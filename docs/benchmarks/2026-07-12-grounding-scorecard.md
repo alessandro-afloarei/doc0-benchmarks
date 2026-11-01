@@ -17,13 +17,13 @@ The rest of this report is the detail behind both rows of that table, including 
 
 ## 2. What is doc0
 
-[doc0](https://github.com/aflsolutions) generates AI-written documentation wikis from GitHub repositories. Point it at a repo and it clones the code, parses it with tree-sitter into an AST-based symbol graph (functions, classes, call edges — not just a file listing), and uses that structure to ground an LLM's generated documentation pages in the actual codebase rather than in the model's guess about what the codebase probably looks like. The output is a searchable, browsable docs site with AI chat, backed by the same graph.
+[doc0](https://github.com/alessandro-afloarei) generates AI-written documentation wikis from GitHub repositories. Point it at a repo and it clones the code, parses it with tree-sitter into an AST-based symbol graph (functions, classes, call edges — not just a file listing), and uses that structure to ground an LLM's generated documentation pages in the actual codebase rather than in the model's guess about what the codebase probably looks like. The output is a searchable, browsable docs site with AI chat, backed by the same graph.
 
 The part that matters for this repo: doc0 keeps the symbol graph it builds during parsing. Every "A calls B, which calls C" narrative in a generated page can, in principle, be checked against that graph after the fact — a hop either exists as a real edge in the parsed code, or it doesn't. Most AI-wiki generators (including both peers measured here) don't expose this structure at all, which means a claim like "this function calls that one" is something a reader has to take on faith, or go check by hand. doc0 can check it automatically, and this benchmark does.
 
 doc0 is a commercial product built by aflsolutions. This repository is not the product — it's the trust artifact: a standalone, reproducible place to check specific quantitative claims about doc0's output quality against committed bytes, rather than against marketing copy. Everything in `corpora/`, `scoring/`, and `baselines/` is designed to be cloned and rerun by someone with no access to doc0's database, pipeline, or account.
 
-Org: [github.com/aflsolutions](https://github.com/aflsolutions).
+Org: [github.com/alessandro-afloarei](https://github.com/alessandro-afloarei).
 
 ## 3. What is this benchmark
 
