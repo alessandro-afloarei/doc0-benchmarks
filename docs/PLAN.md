@@ -157,7 +157,7 @@ jobs:
 
 `README.md` — write the outsider-facing skeleton now (filled further in Task 6): title, one-paragraph "what this repo is" in the gbrain-evals register ("Everything here runs on your machine and reproduces from a commit hash. We publish the numbers we are not proud of next to the ones we are."), a "How these benchmarks work" section explaining the three ingredients (committed corpora, machine-verified answers via the code graph, versioned baselines), a "Results" table stub with a "first report pending" row, and a "Reproduce" section pointing at `pnpm bench:grounding`.
 
-`LICENSE`: standard MIT text, copyright 2026 AFL Solutions SRL.
+`LICENSE`: standard MIT text, copyright 2026 alessandroafloarei.com.
 
 - [ ] **Step 3: Carry the spec + plan in**
 
