@@ -170,6 +170,23 @@ async function provenPages(arm: ArmName, clone: string, events: unknown[]): Prom
   return { from, pages: pages.sort() };
 }
 
+/** Every file keepPages would copy, relative to `from`: the proven pages, and openwiki's Claims files. */
+async function corpusFiles(arm: ArmName, proven: { from: string; pages: string[] }): Promise<string[]> {
+  if (armSystem(arm) === "doc0") return proven.pages;
+  const claims = await readdir(join(proven.from, ".claims"), { recursive: true, withFileTypes: true });
+  return [...proven.pages, ...claims.filter((e) => e.isFile()).map((e) => relative(proven.from, join(e.parentPath, e.name))).sort()];
+}
+
+/** The first file bound for the corpus (which is committed) that holds a secret of the launching environment, by name; null when none does. */
+async function corpusLeak(arm: ArmName, proven: { from: string; pages: string[] }): Promise<string | null> {
+  const secrets = secretValues(process.env);
+  for (const file of await corpusFiles(arm, proven)) {
+    const { found } = redactSecrets(await readFile(join(proven.from, file), "utf-8"), secrets);
+    if (found.length > 0) return `secret in ${file}: ${found.join(", ")}`;
+  }
+  return null;
+}
+
 /** Copies the proven pages into the corpus folder, and openwiki's Claims as _claims. */
 async function keepPages(arm: ArmName, proven: { from: string; pages: string[] }, corpus: string): Promise<void> {
   for (const page of proven.pages) await cp(join(proven.from, page), join(corpus, page));
@@ -239,6 +256,7 @@ export async function runArm(o: RunArmOptions, deps: RunArmDeps = {}): Promise<A
   else if (isolation) reason = `isolation: ${isolation}`;
   else if ("problem" in proven) reason = proven.problem;
   else if (proven.pages.length === 0) reason = "finish not proven: no pages";
+  else reason = await corpusLeak(o.arm, proven);
 
   await mkdir(corpus, { recursive: true });
   const keptPages = reason === null && "pages" in proven ? proven : null;

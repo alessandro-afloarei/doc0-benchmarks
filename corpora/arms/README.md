@@ -38,7 +38,8 @@ folder; the transcript and result are also copied to `results/arms/<repo>-<arm>-
 
 The init event is checked as it arrives: exactly the arm's MCP server, connected, no plugin, the arm's skill and not
 the other system's; anything else stops the run at once. A run is `complete` only when the result's subtype is
-`success`, no secret of the launching shell reached its files (a hit is redacted in place), and the transcript holds
+`success`, no secret of the launching shell reached its files (a hit in the transcript, result or stderr is redacted
+in place; a hit in a page or a Claims file keeps the whole run out of the corpus), and the transcript holds
 the finish tool's own result: `doc0_finish` answering `complete` (its page list is the corpus), or `openwiki_finish`
 answering `complete` without `sourceChanged`, with `openwiki/.claims/` present. Anything else is `incomplete` with its
 reason, and the report scores it as nothing.

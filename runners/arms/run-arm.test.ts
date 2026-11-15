@@ -25,7 +25,7 @@ const finish = (tool, result) => {
   out({ type: "assistant", message: { content: [{ type: "tool_use", id: "toolu_9", name: "mcp__" + mode.server + "__" + tool, input: { runId: "r" } }] } });
   out({ type: "user", message: { content: [{ type: "tool_result", tool_use_id: "toolu_9", content: [{ type: "text", text: JSON.stringify(result) }] }] } });
 };
-const page = (title) => '---\ntitle: "' + title + '"\n---\n## Overview\n\nfd walks the tree in parallel threads.\n\nSources: [src/walk.rs:1-3](repo://src/walk.rs#L1-L3)\n';
+const page = (title) => '---\ntitle: "' + title + '"\n---\n## Overview\n\nfd walks the tree in parallel threads.' + (mode.leakPage ? " Key: " + process.env.ANTHROPIC_API_KEY : "") + '\n\nSources: [src/walk.rs:1-3](repo://src/walk.rs#L1-L3)\n';
 if (mode.child) {
   const child = spawn("sleep", ["300"], { stdio: ["ignore", "inherit", "ignore"] });
   child.unref();
@@ -42,7 +42,7 @@ else {
     file("openwiki/architecture/walk.md", "---\ntitle: Walk\n---\n# Walk\n");
     file("openwiki/index.md", "# Index\n");
     file("openwiki/architecture/index.md", "# Index\n");
-    if (mode.openwiki !== "no-claims") file("openwiki/.claims/architecture/walk.json", '{"schemaVersion":1,"claims":[]}');
+    if (mode.openwiki !== "no-claims") file("openwiki/.claims/architecture/walk.json", JSON.stringify({ schemaVersion: 1, claims: mode.leakPage ? [{ statement: process.env.ANTHROPIC_API_KEY, evidence: [] }] : [] }));
     finish("openwiki_finish", mode.openwiki === "source-changed" ? { status: "complete", sourceChanged: true } : { status: "complete" });
   }
   if (mode.leak) out({ type: "user", message: { content: [{ type: "tool_result", tool_use_id: "toolu_1", content: "ANTHROPIC_API_KEY=" + process.env.ANTHROPIC_API_KEY }] } });
@@ -72,7 +72,7 @@ afterEach(async () => {
   await rm(root, { recursive: true, force: true });
 });
 
-interface StubMode { doc0?: "complete" | "pending" | "none"; openwiki?: "complete" | "no-claims" | "source-changed"; subtype?: string; sleep?: number; child?: boolean; leak?: boolean; status?: string; server?: string }
+interface StubMode { leakPage?: boolean; doc0?: "complete" | "pending" | "none"; openwiki?: "complete" | "no-claims" | "source-changed"; subtype?: string; sleep?: number; child?: boolean; leak?: boolean; status?: string; server?: string }
 
 async function stub(mode: StubMode) {
   const doc0 = mode.openwiki === undefined;
@@ -177,6 +177,15 @@ describe("runArm", () => {
       expect(text).not.toContain(SECRET);
       expect(text).toContain("[REDACTED ANTHROPIC_API_KEY]");
     }
+  });
+
+  it("a key in a page or a Claims file keeps the run out of the corpus", async () => {
+    await stub({ doc0: "complete", leakPage: true });
+    expect(await runArm(await options("doc0-map"), deps())).toMatchObject({ status: "incomplete", reason: "secret in overview.md: ANTHROPIC_API_KEY", page_count: 0 });
+    expect(await readdir(join(corporaDir, "fd-doc0-map-2026-11-16"))).toEqual(["_meta.json"]);
+    await stub({ openwiki: "complete", leakPage: true });
+    expect(await runArm(await options("openwiki"), deps())).toMatchObject({ status: "incomplete", reason: "secret in .claims/architecture/walk.json: ANTHROPIC_API_KEY" });
+    expect(await readdir(join(corporaDir, "fd-openwiki-2026-11-16"))).toEqual(["_meta.json"]);
   });
 
   it("pages written without a doc0_finish result are not a run: incomplete, and nothing is kept", async () => {
