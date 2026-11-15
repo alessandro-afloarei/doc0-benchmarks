@@ -160,6 +160,17 @@ describe("isolationProblem", () => {
     expect(isolationProblem("doc0-map", [init(["doc0-local"], ["doc0-write", "simplify"])])).toBeNull();
   });
 
+  it("accepts the plugins Claude Code itself ships (path builtin), as 2.1.323's init event lists them", () => {
+    const builtin = ["cc-plugin-sec-default", "cc-plugin-telemetry"].map((name) => ({ name, path: "builtin", source: `${name}@builtin` }));
+    expect(isolationProblem("doc0-map", [{ ...init(["doc0-local"], ["doc0-write"]), plugins: builtin }])).toBeNull();
+  });
+
+  it("names a plugin that is not builtin, even one that calls itself builtin by name or source alone", () => {
+    for (const plugin of [{ name: "superpowers", path: "/home/u/.claude/plugins/superpowers", source: "superpowers@builtin" }, { name: "x", path: "builtin", source: "x@marketplace" }]) {
+      expect(isolationProblem("doc0-map", [{ ...init(["doc0-local"], ["doc0-write"]), plugins: [plugin] }])).toBe(`plugins loaded: ${plugin.name}`);
+    }
+  });
+
   it("names another MCP server, a missing skill, a plugin, or no init event", () => {
     expect(isolationProblem("doc0-map", [init(["doc0-local", "gaja"], ["doc0-write"])])).toMatch(/gaja/);
     expect(isolationProblem("openwiki", [init(["openwiki"], ["simplify"])])).toMatch(/openwiki skill/);

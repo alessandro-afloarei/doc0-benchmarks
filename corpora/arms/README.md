@@ -38,7 +38,8 @@ is an allowlist (`PATH`, locale, `TMPDIR`, and the one credential set), with `HO
 The stream-json transcript (`transcript.jsonl`), the final result (`result.json`) and claude's stderr stay in the work
 folder; the transcript and result are also copied to `results/arms/<repo>-<arm>-<date>/` (gitignored).
 
-The init event is checked as it arrives: exactly the arm's MCP server, connected, no plugin, the arm's skill and not
+The init event is checked as it arrives: exactly the arm's MCP server, connected, no plugin but those Claude Code ships
+(`path: "builtin"`), the arm's skill and not
 the other system's; anything else stops the run at once. A run is `complete` only when the result's subtype is
 `success`, no secret of the launching shell reached its files (a hit in the transcript, result or stderr is redacted
 in place; a hit in a page or a Claims file keeps the whole run out of the corpus), and the transcript holds

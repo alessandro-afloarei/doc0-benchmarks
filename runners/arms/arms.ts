@@ -105,7 +105,7 @@ export function claudeArgs(a: { prompt: string; mcpConfigFile: string; model: st
 
 /** Why the run's init event shows a setup other than the arm's own, or null when it shows only the arm's. */
 export function isolationProblem(arm: ArmName, events: unknown[]): string | null {
-  const init = events.find((e): e is { mcp_servers?: { name: string; status?: string }[]; skills?: string[]; plugins?: { name: string }[] } =>
+  const init = events.find((e): e is { mcp_servers?: { name: string; status?: string }[]; skills?: string[]; plugins?: { name: string; path?: string; source?: string }[] } =>
     typeof e === "object" && e !== null && "type" in e && e.type === "system" && "subtype" in e && e.subtype === "init");
   if (init === undefined) return "no init event in the transcript";
   const { skill, server } = ARM_TOOLS[arm];
@@ -113,7 +113,8 @@ export function isolationProblem(arm: ArmName, events: unknown[]): string | null
   if (servers.length !== 1 || servers[0] !== server) return `MCP servers ${JSON.stringify(servers)}, expected only ${server}`;
   const status = init.mcp_servers?.[0]?.status;
   if (status !== "connected") return `MCP server ${server} is ${String(status)}, not connected`;
-  const plugins = (init.plugins ?? []).map((p) => p.name);
+  // Claude Code ships some plugins inside itself (path "builtin"): every arm gets the same ones, none comes from a user.
+  const plugins = (init.plugins ?? []).filter((p) => p.path !== "builtin" || p.source !== `${p.name}@builtin`).map((p) => p.name);
   if (plugins.length > 0) return `plugins loaded: ${plugins.join(", ")}`;
   const skills = init.skills ?? [];
   if (!skills.includes(skill)) return `the ${skill} skill is missing (skills: ${skills.join(", ")})`;
