@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8df64ed84861b8347c1079046190b060d090c8d549cdd6e25fa473f4e8d005ef",
+  "claims": [
+    {
+      "id": "claim_350d1b1d6b79454192c3513b1094266c",
+      "statement": "Signal.connect supports decorator use, weak references by default, dispatch_uid deduplication, and retry=True which wraps the receiver with retry_over_time and forces a strong reference.",
+      "evidence": [
+        {
+          "resource": "repo://celery/utils/dispatch/signal.py#L110-L186",
+          "version": "repo-lines-v1:sha256:c351b34e6b3a5efb7b9d2047bfac6e7def3dbc096e68edb2b701bf27d964e5a1:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxMDljMDY0MzY3MjI2MmJhNTMyOThmMGJiZjNhMDE0Nzg0NjA0Mzg0NWQ1YjhmNTc4Y2ZlMDM3NThmZWI1ZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhMTVlZThmZDE3NzViYzIzMGRjOTE0MzVmZmY4OWJlZWI1YmM2YmI4N2IzN2UwZmFjNTA0MzE4NjNlNDUyNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzMjVhZmJjYjVkMDMxNzAxN2Y1MDdlOWZmNzJmNjBkMTBkNjJlYjcwZDRjMmU3MzkxODhhZDI3MGQwOWIxOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiOTIwZDliNjAxYWE0NzAyMWQ5NTBlN2UyZmYwMjE5YzQ3MzY5N2Q4ZTlhMjNiZjVjZmU5OTJkZWQ4YzBiNmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a66431e8688411e8490dcfc4a274f35",
+      "statement": "Signal.send catches and logs receiver exceptions and returns them in the (receiver, response) list instead of propagating; send_robust is an alias.",
+      "evidence": [
+        {
+          "resource": "repo://celery/utils/dispatch/signal.py#L258-L290",
+          "version": "repo-lines-v1:sha256:12112f59508aaf2d374f27d8533a80b965375cb6ec6632614cad6c94d27e3d23:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMjYxNzkwN2NhODQzYzkyMmU1ODU4ZWUzYWU1ZjQ0NjgzMjNmNGRkYTQ2MmU1Mzg1NDk5NDAxYTE0ZWFkYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjYzUzOThhYjgwMDZlNTA5NDAyMGMwZmU3MDBkZWZhZmMwOGY5ZTIzOTkzOGRhMDM1MTI0NjdlNDQxZWRhMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlY2JjNzAyODZlMzA5Mzc1MmY1MmE4MDQ1MWZjOGIyYWQ1YzFjM2U3ZTU2ZjM1ZjA2NTAzZWM5ZGQwYmQwZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxNGRmYjgzYjAxYTY3MjJlZTM0YjM2NDgxZGMyNTQwYzM2N2I0ZjNjYTExYTdjNjcxZmUzMWRkYjBkNDYyYmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef76184f778f45709f874f20c43664f5",
+      "statement": "celery.signals defines task signals (before/after_task_publish, task_received, task_prerun, task_postrun, task_success, task_retry, task_failure, task_internal_error, task_revoked, task_rejected, task_unknown), worker lifecycle signals, logging signals, beat signals, eventlet pool signals and user_preload_options.",
+      "evidence": [
+        {
+          "resource": "repo://celery/signals.py",
+          "version": "repo-file-v1:sha256:cf64f852aace0dccdb691140ca83733b4b61e25b7f8cc5b39719eb061fcc5022"
+        }
+      ]
+    },
+    {
+      "id": "claim_52507bd03556417c9d469ce1aa3d85c5",
+      "statement": "setup_logging_subsystem runs once per process and, if any setup_logging receiver exists, skips Celery's own logging configuration; otherwise it optionally hijacks the root logger by clearing handlers, configures root and multiprocessing loggers, sends after_setup_logger and sets up the task logger.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/log.py#L87-L146",
+          "version": "repo-lines-v1:sha256:a1cb75f679275802a3463e64607285eebeacba3e63fcaa72411ec3220e376cca:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1OTQ2MWI3MmY5MjY4ZGQ0YWI1YmQ4ZWQxMzI0NGUwMTg5Y2EyZGY4MzlmYzczODc4YTVkOTAzN2IwMDBmMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlNmQ2MzEwNGQ2ODEwM2M1YjM0MWExOGM4MTc4MDM3MTBiMjE4YWIwZTc4YWVlYThhYmUxZGI0MjJjMzUyNTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkZTk2ZGFjMGQ4NjljYWExM2I3MWI2MDVhY2I3OTZlMDY5OWFlN2UxODIxNjBhYTA2OGM4ODliYzQxM2JiYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzM2NjZDNkZjdhOGVhOTRkMjc3NzY5MWViOGM0YjMwZTM1MDI4OTMzYmFjMjcxYzFmMjdlZTZkMzFlMmY2ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c308ff1131349a6afc1e1130fc70692",
+      "statement": "The celery.task logger uses TaskFormatter with the task log format, does not propagate, and triggers after_setup_task_logger.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/log.py#L156-L181",
+          "version": "repo-lines-v1:sha256:0dc5d90593b53d525a7e38e44e99ab3ea86e8252049cab5427f184050d42abf9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmZDRjZjhiNTY3MGE3ZjFkYzJjZTJkMzA1ZmViMmZiZjdjMGU0ODVhYmNiMzFkNzA5OTM0Y2MyNTczNTYyNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3OWU0M2Q4NDIxYzZmMjNiNjgyM2FkZjM4YWY2ZmQ5M2Q1ZDhjZjM1YTZkY2IyZTQ1ZDc0MjM1OGEwZTEzYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwMzA3OWRjMWY5NjAzYWZmNzhkOGM4N2VjNGE0N2MzMDhlNzcwZTI3NDhmNGJhOGMzNjMzZTU4NjRhNjNjZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4MzNkYmEwMzllN2RiY2NmZDE2MzliYzlhMDQ2ZmVmMjMxZDQ1ZmI5MjAzZTAwZGNmZTllM2UzOTNhY2Q5YzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1756ec19ba354831b869567c1ccc1ea2",
+      "statement": "worker_hijack_root_logger defaults to True and worker_redirect_stdouts_level defaults to WARNING.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L346-L346",
+          "version": "repo-lines-v1:sha256:54a7e41c520b8b4c6cbc7d8668d8222bb847fbfe4183161679938f7a803c2f7c:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTRhN2U0MWM1MjBiOGI0YzZjYmM3ZDg2NjhkODIyMmJiODQ3ZmJmZTQxODMxNjE2Nzk5MzhmN2E4MDNjMmY3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTRhN2U0MWM1MjBiOGI0YzZjYmM3ZDg2NjhkODIyMmJiODQ3ZmJmZTQxODMxNjE2Nzk5MzhmN2E4MDNjMmY3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjc1NWUwZjg5YzU1NDVhNzNiNWM5NTQ0MmJhNjk3YjlkMmUxZTkwNWU2YTEwNTgzMjUyZDY3ZTg1ZGNmNzQwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTRjMDdkOWIzM2I3MTQyNDU3NWRlMTk2YjFjOGY5OWYwMjBhMWYxYmQzYmI4NDVkNjliNGE3ZjRkYzY1MGY3ZCJ9"
+        },
+        {
+          "resource": "repo://celery/app/defaults.py#L360-L365",
+          "version": "repo-lines-v1:sha256:17af5e3fa68dc39091864fb52a1462dc7db103b118dd49f00d6ee2630b0fe907:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzNkYzgxYjMwNGEwNzg1ZGIxZTlkMmIzYjBhNjNhMjhkMzNkNGYzZWNkY2MyZTcwOGY0ZTdiZTUwNTkyNzRiMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQzM2QwZWE5ZWNmMmYzOWM5YTUwNDA3Mzk1ZWU0MTE3MmZlNjgyYzljODg1YTM1MDhmNzViZGVlMTUxZWZmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWU3ODI5NDU2YWQ2OGY0NGIwMjEyNGE4M2EzM2UxODRlMjI2MDkwNzE4ZDA1OGQwOWMzMDY5YzY4YmRmMWJhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmNiYWU5MjVmNDgxYzQ4YzUzZWQwNzE3ZmIwMWIxMGU2MTNlZThkOTU1YjdjNzMwZTcxZTMxNDk3ZGYxMDVkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_df64d16b6c1d4587a7674fcb83e56d28",
+      "statement": "create_pidlock acquires a Pidfile lock (removing stale pidfiles) and registers an atexit release.",
+      "evidence": [
+        {
+          "resource": "repo://celery/platforms.py#L125-L272",
+          "version": "repo-lines-v1:sha256:ec7d70df19ef08030c58ec4f120cff70652119f5ea7bcd27cbb67bd9219af0b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiZWZjZDg4Y2M4OGQ5MjliMTk2MTNhN2E0MTYwZTI3MjNjYTQxZmJlNzdmNzliMDU2YWI0YjhiYjI5ZTI4Yzc1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3NmNmODc2NjMzOTU0Mjg0ZjQwNWY1MDE5ZTEyOGU1NzBkMGFhYjQyOWExOWE5MmMxMmQxMDg5NjUzMjI2MzUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2Mzc3NWYzOTRlODRmNzUwMDFjYWIwOTZmNGU2NThjYzM3MmMyNDRiM2NlMTYxZGIxM2VhNWZmMThjYWQ4ZWJmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhMmNkN2E0NGQ5YmU1NjM4NDUwZGY5NzMxODM3Zjk1OTc5ZDFlYjViOTA4NWFhODAxY2UxMDA5NTliNDIwYTA5In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a18757cd1584e4bb5414e8ffa4c83e4",
+      "statement": "detached drops privileges before returning a DaemonContext that double-forks with setsid, changes directory and umask, verifies the logfile and pidfile, closes open fds except stdio and /dev/urandom, and redirects stdio to /dev/null.",
+      "evidence": [
+        {
+          "resource": "repo://celery/platforms.py#L310-L430",
+          "version": "repo-lines-v1:sha256:96c99d56ef89c29ec5e9526e5f3a626321014f8863637004c1df3e777e9920e0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwNjcxZjIwYjIwNTQzNGJhODEzNjU3OGU5YzI5YmI1ODdmMTIwODhlZWQ0MDhhNWY5YWI1ZmQ4YmVlMzI2ZDAyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiYTkyZmRmZGRlZTlmZjAyNTIxN2Y1ZDY2NTFmMjc1ODFmMDk2MmQxZTJhYmZjNWViM2I2NmQ1Yjg3MTE3ZDlhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjZDIzMTU3ZGQxNTQ0NWY0NWI3NzZhNDIxYzU3OTRmM2M4YjQ1ODM4MTM1M2QzMGU2YTc0MTlkNTBiYzBjYWM3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_252df208ca9f46e598cd533227844964",
+      "statement": "maybe_drop_privileges raises SecurityError if root uid or gid is still held after dropping privileges.",
+      "evidence": [
+        {
+          "resource": "repo://celery/platforms.py#L528-L556",
+          "version": "repo-lines-v1:sha256:cd742e192ff1c9cd47d5951a6b0d1e5087255f2d4383459aa624d2bbb1c2b423:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyOGVkNWU4NDYwMDhlMDVhMmQxY2E1NDQwYmZiYTViODcwN2YzMmVhOThjM2Y1YzE2MWU5MjdjZDdmYzA5NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhYzM2ODE0OWI1MTY5MDlmYjZjZTZjZWY2YzQ5NDI0MmUxYzRhNzNiMTE5MWJmOTIwZWEyMTU4OGM2OWI1NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0ZWI4OTUwY2E0NDMxYjUxODQ1ZWUyOTMwZGEwODM1ZTZjODhlMWY4ZDIwNzIwYThlZTM0MzY2NDlkOTIxNzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_299ebda575ce4e7e81ff3007f5f915b3",
+      "statement": "check_privileges raises SecurityError when running as root or in sudo/wheel groups with pickle content accepted unless C_FORCE_ROOT is set, and otherwise only warns.",
+      "evidence": [
+        {
+          "resource": "repo://celery/platforms.py#L788-L845",
+          "version": "repo-lines-v1:sha256:b799ba23a947473b013082fc6c1e3eb904ef911140fe171e37f05d812c236467:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1ZDgxMjFjNzFlMzFkMTdkMzg3YjBkZWNlNTg0OGFjZTMxYTMzMGM4YjQyNGU2Zjk0MGRjODVkZmJkM2IwNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxMmIzNWM5YTE3NDNhODgwOWMzMjI0NzA5YmU5NGM5Y2Q3M2YzMzhhY2IwMDIzYjg1YzU1MDc2NzFlZjcxZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T09:27:53.075Z"
+  }
+}

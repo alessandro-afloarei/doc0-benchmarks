@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:997ee2c68d5257482ef2f95a40acfba5842f678f62a16806103653b69e760dcd",
+  "claims": [
+    {
+      "id": "claim_c970931aecd3480d813f89092f552cac",
+      "statement": "run() executes a fixed startup order: parse Opts, apply --base-directory, resolve search paths (failing if none are valid), reject path-like patterns, build regex sources, construct Config, check leading-dot patterns, compile regexes, then call walk::scan.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L75-L112",
+          "version": "repo-lines-v1:sha256:787bb438302092d0f1e10a4be99cdf40b923ce013f7842ecdc60f1e20d3be880:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMDdhMGM4NTA1ZGU5NGNhMDcxOGQyMDhjYmYyM2U1YjAxOGQ3YTJmZjY3Yjc4ZGE3Y2M4ZTdlMDBlZTM4YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b9b23319756463d815c086df615f7b1",
+      "statement": "Errors returned from run() are printed via print_error and the process exits with ExitCode::GeneralError; successful runs exit with the ExitCode returned by the walk.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L62-L73",
+          "version": "repo-lines-v1:sha256:13c65d2c2e9294fdae79f679c0ae84913ca26313f2fcb5474b41a7e5509f19a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYjllZWU5MWJjMGIxYTc3YjVmMjI0ZmQ2OTQ1ZjNkZWMyMzRlNTU5NmI5NDc1YzkwYzVhZWM5ZTZhZTIwYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYzM3ODVmMmUzODI3NDk2ZDU2NTMxMTE0ZGEyYjc4M2IwMWUxMDAyMjg3ODgzN2U2YjdmMDZjMTI1NDdhNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0N2ZhZDJhM2IzZjkyOGE4MmIyYjQzNjZlZmEwNDlmZGYyMGJlMTZiZjliZTYyZTVhMzZmMWFmYzIwY2FhODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_13485867ef2145d6b4533fee9aa79418",
+      "statement": "--base-directory changes the process working directory before search paths are resolved, and errors if the path is not an existing directory.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L131-L149",
+          "version": "repo-lines-v1:sha256:406c592ff5a76d639af5b3c8093b04e9b5c97556de527ae019543d5aecf87e63:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3NTVmODRjNjU2OTVmOGM2OTY5ZjRiMDVjODdhOGNkMWZjN2ZmNzE1NWUzODVhYTExY2RiMDlmNDgyN2EwNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5OTlhNTIwMTEyZjg4ODdiMzg1ZTFkNzZjMzUxMjVhNzFjZWM1ZGQwYWIwN2ZlMWU4NzQwY2JhNTQwMjEzYzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3ZThhMmMzYzg5NDFlZWE0YTJhMjc1MzA0NzdhNDM5ZDU2MGE3MjdhMjkxZmExZDM1YmEzM2MwMTY3MDQ0NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxOTBjYjJjYWRlYmY0NzIzZjI3NjMwMDc2YTE3M2ZkZGViZmIzNDM5M2NmOTdkNjNhZjYwODQ4NzhlNDY5ZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cca2b00b52dc4f43a522cc51ec4e5556",
+      "statement": "Smart-case detection runs on the regex source strings during Config construction, before the regexes are compiled with the resulting case sensitivity.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L248-L256",
+          "version": "repo-lines-v1:sha256:b07e40af685e104b853908c41adcdbbc89122bfc5ab3fa0ee1af0e93ea65f6b6:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZkNjZkYzNkZDkzMGUzNjI4NmY0MWNjYmNhM2VhMTQwZGQ4ODkzNzhiZjU4M2JjYTY4MTMwMmE4MzJkYTFlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGFlOWUxNmU1YTdmNmIzNDhjYTIxYzliMDBjODMxNjY1OTk1Y2M0NGE4ZGVlMzZiMzNkNDgwMDM2YjdjODExZCJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L541-L555",
+          "version": "repo-lines-v1:sha256:4aecbe6430e27f08136ec95199aa800c7ef17b176bc451821f3756ebe25ccba2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMWUwODU3ZjAwZWQ4MmI1OWQ3Mzk4MjM5MmI0MGVmOTNkMjNiYWFjMjU2NDhjMDdiZWM0YmM3YTg0OTMyYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c00b80e142834804b260de41c94ce8d5",
+      "statement": "Config and compiled patterns are bundled into a WorkerState that is shared by reference between walker threads and the receiver inside a thread scope.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L306-L328",
+          "version": "repo-lines-v1:sha256:b7d200dec0d91edd242e9aea87eb6edcbbb893132534f04183b0e137eccac978:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2MzM4MTBkZTkwMzRhMmZjNTRiNWZhNDNjYmVmMDRjMGQ2NDAzNGI1YmNiMmVhYzVjNmRjOWY5Zjk4NDY1YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3OTgxODllNGRiNDY1ZWMzN2JlNjU1Y2JjN2FhMmM0ZTNlNjVlOWVjMjEyZTQ0ZDQ4ZDE4MzM0ZjQ1OThkZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1NTJkMzQzYzIzNzc3NjBiNDcxY2RhYzY3MzgxMDlkMjg3ZTViNWVhZDc0ZDkzZDQyNmRiNTI1NTRhYmNmZDEifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L617-L653",
+          "version": "repo-lines-v1:sha256:d2c3ab2b47de7ea63105c4d31cb2b42b657a347637ce5e5dd10143e9c480b6cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MTM4MTg4YmI4YmE2YWQ1MDY5ZGMxYTgwMWE4YzJkN2JiMmM5ZmUxNzg5MjYxZDBmY2FmY2I2OTUzYTBlYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlMjcxNTNkY2Q0NGU2Mzc0MTYzYmQyOGFmOWRmNGQ2YWZjYmZmZjI4OWQxODg3YjVmYTVkMjVhY2M2MzZjYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkNDc4ZGQwODQ5ZTBlODhlOTkzNjQxZjQwOWUxNTdmZTVkZDFlNzc5OTdmOGVkYjA0ZGMyMjE0YTkwMmZhMjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0accfe0354f4d29b0d018916aad75f1",
+      "statement": "DirEntry lazily caches metadata and LS_COLORS style in OnceCells so stat calls and style lookups happen at most once and only when needed.",
+      "evidence": [
+        {
+          "resource": "repo://src/dir_entry.rs#L18-L23",
+          "version": "repo-lines-v1:sha256:54199c87bcd6f822416530b4868470cdfd6743dfea0a51ccc372eeff79219978:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTdkODBjZjg1ZWE2MTE5MTE4MWE1MmJlODg3Yjk5ZjVkY2M1ZmI4ODcyOGY1Yjc2MTc2MDI5MWM4MTU4YmI4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGZkYzAwODVmYTZiNTdmYjk1NzhhMWI3MDE2MjI1OGNkZDdlNzE4OWI3ZGRiZmRmOTNjOGM2N2NhMTYwMzMxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdjMmJjMzdmYmYyMWY4ODViMGNhOWViYmRjYmZlZDA5YzBjYjc4NDk4MWM3NzFmZDBmYzhhNDA2ZGZiM2YyNyJ9"
+        },
+        {
+          "resource": "repo://src/dir_entry.rs#L89-L109",
+          "version": "repo-lines-v1:sha256:7ad126feaed862a979b678ffb17af7124272e84c1d2070c79517faa284ade506:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNmM1OTc2OTg1M2JiNTEzMzg1YjlhNjFlYzRjNDY1OTljNDQzNDdkZWMzODU4ZmIwZWE5ZTA0MTVjOTZlYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiNWU0OWFhYjc3MjkzNjQ0M2VjYjQ1ZDk0YTU1NjBiMmJiMTIzNWZmZjA0ODVmM2EwNTNjMmY5NTJmZWJkYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f7b75449f4c4046af56c7e1ced283d3",
+      "statement": "jemalloc is installed as the global allocator only when the use-jemalloc feature is enabled on supported (non-Windows, non-macOS, non-BSD, etc.) targets, and the cfg list must be kept in sync with Cargo.toml.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L66-L74",
+          "version": "repo-lines-v1:sha256:6a7c753c119f4337507ccddf77674fcd73d5ed0d560fd67e68cdfa12d7e3e000:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjkyM2UxOGYyMmU5NmJiNmQzMzY5NjcxZjYzYjAwNmRiZjVkN2FiZmUyZWNhZDdhNjQ2YjQwOTAzZTRlOGIxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI1OTJhMmI1NjIzZDhjYzA4YzJlOGI5MWRkNWQzZTBlZDE4NWMwNmM0ZDliYjBlYmM3Zjk5Mjk0NjliNDY3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGE1MTAyNmNhZTJjYjJlZWM3ZWFiMGRjZmZkZWZmNjBmYzQyMWJkMzY0NmM5ZDJmMWNmMzJhMzFkNTNlMDI2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM1ZDBhNzg4MzA5N2UwZGViYmVlMWQwYmMzNTcwZmQ2ZWE5ODQ4YWNkZDNjY2M4MDZjOGM5MDQ3N2RkN2EzNSJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L40-L54",
+          "version": "repo-lines-v1:sha256:5be8db0bc602de3d11d1dc30d75f4725755b04bcd31bbd6ce3973532b7096eda:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMDViZmQ2OTJkNGQ2NjRlYWMwZmRmNzE4OWQ0ZGEyNWE1MGNhYmQ0ODU2MjY3YjM2MDQ3YWJkZWY5YWU2ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NjMxMjFhYTUzZmIyY2VlOWViMWM0YWM1YmVkYTA4YzIyNTg1ZTY0YmZhYTNlZjA2OGRhOGM1ZjNhMTZhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1YTY4ZWY4YWU1NjFiMWJmNGFkZWI5YjkzMTQ3YTQ5MTRmNDg1YTY4M2JmYWJiYzk3YTBhOTJlZmMyMmZmYWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjJjM2IxYTk2YjI3YWVhM2ZiZDViNDI0NzkwNTM4NzNkMDUwMWM4NzQwZmZiMjBjMGRmMDEzYWIzYzYzMzEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:44:06.029Z"
+  }
+}

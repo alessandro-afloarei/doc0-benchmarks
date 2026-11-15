@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1fad324e06c5f3f86c744c91c4c3f84600883988ac88d6de7756e5a0dc495e7f",
+  "claims": [
+    {
+      "id": "claim_653243ed89994ce5a0009e9e04b6361d",
+      "statement": "invokeTag resets the component's hook index and pushes [context, node] onto buildDataStack while calling the component, which is how hooks locate the current component.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L274-L292",
+          "version": "repo-lines-v1:sha256:92c43c98e0694147fbadc336c202fa0a031f8dfcd88c5b5a723f490850e27bc2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4ZjA1MDE3Yjc1YjI3MmY1MWRmZTg2YTg5NmU4ZjgzMjJhZjE0ZDgxNzAyNzFiODM0MTUwOWQ5ZTVjZjljNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwOTYwMGFhYjdkMDQ0OGQ2MTU3Y2QxZGZlOGVkNDUxMTA0MTRkOTQyMWFjM2I3NjNlZjBhNDcyZTdlOTdmYzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27c6ee362f2b4d1ca2f2d09268a53b52",
+      "statement": "During build, a new child is matched to an old child by key and tag when it has a key, otherwise by tag, and matched children reuse existing nodes.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L497-L560",
+          "version": "repo-lines-v1:sha256:5a44b96c310bbee2d9fe518951a3ef7281e3c2f150f0d163a6a3818312e9d1c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiOTQyOTI2MDdkMjFhYTdhYjM3OTZlNGI2OTBiZDZhZjI1OTczMDk2NmI0MDdiZmI1MzE5ZDE4MGJiNDkwYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NjA2MWJkNTI3M2QxNjUwZTZkZDMxNzBjMGI5Y2M5ZTAxNjYzMTk5MzY5ODc1MTU3MDJiNGIyNDRmZGMzZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1OWQ0N2M2NjYxMDY1M2U5OTcwMDFhYjNlZjY2NzZhOTUxMjdlZjhkZTZlMzk4MThlODJlZjdiZWU3N2ZkZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyY2FhZmNjMWFhMTMwNGRhMWI3NjhmNjAyZmQ2M2JlY2RhYzc0M2E3NDFmMDA2Y2M3MzU0YmFkZDBkMmIyYmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9609a8baa79244e1933b20bd6311a107",
+      "statement": "After applying DOM changes, insertion effects run immediately, layout effects run synchronously, and useEffect callbacks run in a requestAnimationFrame.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L462-L481",
+          "version": "repo-lines-v1:sha256:805414508f1cf3701604f0a1f4be4090a456f7284dd244f2cba1d294bd005187:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxOTYyM2I3YzExMGEwZmRmODI0NzExNzI4MWQxZDEyYjgyN2IxYTNhZGMwNzhhZjIwM2QyN2JhMzc2YzA2OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlZGFiNTQ5MDdjNDNkN2NmZjAxM2U4YzE2YWZjZTgwZjllODBmNGE5OWI2NGNmOGM5M2I1MjkyZDZhYWJhYWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjMDk3NmQyMmMwZGM3MDE4ZjJkMTI4ODBmMDQyNzc2NGUyZjg3MGVmNTQ2ZjJlMWMyOGQ1OTc5Njg3N2QwY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bdc883e1dd4049d589dde205f4eb6023",
+      "statement": "update() keeps only the latest pending update per node, cancelling earlier ones, and defers execution to a microtask unless inside flushSync, which runs collected updates synchronously.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L740-L813",
+          "version": "repo-lines-v1:sha256:2cada4c01c89d7aa059a23b254650bd824b9784e5cae2a2c08ddf7ecc5172cce:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyMDg0NTlkYWM0ZDA4NjIzOWE3ZTgyZTNmNDAyOWMyMTdhOWFkOWE5YmM2Njc1ZmViNzliNjE5ZjM3MmRhZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkN2I4NzZlN2QwNTFhN2ZjNjU2MzhlNzhlZjA3MzJhZTM2NmJmOWVkNjdkYWM4M2UwMzkwNWQ1YjQ4NWQ1NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NTNhN2NhYWJhZWM3ZjdjNGUzZGIwNjI1MzNkOWU1MTBhZDY3NWZlNjlkN2UwZmY4Zjg5ODUwYzI2NzZiMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_12834e66495f4fecbd243ff4f7364ff1",
+      "statement": "render() builds the tree into a DocumentFragment and replaces the container's children with it.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L783-L799",
+          "version": "repo-lines-v1:sha256:27fc5bcfca6fed206376bc9835ec9cb39a8e459c2395113d492a774bd5091f16:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNmEzNmIyMWMwYTBhNDM1MTY1ODNmODRhODJiYzFhODllZDFmZGRmM2JiNjhmMzc3YWI0ZjcwOGE2YzRhMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5Nzg5NDI2MmY3MDc3NTlmZjRhYTg1Nzc1YmNkOTAyNGJhNDkyY2I0ODJkN2MzYjhjZmZjYzJjODRmZGE0MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMGJiZWU5M2M1NjBhMzAyOTg3YTI4OTQ4ZjQ5MmRmMmI2NGQ5YzAyMTM1MzY0MTA3NmY5NzZmZjFiMDc3MzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6af810c88bb94ae5a1d4661e883a6fb5",
+      "statement": "useState returns the initial state with a no-op setter when no DOM build is in progress, stores state in the component stash by hook index, and skips updates when Object.is reports the value unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/hooks/index.ts#L182-L243",
+          "version": "repo-lines-v1:sha256:0ef62263bbd00aaa4ae200d83ec96852480a28d0b8d3c482cf83e5e2147b4c4b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyYTMwOGEyYWRlZWRiYWQxMzNlNzFkZDI1NDMyNzUzMDE1MGExZWM1MTFmNjgyN2YxNjdhMDY0ZThhZDc3NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5MDllMDkxZGRiZDdmNzI4ODc1ZTUxOThiZWFiOTMyMDEzZmVmMjI4OTdhYTBmZjkyOTRhOWU3MzdmYTBjODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMjAwN2M2YjQxY2Y4ZWJjNjFkZTI5YWJiMzFkMzZhNGMyNDAyM2Q3NTI5NDU3Mzg1ZGFiNzE1OGViMWNkZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c917c3b7190b45eeb4a8637785c9c75f",
+      "statement": "use() caches promise results in a WeakMap and throws the promise until it settles, rethrowing cached rejections.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/hooks/index.ts#L332-L346",
+          "version": "repo-lines-v1:sha256:0148f9ea481c8c80da978a62890d4b6d8b4421605586fa872110da9945c6c179:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzZTliZGEzNTNkNjA5ZWJiODcxYTQ2NjI2ODY4OGEzNTc3MzY0MWMxOTVjZWYyYjcxYzRkY2FkNDE3OTFlYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkZWUyMTA1MjQxYzk4M2Q1NjhkYWM0NmY0NWVjYmEwZDYyNzE5MzQ2MmVjMmE1NjMxMDkyM2E2ZTYxN2Y3OTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMjFhZTI2MTJkNDY4OTk5ODJhOTE3OWUyZjExYjdmOGE4ZGYyY2IzNTJiOGU4MjdkODg2ODNjZjVmZmU1ODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5756cf32a49d420099c6b38ae30fb02c",
+      "statement": "useSyncExternalStore requires getServerSnapshot during string rendering and throws if it is missing.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/hooks/index.ts#L397-L425",
+          "version": "repo-lines-v1:sha256:08f8e2f3829c46c1293aca02ebce6435808ed7a59854717430d0937cddc9570e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5OTUzYzgyYTQ3ODdjYmZhYTJjMjg3ODEwOTA3ZTkxYjJkYTg2N2RkMWIzMGQwY2VhNjkzOTQ1ZDdlM2QwYzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYTlhMWVjNzFkNDY5ZmNhNjhmMWE2M2MwMjRlYjNhZGI3NDA1ODQ3ZmE0N2Y0M2E4NWI5NGNjYzBjMTc2NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db70d5da4f06419d92119e089709a853",
+      "statement": "createRoot keeps the rendered JSX in a root component's useState so subsequent render() calls are state updates, and rendering after unmount throws; hydrateRoot simply creates a root and renders.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/client.ts",
+          "version": "repo-file-v1:sha256:ffdcc1e0f623b1c0205b3e66415722f71a9318deab3b31d5bdf748c939d7253f"
+        }
+      ]
+    },
+    {
+      "id": "claim_d92eff4929514dd397b054373ce2a6f8",
+      "statement": "Vitest runs the DOM test suites under two JSX import sources, src/jsx and src/jsx/dom.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L47-L72",
+          "version": "repo-lines-v1:sha256:dc963c6d6e0b950edd3d09156352f2ccf7bbd01996fe6d9d732956331908acb0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhY2Y4ZjFkZTY4ZjM1MTRiMzM2ZGE5ZjkyNTBkYjk1ZTRjY2Q2MjdkYzNmYzNkYWU5NmQzMWM0MmFhNmFmZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhOGRjMmFlODUwODRlYTRkMDg1YTBlYjY0YWYyMGI1YjcwYmU2NTIzMWM0YWNhYTg2MzdiYjc4MTc1NWEyYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f45ecf166fd491195780737944ff5d3",
+      "statement": "DOM intrinsic metadata elements are inserted into document.head with de-duplication keys and precedence ordering.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/intrinsic-element/components.ts#L56-L190",
+          "version": "repo-lines-v1:sha256:7f3761187b830dbfbc635c4de3611649b6f3a05200917f2b18f7c83d356caa44:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxMjg1ZTI3MDc3MzBmNjhkODA4MTI5YzA0NGM2YzVkYjhlYjgwM2RhNDRlZGQwMjNhOTA5OWExODU0NDczNThhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1Zjk5MWZmZGQ1NWNhNWYwZGE1OTE1NzA2YTMyNmU5NmI4NWJiOTQ4MWE1ZThhOTcxYjk1ODk2OWMxOWRhZjQyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzNDBjNWQzZGMzYTc3MzA3OTNjODkyNzk0OGI1NTk2NjQyMDdmNzliYTg3NzczYzIxNTAwNDQzMTk2MmZkNDg4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2NzMxNGUwZDc2NTBlNThkMDczNjJkMjk1MTUzY2ZlM2Y1MmU1NjAwZTc3YWI2N2UwNGI4MmRjNjE1MGUzOWJlIn0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:25:20.453Z"
+  }
+}

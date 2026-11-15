@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c62cc585a0146411c0f9bba5d09c6356cdff5c04b5dc23c5e4ce791a0c90dca4",
+  "claims": [
+    {
+      "id": "claim_0a4dea2763e64c9184e2ab6c8d4e13d9",
+      "statement": "The systemd celery.service runs workers through celery multi with Type=forking, using multi start for ExecStart, multi stopwait for ExecStop and multi restart for ExecReload, as user celery with an EnvironmentFile at /etc/conf.d/celery.",
+      "evidence": [
+        {
+          "resource": "repo://extra/systemd/celery.service",
+          "version": "repo-file-v1:sha256:f34e387ac953ebca22b93a8bc5fab03f27471ccd6ba6c5b315732a26a3945f85"
+        }
+      ]
+    },
+    {
+      "id": "claim_16c7f5a0e8ca4cb5bdb229f8780d8d6b",
+      "statement": "The sample systemd environment file defaults CELERYD_PID_FILE to /var/run/celery/%n.pid and CELERYD_LOG_FILE to /var/log/celery/%n%I.log, and the tmpfiles config creates those directories owned by celery.",
+      "evidence": [
+        {
+          "resource": "repo://extra/systemd/celery.conf",
+          "version": "repo-file-v1:sha256:4475d4b9570861f00c1ed53fb743b9c48351bcf459f284c8ca4c42bbfecd9c41"
+        },
+        {
+          "resource": "repo://extra/systemd/celery.tmpfiles",
+          "version": "repo-file-v1:sha256:fbc862f46b790c5c8907bf54145499786c063228f6d3b35373c242ce45117fdd"
+        }
+      ]
+    },
+    {
+      "id": "claim_a31ecbf5690f49aeb31ef8a41bfd87fc",
+      "statement": "The systemd celerybeat.service runs celery beat directly as a Type=simple service.",
+      "evidence": [
+        {
+          "resource": "repo://extra/systemd/celerybeat.service",
+          "version": "repo-file-v1:sha256:11aa1be76b0f75c348029b0e3ab128e43ca6876803b43861b9129b8392c96351"
+        }
+      ]
+    },
+    {
+      "id": "claim_9a94baf47b86478abdd5f027b5a8e0cd",
+      "statement": "The generic init.d celeryd script wraps celery multi with defaults user celery, nodes celery, and pid/log patterns /var/run/celery/%n.pid and /var/log/celery/%n%I.log, reading its configuration from /etc/default when present.",
+      "evidence": [
+        {
+          "resource": "repo://extra/generic-init.d/celeryd#L144-L147",
+          "version": "repo-lines-v1:sha256:d597278768c13cef443e837095e5b71e46ed03abd9c7f07ae4838d9d391cb429:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDVjODMyNTcwNGI4Zjk4MDkzMTY5MzhlZTJkZmU0YjRkNTYzYjRhOTBmNGYyM2E4NWI0YzYwYjQ1OTBlN2JiMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzlkZGViZjNjZGQ4NzM2NTEzZjhjOGZjMjdhNzI4ZjRjMDJiNDI3NDFmMjdjMmNlZWU2YjExNGViMWJiNjZmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGM0Mjk0NzJmOTczNjE3M2NkMWQ0MTdmMTMyZmFkOGI4ZGEwY2FkZTg2OTdkZTM2ZGY0MjBjY2E2ODVkNzFiYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDM1YzEwZTNkNzQ3Zjg1MzZkMDM4YmE0OTQ5MGYyMTllZTAyYTZlNzc5ODZmNGU2OGRjZTgyNjY0OWFiZmM1MSJ9"
+        },
+        {
+          "resource": "repo://extra/generic-init.d/celeryd#L51-L66",
+          "version": "repo-lines-v1:sha256:7fa77af9e7b18949d0d028588a36fb56fa73c4c4ca3568c4ac03cd53009edc20:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2MjUzM2E5YTEwYzI5YmE3YjczOWE4YTYwZjFmNWQ0MDY5NzQ5ZGYyZjFjNzMzZDZkMzZkYTA5OWQxZDEzODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0Y2ZkYmFjOTMwOWQ2ODcxODJlY2M1NGU4MDY0ZjQ2MTFjNzVkMjA3MDliZWU3MjAyNGNiMzM2ZmM4NGI2MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwMmM1NjQ3YzZjZDk5MWVjMTRhMmJkNTM0YWE3MjFjNTdkNjY1MGNhYjU1MGYzZmYwOWI5ZWEzODUwOTY2NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxOGViMWVkNzEwZDlhNWIzMzYwYWYxZWNkNzJjZjIzNTk0MmE2ZDg2Y2YzZTExN2YzMzg3ZWFhNTk5NjIwNmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_875c3eab9a8c4be2ad7dfc5a1e1864cf",
+      "statement": "The supervisord worker example runs the worker in the foreground with stopwaitsecs=600 and stopasgroup=true.",
+      "evidence": [
+        {
+          "resource": "repo://extra/supervisord/celeryd.conf",
+          "version": "repo-file-v1:sha256:3b76fd81627009b1830a5df0d6931b343c8b3373f2e1651761e736345f2377e0"
+        }
+      ]
+    },
+    {
+      "id": "claim_65343ae56ff8467684df9405d0824b92",
+      "statement": "docker/docker-compose.yml is a development environment that mounts the repository and provides RabbitMQ, Redis, DynamoDB Local and Azurite services, pointing tests at TEST_BROKER=pyamqp://rabbit:5672 and TEST_BACKEND=redis://redis.",
+      "evidence": [
+        {
+          "resource": "repo://docker/docker-compose.yml",
+          "version": "repo-file-v1:sha256:ec7c711a72cfc8c319e98107396c9c8a35b5b760d807e33b58ec2b7e5a8fbc6b"
+        }
+      ]
+    },
+    {
+      "id": "claim_99ba44fd94114fd78e54aa8104e827a2",
+      "statement": "The Helm chart deploys workers as a Deployment (default 4 replicas) with configuration injected via envFrom from a ConfigMap and optional Secret, and its sample probes import celery.task.control, which does not exist in this codebase.",
+      "evidence": [
+        {
+          "resource": "repo://helm-chart/templates/deployment.yaml",
+          "version": "repo-file-v1:sha256:3b3d000ae0460d29300a98992a3511849ec25c3027e593f560e471bd03c5015b"
+        },
+        {
+          "resource": "repo://helm-chart/values.yaml",
+          "version": "repo-file-v1:sha256:d1b741450e827cbdd80721b2acd5cc04740968b53021a46161f5de640a170a11"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T09:27:53.075Z"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:386f1a1926f81fe6c4944d85d3a2f61c89dff72dfbc4be027e2eab82d5a84ee5",
+  "claims": [
+    {
+      "id": "claim_214e46130a6a42daa474706b7188bc7d",
+      "statement": "The Vitest configuration includes a project per runtime-tests directory, a main project for src, scripts and build tests that excludes *.case.test.* and sandbox files, and two DOM JSX projects using src/jsx and src/jsx/dom as JSX import sources.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L26-L73",
+          "version": "repo-lines-v1:sha256:77c4161e5c797304aa68b093eaeb95b000796c1e631e977672d9fb9adcea2b73:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZWJhMTc3YzQ0YzE0YzBlMTNkYzgxZjI1MGVmMGFmZDY5OTFiZTRhYmQzNjlhODIzNWY5MmJhNTk1NzkzMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhYWQ5MmM2ZjM0MGE1OTJmMzc3MWIyZmMzZjcyMjk5NzE0N2ZiNGViZDJiZjU2MmMxY2E0YWM4YTQ2YjJlOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3617734071d54aefae26fc54024ab275",
+      "statement": "Coverage uses the V8 provider and excludes benchmarks, runtime-tests, the build script, perf-measures and compile-time-only type files.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L5-L24",
+          "version": "repo-lines-v1:sha256:78ea0851637591d867328ce0fef4ec3c35ae299983a780e0697f544f6415c004:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMWNkMzlkOTAxZmQ3MmNiODM3ZjQwMjk3NWU2OTQzMmNkODRlMmFmMzliOGY3Y2EzY2Y2MjRkZDE5NTE4NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1ZmVjNmY2Mzk3YmY3ZTA4MDc4ZGZlODE4OGQ3ZWEyNjgzMTE2M2M2MTZmZjAzNjBhZWI5YmY5M2YyYTQ3ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0NDE3ZmU3NTJiOTRlMWIxOTE4NjVlMWJkMWIxODI3ZTFmNDNhZjUzOWEzMjhhNDE5OTY5NWM5ZjNlN2U5YjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_baa5ddfa04e64942b3b3719b0ceae7a8",
+      "statement": "Deno and Bun runtime tests run with their native test runners via test:deno and test:bun, with Deno JSX tested under both precompile and react-jsx configurations.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L16-L17",
+          "version": "repo-lines-v1:sha256:3e6d0ddff03518e7dd0770dc2ccd6176155b9ccd1a82d723978b914d3ca0fc0f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTAwMjQzYzA1Y2Y4MzExNTRiNmVmMmU2Y2I1OWFmNjk2MGVjYmQwYTI0MGI1MDhhYjRkMTJlMTE2ZDQ0MWViZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTBjNTFmOGEzYTgzODM2ZDkwZWM4OGRjN2NiZDIwM2I1NmRjZTA0Mjg0ZjI0NWRlYjQwYzMzZjdkMWQ2OTYxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2E2NzVmMGY2OGNlMDYzZDNkMzZkMzdmYzI2MmI3YjVkNWEwZmZmMGY5M2RmMWQzNGIxNTJhNmFmMTMyOWZlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTU1YWUwNGQyN2Q0OGQ5YWVmNjhjZDI3NTQzMWI4NmNkNzdiMGU0NTNlNTM3OWZkYTk2YTAwMjU1NTdhMTI0YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7cb307a3289c4dbc8b9102d2b55f1c02",
+      "statement": "The workerd runtime test starts the worker with Wrangler's unstable_dev and exercises it over HTTP.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/workerd/index.test.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:afa827fb7fc7563b98a94c5191a6489708a0f7603cb98df015b3db3d092c17e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1MjA3MWJkY2M2ZDQ0OTYwNWJhOGZlYmVhOGVhYmM5NDBlMTZhOTNiYmRlYTJlNjg1MjNmOWQ5ZjU2ZTQ4MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNTBjMDQ4MDcwYTdmYmI3ZjE4NTQyMjI0M2ZmMDNiN2FmYmMxNDNlMzcwNGU3NDg4YmVjNjMyNTNjNzFjNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5Njc5Yjk4ZDMwNGQ5NDhjZGQ5YTEzNjgxYWQ0MGI0ODEwMGJmM2ZhODUxZjc4MWRhMGQ5ZTQ5ODU3OGRjZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6aef2afd8dfb422da17795a498ce55f5",
+      "statement": "The Node runtime tests run apps on @hono/node-server.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/node/index.test.ts#L1-L15",
+          "version": "repo-lines-v1:sha256:e6ce0bd8511bd76b960b62611962159a66e5a1de5637d62335bc146783d30094:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZTAyZDY1ODE5YjE5ODdiNjUxMWZmMjhhZDBjYWZmNWYyMmViZjlhOWRlMWJiNmNkMjU4NjAxYTAyYTY2MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZDNmOTlhODM3MWUxYjhlY2QyODE0MzRiNDMzZmNkNmU4ZDYwOTA0NTBhNjA4MzE2M2VjYTI5NzExNjRlMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNTk0YzgwMTljMWNlMTZlZjk2MDZkMTNlNDAwMDEwMzg4YjgzY2NkNTQ4NGY1MDkyY2RlYTRiZDU3MjBjYzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_14428d20bcdf47ed8ea3a95c81dc118e",
+      "statement": "CI's main job runs format, lint, editorconfig check, build and tests, and separate jobs cover Deno, Bun (Linux and Windows), Fastly, Node.js 20/22/24, workerd, AWS Lambda and Lambda@Edge.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L38-L183",
+          "version": "repo-lines-v1:sha256:6429dd54293581b9e5b4109dadb2f6b41e118d76504262b2386caedaa287b37f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiYmUwOWFlYWNmNTIyOTAwZTViMzJkZDc5ZmY1M2YyZWE5Y2NkMjA0MGZiOTYzYWQxMWZhMTQ1YmM3ZWQ5YjNkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwZTU4NGVkZDNjODYzMDEyNGFhYzUxYjRhODI1OThhNmI0ODU4ZmY4NDI3ODc3NzRkODJlYzA3YzA5OGMyY2JiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4YzhlNjI3YWE4OWU4Zjk2NzQ0MmNiZTM0ODRjNjJmYzFlNGIzNDYxYTAyYmRkZjMyZmQxMWY1ZGY0NmQxNjVhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f2bf5283d164022b64ee8fec26ef11d",
+      "statement": "Codecov targets 75% project coverage with a 1% threshold and an informational 80% patch target.",
+      "evidence": [
+        {
+          "resource": "repo://codecov.yml",
+          "version": "repo-file-v1:sha256:39c8544f849463464b2a8db09958c147107060cc6d555ba11a7c93d44b5c3dba"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7a4a8b98e754ae2886df383ad155918",
+      "statement": "The type-check perf measure generates an app with 200 chained parameterized routes, and the bundle-check measure bundles dist/index.js with minified esbuild to report its size.",
+      "evidence": [
+        {
+          "resource": "repo://perf-measures/bundle-check/scripts/check-bundle-size.ts",
+          "version": "repo-file-v1:sha256:373c8def4e10a113b88d899b97ded6198b76f82b0f0c74754cc90bed4da2bfba"
+        },
+        {
+          "resource": "repo://perf-measures/type-check/scripts/generate-app.ts",
+          "version": "repo-file-v1:sha256:feb7a66fba55ab5eb0c909d8bb4590217f89ddeaea46ce423650feaadf73498b"
+        }
+      ]
+    },
+    {
+      "id": "claim_24d560206cef49b180b147dac23dac1e",
+      "statement": "hc client tests use MSW to intercept fetch.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.test.ts#L1-L10",
+          "version": "repo-lines-v1:sha256:8cf30e382ed501be0ae2625ccfece4a7f135fe1fe3fe8979d02ed60aa6c4e41d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YTMzNzg5ZDhjZGNmNWRmMDAzZmRlOTg4ZTMwYzBlZGE3Yjc0OWQ3YjE3MDMyZDM4NTYwNGVjZGJhY2E0OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwYzc5NGM4ZjlmNTRlYTFlMmU5NDVhZTQ4MDhlNGRlZTU0NDY0ZWZkMjNmYjhiZGRiMmE0NmQxYWRmNzM5MDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViODEyZDgzMTUyYTU5MzY3NzcyNjMyNzRmNjg1OGE3NTE5ZDI2ODQwZTcwNDJjODE2MjRiZmZmMjNjOTQyYjMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:25:20.453Z"
+  }
+}

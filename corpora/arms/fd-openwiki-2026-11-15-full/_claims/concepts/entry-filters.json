@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:36737f4716b08f32e48b0dbc35240fa53a01902dca12ceac556dfc89bc9257b0",
+  "claims": [
+    {
+      "id": "claim_c5738606335048aca3c4c99af3dee9ee",
+      "statement": "After name matching, worker threads apply filters in the order extension, file type, owner (Unix), size, then modification time, and rejected entries return WalkState::Continue rather than pruning traversal.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L526-L591",
+          "version": "repo-lines-v1:sha256:01a9257e5a842ac1cae69f95a329ddec72ba67f34cb0c0c016158fe443cf30db:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNzgzYjM4YWM4OWEyNjkzZGRmMWFmZTM5MTNhMjZhN2UxNjYyNjA4YWVhYjhiNzY4NGIyNGE5NjU2N2I5YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmMwNzYxNDQ1YjVkMTM5OGI0YmRmNGQxZGYyNTBmZmNmZmQ0MDRlMzRiMTZhMTBiM2IxNDRlYzZhNGM1M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlM2Y1YzRkNjRiNDEwZWZmODgzMTMwZTRiMzgwZWQ1MWNmOThlODYzNzRkMDdmYzU0MmJmYTNkYTM5MjViMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed70427ad74d42c8b395cfb509ccec6f",
+      "statement": "Extensions are compiled into a single case-insensitive RegexSet of escaped '.\\.<ext>$' patterns (leading dots stripped) and matched against the file name.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L347-L358",
+          "version": "repo-lines-v1:sha256:97ec057069cd53f5609c56a1cd4c14ba9c640938af1855da172706c51e1e610e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YjkzYjMxODlhODkyMmU3MGJhYmUzM2I4ZGVlYzJkNmZjYzQ0MmFkMDkwZmU3MzQ0NzRmMDM4MWYxNjM2NGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2ODNiYmE0NGM1YjVkZGI5YmUyM2E0YTZkZTFlYjQ3NWZkOTUxMGVkNTYxMzJiMTFkMWQ2MThjNjgxOTU3NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjNmFlZWM3MzIyNTRkOTFhZWJkNmMxNzQ1YTUwMmI0ZDdlODdiZDIzZDRiMTk4Zjk0MmI5MmVjNGM3OTYwN2UifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L526-L535",
+          "version": "repo-lines-v1:sha256:2422582a8bf43d91e39c4c9d1eeb6fa35e2adb72ce0c5a8c3454dd17b3d55b04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNzgzYjM4YWM4OWEyNjkzZGRmMWFmZTM5MTNhMjZhN2UxNjYyNjA4YWVhYjhiNzY4NGIyNGE5NjU2N2I5YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmMwNzYxNDQ1YjVkMTM5OGI0YmRmNGQxZGYyNTBmZmNmZmQ0MDRlMzRiMTZhMTBiM2IxNDRlYzZhNGM1M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjNWE5MThkMmI5NDUzOWRhZTA5M2IzOWFkYWI2YzdjZGE0MjkzMjBhZDQ1MGU4MjY5YWI2ZjhhZWY3NzlmY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ab80e471ccad42acb5d412f1aaa62e2f",
+      "statement": "--type executable also enables regular files, and --type empty alone enables both files and directories.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L318-L346",
+          "version": "repo-lines-v1:sha256:c8fff41713d6d2c5f788f1c27b9297b546ff5e8ddcddfe23d7fc711692f09738:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5NzVlMmM5ZGQ3Y2RjZjM5MmE2YjQ1ZjFhNTdhYjVjZjlkMzBmODk0Njk4MjVlYTdhM2EwZTM5NmEzM2VkZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhYjhkYTg0NWMwODIwZGEwNzY2YmU5YjY3MzFlOTNlOTNiOGQ2OTBjMjhjZmRmNmY3ZGYyMTY2ZDRkNDgxMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5NzBjMTc2NmQxZmQ3MWE3MGJlMzE4YmEyZWYxMTJmN2RmZmEwMTcwNzViMWZjN2RjMjk0MjIwYzNmZmM2OTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0MDdkOGJlNGM4MzcxNzg2MzE5NWU1MjQ0ZmJkZmE2MTNjYzJlODExOGUxMTM4ZDFjY2ViNDlhY2YyODQxYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9577a5fb65742ef89bf54c5de6d1639",
+      "statement": "FileTypes::should_ignore rejects entries of unrequested kinds, non-executable entries when executables_only, non-empty entries when empty_only, unknown kinds, and entries whose file type is unavailable.",
+      "evidence": [
+        {
+          "resource": "repo://src/filetypes.rs#L20-L43",
+          "version": "repo-lines-v1:sha256:6c12d97437cd5228a88022b478515b9012217e38f7d5041b9f85cbb3b10d124d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMmUwMmRiZWE4MDZhNTM1MTVmNDdlNDExNDhlMDhjYmNkYmJkMzRiODhkMzdjZDZiMjNkNDJkYzA3OTc0MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5OTE0Y2M1NGUxZjVmNDJiMGRjNjRiNjVjMzg1NmQ4ZDdiYzAyZDQxYTc0NWNhMzRiMDk4NWVmMzcxZmZiMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82d9a0c61f9a49fb98a5da2b512ba044",
+      "statement": "An entry is empty if it is a regular file of length zero or a directory whose read_dir yields no entries; unreadable directories are treated as non-empty.",
+      "evidence": [
+        {
+          "resource": "repo://src/filesystem.rs#L44-L60",
+          "version": "repo-lines-v1:sha256:f73003627a5f5246976f0a0134ae0543c0b7ee3bd0e9298d32464fdde2ce7cc5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMDM1ZjFjZDExZDY2MDc5YjA5ZjBjNzMzMjIyNjQ2MjA4NzU1MDI4MDE5NjdkNzkxMDNmYjc5YjU4MjU2ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlMjlkMWJiMDhkMDg1M2NkNDUyNzlkYmUxYzIwNTI0NmE3MWZjOTlkODRiMzhhNTMwNzg5ZDYwYThiZGE0MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjYTQ4Mzk3ZTIyZGMyMDE0NDAwMDk3MDcxM2RiZTBkZDc1MjBlZTJjYTgxZmQwNmUzZjQ2YjhlM2E5M2M4NGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_48c410e961dc43269c16140c58b49767",
+      "statement": "Size constraints require a unit, use '+' for minimum, '-' for maximum and no sign for exact, and support SI (k/m/g/t = powers of 1000) and binary (ki/mi/gi/ti = powers of 1024) units case-insensitively.",
+      "evidence": [
+        {
+          "resource": "repo://src/filter/size.rs#L33-L75",
+          "version": "repo-lines-v1:sha256:db91f646c62da6a004ad0df5d7d529c12b5c9b1ab230bb03584154514e2b4610:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ZjdiYzJiZjU2YzUwZWFhZmQ4NTkxMGQxODU0YTQ1ZTk0MmJiYmYyYTgwZGU1MGE1MzE3NDIyM2E3ZmZmNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2OGM2OTE2ZDBlOTRlYjcxYjcyM2JjN2I4NGJkNjYxMGE0Y2VlOWM2ZjVhZGI2NGRjZTM2MGM5ODQ5YmViNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYzk4ZDZiMGRjNDkyYzUwMTZkZjEwODA1YTNhNTRlYjljMTg0YTVhNjEzN2U3ZjRiZWNmYTBjMjIwNTUwZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3711b155120544c591b20c85a95dc8be",
+      "statement": "When any size constraint is active, only entries for which the path is a regular file can match, and all size constraints must be satisfied.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L557-L575",
+          "version": "repo-lines-v1:sha256:d19eba246890300dabc94b0a207663d00a61c0da7978a7dcecd2325d09055bff:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0ZTg5M2QxMGEyNmY4MGI3NWUzMWYzNjc2MTEwYTI1ZGI4MTYzNzMxZTZlMTFkMmM1ZjgzZjk5OTU4ZGUxNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZjQ4MDJlY2Y3NmMxMDNhYjYyZmVjMjEzOTkzM2Q1OTZmYzE0ODlhOWRlN2NlZmViMzY0ZTlhZjFmYWUxNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwYTE0N2E3MGZlOTVjMWI3Y2FiOGNjMjA1YmZiNDFlNWQwNTRjMDVjYTRhMWZkZGI5NzYyYzYwMThlMWE3ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_755a717313b44821979987674eb01147",
+      "statement": "Time arguments are parsed as a jiff duration subtracted from now, an offset timestamp, a civil datetime in the system time zone, or an '@'-prefixed epoch seconds value; bare integers are rejected.",
+      "evidence": [
+        {
+          "resource": "repo://src/filter/time.rs#L178-L180",
+          "version": "repo-lines-v1:sha256:29aad72cf0f6f11be09a4604b71fe909ba3f2c86a8e8b456c4d600ce2d003970:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdiNzAxMGZhZDA4YmE3NTlmNmE2YzhiNDk3YWI4NjZlNmI1MmJhYzJiYjcxMzcyYzU2ZTU4MTE0NjljOTQ0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmFkOWYzMjM5ZDA3ZWUwMmJmY2ZmZGYzZjQzMWU0ZTNlMDVmZmUyZmYzZmYxZWU1NmJjZGQyMDAwYWVkZDVkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTYzZmVjODAwOTRmMWJkYzdkZThlNTViMDY1MjgxMjgzNjc3N2NkNDdmYTg0YmI5ODgyZTUwNDg5YmY3ZTE3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTE4YzJhMDhiMmUwNmU1ZmFiYWY4MzU1MGYyN2MyMjdhMmE5MWFkNGZiODIyMWQ0OTQ1NzIwNWU0ZDc1M2FhNCJ9"
+        },
+        {
+          "resource": "repo://src/filter/time.rs#L28-L46",
+          "version": "repo-lines-v1:sha256:731449b072a34f21e76fb3f40a99c1042e4b35e229ffca9be6b45c0927e739be:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMzcyMzRjZDEyMjlmZWM3YjM0MGVlYmU5MGNiMGFkYzc1ZDFiOTY4ZDUwMTE0MmQ3OWYyNjBlMWI5MzMyNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMGZlYTRjOWM3ZThmZDEyMWQyZWZjMDQ5Y2U2NTEzY2FlZWVmNzFhY2IyMGVjOWYyN2YxNThiODkwMTU5MWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwMGEyY2M1ZTBjMzZkNWVmNjc5N2FjOWJlOGU3MjhhNmUxODY2Yzk2YjU0MTU5YzRlZWYxYmUzM2Y2MWVlZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c34d962d5a764c11acfdd8281c8b5c49",
+      "statement": "--changed-within requires mtime strictly after the limit, --changed-before strictly before it, and all time constraints must hold; entries without a readable mtime are excluded.",
+      "evidence": [
+        {
+          "resource": "repo://src/filter/time.rs#L56-L62",
+          "version": "repo-lines-v1:sha256:078b2a31b4b8cd86e4ab32dae8cb80f24be2a17eebdbc811cee647945e7ad396:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzYxODY3ODcyNmM4ZmIwY2JlYzUxNjIyODkzZTUxODUxYjE1ZmRkNGJkMTk0ZDQ4NDk2ZDYwNzU2MTM3YTk3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTUyMTYwNGIzNWZjNDBhZjAwY2JhNGVlYTJmZDVlMmMzYWYxODYzYjM5MTE4NWQ3YmY0YmIwOWU3MmQwYzhiMyJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L496-L519",
+          "version": "repo-lines-v1:sha256:edb1c0db6bccb1a64b70c9e11fc2ecc25ce0da9f1bcaa42ad2ffcfbc966db541:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NDRkNGQyOWE5Y2Q4M2M5YzVmOWY3ZDY3NmVmYzY1YjU1NWQwNjc5ODQ0MTgwNDg0MjVkNjVhMTY4ZTBhMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3YjA0ODU1NjdjMDlhMjY2YjQxZTlkM2M5N2I3Y2NjNmM5ZGRjOGJhYTY4MzNmM2RkOGI5ZDViYjcwZmNkNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkODY3ZTkxYTAzZDMwMjZmY2UyNTZmODU5NjdiMjcxNjAxM2JiNWEyNThlNDdlZGYzNjBkMDgyYzVjYjVmYjEifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L577-L591",
+          "version": "repo-lines-v1:sha256:ca293102cc0ae346a68653f70a1abd714381fc06a20cfb89c226df337671770e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlkYjY0ZTNjMGM0ZmUxYTljYzgxMzk0OGEwMjVjYjYyYzg0MGEzMTNkOGU4YWZhNWM1MGFhOWNhMTBiZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZjQ4MDJlY2Y3NmMxMDNhYjYyZmVjMjEzOTkzM2Q1OTZmYzE0ODlhOWRlN2NlZmViMzY0ZTlhZjFmYWUxNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlM2Y1YzRkNjRiNDEwZWZmODgzMTMwZTRiMzgwZWQ1MWNmOThlODYzNzRkMDdmYzU0MmJmYTNkYTM5MjViMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e30cfa54441f4fe3882ac94dae314eaf",
+      "statement": "Owner filters parse [user|uid][:group|gid] with optional '!' negation per side, resolve names via nix User/Group lookups, reject more than one colon, and treat empty or ':' as a no-op that is dropped.",
+      "evidence": [
+        {
+          "resource": "repo://src/filter/owner.rs#L24-L102",
+          "version": "repo-lines-v1:sha256:a28d17915179eddf9ce66bb2cc95ef85391d3fc16089d272c9cbbe37e2216b7e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwOTM1MWM4ZTRmOTg1NTkyZTU2ZDhhYThlZmE3MzBlODUwNGQ5MzMyYTcwZjI3YTcwZTA0MDBjZjFhZDQwM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxNjAxYWYwYjU5MTk5NWJmN2VlYzNhYWIzN2VlNDJkMzc0N2MyYzBkMzFlZTU1YjhiZDdjYWVhMjdmMWE2ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1MjE2MDRiMzVmYzQwYWYwMGNiYTRlZWEyZmQ1ZTJjM2FmMTg2M2IzOTExODVkN2JmNGJiMDllNzJkMGM4YjMifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L265-L266",
+          "version": "repo-lines-v1:sha256:ba9648833153e86ba20356a1b5ffe347158255320af2dda41900e84672e65b43:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODJlZDE5ZWEyNTc0NmZiYWY2NjJmNDU5N2Y4YjRjOWZlN2E3NDY2MWJkYWFkODQzNDNjOWQ1YzhmMDRmN2UzYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTI2OTEyZTc5ZjA4YzkyNTc1YjczMzU1ZDE3MWM0NTk3ZWFmOTIxNDE5OTlmODZhZDBjODZiNjQ4NzhiM2RiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMzZDE2MTIwZjBjMTk1YTQ0NWY5ODY0NTY5ZjhhYzFiYWEyODU1M2IwMGZhNmNiNDg5OWZjY2M4MDEyMjY1MyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:44:06.029Z"
+  }
+}

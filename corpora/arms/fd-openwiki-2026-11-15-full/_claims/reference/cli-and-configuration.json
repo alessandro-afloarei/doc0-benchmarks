@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ebbc19bf65fc8778395b3536dce85294ffcfcc9aba6a8bb5557714d7248230d9",
+  "claims": [
+    {
+      "id": "claim_c7b4e964fbc847e1bc83418bb37cdfa7",
+      "statement": "The clap command enables args_override_self and defines an execs group (exec, exec_batch, list_details) that conflicts with max_results, quiet and max_one_result.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L21-L31",
+          "version": "repo-lines-v1:sha256:4c09c207825936694647c1b70e962f5ee985fbfc70e7a4282379b2a5b1b2bb3a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5OWI5M2NiODVkZDYwZjk5NTcyOWY2NjE5Yjk3Zjk3ZjBjMzQzNTAwOWNlNzUzOTA1NzBiZGQ1ODNmMDBhZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjczYjA3MzgxMjIxMzY4OWU1MmZjZGY2ZTVjMzMzMWY5NjUwODIyNjIzODk1NDEzMTczOGM2Y2IwODdlMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExMWY0YTA5MGRhNzMzZDAxMjFjZWVhNTBiOTQwMzZlMGE2NmI2ZjI4MzIxMTdkZTI1ZjY5YWNiZjk5MWQ3ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMjAzMmE1YWU4YzhmNjZkYTgzNjRhNDQ2ODhmYmRiZDM0YmVlMTA5N2ZhZDFjYjZlZjg0YjZkNjg1MDE0MTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e9a49f4b9364ca8a3e18caaa910d9fc",
+      "statement": "--exec and --exec-batch are implemented via a hand-written clap::Args impl that collects ';'-terminated multi-occurrence values into a CommandSet (one-by-one for -x, batch for -X).",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L855-L957",
+          "version": "repo-lines-v1:sha256:faeaf2f8fbdef59134735271f68651aec32772be35b20d00eedf0b75d7d3153a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1N2FmYWVjOGE5MzA0ZWMzNDA5NzZkMmVhZTdlYTc1ZWRjNzZiYTBjY2ZhMmM3MDc3ZDM4NzQwZDE5NDNiYTkwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5ODYzNjdhYjdjMTg2ZmY5N2EzMjc1MTUzOGJkODk0ZGM0MmM4MWNjZWZmOTNlZDVhZTViMWUzY2MyZDU4NTdjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5YWJmOWM4MTg4OGVhYWMyZDExZTQxNDVhYTFmNjJiZTE2MGJjODhlNTJmNWRiZjgyN2I1N2VjYWM0YzRkNjQ2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_e705870d550d434f9141346a757e44b9",
+      "statement": "Search paths come from positional paths, else --search-path, else './' (after verifying the current directory still exists); non-directories are dropped with an error message.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L696-L721",
+          "version": "repo-lines-v1:sha256:d34f92ddbc134f029d276ccf4782ecacbedea15ad2220aa32260313092fb10f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZmJkYjRjZmEyMzg5NDAxY2UwNjg1MmZlNWEwMDk5NDkzNDg0YTBjNjBkOWM2OTdmYmQzZmMyNTNkNGYzODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZDliNzVkZDgxMDgwZjQ3YWE3YWNiNzE2ZDkzYTRkYjBhMmI3MmFjOGQ0NzQzOGViOTc4ZjQ1ZDBkMTZiYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhZmRkOTQwMDQyNzQ4ZGE0ZDJmZDI0NDJjMWFmZjg4NmZkYmQwNWExZDcxZjExM2FkMDdkZTZlNjhjN2RhMzEifQ"
+        },
+        {
+          "resource": "repo://src/cli.rs#L963-L971",
+          "version": "repo-lines-v1:sha256:060ab4929a07573eec9a2397ee59a567ca1bd3c3c1119c86da6c2619c480ddae:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGViMmI4N2ExOWVhZDY5MDE1NzI4NDhiYWY1ZWMzY2JmNzU0ZjU5MjQ5MmJiNmI2YjM0NTY2MWM5ZTBjOTY3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTNkOWZkNjhjODU2ZDliYTgzYzA3NjkyOWU4ZGZlM2E2MGJhZGE1ZTgxZWI5M2NkMmUwNTFlOWQ1ODRjYTRhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca50845b0cae421a8c6a3ca239fa3bfd",
+      "statement": "Search path normalization makes paths absolute with --absolute-path, rewrites '.' to './', and rewrites '-' to './-' so the walker treats it as a path.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L723-L736",
+          "version": "repo-lines-v1:sha256:8986aed2cbc6661c00ef5369697fe2c51e576b5949144d1a7d69df886645297b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMzJhMmFkNWZmYTkzYTY5ZTc3MDY0OGQ2Y2Q3NDQwODY0NzNlYzc1NWJjNTUyY2I0YTFlMGVhOGNkOWZkMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1NDUzMjBmNTU2ODI2ZTZhYjFkNmY2ZjQzYmFlZmZjNTc0MTM1M2VkN2MxYWY5YTkzNzY0YmJkOGVjOWQ1MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViNzY3YTJjNDM5OWU5MDc5YzAxNzIzNjk0YTliODRmMzQ4ZmUzMzExOTI3YzYwMWU0MzY3NDY4ZTk5Y2U4NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e1df2ef7d7cc4272b7d885472e11e745",
+      "statement": "The default thread count is available_parallelism capped at 64, falling back to 1 if unavailable.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L789-L800",
+          "version": "repo-lines-v1:sha256:bf693edccf679417f91447baf12445ea19df4e23565d7943e09ee2dd49f16df0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNWFjMDBhYjA2NDU1YTc2ZTMxZTllMjAyNmU2YjM5OTBjOTg1MDIxNmUwMGViZjE5ZjAwOGQyOGRlODgzN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyNmQ1ZGQxYjYzODAwYjkzZTRlNDZhNjM0MzYyZDQwZTFmYjAwZjNkZDQ1OTkyMjNiMTUzNTUzMGUyYWJhN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1NjFmMzhmYzE5NGY5YzQ5ZmZmNDU3NDI1ZDIwNzQ3NTkzYzgzOGI2NmU0Njc5ZDk2ZDNiNzBlYTA2NWI3YmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e105be3a1404488ac4313552cfd37aa",
+      "statement": "--max-results 0 is treated as unlimited, and -1 is equivalent to a maximum of one result.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L759-L763",
+          "version": "repo-lines-v1:sha256:8ae9f94364b2ab8170f243cc2555365d4221722dd2ebeea90b15be369c2bec31:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJlZGIyZDkyNWMxMzI3YjFmYWVlOGI4OTg4MTI4YWQyYjAyNTJiNWJmOWFlYzE4YjQ1MGRhOGRiY2NiODMxMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNmYjk0YTIyZWU3Yjc2YzQwYmVjOGJiZTk2ZDY3YzgzZjFmZGFiNmZmNDdmYTFhZTVlNDNiNzNmNzk1MmEwOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDdhMDBkZGJmNzEyODFjY2Y5MGI5YjA1Y2VhZTA4ZjEyZGNmMzJhMGM2ZjJlYjU0MDdlMTE1NjQ4MjZhYjRmNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d8a27b118fca4b88a586d3b108f317bc",
+      "statement": "--exact-depth supplies both min and max depth when those are not given explicitly.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L747-L753",
+          "version": "repo-lines-v1:sha256:b2c4294df84a244e72c273471a1770a9ff60163965e0e187ad0d2c7f009f8e68:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ViYmY3NWMwYjZhNmRhOTgyZGI4NjBjMjBjMDExYWVhODY3YjE2MmQ2MzY2NDkzNTNlZTA5OTMxODA3NWNiMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTA5ZjAxYTNhNDE3MDY4YWEwODAwMDM0NDgzN2RjZmQxZTNlOTZlN2ExNmYzMGNiOGNjODBjNzhjMDgzZWRmNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTJiZDA3MmY4NmFiMjNiMzdiYjljNTBhZDdiYjc2NGE5ZmJmZGUzOWE0YjNiZjk1YTU2M2Y3MTkwMTU4MzNmYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2fd4e47542b8476eaad554f31fa6c33a",
+      "statement": "--list-details is implemented by synthesizing a batch CommandSet running ls (GNU ls with -l -h -d and a color flag where available) when no explicit exec command was given.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L395-L494",
+          "version": "repo-lines-v1:sha256:18bf87ff362f8947883d442da143330f9726fbc55b904918ea89a12c23878534:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1OTFhOTRhNzU2N2U0NDliN2ZiYWRiZGQ5Yzg4MmQxOTg3Y2NkOTFmNmYxNmM4ZWU1NTQ4NjgxNGRmZDFkNTYwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2MDYzYzRkMWFmOGNkODliYjBiZGQ3NjU3ZmZjYmY2ODA2YTYxMGQ3OWQ2YzhkNGMzMDdjMjQxZGYzOTAwNTIyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjZjk3NWRhY2NmMjUxMGVlMTc5MTVjMzZlNjg1NDY5YmY3ZmJlYTRiZTkzNzE1NDJhZWY2ODJlNTI0M2MzYTk5In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_82d37a88f424490a8cd93f3998c5e588",
+      "statement": "Config::is_printing returns true exactly when no command is configured.",
+      "evidence": [
+        {
+          "resource": "repo://src/config.rs#L138-L143",
+          "version": "repo-lines-v1:sha256:2955f9c402cbf959895228fcdedb4b49ca43bed6fdf3d0000e87f44eea56dac7:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDgwNzk0YTYwMDYzM2FlNjlkYWUxZjM5OGNhOTdlNzljODc0NzlkMWM2MTcwODRlNGQxODI4NmYxOWQ4MWMxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjdlM2FkN2Q2YzA4NzcxMDcxZWEwNzJlMmFiNWFkMzNhNjZkZDMzNTg1ODU4NmUzODRiZjgzNDViZGY0ZTRmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:44:06.029Z"
+  }
+}

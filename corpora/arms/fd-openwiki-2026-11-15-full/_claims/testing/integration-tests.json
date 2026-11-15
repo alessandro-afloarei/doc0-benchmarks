@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:42ed59e911d121dfb0f87da6ef1b243b50b0ba336af45a7089ef5eeaf6239078",
+  "claims": [
+    {
+      "id": "claim_2e6c171503aa4729ac635b095ac708f0",
+      "statement": "TestEnv fixtures are temporary directories containing a fake .git directory (so .gitignore is honored), the requested files and directories, a 'symlink' pointing at one/two, and .fdignore/.gitignore files ignoring fdignored.foo and gitignored.foo.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L28-L62",
+          "version": "repo-lines-v1:sha256:824d91ae33fb7bcbc7e3b3a23755804b1ae28add76f4d7c5b7045c8155dc7e97:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNWRmNzE0ZTdkMWJjOWNjYTdiZTFlZDZlOGFjMDA3ZjJlZjQ2NmYzMjMxNGM0MjQ5YTczNDlhMDE0NzkzY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMTMyYWNmMDc1YzljYjNjNDlmMjQ5ZDIzOWNlZTY2NTViZDY3NWQxZGJlYjcyNDgzMDc2MzdiMGU5N2EzM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNmIzNDYxMzg0ZDIwZDgzOTJiMmZiZDE4ZDQ5NWQ1YWQzMTU1NmU5Y2M0Y2Q4ZDU2ZjczZDc1MjdmMWQwMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllM2IyMGI2NWVlNGUwYmQwMDZlZGJhZjU2ZGIyZjgyZGM0NmZkYjRlYmVjMjU4Mjg3MTk2MzA4MTU0YzU5MDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_24d490cc03e24ce7979e0c0a2f382f9f",
+      "statement": "Integration tests run the compiled fd binary located via CARGO_BIN_EXE_fd as a subprocess in the fixture directory.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L302-L317",
+          "version": "repo-lines-v1:sha256:558b13c9b364166a93c2c53437a54d6380de37bf2f84130601830d2d7b9d667d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1NDViMzJkMTNhYTJhYmI0ODVkMTJjZDhjYTk3NjIxOTExOWZiYzFhYmQ2ZTliMzJjMjg5ZGI5ZWJiODViNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3NTk3ODEzOGI1MWU4YmYzNWYyZjU2OWJlZWQ2NjhmMDljZjM1ZTgwMzk4YTgwNjI1ZDRjNTkyMDkwNzlmMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0M2Y3ZTY2MTY5ZTQwMWMyNzgwZDZjZDgwYzE1Y2ZlNzY5MjU0OThlNjBlODJjYjE1OGQ5ODc2ZmU0NjUwNWQifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L74-L78",
+          "version": "repo-lines-v1:sha256:6295f1cfebbcbf98a6fa56be4166d167bcbdf4a1bdd83ab3f0efee4a66e38250:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFhYzgxZjBhNWJiZDZmNmMxYTMyYjZjNDA0OTMwNGZiOWRiYmE0MGE0ODZiMjg5Njk0OWI4YzY2NjE2OWVjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmE1YzMyN2I4NzU4MmFkMjRjYTI0YzcwODU4NzlhZjVlYzAyNzY5NDdlNDU1ODNlMmFkM2M1M2NjMWY3MGJkMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTU4YmYzYWYyOGEzMGNhNDAwZTY2N2Q5NGU3NDAxMTZjZTY0YmJkN2VkNzVmZjQxOTRiZjM1NWUyNDNjZjNjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a186593f2e84fc389ecc556ac4ffb3a",
+      "statement": "Each test invocation sets LS_COLORS to empty and either points XDG_CONFIG_HOME at a temporary config dir with a global ignore file or passes --no-global-ignore-file, isolating tests from the developer's configuration.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L302-L317",
+          "version": "repo-lines-v1:sha256:558b13c9b364166a93c2c53437a54d6380de37bf2f84130601830d2d7b9d667d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1NDViMzJkMTNhYTJhYmI0ODVkMTJjZDhjYTk3NjIxOTExOWZiYzFhYmQ2ZTliMzJjMjg5ZGI5ZWJiODViNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3NTk3ODEzOGI1MWU4YmYzNWYyZjU2OWJlZWQ2NjhmMDljZjM1ZTgwMzk4YTgwNjI1ZDRjNTkyMDkwNzlmMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0M2Y3ZTY2MTY5ZTQwMWMyNzgwZDZjZDgwYzE1Y2ZlNzY5MjU0OThlNjBlODJjYjE1OGQ5ODc2ZmU0NjUwNWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5bf838de3b5447a88e32219cc1ee62c",
+      "statement": "Output comparison normalizes NUL bytes to 'NULL' lines, converts '/' to the platform separator, optionally sorts words within lines, and sorts all lines, so tests are independent of output order.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L114-L134",
+          "version": "repo-lines-v1:sha256:f4c06d340496055a22bd81ba3d2e72f3553fce5fcc60c2552dc42cf4496c1282:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2NzY4OWM5NzdmZjJhZmE0NTAzYmY1NzUyM2JhZmEzMzdmMzAzNzRjYmY2Mzg0MmQ5NGM5MzNkZWJmNWFiODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5NmY4Y2IwODNmYTgwMGE0ZGNkMjk2OTcyMmQ3YjkyNjg2YWRkOWViZTM2NTU0OTJmYTY3MmIxYTdjZWQyNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2Mzk2ZjllY2FjZWUyMTAzZDBlMTAwNTAxNDZmYzg4MGZmNDNmMTMxMTdkYzEyNjY3ODJkMzk1OWRkMzMwNGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56015277743d4ad4a0b2ab47ca5b16c7",
+      "statement": "Error assertions check that stderr starts with the expected message after trimming leading whitespace on each line.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L319-L343",
+          "version": "repo-lines-v1:sha256:a74e7e961ea09f4cc10b4c9ccc1bc7d6da7cd9fa4df183f0aa75e511038099fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllODkyOTI1MDg1NzFiOTAyNTU1YjM3NjcxNTBiYjA1YmMyMzZiMmU2NDQxZmIwZDUyODUxZmVmOWY1NDVmOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4MWE1NDE0NGZiOTRiYzk5YzkwZjUzN2E3YzU5OTY0NDY2NzQ3ODdlMDQzNzFlM2I5NGIwY2JiMWU0ZDZiYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a6afa3a0b6746129b984ddc7e9fa5f4",
+      "statement": "Modification-time integration tests set file mtimes using the filetime crate.",
+      "evidence": [
+        {
+          "resource": "repo://tests/tests.rs#L2368-L2376",
+          "version": "repo-lines-v1:sha256:18f2a4ac501de819436153ca514853c94ffc58db4fb9de7e62a92d9787be0c68:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGQ3OWNkOTVhMzhlOGJkYjQ0ZGFlN2RhYTcwMjQxNDEyNjRiMmZhMjVmMDVlMGQzN2ViZDdjNzc3M2Q2ZGJmOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVjYzU5YzQyZmUzNjI4Nzg2YmYwNmYxMjIzZDE3YmMzMzllMzkxMWUwNTdjYWI0OTczODVmNTczY2IwZTNiNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_419722f1d16f421fbd9ce1a132377dd6",
+      "statement": "CI runs cargo test --locked for every build target but restricts arm and aarch64 targets to --bin=fd.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L182-L198",
+          "version": "repo-lines-v1:sha256:0914b3a341771746b182b82cd395990dfeaaafb042d95ecd3d11579eae56b9a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzNjU0NzZjN2RlOGNhM2YzYTVkMTE5ZTZlNTg1NGU3ZjY0M2ZhMTkwMGZmZTI3ZmRkOWIyNTk0YzQzZmM3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTVlYWVlYTk0MWFlMTNjYjkzNmU2YjJkOGY0ZDhkMjM4YzY4NGE2MmY1MTRkZDRiOGFhODY0OGJiN2VhZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljODlkYzM4YjM3ZDNhOTFiMGU2NGUzZGVjOGRiZDQ4NmVmYmM3YmJmMGU0NDMzOTU4YzMwMTg2Mjg0MDY0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwMzg1NjA3ZDk0ZGQ0NWZlN2VmNDk1ZDk1YjM1MGRjYmU0MDIyOWYzYmU1NzhkM2Y4YmUyYTdkMWZlOWMxNmQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:44:06.029Z"
+  }
+}

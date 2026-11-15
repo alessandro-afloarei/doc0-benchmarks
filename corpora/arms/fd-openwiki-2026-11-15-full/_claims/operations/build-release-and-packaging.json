@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9133f5b7ab8d5d15a90dd65be232f67ee606bcdb6db4c73380ecdb99b7da9735",
+  "claims": [
+    {
+      "id": "claim_96253ff0b8c24a579f25d592bcdfc5fe",
+      "statement": "The default feature set contains only completions; jemalloc is enabled via the use-jemalloc feature, which the base feature aliases.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L94-L98",
+          "version": "repo-lines-v1:sha256:7236d89c577de1fe68c57409ed893e1c1db88123efa5a04b83883e7120f39397:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmNmMxYzczZTQ2ODViNmY1NTc5MmFlNTM5MjU1M2ZmNzlkM2NjMDY3YjBiNzRlMDY4Njk4ZjZiMmM3NmI4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmEzNGU1YzNiNWYxODc1MGI3NGJkNTlhNGVmZjZjOWUzNWY0NjIyZTdmNTcyOTI2MTNmOTZjNjBkYTYyYjU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQwMWY5ZWRiYjgyNGU2MTBmNTU2M2FjZTZkYjkxMWM1Yzc3NDA0N2I0YWZkMzBmNzVlNDMxNWVmNmJiN2RhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDA1MjBhODZmNmVkN2NkNTVlMTk3ODZkZTcyMjI2ZmI2ZDA3OTBhN2IxMzE4MGRhMDRkODJjOTZiODhmYWRhMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0daad7c2df5459bb87be70ff2ab7116",
+      "statement": "The release profile enables LTO, stripping, and a single codegen unit.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L89-L92",
+          "version": "repo-lines-v1:sha256:bc930dbe5de0bac10d28ecbce1727f1ee2b77f0b4f8d00d23ea2d40dcfca3dcc:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxYjk5MGFkOGY0Mjg0YzM1NGNkOGY5YjZiMWIwZDAxNTY1MDJhYmIwOGFiMjlhYjUwODI0OTRkN2EwNzYwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk2NWNkMjg1ZWExMzBiOWYxZDFmZDU4MjdiOTIwZjkwMGYwY2VmZGZkOWRmN2Y4YzMwMTNjNTVlYmNjNjg2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODNlYjNmNmZhNTIyM2ZhNmM2MjA5YmNiYjI3MmYxNGM2ODljZjA4N2U4NDk4M2M4MmRmNjZlMThmYjQzMWMzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTUwOGE3MzQ3YzBjNWNmODg1ZTg0NTMyNTMyZWJiMzcwZDU1YjkwMDI5ZTBiMDU3OWViNjVkMzZjMjU3MWU0ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c3d0db5ac3f43a483c362071ad3a796",
+      "statement": "The crate uses Rust edition 2024 with a minimum supported Rust version of 1.90.0, which CI checks by running clippy and tests on that toolchain.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L66-L84",
+          "version": "repo-lines-v1:sha256:5ce5c1c7cdc31a0defdf4c400d108c6b05e218dff49f3a4a80082160b0dc6918:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2M2RmMTI3MjVmMWY3MjFlM2Q5MDliMmRiYzFjMWI1ZmQyMzVkZjIwYjA0MzU1ZWJlMTZiYTBlOWEzMzJmN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMzNhMTZiZTA5YTk5YzgyOTNkZTY5ZWRhY2I1Y2NjMzZkYTE2ZjNiMTI3YTkyM2RiNTk3NTQ3ZGEzY2I1ZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzOWVmZDNiODg2YmE4MjRjZmQ2NDA5MTRmMTdlZDdlYjY2NDQ2MzBkNGU3NjEyYjFkMjEyNWEwYjkxY2RlYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMDUyMTI5Y2M4YmZhOWE0Y2E0ZjI4ZjFkMjhlZTIzZjFiODZhYzBkYWY1NjBhMDgyZDcyNmNhZThlMzVlMmUifQ"
+        },
+        {
+          "resource": "repo://Cargo.toml#L20-L21",
+          "version": "repo-lines-v1:sha256:9585f3c2ebd8496f6cd562aaccb3f1a73a0776a18e57e4d8cedfad2630f4e55e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY2ZDhmNDE2MGYwMmQ2OTJkMmE4MGY2MjJiZjBmMWQwNDBjZmVhMGRlYTIyNmVkNTRlMTNkNGI3OWMzNDJjNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGU2NzE0ZTEzMGI4MTk2YmFjNzMwNDY4YTU4YWVmNDQ5NGU1NDVmMGUzMjBlM2Y0YzQ2OTc4MWNiZDExOTQ5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTAwZTU4OTdiMzZlYjEzZWM5NTUyZjhlYzc0OTg0YzUzMzg2Y2ZiMTI4ODlkZWQxNTBjNzk1ZjZjZDE1YzNjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTEwYmViOGVkOWVjOWYyN2FlOTg4OGM4ZjI3ZTQxNDk2ZWM2ZTk0MGY4YzEwZjA5MGUwYjkwZjM4ZDg4OGYwZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc205c94da54464095909f3ff4fcf54a",
+      "statement": "make completions generates bash, fish and PowerShell completions from the built binary via --gen-completions, while the zsh and fdfind completion files are copied from contrib/completion.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L11-L43",
+          "version": "repo-lines-v1:sha256:3ce15bcd66abfc7f4cd9d1d722d82a1cc9df73a1212c5ee16446c4a444846bcd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMTVjODdkZmQ1ZWUwNWFmYTJmMDFiZTU1M2FmYTQyM2RhYjYzZDI1NWY0MzI3NjE0OGRmYzcwNzYxNDhjYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzZTBhZWE0NTZhNTBiNmY4NzllZWE0OTI5YTZlM2Q0OTQxYjA5MmRiNzMzZGZkMDg3Y2NiYzc1N2Q3ZThmNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1MmMxYjIxYWI3MTA2NDJiYTlhMzA1ZTliNTQ4MWUzNTZmZmFiZjI0MDFiODgxNzNiZjU4ZGIxZTJkMmIwNWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca17c17df2864e8590658684bb4686a0",
+      "statement": "Windows MSVC builds statically link the C runtime via +crt-static rustflags.",
+      "evidence": [
+        {
+          "resource": "repo://.cargo/config.toml",
+          "version": "repo-file-v1:sha256:9e9bb08e059a19c7070ea357774fdaa97ffcd3c09a035e63378973ddd6fcdeeb"
+        }
+      ]
+    },
+    {
+      "id": "claim_725692cda47f4741909aca7da2c1f254",
+      "statement": "aarch64 Linux cross builds pass JEMALLOC_SYS_WITH_LG_PAGE=16 into the cross container.",
+      "evidence": [
+        {
+          "resource": "repo://Cross.toml",
+          "version": "repo-file-v1:sha256:137bb285925ab649e70a86d6a4f5975c9891140b6590c82ab508af3025ff0bfa"
+        }
+      ]
+    },
+    {
+      "id": "claim_17cc99fad7e94124963f66abb672a167",
+      "statement": "CI enforces cargo fmt and warning-free clippy, builds a 14-target matrix using cross for Linux targets, and limits tests on ARM targets to the binary's unit tests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L182-L198",
+          "version": "repo-lines-v1:sha256:0914b3a341771746b182b82cd395990dfeaaafb042d95ecd3d11579eae56b9a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzNjU0NzZjN2RlOGNhM2YzYTVkMTE5ZTZlNTg1NGU3ZjY0M2ZhMTkwMGZmZTI3ZmRkOWIyNTk0YzQzZmM3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTVlYWVlYTk0MWFlMTNjYjkzNmU2YjJkOGY0ZDhkMjM4YzY4NGE2MmY1MTRkZDRiOGFhODY0OGJiN2VhZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljODlkYzM4YjM3ZDNhOTFiMGU2NGUzZGVjOGRiZDQ4NmVmYmM3YmJmMGU0NDMzOTU4YzMwMTg2Mjg0MDY0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwMzg1NjA3ZDk0ZGQ0NWZlN2VmNDk1ZDk1YjM1MGRjYmU0MDIyOWYzYmU1NzhkM2Y4YmUyYTdkMWZlOWMxNmQifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L42-L64",
+          "version": "repo-lines-v1:sha256:d4452515206053235e4d57be2499bf8c300f59ef55332c24e2ab58cbf6a87dc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOGQ0NjZiNTViMGJlYzc5M2QwZjI4YWIxOGRkYjllMmFiMTg5ZjQwNWRkOGMxMzAxY2ViMmYzOGJmMDcwNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhNjM5NzdiYTYwZDFmNzZiNWY2ODNmMjcyYzE1MWViOTYyMDJiZGJjYWMyMmQ1OWVhZWVmNjdjMTc3NzIwNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlMTg0N2E4OGUwZWJjYzczYzc5ODlmZDg5YzI4ZjBmZDg2OWNkYzQzNzQ1OTExODkwNGVjMTg2ODYwNTU5YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxYmM4ZDQ1YmJlMDhjYmI0YjRiMWViNTc3MzViMDhiYzE4NGZjY2VmMzg4NGJlYjRmMTUyMGZhZWU5MWZlZmUifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L86-L113",
+          "version": "repo-lines-v1:sha256:36754e5c09502019143f8a7b8c26fcc978838498dc5ab5d8ac719183322a3525:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlZTNjNjBkYjI1M2NiY2VhNzI0YWFkZDkxOGViOTQ2NjRmN2M2N2U3ODRmNzk2Zjc4NGNmMTAyMjA3ZDI2YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2YWFmNTRhN2I3ZjA2NTVlODg0MWQxYTNiNjU5ZTAwMWY0M2I1YWM0ODE3NzE0ZGNhOGE5YWZhNWJkNTM0YjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiYjYzN2FhNTMyNGM1ODAwMjc2N2M1YzQwZWMwNDUyZjE3ZWIyNGZkN2JkNDc5NTdiNGQ1OWM1MTY3MmVmMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxMGEwMDk3NmJjNjE1MWEzM2FiOGY5OGVlOGI0ZWU5NDNkODVmOGZmZjU1Yjg2M2MzNTY0ZTA5NTZhY2NhYjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4006df4e3d274d7fa4f8ee537ce8c5a8",
+      "statement": "On v* tags CI attests and publishes release archives and Debian packages to GitHub releases and publishes the Windows MSVC zip to winget.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L274-L309",
+          "version": "repo-lines-v1:sha256:e845a1fabedaeb456e3e9203b52efdc5155a30c61c6873c0bd48f9114f8ad201:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4NTU1YTc0MjQ0OTM0ODMxODM2MDI3MmQ1NWQ5NTc5ODY0ODE1YjQ3MWRiNWRlMzdmZTZiZWUwYzI4YmQwNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhZTJiYjRkNGVkZjg4YTBmNjc3Y2E3NjAxZjMwMTJlYTY3YjI1OTIyZGE3YzM0ZTJhNGE1YWNiNjk2OTg5NDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwYmZjYmU1ZGZjOTA2YTJlMGE4OGI5NGNiOWUzYTRjMThkOTc4MjdlMmU5N2Q5ZDMwM2I2MGYxZThmZDdkZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_01d0ae58993046738cd9db90f331f1de",
+      "statement": "The Debian packaging script names musl builds fd-musl (conflicting with fd and fd-find) and installs an fdfind symlink with matching completions.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/create-deb.sh#L13-L22",
+          "version": "repo-lines-v1:sha256:49e0c6aa39956a13f430780d026b8cc5ec16e4cb4edeb8aa51cee3c34661d78b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZGI2YzVhNDk5YTNlNTBiZDhmNGUyYzZlOGY3MWU1YTU4ZTY2MTE5Y2M3ZTJmMGEyMTgwZjZlM2RmZDI5MmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0YTJiZWNmZjhhZmIzNGRiMjYwZGFiYzk2OTE1ZmZlY2ZkZTg0ODkyOTU0MWM2MTkzZGU2ZDE2NGMyMWU4ZGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmZDQ4Mzc4YTE1ZDdmMjkxYmM5MzQ2YTY2NTI4YzdmNGRmYmEyYmQ1YTRlY2QyZTI4MTRiMjhkMjc3NzEyNTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkY2VkMDYwYTRlNzY1N2RjOWM3MWY1ODE1OWM5MzAxNmY2MTY3M2U3NWRiODM1YzZjZTJhYmJjOGQ4ZDU5NWUifQ"
+        },
+        {
+          "resource": "repo://scripts/create-deb.sh#L60-L65",
+          "version": "repo-lines-v1:sha256:404ad003a58660c8fd05aef8c74a4c4b3bfafe17b5fc5468349303c31d30bd06:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQzMjk1MTcyZTJiZWM2MmUxNzkwOTMzYWJjZDY4MGQyZWMyM2I3MzA3YzZiZTNhZGVmOGVkODkyZDdlMzBlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQyZmQ1NmI5ZTA2OWQ4MjViM2IwNDQxZmM1NWU4MTc0ZDhkNWM0ODcwZGRlM2QwMjQyYTllNjE4NTE4MjY1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjQ3OTlmNDRhOTAzMGQwOTRhYWM0YWZlMGNlMTEzN2E1ZTFkYjlmZWM2ZjExY2FlMGQyYTJmN2MyZDY5ZjU0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2Q4MWVmZTU2NjFkYjVjYTM4MDYyNTZlOTg5ZjIxYzZlNjVkZTc5YmZmZDg4NThkOGY4MzA0MTc0ODA5ZTY1NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_87434298e6c34a7287fe2c1a7a2bc804",
+      "statement": "scripts/version-bump.sh creates a release branch, updates the Cargo.toml version and README MSRV note, and renames the CHANGELOG 'Upcoming release' heading.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/version-bump.sh",
+          "version": "repo-file-v1:sha256:af75990740712df6d3c08be10faff4360908fd2c6bf63580beb9a1d9707cc721"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:44:06.029Z"
+  }
+}

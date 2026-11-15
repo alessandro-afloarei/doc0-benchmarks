@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8474f3ea4c18315e4b0b3d617f54fa9cdece8b7ee12e889c63d34fbd7bb66db5",
+  "claims": [
+    {
+      "id": "claim_d0beeb6e5f1941c8a90d7acfb7617c62",
+      "statement": "Tasks use celery.worker.strategy:default as their Strategy and celery.worker.request:Request as their Request class by default.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L222-L225",
+          "version": "repo-lines-v1:sha256:f28cebda753c85170906c2bb399208887c40356a9a3c768771727d809b8f7c41:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY0YTVhYTE5MGRhZjcyYTM0MjU5MmRjNjYxYWEyMTYxMmJkODNiOGQyNTRhM2Q5OTlhYWFjMTUzMmZjY2ZlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE4YjM1OTE1YjZhZTQ4Zjk0OWRlYTg0NDRlNTAxN2JhMGQxNjUyN2E3YzdjYTFiNmJhYTQwMDAwNGNkMDVjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJkZjZiOTMzNzA3ODA5OGRhMmNlNTZkMWM5NTQ4NzE0MWQ5NGVkNmM2OWJiZDAzOTY4NzEwNTI4ZThiZDE2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjQzN2ZhNDBiMWI0OWU1MGY0ZTY3YTdlOTM4ZDk4YWNiNzViMWVhNWYzYmUzODgyMmRjMDI2NWZhNTk4MTRmNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2335b36df197483c9a8cfd429a536132",
+      "statement": "The default strategy converts protocol v1 and hybrid messages to the v2 layout (raising InvalidTaskError for missing args or non-mapping kwargs) and leaves v2 bodies undecoded for the pool.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/strategy.py#L134-L150",
+          "version": "repo-lines-v1:sha256:3827076efb4ea85fb0148970272acc74e598229ea58dc5d259a0708a6e74bc49:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3YjZlMDg3NzljYmRiODVhZmUwMDdjMDgwN2I1YWE2OTBhYjAyMDNmMThjOTFiZGM0MzkzMjdiNjQwZDNhODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlN2M3ZTUxNjI3NDg5NjVhOGI5Y2M5NzYxNTQ3N2FmMjAzN2RkZTdlNjdhM2MxYTlkMzE4N2U0NzBhMTc5YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0OTI3YTBhZTVlNTFhMTk1NGZiZmE4YTNjN2UzMDlkN2QyMzY0ODZkOWE5OTFmODE1ZjBjNTg1OTkxMjg5MWYifQ"
+        },
+        {
+          "resource": "repo://celery/worker/strategy.py#L25-L97",
+          "version": "repo-lines-v1:sha256:b6f92aed79a4a879507b7a2d8d00d7c9e3fb40b7685a13c295fe68a26cce27c6:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNmMwZjAzZjllNzZmNzJmYTdmNTBhMTg2NDRkOTFhYmRiMTcwOGRiM2VlYzFiZTZlZDQ3Y2RkMzA2ZGEyNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwMjI4MTRiZmQ3NTk1MzkwMmM5NWQwZTc2ZGI0MTE3ZjJmODgxOTRmOTE4NWE2NjQzYjE4MWU0OTI5YWZmYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhYjMxNGUzMDRlMTNiNjgxODRjNjUwODkzOTRkYWU4OGI5ZTg4ZDk4OTJlOTU1MjM3ZTQ2MjBjODU4ZGIyOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad4c7219204647bf8b87be38c6d68424",
+      "statement": "The strategy rejects requests with unconvertible ETAs without requeue, increments prefetch and schedules ETA requests on the timer, routes rate-limited tasks through token buckets, and otherwise reserves the request and calls the worker's handler.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/strategy.py#L180-L209",
+          "version": "repo-lines-v1:sha256:548898d3a9eef2591d503681d89c9ed4d45cb6308542edb73c97da1df5245d9c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkYTk0MWIwMjdlNjM4MjA2ZjU2NDM3YTNlZjBkMDBlMjU3NmVmMDI0ODVlYjY5NzFmYTFjMjNiZjkzN2ZhN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3YTgyODk5YjUyNjI1ODdkMTMyNjljOGI3ZjEzOTYxOWVmN2Q2NzgyNjc0ZTc3MWY5ODhlNWExNmEzM2QzMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkNDQwZDY1ZTNiZTE0MzY1M2UwZGQzYWQyMDUxYzlkODlhMDM3MGNlMTM1ODBkZTFkMzJmM2U1ZWE2N2ZkNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca5867a0b9c84bd39e97241049214790",
+      "statement": "Request.on_accepted records the worker pid and start time, marks the task active, acknowledges the message unless acks_late, sends task-started, and applies a deferred terminate.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L514-L527",
+          "version": "repo-lines-v1:sha256:869f9a11d49378909d19e1eee850e718b03d73adc76a2711dba2419fc2171a1b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NTA4OTgyYjI3ODgxZDgwYjM5NjkwNDBjZjQ3ZGI1YTVhOGYwMTUwNzNjZWY5ODJjYTI1M2UzYTRjZWFhMDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1ZWM4NjFlM2YzNTdhZTkxNDEyY2FhZDYxM2Y4ZjEyNGQyY2IzNzViNWEwMzdiMGZlZTI2M2Q1ZjRhODFiOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiZDRkMDY1YjVlM2Q0NTJhNDI3Yzk2NTI2Njk3NWE1YWJlYzE4MGM5M2MwMTc2NjAxZmY5M2I2ZGU2ODMyZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bbcc7424298f4982a389ebe756b9d238",
+      "statement": "On a hard time limit the request stores a TimeLimitExceeded failure, calls failure hooks and signals, and with acks_late acknowledges if acks_on_timeout else rejects with requeue.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L529-L580",
+          "version": "repo-lines-v1:sha256:b338bbdd4a40b03030f475f7cce5473e29f1845255328771ebee583eecfc4afd:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZjRlOGE4NzEwZDMxNzliYzE4NzA3NTczZmNhZWU3Mjg4NGJlYjk5YWQ3NzIxYTczNWE3YzNmMzkwMmJmZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNTg4YzU2NmVkYTgwM2EwYWM3ODhkZDg2NmEzY2VjMzgwZDY1MTk1YTU5YzkyZDY1NjYxMGEwYmYzMzE3OTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2Mjc5NmU5M2Y5N2JjNzA0NGFlZDQ0ZTUwYmI3MmM2ZDRkZWIxZGI1NzI0MWE0ZWE5YTE3NzJhYjczZjcyOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1M2NkMGZhZTkyYmYyOGU5MmU5OWIyODQ4YTY5ZmFhODk2OTA3NWZkNzFkNjg4MTMwY2IwNGE3MjQ4MWJkYjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_06271ab32246468bb93a11b0ccdbcad2",
+      "statement": "With acks_late, failures caused by WorkerLostError with reject_on_worker_lost, or time limits without acks_on_timeout, are rejected with requeue; otherwise the message is acked if acks_on_failure or rejected without requeue.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L596-L680",
+          "version": "repo-lines-v1:sha256:5fdd861003981b626e734a4b3f9d5f803ccd5d369aa872abc1e1ec23d1a2f080:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1YTI4YzI3NDJmNDQxNzI2OWNmOGYwNTA4ZGJjNDFmMGFiZTQ4ZWEwYmQ3NWJkODI3ZTc2Y2FhMzEwNGQxZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxNDhhMTc2ZTA0NWNmOWI0YmU5NWE2YTYwNWMxZTVhMWU4MTk2MGU2OTFmODdkMzEwMWIzNDYzM2E1ZjI2MDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiZmEzYzhkYzk0NTJiODhiYjFjZmYxYWQ1Mzc3YTJmYzRhY2Y1MTEyZDAwODNlYTU1ZjkxM2M0MjY2MzhmMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5Y2FiODI4YzIxOTE5YWY4NjM3MjhhMzE5N2NiNGI5OGZlY2JkNWY0YTg3Y2Q3ZjgwMzlmMjkxMzMyZDZiMzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aecd3d16ccfb4d82ae4829e69cf50861",
+      "statement": "Revoked requests are marked REVOKED in the backend, announced with task-revoked and the task_revoked signal, and acknowledged.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L455-L509",
+          "version": "repo-lines-v1:sha256:0cb2f37ed21e4a02fa79433ffc6c6bbcee7fb4d31c0a62b03beeeac6e22fb44b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyZTU1NjEyODFlMjUxZTU2NjM1NTU2YTQxZGY2MGE0YzM5NWY0MTk4MGJkZGMxYTZmNjZlM2UxYTM2MjJlMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5N2M3MTI0N2FmM2NkMWVkZjU1NWE3ZDEwNzU5MzE1N2Y2ZGMyYTIyYWYwZGU4MmU3Nzc0YWJmMTBmOGFkZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4Yzk5YzM3YTEzY2Q3OTg3Mjk5ZDQ0NTk3ZDdmMTYxNjdlNzczNGRhYjE5NzNiNDQzMWFkMDZhY2QxOGNiNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxYmRiZWUyMTkwN2JmMmEwYjJkZGUyZWVlNWZjMWYyZmM3OWE5MTE5N2E1ZDFlYTk0OTY1ZGNlMjc1ODQ3MWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_66d47c68c3e848c79ad123f51884b077",
+      "statement": "trace_task_ret and fast_trace_task decode the message body in the pool child using accept_content and return (failed_flag, value, runtime); fast_trace_task raises RuntimeError if setup_worker_optimizations never ran in the process.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L735-L784",
+          "version": "repo-lines-v1:sha256:4b40d245d369c4a2aa43ba42ebec5a439a06834d3514777622103bd9309f5e43:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MTFkZmM1YzI4NzNjNzA3YmEzMzM0ODk1YTkxMmUwZTY0NWFmZTFjNDFiMzg0MmFkNmNhNGJlZDcyMzFmNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3NjQzODZiZGQxYWY3ZmYwNWUwN2I3ODI4Yjc3YjZmOWM5MjQ4ZTlkMjlkMTA2OTkyMzIxMjM4NWE3OGNlOGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3YzdiNGFjMzk5MzIzMzkwOThmNGUxYTc5NThmODFhODAyNTkxNWQ5NzUzZThhZTI2NTcxZTI3M2EwYmI5MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxMjg0ODg4M2RlNDkxM2IwMDJlMzgwY2Q1M2M1ZTE1ZDBiNjA5ZjNlZmRkNmU4YzJlOGU2MDhjM2FhMjE2MTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2cda36bc5ac94db7bd5d6842530ba2e4",
+      "statement": "With acks_late, worker_deduplicate_successful_tasks and a persistent backend, the tracer skips redelivered tasks already stored as SUCCESS, dispatching pending callbacks/chain once if no children were recorded and raising Reject(requeue=True) on dispatch failure.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L366-L370",
+          "version": "repo-lines-v1:sha256:7a4131582353a7ff5920f4e5139af476d92ed571211feec2f119693bdd59c17a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTA0MGIzMzM4ZDU1MDc3NzhkOTYxN2YyNTEyZjljMGE4ODE0NTI3YjA4ZDQ3NTgxMWZmN2FiOGUxMGMyZTZjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZhNzE1MjU3MmVlODRmMTA5MDZjNzRiOWYyYTkyNDM0ZGRhYjBlM2M0MjgxM2IwNGU1OTdlZmNlYzk1MWIyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM2OGY2MWRjZGQzOWUyYWRlNjZjOGQyNzA0NGMyNzMxOGZiMDY1NmY4YTY3YjNhOTA3NGZkMWZhZjQ5ODUyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTMxYTI3YTBkMzZkZDRhYTZkYTA1ZDkwOTQ2NzI2MmNiNDExZThkY2JlNjU1NzgyOWNkZGI3OWIzZDg4MDcwNCJ9"
+        },
+        {
+          "resource": "repo://celery/app/trace.py#L505-L558",
+          "version": "repo-lines-v1:sha256:7d1a36e34bc0e85c24b4e693bb4cbde75b941a734be770461182f773580fa1c5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1N2QyYmZkYWI1ZjI1ZTc5ZTIzZWI0MjlhMjg1N2EwYTcxOTc3NTM3NDA0N2ZiNjViZGM1MDU0ODkzMzQyMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNmI2ZjUyY2U1YjQ0OGU1YmYxNDlmMTIyODg2YTI1Yzk5NzA0NTM2ZDdmMzgwNzUwMmRkNmZjNjg0ODNmZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliYWMyYTVlYTE1MTNmZTYxNGQ1ODZmNTRiNzFhNmE3ZDU1NDZlYzQ3NGRhMjQ1ODEwOGEwMWY2NThmNzQzMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2ZjhkZTQ5NGNlZDVkNmZkNGEwODRkOWU5ZTgwNWMwZTU0NzA2NTljNTA3ZjRiMTM0ZTRhYmNjYzlkYmE2MzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf91992663fb435eaf969297f2494847",
+      "statement": "On success the tracer dispatches link callbacks and the next chain step before calling mark_as_done, and an EncodeError while storing is converted into a failure.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L606-L632",
+          "version": "repo-lines-v1:sha256:6781c3291a55917ae0a41040bf9edbee2a670c70e41b6beae1937a6ad3b8d27d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1ZDQ2OWUwOWVjYjJhYTBlZDkwZWM5MWEzYzMxNzgyNzk2YTcwODEyYTliYTIzYWZjNzM0NmNhM2QzM2IwMTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjYzIyYmY2NDZhN2FiZDY4OTE2OWUwYzI1Yzc2MDdlNzg3MTQyMTkzOWVkMGQ0ZjYzYTI2YzY4MWU3YmY1MzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0OWYwZDU4MWMwZDI1M2ZhZmI5ZWU4NDM1ODExOTJmOGM1YWM3NzAyZWNiMTg4ZGNmNDk0OGU5ZjA0Mjc3OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwN2UwNmZjYTkwNGM2OTYxZmE4ZjAzODE5YjI1YTcwOWFjYjYyOGY4OWM2YmVmOTQ3YTZlMTFmMmJmOGI2ZTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_16d11bf02b6648d3ba9a45f0d81678c8",
+      "statement": "Retry exceptions are stored as RETRY without calling errbacks, and other exceptions go through handle_failure which makes them picklable and calls mark_as_failure.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L188-L262",
+          "version": "repo-lines-v1:sha256:1a14a7a1644ae40027da0e0f0b36db43d4242d1d4fc83e35b3658753d5720f4a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0MDgxMDViMTUwZDQ5MWFhM2I5OTQzOTdhOTRhNGYwZGM2OGZkZjM1ZTA5ZTkwZTFiYWY1NDUzMGExMjIxMDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxZjRjMDUwNjNlMGIwNzE2Yzg1MWUxYzk3NTY3NjJjMjU2MTliZmEwYTg0NWI1ZjkwNzlmMDRhZWZkMTUzYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2NTc1Nzg1ZDYyNjRjNzZjOGVlNDk0NjUxNzg1MDllZDJjNGZmYjkwYzk0NzA3ZTUyZjY3Zjg5NDE1Nzk2MTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5M2ExN2I3MDBhYTc0Y2NhMjc1MTRiZjA0MjgyZTY0NzY1YWUzOTg3MjcwYWYzM2Q0Y2FjMGNkMzliZmMyYjgifQ"
+        },
+        {
+          "resource": "repo://celery/app/trace.py#L586-L604",
+          "version": "repo-lines-v1:sha256:1435568a6d1970a937de45525a41fda77b8f2fe48f0f5f4d098afd963ab4f392:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzOWQ0ODhkZWEzZDI0YTAwOThkMDQ0YWFkODdmNTYxNGY3MTVkZmZjM2E0MmViZWIyZDUxMGIyYTJiZDk0NGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMmE3NTE0MjYxMzE3YzRhOTI2ZDFiYWIxMGZjOTAwNWE3NDZmYmQ0ODk5MTgwNmQ4ODk4NTQ5NWQ1NzU4NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViODgyMDljZGY2OWEwNjRmZjBkNmFlMTk1OTU4Y2Y1MzEyMWZjMGQ4ZmExMjViODg3NTRhMTZjNjc0NzgzYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNDFiZDk3NjE4MDdiNjc0Y2JkMjYwYWQ0ODkyMmZmNGYzN2QyZmNhZDEyY2JjZTE3MjVjODk3YzczYTI2OGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4eed07ddcee42619f1a6ce859517a28",
+      "statement": "setup_worker_optimizations installs stack protection on Task.__call__, finalizes the app, localizes the task registry and accept content, and enables use_fast_trace_task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L798-L873",
+          "version": "repo-lines-v1:sha256:e4e62d830b19a13748ab4d17f877bbe3ac00d6c63d11a5125acc006f8b755b71:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNjBjYmM4YTY5MmY0MTA2YjE2NzVmZDRjYjQ0NDRiNTk2MTQ4YmJmZjAxMTBhMjgwN2RkMzkzNjkyYjRmZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2OWJkZjc1NmMzNjZhNDE4ZDYxM2Y2ZWVlZmU4MTI1MjU3MDM2ZDNkYmQ1ZTEzNDFjYjFjMmY3MzM4M2NiN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1YWY1ZTVkZjIwYmJiZDM2N2Q4NjkyOTNlODRhYTllYTk5NDdiMjNlNWQzMTIwYjhmZDE1OGIzY2Y1MDE0MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T09:27:53.075Z"
+  }
+}

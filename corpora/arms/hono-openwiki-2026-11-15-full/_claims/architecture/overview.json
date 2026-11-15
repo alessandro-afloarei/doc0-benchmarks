@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e5c0115c7ccf5fbd03d8b880dd444bea018ad06c04aa8be17154f7405af695f5",
+  "claims": [
+    {
+      "id": "claim_7a39f6eb28e14b399f5c20b91cda7723",
+      "statement": "HonoBase declares a router field but does not assign it; concrete subclasses select the router in their constructor.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L114-L118",
+          "version": "repo-lines-v1:sha256:d58d538a63ff206c6db24b245330d3962b09a3fe3a3ec585c61ef464c93b06d4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE3ZmMwNTRiMzNjODgzYTEzY2JhMThjZTZmNDlhYzM1NmMyY2NjZDFmODljODU0ZGE2YmJiZTBhODU1ZjA4YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmZhZTEzZDNmNTM4OGZlN2IzMzQ3NGNiZTNmMjE2YzQyYzU4ODk1ODhiNjBkYzBhYTBmYTU5YjI3Zjg2ZDcyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjY4OGVmNjE4M2QyMmVlOWIzYTczYjYwNzBhYzllMDc0NjZlMzFjZmM2ZDYzMjFmNDhmN2NlZmU2NGVkMjQ5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzFjNDE4ZGYwNDYyZDdiZjA4OTljZDk2NDc4NDM4YmUzOTQzZTFjNGY2ZTc4NWExYTg5ZDVhYzEzOGIyNDJlZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d308d0c0c2e4dec8bfe004742ee0014",
+      "statement": "The default Hono class uses options.router when supplied and otherwise a SmartRouter over RegExpRouter and TrieRouter.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono.ts#L16-L34",
+          "version": "repo-lines-v1:sha256:076ff2ed6a4a3689ced03b22da055c8b0caf6c3219b14814ab1119cfa9ffd852:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzMDUxYmM3MDlkYWIxOTk3ZjQyYTFkNThhM2E5ZGMxZmVhNjY5OTJkMTc4MjU3MDc3MDZjYTY0NjE1M2NkMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3NGUwMzc5ZmFkMGM4NDA5MjRiYWNkYTQ1NDNhMDg1M2Q5MmI5NGRlMzFiNGE5YjM2MTFjOTdlOTBhODAyM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ebb921b842ba4960aad7f50bf961a379",
+      "statement": "The hono/quick preset always uses SmartRouter over LinearRouter and TrieRouter, and hono/tiny always uses PatternRouter.",
+      "evidence": [
+        {
+          "resource": "repo://src/preset/quick.ts",
+          "version": "repo-file-v1:sha256:5be0902db606b91920d2b4c771646d0a8d0010dda31320383a8d9e7f3e1e0cb1"
+        },
+        {
+          "resource": "repo://src/preset/tiny.ts",
+          "version": "repo-file-v1:sha256:0fff9e84b561bb2c905562186f0c986018308211deb0637448a1a9faadd7760b"
+        }
+      ]
+    },
+    {
+      "id": "claim_9faa4400177d438bba42205323b47de1",
+      "statement": "When strict is false, HonoBase uses getPathNoStrict regardless of any custom getPath option; strict defaults to true.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L170-L172",
+          "version": "repo-lines-v1:sha256:4becbbc6eda62cace238062396d645dd6e38577bfba6632b4ec3cfb8cce4f50e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ3NmUwNjE3MTRiZTBmZDI0NGJhYTM1ZWI3YjVmOGRmMjY5ZmEyOWJlMDIxODM5YzZmODVlZGZmNWY0NmZiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ0ZmU2MjNmNThiOGUzZmYyYWQ4OTA1M2ZlNzM1OTBlZTUwMGNmYTExNzVkNTgxZWQ1YjhiNGUwZDFkNWJiNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzM0MTVhNDJhNzQzMjJjOWE0OTIxMzgwNDY2ZmIwNWU0ZGVjZTA1NWExNzRlMzI1N2I5MWRjYTEyZGQ3ZTcxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI0NDdlNmQ5NmUxMGM5OTIzODZmNDA1OTc2YjU0N2YxYWI3MGNmZDE3Yzc1ZTg0NWNmNmUyYTM1Zjc3N2FjYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd93704261d74896b4305c6d2980372c",
+      "statement": "Features are published as subpath exports in package.json (ESM, CJS and types under dist) and mirrored in jsr.json pointing at src TypeScript files.",
+      "evidence": [
+        {
+          "resource": "repo://jsr.json#L1-L30",
+          "version": "repo-lines-v1:sha256:1b7f5edb61216d187d48c18607f5011e68ad18726830b0b6d202661e7aef5f06:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiYjRmNjkyNjc5ZTcyY2Y3OGI2ODhkMDRlZTg0ODI2ZmE1NGRlYTUwODRkYjAyMmRjNDljNjRhODc1ZDVlMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2NTUyM2Y0YTgzNzQ5ZTE5Mzk0ZWFmZWVlNjI4MmMyOTI4N2U1MThjMGZjMmRhNWY0YTBlNWI5ZDZlZTJkZWMifQ"
+        },
+        {
+          "resource": "repo://package.json#L38-L80",
+          "version": "repo-lines-v1:sha256:f1d76e262debf3044138bea658d17219038522d487086fc928d8de0f05fbf0cd:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMDViYjlmNGE4Yjk4NDUxMGY4MTVhNWZjNDA3OGQ3N2M1YTIwZTkzZjMzNzNkYzVkZGU0YTM0MWQxYjQwYzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNTFhMjgyODU3ODI1NmQzNGNjYWIxZjg3MzRlYzBiZjJmZGFlNGQ2MmU2MWVkZGEzZGQ0ZGNkZDM5Mjc3MGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkZWYyMDM0NTU1NjY1ZjhiZjQ1YzhkMDA4YTQyMmQ5NGE5Yzc3MTZlYWUyMjQxYjlmOWI0ZDFkYTYxNGVkMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhNjRmMDkxNTJiNmQxYjBhNTQ2NTM3YzU2YWIxZWFiMTUyZjUyYTIzNjJhN2VhZWE4YTllM2U2MTVjZDhhNTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_391faf6135f840a9a3aa5fd27518b9ea",
+      "statement": "HTTPException.getResponse returns the provided res re-wrapped with the exception status, or a response containing the message with that status; status defaults to 500.",
+      "evidence": [
+        {
+          "resource": "repo://src/http-exception.ts#L46-L78",
+          "version": "repo-lines-v1:sha256:b07e08faf727b5e3bb7cc4bdf303f3611c22cdd77978573cd8983a1e2f00e536:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMjFhOWNhZDQxZDBiOWJjYTY0NWE1ZTQ4OTdjYzdiNzg4ZjkxYTM3YTUyY2FmYzBhZDg4MDBmMmIyNjQwMzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_687bf7e40aa147fc87c90e6c80dd0e1c",
+      "statement": "The default error handler returns err.getResponse() for errors exposing getResponse, otherwise logs the error and returns a 500 Internal Server Error text response.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L35-L42",
+          "version": "repo-lines-v1:sha256:ffe9f730bc94bb22358a35c58a080ef6fcb0dc6d9ae4bdd867f4ea232c87fb47:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk4YjFlYmU3ZWI5YzBlYTBhNWViNzU5NzJjNmU5YzdlZjhiZDVjOWI5NmE1OTQ5NjBlNDhiY2VhZGFmYzA5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNhNWVjMDgxN2VkYTY0MDBhZjI5ZDNhN2EwYmUzOGIxZWM3MDBjMDA3ODA0MGE5MjBiZjQxNjhlYjIwNzUxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTJiZmExYWRlMDM3N2E2NTEyZDNhM2NlMjJiOWRmMzczYTc4ZDNlNmEzNTk3NWZjMDNmNjI5MDkzYjNkNTU0YSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:25:20.453Z"
+  }
+}
