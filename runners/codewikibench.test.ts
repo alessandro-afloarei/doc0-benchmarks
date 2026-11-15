@@ -1,5 +1,10 @@
 import { describe, it, expect } from "vitest";
+import { mkdir, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import {
+  emitEvaluatorInput,
+  frontmatterTitleToH1,
   hoistPreambles,
   neutralizeNonFinalLists,
   normalizeHeadingLevels,
@@ -204,6 +209,42 @@ The following files were used as context for generating this wiki page:
     const input = `# Title\n\n<details>\n<summary>Relevant source files</summary>\n\n- [a.ts](x)\n</details>\n\nIntro.\n\n<details>\n<summary>More</summary>\n\nExtra.\n</details>\n`;
     const result = stripLeadingDetailsBlock(input);
     expect(result).toBe(`# Title\n\nIntro.\n\n<details>\n<summary>More</summary>\n\nExtra.\n</details>\n`);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// frontmatterTitleToH1 — doc0 arm pages (frontmatter title, no H1)
+// ---------------------------------------------------------------------------
+
+describe("frontmatterTitleToH1", () => {
+  it("turns a leading title frontmatter into the page's H1", () => {
+    expect(frontmatterTitleToH1('---\ntitle: "Celery \\"Overview\\""\n---\n## Overview\n\nBody.\n')).toBe('# Celery "Overview"\n\n## Overview\n\nBody.\n');
+    expect(frontmatterTitleToH1("---\ntitle: Workers\n---\n## Overview\n")).toBe("# Workers\n\n## Overview\n");
+  });
+
+  it("leaves a page that opens with its H1, or a later rule, unchanged", () => {
+    const h1 = "# Title\n\n---\ntitle: x\n---\n";
+    expect(frontmatterTitleToH1(h1)).toBe(h1);
+  });
+});
+
+describe("emitEvaluatorInput — a doc0 arm corpus folder", () => {
+  it("emits every page with its title as H1 and ignores _meta.json and navigation.json", async () => {
+    const root = await mkdtemp(join(tmpdir(), "cwb-arm-"));
+    const corpus = join(root, "celery-doc0-nomap-2026-11-16");
+    const out = join(root, "out");
+    await mkdir(corpus);
+    await writeFile(join(corpus, "overview.md"), '---\ntitle: "Celery Overview"\n---\n## Overview\n\nCelery is a task queue.\n\n## Parts\n\nWorkers.\n');
+    await writeFile(join(corpus, "workers.md"), '---\ntitle: "Workers"\n---\n## Overview\n\nA worker consumes.\n');
+    await writeFile(join(corpus, "navigation.json"), '{"sections":[],"pages":["overview","workers"]}\n');
+    await writeFile(join(corpus, "_meta.json"), "{}\n");
+
+    await emitEvaluatorInput({ technicalDir: corpus, outputDir: out });
+
+    expect((await readdir(out)).sort()).toEqual(["module_tree.json", "overview.md", "workers.md"]);
+    expect(JSON.parse(await readFile(join(out, "module_tree.json"), "utf-8"))).toEqual({ overview: {}, workers: {} });
+    expect(await readFile(join(out, "overview.md"), "utf-8")).toBe("# Celery Overview\n\n## Overview\n\nCelery is a task queue.\n\n## Parts\n\nWorkers.\n");
+    await rm(root, { recursive: true });
   });
 });
 

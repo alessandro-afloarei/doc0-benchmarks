@@ -293,6 +293,21 @@ export function transpileMdx(md: string): string {
 // ---------------------------------------------------------------------------
 
 /**
+ * A doc0 arm page (`.doc0/pages/<slug>.md`) opens with YAML frontmatter that
+ * holds its title, and no H1; every one then starts at `## Overview`. The
+ * parser matches a page's top heading to its filename, so `overview.md` would
+ * shrink to its Overview section (a string, which crashes DocPage). The title
+ * becomes the H1 the cloud corpora open with.
+ */
+export function frontmatterTitleToH1(md: string): string {
+  const fm = /^---\n([\s\S]*?)\n---\n\s*/.exec(md);
+  const raw = fm?.[1] && /^title:\s*(.+)$/m.exec(fm[1])?.[1].trim();
+  if (!fm || !raw) return md;
+  const title = raw.startsWith('"') ? (JSON.parse(raw) as string) : raw;
+  return `# ${title}\n\n${md.slice(fm[0].length)}`;
+}
+
+/**
  * Strip the ONE leading `<details>…</details>` "Relevant source files" block.
  * It's navigation scaffolding, not documentation content — and because it
  * always sits before the page's first H2, the evaluator's parser
@@ -637,7 +652,7 @@ async function loadCorpusPages(dir: string): Promise<EvaluatorPage[]> {
       // headings), preambles hoist next (this reshapes the heading spans), and
       // list neutralization runs last against the final span layout.
       content: neutralizeNonFinalLists(
-        hoistPreambles(transpileMdx(stripLeadingDetailsBlock(await readFile(join(dir, f), "utf-8")))),
+        hoistPreambles(transpileMdx(stripLeadingDetailsBlock(frontmatterTitleToH1(await readFile(join(dir, f), "utf-8"))))),
       ),
     })),
   );

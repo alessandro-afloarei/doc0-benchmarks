@@ -14,10 +14,12 @@ import {
   capMinutes,
   claudeArgs,
   CLOUD_PAGE_COUNTS,
+  CODEWIKIBENCH_REPOS,
   isolationProblem,
   MINUTES_PER_PAGE,
   redactSecrets,
   REPOS,
+  RUN_REPOS,
   secretValues,
   usableDoc0Cli,
 } from "./arms.ts";
@@ -90,7 +92,8 @@ describe("armSetup", () => {
 describe("armDirs", () => {
   it("each arm and repository gets its own clone and config directory", () => {
     const seen = new Set<string>();
-    for (const repo of REPOS) {
+    const repos = Object.keys(RUN_REPOS) as (keyof typeof RUN_REPOS)[];
+    for (const repo of repos) {
       for (const arm of ARMS) {
         const dirs = armDirs("/w", repo, arm);
         for (const dir of [dirs.root, dirs.clone, dirs.config]) {
@@ -101,7 +104,7 @@ describe("armDirs", () => {
         expect(dirs.config.startsWith(dirs.clone)).toBe(false);
       }
     }
-    expect(seen.size).toBe(REPOS.length * ARMS.length * 3);
+    expect(seen.size).toBe(repos.length * ARMS.length * 3);
   });
 });
 
@@ -114,6 +117,27 @@ describe("time caps", () => {
 
   it("ARM_TIME_CAPS come from capMinutes and MINUTES_PER_PAGE", () => {
     for (const repo of REPOS) expect(ARM_TIME_CAPS[repo]).toBe(capMinutes(MINUTES_PER_PAGE, CLOUD_PAGE_COUNTS[repo]));
+    expect(ARM_TIME_CAPS).toEqual({
+      hono: 68, fd: 57, celery: 96,
+      OpenHands: 96, svelte: 91, puppeteer: 75, "ml-agents": 84, logstash: 96, wazuh: 96, electron: 96,
+    });
+  });
+
+  it("the full run, the one the decision rules read, stays hono, fd and celery", () => {
+    expect(REPOS).toEqual(["hono", "fd", "celery"]);
+    expect(RUN_REPOS).toEqual({ ...ARM_REPOS, ...CODEWIKIBENCH_REPOS });
+  });
+
+  it("pins the seven CodeWikiBench repositories at the dataset's commits, under the dataset's repo_name", () => {
+    expect(CODEWIKIBENCH_REPOS).toEqual({
+      OpenHands: { repo: "All-Hands-AI/OpenHands", sha: "30604c40fc6e9ac914089376f41e118582954f22" },
+      svelte: { repo: "sveltejs/svelte", sha: "be645b4d9f84cb7580683c7b2336d1023906c4da" },
+      puppeteer: { repo: "puppeteer/puppeteer", sha: "c1105f125c71353587a837958c2748097ef2927d" },
+      "ml-agents": { repo: "Unity-Technologies/ml-agents", sha: "4cf2f49ad0a973c95eb41325aa3a46959f187708" },
+      logstash: { repo: "elastic/logstash", sha: "895cfa5b14633ae9b9e671105f7b7935c9f2b9f1" },
+      wazuh: { repo: "wazuh/wazuh", sha: "44b7cd33e05abb7730228bb092b23b419ee4f15e" },
+      electron: { repo: "electron/electron", sha: "828fd59a72e673acf03f878b4f488a40fca46dfe" },
+    });
   });
 
   it("pins the three repositories at their 2026-07 corpus SHAs", () => {

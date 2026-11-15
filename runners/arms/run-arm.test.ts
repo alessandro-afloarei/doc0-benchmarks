@@ -125,6 +125,18 @@ async function gone(pid: number): Promise<boolean> {
 }
 
 describe("runArm", () => {
+  it("a CodeWikiBench repository clones at the dataset's commit and keeps its corpus under the dataset's name", async () => {
+    await stub({ doc0: "complete" });
+    const cloned: string[] = [];
+    const meta = await runArm(await options("doc0-nomap", { repo: "ml-agents" }), {
+      ...deps(),
+      cloneAt: async (repo, sha, dir) => (cloned.push(`${repo}@${sha}`), cloneAt(repo, sha, dir)),
+    });
+    expect(cloned).toEqual(["Unity-Technologies/ml-agents@4cf2f49ad0a973c95eb41325aa3a46959f187708"]);
+    expect(meta).toMatchObject({ status: "complete", repo: "Unity-Technologies/ml-agents", source_repo_sha: "4cf2f49ad0a973c95eb41325aa3a46959f187708" });
+    expect(await readMeta(join(corporaDir, "ml-agents-doc0-nomap-2026-11-16"))).toEqual(meta);
+  });
+
   it("a doc0 run is complete on doc0_finish's result, and keeps exactly the pages it lists, and its navigation", async () => {
     await stub({ doc0: "complete" });
     const meta = await runArm(await options("doc0-map", { maxPages: 3 }), deps());

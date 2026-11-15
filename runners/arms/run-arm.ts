@@ -3,7 +3,7 @@
 // then the pages kept as corpora/arms/<repo>-<arm>-<date>/ with _meta.json.
 //
 // Usage:
-//   pnpm bench:arm --repo fd --arm doc0-map --date 2026-11-16[-<tag>] [--max-pages 3] [--budget 15]
+//   pnpm bench:arm --repo fd|OpenHands|… --arm doc0-map --date 2026-11-16[-<tag>] [--max-pages 3] [--budget 15]
 //                  [--timeout-minutes N] [--model claude-opus-5-5] [--effort high]
 // Environment: ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN (exactly one), DOC0_CLI and DOC0_SKILL (doc0 arms), OPENWIKI_BIN (openwiki),
 // BENCH_WORK_DIR (default /work/artifacts/doc0-arms-<today>), DOC0_COMMIT (optional, recorded).
@@ -19,8 +19,8 @@ import { parseArgs } from "node:util";
 import { ensureSourceAt } from "../grounding-scorecard.ts";
 import type { ArmCredential, ArmMeta, ArmName } from "../../scoring/arm-corpus.ts";
 import {
-  ARM_REPOS, ARM_TIME_CAPS, ARMS, armCredential, armDirs, armEnv, armFinishTool, armPrompt, armSetup, armSystem, claudeArgs, DRY_RUN_TIME_CAP,
-  isolationProblem, redactSecrets, REPOS, secretValues, usableDoc0Cli, type ArmTools, type RepoName,
+  ARM_TIME_CAPS, ARMS, armCredential, armDirs, armEnv, armFinishTool, armPrompt, armSetup, armSystem, claudeArgs, DRY_RUN_TIME_CAP,
+  isolationProblem, redactSecrets, RUN_REPOS, secretValues, usableDoc0Cli, type ArmTools, type RunRepoName,
 } from "./arms.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -29,7 +29,7 @@ export const CORPORA_ARMS_DIR = join(ROOT, "corpora", "arms");
 const RESULTS_ARMS_DIR = join(ROOT, "results", "arms");
 
 export interface RunArmOptions {
-  repo: RepoName;
+  repo: RunRepoName;
   arm: ArmName;
   date: string;
   model: string;
@@ -246,7 +246,7 @@ export async function runArm(o: RunArmOptions, deps: RunArmDeps = {}): Promise<A
   for (const dir of [dirs.root, corpus, kept]) {
     if (await exists(dir)) throw new Error(`${dir} already exists: a run's folders are never overwritten (one may hold a paid run). Move it away, then run again.`);
   }
-  const { repo, sha } = ARM_REPOS[o.repo];
+  const { repo, sha } = RUN_REPOS[o.repo];
   await cloneAt(repo, sha, dirs.clone);
   await mkdir(dirs.config, { recursive: true });
   const { mcpConfigFile } = await armSetup(o.arm, dirs.clone, o.tools);
@@ -345,12 +345,12 @@ async function main(): Promise<void> {
       model: { type: "string", default: "claude-opus-5-5" }, effort: { type: "string", default: "high" },
     },
   });
-  const repo = values.repo as RepoName;
+  const repo = values.repo as RunRepoName;
   const arm = values.arm as ArmName;
   const fail = (message: string): never => {
     throw new Error(`[bench:arm] ${message}`);
   };
-  if (!REPOS.includes(repo)) fail(`--repo must be one of ${REPOS.join(", ")}`);
+  if (!Object.hasOwn(RUN_REPOS, repo)) fail(`--repo must be one of ${Object.keys(RUN_REPOS).join(", ")}`);
   if (!(ARMS as readonly string[]).includes(arm)) fail(`--arm must be one of ${ARMS.join(", ")}`);
   if (!isRunDate(values.date ?? "")) fail("--date YYYY-MM-DD (or YYYY-MM-DD-<tag>) is required");
   let credential: ArmCredential = "api-key";

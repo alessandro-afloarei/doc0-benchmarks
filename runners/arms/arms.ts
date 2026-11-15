@@ -28,11 +28,41 @@ export function capMinutes(minutesPerPage: number, pages: number): number {
   return Math.ceil(1.5 * minutesPerPage * pages) + 15;
 }
 
+/**
+ * The seven repositories with published CodeWikiBench scores, at the commits of
+ * the dataset's rows (anhnh2002/codewikibench @ 6d215eb7), keyed by its repo_name.
+ * bench:arm runs them; the arms report and its decision rules read REPOS alone.
+ */
+export const CODEWIKIBENCH_REPOS = {
+  OpenHands: { repo: "All-Hands-AI/OpenHands", sha: "30604c40fc6e9ac914089376f41e118582954f22" },
+  svelte: { repo: "sveltejs/svelte", sha: "be645b4d9f84cb7580683c7b2336d1023906c4da" },
+  puppeteer: { repo: "puppeteer/puppeteer", sha: "c1105f125c71353587a837958c2748097ef2927d" },
+  "ml-agents": { repo: "Unity-Technologies/ml-agents", sha: "4cf2f49ad0a973c95eb41325aa3a46959f187708" },
+  logstash: { repo: "elastic/logstash", sha: "895cfa5b14633ae9b9e671105f7b7935c9f2b9f1" },
+  wazuh: { repo: "wazuh/wazuh", sha: "44b7cd33e05abb7730228bb092b23b419ee4f15e" },
+  electron: { repo: "electron/electron", sha: "828fd59a72e673acf03f878b4f488a40fca46dfe" },
+} as const;
+
+/**
+ * Pages a run on each is expected to write: hono's 29 scaled by the square root
+ * of tracked source files outside tests, fixtures, examples and docs (hono 203),
+ * held to 25–45. Counts at the dataset commits: puppeteer 257, ml-agents 348,
+ * svelte 421, logstash 739, electron 1,028, OpenHands 1,282, wazuh 2,314.
+ */
+const CODEWIKIBENCH_PAGE_ESTIMATES: Record<keyof typeof CODEWIKIBENCH_REPOS, number> = {
+  OpenHands: 45, svelte: 42, puppeteer: 33, "ml-agents": 38, logstash: 45, wazuh: 45, electron: 45,
+};
+
+/** Every repository bench:arm runs. */
+export const RUN_REPOS = { ...ARM_REPOS, ...CODEWIKIBENCH_REPOS };
+export type RunRepoName = keyof typeof RUN_REPOS;
+
 /** m: the largest minutes per page among the 2026-11-15 dry run's three arms (openwiki, 215,537 ms over 3 pages on fd). */
 export const MINUTES_PER_PAGE = 1.2;
+const EXPECTED_PAGES: Record<RunRepoName, number> = { ...CLOUD_PAGE_COUNTS, ...CODEWIKIBENCH_PAGE_ESTIMATES };
 export const ARM_TIME_CAPS = Object.fromEntries(
-  REPOS.map((repo) => [repo, capMinutes(MINUTES_PER_PAGE, CLOUD_PAGE_COUNTS[repo])]),
-) as Record<RepoName, number>;
+  Object.entries(EXPECTED_PAGES).map(([repo, pages]) => [repo, capMinutes(MINUTES_PER_PAGE, pages)]),
+) as Record<RunRepoName, number>;
 export const DRY_RUN_TIME_CAP = 60;
 
 const ARM_TOOLS: Record<ArmName, { system: "doc0" | "openwiki"; skill: string; server: string; finish: string }> = {
@@ -47,7 +77,7 @@ export const armFinishTool = (arm: ArmName) => `mcp__${ARM_TOOLS[arm].server}__$
 export interface ArmTools { doc0Cli: string; doc0Skill: string; openwikiBin: string }
 
 /** Folders of one arm's run on one repository: nothing is shared between arms or repositories. */
-export function armDirs(workDir: string, repo: RepoName, arm: ArmName) {
+export function armDirs(workDir: string, repo: RunRepoName, arm: ArmName) {
   const root = join(workDir, `${repo}-${arm}`);
   return { root, clone: join(root, "src"), config: join(root, "claude-config") };
 }
