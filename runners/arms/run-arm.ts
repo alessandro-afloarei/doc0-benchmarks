@@ -54,10 +54,10 @@ interface ClaudeResult {
   type: "result";
   subtype: string;
   errors?: string[];
-  duration_ms?: number;
   num_turns?: number;
   total_cost_usd?: number;
   usage?: Partial<NonNullable<ArmMeta["usage"]>>;
+  modelUsage?: Record<string, { inputTokens?: number; cacheCreationInputTokens?: number; cacheReadInputTokens?: number; outputTokens?: number }>;
 }
 
 async function exists(path: string): Promise<boolean> {
@@ -129,6 +129,28 @@ const blocks = (e: unknown): ContentBlock[] => {
   const content = (e as { message?: { content?: unknown } } | undefined)?.message?.content;
   return Array.isArray(content) ? (content as ContentBlock[]) : [];
 };
+
+/**
+ * A run's tokens and turns. With background subagents claude prints one result each time its main loop goes idle:
+ * each result's `usage` and `num_turns` cover only its own stretch, while `modelUsage` (like `total_cost_usd`)
+ * is the whole session's, subagents included. So tokens come from the last result's `modelUsage` and turns are summed.
+ */
+export function runUsage(events: unknown[]): Pick<ArmMeta, "usage" | "num_turns"> {
+  const results = events.filter(isResult);
+  const last = results.at(-1);
+  if (!last) return { usage: null, num_turns: null };
+  const models = Object.values(last.modelUsage ?? {});
+  const sum = (key: "inputTokens" | "cacheCreationInputTokens" | "cacheReadInputTokens" | "outputTokens") => models.reduce((n, m) => n + (m[key] ?? 0), 0);
+  const usage = models.length > 0
+    ? { input_tokens: sum("inputTokens"), cache_creation_input_tokens: sum("cacheCreationInputTokens"), cache_read_input_tokens: sum("cacheReadInputTokens"), output_tokens: sum("outputTokens") }
+    : {
+        input_tokens: last.usage?.input_tokens ?? 0,
+        cache_creation_input_tokens: last.usage?.cache_creation_input_tokens ?? 0,
+        cache_read_input_tokens: last.usage?.cache_read_input_tokens ?? 0,
+        output_tokens: last.usage?.output_tokens ?? 0,
+      };
+  return { usage, num_turns: results.reduce((n, r) => n + (r.num_turns ?? 0), 0) };
+}
 
 /** The last result the arm's finish tool returned in the transcript, parsed from its JSON text; null when it never returned one. */
 export function finishResult(arm: ArmName, events: unknown[]): Record<string, unknown> | null {
@@ -268,17 +290,10 @@ export async function runArm(o: RunArmOptions, deps: RunArmDeps = {}): Promise<A
     model: o.model, effort: o.effort, tool_version: o.toolVersion,
     dry_run: o.maxPages !== undefined, max_pages: o.maxPages ?? null, time_cap_minutes: o.timeoutMinutes, budget_usd: o.budgetUsd, credential: o.credential,
     status: reason === null ? "complete" : "incomplete", reason, page_count: keptPages?.pages.length ?? 0,
-    usage: result
-      ? {
-          input_tokens: result.usage?.input_tokens ?? 0,
-          cache_creation_input_tokens: result.usage?.cache_creation_input_tokens ?? 0,
-          cache_read_input_tokens: result.usage?.cache_read_input_tokens ?? 0,
-          output_tokens: result.usage?.output_tokens ?? 0,
-        }
-      : null,
+    ...runUsage(events),
     cost_usd: result?.total_cost_usd ?? null,
-    duration_ms: result?.duration_ms ?? Date.now() - started,
-    num_turns: result?.num_turns ?? null,
+    // The wall clock, as the time cap reads it: a result's duration_ms covers only its own stretch of the main loop.
+    duration_ms: Date.now() - started,
   };
   await writeFile(join(corpus, "_meta.json"), `${JSON.stringify(meta, null, 2)}\n`);
   return meta;

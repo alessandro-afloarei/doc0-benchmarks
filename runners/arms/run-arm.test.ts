@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { mkdtemp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { isRunDate, positiveOption, runArm, type RunArmOptions } from "./run-arm.ts";
+import { isRunDate, positiveOption, runArm, runUsage, type RunArmOptions } from "./run-arm.ts";
 import type { ArmMeta } from "../../scoring/arm-corpus.ts";
 
 const SECRET = "sk-ant-test-never-in-a-file";
@@ -160,7 +160,8 @@ describe("runArm", () => {
     await stub({ doc0: "complete" });
     const meta = await runArm(await options("doc0-nomap"), deps());
     expect(meta.usage).toEqual({ input_tokens: 10, cache_creation_input_tokens: 20, cache_read_input_tokens: 30, output_tokens: 40 });
-    expect(meta).toMatchObject({ cost_usd: 1.25, duration_ms: 120000, num_turns: 7, tool_version: "doc0@0.3.0" });
+    expect(meta).toMatchObject({ cost_usd: 1.25, num_turns: 7, tool_version: "doc0@0.3.0" });
+    expect(meta.duration_ms).toBeLessThan(120000); // the wall clock, never the result's own duration_ms
     const kept = join(resultsDir, "fd-doc0-nomap-2026-11-16");
     expect((await readdir(kept)).sort()).toEqual(["result.json", "transcript.jsonl"]);
     expect(await readFile(join(kept, "transcript.jsonl"), "utf-8")).toContain('"subtype":"init"');
@@ -291,6 +292,29 @@ describe("runArm", () => {
       await rm(existing, { recursive: true });
       await expect(stat(join(workDir, "fd-doc0-map", "transcript.jsonl"))).rejects.toThrow();
     }
+  });
+});
+
+describe("runUsage", () => {
+  const model = (output: number) => ({ inputTokens: 1, cacheCreationInputTokens: 2, cacheReadInputTokens: 3, outputTokens: output });
+  it("takes the whole session's tokens from the last result's modelUsage and sums the turns of every result", () => {
+    // Background subagents: one result per idle point, each with only its own stretch's usage and turns.
+    const events = [
+      { type: "system", subtype: "init" },
+      { type: "result", num_turns: 19, usage: { output_tokens: 22235 }, modelUsage: { opus: model(300) } },
+      { type: "result", num_turns: 5, usage: { output_tokens: 26 }, modelUsage: { opus: model(350), haiku: model(50) } },
+    ];
+    expect(runUsage(events)).toEqual({
+      usage: { input_tokens: 2, cache_creation_input_tokens: 4, cache_read_input_tokens: 6, output_tokens: 400 },
+      num_turns: 24,
+    });
+  });
+  it("falls back to the result's usage without modelUsage, and is null without a result", () => {
+    expect(runUsage([{ type: "result", num_turns: 3, usage: { input_tokens: 1, output_tokens: 9 } }])).toEqual({
+      usage: { input_tokens: 1, cache_creation_input_tokens: 0, cache_read_input_tokens: 0, output_tokens: 9 },
+      num_turns: 3,
+    });
+    expect(runUsage([{ type: "system", subtype: "init" }])).toEqual({ usage: null, num_turns: null });
   });
 });
 
