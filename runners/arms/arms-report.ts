@@ -66,7 +66,8 @@ export interface RuleInput {
   repo: string;
   /** Only arms that completed and were judged. */
   arms: Partial<Record<ArmName, RuleArm>>;
-  comparative: Partial<Record<PairKey, Partial<Record<ArmDimension, CellVerdict["verdict"] | "unreliable">>>>;
+  /** "failed": the judge failed at least one call on that cell, so the cell decides nothing. */
+  comparative: Partial<Record<PairKey, Partial<Record<ArmDimension, CellVerdict["verdict"] | "unreliable" | "failed">>>>;
 }
 
 export interface Decision {
@@ -118,10 +119,18 @@ function closePairs<A extends ArmName>(rows: Array<{ repo: string; cells: Record
   return undecided(`${a} and ${b} are within 2 points of grounded rate on ${pairs.join(", ")}: both arms run again there first.`, "second run needed");
 }
 
+/** A rule that reads `pair`'s comparison decides nothing while the judge failed on any of its cells (the instrument's fault: re-judge). */
+function failedComparison(rows: RuleInput[], pair: PairKey): Decision | null {
+  const failed = rows.filter((r) => ARM_DIMENSIONS.some((d) => r.comparative[pair]?.[d] === "failed")).map((r) => r.repo);
+  return failed.length === 0 ? null : undecided(`the ${pair} comparison has a judge failure on ${failed.join(", ")}.`, "re-judge");
+}
+
 /** Rule 1: the map stays in doc0_begin. */
 export function decideRule1(repos: RuleInput[]): Decision {
   const both = measuredCells(repos, ["doc0-map", "doc0-nomap"] as const);
   if (!Array.isArray(both)) return both;
+  const failed = failedComparison(both, "doc0-map~doc0-nomap");
+  if (failed) return failed;
   const close = closePairs(both, "doc0-map", "doc0-nomap");
   if (close) return close;
   const groundedDiff = mean(both.map((b) => b.cells["doc0-map"].grounded)) - mean(both.map((b) => b.cells["doc0-nomap"].grounded));
@@ -148,6 +157,8 @@ export function decideRule2(repos: RuleInput[]): Decision {
   const all = measuredCells(repos, ["openwiki", "doc0-map", "doc0-nomap"] as const);
   if (!Array.isArray(all)) return all;
   const betterArm = mean(all.map((a) => a.cells["doc0-map"].grounded)) >= mean(all.map((a) => a.cells["doc0-nomap"].grounded)) ? "doc0-map" : "doc0-nomap";
+  const failed = failedComparison(all, `${betterArm}~openwiki`);
+  if (failed) return failed;
   const close = closePairs(all, betterArm, "openwiki");
   if (close) return close;
   const lost = all.filter((a) => !(a.cells[betterArm].grounded > a.cells.openwiki.grounded && a.cells[betterArm].per1000 > a.cells.openwiki.per1000)).map((a) => a.repo);
@@ -244,14 +255,14 @@ function requireSameSettings(scope: string, metas: Array<{ arm: ArmName; meta: A
 const exists = (path: string) => stat(path).then(() => true, () => false);
 const stripped = (pages: WikiPage[]) => pages.map((p) => ({ ...p, content: stripCitations(p.content) }));
 
-function ruleInput(r: RepoArmsReport): RuleInput {
+export function ruleInput(r: RepoArmsReport): RuleInput {
   const arms: RuleInput["arms"] = {};
   for (const cell of Object.values(r.arms)) {
     if (cell.judged) arms[cell.arm] = { grounded: cell.judged.groundedRate, per1000: cell.judged.groundedPer1000Words, tokens: cell.totalTokens, judgeFailures: cell.judged.judgeFailures };
   }
   const comparative: RuleInput["comparative"] = {};
   for (const [pair, byDim] of Object.entries(r.comparative) as Array<[PairKey, Record<ArmDimension, CellVerdict>]>) {
-    comparative[pair] = Object.fromEntries(ARM_DIMENSIONS.map((d) => [d, byDim[d].unreliable ? "unreliable" : byDim[d].verdict]));
+    comparative[pair] = Object.fromEntries(ARM_DIMENSIONS.map((d) => [d, byDim[d].judgeFailures > 0 ? "failed" : byDim[d].unreliable ? "unreliable" : byDim[d].verdict]));
   }
   return { repo: r.repo, arms, comparative };
 }

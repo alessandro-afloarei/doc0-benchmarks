@@ -9,7 +9,9 @@ import {
   decideRule2,
   groundedPer1000Words,
   renderArmsReport,
+  ruleInput,
   stripCitations,
+  type RepoArmsReport,
   type RuleInput,
 } from "./arms-report.ts";
 import type { ArmMeta, ArmName } from "../../scoring/arm-corpus.ts";
@@ -102,6 +104,35 @@ describe("rule 1: the map", () => {
     expect(decideRule1([repo("fd", { "doc0-map": arm(0.9, 10, 100, 1), "doc0-nomap": arm(0.5, 10, 100) })])).toMatchObject({
       outcome: "undecided", note: "re-judge", because: "doc0-map has 1 judge failure on fd.",
     });
+  });
+});
+
+describe("a comparison the judge failed on decides nothing", () => {
+  it("rule 1 is undecided (re-judge) when the map pair's comparison has a judge failure, even with a grounded win", () => {
+    const failed = { "doc0-map~doc0-nomap": { depth: "failed", coherence: "better", breadth: "better" } } as const;
+    expect(decideRule1([repo("fd", { "doc0-map": arm(0.9, 10, 100), "doc0-nomap": arm(0.8, 10, 100) }, failed)])).toMatchObject({
+      outcome: "undecided",
+      note: "re-judge",
+      because: "the doc0-map~doc0-nomap comparison has a judge failure on fd.",
+    });
+  });
+
+  it("rule 2 is undecided (re-judge) when the better arm's comparison with openwiki has a judge failure", () => {
+    const failed = { "doc0-map~openwiki": { depth: "better", coherence: "failed", breadth: "better" } } as const;
+    const decision = decideRule2([repo("fd", { openwiki: arm(0.7, 8, 1), "doc0-map": arm(0.85, 12, 1), "doc0-nomap": arm(0.8, 11, 1) }, failed)]);
+    expect(decision).toMatchObject({ outcome: "undecided", note: "re-judge", because: "the doc0-map~openwiki comparison has a judge failure on fd." });
+  });
+});
+
+describe("ruleInput", () => {
+  it("reads a comparison cell with any judge failure as failed, an unreliable one as unreliable, else its verdict", () => {
+    const cell = (verdict: "better" | "worse" | "equal", judgeFailures: number, unreliable: boolean) => ({ verdict, margin: 0, rationale: "", margins: [], judgeFailures, unreliable });
+    const report = {
+      repo: "fd",
+      arms: {},
+      comparative: { "doc0-map~openwiki": { depth: cell("better", 1, false), coherence: cell("equal", 0, true), breadth: cell("worse", 0, false) } },
+    } as unknown as RepoArmsReport;
+    expect(ruleInput(report).comparative).toEqual({ "doc0-map~openwiki": { depth: "failed", coherence: "unreliable", breadth: "worse" } });
   });
 });
 
