@@ -357,6 +357,14 @@ describe("renderArmsReport", () => {
     await corpora.cleanUp();
   });
 
+  it("shows a run's cost to the cent, as claude's float leaves it", async () => {
+    const corpora = await fakeCorpora({ "doc0-map": { claims: 1, resolvedClaims: 1, judge: () => true, meta: { cost_usd: 1.5631926000000003 } } });
+    const markdown = renderArmsReport(await armsReport({ repos: ["fd"], date: DATE, judged: false }, corpora.deps), await readFile(TEMPLATE, "utf-8"));
+    expect(markdown).toContain("| 1.56 |");
+    expect(markdown).not.toContain("1.5631926");
+    await corpora.cleanUp();
+  });
+
   it("the template holds the plan's decision rules", async () => {
     const template = await readFile(TEMPLATE, "utf-8");
     for (const phrase of [

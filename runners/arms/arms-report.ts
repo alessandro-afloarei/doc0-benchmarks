@@ -383,7 +383,7 @@ export function renderArmsReport(report: ArmsReport, template: string): string {
       const unknown = "unknown";
       return [
         repo, cell.arm, cell.status, cell.pageCount, cell.totalTokens ?? unknown, u?.input_tokens ?? unknown, u?.cache_creation_input_tokens ?? unknown,
-        u?.cache_read_input_tokens ?? unknown, u?.output_tokens ?? unknown, cell.costUsd ?? unknown, cell.minutes, cell.costPerPage ?? "", cell.minutesPerPage ?? "",
+        u?.cache_read_input_tokens ?? unknown, u?.output_tokens ?? unknown, cell.costUsd === null ? unknown : round(cell.costUsd, 2), cell.minutes, cell.costPerPage ?? "", cell.minutesPerPage ?? "",
       ];
     }),
   );

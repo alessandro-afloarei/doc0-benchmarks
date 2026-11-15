@@ -28,8 +28,8 @@ export function capMinutes(minutesPerPage: number, pages: number): number {
   return Math.ceil(1.5 * minutesPerPage * pages) + 15;
 }
 
-/** Provisional: the dry run (Task 4) replaces it with the largest measured minutes per page among its three arms. */
-export const MINUTES_PER_PAGE = 4;
+/** m: the largest minutes per page among the 2026-11-15 dry run's three arms (openwiki, 215,537 ms over 3 pages on fd). */
+export const MINUTES_PER_PAGE = 1.2;
 export const ARM_TIME_CAPS = Object.fromEntries(
   REPOS.map((repo) => [repo, capMinutes(MINUTES_PER_PAGE, CLOUD_PAGE_COUNTS[repo])]),
 ) as Record<RepoName, number>;
