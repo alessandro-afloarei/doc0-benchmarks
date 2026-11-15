@@ -3,7 +3,7 @@
 // then the pages kept as corpora/arms/<repo>-<arm>-<date>/ with _meta.json.
 //
 // Usage:
-//   pnpm bench:arm --repo fd --arm doc0-map --date 2026-11-16 [--max-pages 3] [--budget 15]
+//   pnpm bench:arm --repo fd --arm doc0-map --date 2026-11-16[-<tag>] [--max-pages 3] [--budget 15]
 //                  [--timeout-minutes N] [--model claude-opus-5-5] [--effort high]
 // Environment: ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN (exactly one), DOC0_CLI and DOC0_SKILL (doc0 arms), OPENWIKI_BIN (openwiki),
 // BENCH_WORK_DIR (default /work/artifacts/doc0-arms-<today>), DOC0_COMMIT (optional, recorded).
@@ -284,6 +284,11 @@ export async function runArm(o: RunArmOptions, deps: RunArmDeps = {}): Promise<A
   return meta;
 }
 
+/** A run's date: YYYY-MM-DD, or with a lowercase tag (2026-11-15-probe) that keeps a probe's folders apart from the runs it would be compared with. */
+export function isRunDate(date: string): boolean {
+  return /^\d{4}-\d{2}-\d{2}(-[a-z0-9]+)?$/.test(date);
+}
+
 /** A numeric option's value, or a message naming the option: a positive finite number, whole where `integer`. */
 export function positiveOption(name: string, raw: string, { integer = false } = {}): number {
   const n = Number(raw);
@@ -325,7 +330,7 @@ async function main(): Promise<void> {
   };
   if (!REPOS.includes(repo)) fail(`--repo must be one of ${REPOS.join(", ")}`);
   if (!(ARMS as readonly string[]).includes(arm)) fail(`--arm must be one of ${ARMS.join(", ")}`);
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(values.date ?? "")) fail("--date YYYY-MM-DD is required");
+  if (!isRunDate(values.date ?? "")) fail("--date YYYY-MM-DD (or YYYY-MM-DD-<tag>) is required");
   let credential: ArmCredential = "api-key";
   try {
     credential = armCredential(process.env);

@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { mkdtemp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { positiveOption, runArm, type RunArmOptions } from "./run-arm.ts";
+import { isRunDate, positiveOption, runArm, type RunArmOptions } from "./run-arm.ts";
 import type { ArmMeta } from "../../scoring/arm-corpus.ts";
 
 const SECRET = "sk-ant-test-never-in-a-file";
@@ -291,6 +291,13 @@ describe("runArm", () => {
       await rm(existing, { recursive: true });
       await expect(stat(join(workDir, "fd-doc0-map", "transcript.jsonl"))).rejects.toThrow();
     }
+  });
+});
+
+describe("isRunDate", () => {
+  it("takes a day, or a day with a tag that keeps a probe apart from the runs it would be compared with", () => {
+    for (const ok of ["2026-11-15", "2026-11-15-probe", "2026-11-15-probe2"]) expect(isRunDate(ok), ok).toBe(true);
+    for (const bad of ["", "2026-11-5", "2026-11-15-", "2026-11-15-Probe", "2026-11-15/x", "2026-11-15-a-b"]) expect(isRunDate(bad), bad).toBe(false);
   });
 });
 
