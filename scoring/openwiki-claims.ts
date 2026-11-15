@@ -21,14 +21,9 @@ function evidenceCitation(resource: string): ClaimGroup["citations"][number] {
   return { filePath: path, startLine, endLine: range?.[2] ? Number(range[2]) : startLine };
 }
 
-/** One group per Claim, every sidecar under `claimsDir` in path order; none when the folder is missing. */
+/** One group per Claim, every sidecar under `claimsDir` in path order. A folder that cannot be read throws. */
 export function loadOpenwikiClaimGroups(claimsDir: string): ClaimGroup[] {
-  let files: string[];
-  try {
-    files = readdirSync(claimsDir, { recursive: true, encoding: "utf-8" }).filter((f) => f.endsWith(".json")).sort();
-  } catch {
-    return [];
-  }
+  const files = readdirSync(claimsDir, { recursive: true, encoding: "utf-8" }).filter((f) => f.endsWith(".json")).sort();
   return files.flatMap((file) => {
     const sidecar = JSON.parse(readFileSync(join(claimsDir, file), "utf-8")) as Sidecar;
     return sidecar.claims.map((c) => ({ claim: c.statement, citations: c.evidence.map((e) => evidenceCitation(e.resource)) }));

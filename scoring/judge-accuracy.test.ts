@@ -318,7 +318,7 @@ describe("judgeClaimGroups", () => {
     });
     warn.mockRestore();
     // 4 groups − 1 failure = 3 counted; 1 supported. The missing file stays in as unsupported.
-    expect(score).toEqual({ groups: 4, resolved: 3, supported: 1, judgeFailures: 1, groundedRate: 0.333, resolutionRate: 0.75, claimSupportRate: 0.5 });
+    expect(score).toEqual({ groups: 4, resolved: 3, supported: 1, judgeFailures: 1, groundedRate: 1 / 3, resolutionRate: 0.75, claimSupportRate: 0.5 });
   });
 
   it("a failed judge call is retried once", async () => {
@@ -335,9 +335,30 @@ describe("judgeClaimGroups", () => {
     expect(score).toMatchObject({ supported: 1, judgeFailures: 1, groundedRate: 1 });
   });
 
-  it("no groups scores zero, never NaN", async () => {
+  it("a rate with nothing to divide by is null, never 0", async () => {
     expect(await judgeClaimGroups([], repo, async () => "supported")).toEqual({
-      groups: 0, resolved: 0, supported: 0, judgeFailures: 0, groundedRate: 0, resolutionRate: 0, claimSupportRate: 0,
+      groups: 0, resolved: 0, supported: 0, judgeFailures: 0, groundedRate: null, resolutionRate: null, claimSupportRate: null,
     });
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const allFailed = await judgeClaimGroups([group("one"), group("two")], repo, async () => {
+      throw new Error("outage");
+    });
+    warn.mockRestore();
+    expect(allFailed).toMatchObject({ groups: 2, judgeFailures: 2, groundedRate: null, resolutionRate: 1, claimSupportRate: null });
+  });
+
+  it("judges at most 4 groups at a time, with the same counts as one at a time", async () => {
+    const groups = Array.from({ length: 30 }, (_, i) => group(`claim ${i}`, 1 + (i % 10)));
+    let running = 0;
+    let peak = 0;
+    const score = await judgeClaimGroups(groups, repo, async ({ claim }) => {
+      running += 1;
+      peak = Math.max(peak, running);
+      await new Promise((resolve) => setTimeout(resolve, 2));
+      running -= 1;
+      return Number(claim.split(" ")[1]) % 3 === 0 ? "supported" : "unsupported";
+    });
+    expect(peak).toBe(4);
+    expect(score).toMatchObject({ groups: 30, resolved: 30, supported: 10, judgeFailures: 0, groundedRate: 1 / 3 });
   });
 });

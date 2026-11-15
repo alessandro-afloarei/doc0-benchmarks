@@ -15,8 +15,8 @@ export type AccuracyResult = {
   judgeFailures: number; seed: number;
 };
 
-const LINK = /\[([^\]]+?)\]\(([^)]*)\)/g;       // [label](url)
-const LINK_STRIP = /\[[^\]]*\]\([^)]*\)/g;       // remove links, leaving prose
+export const LINK = /\[([^\]]+?)\]\(([^)]*)\)/g; // [label](url)
+export const LINK_STRIP = /\[[^\]]*\]\([^)]*\)/g; // remove links, leaving prose
 
 export function parseRef(
   label: string,
@@ -192,52 +192,64 @@ export async function judgeAccuracy(
 
 const rate = (part: number, whole: number): number => (whole <= 0 ? 0 : Number((part / whole).toFixed(3)));
 
-/** The judge loop both scorers share: an unresolved group is never judged; a failed call counts as a judge failure. */
+/**
+ * The judge loop both scorers share: an unresolved group is never judged; a
+ * failed call counts as a judge failure. `concurrency` groups are judged at
+ * once; the counts do not depend on the order calls finish in.
+ */
 async function scoreGroups(
   groups: ClaimGroup[],
   repoDir: string,
   judge: AccuracyJudgeFn,
-  { retry }: { retry: boolean },
+  { retry, concurrency = 1 }: { retry: boolean; concurrency?: number },
 ): Promise<{ resolved: number; supported: number; judgeFailures: number }> {
   let resolved = 0;
   let supported = 0;
   let judgeFailures = 0;
-  for (const g of groups) {
-    const excerpt = await resolveExcerpts(repoDir, g);
-    if (excerpt === null) continue;
-    resolved += 1;
-    const ask = () => judge({ claim: g.claim, sourceExcerpt: excerpt });
-    try {
-      if ((await (retry ? ask().catch(ask) : ask())) === "supported") supported += 1;
-    } catch (err) {
-      judgeFailures += 1;
-      console.warn("[wiki-eval] accuracy judge call failed (excluded from rate):", err);
+  let next = 0;
+  const worker = async () => {
+    while (next < groups.length) {
+      const g = groups[next++];
+      const excerpt = await resolveExcerpts(repoDir, g);
+      if (excerpt === null) continue;
+      resolved += 1;
+      const ask = () => judge({ claim: g.claim, sourceExcerpt: excerpt });
+      try {
+        if ((await (retry ? ask().catch(ask) : ask())) === "supported") supported += 1;
+      } catch (err) {
+        judgeFailures += 1;
+        console.warn("[wiki-eval] accuracy judge call failed (excluded from rate):", err);
+      }
     }
-  }
+  };
+  await Promise.all(Array.from({ length: concurrency }, worker));
   return { resolved, supported, judgeFailures };
 }
 
+/** Rates unrounded (the arms compare them, then round to show them); null when nothing was measured. */
 export interface ClaimGroupScore {
   groups: number;
   resolved: number;
   supported: number;
   judgeFailures: number;
   /** supported / (groups − judgeFailures): an unresolved group counts as unsupported. The rate the arms decide on. */
-  groundedRate: number;
+  groundedRate: number | null;
   /** resolved / groups. */
-  resolutionRate: number;
+  resolutionRate: number | null;
   /** supported / (resolved − judgeFailures), as judgeAccuracy computes it: reference only. */
-  claimSupportRate: number;
+  claimSupportRate: number | null;
 }
 
-/** Judges EVERY group (the full population, no sampling), retrying a failed judge call once. */
+const ratio = (part: number, whole: number): number | null => (whole <= 0 ? null : part / whole);
+
+/** Judges EVERY group (the full population, no sampling), 4 at a time, retrying a failed judge call once. */
 export async function judgeClaimGroups(groups: ClaimGroup[], repoDir: string, judge: AccuracyJudgeFn): Promise<ClaimGroupScore> {
-  const { resolved, supported, judgeFailures } = await scoreGroups(groups, repoDir, judge, { retry: true });
+  const { resolved, supported, judgeFailures } = await scoreGroups(groups, repoDir, judge, { retry: true, concurrency: 4 });
   return {
     groups: groups.length, resolved, supported, judgeFailures,
-    groundedRate: rate(supported, groups.length - judgeFailures),
-    resolutionRate: rate(resolved, groups.length),
-    claimSupportRate: rate(supported, resolved - judgeFailures),
+    groundedRate: ratio(supported, groups.length - judgeFailures),
+    resolutionRate: ratio(resolved, groups.length),
+    claimSupportRate: ratio(supported, resolved - judgeFailures),
   };
 }
 

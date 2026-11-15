@@ -49,7 +49,10 @@ describe("loadOpenwikiClaimGroups", () => {
     await rm(dir, { recursive: true });
   });
 
-  it("no _claims folder means no groups", () => {
-    expect(loadOpenwikiClaimGroups(join(tmpdir(), "no-such-claims-dir"))).toEqual([]);
+  it("a read error is never swallowed: a missing folder or a file in its place throws", async () => {
+    expect(() => loadOpenwikiClaimGroups(join(tmpdir(), "no-such-claims-dir"))).toThrow(/ENOENT/);
+    const dir = await sidecars({ "a.json": { schemaVersion: 1, claims: [] } });
+    expect(() => loadOpenwikiClaimGroups(join(dir, "a.json"))).toThrow(/ENOTDIR/);
+    await rm(dir, { recursive: true });
   });
 });
