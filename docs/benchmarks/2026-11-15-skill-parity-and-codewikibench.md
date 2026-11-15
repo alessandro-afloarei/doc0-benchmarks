@@ -57,6 +57,19 @@ folders the reports name are byte-identical copies of `<repo>-openwiki-2026-11-1
 celery v3b/v4b, fd v3b) or of `celery-openwiki-2026-11-15-skillv3a` (celery v4a), and `hono-doc0-nomap-…-skillv3c` is
 `…-skillv3b`; they are not committed twice.
 
+## The reviewed text
+
+After the runs above, a review made the skill's rules agree with each other and with migration and update mode
+(doc0-commercial `9bb2fe87f`, then `329bce9a9`, which only scopes the flat-sections rule to init runs). One
+confirmation run per repository with that text (`2026-11-15-skillfinal`), against openwiki's full-run pages:
+
+| run | depth | coherence | breadth | doc0 grounded | openwiki grounded | doc0 per 1k | openwiki per 1k |
+|---|---|---|---|---|---|---|---|
+| hono | better | equal | better | 0.932 | 0.893 | 13.60 | 10.08 |
+| fd | equal | equal | equal | 0.949 | 0.883 | 14.33 | 9.62 |
+
+The openwiki folders under that date are copies of `<repo>-openwiki-2026-11-15-full`, not committed twice.
+
 ## CodeWikiBench, doc0 with skill v4
 
 CodeWikiBench (FSoft-AI4Code, pinned `00f56b65`, which no longer scores a crashed leaf as passed) scores docs against
