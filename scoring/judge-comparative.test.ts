@@ -2,7 +2,7 @@
 
 import { describe, it, expect } from "vitest";
 import {
-  medianVerdict, judgeComparative, sampleForJudge, aggregateCell,
+  medianVerdict, judgeComparative, sampleForJudge, framedSampleForJudge, aggregateCell,
   DIMENSIONS, type JudgeFn, type Verdict,
 } from "./judge-comparative.ts";
 import type { WikiPage, ReferenceWiki } from "./corpus.ts";
@@ -35,6 +35,34 @@ describe("sampleForJudge", () => {
     const out = sampleForJudge(pages, 12, 100);
     expect(out).toContain("[page truncated for judge]");
     expect(out.length).toBeLessThan(300); // ~100 body chars, nowhere near the full 1000
+  });
+});
+
+describe("framedSampleForJudge", () => {
+  const page = (title: string, content: string, section?: string): WikiPage => ({ slug: title, title, content, verifiedClaimRatio: null, ...(section ? { section } : {}) });
+
+  it("marks every page the same way, numbered, with its section or none", () => {
+    const out = framedSampleForJudge([page("Overview", "## Overview\n\nBody one.", "Getting Started"), page("Walk", "Body two.")]);
+    expect(out).toBe("=== PAGE 1: Overview (section: Getting Started) ===\n## Overview\n\nBody one.\n\n=== PAGE 2: Walk (section: none) ===\nBody two.\n\n");
+  });
+
+  it("drops a leading # heading that repeats the title, or the title's start, and keeps any other", () => {
+    const out = framedSampleForJudge([
+      page("Walk", "# Walk\n\nBody."),
+      page("Entry Filters (Type, Size)", "# Entry Filters\nBody."),
+      page("Walk", "# Something else\n\nBody."),
+    ]);
+    expect(out).toContain("=== PAGE 1: Walk (section: none) ===\nBody.\n");
+    expect(out).toContain("=== PAGE 2: Entry Filters (Type, Size) (section: none) ===\nBody.\n");
+    expect(out).toContain("=== PAGE 3: Walk (section: none) ===\n# Something else");
+  });
+
+  it("samples the same pages and characters as sampleForJudge: 12 pages, each cut at the per-page cap after the heading goes", () => {
+    const pages = Array.from({ length: 14 }, (_, i) => page(`P${i}`, `# P${i}\n${"x".repeat(200)}`));
+    const out = framedSampleForJudge(pages, 12, 100);
+    expect(out).toContain("=== PAGE 12: P11");
+    expect(out).not.toContain("P12");
+    expect(out).toContain(`=== PAGE 1: P0 (section: none) ===\n${"x".repeat(100)}\n…[page truncated for judge]`);
   });
 });
 
@@ -73,6 +101,34 @@ describe("judgeComparative — both orders", () => {
     expect(res.sampleDetail.ours).toHaveLength(12); // DEFAULT_MAX_PAGES
     expect(res.sampleDetail.ours[0]).toMatchObject({ slug: "p0", truncated: false });
     expect(res.sampleDetail.references.deepwiki).toHaveLength(3);
+  });
+});
+
+describe("judgeComparative — raw calls", () => {
+  it("keeps every call of a cell: its sample, which side ours was shown on, and the ours-relative verdict, failures included", async () => {
+    let n = 0;
+    const judge: JudgeFn = async ({ oursIsA }) => {
+      n += 1;
+      if (n === 3) throw new Error("boom");
+      return { verdict: oursIsA ? "better" : "worse", margin: oursIsA ? 1 : -2, rationale: `call ${n}` };
+    };
+    const res = await judgeComparative(mkPages(1), refs, judge, 2, ["depth"]);
+    expect(res.perReference.deepwiki.depth.calls).toEqual([
+      { sample: 0, oursIsA: true, verdict: "better", margin: 1, rationale: "call 1" },
+      { sample: 0, oursIsA: false, verdict: "worse", margin: -2, rationale: "call 2" },
+      { sample: 1, oursIsA: true, error: "boom" },
+      { sample: 1, oursIsA: false, verdict: "worse", margin: -2, rationale: "call 4" },
+    ]);
+  });
+
+  it("builds both digests with the sampler it is given", async () => {
+    const seen: string[] = [];
+    const judge: JudgeFn = async ({ ours, reference }) => {
+      seen.push(ours, reference);
+      return { verdict: "equal", margin: 0, rationale: "r" };
+    };
+    await judgeComparative(mkPages(1), refs, judge, 1, ["depth"], framedSampleForJudge);
+    expect(seen.every((digest) => digest.startsWith("=== PAGE 1: P0 (section: none) ==="))).toBe(true);
   });
 });
 

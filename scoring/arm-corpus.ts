@@ -90,20 +90,71 @@ function proseClaims(groups: ClaimGroup[], pages: WikiPage[]): ClaimGroup[] {
   return groups.filter(({ claim }) => !code.has(claim.trim()) && !TABLE_ROW.test(claim.trim()) && !DIAGRAM_EDGE.test(claim));
 }
 
+/** A page file and the section its wiki's navigation puts it in (none for a root page). */
+interface NavEntry { file: string; section?: string }
+
+/** A file's text, or null when it is not there (a corpus made before the harness kept navigation). */
+const readIfThere = (path: string) =>
+  readFile(path, "utf-8").catch((err: NodeJS.ErrnoException) => {
+    if (err.code === "ENOENT") return null;
+    throw err;
+  });
+
+/** doc0's navigation.json (kept beside the pages): its sections in order, each with its pages, then the root pages. */
+async function doc0Navigation(dir: string): Promise<NavEntry[]> {
+  const text = await readIfThere(join(dir, "navigation.json"));
+  if (text === null) return [];
+  const nav = JSON.parse(text) as { sections: Array<{ title: string; pages: string[] }>; pages: string[] };
+  return [
+    ...nav.sections.flatMap((s) => s.pages.map((slug) => ({ file: `${slug}.md`, section: s.title }))),
+    ...nav.pages.map((slug) => ({ file: `${slug}.md` })),
+  ];
+}
+
+const INDEX_LINK = /^- \[([^\]]+)\]\(([^)]+)\)/;
+
+/** openwiki's index.md files (kept beside the pages): each folder's links in the order its index lists them, a folder's own index read in its place. */
+async function openwikiNavigation(dir: string, folder = "", section?: string): Promise<NavEntry[]> {
+  const text = await readIfThere(join(dir, folder, "index.md"));
+  if (text === null) return [];
+  const entries: NavEntry[] = [];
+  for (const line of text.split("\n")) {
+    const [, label, target] = INDEX_LINK.exec(line) ?? [];
+    if (label === undefined || target === undefined) continue;
+    const path = join(folder, target);
+    if (target.endsWith("/")) entries.push(...(await openwikiNavigation(dir, path, section === undefined ? label : `${section} / ${label}`)));
+    else if (target.endsWith(".md")) entries.push({ file: path, ...(section === undefined ? {} : { section }) });
+  }
+  return entries;
+}
+
+/** The files in the wiki's own navigation order with their sections, then the files it does not list, by path. */
+function inNavigationOrder(files: string[], nav: NavEntry[]): NavEntry[] {
+  const unlisted = new Set(files);
+  const listed = nav.filter((e) => unlisted.delete(e.file));
+  return [...listed, ...[...unlisted].map((file) => ({ file }))];
+}
+
 /**
- * One arm's corpus folder. doc0's claims come from its pages' citations,
- * grouped per page as judgeAccuracy groups them; openwiki's from its Claims
- * sidecars under _claims/. Either way only prose claims count (proseClaims).
+ * One arm's corpus folder, its pages in the wiki's own navigation order (the
+ * judge samples the first pages, so path order would show it an arbitrary
+ * slice). doc0's claims come from its pages' citations, grouped per page as
+ * judgeAccuracy groups them; openwiki's from its Claims sidecars under
+ * _claims/. Either way only prose claims count (proseClaims).
  */
 export async function loadArmCorpus(dir: string): Promise<ArmCorpus> {
   const meta = await readArmMeta(dir);
   const entries = await readdir(dir, { withFileTypes: true, recursive: true });
   const files = entries
-    .filter((e) => e.isFile() && e.name.endsWith(".md"))
+    .filter((e) => e.isFile() && e.name.endsWith(".md") && !(meta.system === "openwiki" && e.name === "index.md"))
     .map((e) => relative(dir, join(e.parentPath, e.name)))
     .filter((f) => !f.startsWith("_claims/"))
     .sort();
-  const pages = await Promise.all(files.map(async (f) => splitFrontMatter(f, await readFile(join(dir, f), "utf-8"))));
+  const nav = meta.system === "doc0" ? await doc0Navigation(dir) : await openwikiNavigation(dir);
+  const pages = await Promise.all(inNavigationOrder(files, nav).map(async ({ file, section }) => ({
+    ...splitFrontMatter(file, await readFile(join(dir, file), "utf-8")),
+    ...(section === undefined ? {} : { section }),
+  })));
   const claimGroups = meta.system === "doc0"
     ? pages.flatMap((p) => groupClaimCitations(extractClaimCitations(p.content)))
     : loadOpenwikiClaimGroups(join(dir, "_claims"));

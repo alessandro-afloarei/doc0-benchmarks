@@ -9,8 +9,8 @@ Docs the same Claude model wrote for one repository, three ways (plan 4e in doc0
 | `doc0-nomap` | `doc0-write` | `doc0 mcp --no-publish --no-map` |
 
 Each folder `<repo>-<arm>-<date>/` holds the pages as the arm wrote them (doc0: exactly the `.doc0/pages/*.md` files
-`doc0_finish` listed; openwiki: `openwiki/**/*.md` without the generated `index.md` pages, plus `openwiki/.claims/` as
-`_claims/`) and `_meta.json` (`schema_version: 4`: model, effort, credential kind (`api-key` or `subscription`, never
+`doc0_finish` listed, plus `.doc0/navigation.json` as `navigation.json`; openwiki: `openwiki/**/*.md`, its generated
+`index.md` files kept as its navigation and never read as pages, plus `openwiki/.claims/` as `_claims/`), and `_meta.json` (`schema_version: 4`: model, effort, credential kind (`api-key` or `subscription`, never
 its value), tool version, dry run, page cap, time cap, budget, status and reason, usage, cost and turns (null when the
 run ended without a final result), time). On a subscription, `cost_usd` is Claude Code's API-equivalent figure, not
 money charged. `pnpm bench:grounding`

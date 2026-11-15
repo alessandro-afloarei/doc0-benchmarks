@@ -9,6 +9,7 @@ import {
   decideRule2,
   groundedPer1000Words,
   renderArmsReport,
+  reportPaths,
   ruleInput,
   stripCitations,
   type RepoArmsReport,
@@ -228,9 +229,10 @@ async function fakeCorpora(arms: Partial<Record<ArmName, FakeArm>>) {
     corporaDir,
     sourceDir: async () => source,
     accuracyJudge: async ({ claim }: { claim: string }) => (supported.has(claim) ? "supported" as const : "unsupported" as const),
+    // A judge that always prefers whichever wiki it reads first: pure position bias.
     comparativeJudge: (async (args) => {
       comparativeCalls.push(args);
-      return { verdict: "equal", margin: 0, rationale: "stub" };
+      return args.oursIsA ? { verdict: "better", margin: 1, rationale: "A reads better" } : { verdict: "worse", margin: -1, rationale: "A reads better" };
     }) satisfies JudgeFn,
     judgeName: "stub-judge",
   };
@@ -282,6 +284,10 @@ describe("armsReport", () => {
     }
     expect(calls.some((c) => (c.dimension as string) === "citationQuality")).toBe(false);
     expect(calls.some((c) => /repo:\/\/|Sources:/.test(c.ours + c.reference))).toBe(false);
+    // Both systems' pages are framed the same way, and openwiki's `# Walk` that repeats the title is gone.
+    const openwikiDigest = calls.find((c) => c.referenceSource === "openwiki")?.reference;
+    expect(openwikiDigest).toBe("=== PAGE 1: Walk (section: none) ===\nThe walker.\n\n");
+    expect(calls[0]?.ours.startsWith("=== PAGE 1: Walk (section: none) ===\n## Overview")).toBe(true);
     expect(Object.keys(report.repos[0].comparative).sort()).toEqual(["doc0-map~doc0-nomap", "doc0-map~openwiki", "doc0-nomap~openwiki"]);
     await corpora.cleanUp();
   });
@@ -302,6 +308,38 @@ describe("armsReport", () => {
     // Dry run: the largest minutes per page among the arms sets the full run's caps, and cost per page projects its cost.
     expect(report.projection).toMatchObject({ minutesPerPage: 6, timeCaps: { hono: 276, fd: 222, celery: 420 } });
     expect(report.projection?.costUsd.fd).toEqual({ openwiki: 69, "doc0-map": 69, "doc0-nomap": 69 });
+    await corpora.cleanUp();
+  });
+});
+
+describe("armsReport keeps every judge call", () => {
+  it("stores each cell's raw calls and shows the means with A shown first and with B shown first beside the verdict", async () => {
+    const all = { claims: 2, resolvedClaims: 2, judge: () => true };
+    const corpora = await fakeCorpora({ openwiki: all, "doc0-map": all, "doc0-nomap": all });
+    const report = await armsReport({ repos: ["fd"], date: DATE, judged: true }, corpora.deps);
+    const cell = report.repos[0].comparative["doc0-map~openwiki"]?.depth;
+    expect(cell?.calls).toHaveLength(6);
+    expect(cell?.calls[1]).toEqual({ sample: 0, oursIsA: false, verdict: "worse", margin: -1, rationale: "A reads better" });
+    const markdown = renderArmsReport(report, await readFile(TEMPLATE, "utf-8"));
+    expect(markdown).toContain("| fd | doc0-map | openwiki | equal (+0; A first +1, B first -1) | equal (+0; A first +1, B first -1) | equal (+0; A first +1, B first -1) |");
+    await corpora.cleanUp();
+  });
+});
+
+describe("a labelled report", () => {
+  it("is written under its label, beside the report it re-judges, never over it", () => {
+    expect(reportPaths("/b", "2026-11-15-full", null, false)).toEqual({ json: "/b/results/arms-2026-11-15-full.json", markdown: "/b/docs/benchmarks/2026-11-15-full-local-generation-arms.md" });
+    expect(reportPaths("/b", "2026-11-15-full", "instrument-v2", false)).toEqual({
+      json: "/b/results/arms-2026-11-15-full-instrument-v2.json", markdown: "/b/docs/benchmarks/2026-11-15-full-instrument-v2-local-generation-arms.md",
+    });
+    expect(reportPaths("/b", "2026-11-15", null, true).markdown).toBe("/b/docs/benchmarks/2026-11-15-local-generation-arms-DRY-RUN.md");
+  });
+
+  it("names its label in the title", async () => {
+    const corpora = await fakeCorpora({ "doc0-map": { claims: 1, resolvedClaims: 1, judge: () => true } });
+    const report = await armsReport({ repos: ["fd"], date: DATE, judged: false, label: "instrument-v2" }, corpora.deps);
+    expect(report.label).toBe("instrument-v2");
+    expect(renderArmsReport(report, await readFile(TEMPLATE, "utf-8"))).toMatch(/^# Local generation arms, 2026-11-16, instrument-v2 \(DRY RUN\)/);
     await corpora.cleanUp();
   });
 });

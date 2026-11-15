@@ -11,7 +11,7 @@
 import { spawn } from "node:child_process";
 import { constants, createWriteStream, type Dirent } from "node:fs";
 import { access, cp, mkdir, open, readdir, readFile, realpath, stat, writeFile } from "node:fs/promises";
-import { dirname, join, relative } from "node:path";
+import { basename, dirname, join, relative } from "node:path";
 import { createInterface } from "node:readline";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
@@ -162,14 +162,17 @@ export function finishResult(arm: ArmName, events: unknown[]): Record<string, un
   return typeof parsed === "object" && parsed !== null ? (parsed as Record<string, unknown>) : null;
 }
 
+/** A finished run's pages and its own navigation files (doc0's navigation.json, openwiki's index.md files), relative to `from`. */
+interface Proven { from: string; pages: string[]; navigation: string[] }
+
 /**
  * The pages a finished run proves, relative to where they sit in the clone,
  * or why the run proves none. doc0: exactly the pages doc0_finish
  * (--no-publish) listed as checked. openwiki: its finish reports no list, and
  * finalizes every page under openwiki/, so every page there but the
- * generated index.md files.
+ * generated index.md files, which are its navigation.
  */
-async function provenPages(arm: ArmName, clone: string, events: unknown[]): Promise<{ from: string; pages: string[] } | { problem: string }> {
+async function provenPages(arm: ArmName, clone: string, events: unknown[]): Promise<Proven | { problem: string }> {
   const finish = finishResult(arm, events);
   if (armSystem(arm) === "doc0") {
     const from = join(clone, ".doc0", "pages");
@@ -179,29 +182,32 @@ async function provenPages(arm: ArmName, clone: string, events: unknown[]): Prom
     const pages = (finish.pages as unknown[]).map((p) => relative(from, String(p)));
     const outside = pages.filter((p) => p.startsWith("..") || !p.endsWith(".md"));
     if (outside.length > 0) return { problem: `doc0_finish listed pages outside .doc0/pages: ${outside.join(", ")}` };
-    return { from, pages: pages.sort() };
+    const navigation = (await exists(join(from, "..", "navigation.json"))) ? ["../navigation.json"] : [];
+    return { from, pages: pages.sort(), navigation };
   }
   if (finish?.status !== "complete") return { problem: "finish not proven: no openwiki_finish result with status complete" };
   if (finish.sourceChanged === true) return { problem: "finish not proven: openwiki_finish reported sourceChanged" };
   const from = join(clone, "openwiki");
   if (!(await exists(join(from, ".claims")))) return { problem: "no Claims: openwiki/.claims is missing" };
   const entries: Dirent[] = await readdir(from, { withFileTypes: true, recursive: true });
-  const pages = entries
-    .filter((e) => e.isFile() && e.name.endsWith(".md") && e.name !== "index.md")
+  const files = entries
+    .filter((e) => e.isFile() && e.name.endsWith(".md"))
     .map((e) => relative(from, join(e.parentPath, e.name)))
-    .filter((rel) => !rel.split("/").some((part) => part.startsWith(".")));
-  return { from, pages: pages.sort() };
+    .filter((rel) => !rel.split("/").some((part) => part.startsWith(".")))
+    .sort();
+  const isIndex = (rel: string) => basename(rel) === "index.md";
+  return { from, pages: files.filter((f) => !isIndex(f)), navigation: files.filter(isIndex) };
 }
 
-/** Every file keepPages would copy, relative to `from`: the proven pages, and openwiki's Claims files. */
-async function corpusFiles(arm: ArmName, proven: { from: string; pages: string[] }): Promise<string[]> {
-  if (armSystem(arm) === "doc0") return proven.pages;
+/** Every file keepPages would copy, relative to `from`: the proven pages, the navigation, and openwiki's Claims files. */
+async function corpusFiles(arm: ArmName, proven: Proven): Promise<string[]> {
+  if (armSystem(arm) === "doc0") return [...proven.pages, ...proven.navigation];
   const claims = await readdir(join(proven.from, ".claims"), { recursive: true, withFileTypes: true });
-  return [...proven.pages, ...claims.filter((e) => e.isFile()).map((e) => relative(proven.from, join(e.parentPath, e.name))).sort()];
+  return [...proven.pages, ...proven.navigation, ...claims.filter((e) => e.isFile()).map((e) => relative(proven.from, join(e.parentPath, e.name))).sort()];
 }
 
 /** The first file bound for the corpus (which is committed) that holds a secret of the launching environment, by name; null when none does. */
-async function corpusLeak(arm: ArmName, proven: { from: string; pages: string[] }): Promise<string | null> {
+async function corpusLeak(arm: ArmName, proven: Proven): Promise<string | null> {
   const secrets = secretValues(process.env);
   for (const file of await corpusFiles(arm, proven)) {
     const { found } = redactSecrets(await readFile(join(proven.from, file), "utf-8"), secrets);
@@ -210,9 +216,10 @@ async function corpusLeak(arm: ArmName, proven: { from: string; pages: string[] 
   return null;
 }
 
-/** Copies the proven pages into the corpus folder, and openwiki's Claims as _claims. */
-async function keepPages(arm: ArmName, proven: { from: string; pages: string[] }, corpus: string): Promise<void> {
+/** Copies the proven pages and the navigation into the corpus folder (doc0's navigation.json, outside its pages folder, beside the pages), and openwiki's Claims as _claims. */
+async function keepPages(arm: ArmName, proven: Proven, corpus: string): Promise<void> {
   for (const page of proven.pages) await cp(join(proven.from, page), join(corpus, page));
+  for (const nav of proven.navigation) await cp(join(proven.from, nav), join(corpus, nav.replace(/^\.\.\//, "")));
   if (armSystem(arm) === "openwiki") await cp(join(proven.from, ".claims"), join(corpus, "_claims"), { recursive: true });
 }
 

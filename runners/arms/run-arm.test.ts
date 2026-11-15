@@ -37,6 +37,7 @@ else {
   if (mode.doc0) {
     file(".doc0/pages/overview.md", page("Overview"));
     file(".doc0/pages/stray-draft.md", page("Stray draft"));
+    file(".doc0/navigation.json", JSON.stringify({ sections: [{ slug: "start", title: mode.leakNav ? process.env.ANTHROPIC_API_KEY : "Start", pages: ["overview"] }], pages: [] }));
     if (mode.doc0 !== "none") finish("doc0_finish", mode.doc0 === "pending" ? { status: "pending", pages: ["overview"] } : { status: "complete", published: false, pages: [join(process.cwd(), ".doc0/pages/overview.md")] });
   }
   if (mode.openwiki) {
@@ -73,7 +74,7 @@ afterEach(async () => {
   await rm(root, { recursive: true, force: true });
 });
 
-interface StubMode { leakPage?: boolean; doc0?: "complete" | "pending" | "none"; openwiki?: "complete" | "no-claims" | "source-changed"; subtype?: string; sleep?: number; child?: boolean; leak?: boolean; status?: string; server?: string }
+interface StubMode { leakPage?: boolean; leakNav?: boolean; doc0?: "complete" | "pending" | "none"; openwiki?: "complete" | "no-claims" | "source-changed"; subtype?: string; sleep?: number; child?: boolean; leak?: boolean; status?: string; server?: string }
 
 async function stub(mode: StubMode) {
   const doc0 = mode.openwiki === undefined;
@@ -124,7 +125,7 @@ async function gone(pid: number): Promise<boolean> {
 }
 
 describe("runArm", () => {
-  it("a doc0 run is complete on doc0_finish's result, and keeps exactly the pages it lists", async () => {
+  it("a doc0 run is complete on doc0_finish's result, and keeps exactly the pages it lists, and its navigation", async () => {
     await stub({ doc0: "complete" });
     const meta = await runArm(await options("doc0-map", { maxPages: 3 }), deps());
     expect(meta).toMatchObject({
@@ -133,7 +134,8 @@ describe("runArm", () => {
       source_repo_sha: "41532d114e2ba565fb5367d606c111b29b96450c",
     });
     const corpus = join(corporaDir, "fd-doc0-map-2026-11-16");
-    expect((await readdir(corpus)).sort()).toEqual(["_meta.json", "overview.md"]);
+    expect((await readdir(corpus)).sort()).toEqual(["_meta.json", "navigation.json", "overview.md"]);
+    expect(JSON.parse(await readFile(join(corpus, "navigation.json"), "utf-8"))).toEqual({ sections: [{ slug: "start", title: "Start", pages: ["overview"] }], pages: [] });
     expect(await readMeta(corpus)).toEqual(meta);
     const args = await readFile(join(workDir, "fd-doc0-map/claude-args.txt"), "utf-8");
     expect(args).toContain("Plan at most 3 pages.");
@@ -203,6 +205,11 @@ describe("runArm", () => {
     await stub({ doc0: "complete", leakPage: true });
     expect(await runArm(await options("doc0-map"), deps())).toMatchObject({ status: "incomplete", reason: "secret in overview.md: ANTHROPIC_API_KEY", page_count: 0 });
     expect(await readdir(join(corporaDir, "fd-doc0-map-2026-11-16"))).toEqual(["_meta.json"]);
+    await stub({ doc0: "complete", leakNav: true });
+    await rm(workDir, { recursive: true });
+    await rm(corporaDir, { recursive: true });
+    await rm(resultsDir, { recursive: true });
+    expect(await runArm(await options("doc0-map"), deps())).toMatchObject({ status: "incomplete", reason: "secret in ../navigation.json: ANTHROPIC_API_KEY" });
     await stub({ openwiki: "complete", leakPage: true });
     expect(await runArm(await options("openwiki"), deps())).toMatchObject({ status: "incomplete", reason: "secret in .claims/architecture/walk.json: ANTHROPIC_API_KEY" });
     expect(await readdir(join(corporaDir, "fd-openwiki-2026-11-16"))).toEqual(["_meta.json"]);
@@ -264,13 +271,13 @@ describe("runArm", () => {
     expect(await gone(Number(await readFile(join(workDir, "fd-doc0-map/child.pid"), "utf-8")))).toBe(true);
   });
 
-  it("an openwiki run is complete on openwiki_finish's result and keeps its pages without index.md, and its Claims", async () => {
+  it("an openwiki run is complete on openwiki_finish's result and keeps its pages, its index.md navigation and its Claims", async () => {
     await stub({ openwiki: "complete" });
     const meta = await runArm(await options("openwiki"), deps());
     expect(meta).toMatchObject({ status: "complete", system: "openwiki", page_count: 1, tool_version: "openwiki@0.9.0" });
     const corpus = join(corporaDir, "fd-openwiki-2026-11-16");
     expect((await readdir(corpus, { recursive: true })).sort()).toEqual(
-      ["_claims", "_claims/architecture", "_claims/architecture/walk.json", "_meta.json", "architecture", "architecture/walk.md"],
+      ["_claims", "_claims/architecture", "_claims/architecture/walk.json", "_meta.json", "architecture", "architecture/index.md", "architecture/walk.md", "index.md"],
     );
   });
 

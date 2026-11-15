@@ -4,8 +4,9 @@
 // fixed before any run.
 //
 // Usage:
-//   pnpm bench:arms --repos fd[,hono,celery] --date 2026-11-16[-<tag>] [--judged]
-// Writes results/arms-<date>.json and docs/benchmarks/<date>-local-generation-arms[-DRY-RUN].md.
+//   pnpm bench:arms --repos fd[,hono,celery] --date 2026-11-16[-<tag>] [--judged] [--label <name>]
+// Writes results/arms-<date>[-<label>].json and docs/benchmarks/<date>[-<label>]-local-generation-arms[-DRY-RUN].md,
+// and refuses to write over either: a re-judged report takes a --label.
 
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -16,7 +17,7 @@ import { ensureSourceAt, requireJudgeCredentials } from "../grounding-scorecard.
 import { ARM_SETTINGS, loadArmCorpus, readArmMeta, type ArmCorpus, type ArmMeta, type ArmName } from "../../scoring/arm-corpus.ts";
 import type { WikiPage } from "../../scoring/corpus.ts";
 import { judgeClaimGroups, LINK, liveAccuracyJudge, parseRef, type AccuracyJudgeFn, type ClaimGroupScore } from "../../scoring/judge-accuracy.ts";
-import { judgeComparative, liveJudge, type CellVerdict, type JudgeFn } from "../../scoring/judge-comparative.ts";
+import { framedSampleForJudge, judgeComparative, liveJudge, type CellVerdict, type JudgeFn } from "../../scoring/judge-comparative.ts";
 import { judgeModel } from "../../scoring/judge-model.ts";
 import { computeStructuralMetrics, wordCount, type StructuralMetrics } from "../../scoring/metrics.ts";
 import { ARM_REPOS, ARMS, capMinutes, CLOUD_PAGE_COUNTS, REPOS, type RepoName } from "./arms.ts";
@@ -212,6 +213,8 @@ export interface Projection {
 export interface ArmsReport {
   schema_version: 1;
   date: string;
+  /** Names a report that re-judges `date` (instrument-v2): written beside the first report, never over it. */
+  label: string | null;
   dry_run: boolean;
   judged: boolean;
   judge: string | null;
@@ -279,7 +282,7 @@ function projection(repos: RepoArmsReport[]): Projection | null {
   return { minutesPerPage: round(m, 2), timeCaps: Object.fromEntries(REPOS.map((repo) => [repo, capMinutes(m, CLOUD_PAGE_COUNTS[repo])])) as Record<RepoName, number>, costUsd };
 }
 
-export async function armsReport(o: { repos: RepoName[]; date: string; judged: boolean }, deps: ArmsReportDeps = {}): Promise<ArmsReport> {
+export async function armsReport(o: { repos: RepoName[]; date: string; judged: boolean; label?: string }, deps: ArmsReportDeps = {}): Promise<ArmsReport> {
   const {
     corporaDir = CORPORA_ARMS_DIR,
     sourceDir = (repo: RepoName) => ensureSourceAt(ARM_REPOS[repo].repo, ARM_REPOS[repo].sha, `arms-${repo}`),
@@ -320,7 +323,7 @@ export async function armsReport(o: { repos: RepoName[]; date: string; judged: b
         const ours = complete.get(a);
         const reference = complete.get(b);
         if (!ours || !reference) continue;
-        const result = await judgeComparative(stripped(ours.pages), [{ source: b, pages: stripped(reference.pages) }], comparativeJudge, 3, ARM_DIMENSIONS);
+        const result = await judgeComparative(stripped(ours.pages), [{ source: b, pages: stripped(reference.pages) }], comparativeJudge, 3, ARM_DIMENSIONS, framedSampleForJudge);
         comparative[`${a}~${b}`] = result.perReference[b];
       }
     }
@@ -335,7 +338,7 @@ export async function armsReport(o: { repos: RepoName[]; date: string; judged: b
   const held = dryRun ? notApplied("dry run") : missingRepos.length > 0 ? notApplied(`needs ${REPOS.join(", ")}`) : null;
   const model = o.judged ? (deps.judgeName ?? judgeModel()) : null;
   return {
-    schema_version: 1, date: o.date, dry_run: dryRun, judged: o.judged,
+    schema_version: 1, date: o.date, label: o.label ?? null, dry_run: dryRun, judged: o.judged,
     judge: model === null ? null : typeof model === "string" ? model : model.modelId,
     repos,
     decisions: held ? { rule1: held, rule2: held } : { rule1: decideRule1(inputs), rule2: decideRule2(inputs) },
@@ -360,6 +363,18 @@ function renderDecision(name: string, d: Decision): string {
 /** A measured rate for display: rounded, or n/a when nothing was there to divide by. */
 const shown = (n: number | null, digits: number) => (n === null ? "n/a" : round(n, digits));
 
+const signed = (n: number) => `${n >= 0 ? "+" : ""}${round(n, 2)}`;
+
+/** A comparison cell: its verdict and median margin, then the mean margin over the calls that showed A first and over those that showed B first. */
+function comparisonCell(cell: CellVerdict): string {
+  if (cell.unreliable) return "unreliable";
+  const meanWhen = (oursIsA: boolean) => {
+    const margins = cell.calls.filter((c) => c.oursIsA === oursIsA).flatMap((c) => ("margin" in c ? [c.margin] : []));
+    return margins.length === 0 ? "n/a" : signed(mean(margins));
+  };
+  return `${cell.verdict} (${signed(cell.margin)}; A first ${meanWhen(true)}, B first ${meanWhen(false)})`;
+}
+
 export function renderArmsReport(report: ArmsReport, template: string): string {
   const maxPages = cellsOf(report).find(({ cell }) => cell.meta?.dry_run)?.cell.meta?.max_pages;
   const noResult = "no result";
@@ -373,9 +388,12 @@ export function renderArmsReport(report: ArmsReport, template: string): string {
     : "Not judged: run `pnpm bench:arms --judged`.";
   const comparativeRows = report.repos.flatMap((r) => (Object.entries(r.comparative) as Array<[PairKey, Record<ArmDimension, CellVerdict>]>).map(([pair, byDim]) => [
     r.repo, ...pair.split("~"),
-    ...ARM_DIMENSIONS.map((d) => (byDim[d].unreliable ? "unreliable" : `${byDim[d].verdict} (${byDim[d].margin >= 0 ? "+" : ""}${byDim[d].margin})`)),
+    ...ARM_DIMENSIONS.map((d) => comparisonCell(byDim[d])),
   ]));
-  const comparative = comparativeRows.length > 0 ? table(["repo", "A", "B", ...ARM_DIMENSIONS], comparativeRows) : "No pair judged.";
+  const comparative = comparativeRows.length > 0
+    ? "Each cell: the verdict and median margin for A, then A's mean margin over the calls that showed the judge A first and over those that showed B first; " +
+      "the gap between the two is the judge's position bias. Every call is in the report's JSON.\n\n" + table(["repo", "A", "B", ...ARM_DIMENSIONS], comparativeRows)
+    : "No pair judged.";
   const usage = table(
     ["repo", "arm", "status", "pages", "total tokens", "input", "cache write", "cache read", "output", "cost USD", "minutes", "cost / page", "minutes / page"],
     cellsOf(report).map(({ repo, cell }) => {
@@ -411,7 +429,7 @@ export function renderArmsReport(report: ArmsReport, template: string): string {
   const incompleteRows = cellsOf(report).filter(({ cell }) => cell.status !== "complete").map(({ repo, cell }) => [repo, cell.arm, cell.reason ?? "incomplete"]);
   const firstMeta = cellsOf(report).find(({ cell }) => cell.meta)?.cell.meta;
   const values: Record<string, string> = {
-    title: `Local generation arms, ${report.date}${report.dry_run ? " (DRY RUN)" : ""}`,
+    title: `Local generation arms, ${report.date}${report.label ? `, ${report.label}` : ""}${report.dry_run ? " (DRY RUN)" : ""}`,
     dry_run: report.dry_run ? `> DRY RUN: ${maxPages ?? "a few"} pages per arm: tests the harness, decides nothing.` : "",
     run: [
       `Repositories: ${report.repos.map((r) => `\`${ARM_REPOS[r.repo].repo}@${ARM_REPOS[r.repo].sha.slice(0, 12)}\``).join(", ")}.`,
@@ -429,16 +447,30 @@ export function renderArmsReport(report: ArmsReport, template: string): string {
 // CLI
 // ---------------------------------------------------------------------------
 
+/** Where a report is written: a label keeps a re-judged report beside the first one. */
+export function reportPaths(root: string, date: string, label: string | null, dryRun: boolean): { json: string; markdown: string } {
+  const name = label ? `${date}-${label}` : date;
+  return {
+    json: join(root, "results", `arms-${name}.json`),
+    markdown: join(root, "docs", "benchmarks", `${name}-local-generation-arms${dryRun ? "-DRY-RUN" : ""}.md`),
+  };
+}
+
 async function main(): Promise<void> {
-  const { values } = parseArgs({ options: { repos: { type: "string" }, date: { type: "string" }, judged: { type: "boolean", default: false } } });
+  const { values } = parseArgs({ options: { repos: { type: "string" }, date: { type: "string" }, judged: { type: "boolean", default: false }, label: { type: "string" } } });
   const repos = (values.repos ?? "").split(",").filter(Boolean) as RepoName[];
   if (repos.length === 0 || repos.some((r) => !REPOS.includes(r))) throw new Error(`[bench:arms] --repos takes a comma list of ${REPOS.join(", ")}`);
   if (!isRunDate(values.date ?? "")) throw new Error("[bench:arms] --date YYYY-MM-DD (or YYYY-MM-DD-<tag>, as bench:arm was given) is required");
   const date = values.date ?? "";
+  if (values.label !== undefined && !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(values.label)) throw new Error("[bench:arms] --label takes lowercase words joined by dashes (instrument-v2)");
+  const label = values.label ?? null;
+  // Checked before any judge call: a run is not paid for only to be refused at the end.
+  for (const path of [false, true].flatMap((dryRun) => Object.values(reportPaths(ROOT, date, label, dryRun)))) {
+    if (await exists(path)) throw new Error(`[bench:arms] ${path} already exists: a report is never overwritten. Give this one a --label, or move that one away.`);
+  }
   if (values.judged) requireJudgeCredentials();
-  const report = await armsReport({ repos, date, judged: values.judged ?? false });
-  const jsonPath = join(ROOT, "results", `arms-${date}.json`);
-  const mdPath = join(ROOT, "docs", "benchmarks", `${date}-local-generation-arms${report.dry_run ? "-DRY-RUN" : ""}.md`);
+  const report = await armsReport({ repos, date, judged: values.judged ?? false, ...(label ? { label } : {}) });
+  const { json: jsonPath, markdown: mdPath } = reportPaths(ROOT, date, label, report.dry_run);
   await mkdir(dirname(jsonPath), { recursive: true });
   await writeFile(jsonPath, `${JSON.stringify(report, null, 2)}\n`);
   await writeFile(mdPath, renderArmsReport(report, await readFile(TEMPLATE, "utf-8")));

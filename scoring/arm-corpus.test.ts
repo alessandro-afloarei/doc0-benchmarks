@@ -129,3 +129,52 @@ describe("loadArmCorpus", () => {
     expect(corpus.claimGroups.map((g) => g.claim)).toEqual(["The walker runs one thread per CPU core."]);
   });
 });
+
+describe("loadArmCorpus: each wiki in its own navigation order", () => {
+  const page = (title: string) => `---\ntitle: "${title}"\n---\n## Overview\n\n${title} body.\n`;
+
+  it("orders a doc0 corpus by navigation.json: sections in order, then root pages, then unlisted pages by path", async () => {
+    const dir = await corpusDir("arm-nav-");
+    await writeFile(join(dir, "_meta.json"), JSON.stringify(meta("doc0")));
+    for (const slug of ["api", "cli", "overview", "quickstart", "stray", "testing"]) await writeFile(join(dir, `${slug}.md`), page(slug));
+    await writeFile(join(dir, "navigation.json"), JSON.stringify({
+      sections: [
+        { slug: "getting-started", title: "Getting Started", pages: ["overview", "quickstart"] },
+        { slug: "reference", title: "Reference", pages: ["cli", "gone"] },
+      ],
+      pages: ["testing", "api"],
+    }));
+    const corpus = await loadArmCorpus(dir);
+    expect(corpus.pages.map((p) => [p.slug, p.section])).toEqual([
+      ["overview.md", "Getting Started"], ["quickstart.md", "Getting Started"], ["cli.md", "Reference"],
+      ["testing.md", undefined], ["api.md", undefined], ["stray.md", undefined],
+    ]);
+  });
+
+  it("orders an openwiki corpus by its index.md files, which are never pages: each level's files, then its folders", async () => {
+    const dir = await corpusDir("arm-ow-nav-");
+    await writeFile(join(dir, "_meta.json"), JSON.stringify(meta("openwiki")));
+    const ow = (title: string) => `---\ntitle: ${title}\n---\n# ${title}\n\nBody.\n`;
+    for (const folder of ["architecture", "concepts", "_claims"]) await mkdir(join(dir, folder));
+    await writeFile(join(dir, "quickstart.md"), ow("Quickstart"));
+    await writeFile(join(dir, "architecture", "overview.md"), ow("Overview"));
+    await writeFile(join(dir, "architecture", "lifecycle.md"), ow("Lifecycle"));
+    await writeFile(join(dir, "concepts", "types.md"), ow("Types"));
+    await writeFile(join(dir, "concepts", "unlisted.md"), ow("Unlisted"));
+    await writeFile(join(dir, "index.md"), "---\nokf_version: \"0.2\"\n---\n\n# Files\n\n- [Quickstart](quickstart.md) - Start.\n\n# Directories\n\n- [concepts](concepts/)\n- [architecture](architecture/)\n");
+    await writeFile(join(dir, "architecture", "index.md"), "\n# Files\n\n- [Overview](overview.md) - Map.\n- [Lifecycle](lifecycle.md) - Flow.\n");
+    await writeFile(join(dir, "concepts", "index.md"), "\n# Files\n\n- [Types](types.md) - Types.\n");
+    const corpus = await loadArmCorpus(dir);
+    expect(corpus.pages.map((p) => [p.slug, p.section])).toEqual([
+      ["quickstart.md", undefined], ["concepts/types.md", "concepts"], ["architecture/overview.md", "architecture"],
+      ["architecture/lifecycle.md", "architecture"], ["concepts/unlisted.md", undefined],
+    ]);
+  });
+
+  it("keeps path order when the corpus holds no navigation (a corpus made before the harness kept it)", async () => {
+    const dir = await corpusDir("arm-no-nav-");
+    await writeFile(join(dir, "_meta.json"), JSON.stringify(meta("doc0")));
+    for (const slug of ["b", "a"]) await writeFile(join(dir, `${slug}.md`), page(slug));
+    expect((await loadArmCorpus(dir)).pages.map((p) => p.slug)).toEqual(["a.md", "b.md"]);
+  });
+});
