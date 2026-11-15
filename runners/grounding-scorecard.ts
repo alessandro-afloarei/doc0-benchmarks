@@ -20,7 +20,7 @@
 
 import { execFileSync } from "node:child_process";
 import { mkdir, readdir, readFile, rm, stat, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 
@@ -168,11 +168,12 @@ function requireJudgeCredentials(): void {
   }
 }
 
-/** Ensures `results/sources/<dirName>/` holds a checkout of `repo` at `sha`,
- * so `judgeAccuracy` can resolve citations against it. Reuses an existing
- * checkout if it's already at the right SHA; otherwise (re-)clones. */
-async function ensureSourceAt(repo: string, sha: string, dirName: string): Promise<string> {
-  const dir = join(RESULTS_SOURCES_DIR, dirName);
+/** Ensures `results/sources/<dirName>/` (or `dirName` itself, when absolute)
+ * holds a checkout of `repo` at `sha`, so `judgeAccuracy` can resolve
+ * citations against it. Reuses an existing checkout if it's already at the
+ * right SHA; otherwise (re-)clones. */
+export async function ensureSourceAt(repo: string, sha: string, dirName: string): Promise<string> {
+  const dir = resolve(RESULTS_SOURCES_DIR, dirName);
   if (await pathExists(dir)) {
     try {
       const head = execFileSync("git", ["-C", dir, "rev-parse", "HEAD"], { encoding: "utf-8" }).trim();
@@ -407,7 +408,8 @@ function parseCli(argv: string[]): CliOptions {
 async function listCorpusDirs(filter?: string): Promise<string[]> {
   const entries = await readdir(CORPORA_DIR, { withFileTypes: true });
   const all = entries
-    .filter((e) => e.isDirectory() && e.name !== "peers")
+    // peers/ holds peer manifests, arms/ the generation arms (scored by `pnpm bench:arms`).
+    .filter((e) => e.isDirectory() && e.name !== "peers" && e.name !== "arms")
     .map((e) => e.name)
     .sort();
   if (filter === undefined) return all;
