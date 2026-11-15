@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:48e193051938c806a65d6e0e0c495f1138583e6433c11969f2a8e5ff757422fa",
+  "claims": [
+    {
+      "id": "claim_d765b2215cea48c3934fdc16879b5219",
+      "statement": "AbortableAsyncResult.abort stores the custom ABORTED state in the result backend, and AbortableTask.is_aborted checks that state, so abortion is cooperative and requires the task to poll.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/abortable.py#L100-L165",
+          "version": "repo-lines-v1:sha256:44e8349c9694dd94718289b9de8cfd9859e1c038455ea751c9c38792097383b5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNThmNTFiMzQ4OTlhNjU3NzFhOWFiOGQyOTE3MTU3NjljMTAzNGYzOTUwYTRlODM4MjRmZjdjNzZlNmM0ZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwNDg2YmU0ZDZjNGFiZmE0NDRhN2M3NGU0YmU4ZTVjMWFhOTQ5OTQ5Y2RiZDA0MGE1ZTgwYzcwMTE5NmUxNWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2YjU1OTk3YzA0YWJmMGE5Zjg5N2E1ZmFjYWEwYzc4ZWZhYTU4OTcyMmEyNGRiODVlMTYwM2Y1OTM3ZGUzYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_92253dcf9f9341d3bc031a0e45f446a6",
+      "statement": "The rdb remote debugger binds to CELERY_RDB_HOST (default 127.0.0.1) and searches for a free port starting from CELERY_RDB_PORT (default 6899) up to a search limit of 100.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/rdb.py#L56-L60",
+          "version": "repo-lines-v1:sha256:9df7391d46c78db79863d064fab8a3a461e3828e337df9e1a86f1d894b1da0e8:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjcwZmFhNDM2YzNlMjk3YmQzZTc0NzlkZTFlY2E3NmM2ZDVhMWE3YjI1MjE3M2E1YWVlYWRmYWQwOTYzMWFkOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODMyODVlNWU4MjYxNWZmYzNlNWE0NDcyMTIyNjFhYTgxYTI2ZmY3NjljMDU0Y2JjZjg2NzE5NjU1ODY0NTg3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTI5NWQyZDVkMjNjZWQxMDNiYmVkMDNmOTZlNjM4MmMwYTk2NzA2ODlmMGM3YWEyOGM0NDljOGZiZjVkODk1MSJ9"
+        },
+        {
+          "resource": "repo://celery/contrib/rdb.py#L91-L135",
+          "version": "repo-lines-v1:sha256:dcd5584a7ae4f2da20cb429eb2495200c80b497fc488768c52bf1e43f4a2ad46:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NGYxZmNhZjIzNjNhOTMxZGQ2MWU3NzVkNmI3ZmE0MDQ5Mzg4ZWJjY2E4OTAwMmQ3NTdhZTIyMjZhMTQwM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZWFjOTQ3MmNjZjNjNjNkYjIyMDJiYTMxZDllNDY5MjE4YmQzYjJiMmVkZDRkMjExY2E4MjFiYjIxNzgyNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2MzZkMWIwMWY5MTA0ZTIyOTBkYTFmODdiOWY5OGM2YjFjYjRlNjFjYWFmZmY4YzQ5YmI5NTMxNTc1OTg3YzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyNzVkNjgzYzg4MTU4MzZmNDdkMjNlNGI3NzI0N2YwZjFhZmJjMGZkNWY5NTQ3Mjc4OWMwYzIyNmVjZmY0NjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bcb99559efd144ef8bfce0126f60e062",
+      "statement": "contrib.migrate.move consumes messages, republishes those for which the predicate returns a destination, and acks the original message after republishing.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/migrate.py#L189-L214",
+          "version": "repo-lines-v1:sha256:1f1516dca39097fd711269198727ead9786dfed498fd8da41129f12cd2c92dbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNjZmYmVlZjg4MjI5OWQ2YWNmZDg3NTQzNTZlMmQ0YTlmYjQ4NDMwY2ZlYWY2ZTIzMjgzZTdjOGJhM2E0YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZTdiZDhkNWQ0MDBkYjkxMzVlM2NmODczYjk0MDA0NTc0NDBmOTVjOTE3OWMwZWMxYmM2YTc5MTNhYTdhNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwMmU5ODY3MjIzOWFlNzE3ZTM3ZGQ5OWRlNzkyOTExYTYxZGJjMzMwNDcyNTliMGNmYmE3MDk1YzU0YmVkZGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0c3bab87ae048a48f96a9c520bf83e0",
+      "statement": "Result backend aliases and beat scheduler aliases can be extended through the celery.result_backends and celery.beat_schedulers entry-point groups, loaded by load_extension_class_names.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/backends.py#L40-L50",
+          "version": "repo-lines-v1:sha256:0f825c9aff9d01e126890f4cdd9051ff2dca8c3c5a5c6da3ab0d664c4c0cb229:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MGYyMWJlMDRkMGRmOTE4NmZkZjU0MjgzMWMyOThhOTk0YzkzYTBmZDJhYzVhNjk2M2M3MzBiYWFkNDYwNTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzN2U4YzY1ZDYxZGQ0ZTg2Nzc3YjA1MzI2ZjBkM2ZjYjcwMThlYWJhMmQxYWE0ZThhZjZiNGQ2YjYwMjYxYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiYjFiMmVlNjRhMzQ5NDNjMDg0MDY1NGZmMjlmYjdmOTg3ZTAzODk5ZTY4MzBlNjQ3MjhjNzIxNzM1MzdkNjcifQ"
+        },
+        {
+          "resource": "repo://celery/beat.py#L665-L672",
+          "version": "repo-lines-v1:sha256:536271c19fcfc3d9794547f8719a1ab0a1f6c3b8021cedb66882e0483ae5298f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjU1MjE0YzY2ZDYyZWQxNDkwM2I3ZDQxYzQ3ZmIzYzU5NGYzOTQzNGY2YWU3NjNjY2ZjYTc4MzQzNWM3MzVmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTQ2YjRmMjJkMDdlMGJiZTZhZDU3NWI3YmQ3OGJlYTZjOTQyNzJiNWQxMTQ1NThmZDkyNTFhNjQ3NjNjMmJiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFmODVkMGEwMThiMzZlZTFhN2RlNTNjMWRiMjk1ZDIwMjRkZWM1OGUzODRjMTJiYmM1MGE3ZDJlNWQxYzA2OCJ9"
+        },
+        {
+          "resource": "repo://celery/utils/imports.py#L144-L153",
+          "version": "repo-lines-v1:sha256:d30b94823114513d43eed1a64ab604f5e39dba952101711351cbd4293c243692:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxNmVkYWI3OWRhMWEwNzIxYjEwZGJiZWI4ZGZkY2JkYjY5OWQ4MjVhNThiY2YzOTAwZTA1MTBhYmZhMDA5ZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYmJhN2YwOGUyOTliM2VmNjc5NDAzZTc2ZmM2NmRiOTVkOTdhZDg1NGMzMzRlNmM1NWE2NTk1NGI5YzllMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmN2E2YWU2ZDViOGFiOTg4NDMyOGYzZmU1MmU3ZWQzN2Q0ZjVjZDE3NjIzY2QyNjgwMTQ3NTE5Y2U1ODVlZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiMWUyZjVkNDNiNzhiNzExN2U1NjZhYzQxODdmMGNkMTM3MTIxYWQ0ZmJiNDU1MmFhZTFlMzBhZmM5M2QxY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_336d1662e09b4ba8aa2e7f6b5bae2b47",
+      "statement": "Third-party CLI subcommands are loaded from the celery.commands entry-point group via click_plugins.with_plugins.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L45-L56",
+          "version": "repo-lines-v1:sha256:dc677082e6a1a95f748bc52d800d6107206a9748b9d50933e72ec2d9f914e676:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NjA4MTU2YWUyZTI2YTUxMzE2YzExNGMzOGNkYWUxMTFkZGFmMWQ5MGJiZWEzZTJiN2U3MDc1MDkxYmJhNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyZjJjNTlkZGM5Yzk3NTU2NTJkYmEzMzY3ZDE1MjY0NGYwNzY0ZGM3NGE3NTg0ZGI4ZTMwZmI5YjBmNmQyMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5Y2U1ZmU0MjgyM2MyMjJkYzQzM2MzZjIyZDBmZTFjMzY4YTVmZWViMjkxYmZmMGY5OTI4YWRhZDVlZWUzMDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_77bc425ae34f4cd78c1f6daae808457d",
+      "statement": "A custom worker pool can be selected with --pool custom when CELERY_CUSTOM_WORKER_POOL names the pool class.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/__init__.py#L26-L43",
+          "version": "repo-lines-v1:sha256:5b850de5f8342af570a08588e6a161435dd77c65b46cf64c65f25bf622445d29:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyZDBhOTlkMTA2NmI0N2Y3YzM2N2NiNzc4ZTQzZmM2MzM5ZDI2Y2E3NTljM2Y3MzljMDhjZGNhMjFjNTdmNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiZGM3ZWE0ZmNlZWU5N2ZkZTJjMTE4OTZiYjhmMzljZTg0ODM5YTllMmJmY2RiOGI3NTIwZTgwOTg2ZDc0MjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjNDA5YjMzMDM1Y2M5ZGVhOTQ2OTUzNTBmNTc1YWYyOGU3YzgyNzljYzFjMmUwYzkwZDM5NDllNDgwMmY1NmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMGRkNTIyYjQ0ZjliNmNhMzFhNzI0NzBlZGNmYjFhYTAyYjliOTE4NWNkNjJjZWNmODQ3OGE2OTViZWQxN2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a077bdc0a21499183f638a83bed6691",
+      "statement": "Signal.send catches exceptions raised by receivers, logs them, and returns them in the responses list instead of propagating.",
+      "evidence": [
+        {
+          "resource": "repo://celery/utils/dispatch/signal.py#L258-L290",
+          "version": "repo-lines-v1:sha256:12112f59508aaf2d374f27d8533a80b965375cb6ec6632614cad6c94d27e3d23:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMjYxNzkwN2NhODQzYzkyMmU1ODU4ZWUzYWU1ZjQ0NjgzMjNmNGRkYTQ2MmU1Mzg1NDk5NDAxYTE0ZWFkYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjYzUzOThhYjgwMDZlNTA5NDAyMGMwZmU3MDBkZWZhZmMwOGY5ZTIzOTkzOGRhMDM1MTI0NjdlNDQxZWRhMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlY2JjNzAyODZlMzA5Mzc1MmY1MmE4MDQ1MWZjOGIyYWQ1YzFjM2U3ZTU2ZjM1ZjA2NTAzZWM5ZGQwYmQwZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxNGRmYjgzYjAxYTY3MjJlZTM0YjM2NDgxZGMyNTQwYzM2N2I0ZjNjYTExYTdjNjcxZmUzMWRkYjBkNDYyYmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1bd7d7682794c5f87f969b7d55b6c42",
+      "statement": "Custom bootsteps are registered through app.steps['worker'] and app.steps['consumer'], which are passed to the worker and consumer blueprints.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L248-L254",
+          "version": "repo-lines-v1:sha256:8cd9196a068fab45f0294d1c6919d7ff714045863fa059214ee16e10c5e1bcd0:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmZiYzkwMDJkY2ZlNzFjYzJmNGRlOWM2OWU2ZTM0ZTI2ZTAxMzg3ZGYyZmYzZDBhMGQwMWEzNTQxZGJhMmM3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWVkMWYwZDQ3ZmRkY2I0YmFlOTkwMmIxNTM4MTk0NjBiNDZmZTliNDBhNjRmNGM5ZGQ4OTZjMTNhMGEyNTgzMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzYzOTg3M2UyMWUxNjMyMmQ5YzQzYzM4MmYyZWUxMDQ5OWM2NzM0MDNmODkwZmU0MjMwMGFkOWNhNzQxOTZlYSJ9"
+        },
+        {
+          "resource": "repo://celery/worker/worker.py#L130-L136",
+          "version": "repo-lines-v1:sha256:d9d0647a3b1cbaadad272ff1bfed3a3ae8898d04a8096191fef345d595b347d0:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDhhMWY5M2MyNDE0Yjg1ZDVhM2UxYjRhNzJjMmVjYjk2ZGE2ZTRlMGY0NWMyMDU2NmY2ZjI2NDMwNjcxOTE1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk5MTdjNzVlYWY3YzM2MGNlYmU5NTJiM2NjYzI1ZDllNmFhOGY0NjE1MGVjYTVmOWQyNjU3NmE2NGNkZWI3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDJmMDhhMGI3MjBlNTI1MTlmMmViMWUzYjczNzFkZDY5ZGNiNmQ5ZGM1Y2IzZTdmNzQ4MTZjOTYwN2ZkM2RhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmVmYjQ1NDc2NTI5NmYyZDI2NTdmMmU2YjU3MmI2MzQ1NTFlYjQ1N2EwMDIzMzBlMmQ1NDAzODU2MTBlMTZmYiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:49.645Z"
+  }
+}

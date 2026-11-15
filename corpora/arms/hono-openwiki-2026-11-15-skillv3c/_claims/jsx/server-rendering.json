@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:32d73bc1fb40e5a49b9747a0b2dc464c698a1068d6cccc8729e0cda492776481",
+  "claims": [
+    {
+      "id": "claim_ac671ac526ef4796a9e34046cdedfc53",
+      "statement": "raw() marks a value as an already-escaped HtmlEscapedString with optional callbacks, and escapeToBuffer escapes &, <, >, double and single quotes.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/html.ts#L40-L46",
+          "version": "repo-lines-v1:sha256:a4aa0508b4fc14e3cd0725cc9af55c65d6226eb0bafde43f00a3f85c50f59087:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E4MTQ4ZDUwNTk5MmYzYThkYmYxMmE3ZWQwZjdlZmQyZGFhOWY3NTNkYWVhOTcxNjFlZjE0ZGFjMzgyMWYwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzY0ZjkwM2ZiNWJkMDUwYjc1MDk2YmI3Njc4MTk3YWRlMTZjZTM1ZmJhN2I3MDZjM2MyYzkyMzVhNDdkOWZiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBlNGU5NTQ5YWExNDE4Y2FhYjhiMTVkY2U5NTZiZWZkZmZjN2FmZjcwNzE3ZThiNDVmYzg0MjgyNDcwM2U3ZiJ9"
+        },
+        {
+          "resource": "repo://src/utils/html.ts#L90-L127",
+          "version": "repo-lines-v1:sha256:8338777e17544dca5b8326ed072720486faad09fd99e44c6116d788fa2b57bbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMGE5NmFkMzE4ZDNjZTc0Y2YwOTRkM2MyOTFhODBjNzk5MmFlNGYzYjk4ZDNjNjU4YjY3OWNmMjVhYjJmYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwNDNhYWFmMmQ5YWY0MzUwYWNiYTMyOTRmMmEzNDQzZDYwYzhjNWNjMGJlOGJjYjJhYmQxNTc5MTc3YjA0OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyNDBjODlhMGUyZDRiOGQ1OWI1MzVjZDhhZjM5M2FhMzI5OGVkODBmMjFlMjlhMzI1YjUzYzNiN2QxZjA1YjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_caf6ecc889c94c11985eae9ed09be5c2",
+      "statement": "HtmlEscapedString callbacks are resolved in one of three phases (Stringify, BeforeStream, Stream) by resolveCallback, which recursively resolves strings returned by callbacks into a shared buffer.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/html.ts#L142-L182",
+          "version": "repo-lines-v1:sha256:657bfa6d0f802fc3805b2a31f9949dd37177e064ce803aa196899e35255893f8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwM2VmODM4OGIxZDQyYzFlZTBkMzQxMGYxMjM4MmIzZjkzNTI1MGUyM2JmOTk4ZjhkNGRkMmQ4OGVlYzNiMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3ZTg0YTg2MTU3MzVkOWNiOGI3YzJkZDMzN2ZjZTBlOTgxZmIwYzY1NDU5NjBmNjAwYWM2Mjg1NWVlM2ZlZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/utils/html.ts#L6-L16",
+          "version": "repo-lines-v1:sha256:5817f415090e80d8fe3fe56202358352380eb5fb16c43346df5826ee9556e947:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMGFlMTIwNDZiYWFhNjE1MjlmMGFlOTFiYWEwZmQ5NDhjMDhlZjg1MTUwN2E0ODlkZWVhNDcyZmZlOGEzYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZWM2ZmVjMWZhZjg2N2I1YjQ5YWYyZjAzY2UwNGFiM2Q1YWEwNTI4ZDJlMTdkMzdhZTdlY2M1OTNlNDBiMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3MDE4Y2IxY2QwN2U2NjYzOTY2MDAxMWM5ZTkxZmZmZTZjYWI4YjA4OGFiM2QxYzk0MmEwNGRiMWUzODQ4N2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3ZjBjNjFiZTUwNTliZWQ0ZjM2NTZlODE5NWIyYjQxZTMyOWMzYzE4NTZlODBkNjFhMDhmZTgyYmY0ZDk2MTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_25bf34a2057c490fb4eaf603acd4001b",
+      "statement": "Server-side intrinsic element rendering converts style objects to CSS strings, renders listed boolean attributes as name=\"\" when true, skips null/undefined values, and throws when dangerouslySetInnerHTML is combined with children.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L179-L224",
+          "version": "repo-lines-v1:sha256:da367904cfd4fceba3526db1ad4aca6dac111e1e2c90171d650fa40b06e4a2b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4OGNkODc1ZTk0ZTI0ZTE0ODk4MDY2Y2VhMTdkOTcyODRlOGQwNTg2ODMyZWMyMmY5YzZhM2Q3NDNjZmI2NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzNDRkZWViMDEwMTM4ZjY5YWZjNGUzYjc3ZmJhM2RiNzIyOTExZTcyMzk3YzI5M2U5ZWIwZjM4NGQxZTVkNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1NzJkYWI2MDRmNzg4MzQ0MDAwYTdlNzZlOWZmYzNlZDYwZmQ1NjQxNGM5ZWE1NTY4MzZkYzNkMzVmZjYxYTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dec6af6d8bbc4559a3e9b4ec335b5b61",
+      "statement": "Server rendering throws for function-valued props other than on* handlers and ref, which are ignored.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L228-L233",
+          "version": "repo-lines-v1:sha256:ff943a21dff147a2dcdeb9957e78796e8a2ac1c85199c3d0ce41ea37ceb5747d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDllODRiMmI5ZGQzNjNlNTExNWNmMjIyOTg4MzRhZWJkYjY1NTY2ZDExYWMwZTMzOWEwYzU2MzRlZmRmNDNkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQxNjhiOGMyMDdmMjNhZWE2ZmFkNTIwYTljMGQzNWI5Yjg4ZWI0ZWY1NDgzYWZiMDlhZDM5ZTFkOWE3NDM1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU3MmRhYjYwNGY3ODgzNDQwMDBhN2U3NmU5ZmZjM2VkNjBmZDU2NDE0YzllYTU1NjgzNmRjM2QzNWZmNjFhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjU3OWVhNmM2MWM1ZTExNTZhYzQ1Zjg0Y2QyYWIzNDNhMTU2OThmZWU3NzhmZTBhYWMzYzM4NjBmZTk4NGM3MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_725ccbaf52bd4a15bcd8fd8e48068191",
+      "statement": "JSXFunctionNode renders nothing for null or boolean results, pushes promise results into the buffer (capturing context state when JSX contexts are active), and escapes non-escaped string results.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L254-L296",
+          "version": "repo-lines-v1:sha256:1a9039bb4b0aaf54d7b5b9d95def82603829361449368bbc71f2b67943a45b68:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYTY1NWQ2OTBlYjU3YzkzMmIzMjE5MDFkNTczZjNmYmM5Njk5ZjU5OTllMGEwMjQyM2FlMWI2NjliNDhjMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1OGQxNmZjMDhhNzM2ZmNhYjVmZWI3YTMyYzg3ZmRiM2JmNzcwOTE1MTI5MjNkZDY3YjM2YjA4NWI3YmIxMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c7b75c6493264ab888fdb33991349734",
+      "statement": "When Suspense children are pending, the server emits a <template id=\"H:n\"> placeholder plus fallback and a <!--/$--> marker, replacing the region in the buffer when stringifying or streaming a template plus inline script that swaps in the content.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L42-L137",
+          "version": "repo-lines-v1:sha256:0fe0ae007cce218ae84d8954b1c5ccb718c18d8cebf082710e07071b13168c1e:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NGI0OThiNzk2ZmFjNWEyMjJkYTI4ZjFiMGIxNWNmMTEzMTg4NjVhZWQ2ZTYyOGY3MDRlYmY3MTA4MzM1ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjMTBlOTIwMjc2YjJhM2ZkNmVlZDFmM2ZiMzVhMzkzZTI3ZjZhYTIxNzIxZGVmNzY3OGJhZjc3NzI4NGVhZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3ODdmZGU3NGE1YzFhMjgyM2QzZGM4MTA2YjQyNzA1ODI3MWE2NmI5MDY2NWVjYjRkNjg4YWVjOWFmOTIxY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e110ce1ab3054fafb32d62ea02acdb03",
+      "statement": "Suspense inline scripts use the scriptNonce provided through StreamingContext.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L19-L50",
+          "version": "repo-lines-v1:sha256:f186a62323c8d56fac22c02c22098f0d5b706764735826594a2f45997f08fded:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5Njk5NjkzMWFhM2Q2OGNlMmM3OWExNDdmNjNkMWM5Y2U0MGQ1Zjg2ZTUxNzM5MzY2YzZkMWIzZDQ1Y2FmZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZTc0YjhlMGZkMGYyOGNlODNlMTA0ZTJjNzYzZmZjN2RmN2FjMmViZGNiOWUzOTM2ZjJjMTVlOTViZjRhNTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0OGQxM2M2MWUxMDgyYThkMWI4MmZjZGJlNjdhMDA3MjZkMmYxMGM5MjYyYmI3Nzk3NGQ0YWUzN2ExYWI2YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExYzlkZTAzMjQyOTgzYmJlNDcwOTNlZWEyOWVkYzFkZjc4NTdjNmQ2OTYzMDkzZjgxNmUyOTIxOWUyZDM0YzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41a2d26698654c618f208ad54ecd60eb",
+      "statement": "renderToReadableStream enqueues the initial HTML, then enqueues each Stream-phase callback result as it settles, reporting rejected callbacks to onError and substituting an empty string.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L146-L215",
+          "version": "repo-lines-v1:sha256:4c7ccd9c4a3c8f54f4a64f1db1bc37f9035587b2fb5b618da4a295ebb77acf5f:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViOTI5MDBmMGQxNzlmNjJiYWM3YWEwYWUzNGE1ZmYyODdmZGZmZjE3NmI3ZTFhNDNkMWM5YTVlYjA5NTNiMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZDI3MzIzZTBjMzQxMjdmMjZiN2M5N2VlZTE4MTlmNTIzNTIxM2JiOGI1MTVjOWY1ZjY0NDczYzFkZjdmODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2NGM1MTJmNTE3Y2I2ODgzNzc4NjY3MDk4ZjliODI3MzkxMjc5YmVjNzIzYzJhMzVlZmUwMDgwYTE2OTAzZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3ODdkYTY4MDgwMThkNzBhMGUxNjg4NGYyZjNiZjEyZmI2NWU0ZjczZjk0NzgxMmRiNjQ0MTNhNDY4ZWZjYzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_25999040d8074ed2bcaf0496dd1e2c26",
+      "statement": "jsxRenderer captures the existing layout as Layout and installs a new layout and renderer, so nested renderers compose; the renderer prefixes <!DOCTYPE html> by default and wraps content in RequestContext.Provider.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L116-L129",
+          "version": "repo-lines-v1:sha256:03efadabb6a57afd29d3b817308e43f6ff8a40ccaf1115ccb5f90287704b3aa9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhOWRhNmU3NjMwYjE3Mzc5YWI2YzZjMDcwMTE0MjlmODYyOGQ5ZDhjYzgwYTEwMDZjZDBlYmM1OWNhNjgwYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4NGQ1ODYwYjkwNTdmODNhNzU1NDdkZTQ4NTlhM2ZjYjNmNjAyNWIwY2E5YjJiZDRkZDY3YzgxMDc3ZDhmMzEifQ"
+        },
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L33-L80",
+          "version": "repo-lines-v1:sha256:3a3f0278f8822a194586493646392822682b78b014e0c2e52dcaa8d2429973c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwNTJkZjg2OWRhOGQ2YzUwMzg4M2YzNzgyOGY3YmE0MzEyYmE2ZTM4YjkxNTQzMjk5MDQ0ZTQ2ZTFkMTUxNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0ZWM4ZmI1OGNkMDc4ZjQ4YTEwNzFiMWViZTE2ZDFjZDc1OWU0N2U2N2NlNThhYjQzNjYwNDE3Y2ZkZDdlMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5Njk2MTljNDhhZGY0ZjdkMGE1ZTI2NmZjZTlhZDM3YmY5MDM5ZWRlMDg4ZjA2NDg4NTA3MjFjZGYzNGU2YzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5367106283af4576960b38f3e4c8426b",
+      "statement": "With stream: true, jsxRenderer sets chunked transfer-encoding, text/html content type and Content-Encoding Identity and returns a body from renderToReadableStream.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L66-L79",
+          "version": "repo-lines-v1:sha256:3982c4fc57ea04eb52fee3458d8cd6d2d713d8e63cbc8daf6d4d45d7330ff5ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZjYyNDExNzBjM2EwZWZjMWE2OTIyMWQ5MmJhYmRhMDhhZjIxMzY3N2QyNzZjYjZjNmRlODQ2NGY4ZGIyZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkODZkYzk4MWM2MjYyZjE0NjczNmFiMDE0ZDhlZTdjMGE0YjIwMjA5YWU2YjcxYTQ4YzY0M2Q0ODkyMDcwY2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0Nzc0ODBmYzczNTRkMTRmNTI1M2ZhMjZlMDYxODYzYWU5YTVmMDkzMjk3YTE5NjMwY2Y3NWUxMzIxNjc3NzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_57ac09a1c76b47d195a239d714ce386e",
+      "statement": "The html tagged template escapes interpolated strings and objects, inserts numbers and already-escaped values unchanged, skips null/undefined/booleans, flattens arrays, and returns a Promise when any value is a promise.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/html/index.ts#L11-L57",
+          "version": "repo-lines-v1:sha256:e5a518a918703d46e1f6b80bab61fda2c6e367e25356a277faf2a3a221b98e57:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0NDlmNmM3MTYwMzFhMjBkNWMwZjU5YjQ2OTQzYWIwOGIzNmU1YzhlMmUwZTQ2NjU3MzVhNmYzYTRmZjI2NDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4MWFlNjQ5MTY3MzY1OWMzZTAwOTg2ZGE0Mzc5NjcyZjcyM2VlMDE5M2UzMWE5ZDcyMGJhZDNmYmJlOWUxZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a24964a2eece4a41a0c54a2568b75e9c",
+      "statement": "The css helper derives class names as 'css-' plus a goober-style hash of the label and style string.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/css/common.ts#L201-L238",
+          "version": "repo-lines-v1:sha256:acd55753147da0766eeb37192d48de2f6d7459624c90d757cf9fd10d644aaba1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljOWY1MmQwZDU2MjBlNTljZjVjMjE1MWY1ZGI4Y2UyZDRjZTAyNDZmYzVkZjJmYmI2YzAzOWFjMGY0OTRhMTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmMDhlNDY2ZDIwM2QxOWIyYmE5ZDM3ZTYwMGI4NWMwM2IzZjYxZmY4OWUzZjYyMDQ4YmE1ZGQzNDlhZTE0ODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1ZjA0NGNkNGNlOGEwODdlYmI2MjQwNWQ5ODE2ZWIyZWZhYzg1MTg0YWQ3ZTlhM2M3YjlhNDRlODIyZDA3MjEifQ"
+        },
+        {
+          "resource": "repo://src/helper/css/common.ts#L43-L50",
+          "version": "repo-lines-v1:sha256:656aeebd43eb43e6b453c61a66e467c5a2173ca7ac7034b3a3900921f7822113:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk1ODkyMDY4OTg2YTEyZjJjZjMyMzg1MGY2OWE2NjBmMmZlYWU1YzlkNmI1ZGQ5OTRkNmM1ZDZjOTA5NjkyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmYwMTAzMjUwMTE0N2JlOTkzZDMyNTAyY2NkODJkMzZlNDg3NjdlYjE0YWQxMjNjMGRjODdhYWRhNjk2OTIxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA0YjdiNWE4Njc0NTQ4MmYxY2FjZWQ5MWI1MWFhOWNiMDhiNTU3YmZjZDMzOTk2ZmYxMDQwMWU0NmQ2Y2NhMSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

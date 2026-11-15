@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:86b5dbe5d255448aa2f6b4a0b785a35c602360294078b15c77679cd5ee68400f",
+  "claims": [
+    {
+      "id": "claim_966b8ae64eee48c3a08c71e4b767007b",
+      "statement": "Settings are declared as Option objects grouped in nested Namespace dicts in celery/app/defaults.py; nested keys are flattened with underscores and namespace __old__ templates generate the legacy uppercase names.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L23-L65",
+          "version": "repo-lines-v1:sha256:b92a505867144190b2258aaa6f9e9d12cf80a05bd6ff62bf393785944b5ebc0f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZDZkMDFkYmY5ZjVhNWQzZmRlOTc4MDFhZGVlYzc2MWUxMDFhNGU4NWJiZjM2YTM1MDIxMmNjMjJkNzc3YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYmRmYjFmOTY4Y2U0ZDIyNGIyNjgxOTFjNjg5NjQxMDYyMzQ2YWJjZjYzMjk0MmRmYTZjY2IxYTE3N2ZlZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmZDg5MDJkYTNjMzNhNTY5ZTU0ZWQ4ZjdhZWUzYTk1YjA0MGI1MGU0ODJkZWUyZTZlOTI0NTcyZWY3Y2I1NTAifQ"
+        },
+        {
+          "resource": "repo://celery/app/defaults.py#L380-L413",
+          "version": "repo-lines-v1:sha256:e9d042e29c59cf1f5faf2298de387d5bb42f3d44ce703ce4924b1081200e5ce5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmN2E1MDRjZDlhODE0MWI3YmNlNmFmODM5OTUwMWNjNWM2ZGM1N2U1MzA5YjFkY2UwZmQxN2M0ZDU4YTEzNTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZGYyOGVkMjA4MTMzNmFiODQwYzk2ZDgxYTZjNTEzNjY3ZjJmYjgxYjM4ODM2MmQ1MGYxYjFkNDZjMWJhMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjYjIxZGNmYzQwOTIyMjRiOTlmMjMyOGQ3MGI0NmVhNzlhNmExZDM4NDFiZDc1N2RlYjU5MDM5OTlmMTExNWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9cda6935d24a46369ba09437425e21b4",
+      "statement": "Environment variables CELERY_BROKER_URL, CELERY_BROKER_READ_URL, CELERY_BROKER_WRITE_URL and CELERY_RESULT_BACKEND take precedence over configured values in Settings properties; read/write broker URLs fall back to broker_url.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L84-L113",
+          "version": "repo-lines-v1:sha256:2dc8a5bce554290274d8950872008935e9c04a31d0ca911da7cbbd2e0dc4d681:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxZDFiODNmYWQwMzZjZTBkZWQwNjIyNjE4MGRmMDE0MGE2ZDA3N2UxNDFiYTA3Y2Q2NGM1NjJmOGZhZmU5ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5NDM4YzEwOTViZDEyNDNkZWMyNWQ1NWI2MTc3ODMxYjQ0ZjI4YmE4ZWVkNjU0ZjA5YTNhYzI4ZmNlMTVhZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5df257e6dca8411b81f3b6c5f223c89b",
+      "statement": "task_default_exchange and task_default_routing_key fall back to task_default_queue, and timezone falls back to Django's TIME_ZONE.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L114-L131",
+          "version": "repo-lines-v1:sha256:db9a02c1eccd11feb046b3ff42f1872ce61ff31b1b4e60ea95e164e7c6042e51:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmNzllYWUwMzU5YWZhMGY0OTYzZDU0Mjc0ZDU5YTQyMmViMmYxNTg1OGExYjc5YWVlMDExYjJmY2RjMmY5OWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkM2E5MzZmZTA5ZmFkODBhMjdhNzg3OTA1ZTZiZGY2ZGMzYzRlMjZjM2ZmNTQ1NWUzOWRhNjU4NDAxYjI5MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhN2QwZTI0YzcxYTIzOWI1ZDk4OGU1MThmNzc4NDgzOTJmOTExZWE0NDYxMDQ4N2U5ZjIxZDk2YzE0NmVjMDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_83434ca90b884abbac1f4f7925c95d94",
+      "statement": "Settings.table/humanize censor values whose key matches API, TOKEN, KEY, SECRET, PASS, SIGNATURE, DATABASE and similar patterns, and mask passwords in broker and backend URLs.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L327-L343",
+          "version": "repo-lines-v1:sha256:ee36a1070a5d562122a572473789d1aea2964b0f079371dd007723c85a38469a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyOTY0MThmYzFhYTU3MzY4NzYxMTIxYTg3YjZmMmUzMWZlMDJlOTNkYTE3MzdiMThhZTAxZGEwZmM1OGJjMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkZGExZDU5NWU3ZThjNmMyYTk0NzgyNzJiYWU4OTFkMjA3YjA5ZDNlODYyZTE0NDg4N2VmODRhY2IzOTBjNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkNzA5NGEwOTBkZDkxYjgwMmJjZWIxYWNkYzMwYWMyNTc5MjU4YTFjNjkxNTk4YWVmNjYyMDAyMWQ1NWMzMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyZjc5OThiYTBhYzI5ZWRhNGZhZmU4MWFhNThjMWIzZTcwZmU0MTUxYWNjZTk1YTMyYjI3MDg2Y2RlMWQ5ZGMifQ"
+        },
+        {
+          "resource": "repo://celery/app/utils.py#L37-L40",
+          "version": "repo-lines-v1:sha256:7de3d869266c4880323a32ac6f99188bcaaf3bb9a8c2dd45c195d8aeca62e747:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM2YjNkNmJkYTczNzI5MjVkNTRlMjM4MTk1NzM2NmFkNzNkOTAwNzFhZjViMmQwMjBhYTczYmI5M2M0Njc4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzU0NDFmMmY5NTc1OTQ5NTI4NjU1YmZmMjk1NWNjMzg0ZDQ2ZWEyMzU1ZDgxMDI4NjcwNDc0MTY3NTRjMjI5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGI4Y2ZlMzNlYzIwMTQ3YWNjN2MxMzNlNDRhZjc5ZWMyNzdmYTNjOGU1Y2Q1OWQwMzRmOGYwNDcwY2JiMmQ0NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e766dd459fe420ca47909354a0f275e",
+      "statement": "The default accept_content is ('json',), the default pool is prefork, the default security digest is sha256, and the default task protocol is 2.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L11-L21",
+          "version": "repo-lines-v1:sha256:cd2e2994c7a5dc71cd6d7414c1ff840cd2ca9fe9018c28d7d14a6b2cfe6e57d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlMDc5OGQ3NzkzNmNmMTkwMWQ3MWQ1M2RjZTJlYzEyM2Y3M2ZlNWZkNjhkMjk2MzkwMzc4NTlmNGJiMjRmYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyODUxMzJmNGZkZDUwMjkyMTM4ZmQ5NDYyYWNlODZlZDU1NWM0MzZhODFiMjg1ZDc0MTdjZTY0MzdhYzhhMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiYjIwYjVlZTJiNzhjNDJhOWE0N2FmODE4ODFlODNmODE1NmU0NTdlNTEzNTNjNzNmZTY0NDhiNzk5MjEyNDIifQ"
+        },
+        {
+          "resource": "repo://celery/app/defaults.py#L304-L306",
+          "version": "repo-lines-v1:sha256:71273e7773d9a1eae76ce8d21e314e0b6b3156eece4b9e927c41a6b62b9f150b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE3NDkwMzQwMTJiZWM2YmE5NTA3NTk5NzY3ZjU2YTU4M2M3ZTE5NTBkMGQzMzc2NGM4ODE4ZmRmMWY3NmVhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDgzYzU2OTUzODVmYzYwY2YwZjUyOTQ3NzI3NWUxNDZiZWU2YmNhZjQzMTlmMThlYmIxYmViMzc3NTA5OWM2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDI2MzA0YmNmZGIxNzg1YTUwNDgyZWE5NjYxYzllYTk1N2M5MDI3ZGUzOThjYzlmNjE0YjY5NGIyNTE1ZGI4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDQzMDE3YzgzZTdhZDlmMDY1YzEzMGVlNTNjNTQzYzU4YjAwYzg1MTQ2ZjY5NTUzOTNkZmJkYmJjZTk2OWFjZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_03671fa1b05b41efbe20644493066c9c",
+      "statement": "task_acks_on_failure_or_timeout is deprecated by 6.0 and removed by 7.0 in favor of task_acks_on_failure and task_acks_on_timeout.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L268-L275",
+          "version": "repo-lines-v1:sha256:81167e92f04a35a6fe853833e7a6ddd77e22365a197eff9db2ada83d428e8bd5:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzNjY2YyMTExZmUwYmM0MGM2YTgxYmNjMTRmZTc0NzFkZDJmN2ZiNTE5NWU2ODc3NDA2ODE2NTVhM2NhM2I5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjM1NjQxODQwYzYxODkxOWVlMWRkMDk0NjYyMjA2ZTk3OGFmNGU3ODhhZWUyMjQxNjVmMzcxMmQwMmJiMmU2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2JlNTlkMDYxMTU3MTdmMzg4NjQ3MTMwODQ2ZmE1MjQwYThjMTU5ZjFjY2FmMWE3ZGE5YWY0MGRmMTU0OTBlZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzdkNjQ4ODdmZDgzYmU1OTA4ZWIxNzVhMTQxY2RmODJiNDc2YTQ4MTQ0OGY3ZGU0MGQ2YTgyOWE3YWYwMDVjNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2de312f45b5a4f3191088c92e504486f",
+      "statement": "result_expires defaults to one day and the database backend engine options default to pool_pre_ping=True and pool_recycle=3600.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L207-L256",
+          "version": "repo-lines-v1:sha256:8b3c2da21eaf43ac4aab1fb54cffcd476e659e5e437be1bc19712908e21f758f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0MzNkMGVhOWVjZjJmMzljOWE1MDQwNzM5NWVlNDExNzJmZTY4MmM5Yzg4NWEzNTA4Zjc1YmRlZTE1MWVmZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2ZmQzZDY1NzBkNDRiOWQ3MTU5ZmRmM2I1NWM1MTZkZTY4ZDljMjk3N2Q5YzM4YzEyNzk3NDVhNzRjMDE1NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwZDIyOGUyNjZmNzFjMGYwNzlkYWZlNzRhMGI0ZTNmNmZmZjczNmU2ZjM2Njg2NGViODIyYTAzNTc4NGUzNjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a21b63b3962642e4a07bce0be598e7af",
+      "statement": "When broker_connection_retry_on_startup is None, startup connection retries follow broker_connection_retry and a pending deprecation warning is emitted if retries are disabled.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L585-L605",
+          "version": "repo-lines-v1:sha256:182c53d08e2b33a0fe0542fa08948289141d4a3fb47681e48f4b58b9b4a0345f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxZTA0YmJmOTAwZGM2ODEyOGM1NGE5MzQzMjAyY2JkOTdiYTU1NTIyZDAzZDAwNTU0ZGIzMWNhMzYyZjJjNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YjcyOTQ0YzdlODEwZDhlYTVkYWFjYmI1NjgwYzMxNTBiMTc3MzJhNzY0OWM1OTA1M2Y5NTA4MTc4NGY1MGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkODkyNDYyZjM1MzdhMGRiY2QyZDNhNDIwMzg3NDM4ODM2MDY3ZjE5YzFjYmMyY2NiYjEzMzZhNThiMzUyOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhYmI2YWI2YmZiNmMyZGY4ODM4NzNkMzE1NDJlYmMyODUwNTc0MjY5OTllMGRhZGNiODhjNDcyNTZlMjEzYWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_07c7688b8de642cf930c0702eee7ddd0",
+      "statement": "worker_concurrency defaults to None, in which case the worker uses the CPU count.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L105-L112",
+          "version": "repo-lines-v1:sha256:6cd0dbc2f2b7f4a8553f79a85a1908510c992da780725a39df706253cabd1215:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDc3NzQ5YmYwODllMDViM2FjYjIzMWRjNmFjMjczNDk3NTcyOTg5OWNiZTIyMDE1MzkyNWNlMTNkOTQwODZmYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGFjNTUzNWYwMWNiZTA5YmEwNzVmZDgzNTc0YTQ2Yjc5OGY0MGM0ZmZmOWQ2ZjE4MTY5MzE4ZWY4ODA5NWU3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTJiNDMzYzc4ZTc3MzNlYzA0YmU1NWYwNzU3M2E4NmMyNzNmYjIxYTkxOGM1NTk2YzdlYTUzZTU4YWNiYTlmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjA1NDM1NjMxYmNhODNiMjJmMjgwODAwZTBlZjNmY2VjOWMxMzVlYzhhNjk4OTUzMWM0OThjMGFiODM1YTg2ZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:49.645Z"
+  }
+}

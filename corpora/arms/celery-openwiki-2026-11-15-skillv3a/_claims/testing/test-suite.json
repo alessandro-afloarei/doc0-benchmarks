@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c49af1b38f0e43919caa566004b0716b78ae03a6f38397d3380c2a5fcb413748",
+  "claims": [
+    {
+      "id": "claim_91a47a08e9734b728465ebe3e06ab094",
+      "statement": "Unit tests run against the in-memory transport and cache+memory result backend with a dedicated 'testcelery' queue and accept json and pickle content.",
+      "evidence": [
+        {
+          "resource": "repo://t/unit/conftest.py#L59-L87",
+          "version": "repo-lines-v1:sha256:86c39dad8199fa070906831cef227272271dd3ca7f3abe397f29e6d0e491c9b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyYjBmMTE4NGQ1ZjQ2MTlmOTAxYjk5ZWQ4MjQ4OGUwNDA3YjQ2NDg5ZGM3ZGRjMjlmN2NkNWU5ZDMxYjUyNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0Y2ZmMGVjMmMxMjg2MDUxNTQ3YmU5NDk3MzMyZjU1YTJjZWFkOTczMzEyYWUyODljMDlmOTc4NjY2MmFiOGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c515a1fb11742f7a7a4c06879a9501a",
+      "statement": "The unit test suite patches multiprocessing and billiard Process classes for the whole session and forces task_join_will_block to False for every test.",
+      "evidence": [
+        {
+          "resource": "repo://t/unit/conftest.py#L128-L171",
+          "version": "repo-lines-v1:sha256:884e33633b8c68284fd4d86a1a66ada497a7dbf741a4999a1a45bd28b5cf796d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3Njc2MGIxZjhmMjZjMTdmZmU0NzFhMDE3NDJjMjNlZTQ0NWIzYzk4Zjg0OGVhMjFhNWI3ODgwNTAyM2ZkZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkYTRiZjgwMjA3YmQzOGZiYTNiZjdlZGI2OTEzYmQ1MmM2MzdkMThjNzk3NWQ4NDRjMjlmNGIwZTJjYmVkMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljYWI5MDY3Zjc5MDg4MGI5Y2ZjOGE1OTMwMTkxMTVjZDdjYjg3ZDFiMzVhMzM5N2VjYzBlMzc1ZDcwMGMxYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c042396259dd41b4a148fa3fe682e395",
+      "statement": "Integration tests select broker and backend from TEST_BROKER (default pyamqp://) and TEST_BACKEND (default redis://), enable result_extended, and allow overrides from integration-tests-config.json.",
+      "evidence": [
+        {
+          "resource": "repo://t/integration/conftest.py#L1-L80",
+          "version": "repo-lines-v1:sha256:42c09e7a1dce222f5c694756fdc6bda61a74cbc7bb24bb2d7f5c53ff646f6d54:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MWE5MTEyYTI5MThlMmFiYTAzZTE5YTJmMjIxYTAyN2FiNGI2ZjllOTQ2YTZjMzk4MTRmNTRlMThlMDdkZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ZGNiNTI5ZGUyZTAzYmE1YmVlZDU3OThlMGY1YTUzOTZhMWExYzg1ZTRkMGYzZTRlNDU2MWNhMGU0ZDBhZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjNGMyNmZiZTdiMmQ5YjcwM2U1NTkzYmU3NDBmZGI5NDhlMzM2NjExNzE0MzY3YjMzZTRiOTI2MzY5ZGI0M2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae8fb87ef4a346cda7174d873fac6ac9",
+      "statement": "tox defines unit, integration (per broker/backend factor) and smoke environments for Python 3.10-3.14 and pypy3, plus flake8, apicheck, configcheck and bandit; smoke tests run with reruns.",
+      "evidence": [
+        {
+          "resource": "repo://tox.ini#L1-L60",
+          "version": "repo-lines-v1:sha256:c6e6943514d1e1043988a2d1b9a2ab23ca13a781903dd524f94d5f6780373f8f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwYWI3NjVkOWU2MGJmN2U3MGQ1ZDU4NzU4NDNiZjdmZjMxMWIwOGYyZjBmNzZiOTc0ODc3NzQxZTc0MDJiZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhMWIzYjViOTQzMDAzNWUwMDM4NzhlNzc2ZGI2Y2Y2MjViNzkzYjhiZjFkMTc1NDQyMmE0MDYyNjFjZjc3ZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6ad666396bb477783be589924dd03c7",
+      "statement": "Smoke tests use pytest-celery's CeleryTestSetup with docker containers and override the Redis broker and backend containers to use t/smoke/redis.conf.",
+      "evidence": [
+        {
+          "resource": "repo://t/smoke/conftest.py#L1-L150",
+          "version": "repo-lines-v1:sha256:e713f2bede50065483fbda0b5a592b1d8d9ce7b194774b1a62a41ee3b5ae73d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1Mzg0YmZkYjJkZjM4MGI2NTU3Y2M3YTcxZDE2ODkxNDE1YmNjYWE4NzY5OTQwNmUyMzZmNzUyYzY0MTUzODlmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxNGJhMWUzMzgwYjcxNzgyN2IwMmMwOGRjNWUxMDg0MzY2ZmYwN2IwZmEyNzIwZWUzYzRlOTgxNTJkMDY1YjljIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyMjQyYzA1NDlmNGI3MWQ1ZWFjNmU1NTVmY2Q3YWFhZGZkZjcwM2Q2NDliMGE3MGRlMmQ3NDUyNmFjODllYzM3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b991815dee8844d59179a7b85f87e5a9",
+      "statement": "The celery.contrib.pytest plugin provides celery_app/celery_worker and session-scoped variants, uses the solo pool by default, and registers the celery(**overrides) marker.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/pytest.py#L126-L135",
+          "version": "repo-lines-v1:sha256:48a30f73894277ec2d568d1f66b0a7d96828ea443cdfaeaacf3aa7e2c0b53a68:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhOTc1MjY3MjJlZWVmODQyMzZmMmViZDUyYmUzNzVmZmEzMGYzMzg2ZTk1MjczOTJiNDQzY2VkNjRlOWIyMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwYjk3MTYxMjNkZDRlNzZiOGRkYjE1OGFjYjgwNWNmYWM2YTIzNmUwMDU2NjFjNjYxMjI0MDJhN2VhYjMyNGEifQ"
+        },
+        {
+          "resource": "repo://celery/contrib/pytest.py#L20-L60",
+          "version": "repo-lines-v1:sha256:8ffdddbfeaf30bac2dd01a4fc74d9a67d15639104b2a7d95f59a8b9b2e3c36f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YTcxNTI1NzJlZTg0ZjEwOTA2Yzc0YjlmMmE5MjQzNGRkYWIwZTNjNDI4MTNiMDRlNTk3ZWZjZWM5NTFiMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjZDIzNTA1OTcxOGM0YTlmMmQxYzg5N2VkNDc3ZTgxN2RjOTU1ZjcwYmZhMzkzYTAxOTE3NDY0MjZlNTlmNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwYjIxYmY4OTVmYWUyZDczOTIwZDkzMTc4Y2ZkNTg0MWNkZjhmOTUyNDUxNmM4YTU2NTg0MzZhNGFjNDhmM2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cc231bba7ea4005885f2b2e1611a625",
+      "statement": "start_worker runs a TestWorkController in a thread (solo pool by default, heartbeats disabled), verifies broker connectivity, performs a celery.ping round trip, and raises RuntimeError if the worker thread does not exit within shutdown_timeout.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/testing/worker.py#L100-L195",
+          "version": "repo-lines-v1:sha256:1b3e83130a8be0b10311b959f74128559b05a1a7d93bce0e4ee0fdcaf16325fa:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MDc3YWRkZjc4YTlkZTY5MzE5N2JlYTg3MTEzOTk0YzliODFiOGY4M2YzZTZkODRlN2JiNTg2NTIxYWY3OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MWYzM2MxMzI1NjlhNzQ5NDZiMmZjZjU0NmNhM2M0NDI1ZGEwY2E1Y2Y2YjY4NmMyNjA5MGZhYTlkMTEyYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5N2I4YTg4ZTYzYTY2NGQwM2U1NzU2YWJjOGJhMTkwYTcyZWRjNDU1OTMwN2YzYWZiNDJhNzFhZjNjYzMxNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjMzg0MDA1ZmJmMDlkMzI5MDM3YWUyZDViNmQ0ZTg3YmZjYmRmZjZkMGNiNGNkN2ZmMjdjNWMwOWE5Y2RlOGUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:49.645Z"
+  }
+}

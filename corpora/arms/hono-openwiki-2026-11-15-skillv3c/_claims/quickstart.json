@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6bbbb8aac55e0b94750f5c4a484038f9a30468d3d441aa3ae0045914cf7a60f7",
+  "claims": [
+    {
+      "id": "claim_6314c3a3283d43998262ed9cfa6ca576",
+      "statement": "The repository uses Bun as package manager, and contributors are expected to make PRs pass bun run test; third-party middleware with external dependencies belongs in the honojs/middleware repository rather than core.",
+      "evidence": [
+        {
+          "resource": "repo://docs/CONTRIBUTING.md#L1-L60",
+          "version": "repo-lines-v1:sha256:d3ddd5e151adff568818e8bf9aa7a7b31adc9c8887831c14232d1c260660443c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMzUyMjU0NGU1NmU0MTI5ZDFlOWFmYmJiYjI4NTA3YTFkMzkwM2I0ZDYwMTU3ZGU3YTIzNzNmNmFjYTg1MWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d33b19d90f694b06b3a4d8ec26e62e95",
+      "statement": "The package is published as 'hono' on npm with version 4.12.30 and exposes subpath exports for core, middleware, helpers, adapters and JSX.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L1-L60",
+          "version": "repo-lines-v1:sha256:bab94d5b76f940a9e3f4e08b07216ede14cd1e7c4e390dfd6a640ff564234416:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3MDQwMzAwYjI2M2I5NzMxOWQxNTE3ZGQzYTNkODM5MjdkOGZiNzE2YzZhY2JlMjVhYTFiNDVlODVkMWVlNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiZDM3Mzc4NWU0YmEyMTFlNGEyNWViMGM0Mjg5MjE0ZGVlYTkxZTYyN2YwODdmNGNkZjBmMzk4OTA4MTkxMzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b023b3e691e64e8d9ec76ce7c078b4df",
+      "statement": "The root module exports only the Hono class, Context and core types; other features are imported from subpaths.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L1-L53",
+          "version": "repo-lines-v1:sha256:7b6cf83beb39bc315f65824bd5720f93609e673d6959dff369d911effeb2167a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhNTk5ZDEyZjg4ZTc2ZDhmNTQwZjBhZWExNDdiZDNiMDJiMWRhZDliYTcwNmU3YWUxMWJkZTNkMDdiYmQ5ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e358ba6b40964ce291b3e992a323cb92",
+      "statement": "Developer scripts include test (tsc over tsconfig.spec.json then vitest), lint, format, build, test:deno and test:bun.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L10-L38",
+          "version": "repo-lines-v1:sha256:5037984d599f7197363628a9a5ecd12a574b075ad297837b4e88a11c54441042:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2YzNmNmE3ZmUyOGNhM2Q4Nzk4NDY2MmZiZmFhOTdjMDg3NzRmOTBiNzE2Zjc3NmY2NjcwMWFmZjY0OGQzMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMDViYjlmNGE4Yjk4NDUxMGY4MTVhNWZjNDA3OGQ3N2M1YTIwZTkzZjMzNzNkYzVkZGU0YTM0MWQxYjQwYzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkZWZlNzA3ZTI1NGY1Zjc1MWYxNjVjN2I0MGRmNDY0OTEyZjU3NzU1MmYzNDc2ZWRkZDYyMzMyM2U4M2RiMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5MGRkMTQ3MDM3OTNlOTZlMGJlYWQwNjNhOTFjOWMyMjVmYmQ4ZjFkM2M1ZTI2MzJhZTA2YWNjMjA2NjUwYzgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

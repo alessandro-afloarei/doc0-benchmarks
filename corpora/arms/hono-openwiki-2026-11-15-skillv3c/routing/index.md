@@ -1,0 +1,5 @@
+# Files
+
+- [RegExpRouter and PreparedRegExpRouter](reg-exp-router.md) - How RegExpRouter precomputes per-method handler lists, compiles all dynamic routes into one regular expression whose empty capture groups identify the matched route, serves static paths from a map, rejects ambiguous patterns with UnsupportedPathError, and how PreparedRegExpRouter ships prebuilt matchers.
+- [Router Contract and SmartRouter](router-interface.md) - The Router interface every Hono router implements (add/match, the two Result shapes, ALL method, UnsupportedPathError), the supported path syntax, how SmartRouter picks a concrete router on the first request, which router each preset uses, and the shared router test suite.
+- [TrieRouter, LinearRouter, and PatternRouter](trie-linear-pattern-routers.md) - How Hono's three non-RegExp routers work and when they are used — TrieRouter's segment tree with breadth-first search and insertion-order scoring (the SmartRouter fallback), LinearRouter's zero-cost registration with per-request string scanning (hono/quick), and PatternRouter's one-regexp-per-route design (hono/tiny).

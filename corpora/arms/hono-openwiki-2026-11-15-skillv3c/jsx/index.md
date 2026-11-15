@@ -1,0 +1,4 @@
+# Files
+
+- [JSX DOM Runtime and Hooks](dom-runtime.md) - How hono/jsx/dom renders JSX in the browser — the virtual node model and keyed reconciliation in render.ts, microtask-batched updates and flushSync, hook storage shared with server rendering, effect scheduling, ErrorBoundary/Suspense via error-handler fragments, portals, head-element hoisting, form actions, and the React-compatible API surface.
+- [JSX Server Rendering, html and css Helpers](server-rendering.md) - How hono/jsx renders JSX to HTML strings on the server — JSXNode string buffers, HtmlEscapedString and escaping, async components and callback phases, streaming Suspense with renderToReadableStream, the jsx-renderer middleware and c.render, the html tagged template, and the css helper's hashed class names and Style injection.

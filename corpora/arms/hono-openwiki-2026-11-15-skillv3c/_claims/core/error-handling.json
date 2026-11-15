@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c90dd35e240f953f8f14eacc4bd731b7cb5c6bea1f51dd876ed577d347af5729",
+  "claims": [
+    {
+      "id": "claim_2233cab92940488598cdcba8cabf5297",
+      "statement": "HTTPException.getResponse() returns a new Response from the supplied res body and headers but with the exception's own status, or a plain Response(message, { status }) when no res was given; status defaults to 500.",
+      "evidence": [
+        {
+          "resource": "repo://src/http-exception.ts#L46-L78",
+          "version": "repo-lines-v1:sha256:b07e08faf727b5e3bb7cc4bdf303f3611c22cdd77978573cd8983a1e2f00e536:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMjFhOWNhZDQxZDBiOWJjYTY0NWE1ZTQ4OTdjYzdiNzg4ZjkxYTM3YTUyY2FmYzBhZDg4MDBmMmIyNjQwMzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22699f51619d41d5b9ed4dc8df45fd32",
+      "statement": "The default error handler returns err.getResponse() for errors exposing getResponse and otherwise logs the error and returns a 500 'Internal Server Error'; the default not-found handler returns '404 Not Found' with status 404.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L31-L42",
+          "version": "repo-lines-v1:sha256:93465142d4a40af04cef431b054cdd7ca5ee473128688c5a24b4ef44eaf3b044:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MGFiYzFlNmFkYjA4NGZiODFhZTFmOTM1ODU2ZDM3ZWRhMjljNjU2MWRmMTM5ZWNiNDFkZTBiM2ZmYWVmNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NTk5MzBiMTM3MjM2ZjExYzAxOWIyZDZlOTlmNThhNDMzOWQwZjJlM2Q3MGVlZWZmYzQ3MWI1YmYxZGQyYmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyYmZhMWFkZTAzNzdhNjUxMmQzYTNjZTIyYjlkZjM3M2E3OGQzZTZhMzU5NzVmYzAzZjYyOTA5M2IzZDU1NGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d3eff10cff7d493caeb8fb25f27ef5e2",
+      "statement": "compose catches Error instances thrown by handlers, stores them on c.error, invokes the error handler, and assigns its response to c.res even when the context was already finalized; non-Error throwables are re-thrown.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L49-L73",
+          "version": "repo-lines-v1:sha256:660c8609421fcd84c49378411c5bb4b138a10514736a57514ff1a5735ba71e48:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTBjOGRhYTc4YzQ0ZmM5ZTg3MDM3YjE4ZTUwYTBjYTVhNzk5MjgxNjEyNDc4N2Y3MjEyNWJhNmYyYzcyNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExN2YyMmUwNzY4YTgzMDU1ZWRkM2NjYWI5ZmJhNDhiZmE2MWJmODRjZTdkNWZmZTNmNjZlMzg3ZmYxZWYyYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f1587b997c142a5bae0383f6f2863b8",
+      "statement": "Dispatch routes errors to the error handler only when they are Error instances and re-throws anything else.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L399-L404",
+          "version": "repo-lines-v1:sha256:fb83d79a246fdb82819606d42f34a01146cb1309688b1b35f9157a7f012211f1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAxYTY4ODg1NTUzMmE1NzBlYzNmODY5M2MzOWI1YzUxYjgyNjY5MDkxNzQ4YWIyODk3NzYxY2U2YTk1NDI0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTAxMWRlYzI2OGUyNzgzYWQ2ODU2YjBlNDc4ZjkyYzBhOGQ1ODQ4MmNkZjFiNTY1ZmNlMzU4YTczM2ZjOGJlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQxNzBlOTFmYWJjZDY3NDY3OTEwN2QwYzRhMDdhYjEyMWFjMDY2NjMzYjMxY2VkNzFhYjBhYTMxMjg2OGZlYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9fd7c2ddad1e4c70b32145de311a98d5",
+      "statement": "Errors thrown from a custom notFound handler are handled by the app's onError handler.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono.test.ts#L1622-L1640",
+          "version": "repo-lines-v1:sha256:1db2af1f7157454444e02285cc80c9b5d6b98249e3178cf9643d09c2b598cbf5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1NWY5MzEzNzJkNTkyOTk4ZGVhYzhhMTFmMjMyYTAzNmFiYjM3NzE0YzFmNDI1MTA2ZWMyZDA0ODg3MmJlYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzUyNTg5YzM0ZDNjNjA2ODU5MzFiNmVjYzRkNTA5OTFhN2M1NmM4ZmJhMjg5NDExNDY1NzY5MDI3MmNhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMGVjOWI3YWQ3YTFhZDk3MjVmNDM0YmM3ZjFlYmM3NmIwMjU3MWVjMjgyOTU2MmUxYzdjNjc1ZDhjYmM0MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjMjUzYzI2ZWEzYjA4ZGY1YWFmOGRhNGQ2YzhhN2E1MDZhNTZlODRlYmIxNzZhZjk5ZTIyNjgwNzlhMzVjZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a21818168b5d45e2a48ea458d0eefe06",
+      "statement": "When a sub-app is attached with route(), a custom sub-app onError handles errors from its handlers, while the sub-app's notFound handler is ignored in favor of the parent app's.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L208-L232",
+          "version": "repo-lines-v1:sha256:adba54d626c68d5600abd1ead02fc403b18aee50993a0875edea6abb2cd02210:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNDJjZDVlNTk4OWQwOGQ3YmI1NDhmZWJkNWJiZTVhM2JiM2JmYzQwZmM5NDJiZGZjMGNkMDQ3OGJhZGUzMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NTAzMmYxYjMwYTU2YTU2YTg2YzI3ZWYwNTM2ZjUzZjYxZTJlMTg4YmQ5ZWY1YWYzODgzNzJiYWM4ZjI5YzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MWUwNzk3NjYzMWM3MTM4NDE1MzY1NzQ4ZjFkZDY3NDc3NzRiNmE2YTA5ZGM4NzliNjQ3M2QzOThiNGI0NDIifQ"
+        },
+        {
+          "resource": "repo://src/hono.test.ts#L1874-L1925",
+          "version": "repo-lines-v1:sha256:f6a7c3447dc21ebea1a5edfb1e13907888814d761fdc71ece33623df31f171f5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmNzlkMjM4MmI1NmFhYjg2MDc0ODdjMjg5YTc5ZDYxNzQzZDA2MGRkZWU0YjBjZjQzNzVkYjEzZDU5MDFjNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMGVjOWI3YWQ3YTFhZDk3MjVmNDM0YmM3ZjFlYmM3NmIwMjU3MWVjMjgyOTU2MmUxYzdjNjc1ZDhjYmM0MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5NTNmMWFkMzk3NDA1ZjUyNDk0YzgxNmRhMTE4ZmJhMzYyNTlhNDZhODY1ZTU5M2Y2NmNjODNhOTlkYzAyNjUifQ"
+        },
+        {
+          "resource": "repo://src/hono.test.ts#L1956-L2000",
+          "version": "repo-lines-v1:sha256:07c57705a10be6c2d901a2538f5bde6dbcdc3124432ee9cb8f0ff9fb8764dedb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxODllZWRlZDJmZDc5NWE4YTA4OGJkZWU2YjI0Y2YxNmVmODM4MTJlMWI2ZTY0NjA3OGEyYTkzMzc0MWJhZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2MmQ1OGE1YjBjYjlmYTIzNjc1N2I5NmY2NmVmMTVhN2ExNDFmZDIwMWU4NDdhMTY2ZDYwZjJmYTQ0MGJhZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMGVjOWI3YWQ3YTFhZDk3MjVmNDM0YmM3ZjFlYmM3NmIwMjU3MWVjMjgyOTU2MmUxYzdjNjc1ZDhjYmM0MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwZjc1YTFmMDI4ZDc2NzZmNzVhODgwMzBhNjA0ZWUwNTFiYWRmZGYwMGFhMWUwYjZkYTgwN2ZlNzY1MTEyMGMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

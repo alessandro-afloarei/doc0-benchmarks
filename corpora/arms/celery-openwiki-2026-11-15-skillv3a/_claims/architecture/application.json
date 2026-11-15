@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:aad1c595fcc4474cd673418fa69ed18c558fcf1bb736900f830a602b31956989",
+  "claims": [
+    {
+      "id": "claim_11379925704a4f14b3cba48a4ea06048",
+      "statement": "Configuration is loaded lazily: the first access to app.conf or a pending configuration key runs _load_config, which sends on_configure, imports the config source through the loader, builds Settings via detect_settings, applies pending defaults and periodic tasks, and sends on_after_configure.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1230-L1280",
+          "version": "repo-lines-v1:sha256:bc30307cfc5d47fe1bf21cba8bd154e3e8f2e50bf116036cd9e54715a11bee36:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMDIzNGJhM2JhNWI3MDE1MGQzYWU1YTgzNTlmNDE3NDAzNmQ0MWZhNWI0MGM2MzUzNGRkNzc0YzQ5NzNjZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjZThkMGRmYTZhMzhmYzYxMzI1MzM4OWM5YjhkOTFkYzRkYTkxZDZjNzFkOGQ4YTI2NWMzNzQyNDNlMjhjMWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3NWYxZjg1Y2NiMDFhMmUyZGNlMWM3MDQxNzJkZDgyZjMyNGE2MGE5MDNiMTA0OTVmNTE4OGVmYzczZjQ0ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0NWFkODAxMzdkNDFhYmVkNGYzMjAzY2NlNmFjZGY0MDUzNjYwMTFkZmMxMDMxMzFmNWU2MjUzZTU5NmJmOWYifQ"
+        },
+        {
+          "resource": "repo://celery/app/base.py#L1564-L1574",
+          "version": "repo-lines-v1:sha256:a67c1e6f6641c24e28bf033891ba2b195f20ae048f0a53c55e99f760575e8e32:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhOGZkMzk2ZjRkYjFkZDkyOTBhMTlkOWFjNzRlNTQ1NTdkOWUwMmY4OTM0NTVhOTgxNGY2ZDJhZjkzM2VjNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlZTllNzA4ZGI1NmFjZmRjNTFkYzlhMjUyMWZlYmIyZjY0NDBkNWNiZWI5ZjcwYzNjOGU2OGEyY2Q0NDEyMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2MWNlZTM0OWE4YTU5YTk5NmQzM2M3ZWZhMzU3YzM2Njg2YTJiYWRiZmRiMTNkM2JkMDNmNWY3NDY3MDI0NDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b00716a5bd841229f6c9d65610b7be5",
+      "statement": "detect_settings raises ImproperlyConfigured with rename suggestions when old uppercase and new lowercase setting names are mixed, and always uses the new format when a namespace prefix is set.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L232-L286",
+          "version": "repo-lines-v1:sha256:fc803d8c5757fcebfa96b7bc52ca00a20c00cb0cfa9fb121db4d422483ab9742:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiN2ZmODExZjlmZGMwNGUxNzg0ODViYTI4ZjlkMDA3OTNhMTYxNmY4MjU5OWM0YzkwODdlZWQ3YzUzYTMzNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzOGFiZTc2ZTk1YmJmOTAxODhmYWFiNDE1NjgwOWI3MDZmZGEyNWM4NzMwZGU3ZTU3ODkzNGNjNmI5YmMyZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1c246b42a3e4db2a736cbb8181e9cd7",
+      "statement": "When the app is not finalized, @app.task returns a PromiseProxy appended to app._pending; shared tasks additionally register a constructor via connect_on_app_finalize so every later-finalized app gets its own copy.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L554-L580",
+          "version": "repo-lines-v1:sha256:39d3dd4bc4f9cfca51a5fd5998d01914309c035833be98e032797faba8d0e377:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxN2U1NjBmZDY2NzZkNTlmZmE3YjE1ZTRiMzY5ZWRjMjFkMGNjYzNiZTY4ZGU1ZTk1MGQ2YzczM2Y5NTJjZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyOGE3NmY4ODBkMjQ4YTgwMjAxODViZTM5NDY0YzJkZTFjNzUyNGJjYTY5OTA5ZjM2NWM1OTE4MWQ2MzkwZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMzU4MDYzOGZjMDgxNzUzMDVkZGJmNmExMjlkODY5MmIzMzEzYmVmOWFkZmMzNTAzZTAzYjk0ZWUyOGMzZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlNGMyZmVhMmVlYTFkZWQzNjQ3MDRlNmEzNzYyMjM1NDc0ZjRkZjU4MjlmZTFlODQ2NWIwNjU1OWE4MmVjZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f4940f1d799242f3a3aa6100d25126a1",
+      "statement": "finalize() is guarded by an RLock, announces finalization (running built-in and shared task constructors), evaluates pending task proxies, re-binds all tasks, and sends on_after_finalize; accessing app.tasks triggers finalize(auto=True), which raises RuntimeError when autofinalize=False.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1600-L1608",
+          "version": "repo-lines-v1:sha256:e01e54b479689f22017f92a7a312f46efae4099ee20d93220aa2cca1665bd5c3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTkyZGY3YjI2ZWNmODY5MDE4N2U2YzQ0ZWEwNGNkMDRjNGM5OWFjNmNlYTBhMDU2ZGJlZTJmZTI5Y2MwM2ZiOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjg0NDY1MTJhYTNmNmI1Mjk4Mzk3OWI4MDI0NjA2YmUxMzY4NzM1NTQ4ODY3MmRmMGY4MTI2MWFmNDJmYjBkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTEwMjZiMWRhOTIyMzRhMmE5ZjczNDU2ODJiNWVkNzI0NTk0MmJlZTUxYjZkOThmODk2NWM2ZjI1YTEzZmNlMyJ9"
+        },
+        {
+          "resource": "repo://celery/app/base.py#L657-L677",
+          "version": "repo-lines-v1:sha256:b279ec5c316e9c4aa74ee23fb39adbb45331719b9c90d3417f7af7be363f3a43:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMmM4N2I0MjY1NjMyYzIzYmI2NWZlMDY0YjIyZWNkMTVmMTFmODM2MTI5NzNlYmUyMDg2ZThjZGZkMDY0MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NjQ1M2FmYjM2MGEyZGY1NzUyYmEwN2U0Y2MzNGYzNWY0N2UzYWRjNjZmMTc4ZGFmNmM0ZDJiOTUzNmE2ZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5YzNjN2RjNGM1ZjFiNGRjNzM3MTRiZmU2MzI1OWJlNDU4MTlmYzZlNjk2YzJiNGViZmQyMzQ4ZDA3ZTQ4M2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjZDczYzM0Yzk2ZDMxMWY2OTYwOTJjZWRmNWMwMjc0M2Q3YjZmZDNjMjg0NThjZDBiMDY5MTc0ZDU0MTk0YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6661148296d47aaa733a0a9545c2ce3",
+      "statement": "_task_from_fun dynamically creates a Task subclass with the function as run (staticmethod unless bind=True), registers it in the registry, binds it to the app, and applies autoretry behaviour; pydantic=True wraps the function with pydantic_wrapper.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L590-L633",
+          "version": "repo-lines-v1:sha256:94e6d12aade0458746982fdfaee81d8132ca75b085f808d09678933ca2b892de:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxZGYzZGFmOTZiZTI1OTRkYTQ4YWE4NDg2ZjI0M2FjZWE1ZGVlYjExMjRhNDgxYjNhMDJlYTdjY2U2ODI4NjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkYmExMmRjNjgzMWEzMWU5NzdjMTMzMDU0NWZiMzZhMTFjYjE2MDQ5YjQ5ZGYwN2MzYjAyNjM4YjIwNzA2YzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmZTE2NWJkYTcyOWM1YzJmY2YyZTdjNDgwMDU4YmE3ZWE4YjIzZjFlY2FjOThhYTU3YzRhNjc1NTFkNTc3NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1YmIwMTNjNzI3YzNkZWE5YThiMzQ5ZDY0N2FlYjU4YzhmYTE1NTc5OGI5M2QwNmFiMmFiZWE0NjZhODViMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5dbff91c039e467882bb65e42e391490",
+      "statement": "Built-in tasks such as celery.backend_cleanup, celery.chord_unlock, celery.group, celery.chain and celery.chord are registered on every app through connect_on_app_finalize callbacks in celery/app/builtins.py.",
+      "evidence": [
+        {
+          "resource": "repo://celery/_state.py#L43-L53",
+          "version": "repo-lines-v1:sha256:4632540d5c5aaeda3cd2872f0bc06a20990014ff36f3dcbd716fa462e5982e9e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlNDgxYjMxYmY1YWU1YWNjNzRiZjNiOGZmZGQ1ZWRkMWY0MmY1NWUzYjg0MjU4ZTFlN2I5NjYzZGM5ZmVjNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhYTI1ZDMwNGY5NGIzZDMwNGNiNzYwMmRjNDM2MGVlYmQwNTA5YTBmNTI2MzJmZjhlODZiZjFjYmIyNTZhYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkZDg1M2FiZTlhNTNkOGY2NjlkMWFiZWFkN2YwNjc5MTllNWI0N2JjMjIyNjU5YTE2MzdmNzkzNzFiMWM4NzQifQ"
+        },
+        {
+          "resource": "repo://celery/app/builtins.py#L1-L60",
+          "version": "repo-lines-v1:sha256:1f717aa363ba026b5fa940455a70e992aa7ee89978e29df8391de8ccfff49810:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1ZGUxNzkzNTc1YWRjYTE2ZWUyMDMzZjMyYTg2ZDFiNWRhNWY2NDQ1NDYxNjMxOGZiYTZjNWQ3ZWFhZmJlMWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NzMzYzRmNWIyM2FhYjY5MDZkMGRjNDBkZTMxMDI5OTZlZjVmY2RjZjY1M2RjZDhhZWY2MTM5YWQwMjA4YmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkYjNiYTg2NTU2MjJhMmIwNWJjZTk5ZDY0ODBlNDg3ZjYzNTY5NjRjOWMzMmY5Y2NmZGRhMGIxM2RmMjczYzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_de0415675dd84675ad15994477455a1b",
+      "statement": "If no app exists, _get_current_app creates a fallback default app named 'default' with no fixups using the CELERY_LOADER env var or the 'default' loader; the current app is otherwise tracked per thread in _tls.current_app.",
+      "evidence": [
+        {
+          "resource": "repo://celery/_state.py#L86-L105",
+          "version": "repo-lines-v1:sha256:b821b6cf890f89a3457fa43ee7857a7353f1328655b21f20b179fa08cdfa7740:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4NmQ5MjRlOTI2ZDRiZDcyNTlmN2UwNjA1ZDFhODI4ODRmMWYzM2QzMDUzMGMzMDA4MzViNzMwMTBiNzJhNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5MTAwMDE2ZmE2N2FjMGQzZGViYWE1MGU2NmFmOTYwMjc4ODFiZDk4MzEwYTI1NmY0ODQwNGQ1Mzg0YWJkNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkMzhlZjA3MmI5NmUwMmY0YWU5NDAwYTRmOTExMjQxNGI1MWI4N2MzYzE0OTU2ODVhZmUwMjcwZWI4NzliMjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_252ea94c41fb450d9602b157e31f80c3",
+      "statement": "The result backend instance is cached on the app when backend.thread_safe is true, otherwise stored in thread-local storage so each thread gets its own backend.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1539-L1563",
+          "version": "repo-lines-v1:sha256:abef3d0d713b6f7f2d0c58b63c306132d62a94dd43d798ee313e9d219f4dddf7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlZGIxMGEyM2FjYWQwYTczODliNTc4YTJkYTM5ZTExMmZlODMxZDgwMDVlMTYxMDQ2NjMzMDg2NzNkYTZiMzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkNzI1YWJmZWM4ZmE4MDUwY2JkOGU5OTcwM2MxYzhlNmQ3MDg2YTc3MWQwNDNlNDdkNWQ1ZjZiNjQwMGQxZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiNzZjOGE4OGM0OTEzNDQ5OWZmZWU0MzhiMjhmOTdiZmVlNGRiNDdmNDI5NDI3YjAyZGZiMDBjNDE3ZWYzNzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c237e073e8614d2487d2579f2866b539",
+      "statement": "autodiscover_tasks defers discovery by connecting to the import_modules signal unless force=True; with no packages given it uses packages supplied by fixups' autodiscover_tasks().",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L818-L845",
+          "version": "repo-lines-v1:sha256:a85b272f096de2931aef6128735c2b8896bbceec8ae2a1b448c10c26a419ed31:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjZWJjYzA3ODFmYTdmNTUxMDA4MWNhOWExMTNmZGJjN2UzNWRkMTcyNjNlMWYzYWZiNWExMzRjZGVlM2I0Y2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyN2EzZGU1NDM3ZWI4YWI1MzAxMjA0NmJlM2I4NDkxMjgwMGRlMTk1ODVjNTY3NDZiN2NiYzNkMGNmN2FiYjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyNzcxYWJlM2Q0MTRhOWQ2NGI3NTA3MmUyN2QzZjBhNDdmMjIxOTI0YWVkMzQzN2VlZmYwOWJlYTUxMGYyOWYifQ"
+        },
+        {
+          "resource": "repo://celery/loaders/base.py#L97-L106",
+          "version": "repo-lines-v1:sha256:e56138f979bf73d12c408d9c5f1eb6ef37964a0bbff0b835b8e62922e88fb468:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjIxYjQ2MzVhYjQwYzIzOTgxNzIzNmFkMjhlNzU1YmQzN2UzNjJmM2I1MTkzZDNjMDU1M2IxOThjMGFiNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMjQwOGM4OWVhMjJkYzU4MDVkYjk1YjI0MWNhNDg2M2M1NzQ4NTRjNWJmODUzZGIxMWIxZGNjZDA0NTc5YzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllNzY0YTZkOTA4OTg5MGU4MTE4MDIxM2QzOWY3NjAzMzU2ZDVlNDQ0OTQ5MGU2ODkxMzdjMDM1NDJhOTExYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_996d4c5a5c964b018367302c7b0ef24c",
+      "statement": "The Django fixup celery.fixups.django:fixup is a built-in fixup instantiated for every app unless fixups are overridden.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L410-L413",
+          "version": "repo-lines-v1:sha256:4904d68e2aeb489d332b1d8b0dc558e4899a3626f9c1cc4cb6337829727af7db:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNThmZjJlZmU2N2Q2OTNiNDM3OTA5NjAxZTkxNDM4ZTYxMDgwYWUwZjk3NjAwOWI0M2Q2NDFkNjBkOTNiZDJjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE5MzEyMTEwYzhlYjFiMDIwNzMxODZmOGE4NDVlMjc0NmEzODFjNWZmY2ZlNGI3Mjk3MDM3ZmIzZTY0ZThkOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDcxZTM5MmZiMDljOTA5ZmUwNzVhMTRkOTAzMTgwYTYwZjU1MmQxYWFlYzk2ZTBkMTc5YmU2YTM2YWZhN2QzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGI3Yjk2ZmE0YjA0MjRhMTZkYjIxNGY3YTAwOTE3ZDRhOTFkN2Q4YzYxMmFkZmEyZWY2ZTczNTdjMzg5OWUwNiJ9"
+        },
+        {
+          "resource": "repo://celery/app/base.py#L82-L84",
+          "version": "repo-lines-v1:sha256:84b4e8d152b4931da4c08c4591e368c4a44e1d7d0f7b75738cc71d547338bde4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI3YjhiNTg0YzMwNmFmODlkMDA5OTQ2NDg5NTE4NWUwZmNjNzJhYzc3Yjc3MDgwMjcwZDUwZWQ2YjVjZDVmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmY5N2YwNTJjMjMwNDhlZTk4MWJlMTBiZjJhMDFiZTA1NDhjNzdhNDE3ZWJjZGIzMWJkMGE2MGE5OTFjMzMzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGM2NGQ4ZDk1NzA0ZDg3Zjk3YjUyOTkzNTRkM2ZhYThlNzk0YTZlZjhkNmQ2MDBkZDI1NGNjYWFlMWFhNDQ3OSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:49.645Z"
+  }
+}

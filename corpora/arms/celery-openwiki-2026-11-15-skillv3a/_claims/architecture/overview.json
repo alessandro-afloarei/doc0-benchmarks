@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:41dd1b9fed38e3fc491a67bb027afc76bd76eab5bd05da36b9d91d4211fe9932",
+  "claims": [
+    {
+      "id": "claim_69a503f5a024413ba6c3f6d043a6cacc",
+      "statement": "Task.apply_async runs the task locally via Task.apply (after a serialization round-trip of args) when task_always_eager is set; otherwise it delegates to app.send_task with the task name and merged options.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L675-L708",
+          "version": "repo-lines-v1:sha256:d6b4ef7365139d99fd1b70ec04651e5df4d0eb7fc283605dbf4433efb2ce47ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzY2EwM2JiMzYzMDVlMTYwNDYxM2U0MjJlNjYzYzJjMDRiM2EwNDliYzEzYjU5ZDYyYmZkYjg1ZGU5Y2YwMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljZWM4ZjMwYTVjOGE5ZjhkNzNlOGZlNGI5YTRmYzU2NmU1Y2ZhNTVhZTVhYjAwYTM3ZDM2NGIwY2U4ODhiZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlMDI2NmMzNTQ5YWU3NWUyNjE0MGYxMjZmZDhkY2I4NmQ1YThkMWFmODAzODVkMGYwZWU3MzUwZTM2ZTA0MzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_475a2e4528634a4d92e2c3031e078ef8",
+      "statement": "app.send_task builds the message via amqp.create_task_message, calls backend.on_task_call unless ignore_result, publishes via amqp.send_task_message, returns an AsyncResult, and adds the result to the current worker task's trail when called from within a task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1007-L1041",
+          "version": "repo-lines-v1:sha256:6d902f519e6474181fcd793c2cd5b11fb97c6a33758eb99d870fa59a3b2e0a0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwMjMzNTgwZWU0YTUxMzJhZWQ5M2I3NzAwNmNhNWZhN2VjNmJjYWI2MGYzYTAxMmNhOTRjOTE5OGI5MzcwZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4ZDAxOTAyZTI4ZmVhM2M2NmVhM2Q1NTcwOTljZDA5MjZhMzE0YjNiZDI4ZmU5Nzg2M2MyNmQ5Nzk4ZGI1ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyY2ZlMzMxN2IzODk4MmRlYjc3YjQyM2NhMDBlOGU5ODE1YzU2OGQxMWI0NGVjNTA3MzA4ODg2ZGExMDJkODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73502078b8eb4671b1079741d097bd77",
+      "statement": "The worker's default strategy builds a Request per message and either schedules it on the timer when it has an ETA, places it in a rate-limit bucket, or hands it to the consumer's on_task_request handler.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/strategy.py#L99-L209",
+          "version": "repo-lines-v1:sha256:b1378bad3667197230d2de42c9ce2de1aa8d64031ec1b8d0dd857f601974fcbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTExLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlNDFiZmRlYzlmMzg4ODdkN2RlNjE1NzRmMGMzODkwZGI5MmMzODZmNzVjNTQ0YWVjOTA5ZmU4NzhjZmJiMTEwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmN2E4Mjg5OWI1MjYyNTg3ZDEzMjY5YzhiN2YxMzk2MTllZjdkNjc4MjY3NGU3NzFmOTg4ZTVhMTZhMzNkMzJmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1ZTY2ZmUyOGU0YzNjNGJkMGY3NmM0NGI3M2FiMDEwYzI3NTczZDI3NDk3MTI1NDk2ZjY3OGY1YjlhY2MxOGQ4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_dc6dbc2fdd02474e98f012a4a3f1584d",
+      "statement": "WorkController._process_task executes a request by calling Request.execute_using_pool, which submits trace_task (or fast_trace_task) to the concurrency pool.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L355-L370",
+          "version": "repo-lines-v1:sha256:4a89e69ffd4d9a0c792feff5b2da60ccf76f4bd8cfcef612d52c54868894650b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlZDEwZjg5N2Q4M2Q5MmIxMzNlMzU5ZTg1ZTFiNTQ5OTAwMzFkNzgwYThlNWI2MjZmZDE0MDU3Nzk5YWFmZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzYWIxODczZjFmYWI3YTkwNDkzYWFiOGYwNWQwOTQ4YjFhMGNiZWI1MmE0NWYxOWQwZTJmMGFhNmQ1ZGMwNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MGIxOGI3ZTJhZWYzODJjZGQzYzQxZDAwMjNjNWY4ODQyM2MwNDdmZjZlYmU0NGZlNmQ2ZTYyNzFjM2MyYmUifQ"
+        },
+        {
+          "resource": "repo://celery/worker/worker.py#L223-L231",
+          "version": "repo-lines-v1:sha256:4ffb514847bd001d2b9d1fcc64394a0410a3fcf8b2219bd20f79554b8701926a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM3NTRhY2UyMDI5ZmE3ZmI1YTMwMmZhMDUxY2UzZGQ2ZjE1OTA5OWZjZjZlMmUzZDA3YjcyMjNlMWNkNjQ0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGVlYzUwYzk2NTQ0MWUwZTE1ZDdmMjdkNzkzZDFlODQ2OGNjYzkzNzMxYjk4YmI0MWE5YTBjNjYwNTEwOGM1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTdiZWFjN2VhZmJkMjFiOWNiY2NlNzY2NDVhNjAxYWU3ZjA4ZDk3MTI4Njk2OTkxMGI5YWU0NmIzODllNDQ5NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzEwNjU1YTEzYjVmNTRmOGFlMDllNGQ5MjAyNDA1ZTA0ZjQ5ODdkM2E0YjQ0M2NiMzVhYzhmOTg3MTY1ODQwMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c92952de6bf84364a0f20dd5826ae3fe",
+      "statement": "Beat publishes due entries through task.apply_async when the task is registered locally, or app.send_task otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://celery/beat.py#L393-L421",
+          "version": "repo-lines-v1:sha256:92f42b25347af91227ef985f57f83bd14a560c6514e10fdcbfed415807335e28:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MTEwNmU5NGI1NmRkNmY3ODliMDZkMTk3MjE5MzcwZmYyYjE3Njg4MzIwMTI2ZDc4MzM0N2NmMjZhMGFmN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiODY1OGM3Y2Y5MzM3ZWYwZjdlMTc2MzUyNjViOGMzZjU1YjM4YjcwZTFjZmFiOWM4ZDhiZWQ3ODI3MWUzMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMGVjMmMzOWQ5ZTY0NzIxMDhhOGMwNzZlNzQzNTVlMjNlZDZjYjYzNWQxMmM1NGQzOTMwNDI1YWI5M2E3MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1NWQ2M2IyMzg1MDkwZmM3NmFlZDQ5OGZmMjJkZjBjMWEyNmJkNDQzOGRkMzUxNzUxODE4ZDRjYTg0ZmZmMWEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:49.645Z"
+  }
+}

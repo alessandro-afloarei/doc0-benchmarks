@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ee7ce372d03e4835be1ff3dbef31c04acc142b17ac02b5b33364d09ddc1a3723",
+  "claims": [
+    {
+      "id": "claim_24c06fd8166f49d8a74d002864b3ccf7",
+      "statement": "Env consists of optional Bindings and Variables object types, and Input has optional in, out and outputFormat members describing client input and validated output.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L26-L46",
+          "version": "repo-lines-v1:sha256:8a253fa64ca32d7c23028608b6d01b23f10cd6016179a957a349276740b74095:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNWZkZmY2NDJiYmFkMmE4YjQyNzQ2MTIxNzA3YmEwZGFmZGZhYjJjMTI4YmU1OTY2YzYyYzFjNjlhYzczNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYTU1MTllYzhlYTA5MTU2Y2RlZjcxZGJmMWRkMzg4NGQ5NDIwYmZlZTg3NjZmMjYzODBmNTlhYWI4N2Q1NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkNTU2NjgzZGMwMTllNmMyNWUxZDQzOTQyYjFjZGYyMDY4ZjYyNTA4ODJkZTFiN2RjNWE4YjM4NzZjMzVlMzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_670a72bee2be4a7b93d480a01ca41a74",
+      "statement": "Each method registration overload returns a new HonoBase type whose schema is the previous schema intersected with ToSchema for the method, path, input and merged response, and intersects the Env types of the handlers in the chain.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L127-L175",
+          "version": "repo-lines-v1:sha256:0f8be71a1d45e88b328f927d46ee45c3d407840c35fe9b0d7a56c4990022c084:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMmU4OGFjZmYzNzA0N2U0MDBlYjMyMDQzNWIxYzdiZWZmNWFhYjBkZmIwMjBkMjZjNjhiMWU0YjY1MjdjNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhNjVhMTc5ZjUwZDIwZTU2ZTc3MDRhYTFlZjQ1MTQ3ZWU0ZTBjZmMyMTY4Y2ZiYzJiN2NkYzY3MTE0ZTkxM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYTU1MTllYzhlYTA5MTU2Y2RlZjcxZGJmMWRkMzg4NGQ5NDIwYmZlZTg3NjZmMjYzODBmNTlhYWI4N2Q1NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzNjNiNGVmZDAzODFjMTUxZDM2MDdjMWRiYjQyOTY2N2NiNTJmNzA0MGYxODliMTU4ZjE3MzY5ZDNjOGU5MjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7434263d9a04652be7972538feb7f52",
+      "statement": "ToSchema keys endpoints by path and by lower-cased $-prefixed method, records input with path params added, and adds no entry when the response type is Promise<void>.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2500-L2529",
+          "version": "repo-lines-v1:sha256:0ea6f5e4535ed24af700c2942d22005056516120a52b9d786ae8f6f7c3ed3763:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhM2ZmMGUwMDhlYzRlY2VkYzk2NjY0ZDM3ODkyZTRjZTkxM2YwMjA4N2RmOTY5YmRiZDc3MzY0ZWQ4ZmFiYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4MDA1ZDU3MTA2YTM2MmViMDAwZGFmM2RhNDY3NGM4MmI1MThmZjVhMmUyZjY3ZWU4ZTc1N2EzMzNjMmFmNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhN2UxN2RjM2ExMTRmODNiNjJmOGZmYzM4OWE2YjE5ODEzNDA1N2FiNDk4NWY5YmZhYmExMmU2NmI3NDk5MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZGYxMTAzMDJhMTc2NmNkM2Y3MzY2MWEyZjUxMjhhNWI3ZWZkOTRhMDhlYmJlM2M3ZGE0ZWVkMTg2OWNmNjUifQ"
+        },
+        {
+          "resource": "repo://src/types.ts#L2601-L2608",
+          "version": "repo-lines-v1:sha256:9c77576676d851b41f682be3cc12879bc47dd1054dd2e332796772f1b5e7263b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmIwMjgxMDRkNjYxYjMxMDk1YWRlNmNkM2E4NGJiY2M0NTA2NjcxODYyOWFkOTU5OTc5MTQzYzcwMTA1ODgyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk0NGRmYmYyYmE2NzkxY2FlNDI5NmEwOWM3MGRiOTczNzdjZjJiMDdiOWI5NjUzODdmYmM4NzE1M2Q4NmJjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ZlMTI3YTUwOGYyMGI3YTJiZjdhNGVjMTcwODc0MDM0NTljM2U0NmFiZmYxNjE2ZGVmNmMxNDgyNDE4Y2IxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTJjNmYzNDY1NzI0NjNlNjg0NmM4NmQ3ZjMxMDQwOTljMDAyNmUzYmQ1ZDg3NDJkODI0MzJhNjZjMjBmYzY2OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_520bb48b49f04e1887d987fd4ba31482",
+      "statement": "A Schema maps paths to $method keys whose Endpoint values hold input, output, outputFormat and status.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2531-L2551",
+          "version": "repo-lines-v1:sha256:38f16c45009246aac84cf155462a774545b32a9638282aaf4f5b8894b083b791:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyZTE5YWZiMDliNGY2MWEyMWQ4MDg5YjU4NzRjNWQ1OWU0NzUxMDExNDcxMjlmMzNmNzY5MTQyNjk0M2NlZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3YzY2ZDZhODMwNzMyMGY2YzViY2RhYjcyZTA4NDBhZWVhOWUzNDNhMWQ5NTRjZjg2MDdjYjhlYWQwODVkYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliOTY1NzE5NmNmMDZkNTc2ODVkZmUwZTgwZjEwZWRkNWNhNjY1YTYxMTkzZTk3NmM1MDg2MWZmZTg0Yjg4ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f041600aaacd45fc9896485f92e8a810",
+      "statement": "TypedResponse is a phantom type carrying data, status and format, with format inferred as 'text' for strings and 'json' for JSON values.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2632-L2647",
+          "version": "repo-lines-v1:sha256:e4c73d37252afb895d79036e232a308a2f1923ac3d761259b1a37e2f250eda75:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5YThlMTNiZDZiYzNmMzI0MWFhNTJiNDhiMmQ3ZGY5YTgyMzdmMjEyNjBiZTVkZjljNTg0YjRkNzlhY2NkN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYTU1MTllYzhlYTA5MTU2Y2RlZjcxZGJmMWRkMzg4NGQ5NDIwYmZlZTg3NjZmMjYzODBmNTlhYWI4N2Q1NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4YTU5ZWQ2NzJkOGIzMGJiYjQ4OWUyNTVmYzM5MDJhNmY2YmExNGJjZWFkNjIwNzcyMTQ3MzhkOWM0MDgwNGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cd22d6f188bd437fb88ef751463e7898",
+      "statement": "ParamKeys extracts parameter names from a path string literal, stripping regex suffixes and marking optional params with '?', which ParamKeyToRecord maps to string | undefined.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2698-L2712",
+          "version": "repo-lines-v1:sha256:36ec1d9bb60714247939039153d956556277e6ab3c8176d159096eb9363fb4e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NWI4ZTA0NDhmOGQwZDgyNzQwNDI3OWQxMTAzMjRmOGUyNGRhM2Q1NTM1YzIxMzk4YzI0NTk4ZTAwYmYxN2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1Zjg4YjRmNDU3OTZmYmRhNjEwZDZiNmQwOTgyMjljYTUwOTFhMTAwZmZkYTAyMWM1MjAwYjllM2M1OTIzNTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYTU1MTllYzhlYTA5MTU2Y2RlZjcxZGJmMWRkMzg4NGQ5NDIwYmZlZTg3NjZmMjYzODBmNTlhYWI4N2Q1NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxZGM2NTNlZGMwZmE3Nzc3NTRjYzNkZjZmNjQ4MGZlNGU5YjZmNTQzOTJmNzk4MTg4NWNhZmE5NTdmMjM0OTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d63cc14404c448fa247abf239f4a011",
+      "statement": "The MergePath type mirrors runtime path merging rules for base paths at the type level.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2610-L2624",
+          "version": "repo-lines-v1:sha256:b12fd959399c2edf2ef5196fd64b4d1e356ddc461a164eb00a75003eb11c54ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhYjcxOWQwNjIzYmNlYzlmNjM3ZGE5M2NkYmMyYWExZDc2MmRlNDJiMWJhOGFiYjJjNmViYmFlYjhkNDExNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5MWJiMTc2ZGU1NGI2MDc3ZGY1ZWUxMzQ4OTQ4NGZkNmM1MTc4MDBlNThjYjA1ZjRiM2QzMGZkNDlmMDc3MWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwNzQwNzI5NTk4NGVmNTIzOTI1ODc1YTYzYWNmYjIxMTQ1OTFkYjJiMDJiN2RjZmZkNzYwNmRiMWE5MmI1YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxZGM2NTNlZGMwZmE3Nzc3NTRjYzNkZjZmNjQ4MGZlNGU5YjZmNTQzOTJmNzk4MTg4NWNhZmE5NTdmMjM0OTUifQ"
+        },
+        {
+          "resource": "repo://src/utils/url.ts#L158-L169",
+          "version": "repo-lines-v1:sha256:377f6c2de8d255811f055c14719d67b1e531ae2a2a08c3227693c4ca80aa20ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYTg4NDJlZDFmMjdjMTc2NjNhOGQ3ODA1NjFmY2E4NjFhZGI3MzE5NTQxOGRhZmE5YWM4ZjdlOTNlZTYzMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiZDJhZjg0N2FiNzZiMDFiMzc1NzJlOGExMjFlMGUzZTEyN2FmMzMxZDJmYjRjNTQ2MzU0OTY3MDFkNTNmYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5OTllYWY3ZmE2ZjdkYzg4N2E5MGRlNmQ2MTMzODU5YTBmNzgzNjAyZTE4YzIwNGY3Nzk5Y2MxMzMyMTgyNTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_172be25ac89c4ac48ca50923ab6fb856",
+      "statement": "JSONParsed models JSON serialization at the type level, honoring toJSON, dropping invalid JSON values, and converting Sets and Maps to empty objects.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/types.ts#L53-L80",
+          "version": "repo-lines-v1:sha256:8a5a216e278aca367a8f2f43ae6746885464e6d6e3afb1ca611abcf21b8d012d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NzhhNGM1OWE3MzhkNGZmNDVhNmYyNDYyY2I3NmZjNzkxMmE1ZmY2MTZlNjUzMmVlZTM3OTEwNzdkNzYyYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjNmMwMTM5ZTk0NDY4ODhhODMxYzVjYWUzYWYxOTNkMjdhZmMwZWU0MTEwYmVjNmFjY2M0NTM4NjU5YmQ1ZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3YmQ1YjJmMGZkMWE4ZjZiZmVlYTVmZmZmYTFjNTkzZDFjMzhmMzdkZDJlNzM0MzVmNjY0NTM2NzJhY2VlY2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ODczYjA5ZWEyYTJkOTcwMmY2YjczNDA1NDU5MWE1NTBhOTQ2YzJjYzc2ZmFiNmE1MWZlMjc5NDNkNDY4MWQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

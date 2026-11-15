@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6dcc9eec8d721919a073a653290d6d089e273352c56fcd6c8b8ce17fbade34f5",
+  "claims": [
+    {
+      "id": "claim_902b3bb39ddd4447a504a1f9393e2b21",
+      "statement": "StreamingApi swallows errors from write and close, and its response ReadableStream calls abort() when cancelled unless the stream is already closed.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/stream.ts#L35-L76",
+          "version": "repo-lines-v1:sha256:7f9c9c5bae2bac54624f19243c9d2d9700219b4ee60dc61d56a40cd113c3e24a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlY2Y3ZmQwZjljZTQ0ZWQxOGRlNDYyZThiMmFhYmIxZmE3OWExZjllYjhiMjcxOGQ0MTg3YzY5MjZlYWVmMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhYzhmN2FiYWI4MmY0YzM4M2I1Njk5N2Q0ZmM2MmFiMzM0YWZhMWZhNjYyOTg1MWVhYmJkMzkyYjBhMzc4MzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiNDY5ZmY5Njc2NzUyY2Q0YmRiNjRiN2YxMWE4NWRmNTk2NzRiM2E3NDA4Y2JhZDk4YTY3NzcyNDI3Yjc4OTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15dd302553b74534ad6a1c52a9278e7c",
+      "statement": "StreamingApi.abort() runs only once, setting aborted and invoking all onAbort subscribers, the first of which cancels the internal reader.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/stream.ts#L26-L33",
+          "version": "repo-lines-v1:sha256:6a92145e579058525cec0e273f6fd554edec5b6c476b9a771b48e2865424a012:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI3ZjVlNzg0ODk1N2JiYjEwZTZkYTg0ZjhkMGQwNjc5NjNkNGI0MWRkNjJjZjY2Yjk2YjdlYmFkYTAzNmUxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQ3NWU5NGE5MDRhYzQ5YjMxNTRkNDY3MmE2NmU4NjI5Yjg2ZGFjNzRlM2UyOTM3YmU2OTI3YWUzZGExMWM1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzVlOGVlMTk4YzYxNTFmMTAwMjNhODhlMjkwODRlNmZkZDMzMjlhYmI2YjljZjYxNDViNzk2Mjc2OGIwZGY2YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjBhMDJhMWExZjVlM2U0OGQyN2ZhMTA4MTQwNjllMmExNmJmZjVmMzQwNDU5NzEzNWZjZjJjN2Q0OTQxZTJjYiJ9"
+        },
+        {
+          "resource": "repo://src/utils/stream.ts#L84-L97",
+          "version": "repo-lines-v1:sha256:58a17f2aadff7cde9069e9f34e4feef848cdef67a697799fa6c36b889a4e5b64:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMzBiN2FiMjNkYzljYmMzNTg0NTg2YzUzYTY1YTRiMjNhYTc5NTJkMDJkYWM1MzNmMzQ5ZDI4OGIzNDdmN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0NTEwOTcyOWNlMmUyMGNmZTdlMTY4ODgxN2RlYWJjZTg1YzE3MmI5ZDA3NTRjNDIxNDdjMzI2OWExMWI0ZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8579e868e1be4beaaaed95382f328f6e",
+      "statement": "stream() returns the streaming Response immediately and runs the callback in the background, calling onError for Error instances, ignoring undefined rejections, logging other errors, and always closing the stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/stream.ts#L7-L45",
+          "version": "repo-lines-v1:sha256:0a280b87fb1dfa529d0c50dbc636bbe9dcaabda0d43a20a1ffce718fefc02ad7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxYmMxNjFiZDExNjY2NjE4ZWVkY2RjNzA4ZGNjM2NjODY3MDMzNTgwMzVlMTI2MDNlNmRkZDA5ZDNjNzJhNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmNzUzZDlmODJiYmM3OWRhYTRhMzI4NDkzMmVhOTY1YjM5YjkzNWIzNDI3YzNkODEzYWJmYzZkZWVhMjExMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b64c6721dee4b97a35659ce94fd5bda",
+      "statement": "For Bun versions before 1.1.27 the streaming helpers abort the stream on the request signal's abort event because those versions did not cancel response bodies.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/stream.ts#L15-L22",
+          "version": "repo-lines-v1:sha256:7be28bd1a944af07b8a92f01ef2f62793b09328bb7eb048c795d6fcf1b30bbe9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI5OWFlODhhYWIwNzFlY2Q4MzljNjJlMzU4ZGJmOThmOGQxNjhlNTQyOWJhMmQ4NzAzYmE1OWNiMGFjNjdjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODNjNGZlNjMwZjA5NTQ4NDE4YzU2ODdkNGI5OWJjNzQwOTY0NmM5NmUwMzY1NTAwM2ZmMzAyMDFiNjA4NDY3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWM4YjZkNWEyNjMyNTBkOWViMjY4MjUxYmIzNjgwNDQ2YjRiODMyOTczM2YzZjdmNzIzZWMwNDc0ZGVhZDcwZiJ9"
+        },
+        {
+          "resource": "repo://src/helper/streaming/utils.ts#L1-L11",
+          "version": "repo-lines-v1:sha256:52368d2d53097f5a78c75e5785046868ccd4edbd46ff002434417b2e6bfb3469:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiMWZkMWQzOTUyYTU5YjdhZjJjY2U2Y2JhMDIyN2U0Y2IxZGRiOGJkYzQ5ZTVmMDQ4ODcwZDA3NmJkMGJhZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed62f9e808064b118c551ce224ab7dc8",
+      "statement": "writeSSE splits data into one 'data:' line per input line and throws if event, id, or retry contain carriage return or newline characters.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/sse.ts#L18-L44",
+          "version": "repo-lines-v1:sha256:9ea3d77d2a010b65c5da946905136e5ac644ac8f8828d6e459bf0213f57ec972:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMDFjY2IwZWFiYzYyYzA5NDUwMTY1ZTMyMTA2NGJkYWYyZTRkNjY5YjI4OWM4NWEwZDJmNDE2ZDdiZTEzMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyZDIwZTcwNWQyNmE2MzM5NTQ5NzczMDI2OTQ5MDhjNWUwODY2OGI1MmNjMTgwYTM2M2Q3MTAyZmVmMDVjZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0MWZkZWU0ODM2MGEwNmNmYTRkMWUxYTJhYTEwYTI2OWU4OGYzZjk4YjNlMDg5MGJmOWY0NTM2ZTAzYzY1OWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_18e8551befe54a95b5e91666906766bb",
+      "statement": "When a streamSSE callback throws and onError is provided, onError runs and an SSE message with event 'error' and the error message is written to the client.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/sse.ts#L47-L68",
+          "version": "repo-lines-v1:sha256:a75bd1ae97f9406dd6a13e40aac54d2863129d44b0dce1844dabfc1684dfdfec:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkM2VmYjVlNmI4ZTMxNzQ2MTYwNjdhYjlmMjhkYTM2YjlmMWQ1YjMwMDFjYzM2MjM0MGIwMWVlYzg1NWZkZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmNzUzZDlmODJiYmM3OWRhYTRhMzI4NDkzMmVhOTY1YjM5YjkzNWIzNDI3YzNkODEzYWJmYzZkZWVhMjExMTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6110073d639e40a9a6717b84226d4844",
+      "statement": "streamSSE sets Content-Type text/event-stream, Cache-Control no-cache, Connection keep-alive and Transfer-Encoding chunked.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/sse.ts#L92-L95",
+          "version": "repo-lines-v1:sha256:c0fe27b5ba44bc30c0aa7ecc37e764d84e6248f9160343c536a80c9663335fd3:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ0ZDYwNjU2NmQ2MGQwYWRlODVhYzcyMWMzYzA0ZDE2MjNiMDRjMDYwMDJkNWNmMGRlM2U2NDNjNmVjODMxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDhhMmFkY2ZiYzRlZmNhNTk4ZDE0MzdjMmMyMDg3OTlhNjhhZmRiZGY2NDE5MmJiYzY2YjE5YmVhMTU5ZDY0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTFmMGExNjAxZmM3ODU5Y2ZjMmU3MjkyYzBkMTdiYmYyNzFkYjVmMjg0MjQ2MGFhMzRkZmY5ZDcxZTg5MmE1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTAwZDFjZGQxZmVkYzFiYTgyMmQ5NWRmNTAzMWM0ZTVlZDBhMWQ1ZjRmYjM2MGE2NmQyZDkxZTczZjE1OGI4MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec71cf4ec3544b058de05038a4ef831c",
+      "statement": "defineWebSocketHelper's middleware form calls next() when the runtime handler does not return a response, while the direct form throws 'Failed to upgrade WebSocket'.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/websocket/index.ts#L111-L140",
+          "version": "repo-lines-v1:sha256:5e72a020f1b913dcfabdf68daa264b5ba7b8c14831825e3b515374afd187ba6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZTMwMjA5MWZhNmM5MDEwMmUzMjY5NDUyMTA0N2FjNTM3NjZlOTUyYmQ0YjI1YWNkOTAxNGExYzM5YWM0NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyOTY5YzQ4MTg2NTExNGM4NTIzODMwZTFlMjYzOWIzODA3YWYxMTVkNGNlNWJhYTdiNmM4OGE0OTYzMWVhNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_36a3e5aef20f41edb057f04bf713af15",
+      "statement": "The Cloudflare Workers upgradeWebSocket uses WebSocketPair, does not support onOpen, and returns a 101 response carrying the client socket.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/cloudflare-workers/websocket.ts#L5-L53",
+          "version": "repo-lines-v1:sha256:ffb8066faa2b33f394371d3d91a216a68ad21ab4e70871ff7f918848f0809f05:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ZGMyNjllMjM4ZjczZDUyM2VkYjNkMjhkMzQ1ZTE0NDQxM2Q1MjUxMDUzOWY1Mjk0NTk4NmJlY2YzMGI3Y2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1MzFjOTFlYzZlMWNkYzIwMGM3MjQ3ZWIxMmVhY2E2OTE2ZjE5YmRmNTZjZDc2YWMzNGZjZDE0Mjk2NzZmNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d200697a0e44d1a96c548dc062bf8fe",
+      "statement": "The Deno upgradeWebSocket echoes the first requested Sec-WebSocket-Protocol as the negotiated protocol unless overridden by options.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/deno/websocket.ts#L4-L38",
+          "version": "repo-lines-v1:sha256:edf47724672a98eba1bb27557d91648baa32799f7c607c7686fb0310222b71a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmYzg2YjIzYjFjNWU5ZDY5YTIyYmYxMjNkZjY4OWQ2ZWQzYjA1ZjhiMjRjNWFkNTIyYWY3MjFhNjZlYTdkYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzUyNTg5YzM0ZDNjNjA2ODU5MzFiNmVjYzRkNTA5OTFhN2M1NmM4ZmJhMjg5NDExNDY1NzY5MDI3MmNhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjZDcyYmVhNDZlMDk2ZjIwMDkyOGNjZTYwYWQwZDg5MTZhNDBhNzdlMDgyNGU2ZWE3OTVhMjI3OGVhYmVlYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5dafcc04e4984747ac516407acd21ba8",
+      "statement": "The Bun upgradeWebSocket stores events, URL and protocol in the socket data via server.upgrade, and the exported websocket handler dispatches open/message/close events from ws.data.events.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/bun/websocket.ts#L48-L104",
+          "version": "repo-lines-v1:sha256:f996325ec149a24a5fc99116920755ebb1055d5337b2d93db7ab56a1bd28c48e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxZDA3N2JmMWU0NTg2NjM3Mjk4NjY1MjJlZDUyZGNmOTllNjU2YjVkOWM5YTg4NzgyYzQ2NWJlYmIwMWE5YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZjk1ZjJhMmZmNDU0NDJlMTM1ZDA0ZjY2ZmIyNTRiYTcwMTBlZTMyYmU4YjNhY2EwMDI3M2UxNzdkMDlmMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhZThhZWMxMjZkZGJjNGY0YTk0NDFlNzM5ZDRmNzIzOTczODlmMzFiM2E5Mjg3YmY3NzVjYmEzMjJmNzE1YjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c67e2fb85a5e4b90b66b4c346df02001",
+      "statement": "The runtime-neutral WebSocket helper in src/helper/websocket is published under the hono/ws subpath.",
+      "evidence": [
+        {
+          "resource": "repo://jsr.json#L79-L79",
+          "version": "repo-lines-v1:sha256:30e174925149376d8e2782c584d53e942aeb7ffeb96605b2abae5d48761e5fd2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBlMTc0OTI1MTQ5Mzc2ZDhlMjc4MmM1ODRkNTNlOTQyYWViN2ZmZWI5NjYwNWIyYWJhZTVkNDg3NjFlNWZkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBlMTc0OTI1MTQ5Mzc2ZDhlMjc4MmM1ODRkNTNlOTQyYWViN2ZmZWI5NjYwNWIyYWJhZTVkNDg3NjFlNWZkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzFmNDIzNzk5MGU1MDU2YTkzY2Q4YjA0NDA2ZDE5MWRhZTQ1MzkwOWQ3MWRhNTE1N2RjMDVmNGE2OGYzOTk1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTExMjI4OGQ3MjQyNzg4M2FhMjE1YzE4MGU5NjRmNTY3ZmNlMGViNDkwNWRjY2I5MTNjYmM2NGNkOTFiMTlkOCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:28:44.415Z"
+  }
+}

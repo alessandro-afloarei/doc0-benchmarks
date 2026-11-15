@@ -1,0 +1,7 @@
+# Files
+
+- [Application Object and Request Dispatch](application.md) - How the Hono application class (HonoBase) registers routes and middleware, composes sub-apps with basePath/route/mount, and dispatches a Request through fetch, request, and fire, including HEAD handling and the single-handler fast path.
+- [Context](context.md) - The per-request Context object in src/context.ts — lazy HonoRequest, response builders (body/text/json/html/redirect/newResponse), header and status staging, the finalized flag and res setter merge semantics, typed variables, renderer/layout, env and executionCtx.
+- [Error Handling and HTTPException](error-handling.md) - How Hono turns thrown errors and unmatched routes into responses — HTTPException, the default and custom onError/notFound handlers, where errors are caught inside the middleware chain, c.error, and how sub-app handlers behave under route().
+- [Middleware Composition](middleware-composition.md) - The koa-compose-style onion model in src/compose.ts that runs matched middleware and handlers in order — next() semantics, routeIndex tracking, how returned responses become c.res, not-found fallthrough, error capture — plus the combine helpers some/every/except.
+- [HonoRequest](request.md) - The HonoRequest wrapper (c.req) in src/request.ts — route params resolved from the router match result and routeIndex, fast query-string parsing, headers, cached body readers, parseBody for forms, validated data storage, matchedRoutes/routePath, and cloneRawRequest.

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3dd113e4b3736b7efd2d719813f0de6a98cca205b7a0d5c7ef01a9a52e906ae5",
+  "claims": [
+    {
+      "id": "claim_514f83e64e18444aaa62a549b698ed30",
+      "statement": "The cookie parser skips invalid cookie names, keeps the first occurrence of a duplicated name, strips surrounding quotes, rejects values outside the allowed character set, and URI-decodes values containing '%'.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/cookie.ts#L102-L138",
+          "version": "repo-lines-v1:sha256:f66f55cb368a3f490c6ee55660503ec91217d790ac67fefea0bfa69de687cfea:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YzQ3OWZjODk3NDZhMzVlZjc5MGY3M2Y0NDJiZDBlNTg0ZGFiOGU1NjJmYzk2YTdkYmIzNWFmYTNiNWI1NjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0M2EwYWE2YzNhZjRkZmE2MmZlNmIwN2M1ZTBmYmJkOGQ0NjdkZDYxNTQyNWU3NjU3ZjBhNzI3YzM2Mzc5YWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4Y2Y4YjIyNTgyNjMwODg4NzUyODZlZjZkNzk3YjZlMWY0NzVjNjQ2YTRjODBhYzA4ZjhiODBmYjJjZTVlNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f181124136b4da6b5dc8358ada9a876",
+      "statement": "Signed cookies append a base64 HMAC-SHA256 signature to the value; getSignedCookie returns false for values whose signature fails verification and omits values without a well-formed 44-character signature.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/cookie.ts#L140-L165",
+          "version": "repo-lines-v1:sha256:2d57d99ea941bee11d433f8c2c268163f8430beb7506b36f543c750839df1a8a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhOThiM2MyODNjZTc4NWFmMzMyOGI0ZTkzY2NlOTEwYWI2OWVjODVjM2NlOWI1ZjVjNzhmY2E4NTQ1ODkzNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMDc1ZmIxZTA1YjQwZWU1N2EzMzhlOWJkYTRiOTg3Y2EwNDRmOTA2OTYyOWQwMjE0Mzk4NzYzYTQyMzI3ODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzZDllYzg3YWMxNWZlNzdjNWVhMjM5MDBmZDRkOTc2ZmQ3N2IzYTA5MmJiNDEyNmMxNTQxNDllMjIwNzYyMTcifQ"
+        },
+        {
+          "resource": "repo://src/utils/cookie.ts#L264-L274",
+          "version": "repo-lines-v1:sha256:72b3e2a7f0ad7af390d90458a2d18d3a14f101d68d3464e9be96d941abdf6839:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwM2MxZjFjYWViOWFiN2Q4ZWQ1MmVkMzIyMWMwYjc4YjQyM2YxNWQ5MDM3OTIxZjEwZjJjYjMyNmZkNDNhOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2MjQ2OTg0MDMyZWFhOGQwMjNiMjcyNTdiOWM4NWQzZTNlYjU4MGE0OTU4NGZjNWE3NmVkZmZhN2UxMzI5MmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/utils/cookie.ts#L36-L48",
+          "version": "repo-lines-v1:sha256:53b6fe00cc9b30b4381db5b8fc512a67389589d7bddfef1281353b7dd89071fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhZTM5NGUyYmMxYmFlZDNjMjNlYzBkOThjMDE5ODVhNWFjMTY5YTljZmRmNmM0MmJlN2M5ZmEwYzJkMjY3ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiMWNhMmVkNzc1ZTY2MzFjOTU4NThjMDExOTQyMjIyNzMzYzc1YTVhNjE3MmQ0ZDVhNDNmZGM5M2NhNThhZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxNTg4N2E5ZGIxMTllMzA4Yzk0MWRjZTI3YWNkMGI3MjQyODhhYjVhY2I0ODc3ZmIxMWI2ZGNkZWQxZjA2ODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d97f4209dfa45a08a5a8846c445dedf",
+      "statement": "Cookie serialization throws for __Secure- cookies without Secure, __Host- cookies without Secure, Path=/ or with Domain, Max-Age or Expires beyond 400 days, and Partitioned cookies without Secure.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/cookie.ts#L167-L250",
+          "version": "repo-lines-v1:sha256:3f0bf41fbb79f95335e2c3cbd2539fc2916577dc6f63aa6bd6aabe829a7c2c55:eyJzZWxlY3RlZExpbmVDb3VudCI6ODQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMDJmMGU5MjUzODg2Yzk1ZTJlNjJjOTlmOWJlOTEyMjgxODlmZDI0MDJmMGU4OGRiMGI3YjMwODMwMzI0YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMDc1ZmIxZTA1YjQwZWU1N2EzMzhlOWJkYTRiOTg3Y2EwNDRmOTA2OTYyOWQwMjE0Mzk4NzYzYTQyMzI3ODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZTBkMGVhMzdmZjAxMTM1YWIyN2QyNTAyMGU5NjM5MDVmNTIwYzVkZTFhNDNhODIyNTY1ZDU2ZTEyZmU3YWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_645d014e327b465e8279d4ed2a738b96",
+      "statement": "setCookie defaults Path to '/', appends a Set-Cookie header, and with prefix 'host' forces Path=/, Secure and no Domain; deleteCookie sets the cookie with maxAge 0 and returns its previous value.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/cookie/index.ts#L78-L145",
+          "version": "repo-lines-v1:sha256:847e5c7e7e5d6e5d7bb2c1cb515ae76a99fe0412036b4affd17b8502da538698:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MGFhYzdmNzQ4OTNmOGJiMDE1ZWJjYWExYWNlZDczMDA3M2VmN2ZiMjEwMjJmYzNmNzkxOTM2NDcwMTU4YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3Y2MxODk5MmMwNzZhYmY5YjBmMDQ4ODlmZjY5MzY0OTFhMDM2NGRkMjlkYWYwMDcyM2I5NTQ2MjM4NmIwZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7d24359041f4bfb97afc0a50f31b22e",
+      "statement": "getRuntimeKey detects the runtime first by navigator.userAgent prefix (Deno, Bun, Cloudflare-Workers, Node.js), then EdgeRuntime, fastly, and process.release.name, falling back to 'other'.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/adapter/index.ts#L43-L90",
+          "version": "repo-lines-v1:sha256:0b71ccb85fb0bb3bbd9007381cc9e60fae80b67aa402ed75b7de2e0bc07f348c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4M2MyMDgzMDI5NTM0ODczNDFkMmZlMjE3ZDQzNTkwZTBhY2YwZGY2M2MwZmQwNWQxYWE0ZTRiODY2NWJmYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4NDQwMDNhYTFhMmViYjgwMGE5OGFjMTVmOThmZmExYmI4MDBiMjkzNWVhZWYwYmM2ZTQ1NWE5NGRiMTAxM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d03dbcffa70545e6bbf3282f51dff9d4",
+      "statement": "env() returns process.env on Node, Bun and edge-light, Deno.env.toObject() on Deno, c.env on workerd, and an empty object on fastly and other runtimes.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/adapter/index.ts#L10-L41",
+          "version": "repo-lines-v1:sha256:99cc2cd994b424eba0df7db6986b0577402150388d982053bcb6b3abaf96ce27:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjYjhiZTViYTNhMjJiNmUzM2FjMTUxNGE0M2RmMzdmMjVmNTlmYjE4Nzg3Nzc1NzBlMzUyYTFmMjcxM2FkNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1N2FkZGIwZDlmYzFlZTU4YThhOTYyYTYxNDAwMzdiMDNjZTI1OWYwYTE5ZTQyNjhlMzg5ODNhMDg5NjM5YWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczN2EwMjYyN2FlN2YxZjJlZmIzNzA5NDE2ZGI0MmI4YWM2Yzk1ODkxMDQ3MGIxYmEwMmNlNWM1YjYxNmQxZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3a0e3c815bb481e8faa71e38bc6680d",
+      "statement": "Factory.createApp merges default app options with per-call options and runs initApp on the new app; createMiddleware is an identity function used for typing.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/factory/index.ts#L332-L375",
+          "version": "repo-lines-v1:sha256:ac555df5e7dd159a2622bf7a19e495b93ae1d4172a86d6152741d43924bc5ac6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMmJlY2M5M2U3NjMwZDEzOGFmYmZkNjMwMjY4Y2RlNzgwMGQ4NDNiMjY0NGFmOGJmMzI0OWJkZjM3MjUyMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxZjg3NzkzY2FjOThlMmIzYWJjOTEzZGZmZWMxYWQ4ZWFhYWY0MGEyYzRkMTQwMmMwOWMyMGFhMDY5OWU5NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f99aae4c67ff402688071a6a28425600",
+      "statement": "inspectRoutes unwraps COMPOSED_HANDLER-wrapped handlers and classifies handlers declaring more than one parameter as middleware; getRouterName triggers a match before reading router.name.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/dev/index.ts#L23-L79",
+          "version": "repo-lines-v1:sha256:28207ab46c49b332ccef244ac5a2fde9c98f32c1e90262c5e1731c304c402467:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyMmFjMWM0ZmVhMmM1M2I1OTUyOGVlOGYxNWI0NTQ2M2RlODA1NTdlMDM2Nzk0NzgxYzhmZGU2MjAyM2ZmYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmOTUxOGFjODQ1MmUwNzJkYTcyYmQ3N2M4YWEzODYxM2JlYzU2Yjk4ZWEwNjY4ZjA0ZTczZDY4Mzc1OTg0MTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/utils/handler.ts#L8-L15",
+          "version": "repo-lines-v1:sha256:b8efc783170812193f0ba658bcd36a4f2d1ee8c47ec5758b1871af07777164a1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQyYmUwM2RlMWViMjhkZjU0ZjI0YjY0Y2MwMjMyZmY4YzQ4NWNlOWQ4ZDdlMzhhY2Q0YmFhMTNjZDBiYWM1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjY1ZDgxZjY2OTE0MzY3ZDRkNzVjZWJlZmZjNjc5YmI0MTEzYzBmODRhM2ZjNWNmY2YxN2RjMjAwNDRkYjliNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_aca2ea3e09744a1dbb1d66002f821725",
+      "statement": "hono/route basePath() fills parameters in the base route path from the actual request path and caches results per context in a WeakMap.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/route/index.ts#L106-L141",
+          "version": "repo-lines-v1:sha256:d63061fc3b5a0d102afa767c8a7e251f24cc2e7b2290e29fbf2141cfdc6bd9ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkZjE3NmU3MDVhMDIxMjJjODFiNmQ3ZWZmY2I0NDRmMTU4NTczYTMzYTMyYjFkMjkwOGY0YmE3OTYzMDQxYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1ZWQ1YTBmNDczNWU1YWU1NDMzZTE4NjNjMjVjYjQ2MDkwZWViZmUwM2Y4YWQ0MGFhNDI3ZGJjMjFhZWQ0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9206e0bcaf9041399de2c5722c619995",
+      "statement": "proxy() strips hop-by-hop headers from both the forwarded request and the returned response, always drops Accept-Encoding from the request, and removes Content-Encoding and Content-Length from encoded upstream responses.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/proxy/index.ts#L10-L19",
+          "version": "repo-lines-v1:sha256:a8d464095bba3f27ec76e966aed4ff4262e78ec62b20cbd9084899718b859083:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3OWNmMzkyMWMwNjEwOWVhMGNiZDQ1YWI1MTk1OTlkNzk2NWRhNTQ0ZjUzNjM4YTg2Y2I4YzUyYjY5YzgwZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzZTg1MmFmMTg2ZDY0MDFkZTJiMjRiYzc3ZjRjN2Y2NGQ2YWY4OTRjMzBkOTU1ZjU0N2RhZTNhNWM1NTkzNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4ZGVmNjQwM2RkMTJkNjIwMjdjN2M4M2E2NjMxYTg5NDYwNWQ4NGFkNzJlYTBlMjMyYzUzYjc1MmFkNjE0NzgifQ"
+        },
+        {
+          "resource": "repo://src/helper/proxy/index.ts#L160-L190",
+          "version": "repo-lines-v1:sha256:83f2ad88b2b122fa31be1aa58f58fc2d775dc572b687cd90901944a5002a3587:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZTM5NDdiNGI3OTUwMzZhZTA3YTFlZTI3N2IxYTZjMTQyODVhNWMyYmQzMzJhYTMwMmM2NzU1YTViMmYyMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b524e73c749c4fef91527cc66224157e",
+      "statement": "With strictConnectionProcessing, proxy() removes headers listed in the Connection header and throws HTTPException 400 for invalid tokens in it.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/proxy/index.ts#L50-L91",
+          "version": "repo-lines-v1:sha256:a29f7d9944c6ecfa71220ee5e9209bbbcef05beb586802a8d92120e8cbbc1ab9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwOGRhMDExZGM2MzQ1NWQ2NTU2ODQ4ODlhYzlkMzg1MWQwZGNkODlkZDMxZDRiNjg0MjNhODNkNmJhNmQ1YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5OGQ1MThmNzQ1M2M4Yjk0MGVhYzA2ZjJmNjhiNDQ0Y2M2MmYxMjc2ZjkwYThhMjRlYTI5ZGJmZjNlM2RmMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4NGM4OTZkZGZkNTliZTZkNjBmNWI3MzU3NDYyYzJkMTgxNDlmMDJmNDc0MzM4ZjM5Y2FjOGMyYzVlZGYxNWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f36a0c0dcd64531922a0742a27cdf9a",
+      "statement": "testClient builds an hc client for http://localhost whose fetch calls app.request with the supplied env and execution context.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/testing/index.ts#L16-L27",
+          "version": "repo-lines-v1:sha256:c2bc4086efc731b13dd9901576db6b8ae03c7126487f5b7be7ac920d5721e6f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MTBmNGZiMTQxZWQ0ZWY3MDIzNDY5YmJkNTk2Y2RkOWVjYWRkODgzYTMxM2RlMWUxZmJjYTM2OGZjYWQ2MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNGQ0NDYzOTA0NzZiM2MzYmIwMGU2MDJmMzk0NDk0ZmIwZmZlYWVhYjFlZmIxYzVkNmVmYjZiYjJhZmZlNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}
