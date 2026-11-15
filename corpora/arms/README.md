@@ -39,8 +39,7 @@ The stream-json transcript (`transcript.jsonl`), the final result (`result.json`
 folder; the transcript and result are also copied to `results/arms/<repo>-<arm>-<date>/` (gitignored).
 
 The init event is checked as it arrives: exactly the arm's MCP server, connected, no plugin but those Claude Code ships
-(`path: "builtin"`), the arm's skill and not
-the other system's; anything else stops the run at once. A run is `complete` only when the result's subtype is
+(`path: "builtin"`), the arm's skill and not the other system's; anything else stops the run at once. A run is `complete` only when the result's subtype is
 `success`, no secret of the launching shell reached its files (a hit in the transcript, result or stderr is redacted
 in place; a hit in a page or a Claims file keeps the whole run out of the corpus), and the transcript holds
 the finish tool's own result: `doc0_finish` answering `complete` (its page list is the corpus), or `openwiki_finish`
@@ -49,5 +48,13 @@ reason, and the report scores it as nothing.
 
 ## Isolation check
 
-Every run checks its own init event (above). The one-off probe the plan asks for (one page, `--budget 2`,
-`--model claude-haiku-5-5`, read the transcript by hand) has not run yet: it needs the API key.
+Every run checks its own init event (above). The one-off probe the plan asks for ran on 2026-11-15, on the
+subscription credential: `doc0-map` on fd at 41532d1, `--max-pages 1 --budget 2 --model claude-haiku-5-5`, under the
+tags `2026-11-15-probe` and `2026-11-15-probe2` (never compared with a run; their folders are kept outside the repo).
+- The first probe stopped at once: the init event listed five `cc-plugin-*` plugins with `path: "builtin"` (Claude
+  Code 2.1.323 ships them inside itself, the same for every arm) and the check refused any plugin. It now refuses
+  every plugin but those.
+- The second completed in 53 s (1 page, 20 turns). Its init event listed one MCP server, `doc0-local`, `connected`
+  from the first event (never `pending`); no plugin but the builtin ones; `doc0-write` and no `openwiki` skill; the
+  other skills were Claude Code's bundled ones. `doc0_begin` answered with a map of fd itself (25 files, 402 symbols,
+  commit 41532d1): the server's working directory was the clone.

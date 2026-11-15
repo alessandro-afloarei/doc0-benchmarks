@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b74cd668fbd1b5729efcdbd97541a1e5b2176143802ffd3bd4c4f0794caa35d5",
+  "claims": [
+    {
+      "id": "claim_089cc3b0af584e7b8698588cccb43e93",
+      "statement": "Without --full-path, fd rejects any search or --and pattern containing '/' (and on Windows a '\\' pattern naming an existing directory) because patterns are matched against file names only.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L169-L216",
+          "version": "repo-lines-v1:sha256:9f9cffd90d35115bebc476abd4cf436d33d89426b5b26fecca5624574dd622f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZWZlMzZjNDhlMmQ0NDBkODE5NWZkOWQ2NTJiMWY5N2QwNzdiZjA1NzRlMDRjYWMxZjgzOTczNjMzZjNhNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2OTk1NDM2NzI1NmM2YTYxYWUyZTg2Yjc1MGUzZmRjYmNkYmFjOTBhOTFhNGYyOTg2NWUwYWI0MWQzMzhjMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwYWUyNDhjYzg4OTU3OGFlNDIwYmYxMzhjNDEzZTNjMDU0YWY1ZTUzOWY4OWY3NzUzNWEwNmVkOWQ4YjhlYmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97f83c2f8da54659a715810a13701ab3",
+      "statement": "Patterns are converted to regexes via globset (--glob, literal separators), anchored escaping (--exact), plain escaping (--fixed-strings), or used verbatim.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L218-L232",
+          "version": "repo-lines-v1:sha256:b9afab2e17423f97e8e3b2bb17622db621566158c5b4ec42c02ca77be8798af6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NWQ5ODY4ZmNmN2EyOTE3NzcxYzE4YzlhMmUxMWUzNjUzNWRhYmViNDU5OGVjNWYxNDg3NmFkNmE4OGI1YzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiNDA0ZDk1YTZlZWJkNmU3NDU0MWE1NmI5ZjU2OGQxM2VjNjBiMDU3OTBhNzBmZDQ0NzBjYjgzMzg1NTUzMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3cb9a4cc134a484d83ed80d584b2dcaf",
+      "statement": "Smart case: the search is case-sensitive when --case-sensitive is set or any pattern contains a literal uppercase character detected via the regex HIR, unless --ignore-case is given.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L249-L256",
+          "version": "repo-lines-v1:sha256:4657d457919a4a58e7b84605dd3ddd3e617f52ba4ebc88559f3762fe5505e4fb:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQ2OWY3NDIyODBlNjNhMDI5NzBlOTEzMTVjMzI4Y2Y2ZjQzOGRjNDUwZDQyOGY2YmMzYmE2ZWEwYTE5OTY1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNiYTYyNDM1M2Y0ZmM0MzQwMjgxMDQzNzMwYTZmZTJmNzY3MTZlODIyMGViYTlhYTMxODAxOGZkNmM0YWM2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGFlOWUxNmU1YTdmNmIzNDhjYTIxYzliMDBjODMxNjY1OTk1Y2M0NGE4ZGVlMzZiMzNkNDgwMDM2YjdjODExZCJ9"
+        },
+        {
+          "resource": "repo://src/regex_helper.rs#L4-L37",
+          "version": "repo-lines-v1:sha256:91ae0b2fce33d16fa3fed0c35731905e93c81e25068dbc2781cfb58194b52a9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYTUwZmEzZjBmODVhNTVlNWMwOWVjOGI2OGY5ODgwNjgzNmQxNjJiZTA2ZDM0NjUzZDNmYTA1MjZiMjFkZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkNmNhNDY1NGMzNDQ2N2UzMDBhZDZkNDkwYTUxZDhlNjhkODJiYzY0YTdmNzJkOTZiOTkyYjBiYTA4NmY0ZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4NWMwMWQ4Y2MzYjc1ZjQ1ODIwMWNhYjQzN2JjMDQyMjQxM2UxZWMxMGJjZDMyYmQ4YWFhOTJmMTlmMzJkMTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_79ec641847c349ba86bb4baceb3e916c",
+      "statement": "Patterns compile to byte regexes with dot_matches_new_line, and an entry must match all patterns.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L540-L555",
+          "version": "repo-lines-v1:sha256:9b931c37c74aecce21723033c8ed3e1ea7d94892cf22d86f0b176985c13671d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwOTU5ZmUzOGU4M2Q3MDc1MTRlZWRlMmU2YTg4OWQ1YTU4MmY2ZWUzMzBkNjZjMTE2YWU3ZDVhM2JhZWZlMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L514-L524",
+          "version": "repo-lines-v1:sha256:44d895078fd1276d6dd99da43134cb4a26b7fcaa3ef2e11455991ee1f78e89fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNWJmOTljOGQ4Y2EyYzVhMDE5NjgwNWQyNTNlMDEwNWJhNTdhMDdmYTk2ZGQwNDRlMjdiNjYxMTAwODM3ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmMwNzYxNDQ1YjVkMTM5OGI0YmRmNGQxZGYyNTBmZmNmZmQ0MDRlMzRiMTZhMTBiM2IxNDRlYzZhNGM1M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyZDg5ZmJiYTA4NmY3MThkNDc0YmNjNWNkMzY3NjRjZjkyNmM0M2QwMTU1MzI2ODJmODg5OWQ0OGQ3NTk0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2556ebd95f934d5daa71809e3860fb23",
+      "statement": "The walker is an ignore::WalkParallel configured from Config ignore toggles, adds .fdignore as a custom ignore filename, loads the global ignore file at <config_dir>/fd/ignore and --ignore-file entries, and reports malformed patterns without aborting.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L347-L404",
+          "version": "repo-lines-v1:sha256:29a70bb281fdea322430e729a24287c2eafe23d71e4b338f3adae5d4b90dc642:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOTU2Y2Y1ZDg2YjkyZDgxMGEwOGU0MjE2NTI1NGMyZjFmMzFkOTQzMWZjMGJjNTQ2MjVjNThiM2NlZDM1MjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxYjIyMDlmNGJiNDMyZWExMTBkNzA1YmFhZjM1MDRjYmM3YjRmYTEyOGJkNWY0NmM3MTlmYWRhZjAzZjUxMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiMGM5ZTY1OTdkMGUzY2M2NThkOTUwYzllOWJkMDk1MTA1NzJlZDJjNjRiYTQzZDg0NzlkMDBiNjU1NjkzMDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9172cecc65e3410f96109fa15f82c192",
+      "statement": "Walker threads apply filters in order: ignore-contain skip, root skip, broken-symlink conversion, min depth, name/path regex match, then extension, file type, owner, size and modification-time filters; --prune returns Skip after a match.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L459-L612",
+          "version": "repo-lines-v1:sha256:89bfcb5dc2d56a055f1fdf4d3f85f2490377069617bd1647ffbdd4baff89e43f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5MTljMGQ1OWU0ZWZjM2Q3MDc5NjA4MTVjZGIxOTZjNzViZmU4MGMyMjJkOTk4ODQ2OWM4OGMzZWJhYTNkZmRlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlZjYwNzgyOGQ0MWQ1OWI4YzNmNGJmZjlkNGVkMmQ0ZDg2MjM0ZThmZjhhODNlOTk0ODhmMjI4YzVkMzMzM2VhIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2NTBkNzRmZDQyM2U1YTI2MDE2YmZmYTEzNjk2OTBlZGVlYzJhNjFhZDA4ODViZjlkNTFmOTJmY2QzYmE5NzA1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhMmNjMGQ0NGRkZTM5MTAxOGE0NTljMDZiMDkwZWVlYzhkZjUwNDE4ODI5NzMyMDJkMGE3NjVmYzkzNTY0Y2E2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ebbc989466a4e439648b219f4fef3d6",
+      "statement": "Results are sent in batches over a bounded channel of capacity 2 * threads, with each batch sent on its first item and filled up to a limit for backpressure.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L636-L636",
+          "version": "repo-lines-v1:sha256:07d922b905c2311954a2e84b447b0e5b60644d2ad6da43e0f1a39ea0def1a45d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdkOTIyYjkwNWMyMzExOTU0YTJlODRiNDQ3YjBlNWI2MDY0NGQyYWQ2ZGE0M2UwZjFhMzllYTBkZWYxYTQ1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdkOTIyYjkwNWMyMzExOTU0YTJlODRiNDQ3YjBlNWI2MDY0NGQyYWQ2ZGE0M2UwZjFhMzllYTBkZWYxYTQ1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODFlZGZjNjczYzM0NDFlNTM1NDNkOWFkZTRjN2M2NWEyMjBiYmU3YTBlMTY5M2IwMmZhOTM2MDExNDhiOTQ3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjZkOGEwMDNjMzcwYjFhNDVjMjA2YWM4YzE3OGUyYjQzZjA4NzM5ZDFmYmJjODAwNjUwYWFjNDM2MzYxZjE1YiJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L74-L122",
+          "version": "repo-lines-v1:sha256:17860d01b6f7d3c31db4df17bcdc477d59eae84933b5f11842332b03541b85ee:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiNDAzNzBjMTQ3MmViNmNiYjIxYWY4MjRlMWRhOWNiMmIyNDYyNDBkODQzYTI5N2NkODdlNWU0MzA0MmYyNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxNjQyNzg0OTFhODdhNzQ3Mjk3MWNlNmZlZmM1MDZkNzdhNTU4NmQyNjM0NDk0Zjk3YjZhMGU4NDlmNjI5N2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_efc9ea00d64e438e93b6780542885565",
+      "statement": "The receiver buffers results for up to max_buffer_time (default 100 ms) or 1000 entries before switching to streaming; if the walk completes while buffering, results are sorted by path before printing.",
+      "evidence": [
+        {
+          "resource": "repo://src/dir_entry.rs#L132-L137",
+          "version": "repo-lines-v1:sha256:142e8ebba893d03c376713730a6fe859ca314077810293e941d34cc5b2d98d28:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ1ZWI4OTViNjQ3ODJhOTUwNTVlZmU4MzVjNGY5MDkxMTc4NGQ1N2FkZmNjYTNjZDAxNTBiOGFkMDU3YjMyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFhMjY2NDIxNTdmZjA2NDdlZmI2OTVmMjlmMWY5Y2NiZmMxMGU1YTc4YWZjYjQ1ZDY5MjU5ODA4ZTEwNjg5NyJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L124-L127",
+          "version": "repo-lines-v1:sha256:18877b908b8c3f235cfe9f940ebfaad9c96c4c0a2f87a8e93da63ae34dfbfd19:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODg2M2UzYTQzYTJmNTEyY2M5MGU5MGRlNDg3OTcyNmVhYjA1NmVlYTRiYjVjNTU5MDZjM2JjYzk4MGQzMmY3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDU5NzI0ZDdmMzYxYTg2NmQwMjJmNmNkNWY4NzcyZTY4MTI3ZWQ2ZjZjYzIxMDEwYzJlNjExZDk2M2MyNGM2NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWNiNzBiOTgwZWI1ZjkyODlhNDI4MTkwNWI2YzE2MjNiYjQwMzcwNjM5NWYzZDlmNjg3MjNlMmNmN2FlYTE5MCJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L198-L293",
+          "version": "repo-lines-v1:sha256:3c6a6dd2b272db163ee53324eca0470da30b082ab3acdd55f8cf2cf8319b349a:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkOWIxMTM3ZmMzZjc1ZDBmMDNiN2JmMDZiNDE4Yjk5M2VhZTNjYmM0Mzk1MzkxNTQzZjY1NTZlYWQ0ZTJlZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1OTFjOWFlZmM1YWRiNDlmN2VhOTkwZmM1NDMxN2QzMDE2NDg4Nzc3ZDljODZhOTRjNWUxYWFhYzcwMmM1OGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4OWM2YWVkNWUwN2EwZWE2MDMyZTViZGEyMDI3NzViOTcwZTlhNmI0NDE5YzA1NDc3YzJiZjA3YzRhZmVlYjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f8236f0a28c40ea954eac7e2d0028d0",
+      "statement": "--quiet stops at the first match with HasResults(true), mapped to exit 0, and exits 1 when nothing matched; --max-results stops the receiver after N results, which sets the quit flag for walker threads.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L14-L23",
+          "version": "repo-lines-v1:sha256:bff23bac93d21ddd908026e117553169480e9285916ac3df6fcecf41dde5fb87:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYWZhZGRlYThkYzlhYWZmMjM1MzFjZmY2YjY4ZjBlNmVjOWYzYmE5MzllNDA5MGQxYjI0NTllM2Q2YjI4MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2ZDcyZWUxN2UyOTFhYzgxMmM3MWNiYTc5ZGM3Y2RhN2U4Yjk5ZTFlNDMwZWZiZTM4NTdjOTNmOGE5NWQ3MjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyZDE5ZDdlYTVmZDIzZDhiOGFiMmQ0ZWVmZmZjZDhiNmY2Mjc2MjVhYzMyNTg0Yjc4Yzk4YzgyNDAzNTkyMTAifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L174-L226",
+          "version": "repo-lines-v1:sha256:3983009bcd3981ba7336b5c082b1f5627db0983fe2994d4c22a64e537406af4b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4MDE1YjQwOWJhMDI2OGNhMWQ0Yjk0NjFlZjZjNDI3NmE5OTUyOTgwZTU4OGM0OWU2NGZlNjBiNDViZjNkNDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YTVmZmEzZTA5NWRmMDViNmIzMzMzODcxYWJhMWMxYjNlMjVhYjNkYmYxZDQ5MmYxNTRjMmNjMmIxMjJmNTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxMjE2MGE3YmM0NTlhMDFiYWVkYTdhYTU2YmY4NTUxMTQ4OWQ2MjFjZjIxOTMzNTliZDc1MmNlMmRkNWM5ZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyOGRlMjZhYWMyZWJlNDE5NDE0ZmIyZjdmMThhNTkxNDU4NzU3MDkyZDMwYjgxMGEzNmMwNDBhN2FhYzExMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2fd3fdca21af43e89beeb728bff4a71a",
+      "statement": "When printing colored output a Ctrl-C handler sets quit and interrupt flags; a second Ctrl-C exits immediately, and KilledBySigint exits 130 after re-raising SIGINT on Unix.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L25-L44",
+          "version": "repo-lines-v1:sha256:61caaf4e2e65a292bf87fe3f733ff492dedad1c3a4aff5c4aed2f309d5dcf67a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2Zjc1MzhkMGNlZmMyMWQwNDI4NjUzNDFlNTM2NDAwZmVjNDFjMWY2NWVmZjcwZGNkNzgzYWU0ZWZjZmNmYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmNjk3MTAyN2YyYmU3YWExZDE2ZWUzMjM4OTQyZmJmMzQzODNlNjEyMDhkMTE5MGFhMWI4MDk0YmM3YzI4NTAifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L621-L634",
+          "version": "repo-lines-v1:sha256:47ff3a04cf0577c153e1e076661b514d31e668cb8b9a8306cb04b133b74c1226:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NTJhOTM4NzFiNzkzNmE5MGJiOThmYzI0MjFlNTA0NWY2NTc4MTI4NzJhNTJjNmJiZjQ1NDkyM2M2NGU2ODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiN2EwNDBhYjJkYjJmMzRkZjA1NThlYzZmNDFjZjQ3ZWY4MjUzYzRkZjUxZjE1YzRkN2Y0MmMxMjI4ZWY2ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkZWZhNjRlYTIwZjllNWUxMTA1MTYzNjNhZDljNDA2OTZjMTNmYjkxNjY2NjNiZGYzY2YzYjIxYWQ3YmY2Y2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7bf4d5152344011a456daeea423661e",
+      "statement": "When writing to an interactive terminal, file names are sanitized by escaping control, bidi, zero-width/format and tag characters to prevent terminal escape injection; piped uncolored output on Unix writes raw path bytes.",
+      "evidence": [
+        {
+          "resource": "repo://src/output.rs#L166-L182",
+          "version": "repo-lines-v1:sha256:bdb1daa90e9e2b126c88dee7de3661db0e6e79e02e530ecb92f815ff0b4edb17:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjNjk4ZWM5ZWYwM2M5MjBmNjg1Y2U2ZDhiZTVmOWFmMGE0ZjMyZDNjYzZhNTI2OWZmZWQ1ZTViMWY4YzI4ZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/sanitize.rs#L1-L55",
+          "version": "repo-lines-v1:sha256:9213d17c17d21851d80e75d78254e0818441789b6a835a038a3ac9efc1b084ee:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlMDYwNWFhYWE2MTMxNzYzOTg0MzcwMDE1ZTI3ZWQ1MTAzMmEwNzMxYzBmMWVmZDdhMWZjZTI2NTQ0NmM5N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYzk4ZDZiMGRjNDkyYzUwMTZkZjEwODA1YTNhNTRlYjljMTg0YTVhNjEzN2U3ZjRiZWNmYTBjMjIwNTUwZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2bb0cd9f2ab9484eb1fc51bd465986f5",
+      "statement": "With --color auto, colors are enabled only when stdout is a terminal, ANSI is supported and NO_COLOR is unset or empty; LS_COLORS falls back to a built-in default theme.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L275-L294",
+          "version": "repo-lines-v1:sha256:778f116af7e32517bd3324151f08019418241ab5c3b59b83eb02af79d229ab60:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZjU2OTZiOWNlYmY2N2U1MzllMzY5ZjY1ZGVjMTRlMzY3ZWJmMjM3NTU0MmQyNTY1ZmExMzgyYTA4MjhjZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlZmFkNjUyNDZhMmY3OGM4OTdkZTYzYTE4OTBlMWFlZjg4ZmEzZjg1ZGM3YjA3Mzk5ZDA5MmJiY2UyNDNmMDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkNzAxYjg3YjliZmNiNzA1OTYzMThlMWNlNjBiNmZlNGVmMzNmYWNmMWY2ZjU1NDY2OTlkZDIxNGUzODMxMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiMWVmM2VmYWQzOWRiNjFkOTFkODE0ZWRiMjM2NWU4NjZjYTcyZjk4YjNlNzU4MWYyMmI2NTczODY4YTgxYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_110d304035404ce59b4ce9a72630a89d",
+      "statement": "The default thread count is available_parallelism capped at 64, falling back to 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L789-L801",
+          "version": "repo-lines-v1:sha256:e3166a2478518f594c70593321d355556e7610e1785a43e1eacdd3af730fd7b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNWFjMDBhYjA2NDU1YTc2ZTMxZTllMjAyNmU2YjM5OTBjOTg1MDIxNmUwMGViZjE5ZjAwOGQyOGRlODgzN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyNmQ1ZGQxYjYzODAwYjkzZTRlNDZhNjM0MzYyZDQwZTFmYjAwZjNkZDQ1OTkyMjNiMTUzNTUzMGUyYWJhN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MTI3ZGZjNDMyYjEwYmUzN2ZhYWI5MGEyOTEyMGY2ODQ4ZWFkMDVlODliODg4MmFkMDUyNmMwNmVhOGNjNTcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T06:14:47.054Z"
+  }
+}
