@@ -35,12 +35,14 @@ export const ARM_TIME_CAPS = Object.fromEntries(
 ) as Record<RepoName, number>;
 export const DRY_RUN_TIME_CAP = 60;
 
-const ARM_TOOLS: Record<ArmName, { system: "doc0" | "openwiki"; skill: string; server: string }> = {
-  openwiki: { system: "openwiki", skill: "openwiki", server: "openwiki" },
-  "doc0-map": { system: "doc0", skill: "doc0-write", server: "doc0-local" },
-  "doc0-nomap": { system: "doc0", skill: "doc0-write", server: "doc0-local" },
+const ARM_TOOLS: Record<ArmName, { system: "doc0" | "openwiki"; skill: string; server: string; finish: string }> = {
+  openwiki: { system: "openwiki", skill: "openwiki", server: "openwiki", finish: "openwiki_finish" },
+  "doc0-map": { system: "doc0", skill: "doc0-write", server: "doc0-local", finish: "doc0_finish" },
+  "doc0-nomap": { system: "doc0", skill: "doc0-write", server: "doc0-local", finish: "doc0_finish" },
 };
 export const armSystem = (arm: ArmName) => ARM_TOOLS[arm].system;
+/** The finish tool whose result proves a run complete, named as Claude Code calls it. */
+export const armFinishTool = (arm: ArmName) => `mcp__${ARM_TOOLS[arm].server}__${ARM_TOOLS[arm].finish}`;
 
 export interface ArmTools { doc0Cli: string; doc0Skill: string; openwikiBin: string }
 
@@ -103,12 +105,14 @@ export function claudeArgs(a: { prompt: string; mcpConfigFile: string; model: st
 
 /** Why the run's init event shows a setup other than the arm's own, or null when it shows only the arm's. */
 export function isolationProblem(arm: ArmName, events: unknown[]): string | null {
-  const init = events.find((e): e is { mcp_servers?: { name: string }[]; skills?: string[]; plugins?: { name: string }[] } =>
+  const init = events.find((e): e is { mcp_servers?: { name: string; status?: string }[]; skills?: string[]; plugins?: { name: string }[] } =>
     typeof e === "object" && e !== null && "type" in e && e.type === "system" && "subtype" in e && e.subtype === "init");
   if (init === undefined) return "no init event in the transcript";
   const { skill, server } = ARM_TOOLS[arm];
   const servers = (init.mcp_servers ?? []).map((s) => s.name);
   if (servers.length !== 1 || servers[0] !== server) return `MCP servers ${JSON.stringify(servers)}, expected only ${server}`;
+  const status = init.mcp_servers?.[0]?.status;
+  if (status !== "connected") return `MCP server ${server} is ${String(status)}, not connected`;
   const plugins = (init.plugins ?? []).map((p) => p.name);
   if (plugins.length > 0) return `plugins loaded: ${plugins.join(", ")}`;
   const skills = init.skills ?? [];
@@ -116,6 +120,27 @@ export function isolationProblem(arm: ArmName, events: unknown[]): string | null
   const others = Object.values(ARM_TOOLS).map((t) => t.skill).filter((s) => s !== skill && skills.includes(s));
   if (others.length > 0) return `another arm's skill is present: ${others.join(", ")}`;
   return null;
+}
+
+/** The launching shell's variables an arm may see; everything else (CLAUDE_CODE_*, judge keys, proxies) stays out. */
+const ENV_ALLOWLIST = ["PATH", "LANG", "LC_ALL", "LC_CTYPE", "TMPDIR", "ANTHROPIC_API_KEY"] as const;
+
+/** The environment of an arm's claude and of every tool and server it starts: the allowlist, with HOME and the config in the run's own folder. */
+export function armEnv(parent: NodeJS.ProcessEnv, configDir: string): NodeJS.ProcessEnv {
+  const kept = ENV_ALLOWLIST.flatMap((name) => (parent[name] === undefined ? [] : [[name, parent[name]]]));
+  return { ...Object.fromEntries(kept), HOME: configDir, CLAUDE_CONFIG_DIR: configDir };
+}
+
+/** The launching environment's secret-looking variables (8 characters or more), as [name, value]. */
+export function secretValues(env: NodeJS.ProcessEnv): Array<[string, string]> {
+  return Object.entries(env).flatMap(([name, value]) =>
+    value !== undefined && value.length >= 8 && /KEY|TOKEN|SECRET|PASSWORD|CREDENTIAL|PRIVATE/i.test(name) ? [[name, value]] : []);
+}
+
+/** `text` with every secret value replaced by its variable's name, and the names found. */
+export function redactSecrets(text: string, secrets: Array<[string, string]>): { text: string; found: string[] } {
+  const found = secrets.filter(([, value]) => text.includes(value)).map(([name]) => name);
+  return { text: secrets.reduce((t, [name, value]) => t.replaceAll(value, `[REDACTED ${name}]`), text), found };
 }
 
 /**

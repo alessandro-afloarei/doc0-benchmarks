@@ -7,6 +7,7 @@ import {
   ARM_REPOS,
   ARM_TIME_CAPS,
   armDirs,
+  armEnv,
   armPrompt,
   armSetup,
   capMinutes,
@@ -14,7 +15,9 @@ import {
   CLOUD_PAGE_COUNTS,
   isolationProblem,
   MINUTES_PER_PAGE,
+  redactSecrets,
   REPOS,
+  secretValues,
   usableDoc0Cli,
 } from "./arms.ts";
 
@@ -146,9 +149,9 @@ describe("usableDoc0Cli", () => {
 });
 
 describe("isolationProblem", () => {
-  const init = (mcp: string[], skills: string[], plugins: string[] = []) => ({
+  const init = (mcp: string[], skills: string[], plugins: string[] = [], status = "connected") => ({
     type: "system", subtype: "init",
-    mcp_servers: mcp.map((name) => ({ name, status: "connected" })),
+    mcp_servers: mcp.map((name) => ({ name, status })),
     skills, plugins: plugins.map((name) => ({ name, path: `/p/${name}` })),
   });
 
@@ -162,5 +165,42 @@ describe("isolationProblem", () => {
     expect(isolationProblem("openwiki", [init(["openwiki"], ["openwiki"], ["superpowers"])])).toMatch(/superpowers/);
     expect(isolationProblem("openwiki", [])).toMatch(/no init event/);
     expect(isolationProblem("doc0-nomap", [init(["doc0-local"], ["doc0-write", "openwiki"])])).toMatch(/openwiki/);
+  });
+
+  it("names the arm's server when its status is anything but connected", () => {
+    for (const status of ["failed", "pending", "needs-auth"]) {
+      expect(isolationProblem("doc0-map", [init(["doc0-local"], ["doc0-write"], [], status)])).toBe(`MCP server doc0-local is ${status}, not connected`);
+    }
+  });
+});
+
+describe("armEnv", () => {
+  it("passes the allowlist only: no CLAUDE_CODE_* messaging, no judge keys, HOME and the config dir isolated", () => {
+    const parent = {
+      PATH: "/usr/bin", LANG: "C.UTF-8", TMPDIR: "/work/tmp", ANTHROPIC_API_KEY: "sk-ant-x",
+      HOME: "/home/orca", CLAUDECODE: "1", CLAUDE_CODE_MESSAGING_SOCKET: "/run/s.sock", CLAUDE_CODE_SESSION_ID: "abc",
+      GOOGLE_GENERATIVE_AI_API_KEY: "g-key", ANTHROPIC_BASE_URL: "https://proxy", MAX_THINKING_TOKENS: "1",
+    };
+    expect(armEnv(parent, "/w/fd-doc0-map/claude-config")).toEqual({
+      PATH: "/usr/bin", LANG: "C.UTF-8", TMPDIR: "/work/tmp", ANTHROPIC_API_KEY: "sk-ant-x",
+      HOME: "/w/fd-doc0-map/claude-config", CLAUDE_CONFIG_DIR: "/w/fd-doc0-map/claude-config",
+    });
+  });
+});
+
+describe("secrets", () => {
+  const env = { ANTHROPIC_API_KEY: "sk-ant-api03-secret", GEMINI_API_KEY: "AIza-judge-key", GITHUB_TOKEN: "ghp_123456789", PATH: "/usr/bin", SHORT_KEY: "abc" };
+
+  it("secretValues takes the secret-looking variables of 8 characters or more", () => {
+    expect(secretValues(env)).toEqual([["ANTHROPIC_API_KEY", "sk-ant-api03-secret"], ["GEMINI_API_KEY", "AIza-judge-key"], ["GITHUB_TOKEN", "ghp_123456789"]]);
+  });
+
+  it("redactSecrets replaces every value and names each variable found", () => {
+    const text = 'env: ANTHROPIC_API_KEY=sk-ant-api03-secret\n{"k":"AIza-judge-key","again":"sk-ant-api03-secret"}';
+    expect(redactSecrets(text, secretValues(env))).toEqual({
+      text: 'env: ANTHROPIC_API_KEY=[REDACTED ANTHROPIC_API_KEY]\n{"k":"[REDACTED GEMINI_API_KEY]","again":"[REDACTED ANTHROPIC_API_KEY]"}',
+      found: ["ANTHROPIC_API_KEY", "GEMINI_API_KEY"],
+    });
+    expect(redactSecrets("clean", secretValues(env))).toEqual({ text: "clean", found: [] });
   });
 });
