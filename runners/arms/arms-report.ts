@@ -4,7 +4,7 @@
 // fixed before any run.
 //
 // Usage:
-//   pnpm bench:arms --repos fd[,hono,celery] --date 2026-11-16 [--judged]
+//   pnpm bench:arms --repos fd[,hono,celery] --date 2026-11-16[-<tag>] [--judged]
 // Writes results/arms-<date>.json and docs/benchmarks/<date>-local-generation-arms[-DRY-RUN].md.
 
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
@@ -20,7 +20,7 @@ import { judgeComparative, liveJudge, type CellVerdict, type JudgeFn } from "../
 import { judgeModel } from "../../scoring/judge-model.ts";
 import { computeStructuralMetrics, wordCount, type StructuralMetrics } from "../../scoring/metrics.ts";
 import { ARM_REPOS, ARMS, capMinutes, CLOUD_PAGE_COUNTS, REPOS, type RepoName } from "./arms.ts";
-import { CORPORA_ARMS_DIR } from "./run-arm.ts";
+import { CORPORA_ARMS_DIR, isRunDate } from "./run-arm.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const TEMPLATE = join(ROOT, "docs", "benchmarks", "templates", "local-generation-arms.md");
@@ -433,7 +433,7 @@ async function main(): Promise<void> {
   const { values } = parseArgs({ options: { repos: { type: "string" }, date: { type: "string" }, judged: { type: "boolean", default: false } } });
   const repos = (values.repos ?? "").split(",").filter(Boolean) as RepoName[];
   if (repos.length === 0 || repos.some((r) => !REPOS.includes(r))) throw new Error(`[bench:arms] --repos takes a comma list of ${REPOS.join(", ")}`);
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(values.date ?? "")) throw new Error("[bench:arms] --date YYYY-MM-DD is required");
+  if (!isRunDate(values.date ?? "")) throw new Error("[bench:arms] --date YYYY-MM-DD (or YYYY-MM-DD-<tag>, as bench:arm was given) is required");
   const date = values.date ?? "";
   if (values.judged) requireJudgeCredentials();
   const report = await armsReport({ repos, date, judged: values.judged ?? false });
