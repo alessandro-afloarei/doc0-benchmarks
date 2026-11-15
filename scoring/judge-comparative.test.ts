@@ -151,3 +151,17 @@ describe("judgeComparative — bestPeer", () => {
     expect(res.bestPeer.coherence).toBeDefined();
   });
 });
+
+describe("judgeComparative — dimensions", () => {
+  it("judges only the dimensions it is given, in both orders", async () => {
+    const seen: string[] = [];
+    const judge: JudgeFn = async ({ dimension, oursIsA }) => {
+      seen.push(`${dimension}:${oursIsA}`);
+      return { verdict: "equal", margin: 0, rationale: "r" };
+    };
+    const res = await judgeComparative(mkPages(3), refs, judge, 1, ["depth", "breadth"]);
+    expect(seen).toEqual(["depth:true", "depth:false", "breadth:true", "breadth:false"]);
+    expect(Object.keys(res.perReference.deepwiki)).toEqual(["depth", "breadth"]);
+    expect(Object.keys(res.bestPeer)).toEqual(["depth", "breadth"]);
+  });
+});

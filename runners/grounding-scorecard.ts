@@ -155,7 +155,7 @@ async function ensurePeersFetched(corpus: string, manifestFiles: string[]): Prom
   }
 }
 
-function requireJudgeCredentials(): void {
+export function requireJudgeCredentials(): void {
   const hasAiStudio = Boolean(process.env.GOOGLE_GENERATIVE_AI_API_KEY);
   const hasVertex = Boolean(
     process.env.GOOGLE_VERTEX_PROJECT && process.env.GOOGLE_VERTEX_CLIENT_EMAIL && process.env.GOOGLE_VERTEX_PRIVATE_KEY,

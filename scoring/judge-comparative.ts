@@ -27,11 +27,11 @@ export type JudgeFn = (args: {
 export type CellVerdict = Verdict & { margins: number[]; judgeFailures: number; unreliable: boolean };
 export type JudgeSamplePage = { slug: string; title: string; chars: number; truncated: boolean };
 
-export type ComparativeResult = {
-  perReference: Record<string, Record<Dimension, CellVerdict>>;
+export type ComparativeResult<D extends Dimension = Dimension> = {
+  perReference: Record<string, Record<D, CellVerdict>>;
   // Partial because the field is only set for dimensions where at least one reference exists.
   // When `references` is empty the map stays {}, so callers must treat each entry as optional.
-  bestPeer: Partial<Record<Dimension, { source: string; verdict: CellVerdict }>>;
+  bestPeer: Partial<Record<D, { source: string; verdict: CellVerdict }>>;
   // How many pages of each wiki the judge actually saw. The sampler caps at
   // DEFAULT_MAX_PAGES, so this surfaces e.g. "12 of our 25 vs 12 of deepwiki's
   // 46" — a reader must not assume a full-wiki comparison.
@@ -123,11 +123,17 @@ export function aggregateCell(
   };
 }
 
+/** Judges all four dimensions, or only those given: the generation arms leave out citationQuality, which is not judged across systems. */
+export async function judgeComparative(ours: WikiPage[], references: ReferenceWiki[], judge: JudgeFn, samples?: number): Promise<ComparativeResult>;
+export async function judgeComparative<D extends Dimension>(
+  ours: WikiPage[], references: ReferenceWiki[], judge: JudgeFn, samples: number, dimensions: readonly D[],
+): Promise<ComparativeResult<D>>;
 export async function judgeComparative(
   ours: WikiPage[],
   references: ReferenceWiki[],
   judge: JudgeFn,
   samples = 3,
+  dimensions: readonly Dimension[] = DIMENSIONS,
 ): Promise<ComparativeResult> {
   const oursDigest = sampleForJudge(ours);
   const perReference: Record<string, Record<Dimension, CellVerdict>> = {};
@@ -137,7 +143,7 @@ export async function judgeComparative(
     const refDigest = sampleForJudge(ref.pages);
     refPagesInSample[ref.source] = Math.min(DEFAULT_MAX_PAGES, ref.pages.length);
     const byDim = {} as Record<Dimension, CellVerdict>;
-    for (const dimension of DIMENSIONS) {
+    for (const dimension of dimensions) {
       const runs: Verdict[] = [];
       const repeatMeans: number[] = [];
       let judgeFailures = 0;
@@ -170,7 +176,7 @@ export async function judgeComparative(
   // a "toughest" result and mask itself as real comparative signal. If every
   // reference is unreliable for a dimension, that dimension has no bestPeer.
   const bestPeer: Partial<Record<Dimension, { source: string; verdict: CellVerdict }>> = {};
-  for (const dimension of DIMENSIONS) {
+  for (const dimension of dimensions) {
     let pick: { source: string; verdict: CellVerdict } | undefined;
     for (const ref of references) {
       const verdict = perReference[ref.source][dimension];
