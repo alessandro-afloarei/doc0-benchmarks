@@ -8,9 +8,10 @@ Docs the same Claude model wrote for one repository, three ways (plan 4e in doc0
 | `doc0-map` | `doc0-write` (from the packed doc0 CLI) | `doc0 mcp --no-publish` |
 | `doc0-nomap` | `doc0-write` | `doc0 mcp --no-publish --no-map` |
 
-Each folder `<repo>-<arm>-<date>/` holds the pages as the arm wrote them (doc0: `.doc0/pages/*.md`; openwiki:
-`openwiki/**/*.md` without the generated `index.md` pages, plus `openwiki/.claims/` as `_claims/`) and `_meta.json`
-(`schema_version: 2`: model, effort, tool version, status and reason, usage, cost, time). `pnpm bench:grounding`
+Each folder `<repo>-<arm>-<date>/` holds the pages as the arm wrote them (doc0: exactly the `.doc0/pages/*.md` files
+`doc0_finish` listed; openwiki: `openwiki/**/*.md` without the generated `index.md` pages, plus `openwiki/.claims/` as
+`_claims/`) and `_meta.json` (`schema_version: 3`: model, effort, tool version, dry run, page cap, time cap, budget,
+status and reason, usage, cost and turns (null when the run ended without a final result), time). `pnpm bench:grounding`
 skips this folder; `pnpm bench:arms` scores it.
 
 ## How a run is made
@@ -26,17 +27,21 @@ export ANTHROPIC_API_KEY=…                                       # from the en
 pnpm bench:arm --repo fd --arm doc0-map --date <date> --max-pages 3 --budget 15
 ```
 
-`runArm` clones the repository at its corpus SHA into `$BENCH_WORK_DIR/<repo>-<arm>/src` (it refuses a folder that
-already exists, so a paid transcript is never overwritten), installs the arm, and runs `claude -p` with the clone as
-its working directory, `CLAUDE_CONFIG_DIR=$BENCH_WORK_DIR/<repo>-<arm>/claude-config` (empty), `--setting-sources
-project`, `--strict-mcp-config --mcp-config <the arm's file>`, `--no-session-persistence`, `--max-budget-usd` and a
-time cap that kills the whole process group. The stream-json transcript (`transcript.jsonl`), the final result
-(`result.json`) and claude's stderr stay in the work folder.
+`runArm` clones the repository at its corpus SHA into `$BENCH_WORK_DIR/<repo>-<arm>/src` (it refuses a work folder, a
+corpus folder or a `results/arms/` folder that already exists, so a paid run is never overwritten), installs the arm,
+and runs `claude -p` with the clone as its working directory, `--setting-sources project`, `--strict-mcp-config
+--mcp-config <the arm's file>`, `--no-session-persistence`, `--max-budget-usd` and a time cap. The arm's environment
+is an allowlist (`PATH`, locale, `TMPDIR`, `ANTHROPIC_API_KEY`), with `HOME` and `CLAUDE_CONFIG_DIR` both
+`$BENCH_WORK_DIR/<repo>-<arm>/claude-config` (empty). The time cap and claude's own exit kill its whole process group.
+The stream-json transcript (`transcript.jsonl`), the final result (`result.json`) and claude's stderr stay in the work
+folder; the transcript and result are also copied to `results/arms/<repo>-<arm>-<date>/` (gitignored).
 
-A run is `complete` only when the result's subtype is `success`, the arm's finish step deleted its run state
-(`.doc0/run.json`, `openwiki/.run.json`), pages exist, and the transcript's init event shows the arm's own setup:
-exactly the arm's MCP server, no plugin, the arm's skill and not the other system's. Anything else is `incomplete`
-with its reason, and the report scores it as nothing.
+The init event is checked as it arrives: exactly the arm's MCP server, connected, no plugin, the arm's skill and not
+the other system's; anything else stops the run at once. A run is `complete` only when the result's subtype is
+`success`, no secret of the launching shell reached its files (a hit is redacted in place), and the transcript holds
+the finish tool's own result: `doc0_finish` answering `complete` (its page list is the corpus), or `openwiki_finish`
+answering `complete` without `sourceChanged`, with `openwiki/.claims/` present. Anything else is `incomplete` with its
+reason, and the report scores it as nothing.
 
 ## Isolation check
 
