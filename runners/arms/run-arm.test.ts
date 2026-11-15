@@ -3,7 +3,7 @@ import { mkdtemp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { runArm, type RunArmOptions } from "./run-arm.ts";
-import type { ArmMeta } from "../../scoring/corpus.ts";
+import type { ArmMeta } from "../../scoring/arm-corpus.ts";
 
 const SECRET = "sk-ant-test-never-in-a-file";
 

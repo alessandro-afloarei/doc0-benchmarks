@@ -41,32 +41,3 @@ export async function loadReferenceWiki(dir: string, source: string): Promise<Re
 export async function loadWikiDir(dir: string): Promise<WikiPage[]> {
   return (await loadReferenceWiki(dir, "ours")).pages;
 }
-
-// ---------------------------------------------------------------------------
-// Generation arms (corpora/arms/<repo>-<arm>-<date>/, written by runners/arms/run-arm.ts)
-// ---------------------------------------------------------------------------
-
-export type ArmName = "openwiki" | "doc0-map" | "doc0-nomap";
-
-export interface ArmMeta {
-  schema_version: 2;
-  system: "doc0" | "openwiki";
-  arm: ArmName;
-  repo: string;
-  source_repo_sha: string;
-  generated_at: string;
-  model: string;
-  effort: string;
-  /** doc0's packed version (and commit when given), or "openwiki@0.9.0". */
-  tool_version: string;
-  dry_run: boolean;
-  max_pages: number | null;
-  time_cap_minutes: number;
-  status: "complete" | "incomplete";
-  reason: string | null;
-  page_count: number;
-  usage: { input_tokens: number; cache_creation_input_tokens: number; cache_read_input_tokens: number; output_tokens: number };
-  cost_usd: number;
-  duration_ms: number;
-  num_turns: number;
-}

@@ -7,22 +7,25 @@
 // file in this repo with enough lines. This is a fixture-data substitution
 // only; the assertions and judged logic are unchanged.
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtemp, writeFile, rm } from "node:fs/promises";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+import { mkdir, mkdtemp, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import {
   extractClaimCitations,
   resolveCitation,
   resolveExcerpts,
   judgeAccuracy,
+  judgeClaimGroups,
+  parseRef,
   groupClaimCitations,
   seededShuffle,
   type AccuracyJudgeFn,
   type ClaimCitation,
   type ClaimGroup,
 } from "./judge-accuracy.ts";
-import type { WikiPage } from "./corpus.ts";
+import { loadWikiDir, type WikiPage } from "./corpus.ts";
 
 describe("extractClaimCitations", () => {
   it("parses range-in-label (ours/deepwiki) and pairs the preceding claim", () => {
@@ -242,5 +245,99 @@ describe("judgeAccuracy — failure accounting", () => {
     expect(res.judgeFailures).toBe(1);
     expect(res.claimSupportRate).toBe(0); // no successful judgments — rate over zero successes
     expect(res.seed).toBe(42);
+  });
+});
+
+describe("parseRef — repo:// citations", () => {
+  it("a repo:// citation of a file at the repository root names the file, not the scheme", () => {
+    expect(parseRef("build.rs:1-5", "repo://build.rs#L1-L5")).toEqual({ filePath: "build.rs", startLine: 1, endLine: 5 });
+    expect(parseRef("Cargo.toml", "repo://Cargo.toml#L2-L9")).toEqual({ filePath: "Cargo.toml", startLine: 2, endLine: 9 });
+    expect(parseRef("src/walk.rs:10-40", "repo://src/walk.rs#L10-L40")).toEqual({ filePath: "src/walk.rs", startLine: 10, endLine: 40 });
+  });
+});
+
+describe("judgeAccuracy — characterization on the committed hono corpus", () => {
+  // Every cited path exists with 300 lines, so ranges past 300 stay unresolved;
+  // the stub judge fails on claim lengths divisible by 7 and supports even ones.
+  // The expected values were computed before judgeClaimGroups shared this loop.
+  it("judgeAccuracy's results on the committed hono corpus are unchanged", async () => {
+    const pages = await loadWikiDir(join(dirname(fileURLToPath(import.meta.url)), "..", "corpora", "hono-2026-07"));
+    const repo = await mkdtemp(join(tmpdir(), "hono-char-"));
+    const paths = new Set(pages.flatMap((p) => extractClaimCitations(p.content).map((c) => c.filePath)));
+    for (const p of paths) {
+      await mkdir(dirname(join(repo, p)), { recursive: true });
+      await writeFile(join(repo, p), Array.from({ length: 300 }, (_, i) => `line ${i + 1}`).join("\n"));
+    }
+    const judge: AccuracyJudgeFn = async ({ claim }) => {
+      if (claim.length % 7 === 0) throw new Error("stub outage");
+      return claim.length % 2 === 0 ? "supported" : "unsupported";
+    };
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    expect(await judgeAccuracy(pages, repo, judge, 40, 42)).toEqual({ sampled: 40, claimSupportRate: 0.519, citationResolutionRate: 0.75, judgeFailures: 3, seed: 42 });
+    expect(await judgeAccuracy(pages, repo, judge, 100000, 7)).toEqual({ sampled: 176, claimSupportRate: 0.529, citationResolutionRate: 0.801, judgeFailures: 22, seed: 7 });
+    warn.mockRestore();
+    await rm(repo, { recursive: true });
+  });
+});
+
+describe("judgeClaimGroups", () => {
+  let repo: string;
+  beforeEach(async () => {
+    repo = await mkdtemp(join(tmpdir(), "groups-"));
+    await writeFile(join(repo, "a.ts"), Array.from({ length: 20 }, (_, i) => `line ${i + 1}`).join("\n"));
+  });
+  afterEach(async () => {
+    await rm(repo, { recursive: true, force: true });
+  });
+
+  const group = (claim: string, startLine = 1, filePath = "a.ts"): ClaimGroup => ({ claim, citations: [{ filePath, startLine, endLine: startLine + 1 }] });
+
+  it("judgeClaimGroups judges every group", async () => {
+    const groups = Array.from({ length: 60 }, (_, i) => group(`claim number ${i}`, 1 + (i % 10)));
+    let calls = 0;
+    const score = await judgeClaimGroups(groups, repo, async () => {
+      calls += 1;
+      return "supported";
+    });
+    expect(calls).toBe(60);
+    expect(score).toMatchObject({ groups: 60, resolved: 60, supported: 60, judgeFailures: 0, groundedRate: 1 });
+  });
+
+  it("an unresolved group lowers the grounded rate and leaves claimSupportRate alone", async () => {
+    const groups = [group("one"), group("two"), group("three"), group("whole file", 0)];
+    const score = await judgeClaimGroups(groups, repo, async () => "supported");
+    expect(score).toEqual({ groups: 4, resolved: 3, supported: 3, judgeFailures: 0, groundedRate: 0.75, resolutionRate: 0.75, claimSupportRate: 1 });
+  });
+
+  it("a judge failure leaves both numerator and denominator", async () => {
+    const groups = [group("ok one"), group("ok two"), group("broken"), group("missing", 1, "gone.ts")];
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const score = await judgeClaimGroups(groups, repo, async ({ claim }) => {
+      if (claim === "broken") throw new Error("outage");
+      return claim === "ok one" ? "supported" : "unsupported";
+    });
+    warn.mockRestore();
+    // 4 groups − 1 failure = 3 counted; 1 supported. The missing file stays in as unsupported.
+    expect(score).toEqual({ groups: 4, resolved: 3, supported: 1, judgeFailures: 1, groundedRate: 0.333, resolutionRate: 0.75, claimSupportRate: 0.5 });
+  });
+
+  it("a failed judge call is retried once", async () => {
+    const seen = new Map<string, number>();
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const score = await judgeClaimGroups([group("flaky"), group("dead")], repo, async ({ claim }) => {
+      const n = (seen.get(claim) ?? 0) + 1;
+      seen.set(claim, n);
+      if (claim === "dead" || n === 1) throw new Error("transient");
+      return "supported";
+    });
+    warn.mockRestore();
+    expect(seen).toEqual(new Map([["flaky", 2], ["dead", 2]]));
+    expect(score).toMatchObject({ supported: 1, judgeFailures: 1, groundedRate: 1 });
+  });
+
+  it("no groups scores zero, never NaN", async () => {
+    expect(await judgeClaimGroups([], repo, async () => "supported")).toEqual({
+      groups: 0, resolved: 0, supported: 0, judgeFailures: 0, groundedRate: 0, resolutionRate: 0, claimSupportRate: 0,
+    });
   });
 });

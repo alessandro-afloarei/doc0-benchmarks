@@ -7,7 +7,7 @@ import { execFileSync } from "node:child_process";
 import { constants } from "node:fs";
 import { access, copyFile, mkdir, realpath, stat, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
-import type { ArmName } from "../../scoring/corpus.ts";
+import type { ArmName } from "../../scoring/arm-corpus.ts";
 
 export const ARMS = ["openwiki", "doc0-map", "doc0-nomap"] as const satisfies readonly ArmName[];
 

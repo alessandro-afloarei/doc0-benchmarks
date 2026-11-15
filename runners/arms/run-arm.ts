@@ -16,7 +16,7 @@ import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 
 import { ensureSourceAt } from "../grounding-scorecard.ts";
-import type { ArmMeta, ArmName } from "../../scoring/corpus.ts";
+import type { ArmMeta, ArmName } from "../../scoring/arm-corpus.ts";
 import {
   ARM_REPOS, ARM_TIME_CAPS, ARMS, armDirs, armPrompt, armSetup, armSystem, claudeArgs, DRY_RUN_TIME_CAP,
   isolationProblem, REPOS, usableDoc0Cli, type ArmTools, type RepoName,

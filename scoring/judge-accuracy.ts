@@ -38,7 +38,8 @@ export function parseRef(
   if (start === undefined || end === undefined) return null;
 
   const labelPath = label.replace(/#.*$/, "").replace(/:\d+(?:-\d+)?\s*$/, "").trim();
-  const urlPath = url.replace(/#.*$/, "").replace(/^\//, "").trim();
+  // repo:// (doc0's local pages, openwiki) names a repository-relative path, so a root-level file is not "repo:" + "/".
+  const urlPath = url.replace(/#.*$/, "").replace(/^repo:\/\//, "").replace(/^\//, "").trim();
   const urlIsHttp = /^https?:\/\//i.test(url.trim());
   let filePath: string;
   if (labelPath.includes("/")) filePath = labelPath;                  // ours, deepwiki
@@ -179,27 +180,64 @@ export async function judgeAccuracy(
   // IS the multi-hop case this resolver exists for.
   const groups = pages.flatMap((p) => groupClaimCitations(extractClaimCitations(p.content)));
   const sampled = seededShuffle(groups, seed).slice(0, sampleN);
+  const { resolved, supported, judgeFailures } = await scoreGroups(sampled, repoDir, judge, { retry: false });
+  return {
+    sampled: sampled.length,
+    claimSupportRate: rate(supported, resolved - judgeFailures),
+    citationResolutionRate: rate(resolved, sampled.length),
+    judgeFailures,
+    seed,
+  };
+}
+
+const rate = (part: number, whole: number): number => (whole <= 0 ? 0 : Number((part / whole).toFixed(3)));
+
+/** The judge loop both scorers share: an unresolved group is never judged; a failed call counts as a judge failure. */
+async function scoreGroups(
+  groups: ClaimGroup[],
+  repoDir: string,
+  judge: AccuracyJudgeFn,
+  { retry }: { retry: boolean },
+): Promise<{ resolved: number; supported: number; judgeFailures: number }> {
   let resolved = 0;
   let supported = 0;
   let judgeFailures = 0;
-  for (const g of sampled) {
+  for (const g of groups) {
     const excerpt = await resolveExcerpts(repoDir, g);
     if (excerpt === null) continue;
     resolved += 1;
+    const ask = () => judge({ claim: g.claim, sourceExcerpt: excerpt });
     try {
-      if ((await judge({ claim: g.claim, sourceExcerpt: excerpt })) === "supported") supported += 1;
+      if ((await (retry ? ask().catch(ask) : ask())) === "supported") supported += 1;
     } catch (err) {
       judgeFailures += 1;
       console.warn("[wiki-eval] accuracy judge call failed (excluded from rate):", err);
     }
   }
-  const judged = resolved - judgeFailures;
+  return { resolved, supported, judgeFailures };
+}
+
+export interface ClaimGroupScore {
+  groups: number;
+  resolved: number;
+  supported: number;
+  judgeFailures: number;
+  /** supported / (groups − judgeFailures): an unresolved group counts as unsupported. The rate the arms decide on. */
+  groundedRate: number;
+  /** resolved / groups. */
+  resolutionRate: number;
+  /** supported / (resolved − judgeFailures), as judgeAccuracy computes it: reference only. */
+  claimSupportRate: number;
+}
+
+/** Judges EVERY group (the full population, no sampling), retrying a failed judge call once. */
+export async function judgeClaimGroups(groups: ClaimGroup[], repoDir: string, judge: AccuracyJudgeFn): Promise<ClaimGroupScore> {
+  const { resolved, supported, judgeFailures } = await scoreGroups(groups, repoDir, judge, { retry: true });
   return {
-    sampled: sampled.length,
-    claimSupportRate: judged <= 0 ? 0 : Number((supported / judged).toFixed(3)),
-    citationResolutionRate: sampled.length === 0 ? 0 : Number((resolved / sampled.length).toFixed(3)),
-    judgeFailures,
-    seed,
+    groups: groups.length, resolved, supported, judgeFailures,
+    groundedRate: rate(supported, groups.length - judgeFailures),
+    resolutionRate: rate(resolved, groups.length),
+    claimSupportRate: rate(supported, resolved - judgeFailures),
   };
 }
 
