@@ -7,7 +7,7 @@ import { execFileSync } from "node:child_process";
 import { constants } from "node:fs";
 import { access, copyFile, mkdir, realpath, stat, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
-import type { ArmName } from "../../scoring/arm-corpus.ts";
+import type { ArmCredential, ArmName } from "../../scoring/arm-corpus.ts";
 
 export const ARMS = ["openwiki", "doc0-map", "doc0-nomap"] as const satisfies readonly ArmName[];
 
@@ -122,12 +122,23 @@ export function isolationProblem(arm: ArmName, events: unknown[]): string | null
   return null;
 }
 
-/** The launching shell's variables an arm may see; everything else (CLAUDE_CODE_*, judge keys, proxies) stays out. */
-const ENV_ALLOWLIST = ["PATH", "LANG", "LC_ALL", "LC_CTYPE", "TMPDIR", "ANTHROPIC_API_KEY"] as const;
+/** The variable each credential is read from: an API key, or a `claude setup-token` subscription token. */
+const CREDENTIAL_VARS: Record<ArmCredential, string> = { "api-key": "ANTHROPIC_API_KEY", subscription: "CLAUDE_CODE_OAUTH_TOKEN" };
 
-/** The environment of an arm's claude and of every tool and server it starts: the allowlist, with HOME and the config in the run's own folder. */
-export function armEnv(parent: NodeJS.ProcessEnv, configDir: string): NodeJS.ProcessEnv {
-  const kept = ENV_ALLOWLIST.flatMap((name) => (parent[name] === undefined ? [] : [[name, parent[name]]]));
+/** The one credential the launching shell holds; throws when it holds both (the arms could differ) or neither. */
+export function armCredential(env: NodeJS.ProcessEnv): ArmCredential {
+  const set = (Object.keys(CREDENTIAL_VARS) as ArmCredential[]).filter((kind) => env[CREDENTIAL_VARS[kind]]);
+  if (set.length === 2) throw new Error("both ANTHROPIC_API_KEY and CLAUDE_CODE_OAUTH_TOKEN are set: set exactly one, so every arm runs on the same credential.");
+  if (set.length === 0) throw new Error("neither ANTHROPIC_API_KEY nor CLAUDE_CODE_OAUTH_TOKEN is set: each run's config folder starts empty, with no login.");
+  return set[0];
+}
+
+/** The launching shell's variables an arm may see besides its credential; everything else (CLAUDE_CODE_*, judge keys, proxies) stays out. */
+const ENV_ALLOWLIST = ["PATH", "LANG", "LC_ALL", "LC_CTYPE", "TMPDIR"] as const;
+
+/** The environment of an arm's claude and of every tool and server it starts: the allowlist and the run's credential, with HOME and the config in the run's own folder. */
+export function armEnv(parent: NodeJS.ProcessEnv, configDir: string, credential: ArmCredential): NodeJS.ProcessEnv {
+  const kept = [...ENV_ALLOWLIST, CREDENTIAL_VARS[credential]].flatMap((name) => (parent[name] === undefined ? [] : [[name, parent[name]]]));
   return { ...Object.fromEntries(kept), HOME: configDir, CLAUDE_CONFIG_DIR: configDir };
 }
 

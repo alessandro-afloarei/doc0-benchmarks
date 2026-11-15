@@ -10,8 +10,10 @@ Docs the same Claude model wrote for one repository, three ways (plan 4e in doc0
 
 Each folder `<repo>-<arm>-<date>/` holds the pages as the arm wrote them (doc0: exactly the `.doc0/pages/*.md` files
 `doc0_finish` listed; openwiki: `openwiki/**/*.md` without the generated `index.md` pages, plus `openwiki/.claims/` as
-`_claims/`) and `_meta.json` (`schema_version: 3`: model, effort, tool version, dry run, page cap, time cap, budget,
-status and reason, usage, cost and turns (null when the run ended without a final result), time). `pnpm bench:grounding`
+`_claims/`) and `_meta.json` (`schema_version: 4`: model, effort, credential kind (`api-key` or `subscription`, never
+its value), tool version, dry run, page cap, time cap, budget, status and reason, usage, cost and turns (null when the
+run ended without a final result), time). On a subscription, `cost_usd` is Claude Code's API-equivalent figure, not
+money charged. `pnpm bench:grounding`
 skips this folder; `pnpm bench:arms` scores it.
 
 ## How a run is made
@@ -23,7 +25,7 @@ export DOC0_SKILL=$BENCH_WORK_DIR/doc0-cli/node_modules/@alessandro-afloarei/doc
 export DOC0_COMMIT=$(git -C <doc0-commercial> rev-parse --short HEAD)   # optional, recorded in tool_version
 npm install --prefix "$BENCH_WORK_DIR/tools" openwiki@0.9.0
 export OPENWIKI_BIN=$BENCH_WORK_DIR/tools/node_modules/.bin/openwiki
-export ANTHROPIC_API_KEY=…                                       # from the environment only, never written anywhere
+export ANTHROPIC_API_KEY=…   # or CLAUDE_CODE_OAUTH_TOKEN (a `claude setup-token` token): exactly one, never written anywhere
 pnpm bench:arm --repo fd --arm doc0-map --date <date> --max-pages 3 --budget 15
 ```
 
@@ -31,7 +33,7 @@ pnpm bench:arm --repo fd --arm doc0-map --date <date> --max-pages 3 --budget 15
 corpus folder or a `results/arms/` folder that already exists, so a paid run is never overwritten), installs the arm,
 and runs `claude -p` with the clone as its working directory, `--setting-sources project`, `--strict-mcp-config
 --mcp-config <the arm's file>`, `--no-session-persistence`, `--max-budget-usd` and a time cap. The arm's environment
-is an allowlist (`PATH`, locale, `TMPDIR`, `ANTHROPIC_API_KEY`), with `HOME` and `CLAUDE_CONFIG_DIR` both
+is an allowlist (`PATH`, locale, `TMPDIR`, and the one credential set), with `HOME` and `CLAUDE_CONFIG_DIR` both
 `$BENCH_WORK_DIR/<repo>-<arm>/claude-config` (empty). The time cap and claude's own exit kill its whole process group.
 The stream-json transcript (`transcript.jsonl`), the final result (`result.json`) and claude's stderr stay in the work
 folder; the transcript and result are also copied to `results/arms/<repo>-<arm>-<date>/` (gitignored).

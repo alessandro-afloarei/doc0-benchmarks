@@ -8,8 +8,11 @@ import { loadOpenwikiClaimGroups } from "./openwiki-claims.ts";
 
 export type ArmName = "openwiki" | "doc0-map" | "doc0-nomap";
 
+/** How the run's claude signed in: an API key (ANTHROPIC_API_KEY) or a subscription token (CLAUDE_CODE_OAUTH_TOKEN). Never its value. */
+export type ArmCredential = "api-key" | "subscription";
+
 export interface ArmMeta {
-  schema_version: 3;
+  schema_version: 4;
   system: "doc0" | "openwiki";
   arm: ArmName;
   repo: string;
@@ -23,23 +26,25 @@ export interface ArmMeta {
   max_pages: number | null;
   time_cap_minutes: number;
   budget_usd: number;
+  credential: ArmCredential;
   status: "complete" | "incomplete";
   reason: string | null;
   page_count: number;
   /** Usage, cost and turns come from claude's final result: null (unknown, never 0) for a run that ended without one. */
   usage: { input_tokens: number; cache_creation_input_tokens: number; cache_read_input_tokens: number; output_tokens: number } | null;
+  /** claude's total_cost_usd: on a subscription, Claude Code's API-equivalent figure, not money charged. */
   cost_usd: number | null;
   duration_ms: number;
   num_turns: number | null;
 }
 
 /** The settings two arms must share to be compared: the report refuses a pair that differs in any. */
-export const ARM_SETTINGS = ["model", "effort", "dry_run", "max_pages", "time_cap_minutes", "budget_usd", "source_repo_sha"] as const satisfies ReadonlyArray<keyof ArmMeta>;
+export const ARM_SETTINGS = ["model", "effort", "credential", "dry_run", "max_pages", "time_cap_minutes", "budget_usd", "source_repo_sha"] as const satisfies ReadonlyArray<keyof ArmMeta>;
 
 /** A corpus folder's _meta.json, refused when an older harness wrote it (it lacks fields the report checks). */
 export async function readArmMeta(dir: string): Promise<ArmMeta> {
   const meta = JSON.parse(await readFile(join(dir, "_meta.json"), "utf-8")) as ArmMeta;
-  if (meta.schema_version !== 3) throw new Error(`${dir}/_meta.json has schema_version ${String(meta.schema_version)}, not 3: run the arm again.`);
+  if (meta.schema_version !== 4) throw new Error(`${dir}/_meta.json has schema_version ${String(meta.schema_version)}, not 4: run the arm again.`);
   return meta;
 }
 

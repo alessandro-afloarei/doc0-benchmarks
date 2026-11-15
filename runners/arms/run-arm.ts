@@ -5,7 +5,7 @@
 // Usage:
 //   pnpm bench:arm --repo fd --arm doc0-map --date 2026-11-16 [--max-pages 3] [--budget 15]
 //                  [--timeout-minutes N] [--model claude-opus-5-5] [--effort high]
-// Environment: ANTHROPIC_API_KEY, DOC0_CLI and DOC0_SKILL (doc0 arms), OPENWIKI_BIN (openwiki),
+// Environment: ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN (exactly one), DOC0_CLI and DOC0_SKILL (doc0 arms), OPENWIKI_BIN (openwiki),
 // BENCH_WORK_DIR (default /work/artifacts/doc0-arms-<today>), DOC0_COMMIT (optional, recorded).
 
 import { spawn } from "node:child_process";
@@ -17,9 +17,9 @@ import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 
 import { ensureSourceAt } from "../grounding-scorecard.ts";
-import type { ArmMeta, ArmName } from "../../scoring/arm-corpus.ts";
+import type { ArmCredential, ArmMeta, ArmName } from "../../scoring/arm-corpus.ts";
 import {
-  ARM_REPOS, ARM_TIME_CAPS, ARMS, armDirs, armEnv, armFinishTool, armPrompt, armSetup, armSystem, claudeArgs, DRY_RUN_TIME_CAP,
+  ARM_REPOS, ARM_TIME_CAPS, ARMS, armCredential, armDirs, armEnv, armFinishTool, armPrompt, armSetup, armSystem, claudeArgs, DRY_RUN_TIME_CAP,
   isolationProblem, redactSecrets, REPOS, secretValues, usableDoc0Cli, type ArmTools, type RepoName,
 } from "./arms.ts";
 
@@ -38,6 +38,7 @@ export interface RunArmOptions {
   timeoutMinutes: number;
   maxPages?: number;
   workDir: string;
+  credential: ArmCredential;
   tools: ArmTools;
   toolVersion: string;
 }
@@ -228,7 +229,7 @@ export async function runArm(o: RunArmOptions, deps: RunArmDeps = {}): Promise<A
     claudeBin,
     claudeArgs({ prompt: armPrompt(o.arm, { maxPages: o.maxPages }), mcpConfigFile, model: o.model, effort: o.effort, budgetUsd: o.budgetUsd }),
     {
-      cwd: dirs.clone, env: armEnv(process.env, dirs.config), timeoutMinutes: o.timeoutMinutes, transcriptFile, stderrFile: join(dirs.root, "stderr.log"),
+      cwd: dirs.clone, env: armEnv(process.env, dirs.config, o.credential), timeoutMinutes: o.timeoutMinutes, transcriptFile, stderrFile: join(dirs.root, "stderr.log"),
       watch: (event) => {
         if (initSeen || !isInit(event)) return null;
         initSeen = true;
@@ -263,9 +264,9 @@ export async function runArm(o: RunArmOptions, deps: RunArmDeps = {}): Promise<A
   if (keptPages) await keepPages(o.arm, keptPages, corpus);
 
   const meta: ArmMeta = {
-    schema_version: 3, system: armSystem(o.arm), arm: o.arm, repo, source_repo_sha: sha, generated_at: new Date().toISOString(),
+    schema_version: 4, system: armSystem(o.arm), arm: o.arm, repo, source_repo_sha: sha, generated_at: new Date().toISOString(),
     model: o.model, effort: o.effort, tool_version: o.toolVersion,
-    dry_run: o.maxPages !== undefined, max_pages: o.maxPages ?? null, time_cap_minutes: o.timeoutMinutes, budget_usd: o.budgetUsd,
+    dry_run: o.maxPages !== undefined, max_pages: o.maxPages ?? null, time_cap_minutes: o.timeoutMinutes, budget_usd: o.budgetUsd, credential: o.credential,
     status: reason === null ? "complete" : "incomplete", reason, page_count: keptPages?.pages.length ?? 0,
     usage: result
       ? {
@@ -325,7 +326,12 @@ async function main(): Promise<void> {
   if (!REPOS.includes(repo)) fail(`--repo must be one of ${REPOS.join(", ")}`);
   if (!(ARMS as readonly string[]).includes(arm)) fail(`--arm must be one of ${ARMS.join(", ")}`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(values.date ?? "")) fail("--date YYYY-MM-DD is required");
-  if (!process.env.ANTHROPIC_API_KEY) fail("ANTHROPIC_API_KEY is not set: each run's config folder starts empty, with no login.");
+  let credential: ArmCredential = "api-key";
+  try {
+    credential = armCredential(process.env);
+  } catch (err) {
+    fail((err as Error).message);
+  }
   const maxPages = values["max-pages"] === undefined ? undefined : positiveOption("--max-pages", values["max-pages"], { integer: true });
   const env = process.env;
   const tools: ArmTools = { doc0Cli: env.DOC0_CLI ?? "", doc0Skill: env.DOC0_SKILL ?? "", openwikiBin: env.OPENWIKI_BIN ?? "" };
@@ -344,7 +350,7 @@ async function main(): Promise<void> {
     budgetUsd: positiveOption("--budget", values.budget ?? ""), maxPages,
     timeoutMinutes: values["timeout-minutes"] !== undefined ? positiveOption("--timeout-minutes", values["timeout-minutes"]) : maxPages === undefined ? ARM_TIME_CAPS[repo] : DRY_RUN_TIME_CAP,
     workDir: env.BENCH_WORK_DIR ?? `/work/artifacts/doc0-arms-${new Date().toISOString().slice(0, 10)}`,
-    tools, toolVersion,
+    credential, tools, toolVersion,
   });
   console.log(JSON.stringify(meta, null, 2));
   if (meta.status !== "complete") process.exitCode = 1;

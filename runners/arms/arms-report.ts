@@ -415,7 +415,7 @@ export function renderArmsReport(report: ArmsReport, template: string): string {
     dry_run: report.dry_run ? `> DRY RUN: ${maxPages ?? "a few"} pages per arm: tests the harness, decides nothing.` : "",
     run: [
       `Repositories: ${report.repos.map((r) => `\`${ARM_REPOS[r.repo].repo}@${ARM_REPOS[r.repo].sha.slice(0, 12)}\``).join(", ")}.`,
-      firstMeta ? `Model \`${firstMeta.model}\`, effort \`${firstMeta.effort}\`.` : "",
+      firstMeta ? `Model \`${firstMeta.model}\`, effort \`${firstMeta.effort}\`, credential \`${firstMeta.credential}\`.` : "",
       report.judge ? `Judge \`${report.judge}\`, every claim group (full population).` : "Not judged.",
     ].filter(Boolean).join(" "),
     decisions: [renderDecision("Rule 1, the map", report.decisions.rule1), renderDecision("Rule 2, the landing claim", report.decisions.rule2)].join("\n"),

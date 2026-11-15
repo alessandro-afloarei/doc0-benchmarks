@@ -14,7 +14,7 @@ afterEach(async () => {
   await Promise.all(dirs.splice(0).map((d) => rm(d, { recursive: true, force: true })));
 });
 
-const meta = (system: "doc0" | "openwiki") => ({ schema_version: 3, system, arm: system === "doc0" ? "doc0-map" : "openwiki", status: "complete" });
+const meta = (system: "doc0" | "openwiki") => ({ schema_version: 4, system, arm: system === "doc0" ? "doc0-map" : "openwiki", status: "complete" });
 
 // The doc0-write skill's "Example page" (doc0-commercial packages/cli/skill/doc0-write/SKILL.md at 894b32f9a): it follows
 // the skill's rule of a Sources line after every block, a diagram and a table included.
@@ -55,6 +55,12 @@ Sources: [src/routes.ts:3-12](repo://src/routes.ts#L3-L12)
 `;
 
 describe("loadArmCorpus", () => {
+  it("refuses a meta an older harness wrote: it lacks the credential the report checks", async () => {
+    const dir = await corpusDir("arm-old-");
+    await writeFile(join(dir, "_meta.json"), JSON.stringify({ ...meta("doc0"), schema_version: 3 }));
+    await expect(loadArmCorpus(dir)).rejects.toThrow("_meta.json has schema_version 3, not 4: run the arm again.");
+  });
+
   it("a doc0 arm's repo:// Sources line yields its claim group", async () => {
     const dir = await corpusDir("arm-doc0-");
     await writeFile(join(dir, "_meta.json"), JSON.stringify(meta("doc0")));

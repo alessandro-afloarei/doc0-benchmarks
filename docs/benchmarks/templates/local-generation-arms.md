@@ -47,8 +47,8 @@ How the harness applies them:
   `better` verdict (an unreliable cell is no win).
 - A rule whose inputs are missing (an incomplete arm, or a report run without `--judged`) is **undecided** and changes
   nothing. On a dry run, or on fewer repositories than hono, fd and celery, the rules are **not applied**.
-- The report refuses to compare arms made differently: every arm of a repository must share model, effort, dry run,
-  page cap, time cap, budget and source SHA, and all of them but the time cap and the SHA across repositories.
+- The report refuses to compare arms made differently: every arm of a repository must share model, effort, credential,
+  dry run, page cap, time cap, budget and source SHA, and all of them but the time cap and the SHA across repositories.
 
 ## Decisions
 
@@ -67,6 +67,9 @@ judged across systems. Each cell is three samples in both orders (`judgeComparat
 {{comparative}}
 
 ## Tokens, cost and time
+
+Cost is claude's `total_cost_usd`: on the `api-key` credential, what the run was billed;
+a subscription run's `total_cost_usd` is Claude Code's API-equivalent figure, not money charged.
 
 {{usage}}
 

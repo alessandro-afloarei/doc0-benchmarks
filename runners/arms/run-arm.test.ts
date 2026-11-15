@@ -6,6 +6,7 @@ import { positiveOption, runArm, type RunArmOptions } from "./run-arm.ts";
 import type { ArmMeta } from "../../scoring/arm-corpus.ts";
 
 const SECRET = "sk-ant-test-never-in-a-file";
+const TOKEN = "sk-ant-oat-test-never-in-a-file";
 
 // A stand-in for `claude -p`. The arm's environment is an allowlist, so the
 // stub reads what to do from stub-mode.json beside itself: it prints a
@@ -45,7 +46,7 @@ else {
     if (mode.openwiki !== "no-claims") file("openwiki/.claims/architecture/walk.json", JSON.stringify({ schemaVersion: 1, claims: mode.leakPage ? [{ statement: process.env.ANTHROPIC_API_KEY, evidence: [] }] : [] }));
     finish("openwiki_finish", mode.openwiki === "source-changed" ? { status: "complete", sourceChanged: true } : { status: "complete" });
   }
-  if (mode.leak) out({ type: "user", message: { content: [{ type: "tool_result", tool_use_id: "toolu_1", content: "ANTHROPIC_API_KEY=" + process.env.ANTHROPIC_API_KEY }] } });
+  if (mode.leak) out({ type: "user", message: { content: [{ type: "tool_result", tool_use_id: "toolu_1", content: "credential=" + (process.env.ANTHROPIC_API_KEY ?? process.env.CLAUDE_CODE_OAUTH_TOKEN) }] } });
   if (mode.subtype !== "none") out({ type: "result", subtype: mode.subtype ?? "success", duration_ms: 120000, num_turns: 7, total_cost_usd: 1.25, usage: { input_tokens: 10, cache_creation_input_tokens: 20, cache_read_input_tokens: 30, output_tokens: 40 }, errors: ["budget reached"] });
 }
 `;
@@ -98,7 +99,7 @@ async function options(arm: RunArmOptions["arm"], extra: Partial<RunArmOptions> 
   await writeFile(doc0Cli, "#!/usr/bin/env node\n", { mode: 0o755 });
   return {
     repo: "fd", arm, date: "2026-11-16", model: "claude-opus-5-5", effort: "high", budgetUsd: 15,
-    timeoutMinutes: 1, workDir, toolVersion: arm === "openwiki" ? "openwiki@0.9.0" : "doc0@0.3.0",
+    timeoutMinutes: 1, workDir, credential: "api-key", toolVersion: arm === "openwiki" ? "openwiki@0.9.0" : "doc0@0.3.0",
     tools: { doc0Cli, doc0Skill: join(root, "SKILL.md"), openwikiBin: await fakeOpenwiki() },
     ...extra,
   };
@@ -127,7 +128,7 @@ describe("runArm", () => {
     await stub({ doc0: "complete" });
     const meta = await runArm(await options("doc0-map", { maxPages: 3 }), deps());
     expect(meta).toMatchObject({
-      schema_version: 3, status: "complete", reason: null, page_count: 1, system: "doc0", arm: "doc0-map",
+      schema_version: 4, status: "complete", reason: null, page_count: 1, system: "doc0", arm: "doc0-map", credential: "api-key",
       dry_run: true, max_pages: 3, budget_usd: 15, time_cap_minutes: 1, model: "claude-opus-5-5", effort: "high",
       source_repo_sha: "41532d114e2ba565fb5367d606c111b29b96450c",
     });
@@ -176,6 +177,24 @@ describe("runArm", () => {
       const text = await readFile(file, "utf-8");
       expect(text).not.toContain(SECRET);
       expect(text).toContain("[REDACTED ANTHROPIC_API_KEY]");
+    }
+  });
+
+  it("a subscription run gets the token alone, records its kind and never its value, and the token is scanned like a key", async () => {
+    delete process.env.ANTHROPIC_API_KEY;
+    process.env.CLAUDE_CODE_OAUTH_TOKEN = TOKEN;
+    try {
+      await stub({ doc0: "complete", leak: true });
+      const meta = await runArm(await options("doc0-map", { credential: "subscription" }), deps());
+      expect(meta).toMatchObject({ credential: "subscription", status: "incomplete", reason: "secret in transcript.jsonl: CLAUDE_CODE_OAUTH_TOKEN" });
+      const env = JSON.parse(await readFile(join(workDir, "fd-doc0-map/claude-env.json"), "utf-8")) as Record<string, string>;
+      expect(env.CLAUDE_CODE_OAUTH_TOKEN).toBe(TOKEN);
+      expect(env).not.toHaveProperty("ANTHROPIC_API_KEY");
+      for (const file of [join(corporaDir, "fd-doc0-map-2026-11-16/_meta.json"), join(resultsDir, "fd-doc0-map-2026-11-16/transcript.jsonl")]) {
+        expect(await readFile(file, "utf-8"), file).not.toContain(TOKEN);
+      }
+    } finally {
+      delete process.env.CLAUDE_CODE_OAUTH_TOKEN;
     }
   });
 

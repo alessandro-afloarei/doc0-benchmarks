@@ -7,6 +7,7 @@ import {
   ARM_REPOS,
   ARM_TIME_CAPS,
   armDirs,
+  armCredential,
   armEnv,
   armPrompt,
   armSetup,
@@ -174,25 +175,49 @@ describe("isolationProblem", () => {
   });
 });
 
+describe("armCredential", () => {
+  it("names the one credential set: an API key or a subscription token", () => {
+    expect(armCredential({ ANTHROPIC_API_KEY: "sk-ant-x" })).toBe("api-key");
+    expect(armCredential({ CLAUDE_CODE_OAUTH_TOKEN: "sk-ant-oat-x" })).toBe("subscription");
+  });
+
+  it("refuses both or neither, naming the two variables", () => {
+    expect(() => armCredential({ ANTHROPIC_API_KEY: "a", CLAUDE_CODE_OAUTH_TOKEN: "b" })).toThrow(
+      "both ANTHROPIC_API_KEY and CLAUDE_CODE_OAUTH_TOKEN are set: set exactly one, so every arm runs on the same credential.",
+    );
+    for (const env of [{}, { ANTHROPIC_API_KEY: "" }]) {
+      expect(() => armCredential(env)).toThrow(
+        "neither ANTHROPIC_API_KEY nor CLAUDE_CODE_OAUTH_TOKEN is set: each run's config folder starts empty, with no login.",
+      );
+    }
+  });
+});
+
 describe("armEnv", () => {
-  it("passes the allowlist only: no CLAUDE_CODE_* messaging, no judge keys, HOME and the config dir isolated", () => {
-    const parent = {
-      PATH: "/usr/bin", LANG: "C.UTF-8", TMPDIR: "/work/tmp", ANTHROPIC_API_KEY: "sk-ant-x",
-      HOME: "/home/orca", CLAUDECODE: "1", CLAUDE_CODE_MESSAGING_SOCKET: "/run/s.sock", CLAUDE_CODE_SESSION_ID: "abc",
-      GOOGLE_GENERATIVE_AI_API_KEY: "g-key", ANTHROPIC_BASE_URL: "https://proxy", MAX_THINKING_TOKENS: "1",
-    };
-    expect(armEnv(parent, "/w/fd-doc0-map/claude-config")).toEqual({
-      PATH: "/usr/bin", LANG: "C.UTF-8", TMPDIR: "/work/tmp", ANTHROPIC_API_KEY: "sk-ant-x",
-      HOME: "/w/fd-doc0-map/claude-config", CLAUDE_CONFIG_DIR: "/w/fd-doc0-map/claude-config",
-    });
+  const parent = {
+    PATH: "/usr/bin", LANG: "C.UTF-8", TMPDIR: "/work/tmp", ANTHROPIC_API_KEY: "sk-ant-x", CLAUDE_CODE_OAUTH_TOKEN: "sk-ant-oat-x",
+    HOME: "/home/orca", CLAUDECODE: "1", CLAUDE_CODE_MESSAGING_SOCKET: "/run/s.sock", CLAUDE_CODE_SESSION_ID: "abc",
+    GOOGLE_GENERATIVE_AI_API_KEY: "g-key", ANTHROPIC_BASE_URL: "https://proxy", MAX_THINKING_TOKENS: "1",
+  };
+  const isolated = { PATH: "/usr/bin", LANG: "C.UTF-8", TMPDIR: "/work/tmp", HOME: "/w/fd-doc0-map/claude-config", CLAUDE_CONFIG_DIR: "/w/fd-doc0-map/claude-config" };
+
+  it("passes the allowlist and the run's one credential only: no CLAUDE_CODE_* messaging, no judge keys, HOME and the config dir isolated", () => {
+    expect(armEnv(parent, "/w/fd-doc0-map/claude-config", "api-key")).toEqual({ ...isolated, ANTHROPIC_API_KEY: "sk-ant-x" });
+    expect(armEnv(parent, "/w/fd-doc0-map/claude-config", "subscription")).toEqual({ ...isolated, CLAUDE_CODE_OAUTH_TOKEN: "sk-ant-oat-x" });
   });
 });
 
 describe("secrets", () => {
-  const env = { ANTHROPIC_API_KEY: "sk-ant-api03-secret", GEMINI_API_KEY: "AIza-judge-key", GITHUB_TOKEN: "ghp_123456789", PATH: "/usr/bin", SHORT_KEY: "abc" };
+  const env = {
+    ANTHROPIC_API_KEY: "sk-ant-api03-secret", CLAUDE_CODE_OAUTH_TOKEN: "sk-ant-oat01-secret", GEMINI_API_KEY: "AIza-judge-key",
+    GITHUB_TOKEN: "ghp_123456789", PATH: "/usr/bin", SHORT_KEY: "abc",
+  };
 
   it("secretValues takes the secret-looking variables of 8 characters or more", () => {
-    expect(secretValues(env)).toEqual([["ANTHROPIC_API_KEY", "sk-ant-api03-secret"], ["GEMINI_API_KEY", "AIza-judge-key"], ["GITHUB_TOKEN", "ghp_123456789"]]);
+    expect(secretValues(env)).toEqual([
+      ["ANTHROPIC_API_KEY", "sk-ant-api03-secret"], ["CLAUDE_CODE_OAUTH_TOKEN", "sk-ant-oat01-secret"],
+      ["GEMINI_API_KEY", "AIza-judge-key"], ["GITHUB_TOKEN", "ghp_123456789"],
+    ]);
   });
 
   it("redactSecrets replaces every value and names each variable found", () => {
@@ -200,6 +225,9 @@ describe("secrets", () => {
     expect(redactSecrets(text, secretValues(env))).toEqual({
       text: 'env: ANTHROPIC_API_KEY=[REDACTED ANTHROPIC_API_KEY]\n{"k":"[REDACTED GEMINI_API_KEY]","again":"[REDACTED ANTHROPIC_API_KEY]"}',
       found: ["ANTHROPIC_API_KEY", "GEMINI_API_KEY"],
+    });
+    expect(redactSecrets("Bearer sk-ant-oat01-secret", secretValues(env))).toEqual({
+      text: "Bearer [REDACTED CLAUDE_CODE_OAUTH_TOKEN]", found: ["CLAUDE_CODE_OAUTH_TOKEN"],
     });
     expect(redactSecrets("clean", secretValues(env))).toEqual({ text: "clean", found: [] });
   });
