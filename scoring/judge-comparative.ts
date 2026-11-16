@@ -3,7 +3,8 @@
 import { generateObject } from "ai";
 import { z } from "zod";
 import type { WikiPage, ReferenceWiki } from "./corpus.ts";
-import { judgeModel } from "./judge-model.ts";
+import { meteredJudgeModel } from "./judge-model.ts";
+import { BudgetExceededError } from "./vertex-ledger.ts";
 
 export const DIMENSIONS = ["depth", "coherence", "breadth", "citationQuality"] as const;
 export type Dimension = (typeof DIMENSIONS)[number];
@@ -186,6 +187,7 @@ export async function judgeComparative(
             pair.push(run.margin);
             calls.push({ sample, oursIsA, verdict: run.verdict, margin: run.margin, rationale: run.rationale });
           } catch (err) {
+            if (err instanceof BudgetExceededError) throw err;
             judgeFailures += 1;
             calls.push({ sample, oursIsA, error: err instanceof Error ? err.message : String(err) });
             console.warn(`[wiki-eval] judge call failed (${dimension} vs ${ref.source}, oursIsA=${oursIsA}):`, err);
@@ -280,7 +282,7 @@ ${wikiB}`;
   // at your own private clone sends that source to whichever of these two
   // external endpoints is selected.
   const { object } = await generateObject({
-    model: judgeModel(),
+    model: meteredJudgeModel("arms-comparative"),
     schema: verdictSchema,
     temperature: 0.3,
     prompt,

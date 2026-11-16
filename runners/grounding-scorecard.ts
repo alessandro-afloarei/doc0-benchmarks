@@ -37,6 +37,7 @@ import { computeStructuralMetrics, type StructuralMetrics } from "../scoring/met
 import { judgeAccuracy, liveAccuracyJudge, type AccuracyResult } from "../scoring/judge-accuracy.ts";
 import { judgeComparative, liveJudge, type ComparativeResult } from "../scoring/judge-comparative.ts";
 import { judgeModel } from "../scoring/judge-model.ts";
+import { assertUnderBudget } from "../scoring/vertex-ledger.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const CORPORA_DIR = join(ROOT, "corpora");
@@ -166,6 +167,8 @@ export function requireJudgeCredentials(): void {
         "GOOGLE_VERTEX_PROJECT/GOOGLE_VERTEX_CLIENT_EMAIL/GOOGLE_VERTEX_PRIVATE_KEY trio (Vertex) — set one and retry.",
     );
   }
+  // Refuses before any judging when VERTEX_BUDGET_USD is unset or the shared ledger has reached it.
+  if (hasVertex) assertUnderBudget();
 }
 
 /** Ensures `results/sources/<dirName>/` (or `dirName` itself, when absolute)

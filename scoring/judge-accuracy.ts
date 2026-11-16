@@ -5,7 +5,8 @@ import { join } from "node:path";
 import { generateObject } from "ai";
 import { z } from "zod";
 import type { WikiPage } from "./corpus.ts";
-import { judgeModel } from "./judge-model.ts";
+import { meteredJudgeModel } from "./judge-model.ts";
+import { BudgetExceededError } from "./vertex-ledger.ts";
 
 export type ClaimCitation = { claim: string; filePath: string; startLine: number; endLine: number };
 export type SupportVerdict = "supported" | "unsupported" | "citation_broken";
@@ -217,6 +218,7 @@ async function scoreGroups(
       try {
         if ((await (retry ? ask().catch(ask) : ask())) === "supported") supported += 1;
       } catch (err) {
+        if (err instanceof BudgetExceededError) throw err;
         judgeFailures += 1;
         console.warn("[wiki-eval] accuracy judge call failed (excluded from rate):", err);
       }
@@ -267,7 +269,7 @@ export const liveAccuracyJudge: AccuracyJudgeFn = async ({ claim, sourceExcerpt 
   // excludes them from the denominator instead of silently scoring them "unsupported",
   // which would conflate API outages with genuine claim/code mismatches.
   const { object } = await generateObject({
-    model: judgeModel(),
+    model: meteredJudgeModel("arms-accuracy"),
     schema: supportSchema,
     prompt: `Does the source code excerpt SUPPORT the documentation claim? Answer supported=true only if the code substantiates the claim.
 

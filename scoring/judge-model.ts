@@ -16,35 +16,41 @@
 import { google } from "@ai-sdk/google";
 import { createVertex } from "@ai-sdk/google-vertex";
 import type { LanguageModel } from "ai";
+import { meteredModel, type LedgerSource } from "./vertex-ledger.ts";
 
 /**
- * Judge model provider. Default: Google AI Studio (`gemini-2.5-flash`) via
- * GOOGLE_GENERATIVE_AI_API_KEY. When GOOGLE_VERTEX_PROJECT,
- * GOOGLE_VERTEX_CLIENT_EMAIL, and GOOGLE_VERTEX_PRIVATE_KEY are ALL set, a
- * Vertex client is constructed on the `global` location instead and used
- * with `gemini-3.5-flash` — the model id the source pins for Vertex mode
- * (Vertex's `eu` endpoint 404s on 2.5-flash; `global` is used here since this
- * repo has no EU-residency requirement of its own).
+ * When GOOGLE_VERTEX_PROJECT, GOOGLE_VERTEX_CLIENT_EMAIL, and
+ * GOOGLE_VERTEX_PRIVATE_KEY are ALL set, a Vertex client on the `global`
+ * location with `gemini-3.5-flash` — the model id the source pins for Vertex
+ * mode (Vertex's `eu` endpoint 404s on 2.5-flash; `global` is used here since
+ * this repo has no EU-residency requirement of its own). Otherwise null.
  */
-export function judgeModel(): LanguageModel {
+function vertexJudge() {
   const project = process.env.GOOGLE_VERTEX_PROJECT;
   const clientEmail = process.env.GOOGLE_VERTEX_CLIENT_EMAIL;
   const privateKey = process.env.GOOGLE_VERTEX_PRIVATE_KEY;
-
-  if (project && clientEmail && privateKey) {
-    const vertex = createVertex({
-      project,
-      location: "global",
-      googleAuthOptions: {
-        credentials: {
-          client_email: clientEmail,
-          // Env stores the PEM key with literal "\n" — restore real newlines.
-          private_key: privateKey.replace(/\\n/g, "\n"),
-        },
+  if (!project || !clientEmail || !privateKey) return null;
+  const vertex = createVertex({
+    project,
+    location: "global",
+    googleAuthOptions: {
+      credentials: {
+        client_email: clientEmail,
+        // Env stores the PEM key with literal "\n" — restore real newlines.
+        private_key: privateKey.replace(/\\n/g, "\n"),
       },
-    });
-    return vertex("gemini-3.5-flash");
-  }
+    },
+  });
+  return vertex("gemini-3.5-flash");
+}
 
-  return google("gemini-2.5-flash");
+/** Judge model provider: Vertex when its credentials are set, else Google AI Studio (`gemini-2.5-flash`) via GOOGLE_GENERATIVE_AI_API_KEY. */
+export function judgeModel(): LanguageModel {
+  return vertexJudge() ?? google("gemini-2.5-flash");
+}
+
+/** The model a judge call runs on: a Vertex judge is metered into the shared ledger and refuses at the budget (vertex-ledger.ts). */
+export function meteredJudgeModel(source: LedgerSource): LanguageModel {
+  const vertex = vertexJudge();
+  return vertex ? meteredModel(vertex, source) : judgeModel();
 }
