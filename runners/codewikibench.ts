@@ -5,7 +5,8 @@
 // evaluator expects (`docs/codewikibench-pinned.md`, section (b)):
 //
 //   1. A flat folder of `.md` files (their parser does NOT recurse into
-//      subdirectories — `os.listdir` + `isfile` only).
+//      subdirectories — `os.listdir` + `isfile` only), so a corpus's nested
+//      pages are flattened to unique names (`corpusPageFiles`).
 //   2. A `module_tree.json` in that same folder whose keys are the exact
 //      hierarchy of page titles. Verified against the evaluator's own source
 //      (`src/docs_parser/parse_generated_docs.py`, pinned SHA
@@ -25,7 +26,7 @@
 // evaluator's parser end-to-end and measures how much of this survives.
 
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 
@@ -643,11 +644,42 @@ export function planEvaluatorInput(technicalPages: EvaluatorPage[], userGuidePag
 // Filesystem shell
 // ---------------------------------------------------------------------------
 
+/** Whether `_meta.json` names an openwiki arm, whose index.md files are navigation, not pages (as loadArmCorpus reads them). */
+async function isOpenwikiArm(dir: string): Promise<boolean> {
+  try {
+    return (JSON.parse(await readFile(join(dir, "_meta.json"), "utf-8")) as { system?: string }).system === "openwiki";
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === "ENOENT") return false;
+    throw err;
+  }
+}
+
+/**
+ * Every page of a corpus folder, nested ones included (an openwiki arm keeps
+ * its pages in folders), each flattened to one name: `architecture/overview.md`
+ * becomes `architecture-overview`. Skips _claims/ and openwiki's index.md files.
+ */
+export async function corpusPageFiles(dir: string): Promise<{ file: string; slug: string }[]> {
+  const openwiki = await isOpenwikiArm(dir);
+  const files = (await readdir(dir, { withFileTypes: true, recursive: true }))
+    .filter((e) => e.isFile() && e.name.endsWith(".md") && !(openwiki && e.name === "index.md"))
+    .map((e) => relative(dir, join(e.parentPath, e.name)))
+    .filter((f) => !f.startsWith("_claims/"))
+    .sort();
+  const bySlug = new Map<string, string>();
+  for (const file of files) {
+    const slug = file.slice(0, -3).split(sep).join("-");
+    const other = bySlug.get(slug);
+    if (other) throw new Error(`[codewikibench] ${other} and ${file} both flatten to ${slug}.md`);
+    bySlug.set(slug, file);
+  }
+  return [...bySlug].map(([slug, file]) => ({ file, slug }));
+}
+
 async function loadCorpusPages(dir: string): Promise<EvaluatorPage[]> {
-  const entries = (await readdir(dir)).filter((f) => f.endsWith(".md")).sort();
   return Promise.all(
-    entries.map(async (f) => ({
-      slug: f.slice(0, -3),
+    (await corpusPageFiles(dir)).map(async ({ file: f, slug }) => ({
+      slug,
       // Order matters: components demote first (Step/Accordion introduce real
       // headings), preambles hoist next (this reshapes the heading spans), and
       // list neutralization runs last against the final span layout.
