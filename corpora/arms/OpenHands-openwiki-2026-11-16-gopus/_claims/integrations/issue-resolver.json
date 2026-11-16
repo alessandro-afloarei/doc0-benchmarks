@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:63ee7e7b1e2d9a673e8dac2529bff5d8ebc0178ef69a101ffd9ee3db194e596c",
+  "claims": [
+    {
+      "id": "claim_e05e55be540a469cbc1d4f3042b99099",
+      "statement": "The resolver identifies whether a token belongs to GitHub, GitLab, or Bitbucket and uses a factory to build the matching issue or PR handler wrapped in a service context.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_handler_factory.py",
+          "version": "repo-file-v1:sha256:acf6cd706b8fc140552b7ecde333161102867c011bad46e6fa462fa68f5f06da"
+        },
+        {
+          "resource": "repo://openhands/resolver/utils.py#L18-L30",
+          "version": "repo-lines-v1:sha256:fb8f3c3cf0af604d59aa1cd0f7499a727f6a82bbe796f16e293900af85593a0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0NjEyMGY4NzlmZTExZTM2Zjc4ZTcxZjUyOTQ3OWVjOGM0ZWEzZDljNjU2MjdkODAyMTFmZDM3NjIwM2Y0ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyNTA4Y2VkYTZhZGZiMzhjNjQwMTg4ZDQ1ZWY3OTY4Zjg4NDYwYTI1NDU0M2Y2OGYxYTU1ZDI1MjEzY2I5MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0MmI2NWJlYmNjNDFiM2FhMDdmNmExMjIyOGZjNTc3YmE3YjVjNWRhNDNmNGVkZWNkNDA0MTQ2MGI4YWRmOGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d91a5a4ac3a465ba9d0007b4b40c6a3",
+      "statement": "resolve_issue clones the repository once, records the base commit (checking out the PR head branch for PRs), loads repository instructions, and skips issues already present in output.jsonl.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L535-L660",
+          "version": "repo-lines-v1:sha256:47a7dd30610de4e7770986264102d567f29eb7a269d7ac46d1942b3954702010:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxNDY2NjM0YzViZGQ0YmFkMThlMGI3NDE2YjJlNDJmZmI0MDkyMDVhNjYxM2I0NDZiZmIxNTFjNDU2YThjNzZhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyNDk2ZjMwZTUzOGZjZTU1YmE5MDhjODI0MWY2NmQ4ZDNlODg2Y2M1NDU5YjRhMTMwZmZmOWMxZjI1YTQxYjc1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1OGRlNzVlOTNlOWQ4NmNjNjgyZWVlMTZjMzk5YTZmYTU5NDU2OGViNmJkNmQ1MjcwZmRlZGQzNjQ1YTk3MjJkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1OGFmZmUxYTViYzgzMTllNWQ5YTkxNTkyYmFiOWZiMWJlYjFmMDhlYzg2NWJiMzM1MmVjYzExNmEzZmI0NTgxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c25e2ea752a34940a699d6149337b946",
+      "statement": "process_issue runs the agent headlessly via run_controller with a simulated user response function, then extracts a staged git diff against the base commit as the patch.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L309-L388",
+          "version": "repo-lines-v1:sha256:24a51b259323fb41a4d1cfaf5dd9a0fd9d61b6284af555f45400983d64d61201:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNzM5ZDYzMGViYzM2NzNjZjEyN2YyYmMzMjc1MjA0ZTUzOWIyMWQ5M2I4MjE4YTFkYTJhOTdlMDNlZDYxZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYWJjZDBjYzY5MTNkNGY1MWViMjFlNGY1YWZjMmU5MGY4NmQzNmE0NTBiYjQyY2IwNWM2ZjNlMGQ3MDZmOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNzAxYTRlZGM4NWEyZmE5ZjIyZDZlMTU3NzQ4NWJjM2E4NDA1ZGQxNWFhMWU3NzJlMGM5ZDAwZGY2Njk4MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjOGQ0MmE1MDBiNjAxZTdkYmFjYjE3MTE0MmZlMTQzYjNkYTgzMzVhZTMyZWRiOTk5YTc2N2FiMDlkY2EyNzIifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L397-L460",
+          "version": "repo-lines-v1:sha256:018c9706200c8828fda7669280d7d3ae66b05b1a6e02e0430cb30cab63d1193f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYThmODAzMDgyMTNkZjVkNDQ2YWM2NTI5ZWU4ZTcxYTQxMjE0NTgzOWE3ZDFkNThiZGRmOTBkNDc1NDRkNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczZjc2M2I0NTY2MWJlMTljYTQ2ZmI0M2M1ZDFiMzIwMjM2ZjliMmY4YmI4YjIwYjQzOTc0ZjAzNzY4NzQzZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxZDJhOGVhZjVjNWRlZTdiN2M5ZDU3MDI3MzY2NGIzMTMwNTUzMWEwYmExNWE4N2MxYTVhZmNjNmVjMDllYTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2771787d9c7d4f6686fb0b9a8aefe85d",
+      "statement": "Resolution success is judged by an LLM using guess_success prompt templates, with PR runs checking review threads, thread comments, and review feedback separately.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/interfaces/issue_definitions.py#L370-L405",
+          "version": "repo-lines-v1:sha256:5e909fe6cc953fd8d6e7db14e68cd35ec1edda551a4c7585908f60fcf3f1cdc1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2ZDRkMzA3YzRmYmZlM2U0MjViYmFmY2QzOWVmM2Y3ODk5OTY5NGM4ZDA0MDM2MTVlOTM4ZWE3ZTljYzM5YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YTA5NDFlYzI2ZmUyN2IxNTRmNGVlYTBiNTM3YTY1ZjlmZGJkNGUyZTAxOTZkYjZjYzJiYzVmYmE4ZDcwZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlMzE1NzQwM2U4YjdmNTQ1MDRlMDc4ZDRjYjA0MTlkZmVlN2JjYTg1ODdiMzJmNWJiZDAyYjQyYTNkNzBiNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkMTIxYzc1ZjUzYWYwNzVhYzZkMjQ1Y2E5MDExZDRhNmRjODQzOTI5ZDNkMjVmYTk5Y2Q0NDg3OGU3NzdmZDQifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/interfaces/issue_definitions.py#L45-L110",
+          "version": "repo-lines-v1:sha256:607fe93f280494b56f4780867a48c3f296051cc6e9f6762c1a0eb751a531f066:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2ZDRkMzA3YzRmYmZlM2U0MjViYmFmY2QzOWVmM2Y3ODk5OTY5NGM4ZDA0MDM2MTVlOTM4ZWE3ZTljYzM5YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmZmRiNmUwMTJjZDEwOWQ3MGMyYzUwNjRkYjY5ODQyMjM1NmU0ZWI3OTkxYjYwZTEyOWI3NDQ4ZjRkNjI0ODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzNzQwZDFmNDZiNTAzODZjMjBhNDEyNWZlZmY0MTVmZDZkMDAzMGFhYmEwMmE5YTg3ZDJmMTNkOTg0MzFmOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2ZTYzOTkxM2Y3OTc3ODVkYTczZDQ4NzFhZmNjNjFmNzY1NGMzNzc3NWJjM2Q4Y2ExYTFjMDhmNzdmMTdmNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e45ea418da14d8ab30fd0eccee4c14e",
+      "statement": "send_pull_request supports branch, draft, and ready modes, applies the recorded patch and commits it, and by default does nothing for unsuccessful results unless send-on-failure is set.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L233-L390",
+          "version": "repo-lines-v1:sha256:e1ebff84dfe4b017cde7d44d351d35583209996a6e4d1e171b6303afd8c54659:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyODgzOGM1NjVkNmM1OTU4MDI1YzZmYjZmZmM3YWNlNTZhYmY5NWVmN2VmOWYwZjM0NjZjYzBhNzQ0NTc5M2Q0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhYmIyMzA2ODM2ODYwYjIyNWRhZTFiOWQ3MjkyYzhiMDVlMmM1NWFmMGMyY2UxMDE4OWMyNWY3N2UxZTU5YTgwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiMTJjMTI2ZGM4MmEwZWVkZDA2NzE0M2IzOGU2ZmIyNmRjMzUwYzhjODA1MjU0NjUzNjllM2U0YjI3MDM5ODM0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0OTVjNTMyMjA0MTM3YzEzNWMxMzEzMGFlOWM1YzQxNWVhZThhODJlZmRiMmMwMjgxYmY4YWU2ZGIyYzhiYWIxIn0"
+        },
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L502-L585",
+          "version": "repo-lines-v1:sha256:05bdae26e090f44524384834a8d2d11c091ed3acdfc53ca5c2354fbf24c753c7:eyJzZWxlY3RlZExpbmVDb3VudCI6ODQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTQxMzk4ZGRiZTMyOWViOTU2YTkwMDI5ZDBjYTNjN2Y4ZmVmMzAzMmYzOGY1YTE5NmRiNDdlMDhlYjJiZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MDYzNGVjOThmZWU1MDc0NTU3NTFkNmY2MzlkNzcxMjU2NmExY2Y3NTQ0MDAwMDhkMDE4ZGJhMjJiNDg3ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjMzJiNzgzY2JlNzRiMDg2NmUzNmYzNjI3YWY1MDQzNzZiNjYwMzI5ZmZmMzc3NjI0ODQwZDU2NDU4ZDlkNmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_666f34e833ee45f8b399083714ce9367",
+      "statement": "The resolver GitHub workflow triggers on fix-me labels, @openhands-agent mentions in comments and reviews, or workflow_call, runs resolve_issue, and then creates a PR on success or pushes a branch on failure.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openhands-resolver.yml",
+          "version": "repo-file-v1:sha256:e0b04da2f25661a283e5773d5c8d0b4d9631a74278dc846efe50cd8820826452"
+        }
+      ]
+    },
+    {
+      "id": "claim_6714119224f6472590702d7727eaea94",
+      "statement": "Unless a container image is specified, the resolver uses the versioned ghcr.io/all-hands-ai/runtime nikolaik image, and specifying both base and runtime images is an error.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L209-L240",
+          "version": "repo-lines-v1:sha256:ad89e4cb0d416d928194656d19e54cfac7d84f02275122a00ae89fbcc8a6b857:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiYzg1NmU3ZDhkODQ3NTE3NjI5NzQwYTA5YmRiMzI3ODQyZmY1YjMzODMwYmI5ZDk4OWY1YzRiMGVmMjVkMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzMmQxZTA1YTBhNjU3MGI1ZmUzMDAxZTg3ZTk4ZTEzZTRkZWMwYWY4ZmMwYzJjZTdlYTA4YTE4YzRkYjY5NDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5ZTg3MzY5MTdkMmRkNmNlYjMwYzUxMGU2OWEzYTQyMjNkYmNlYzE1MDlhYWUxMjhmNjcxYzFmZWE1YWQ2NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0MTczMGUwNzgwMzRhMTQwMzk2MGRjZGIwOTY0YjgwNjhjMDg3ZjI2MjExNzZjNzNlYzdhZGFjYzllY2FhNWEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1fdb8006f6a9e4cc4bfb4e29add2e11dd613ea855c1333c99a52f6fc3ee6137d",
+  "claims": [
+    {
+      "id": "claim_75029bc39c4f44e68dbc1746613b9c2c",
+      "statement": "The OSS server instantiates its ServerConfig from the class named by the OPENHANDS_CONFIG_CLS environment variable, and that config names the settings store, secrets store, conversation store, conversation manager, monitoring listener, and user auth classes.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/config/server_config.py",
+          "version": "repo-file-v1:sha256:bc098c2b599fa600e1a914926612ec008b052b733dacef44b55bb5ad62f1ac54"
+        }
+      ]
+    },
+    {
+      "id": "claim_accc7ba4ae244b189b63929c749101d5",
+      "statement": "SaaSServerConfig sets SAAS app mode and replaces the OSS store, conversation manager, monitoring, and auth classes with enterprise implementations, defaulting to the Redis-clustered conversation manager.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/config.py#L51-L72",
+          "version": "repo-lines-v1:sha256:da46be83f9c9cbd6ad415a3c5aed0bcc8d1704d87db889cdd7031838e83e99d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMWNjYzM0MDY1YTQwMTUxYWU2N2NmODE0Nzk1NjJlNzc3MWQwZmFkMzJkZjIyY2Q0NjAxNzdjZDRmZWVmMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzN2U5NDdjNTM4OWI1OTVjMmJhZGU2NTY4OTUxNTFlYTBmMGRmM2I1YjYxMjc2YTEzMmU2NjQ0MTJkYTYyNDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYWIzZjFjMmQ5NTFiZjU5MDM4OGI4NGFmOTNlOTJlMGYxY2I5NTQzNzQxNTJkYjJiMGQxYTdjNzk5MTgzOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4NjU3NjEzMDUzMWYxODBiY2M5ZGNlYTkxM2JmZmUzMDE2ODZmZGFhNjU4N2ZiZmM1YzAwOGNhYWEyZWEwNDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5d454ffc8ee347acbfa158ba914f5142",
+      "statement": "saas_server.py stacks enterprise routers, middleware, rate limiting, and 401 exception handlers onto the OSS FastAPI app and wraps it with the OSS Socket.IO server, conditionally enabling GitHub, GitLab, Jira, Jira DC, and Linear integrations by environment variables.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/saas_server.py",
+          "version": "repo-file-v1:sha256:e8afcc54934dde6b162dbe92d3348ce49f1b0805776c2561964b8bad469157bc"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ee1dde13dbf424ea2a79d7207286382",
+      "statement": "SaaS requests authenticate first with a bearer API key (or X-Session-API-Key fallback) validated against the API key store, then with a signed keycloak_auth cookie, raising NoCredentialsError otherwise and applying per-user rate limiting.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/auth/saas_user_auth.py#L205-L268",
+          "version": "repo-lines-v1:sha256:6d89892d86b66d92a683c0a1ff1a68d28fa3739760b94e1f919973ebd84d1c1b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzZGQ1YmYzYjkwOWY0MzFlN2I0Y2RlMGU5MmU0ZTQ1MzRlMWY0YTMwODU2ZGVhZTU2MDVlNWE3NzlkMTNjMTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkMjY2N2YwODllZDQ1NDZhZDc0ODNlMDI4YmY5NDllM2UzODgzYTI5YjFkZTc4YmRkOWNhMGExYzUzNDZhNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5ODJmYzk5Yzg1ZDJlYzQ2MjI1NzA0MmY5ZTlmODBjYTZjNzZmYWQ3NDkwOTg3OTliNGFjZjQ2MzVlNzc0MjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_93db330b27b54d0795f316cfa5422600",
+      "statement": "Enterprise persistence uses PostgreSQL through SQLAlchemy, connecting via the Cloud SQL connector when GCP_DB_INSTANCE is set, with schema managed by Alembic migrations.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/migrations/env.py",
+          "version": "repo-file-v1:sha256:015213657a419275d71c9c6a803ab05d2e8614dbf405f674a666caf875ca77d6"
+        },
+        {
+          "resource": "repo://enterprise/storage/database.py",
+          "version": "repo-file-v1:sha256:a64803f9f6e81fd8ca91f9fa376b6a603067be5241250eae5f2a6ba749c12b63"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1c712ae5dc84eb98617203c1378a58a",
+      "statement": "ClusteredConversationManager extends the standalone manager to coordinate multiple server instances using Redis keys for active conversations and connections and Redis pub/sub for cross-server messages.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/clustered_conversation_manager.py#L60-L82",
+          "version": "repo-lines-v1:sha256:304c93745b86b577070b19f9cd687046822e8a580e6c1586a9ccb38249494d71:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4Mzc4ZDg4NDEyMDFiM2VmMDVlMTc2NjlhZjkyNzZjM2MxNzEzZTU1ZTg2NTFlM2FmNjg3N2ZiYTFkMWY3Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NWI1NWRjMjNjZTNjNDlmOTc0ZTA2N2NjZTgzMDRmYzM1ZWYwY2Q2OWQxZWQxZjg4OWYzZmU2MjVjZDhjNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7420447f2e5844faa888562e39cc0651",
+      "statement": "SaasNestedConversationManager runs agent loops inside remote runtime containers by creating a conversation on the nested server's /api/conversations endpoint with the initial message, repository, branch, MCP config, and instructions.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/saas_nested_conversation_manager.py#L373-L414",
+          "version": "repo-lines-v1:sha256:d463c397e474691fccc56a5f29018536d41a081b85885f4ae9bb139cd4027cdd:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzZTM0YTdiNDE4MzkzM2MxMDA4MWM4MTYwNzhmYjU4ODQ2MDg2ODNmOWU4MjYzODU0ZTU0NjUyM2ExZTZlMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMTRhYzNiZmIzZDg2MTdmYTU2Y2NkZjY3MTkwOTMyMDU3OTE0MzhhMzBiMDE2NzJmZjEzYTgzOTY0YTIzZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4N2E5MjAyNjk4MTQ1NGE5ZDIxNmZlOTEzNDFkYmViNDUyMGMxM2ZkZmFmZWU1NjBiMjZjYzc5MTFmMjFkZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjNmJhN2MwZDFiZTdhZDQzMWU1MjdjNzYxODY1MzVhNzA1NGVhMDQ4NWE4MmY2YWUzODQzODU0MjhlMmIwNTgifQ"
+        },
+        {
+          "resource": "repo://enterprise/server/saas_nested_conversation_manager.py#L86-L96",
+          "version": "repo-lines-v1:sha256:179744442d9c826e33b76d6aa7b6850d8f2217bd9dd93bb85bcffef3e2162c70:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjZjdjNDk2NDQxNGVjZTE5MzU5M2RkMTE0OTFlNDkwY2NiZDY3MGYwNjQ1ZjhmN2ZlMDYxOTRhY2NkYmU1NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1Yzc4MGE4ZTk1MDQyMjI2MGFkM2NiY2EwNzllZmU5NDYyNjFmYTVmOTNhYzVhMjYyMDYwNzc1N2QxYzllZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlM2NlZjkwNDZlNTEwMDAxOTI4YTEzNTgxMzEyM2FiYmM5OGZmYmJhM2VhOTA2YzNjMDYzMzlmNDdiNzZlMDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a65346a90b1f490b86e81fcf2dad3b09",
+      "statement": "The enterprise package is licensed under the Polyform Free Trial License rather than MIT.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/README.md#L1-L4",
+          "version": "repo-lines-v1:sha256:c97bf281f88d0c1faba7d16f6c52cd0faf4128dc1349e3fc56c6455d4af164b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzEyOTQ4ZjY5NjgyNTc3MDE3ZDgwMTYzMDRmYzM1ZTZmOGYwYjA2N2NhNjA4MDgzNjA5MjRlNmYwNDIxYjBkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzE5NDU1MDc1MzBhYjNhNmIzYzNkZTllYmE0YTFmMjVlOTQzMzhhNDAwNmI2NGNkMjI1OGUxYjgwMGM2MThmMCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

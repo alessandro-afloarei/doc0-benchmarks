@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b843faa98b3e852825dfd462e981b2097129eadda11e1be7f1e3a0ce4a01062f",
+  "claims": [
+    {
+      "id": "claim_d67337185b784582a3251f5198ac6dc4",
+      "statement": "The result backend class is chosen from the URL scheme via BACKEND_ALIASES, a '+' in the scheme separates the alias from the real URL, aliases can be extended via override_backends and the celery.result_backends entry points, and no backend means the disabled backend.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/backends.py#L15-L68",
+          "version": "repo-lines-v1:sha256:d4a39217b412dbf2bc50b9e3a1d1c9f700e9cbcfb5f36aa9ade21ff71a73b80f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYjg3ZjM5NWQ1YTA0ZmQwNzNiYWYyMWUxZWNjNTk5MWJiNGQzYTdmMDM5NTdiYmIwNTg1YjM5YzY0MzljNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlOWI5MTk0NGI0YzQ1ZDJkNzJkOWY1ZGJjMTAzNDBjNTgzNDEyMWM5YTI2MzJiYTE3NDA4NGVlYjBkNmYxMTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0ZDdiYTVjZTczOGUwZjQ4OTUyYmFkYzcwNTgxOGM5ZWUyZjg2N2ZhZDVhMjUzODIwZGNlMjI3OTIyODQ5YzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhOTRjMjAyNjAxNmYyM2ExNzRkYzQxMjE4MTYxODQzMWRmZjAwMDdjMDRhZDc0YzgyMWFiMjI0MmNlMThjNzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27c47e093c564fc0aed79e923d24c466",
+      "statement": "mark_as_failure stores the failure, notifies chord bookkeeping, propagates the failure state to downstream chain elements (descending into chord bodies), and fires errbacks.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L188-L252",
+          "version": "repo-lines-v1:sha256:18c04d06936f3d56920358378e4f935e3950bd4217b4d4e28dfef5ae6f78ba7d:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MzQxZGI0NjFmYmFhZDZlODRmM2VkN2ZmZjkxZDczZGE2OTVlZDhmYWI2Yjk3MDk4MDYxM2Q2NzQ2ZDQ4MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExNjE5MTJjMWM3YWY2ZDRhYzIzYTJhZDhlOTMxNTJkNDAzNDFjYjkzY2M0NGE5ZmE2YzQ1ZTUxMmVhZjlhZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3ZDliMWQ4NmQ4OWE4YzI1NzQxY2M4NTAwMDE0YTIxZjczMzNlYmM3ZjEwNjMxOWQxZTcyYzY0YjlhMDQ1Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4NjQ5OGE2ZTQ1NDFkOTYxOGUyMmJhMzNlZmRkNjk4NDIwNzM3ZWE5NjczNmE4MWFjMGRjZmIxYTJkYzBmZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8775ecdcfd0c42b19d5ddb090c2cbb09",
+      "statement": "With result_backend_always_retry enabled, backend store and meta reads retry retryable errors with exponential backoff up to result_backend_max_retries before raising BackendStoreError or BackendGetMetaError.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L635-L693",
+          "version": "repo-lines-v1:sha256:b43d8129a087815d99f5485773de7c9558caf96f35d7489d561fdfe9f32d2b40:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMzdkZTkyNzZlNzU3NWM4OTFlY2Y5MTgzNTQ5MGYxMWFhYzNmMzkxNWNjODJhY2VkODAzZGYzMzdiNTg4M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ODg4NWE5ZjI5NDZjZDBhMzMyNzM4OTY1NmY5NDNkOTlmYThmNmQwOTY2OTE2NzMxZjlhODg3N2E3ODg3YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5NDk3YWFiNTRiYWJlMzhhYzg5MGI5MWQyZjFjYmU2MDY0MDExOTdiYmNiZWM5Mzc3NGFiMzJmYWI1ODcyNTkifQ"
+        },
+        {
+          "resource": "repo://celery/backends/base.py#L746-L768",
+          "version": "repo-lines-v1:sha256:e8fedb4207ba2bbdf539a9c7699b7af6f6ec7d71b780608c1f7ea32750131825:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MTA5MWI0NDI3Yzc3ZmQ2ZDY0YzIzZDUyNjRhNmI4NTg1OGQ5OTRhMjg3OWFiZmZjNWFmNTAwYWNhOWU5MDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MzQxYThhMzkxZjI3MDZkYjNjZDE4MGExZmRjNzk3NzMxYjU1YjBiYTUwZTRjYWJkYTMzODcyNzlmNGZmYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMDI4Mjg5Njg4YjRiOWVhMzZiMDM0ZGQ4N2MyNDJkMzM0MTk4Y2MwMzU5YmY3NTRlMTZiYTJmYTcxYzBjMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxYmViNTM3YmE5NzA5YjVjOTc3YTczMzlhM2NiYzVlZjYyOGVjNjBkMTFhMjBmM2VmMWZjMTg3YzFlMGFiZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03962c0eb868483295decc2f09a8828c",
+      "statement": "get_task_meta caches only SUCCESS results, and the result cache is disabled by default because result_cache_max defaults to -1.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L205-L231",
+          "version": "repo-lines-v1:sha256:4c23d280ceb9cbc6ff80ad811e3286eaf5b69b42c80d292714c5bcd458da738a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlMzY3NDIxOGM5MWVhNzE5NWFmNDdiMTgyNDI1OWEyMTUyZTE0ZjFmYmRmYjEyODJkMmQ3MTQyY2EzYjdkM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NDBkNWI4YjY0MGUzNjJkMjgzYzcxOGQ1YmRjNzcyMGQ0OGMwNzkxODNiNjk2YmViOTljZjNhYzY1NDI2MmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxY2FhNGIxNjZlYzQ5YWQyYTgyOTEwNDA4MDg2MDA1NzJlMDdkYjgxNmExMTgzZmQ1NjY4MTc5NjRjZmIyYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1M2EyMjliMmVmZTE3OGZhNTk0ZDk3OGUzZWNiYmYwZjFjOWJjYjc3Y2U2NzBhMDMzOTllYWIxODAxYmE2MjIifQ"
+        },
+        {
+          "resource": "repo://celery/backends/base.py#L138-L150",
+          "version": "repo-lines-v1:sha256:37b6f52c2c9825d4ab647ea8b431a36987b40cd9652587d5e9d8c48f2efe7173:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4MDBjMWZhNDdmMTk2YWVjYTk4ODEzMDI5MWY3OGYwZDBhMjk2YjAzNGRjNjk0YTQ3ZTY5OGIwOTVkNTVmMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyY2Y3NGM4MWVlZTkwNmQ2OWY4NjAwYzVjMDYyMDI1Y2U0NGNjYzAxMzFlMGUzOTA2OTk4Y2MyN2MwMDVlYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwNWIwYTQ5M2Q2ZTYwZDNhYTRlYmQ2NTI4N2NmZjM0NWIxMTQ1OGNiMjk0YjRlMjc3MTY3MTJlZTFjZjk0YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhZGU1ZTllZDIyMDBkMTRkZDVlYzliOTQ2NGZhNDc4NGNlY2FiNzcwMWYzZTk0YjNlMTI1MjJhZWU4OTMxZDcifQ"
+        },
+        {
+          "resource": "repo://celery/backends/base.py#L746-L768",
+          "version": "repo-lines-v1:sha256:e8fedb4207ba2bbdf539a9c7699b7af6f6ec7d71b780608c1f7ea32750131825:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MTA5MWI0NDI3Yzc3ZmQ2ZDY0YzIzZDUyNjRhNmI4NTg1OGQ5OTRhMjg3OWFiZmZjNWFmNTAwYWNhOWU5MDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MzQxYThhMzkxZjI3MDZkYjNjZDE4MGExZmRjNzk3NzMxYjU1YjBiYTUwZTRjYWJkYTMzODcyNzlmNGZmYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMDI4Mjg5Njg4YjRiOWVhMzZiMDM0ZGQ4N2MyNDJkMzM0MTk4Y2MwMzU5YmY3NTRlMTZiYTJmYTcxYzBjMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxYmViNTM3YmE5NzA5YjVjOTc3YTczMzlhM2NiYzVlZjYyOGVjNjBkMTFhMjBmM2VmMWZjMTg3YzFlMGFiZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b854c0b95e4406cb71f29ee11c08010",
+      "statement": "Key/value backends never overwrite a stored SUCCESS result, and a missing key is reported as PENDING.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L1116-L1153",
+          "version": "repo-lines-v1:sha256:3aec61ab764083898f17332f1b8567800413d8d8265904b462d327f7467f3dc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5MjYxZGQ1NmNlYTI1MWE1ODRkMmUzMzc1OGI2YzA4YjQxMGQ0YWI3Zjc5Y2VlNDVhMTgzM2IwZWE4OTBiYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNmQ2MGM1NjdkMzA2YzUyMDc5NGVjZTljYzVmYmY1NmFhYTI0MzUxY2NhYzJmYzFlYmZjMjBhNDcwYWE2NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjOWY3Njc2YzIxMThiMDUzZWM1NjcwYmNhMjU0OGRkYzcwMDQ0ZjU1ZDY2ZjFlNzExMzY0NjNkMDkxYzJlOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiODRkZDNiNmNiODE2ZDFmMWQ1NDE1ODQ1MDllNGY2YTViOTc4OWQ1YmE5OWQxNmE2NGYxMzZiMTcwYWU2MmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_79845fd171fd49318f24ea63f18d7e2f",
+      "statement": "For key/value stores implementing incr, chord completion is detected by incrementing a per-group counter in on_chord_part_return; the call reaching the chord size joins the header results, calls the body, and deletes the group and counter.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L1183-L1256",
+          "version": "repo-lines-v1:sha256:a2b7824c55d2fddf08b549c21f7b1b442144ab325aedf860c121175b8e895ef2:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNjJhYmZhZjY3YWQ4YTQ4ODhmNTg2NTQxOGU2NmJjYTAzZTliNTVlNTFiNmE0NTJkMjQwYjE0ZDE0ZDNkNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0ZDcwY2JmNjk0ZGRmNGVkMTYzM2Y1ZWNkZGJmZWZlYWJkN2M5NTYyYTEyYzIxZWQ2YjM2ZGU4MGUzOWMzZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmMGMyMjUzYzg3YjlmNjhiNzMwZDM5NzIwYTM0N2VkZmZjM2JiOGUzNTUwNDI3MjM4ZmE4YWFkMWYwZjdiMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4NGQ1M2ZjNDJiOGJkNjdlNmQzYjNjMDI4ZWQ2OTAwMzRjMjJkNjAxYjk1MzAxYjNlYzU4NGNhMDg4ZjE1ZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_752ef772ef7d4daeb164514de2068767",
+      "statement": "The Redis backend writes results with SETEX when expiry is set and publishes each value on a channel named after its key, enabling pub/sub result waiting; values over 512 MiB are rejected.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/redis.py#L526-L539",
+          "version": "repo-lines-v1:sha256:aa09cf9e3071dffa6b36d86418b7ed7a215cb0fd790b124cdf918dfd264cbe84:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiNDVmM2JjODM1NjAwNWYyNjAxMTQ0ODE2NWFjM2RkYWE1OGM5ZmI4MGU4YWRkNWJiYTAyYTg2ZGE5NTY0MGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNDdjMGNlMzkxYzYwZGM5ZTA4N2Q5ZDdhMmMyZjQ5ZjkyOGU4ODk3NjY3MGY5MWI5MmE3MGRkOWRiNDk5YmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjNDA3NzlkMzVmZGJmNDZhZWVhY2RjYjUyYmEyYzQ2ZjQxZWM5Nzc3MWI0MWYyZTY4YzAyNDE0NjhkYjA4ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3Y2ViM2ZmZjgyNjZlZjNjNmFlNzE1ZmMzZWI5ZDE2ODdjM2JhODE0Zjk5ZDA1Mjc1Njk4MTU4YTUwYjBhYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4219285d91c648c4a669b6a5e9e224db",
+      "statement": "The Redis backend implements chords natively by accumulating header results in a per-group sorted set (or list) and calling the body when the ready count equals the stored chord size plus additions.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/redis.py#L593-L686",
+          "version": "repo-lines-v1:sha256:d3465d8d940bcb86ab1dbb45af9bf1653e6ba662010ecf8180f4bf96e35b77a8:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5MmYwZDgwZjVjMTY2MWVlZTgxMTBkYWE0MDJhNTFjMTI5NjhkZmM0OGI3OTI3Y2FkZmFhMzIxMWU2OTVlYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhMmEwZDIxMTZlNzQ4NmJmZmQyNjNmNzAxZjI0NzQ2MjhiOTBjNDQ4YjJkMWMzMWE5ZGYwM2NiZmJhYmU4ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4YjYwOGQ1NDU1NmJlYzM2YjJlMGJjNmFkNjM3ZTVhYjllYTNiMWZlZjVkMGNhZWU3ZDM2ODVkYjgxZTczMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db0052a317054cc6bcac3b65e02744e8",
+      "statement": "The RPC backend publishes results to the caller's reply_to queue, declares the reply queue on task send, is non-persistent by default, and does not support chords or group save/restore.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/rpc.py#L147-L271",
+          "version": "repo-lines-v1:sha256:0f77e35432ad1c18b375574a63899ffd2baf9ec44134188f313fdd802437c3e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiMGI3MWJhZDVkNjY4MTVjZTE4YjEwZjM0ZDAyZjRhN2E3Zjg5Mzc3MzVhNTRmZDc2YzZhMWVmYWFhYTJkZmE4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3NzJmOTY5NWM3NDY3Yzc0NzczYzljZTdmYzQyOWM1ZDBkMGU0ODdmM2M1MWQxNWQ2NjY4YTNkMjQwNzJiYjk1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMmIxZDdhMGYwODk5YzEyMjFmZThjNjUyYjlhZGE1Y2VkYTgyMWZkODQ3MDAwYTJjMWEzMjc5MzUzYTNiY2QzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkYTdhNTRmYzQxNTZhZTAxZDg5ZmQ3MmMxYmE1MDczNzZlZmZmMjJiMGE4N2Y0ZjYzZGFkMzgzZjlmNzY4MGZiIn0"
+        },
+        {
+          "resource": "repo://celery/backends/rpc.py#L360-L374",
+          "version": "repo-lines-v1:sha256:1023039d7ef3186c945851e1cd98eaef8014276851f1bf90224ec16c470235ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNTBhYWJjM2RiODNhMzVhMGE3YWI2ZGFiNGQwMDlhZWE5NTMxNTc2Yzk1MjM1MGIxMzhlOGY0MjdjYzQ0ZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmOWE3ZmY4ZGExZDJmZmExMzExODUwODliMTk1OTZjOTRjNGY4OWNhZmVmNGFiMjU3ZmNlZmUyYzZjYTE3NWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwZGNmYmJmY2VlMmVlZGFiZWRiOGY3MDZmZWFlNTliNjhiM2UyZjQyZDFjZDJkODBlYzM2YmI4ODJiZjQyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0NDU4ZjBlYjk0NjA2NDEyMGM5NDU4NDZjNDdjZTYwMzI0YjExNzUzZTU1MGU5NWNiMGZhZDcxYWQ1OWQ2ZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2dd0f5e479a74879a882c1b95d2589d5",
+      "statement": "AsyncResult.get raises a RuntimeError when called from within a task where joins would block; prefork child processes set this guard and allow_join_result temporarily lifts it.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/prefork.py#L40-L50",
+          "version": "repo-lines-v1:sha256:6643fd3b77f9dfba27922044cadcc4d74d58b3fb2ee6f86686556f3429d30545:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyNWZhOWM2YzE1NDQ0NDc4NjM4MjE4YzgwMGQyZWMzMDZhMDAxMWYzYzhhYTIwOGRiNDgzZWE5YzhiMTJiMzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyYzZmYjJkZGJiMGEyYThiNjdkNzIwNjAwZWZlZTA2ODIwY2NhZjdkMWQ5ZDQ3ZmVhNzllNjM5YTEwMjE3MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1M2RhMDA2YjNhYmJhODFhOGUzNDdiY2FhNzliYTE2OGQwYjhiZmZkNmM5ZDU3ZTAxNTA3ZjRlYWQ4Y2FjNWUifQ"
+        },
+        {
+          "resource": "repo://celery/result.py#L30-L58",
+          "version": "repo-lines-v1:sha256:73eef928d57dbe96fab2f85e48dfeef146b004a689209b9a2afeb9aadd886722:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YjMxYWFkODQwNjg5YWNlMzFiMDQyYjllNzY5YzcyZDA2Y2QzNDE3MGMwMGQ5NTIzZmE1NTZiZWNlYjcyNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MGRhMDMyZmJmZGJkMWI0MjRlODE0YzIxMmFlNTg0ODRlNzZmNTdkYzU2ZGJmZDEzYmY4MDM3MzZkMzI0YjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1MjU5MDRmZjU5YzBiOGQ4ZmEzYjI0NDM3MDIyYjg4MTU1YTc2NTE2ZGQ4Y2YyNjJiN2YwNTgwN2U2YTdiOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzODAzMjk2YWZiY2U5ODFhMzdmMjQyODhjYWNlZTQzMDc3NjA2NDUwOGYyOWFkNWQ4MmU3ODUxMTU1N2EzZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c450af70d55f45cca5e6eebf9bc0c377",
+      "statement": "The database backend's cleanup deletes task and group rows whose date_done is older than result_expires; result_expires defaults to one day.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L205-L231",
+          "version": "repo-lines-v1:sha256:4c23d280ceb9cbc6ff80ad811e3286eaf5b69b42c80d292714c5bcd458da738a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlMzY3NDIxOGM5MWVhNzE5NWFmNDdiMTgyNDI1OWEyMTUyZTE0ZjFmYmRmYjEyODJkMmQ3MTQyY2EzYjdkM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NDBkNWI4YjY0MGUzNjJkMjgzYzcxOGQ1YmRjNzcyMGQ0OGMwNzkxODNiNjk2YmViOTljZjNhYzY1NDI2MmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxY2FhNGIxNjZlYzQ5YWQyYTgyOTEwNDA4MDg2MDA1NzJlMDdkYjgxNmExMTgzZmQ1NjY4MTc5NjRjZmIyYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1M2EyMjliMmVmZTE3OGZhNTk0ZDk3OGUzZWNiYmYwZjFjOWJjYjc3Y2U2NzBhMDMzOTllYWIxODAxYmE2MjIifQ"
+        },
+        {
+          "resource": "repo://celery/backends/database/__init__.py#L237-L250",
+          "version": "repo-lines-v1:sha256:69afa728875634607499fe098075b8b75be3f898dc02277732e942ce02ffab3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZGY1OWM1MTRiMTIzMWUzZDA1YmMwYzlkMjVlZjE2NDcwZGUwMTBiNGYyMmJlZDBiZWQxYzZkZjJjZDExOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0M2JkZTVkYTRjM2FkZTFlNDg0YmY4MDhhZGE2MjcyMzRlNWM3OGYxMGI1NjMzOWI5NDY4NDRlNzNiMmQ2MmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5MDFjMDJkZWQyM2ZjNTIxNGJiYTAzNDQ4ZTUyNThlOWVkMmZiMDM1ZjU5MGI4NmJjNjA1N2RlODE5ODY2OTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0NDU4ZjBlYjk0NjA2NDEyMGM5NDU4NDZjNDdjZTYwMzI0YjExNzUzZTU1MGU5NWNiMGZhZDcxYWQ1OWQ2ZjUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:57:55.789Z"
+  }
+}

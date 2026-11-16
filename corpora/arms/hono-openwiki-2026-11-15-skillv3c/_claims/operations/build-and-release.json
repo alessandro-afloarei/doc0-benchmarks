@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:80ad6a49f2737e51bb4ce9d2634b4dc6363e90373af2088b8c699a44381c8625",
+  "claims": [
+    {
+      "id": "claim_31ce3b9b8335489496c88f046d07cf3c",
+      "statement": "The build validates that package.json and jsr.json declare the same exports in both directions and throws 'Missing \"<entry>\"' for any subpath missing from the other file.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L20-L26",
+          "version": "repo-lines-v1:sha256:b156c0232c2fba3f08214cef858341fbc1bc8b1691aaaa58226e926ad4c26f47:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTE0ZmVlYjI3M2ZlYTc1YTg2ODQ0M2E0ZmJkM2UyNmZiNDhlYjVkZGJmOGI3M2I3OGQ2YTk2ODk2ZjI0MzQ3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc0ZmY4Zjc4N2U1ODljODRhYmQwMDcwM2JlYjFhZjFjZjIxM2E1OTE3YmZmYjFhNTkwNjRkMDZlNWJlYzBmMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTNhNDVhODg0MjA3YzhhYzRkZmUwM2I3MTExMzI5NDI5NDFlODJlMzFhODEzN2FhMWIzMTJiMjJhMzNkNTVjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWEwMGFlM2ViZmQzMDY0ZjNkYzk0ZjI5YWU5OTM0MjYxYzE0N2VhMTQ3ZWExNDFmMzJmYWE4YjU1ODhhOGI0NSJ9"
+        },
+        {
+          "resource": "repo://build/validate-exports.ts#L1-L37",
+          "version": "repo-lines-v1:sha256:ff840cad785fc1f7d0c6ec5b7c2f6845423fd5ffbbc58ce400ecfd2f7e30af0c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNWZhYjQ0OWMzYjNkMDZhOWQ2YWJkNTAwODMwMjdkZTIwYTRiODU1MTY5NGJhYTRjZTAyYjMwYzQ1N2NmYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d01b08d2c09e4eb1b87352904f5aff35",
+      "statement": "Every non-test src/**/*.ts file (excluding src/mod.ts, src/middleware.ts and src/deno/**) is a build entry point.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L28-L39",
+          "version": "repo-lines-v1:sha256:68edbcbff455ec7295b2bb2185707989069c50ce29d28d0214397aadb4f1d4d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMjg3YmQyMDQyY2UzYWM1MzBhZWRhMmZlZTQzMjdjMjA2ZTk3ZDliZTVkMzMyODBmM2FlODFjYmI3YWE2MGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyNGZkY2M1ZGVmYmYwMjVkYmMzNzA5Zjk0NzUxNjdlNTY2NzQwN2U3NjdlODRhZmJkZmZkZDIwOGNmMWYzMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljMzc2YzUzYWEwM2E4YzcyZGYwZTRjMjk3OTA5ZjBkZGIyNmJjMDgzZDEyNWY1YjZlOTM1MTdmNzMxOGRiODMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32bbb5ec323d426892548d7b41011605",
+      "statement": "The build produces ESM output in dist/ (with an esbuild plugin that externalizes imports and rewrites them to explicit .js paths), CJS output in dist/cjs/, and declaration files in dist/types/ via tsc, in parallel.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L45-L107",
+          "version": "repo-lines-v1:sha256:c2587b241a769bdb532417e7a15413b0079f490b4530498d25261ab6eb8406ec:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMDlmYjYyN2MxYjU1YzM5MDllZDU4OTNmMWY3MjE4ZDgwNDY0YTM0NThiZmUzM2Y3NzU4YmEwZDQzMTVjNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2M2FhZTM5YWQ1OWZhZjMyZDNhMDQ1OGI4OTM0NmU4ZTg4ZTkxZmRkNDA0NTQwM2E4OGEwNjdlYjU2Mjk5NjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3M2ZiMmE2NzYyZmFiZmQxM2JiNDhiMWU5NTdhZjQzODA3MDY0NGY0YjUyZjE1NDAwMmRlMDRlZGMzMDk3YjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyYWU0NTI1ZTFjMjJmNWY4ZmUyOWVjNTFiMzI4OGYxYzI2ZGIxZTFjMmZjMTZiZWVhYmJiMDExZDc1YzUyZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97404e82d2d64064a29e729acf960bda",
+      "statement": "After emitting declarations, the build blanks out #private property declarations in all .d.ts files using oxc-parser.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L109-L114",
+          "version": "repo-lines-v1:sha256:ee07c5103e4f96c3de30949fe1852d7a7290a7c853193793ce92cd08b655a087:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFkMmU4ZDk0N2RiZjBlMGVjNTA4YmI4MTAzOGE2OGNiOGQ1MWJlMWZkNmJkYWFhYjAzMjkwYmU0ZWYxZjVkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGMyMGNkYzg3M2UwM2VhMTgyNGRlOTg3ZTdiYzYxYTNkZmM1NDk5MTM2ZWYxZWFiNDFmZTNjM2I1ZDNmYTVmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjk4Mzk3OTBhZDViOWQ0NDg1ZmE5MWVkM2E2OWMxYWJmYWQ2NjFjNzFmZDIxMWEwNjNjODk0ZTAxNjljNDRlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://build/remove-private-fields.ts#L5-L57",
+          "version": "repo-lines-v1:sha256:d7e3103e4560edbbebd78478a5cf2bcc6de42bcd760ef7a23fe7892eae0f1b6f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmZjE2MGRiYjM2OGU2MGE4Y2VhMGU2OGQyNDY5NmVkZjZjZDQ4NDRkODU2ZTQ2YTE0YTAyZTg1ODIyY2E4NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNTJlMzkxODY5MWVmOWVjZGNlNDFjOGJhMmNmNTllZDMyMjA0OWNjNTE0ZTI0YmNhNThiYTBiZjIzYjI2YWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5bae5804075425999633cc08b7d098b",
+      "statement": "package.cjs.json ({\"type\": \"commonjs\"}) is copied into dist/cjs and dist/types after the build, and publint runs as a postbuild step.",
+      "evidence": [
+        {
+          "resource": "repo://package.cjs.json",
+          "version": "repo-file-v1:sha256:8005a3491db7d92f36ac66369861589f9c47123d3a7c71e643fc2c06168cd45a"
+        },
+        {
+          "resource": "repo://package.json#L25-L33",
+          "version": "repo-lines-v1:sha256:49ef4bf5637c936bb88b28d3d4a98b26a80ab3d86186d34580bb9bf8a8fa9e52:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTllYjA0Y2IyNTUzM2MxNWYxM2FmMjIyYjkyYWJlNWNmNjEwOWQ4YmY0MDI1YmI2ZmI0MGQ4YTU1OWIxZDRiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzVkYWFlOGZlYWY0ODdiNWU0MWY4MTZhNTFjMmQ1N2ZhZDhkYTA2NzFjZDNiNDUxOWRlYjUwYTUzOTdkNTcxZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2JhOTg2ODU1NzdjOTE2ZTkwYzU1M2YxZDczOGZkMTAyNjI1YjA5Nzc4Y2U0OWYxOGUwZTY2ZGY2NjYyMTYyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDhlZGVlYjk0MDcxNjY5ZGExOTY2YjE1N2UxODAyODdkNTE5NDdmOWViYzRkNGViZDJmZTA1NDgxY2IyMWE2OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b93d8408d1b4c329d3413a2722c7d4f",
+      "statement": "jsr.json publishes the TypeScript sources under the name @hono/hono with sloppy-imports enabled, excluding test files.",
+      "evidence": [
+        {
+          "resource": "repo://jsr.json#L1-L8",
+          "version": "repo-lines-v1:sha256:7a8cdcc162770c1809597b2d171bc092152e51e5bdf99bfc125867d245f7ac87:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MwNWJiOWY0YThiOTg0NTEwZjgxNWE1ZmM0MDc4ZDc3YzVhMjBlOTNmMzM3M2RjNWRkZTRhMzQxZDFiNDBjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjhjNDYzZjUzYmQzY2NjOGYzMjI1ZjUxMjRjOWEyM2MzNTBlNDM5ZGFiM2FhYjU5Y2U5MDJiZmFlMDc2MDM1NiJ9"
+        },
+        {
+          "resource": "repo://jsr.json#L107-L111",
+          "version": "repo-lines-v1:sha256:cfca9123a7d7f041bcb3ceb804054588ec42172842eaf381cdd0b1ac19186179:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDIwMzYxYmU5NmJhMzVhOTI3ODI3MDgzNWE2MzJlOTkzYjU2MDM0ZmNkZjM4NjAyYzI5Njk0NzJjNDJhYjlkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODg2YjI0ZWE5OThiNzEyNzc3NDFkZDc1ZmRlOTMyNWE1Y2ZiMGJmYzcyYTZiNzMxZGYzZWEwZTk3MmY4MGFlNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_af84d4f0a38449b0987e4efa46784056",
+      "statement": "Pushing a tag publishes to npm with provenance after building, and to JSR via publish-on-tag.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L1-L50",
+          "version": "repo-lines-v1:sha256:8d3e9c2a9cb7d4dbad5417fdfa6a8ae178779899c1e7c8ed933359866042d21b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYTc1NThiZWJjYmVjMzAxMjIzOTlhZjE1MmM0ZjQ1MzBiZDdiMTc4ZTQ3MGM4NzY4YjU4Njg2OTljNWQ4YTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyZTRjOGM4Y2QzNGFjMzA2MzZkNzdmNzlhOWExMGVlYThmZWE5YjZiNjJlMWYwZDhlYzdmMWE4ZmQ3ODY0ODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1ZmU1N2U2MzMxYzMxYWEyMzdhNjU0NWZhZjk0MmM3MmFmNWU3ZWMxZGFmYjY5YTkxZGI4NmFiNGVhNjAwYWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f816b5cc8e548fe9fc4e97ac4a7ec23",
+      "statement": "The main CI job runs format, lint, editorconfig-checker, build and test, with separate jobs for JSR dry-run publishing and each runtime test project.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L38-L183",
+          "version": "repo-lines-v1:sha256:6429dd54293581b9e5b4109dadb2f6b41e118d76504262b2386caedaa287b37f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiYmUwOWFlYWNmNTIyOTAwZTViMzJkZDc5ZmY1M2YyZWE5Y2NkMjA0MGZiOTYzYWQxMWZhMTQ1YmM3ZWQ5YjNkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwZTU4NGVkZDNjODYzMDEyNGFhYzUxYjRhODI1OThhNmI0ODU4ZmY4NDI3ODc3NzRkODJlYzA3YzA5OGMyY2JiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4YzhlNjI3YWE4OWU4Zjk2NzQ0MmNiZTM0ODRjNjJmYzFlNGIzNDYxYTAyYmRkZjMyZmQxMWY1ZGY0NmQxNjVhIn0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

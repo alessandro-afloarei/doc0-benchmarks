@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:959ce13d124a4607c4788ad9c9bada9adcc08040cf955d46538b2c94ef5f7b79",
+  "claims": [
+    {
+      "id": "claim_988a15d3367148c5bf6dfeeeb311e85f",
+      "statement": "The frontend runs React Router without SSR and flattens client build output into its build directory.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/react-router.config.ts#L12-L35",
+          "version": "repo-lines-v1:sha256:9240bbf8c5aed3ea505c1cc35c6c1357615ebb486cec1ecbe86a159aef48174d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2MjRkZjFjYTc5YzExMWZlYjEyNGM4OGEwYmFjN2IzMDllM2U0ZGIzMGFhY2QyNTUzNGU0YmQ5MWQwYjY4NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyNmRlMjBiOWIzYTAzMDQwYmM0MDMyOTY3YTQ5OWM2ZjY3OGYxYmNkNDNlODFjY2Y0YTY0NmY2NzExNzAwMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1ODI3YWRlNzAwZjFkYTYyMmI3OWVjZWY3OTVhMGUwZTE2OTU2Y2Y1ODA1ZjA2NzQwYWVjOTYxNTQwMGY4NDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fed1ebd625464cb4ad144551d6712c47",
+      "statement": "Conversation creation posts repository, provider, branch, initial message and instruction/task fields to the backend, then invalidates the conversation-list cache.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/api/open-hands.ts#L257-L283",
+          "version": "repo-lines-v1:sha256:9578f72bfc472ba326daf927e379efbbc20dc1300561e80e189cf0f152597480:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTJmYTFjYzg3Y2ZkOTRkMzVmYTU4MWFlZjgwMGZiNzY3ZDYyNjM3NTEyZGE5YmM4ZThmOTc1ODFiM2UzNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiMTA2YmY1YjhhMDBhYTMzNzA0ZWJmMzAwZGUzMDY5NmE5Mzk2YTMwMzAzMjkwMWFlY2Y5ZTAxOWMyODQ0MzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2NzJmMTU1N2RmYmVhNTZlODNkMTEzMzAxZmJmODdmNzlhOTc0M2EwZjM3MmI3OWQ2OGFlMjUwZmZhMTlkMGUifQ"
+        },
+        {
+          "resource": "repo://frontend/src/hooks/mutation/use-create-conversation.ts#L20-L55",
+          "version": "repo-lines-v1:sha256:dee517d3c4a0d25e3cedac209c0607cf8eaa0afca0bfc1d3a4b74b9da28f91b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNDVjOTEwMzk5ZGFlZWQzMDFjMTI3YWU4Mjg3OWJhM2I4NzAwZjYzMjY1NzJkZmMwYTAyZGM5Yjk0ZjIyNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmMDRlNzlkMTI3YTBmN2Y0MThjODFlMmI0ZGVhNzYzNWQ0N2M3MmE2YmJkZjQ0NGI5MzZiMTEzNjQwMzA2MmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_48eba4b094434f69a7ccd2d221db75f4",
+      "statement": "The conversation route resets displayed state when switching conversations and restarts stopped conversations through the API.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/routes/conversation.tsx#L45-L92",
+          "version": "repo-lines-v1:sha256:d781663723a6eccc21f8b06cc29af6e6da454c05b2466abeed8cd528c92179ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4YzA3ZDJhN2E4ZmJmZGMwMTA1YmEyZTZlZDI4ZjQ0NTEwMDAxMDBmYzczZjQyNmQ2M2UzZDc2ZGNhMDk1Y2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlMDA2Mzk5NzZmYTc2MzFhNWRiZDI3ZTNlNGNjMjI3YmI0YzM3MWM3NTVlNjVlNzlkNDlkZDMwMGVkOGY0M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkZTY2NWZiODNhMDYxOWQyZThkZDdjNzFhNTZmODk2MDliMTA5YjE4MjExNDMwNjM2Zjg2OGZmMDE3OWUwYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlNWUzYjNhYzEwYzc3MTE4NWMxMGI3YjBiZGI2ZTBmYzg0NzFlYzhjOTU0NTY3NDdjNWE0NjNmODNmMTcyZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_554a16561b6f4dea969aacf4013fad16",
+      "statement": "The primary socket provider sends oh_user_action, receives oh_event, tracks a latest-event cursor and chooses a socket path from conversation URL or local host configuration.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L151-L157",
+          "version": "repo-lines-v1:sha256:847052546c68aba532c5757204f89f14ee336f6ac2d4f72bc5bf3d44c08146c9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTA1YTJkMmYwMTVhY2ZhZWIwZTQyZDUxNTAwYTQwM2E1ZWQwNDc2MjQxYjlkNzI1MDc1ZWVkNjYyYmVlOWJlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmE0MzRjMDE5MDZhZWRmYTg3Yjk1MTNjZDc1ZGM3NGQ1MjRmNzU1MzBiZjY4ZGM5MWIzZjMxYzRhMWNmNmJlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzljZDRkZTExMWQzOGM2MmVlNmVhZjNmYTliOTZkYjZkYjM1NzE0ZDEyYmQ0MWZhNzI3NWMzOWU4ZTc0OTExNSJ9"
+        },
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L251-L352",
+          "version": "repo-lines-v1:sha256:b0a839b7c0fec58666f78983b7449acb7b76d2c0d1e666a31b30633c367379a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJjODdjNjNhOTI2NTBlMjIwZDJmYzg5Y2YwNmY2M2I0Yzk5YTc1MDNkNmJiMDkxNTMyYTZiMjc4ZmIyOTI1NGIzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzNGJlYzFmYzc5YTcyOGYxZjg1ODdhNDZkZWE4NGZlZDM3MWMwZWU3MGJlOTk5ZDdhZTIxOTQ2MDk5YTIzMjY4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4YzJmYWQ1NWUwMjlmNTUxZDI2ZDYyNmI0YTZiMTA2NTFjMDNiMDM0OGJjNDQ3N2Y5ZTI5YmExYzM0NDc1NzU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_8292bb4337c04d1c8a814fbeff2fd9e4",
+      "statement": "Incoming events update Redux through action/observation handlers while the socket provider invalidates file-change and file-diff queries on relevant actions.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L162-L248",
+          "version": "repo-lines-v1:sha256:bb7ceb4cc71c35db4795f60f08b6f02d0444c0ec32fca2e12577efb415cd7fd4:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmYTc5NzNiZDJkYmE1YTVkNTcyOWQxMzFlYWQ3MTk0MTUxYmE0NTNiODU1NGZlOTg5NjE1MTNlMjBiNGNiN2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0YjlhMGIxNmI5OTEwYmFhNWQwYTRkY2FmZjhhNjBjNDI5NjMzYmYyYWUzY2JhY2M4MjAyOTA3NTgwZDEwY2EifQ"
+        },
+        {
+          "resource": "repo://frontend/src/services/actions.ts#L17-L42",
+          "version": "repo-lines-v1:sha256:02ea67112632f52283e02bfa56c2e767fd9a3ce2b4470d8560a4b3931afcf602:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2OTVlMzhhYTk2M2I3MDU3Y2M2MzA0MjBkMjI5MDNhOTNlOWE5ODVhNmRiZGM1ZmFiM2FmOTkzMjBiNDcxYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2Yzk2ZGI5MmU1MjczNzkxNzVhZjkwYjE2Nzk4OWVhY2ZiYmM5NmRmOTk5MGFkOTUwODZlZWY5MTM2OWMwMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNGJmMThhYjEyOWJlNTQ0MmUxZGVhNTc5MDU0NGU5OWFlMjJkMDU3YTY0NDZlNDUxMzE0NWI4NTFhYWFhZGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_80fc222c864d4b12a5cd33c4ae53b59b",
+      "statement": "The terminal observation renderer truncates output longer than 5000 characters to the first and last 2500 characters.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/services/observations.ts#L9-L26",
+          "version": "repo-lines-v1:sha256:4639521f72dfc35ee6d58047792cfe6074d144dce499deb3e8cbad1a210e6a48:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YmZjZTVmNWFkODk4MmI3YzMxMGJjYTM1Zjk5ZDVmYTQ0ZDQzMTMxYTk3MGVhYmVhZmU1ZTIzZDA3MmE2OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExYjAwZDlkNjA2ZGY3NmRkMjA5M2M4NDMxZDM0ZDViOTcxOTMzNTBjODgyODJkNjhhM2Y1YzIwNGRiMTUxN2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1NjAyMjMwZTQ1YWJhMWFhNDMxNjIyMjdjYzc5MjRkMWU2MWY3YmJhNTFmZDQwZmRmZThjNzJiMjM3OTc0YTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwMzk0ZTBmZjI3ZTc4ZTExYTY2ZjU4NTMxYTVkNmJiNTYxMmY4M2MxNjE1NTU1M2JlNjFkOTQwNjg3MTUyZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_546fb31ff8b04fcf9e275633b230710f",
+      "statement": "The UI component package exports built JavaScript, types and a separate stylesheet.",
+      "evidence": [
+        {
+          "resource": "repo://openhands-ui/package.json#L27-L43",
+          "version": "repo-lines-v1:sha256:9e05862c016800346f19715c438978c928a51f23acb1f64e4c993aa81da08f1b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NmQ4MzA5MGM2ZmI5MzQ2M2FkNGYyZjg1ZjhjYTU1NzZmN2U4NWUxMjFkOTU4YTUzNzE4ZTIxZDlmNzZlNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyMzgzOWQwNTFiMDA2OTFjMmQwMWVmNDQ2ZjNiNzJiZTg5ZDNiMzNmMWU1OTA4NDY2ZjRhNjhlZGFhYjI3NTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViYmE3YWQ0MzRiZjVmNDc0MTVjZTMwNzZmMTQ3ZmFmZmY2OTZkOWVkYmFmYjZlNDc4MjBiMGZhZGYzMWI1NjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiMTdiMTczMTcwOGUwMmI3NzMxZjk4YzBlNjE5NGNjOTUxMzNlNmJlMjNkNTYwOGI4NWJkM2M2NGI2MDlkNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0caddcb958a94befb50a131755bee5c1",
+      "statement": "Frontend scripts distinguish real-backend dev from dev:mock and dev:mock:saas and generate translations during builds.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/package.json#L63-L77",
+          "version": "repo-lines-v1:sha256:64fea7062ac6e5033768fbaf8b90eaaf4c45a98cefecd98856af09a02793c39f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ODMzZDU5NDljMDNhNDBjYTk1MjQ5MTYxMGE2NjU5NjQ0YjNhYTQ2NjM2MmY3OTkwMjBkYmYxOTgxNTQ3ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyZDM3MmRkZTMxMjk3YWRiYzBlN2RjMjY5NDlkN2U5NWEzYTdhZGZiZTU0NzlhZmRjOTI3MzdkOGJiNTRkYjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkMTdlOTExYWYzNDQ1NDRmZDI3MDg2M2JjMDI1OGRiM2JjYjcyYTU5MDRjYWJhNWMwMmQzZTg1MjU2MWQ0ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlMDc4NTc1ZWY5ZDY2ODQxMDE0OTEwMDJmNTM0NmUxMDI5OTk1Y2U4YTkzNTNjZjczOTBjMGNjODAwYzc2YmMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

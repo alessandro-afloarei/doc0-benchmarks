@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ebdbd51fdb565139c8c4a1054cad3e69c01e27bd9d701a95ef46ecd3ec4b43f2",
+  "claims": [
+    {
+      "id": "claim_1cbc3c3570f549578d64fd7c764c21f6",
+      "statement": "bun run test first type-checks sources and tests with tsc against tsconfig.spec.json and then runs all Vitest projects.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L11-L12",
+          "version": "repo-lines-v1:sha256:90b142c66f3a8aea0ee0547b2816e457d3100ec23a0eb4ffc2adfe82632eb59e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc3MTQwNGJhYzNhMThiNTRhOGQzZGJhYzhjMGI1MTExZjFlMmUyYjFmY2NhYTU4ZDIzMWQxNjc4ZmIyMmYxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY0ZDhjMDczNDI5ODkzMTAxNTc2ZDg4ZDk5MTI3ZTg5ZDY4OTFkM2IxN2U4OWRmMDJlYzlhZTcwNzA1ZDhiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzJkN2Q5N2RmNGJiMjU4ZmRkN2M1OWI4MTlhMGIzZjVmMTdmMjc3MmViMjJhZTM3NTRlNjlhZTA3YTBjNmZkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2E2NzVmMGY2OGNlMDYzZDNkMzZkMzdmYzI2MmI3YjVkNWEwZmZmMGY5M2RmMWQzNGIxNTJhNmFmMTMyOWZlYSJ9"
+        },
+        {
+          "resource": "repo://tsconfig.spec.json",
+          "version": "repo-file-v1:sha256:fb97bc443e930077ff966e316fd02fe05bbadaa0e03e575516757f15d244f7d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ab4a2277b0b4c199e52f32165ab6160",
+      "statement": "Vitest runs with globals and always-on V8 coverage, excluding type-only files, benchmarks, runtime tests and perf-measures from coverage.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L3-L24",
+          "version": "repo-lines-v1:sha256:005c621c934ff17b270b8ce569227a80860504b1234ca0b039db026de24599b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyY2VjYjE0NGE0NmY1ZGNmMTJhNjE2OWZjZWVkNzY5NWU4Mjk0YjA5MGRlNzZmMzY2MWNkZDAyNDkzMDAxNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjZDgzYTljZjc4YTVkYjA2Yjc5MjUwMGM1MjdlMjAxZjcxYTQ4NWM4Yzk5YzQ1Zjg0OTE4YWUyOGY2YTg0MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0NDE3ZmU3NTJiOTRlMWIxOTE4NjVlMWJkMWIxODI3ZTFmNDNhZjUzOWEzMjhhNDE5OTY5NWM5ZjNlN2U5YjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15743f974dbc4031a33331dd4a042779",
+      "statement": "Vitest projects include every runtime-tests/*/vitest.config.ts, a main project for src/scripts/build tests that excludes *.case.test.* harnesses, and two JSX projects running DOM tests with ./src/jsx and ./src/jsx/dom as JSX import sources.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L25-L71",
+          "version": "repo-lines-v1:sha256:861c97933c2c9a7af667917c1fc4298b7706108e69af1575121c81eaf88eb682:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5ZmExNDBiMzc4YjZjYmVlMTNlZDFjYTIzNTRjMTJkZDA2NjZmNzQzMTRmYTdjM2UzYmE4MzhkZmU4NDNmY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2M2Q1MzVjZTM4MDYzZDZiNGM1MWQ4YzM4NmE3ZjliM2U1ODBhMTRhMTBjMDdiMTk4ZGZhZjE5YzkzYTNiZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjMzhjYmUyMTJlOWRhODVkODhkN2NhY2U0ZGU0OWYyZTczMWZlYzUyNjM0NTc1YzU0MWZiYjU0YWRiNjc5ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2NjQ4ZTYxMDEyNGY5YjM2ZDA3MjNmNDg3NTYwZDM3MGY4Zjc4MDU3MzU1MGI2NmU2ZmU1MTEwYWI5YWU5NTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5036c9d62514ebbb5051564cd031341",
+      "statement": "Deno and Bun runtime tests use their native test runners, with Deno JSX tests run under both precompile and react-jsx configurations.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L13-L14",
+          "version": "repo-lines-v1:sha256:55e5f4f82644cbfe69681fff37781724c37d041a0b7318b919bbd692988d6182:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ4MzNkNTk0OWMwM2E0MGNhOTUyNDkxNjEwYTY2NTk2NDRiM2FhNDY2MzYyZjc5OTAyMGRiZjE5ODE1NDdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjBjYWExNDkzNDVkYzU2MDNiYTNiNDhhYTZiMmI1ODMyYjI3Y2YwZjgyZjhiMmY3NjgxZTNkY2Q5NTNhOWYyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjI2MzQzN2UwMzQ3NzczNDJkOWQzMjBjMWYzOTM3NjkyNzE5NDFkYWY5YzE2YzI0YzA1YjBjNjgzOTMwYjI4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjViYmNmYmI0NjUyY2NhN2Q0YjU2NjVlOWNiMzFlOGNlZWMwNDY3NjE1NWViMWJhNTIwYjFjYmRkZTQ2ZjJkOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa62d4685f8547cdb6023fb24b5c3af9",
+      "statement": "The workerd runtime test starts the worker with Wrangler's unstable_dev and tests it over the network.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/workerd/index.test.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:88b9398aad894ff636090a9b1f6d7989e7f9a9dfeb46c734f0b1082a40488c35:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1MjA3MWJkY2M2ZDQ0OTYwNWJhOGZlYmVhOGVhYmM5NDBlMTZhOTNiYmRlYTJlNjg1MjNmOWQ5ZjU2ZTQ4MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzUyNTg5YzM0ZDNjNjA2ODU5MzFiNmVjYzRkNTA5OTFhN2M1NmM4ZmJhMjg5NDExNDY1NzY5MDI3MmNhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3NjkzNDZiMWJkNjU4ODVlMjBjOTU5MjA1MTIwM2VlMDZiYzE1ODJkNDA4NGJhNmQwNWUxNjdjZmQyNDQzM2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ff696087ec0450e92dea0d0ad46a126",
+      "statement": "The bundle-size measure bundles and minifies dist/index.js with esbuild as ES2022 ESM and records the resulting size; the type-check measure records tsc and tsgo diagnostics for a generated app.",
+      "evidence": [
+        {
+          "resource": "repo://.github/actions/perf-measures/action.yml#L1-L45",
+          "version": "repo-lines-v1:sha256:922db9180bbd313ce1712284bedcb62c93bb2892f23525eaa0588ef5391d995e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMWQwZTc1MjM1OTk4ZjQ1YjI3Njc3NTUyMTFjMTM3M2EwZTA4MTQ0ZDI0Y2VlMzRjZTk3ZGNjY2ZhODUzMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNzllMDUyZDMzMzRmMzU3ZWIyYTNhMTY4NzE1NThkZDRiNmIxZjU0ODY4ZjZlYTgxYjcxMmEwMWUzYzFhZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMDQ5YmJmYzM3MjRkMjA2OWJiNzEyNDIyM2I3ZjM1YWM2YjEyYzFhYzVhZjQ1Mjk5YTgzZDZmYjM2NjE1NjcifQ"
+        },
+        {
+          "resource": "repo://perf-measures/bundle-check/scripts/check-bundle-size.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:88e620e2a08319026b421585baaebb19b9afdd8718c9c0a30c9616f6b14d9596:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliN2FlNDIyZGRlYTczZjM4ZTY4MGUxNDZkM2I1NjY0NGE3NjI1NmRkMTZiMDA3ZWE3NTczYjVlYmE1NTliNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwZmU3ZWExOGZhMjc1YTUwNTI1Nzg4ZmRmZDZmZDhjNGYzZDhmNWIzNGRiNDQwMWY4NzdhYWUzZjY4Yjk5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkNzk3NWM5MjlmNDljNTMwNDFhMmJlYWJjOWUyNTQ1YmJlN2QzNDRhMTZhYTFhOWY2NWM3ZjgwNDk4MWYyYWUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

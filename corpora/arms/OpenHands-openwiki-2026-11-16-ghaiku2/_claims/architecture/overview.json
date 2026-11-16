@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3c8d3f5192ad23e5c4285d32a98ad4797f7c94a4139ccdf979398d63fb95226b",
+  "claims": [
+    {
+      "id": "claim_b700871b2c04463d96d75071e2167a35",
+      "statement": "run_controller builds the agent, runtime, memory, and controller in sequence, connects the runtime, adds the initial user action to the event stream, and runs until the agent reaches a terminal state.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/main.py#L186-L215",
+          "version": "repo-lines-v1:sha256:486f5add8ffa54d24b2bb1cba945781405e6e5a2240cbf1d6eeca7e1c494eb10:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkMzRhOWRmNzc5Yjk1NjZiMDRhZDJiOWU2Y2RkZTNiMWQ1ZTZjMWE4YzhiOTdhYjdjMjhhN2IxM2EzM2JkNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYTVjNjZlMTdiMTQ1Mzk3ODM0YjhjODU0ZGM0MTkzZTIxMjUxODBhODk5NmExNGMzMTg4MzMyNmIyZWZiY2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5NGVjOTRjOTZiY2Q0ZGJkMTdjYWY0OTZiNTNmNjEyY2IyOWM0NmViY2VmZjdlMGEwZjdlMGMzYzRkNTBiM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyNzRhYjVkMGM4OTQwNjQzOGE5MmViZDBlOTMyM2Y5MzZkNjY1ZjBhMGYxZTlhNWU2ZjRmN2VhZTFmZGFhZGYifQ"
+        },
+        {
+          "resource": "repo://openhands/core/main.py#L51-L122",
+          "version": "repo-lines-v1:sha256:2cbcbf02fe8142b7cca8dca464572ef9e823b49030b72a9bc9bd32331e0644d6:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjOWI2OWI2ZWUzMTZkNzJkZDEyODgyYTUyZmRhYThmMzQ4ZDg2ZWVmYjhmOTk2MDM0MmViNGQ0YzNhZjNiYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0MjgzZGZiOTFiZjA1YjBmNmI4Nzk2ZTU4NWFlYzM0OTM3ZjNiZjE4YWM1ODIxNmRkZGNlYzRmMjk3Njg4ZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1MzgxZDI3MzM4Nzk4YzRjYjhkNGFlYWE1YzUxNmEzZWMxZGI4ZDU4ZjA5MWUwY2NmNWY1OWMzNGQ3ZmRlNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9de8ac80500d47d1be35f239789464c9",
+      "statement": "The component factories in core/setup.py create the agent from the configured default agent name, and create the controller around that agent, so the CLI, headless runs, and the web session share one assembly path.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/setup.py#L202-L242",
+          "version": "repo-lines-v1:sha256:396943f88818429053e47c5afd08684fa8dce7dfa7ad53a0cb65395a04595b18:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyZWI4ODkwYmI3NGY3MGIzMzY3NWEwYzAxOTM3ZGJiMjIzNmY0MDVlYWJiNTQ2NGQ2YWQ1YzJhMDhkNTQ3OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0Y2VkZjc5M2Q1ZDYzZjgyOTAyOTExOGNhNjcwMzA1NTkxNjVhZmNkYzA5OTNiMmZhNjYzMTk4ZmFkYTk4ZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwM2FkOTJiMWZmMDVhNDNmNWQzNzJkOWVhZTg0ZjFkZjA2ZjUwMjk0M2VkN2Q3YjIwYzg5YTBmMzlkMzI1MGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6615d81ed00458383c7f1d4c713895b",
+      "statement": "The runtime executes each action it receives, converts any exception into an ErrorObservation or a runtime error status, and publishes the resulting observation to the event stream with the action's ID as its cause.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L361-L400",
+          "version": "repo-lines-v1:sha256:6767f346a3247295252e68d1312c6d874363392bb8d7bdb7a71ab660f4b7858d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNTc5OGUzNWRhYjQ0NDIyNzhkOTU3MTRiNjc4NTY5NTBkYjljYTliNDQzM2I3NjU1NmFmYjMzYzUyNWRiMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNjcxYTUyYjYwMDk1NDNjNmI2YzBlMzVhN2EyNzVlMWI4YzhlMGUxNTVlZDIxM2JhY2Y5ZWU4MDA4OWM3MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1YmM4M2E5Y2VmMGJkY2MzMGIxZjUzNjk2NzQ2NDZlM2NiMjFhZDFlYWU5NjUyYTQwNjZkYTI4MGE5NjZmYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f3f7727cca854efa82bc3554d9f6a8fe",
+      "statement": "The web server mounts the Socket.IO application around a FastAPI app and serves the built frontend at the root path when SERVE_FRONTEND is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/app.py#L56-L86",
+          "version": "repo-lines-v1:sha256:15d209c6578fcae4f72cdaca7539a3686fccd4e5373e00e7b2101ee8117a1c4c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3YTM3YTQwMWQwMWQzZjBiMWFiNDA4YTMzYmZhYjU1NTMxYTBiZGU0YjUzYzBkNzk4ZDc4NDNmMWM1Y2NhNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwZGJmNjYxNWM1ZWFmYmVhNzVjODYzMGZiN2RmODNkMjFkMmQwNzAwYzc3Nzc0MDczMzgwYTg0MjU3YmJhOGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://openhands/server/listen.py#L1-L27",
+          "version": "repo-lines-v1:sha256:aa744743c97739d69b0989f7408ee1c98388edb338934b6bc7972ed20f17938a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MjdhZGZmNTI0ZTA2MTYwMjJlYWRkOGY0YWYyMWEwNzc4YjI5ZmM0Yzc3YmRmZWZkMWFmY2UyY2JmNWU0YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGMwNjFmNmEwMjc4MjVjNWFlNGNkODUyNzdiNmQ2YjgzZGNmNmIyYzU0OWVkMzk0NWJiZmQxZWEyY2QzY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b8b4edef450473f90e49bf3a1e6251c",
+      "statement": "The conversation start endpoint delegates to the conversation manager's maybe_start_agent_loop, which is how a browser request starts an agent loop.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/routes/manage_conversations.py#L474-L520",
+          "version": "repo-lines-v1:sha256:f4152e9b584b0833d07e0239a3a7498ca6a4afd72a07c8baa987d6391662a481:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhMDVkN2M4MTI4ZTg2OTk3N2YzMGExZmQ3MTljNTM4M2E0ZjhjMGZlNjZjYTJlNDEzYmEyMmRlZDQ5N2E3NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5ZWM5Y2ExZDU0ZTVhY2Q5N2NjYmI4ZmE5MzQ5ZTM4ODRkYmMxMGIyNDI5MGJhMTJlNDgwZTA5N2Y5ZmIzODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmZWJiYjg5YzhmNGI4MTk2NTI4NjkyMjU4NTkxNzA0MmE3NmZkMDQ3MmMwNWZkOWI1ZDI4OGU3ZWZmYmNiYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmNDY0NDRjYmE0MGE5YzhlYjA4NjdlNmZkYTQ4ZjE0OTA5ZDhjYzkxODI3ZGE0NDliMzk1YzIxMzQ1NDg4MWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_676d72c4ad854190816483f7e34beb5f",
+      "statement": "The issue resolver runs the headless controller through run_controller for each issue.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L436-L450",
+          "version": "repo-lines-v1:sha256:3ea338a0bf6f5b35907c34c88630e5f08388ad27f2d1728954bbc65079e59201:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ZDMyYmFlMTVmODQ5ZTUzOGE3ZGYxYWViYjJlZTU3ZjcwNWM1OTJkNzAxYTc4MWU2MmJlOTY3OGEyMjNiNzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NDk1NGEzMGNiMDc4OTgxZDZhNDhhYTg4MDUzZWMxYjlmN2IzNzA0YzU4MzA1MzAzZGU0NjQwYmYyN2MyNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlMzI4YzQzYmMyMzA2N2ZmZmQxNjUxM2M2ZTZlMTg1Y2NmMzAzNDI1YTQ1NTgyYjBlMTIyNDQyMWIyMmI1N2EifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

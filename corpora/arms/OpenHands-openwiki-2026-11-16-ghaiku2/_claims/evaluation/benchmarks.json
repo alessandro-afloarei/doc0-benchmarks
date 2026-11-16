@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f74334d3aff82da9d77022c42c149ddafdd27e082bd8ec2ed11d5550ed318090",
+  "claims": [
+    {
+      "id": "claim_556523e007a147cf864858a53bdd3123",
+      "statement": "prepare_dataset loads instance IDs already present in the output file and removes those instances from the dataset, so an interrupted evaluation resumes from where it stopped.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L219-L290",
+          "version": "repo-lines-v1:sha256:8c8f00b99381c99d1cacef2e723a6104b31b2d1f9ca8c938263bc4b2c378007f:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YjVjMGJkMmVmOTVlMzg5NGQyMTk1MjM4MmMwZmUxNWU0OTg3YWZlYTkwNjljYzBlMmYyZGM3ZjM5MmRiNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxZmJhYjUxYzczN2ZmYTIwNzdjZmMzYmFjYjM2ZGFmODg5MmRjYzU5MWNhMWZmZGUxMWRlMTVmMDMyNDM0Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiY2U1ZGQxYWI5YTBmYzEyYmMxZWIxY2YzYmNmM2FkYjU4YmJmOTM2MTA3N2Y2YTYzMTQ4MGI5ZmZjOWIyYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f2cb73dc75043278c17f91bc25ea483",
+      "statement": "run_evaluation appends each finished instance result to the output file, and runs a single process when num_workers is 1 and multiprocessing otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L486-L515",
+          "version": "repo-lines-v1:sha256:fb77b8e1a102821a11be8dc38c6ce0db8b0daceaf4333f67e4d36fc65bfc4686:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYjEwMDhmNDE5YTBjMDI0Y2M0ZGM5YzA2ZjRjNDRjNTgxMTBlY2FjMmEyYmY4YmUzMGRjMjkyODI2ZTUwNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMTAwZWNhYWZjMTQ0ZDU5NjViZDM4NGE1MjI4NTk2MWMyNmU5MDY3NmZhNzVmMjc5YmEwNWIwMDhkZDk5YzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZDAyNzlmNTJmYjQ2MjRjZTQ2YjMzYjc5N2U2ODdkMDZlNGIxYzI5NzE4MzY5YzExMmJiYjM1NWFjMjQyMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiZWEyZDBkZGEzYmJiODJkZGVhMzgxMDdlZDZiZGY3Nzc2M2IyMjVhMjNiYWIyNDdmOWRhNzVlNjMxNTU2NzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_60a46973a4f941f4a0052975994ee2f4",
+      "statement": "The per-instance timeout is applied inside the instance wrapper, which records a timeout error and stops that instance rather than the whole run.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L387-L420",
+          "version": "repo-lines-v1:sha256:65a93306a29c4203c1eb02e9f447f14eb28a592066df54cdb515fad3e1b74e95:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZmI2ZDA3MTNjOTAzNjQ4ZWRhZjAwNzIzMWRjNTUzZTdlZTZmZGNjNjk5YzIzOTM4YjFkZWI5YTljMTdlMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhZGMyYmViMTMxNWRhMmI0ZTljYjMwZjgzZDEzNmZmM2JmM2RiYjAyM2RiMzkxM2MwOGJhYjRlNTI5ZTEzMzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_156e02d5170442e59d4e03bc3dfdcea3",
+      "statement": "The SWE-bench process_instance creates the runtime, runs the agent with run_controller using the runtime and a scripted user response function, and closes the runtime in a finally block.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/benchmarks/swe_bench/run_infer.py#L606-L700",
+          "version": "repo-lines-v1:sha256:83eae0f10020d0d50e6e0e8b615fcbee6eceb7f79147d0379de0474912609b60:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyNmEzMTFlYWJjYzgyNjlkNjViYTNhZTRiNzcyZGQ0ODUyYmQ4YjFiYjAzNGIyMTg3Y2UwZTZhYzVkMmI4NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMWE0NzM4ZDA1MTNjN2ZhMTRiYmUzMmQ3MTAyNDkzOTdkYmMxODllNGQyNGE5MjBjODNhODQyODRlMGVlYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkMWQ5OTE3ZjQ0YzNlYzdmZDlmODU2NDRlODkxZWU0YWFhOGU4ZDc0ZDJkYWUwNjU4OGY4NWEyYmM2NGEyYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMzk4MTlhOTYwYTA5MDY0NzNiMDZjMTUxNTAzNzc4ZDA4OGZhZTIzY2U2NjQ3ZDJjMmY5NDg5OTU0MGM4ZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b2e4c844fef4e77821e14db2366e292",
+      "statement": "The integration test suite is run only when the integration-test label is applied, on manual dispatch, or on a schedule, and was removed from pull-request CI because it needs live LLM access.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/integration-runner.yml#L19-L20",
+          "version": "repo-lines-v1:sha256:e886ab17089955301a10ab9c9f6ca4b85ad7b41f93a6147979a3e149f6bd42cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM2NjEwNTNjNDQzOGRhNTYxYmM4NTE5Y2Q0NjIyZjJiOTc0NTVmOWE3ZjdmYjkyMTdmYjM1NGJlN2RkNTgzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQzOWFkOGVhMjU2NmJhNmIwNmM1YTk0MzQzODFkZjM2NTQ4ODMxZTU1NGNhYTFlYWI0OTU0MjE2NDZkMWQ4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTEwMjJmMDlmOTU0YzhhYmJhODQ1ZDUxMDlhODJiZGUwYTM2YmRmNTQ3YmE5ODE2NmE1ZTY5YTVkZjAzZWI1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTk2NjBmNWRiYzhiNzE5Y2E1ZGRlYjkwYWFjZTU0OWZjZDFmNzhhYzBiYzYzN2JjMDhjY2MyNmY1NWEyMDIzNiJ9"
+        },
+        {
+          "resource": "repo://evaluation/integration_tests/README.md#L1-L8",
+          "version": "repo-lines-v1:sha256:9592426ae1a44558ac77110fdd5c3e585a7a76824a7aec4debdbd963f0781d3f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM1ZTU0OTZhYWYwY2ZhNDU1YzFmNDJlYmRiZTA4MjJmNjExYjQ2M2MwM2VlNDMzN2QwNDliYmQyNGZhZDExYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzM1OWNkMzkzNzRhOTJmYjEyZTlhZmJjY2ZmODUwZjg2OTYzMTZlYzQ3OWY2YjJmODUyYjViOGJjOTkzMmViZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc6a9996e39a430f8c698eaa19444294",
+      "statement": "The EvalMetadata record stores the agent class, LLM configuration, maximum iterations, output directory, start time, and git commit, so each evaluation output can be traced to its configuration.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L44-L58",
+          "version": "repo-lines-v1:sha256:b87e08b888262aeb4397e05fad99cd98d21df0dbfe7111a9c7f3e074d09bea69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzNWU3YmIzODlmYjU1ZDE3MWQzYmVlYjE4N2JmYTU1YTk0NGQzNzdhZWE1ZDdhOTc4OWJlMTdiODA5YzQ5MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3MzQ3YmZiZGJlZWQyNzNkNjQ0MWFhYjRlMmJjMTAwMGIxOWE3NWY5NDcyNjI1MDA0ODAwNDgwNmU5ZjM3NGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlNGM5ZTc4M2UyMGQwNDJlNDZkOGM2NDNjOGI0YjUzNDY1ZjJmZGY0MmU0NWM3NjI0NzQ0MDBjNjliYmYzMzcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

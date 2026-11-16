@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e2334a453cde7bd3e02d108473358a3558b19d5c33ed9ef44d001ca98b33ca3f",
+  "claims": [
+    {
+      "id": "claim_33d274295d184865ac12213fa87ff2c4",
+      "statement": "sign builds a JWT with a header containing alg and typ JWT, defaulting to HS256, and takes alg and kid from a JWK object key when one is supplied.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/jwt/jwt.ts#L56-L76",
+          "version": "repo-lines-v1:sha256:c0f8063c2730207504876e742eb1b421e36bf2244b650fb55da148d83689b358:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2ZDhhMTlmMGJjYTRkMzU0Njk2YjQzNTA1NTc3ZGNlYjM3OGU5ZjdkYWUwNTBhZDc5N2U3Njg2NTc5MjE3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMWJiMGMxZmE0NTAzNDllNjE2MTg2OTBiZmZlMTUwMjkwZWJhNWFjN2YxYzhkODNmN2ZiMjI1NDlkMjI0NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2NTdmMTQ5ZTA0NTA0NmNjZTRjNDU3OTdiYWUyYmY0N2ZkZTk1MDBkMzIwOTlhZTFmYmVhMjQyMzBmYTdmZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9abad199f874d2f863bb824fe97f5be",
+      "statement": "verify requires an algorithm, rejects tokens without three parts, rejects a header whose alg differs from the requested one, validates nbf, exp, iat, iss, and aud, and only then verifies the signature.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/jwt/jwt.ts#L96-L195",
+          "version": "repo-lines-v1:sha256:7e43b272236763fb86ae63a372de989ebbae92f9aaef5dc07ac58244effe93cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1NGQ1ZjUyYzQzMjA0MWI4ZTk4OGYyY2I5OThmMjYyODI5OThhNmE2NTE4NGRjMjQ5MDU4ZWRjM2JlYWE4ZWZkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmOTQxNmUwOWY3OGJhMzE2YzAzMjU2ODIxM2I4NTVlZTc1NmU0MTU2NWQ5MThmMDk1MTljODFmZDYyMGY0MDYwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5MDQ3NDQ4YWM0OGRiZWIwZjhiZTg0Mjk2OWJlYzI1MzYzMGFhOGNmMzM2YzI2YTU0MDBhOTM0NDUyM2UyNzkyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiMTYzNWY3ZTE2N2FmYTk0MmRkNWZlOTJmMDE5NWUyZjBhMDg0MGViYTVmMjkwMmEzZDUwNWMwOTgzMDEyZWZkIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e6e1827c5d343caaf684fcf86df016f",
+      "statement": "verifyWithJwks requires a kid, rejects symmetric algorithms, enforces allowedAlgorithms, fetches jwks_uri when configured, and verifies with the key whose kid matches.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/jwt/jwt.ts#L197-L262",
+          "version": "repo-lines-v1:sha256:4c995c559e5cb84da0e3b663c6479a535d2b279d18373faacb0703348371fd7d:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmYzdhZjY2MjY4MzU1NzdlOGFlNDIyNjk0YjEzNTU1N2E2NTk4ZDYxYzFhNTUwMzg0ZGMzY2ZmNjE0MTE4MGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyYTAwYWYwOThiODg5YjRkYTgxMTVhMDY2YWRkMjdjYTNlNTU3MzJhZjUzZTFlY2RlNGQ2N2JkNGE2ZTkxNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1ODk1OTdiZjVkZjEyMjA3ZTViNmM2OWE2ZDI0MDRiZDY3YTA3ZTJhYjVlYWU2MDk1MmM4ZmM4MDI2MDYxYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a823d66fcdc04ecabd4d1c003f5abc10",
+      "statement": "The AlgorithmTypes enum lists the HS, RS, PS, ES, and EdDSA signature algorithms used by the JWT and JWK middleware.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/jwt/jwa.ts#L7-L22",
+          "version": "repo-lines-v1:sha256:a694dead6d3edc35c090f3876682006c752dfb81f432fc3fbe7ac3dbce235f59:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxODE2Y2U4NDkyNTk0N2UxMTZiOGRiMjlkMzk3MTJlYzJhM2JkOGQyYWIwYjAxM2NhYmM1Zjk2OTIxZDQyNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzYmY2Y2UwYmY5M2I4NjE5MWVlNTViYmNiMWZhZWFlNWMyNGZlZjg4MWExYmQ2MDI4ZjU2NzBlMWFmYzdjNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2MGY0ZGFjYTg1YTZlMjVmYTQ5NTVlOGE2ZGEyMjAyNjE1ZGEwMjk4M2I5YzdkODc0ZGQyMTg3Njk4MTVhZjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_63ae29ff060a4b6cb062c65301ad3a16",
+      "statement": "timingSafeEqual hashes both strings with a hash function and requires both the digests and the original values to match in constant time.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/buffer.ts#L44-L62",
+          "version": "repo-lines-v1:sha256:8e8a379f6e5742e33a64de3656f5996d7c2d788681fa07a7b47e018225f5a600:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyM2IxZDg5NTdlZDc3ODY0MDcyN2MwNGRjNWZlNGIyZTA0YjJhZjU3ODFlNjgyNWU4YzlmYjNmYTAwM2I5YTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NmRjNjM1NWNmNTJhOWIxZTJlMWJkMGYwZjQyNjRmOTY3OTEwOTA1NjBmNDY3OWU0OTA2NjkzYjJhMTlkNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwYmMzNzc2NDg5YWE0YmNmNTdhODgzM2VlYTA2MDcwMWYyODdmZDJhOWQ2ZDk5YzQwNjFjN2RhMTdmNzk0OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliMzcxNGM3NjliMDcxNjQzYzZmOGZlM2I1MzY4ZGM3ZjhjMDI3OGQyOGE1NzRmODFiNmRlMGVkNTdmYjIxOGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8626fa2f03994558a3eb63016fa3baaf",
+      "statement": "The signed cookie helpers sign values with HMAC using SHA-256 through Web Crypto.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/cookie.ts#L130-L160",
+          "version": "repo-lines-v1:sha256:86ceba46a8cf2f7697e0faeb20839326e240f49d537d0db4ffeff3200429f5eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhOTI1OGRmNmFjOWU2NDQ2MTkwMzc0ZjAyZGI0ZmI1MjU4NWY2ODc4YWFkZTg1NGNmNDkxNzAyNzllMDY1OTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlNWRlYTI4NmEwYjk1ZTY2Yzk4NTM5YTQwZjRhZGFkYWZiYmQ1ZGE2NmEzNGQ4YjY1NDkzODY3MzI2ZGJiMDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5NTBkYWJiNGI4NzUxNjYxMmNlMzI4MzFmZjFjYzM0YTFlZDYyZDAxN2Y4MzIwMTIzMWQwMmE2Y2FhNjA0ZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3YTljMWNhYzVmZGI3OGFlZTkyNGU0ZjNlYTA4OWU1NTEyZDI4ODMxOGU0NjdlZjU2Y2FiZWYyNThiM2I1YWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b8c97dada6cd415c896260f31ced9644",
+      "statement": "The compressible content type regular expression is shared by the compression middleware and by the static-file middleware's precompressed mode.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/serve-static/index.ts#L8-L8",
+          "version": "repo-lines-v1:sha256:8ca218f4cf6c5267600d94d57d500e5e187493bb179d405c62d3c0945d1ad65e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNhMjE4ZjRjZjZjNTI2NzYwMGQ5NGQ1N2Q1MDBlNWUxODc0OTNiYjE3OWQ0MDVjNjJkM2MwOTQ1ZDFhZDY1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNhMjE4ZjRjZjZjNTI2NzYwMGQ5NGQ1N2Q1MDBlNWUxODc0OTNiYjE3OWQ0MDVjNjJkM2MwOTQ1ZDFhZDY1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjRmZWIwMGFhNWVjNGIwNGRlODY0ZjkxYjA1OTA2NzNmYzg0MjI0YmFmN2Q0YzQxOGU2MmM5OTBlYTk2Yzk3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTM2NWZlMjdkNjU0NTQyMmUzZTM4OTUzNTNmNzE0NjljYjc4NDIyNmY0N2U0NDZmZjhmOWQ0MDUyZWQwMGU1MyJ9"
+        },
+        {
+          "resource": "repo://src/utils/compress.ts#L9-L10",
+          "version": "repo-lines-v1:sha256:a609b9a8af2ff458b53cf8c7cad96ebd1e58e400f4cee9837725a80693aea480:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE4YTFjNDNiNDBkMzkxMjcwNTZkNjVmYzY0MjMyYzFiZmYxZTBiNTVlNDIxMzU1ZTg1NjQ2MzYxOTBjMTllZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk4YmRiM2YyZjA3NGFkN2U5MGMzNmY5Y2U2MGJkYzFlZWQ0NDcxMDhlYjYxMGY0MjU4NGFmMmZiNzIzODIzNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGUwMmRhZTM5NWNjYmY1ZmNmMDA4MWVmZTg2NzlkYzJmZmY0ZmIyZDM1NmE3ZjE0Y2U0ZGY5OWIzYTRiY2YyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_43bdb42c75204eea91e68c35c04f1489",
+      "statement": "parseBody reads only multipart/form-data and application/x-www-form-urlencoded bodies and returns an empty object for other content types.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/body.ts#L97-L113",
+          "version": "repo-lines-v1:sha256:407a45c249638257c2b14f0cd1408677f881d957c6cd57cbc84bff72b69ac89a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiMTY1OWZkNWJjNGVmNWFjOGJkYTJiYmQ5NTJjMjUwZjgxOTBkYjg1N2ExOTRlYjUzMjAzYzEyODZkMmUxNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzZDQxYmFlZTMxZmZmMjUyMzZjYWM0MDc1Nzk0ZjFiYTk3ZjdjMTQ1N2M5YmUxMzEzYTNjNzliMGU4MjU2ZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhYTk4YzY1ODAyNmJmMzllYTA5YTY4M2E1M2ZjYzIzMzYxMjgwOTFhNjA2YWRkYzQ0NGMyY2ZhMmQzYjAzOTMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:23:45.579Z"
+  }
+}

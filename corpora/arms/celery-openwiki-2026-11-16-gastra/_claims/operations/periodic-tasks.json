@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6f70e50e18f257705d5aa070d6dc90dd65a1dd794b24359569ec01695ea9f356",
+  "claims": [
+    {
+      "id": "claim_d007184607b14bcaaf85efb1ced780d5",
+      "statement": "Beat publishes periodic tasks for worker execution and requires a single scheduler per schedule to avoid duplicate publication; task invocations may overlap.",
+      "evidence": [
+        {
+          "resource": "repo://docs/userguide/periodic-tasks.rst#L13-L22",
+          "version": "repo-lines-v1:sha256:b7112b2a0daa7b2d2361dfe84dd379fb4eeed02083d9dc2bd6a9bf80aff37b04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5ZTQ5MjNjODhiMmE0NmU4ZWE3M2E5YmUwMGZiZGFmNGIwOWNhYzE5YzkwNDk5YTliYWU1NDM0YzQ3ZWFlMmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNTJmNDc5OTI2YjNiMTc3MjJiNzVlNzFhN2MzNTUyMzAzMmZhNTYwZmQ1MDdjMmQzZjdiZGI5ODE1N2U3YTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiZWY2NmU2N2FlNWFkNWY5MWRlMDc4MDQ5ZGY3ZGY4ZDhkMWIyMThlZjk1MzEyYjM4NTgzZDQ0YWY3NzdmZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzOTIxYTkyMTZlY2JiODdhNjk5ZjkwY2VjMGVlZjdhZTFiMzY0NGZiMjY4MTc0NzQ1ZDg2OTU0NWI5OWFhNGYifQ"
+        },
+        {
+          "resource": "repo://docs/userguide/periodic-tasks.rst#L164-L168",
+          "version": "repo-lines-v1:sha256:70bc0e44e0ee2b72a6ed0bb56ef963a9e0b7242b8c70e9c53b21760ac3625876:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWYzNDU2OGVkOWRjNzA1Y2RkYTFiZTYyYWZkY2U0MWY4NGYxZDgyOGMzYzEwOTEzYTA5NTAzYzdkYTQ4OTk2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzdkYTUwYTZjNmFlM2ZjMmEyNGQ0YTUyYzRlOWI5MmYyYjg2MDdlYzVkYWZmOTQ0NDMzOWEwYjZmYWZhZmQxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2VhNmZmYzFlMzYwN2Q2ZGY1NTFkYjcxYWMyODM0ZWE3ODUwZWU1ZDkxZmZkYjYwYTU1ZTIwMzY4Y2I1Y2I5ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac2bcf5529e047aeb62096efa36a90c3",
+      "statement": "Schedule entries advance timestamps and counts, and each scheduler tick executes at most one due entry before returning a bounded sleep interval.",
+      "evidence": [
+        {
+          "resource": "repo://celery/beat.py#L128-L141",
+          "version": "repo-lines-v1:sha256:3253479e3a8544630e8a4563538da5c1567590789d4da9d18556e8f759fbe720:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjhkNmNlYmE3MTg5NTNmYmQ2YWJkMjBiMzUyMGM5MTVkYzNmYzI1ODNiYTA5MmNlMjliYTY3MzhlNDFiYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZmZjZWVkMDUwNjBhYjViZGJkYjIyN2Q4ODU5YTcyNjVkZDIyZTliMjFmOGVmYmM1ODQwN2Q5ZGRhNGRhMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlMGYzNzQ0MjhmZjU3MjhkMThmZDBiNTI2Yjk4YzJlNTQ0ZGI0N2QxNzY0OTI1NWEzMDg1OWMwZmFlY2Q1MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmNTBjNGFmMjVjNWZmMGMxMWVkOWQzYjhiN2FjZDE5YmY4MGI5YjM0MGMzYTdhYjcyYjk0ZjM2ODA2N2JiY2UifQ"
+        },
+        {
+          "resource": "repo://celery/beat.py#L326-L365",
+          "version": "repo-lines-v1:sha256:57dc6cd98ff089f564a5322d5b5698338da67b2c36af7931503ebd2a1d681de3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNDQ0YWY5MjA0YTRlNzBjMWMwYTA0OWYyYWZkMzgxMjgyNzczOTcwZTg3MDhkYWMwNDNlZmE3M2M0NzE0YWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0ZTU2OTIxMjgwZDJhYTIwNjA3ZjFjZjYzNjI5YTI4Mjk2ZjIzZmM0NGRkNWZmNmVkMzZlNDI5OWNjOGYxNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxNDYwNjk0MTNkYzYyOTE5ZTAwMDI4OTFiMGU5YjljMjNlY2U1MzExNjA4ZTQxM2QyNGZiNTdmMmI4MDljNzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e354c9b107d41c5bc0456bd0434bb42",
+      "statement": "Beat advances schedule state before publication, uses registered Task.apply_async or send_task by name, and wraps publication failure as SchedulingError while syncing in finally.",
+      "evidence": [
+        {
+          "resource": "repo://celery/beat.py#L279-L292",
+          "version": "repo-lines-v1:sha256:6124695064241d868c162373ec4eaed1ed166233c80a0a2ea6fd489e5af91612:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2YzQwODJmNDU4NTMxYjg0YmQ1MWZmMDlkODZjYzA0YTMyMDM2NjhhODc4OGY0ZmNkMTQ3NjA1MzY4ZDk2NjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0MGEwNTRkNzEwNTliNTNmZjZhZDYzNjBkZGM0ODg3YTljOWQzMDA0MTVjMDkwMTRiNGI1OWI0ZDM5YWJiNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiOGE5MTY4OTUzZTZiOTE2Mjc4YjkyNWU2NzdmNjZhYzg5MjBiNDEwNWJiNzQ5OGJlMTAwOTc4NDdlMDhmMmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0MWE3M2ExOGQyYzA2NzAwNDI0ZDhlYmM3NDViMzAyYjRhYWM0ZGYyYjQ5YzNkNDJmM2I1ZTQ3Njc5NWViYzAifQ"
+        },
+        {
+          "resource": "repo://celery/beat.py#L393-L422",
+          "version": "repo-lines-v1:sha256:ca6f589550d6270415ebaee9a3ccd7c4c1a447a43ed8acaa0ddb1daa5434312f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MTEwNmU5NGI1NmRkNmY3ODliMDZkMTk3MjE5MzcwZmYyYjE3Njg4MzIwMTI2ZDc4MzM0N2NmMjZhMGFmN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMGVjMmMzOWQ5ZTY0NzIxMDhhOGMwNzZlNzQzNTVlMjNlZDZjYjYzNWQxMmM1NGQzOTMwNDI1YWI5M2E3MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1NGJlZmFjYzc4MTUyODI2ODJlOTRhNjdkNGE1ODE0Y2JmOTI2ZWRhNDY4MWQ5M2NlZWViNTEzMTI0NGJjOGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_029c98540b8642ab8ece0681506946f5",
+      "statement": "The default scheduler persists through shelve, recreates corrupted stores, and resets schedule state when timezone or UTC configuration changes.",
+      "evidence": [
+        {
+          "resource": "repo://celery/beat.py#L505-L565",
+          "version": "repo-lines-v1:sha256:17d0d476afdb668b5eda4eb07e27c00de6bcbe6d032c8968b6cc7de972d765bd:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTYyYmQ5MDViODA3NWMyZTA3ZjVjZDEzZThmZDdkMmQ3YzUzYTBiNGRhNDlmZjYyMzU4ZGJmMDZhYTRkZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczYmJmODg2NTcwMWM1YjBjMDZkZTZiNGFkYTk4ZmUwM2FlYTgwODdkOTVjYTAzZmNmMDAzNmNkYjljOTZmYjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlNjJlYThmZTRkMjY0NGYwM2VmMTc0OGI3YjJmNTg5ZDlmYmFiMjg3OTQ4NzJhZGE0MWJmZjE3NWIxNTc4OTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5OWJmNmZiMTUxN2E5MWY5YjJlMGY1MTI2MjM4YmFkZDVkZmRlZmYzZGJhMzlhNmQyYTlkYzRiMzI4Mzc3ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_beaf356275de41558f5085e5a096236e",
+      "statement": "Beat adds a 04:00 backend_cleanup entry when result expiry is configured and the backend lacks auto-expiry, unless that entry already exists.",
+      "evidence": [
+        {
+          "resource": "repo://celery/beat.py#L267-L276",
+          "version": "repo-lines-v1:sha256:2df11a14ed8a80873ea2b12147649fdc12c4741bc47168c7d2da6e857ad44a75:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0NTg3ODI5YTQ5MDMzZTkwNWZmMWVkODU2ZTNjMmE5YzU1YWFkMzU3NmQ3OTVkMTJhZDUzYjdlMmI5ZWZhNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMjgzODgyODc5OGIyZDZkYjk4ZTdjZGZiODNlZDQ3MTgwMDE3ZmExYWNmMDI0ZTJjYTQ1YjQ1YjIwOTUyNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzOWZhM2I2ODJmNDFiNGFjNmIzNDE4NTk0NjY4NjU0ZTllMmFhN2JiNTJiZmZlNTk1ODVmNWMyZWIzMWZhODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_876a511cd43f4ec8abef7041f34882cb",
+      "statement": "The Beat service loads scheduler classes via celery.beat_schedulers and passes application, storage path, loop interval and lazy initialization options.",
+      "evidence": [
+        {
+          "resource": "repo://celery/beat.py#L663-L675",
+          "version": "repo-lines-v1:sha256:e399e08e79d2a9af4abe42bd1668db34bc795a110117712d6daf2b397f3d421b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0YWJmYjEwZWViYzRiM2M1MjM1ZWFmY2U2ZTg1MzkwZmY2OWRkZGJiMDJhMjhlOTRhNDNkYjYwNjA5OGI5ZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMmQ0MDUzZGJmMWQ2OGJkOGFmZmFlNDAwMTIwZTRiMWI3NjAyOTdjMjk2YzNlNzRhMDRmZTAzMjIwMzUwZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5ODNlMzZiZjRlNTQwZmM3YzAzYTk2OGRhZGVmYWM4NDhiMWMyYWI1MDc2MDRkZGE5NDkxYjI2NWI1ZGYyODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3632a63760604d04b7a3daa50a62c69e",
+      "statement": "Crontab due checks can suppress missed runs outside beat_cron_starting_deadline.",
+      "evidence": [
+        {
+          "resource": "repo://celery/schedules.py#L641-L690",
+          "version": "repo-lines-v1:sha256:51f2cd1427590967c3dc465ce25dfb34437de433c8691f85ff276c5bc8b39c54:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliMzZhODI3NmE2ZDFhNzE4ZjRlNGQ1ZWVmYWQwNjkxOGU0NTJlZjg1YzkwYmQ3NjgyMTIxNDI0ZThmYWVmZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1NTZiYzM0MTY0YWQ0ZWJmZTA2NzdkNjQwYThmZDk3NTI0NjE4YjdjMDEzZTM1NGRhOTFhZDEwOTBiMGRmMzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxODVhZjg1MmFkNWZjODgxN2NhNGNhYzcwMjllNzkzOTM2OGUzMzQ3ZDYwOGUzNTU0NGFmMDkzMzcyYWRhYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3YzkxZThlMjYzMmUwMTcyM2U0MmE5NjAzOWU3YmE4M2E3NWY3MGI3MDM0YTllMGQwNjIyNTFlYzUwM2FmN2IifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:55:28.912Z"
+  }
+}

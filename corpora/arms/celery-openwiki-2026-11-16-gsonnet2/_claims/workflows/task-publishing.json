@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:dea34f4fa9eb74fd39ebe5af692130b10022e01c5283ac2ba84041e7f3d3739a",
+  "claims": [
+    {
+      "id": "claim_c7178774e59447e9a633ee81daa35b3d",
+      "statement": "Task.apply_async validates time limits, optionally checks call arguments against the task signature, merges task-level execution options with call options, and either runs the task eagerly (after a serialization round-trip) when task_always_eager is set or delegates to app.send_task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L536-L708",
+          "version": "repo-lines-v1:sha256:bd4e7de395e7ea12a5684240b91b0707a5a07ad4f9a350a249fdf67566f7b8f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTczLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1MzFmZWJiYTM1Y2ZmN2NjODRmM2Y4Mjg1MmQ4MWU4OWZhNzA1YWMzZmNhOTAxNzc3MTY1YTZiZGY0MTU5NmMxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1NTAzMmU5NjRkMDkzMjM1MWU1ZDE4NTI2OTI4MWIxNzFhM2EwOWIwOGIyODZlNjYxZWE0NzAzMjNjODJlYjRkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlZDExMGY3OGY2ZWNhYmIxZjRhNTgxNGIwZjdkZjI0N2Y2OWE4N2QxMGYyNWE0MjNhZjc1YTIyOTMyNmQ4ZWQ4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiZTAyNjZjMzU0OWFlNzVlMjYxNDBmMTI2ZmQ4ZGNiODZkNWE4ZDFhZjgwMzg1ZDBmMGVlNzM1MGUzNmUwNDM5In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d228bb1e0b2471e884cd7bdf4a55880",
+      "statement": "Celery.send_task works by task name, merges registered task options only when no task_type was supplied, normalizes time limits and expires (converting to a broker expiration in seconds), routes the message, and warns that task_always_eager has no effect on send_task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L846-L960",
+          "version": "repo-lines-v1:sha256:a82ecde7dbee7310583f0e389623599a87fabc71b32375214724da5e95e0479a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZmNkNWY0ZGRmYzIxN2RmYWFhZjIxZTIwN2VhNTRhNDQwMjFkYmFlNjZlOWJjY2NjN2Q3NGViYjA2Zjc5MGNhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxMDBjY2UyMjgzNTdkMTYzNjA0YTM5ZWEzNDExYTY2MzRiYjJiNDJmYzUxZGFjNmJjMjA0NWZkMjBkYzhhY2ZhIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlOGI0NmJkMzdjOGMxNTM0ZWQzYzhkM2U5ZDE3NDI5ZDgyYjc3ZDkzODlhNTZlOWI1ZjRiNjAzODNjNjQzM2Y0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwNTRiOTI5YTdkYmU1NzY1YjFhNDY3YzAxYmQ0ZjRhNzczNmJkZDM2NTgwZTI1YzY5M2NhM2Y4NjEwYmExN2ZlIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_9ae341d761974031acbb3089c879a87b",
+      "statement": "For countdown/eta tasks on quorum queues with a non-direct exchange, send_task converts the delay into a routing key on the celery_delayed_27 topic exchange (native delayed delivery), and warns for direct exchanges.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L945-L975",
+          "version": "repo-lines-v1:sha256:e94edf9412d8dfc8f6b60263f41342c1f4ea47cb6ac7f79aa2e5d642e5c20efb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YTg3NjMwYmRhMzViNWQ0ZmIyYTM3NmVkNTI5ZjhkM2FjYjI4MTVmNzYwNmFkYjFkNTJlNzRkYjI3NmVjNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1N2QyYmZkYWI1ZjI1ZTc5ZTIzZWI0MjlhMjg1N2EwYTcxOTc3NTM3NDA0N2ZiNjViZGM1MDU0ODkzMzQyMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyMWJkMWFmNDEwMmFkZGRkMjg3OTNhOTVjNWRlNTIwMzAyNzk0NmU1NGJiMjYyYWMwODhkZGMzYzcxMDk0NWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxYzhhNzBlNzY0MDE3YWUwODMzNWZjZGZjZmY0NWU0MjhhMTM0ZmE4MzYyNDlmNmZjMWRkMWJiMTNjNzM3NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a4c8f114e2754d7e948dc246ddbfa334",
+      "statement": "send_task fills root_id and parent_id from the current worker task, optionally inherits parent priority, publishes through a pooled producer after calling backend.on_task_call (unless the result is ignored), returns an AsyncResult and records it on the parent task's trail.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L990-L1041",
+          "version": "repo-lines-v1:sha256:c1615d26be1742a0ebbc9745be8edff6f46cf14bdf314f396e516ffe9bf8fa41:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzZWE5N2QyN2VjYjMwYTkxYTQwZjdjNGNlOWE1YzRjNGVhMGIzYzViMzUwMDk1ZjUyMmRiM2Q4ODcyNzA3NWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYTMzMjBjNGFlMzRiZGVlMDU2ZTNjYjEwZThhZjU3OWUxNWE1YzMxYTkzYzkxZWZlYjA2YzdlODEzN2Q1ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyY2ZlMzMxN2IzODk4MmRlYjc3YjQyM2NhMDBlOGU5ODE1YzU2OGQxMWI0NGVjNTA3MzA4ODg2ZGExMDJkODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c02dba0cf3904bce9c647116c7b6b83a",
+      "statement": "Router.route expands an explicit queue, consults task_routes routers in order (the first non-None route wins and call-site options take priority), and falls back to task_default_queue; task_routes can be dicts with glob patterns, callables or dotted-path strings.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/routes.py#L26-L136",
+          "version": "repo-lines-v1:sha256:7a02bc48b501fcd15fae7cad81407e38ab90ae1ee9dd086c3ee873761175d335:eyJzZWxlY3RlZExpbmVDb3VudCI6MTExLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZThiYzBlZmE2NDkxMmMxMWJmZjdiOGU5NWJkZWQyZDg4YWZlZjgxM2NjZWMwNDcxMjZlYmJiZjlkZDEzMTAxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhOGUwYjVlMjBjNGM4MDFkYTg1ZDYzNGQ2ODE4NjZkOGIyYjlhZTY4Njg2MDFmM2ZiOThjZDNhMDU4YjM1ZWE2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1YjM4Y2E3MTgwMzc2YWFlOGFmZmJmYjAwZGIxYTUyODBmYzRkY2ExYjAwYzdlMzdhOGQwMjQwZjU4YTUwMmZlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_27cbe7c90dac42c7ab05f8594563e08b",
+      "statement": "Queues auto-declares unknown queue names when task_create_missing_queues is enabled, with classic or quorum type and default max priority taken from configuration.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L273-L306",
+          "version": "repo-lines-v1:sha256:ba6689792f596966dc130ee5e442aa6b94f741212198f60b82537eec35c69ae1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhMGJkOTE1M2E3MjBhMzkwZTAzY2I3YjdmNmE3MDk2MGMyZGFhZjY4MjNiOTVkMGQyMGU0MjViMzQ1NjI0ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhY2RmYjczN2Q3NzA4OGVhZmE5NTkwZDU5NTk4ZGEyZDJmNThjZDUwMTg3NTQyYjYyOWUyYjYxMGQ3NjYyMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlMDMzNDlkNTJlZGI2ZGVkYTA0NDhjN2YwZjIzODlhNWM0MDVjYmRhODQ3MTcyMWIyMWFmNzUxZjM2Mjk1YjMifQ"
+        },
+        {
+          "resource": "repo://celery/app/amqp.py#L41-L104",
+          "version": "repo-lines-v1:sha256:7707b2446dd44dc2b9f14636ae623c0a2f6acb6f3990c5052766822d5b645387:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkMmYxZTAyYjgyNmNkOTExYjE4NGExNWM2NzhmNjFmMjQzMDdhYjUyYzJhYTU1N2M1YjRiYTRkMTkwMjVjNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmYzkyNmNiM2E4NGMxMTdhNjA2NGZiMzZlZmYyNTQzNzYzOTA4NzRlNjAxMTFlMzUyM2FlNGI1YmQ1YmUwZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExZTk1ZGMwMzc4ZmIyZDliYTViZTcxY2MwOTM3NzM5ZjE2YjgwODZmYzRkYjUzYmNiMWE2YTFkZTViZjU5NTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxYzQ5YjUwMTI3MzliZTk0MjcwMTAzNGE2NTIxYmJkYjc2OTZmMGE4OTcwZDhiYTkxZTdjMTFkM2VlYzIwZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b72be4815c5415aa6f7ce27f90c6c60",
+      "statement": "as_task_v2 builds a message whose headers carry the metadata the worker needs without decoding the body (task, id, eta, expires, group, retries, timelimit, root_id, parent_id, stamps), whose properties set correlation_id and reply_to, and whose body is (args, kwargs, {callbacks, errbacks, chain, chord}); countdown and expires are converted to aware ISO-8601 times.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L326-L418",
+          "version": "repo-lines-v1:sha256:7742fdedd211a3d1f879338704ed137ee5c13512fbb45c7dca1d6cabc2707cd8:eyJzZWxlY3RlZExpbmVDb3VudCI6OTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4NjJkNzg1MzBlYzVmZjgxNGQ3Yzc2ZDYzY2RlZWY4NmJiZmYyOWUzNmU5ODRjZjUwZDdiZmI5ZjMyNGZmZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllMjBiODRkMjNiYzcxMTQ5ZjU3YjRhYmU4NDYzNGY2YTVhOGViMDVkMGFhNGJlZWVmMmM1ODdmOGFmZTRmZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4Y2IyMGE5MGM1ZDkzOWUxNGJiZTZjMmU5MWViNjAxMGMyYTFlZDQzNTVmYzllNDlmM2YyMzIyODUzNTg1MGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f2b9d11a4d0466e9b4133dc518f0fe7",
+      "statement": "send_task_message resolves the destination exchange and routing key (anonymous exchange for direct queues), declares the queue with the publish, applies retry, serializer and compression defaults from settings, sends before/after publish signals and publishes the task-sent event when enabled.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L485-L607",
+          "version": "repo-lines-v1:sha256:5d15a9fc2f91ffff1cfa8ca46e486630cbcf9b5b2bd3e98785ba75c16259dd9e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMDExOGVhMTM2YmU3ZDRkYjlmYmU1MGIyMjZiMjM0OTg2N2I0NWM0MjBhYzhlNjEwNDMyZTY4Y2RmYzg3NDJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwZmZiMjYzNTk0MDE4MWE5ZDRhZGNjZmUwZjYxOWRjZmQzNzJiZmY0Y2Q4M2EyMzI0MjNhN2IwZGJjMDMwYTgzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4MDAyNDg4NGIzOWIxZjExZTExMmZjZTAwMTI0NDZhNTgzNDMyZmRkNmNjY2FhM2JkYWVlYjZkMzM2OTU3NzRiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_200cdee14c454d00b0d46b38236666bc",
+      "statement": "The producer pool is created from the write connection sized by the app pool limit, and acquiring a producer or connection that times out raises OperationalError advising an increase of broker_pool_limit; the pool is dropped after fork.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L635-L643",
+          "version": "repo-lines-v1:sha256:6b4207f13e1a6c99346df99aba2175dcfdea0f43da78d154e91b4f90dfcc6bb4:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjNkMDBjZjI3MDk2NGQ0NGExM2RmYWM4NzUyYjA5ZmNjNDM1YjBmMTliMzE2YWJjZjgxYTdhYTY0YmIxMjJkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNkZjk1OGRhMTQ2OGVjYWRlOTMzZjVmZmZkYmI5NWZkODE5MTVmZTMxMjA4YjhhMjg1N2Y4OWYwZDIwMDBjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRjMmYyMTlkMzljOGNiYzZlMzViMWIxZjMxNWMwNmM5MWU2OTQwNWQxYWQ5NTFkZWY2NzU0ZjdlMTExOWJlNyJ9"
+        },
+        {
+          "resource": "repo://celery/app/base.py#L1131-L1190",
+          "version": "repo-lines-v1:sha256:32b016e858dbb5e855c1888e78b0eae54784fc1600d8d3658dbe95d59327d85e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmNTIzZTNlMDhiYjkzMWMyMDE5MDJiMmI4OTI1YTUzYTA0M2IzMmQxMTY0Zjg2M2Q1NDY1NTExYmZjZTM1ZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhOTJkZmRkOGZmYjZhOTZhZDliMTZlMzAzNmU5ZDkxOGNmNGU4MDYxNjJjOGNkM2Y1ZmMwOTQzNjgyMzU0YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNmM5ZjEyM2RmYjM3MThjZjc4NWVhNDE2NTliMDc0OGMzYTA1YmQwMWYyOTdiNzA4MWE2OWI4NmRiNTk0YmYifQ"
+        },
+        {
+          "resource": "repo://celery/app/base.py#L1282-L1288",
+          "version": "repo-lines-v1:sha256:8279c3de88f2fcceb6fed007e832acb7d247d1250e7a1b820dfa0dab507561d0:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDhmZWM1YjNhMjJlZjU0ZTZlZjNiNWYyMGU5MTNkZDJiMzYzZmEwMjgwNDAxY2E0Y2E2YjczNmRkMzA2ZGVhNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWNmODk2YjZiNTRhMjUyZDI1NDk1YzllY2RmNmZjYTgxNzIyNzFlN2U5NThkNTQxNmU2ZTg1ZjhkODkyMjdhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWViOWU3YjY1ZjdiZjE1M2Y5MTMwNGYyYzk1YjQ1ODBmZmM3NmQ3NWY0Y2Q3YzQ2ZDFjODE3MGM1NDI1ZTgyOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDhlNTMyMjZiY2NlMjFhMmE2NzFiNTUxNTk0NzUwNWE0Y2E3M2I2YWVhNzg4NzZmMjc5MWY2M2EzNzVjNGVhYSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:56:17.091Z"
+  }
+}

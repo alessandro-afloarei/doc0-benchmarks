@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:67f0cae27c36dc08b0dd2361a5b0bdc2b9bb5ea59bdccf86b88a55ff4af9da1b",
+  "claims": [
+    {
+      "id": "claim_9f9923e4dc4e4d87b55faff037c78b1c",
+      "statement": "build/zip.py keeps explicit lists of file extensions and path prefixes that are excluded from the distribution zip, such as .pdb files, Vulkan mock ICDs, and the Electron.dSYM bundle.",
+      "evidence": [
+        {
+          "resource": "repo://build/zip.py#L8-L30",
+          "version": "repo-lines-v1:sha256:5b069776ae6a55611f3362573fb833123c8c508bff0c74297526627086763db5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5NTMzOTg2YzRjMzEzZDhjODk4MjExNzI3MzRiZjdhOTQ3ZDFlY2YzODA3OTUwYmM4OTM5MWNlNjdmZWI3NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkODM5Mjk2M2U1Y2E0YWE3YWM4YTU3MjhhMjFhMDU0ODNlNjU1MjAwZWI3ZWQ2ZTU2ZjE1YzZiMGM5Y2VmNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5ZjRmZjZiMzVjMzgxMDEwYzc3ODJkZDBjYTRhOGJlMzkxNGQ4NzE5MGQ3Y2YxMmZkYmE2Nzc4OWNlMzQ0NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2ZGI0YTE1MmUwYWM2NDk4YjRhODU4NzM5MmY3OTkxZjFhZWY4NjQyNTBiMzQ5NDY2NWNjY2ZhYWQ0MmJiZTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e670ea906dc4e24b7fc9818766a0bd4",
+      "statement": "script/zip-symbols.py packages breakpad_symbols into symbols.zip and, on macOS, packages dSYM bundles into dsym.zip, excluding the v8 context snapshot generator dSYM.",
+      "evidence": [
+        {
+          "resource": "repo://script/zip-symbols.py#L17-L40",
+          "version": "repo-lines-v1:sha256:64b74ed9a4fe1259797d82d80d949ea447b30f626faacaccf8fdeb81da2633d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0MzNjYjk1NzIxMzIyY2JkMjUyMzAyNzRhNGRkYzY0NTdjODQzOGY4MjQxNDY5NThlNWRjMWI0MDIxNmNmODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1MzA4MDljN2VjZDljY2RmMzZhYzMxYzc4MjlmNjRmYjE5MDQwNWY2NzkzMzcyYjYyMGUwOWMwOGQ4NDNkZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljMWFiMDg3NTczNmM4OThmMDM4OGVkOTY3NmRmZGNmNzcwMDA3Y2E2YTYxNzUwMzlkMDAyNjZmMGVlYTUyOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5ZjY2OWY3Mjk3NjlhNGNkYWRmYjZkMzlmZTljNWUzZjdiMDRlZjJjNmU4MmExMTgwZjY4ZjcxYTA4Yjc5YzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82a25b25408f471b96b4dc579d3c89fa",
+      "statement": "check-zip-manifest.py compares the entry names of a zip with a committed manifest and returns a non-zero status when entries were added or removed.",
+      "evidence": [
+        {
+          "resource": "repo://script/zip_manifests/check-zip-manifest.py#L6-L40",
+          "version": "repo-lines-v1:sha256:35d6e72cca88c81e53b15af7f73c0da2429ab7ce26dc5f89375a1762308ab1d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ODU0MzNmYjJlOWE4N2U4NWM5NWE4YjNiNTNkYTkzNmMxODFlNjQzMzZhMDJhNzU2ZTRmNTI1ZTNlY2I5MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzYjcwNmMwNjdlY2NlODdjNDQ4NjJiZTEwYjFkOTNlNjBkYzdiODQyNjFlZmM2MDcxYjEyMjQ2Y2MzYjQ3NTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8b389317ff74f71bb85114003118c48",
+      "statement": "The build-electron composite action runs the manifest check on dist.zip and chromedriver.zip using the manifests for the target platform and architecture.",
+      "evidence": [
+        {
+          "resource": "repo://.github/actions/build-electron/action.yml#L76-L76",
+          "version": "repo-lines-v1:sha256:20d9252f2fded2c38f7247ffa482059d25c2b25af9422f74a3c9f151b4f2ffe2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBkOTI1MmYyZmRlZDJjMzhmNzI0N2ZmYTQ4MjA1OWQyNWMyYjI1YWY5NDIyZjc0YTNjOWYxNTFiNGYyZmZlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBkOTI1MmYyZmRlZDJjMzhmNzI0N2ZmYTQ4MjA1OWQyNWMyYjI1YWY5NDIyZjc0YTNjOWYxNTFiNGYyZmZlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGNlM2ZjZjU0OWFlYTI3MzNkODExODEzODViNzQ1MWNhNmY0NDNkMzZjODc5NWY2MjYwYzI2YTU0NWUzMDZhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGRjNDlhZWNmOWI5NjBmNmMwOTFlZjA3YWE0ODUyYTAzNjUwYmFmMjI2N2Y3MmMzM2JmYTBmMTljNDJkMGY0MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_08d5cdabc5fa49c998cb28493a3c8169",
+      "statement": "generate-mas-config.py writes a generated header that defines IS_MAS_BUILD() as 1 for Mac App Store builds and 0 otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://script/generate-mas-config.py#L1-L15",
+          "version": "repo-lines-v1:sha256:42f5d4ce6f9b3f7cfdd82c19f600daddf42eec98f1b89495c370dc986f4b2ded:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MTc1Nzc4NTFjNDg5ZTQ1YWJhZTI1OTEyNTZjNDA0MDRhMDVjNmQxOWNkNGQ1YWU3ZmQyMmIwMDg0Y2VjNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhMGY2ZjQ0NTA0NmUzYWRkZmY5ODM3MWM1NjIwNTgwMzc1MzdkOTVhMDlkMjk0NWQ1M2Y1MTVkODY2YzRkYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39dfd70b83204b6ea09ba6e462cd5fa7",
+      "statement": "get-trusted-identity.sh prints the first valid code-signing identity reported by the macOS security tool and exits successfully with no output when none is found.",
+      "evidence": [
+        {
+          "resource": "repo://script/codesign/get-trusted-identity.sh#L1-L13",
+          "version": "repo-lines-v1:sha256:2b705670c583c36df225827b9b25df2fa6dc52413e8f08d2c609fd83303d78d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOTVmYzA0YTgwYzk1MmY0OWNlNDE4ODYyN2M1M2IwZmJlOGM0NDA0MWI5NTJkNTkyYWNkMWRlOTk4NjE0NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NjlkMjM3Y2Q0MjBiOWQzOGI5ODFhMGE0ZjY3NzAxOTBhNGE4M2RjYTFmZTU2YzRmNWJhMWUyY2JjMGVmNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d4160b66f56402f8530fb4868a07020",
+      "statement": "gn-plist-but-with-hashes.js replaces each ${KEY} placeholder in a plist template with the contents of the file named for that key.",
+      "evidence": [
+        {
+          "resource": "repo://script/gn-plist-but-with-hashes.js#L1-L16",
+          "version": "repo-lines-v1:sha256:2fb54bcc282684df84b2deb987446314a9cae61751020938e6c5a3e23c73bc16:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmM2E2ZDk0ODE1ODk4ODhjYzc3NjQ0NDRhYzFkZTg0NjM5ZTFlZDk5NjRmOTRiZWRiOGNhZTFkYjg3NGI5MDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NzdkYmIxYzJhYzM4ZGQ0YzhiNGZhNTA0NjA4Yzg4NDE3YTdhMTkzMzQ1OWI4MDAzMzM3ZGQzYTRlYzcyNzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

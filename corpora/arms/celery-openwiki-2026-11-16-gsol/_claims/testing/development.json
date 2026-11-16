@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c15f3576f6f6b289478f54d78a7e1db350b137754a9cbb81642938b21c6baf8c",
+  "claims": [
+    {
+      "id": "claim_ae18f35353144691a3b441aa1acc01b9",
+      "statement": "Packaging requires Python 3.10 or newer, reads runtime and extra dependencies from requirements files and installs the celery console script.",
+      "evidence": [
+        {
+          "resource": "repo://requirements/default.txt",
+          "version": "repo-file-v1:sha256:17b8070018ddf52ea728f54c711f076ef112fc8a7b590e5863129e46fc50f36c"
+        },
+        {
+          "resource": "repo://setup.py#L118-L177",
+          "version": "repo-lines-v1:sha256:92db00a16f3a669c1bad74a413de2da869b6b7c89534fcb1319d43a4d3b82257:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZmI4NjliMDQwYWRhNWMzNzJmYmRjNWI2MWNhMjc1ZmUwOTA5ZmJmNjgzMmM4ZGMyMjBmMzZiNDAyNGY2YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4MTA1NDc2NmJlMGRkMzNjNDJhMzc4ZWYxMGZhYWMxNWMxYjRmYWFmZmE5NWM0ZWY5YzQ2NGI1ZGMzMzIzYTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzNjg0M2VmNzYxNGNmMWJmMmUwM2FiYzgwZGExZDNjNTY4ZTk2ZTY5N2ZlNjNhNDVjMzlkOWQwYzAwMGNiODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyMzg4YTcxZjYzZWZiMWYwZDIxOWM1YmQyN2QxMTM2YWQyNTMxNmVmMzFlYzJkNTc3OTJiNTIxY2NhYjkzZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e672207c640340a489c89fea1e7d55f7",
+      "statement": "Pytest defaults to t/unit, uses test_* classes and strict markers and strict xfail behavior.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L1-L8",
+          "version": "repo-lines-v1:sha256:5e1ff7685c97638d8c2e201a29255d952be6e4496811138fe6196dd700c1eb8f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY3NmU2NDE0NjVhNjU1MWU5ZTljZmZkN2ZhYTFlNmE0MmY5YjcyNDgwOTgxM2M5MDNkN2VkY2I1MmYzMDA2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI3NDVlZWZhNmQ2ZmYzYjYzZjY3MzFkZTI2ZTY4M2MxYzM1MmEwY2Y1YTM0MDUxN2IwMmFkZTg3ZjUxNGQwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTE4MmVjOWU1MWViZjhjYmY4YjU1ZDE5NDhmNmQ1MmJhZjNhMjNlMzg2NGMwZGMwNDlkYWMyYzFkOGNjZGE0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1c4d8076d3f464687b8139ee1039b56",
+      "statement": "Unit fixtures use a memory broker and cache-memory backend, enable app trapping and provide an app alias, while disabling multiprocessing construction and synchronous join blocking.",
+      "evidence": [
+        {
+          "resource": "repo://t/unit/conftest.py#L123-L170",
+          "version": "repo-lines-v1:sha256:f60c61a61134cb0dac375304c80d861d390feb13224c0b545e94cf11c57bc475:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZjM2NmI5YmQ5YThkMGYzNDBhMmJjMGJlMWUyMmVlYTIwNTY4ZGQ3OGE0NTI4MWI3MjFiMzBmMjJkMDg3ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1NjI5MGZhZGU4NDFjYjBkNTk0YTVhZWU2ZTU4ZWZmMmEwNGEwZmYxMDA1NDY2MThhZDkxMjI1OGZhNmVjY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjOWJiZmE5NmI0MzFhN2JlM2MxNTliZmUxNGI4MTEzZTIzM2I3Yjk3MzI1YmY5Y2I1MzVmMGQ0ZjVhYmQ5OTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkM2U3ZTFhY2Q4ZTIyZjE5MjE2NjNlNzJlOTE1NDAyZWJkMjU4ZGEzMzcwZjAzM2RhODJmMTJlZDU1YzdkZTIifQ"
+        },
+        {
+          "resource": "repo://t/unit/conftest.py#L59-L92",
+          "version": "repo-lines-v1:sha256:00b063ade83fa3aa360a0dfb8880dbcf6a169def3a261fd9213e7880433fba06:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZTJhNDY1MDA5NWZhOTVkMGUyYmI0MWIyZGIyOTA5NGQzNDA0ZDI4Y2UxMjMzOWVjODhiYjRiNWM1YmU4ZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyYjBmMTE4NGQ1ZjQ2MTlmOTAxYjk5ZWQ4MjQ4OGUwNDA3YjQ2NDg5ZGM3ZGRjMjlmN2NkNWU5ZDMxYjUyNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlZjExYzliNzE2N2MwYWRjNDJmZWE4NTRhYjYzNDk5NzcwODE0YjBlNzE4MTAzYTllYzBmOWJlN2FmNjk5NzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2c8b0e90b314a5ba96e7b167ea01010",
+      "statement": "The contrib pytest worker pool defaults to solo while repository integration fixtures select prefork.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/pytest.py#L127-L135",
+          "version": "repo-lines-v1:sha256:5465593d0ef219c44db200cc67480053154f54d8eb3def3b19327f48e0f26239:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM5YWRhYTBmMjJlODM5NDc1ZGE4NGUwZmNjNDMxZmE4Njg5YTk1YWYyNzE0MjQ3NjBiNmNmOTY5MDJkMWFiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTRjZmYwZWMyYzEyODYwNTE1NDdiZTk0OTczMzJmNTVhMmNlYWQ5NzMzMTJhZTI4OWMwOWY5Nzg2NjYyYWI4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDBiOTcxNjEyM2RkNGU3NmI4ZGRiMTU4YWNiODA1Y2ZhYzZhMjM2ZTAwNTY2MWM2NjEyMjQwMmE3ZWFiMzI0YSJ9"
+        },
+        {
+          "resource": "repo://t/integration/conftest.py#L90-L100",
+          "version": "repo-lines-v1:sha256:8969334fbc2a902e8b7d4cfe387827894f6d6e312dd07c7454a5d22c3111d28f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZjM2NmI5YmQ5YThkMGYzNDBhMmJjMGJlMWUyMmVlYTIwNTY4ZGQ3OGE0NTI4MWI3MjFiMzBmMjJkMDg3ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlNzU3NWMzYjc3NzZjZjJmOWMyYmZiY2E0NGYyMTQ4MTNhNzgyN2VhYTljMzg0NTRjNzAzYjY4OWE3NDQzODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2N2Q1OTkzNTlmNmU0Y2UyYTZhMmFlOGRlNDJjMTA2MTZhMTljYTgzYWI3NDU1ZDA3MzU0MDRmNjE3ZDRmOTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6bfc855154184619b88b56710d993dba",
+      "statement": "Integration settings use TEST_BROKER and TEST_BACKEND and permit root JSON configuration overrides; tox factors choose service URLs.",
+      "evidence": [
+        {
+          "resource": "repo://t/integration/conftest.py#L18-L85",
+          "version": "repo-lines-v1:sha256:eab35545a0c8c188f566491cffe07c0af2041875946c22e1cae37496d4e2b4b8:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZWE5MTA4NjFhYzNmMGUzMzM1ZDljYWFkZTQ3MzJjN2Y0NjllZDNlMTcyMGFmZGE4ZWMyYjQ3MTcxMTYwYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1Mzk5MTk1ODEwNDkwOTBjNTk1ZTU3NmI2MGYwMmJkYzI4ZDhlYzZlNTM1ODU0NmI3ZjhlY2M4NjFkMGYyMDAifQ"
+        },
+        {
+          "resource": "repo://tox.ini#L54-L89",
+          "version": "repo-lines-v1:sha256:8be228c10890d4353dc42b72dfaae5c46df5fe56d982ab09394a6c0b75bf7797:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjYzYxMTliN2NkYzcxZmM4ZDRjM2MwZjk3MDhkZjVkOGIzZjg5MjU0MmI3YjU3NjEzYmE4NWQ1MTVhYWU0OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlNzdjOTQzNWVhZGU0OGVjZGJhZDQ2YzNlM2I2ZjIyOGQwY2ZjNzI5NTdmMGE5NzNiMGE1MTY0ODc4MjkzODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2M2Y3NjcwOWY3ZjE3Njg1ZmZkYmYzMmIxMTgwMDRkZWQzNTVlYTdlYTdkYWY1OGY0YTE4Zjk4ZGMyMTY2MmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5543822ad6354c61a60165529a7b9ed2",
+      "statement": "Smoke tests use pytest-celery and Docker tools, verify Docker readiness and provide container Redis settings to test workers.",
+      "evidence": [
+        {
+          "resource": "repo://t/smoke/conftest.py#L1-L117",
+          "version": "repo-lines-v1:sha256:6ee9f2d5b709eb29a75a3dcdae16603f2c7a18f9afaace32d7fd37d1fdf0225e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1Mzg0YmZkYjJkZjM4MGI2NTU3Y2M3YTcxZDE2ODkxNDE1YmNjYWE4NzY5OTQwNmUyMzZmNzUyYzY0MTUzODlmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2MDlhZWQ2MmQ2ZWE1M2Q0MTcxOGFiNGE3ODFiNzFlMGYzNzBhNmRjY2QwNTVkMTU3OWExZGMxMjU5MWE2NDQ0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3YWZiMGNjYzRjYjBmOTM4ZmU3NjAxM2YxNzQyZTNiMTgwYzEwNGU3YzdiN2FkYzBlZTczYzY2MTU5Yjc1ZTEzIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_de99a8cb137a40108cdb73ff21bd3a62",
+      "statement": "Tox defines unit coverage, integration and smoke commands and lint, mypy, Bandit and Sphinx validation environments.",
+      "evidence": [
+        {
+          "resource": "repo://tox.ini#L102-L124",
+          "version": "repo-lines-v1:sha256:bbe298590b43b9b527380f902cf5c3667e58f410ffa5eb1163cdcd6851025cb8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NjU1MGU3ZjBkNGJlNzY5YzEzYTZhNjdlYzNlODViZGZiYzcxMzlkMTljMWRiY2YyNjNhZWY5YzNjMDBkZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNTk2YmNmYzhjYmYzYzViN2U4OGY4N2YwMDBiMjQ5M2NmMDVjYmE1N2Q4MTFlYjUyNjE2MTg2Y2FiZjdjODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MWNkNWQxZWFkNzdiY2NjMWU4ZWIxMDk5Yzg1YTUzMGYxZGFjMWM5ZDYzMDM2MTlkNmFmNjYwZjUyZTI3NDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliZjg1MDdmZTZiMmQ0MmRjNjQ5NTAzOGNiNWM2NDg2MjFiOTcwYzFmOWQ4ZDRlY2E2NTQ1Njg4NGVmMWVjN2YifQ"
+        },
+        {
+          "resource": "repo://tox.ini#L40-L49",
+          "version": "repo-lines-v1:sha256:17fa25562817c04e42288983e3745016d45179afd0c44b9ee88efc6924f2f32c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiYTNjNDk1YjRiOTIyZjJlMWRhYTNiMjg2MmMxZDU0ODc4NGQ5MmNmMzk3MzZkOWE2Mzg1MWZkZTdlOTFjYTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyYTNjYmI1MjNiZDU5NmE3MjQ3ZjZlM2RiNDI3MjQ2MDBmMjIwNzEzNWJlMGRkZTcxOTAyOWRmOTQxMWY1NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjNGZlNDAzZGU4MjdjMGMxNWFmMjQwZTZlZTgyM2RhNWY5MjBlN2RjNWQ4NGQxZmMxYjdlMWU0MGI0ZjcyNTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f167c81cf8847e4afac917e799c3d31",
+      "statement": "Pre-commit includes a CI test-matrix check for affected tests and workflow files.",
+      "evidence": [
+        {
+          "resource": "repo://.pre-commit-config.yaml#L47-L55",
+          "version": "repo-lines-v1:sha256:f8c57750353046cd8679c2d0f07b066d89ee1bf58bf7b705d95ca982936ee15f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTA1YWM3YTc4Y2U4ODNmYTE4YjcwN2U4MmYzNTVmNGRkNDQ5Y2ZlY2M3OTJmZWQxZjBkZDI4YWUzZjYwOTg1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTE3ODZiZDNkNDliYTkzYjI2YzQ0NjgzNTJkNWViMDc5YjVmY2U0ZmRmZDYzNjgzODY0MjFkZWZjMjY3MDRlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNlN2Y1YWE1OTFjMTRkYTJmMGE0NDk0ZjA4MDZlZGMxMzkxMDM4YTNjMDMxODI5YzVmYWQ4OWFkM2IyYjM3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7cded58236994584b9c20b68301c1f43",
+      "statement": "Integration requirements include backend extras and a Git Kombu dependency.",
+      "evidence": [
+        {
+          "resource": "repo://requirements/test-integration.txt",
+          "version": "repo-file-v1:sha256:bbe747a495240df819dd85838a0ddf66c712d76b42098070d4ce76221be530cf"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:34:04.042Z"
+  }
+}

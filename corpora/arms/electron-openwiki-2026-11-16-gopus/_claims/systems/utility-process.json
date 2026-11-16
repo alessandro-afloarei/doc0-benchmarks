@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:95c30d70cbaf8bf2720dcfdb83e6addfb43377f254919d0683197f2f1e7a7c8a",
+  "claims": [
+    {
+      "id": "claim_5916bf23b59d4514b7c6e2717799de41",
+      "statement": "utilityProcess.fork requires an entry script, validates execArgv, serviceName and cwd types, and only supports stdin 'ignore', with 'pipe' for stdout/stderr creating PassThrough streams.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/utility-process.ts#L13-L93",
+          "version": "repo-lines-v1:sha256:22b46a452fcdb52c5c3d9043d9abc00ecade1506d422299f490b89afc07fe520:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwN2JmNTQ0NTZkMzFmMjAwOTg3ZTRjYjNiNzE5YjJhMTI3NzcxYjIwNDM3NmQ5ODVkNmJiYmY4NmEyY2I4ZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwZjI5ZGUwODc0MmZlMmZjYjIwY2RiZjJmMDVhN2FlM2QxNTZmNTIxNmZiOTJhM2ZiNDU0NDcyZGJhMmY1NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2NDMyZjE2NGJlMGQ1MmYyOWRmYWRlNWY1MDgzNTIzYWQ1MjdhYzNhYjc0YTUxYzUxNWI2NTZkOGNlZTg3ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxOGI2YTRiMTQzYzMzMjY4ZDMwZjQ2MTNlZGUxYTI3ZGZiYjM3YWZkZWNiYzEwZDZkM2JlZWEzZmUxOTQ5YTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cbcb660419b64746b71cba90481508c3",
+      "statement": "The JS wrapper turns native stdout/stderr file descriptor events into sockets piped to the PassThrough streams, and on exit re-emits the event then releases the handle and streams so kill() returns false afterwards.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/utility-process.ts#L93-L147",
+          "version": "repo-lines-v1:sha256:232c969e57a48842e4355bf06729fede8bd67423973ab37902b4834e4b74e71b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwZjI5ZGUwODc0MmZlMmZjYjIwY2RiZjJmMDVhN2FlM2QxNTZmNTIxNmZiOTJhM2ZiNDU0NDcyZGJhMmY1NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0YjlhMGIxNmI5OTEwYmFhNWQwYTRkY2FmZjhhNjBjNDI5NjMzYmYyYWUzY2JhY2M4MjAyOTA3NTgwZDEwY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiNjJiMmVmMDFkM2U1NDI4ZjdkZTgyZDczY2U1YmVhYTViYjczM2Y0ZDFmNDhhNzUyZWE2ZDA0ZmU0MjY0NjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d4fafc44d2f741feab739ffe7334aeb8",
+      "statement": "UtilityProcessWrapper launches NodeService through ServiceProcessHost with a default display name of 'Node Utility Process', and a custom env replaces rather than extends the parent environment.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L159-L195",
+          "version": "repo-lines-v1:sha256:0c17da416faec82dc49ab52ecb2c8e91ab56503d27ed211ee57259f884d9535e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxZGFmNmI0MDM3YWNiOTA3NmJmOTc3OWRiZDg5Mjc5OTZlNzA4ODNkODIxM2JiOWQ1MTU2OTc4ODhmMmVlZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMGYyNGRkNzZkOGEzZTg5YzE2Y2Y4NDE5NWVhM2EzYWQ0OWI4YTI4YjRhNDI3ZjJkYzg1YTg3MzZiYTJiODYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4MTE5NzkzN2RhNzU3NGEzMzE3MmJhZDhkMDhmZDllMzY0YWVjYjEzYmQzZTc1YzQxNWYyY2U0MDFlMzM3NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxN2E5MzRhNjBmYzE2YTRkOTEwZDU4M2NiN2NlNjJjODE0OWM2NjRjYTEzMDhlYWIzOGVhMWQwOTQyZDJiNTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_500b0ee98dcb42b59574142c925ea1dd",
+      "statement": "The browser provides the utility process a URL loader factory and host resolver from the system network context, optionally with a network observer so auth requests can be answered from the main process.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L210-L238",
+          "version": "repo-lines-v1:sha256:dba616f12cd668d878f4cd6e48e2b495dcd7827dcf8375d2d6ce9dbda4360e52:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YjIzNjIwMGQwMWNmMWQ3NDYyNzI4NDI1YjdkMGYzNjA4MDMwMTUxMTU3ZWRlNjVmZjEzYTJiOWI4NDZlOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0M2QwODVlNjk1ZDdjMTE3YjRhOTNhYmZjNDk5ZGViMGNjOTFiODMxMGNlM2ViY2MwZTI5YTU2Nzg0ZDc3OTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ODQxMDMxYWQwMDc4YjI2MmRkMDdkNjFhYzExM2ZhNjQ1NzdkMjQ2ZWViZjZkMmY3OWQ1YWM0MGIzMzhhYWEifQ"
+        },
+        {
+          "resource": "repo://shell/browser/login_handler.cc#L45-L90",
+          "version": "repo-lines-v1:sha256:344ad99cd69f94d2ea43bfcc460c8bcd72a47573391692bd7e06632c145d903c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NjIwZWFhNjA2MDQ1OTA3YjI2MTE5MTM4MGMyYmUwNGQ2MmY1NjJkYTc5NGRiMzY0NzNmNzkxM2UwNTA0N2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0ZDNhYmU0ZTAwMTkxMDQzYjRlNTY1M2I1ZmExMjExZGE1ZDNmN2UxMmRiMmZmOTI0YTc1ZDZiZTQyODE2MTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwMGNhYmMzYzQ5N2NlYzg4MGFkNTRjZDgyZmE0OTVjMmMxZDY2NDU0NWVhYzExMTgwN2ZlZWVhNWYyZTJhNTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff18ad6bebfc4e46a54f8a61d91814d2",
+      "statement": "postMessage between main and utility process uses a dedicated message pipe carrying TransferableMessages, separate from the NodeService interface.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L195-L208",
+          "version": "repo-lines-v1:sha256:4d941bcab97b1a58146cf803553b48e6b6423f7a1a5bae7e98e8817dfcd8445c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMGYyNGRkNzZkOGEzZTg5YzE2Y2Y4NDE5NWVhM2EzYWQ0OWI4YTI4YjRhNDI3ZjJkYzg1YTg3MzZiYTJiODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZWExNmU0MDgwYjM0NDc1Y2FlOGUyNzViNmI0MzQ3Njg2M2JmY2QyMGFjMWQzODVmZjViZjk4N2Y5ZjU2MWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyZWFmNzA3MGVkNDViMzMwZjA3NzkxNTQ2NjQ2Y2MzZDQ0ZWUyYjk1YmUyMDI1OWRkMTViMmViYmM3M2UxMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4YjA4ZDdjZDE3MWFlZGQ0NzI4YjYxYWNjNThhZGZhOGIyNWQyYjkwMWFkNjJkZjg5YTNhOTA3MmJkOTRmYzEifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L409-L422",
+          "version": "repo-lines-v1:sha256:0753df44e11dd1dd9eea8c357e4c2fd0e24a561ab370ecb5cd79b663b7a92991:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZDgyYjliNjZlZGNkMDQ0NDUxYzY5MDRhMjJlNDk0NGRkNDhjZWFjOGUxOGQ3MWZkZGQyZjFjMzlmMmM4MzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwOTFlOGU2ZmNhMDlmYWQwMmRjOGM4ZmYwZDQ4NDRlNTZjMTUxZjQzZDJjMmI3ODNkZGM3M2NhZmI3MmY2YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmYzAzNmZjNmY0OGYxOTRlZjJhMDEyZjA0OWM1YjcyMWM0OGQ5YzQ1OTFlY2Q4NDQ0Nzc2NjQwZjJjMzk3MTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5c4a0fe6ae74b359f1fe454292a8080",
+      "statement": "The wrapper emits spawn after launch, deduplicates termination signals into a single exit event, normalises SIGTERM/SIGKILL exit codes to 0 after kill() on POSIX, and unpins itself on exit.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L244-L320",
+          "version": "repo-lines-v1:sha256:1dd9ed836f7c2301b46d65a49ab8c9d1cd80a78b975a0ed94111d4456d92989a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwMzc2MDQ5MTAyZTM1Njk3NWY0NDllNWRlMjc3ZTA0NzMwNTYzMDllNDFiMzM0YzU3MzA4MjI1Yzg4NTAzNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MjEzYzkyYjYwODMzMjVlMWE2Y2Y1ODQ3ZDVmOWRlOWI3ZTZlY2ViNzBiZDNkMDkyZTI4NWNiMTU5OGM4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkMjY5ZWJkYWY0YjE3MWI4YmM3MDM3ZDI3NjY2OGVmMmVmODNlNTFkMTFjNWJmMzZlYjVjYzk1YTlhZmQ0OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzY2EwZjdkNzY5YTNmNDZiMWMzODkwMjdjMDAyZjBiOGNmM2JmMDRkZGFmMGQ4Y2IwOGFlNmE1YjgzZjRkN2EifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L385-L401",
+          "version": "repo-lines-v1:sha256:41a2e1227a53d3490a70def2c6417db46b42836227d0754812cd00d51c78c9bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4NDJmZDAwMDg0MGRiMjU0MDExNDcxNDYxNzZlNjhkNzdhMDQzMWJhMDUxYzg1MWNjZjZlM2M4NGIxNWY3NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2MGJiMTNmMWZlOTU4MWRiZDZiNjcxN2JmZjc0NmUwNWU4MDIzYTg5NmFhMGExZDcxZjcxYmQ1YzBiODM3OWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b92d82ac588345c1b0a72967e26f29ef",
+      "statement": "NodeService initialises ParentPort and the URLLoaderBundle, creates a utility Node environment, installs an exit handler that resets the service connection with reason process_exit_termination, and stores the entry script as a hidden _serviceStartupScript before loading the environment.",
+      "evidence": [
+        {
+          "resource": "repo://shell/services/node/node_service.cc#L108-L192",
+          "version": "repo-lines-v1:sha256:875bc88c600e93a9d4d02eba1b0eb5f2792080f6d602b45dc4ba177183ecec2f:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2OTNjZjhiY2VjYTgwMzlkZTJhODkxZDM0MDhiOTg0OWMwYWJhOWFlMjZkOGVlNDc4MzUwMjUzZTcwMjUwZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1NTcxN2YwMDVjODE0MDdiMjllNDU5MWNlZWVmM2E4NzJiOGRhNzAzYzVhNTE3MDViNDBmZTYyNGY3ZWEzYmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExZDNiOWVhZDM0OTk3ZGE0YzIxNzg4OWE5YTVmMzNiY2YxZjU0MDY3MjZjZDNkNGE4ZDRkMjIwNTU0ZGI1NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d403bcb068a4bcea951b77fd5f971c1",
+      "statement": "In utility processes uncaught exceptions are not suppressed, unlike browser and renderer processes.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L748-L758",
+          "version": "repo-lines-v1:sha256:79397bfab962c7e0324206f4e04db0b22792996e2076be28ac6a870041253a98:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlNWM0YTYzNGMxOWQ5YmM1NzM1NmIyYTI2MGJiMzNiYjc2ZmEzNTBkNWFiMjA5ODA3YzllYmJkYWU0M2E3OGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxNTJiYWZiNTg0ZTQ0ZDk2NzBmN2M0NTc0MmNmNzNjODVmZmE1YTZmNmVlY2I2YTY5YWUzN2EzNmMwM2U3ZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6930849afedf4d4d8d89fb332a48d839",
+      "statement": "process.parentPort is a read-only EventEmitter whose underlying connector starts paused and is started when the first message listener is added and paused when the last is removed.",
+      "evidence": [
+        {
+          "resource": "repo://lib/utility/init.ts#L18-L36",
+          "version": "repo-lines-v1:sha256:cf5fcaede8387d87f38cdc86ed153a263a16e90f7573d847664c097dfdc5a9f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiOTI3M2E5NTZhMzQ4Y2EwOWY2ZTliODFlYWIxZTc3MzBkNWViMGE2NWI2OTA2MTA0NDA1ZGJlMTBiYjFjNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5OGZlNWU5MmNmY2NkMTAzOGU2YTU0YTQ0M2U4NjAxZmNiM2ZhODk4N2JiNzA0ODViNGVhMDQxZWMxOGRlNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2MDBiMWMwYjYyNGQ4YTY2NDI5ZDcxM2Q3OWFlZGYyZTFkY2FjMjVjZDJlZjRhZjM1MTA2ODI1MDJhNDM1MjIifQ"
+        },
+        {
+          "resource": "repo://shell/services/node/parent_port.cc#L36-L80",
+          "version": "repo-lines-v1:sha256:43c8691f793556d8d39cf54c2f701ef279f5f40da8d2910fab9c6fd33ed432fe:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YTcxNDU1NDcyY2MxNTc2NzExMzY5MWY5OWM3Nzk2MmNjNDc4OWNlMmFiZjIwYmM2Yzk5YzZmNzk0ZjFkMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzYjNiNjZiNjA4NmRmYzAwNGQ0ZjRlMjAwM2U4OWJlM2EyMWIyMTg2NjIwYTZiNDJlZjc0MmFiN2JlNjNlYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1YmJjNzg0Zjc0OTczODMyMGRkYmE3OGYwMzU3NzhjY2YzMTU0Nzg2OWNhNTBiZGNmY2MyYTM3YjlkMjUxNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzYzRmMTllMDkyMTU1NTNjY2U2MjA2MTA5YzE0OWY3MWFjN2ZhYjYyMGU3ODJjOWFhNGQ2MWE4ZjdhMGUwNTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e6d3cc7296a64bb6bc081fe8a381f89a",
+      "statement": "In a utility process, require('electron') exposes only net and systemPreferences.",
+      "evidence": [
+        {
+          "resource": "repo://lib/utility/api/exports/electron.ts",
+          "version": "repo-file-v1:sha256:90bf690dfea56d958fba731e9cfbcd3c51b41fc01b9a06b41e33f5126365ee85"
+        },
+        {
+          "resource": "repo://lib/utility/api/module-list.ts",
+          "version": "repo-file-v1:sha256:fb6c4a8938942dcea038ab3b961dea2cc5e9a48ae8a104530638061feacdacde"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

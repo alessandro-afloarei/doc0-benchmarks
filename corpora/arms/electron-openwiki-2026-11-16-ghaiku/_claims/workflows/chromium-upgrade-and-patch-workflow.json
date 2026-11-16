@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:26f88467063b8ba807f2816e8caf0ceb140e3eb529afc4248a89286a0d541266",
+  "claims": [
+    {
+      "id": "claim_6f17c2bf1e5c4dfcb89b499685a0a8b4",
+      "statement": "Upgrading Chromium or Node.js in Electron starts by changing the chromium_version and node_version pins in DEPS, which the deps entries use to select the checkouts.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L1-L12",
+          "version": "repo-lines-v1:sha256:e401e4f013fedb05a9ddea3fc4dda0c93fbf800d34799f4badaac39e53a6ba54:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzOTc2YmZiYjVkMzZmMzk3ZGI1YWUwZjM3MmM3OWVkNmIwMDE4ZWRiMDg1YmYwNWY2NTBkMzQ2MDRhMzQyY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YjVjYTVlMjFhYzNjZDAzY2QwNmViOGJhZTFmZWU2YzA3YzMzN2IyZGUyODU0NTFjZGQyN2Q2NzkxODU0MjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmYjllYTY3ZGZmMDc2ZWYzN2E5ZTYwZGNlYzFmN2YyYWRmOGQ0Y2EwM2RmMTM2YWFmM2QyZmQyZDE4MDUzYzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9610a9b06efe4382b8bc3b1e031fe6d3",
+      "statement": "gclient sync runs the patch_chromium hook, which calls apply_all_patches.py with patches/config.json.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L126-L141",
+          "version": "repo-lines-v1:sha256:6dcb15b5f7450e717884e1260c4ba99ab71c331274c403e3a24baa6bf3f11611:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzYmIyYWY1MDU0Mzc4ODZlYjYxY2M4ODQ1MGQ4OTc3MTJiOGIyMjRjNmI3NmQ5NTM3NDFjNmQ3NjU4YTE2ZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwYjk2YjM4MzZmMTE2MTlhNGRlMDUzMjdkOTcyNDRmZTU2NjI2ZTllNmJlM2MxM2ZmOTYzMTgyNDI1ODg1YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyNGM4ODgzYTgwMDUwNTcyZDVhZGNhMjdiZTc0MGQxNGJhY2RmY2Y4ODE4M2U5NWRhZjBiODU0NDc3YWM1MDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_07b69c0f4008487e860796bdfa933a31",
+      "statement": "apply_all_patches.py enables three-way merge when ELECTRON_USE_THREE_WAY_MERGE_FOR_PATCHES is set in the environment.",
+      "evidence": [
+        {
+          "resource": "repo://script/apply_all_patches.py#L11-L11",
+          "version": "repo-lines-v1:sha256:b507ea0aa677c9e806e07b09c241586cc8703edaf9fa461c627b4919731b6fdb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUwN2VhMGFhNjc3YzllODA2ZTA3YjA5YzI0MTU4NmNjODcwM2VkYWY5ZmE0NjFjNjI3YjQ5MTk3MzFiNmZkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUwN2VhMGFhNjc3YzllODA2ZTA3YjA5YzI0MTU4NmNjODcwM2VkYWY5ZmE0NjFjNjI3YjQ5MTk3MzFiNmZkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmMwODM2ODhmYjBjOTUzNTRiMDgzNzY3YWYyNmNjODU2ZDc2NTU4MWQxZTFmNDRjMjVlZjcxZTU1NzEwMzY1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDllMjlhN2ViZTE3ZjI5N2Q2MmExOWMwNTlhMzMyNzJhY2Y4MDZjZWRiZWE2NzI2N2Y3MWViZDMxZGRiZDhhOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ec23aece2684319a14aed6093781469",
+      "statement": "The patch-conflict problem matcher recognizes 'error: patch failed' lines and reports the file and line of the failing patch.",
+      "evidence": [
+        {
+          "resource": "repo://.github/problem-matchers/patch-conflict.json#L1-L20",
+          "version": "repo-lines-v1:sha256:e5be43a885b2b97e593e8dcb522fa4f8c8710da108017dda3caa75675de1ffe8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmZmM4NGViNTI2NTc3ODQ5MmYzN2Q2ZmU4N2FiMmNjMjBjMzQ4MjRhZmI3ZDc3ZGE4NmJmYjBjOWMwMjZmYjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8dd050dd6e7a4609b118eafafddf5b75",
+      "statement": "The checkout composite action sets the three-way merge variable during gclient sync, re-exports the patches on non-release builds, and fails the job when the export differs from the committed patches.",
+      "evidence": [
+        {
+          "resource": "repo://.github/actions/checkout/action.yml",
+          "version": "repo-file-v1:sha256:be827d159b44131ce00bdfba8554d29d4e3b69c145b498599b8b572954961e5f"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e48537ada114c4fac45c32538ad9c6b",
+      "statement": "script/patch-up.js reads the changed patch files and pushes them to the current branch through the GitHub API using credentials from the PATCH_UP_APP_CREDS environment variable.",
+      "evidence": [
+        {
+          "resource": "repo://script/patch-up.js#L1-L30",
+          "version": "repo-lines-v1:sha256:fea836344f8e5e278bf08040ba02ae10a51da2e6069f2d961dfc2da1da63768d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2Nzk5ZDU2YTMyZmE5YmUyOTVhM2Y1MmZiOTA4OTIxZDQ3NDM2YmQxMjIwNTUzZWY5NjgzODFhMDVjMjdjOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjMDhjYjdiODU0OTI2NGYxNWIyNGMyM2EzOTJiOTQ2YjM0ODM1ZTMyMDg1NGUwYWM1YTA1MzNjNTZjOWMzNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_72025e3ae2d64bfcaad4ac68d92c2a84",
+      "statement": "The lint script's patches rule checks each target directory, requires a .patches file, and rejects duplicate entries in it.",
+      "evidence": [
+        {
+          "resource": "repo://script/lint.js#L200-L240",
+          "version": "repo-lines-v1:sha256:35f7812697be161ce074d74a0d38385c65bd934a3bb17cc71e8312884f56c06f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjMGVlYWJiNTIwYWQ3MTY1OGY4N2U4YmEzNDRmOTYxNWNlZGFmNjk4NTMwMzFkOWUxNmU2OTc0N2VhNmViODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwMmEyZGE5NjM4ZGIyNTkwYzYxNTkwN2VmMzFhZjA1YzliMmJmMjI0NWViMzNlOTYzZjkwOTY3ZTIyYjQxNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlNTRhOGMxZjJiZTg2ODFmMWE2OGMxNzdiOWIwOTY4NDA3Yzk4ODFjNTBhMGVkZTMwOGJjMzJiYmQwZWQ3ZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_470fe2227ae94dd881e9ec40ad796e92",
+      "statement": "The CI build workflows use the .depshash value from generate-deps-hash.js in their source cache key.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pipeline-segment-electron-build.yml#L147-L148",
+          "version": "repo-lines-v1:sha256:2fe011689e3309dce87464cb0021acdd4930aa9d084144b25299456e23f9f1fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzg5MDU0NzNkNWVlYjdiNTQ3YWM4YjY5ZGNlM2ZjZWEzZDNlNjVjM2UwN2YxMWY0ODRlYjVhYzE2N2JmZDE3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODFiYzdkOTY4ZTBiZmE5ODRjMmZlZTUzZDBmZjYxNWIwNjRlZDdhNTNiNWE1ZDRmMzc4MzEzODVjYmY3ZjVlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjA5OWNmNzc5YjU2ZjM4MDEzZWQ4ZjY4OTJhOTdlMjQxNjFiYzUzNTkxYjc0MWUwYzUwN2RhNmI1MDUwNTliZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjA0NzY5YjFiZmY2YTQzYmM1NzYxNTJiNTlmNjcwZmJmZDI4OWRkNWM0MTczYWUwZTlkOTc2Y2Q2MjdiNWQ5YSJ9"
+        },
+        {
+          "resource": "repo://script/generate-deps-hash.js#L1-L30",
+          "version": "repo-lines-v1:sha256:b920b73565ebe4beabc358954cfc2ba7b9f40fe90063ed722ac04194a4fda538:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkYzNjYTBlMzg1NDY3MWJhNzFmNGYxZWNhMzU1NGQ5ZDZhMjQ5YTQ5NjYzOWJjMWE2ZDE4ODkyNWZhNmRlY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3Y2NkN2ZhOWIwNGZhZDMzNTBiNDYyMzliY2ExNjdlZjg5MTMwZDczZGVkNWFiYzUwZjE5Y2Y0MTllNDk3MjUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

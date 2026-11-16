@@ -1,0 +1,5 @@
+# Files
+
+- [Git Provider Integrations](git-providers.md) - How OpenHands integrates with GitHub, GitLab, and Bitbucket — immutable provider tokens, the ProviderHandler facade, per-provider service classes and override hooks, repository/branch/suggested-task/microagent APIs, authenticated clone URLs, and how tokens reach the sandbox while staying masked in events.
+- [GitHub/GitLab/Bitbucket Issue Resolver](issue-resolver.md) - How the openhands.resolver package runs OpenHands headlessly on an issue or pull request — cloning the repo, building instructions from the issue thread, running the agent, extracting a git patch, judging success with an LLM, and opening a branch or (draft) PR — plus the reusable GitHub Actions workflow that drives it.
+- [Model Context Protocol (MCP) Integration](mcp.md) - How OpenHands configures MCP servers (SSE, streamable HTTP, stdio), discovers their tools and exposes them to agents, executes MCPActions through short-lived clients, proxies stdio servers inside the sandbox, and serves its own built-in MCP server with PR/MR creation tools.

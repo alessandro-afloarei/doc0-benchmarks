@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a09bbca856d029007c1768a99a3efe3dbcc6ff2c3fdbf872e5e17cc3b491164a",
+  "claims": [
+    {
+      "id": "claim_63c8638a403144e68fee136a3d681c64",
+      "statement": "Cloudflare Pages handle passes environment plus eventContext and execution methods to app.fetch.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/cloudflare-pages/handler.ts#L33-L49",
+          "version": "repo-lines-v1:sha256:d1e3e8d69de0ff17ff2d18108efe15c560a54686c8566f95ccbd22066e8b0b11:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YmQxNjU0MjVkNjhkZTNiNzhjNmE5Mzc4MGU0ZDQ0NTE5OGI0YWY3MGFhM2Q1ZjIxMmEzZDY1YTczZTJiODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiMWVjNDViNWUzNzIxMWVlZmQwMGFkZDNmZWI0NTU3OTZmZDEyMTAxMTZkNDg5NmU2ODM1YjE2NWRmNzUyMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViNTRjNThiNjdmYzkxMzk2ODc2OTlkMzdkNzE5NzkxNWEwNDQxZGI2MTIyYTFjOTYzYTJiNWNmNTIzZTYxYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNTU5NWRjMzAxMzc3OGU4ODg1ODk1NzFlNTA4NjI5NjFhZTk0NzcyN2MyOWI2MzFlNWU4YzBiNWU4YWRmMzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce0f4e08b20f421e9432780c923b59dd",
+      "statement": "Lambda handle translates events into Fetch requests, maps request conversion errors to 400 or 500, and supplies event, requestContext and lambdaContext bindings.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L239-L275",
+          "version": "repo-lines-v1:sha256:060ad959823beafc461dd0aad08f40ee6a5e35bccddaf03d9e58e812082898ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMzRhYTYyMWM1NDA4OWE4YmQzMDQ5OGZlNGVlYjAwNTEwZTFjYjZlZWY1NzllNDhjZmM3MmQ0NjY5MGRhMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0ZmZjYjcyYzg4ZTk1MTg1NTg5MTgwMGQxNDY0ZmZjZmFiYTVhYzhhYzgxYTkxM2M3NTk1NzhkNDgxMTMyY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_17f1627e7d264da198e0eeab05811572",
+      "statement": "Lambda buffered responses choose text or base64 and event-specific header representations; streamHandle instead uses platform streaming APIs and always ends the output stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L138-L192",
+          "version": "repo-lines-v1:sha256:bb36419de223145478c62c3e919f5f90515fb2d1bf1d172b924ffab0b1a30ace:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYWJiNDdlOTMwNzA4NjQ0OTBjNTFiNTI2Mzg2ODc0YTAxYWJlZDk5YTFhNDU3ODkyZTVjZThkYjI1NjQwNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MjY3OTM1ZmM2MzM0NjVkODQ4YjQwYTRlZDY5NjdlN2I3YTMyM2Y4MWNkNTNjMTEwYWUyMTAyOTY4N2FhMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzM2VjMzBlZTVmM2FkNGM3ODdmMDE1NjkxNWZlMDE0MmRmYjIyNmIxMjJlODJhZjllZTk5MmNhMGZmZDhlZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2M2MzZDJlNzM5NmQzN2Q3OTczMDdkMDdlMTQyYjlhNDI4YmQ4NWNjN2FkNzhlY2QxZTI0YzEzOWRjN2RlMDYifQ"
+        },
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L344-L385",
+          "version": "repo-lines-v1:sha256:cccb84c3398a56ad677ad3d1ca3ea32b43c03d4f6321af108ea851554f483dc3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlYWViOGUyMGNmNDQyZGIyZjE4OWJiNzkxZmMyMGMyYTQ0MTE1NGE4Nzg3ZWYwYWIyMWQ1YmE4ZTI5OWM0M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMTFjMDU2N2QwYTVmOWU5YjEzNWY2NWNkMjUzNzJkZmQ2Mjg3NzVmN2MxZWQyNTNmOGJhZDQyZGQyZDY2NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlYjk5NjBmMWY0NWM0YzViYzZhYzIzNTY5NWM5NDRmMWQwNDc5ZTM4MWUyYzQ0ZDJjMGQzNGVjNDEzZjI5OTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyNDE1MGJmMDY1ZmQ5ZDM2Yzk2ZTUyMzI0MjdmN2FjMmExYTZmZGJiNjMyYjg0NTRkNzM1YzE3NDQ5OGYwYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_99363833622c4a21abc4cf66aab8e60b",
+      "statement": "Bun WebSocket upgrades require a server from the environment and separate exported callbacks dispatch shared WebSocket events.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/bun/websocket.ts#L48-L104",
+          "version": "repo-lines-v1:sha256:f996325ec149a24a5fc99116920755ebb1055d5337b2d93db7ab56a1bd28c48e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxZDA3N2JmMWU0NTg2NjM3Mjk4NjY1MjJlZDUyZGNmOTllNjU2YjVkOWM5YTg4NzgyYzQ2NWJlYmIwMWE5YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZjk1ZjJhMmZmNDU0NDJlMTM1ZDA0ZjY2ZmIyNTRiYTcwMTBlZTMyYmU4YjNhY2EwMDI3M2UxNzdkMDlmMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhZThhZWMxMjZkZGJjNGY0YTk0NDFlNzM5ZDRmNzIzOTczODlmMzFiM2E5Mjg3YmY3NzVjYmEzMjJmNzE1YjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_17d5b3efd5954e19883b8416acb28659",
+      "statement": "Cloudflare WebSocket upgrades use WebSocketPair, omit onOpen support, and return a 101 response containing the client socket.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/cloudflare-workers/websocket.ts#L5-L53",
+          "version": "repo-lines-v1:sha256:ffb8066faa2b33f394371d3d91a216a68ad21ab4e70871ff7f918848f0809f05:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ZGMyNjllMjM4ZjczZDUyM2VkYjNkMjhkMzQ1ZTE0NDQxM2Q1MjUxMDUzOWY1Mjk0NTk4NmJlY2YzMGI3Y2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1MzFjOTFlYzZlMWNkYzIwMGM3MjQ3ZWIxMmVhY2E2OTE2ZjE5YmRmNTZjZDc2YWMzNGZjZDE0Mjk2NzZmNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cdec161f02444613bb24445f11971316",
+      "statement": "The env helper selects process.env, Deno.env, context bindings or an empty object by runtime without merging them.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/adapter/index.ts#L10-L40",
+          "version": "repo-lines-v1:sha256:ca7d2fcaeae11b17fc37d790bedec7a49f246fb3ab8ab9f0f16d78b9c5518b68:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjYjhiZTViYTNhMjJiNmUzM2FjMTUxNGE0M2RmMzdmMjVmNTlmYjE4Nzg3Nzc1NzBlMzUyYTFmMjcxM2FkNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZTk5ZDhhNDM3ODE0MmVlZmJiZmQ5YWM0YWU0MjgzYTg4ZWU3OGE3MjY5MDQ3OTkxZTdlNGU2MTI1ODNhOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1N2FkZGIwZDlmYzFlZTU4YThhOTYyYTYxNDAwMzdiMDNjZTI1OWYwYTE5ZTQyNjhlMzg5ODNhMDg5NjM5YWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiNjg2NThhYWNmNTE5M2Q4Y2ZiNThiMDhjOTVkYzBkZDJjMjRmOWRhZTMxM2MyNWI2M2I2NzdkNjBmOGIxNmQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:23:09.970Z"
+  }
+}

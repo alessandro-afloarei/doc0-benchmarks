@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5d71e3223750003513bc1a723cbf4aff89424af8bd082fb0e46471de9d683bff",
+  "claims": [
+    {
+      "id": "claim_c5ad98c338e149248034770d8eca5ef9",
+      "statement": "The Node environment's fs module is wrapped at startup so that reads of paths inside .asar archives are served from the archive by the JavaScript wrapper.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L32-L44",
+          "version": "repo-lines-v1:sha256:936ded38ef8b28af8ecc7612898aac6f9d65297565e1dede046e02b3ddc5df02:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkYzAwZWZjMDhmNGUyNTIzODgxZjFlZDA0ODU0ZDhlNzMwZGVkYzFmZDYwMTU4YjMwMWRhM2JlOWFmMTk4OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhZmVkYjQ0M2YyM2U0YzlkODdhNDVlNDVlNjU5ZGI4MTdhMjkwNjg4Y2RjYzY0MWE2YTU5MTdjOGY3MzBmZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4OWViNzQ1YWU2ZGMyYmFhMTA2ZGFkNThiNzRhZTNmZjM0ZmI5NWYwYzZiNThmN2RmYzhjZDZkZGYwZGM2ODcifQ"
+        },
+        {
+          "resource": "repo://lib/node/init.ts#L4-L5",
+          "version": "repo-lines-v1:sha256:4796d640aab53f0a52889af7b0927aafbd68f2136dc4a6fc70da37e04bc049d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2QxZmJlYTkyZjI2ZjJjMzY1ZDkyYjhkNjc4MTJlYzA5YmNmYzQzY2I2YTk0MWY0OWI0YmQ1ZTliZDdmZGY5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODQyYTRiNWRmNjU4N2VkNzJhNDhlMDQyMDQzOTZiMzQ4ZjRiMWIxNWIxYmExNmUyZmUyZTcyM2Y0OTM2MjI0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTFiNDYyN2I2MzJlOGJjMjllMWY1ZGM1NmE4MTU5OWZlNDQ4NWNlNjVhZTQzNDczMDc1NjY1ZTU5M2Y0MWI4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDgwZjY3OTZjNTE1Njk0ZWIyMTI2NmYxNzEzMzJiODk3Mzc5ZTg1Y2M0MTFjMTFiMjEyMDJmNjdiZmE3ZmQxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4a7cd00aa124918b5a2328303a10eaf",
+      "statement": "Module path resolution inside process.resourcesPath is restricted to candidate directories under resourcesPath, so app code cannot resolve modules from directories outside the app's resources tree.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/init.ts#L46-L58",
+          "version": "repo-lines-v1:sha256:8e0871dab159f903f5386b44cc30d44e93b0592848d21872779cbfec44b565ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwOWYxZGExMDM2YmNlMGU3MzI4ZWZjZDc1ZGFmNDhhYzliNTEzOTE2MDJhMGFjM2JkYTNmOGQ5ZDJiNTQ0YTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllNDYxM2IzMTE3N2JhYWNjYTEzODgxOWI2NDQ5ODRhY2E2MmE4Nzg0ZDUxNTc4NDk2ODI4NTcwYzFhYmIzOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa31bd26d9c54a99adba8a5b61bbbc3b",
+      "statement": "In the browser process, the app entry search list is app.asar, app, default_app.asar, and the only_load_app_from_asar fuse reduces it to app.asar alone.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L680-L700",
+          "version": "repo-lines-v1:sha256:73f3c76bf456698e52679e45b6cf5a37970a9d875a97503a689fd009228d5610:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmZTc0MDk4OWVkNGY1YmY0MjYwMjI2YWJiMWVjNDkxMmQyM2QxYmYxZDM4MzkxNTBmODdiYzEwMTExZWE2ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1NDYwMDllOTNjYTVhNDZhYzBmMWJiNjUzZTM5NjljNjMwN2Y3ODkwNWYyNzI5NjFmMmZkYWJhMDA5MTFjNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2NWQ0ODFjYzBjOTUzMjgzNDQzOTRlZmFiODU4NmI3NTk2OGZhZjYxNzA2NWVjYzJmODhlNjU3ZDg5NTA3MGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51ca098d23c04413a37d2662b1766781",
+      "statement": "When the embedded ASAR integrity fuse is enabled on macOS or Windows, an archive without a header integrity payload causes a fatal error at archive initialization, so tampered archives fail closed instead of running.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L235-L245",
+          "version": "repo-lines-v1:sha256:c3236de3663ce982b235c4ff81215c42afadf60d0bb63351a0388e38cd096495:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZWM3MWVmZDYzNjc0ZWYxYTI5MGI2NGFiNWEyMzE1N2ZiMjZlNTQ2Mjc1Y2FhMjk0ZTQ4YjNlYmQyMDFjYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMWY3ODAzYWY0ZjQ1ZDkyMDBjNjVlZTIyMzE1MTE3MjY5OTBkNTdhMmVhYzJkMDY2YzE2ZTBhZDcxY2RhMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjNDUyY2FhM2RhNjEyZWZkMGEzNjVhMzE0NTg4M2NlMjlkMWEzZTljNTA5NTczMzlhZmQ0ZTc1MzNlNDYxMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4ZWM0NWU4MzNjZmYzMGE4MTk1OWE4YzY0ZDIwMDU2YzA2ODcyYTlmYmExMzU5ZGU4NTE5NDBmZjhlZDdkYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15f406c7b98a4128a4cbd596311f8fd6",
+      "statement": "When the embedded ASAR integrity fuse is enabled, the V8 startup snapshot data is checked against a compiled-in SHA-256 checksum and the process CHECK-fails on mismatch.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L216-L226",
+          "version": "repo-lines-v1:sha256:556ec79df065a4e8e20ebcb240c2d4a047f3428e46aae79aa217e1bb514384a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYmJmZWVlNzBiY2FmMzM0NDFjYzliZTJmYTVmMDczYzNkYWFlM2ZmZThiZmIwMmZlZTMyZTk1MDkwNzJlOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmNjlkN2UxODYxZmFjZjQ2MGRmYzc2NDVjM2NkOWNhODNlMmY2NWM4MTQ2ZjBjNzk0Mzk2YTIyYjEzMmYxYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a584d86f605f4bd69e6e705db32d332a",
+      "statement": "Fuses are declared as compile-time defaults in build/fuses/fuses.json5 and generated into fuses.h and fuses.cc, where each fuse is a byte in a sentinel-marked wire read at runtime.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/build.py#L51-L70",
+          "version": "repo-lines-v1:sha256:65ea872c21f048c8d4bf2fd7fd9d04d056db95f90c39ee98ae0ba82341a457c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4YTUxMDA0YjVhMDFkNWVmYjk2MWVkYjEzNWZhNGQ5MWI3Yzc4YmQyNTY1ZTExMmM4ZTIwNTc3YmRiOTRhM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyMzY3YWU5MjRhYjY5OGQ2OWYzZWRiMDZjZmFkMDFhZjhmMGVjYTI3Yjk0YTY0ZTA4NmY0Njc3NmRhYTNjOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMTUwMjlkNmY1NjY5N2Y3ZTU0ZDU1MjFiMDg2MzgwNDViY2Y3NTNlNjE5ZmJlOWQyYzU4NWZiYjU1MGM0N2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2YzEwN2RkMDZiZjY0NDg0MjE3MzU1M2RiMGVlOWNhYWY0YjIyZGEyYmM2NGEwNjI1MTNmNjQ0ZTkzMzNjMTIifQ"
+        },
+        {
+          "resource": "repo://build/fuses/fuses.json5",
+          "version": "repo-file-v1:sha256:54b905d53aaa1974297cd60ad84141db8490becbf71d752401f5aafaa15cfb8c"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

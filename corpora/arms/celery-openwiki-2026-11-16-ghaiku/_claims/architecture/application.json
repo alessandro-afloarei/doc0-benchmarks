@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9e8b981d646a53d0223650db48ff6a2e340edbacd53e3d37840af74eeb2aa2c2",
+  "claims": [
+    {
+      "id": "claim_517d71bcb1ff4488874f8b6f004abc66",
+      "statement": "The Celery app creates its AMQP, backend, loader, log, control, and task registry components lazily through cached properties rather than in the constructor.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1534-L1607",
+          "version": "repo-lines-v1:sha256:b5ee8ac477d35dd2bc734d92db77ab625324af7142d2ebb61f93074bc21ed084:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNWVhYTg0YmVkMjQ3YTAxMDAwMGMzZWNhNzI5MzA3N2U4YzA0Mzg5YWRiODNhNzkwOWZhOGI4ODQxYzNiNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZGUyNTg3MTk2MTQ5MjYwNzFjOGZiMTlmZDg2NjE1MDU1NWYxYjAxMzU0ZjhjZDE2MDNhMTA5YTdkZGFlNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3YTQ1YTYzYTcwZDEzZjNkNWYwZDEwMjQ5ZjM2MTg3Njk3ZDQ0ZWNkYTYxNDkxOWM2Mzc4ODk2MDY0OTA0OGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwYjE0N2FjNTg2M2MyN2FlMjY3YWE1MjUxYmQwNDY4NjdiZDkzMGI3OGZjZDU1MGM0YThjYzZjYzhlZTdlOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_57c10a84e8864f2ba09e00477625316a",
+      "statement": "Loader resolution checks the CELERY_LOADER environment variable first, then the loader_cls attribute or argument, and falls back to celery.loaders.app:AppLoader.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L436-L443",
+          "version": "repo-lines-v1:sha256:247541059599c7562198c338532d140068d095289508692400d128f06730d971:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZkMDNhMTdkZjFlODQ3NGMxMjAwMGY0NzJhOWY2YmVkMzRhNDhhMTk5ZmQxMmEzNjkwMmVlODg1NjBjY2I0ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTM3ZGEzYTgzMmQwNjE3NzI3NGFjMjgyNzMwNGM1NTZkZGU0OTY5YTA4OGZkODA2NzU4Mzg1ZTc5OWJhMTBhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTU1NTg2MWM5YWExODM2NzkzYjMxYzFhYmMxNTI5ZjNlM2I5MTg0ODU0OTkwODhlYTFmNDg3ZDY1MzY1MzI0OCJ9"
+        },
+        {
+          "resource": "repo://celery/loaders/__init__.py#L10-L18",
+          "version": "repo-lines-v1:sha256:0ae88c1318de54e88364b0c9e74d43b8f910f07e45e14e46ede9e8e7f0960cbe:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRjYjFiNTIwN2VkMzM0ODBhZDc1NGM0NzE4MzQzMTM2NmIzYWE2MDgxYzcyOGIwYTZkYWIxNWNjYTBhMTQ3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQyZGZlNTY5YjZmZDA5YTQzN2FmM2QwOGJmODk1Y2JlMjZiNzYwZTUxMTljYzk5ODUxMjYwMTEzNzZjNzdkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWU4ZTY5M2ZkNDY4N2JjYmUxZmMzMzhhNzc1OTczNTFkODNlYWE0YzdkODZiYjYxMjU5NWIyMjJjZmVlZTIxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_584981e9aa244d44984570406d4b1c8a",
+      "statement": "Configuration is read lazily: config_from_object stores the source, and _load_config materializes it on first access to app.conf, swapping the result into the existing settings object.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1247-L1262",
+          "version": "repo-lines-v1:sha256:661e93c30009bfde495799cb5f2f57615e09894b320b201dd15047d92f978c6a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZGM4YjIwZDYyYzI2YjY1Y2VlZTg1MTU0MTE4ZDgxZGQyNTQ3MTQzMTBiZjRkNTQ5YWRhMDljNzFhMjI1NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5ODlkYzcwMjdhMjUxMTI2YWE0YTZmMjVmZDZkODdhZDliYjhkZmUwYWFiNjY5M2YzMGI0OGRkNTM2MGQxNTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5MjJmNWU3ZjJiNTBiMjk4N2FkN2I4ZGM0MWY5MDhmNzJiN2Q1MTUzNjc2MzgyNjU0YWY3OTkyNDQ5NTU2OGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyOGQ2MTQxM2RmMmUzNWQxNDI1YmM1NWM1ZDZhNDMwY2FhMTg0ZjhjMjUyMmM4Yzg1MDE3YzQ2YmYyMDY3YzUifQ"
+        },
+        {
+          "resource": "repo://celery/app/base.py#L703-L726",
+          "version": "repo-lines-v1:sha256:3643e8cff3d7671fd06705995ffd815ef93a100ce3631adc1de496a635c49001:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYWY0Njg2ZTEyODdkYWVjOGFiYjgyNTgzZTVhZDQ2MmRhNWIyNGM3ODc5MWY3ZDQ0OGE0NmIwY2IxZWM4M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxMGQyZGVkODgyNzZkZTlmYTc2YWM3NDE1ZDg1ZjNjNGFmZjQwMjJlMGVmNmY5NzhiZmEyMzMyZTU4ZGI0NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlN2JmOTBkM2JmYjQ4NzE2ODFiZDk4M2I4MWExYmNlYTcwOWY1MWI2OTk5NjIyNDk3ZWMwOGFjYzM5NzBmOTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd097c9461244bbc939a08fee44023f6",
+      "statement": "Tasks decorated before the app is finalized are wrapped in a PromiseProxy and evaluated during finalize(), which binds registered tasks to the app.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L556-L572",
+          "version": "repo-lines-v1:sha256:25cbdf8c1290d833f2c0b5b18a4c972945da27c26bc2c90e8d1f85d0946aebc8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxZDMxZTc1ZTlmMTZhZjY4MWFhODRkOWQxMzYwZWE2N2FmOWYxYWE4NWViZjA3YjQ3OGJiNzgxZjU3OWJjYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxMDhmMmNhNmE4ZWZiZWMzMDUwN2I2YWNmMWQyNjM4YzQ4YWFkYjMwOTcxZTRjN2Q5OGM2ZjgyZTZmZGJjZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3ODc2ODA3NjRlODk0YzdlZjc0MTRjMjhiOTg5YzNiNDhhOGY2ZWQxMGU2YjI0OTA5NjA0MTIyYmM0NjU0MWMifQ"
+        },
+        {
+          "resource": "repo://celery/app/base.py#L657-L677",
+          "version": "repo-lines-v1:sha256:b279ec5c316e9c4aa74ee23fb39adbb45331719b9c90d3417f7af7be363f3a43:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMmM4N2I0MjY1NjMyYzIzYmI2NWZlMDY0YjIyZWNkMTVmMTFmODM2MTI5NzNlYmUyMDg2ZThjZGZkMDY0MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NjQ1M2FmYjM2MGEyZGY1NzUyYmEwN2U0Y2MzNGYzNWY0N2UzYWRjNjZmMTc4ZGFmNmM0ZDJiOTUzNmE2ZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5YzNjN2RjNGM1ZjFiNGRjNzM3MTRiZmU2MzI1OWJlNDU4MTlmYzZlNjk2YzJiNGViZmQyMzQ4ZDA3ZTQ4M2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjZDczYzM0Yzk2ZDMxMWY2OTYwOTJjZWRmNWMwMjc0M2Q3YjZmZDNjMjg0NThjZDBiMDY5MTc0ZDU0MTk0YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2c6e1dd18e44625b26861b723071261",
+      "statement": "With autofinalize=False, accessing the task registry before explicit finalization raises a RuntimeError instead of finalizing silently.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L657-L664",
+          "version": "repo-lines-v1:sha256:feb11dc57bd16bced9a8f507c2d141cf40cd659fb4beca173b9745097a589c06:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWIyYzg3YjQyNjU2MzJjMjNiYjY1ZmUwNjRiMjJlY2QxNWYxMWY4MzYxMjk3M2ViZTIwODZlOGNkZmQwNjQyYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UxMzA1YmM2MGYwMGExYzkxNDk0ZGNmZTQ1NDI5NmRmZDA5YjljZmJmZWZjNmI2YzY1NDU5OTNlZDNjMTNiNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzljM2M3ZGM0YzVmMWI0ZGM3MzcxNGJmZTYzMjU5YmU0NTgxOWZjNmU2OTZjMmI0ZWJmZDIzNDhkMDdlNDgzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODk1NGRhYmEwNGQ0OThhMmZmOGM3NmZiNjljZTcxNTk3NGJkY2E2Yjk0MTdmMGVkNDQwZDNmNWEzOWI2ZTY5ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_98aadc01804b428685309ebef9e96235",
+      "statement": "TaskRegistry.register rejects a task class that does not specify a name.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/registry.py#L20-L32",
+          "version": "repo-lines-v1:sha256:f9d8a14d7cbe2ff09a44d963418f1358c77d758e4708c924fee3b4452d1e9fc3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2NkY2VjODhjY2U1NjIwMzE2NjliMTViMTg1ZjFkNTFjMDYyMTlhODA3ZDM4ZGZiYWE4MTJmM2U3NzU4N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5YjM3ZTA0OTQ3MDdlZDExYjVmYzdlZWE1MDYwMjI5MWJkZmI5YTY3Mjc2M2I1YTdjZDJkYzFlMWI1MjJlMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwODM0NjZjZWExMzUxNzE0NTQ3ODMyZGZkZDVjZDBhMzNkZDQ4MjIwNjY3YjFmMzNiODM3MjcyOTNkNDRhNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiMjExMTkyNmQyNWNmZGEyZDMzMjFiZTBiNGY0MTJiYzZhYWJkMTBhOTFkNTYxOTYyNjI1N2JlYjBhNGM1ODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e972d666f5304c42b6ab929c32c5bb9f",
+      "statement": "Route options are merged with lpmerge(route, options), so explicit call options overwrite values from task_routes, and task_default_queue applies only when no queue has been determined.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/routes.py#L66-L76",
+          "version": "repo-lines-v1:sha256:055f2908c7d4d0353822a2fe85bd9ac6d1330d88a2d4922be40af0091f81e3d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmOTM1N2RlMTIxZTQ0YTQzNWJiMzkzMWFhYTAwYTNkYTEzMDA1MzY2MzExZDBkYjQzYmFmNDE1ZTdmMGQ0M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViMzM2YjJkMTkyN2UzNDY4ZWEzZTQ3YThkZGE0ZWJhZDQ0MjM5ODc1YWIyODQ0ODE4ZjY4YjgwNjhhNmIxNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiMTc2ZjI5NmViMGNlZDI3NGFmZTJjNzdmMzYwNTZiNzAzYTBhNWJjN2Q1ZDg0YTAxZDYzZTg5ODM2MjA4NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyMDFlODdhZjk5OTRlZmVmNGE3MjBjYjE2NGM4YTA0NmM1YTQ3ZDQzN2M2NjFmNzI4OTE3MDdlNTc3OGVmOWMifQ"
+        },
+        {
+          "resource": "repo://celery/utils/collections.py#L47-L55",
+          "version": "repo-lines-v1:sha256:a503b4ca5b21e85b05a34a8c82678fb774c6032dcbab125f9c3864b1a070f7c7:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTcyOGU0YzFiZWViNDkwNGEwMzM4Y2ZmYjhmYWQ4NWIzZTQ3NDAzZGRkN2M0ZjhhOWI2NjAyMjc4YmM4N2Y2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM4YTkxNTZmNTAzMzBhY2MwOThmZjMxNjU1Y2FmNDliYTYyNWFjNGVlYjE5YzJjMWZhZTlkNGY2YWExOTdkOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQzNTEzYTdiYTFlODRhNDVjZTdmODhkNzExNWU1OWIyNTJiYmM5MTE0NGIxN2JkYzNiMmVkODlkOTZjYTZjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODU0M2UyMDI2M2U1OTZmYWU2OWE0MTQ5ODA1Mzg3M2I5MjIxMTZhNTkxY2MyZTE4YWZmOWUxMzc4YmJlZmMxZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc45d05b161644a4afad9f14fb210aa1",
+      "statement": "Changing task_routes at runtime triggers flush_routes, which recompiles the route table and rebuilds the router.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L314-L316",
+          "version": "repo-lines-v1:sha256:84ab0504acd899eb3ce42efb5e18381aeaa5405f557868f6ee6b0a08d646027b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJhNDVkYzIxMGI1YmI3NDM1NjViZWYzMjBmNWE4OTRkZmFlZjg4ZmFjMmQ4YmQ4NDZlZTcxMDE1NzEwODQ4MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUwNjg3ODYwMjc3NzYyYjAyNWE1ODJkMjIwOWE3OWU2MjYzMThhYjk3ZmRjYTVjY2ZlZTEyMzk4MWIwN2Y3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjVjZmFkMTE2Y2UzNGZjMDM2Y2M1YmYzNmVjZjhjNGMxYjNhNzk1OGQ1MDFhYTU2MTU2NzIzMGQ5NmQ3ZDAwMSJ9"
+        },
+        {
+          "resource": "repo://celery/app/amqp.py#L659-L663",
+          "version": "repo-lines-v1:sha256:a4e8945c05a08000a6c48a10fc21d45274c3aa2acd2c1aa2f198f13c011a1cbb:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ1ODJlNGNmNWI5OWNjZjhmYzFiMWQwNWY5OWE3ZTAxNmQ0MWM2OGY4YjAyODk5OGZmNTU4OTY2MGNhNjU3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI1YzgyNjMyZmM4MmQ0YjJjMzQwZjQyNTU4YmEzZGZhMzFjNzY1NWRmNmZjYzE2OGI0ZmRjZTU3ZmFjNjA0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGE4ZmE3MTUxMjEyODQ4NTVhMzU1ZDA0MDg0ZDNiOWFlN2ZiYzM0MzI1MmEzMDZiZGE5MTQ0NWE1YjgwMGE2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:42:35.525Z"
+  }
+}

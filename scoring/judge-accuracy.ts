@@ -5,7 +5,8 @@ import { join } from "node:path";
 import { generateObject } from "ai";
 import { z } from "zod";
 import type { WikiPage } from "./corpus.ts";
-import { judgeModel } from "./judge-model.ts";
+import { meteredJudgeModel } from "./judge-model.ts";
+import { BudgetExceededError } from "./vertex-ledger.ts";
 
 export type ClaimCitation = { claim: string; filePath: string; startLine: number; endLine: number };
 export type SupportVerdict = "supported" | "unsupported" | "citation_broken";
@@ -15,8 +16,8 @@ export type AccuracyResult = {
   judgeFailures: number; seed: number;
 };
 
-const LINK = /\[([^\]]+?)\]\(([^)]*)\)/g;       // [label](url)
-const LINK_STRIP = /\[[^\]]*\]\([^)]*\)/g;       // remove links, leaving prose
+export const LINK = /\[([^\]]+?)\]\(([^)]*)\)/g; // [label](url)
+export const LINK_STRIP = /\[[^\]]*\]\([^)]*\)/g; // remove links, leaving prose
 
 export function parseRef(
   label: string,
@@ -38,7 +39,8 @@ export function parseRef(
   if (start === undefined || end === undefined) return null;
 
   const labelPath = label.replace(/#.*$/, "").replace(/:\d+(?:-\d+)?\s*$/, "").trim();
-  const urlPath = url.replace(/#.*$/, "").replace(/^\//, "").trim();
+  // repo:// (doc0's local pages, openwiki) names a repository-relative path, so a root-level file is not "repo:" + "/".
+  const urlPath = url.replace(/#.*$/, "").replace(/^repo:\/\//, "").replace(/^\//, "").trim();
   const urlIsHttp = /^https?:\/\//i.test(url.trim());
   let filePath: string;
   if (labelPath.includes("/")) filePath = labelPath;                  // ours, deepwiki
@@ -179,31 +181,94 @@ export async function judgeAccuracy(
   // IS the multi-hop case this resolver exists for.
   const groups = pages.flatMap((p) => groupClaimCitations(extractClaimCitations(p.content)));
   const sampled = seededShuffle(groups, seed).slice(0, sampleN);
-  let resolved = 0;
-  let supported = 0;
-  let judgeFailures = 0;
-  for (const g of sampled) {
-    const excerpt = await resolveExcerpts(repoDir, g);
-    if (excerpt === null) continue;
-    resolved += 1;
-    try {
-      if ((await judge({ claim: g.claim, sourceExcerpt: excerpt })) === "supported") supported += 1;
-    } catch (err) {
-      judgeFailures += 1;
-      console.warn("[wiki-eval] accuracy judge call failed (excluded from rate):", err);
-    }
-  }
-  const judged = resolved - judgeFailures;
+  const { resolved, supported, judgeFailures } = await scoreGroups(sampled, repoDir, judge, { retry: false });
   return {
     sampled: sampled.length,
-    claimSupportRate: judged <= 0 ? 0 : Number((supported / judged).toFixed(3)),
-    citationResolutionRate: sampled.length === 0 ? 0 : Number((resolved / sampled.length).toFixed(3)),
+    claimSupportRate: rate(supported, resolved - judgeFailures),
+    citationResolutionRate: rate(resolved, sampled.length),
     judgeFailures,
     seed,
   };
 }
 
+const rate = (part: number, whole: number): number => (whole <= 0 ? 0 : Number((part / whole).toFixed(3)));
+
+/**
+ * The judge loop both scorers share: an unresolved group is never judged; a
+ * failed call counts as a judge failure. `concurrency` groups are judged at
+ * once; the counts do not depend on the order calls finish in.
+ */
+async function scoreGroups(
+  groups: ClaimGroup[],
+  repoDir: string,
+  judge: AccuracyJudgeFn,
+  { retry, concurrency = 1 }: { retry: boolean; concurrency?: number },
+): Promise<{ resolved: number; supported: number; judgeFailures: number }> {
+  let resolved = 0;
+  let supported = 0;
+  let judgeFailures = 0;
+  let next = 0;
+  const worker = async () => {
+    while (next < groups.length) {
+      const g = groups[next++];
+      const excerpt = await resolveExcerpts(repoDir, g);
+      if (excerpt === null) continue;
+      resolved += 1;
+      const ask = () => judge({ claim: g.claim, sourceExcerpt: excerpt });
+      try {
+        if ((await (retry ? ask().catch(ask) : ask())) === "supported") supported += 1;
+      } catch (err) {
+        if (err instanceof BudgetExceededError) throw err;
+        judgeFailures += 1;
+        console.warn("[wiki-eval] accuracy judge call failed (excluded from rate):", err);
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: concurrency }, worker));
+  return { resolved, supported, judgeFailures };
+}
+
+/** Rates unrounded (the arms compare them, then round to show them); null when nothing was measured. */
+export interface ClaimGroupScore {
+  groups: number;
+  resolved: number;
+  supported: number;
+  judgeFailures: number;
+  /** supported / (groups − judgeFailures): an unresolved group counts as unsupported. The rate the arms decide on. */
+  groundedRate: number | null;
+  /** resolved / groups. */
+  resolutionRate: number | null;
+  /** supported / (resolved − judgeFailures), as judgeAccuracy computes it: reference only. */
+  claimSupportRate: number | null;
+}
+
+const ratio = (part: number, whole: number): number | null => (whole <= 0 ? null : part / whole);
+
+/** Judges EVERY group (the full population, no sampling), 4 at a time, retrying a failed judge call once. */
+/** Claim groups judged at once: JUDGE_CONCURRENCY when it is a whole number from 1 to 32, else 4. A slow judge backend (Vertex MaaS queues calls) needs more in flight. */
+export function judgeConcurrency(value: string | undefined): number {
+  const n = Number(value);
+  return Number.isInteger(n) && n >= 1 && n <= 32 ? n : 4;
+}
+
+export async function judgeClaimGroups(groups: ClaimGroup[], repoDir: string, judge: AccuracyJudgeFn): Promise<ClaimGroupScore> {
+  const { resolved, supported, judgeFailures } = await scoreGroups(groups, repoDir, judge, { retry: true, concurrency: judgeConcurrency(process.env.JUDGE_CONCURRENCY) });
+  return {
+    groups: groups.length, resolved, supported, judgeFailures,
+    groundedRate: ratio(supported, groups.length - judgeFailures),
+    resolutionRate: ratio(resolved, groups.length),
+    claimSupportRate: ratio(supported, resolved - judgeFailures),
+  };
+}
+
 const supportSchema = z.object({ supported: z.boolean() });
+const accuracyPrompt = (claim: string, sourceExcerpt: string) => `Does the source code excerpt SUPPORT the documentation claim? Answer supported=true only if the code substantiates the claim.
+
+CLAIM: ${claim}
+
+SOURCE EXCERPT:
+${sourceExcerpt}`;
+
 export const liveAccuracyJudge: AccuracyJudgeFn = async ({ claim, sourceExcerpt }) => {
   // NOTE: this call sends source code excerpts to whichever backend judgeModel()
   // selects — Google AI Studio (`gemini-2.5-flash`) by default, or Vertex
@@ -217,17 +282,51 @@ export const liveAccuracyJudge: AccuracyJudgeFn = async ({ claim, sourceExcerpt 
   // excludes them from the denominator instead of silently scoring them "unsupported",
   // which would conflate API outages with genuine claim/code mismatches.
   const { object } = await generateObject({
-    model: judgeModel(),
+    model: meteredJudgeModel("arms-accuracy"),
     schema: supportSchema,
-    prompt: `Does the source code excerpt SUPPORT the documentation claim? Answer supported=true only if the code substantiates the claim.
-
-CLAIM: ${claim}
-
-SOURCE EXCERPT:
-${sourceExcerpt}`,
+    prompt: accuracyPrompt(claim, sourceExcerpt),
     // Two real hangs during Phase-2 validation: an unbounded call stalls the whole eval
     // run and never reaches the judgeFailures accounting above.
     abortSignal: AbortSignal.timeout(60_000),
   });
   return object.supported ? "supported" : "unsupported";
 };
+
+/** The model the LiteLLM proxy serves as DeepSeek V4.1 Flash on Vertex MaaS (codewikibench-2026-11-15/proxy/config.yaml). */
+export const PROXY_ACCURACY_MODEL = "deepseek-v4.1-flash";
+
+/** A reply that is exactly `{"supported": boolean}`, a code fence around it allowed; anything else throws: a judge failure, never "unsupported". */
+export function parseSupportReply(text: string): boolean {
+  const json = text.trim().replace(/^```(?:json)?\s*([\s\S]*?)\s*```$/, "$1");
+  return supportSchema.strict().parse(JSON.parse(json)).supported;
+}
+
+/**
+ * The accuracy judge on DeepSeek V4.1 Flash, through the LiteLLM proxy's OpenAI-compatible endpoint. The proxy meters
+ * every call into the Vertex ledger and answers 402 once the ledger reaches the budget, so these calls are not metered
+ * here too, and a 402 stops the report. The answer is parsed from the reply's text: the prompt asks for the JSON alone,
+ * so nothing depends on the endpoint honouring a structured-output mode.
+ */
+export function proxyAccuracyJudge(proxy: { baseUrl: string; apiKey: string }): AccuracyJudgeFn {
+  return async ({ claim, sourceExcerpt }) => {
+    const res = await fetch(`${proxy.baseUrl}/chat/completions`, {
+      method: "POST",
+      headers: { authorization: `Bearer ${proxy.apiKey}`, "content-type": "application/json" },
+      body: JSON.stringify({
+        model: PROXY_ACCURACY_MODEL,
+        messages: [{ role: "user", content: `${accuracyPrompt(claim, sourceExcerpt)}\n\nReply with only the JSON object {"supported": true} or {"supported": false}.` }],
+        // A verdict is a few tokens: the cap bounds a runaway reply's cost, and a cut reply fails to parse.
+        max_tokens: 1000,
+      }),
+      // Vertex MaaS queues a call at times (a 6-token verdict took 134 s in calibration): wait as long as the proxy
+      // lets one attempt run (request_timeout 300), since it retries upstream errors itself.
+      signal: AbortSignal.timeout(300_000),
+    });
+    if (res.status === 402) throw new BudgetExceededError(`the judge proxy refused at the Vertex budget: ${(await res.text()).slice(0, 300)}`);
+    if (!res.ok) throw new Error(`the judge proxy answered ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    const reply = (await res.json()) as { choices?: Array<{ message?: { content?: unknown } }> };
+    const content = reply.choices?.[0]?.message?.content;
+    if (typeof content !== "string") throw new Error("the judge proxy's reply holds no message text");
+    return parseSupportReply(content) ? "supported" : "unsupported";
+  };
+}

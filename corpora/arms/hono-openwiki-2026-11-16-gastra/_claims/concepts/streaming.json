@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c4d75b97b617e069c715f6720ac19336a9899fc8d3d2fb562874cef553decbe3",
+  "claims": [
+    {
+      "id": "claim_fd35289c7fd74b2593cf58862646d84b",
+      "statement": "Generic stream creates a TransformStream, starts an asynchronous producer, retains context through a WeakMap, handles producer errors locally, and closes in finally.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/stream.ts",
+          "version": "repo-file-v1:sha256:97d240f56482dedd1891067ae12c48e5a99cab8a6611eacef425582801d261d7"
+        }
+      ]
+    },
+    {
+      "id": "claim_1350329a622f43229717386c564aee23",
+      "statement": "streamText adds plain-text, nosniff and chunked-transfer headers before delegating to stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/text.ts",
+          "version": "repo-file-v1:sha256:6be4f663b9d00fcc24df38592ae6772460a165cf11e096420e75bb5dabe408aa"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7797d6dfe9b4df3a55c9205ee647628",
+      "statement": "StreamingApi encodes strings and awaits writes but catches writer failures; pipe preserves the destination and reacquires the writer.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/stream.ts#L48-L82",
+          "version": "repo-lines-v1:sha256:090a241e9920c43593a2ce57351124d8019087319e82cd003e95b924a31ba8e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiYTVjYzcyZWQ1MThjOWY2ZDYwOWQ4ZGNjZWE2YmM5MjhlMGI0ZmQ4NThlZWI0OWJkYjU4OGNmNjczNTBlZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljNzlmNjZkZTFhMGY2NmIwZWU2MzVhNDc5OTI2MTJhMzZkMjA2YWEyMzcxODY0M2E4ZTFjMDQxYzM5YTNkZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzYzU0OTRmM2M3YzA1NTc4NGNkMzk0NTY5MjJiY2FlYjU4MzBhZDZiNzAwYTM2NzRmNGU3ZThhMzc4MDAzNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0eb59515c3734ef7af5658224d663fd1",
+      "statement": "Cancelling the response readable triggers abort once, invoking subscribers including reader cancellation without awaiting subscriber promises.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/stream.ts#L21-L45",
+          "version": "repo-lines-v1:sha256:feb5c9abc467d65ae43fa2e7f5bf3c7b65dfe3aef4bb0fab7cdd022001a4a7d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5M2IyNTMxMTVhNGY1YzJmYmE5ZDgyMmZmNDc4MzhjZDYxMjVjZGFlNDM2MWE4OThjMzU2NDA2MGZmYzExNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNmMwZDliODEzNGYxN2I0ODFiYWY0ZmE0NTQ3NGZmNTI0ZTRmZGJlNjQ3ODM5ZTY4YmQ2ODMzNTk0ZDg1MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZDljMzBjZDAyY2JhMWM2MTczYjNlMDVhYjhjNjc3MzMzMDdiOTNjYTgyMTAyNTBmM2E3YzQwZWNlNjFlNDMifQ"
+        },
+        {
+          "resource": "repo://src/utils/stream.ts#L84-L97",
+          "version": "repo-lines-v1:sha256:58a17f2aadff7cde9069e9f34e4feef848cdef67a697799fa6c36b889a4e5b64:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMzBiN2FiMjNkYzljYmMzNTg0NTg2YzUzYTY1YTRiMjNhYTc5NTJkMDJkYWM1MzNmMzQ5ZDI4OGIzNDdmN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0NTEwOTcyOWNlMmUyMGNmZTdlMTY4ODgxN2RlYWJjZTg1YzE3MmI5ZDA3NTRjNDIxNDdjMzI2OWExMWI0ZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7918b8ad8cf642d8bb58a7a8f11d7143",
+      "statement": "SSE splits data into prefixed lines, rejects line breaks in metadata, omits falsy optional fields and terminates messages with a blank line.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/sse.ts#L18-L44",
+          "version": "repo-lines-v1:sha256:9ea3d77d2a010b65c5da946905136e5ac644ac8f8828d6e459bf0213f57ec972:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMDFjY2IwZWFiYzYyYzA5NDUwMTY1ZTMyMTA2NGJkYWYyZTRkNjY5YjI4OWM4NWEwZDJmNDE2ZDdiZTEzMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyZDIwZTcwNWQyNmE2MzM5NTQ5NzczMDI2OTQ5MDhjNWUwODY2OGI1MmNjMTgwYTM2M2Q3MTAyZmVmMDVjZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0MWZkZWU0ODM2MGEwNmNmYTRkMWUxYTJhYTEwYTI2OWU4OGYzZjk4YjNlMDg5MGJmOWY0NTM2ZTAzYzY1OWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4880f58d851b464c9c6a428d2844e221",
+      "statement": "SSE runs producers asynchronously, sets event-stream headers, and with an error callback emits an error event after awaiting that callback.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/sse.ts#L47-L99",
+          "version": "repo-lines-v1:sha256:6902a504168beb4839bba004c5c469f303e127a34aff73eac154054de595e9e7:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkM2VmYjVlNmI4ZTMxNzQ2MTYwNjdhYjlmMjhkYTM2YjlmMWQ1YjMwMDFjYzM2MjM0MGIwMWVlYzg1NWZkZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMDZjMjM2NDBkMGZjOWZkYjgwN2I4NjU0YTEzZWI2NDRjZDU5NmZkMWFkZmRlOTA2NjYzNjhiMzFiOTdjY2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef78a7abfe9a40f684c751fa3e09b9bd",
+      "statement": "JSX streaming emits initial and asynchronous callback output; cancellation suppresses output without aborting underlying promises.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L146-L219",
+          "version": "repo-lines-v1:sha256:c4affc1e21d207a2a318b3295b1bc61527f30b21d6f51d6c3f81ed7b3b0c8a0c:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViOTI5MDBmMGQxNzlmNjJiYWM3YWEwYWUzNGE1ZmYyODdmZGZmZjE3NmI3ZTFhNDNkMWM5YTVlYjA5NTNiMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxNzQ1YmMxNTY0ZjE1NzkwZWIxMmQ4YTUwMDI3ZWM3NTlmNDVjZDg2ZjQ2MjE3OThiY2M1NDFkYzk5OWNhNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2NGM1MTJmNTE3Y2I2ODgzNzc4NjY3MDk4ZjliODI3MzkxMjc5YmVjNzIzYzJhMzVlZmUwMDgwYTE2OTAzZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91b3ec9602c9409ba8972fa6210654de",
+      "statement": "Suspense streams fallback placeholders followed by replacement templates and scripts, using a nonce from StreamingContext when provided.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L18-L50",
+          "version": "repo-lines-v1:sha256:671dc30c838ec40612786339b8fc3019bf37b5d92aa7793cbaec0dce136b0bca:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZTc0YjhlMGZkMGYyOGNlODNlMTA0ZTJjNzYzZmZjN2RmN2FjMmViZGNiOWUzOTM2ZjJjMTVlOTViZjRhNTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkYWI3ZmQxNDQ1ZWE5MDU0MmZjODk2ZWU2Mzc3NzQxYmZkYTA4ZTA1Mjk5YTk0MmE0Mzc4NDExZTg2MDVlMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExYzlkZTAzMjQyOTgzYmJlNDcwOTNlZWEyOWVkYzFkZjc4NTdjNmQ2OTYzMDkzZjgxNmUyOTIxOWUyZDM0YzIifQ"
+        },
+        {
+          "resource": "repo://src/jsx/streaming.ts#L87-L133",
+          "version": "repo-lines-v1:sha256:17f5bd966e9cce3ce9ee1fd7028265edead05f4b85ff90c33da95127f3048f65:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyMjJjODkxYWUyNGQ4ODFkNjdiNDY5N2IwMzY4ODk2ODBhMmM5NjdkYjZhYjJiOGNhNmUwM2NjMWJmMGVlYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkNGNhNGY4YmVmYjQzZmIxNzUyOTdkZDA1Y2I3MjA0NTBlYjliN2JiNmM0ZDlmYmFmMTg1ZmIxZWMzNWY3OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4NjkyOTY3NTViMWIwNWJmN2U5YjdkMWY3NjY3NjEzNjkxZjkwNDliYjZjZjUyMjE1YWU4NGE2MjA5NGI0MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmZjkzZDIwZGE0YmJkZDIyMDRmYzhiMzhmMmIxOTQ0YjU4YTAyY2E5MGMzNTNhNmMxMjY5OGNkZjFkODIyOTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:36:56.362Z"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:08e3263c215426e2eea383b0f6429eda7a6bfcac5b17834db070b8127db34db8",
+  "claims": [
+    {
+      "id": "claim_72eec5a436824fb2b6406e6b6f04ad12",
+      "statement": "This repository's fd-find package builds fd from src/main.rs and declares Rust 1.90.0 as the minimum supported toolchain.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L15-L31",
+          "version": "repo-lines-v1:sha256:92bbd2e86b29c667ea2fb793d57ff83e9345225730c61c6048c0d2965b0422a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiOThmZjg2YzNkNzM0OGYxMDk4ZDAxMmEzZmE1NjljYmIxY2Q1M2RiZGMxNmM3MmZjOTUzZGQ3ZGI2YzRkNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYWJiMmJhNWU2ZmI5MTQwMGQwNTdlOTMxY2U5MTk5OGI2ZjcwZmM1OGI3MzMwNTIxMzI2YTRlYzVlNWI2YzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwM2Y5YzlmYTcxOTM1OGZlOTY5ZTY0NjUxMWUyOTMzMjlmMTUyMDQ0Yzk3NDlhOTAyNTU4ZTY4NTVlMWQ3ZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3ODhjOTVlMDhmZTU2ODY1YTA4MTEyOWRkMzQxNTczNjFjMzExYTdkOTkwNDE3MWY0MGZhMmUwYjg5ZDU1ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_653a17101ecd47c6b7fe9f2f5f887ce3",
+      "statement": "Each invocation resolves roots and compiles patterns before scanning the filesystem, dispatching results to printing or command execution.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L75-L112",
+          "version": "repo-lines-v1:sha256:787bb438302092d0f1e10a4be99cdf40b923ce013f7842ecdc60f1e20d3be880:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMDdhMGM4NTA1ZGU5NGNhMDcxOGQyMDhjYmYyM2U1YjAxOGQ3YTJmZjY3Yjc4ZGE3Y2M4ZTdlMDBlZTM4YTcifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L406-L439",
+          "version": "repo-lines-v1:sha256:aa4db57680982844c7e4da4f24904621387fbb66876e2e251d71ee616a919dae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzODIwMWY1MjhkZTg0Yjc3MTg3Yzk5MDQxZjhjMjU0ZmRmOTExYjQ4MzhlYmUzYmIxNDdkYjM3YWRmNmNjMDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViZjkzMmM2OTI4N2QxNmRmMmZmZTc5MjlmODA5NTg1OGMzMDE3NzYxOTA5ZDMzYTE0ZmUxOTIwYzUzMmNmN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjM2ZjZTkzY2VkNzBhZDE4YmVhNGIxNjc2YWEwOGM1MjFjOTFjMDE1MWIxYTNhMWU1OTc0OWNjZDdkYmE0NDEifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L616-L645",
+          "version": "repo-lines-v1:sha256:21448f4c120a68962bc4bb3f21359600995bc21c6694628f9a34ba195c15316c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYWU3YTY1NzA3YzkzOTMxNWNlODE4YzkxNzZlMWFkNDRlNDViNmUzNTUwYzlkYmNjY2U1N2UyNjNjMzNiNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkOWM5ZDI1ZGJhZDI4YTQxNmM5YzI5ODZlOGYxZmFlZjZjZDlkYjgxZjExMzdhOWE0YjhjMDQ4YzE1OWQ3YTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyY2MwZDQ0ZGRlMzkxMDE4YTQ1OWMwNmIwOTBlZWVjOGRmNTA0MTg4Mjk3MzIwMmQwYTc2NWZjOTM1NjRjYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxZGE0NzY2MDFmNzU5ZWViMGE2YWQ4MjI1MmRhYzQxNWJjNjA4YmNkMzUzODU0Yzc4ZTE0ZTQxN2Y0NGYyMjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7bf311d0654f4cf387dcde2a027f1319",
+      "statement": "Filename matching is the default, all additional patterns must match, and full-path mode uses an absolute matching candidate.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L514-L524",
+          "version": "repo-lines-v1:sha256:44d895078fd1276d6dd99da43134cb4a26b7fcaa3ef2e11455991ee1f78e89fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNWJmOTljOGQ4Y2EyYzVhMDE5NjgwNWQyNTNlMDEwNWJhNTdhMDdmYTk2ZGQwNDRlMjdiNjYxMTAwODM3ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmMwNzYxNDQ1YjVkMTM5OGI0YmRmNGQxZGYyNTBmZmNmZmQ0MDRlMzRiMTZhMTBiM2IxNDRlYzZhNGM1M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyZDg5ZmJiYTA4NmY3MThkNDc0YmNjNWNkMzY3NjRjZjkyNmM0M2QwMTU1MzI2ODJmODg5OWQ0OGQ3NTk0NTEifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L656-L678",
+          "version": "repo-lines-v1:sha256:6378b5bf532fe34c62093043e8ca2f314839fe70aac0d5b3cb56718444f06532:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlOGFkMDg3Y2I2YzhiZWQ4YTIwMTk2MTVmNmQwZTE4N2JjZGIyOWVhYmJmNmNmMDY5ZjRkNmQwNzQ3ZWY4OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjNzk0ZTQ5NzI5MmVjNDRiOTQ2MTcwZmUwMTUzODdmZGZkM2UxMjQ1ZDVmOTgwN2ZiNTczMTBhMzUzNjU4NjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb365246108845f89e3ec776ce55d0a9",
+      "statement": "Smart case uses uppercase in any transformed pattern unless explicitly overridden, while hidden and ignore filtering are separate configuration policies.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L248-L255",
+          "version": "repo-lines-v1:sha256:a661469ada8bfb818a5d08bc148304f6396af813bda86e7d83cda71eb3ff8b73:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZkNjZkYzNkZDkzMGUzNjI4NmY0MWNjYmNhM2VhMTQwZGQ4ODkzNzhiZjU4M2JjYTY4MTMwMmE4MzJkYTFlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVmMDY4NmQwY2JhYjU0OWRlNGQzNGU3YmNkOGJhOTg3MWQ5NGEwZjUzMWE4OTBkNjg5ZjE5NjJmMzI3N2ZmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmJjNWViNWNmYmZiMjViODI3NWJhOGRkOTgyYTZlZjM3NzAxMzJiMzlkMWYyNjQ2MWJhOTMxNGI0ZjVlNWQ0ZiJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L310-L320",
+          "version": "repo-lines-v1:sha256:4d25d3e444545f164b2b808432d09461db975ee4b51fea7fcd02651c72b06a96:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxNjIwODIwYzFlZWZhOWU5MDBmNTg2ODcyMzRjM2JjYjg3N2U2ZmU1YzE0ZjIwYThiOTE4ZDE5NDk0OWY2ZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYzM1YmJhOGFmMjVmZTZkN2MxMWMxMzRiOTU1MWMyOTU3MTczOWJhYjMxNDBhM2YwMTkxMTU4ZWE5OGU5ZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2M2Q1NzE5NDY0MmYwNjcwOWExMTUzNDVkZGQxNDNmMDUyZTQxZjJhYTY1YmMwMjZkNDlmN2RkOTllYjFkYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyMDI4NjFiZTU3MDJhZWJmMDcyMzNiZTU5NDllYjI5M2IwNDMzYTgwYWI1NzQzYzI2YTBiNDQ5NzBhMWQ0YjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_afdc1512e8c348979bd498d82dce9f8d",
+      "statement": "Ordinary completed searches succeed with no matches; quiet searches return success only when a match exists and print no matches.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L14-L23",
+          "version": "repo-lines-v1:sha256:bff23bac93d21ddd908026e117553169480e9285916ac3df6fcecf41dde5fb87:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYWZhZGRlYThkYzlhYWZmMjM1MzFjZmY2YjY4ZjBlNmVjOWYzYmE5MzllNDA5MGQxYjI0NTllM2Q2YjI4MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2ZDcyZWUxN2UyOTFhYzgxMmM3MWNiYTc5ZGM3Y2RhN2U4Yjk5ZTFlNDMwZWZiZTM4NTdjOTNmOGE5NWQ3MjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyZDE5ZDdlYTVmZDIzZDhiOGFiMmQ0ZWVmZmZjZDhiNmY2Mjc2MjVhYzMyNTg0Yjc4Yzk4YzgyNDAzNTkyMTAifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L198-L206",
+          "version": "repo-lines-v1:sha256:6520d48247538319c4d053ab64e63b5d542f2b782dbed4622c454a361b9fe334:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q5YjExMzdmYzNmNzVkMGYwM2I3YmYwNmI0MThiOTkzZWFlM2NiYzQzOTUzOTE1NDNmNjU1NmVhZDRlMmVlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdiNGUxZjFjYWM5YmZkNmZkMGIzNTA4NjRmNjViNzllNzFmZDkzZjBlYTIxZTA5MWQ0N2Q2M2ExODkwZTU2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjU5MWM5YWVmYzVhZGI0OWY3ZWE5OTBmYzU0MzE3ZDMwMTY0ODg3NzdkOWM4NmE5NGM1ZTFhYWFjNzAyYzU4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjQzNDk3NTIzZTRhMWVkYWExNjgyNWMwZGY5YzA4ZDQ0ZWMzZDY5YTVlOTFlMTdmYTRiNmUxYjNjY2NmMGQ2ZiJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L281-L293",
+          "version": "repo-lines-v1:sha256:d28d2c6c53cbd9145e8cc3ec7b6be7e68be24f8778e17d4f59cc4de7d76ff1fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1ZGM0ZTkzMTBjYTc1OWZjYWM5YzFiODk1ODA0N2QxYjdlMTJjMTQzZWQ3OGRlOWI3MzM2NGVkOTg5ZmE2YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkYWM0MmRmMTI0NTljMjkyNWJjN2RhZWMxMGZhMzI3OTZiZmE1NDRjNjM0ZGMwOGJlNGI1OTJkMjU4ZmE4MjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4OWM2YWVkNWUwN2EwZWE2MDMyZTViZGEyMDI3NzViOTcwZTlhNmI0NDE5YzA1NDc3YzJiZjA3YzRhZmVlYjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a159e565e2f24f72abc3141325cdbbfe",
+      "statement": "Standard integration output assertions normalize and sort results, requiring raw process output checks for ordering or bytes.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L114-L134",
+          "version": "repo-lines-v1:sha256:f4c06d340496055a22bd81ba3d2e72f3553fce5fcc60c2552dc42cf4496c1282:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2NzY4OWM5NzdmZjJhZmE0NTAzYmY1NzUyM2JhZmEzMzdmMzAzNzRjYmY2Mzg0MmQ5NGM5MzNkZWJmNWFiODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5NmY4Y2IwODNmYTgwMGE0ZGNkMjk2OTcyMmQ3YjkyNjg2YWRkOWViZTM2NTU0OTJmYTY3MmIxYTdjZWQyNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2Mzk2ZjllY2FjZWUyMTAzZDBlMTAwNTAxNDZmYzg4MGZmNDNmMTMxMTdkYzEyNjY3ODJkMzk1OWRkMzMwNGYifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L216-L275",
+          "version": "repo-lines-v1:sha256:20afdaa752434cacc88fbf803cbfe5f1a8ed964df9236826df4f934ca0dbd553:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkN2MxNDhhYTQyOWFiYWYzYzE1NTQ0ZDQ2OWZjMGQwMGFiODU1MTIyOGRhODY5YmUxMGRlNDZiOTBhYTQzN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3MGNlNWRmYWQ1ODY3NmYyNTA1MjFkODlkYzExMjZhOWJhNDE0MGFkM2EyY2NjM2M2YWMwOTUyNTE3ZmJiMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmMzI1MGFmZDllNjBjMWMzNjA4ZGQxYTFmOWJkMTQyNjE5YmE3NzBmYzI3ZDBhNWI1N2I3OTZmNDliYTU1NTMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:26:52.841Z"
+  }
+}

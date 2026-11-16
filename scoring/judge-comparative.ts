@@ -3,7 +3,8 @@
 import { generateObject } from "ai";
 import { z } from "zod";
 import type { WikiPage, ReferenceWiki } from "./corpus.ts";
-import { judgeModel } from "./judge-model.ts";
+import { meteredJudgeModel } from "./judge-model.ts";
+import { BudgetExceededError } from "./vertex-ledger.ts";
 
 export const DIMENSIONS = ["depth", "coherence", "breadth", "citationQuality"] as const;
 export type Dimension = (typeof DIMENSIONS)[number];
@@ -24,14 +25,16 @@ export type JudgeFn = (args: {
   oursIsA: boolean;
 }) => Promise<Verdict>;
 
-export type CellVerdict = Verdict & { margins: number[]; judgeFailures: number; unreliable: boolean };
+/** One judge call as judgeComparative made it: its sample, whether ours was shown as Wiki A, and the ours-relative verdict, or the error. */
+export type JudgeCall = { sample: number; oursIsA: boolean } & (Verdict | { error: string });
+export type CellVerdict = Verdict & { margins: number[]; judgeFailures: number; unreliable: boolean; calls: JudgeCall[] };
 export type JudgeSamplePage = { slug: string; title: string; chars: number; truncated: boolean };
 
-export type ComparativeResult = {
-  perReference: Record<string, Record<Dimension, CellVerdict>>;
+export type ComparativeResult<D extends Dimension = Dimension> = {
+  perReference: Record<string, Record<D, CellVerdict>>;
   // Partial because the field is only set for dimensions where at least one reference exists.
   // When `references` is empty the map stays {}, so callers must treat each entry as optional.
-  bestPeer: Partial<Record<Dimension, { source: string; verdict: CellVerdict }>>;
+  bestPeer: Partial<Record<D, { source: string; verdict: CellVerdict }>>;
   // How many pages of each wiki the judge actually saw. The sampler caps at
   // DEFAULT_MAX_PAGES, so this surfaces e.g. "12 of our 25 vs 12 of deepwiki's
   // 46" — a reader must not assume a full-wiki comparison.
@@ -59,15 +62,34 @@ export function sampleForJudge(
   maxPages = DEFAULT_MAX_PAGES,
   perPageChars = DEFAULT_PER_PAGE_CHARS,
 ): string {
-  let out = "";
-  for (const p of pages.slice(0, maxPages)) {
-    const body =
-      p.content.length > perPageChars
-        ? p.content.slice(0, perPageChars) + "\n…[page truncated for judge]"
-        : p.content;
-    out += `## ${p.title}\n${body}\n\n`;
-  }
-  return out;
+  return pages.slice(0, maxPages).map((p) => `## ${p.title}\n${capped(p.content, perPageChars)}\n\n`).join("");
+}
+
+const capped = (content: string, perPageChars: number) =>
+  content.length > perPageChars ? content.slice(0, perPageChars) + "\n…[page truncated for judge]" : content;
+
+/** A body without its leading `# heading` when the heading repeats the title (or the title's start, as "Entry Filters" does "Entry Filters (Type, Size)"). */
+function withoutRepeatedTitle(title: string, content: string): string {
+  const h1 = /^# (.+)\r?\n+/.exec(content);
+  return h1 !== null && title.startsWith(h1[1].trim()) ? content.slice(h1[0].length) : content;
+}
+
+/**
+ * sampleForJudge's pages and per-page cap, with every page framed the same
+ * way whatever its body opens with. sampleForJudge's `## <title>` frame left a
+ * page whose body opens with `# Title` plainly framed and one that opens with
+ * `## Overview` running into the next; this frame names each page's number and
+ * section, and the repeated title heading goes before the cap applies.
+ */
+export function framedSampleForJudge(
+  pages: WikiPage[],
+  maxPages = DEFAULT_MAX_PAGES,
+  perPageChars = DEFAULT_PER_PAGE_CHARS,
+): string {
+  return pages
+    .slice(0, maxPages)
+    .map((p, i) => `=== PAGE ${i + 1}: ${p.title} (section: ${p.section ?? "none"}) ===\n${capped(withoutRepeatedTitle(p.title, p.content), perPageChars)}\n\n`)
+    .join("");
 }
 
 export function describeJudgeSample(
@@ -102,7 +124,7 @@ export function aggregateCell(
   repeatMeans: number[],
   judgeFailures: number,
   totalCalls: number,
-): CellVerdict {
+): Omit<CellVerdict, "calls"> {
   const unreliable = judgeFailures > totalCalls / 3 || repeatMeans.length === 0;
   if (unreliable) {
     return {
@@ -123,25 +145,37 @@ export function aggregateCell(
   };
 }
 
+/**
+ * Judges all four dimensions, or only those given: the generation arms leave
+ * out citationQuality, which is not judged across systems. `digest` builds
+ * each wiki's sample: the generation arms pass framedSampleForJudge.
+ */
+export async function judgeComparative(ours: WikiPage[], references: ReferenceWiki[], judge: JudgeFn, samples?: number): Promise<ComparativeResult>;
+export async function judgeComparative<D extends Dimension>(
+  ours: WikiPage[], references: ReferenceWiki[], judge: JudgeFn, samples: number, dimensions: readonly D[], digest?: (pages: WikiPage[]) => string,
+): Promise<ComparativeResult<D>>;
 export async function judgeComparative(
   ours: WikiPage[],
   references: ReferenceWiki[],
   judge: JudgeFn,
   samples = 3,
+  dimensions: readonly Dimension[] = DIMENSIONS,
+  digest: (pages: WikiPage[]) => string = sampleForJudge,
 ): Promise<ComparativeResult> {
-  const oursDigest = sampleForJudge(ours);
+  const oursDigest = digest(ours);
   const perReference: Record<string, Record<Dimension, CellVerdict>> = {};
   const refPagesInSample: Record<string, number> = {};
 
   for (const ref of references) {
-    const refDigest = sampleForJudge(ref.pages);
+    const refDigest = digest(ref.pages);
     refPagesInSample[ref.source] = Math.min(DEFAULT_MAX_PAGES, ref.pages.length);
     const byDim = {} as Record<Dimension, CellVerdict>;
-    for (const dimension of DIMENSIONS) {
+    for (const dimension of dimensions) {
       const runs: Verdict[] = [];
       const repeatMeans: number[] = [];
+      const calls: JudgeCall[] = [];
       let judgeFailures = 0;
-      for (let i = 0; i < samples; i++) {
+      for (let sample = 0; sample < samples; sample++) {
         const pair: number[] = [];
         for (const oursIsA of [true, false]) {
           try {
@@ -151,14 +185,17 @@ export async function judgeComparative(
             });
             runs.push(run);
             pair.push(run.margin);
+            calls.push({ sample, oursIsA, verdict: run.verdict, margin: run.margin, rationale: run.rationale });
           } catch (err) {
+            if (err instanceof BudgetExceededError) throw err;
             judgeFailures += 1;
+            calls.push({ sample, oursIsA, error: err instanceof Error ? err.message : String(err) });
             console.warn(`[wiki-eval] judge call failed (${dimension} vs ${ref.source}, oursIsA=${oursIsA}):`, err);
           }
         }
         if (pair.length > 0) repeatMeans.push(pair.reduce((a, b) => a + b, 0) / pair.length);
       }
-      byDim[dimension] = aggregateCell(runs, repeatMeans, judgeFailures, samples * 2);
+      byDim[dimension] = { ...aggregateCell(runs, repeatMeans, judgeFailures, samples * 2), calls };
     }
     perReference[ref.source] = byDim;
   }
@@ -170,7 +207,7 @@ export async function judgeComparative(
   // a "toughest" result and mask itself as real comparative signal. If every
   // reference is unreliable for a dimension, that dimension has no bestPeer.
   const bestPeer: Partial<Record<Dimension, { source: string; verdict: CellVerdict }>> = {};
-  for (const dimension of DIMENSIONS) {
+  for (const dimension of dimensions) {
     let pick: { source: string; verdict: CellVerdict } | undefined;
     for (const ref of references) {
       const verdict = perReference[ref.source][dimension];
@@ -245,7 +282,7 @@ ${wikiB}`;
   // at your own private clone sends that source to whichever of these two
   // external endpoints is selected.
   const { object } = await generateObject({
-    model: judgeModel(),
+    model: meteredJudgeModel("arms-comparative"),
     schema: verdictSchema,
     temperature: 0.3,
     prompt,

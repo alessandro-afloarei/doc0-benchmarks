@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:097326f1fe94eab2407a435bef79474e340b1fae2f276e257b6fce26dc3d79d0",
+  "claims": [
+    {
+      "id": "claim_ff4c79fd3c4b423bb9feca829bb59504",
+      "statement": "The Router interface returns either handler/param-index pairs with a shared param stash or handler/params-object pairs.",
+      "evidence": [
+        {
+          "resource": "repo://src/router.ts#L62-L103",
+          "version": "repo-lines-v1:sha256:2015cfc7ee9f0383045b173ed17601b589b893672fa51b22d415ae55d4178be4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4YTk2N2E5ZGMyMTI1MzRjZDczYmI2NDFjZDVjNTBlNDJmNzVlY2JlZDY4MDRjM2NiMmRmZjRhNmE1OTQ4N2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmOGNlNjdkYmM1ZmE0ZGEyZTFlYWNlOWFlM2ZjY2ZkMzU2ZDY2NGMyODdjMTU5YzFhZTQyNmRlNjlkZGE0NTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd01bdb01b3941318088833bcaa25954",
+      "statement": "RegExpRouter propagates wildcard middleware to every matching registered route path at add time so each path carries its ordered handler list.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/router.ts#L132-L204",
+          "version": "repo-lines-v1:sha256:f19c5d98745f06916a04536117fcdb486f4f5657b48c91cdcd35cf80b1f5d281:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MWIxMWIwMTI5MjM3ZTVkOTcxNjFjOWNmMzg3ZDM2YmY1M2EyODYxMWRhMjFmMGRkYzFiYTUxMTUxZjg1ZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3NjhhN2FlZTllZDU0ZGZlYmE0YTVlZGIyYjU5ZjJiYTg2ODRkMDc3N2U2ODU3MjJjNDg1NTRiZDEzZjZhNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmOTUyMDcxOTAzYzgzZDQwOGQ3NjAzMDhmOTFmYzYwMDcwZGU1YzU5ZDlmMTk4MjNlYjQ0Njk3MmUyMmQ4MzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11e205c432fb4a088533d31665faefb3",
+      "statement": "On first match RegExpRouter builds per-method matchers consisting of a static path map plus one compiled RegExp for dynamic routes, then releases route maps so later add() calls throw MESSAGE_MATCHER_IS_ALREADY_BUILT.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/matcher.ts#L10-L33",
+          "version": "repo-lines-v1:sha256:9979e624392c168ee17e16fdce2138271fe69ee0a095718b66327880171d700b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YWU2NzNiOWNkOWZiYTk1MjA0MGZmZjE0MGU3MDNlMGU3YmYxMDUzOWU2NTc4MTllZTJmYjdjZjJmZjE2ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkZmZiMjFjMTNhMDFjOTYwNjRkZTUwMWViZDAwNzNkNzU3YjBkODA0ZmFlYmVjNDFkZWUyZmU1MjQ2ZGUzZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/router.ts#L208-L222",
+          "version": "repo-lines-v1:sha256:c7373bcc0537703208ebd86a43ea9f4b693664189d33a3fdf271f2abc858e832:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMTExMWE2MDYzM2FiMzYwZTc4MzFkZDExYTcyMDQzNzJlMThjMzNmZjkzMzZhMDI0ZDA1NzU4MGQ0NWE0MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmOTUyMDcxOTAzYzgzZDQwOGQ3NjAzMDhmOTFmYzYwMDcwZGU1YzU5ZDlmMTk4MjNlYjQ0Njk3MmUyMmQ4MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMTBhNDAwZWE1YjE4NDM4MDkxMTM5ODk1ZGRhOTA1MTIyY2JlODBjNTAxNmMyODNkNmU4ZTYwYjFjYWYwYWYifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/router.ts#L34-L103",
+          "version": "repo-lines-v1:sha256:d24aef860defbff263e1cfb1aeef78c356f154bd8dd57c3b921f7de4f0733cac:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4MGNkNzExZWMzYjcwZGU5MTIzNmJmYWY5ODllODU3NjQ1YzgzYTMzMzAwMDdlYzQ0M2U4ZDdlNmU2Yzc0ODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3N2NhYjUzMDEyN2QyMWM5M2IwNjE4YTQ2OGUxNjllODcwZTU1MWQwYWNjNTQwMWI0OWY0NjM5NzVmMGQ3ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzZWU5MTY1OTA4YWYwODUxZWM4Zjg0MzdjNzZjN2VmOTdkZTgzMjUxMTAzN2RiNWQ5MmE1OWUwN2MyODdiMWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e6645f7f9f26406197494eadb2745963",
+      "statement": "RegExpRouter locates the matched route by the index of the empty capture group in the match array and uses the match array as the param stash.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/matcher.ts#L22-L28",
+          "version": "repo-lines-v1:sha256:fa00195dcaa4f29763b221c7046cbcd0ab0836189f73007447b274fa0fc1faac:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBjMzg1NTVkNGE1NDc4NWQwZDVlMmY1MDJlZTJlNjFjMGYwMWRjNjY2NGQ5NDJmZmY2MDU2N2I4MGE1YTQyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2RkMWJiZWM0MzY2YzQxNzEwNTgzMjQ4ZTNhMWQzNTBlZmVjY2M3MGRhM2RhY2I3ZGQ2MWNiZWFlZTkwMDUzOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGFjODZiMjgxYWExMjQ2ZGQyNjA2YWQ0NDk2N2U5ZWY5ZjVhNDM1YmFjY2NkNzE2NGUxMjg5NDMzZmQzZmRkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmYwODUwZjY0YzBjYmJjNzUxMTU3NzMyYjI5MWViNGYxNjY0Zjc0MDZjY2Q4OWFlMTA3ZTI1Yzc4YjU4ZGU3NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2707e8f020e3431e9acccc826a9e014d",
+      "statement": "RegExpRouter's trie throws PATH_ERROR (surfaced as UnsupportedPathError) for ambiguous paths such as conflicting static and param segments, duplicate endpoints, '.*' param regexes, or capturing groups in param regexes.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/node.ts#L50-L130",
+          "version": "repo-lines-v1:sha256:853fb4207bfea5ca79781591a0970d0cc31785d82a4ff4bcec788b99b45aa641:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4ODViMDA0NGQwMmQzNWExZjMxMzVjMWU5NTlmMmY2YTE3MDgyZjZkNzM4MWU2OGY4ZTMyZDYxNTM2MTFlYzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjOGI1YWVkNjNiYzdkZDU1NjNjZGE3MjQyYWY3OGE5MjQ0NDZiMjM4OGRiYTMxYzkyNjQ4ZTY0YzY3NjZiMjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0OWUwMDEwMGUxOGRjNDFjOTIyNGFlNGRmNDFmMzcxMDg1ZDljN2E0MGI2YTU3OGZhYjhkNjhiMmIwMDJlZDIifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/router.ts#L60-L65",
+          "version": "repo-lines-v1:sha256:429378259163c08ed26aea8f38bf1803f5d5d4d7193ba222ac3818e5d1cf20e1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY3YzUxZTQ2N2NkMzQ5ZjU2MmE2NTcwZmEwZmUyOWY2NmJkZjZhNWM0ZmUwNTI2NjVlZTFlYTkwNjBiYjgwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWEyMmIyN2Y1NGVlYTA4ODAxYTUyMDRjOTBmMTdlZTdmMzNjOTI5OGU0Mzg1MTcwY2YxZDY3ZDdiYmU0MWExNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNiMGM5OGM5NTNmZWJmYTU1MzFjYTgxODRjMDYyYTVlMTFmZTdiYzA4MjAzODgzMDI2MTAxYmM4ODk0ZmVmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_80e19e76d6044b67892da2f1649d7d37",
+      "statement": "TrieRouter assigns each inserted handler a score from insertion order and sorts matched handlers by score, preserving registration order.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/trie-router/node.ts#L237-L243",
+          "version": "repo-lines-v1:sha256:105818ee8a19f14b8b925fe0fba14a019b9b57769fae0e672ec0ad98bc1b41d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWY1Y2FiNTFiNDJkODk3NDRkMzc3M2QzMzMwOWM5NmM2MGMzMGQzMjliODU1MzAxOWUwZmZiMDNmYjU1YzRjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg3YmE2YTAzZWQ5MGI0MTMyNTkzMzQwMGM4YjU2MmY5M2ZmZjhiOWNiY2E0ZjUxN2YzMDBjNzg3ZGUwYmQ4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjE4N2RmNzhjNDQ3MzRkMjg3NTlhYzVkYzFhNjM5NTVlODlkNTA5OTExYjE1OTNjOTYzOWY5NDMyMTdhMGYwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGY3MzlhMDZjMWNiYjEyNDRlMzM2M2QzOGJjZjlmYTUwY2U4NGZlZDM5OWMyMTkzYTNjN2YwOGQ1OTkxOGIyYSJ9"
+        },
+        {
+          "resource": "repo://src/router/trie-router/node.ts#L44-L85",
+          "version": "repo-lines-v1:sha256:42f882d847dd3f414d6c4ef675dbfb086ff9c24f2b1a6ed4493cd20d3a02ec5d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiNzRmODY0ZmM5ZGJhYmJmMzdhODBhZjQwMTk5M2IwNzM5ZWFlNTg4NzliZmY3NGYxZjFkMThiZWZiNmZjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjY2I3ZTg1MDVjZjA4OWVlODYzNDQ3YWI3ODNkZDI3NTIwMGRjOGI4ZTE5ZTI3YmE1MzVkNTczN2M0ZWI5ZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZTkzNDYyMDI4MTdjYTk0Mjc0YzhmMGU3YjBmZDA2NGQwOTNhMmZhZjM3ZDM3Yjc5Yjg1NDY4OTFkZTc5OTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2824eb71852c4da1968be0da368f3ef7",
+      "statement": "SmartRouter buffers routes, and on first match replays them into each candidate router, skipping routers that throw UnsupportedPathError, then permanently binds match to the first successful router and updates its name.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/smart-router/router.ts#L13-L69",
+          "version": "repo-lines-v1:sha256:645d0034af19bac34cf6a6f85fcb2c26c81e058400211767ab990658e17e5283:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MWIxMWIwMTI5MjM3ZTVkOTcxNjFjOWNmMzg3ZDM2YmY1M2EyODYxMWRhMjFmMGRkYzFiYTUxMTUxZjg1ZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiZmQ3YjU2MjBmYjhhOGQwZDM2ZjBjM2ZjMDg1MDk1YWVhZDA2ZTJkN2E1MWNlZmU1MWYxMWE5NWUzOTA3NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af2767ee64fc4d4f8e7fa90ea7ee40ed",
+      "statement": "LinearRouter stores routes in an array, expands optional parameters at add time, evaluates routes sequentially on match, and throws UnsupportedPathError for routes with both params and wildcards.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/linear-router/router.ts#L15-L143",
+          "version": "repo-lines-v1:sha256:53ff65ce1766bd46a0d87ab10a195f8d2313c0992109037c285a8bdd5b02c3d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3NjFiMTFiMDEyOTIzN2U1ZDk3MTYxYzljZjM4N2QzNmJmNTNhMjg2MTFkYTIxZjBkZGMxYmE1MTE1MWY4NWU5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyN2U1Nzg4ZDVkOWQ3M2QyNGE4MWRiYzBhNWE3NGJmYTgyYzljM2IzYWY5OWU1MmFmNzk2ZTkwYjQ2OGE4YTNkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwYmY0ZjZmOWZlNzY0YWE2ODk4MjRkODI0Yjg0YzM5ODQ0ZTE4MzE1OWE4MDYyMWYxYWI4YmM5N2IyYWRhZDIxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2735f26a61b4017a5557172d1e38137",
+      "statement": "PatternRouter compiles each route to its own RegExp with named groups and tests every route for the method in order, throwing UnsupportedPathError for invalid patterns.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/pattern-router/router.ts#L12-L59",
+          "version": "repo-lines-v1:sha256:22bb496f0bbb74eab1cac790aae5ec40f05e7a815c8f8fcc53413f5ab195db97:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MWIxMWIwMTI5MjM3ZTVkOTcxNjFjOWNmMzg3ZDM2YmY1M2EyODYxMWRhMjFmMGRkYzFiYTUxMTUxZjg1ZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3Mjg5OTI1NjMzOTg3M2M2NDU1NzJlMmY3MDRkYzhkOTc0MTVkMDVjMmNhOTE4ODczNDlkY2E2ZmMwM2I2Y2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec5d01b72a554ad1a236cb4ee4ea3489",
+      "statement": "Optional parameters are expanded into the parent path and the path with the parameter by checkOptionalParameter.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/url.ts#L171-L203",
+          "version": "repo-lines-v1:sha256:275920a91afb24b429333bc469b8f7edbe74fe2ab8613655d4a80bc57fa61a21:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkZWY2NDllODkwZjcyYjExMTVhNDRlMjA0MzEzY2E3MjY0MTEzMWVjNjk1OTAyNjM4YzdiZmRmYTcwYTEzZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzUyNTg5YzM0ZDNjNjA2ODU5MzFiNmVjYzRkNTA5OTFhN2M1NmM4ZmJhMjg5NDExNDY1NzY5MDI3MmNhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwNTYxYTkwZDI0NGYzNmViOGVjYzAyOGZhNTg5OTQ2ZTUwMDViM2IyNGYyMWVjMWU5MWJkMTRiMDc5YjMxZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiMmNkMzU0NTYxYTg5NjI1ODVkOGQ0ODhlZWU1NzdhNWJiNTg5MmI0YmFlZmMxMWZjZjczNGFhMTA4ZTFhNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_49bfd3520dd649f6ae22d293847b9125",
+      "statement": "All routers run the shared runTest suite from common.case.test.ts, with each router declaring the cases it skips, such as RegExpRouter's UnsupportedPath cases.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/common.case.test.ts#L13-L25",
+          "version": "repo-lines-v1:sha256:43d44b2621ec5d6bdabb0a95afac438a2ca9c9f2c3767ac79b102e9fda80c9ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkNzFkMzM2OWI0MmZiNGQzYjdkYjUwYWY1Yjc2ZmIzZjQ4YWY0YTE1NzU5ZjBmZGZjODgyMDg0MTQyNmQxMjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1YjNjZTY5MTQwZTIxNTg4M2FiMzY0MDE1M2ExZGQyNzU5NWY1NDliZTg4NWJkNzdjYzA3Nzk2NzcxZDY4MTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4MzA4ZDNmNzJjNjY5Nzk1NDRiZWQ4NThjZDI1ODhjZjEwOGJkMWEzZTI5OTY2ZWZlOWMwZjE3ZjAyMjYxNTMifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/router.test.ts#L1-L26",
+          "version": "repo-lines-v1:sha256:ceef87beb71a45af74823e62a1a8ac5c32b24f77716c678f4278b3e8377c1bff:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1ZWM3NzFhY2I2ZDQ4MmY0NjI4ZGIxMWYxMDVlN2ViMDRhYzE4YmM0ZjRjZTkyMzg5NWE5MzI0MmZlYjVjMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzUyNTg5YzM0ZDNjNjA2ODU5MzFiNmVjYzRkNTA5OTFhN2M1NmM4ZmJhMjg5NDExNDY1NzY5MDI3MmNhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTMwMzE0Zjc3MjMzZmE4Mjk1MTIyMTQ5MzY5YzBjMDg0MWY0Y2RkOTBlZGNjMmZkOWQwMTg3YzI2ODRkNDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e575c61c88eb44c0838d2d54b92057a9",
+      "statement": "PreparedRegExpRouter with buildInitParams and serializeInitParams allows precomputing RegExpRouter matchers for known paths.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/prepared-router.ts#L9-L30",
+          "version": "repo-lines-v1:sha256:24c93bf0259e460457c4fa9974892fc6ae770b5efae270c25654e1a7662f93b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3Mjk5NzhmNzk2MWQ3MzZmZmRjY2RiMzc4NTRmNjQyNWU4NTg5MGYwZWE0YmM0ODMxMzc2YTQzNzRjNTg3NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViODJmMDE5NDQwYTZkYmM1NzBiYmQ4YzQ4YWQzY2ViYTdlMzZlNTUwYTJkOGQxZDEwYTcxNzgyNDVhMDBjOWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjZjMzZDhkZTYyOWZkYzI0YzdjM2EyN2M4MjhmNWU3ZjBiOTc3Zjk1MzEzNGJlOGNkOWEwOGU0NDdiZmE2ZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkYjQyYzViZjEyNGUyMmZlODY2ZDVlODc5NjJiNTBlNGI2NzkyODJiMjU0N2E5OWU5MTJiZTJhMWVmMDIyMzgifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/prepared-router.ts#L95-L115",
+          "version": "repo-lines-v1:sha256:8d4ea4efbe8a26fe5a628f60df6aff1213e37c6fbfbdb9021aafec774b31988b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiOWY0MGU2MjIxNGNkZDk3ZmI0YTRiNGZhOThiM2Y0YzA2Y2FjOTBlMTdmZTkzYTQ3NmUwNjRhODU5MDg5MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3NDk2MjhkYjk1YWI1OWJlYzljOWE3YWNjMjVmZmU4MWJlM2EyNzIwMzZiOGQzM2Y3NzhmZmE3NWY3NmNkNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1YWRiYTIzOTlkZGNmYmQxNzA4MjJkOTY3ZDUzNWY0MGZkOGRkMTA4ZWMxMzVhNWFjNmVlZWI5ODc4YjQyMjMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:25:20.453Z"
+  }
+}

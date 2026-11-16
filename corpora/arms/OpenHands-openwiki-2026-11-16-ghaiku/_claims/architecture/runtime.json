@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e30cb8d4142541eab5dc31d97c8a0dc1df5fe4c501e5752d5d982e2193e9c709",
+  "claims": [
+    {
+      "id": "claim_36418cfd5a86418d8c1f9e11e092b7d0",
+      "statement": "The runtime name mapping defines docker (alias eventstream), local, remote, kubernetes, and cli backends, and get_runtime_cls resolves a name to its class or raises with the list of known names.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/__init__.py#L14-L21",
+          "version": "repo-lines-v1:sha256:1c039e281de42331f6c3a851d4f66ff930d6f31777ba20cc1d22fe445764a7b7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjI2MmE0ZDgzNmE0MzBkOTQ0YWY5OGZmZDZhYmI0MmI1ZDNlMGNhNmVkMmQ4MjBjNDM5NmJhNGRlNThmZTRjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzI4OTRhYWIzOTZkOTY4ODQ2OTVhMmYyZjkxMWYxYTBjZmQ4YTVlYjE4N2JhZmNjNjFmN2Y4OTkyMTA4YmViZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDUyNjM0Yzk0NzFiYjA0ZGJmZjczOTg2NGIwOGQ3NzI1N2Y4ZDliN2UzNjJhZDgzNGMyN2VlYjg2NWE3ODM5NyJ9"
+        },
+        {
+          "resource": "repo://openhands/runtime/__init__.py#L90-L102",
+          "version": "repo-lines-v1:sha256:fa1fba116e4acd137b1cdfa0f764afc1d0cecce24231dc8f76aeaeac01aacc72:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNDRiMjMzNjQ1M2NkZjhlYzJlOTgyNjQ0MGIyMzJjMTc5YzQzZDI5MDVhYzgxYmQwNjVmYzJjMzFlNWY2YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlOTZhY2UzMjg2Y2U5MTg5Mjk3ZWIxNWE4ZmYxMTc5YWQ2MzgyYjFhN2FiMGRmZjA1MDdjYjM3YTg5ZjM5ZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxNGU1ZTAzZTc4ZDBhYjI1YjQyMjViYTU4ZmQxMTdhMjk3Y2Q3NjhmM2FhMmRiZTM5NTE5ZGY0OTBiZTBmODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5YTdjMzVlZjhkZTUzMzhiOWUyMjAxMDdhZjRkMGNkN2NjYjQ4ZmE1ODViM2YzZDZlNTU4MzM0MWQ1ODhlMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c78938f360de42b59adae8c56cc832bb",
+      "statement": "Runtime.on_event hands each Action to _handle_action, which sets a default timeout, routes MCPAction to the MCP tool call path and other actions to run_action, and maps PermissionError to an ErrorObservation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L320-L323",
+          "version": "repo-lines-v1:sha256:d8273623e5332d76612ff9cbd05a6a4a28e5cd5e0797fdeeb67df2fbd13e9f8f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FhODFjM2U1N2IyYTJhZDFjNmE4ODUxZWVhNDk0NGVhZTAzN2Y3MjM3NjM2ODMwNGUxNWRiMGNjODM0MDEwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU3M2YwNDQxNDcxNzI2NmFiZGMyOTg2M2QxYjA2NzlkMzk5YWU2ZjVlMjkzZDhkNjcxMzNiMWI4NTFjZjRmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjU3ODUyYmRmYmE5ODRlYWU3ZjVmZDJjOTdiMmFjZGE4YjIxYmMxYTdlMzBiZmMzMGRhOTUwOGUxMWJkMWZiNCJ9"
+        },
+        {
+          "resource": "repo://openhands/runtime/base.py#L361-L400",
+          "version": "repo-lines-v1:sha256:6767f346a3247295252e68d1312c6d874363392bb8d7bdb7a71ab660f4b7858d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNTc5OGUzNWRhYjQ0NDIyNzhkOTU3MTRiNjc4NTY5NTBkYjljYTliNDQzM2I3NjU1NmFmYjMzYzUyNWRiMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNjcxYTUyYjYwMDk1NDNjNmI2YzBlMzVhN2EyNzVlMWI4YzhlMGUxNTVlZDIxM2JhY2Y5ZWU4MDA4OWM3MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1YmM4M2E5Y2VmMGJkY2MzMGIxZjUzNjk2NzQ2NDZlM2NiMjFhZDFlYWU5NjUyYTQwNjZkYTI4MGE5NjZmYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_414a140699ef4380a4e89f71f939e28c",
+      "statement": "A network or disconnect failure while running an action sets the runtime status to ERROR_RUNTIME_DISCONNECTED and produces no observation, while other exceptions set ERROR.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L372-L400",
+          "version": "repo-lines-v1:sha256:da7d02522d0bb77b5d9adbf899adb25b220c4183eb2db2badfa24610d35c3d7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2YmYxOTkxYjVhYzkzYzNmMmRjZmMxM2IyM2NjZjU3MzA4MDdmZDY4NzIxZTE4OGFhMWE2M2Y5YmM0Yjk0NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0ZDExNzY1MjhhODdmZjJjODBjYzk5ZmFhMjA0ZjY2MjYxN2MzMGVlZmQwNWM4NmFiMjMzYmJjMzVmOGI0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1YmM4M2E5Y2VmMGJkY2MzMGIxZjUzNjk2NzQ2NDZlM2NiMjFhZDFlYWU5NjUyYTQwNjZkYTI4MGE5NjZmYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31ba3f7e0952483cbef83648c95a18d6",
+      "statement": "Non-runnable actions such as AgentThinkAction and TaskTrackingAction are answered inside the runtime without contacting the sandbox, and task lists are written to TASKS.md in the conversation directory.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L890-L915",
+          "version": "repo-lines-v1:sha256:42c4bd2c7a1fac1078d1f4f145e34ea7a9e23021199d1a6ac8303698da380a5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4ODc0Mzk5MDIyMWIxYjNlMTJhYTE4OGVjNzcyZDdkY2M2NGUwM2NkYzQyNmY2OGVkOTVlOGU1ZmE1NTBlN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjMjk1NmNjMTA4Mjc3M2Y5ZDFjYTBmNjE4MmJlNmE4MDIwMDA2MzE1Yzg4YzdhMWRiZTZkNDc0ZmZkOTg3NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4N2IzNmU3N2E1MGUwODA4NWJmMDgxOGM0ZjliZmRjMzM5NWNkZjgxYzQzNzZlMzlmYzBmZjk2YjVhMTVhM2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_467f52f996274a8e87d1649762ac210b",
+      "statement": "The action execution client posts serialized actions to the sandbox's /execute_action endpoint and applies a default timeout to any action that lacks one.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L272-L290",
+          "version": "repo-lines-v1:sha256:2e24b6da548ab2f87ed6e0d26a580096b66b0e21a57e08119245ed8816eae7a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzMzBjMWNmZDRmY2NjMzc5YzJiYTIwYzJmMzcxZTQ4MmNkMDZlY2YyZDBmZGVhNmJiOWQ5MWYzODYzYzljODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxYTBhN2Y3MTBhNTMwMGY4YzEzMTA0YjU5ZWE1YjYwOGQ0OTk3YmVhZjVmNWYwZTVkMzcyNDFiMTU3ODM0NzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4MmJjMWM4Mjc4MTFmNTdhYmJiNjUwOGYyOGIzNWVjNTA4MWQ0OWFlYjkxZDBlYTdjMzcyODRjNjZlYzdmYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiZDcyOWRjMWNjMTYwNDE2NDQwNjU1OWZlOTQ0MzU3NWQ1YzA3MDg5YjU1OGU2YmViZWFiNDRmZjE5NzdkOGIifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L321-L321",
+          "version": "repo-lines-v1:sha256:1fb90bff17b7f96424e2b6ed13defa491983331baa0d54d01ed48075e3b71a41:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZiOTBiZmYxN2I3Zjk2NDI0ZTJiNmVkMTNkZWZhNDkxOTgzMzMxYmFhMGQ1NGQwMWVkNDgwNzVlM2I3MWE0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZiOTBiZmYxN2I3Zjk2NDI0ZTJiNmVkMTNkZWZhNDkxOTgzMzMxYmFhMGQ1NGQwMWVkNDgwNzVlM2I3MWE0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODFhNjk0ZDI3YTc5MmFjMjRiMWZkOWU5NjNhY2MyODRjNTcwZDMwYzgxMTFkMjA5ZWZlYzI4NDUyNDFhYTkwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWE5YjBmMzU1NTVmOTc1NTk1Zjc4Y2M2ZjkxOWQ2ZGE5YjIxZDc1ZGQzNmZiZjIwODMwODYwZjg4MmJlMDRlNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf4ed6e90b944baabd54bd1a0ccea5f8",
+      "statement": "The action execution server enforces the X-Session-API-Key header on every request except /alive and /server_info.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/action_execution_server.py#L787-L796",
+          "version": "repo-lines-v1:sha256:5539b4bf427a3bcb8109f553634f43e9b64b70b6a70fd764512d49aedaeefefc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyMGIxZGJmMjczOGEzZmQ5YzU1NjFhY2ZjYWMwOGQ4Y2UyYzliN2IxMzJjNDU1NWFiY2Q2MWFjNWZkNjE4N2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2ZGEwZGYxNzA1NjA3ZWM0MjdjMjMzZmVlOWMxZTM1NDE3Y2M3ZjE4ZTI2YjI3MjRjMjdlY2M1Y2U4ZGY5ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyNGRlOGRiYzU4YmIyMmRjNDIzNjhlODY3MWMyNmJhOWQ1NGVhZmEzZWE5OWJkYzM2N2ZlZmFiOTJhMzE2OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiMzI1NjBjZjNjZWE3MDVhZWNhMDAxODg0NzY3MWY1ZWUzOWVkYjk1NDFkZmZiZDA4MTg5MmFhMGZkNDg0YjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5d59ccf646bf47e79a76c5a3a6fd9f17",
+      "statement": "The /execute_action endpoint deserializes an Action, runs it through the server's client, and returns the serialized observation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/action_execution_server.py#L814-L831",
+          "version": "repo-lines-v1:sha256:e2f3a3ce641b6fe18871a7a765ed2d5c2df21cfa18946b6c0a804336e7aee4a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExMDRhODU1MTlmZmI4Y2I2YzIwNjM0ODQxZDc0YzFlODdhMmQwN2ViYWZkMWU0MTAxNmY4N2I5MjViMGMxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxYTI3ZGFmNmY5MGQ2ZmEyMjQ1NDFkZWQ4NGIyZWEwNjI0NmFjNWMxYjUyYTZhMTQyNmFiMjM3MmM1NjdhOWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjNmU5OTliMWE0Mjk0YTYxNzM2MmRmNDc4NDZjMjJmNjlkZWViMTMyOGZjYTk4ZjkwODk1YjZlMDZiZWM4YzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5NzQyMDdmMzNmZGI3MTUzYWYyMGMyNDhjZWE2ZmE3MWIwYjk0ZWY1NDk1YzQzYjQyNGQwMDcwMTQxMDI1MjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_edb3cac049334ea0bb8fc8e250c5f5e6",
+      "statement": "The action server's run_action serializes execution under a lock and dispatches each action to a handler method named after its action field.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/action_execution_server.py#L379-L383",
+          "version": "repo-lines-v1:sha256:778327026f866999f62b094bbea4a1104e40ced2682e9921260596ec8db32881:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjc4MzY4ZWM1ZTJhOTU2MzIzN2ZmNmY5ZmQ0Y2QzZjY0MjNlZjIyNGY5ZDFmOTJlNTM3ZWFkYWE3ZmM5Y2Y5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZlMDQ0MmE5ZDBhMDM0Yzc4ZjgzNDE2MTM4MjAwZjdhNDY1MDE0ODA2YmEyZGM5M2E0OWJlYjc2YWEyMzc2NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTU2MmNiOGJlYzMzNzlmYzQyN2FiZDYyODlhZGFlZDRiMjdlOWUyZGM5OWQ1OTdmYmZlMjEzYTlmOTFlNmQ2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGYxODdiNGI2YmYyZTQzZmRmZWNhZjA3MzU5ZjFkMWJmNzU4MTg5MTg0NDY3YjBkNTgzNzJhZGFlN2IxM2ZhMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f1ea6b05d5a41929bddecc5db071d3a",
+      "statement": "The remote runtime accepts only sysbox or gvisor for its remote_runtime_class setting.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/remote/remote_runtime.py#L97-L97",
+          "version": "repo-lines-v1:sha256:394b36fff7b9c1327528436608c5c979881ec5eb646578721f88dcf9aa7a5f7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzk0YjM2ZmZmN2I5YzEzMjc1Mjg0MzY2MDhjNWM5Nzk4ODFlYzVlYjY0NjU3ODcyMWY4OGRjZjlhYTdhNWY3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzk0YjM2ZmZmN2I5YzEzMjc1Mjg0MzY2MDhjNWM5Nzk4ODFlYzVlYjY0NjU3ODcyMWY4OGRjZjlhYTdhNWY3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQzYzY0ZjRiM2U0NjU2OWE5NGM4MzhlZmIxZWZlYjlmY2I2YTM4YWU5OThkOTA3OTU4ZWZlYTAxMzNhMDI1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjhlNTdhNzZlZDU1OTNkN2FjZWVkNDI4MDNlZjM4NDVmODE0NjE2ZmFiNmFmNTAyZDYyMGJjODJjMmMzNjA2NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c4f09b6ead4405c8c5f75075a442822",
+      "statement": "The Docker runtime skips stopping its container when keep_runtime_alive is set or it attaches to an existing container.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/docker/docker_runtime.py#L606-L606",
+          "version": "repo-lines-v1:sha256:b9fb88415cb3fbf153e948229cbc3c4e052a718f0366c112572650847c613cb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjlmYjg4NDE1Y2IzZmJmMTUzZTk0ODIyOWNiYzNjNGUwNTJhNzE4ZjAzNjZjMTEyNTcyNjUwODQ3YzYxM2NiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjlmYjg4NDE1Y2IzZmJmMTUzZTk0ODIyOWNiYzNjNGUwNTJhNzE4ZjAzNjZjMTEyNTcyNjUwODQ3YzYxM2NiMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDYzYzhiMWZmY2ExODZiZTAwYWI1MjIxYWYzZmI4ZjRjYjNmYWZiMGY1NmVlOGI2MTYyODE3YmVmZjEzMWY2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDY2MTc4ZDdkZmRmZjQyMWRiM2IwYmIzMTFlMDM4OWZjN2UxODlmZmUzZTY1MWNkODE1ZjEwM2VhMjJjNDZiMyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

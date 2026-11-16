@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c403859da58b992e04055a00b092901e4fe26233ba62d6263ebadcb06e46bd2d",
+  "claims": [
+    {
+      "id": "claim_303ff2ca9f4c44ccbf3234e47cbc80f5",
+      "statement": "TestEnv fixtures are created in a temporary directory containing an empty .git directory, the requested directories and files, a 'symlink' pointing to one/two, and .fdignore/.gitignore files ignoring fdignored.foo and gitignored.foo.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L29-L63",
+          "version": "repo-lines-v1:sha256:c73d8c81e8748e162ec95048ab718396a8f439420493fd9878bc7bab81a02920:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5Nzc1ZGFiNGI2YTIwNWEzMTI5MTEzYTVjMDY2NDkzOGM1ZmUwZjBmNzM0MzViNTVkMGIxNzBjMDU2YTczZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NDFkNGZmMDVkZmZmNzk2MzcxMWExZTI4M2NjODQ0MGNlM2JlMjVhOGZlMjhiZTQ3YzM1ZWEwYzQ1NThkZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4NTZmODJjZjlhODFjNDdjMTc0MzY5MWY5YWI1ZTBjOWE5NDlkYjAyOWM2Y2Q3NjVjNTM5NjU4ZTM4OTQ0M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f851a361ea5461f86021ff098c3ece3",
+      "statement": "Integration tests run the real fd binary located via CARGO_BIN_EXE_fd, with LS_COLORS set to empty and --no-global-ignore-file appended unless a global ignore file is configured through XDG_CONFIG_HOME.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L300-L316",
+          "version": "repo-lines-v1:sha256:4b80b65304f9fc8c0f897fbbd090574d65fa23370e6f54d5b6c5560a3d676d61:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiOWUzYzQ2ODkyYzVjZjE5MzMyNTgzNmRlNjIyYzYyNDYwNjk4NTUxOGFlYWQ5NjQyZTQwODg4MTI5MGFmNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzN2U4ZTBhYzJkZGQ3Mzg5Y2IwMWM5NDJmYjlmOGRmNDliM2U2NGZiMmEwYjkzOGYwMTFkNDZjY2IzNjY5YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllMWE0YjkwNzYzODZhMWRkMGNhNzdkOGFjMzU0YmFmNjljNzk5NzI5NWMyZTg2NWZiNGUwZDg2ZDZlZjc2NTgifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L75-L79",
+          "version": "repo-lines-v1:sha256:5bcd015fbdf5b1025bef704f64dd4d34d1ba23ee7e9e2b743c3bf3f93e4161c7:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFjZmViYjNjODNjNWNkOGUwMzc3NGVjZDRlOTdmNmFjNGZkMzlkYjJlNGUzZTQ4NzRkMTg5MDU0NzgwNTc2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Y3ZDNlNTA3ZWJmNWFhY2JkZDJkNjRmN2I3NjZlNzBmNTY4YzU0MDU5MTAxMTA4NTMxZGM1ZTU1OTBkMjUyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDZiNTFjNTUyZDFkZjdkYTc2YTBiMTBjZjljNTY2MjYxYWFlOTY5Zjc2M2VkYzlmMTkxOTA1Mzk1MzY0ZWJiZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_930c1b7a40c349db989184839a2ff665",
+      "statement": "Output comparison is order-insensitive: NUL bytes become 'NULL' lines, '/' is mapped to the platform separator, lines are sorted, and optionally words within each line are sorted.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L115-L134",
+          "version": "repo-lines-v1:sha256:bd6dbb1afb5cee1315f2acc4c327c45e4d53c7835413711fe78861fc2d3bd12e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NjIyY2E1YmY3MTY2NWQ5NzNjODg3NmU2NjE5NmI0M2QyZWJkNGNjNmYxZWY4OTFiNGQ4MjA2ZjM0NjI2OWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiMjdjOTQ4YjYwZjFjYWQ5ZjRjZTgyNjdmOGRmZDMzNmFkZmYwMjNjZDVhZDk2OTY1ZDA1NGFiNWFmNGJhMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2Mzk2ZjllY2FjZWUyMTAzZDBlMTAwNTAxNDZmYzg4MGZmNDNmMTMxMTdkYzEyNjY3ODJkMzk1OWRkMzMwNGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6d4bef5f3c04c9a9865e3ad79fd12b8",
+      "statement": "Error assertions check that stderr, after trimming leading whitespace on each line, starts with the expected message, and failure helpers additionally require a non-success exit status.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L278-L298",
+          "version": "repo-lines-v1:sha256:432cde45867cc1d2e218b36fde3711bcdf144b319633fa889ef857e95100d25b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1YmUzMTliYTExMzZkZjVmMTUwYjNhNTk2YWFjOGQ3ZTAyM2Q0Mzk5YjUxYWFjOTE0YWJkNTk0MGI3YjBiNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3NTk3ODEzOGI1MWU4YmYzNWYyZjU2OWJlZWQ2NjhmMDljZjM1ZTgwMzk4YTgwNjI1ZDRjNTkyMDkwNzlmMmUifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L318-L344",
+          "version": "repo-lines-v1:sha256:1a4cd4b54c0d04fb4a761c8a684db6607198b1161ffd440b8c207491ac661f9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkN2MxNDhhYTQyOWFiYWYzYzE1NTQ0ZDQ2OWZjMGQwMGFiODU1MTIyOGRhODY5YmUxMGRlNDZiOTBhYTQzN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5MGJjYjMzZDk0N2ZlZDkwMDI5OGQ2MTVjZDY4NTQ1MTE0OWIyNzliNGQ0ZDZhOTc1MjgxZmI1OWQ3MjQ0MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_89a9f9b10e2b48ac8924a696208fc079",
+      "statement": "Most integration tests share a default fixture of nested 'one/two/three' directories with .foo files, ignored files, a hidden file and a file name containing a space.",
+      "evidence": [
+        {
+          "resource": "repo://tests/tests.rs#L17-L29",
+          "version": "repo-lines-v1:sha256:95d666e0184d4333706842dd831d9f6217ec04bfdac4125b9786267dd735c228:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzMTM4MTg0NDBmYTExNmFhNWUzNDM5NDFjODBmYWE3N2Q3MTcxN2Q2MTdkZWYwNDAxNWZlYzMwOThmZWVhNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ZTRlNGE2MzRiM2NiNzI5YTY5MDE5Yzk5NWE0YTQwYmFiYTU4N2Q4MzA2MzlkYWNkYzFmY2FhNmY1MGY4NjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjYzVkZDgwNmJiZTc4NzFmMTBlMzM1OTM4OTIwYWZmNGMyYzAxZjM3MWQwMTgzMzY1NzBmMDAyZmI4ZTQ3MWIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:28:22.809Z"
+  }
+}

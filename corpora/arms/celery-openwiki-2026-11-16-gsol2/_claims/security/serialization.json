@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:016527625b60072a9ef56cd3ed87bf75e3301d24b233e0a8bdd91726da4411ca",
+  "claims": [
+    {
+      "id": "claim_3f64e803979a49e893b3c9d462e83d8f",
+      "statement": "Task consumers pass accept_content to Kombu, and result backends choose explicit accept before result_accept_content and then accept_content.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L317-L324",
+          "version": "repo-lines-v1:sha256:b3be71d95494c51b2efb8d7984802be3e57c78863aae99af6d1c95fa954a9d74:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFmZjlmYTliODA2YmI1YjVhNWFlNTVmZWE3ZjdkMmRhNjgyYmFkNmZiMTk1ODZmNjdiMWIxOTk5NGVkZTZhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODRhYjA1MDRhY2Q4OTllYjNjZTQyZWZiNWUxODM4MWFlYWE1NDA1ZjU1Nzg2OGY2ZWU2YjBhMDhkNjQ2MDI3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODYwODA4MDEwMDRlZmMxMGE4ODhmOGMxNDJlNDQzODE2Yjk1MWEyOWYzMzZkOTNjNWJjY2Y0YzI2MDQ5MzAzNyJ9"
+        },
+        {
+          "resource": "repo://celery/backends/base.py#L150-L155",
+          "version": "repo-lines-v1:sha256:6c59e325bdb81135e69e00744839c328acc685831f4ee3d4951d1d809ebf9b53:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJjZjc0YzgxZWVlOTA2ZDY5Zjg2MDBjNWMwNjIwMjVjZTQ0Y2NjMDEzMWUwZTM5MDY5OThjYzI3YzAwNWVjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI0OGI1ZDRkNDM4NjEzOWIzMTY0YTEzMjg4MzY4MGZlMDI5YWY0YjMzYzk2NTQyY2FhMzdlN2Y0OWU0OTE4NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTRjOTYwZjQ1OWVmZjI0OGY4YmI1M2YyYWYzNmZmN2IwMGQxMzg0YmFjZThkNWEyNGQwMGIyMWM4YWU1NGRjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNhOGExZjcyMDJiMDYzOWE0ZTEyNjQ0MWVhZjY5NjZiMWFjYmY2MmViMTQ2OWE4MjJiYTI1MjZiYzYyMjU3NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9fd96410579041d9ace2733215340401",
+      "statement": "setup_security requires auth task serialization and an auth-only accept list, key/certificate/store inputs, and configures the process Kombu serializer registry.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/__init__.py#L44-L70",
+          "version": "repo-lines-v1:sha256:336d858dad626eda41747722afa49fc85f17706c4afb95a96091c6f0fbf14f4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1MmEyMjgyNDVmNjFlZDBjOGFhMzliZGRmODk2YTAxM2Y4NTE5ODZmMDM4Mjc5ZDk0ZTUzNGY5NzI1NDYwMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxOGM5YzljNjY0MzYxOWNiNjE1NWI4MmMwYjk4ZDZmNDZmM2FmZTc1Y2M2YmEzMTFlM2U2OTA5MDYxMTE1YTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyOGY3NTg2MjI0OTdkODQwZWIwMzUyMmE0MjY3YWQyYWFjYTc1ZGNhYWJkY2NmMWRlNjI0MjcyN2JmNWY0MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5MzkxZmViZGZkMWZjYjRlOTQxZjQ3MzM0NWRkZWUzY2VjNGVkNjFhZjljY2VjMjliN2U2NmI5YzhiNGQxZWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8cd4cda99f83454c8276c3f3e5c8731a",
+      "statement": "SecureSerializer signs the inner serialized body and verifies it against the trusted signer certificate before inner decoding; it does not sign the full broker envelope.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/serialization.py#L31-L58",
+          "version": "repo-lines-v1:sha256:c3c19377fa85bf44448b2e63fc7294504e4b8a76bd9f934beb71c142dcd442c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMzhkNjMyNTZiMWZiOWZlNDlkN2I2OTQzYzcwYmY1YTA1NjVhYjBmZGIzNDFiNTU1MTY5NTdmNDllZDViNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMzgyMDNjNTI5ZGU0OWI5NDQyZjhiYTE1Y2RlMzk0NjhhNjI0ZDIxMmIwNzFiZDE3Yjk3NThhYTU2MTI3Y2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkZGE1NmYyNTA4ZTc4MGM4NDg1ODE3NTllMzAxOTlhNGU1MzkyYjM3MDlhYjA1ZDNhN2MyNTNhMWU5MjgzOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNDVhZGE1MWZiMzQ3OTZiNDk4NTYzZGM3MGNkYjI3YzA4Y2YzZTY2MmY2YjQwZTcwYmM0YzQyMDNjYWM1ZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_77138fef04ae4a859b291fc2f5698a53",
+      "statement": "The auth serializer provides signing rather than encryption.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/serialization.py#L60-L76",
+          "version": "repo-lines-v1:sha256:c502d7843c116eacc0a6d37fd13baf1589aef77fe4dc8936ad0f260bb16cf0a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMzZiNmQ5NjhkODk3YWM4NDMzMjcxNDk3NmY0YmI4NDRiNTA4ODJiZGMwMTBhODI0MTNmMjNmMzI4NDQxYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NDQ2YzMwYmJmMGRhNGVmOWNiMDE0ZjRlZDFmYjFmZTAyNWI2YjRiN2UyZTk1ZDJkOTI0YWI2ZmI2MGM1M2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkN2ZhYTVmYTY1YWVhY2FjMzYyNzNmYzBiOGMxZDIyNWRhYWI4NWZkN2U4N2ZmMDk1YzMxOWMxZDhjYTQ0NGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmOGNmNmU2MjBjMDg2ZDAzMTIyYzIxNThkMTY2ODZkMmIzYzBkZGE3YjY1ZDdkMjc4YjVkNWFlOGE2MDMxMmIifQ"
+        },
+        {
+          "resource": "repo://docs/userguide/security.rst#L189-L198",
+          "version": "repo-lines-v1:sha256:f263ef602e8e0ea8223c240700d608c90b7f127a7481f0871803615be0b34de4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1NTZjMzEwNDhkNDNkY2FlMzhiMTMxZjZhN2ZmNmY4ZWFlNmQ3YWZmZTRiOTZiMWVhZDUzZTZlNzc3NjJjYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1ZDM1OTM5ZGIyZjVkZDJhMWUzNzA3YjAyMzhjNGEwYjcyZTQ4MWM0YzE3MmMxZjZiOWMyMmFiNDMwMDU1YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiYWM1MDk0OTA5N2NmZWNiMmMyNmQ2MjRjNmUzNzZiY2EzODQxYzMyMTU0OTJiODk1YmE0ZjA5NTk5OWVmMjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a65459baf3c48b8bf73f5f5ad118199",
+      "statement": "Certificate handling requires RSA keys, verifies RSA-PSS signatures, and the certificate store rejects unknown signers and duplicate certificate IDs.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/certificate.py#L34-L97",
+          "version": "repo-lines-v1:sha256:ed764fee814dc54c6f3f13bdc354bacfe5cf07e452ad7d51b8214f177cf7a8b9:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzOTI3ZjRkNTBlMmQ0NTEwMTBmNjdhNDVkM2ExMjhjZmQ2YThhMTdkZmEyZTBmNmMzOWM5NWE5Njk3ZDhjNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2MjBmNzNkMjVkNjNkZjhjYTkyMzhmZGFmN2M2ZGExOWYyN2RlY2VkZjBlODBmMmJhNzVhNTgzMmE4YzU2NGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzZDZiZDgyOGRhZjk4ZTdjOTdkZDhlODI1ZmQ1NTJjYmM4Zjk3OTNiYTg1NGIzZGI1MmI1ZWNjMDU0ZWMzM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5ZDVmOTJmNjliMGU2ODVkNDg0MWRjYTZmZDhhNzJkNWUzYzMyMjU0ZmRkNDQ1YjkzZDQyYTI4OTdhNDc2YjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf3bb077e8ff4f2ebc1361a441c2b418",
+      "statement": "Filesystem certificate stores reject expired certificates at load time, while the signature verification method does not recheck expiry per message.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/certificate.py#L100-L113",
+          "version": "repo-lines-v1:sha256:fad507e96f51f07d3f672bfc4f80eefc4487bd1e3ab411c3e6c1125b412147a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NzU2NDFkMmJjNTIxODU1NzY0ZmNiZjI3ZjIxNDkxNmM5ZTdhMjRlOTI3MTAxM2JjYjYwMWM4NWI2Y2Q4ZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNjIyMTk5ZmNiMzlmNTFkNGQ3MTRiMDdhZDg0YzNhNjBiOWUxMDdjZmZhNjllMDg0NWFmMzQ1MGE2OTY2MWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3ZGQwNDNlZWE3NjllZWM1Y2EzMjQ4MTE1MzM1OGUzYzU4NjlkYjZiOGVlMGJkNjM1MmM0MTc1MjQyMDRjOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://celery/security/certificate.py#L44-L46",
+          "version": "repo-lines-v1:sha256:ec081bcc675a1499993192f6764a1c99c862df3564c910f043252566d5c74f92:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgzYzZjZTY1OTU5OTZiYzk5NWVkMmU1ZGIyMDU3YTkxZGI0NzlhZmU2ZmM2N2ZkMGMxYzYzMDRlODQ5MTA4MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjJlYjVjZjVkYzk0ZDlhNDNkODA0MzUyMjQ2YTQ1NGE4MjNkMWUyMzgxNDc5MDZhMWUyZTFlM2E1ODY3YmJiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmYyNTA5OWM0NzdmMDExM2QzNjA2MmE0MDExNmM4YjNmNzIxY2M0M2JmZjE1ZTc2ZWViOWMzZjM3OWMyZTE1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzkyN2VlMDRlNmNjYzQ3ZDM4MjY3MDBiNTJjOWM0NDkwZWZmZTQwMjAzOTkyNDM4NzJkOGVmOTU1NWI5NDk4MCJ9"
+        },
+        {
+          "resource": "repo://celery/security/certificate.py#L65-L73",
+          "version": "repo-lines-v1:sha256:ba59764cd6ae14023b05b77b110433c3dd35713d0dfea7899fc636ebb87ff58a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRlNDNhM2ExYWIzMDgzMmIxZGEwN2RjNTdiMjk1YmIwOWY0MTEwMTM3ZTg2NjI5YjUxZGJhZGI1NjlhNmEzMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI5OTYyMzIxZDA4MzM2YzkzMzNjMTEyM2MzZDkzZGEwMGMwMmE2NWE4MzE4ZDJlMGRjNjVlMWJhYzVmZDc1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWJkMzZiYzA1OTFlYzY5YjNmODEzZTZhMzZkZjRjMDczNmUyYTAzZTU2MzU5N2M3YjUzYzM3MTRiMmVhMTIyOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGE4M2RlNzAwYWNjNzU0MzczNjI4ZDkyY2E0ODVkMjcwYmQ1ODQ4YzIzMTc3YmYyOGIwMTVjZWQxOGRlMjJjNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f6cb5bd631e4e638cf2e0a615f961e6",
+      "statement": "Backend exception reconstruction checks that the resolved exception type is a BaseException subclass before instantiating it and rejects arbitrary callable values.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L457-L526",
+          "version": "repo-lines-v1:sha256:863e25a1c14630afbacbdeb77620a44e94fb0008fecd2100af876ce3a248b308:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjMTJlMDM0ODMxMjE5ZjkxM2UxYmE2ZTk5YzQ0MGFiMjQwNWVmMGJhZDlhOGI4OTRiNTZlZGE5MzNmYjg3MGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyODU2OTVlMTJkMTFhYTE1ZGE3NmE1YjI5ZjQwNDZhNzAzYmMxNmRiMzEwNjQ2ZDBjZGQ0ZWJjY2FkZmJiZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkYmFlMzgyNjJiYTAxZDBmNGE1YWYzMzUzOGI1ZTAxYmEzNWI5MTVkMjgzODIzNjliZGI0MmUxZTFlYzA4ZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0NmJmYzJlMmFlODIxNmI1Yzc4OThmZWZlN2JjOTI2ZDU1YjcyZDA4Zjk5Njc5ODBlMTE2ODVkZDllZDgzZGEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:38:41.370Z"
+  }
+}

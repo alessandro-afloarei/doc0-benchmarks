@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c82618e03a062151bccf749a9e874e8bb864af9cfd40e08f98f6134953d949c7",
+  "claims": [
+    {
+      "id": "claim_0f9994777d04402ea73e86c519683924",
+      "statement": "hc returns a nested Proxy whose property accesses accumulate a path and whose call applies the request; the proxy returns undefined for the then property so the client is not treated as a thenable.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.ts#L133-L137",
+          "version": "repo-lines-v1:sha256:e91af802ee48713ed87c2228b3ecfa523ce8b20a37f629835b910bcdb92f4746:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNkYTFiOTYwYWNhMWIwNDkwN2Y5NWVkZjliZTEzYTQ2NWM1ODJiNmYxYzkxYzhmMDY1MjYwM2IzMDI1NGNkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTVlYWRmMzYzNTE2MjNlMWQ4MWVmYjkxMzFhYWQyOGRhMWFmYWI3YzE3YTY3ZjA4MjcxZTJlMjhkNWZhMmY0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Q0NDc2ZGVkMDBiZmFkZGRiZGY4MWNhNjUwNmQyNTQ3ZjhkYTg3NDAyZTE0ZjAwZjllNTgyNGUxMDUwYmZiNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTMxNDQ3NDgwMDk2NzBlY2YyODI4YTNkNzA2ZjBjZDJlZTg4NzU3MzM1Y2YzM2RiNGYzOTVhMDM1OWVjNDAwMSJ9"
+        },
+        {
+          "resource": "repo://src/client/client.ts#L15-L31",
+          "version": "repo-lines-v1:sha256:ce804889438060604c2ee167dbae211625bed22199b62c095ea32409d94e18dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMDNhOTM2YTQ3ZTQ0NzIyOWM0ODU2ZmEyZTFlMTBkZjRiY2M5ZTk0ZWNkNzE0MzYwMjYwMjA4ZGRhZTAxZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxNmI2OGYwYWRhZTdkMTcwMzVlMzA3ZjM1NjNlYjIwMTk0MWE4NzBmYjIzOGFiOTA2YjA0NmFmMWMxNjcyZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ZDMzNTkwMWMwYTM0ZGE4NTZiMGIyMTI2OTBhMmRhOTc1NDY1MTQzYjRiMTljM2FkOTYyM2ZmMzZiYTYwMDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31da40e95ef244ffb81c21fded6a67db",
+      "statement": "A $-prefixed final segment selects the HTTP method, while $url and $path return URL or path strings without sending a request, and $ws opens a WebSocket with query parameters applied.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.ts#L137-L202",
+          "version": "repo-lines-v1:sha256:7d43f3cedecbd2176871f1e89b8f452d0075c58f78a2f3d3e9e637d4874c5e5d:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ZWFkZjM2MzUxNjIzZTFkODFlZmI5MTMxYWFkMjhkYTFhZmFiN2MxN2E2N2YwODI3MWUyZTI4ZDVmYTJmNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkZWE3MDM1NTkzY2VjYWM4ZjYxMzA5MTg4YTZhZmIwZGQ2MDg5NTBlMWVjYzUwZjQ5NjFmYWM5ZGM3NmZhNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2NjdhYTcxM2NlZDYxZWRkN2VhYjM1MGYwYzY2ZjhmNTBjMmM4MmZmZmI3NDU4Y2RjNDhhY2MyZjg1ZjM0ZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea9d1835d81a420abe5d99c80a5f2976",
+      "statement": "ClientRequestImpl.fetch builds the URL from param substitution and query serialization, encodes form and json bodies, merges header and cookie inputs, and attaches a body only for methods other than GET and HEAD.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.ts#L53-L131",
+          "version": "repo-lines-v1:sha256:b75c710b3508af224aef2d2f81fc985f4613d80943059cab5b35cfe1466d1e0b:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMzk5MzM1ODcxYTlkNzM2M2MwYWExMTQxZDMxZmY1MzEzYzFkM2NlMzI2ZTRlNDY2ODRlZTAzN2E3YzI3MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhMmFmNDdkYmI5Yjk5ZjRmMWE5NjljMmE1ZTMyNzMxYWY0MGRjZjBjYTc4YzUwNzE5MmFlYTQwNGRlMWI0YmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2M2FjNDUyZGE5MGIzZmIzNDBiMTNjZmMzMTYwY2E4M2EzZjVkNzhhNjJlODI5MGJhZjM4MTEyNjE3NzRiYzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ebf6f4ebee046f98e1719b817eff59e",
+      "statement": "parseResponse delegates to fetchRP, which reads the body as JSON or text and throws DetailedError for responses that are not ok, carrying the status code and parsed body.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/fetch-result-please.ts#L20-L60",
+          "version": "repo-lines-v1:sha256:7b443f8518fba9410d6838719b112c449c53c050b3265fa0fc678498263b35c0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1NjQ2ZTNlM2Q5Yjg5ZmViNWQ5MThiODM4NmQ4YjIzNzA4NGMyNmM5YWFjY2E1ZThiMjZhMDM0NDExNzA3NzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiOThjYjgyYTdhNjA1ZDNmNDY4MDU3MDA4NWI3OThmNDQ3YjI1ZDhjZTIwNTMwYjkzZDgyOWQ0MzhiOGI5NWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3NWE5N2E1MjNiZDcyMDk0NWE3MjM0MWIyNWU4N2NkMzNlYjlkYzVhN2Q0ZDliZTcwOTRiZGQ4Y2IxMzU0MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzZDg0YjEzMTUyODdkZTBmZGFmOWExNGRkYTRhZTlkMDA5MWJhMGVmZDMzYThjYjAxMTZhYmIwOThhY2M0ZjEifQ"
+        },
+        {
+          "resource": "repo://src/client/utils.ts#L92-L113",
+          "version": "repo-lines-v1:sha256:ac1aa726c26155e672d94e332437ef92e9508663ccfe5a4a7364edabb9f5cfc8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNDI1ZDEyNDNiZjVjZWI4MjMxYTc5ZjZiZDIyYmM2ZGY4OGU2ZTEzZmZmMzY2NzAwZDJhZTdiZTY3OGE5ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYTY0NTNkZWEwMDRlOGZmZDFkNGFhNjE1ZGQ2N2I2NmUyMzgwMjY0OThlMTVkNDA0Njc5NjI3NzA0OWJmMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlOThlYjE5OGEwNWZlMGI2NTU0N2I4ODJmN2FlZGUzYmQzNmMzYzQ2NTBkMzYwZjM1NWNkMmM1NTczMTFlZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_454f2133f2c84ae2a2354556c0f7e009",
+      "statement": "A trailing /index segment is removed from the request URL by removeIndexString.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/utils.ts#L55-L60",
+          "version": "repo-lines-v1:sha256:af513dd559747ae50fa8810fad74b79b8e4f8312214567dcd7cb364d7c140d22:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZlNzAxYzNiYjU2ZGVhZGQ2ZmE4NGI0YjQ4MTYyMzg4NjY4MGM3OTBjZjJiZTU0ZDdiNzViNzE1ZDY0NWJmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2NmMmE0YTU0NTk5YzNiOWUzNGQwMjQwOGEzYTQ0N2M1MDQ1MWI4MDZjY2I2NjRlNzU0MmMxMjZlNjMxOTUxZiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:23:45.579Z"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1cd20e3e7fd1d6e7eab9ad3d66b8d5913ff97b6a8107d4bac8ce83fec10a04cd",
+  "claims": [
+    {
+      "id": "claim_f267be082074407693e6002227bcb69d",
+      "statement": "Pytest is configured with --strict-markers, xfail_strict and a default test path of t/unit/, with a fixed list of custom markers.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L1-L6",
+          "version": "repo-lines-v1:sha256:226a7d275f40c4bb8edd83a7c84b130879d7bd905189b65e114e357c27a80846:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY3NmU2NDE0NjVhNjU1MWU5ZTljZmZkN2ZhYTFlNmE0MmY5YjcyNDgwOTgxM2M5MDNkN2VkY2I1MmYzMDA2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjNkZDQyMDQyZWEyOTZlYzM5YzgyOWEyMTljZTQ0ZDkxOTBmZjZiN2U1OWI1MWI3YjliNGQ5Y2VhZGI4OTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWRkN2VjOGI5YmQ4ZWI4ZjljYzU2OWNmNGFjYjA1NDE5NzlkYzk3MmQxYWI1YTNiZjAxMmZlOGUyZTEyYzZmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4eb5069041345479c4fd137801edeeb",
+      "statement": "Unit tests use an in-memory broker and cache result backend with a dedicated testcelery queue, and enable the app trap so implicit use of the current or default app raises.",
+      "evidence": [
+        {
+          "resource": "repo://t/unit/conftest.py#L59-L94",
+          "version": "repo-lines-v1:sha256:9badfa33f80eebde35ae430002af1443b0004a721dcfdfbb172a59401ecf267f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyYjBmMTE4NGQ1ZjQ2MTlmOTAxYjk5ZWQ4MjQ4OGUwNDA3YjQ2NDg5ZGM3ZGRjMjlmN2NkNWU5ZDMxYjUyNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyMDVjYjE1YzMwYjgzY2EyZWYxY2EwMDg0NjcxMzEzZWM0MzhkM2ExYmVjYjJmMWVmZjk1ODRkMzUzZWQ2Y2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c619a88e14cf462588d032c8da206688",
+      "statement": "Integration tests take TEST_BROKER and TEST_BACKEND from the environment, can be overridden with an integration-tests-config.json file, and use a session-wide embedded worker and a Manager fixture.",
+      "evidence": [
+        {
+          "resource": "repo://t/integration/conftest.py#L61-L124",
+          "version": "repo-lines-v1:sha256:bbd21c4a152db717769f984ff1f7d741cf33429b13c4150e0057bfa492b79d6e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYjRiN2JjOGNjMWVkYmMyYzM4YjE4ODViZWQzNzNhN2RlNTI4NDk4ZTlhMjVkMTA2ODcxNmM0NzUxODM2ZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwYjIxYmY4OTVmYWUyZDczOTIwZDkzMTc4Y2ZkNTg0MWNkZjhmOTUyNDUxNmM4YTU2NTg0MzZhNGFjNDhmM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_badd4bb691334ba99f8842c366172db5",
+      "statement": "Smoke tests are built on pytest-celery and pytest-docker-tools with docker-backed readiness checks and reusable suite operations, and the tox smoke environment reruns failed tests up to five times.",
+      "evidence": [
+        {
+          "resource": "repo://t/smoke/conftest.py#L1-L74",
+          "version": "repo-lines-v1:sha256:5c9427eaad2fccd35313d9cd824b8603f632c899fcd4c948e0050378634fe1f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzODRiZmRiMmRmMzgwYjY1NTdjYzdhNzFkMTY4OTE0MTViY2NhYTg3Njk5NDA2ZTIzNmY3NTJjNjQxNTM4OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhMjYwNjgwM2Q1NTE1MjA3NTZjYzhjZGVjYTVjNzhlMTcyYTM1NGVhOGU5NDdkMDdlOWM0Y2ZjY2U2NDU1MDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0ZGRhYTJlMmE4MWY3MTE0ZGVmMGU3MWE2YTFlMjk4NjBjZDc5MDZiYWRlZWFlOTdlMjRkYzMxYzEyODI5OTYifQ"
+        },
+        {
+          "resource": "repo://tox.ini#L1-L45",
+          "version": "repo-lines-v1:sha256:1ff2cbf897b161d4adc041b66a0ceb82247ae4d6db7f6633f2d9ff8bf4f70cd1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwYWI3NjVkOWU2MGJmN2U3MGQ1ZDU4NzU4NDNiZjdmZjMxMWIwOGYyZjBmNzZiOTc0ODc3NzQxZTc0MDJiZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ZmEwYjRiZGNjNzQwZmIxNWE0YWZkZjg5ZjlkZmE1MzA4Zjk3ZDE4N2EwYzAwODc2MzA4NzQ0MDIyZTlkNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzMjc0MjVlNjg5ODAzOWZkMzgxZmIyMzllNThjZjhhYTcwNDAxZTBkOTZmNWViZDJlYTI5ZjY5OWMyMGQzZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9105fa81474d4f3683cfba3390bd185c",
+      "statement": "tox defines unit, integration (per broker/backend combination via TEST_BROKER and TEST_BACKEND), smoke, flake8, mypy, lint, bandit, apicheck, configcheck and linkcheck environments.",
+      "evidence": [
+        {
+          "resource": "repo://tox.ini#L1-L136",
+          "version": "repo-lines-v1:sha256:cc70efb275d35b15d4ad0f6ef07840eb336c5ef25ce84c0aa4d30e1e2e80a924:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4MGFiNzY1ZDllNjBiZjdlNzBkNWQ1ODc1ODQzYmY3ZmYzMTFiMDhmMmYwZjc2Yjk3NDg3Nzc0MWU3NDAyYmQ3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlMWE0OTgyNmY0ZTVlYWRhNmI1MTg2ZjFhYjYzMTQzYTJjNWMzMzBhOGE3M2M4MGRlNjhjNzc4YmZlNjZjYjFiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_44e8192c9a814e038026d04682e928d4",
+      "statement": "CI runs unit tests on Python 3.10-3.14 and PyPy on Linux (Windows only on the newest CPython) and calls reusable integration and smoke workflows per test module from python-package.yml.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/python-package.yml#L105-L143",
+          "version": "repo-lines-v1:sha256:43ffa32be91a77889972009e1f189e555d3f6658ad3eec86279ba15ad15175f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0Njc1ZjFlOTA1M2ZjMDEwZGZhY2YyM2U4OTJhNGRhMThhYjhiNjU2YTBkZTUxNjc5OWU0YzQ3YTcyY2ZkMGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwNmZiNzg4NDYzMWNmZjc4NTU4NDMxZjU1NDRlMzE0ZWM5OTdjMmM2NDQ3NGU3MzNiNDczNTdmNDgxMDdjZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2MTExYzVhYzI2OTRjNWQwY2Q3ZGM5ZDliY2E5OWYzMDZhOTBjN2VlMWQxZDhhMGUxNWFkMGZmNWJlMThhMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/python-package.yml#L24-L50",
+          "version": "repo-lines-v1:sha256:daf091950ed4a7cba7207fdf6e7f633b4e61257ec878633564c0ff71eaddf48f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1NjEwMzhhNWUzNzJkNjhjZjFmZjliNGI3NTI0YWZjZjhkMDBmNjA1YjY1OWI1ODkwYjg4NGJjNzk5ZWFjYTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzNTlmN2FjYjM2YjFiMjNiYjUzMzBkY2Y5MTgxM2ZjNzdmNjAxMThlNmMyNmMxYTk2NDEzMmY3MjUzNGUyNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjMjhlYjk3NTgwOGE2ZTMyYzg1MGY0ZjRjYTk5YWQ4ZDQ0MTUwYmNlM2Y5MTlhN2UzMTY3NzA1ODgxZjQ4YTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e8f2555af0e4288a297183858f134bb",
+      "statement": "The openwiki-update workflow is a scheduled and manually triggered job that regenerates the wiki.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L40",
+          "version": "repo-lines-v1:sha256:5461c71a2f70583809c77214ba53ab423c608023014de7d4680d4f48a3bf0de6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyNWU4NDZiOTUzNzg0YTU3MjcxZDEwMmI3M2Q1NzI5N2NjODkyM2RjZTAwM2IwNDFiZjAwNGQ0MzcwNTFiNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MzM0NjliMjg4MDJlMzM3MzgwZTRkODkyY2QxMjZiMmQ0NDRiZjBkZmFhMjcwMjEyMTUzNGRiZTNiZmJhM2YifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:56:17.091Z"
+  }
+}

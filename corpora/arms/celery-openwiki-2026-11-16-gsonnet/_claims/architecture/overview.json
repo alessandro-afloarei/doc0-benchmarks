@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9f9a86a30f498403939890c35e3c45a2017dc8c5761f65aa66a8b1a679acde09",
+  "claims": [
+    {
+      "id": "claim_6b70bef486ea41c68adb9c28d3e48ba3",
+      "statement": "current_app resolves to the thread-local app set by set_current, falling back to a process-wide default app (created on demand as a fallback app named 'default'); C_STRICT_APP and C_WARN_APP environment variables turn implicit use into an error or stack trace.",
+      "evidence": [
+        {
+          "resource": "repo://celery/_state.py#L60-L120",
+          "version": "repo-lines-v1:sha256:1e88a3010a5b7e4ff2216d344411a2f65c30b10a1146770840d19a29e1805d3e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViNDE4OTQ4YjlmOGQ2OTRkZDk0YmMzODVlOTMxZjE3YWE3NGRmM2RkNDc2Zjc1OGFhNjRhYzBjMTQ0YzJkY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjODJkODBmMWE3ZTdjMzQxNmM3NGM0Y2RmN2NmNjUwOTMyNDJkMDM5MmZkZDRmNzQ5ZDdmZDMwM2QzMWI4ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzMWU1Y2IyMDhlNjMxYTQ2YWE0Y2YxN2UyMzJjNzk4MGRmNzE1ZDY3NTRiNzAwYWMzNjE2YzA0ODg5Mzg2MmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ead15a8b63f41bf97981041f130aa67",
+      "statement": "current_task is a proxy to a thread-local task stack maintained by the tracer, and get_current_worker_task skips tasks that were merely called directly rather than applied by a worker.",
+      "evidence": [
+        {
+          "resource": "repo://celery/_state.py#L119-L142",
+          "version": "repo-lines-v1:sha256:88806ac4d66b1e26525a97f9fe1a455dc1a89b3d187a59b0c22566d95d237f5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYTVkN2EzYWY2NThiZGZiNWU5ZWQ2MjVlNTg0NTY1ODgzODQwNzQ3YjcwY2E3YmVhOWYyNWI0OWM5NmJlMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZWQ0OTI2MGRmNDQyNTBiMmFiMjYwMGZkNjZhNjE0MjJhZWZmMmFkOTBjZDhlYTEwMDlmNTcyMmVmYzc2ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0YWYwNTlmM2Y4YzVmNGUwYTY3OTI4MjczNjliNjQyZGNiMjBjNjlkYmRkNDM5NzRlZmY4MzRlMjgzOGEwNGUifQ"
+        },
+        {
+          "resource": "repo://celery/_state.py#L74-L82",
+          "version": "repo-lines-v1:sha256:d181f0aac67877d5ba6911aa6a56fc463dd9072c543bc137bcbffa224a69b1ac:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2UwZmZjMmI1ODU1NmE5YWVkZjE0MmQ3ZjMzZDI3NDFlMzFjNWIxZTg0Y2RiYjY5M2VlOWQzMjRkMWNkNWE2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTU3MGJkNTE4YmFkMWYzYTY3NzllMjNhZjdkNmE1NmRjYTdiYjg5Y2YxNjFkOTc3ZmU3YTkyNjY4MmRlZDQzYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODkxMDAwMTZmYTY3YWMwZDNkZWJhYTUwZTY2YWY5NjAyNzg4MWJkOTgzMTBhMjU2ZjQ4NDA0ZDUzODRhYmQ1YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6746e9615b6d4070a5d4d1c62a5ed570",
+      "statement": "AMQP.as_task_v2 builds protocol-2 messages with routing and bookkeeping in headers (task, id, eta, expires, retries, timelimit, root_id, parent_id, group, stamps) and a body of (args, kwargs, {callbacks, errbacks, chain, chord}); countdown and relative expires are converted to absolute ISO-8601 times.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L326-L418",
+          "version": "repo-lines-v1:sha256:7742fdedd211a3d1f879338704ed137ee5c13512fbb45c7dca1d6cabc2707cd8:eyJzZWxlY3RlZExpbmVDb3VudCI6OTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4NjJkNzg1MzBlYzVmZjgxNGQ3Yzc2ZDYzY2RlZWY4NmJiZmYyOWUzNmU5ODRjZjUwZDdiZmI5ZjMyNGZmZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllMjBiODRkMjNiYzcxMTQ5ZjU3YjRhYmU4NDYzNGY2YTVhOGViMDVkMGFhNGJlZWVmMmM1ODdmOGFmZTRmZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4Y2IyMGE5MGM1ZDkzOWUxNGJiZTZjMmU5MWViNjAxMGMyYTFlZDQzNTVmYzllNDlmM2YyMzIyODUzNTg1MGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b8de444293f4c31b6f38c3996a6da8a",
+      "statement": "The task sender resolves the queue and exchange (using the anonymous exchange for direct queues), fires before_task_publish and after_task_publish signals, publishes with configured serializer, compression and retry policy, and optionally emits a task-sent event.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L485-L606",
+          "version": "repo-lines-v1:sha256:6ece4469f24eb369357da3944309596d9183eb3fa1ea44df47cf53ee3289639d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMDExOGVhMTM2YmU3ZDRkYjlmYmU1MGIyMjZiMjM0OTg2N2I0NWM0MjBhYzhlNjEwNDMyZTY4Y2RmYzg3NDJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiOTVkNjE5YTBkNmYwYTQ1MjRjOTliMjJkMGY3YTBhM2E2N2E0OWZjZmY5NDM3NzI4YjMwZmI2ZWNjMmM4MWI1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwZmZiMjYzNTk0MDE4MWE5ZDRhZGNjZmUwZjYxOWRjZmQzNzJiZmY0Y2Q4M2EyMzI0MjNhN2IwZGJjMDMwYTgzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4M2JiYWI2N2RhMTM2MWVlNWNjNjI5MTMxNTBkODRhYjEwYWVlMzA0ZWY3ZWU3MmRmNTBjMjk5NjIzNzM2MTE1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_decd1566722647b1bef06a3f0a273a32",
+      "statement": "The WorkController blueprint consists of Hub, Pool, Beat, Timer, StateDB, Consumer and Autoscaler bootsteps; its constructor initializes the loader, selects queues, imports task modules, sends worker_init and applies the blueprint, and start() maps failures to exit codes.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L186-L200",
+          "version": "repo-lines-v1:sha256:0e1b32d74c9a052a6477062af0e4c2ea0c9a938bfa9895752d916569f79014de:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmOGZiMmY1ZTM0OWVmM2Y3ZjE0NjhiZjAzNzk1MDU2NGM4OGNkNzI2MGUxMzlhZTdjYTZjY2UzMGExNzEwZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZjUzZDMzZmUwODE0MWRiZGIxNjNhODRjYTU4ZDBlYjZmNjlmYzMxMjMzZjI1NGQwMjQzY2UzNjk4NGE5NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2ZTUxYjQwMjEwMGYwZjU1YTQ3MTA1ZmU1OTQxYzlhNGIwZjdmZmZlODMzZjA2ZWJkNDYzZTljNmExZmFhNzQifQ"
+        },
+        {
+          "resource": "repo://celery/worker/worker.py#L63-L135",
+          "version": "repo-lines-v1:sha256:26caf2a473b157dd6add646fa54643d529a2b1bd1f50ee00a30a753761fe2ebd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5ZmRjMTAwMGJjNzBlMmRiNTIzYzcwNjIwZmQ2NzNhNDFkMWE3NGIzODAwYzJkMDlmN2I1YzAwMDMxNzBiMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4ZTJmMGQ5YjEzODBiMmEzMGNhMjRkMTY1MGUwNTY5MDYxNGY0NmVhNzk0NDJlNWJlMjg1MDU3NzZlNTY3ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4YWU2MGEwOWE3ODRiNDdlYTA4NTMxNmJmZjkyYzY4MDExZGQ2NzBkODlmMjhkYWY1ZGE5YmI2YWU0MWJjNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlMTBmNTllZWVmYmY5NzJiMzNjNTkxZmI4NjhmYzgxM2E1ODM5NTVmZGRlNGIxN2ViMDk5ZjcwNjgyOTAzNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22795099874f403bbc525b031be61a84",
+      "statement": "The Consumer has its own blueprint with Connection, Mingle, Events, Gossip, Heart, Control, Tasks, DelayedDelivery, Evloop and Agent steps.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L171-L189",
+          "version": "repo-lines-v1:sha256:4e66e3796565d5cb067b8bad1c7dd3158ee94d4e09c77759fa543d7f2a36ff0f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOGY5MzExNjlkNWE3YThiNzA2MDk3NGMxMWVjZGRjNTJjMWVmYmViNzQyNGU4YjEzYmViNDU5MTZhMWJjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMzA0YmVjZjIwOGI1NWZhZTcxY2Q4NjQxNzI1NTQ3YTMxNjYzYzhmMjU1MWE1OTA5MzUxZTk1M2MzZTBiNzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmMjIyYzQzNTM5MTJmOGE5OTU2OWMxNzA5OWI2NTM3YjQzN2M0M2M1NGRmZTU2ODIxNGRmZGU2NDBhNDM3MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxN2UxYjdhNmViZTM5OGIxNTNlZjM1NDBmYzBlMDhlZDlmMjdkNWJhNjkzODljNTE3NGE3ZDYxM2U2YjZhOGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_560dbf271b8041f0967fc96f8a26da9c",
+      "statement": "WorkController.setup_queues applies queue selection and exclusion from -Q and -X, raising ImproperlyConfigured for unknown queues, and adds a worker-direct queue when worker_direct is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L160-L178",
+          "version": "repo-lines-v1:sha256:a5126f4ca3b98fb9ab9c2306ad41d1eae754b6121393fc760c222768ac505f5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YmNkZTVhNWEwYmE3MzUxMmNkNGFmOGUxNzg5NTBmMTU2MTdlMjM1ZGM3M2Y4NDAwY2I0M2VhN2E5NDM5OWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NjA3NDFlNWRjOWE2NzQ0ZTA1OTkxYjgwZGQ5NTI3YmZjNWJhZDY3MjY3MzJiYzg5YjE1NzJmMWNiNzgwZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzNjlmNTJkYzdkYTVhYzBkNzY1NjI4NWZhM2RiOTI3ODYyOTEyZmU0ZTNhMTkxNmEzMjJiNmQwMWM1MjY2NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4NWE0N2FlMGI5NTYwNTI2NDc4NmFhM2Y3Yzg4YzliYjQwYjgxZWQwNmQ3MDFlZGRmMGQ1NDFjMzQ4NmI1MTYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:22:47.483Z"
+  }
+}

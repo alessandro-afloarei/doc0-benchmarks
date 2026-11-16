@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:87fe4bde5038ea291f945a02d9e4f0091d45747eea8a61278b7dd6b50752dab7",
+  "claims": [
+    {
+      "id": "claim_b25d8699513a44248c44a038d3b75a06",
+      "statement": "fd's Opts struct sets args_override_self and uses visible/hidden flag pairs with overrides_with so later flags override earlier ones.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L14-L31",
+          "version": "repo-lines-v1:sha256:35ee03c72724d9bc6c62733c133fabd54ccef75f1715bd3323187fa3eb3583cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjZTZiMzEyNDllN2MwMjE0ZTRlNzNhY2JhYWZlMmUyNGMwYTQ0YWYzYmQ3NTBkMDBkOTRkNTFmYjk4YWIzMWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjczYjA3MzgxMjIxMzY4OWU1MmZjZGY2ZTVjMzMzMWY5NjUwODIyNjIzODk1NDEzMTczOGM2Y2IwODdlMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZTJkOWRiOTdiNzZkNDQzMGQ4MmE2YWY0NzMyYzc5NzNiY2FiMmZhNDU5ZTgxNzk4NWFjNzIyMGQ2NDU3ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMjAzMmE1YWU4YzhmNjZkYTgzNjRhNDQ2ODhmYmRiZDM0YmVlMTA5N2ZhZDFjYjZlZjg0YjZkNjg1MDE0MTIifQ"
+        },
+        {
+          "resource": "repo://src/cli.rs#L48-L63",
+          "version": "repo-lines-v1:sha256:5088dd7812bc3e95e59f2b6afb9769dee6720aa1afd4d3e328609dd354f6d1c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4ODM2Y2IwZTM0OWM2YjI1YzYwNDJlM2UyODEzNDNjZjE3MmQ4MWQ4MGJlNTg5MmE2YWExODNiZjRlZWRiNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNWY5ZWU4YmQzODJmYTFmZmM1YzlmYTY0NjYyZmU0Njc2MTQ5NjY5NDBiMDcwOGEzOGIxMWM0Y2RhZjcyNTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3MzNhMWIyMDg1OWRhNmY3MTBiMDY2ZjM3NjRlYzhiYjQ5NTlkMzRkMDhjYjBhNDc5ODFjNGEwMDIyMmVhNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxYjgzMjkwMzdlYmJkMTM5YmMwMWIzNDVmZmNhMGY2Y2ViNjJmNzAxM2NiZDk0NWM3OGUwOTNkMjE4YTY0MGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e33b2db3a644701b62b5eca7e7323a0",
+      "statement": "--exec, --exec-batch and --list-details form an ArgGroup that conflicts with --max-results, --quiet and --max-one-result.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L29-L30",
+          "version": "repo-lines-v1:sha256:8c348b6c721db39b6a4cdc73a860dd692cc186277d4e4c1463c76164b394a90b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODgyZWY4MjZmZjY4MDgwZDE3OGE3ZTE5NmU5YzQzYWQzMDEzZDU3NWEwM2JhNTQ0ZTJlZWYzMDBhNTUxYWIyNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RlMDk3ZjVkMzI3MWRmMzkwNDA4YTA1Y2MxMTg0MWFjMzZjNjI0YzQ0OThkN2FlYjRlNzE3NGFiY2EwYWNjMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNlNDA3MjdmN2I0OTQ0OWM3NzcwMTAwMThiNzI3ZTEwMTljMjdkNjA4MjQ4YjVlN2I1MzQ1NDExN2FhYzljOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGI2MmM2YjI3OGZkNGE0YWNjMzdlN2ViYTdlYmVlOWIwYzQ2ZWI1YWNiMGM5MjEzYzljOWNkODM3OTQyZGU2NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a92a0074487d4730bf55d3ed963a9d57",
+      "statement": "--exec/--exec-batch are parsed by a hand-written clap Args/FromArgMatches implementation (Exec) producing a CommandSet, because the derive API cannot capture grouped occurrences.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L855-L881",
+          "version": "repo-lines-v1:sha256:2f332a1db0978fe79e999de71493b4b7517610944f6e69ffff7df809b0e79725:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YWZhZWM4YTkzMDRlYzM0MDk3NmQyZWFlN2VhNzVlZGM3NmJhMGNjZmEyYzcwNzdkMzg3NDBkMTk0M2JhOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4NjM2N2FiN2MxODZmZjk3YTMyNzUxNTM4YmQ4OTRkYzQyYzgxY2NlZmY5M2VkNWFlNWIxZTNjYzJkNTg1N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5Y2ViZGQzZmI2NWM4Yjg2Mzc4MzIyOTA3ZTRjYmIxOTA4MTMwMGJjYzMzMWZkZDE0YmVlZDVhMmQ3MTY2YmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6b3ff29fce046f1accc060906f623ee",
+      "statement": "The default thread count is available_parallelism capped at 64, falling back to 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L788-L801",
+          "version": "repo-lines-v1:sha256:e0987367835c2aac02e12012ff68de0f9197482c718ab4d4c22e9565e946d954:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyNWRlODY4NmU5NTg0NTFmYTBjMzIzMGNkNzYwNjZhYWRkMGZjNTNlOGRkNjUzNzg3MTBlNzgyMmE2OTE3M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MTI3ZGZjNDMyYjEwYmUzN2ZhYWI5MGEyOTEyMGY2ODQ4ZWFkMDVlODliODg4MmFkMDUyNmMwNmVhOGNjNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d798d21151942059fa4f51118c31d9e",
+      "statement": "Search paths come from positional paths, else --search-path, else the current directory; non-directories are reported and dropped, and normalize_path rewrites '.' to './' and '-' to './-'.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L696-L736",
+          "version": "repo-lines-v1:sha256:22dbd67d6572ba94003822579048173c3afb9cf6cef490ac63cb39449c707d87:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZmJkYjRjZmEyMzg5NDAxY2UwNjg1MmZlNWEwMDk5NDkzNDg0YTBjNjBkOWM2OTdmYmQzZmMyNTNkNGYzODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZDliNzVkZDgxMDgwZjQ3YWE3YWNiNzE2ZDkzYTRkYjBhMmI3MmFjOGQ0NzQzOGViOTc4ZjQ1ZDBkMTZiYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViNzY3YTJjNDM5OWU5MDc5YzAxNzIzNjk0YTliODRmMzQ4ZmUzMzExOTI3YzYwMWU0MzY3NDY4ZTk5Y2U4NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b6bf9724f744d46b161590087590128",
+      "statement": "The cwd prefix is stripped only when no explicit search path was given, and in Auto mode only when neither --print0 nor a command is used.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L765-L773",
+          "version": "repo-lines-v1:sha256:cb2e725d662d530f28c7283124e5fcf5eee46d46c6044dd01f082033752e4bd3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjkxMGYzODgzOWQzNDg5YzdiM2EwMzQwMjc1OWYzOWZiNjcwMGY2NWEzOGQ3YjljMDFhY2NjYWQ2NmQ4YTI0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzlkNzY5ZWZiZjIwMTVmZjJiYzAyNzM2ZWUwZWJlZTE0MGI2Zjc4ODY3N2M4NjdiZjgwNzZmNGIzM2EzYWZjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTMxYzBjOTg1ZjI0YzI3MzZkMjdlNzdlYzc4YmNhNGFhZWY0YWE2MTRkNThhZDRmYjUwNjg0Y2Q1NmNmNDJiZSJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L390-L390",
+          "version": "repo-lines-v1:sha256:6e1e5d0c9ebdfcc88292ff6288cd7d99474990d389b931467373ea7ee723ce88:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmUxZTVkMGM5ZWJkZmNjODgyOTJmZjYyODhjZDdkOTk0NzQ5OTBkMzg5YjkzMTQ2NzM3M2VhN2VlNzIzY2U4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmUxZTVkMGM5ZWJkZmNjODgyOTJmZjYyODhjZDdkOTk0NzQ5OTBkMzg5YjkzMTQ2NzM3M2VhN2VlNzIzY2U4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzc0NTkwYWQyNjAyYTc5NzZiMzlmYjY1NTk4Y2Q4YjVhNmIzZGMyZWVlMGVjYmNjY2NhNzNmMjhjZDliZTg4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjcxNzNlYjQzMDAwOTQ4ZWVmOTZkMTM0N2M1NDhhMmMzYjNjY2I1OTY3M2U3NzA0ZDdhMDEwNjA2NTNlZDYyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_00194e9a9bc54bad94e427d73510b77f",
+      "statement": "construct_config derives Config from Opts: smart-case sensitivity, ignore flags (with -u/--no-ignore overriding), color/hyperlink resolution with NO_COLOR and terminal checks, extension regex set, and file type folding.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L248-L393",
+          "version": "repo-lines-v1:sha256:3e21c698661cb2f4284e4bf0438d4d47c592efdd481f3f141c4838a359df61ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZmQ2NmRjM2RkOTMwZTM2Mjg2ZjQxY2NiY2EzZWExNDBkZDg4OTM3OGJmNTgzYmNhNjgxMzAyYTgzMmRhMWVjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxOWU3NjM1NWNmMTE5OTQ4MGMzZjk5ODM2YjE0ODZjODQxZDg5MWZhYWQ5MDRjNjA4ZTA5MzAyMmQzNzU3YWVlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjYWVjNWRlNmQ0OGJiNGMwZWI0NmM0YjQ2ODI2ZTUxYjA0YzlkZDNjMzUwMTlhODE2ZWU2OWFmMDMzYTU3NTYyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_f260ce22a7394587ab224fe5ca0f4ad8",
+      "statement": "Config::is_printing is true exactly when no command is configured.",
+      "evidence": [
+        {
+          "resource": "repo://src/config.rs#L131-L136",
+          "version": "repo-lines-v1:sha256:12165abf58b136c20cbdc262be0bf2e876c36235bca1bd0293ca25a2d5b6e09a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjM1MzM0OTU1M2M0ZDM3NmRmNTc2YzU5YzFhZWEwNWI5N2EzNTgzMDljYzQ0NzRlZWM0MTkzN2MyZDg3Y2Y0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTY4NjE4OTk3NGRiMDIzYWUxYzVjYTZhMmI5NTIxNzY3NjE3ZmY3MzNhZGEyYjlhMWVhNmUxYmI0YzYxMDM0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDYzNmM0YmVkZTg3Zjk1MjA0MjEzYWQxYTZiM2YyYjZmMmFhODYwZDkyNTNjNWNmOTljMjNmMzBjYmYyMmE2MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_57ebc76e2fee47359bd3fa4ed988bbea",
+      "statement": "main.rs validates inputs early and aborts with anyhow errors: slash-containing patterns without --full-path, leading-dot patterns while hidden files are filtered, invalid size/time/owner values, and a nonexistent --base-directory.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L131-L215",
+          "version": "repo-lines-v1:sha256:299bbbc25e2517a7a57319bbeccada41926d4f7ab9280716feeca1ab9b6da8c6:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3NTVmODRjNjU2OTVmOGM2OTY5ZjRiMDVjODdhOGNkMWZjN2ZmNzE1NWUzODVhYTExY2RiMDlmNDgyN2EwNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3ZThhMmMzYzg5NDFlZWE0YTJhMjc1MzA0NzdhNDM5ZDU2MGE3MjdhMjkxZmExZDM1YmEzM2MwMTY3MDQ0NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3OWMyNzc5MTI2NTM1MDgzYTlkOGY3NWFkMzM0NjFmMDE4NjFjYTA5MmNjZjUxYTgwODEzOTU0NzUxZTlhOTcifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L521-L539",
+          "version": "repo-lines-v1:sha256:03fc43e4364c9c9be01660977624f8fcb36831d68eda44f20beed381baabbfa3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZTJmNDI0MjU3N2Y3YWMwZGNkZjNhNDk2ZjBkZTQ5NmE0ZDI4YWQyMDM1MjQ0ODk3ZWM3MWU3MjZkZTYyYTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3YzhkZGE5MGFjMDU0NDA0NmNjZTQyNmZmZjEwM2FjYWJmMThmZmUzM2U5MTJjNWJiZGUxNjU5OWRjMTBhMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlY2NlYzJjOGRhYjFhZTk1MzU3YjBkYzAxZGRmYTI2Nzk3YjZkZTY5MTE2MTljODNiMzA0YjI1N2JlNTE1NzEifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L75-L111",
+          "version": "repo-lines-v1:sha256:653163916448d3ad1ec35b2d160363417a62801dcb80808ee6976fd21c4fca17:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNTA5M2YwMTIxZDYwYTBhOTQ4YTk2MGRiMWM5YTg5YjY2MzNmMTUzYmQ3NDk2OThiOGZkNzEwNTI5N2UxNzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwN2RkZDljN2JkNmYyZDNlNGRjYWRlZjI2NTIyODQyYmNlOWY4YmNhMzkyMDRiZGZlNDYwMzgyNTVjNjk5NWUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:38:21.850Z"
+  }
+}

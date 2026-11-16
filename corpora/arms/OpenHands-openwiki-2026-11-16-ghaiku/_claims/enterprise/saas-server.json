@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f993eb9332d72be0602968b5fcdf584135ca306a124d37eef0bf52be948cf1e5",
+  "claims": [
+    {
+      "id": "claim_fc8386104fad419a81657003d17883ad",
+      "statement": "The enterprise server imports the open-source openhands.server.app application as base_app and adds routers and middleware to it, rather than building a separate FastAPI application.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/saas_server.py#L40-L40",
+          "version": "repo-lines-v1:sha256:a0dfe7b172c90b60a2cfc8f9eb585d5ea56d1143dd0d07cbd7d24ed575e2e71f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBkZmU3YjE3MmM5MGI2MGEyY2ZjOGY5ZWI1ODVkNWVhNTZkMTE0M2RkMGQwN2NiZDdkMjRlZDU3NWUyZTcxZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBkZmU3YjE3MmM5MGI2MGEyY2ZjOGY5ZWI1ODVkNWVhNTZkMTE0M2RkMGQwN2NiZDdkMjRlZDU3NWUyZTcxZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTkyZGU1M2RlNTZmZTk5YWI4MzNlNzBkMTYxYWVhMzQ3Y2VkZmE1MGFhMzhiYTc0ODY3NTY2NjdjZDg0MDIxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGIxYzMyNWNkY2M0MDQ4ZDBiNzE5OWNjN2RmOTI4NjMwOWE4MGVkMWQyNTY3YmU2NzliZjNmYzZiM2M2NTc1YSJ9"
+        },
+        {
+          "resource": "repo://enterprise/saas_server.py#L58-L130",
+          "version": "repo-lines-v1:sha256:3cd3f3aecf63c7d4e983c9966f5dcc4702c9cee10fbf2d7c2c49ddf6a1c1483e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0NGZmMWRjM2YyYWE4ODU1MmJiOWUzMzM4MmM0NWFmYzY2YWU0NDUwNDhmYWI1Njk0MDc5ODZkODM5NTQwNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGMwNjFmNmEwMjc4MjVjNWFlNGNkODUyNzdiNmQ2YjgzZGNmNmIyYzU0OWVkMzk0NWJiZmQxZWEyY2QzY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhYjkzMjc1MDZjYTFkMzZlNWM2MmJmNmNhNGRmM2FkNTQzMGNiNTRkMDI4MDRlMDI3OWQ0Njk3NWMxOWI2ZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e0d5947f78a498dabfd4071cba46c9a",
+      "statement": "The enterprise server includes the GitHub integration router only when GITHUB_APP_CLIENT_ID is set, and includes the Jira, Jira Data Center, and Linear routers only when their enable flags are true.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/saas_server.py#L69-L71",
+          "version": "repo-lines-v1:sha256:49d4a9c2d819e9812ed9234e67db03af0c8fa6f8fad12a2e36e4a2607b15477c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY4YmE4MGQyNDRiM2E1MmJhMWE0NTNiYjZjMzZjNjllNmE4MTA3MmNkNjQ0OWVlYjVkODdiZTg1MzhkYzBhNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWU5M2Y1NDEzODIwZWY0MjExYzA5YjA2NjdlYWQ1MDdhNjk0NTNhZWFiNjQyMGU2Zjc3ZTg1NWQ3NjAwZDBjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDc4MzMxNDRkMTM1MGViODhhYzFmYTQ0ZTAyMzdlOGVlZTY1MWJkMWI0ZmIzNjEwYjIzYzRhYTA4M2JhZDRiYiJ9"
+        },
+        {
+          "resource": "repo://enterprise/server/auth/constants.py#L21-L23",
+          "version": "repo-lines-v1:sha256:a9e8478f27d1422e9878d46b3bdb1543a0ec92f8ebb31cf246f81986a35e890c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTcwNjUyMWYwNTVjMDIzZDA1ZTYzZmM2MDZiZDcyMWI3YWI5ZmQ5MDY5ZjlkNDMyNzAxYzk3M2U2NTg3OGRiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2VjOTBmYzAxZTk3YzU2ZGJlMzAwOWVjNjE2ZTNlOGM3ZjcwMTNiMWJiNzE0MTU2Y2NiNThiOTcxYTAwMmY2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2U1ZGMyZWY2MDdmOGEzZDJkOGIxNTZmNTY3OGM3NDk4NmRmMTdmMDNhOWU4ZmQ0ZGVlMjFmMTJjYWIwYzBhMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWY3YmVlMTg4YWJkN2Y5ZTdiMjRmYWQwOWM2OWU2OGU4NDMzMjhlMTY3MWIyYmE5NDZiMzk0NTM4MzhjZDdhYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9619253e59f246378c4abafabb99a975",
+      "statement": "SaaSServerConfig subclasses ServerConfig and selects the enterprise implementations for the secrets store, conversation manager, and user authentication, while the open-source loader chooses the config class from OPENHANDS_CONFIG_CLS.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/config.py#L51-L71",
+          "version": "repo-lines-v1:sha256:3f256c7c56c88f29e69d77e4608367e5a9d8e118d56c0675ec018a6dead7b699:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMWNjYzM0MDY1YTQwMTUxYWU2N2NmODE0Nzk1NjJlNzc3MWQwZmFkMzJkZjIyY2Q0NjAxNzdjZDRmZWVmMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1NzkwNjM1M2U0YmExMGVhZTk3ZGFlNWRlNTBiNzUxZGRiYzA0MzIxNzM3NTVjZWIzMjNiNDk0OWZlNDQ0OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYWIzZjFjMmQ5NTFiZjU5MDM4OGI4NGFmOTNlOTJlMGYxY2I5NTQzNzQxNTJkYjJiMGQxYTdjNzk5MTgzOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhYTE1ZWRhMWVmYzgwYmI4MjAwOTc0MmY5NzcwMjA1MDk0NWRiNDYwYzA1NWZmOTAwMGNiODI0ZTM1Njg0ZGUifQ"
+        },
+        {
+          "resource": "repo://openhands/server/config/server_config.py#L52-L60",
+          "version": "repo-lines-v1:sha256:630178472c0f194838d050d82703403bc6b1d43245ed3bf8e0a15181d84a1c46:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk2NmEwZjFjZTg0MzAyZmQ1OGYxZjg1NTFlZGMzYmRhMjg1MGU1OTliOTkxZjMwNDlhZGNmNmU1MWI2NWY1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAyZDk0N2MwMmQxZjA5YWQ3NmEzMGE3NDVjN2VkODA4ODc0ZmU2YTIyNmMxYjg4NjUzZDFiZDE4MWQ4NDg5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjlkOWI0YzBmOTBiOWIyZWNlODNjNGE3MWZjMjc3MGE4NzZjOGQwNTYwNTAxYzI0MWQ0NzkzOWY0N2FjOTNlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0083c49ac5244c228e1088f4656bc080",
+      "statement": "ClusteredConversationManager extends StandaloneConversationManager and starts each conversation as a nested conversation, waiting for it to become ready before it reports the start.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/clustered_conversation_manager.py#L373-L420",
+          "version": "repo-lines-v1:sha256:315339cb10f5424d643b4fdc9562c0e8eac85916f0d19e981b104215582ff747:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczMTg1MzUxZTdhMTI3YTg4MWM3NTY1NzkzZGMyZjQxNGM1ZDM3NTY5Y2QzNWU4MWRiM2E1NjM0MDI0OWI3YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwOTQwZDMyZDc1NmY4YTY3OTQxMWQwYjRjNzE0YTAyZDdiMDhiNTAyZDRkYjhhYmFkNGFmODQ1MzQwMjFiMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMTJmNjAxMjY5MThhODliNDg5MGQ1YTgxMzU0ZDllOTgwNTNiNDhhMmJlZmQxMTdiODZmMmQ2MTMyZGNjNDMifQ"
+        },
+        {
+          "resource": "repo://enterprise/server/clustered_conversation_manager.py#L60-L60",
+          "version": "repo-lines-v1:sha256:c8378d8841201b3ef05e17669af9276c3c1713e55e8651e3af6877fba1d1f7cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzgzNzhkODg0MTIwMWIzZWYwNWUxNzY2OWFmOTI3NmMzYzE3MTNlNTVlODY1MWUzYWY2ODc3ZmJhMWQxZjdjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzgzNzhkODg0MTIwMWIzZWYwNWUxNzY2OWFmOTI3NmMzYzE3MTNlNTVlODY1MWUzYWY2ODc3ZmJhMWQxZjdjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmMxZjAyZmQ3ZWMxZDQ2MmMwY2I4MThiOTQ4ZmZlNGY3MTViMmMyYzQzMjYzMGMyMzJkZmUzNGQ0Mjc0M2ZhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDdiNDhiYTRmZGE5NjdiZGY4OTNmNmQwNzIwNjlkMjZlZTgyMDQ3OTkxMjIyMDYxOGEwM2VkMjBlYTJkMDY3NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7f90c068fe74e4983d80f0a8a67d47b",
+      "statement": "Starting a clustered conversation applies experiment settings, nested settings, provider tokens, custom secrets, and MCP configuration before creating the nested conversation.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/clustered_conversation_manager.py#L252-L372",
+          "version": "repo-lines-v1:sha256:a3549e0d858d3da5d52f51d135f6989a6db768f8e1838c91a29b4de5b58b06c9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1MTRiMjFjMmE5ODg5NzZhYzllNzg4NWMzNDUxYTgxNzk5NjNiNjhhNjM5MTliZWNjNzNjZjFmOTE5ZjliYjAzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhOTdiNDdiYjgxY2U5M2NiYTY3YWZjMDg2OThhODBjZmEwOTNhODY2N2U5YzlmOTY1MzM3ODE4ZDY1NzhkMTg1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkYWRhOWZlNzdjMDYwY2M2M2E4Y2VjNTI5MTliMDkwMTNlN2E4OTZlNjBlZmY5ZDkwZWUzMmExYzQ2MWI3YzE3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3NzcyZThhYTZlMDA2NmFlNDcxMGRhOGMyZGMzMmI3ZWYzYzk1MGNjODQ2YjkxZmRkZmY3NDRmMzJiNDIxZDExIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_532b9c671e8f40ba9d0f95be485cd614",
+      "statement": "SaasUserAuth checks token expiry and refreshes tokens, and resolves provider tokens for the request.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/auth/saas_user_auth.py#L43-L141",
+          "version": "repo-lines-v1:sha256:34f9249a15ab2414fbc5d78d2e840f136f35d0b291d5f237e2affbdc4c23d7a4:eyJzZWxlY3RlZExpbmVDb3VudCI6OTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZTY1ZjMwNjI3ZDZiMWI5MTdhODdlODFkYzIwYzRkZTk1ZWQzZmMwYTcwNTE2N2MyNzdhM2VkYTI1YzQxOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMTQ3MjgwYzg2NDkyMTQxNTcwZTA4ZmYxNDVjNDczM2M5NjMyNDI1YzFmOTQ4NmJlMWU5MGM4M2QyNjkzMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkOGEwNjJmMDc4ZGYyNTI5ZTFlYzBhM2RiN2UzN2FmYTIwYjU4YjIwZjRiMDhmZWMxNTg4YWU5OWUzMThkOWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_565a906738e742648e11713278db7333",
+      "statement": "The maintenance runner takes the next pending task, marks it WORKING, runs its processor, and records COMPLETED or ERROR, and can mark tasks left in progress as failed.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/run_maintenance_tasks.py#L23-L58",
+          "version": "repo-lines-v1:sha256:d7c3d1cf2649565cbd0d6d15ca2c97e12c03b0c9f8a41a6d0f6f7b14269177ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhOWQ1NTRkZTE2ZjVlMTI0MTkwNzE5YjZkNDk0MWEzZDZmNWJiZTY4MjkxM2JmODFiNjNkN2VjYzY1Mjg2OWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkNDM3MDRhNDU1ZThmYmZhMWE2NjU4NmQyNGUxYzFiZDFlYjc4ZjIxMjQwNjUxODViYWZkZTllYmQ5NzBmY2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3MGI2MThkOTg5MzdlMWQzNDBiNGQ0MTc3ZGJkODBlZTIwMDFiOGFiMWM3Mjk1YjA3ZjY1YzJhNWE4ZDJlNTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_419c93e3158e43e1aec085306248ce09",
+      "statement": "The enterprise service configures Slack, Stripe, and LiteLLM proxy credentials and billing behavior from environment variables.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/constants.py#L35-L59",
+          "version": "repo-lines-v1:sha256:05e221580270577238739edf440a30625b09f7ab2484d45dc6a6bb271175582b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxNzk1MzJlNDhhZjRlOTE3YmFjMDA1ZGNjODg5NzkxZWEwOTYwMDU1N2ViYTJjYzkxYWQ2ZDY3M2QyODJkZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNjE0Mjg4ODA4ZjY4ZTkyM2Y4YTJlMDFkNmU3NWFlNmI5NTkwOTZjZWEwZWQzNjU2YzFiZmM0OTUxYzhlMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4N2ZhYjgzYTNiYzU5OThkNjI5MWQzZDIwNmQwY2E0N2Y4MWEyZTI3ZDg0ZDFjZDU3ZDE2ZDY0YmM4NzhjNzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmYzVkNWUwY2EzZTBhOTY3MWNkZGRlZTcyYmRlOGRhMzdmMzFiYTczZjhjZjRkNmE1NmJkYWQwYzM2ZmUyOTkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

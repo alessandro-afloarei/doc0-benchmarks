@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:259f88cf6c82816a974fbf560e0923485a6faee4f274700878e628c0c16a3c2e",
+  "claims": [
+    {
+      "id": "claim_41a8a1d0872046b2a9ddb7ed0361a779",
+      "statement": "Task.delay delegates to apply_async, which validates typed arguments and time limits and merges task execution defaults with caller options before sending.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L523-L537",
+          "version": "repo-lines-v1:sha256:89185fbe5d75e5708f87b604ab33ca36e64002841a03008fe393582fc34f9466:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5YTQ0NjEwMWFmM2RlNzg2OTJjM2NkOGRhNzJhYTYyZThkNDFjN2ZiMjZmZWEzMmVhMzA1MzYxMjA5NjRhYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNDZmNmUyNGNiNjYwNjc5ZTcyMTYzYjBmOWVjNThlMDFlYTA2OWQ3MGVlYzA5MTBjNWZmODYxYWQxZjNhOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyYjcxNGJlMDg1ODM4MDkxNmYxOTdhMzYwMGYzZDY2ZDUwMWE5NmEzYmFiM2FkZDUyOTQ5NDQ3ZTFlNDg5ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiNzNmZjI0Y2IzYmRiYTQ2YzE0OTI2MTU0MjBiMTU1NTVkMjE5ZjUxNTY5NjEzOTRjN2ZiN2Y4ZjgyNmQwMmYifQ"
+        },
+        {
+          "resource": "repo://celery/app/task.py#L656-L718",
+          "version": "repo-lines-v1:sha256:488bcfadaf4961de5cb6aed3a1b8f99a9ca395132318ac53fc1034f2fd039889:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxYWZhNDk0MDQ5YTdiYjdlMDkwOGIyOThlYzY4NjVkY2U1MTgxMDA5NGVlYjY2ZWZlNjg4OWM0N2ZhMzM5NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmMTMzMWEyMDJhYTY2OWZmNjI0ODZmODRiZjgxOWY5YTU4NDdhNjAzZjE1Yzk2YjJlZmEwZWQzZmQ0OWQ2NjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxN2M5MGNiZGZlNDZkMzVmZGZlMzFhNzdhOGM0ZGFmM2FhMGY2YjQzZDNkZWQwYzEzNjk5Zjg2MDRmNjEwYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkN2I5ZDA3MzRlZDExODk3N2M0YWNlOTYyZGNhZmU2YjU0NDk1OWNkNGQ3MTEyZDBmNjA2NTNiYzVmMWZmNWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_798a5696c7114ea2b0403bffc9596b28",
+      "statement": "send_task looks up local task defaults without auto-finalization only when no task_type is supplied, merges non-None defaults and distinguishes omitted execution arguments from explicit None.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L846-L934",
+          "version": "repo-lines-v1:sha256:6a17da22bb30abbc707510d7debfaa8454182e03e178f6b5be83a858b9fbc524:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmY2Q1ZjRkZGZjMjE3ZGZhYWFmMjFlMjA3ZWE1NGE0NDAyMWRiYWU2NmU5YmNjY2M3ZDc0ZWJiMDZmNzkwY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4OTUwYTg2OTViY2JlYzFiOTMxYWM3ZTIyMmM2ZDYzYzUwOTc3MGIxNmJjMTdhNjc1OTc0ZmIwMzg3ZjJmNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4YjQ2YmQzN2M4YzE1MzRlZDNjOGQzZTlkMTc0MjlkODJiNzdkOTM4OWE1NmU5YjVmNGI2MDM4M2M2NDMzZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmNDJkNDRhYjFhNjk2ZjlmNjJkMWJiMDJjZmYxMTc2MDIyNDcxZGZiYjIzZjA5MTAyMTA5NGMxMWMzZmU0MjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc9f005c82fb4e07a7c62440f76d4347",
+      "statement": "Routing uses ordered first-match routers and merges non-None invocation options over route defaults, falling back to task_default_queue.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/routes.py#L66-L110",
+          "version": "repo-lines-v1:sha256:b6dd836282b4c9f5aabd25ee07e786526127fafa4d7e7bdc5d591256ad61cf1d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmOTM1N2RlMTIxZTQ0YTQzNWJiMzkzMWFhYTAwYTNkYTEzMDA1MzY2MzExZDBkYjQzYmFmNDE1ZTdmMGQ0M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjOTFiY2M5OGYwOGMyYmI2OTY4NTBlNWQxZWI1M2FmOTBkMzUxODVhOWM2OTVhYTFhNDEyYjc3NjA2MTM2NDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiMTc2ZjI5NmViMGNlZDI3NGFmZTJjNzdmMzYwNTZiNzAzYTBhNWJjN2Q1ZDg0YTAxZDYzZTg5ODM2MjA4NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyNjZiNGFhYTEyZmNlZDUzZWQ4YjUwMmNhY2U5ZjczY2Y3MzgzZWZjNWM4YmQ2YjRjMTZjMWYyNzRmMWZlYTYifQ"
+        },
+        {
+          "resource": "repo://celery/utils/collections.py#L47-L55",
+          "version": "repo-lines-v1:sha256:a503b4ca5b21e85b05a34a8c82678fb774c6032dcbab125f9c3864b1a070f7c7:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTcyOGU0YzFiZWViNDkwNGEwMzM4Y2ZmYjhmYWQ4NWIzZTQ3NDAzZGRkN2M0ZjhhOWI2NjAyMjc4YmM4N2Y2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM4YTkxNTZmNTAzMzBhY2MwOThmZjMxNjU1Y2FmNDliYTYyNWFjNGVlYjE5YzJjMWZhZTlkNGY2YWExOTdkOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQzNTEzYTdiYTFlODRhNDVjZTdmODhkNzExNWU1OWIyNTJiYmM5MTE0NGIxN2JkYzNiMmVkODlkOTZjYTZjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODU0M2UyMDI2M2U1OTZmYWU2OWE0MTQ5ODA1Mzg3M2I5MjIxMTZhNTkxY2MyZTE4YWZmOWUxMzc4YmJlZmMxZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a0cb5a6d6fb4dccbe7406a44a25524e",
+      "statement": "The queue registry can automatically declare classic or quorum missing queues and restrict the consumed subset independently from routing definitions.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L174-L216",
+          "version": "repo-lines-v1:sha256:a4acc73b9dc40432e4ccb4720142d0a93cbfe216989f66b8dd9cda1502bd38a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4MTQ5NmU4NTY3YmQ4MDRlYTE5OTAyZGVjZDhkMzJjOWYyYjJhYTQ5YWY4NzAxNmY2OWNiMWE3YTViYWEyYzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNTg5M2RlZDhkODFlNzgyYjYxMTU0OTdjOTMzMWRjZmZiNDcwMWUwNzM0NDIxMTk4MmExZmRkOTM0NDE5YmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjYjBiOTVjZTMzMzAzNmMwMTYxNjBkMTNhZDA1MzRjYjQ3NzNhMmRiNDZiYmEzYjBjNGY2M2JiYWJjYmY4ZDcifQ"
+        },
+        {
+          "resource": "repo://celery/app/amqp.py#L41-L84",
+          "version": "repo-lines-v1:sha256:c5edac9c822750209c151933f0a5fe39ae71cef3add015c3c7767b233628b915:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkMmYxZTAyYjgyNmNkOTExYjE4NGExNWM2NzhmNjFmMjQzMDdhYjUyYzJhYTU1N2M1YjRiYTRkMTkwMjVjNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjNDZjMmJmNTkzMzBjOTdjNjY2MzVlNzU0MGY4YzZkNDY1Y2UwNTNiYzdmOTkzMWJkOTg2YmM1OGU4MmYyYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExZTk1ZGMwMzc4ZmIyZDliYTViZTcxY2MwOTM3NzM5ZjE2YjgwODZmYzRkYjUzYmNiMWE2YTFkZTViZjU5NTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjOGIzMjYyNWQwNTQ2YzU4OGQ2YWM0YmU3Y2RkZDU1MTI4YWQyOGFjMGMwODY1YzQ2NDc2MDAxOGJkYmEwOGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a47a444489f47c1957e9a1605fdbe54",
+      "statement": "Protocol v2 puts task identity and execution metadata in headers, correlation/reply IDs in properties and arguments and workflow continuations in the body.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L330-L417",
+          "version": "repo-lines-v1:sha256:8a039186e2e9e9cfd67952d0e346287964a1c02b064755be41239dd3e0b5959c:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhMzg0MTc3NGJhYTNiODI1N2FiNjYxOTg2ODIxMzU1OTQ2NDNlNmNmMWI2ZTQyNmNmNGRkM2JiNjBjMzhjOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZWMzOTEzNmIzMWVlOWEzZjhiOWIwNzNjNDVmYWI2YTI2NjRjNWZhMDg3NjY4MGEwYTgyYzhhMDIyZmRlNGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmZDM3MGFkMGU2MWRiYThmMjA4NmI4ZGE5NmRkYWRlZGMxZjM3OTdkYWQwYjJjMDkyZDcwZWM0NjMzZDFlZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiNzU0YjdlZDJiNzAyNGQ4YzY2ZWYxZGVmNzVlYTYxZmM3MThhZGRlNzAzNDQ4YmNlOGM3OGNiMDg2ODljNzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0dd7c5cf0a5498986ac907f3118ac17",
+      "statement": "send_task computes broker expiry and handles quorum native delayed delivery for non-direct exchanges, warning on direct exchanges.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L939-L1002",
+          "version": "repo-lines-v1:sha256:a3ea5ec4c96b0f7bfd4b935d5d969aa0257c55ab805daa84e55dcd09613296a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMTkzMzQ0MDk5N2NjODJmZGJmMTA0YWQ0YjgyOTUxYTUyNDYxMDRjODEyODA1MTAxOWU1YWU4NmIyMjgxZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmZjcxNzY0MWE5YzgxNzZlY2M5NjE4YTIyOGUzZDMwMzk5ZjA3NjJiNWU2NGU4NzBjZWFjOTNjNTdhY2JmMDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2ZjdmZTgyNDdiMGYyYzIwNWYzODE2OGY4MDc3N2ZiOGJmN2E1NmZiMTk1ZTk1YjY2YWM2NDdjNTk3NmFhZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmYWIxMjcwYmU5OGU5MGE4YTMzYzNlYmZiMzE0NjllYzJjNThjNjFjOGQ5OWYwODUxOTllNmM4N2IxYjY4MTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_acf74081ce984465b70e3ba5b8c82e64",
+      "statement": "Producer acquisition uses broker_pool_acquire_timeout and reports pool exhaustion as OperationalError.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1131-L1145",
+          "version": "repo-lines-v1:sha256:a27ebb0978f1ca7f15f66aeb0b123f0f67bae70ed9e9b2d67800b7187c8becac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmNTIzZTNlMDhiYjkzMWMyMDE5MDJiMmI4OTI1YTUzYTA0M2IzMmQxMTY0Zjg2M2Q1NDY1NTExYmZjZTM1ZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZTlhYjQ1MjNhMjgxODNhMmVhMTc1ZThhODEwYTY0MDNhOGY0NmE4NmMzMTYwYmVkMjM3Y2U5N2M3ZmUwZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhOTJkZmRkOGZmYjZhOTZhZDliMTZlMzAzNmU5ZDkxOGNmNGU4MDYxNjJjOGNkM2Y1ZmMwOTQzNjgyMzU0YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyYjE1M2M0ZTM1MDAyODEyOTU1OTg1MjkzNTk4YWI1YjVjNzA3YWQwOTMyNGRmZGU4MWNhOWVlMDI1NWExMjAifQ"
+        },
+        {
+          "resource": "repo://celery/app/base.py#L1162-L1190",
+          "version": "repo-lines-v1:sha256:ebaf185c017cc8c7910062e4edbf12b0735b96d96f70297c5bec04b4f7bb4430:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YzBiMmYxMGZhYjA3YjhhZjBiNjY0OGIzMjFjMzEyMDExYTUzNGU1NTQ3MmMyMjJhMjY1ZmMwZjhiMjY2MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5OGUxNzFmODQ1YmNhZmMzN2YyZWVmMGI5ZjAyY2QzMjliNmYyZTlmYzY3YTA4NGRlMGRmZWUyMDlhNzg5NmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNmM5ZjEyM2RmYjM3MThjZjc4NWVhNDE2NTliMDc0OGMzYTA1YmQwMWYyOTdiNzA4MWE2OWI4NmRiNTk0YmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8dcd9242b3904f6b934e69dea1f00bcf",
+      "statement": "The task sender merges publication retry policy, emits publish signals and invokes Kombu publish with declarations and encoding options.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L487-L591",
+          "version": "repo-lines-v1:sha256:0cb2c8144b309523a333b152f8b9ccf3e0e059f74173d65099b8085db6ee20ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzYzU2NDQyN2M4M2QwZmFkMjNhODYxMjM3ZThhZDUyZTUzMTRmYjAxYWIzZWI5MGMxNGQ1MjE1ODQ1MTI5MDRlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzYzdjZmU3N2EyMmYwMWUzYjEzYzdkNGY2ZTVhZjhkYTZkMzk2ODg4MmQ3ZmVmNGQxNWVkOGYxYzNjMzA3YzE3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0Zjg5MDAyMzJhOGMzN2QxZjI5NDZiZmUwZmNhM2E0OTcyYmZmNDdiYzk1ZTkxOTkzNGI5MTY0MWNhMDIzYWE2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmZWU2ZjA2MWU4MzA4YzI4ODA0N2YyYmMzYmExOGVjNmYxYzRkZjgyYzc3NWVkOGYxOTkwMThjN2UwMjBmMzJkIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_86e54051e16d4f78a10d719df8cc548b",
+      "statement": "Registered-task eager invocation executes locally after argument serialization while plain send_task ignores eager mode.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L869-L873",
+          "version": "repo-lines-v1:sha256:0a79a4066cdd8f2d0d2604e4d9644d476db70c3373317418d7d1be2164825bc9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDBlZmExOWI0MmY3NTQ1YjI3ZTNmMmFjODVlYWU0OGFhNTk0MDZmOTgxMjc4YWYwYjY2MGJhNmZkZDIzZmY1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGZkZDBmYzI3NGYzZWMxMWMyNmJiNjQwMTZhNTQzY2Q3M2Y1Mjk4YjdkNDA0ODZiNzhlNDgyNzg0MDk4ZGRhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDk3ZTM4ZmJjMTA2Mjc0YjJmOWQ4YWJjZmIyMjAwYzVhYTM4MzE1MDM1NDQ1ZTU4NmYyMDBkNDY2ZjljOWUyMyJ9"
+        },
+        {
+          "resource": "repo://celery/app/task.py#L687-L718",
+          "version": "repo-lines-v1:sha256:bfb8903192193946fc0a7b367548c7d2368159d8484de2d25299f8f6a29f81db:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0Y2QxMGVlYTIxMzc5MzM2MjBmYTg2NDY3OTdiY2Y1MzNiNDM1NTIzMDgxZmZkNWQ2NGQzYmM3YWJmMTljNzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmMTMzMWEyMDJhYTY2OWZmNjI0ODZmODRiZjgxOWY5YTU4NDdhNjAzZjE1Yzk2YjJlZmEwZWQzZmQ0OWQ2NjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3OGZhMGUyYzU4NWQ0N2UwY2E2NTczZWZkMzk1YTA3ZWZiYzM5MzgzNWZlNzYxOThkMjVmMDY4NmEzNzVmMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkN2I5ZDA3MzRlZDExODk3N2M0YWNlOTYyZGNhZmU2YjU0NDk1OWNkNGQ3MTEyZDBmNjA2NTNiYzVmMWZmNWYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:34:04.042Z"
+  }
+}

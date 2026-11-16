@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cad72f5888edcbbeaf2ff31155ca93c6ebc11e49a10530ca54801c36766591cf",
+  "claims": [
+    {
+      "id": "claim_5808cfec71624025850f5c2f9a86791b",
+      "statement": "Signature merging prepends partial args, merges kwargs, and lets new options override existing ones except group_id and stamped header keys; immutable signatures ignore new args and kwargs.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L403-L443",
+          "version": "repo-lines-v1:sha256:9b75c3e2e35026f0f5ef72d60683e1268fadf043d8da5df68b6448f1527ac019:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhMmQ3ODI2YzZkYjkzNGQxMzE5ZjAxMDI5OTQ1N2QzNDBkYWU4Mjg0MGM1YTlkMjA3MGU5NGFkNDBjYjI1YjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjOWQzODcxZGVkYjZiNjc1MTNjZjczZTgxMDJhNzdkYjQzYmEwNWIyOGZkN2E4ODQwN2Q1MGRkMWMyMTFkNGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkNmU1YmFmZTBjMWEzYzMxYmYzYzM4OGMyZjg4YWNhMGZjYThlZTZjMWYwNTZjOTA4YzM0NGM1N2E2ODljMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1MWNmZDk4MzM5ODhhNWUyNjRmMzQ5NDc1MDNmNDNjMTRhNjM1OGQzNjhkZDYzYmZlMjJiOWUyMzZiNjQxM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a205e0b8413482dad7b2756372ba444",
+      "statement": "Freezing a signature keeps an existing task_id or assigns one, sets a default reply_to and group/chord metadata, and returns the AsyncResult without sending anything.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L473-L522",
+          "version": "repo-lines-v1:sha256:1be505445b236415c20924119710e506cba6397eec08a7572b1a81263895ef6d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmZTQ3ODRhNDllNWM3YTJmYTRiMDViNjU5MzUzMGE1ZDI2ZGU4ZjVhMDMwOWRlMjQyN2IzY2M3ZjZiNzA1MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlZGNhMDAyMzZmMWVjNGFhMzNkYmJjMDVmNDAwZWViYzAyMzdhZjQ1YTVjMmU0ZDU3ZmZmOWZmNWRkNzA2YjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MTJlMzk3ODY4NjNlZTA5NDA0Y2U3ZjBmY2QwOTQ3MTliZmU2NWFjODgyMzAyNDI1ZGE0YmQ0YTcwMmY2ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5NTRlMWJmMjA0OGJjMmZmNGU1ZjY5ZTczODVmMDM0YWU4Nzc5MjZmNzk0ZjVjMzQxYWM5MTUzM2M0ZjUxNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d080387e7bd94d6384a07d862ab01d10",
+      "statement": "Chaining a chain that ends in a group with a task upgrades the trailing group to a chord, and chaining onto a chain ending in a chord appends to the chord body.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L960-L1006",
+          "version": "repo-lines-v1:sha256:7a199b9f00b4ae796554cef4369ab893552e8714e76fc4a0f2c397f5d908fa48:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NGRiYmY4YWZjNjljYWRjZjMzN2RiYzQwMzNhZjc0OTIxNDI0OTdhM2Y1ZTBjY2Q0MGNiMzI3MjAwNjIxZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1YzYxN2E0NDU0N2E3NzdkZDI4ZWExODI0NDRmMzgzZGIxMDhmYmQzNDY1NTdiOWEyNWM1NTdjODExYzU4NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxNzEwZWQwODQxYTg2NzJmYTQ1NDVlNmJiMzNlY2NmZDhiNzc1ZWNhOGI2N2Y0ZGQ1ZmIyMWU1YzE5OGU2NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjZjViOWQzZmZhYThiNGM4NmQ2MWE1MGY0OGFiYzJjNzVmZTU3MWQzMThhMWZlOGYxNjcxZDQzZDhmYjczMGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8474a8375849445ab681d77f94df4b0e",
+      "statement": "A chain run publishes only its first task, passing the remaining prepared steps in the chain option without mutating the shared options dictionary.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L1048-L1094",
+          "version": "repo-lines-v1:sha256:c39a6a1290c992430bf1ed25753048a639bd4a1ef14e6158de911ce32e97ee78:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NDgyZmViMWJjNjJiZDM2MzNhMWZlODQ0M2E5NWY3ZGNjYWQ3MzBlMGQ2YWI5MTRhZDYyMWVlN2ExZDNmODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMTAyOGU0YTM5YWNmNjc4Njk3NjRlNWFhMzFkNGUzNGFiZTlhYTgxYTNjZTAwMjQ4NWNmNWZmOTEzMjhiMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1NjJjZDI1OTJlZDllYjZkODIxNmU2NGIxNWJjZTQzYWFhMjcyYTAxNjM5MWNhOTU0ODMzNWU1NmY2Yzc4Y2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyNDE1NjY3ZjdiZTUzODI5OWFlMGZlMzk4MjljMWVhMmY5YWQ3YzQyOGVlNTYwYTMxNzllY2QwYjQ5MzAyYWUifQ"
+        },
+        {
+          "resource": "repo://celery/canvas.py#L877-L933",
+          "version": "repo-lines-v1:sha256:8e72d7c8a057b3e9b6926f08ff177ba50511e30530b0579abf6be2032237b101:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2ZmJhZGRmNTQyZDI1NTQ2YTU5NTU4ODkyODFkMzNkNjUzMzkzMGQxNGU2MDhkNWE2Nzg4NmQ1NTJhZGQ2ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MWEyNzc2MzYyNWY2NDE2YjU2YjNiM2M3ZTRhMDYwOTE0NGZiMzE4NDI4YzVlZjhjZTQxZGZiNmI3OTc4M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5MjI1YmQ1MWIyMDdiOGExYTY5ODZlNzNkM2NjMGIwOTdkMDA2MmM3MzFkMDA0YTRmMzA1MTRjZmE1NzViMDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf834ac710974b3c87c5b14cefc08747",
+      "statement": "Groups cannot take link or link_error directly (TypeError), publish all members, and return a GroupResult added to the calling task's trail.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L1616-L1650",
+          "version": "repo-lines-v1:sha256:b447b7c46c3513269089faa1e19aeff138eb0264073ce20b432cddf64ca2849f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MjYwN2IzZWU5NmFmYTE4NjZhYzIxMmViMWUzODgwY2JkNWE5ZDEyZjgyNWNiMDM0YTc4YTMyNWQ2NDVjMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNDU2M2E1ZmJjNGJlNzVjOTE1NDk2NmQ0ZWRiM2M5NzBkNjM3NDlhYmU4OGQ0MDFmY2VlYjNhMTQwOTQ0MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwZDZkMzNlOTZkZjZmOGQ1NTllYTEzY2YyZDgwMmYwYmEwMWQ3ZjMxMGRiZGQzYzNhMTZiMjQ1NWY3NjZmOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d1053d01256543d994f5a878f7f40820",
+      "statement": "Chord execution freezes the body, freezes header tasks with the chord body attached, calls backend.apply_chord, publishes the header, and calls the body immediately with an empty list when the header is empty.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L2226-L2286",
+          "version": "repo-lines-v1:sha256:9bc3418fc5b72a8ef38f3f2555d9bf5b0b34224f9dbce148c9200beb435ea322:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzZGYzMGE5ZDA0ODRkOGE1MzQ5MTc5ZWJhYzQ0YzEwMTU1YjZkYjhmNjhmY2Q0YjgwZTgwNzY4Y2M3NmQ2YjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NjM0YzFhNmZmMGI1NTUyOGZjZjBlOGFhYzdhMGY5OGNjMDg0MjI4NTY5ZTE3OThiMmQzZTUyOTcxZDI2ZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzNmU4MGZlNmI5MGEwZmEwYmRiOGNkMDhiM2E5YzQ4ZTcyMmIyZDNjYTg4NDk3Y2JjODE2NzMyMmEzOGNlYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5ODMxMjhlMjZlMGYwOWU1OGVlZGI2NDdlNDBjZWQ5MjM2N2Y5MjM0MzZiMDk5MDg0OWNlMmVjZjcwMDdjMDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f1e46f1fbfc402e9282c174e5ff02c0",
+      "statement": "Backends without native chord support schedule the celery.chord_unlock task, which retries until the header GroupResult is ready, then joins it and calls the body, reporting failures via chord_error_from_stack.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/builtins.py#L36-L99",
+          "version": "repo-lines-v1:sha256:6b2f0e6ca53acf3d1360c8da242369917f68b2af09b42d12a48ad86a9a6b74f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ODYyNDE3MTI0YTc4MzIxY2MxYTkwMzNjOGJhYTI1ODNjZjhjZWE2M2FlYWI1M2FkODViY2NjYjIyZGFkMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlYWI2Yjk2NjIwYjJjZmM5N2NjNWRlMDc3NzAzM2ZlMDZmZDdhOTlmNmQ5MTdmNDMxZGQyODEyYzU4Yjc2N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxOTY5MDc5NGM1N2Q0ZDhmZjhkYmY3Yjg0ZjMyMDQ3NzUzMzY2ZWI2MDc2Mjk4ZTIwZTQ4MTg3NDZiZmY3OWIifQ"
+        },
+        {
+          "resource": "repo://celery/backends/base.py#L838-L867",
+          "version": "repo-lines-v1:sha256:59fd3c50a54a07f98ee0368fca3ecd684316e7035b70805a99e27d2553f6f0ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YTkxMGFmMTQ0MWYyYzk0ZDI0ZWFhOTM1ZDQ1NDY0NGM0NDBkNDc5NDM4YjY4ZmMzZTQ0N2Q5ZDExMWYxY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZmMwYTYxZWEwMDE1MzNmYjFlNDBhM2Y4NTA1NjZmNzVmY2YxNDZlMDAyYjNlY2IxMDgzYzBiZDgwYTg5MTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyNGU4YmYzMTEwYjE4MjBjYTViMjEwMjIzN2VhZDE5MDMzYTkwMWQ0N2UxZjA0ZDE3ZTc5ZDNhZDI2NGVkN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwODYzZDQyMDdhNWFkNmFiODZjYjU2ZTVhMDY4ZGFjNDYxOTY1MjE2MGMyNWIzODY5NjY1ODY1ZjEwZWY3ZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_71929bb1daa04525af2603246fa0a928",
+      "statement": "Errbacks accepting more than one positional argument are called inline with (request, exc, traceback); other errbacks are applied as a group with the task id.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L254-L304",
+          "version": "repo-lines-v1:sha256:3d00c82f5fb4dab6778e0b02666ebf9d443c43a9db22cf0e2e99567a1fdb6fe0:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4MjY2NTQ1ZTgyMzlhOTk2ZDY3MzBiNmMwNWFjMDZjYjEyN2IyZGNmMWE3N2I1MGVlM2QzMjQ1NzZjNzRiMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ZmVmMDUwODg5OTYzNjVkOWI4NjBjMTlkNmVmOTFjZDM2ODk3ZDRjOWI3NTY1YzI2Mzc1MzYyNjJhZDQ1ODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1YTk3MmJlYmI2NTdjNjc1YTc2NTJmNmVmZDE2YzgzZWM0MTYyZDk5OWYzYTMxYmMxMmZiOTk5OWVlYmYwM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f961c31eaf0648fe959d90c3acd69b06",
+      "statement": "chord.link_error attaches the errback to the body and only adds it to header tasks when task_allow_error_cb_on_chord_header is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L2303-L2341",
+          "version": "repo-lines-v1:sha256:b580c74b435702734be121e0db86782113aee5e21dd0e8397e5079f16b350965:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmZDhjZWMwNjJmMGUzY2M3ZjA0NTE2MWIzMDk0NDNjYmEwNzNhMGM4ZmJhNmI0N2RhZWMwY2JmNjRmYTQwNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMTQxZDg2ZDk4MzgyZGE1OGU3MDAzN2EyM2ZlNjY2NGU3YWZiYzlmNDRjNGIwMGM1ZDU1Zjc5ZmFmN2YwMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3NDQzYTIwNzM0OTZiZDhkNzBkMDM5NGEyZjRiNWY0YjI3NTcyODIzN2NkYmJlZjY3MWE4YTg5NThlNDI3MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmN2M5Mzk0ZDExNmZmNTc3OGVlODJiZThkODlmNGZjYmI2YWJlYjE4MzY1YjA1OTRjZGFhMzIyOTllODBmMDMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:57:55.789Z"
+  }
+}

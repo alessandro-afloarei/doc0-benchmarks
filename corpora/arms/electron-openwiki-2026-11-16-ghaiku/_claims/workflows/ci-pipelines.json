@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e52967610d8ebbcee6aee9aa73c3ffccff5ed8e50cb3ff144e0e20ebe15789b3",
+  "claims": [
+    {
+      "id": "claim_d92fdb27eacb4690bd449ec90dd234d4",
+      "statement": "The top-level Build workflow runs on manual dispatch, on pushes to main and NN-x-y branches, and on pull requests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L1-L42",
+          "version": "repo-lines-v1:sha256:91bdb1d529f23e55754ad7978734ba06ea7ab00eea2749dd59e61d09273980b0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4MjM0YzRmNjlhNmIxM2MwYjI4YzkwYzZmM2E0YTc5YjZhMDU1YjFkZGRkYzZjOTVjNzk5ZmQ5NjcxM2U1Y2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyN2EwNTU4ODJmYWI3YmFkOWE0YjZjNjNmZmNiYWU1MjEwMjkwYWQ2MjY5OWMzMWZmMGNiYzg0NWVmYmE1NjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjOTJiY2JiYTJkN2U2MDQyNGFhNTIxYTJjMzNiNDdiMzhkZWRjMGM5ZmE5ZjI5NzAzZDhjMTgxMjIwZjk4OTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a801e3f901c47aaa573e5249bb9a518",
+      "statement": "The Build workflow's manual dispatch inputs include a build image SHA and skip switches for macOS, Linux, Windows, lint, and SSH debugging.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L1-L35",
+          "version": "repo-lines-v1:sha256:02e465ab02b3150818258b1ac631060dc46361adf6f57cfb4228109b0b0fd27d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4MjM0YzRmNjlhNmIxM2MwYjI4YzkwYzZmM2E0YTc5YjZhMDU1YjFkZGRkYzZjOTVjNzk5ZmQ5NjcxM2U1Y2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1ODg1MDMyMjZiZGQ4MzY1MDE2YjViMzU5ZDdjZGE2MmI5MWYxZTc2NTcwZDRjOTNiMGI2NDU1OTE0NjYwM2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4ZTc4YWMyYzY0ODNhZGVkMGVmZDI3Y2MzNGZmMGE5YTI1MjhlNzRhZmYyOWI5ZDY1OTAzYTlkZTI4MjFiNzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5be7bcafc47d4e16bc37bab363d006a4",
+      "statement": "The test segment in the build-and-test pipeline declares needs: build, so tests run only after the build segment succeeds.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pipeline-electron-build-and-test.yml#L87-L90",
+          "version": "repo-lines-v1:sha256:bbec1ca301ea5003db470507f1787cc933fe27f39eba7c94550a70787d3342a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjIwMDU3Nzc3NmM2NjhiNzAxZDcxNjVhOTcyY2JhYmI2ZWRlZDEyOGJiODVmYTcwYzMyNjBiNThlMGU5YjA0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRkNjgwY2RhNzJkNDJkNDg5Mjc0ZDQwOWMzMzIzNDM3NDVhN2FkMjQ0YTZlNmI3MGQ5NWI3ZWZkNzJlMGJhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTY1YjViYjM4ZmU3MjIyMTZmZmZiMWFlOWVlYzkzMTE5M2E4MTZjYjA1NmVmOTk3ODg1NmU3NDcxNzhlNDRiOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzkyZmE2Njg4NGJmZGM0ZGM2MDg1OTE0NmY4ODQzMDQyOTEyMjljNzc4MzE5ZWMwMjQ3MGU3YzAzYWU2N2IyYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_974ea9da75d54d85a567a37cd2025542",
+      "statement": "The ssh-debug action runs in the macOS build segment when enable-ssh is set or step debugging is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pipeline-segment-electron-build.yml#L96-L100",
+          "version": "repo-lines-v1:sha256:0e441d9ddf2c04c9df5cecc1e84cfe6e8e19fa6d2b43f8fd01e607141496fc02:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNlZmY2MTY3YjBjN2RmMjUyZjVlNTJiYWEwZGFkYWI5MjkwYzE3YjAyYjViMzZiOTg1YWFhYzNjODA3YWExMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE5MWM4N2Q2YTdhZGFiYWRhZGE5MDk0ZTk0YWY1ZWUyNzJlNDU4N2EwMDEzMDZhNzc1MDYzMzk2MGVlNzlmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2MyYmRjODcxMjIxZGM1MjRkNTdkNGEyNGVlMWYwMDE5NzE1YmQ5MGRjYjNhNmE3Y2FkZWY5ZTdjNDEzMzRmOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjNiZDllMGY4YjY5ZjY1NjI0MDVlMWM0ZDYyZmE5NmJkMmE5YTUwYjdjN2E1ODRjMDQ5ZGU0ZmRhYjkyNGMyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8ebe84ca04f4715a042531a08e533ab",
+      "statement": "The build-electron composite action checks dist.zip and chromedriver.zip against their manifests and zips symbols with script/zip-symbols.py.",
+      "evidence": [
+        {
+          "resource": "repo://.github/actions/build-electron/action.yml#L172-L174",
+          "version": "repo-lines-v1:sha256:3fa5e8e0babb863eef72867d3bcca5910d308a18fb639ec7181ec2bd2bc7b529:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjU4ZTdjMmQyYzQxN2U0ZGMwMDJiNzBiODgwNmFlMGE4YThhOGY0MGJlYjcyMjQ4YTQ4MWY4NTE3MGNiYzVlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzA0N2RiZGNjZTQxOWFjM2E4M2I1NWQ0YTExZDkzNGNmNjM0N2FkODNkZTNiOTc1NWYxMDdlNzcyMjRjOTRkZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDQ4NGVkZWY2NGRlMzQzNGJmMmQ1ODRlYjlhODQ0MjE0ZjlhZDJmOTQ2M2JiZDBkNzc1YzMxZGJjNjJkOWY4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGI5YzlkODUxZjlhNDFiMTIxYTU4Zjk4NDVjMTMxY2E5ZjhhNDMyNzU2YWUyY2JkODQxMTY5NTVkZWU2NGJhYyJ9"
+        },
+        {
+          "resource": "repo://.github/actions/build-electron/action.yml#L76-L76",
+          "version": "repo-lines-v1:sha256:20d9252f2fded2c38f7247ffa482059d25c2b25af9422f74a3c9f151b4f2ffe2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBkOTI1MmYyZmRlZDJjMzhmNzI0N2ZmYTQ4MjA1OWQyNWMyYjI1YWY5NDIyZjc0YTNjOWYxNTFiNGYyZmZlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBkOTI1MmYyZmRlZDJjMzhmNzI0N2ZmYTQ4MjA1OWQyNWMyYjI1YWY5NDIyZjc0YTNjOWYxNTFiNGYyZmZlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGNlM2ZjZjU0OWFlYTI3MzNkODExODEzODViNzQ1MWNhNmY0NDNkMzZjODc5NWY2MjYwYzI2YTU0NWUzMDZhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGRjNDlhZWNmOWI5NjBmNmMwOTFlZjA3YWE0ODUyYTAzNjUwYmFmMjI2N2Y3MmMzM2JmYTBmMTljNDJkMGY0MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ffc10b38023c4603bad6970d948b9563",
+      "statement": "The checkout composite action registers the patch-conflict problem matcher and runs gclient sync with three-way patch merging enabled.",
+      "evidence": [
+        {
+          "resource": "repo://.github/actions/checkout/action.yml#L80-L100",
+          "version": "repo-lines-v1:sha256:57f5e8c2a01c736e6c59fc8a30673635fd743c8090ea8906efc74f601fd17a51:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NDQ3YTg2YTVkM2MzOTMzN2M4NmM3MWQyZDkwZjk3Y2MyZTFhYjhjZjI5YjA2ZTZiZDY4MjA4YjU0ZDZhM2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiZDA2ODkzODE5MDVlMGRkMTVlOTA3ZDgxMzQ1MmRhNmM2NDFmOGM1MDI4OGZmZDNlNzU0NTRhMzY1MGE2MjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxYWNhODJlZDJhZWQwMWVhMGMzZDllZDA3M2VkNTVhNTBjZWVjMmNmYjMxMGNlZTQ5MjM2YWFlZDRhNTg4ZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3NWUyOWE5MjA4MjRlYTIyMDI3NWExZmJmYzc2Y2Q0MTI2MGVkMDc4MjVkNzJkYTUzZGZiMGFhNjQxMDVjZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_730680cc6a1d4c39b27d9c4ac50d5944",
+      "statement": "makeRelease uploads the Node.js shasums, creates the release shasum files, validates assets, uploads index.json, and publishes the draft release.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/release.ts#L414-L436",
+          "version": "repo-lines-v1:sha256:6cca60d80def197e27938c1c8f443bdc9f1591ea3d9eed9daeb04d8e4be8d94f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZmU0NTFjODk5NjkzOWRlNzM0YzhkNzdjYzkwZTQxNDRmMTVlODE5MmFjNjEwN2NjMzQwZDNiNDRkOGE5NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNjBiZjExMzdjYWIzOWFmMTFiNTVhNDJjOGFhODQ0MjJkZmVkZmY2YzYyMzc1NmNhZDRlMjg3ODE0YjY3OGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyNjVmN2U4NTM5YTZlZDVjMjJiYTlkNzU3MmU1MjA1MGI2ZTU1ZTY3YmMyYjU5MGM4ODhhZGMzMzdlZTUxYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzMDI4NjU5NjE1MzFiYWFjNjdmYzEwNDM3MDZjMDNhODFjYTZlZjYxMjljZWJiZDlhNDNkMTVhNDgyZDY5MmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_963b001f21ff4472947c4829eb89d0a0",
+      "statement": "run-release-ci-jobs.ts starts CI builds for a release by calling the GitHub Actions workflow-dispatch API for the named workflow file.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/run-release-ci-jobs.ts#L29-L58",
+          "version": "repo-lines-v1:sha256:d79d36ddf40061a0f08de66ae41e49dcd4a5afd078af6c4bc7b1bc29b7dffd86:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4ZTA1YWUwM2QzYWIzMjM2MmQ0MzgxOTlkMjA3OGU5YWM5YTExMTY3MTc2NTk4YTE4M2Y4MjY5NzdiMDNlMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYTYyNmJkZTUxZjNkYWRjMGM4MDI2M2MwN2U4MjgyOTgwODIyOGE5NmNlOTYwNDk1Nzc3NTUxOGM5NDNjZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYzU2ZDJlZmEyYjRlNDlmMjExMGM2NDI5NGI4NjQwNzc0MThlMGQ1MjU4NjEyYTc4M2I5YjJkMzkxNzA1N2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxZjdhZDcwMGFlMDk5MWRkODA5NDM0ZDM4ZWE4M2FkZjBmNzUzOTllNmQwZWQ0MzdiN2FlODViOTI0Y2U1ZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73bf310905e749dc8bd1a7c7fa091d87",
+      "statement": "The OpenWiki Update workflow runs on manual dispatch and on a daily cron schedule, and opens a pull request with the generated openwiki directory.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L12",
+          "version": "repo-lines-v1:sha256:1a27c71781b6cfecdcb9515c9523b05e81fe6c63a5a13aa4505bfe3f7c531fa4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ZDgwMTU0ZWQ0MmZjNWM3NzliMTMzMTU3OGI1OGI4OWM4MDFlYWNlNzRmMjRjZDQ4ZWI0YTIzNTc5NDBhOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjNWE4OTI3NzBhZTRmNTMzM2ZkN2M5ZTEyZTBhNmJjNDViMjZiNWJiNzc1M2UwMzlkZjhlZDQ5Yzk3Yjk2MDcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

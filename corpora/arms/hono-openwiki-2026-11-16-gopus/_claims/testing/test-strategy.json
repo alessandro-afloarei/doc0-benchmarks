@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4c04b212468e717e84c2fdf1050c3189c01c005effa027009002e5018c479b71",
+  "claims": [
+    {
+      "id": "claim_3255455c15c548a987de127d540fb574",
+      "statement": "bun run test type-checks all sources and tests with tsc -p tsconfig.spec.json before running vitest across all projects.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L10-L30",
+          "version": "repo-lines-v1:sha256:d0b4c196d827a88888f435c4d431cf3b46f9300e3cebf6bcd8a04c3a04b26770:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2YzNmNmE3ZmUyOGNhM2Q4Nzk4NDY2MmZiZmFhOTdjMDg3NzRmOTBiNzE2Zjc3NmY2NjcwMWFmZjY0OGQzMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2YTM4OTA2YWQ3OGZhNjY3YzM0N2MwMmVkYTM4OTQ3NzgzMzg3NDA1OTAyNzA5ZDQ2MDIzNjM4OWExMDJmM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkZWZlNzA3ZTI1NGY1Zjc1MWYxNjVjN2I0MGRmNDY0OTEyZjU3NzU1MmYzNDc2ZWRkZDYyMzMyM2U4M2RiMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2YTFiODA5MTk4Yzg0MmFhNmM3ZTAzZGZlOGNhMGZmMmM2NjE4NThhN2MzYTNkNTBjNzBlOWM2YTk0NDI3MDEifQ"
+        },
+        {
+          "resource": "repo://tsconfig.spec.json",
+          "version": "repo-file-v1:sha256:fb97bc443e930077ff966e316fd02fe05bbadaa0e03e575516757f15d244f7d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed4edbf9573d41fbb4c3e071e5b67886",
+      "statement": "The root Vitest config composes per-runtime projects from runtime-tests/*/vitest.config.ts with a main project for src, scripts and build tests that excludes *.case.test.* shared suites.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L25-L44",
+          "version": "repo-lines-v1:sha256:f4050b55be5dfbaa592887f93b3fa7e261c2d7acece7946371e9f1813a963487:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5ZmExNDBiMzc4YjZjYmVlMTNlZDFjYTIzNTRjMTJkZDA2NjZmNzQzMTRmYTdjM2UzYmE4MzhkZmU4NDNmY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5NzhlMjUwM2I4Y2YzN2EwNmY3ZDZmMGEzYTZiNmZlMzU2OTFmYmNhYjUwYjg3NzVjYWI2ZmFiYzcxYzU5MmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjMzhjYmUyMTJlOWRhODVkODhkN2NhY2U0ZGU0OWYyZTczMWZlYzUyNjM0NTc1YzU0MWZiYjU0YWRiNjc5ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1OTFhNzA5N2M0MWU5ODFjZGFiNWU5ZmViMzVjNTU2NTE2NjRkOTc4NjhhZTQwMTBjNTc1ZTRjZmZhMDYxZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1a7b486b2c84a9290bfa3c49fe73a27",
+      "statement": "DOM JSX tests run twice, in jsx-runtime-default (importSource ./src/jsx) and jsx-runtime-dom (importSource ./src/jsx/dom) projects.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L45-L70",
+          "version": "repo-lines-v1:sha256:6deee87b5afa506d7168697d723d0465d5a8567769fcae388bc70db1df7d8947:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5NWI4YzViZjg2Mzc0MzY3MWRlZjNmNjMwZWIyMzJkNTlhN2E2MzRhMDcwZmM0MzZlZWMzN2E4Njc0ZTZjMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5NzhlMjUwM2I4Y2YzN2EwNmY3ZDZmMGEzYTZiNmZlMzU2OTFmYmNhYjUwYjg3NzVjYWI2ZmFiYzcxYzU5MmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlM2Q4NDUwY2E4ZTg5NGE5MzNjNGVjZjk2YWM1NDY5ZGJhOWM3ZmI5NGU3ZmViNzZmYjBmM2E4NTRjMWU1OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5M2RmNTg5MDc5NmY5NWI3OTJlYmMwZGFkNzBkNDA0OTZmOTM3Njc3NjM4MmNiMWVkNDYxZGYxOTBkNDkzN2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70727750a77043c2930a0b2c04b3f5ea",
+      "statement": "Coverage uses the v8 provider and excludes benchmarks, runtime-tests, perf-measures, the build script and type-only files.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L5-L24",
+          "version": "repo-lines-v1:sha256:78ea0851637591d867328ce0fef4ec3c35ae299983a780e0697f544f6415c004:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMWNkMzlkOTAxZmQ3MmNiODM3ZjQwMjk3NWU2OTQzMmNkODRlMmFmMzliOGY3Y2EzY2Y2MjRkZDE5NTE4NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1ZmVjNmY2Mzk3YmY3ZTA4MDc4ZGZlODE4OGQ3ZWEyNjgzMTE2M2M2MTZmZjAzNjBhZWI5YmY5M2YyYTQ3ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0NDE3ZmU3NTJiOTRlMWIxOTE4NjVlMWJkMWIxODI3ZTFmNDNhZjUzOWEzMjhhNDE5OTY5NWM5ZjNlN2U5YjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_28cde89e2c294256a7b264f64f98434c",
+      "statement": "The workerd runtime test launches runtime-tests/workerd/index.ts with wrangler's unstable_dev and exercises it via worker.fetch.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/workerd/index.test.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:afa827fb7fc7563b98a94c5191a6489708a0f7603cb98df015b3db3d092c17e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1MjA3MWJkY2M2ZDQ0OTYwNWJhOGZlYmVhOGVhYmM5NDBlMTZhOTNiYmRlYTJlNjg1MjNmOWQ5ZjU2ZTQ4MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNTBjMDQ4MDcwYTdmYmI3ZjE4NTQyMjI0M2ZmMDNiN2FmYmMxNDNlMzcwNGU3NDg4YmVjNjMyNTNjNzFjNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5Njc5Yjk4ZDMwNGQ5NDhjZGQ5YTEzNjgxYWQ0MGI0ODEwMGJmM2ZhODUxZjc4MWRhMGQ5ZTQ5ODU3OGRjZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_792a88a72ce1486a95d041bc5c8567ee",
+      "statement": "The Fastly runtime test project uses vite-plugin-fastly-js-compute, and the node, lambda and lambda-edge projects set NAME=Node in the test env.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/fastly/vitest.config.ts",
+          "version": "repo-file-v1:sha256:0dde78adec8e603c4b51c2c00dfef373159926a97ceeaf18f29bdc34de0f5ae1"
+        },
+        {
+          "resource": "repo://runtime-tests/lambda/vitest.config.ts",
+          "version": "repo-file-v1:sha256:d114a77733a74573c6eaa459a343ef3df510200f8a4b4af5c9e6035aaae0e4ed"
+        },
+        {
+          "resource": "repo://runtime-tests/node/vitest.config.ts",
+          "version": "repo-file-v1:sha256:9af80f5b558080d3d5462bf2b411c2e460ffe27071341332ff74d80f3bb3ff52"
+        }
+      ]
+    },
+    {
+      "id": "claim_93d950f939b7491e984d103dd6f2b2bd",
+      "statement": "The Node runtime test serves the app with @hono/node-server and covers a minimal set of patterns including env, basic auth, JWT, streaming, SSE and compression.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/node/index.test.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:9ea1ab33a206a5822f8a2941b3faa0412dc36ac0b7baef61d512ee3fbc0769b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZTAyZDY1ODE5YjE5ODdiNjUxMWZmMjhhZDBjYWZmNWYyMmViZjlhOWRlMWJiNmNkMjU4NjAxYTAyYTY2MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhZTc3MjMzOGU4YjA2Njc2NDY1M2IzMmZiNTU0NmQ3ZTRmM2M5OWZlZGYzYTRlNThiMWM4ZjJlOTI1ODRiYmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxNzY2ODcwYTRkMTkwNDRhMzY5NDcyMjljMjRiNWRjNDY4YjlhNzM2ZDA0ZWIxMmJiZTQ4MzM2MzNjZjY0NzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e64cfb2e53bf4b638def10f1cc395359",
+      "statement": "perf-measures/type-check generates an app with 200 chained parameterized routes and type-checks an hc client over it to measure compiler cost.",
+      "evidence": [
+        {
+          "resource": "repo://perf-measures/type-check/client.ts",
+          "version": "repo-file-v1:sha256:e9bb59e1c1e7af7dea84ea890e9002229a5a7472cabffa60d0e75166d272d9be"
+        },
+        {
+          "resource": "repo://perf-measures/type-check/scripts/generate-app.ts",
+          "version": "repo-file-v1:sha256:feb7a66fba55ab5eb0c909d8bb4590217f89ddeaea46ce423650feaadf73498b"
+        }
+      ]
+    },
+    {
+      "id": "claim_38694dc1071e46499c0640a4c775c3ec",
+      "statement": "The router benchmarks compare Hono's RegExpRouter and TrieRouter against other routers such as find-my-way, express and koa-router.",
+      "evidence": [
+        {
+          "resource": "repo://benchmarks/routers/README.md#L1-L15",
+          "version": "repo-lines-v1:sha256:b874bdc932b653abc94bba1c8c76416e2bc64ea62b4f9e81717aad5b5505b1e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwMjkwOTU3Mzk1NTUwODU3ZWViMjU1YWVjNGEwNjYxZWM3NTM0NTFlNmI3ZDZjZWVmNGI1MDgzY2E4NWNiM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlZDMzYTJmMGNkYTQ4NTUzZWY0MTY3NGQyYTk4MDE4YzJiMThmZTZkMzlkZmQ1N2M2Yzk5YWI0MGExOGUwODYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:17:44.986Z"
+  }
+}

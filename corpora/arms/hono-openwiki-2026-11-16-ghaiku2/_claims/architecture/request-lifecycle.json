@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ef5bde4494712e10123cc87d03ed2195197404398cbcf65559997044e892509f",
+  "claims": [
+    {
+      "id": "claim_870a1e536bb44ea788918f6047087cd0",
+      "statement": "Hono.fetch takes (request, env, executionCtx) and dispatches with the request method, passing the env and execution context to #dispatch.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L479-L485",
+          "version": "repo-lines-v1:sha256:a48837339e00e39d494fdffb4c2182281d46af54b20de309171ce078d619c24d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNhMTYyYWFkZTQyNzg4Mjc2YmY1YTJlODkwYmQ2YWM3ZTdiYTdlYTk5Y2I0MTJiYjcyMGQwZjc1NWJhNDA0YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA0NjEzNTcxNTBiOWJmOThiZDRkYWU5MzQ4NmE0ODlkMDg2MGE2YWM2M2VkYWRlYjMwMGFlZjRlZWIwZTgwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTY1ZGYyMjA2NmFlOTllNzQxYzA0MGU5ODJjMjc3NjU4MWI3ZTk1MDhiNWUwYjhkM2I0Yjg4MDI5MGYwMDVlYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_21583e4de361443e8b423eb2c8b38055",
+      "statement": "#dispatch re-enters itself with GET for HEAD requests and returns a Response with a null body and the GET result's status and headers.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L406-L416",
+          "version": "repo-lines-v1:sha256:138081372ca6f8cf10b48475b0dacedde4605e5765047fc12a6394c3a73c3b87:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiMDBlMjNkOTU3YjY2YmUyZWNjMWEyNDMxMmI0Yjg5ZGU0OWVmNWNhYjcwNjgwZDVjMzFmYjhlNjdkMjdkYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MTZlNGZmNWFlMGFlYjdjMTBkNTJmNjk0MmQ0OWRjYjhkYTNhZjczN2Y0Nzg0NmRhYTE4OTU4NTMwNDE4MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzOTRlYzY3M2E2ZTg1ZjcwNjRmMjQxNjg3MjgyZDVlNTU4MmE3NGY3NjNjZGEzMWM5ODZiYmJkYTgwMzg4YTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_936365783f924852943016d24a9c721c",
+      "statement": "The default getPath extracts the pathname from the request URL without constructing a URL object, and percent-decodes the path only when it contains percent escapes.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/url.ts#L106-L134",
+          "version": "repo-lines-v1:sha256:f5d85ea3ba1a48bd7c7e6f291884c2d875a238ce9a4e7ecee295f012e6df87f6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YWE4ZTQ0NzUwMzliNGMxODVhZjg4YzRjYjllMjFkODJiMmIwOWQyODk1OWNkZmMzNjI0NWU4YTYwZDk5ZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1NjEyODhjZmEzNjRmMTk5ZjZlYTQ5NmY0OGZjMzMwOGRmNTYwNTdhNTg4YjRiNTAyNmMxYmEwZTgxNTY3NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjY2EwN2Q2NjE4OWIzYzkyMWM2NzYxMmEyNmM4OTAzMTM4YjFlMjJmMzM4ZTUyNmIxYWRkZDUwNTEzZmI1NjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e90a38f25060426ea589fb66be2877bf",
+      "statement": "When strict routing is disabled, getPathNoStrict removes one trailing slash from the path so that trailing-slash and non-trailing-slash requests resolve to the same route.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/url.ts#L141-L146",
+          "version": "repo-lines-v1:sha256:ac9e834b30fefbe1e69aff399dd76f9557cdc1b604a7ea4d2b4a5efb3c5515a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJlZjgxZjljN2Q5ZWY4OWVkNTk1MTg2N2MyOWYyNDg5NzQzOWM4NDYwNzczMmFkNTFiZjI5NTcxMDNhYjdiMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODE3Mjg2ZDQ2OGFhMDM5ZDgyMWQ2ZGRlZjQ3ODRmZDQyNDJhYTI0ZmU3MTlkN2I1OWJkMGIxZTJkNzk2MTVkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWVkZGYyMmU2NGJiODkwYzE1ODc4MGU3ZGIwZDgzNjM2MzFkMDBiMGQ4ODY2MmE3ZTUxYjgyMGE4YTQ2M2JlYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_56926282ace544f0be8a3475d664eb65",
+      "statement": "When exactly one handler matches, #dispatch calls it directly without compose; a promise resolving to undefined is replaced by the context response if finalized, otherwise by the not-found response.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L420-L448",
+          "version": "repo-lines-v1:sha256:9a572c237c2fb89ea365abd4a146ffde7cd43db508f31103096d8fc073fe899e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzOTRlYzY3M2E2ZTg1ZjcwNjRmMjQxNjg3MjgyZDVlNTU4MmE3NGY3NjNjZGEzMWM5ODZiYmJkYTgwMzg4YTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkNjIwYmUwNmNhNzA3ZWE4YmMwZDU0ZjZjYjdiOWNjNWVmZGM0M2ZkMTljYzZlYzljMjE2NGQ1MWJmMTQ2ZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03c47529d59c4032b4810b6631053afa",
+      "statement": "After the composed chain completes, #dispatch throws 'Context is not finalized' when context.finalized is false and routes the error through #handleError.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L450-L465",
+          "version": "repo-lines-v1:sha256:245cf410e3d96147d18ce1aa6e4d1dcafd129ea04d6232e43fabdbe6b0a8f96b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMWZhM2Y1ZTY0ZDQxNjZkYTQ1MzdlYTlmNTc4OTg5NjJiYWZlM2FjNTk2YjQ5NWE3MWVlNjRlYmNhMDA3NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OGJjYjFjNjdhMDYyZWU2OGQxMzNiM2M4OWU2ZTE5NWZhYzRiNzE3MWYwNTg5Y2I4YWExOTk3MmQzYWI4ZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1YzJkZTA1NjgzZWE5ZDRiODAxNDZmYmE2ZTI2MmRhOWFhYWIyM2RjOTUyMzJmNWUxODRiYzM4NTc1ZTg1NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhOTI5M2ZkODA1NGI2ZTQ3MjQ4MzczZjM5ZjRkZDc3ODAwMTA1ZWI3NTgzNDg2ODcyNTQyODVjZDEyODJiNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_74291fd0acd24df685481f2cef658573",
+      "statement": "#handleError passes Error instances to the configured error handler and rethrows any other value.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L398-L403",
+          "version": "repo-lines-v1:sha256:44e3374e387fbeb3ae86d9884bbebc15b317287a591a6aeaecebd2457238bde0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGU0OTBlMDcyZjIzZmQzNTA2NjUzODJkMTY0MTIyZTAxMGYzNjljNjMyNDJlNWQzMmJhZmNiYjAxOTVmMmFkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDYyYTU4NjRkZmZmNDA5NDZhNTI5MjZmYmM0ZGI4NjAwYTQ3YzZlN2ZmMWYwY2VmODIyODRjYWRkODQwMjU4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmU0OTNmNDRhMjU3M2EyZmY3M2NiMzMxMTZkYzc5NzNkY2M1ZmYwNTBhZjJkODNkOTJlMmE1MjI0ZjFmMGQ3MSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

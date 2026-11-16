@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:919491d34708aee5f112f5914f53db2dc347c5675e8962acad11e1e5dedc06d7",
+  "claims": [
+    {
+      "id": "claim_3ac727129fb546e8a1d50f69e87c65cd",
+      "statement": "BUILD.gn declares one webpack_build target per process bundle, each writing its output under $target_gen_dir/js2c.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L165-L172",
+          "version": "repo-lines-v1:sha256:394ca5fb4ca1c68cccba18a411c45a56c3815e5aa4c768e06581c13df949eab5:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNmN2I2NWQwYzNkMmJkMDIyNmY1MDY2ZjgxN2Q3NmZmYjJjNmRiNDQzZTIwZjY1ZDQ2NGJiMTk2NWYwYTJlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTBmZmU5ZGMzNTczNDJjNGE2NDE2MWIyODhmMTg1ODRlYTQ5ZTFmY2RmNjBjOGU3MTUyNDI4ZTA3NjkzYjhhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2VjNTAzZWJkODg1NDAxNzkwZjQ4ZTdmZjE0MjdhY2YwOGRhNTMyMDExMjYwMDQ3NjQ0NTM3ZjYwY2M5ODQ4YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_12b1b97f2c6243a1bc7201cebae4e7e7",
+      "statement": "The electron_js2c action depends on every bundle and runs build/js2c.py to produce electron_natives.cc, which embeds the bundles as native JavaScript sources.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L237-L262",
+          "version": "repo-lines-v1:sha256:656467552c45e1245ab83a1002d3dbcd8a79ca9a7d9d6fb3fa7b9b0313355197:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxNjU3NmQ2ZWVmYzg0NDg5MTRjMWZkYzkyOGNhMmNlMTM4YWY1MTk1OWZkODdkOThkYWY1MTI0MjAwODRlMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1NDI1OWVlMjI2NWRhMTBhZTQxZDAxMjY1YWY2MjczMTNhMTE4ZWVkMzg5ZWE0OGRmNTMzNzAzOGE4MDRkZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2NDczOTA0YzBhMDk1YmY0NTFiM2M1MThjMmFiY2Y5NzQ1Nzk5MzM3ZGIyYzEyMmZlYThiMzlkODcyZmY0YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3MGVjMjg3M2FkOGZhM2Y1ZWZkNWE2OWY0OGQyZmY4ODI3N2NjNjIwZTg2MGY2NzUzYTJjNjJkODFjZmM4MzcifQ"
+        },
+        {
+          "resource": "repo://build/js2c.py",
+          "version": "repo-file-v1:sha256:ff9bc0997dc54573d6105336fe9c796abad67680d1fbab2d378d337ccff34a32"
+        }
+      ]
+    },
+    {
+      "id": "claim_d18d85d30ec640f2a88b58af2d27074d",
+      "statement": "The webpack_build template runs webpack with --env mode set to production when is_official_build is true and development otherwise, and lists the shared webpack config and typings as inputs.",
+      "evidence": [
+        {
+          "resource": "repo://build/webpack/webpack.gni",
+          "version": "repo-file-v1:sha256:0e9204897661ba4824bdbe592750226908999c5fb92a308a7b78e92dc97ca79c"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e07ecf96ef2470d8e5d7de0edf36ebe",
+      "statement": "The shared webpack config chooses lib/<target>/init.ts as the entry point and aliases @electron/internal to lib and electron (and electron/main, electron/renderer and similar) to the target's api/exports/electron.ts.",
+      "evidence": [
+        {
+          "resource": "repo://build/webpack/webpack.config.base.js#L109-L125",
+          "version": "repo-lines-v1:sha256:fa460f0c8b7b9191e759a553413aa8e336a67921f5200cf7e449c3028f6dd83d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NzdmZTFmMWNkMWJhMmNmY2M3MGE2NjFlZWIxYWI4YTljMmY0ZTJkMTJhOWVmMjRkNTE5ODY2NDJjMDE3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiNjlhMGQyZjQwNTMxMDc2OWIwYzFhYzI4MjEwN2Y1NDI3ZWJjZjc3OWU2YTBmNmVlNGFlNDE3M2ZmM2I2MGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzMGMzOTEzYjhlMzc5MDQwYTUyYmM0NDQxY2I0NzNhYWYxZDI2NWQ0ZGM2MjMzY2Y1ZjBkMGJlMzM2ZjRjYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhZjM0YTQ3ZTgxZmQ2MmYwMTRmNmMzNzllMWMxZTdlNDEzMjYwNTcwZjA4NzcxZmFhZTFkZTJjNmJkZmIwZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_398418282e81438e9cf92163ee68e533",
+      "statement": "The shared webpack config hard-codes webpack mode to development, and the env.mode value only enables Terser minification when it equals production.",
+      "evidence": [
+        {
+          "resource": "repo://build/webpack/webpack.config.base.js#L109-L110",
+          "version": "repo-lines-v1:sha256:e3d14fa565f0113a57b834bcad8cc82e14b28938fdc9aa96e2e8371dad30b044:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzY3N2ZlMWYxY2QxYmEyY2ZjYzcwYTY2MWVlYjFhYjhhOWMyZjRlMmQxMmE5ZWYyNGQ1MTk4NjY0MmMwMTc5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjlhOTg0YjkzNGZhNzhlY2VlNDgwM2Q2OGFjN2Q3ZDJhZWIzNDIzMjRkNzA2ZDhkNmQwYjgzMWRhYzZmYzM4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzMwYzM5MTNiOGUzNzkwNDBhNTJiYzQ0NDFjYjQ3M2FhZjFkMjY1ZDRkYzYyMzNjZjVmMGQwYmUzMzZmNGNhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTM1NDdiNGJmZjBmY2FlNjIzNTQyYTgyNTI0NDU0NjUzZGQ5Y2U0MDE2ZTIyOTI4NTY3ZTdlNTg5MTI2MjFkYSJ9"
+        },
+        {
+          "resource": "repo://build/webpack/webpack.config.base.js#L157-L161",
+          "version": "repo-lines-v1:sha256:18bb114a299728d81ff2d6a2cfb66452fe08656663b83e40749fcd9cf9e131ce:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk3OGUyNTAzYjhjZjM3YTA2ZjdkNmYwYTNhNmI2ZmUzNTY5MWZiY2FiNTBiODc3NWNhYjZmYWJjNzFjNTkyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGNkNGYyZDVmMWM1YmVhOGU3Njg2NDE2YmRjNDE1ZmU1YzUxMTM2MmI1MTdmZGZmMzcwODMxMjMyYjMzZTU2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2EwMTA2OTEyYzk5NTg3MGI3YTY1ZTA1NGYyYmU3NDM4MjA3NTkwNDhjNmY4Y2YyMGJlYzcwNWZkN2ZkY2I0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGZjNTlmZDIwODFkOTRlNGZjODc5ODE5YWNmZDEzNDJlOTQ1NWI0NGFjMDhlNWE4MDE2OGI1YmMyYTIwZDcwOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3acaa825a0eb466db396793cc27c4caf",
+      "statement": "shell/common/node_bindings.cc maps each process type to a browser, renderer, worker or utility name, sets process.type to that name, and builds the init script name electron/js2c/<type>_init.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L662-L674",
+          "version": "repo-lines-v1:sha256:76a1421bcffb6a56d4b0b7a0a32b713108a2881b768398adbd50b643a20abbe0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3ZjZkODk5YTdmYjU4ZWQxZTk3ZTRmY2UzMDAxOWNhNjJiNTU2Y2VkZTllM2Q1MWYxYTRhZGRlNWU2NmJiYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmYjYzYWZlYTdhMDJmNTY0MGEzOGQ5ZGVlYzEwN2YzOTgzMjEwZWY2NTZkZjVlMjZkMjVmMDRhMTZjZTU0NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiOGY2YzYxYjk1ZTg5MWQ2ZWU2YTRhYTE2YTA2Y2IwZTY1ZGQ2NGM0NDQ5MTI3ODBhYmVjMjllNDFkM2JhODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2NmUyODU1NzE3YTEyNWM1ZjRiMDdiY2I4OGU2MTQ2MTkyNDM1NjdhNjIzODU1NDRiOTgwZjljMmZjOWVmOTAifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L702-L702",
+          "version": "repo-lines-v1:sha256:582dcb857f98d72c96a7b5e777592032be04b7d9d73c254b18570843275ad422:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgyZGNiODU3Zjk4ZDcyYzk2YTdiNWU3Nzc1OTIwMzJiZTA0YjdkOWQ3M2MyNTRiMTg1NzA4NDMyNzVhZDQyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgyZGNiODU3Zjk4ZDcyYzk2YTdiNWU3Nzc1OTIwMzJiZTA0YjdkOWQ3M2MyNTRiMTg1NzA4NDMyNzVhZDQyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIyOTJhYTQzNWE2YjVmNTc1MjI1ZGJlYzdhNjM1YmU1NTkyYjY2YjA5YTE1ZmVmMGZlYThkNjIwYTdmYmQzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjI2OGViMTJjM2QxMDU2YWFjNjI0MGI0MjMxYjEzMTVmOTVmZjM0ZGYwODE5OWI3OTYzOTg5NWU5MzcyZWU2YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_59bc5c2a3e554b89a1ae03af1ef6f11f",
+      "statement": "The sandboxed renderer client loads the electron/js2c/sandbox_bundle script by name, rather than the process-type init name.",
+      "evidence": [
+        {
+          "resource": "repo://shell/renderer/electron_sandboxed_renderer_client.cc#L131-L134",
+          "version": "repo-lines-v1:sha256:c0176b4520b26a125a5b9cfff2687001471840c7db245fd632a1d88671664b80:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzU3NmVlYTFmNDMzZGEwNWJjZjIyZDVlZmM3OTIwYjEyNDk1MzJmMjVjZWJhYWZiZDI2MjY5NmYzMmE5Y2EwNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM5YTFiY2Q5ZDdmMDI2YWQyNzNlNmIzNTM3N2ZjYjIyNGY4NDFmMzQwZmM5OTc2NjVlOGFkODBlOGMzZjZlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWM3MGRiMmRjNjMzN2MxNjYwODFjNzJkYmFiM2ZmYTI3MDA3MmU5ZTFmMzM3NWFmMDQ0NGJkNjI2Mjk2NGYwOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1853c7ab7bef4819ba246db0e9cdae37",
+      "statement": "defineProperties attaches each module-list entry as an enumerable getter that calls the entry's loader on first access, and unwraps a default export from ES modules.",
+      "evidence": [
+        {
+          "resource": "repo://lib/common/define-properties.ts",
+          "version": "repo-file-v1:sha256:3b46e95e72f8a26a52b609b90910b5d66971ac112884bc72f7b0cee4257d8182"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d671589da3846f79e702aeccf79989d",
+      "statement": "lib/browser/api/module-list.ts exports browserModuleList, an alphabetically ordered array of name and require-based loader entries for main-process modules.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/module-list.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:f9e2eea04190d8e4971bb3e5c38eb70d4dc40aac404c7b91df01f8609ce73ccd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjg4Y2I5NDI1MzM0Yzc0ZTE5ODM2MzIzNmE3YzExYzNkNDY1YjU1MmYyYWYyODg4ODFhMTA4NjJkZDJkYzU0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWEyZGYyMDEzMTY1NWEzY2YwNTBmYzE5NTgwNGZlMDViNzAzMDMyZjc5MjYzMGExNzZkNWE5MDBlY2IyZDljMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTg0NzY5MWY0NzBhZWFjOTk1Nzk4YWE1YTQ3ODlmNmRiMTVjMTVhMzMxNTRiMzI5YTBiZWJiZjIzN2IwYTQ3YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_793530bbf7544622b144048a664b4c27",
+      "statement": "lib/common/init.ts wraps setImmediate and process.nextTick so their callbacks also activate the libuv loop.",
+      "evidence": [
+        {
+          "resource": "repo://lib/common/init.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:92b6b57590210f7d0141c8a325921fad0bda10d4f24ff610ceac1820e366d9ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4OWU1ZjY4NDJkYzUyYjg1NDFlY2E4MTNjNTEyNzkzYjFhOGQ2OThmMDk3ZDdiY2M0NmZmN2I3ZTQ5OWU0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4ZGYzYzY2Njk0ZjhlMmNlN2EwMTY2ZjIxODBjYTJiZGI2YTYzMzg3NDg3ODFmNmNlZTg5MzUxZDg4MWFlMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlZWNhOWFmY2U1ZjIwMzVkOTdjYjgwNGEwNjI4MmE0YTEyMjM5ZWM1YTI0YWJiNmFlZmVlNzAzZTQ4YjhjODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_93463a9181104edeb0f319071fe7fdf6",
+      "statement": "lib/browser/init.ts removes the placeholder argv entry, then installs an uncaughtException handler that shows an error dialog only when no other handler is registered.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L1-L35",
+          "version": "repo-lines-v1:sha256:ba2013f492c4857910de492d03a13cf949a769092e1459214670a45ee026842c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwZjY0ZTE2Nzc5ZmRlNDQ2NjlhNDkyNzAwNDdmNTkyZTU0ZjQyZjJiMGM4ZWIzZjc3MjE2MTg0M2Y1MzI5OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkM2ZlMDcxNmQ5NzUxMWJiOTk1MTE0ODcyMDYyYWU2ZTk1MDc4MDYxOWQwMGE5NTA3YzQ1NGRkNTEzYjA5MDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2NjNjNGRkYmY3NWFjYTkzYWQ1M2IxNGVmMTExNWY4MmMxN2E0NDUxMzIwZmNjOGVlZDZjZTcxOGI1MTA1ZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_95796dc28c8740f4987b7ccc294ebcdb",
+      "statement": "lib/renderer/init.ts replaces Module.wrapper so that process, global, and Buffer are passed into module wrappers, and it warns when a module requests the vm module.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/init.ts#L9-L40",
+          "version": "repo-lines-v1:sha256:317a7b0feeac4a8e442a90432a4fee428e920ece2051cb34c9cff7212a958bb0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1ZGI2ZTE0YTY4OGY2NDYyZTk4OTQ5MjA1MjAxYTdlM2MyOTZhOWZkYWRhOTc2ZTIxZTM5NWM3ZGY0YjUxMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0MTk4YWFmNTZkMjlmY2IyZmQzNDBkNWZjYmQ0Yjc3ODgyZTFiNDkyODVjMzM2YmE2ZmU5ZjA2YjUyYjExMTMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:50:06.090Z"
+  }
+}

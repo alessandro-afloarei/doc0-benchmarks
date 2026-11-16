@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:609d0e6a1c089c9e328f5194798b128974449d4d4828b6cb61bdc56569186a0e",
+  "claims": [
+    {
+      "id": "claim_ed38359502d849a3920fc3b354da039c",
+      "statement": "Context lazily creates HonoRequest and throws when absent execution/event capabilities are accessed.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L352-L397",
+          "version": "repo-lines-v1:sha256:e91e4bbfab8b712012c6a3bd880538e99b02fb9c12e237a21a7b13a9ce02bb8f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjNjgwYjhhMjIzOGNkYTJiZTRjNjYyMTc2YmIxNzk0MTc0YzEzNWY3MDY4NzU2MzU1MDFjNmE2YjIyNzhiY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlNzlmYzg5ZWExNDZjZGMzN2YwMmI0ZTM2NTJmNTVmMWRhZWEwMzQ0NGVjNWM4ZDkwYTBhMzI4ZTc3NDE4NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlNTE0NTJhOGY3ZDhiMzRiZmE0OGUzZDE4YWJhMzNkOWE2MzcyNjA2ZmE3NDhhMjFhMWQyNmY0MDdlMGQzMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_77febd5e7990476f8498ce145c0727c6",
+      "statement": "Response getter does not finalize; assigning res finalizes and preserves prior non-content-type headers with special handling for cookies.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L403-L434",
+          "version": "repo-lines-v1:sha256:ecd42ef7034954fb271af45dcd1c7845835d0b69cfe226f909cea4dbff4061b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkM2Q3MDc3ZDJlYTIyNTc0ODRjNmVkNjYwZWM3MDJkZTg1ZWU1YjczYmYyMjNlNzVmYjliNjJlYTJkMzQ1M2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwMzRmZDk2ZjZkNjc3MzQxN2Q4NjM4ZjY4YzMzZTFhYWM1MDZjNDE4ZjIyMTUxYjhhNTY1MWNmMzBkOWUyYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhOTFjMmNhZjJjMzQ1M2JmOTgwMjM5ZDE4NTczYTI5OGI2ODVkZThkNmY3M2UyODA2NDIzNDQyNmJlM2RiYzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f997128dd714914956d021b45df9a4f",
+      "statement": "Context header writes use prepared or response headers and recreate finalized responses; request variables use a lazily allocated Map.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L515-L556",
+          "version": "repo-lines-v1:sha256:ed49ba5e69f5c9ec038a0753218341a061f3f0ad1ac290d8d3ec59523c11c2df:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ZTcyY2MxZDllNWEyZjIzMDY3YzlkMjEwYTlmNDA0OTgxMjZlMmVlYWM5MTdjZGM2ZWVkMmJiMzFhODcyZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NjNlMDIwM2NhNTNjNjMwNDczZGYyZDdmOWJhMjJhYjU4YTJjNjU1MjJmY2ZmNGYzNTRiZDBmNzc4YjljZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NTQ4NDRiZWVlZTQ4ODEzMWMxZDliMDc3ZmZlMWEyODNhYzcyYzMyY2UyNDNlZTgxYjNiNmYzMDU4MzQwZjUifQ"
+        },
+        {
+          "resource": "repo://src/context.ts#L578-L601",
+          "version": "repo-lines-v1:sha256:928977370b8e9fa619ae6976676ce01bb88294511345f45834c156c5f4aa7ea6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzMmI4MzdiMjAxMTkwZWNiOTQyOGRhMDYxYTNiOTU5NzhkMzQwODQ4N2EwNGU1M2VkY2Y1NjZiMDgyODA4ODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlY2U3NTFkZGY0YjMwOTJjMGFmM2U5MDEzMzEzNjIyZjBhOTgxZjZhNTFjZjk5ODY4MzRhNjE5YzgxNzBmZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1OGNjOGMwYmY0NTU3ZmNlZmZlOTA3Mjc4OGU4NzEwYzc3MjkxMTE4ODY1OWU1M2MyODIxM2M0OGUxMmViYjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3MWIwNzkyMmE2NWRhMWE5NTgzNjBkYjQzN2UxN2UzYTE1NjJkNjExYzBiMTAyMGZhYWE5YTg2N2M1NDk5NDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b077aa4e3664cfb840733e98d8d93df",
+      "statement": "HonoRequest body parsing caches promises and attempts cross-representation conversion; cloneRawRequest fails after uncached raw-body consumption.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L220-L239",
+          "version": "repo-lines-v1:sha256:cf58665e530eaa0f925da617303e2437b2027af634d30c13fb089164bb94a252:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkZjZmNDFjYzNkNTU2ZTJlZGI2NDRlNzU0OWQ2ODBkOGNlZTYxN2JhMjhjYWM1YTYxOTMyNzE1ODNjMGUyMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3NWE3MjI1YjhmNDkwN2QwZTQ2YjcxOWVjZDJiNzZjOTY2NTUwYjE3NDA4NDNkY2ZjOWUzNzU4NDY1MDZiMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmN2ZlMzE2Y2Q1MzZmYjgwYmFmNzU1MTQwNDgxZGQ3MDQ0OGM5N2ZkNGYxZjQwMjc3NGI0ZTVhZDQ3YjcwMjgifQ"
+        },
+        {
+          "resource": "repo://src/request.ts#L476-L504",
+          "version": "repo-lines-v1:sha256:ce4e0adc873fb7e649235d98ed4a82e87c56f80cdb864db72f2c16f4933adfbc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MDFkOTFhNTFmYjc2NDgzY2FiZTdkNDJmNTM3YjEwYzM0NWE4YmYyNzRhZmRlNjJjODRiNzFmNGViODFiMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmYzBmMzJhNjY1YmJiYTIxMGJhMmYyYzRmODZkOTEwMGViN2I5YTFiM2UxOWVkMmRhYjUzYjQyNDA3YjA2ZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3NzhkMWIwMTk3ZmE5MzQyNDFiODY0MTljNzA5MDg3NmU0MTEyNjMxMTZjNTgzMGUyNzFiNWY2YmQ1YmM3ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_446e307084844385800868562292eddc",
+      "statement": "Validated input is stored separately by target and retrieved through valid rather than being produced automatically by body parsing.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L339-L354",
+          "version": "repo-lines-v1:sha256:830fc341af7ccc9cff44802fdde38682afd75c2b2733c2161e775a4711dcf847:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NGQzODBjMzYyZmI3ZDg4YjEyZjEwNDE5ODM4NzM4ZmZkMzhjOWNmOGY5MDI3YTUwYjkwMzYwM2ZjZGMzYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjNGViYmRjZTc4ZDBkNmMwZTQ5M2Q4Mjc3NGQ1ZDJmYmU0OWM3NjM3MmQyMDI0YmQyZGYyYzY0Mjg2MTMwNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZmJkNDYxZjI5NDQ3Y2M3MDhhOGZlMjE4NTU4NmFjYzg1ZTJmMjYyMjgyZWIyNjQ0MDIyZmZmMzgxMjhlYWQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:23:09.970Z"
+  }
+}

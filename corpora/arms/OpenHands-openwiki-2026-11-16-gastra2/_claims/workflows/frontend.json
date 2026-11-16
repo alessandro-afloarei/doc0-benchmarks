@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f1fb505fde0dac87a8c19da5176a523218b70bb3ccc6e2c52cf636ad7af5cb58",
+  "claims": [
+    {
+      "id": "claim_770321bf572a455bbe7be789846d6248",
+      "statement": "The main frontend runs React Router with SSR disabled and moves built client assets into the build root for static serving.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/react-router.config.ts",
+          "version": "repo-file-v1:sha256:57a4fb5f5edc620cedd60fefcdfcf81aae1e1b2f9f68127f60660b18a309f516"
+        }
+      ]
+    },
+    {
+      "id": "claim_a4e67bc5d1864ae7bf13c15d1760ea90",
+      "statement": "Conversation creation calls the REST API and invalidates the conversation-list query on success.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/hooks/mutation/use-create-conversation.ts#L21-L54",
+          "version": "repo-lines-v1:sha256:6b6dbf3fb7d5df0bd825b1739dfe8e64d94b992382c41cc5cbb726924cdb8385:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkYzMyYWU2OGFlNTAxNmRhMTY3NWU1YTllOWFkYzg2NjIwZjQ0NDE4MjYyMjYzYWFjNDUwMTc3NTg5OWNiMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxMDExYmUwOTUzYTgxYzcxNGMwNmI0ZTgzMGE5ZTQyMzNjNWQ4NGE2MWRhNzcwZWRjMmI1MTFmNzllNjg2NGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c8b94f1884f54657b94b56000f705d9f",
+      "statement": "The conversation route starts stopped conversations and clears presentation state when the conversation ID changes.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/routes/conversation.tsx#L48-L74",
+          "version": "repo-lines-v1:sha256:9cd559facadf58dd86e558d26713419658198eff0fa6c15b4be565f2a9d0d52d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTAwZTA0YzY3ZDI2OWI5ZDFiOWYyYjdkOTk1MTZjZDJlNDA3MzE0YmE0OGM4ZTA0ZjljZWM2OTRiZWI1ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzODJhY2ZmN2QzYzU0ZmZhYTY0Y2VlMzU3NjVkM2VjOGYwNzYwMzgyZjJjZDVmM2U5MDAzODIzY2MxMjEzNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxYWI5Nzc4ZjdhN2NmZGFmNTllZjE2MjUyYzQzMTk4ZDdmNGU2ZDZlYzU5MDI0Y2ViZWU5MmQ1MjdlZTRiN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_89712afd54cf46bfb783dd0e8493d229",
+      "statement": "The active socket emits oh_user_action, receives oh_event, and updates latest_event_id for reconnect while clearing event state on conversation changes.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L151-L156",
+          "version": "repo-lines-v1:sha256:cf9e2fbb69fc923707ad18c947ee178589c4aad0f079d0ac98d20b32ed514e38:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTA1YTJkMmYwMTVhY2ZhZWIwZTQyZDUxNTAwYTQwM2E1ZWQwNDc2MjQxYjlkNzI1MDc1ZWVkNjYyYmVlOWJlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNiOWE2MGEwNzUzMjllYzkzM2JjMGY0NWM5MzZkNGVjZmI5NjU3YTFhOTU3NjRiZGQ2ZTI0ZjJmMWM4NjliZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmE0MzRjMDE5MDZhZWRmYTg3Yjk1MTNjZDc1ZGM3NGQ1MjRmNzU1MzBiZjY4ZGM5MWIzZjMxYzRhMWNmNmJlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODE4NThmMjM3YTE1MGJmMjdlMmI4Y2EwZjA0Y2MzYjkwZDYzODRjZmVmZjM4OTkxY2M5NGIxODBiMTllOTJlZCJ9"
+        },
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L252-L265",
+          "version": "repo-lines-v1:sha256:544c9e2b4a672237d6116008c450685b7834b6ff580cc8b616d9a56dedb3099f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjNzUwOTdhODIyMjFhYzA1MWM3ZjQ3OTZlZWQ2ZDA2OWRmOTgxNDBjZWIxZmUxOTI5YmUyM2E4MTBkOGNkYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NTg4ZTljZGRhYWJkNGI1YmI1ODlmNTZkYjdkNDFmOWY0MTIzMmE4N2E3MDk4YWYwYzM1OWYyNzNhODA1OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0YjlhMGIxNmI5OTEwYmFhNWQwYTRkY2FmZjhhNjBjNDI5NjMzYmYyYWUzY2JhY2M4MjAyOTA3NTgwZDEwY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmZDI2MGM4MjM2ODFjY2ZlZDI4OTFkZjA5ZjlhNzA4NDllYjc2ZjhkZDA4NTljOWM0YzExMWRjZjFlODVmMTkifQ"
+        },
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L286-L351",
+          "version": "repo-lines-v1:sha256:cea012b117d125c2d556dea7ec98a2eb0295df7f0a0da92d5dddbe326d73a000:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTAwZTA0YzY3ZDI2OWI5ZDFiOWYyYjdkOTk1MTZjZDJlNDA3MzE0YmE0OGM4ZTA0ZjljZWM2OTRiZWI1ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4Y2EzNzZhMmVjMzUyNDIxMGNkYzRiZGRkYWJmNGE1MzJhYWYyNWU1YWU1YjAyODIwMTk1MTA1ZGJkZmM2YTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMzQ0NDY0ODYyZjk3MTA1YWM4MTJjZDVmN2NmM2RmN2QwZmI5NGU1NmMxYzZjZjgzMzQyMjIwNTIzNjA5ZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlODY2Zjk0YzdlN2Q5YTlmNWM1MWMwMTQ1Mzg0NWNhMDZjMTE0NGNlZWE2ZDVhNzhmMzM1NDVhODcyNjBmYmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6913e6152e4f4d22b20fe3d20159c5a9",
+      "statement": "Live command and file-edit/write actions invalidate file-change queries, and file edits/writes also invalidate normalized file-diff queries.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L212-L248",
+          "version": "repo-lines-v1:sha256:fe545c1231f7e346236f44610588e5b4c62b12ae5d96d06fa6d13ee8fc82b58d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5YzY2OGZmYWRlYTAwMjU3NmI4ZTg1MzY5NDNkZGYyMTAzNmM0ZWI4NzJkN2M1NTQ2ZTAxMWQzMjczYjIzYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxOTVlZWM2Yzg0ZTY4NzY2YTMzYTU2NGJiMDNlMDAwZTZiZGVkNDNlZTBkYzZkYTFkNWI1MjM1YmMwOTcxNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0YjlhMGIxNmI5OTEwYmFhNWQwYTRkY2FmZjhhNjBjNDI5NjMzYmYyYWUzY2JhY2M4MjAyOTA3NTgwZDEwY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_efc448c588144801849c1de839b4262a",
+      "statement": "The REST client supports conversation-specific endpoint URLs and sends X-Session-API-Key when the active conversation provides one.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/api/open-hands.ts#L39-L64",
+          "version": "repo-lines-v1:sha256:6c1de958d9d0cb7790690241c054c789378ea4ae23967ddbe15fc8180b63eb01:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZDYzN2FjMDBlNjc3YmViNjBjZDU5NWVjMGQxNzM0OTgxYzkxMTEyZTZiODUyNzM0MTRkZjFkYTdkN2YyYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZTdhYmRmMzllMTJlMWE3MGYwYjE4YTExOTU0NzYyYTFiNzlmOGYzMjRiN2E0NmQ4ZTUxZWQ4NjdjOTI1MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwMTQwZjlhOTE5ZTMxNzc5ZWJjMjU0ZTQ5OGQyNThiMzRiZWFlZTFkZWNjYTA2ZmY5ZTUxZDM5ZmYzMzQ4MjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39ad360ec3d9434a97f605c0954452b3",
+      "statement": "Background conversation subscriptions maintain separate sockets and unsubscribe after a FINISHED state notification.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/conversation-subscriptions-provider.tsx#L157-L216",
+          "version": "repo-lines-v1:sha256:f0b3871b099d305e083a5db1ececb7beda4f260adc6d6844a1f8b3554216ce9a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YTAyYmRlZWQwN2E4MTFiZGNkNzkxMTc1ZGE5M2M2MzA1NTA4ZjEyNDdlZTZjYzVkMGY1MzM0Zjk4MTFkYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0NWJjNWMxNTJiNGZlOGQyYTFhNzQ5MGE0YmE1YWJmOGRiMDRmZDA0ZGY4YmU3ZDQ0ZWZlOTE0MzA4ZDUzMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiMzMxYTdkYWUwNDc3MzJlNTIzNDRmMjA1Y2NjYWNmNWFjNjdkNGE2MmQ4ZjUwZTI5OWMzZjE0YTZiYTg4MWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a119c88105e483cb179e92b838b02e9",
+      "statement": "The shared UI package builds a separate component library with declarations and React/React DOM externalized.",
+      "evidence": [
+        {
+          "resource": "repo://openhands-ui/vite.config.ts",
+          "version": "repo-file-v1:sha256:9cdf52c92b902788d32c3372f699b2a1f35ae980ec7583cf38d860512d952454"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:51.947Z"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:907419b4ef684492e527758668024786d8ef537c73273e594d2181fdbb602ec4",
+  "claims": [
+    {
+      "id": "claim_028ab340735b426f9e0f495fd204ec36",
+      "statement": "EventStream rejects already-identified events, assigns an ID under lock, persists serialized event data and then queues subscriber publication.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L156-L201",
+          "version": "repo-lines-v1:sha256:b9939eb4e18c8db7e6f294d2bcba137b474e3b3f21b278b2a5a6ddd78ffd0aca:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxOGVhMTNjODE3NDg2MGZiMWJiMzMyOTRmOWVkMjZmYTgzMzU2N2Y3ZDhhZWQ2MmJmODM3ZTM1YzZiNjg4ZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwY2UyMThhYzUyNmNmNWNiYTY3MDM0ZDY4YmZhZGU3ZGI1MzZiMzg1ODBjNjAwMWY2NDZmMGNkNDViY2MzMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1MTAxMTMzMzFmN2EyODVjNDQ2ZTliYzhjZDQ2YWI0YTFkMTllMGZlNzc4NjE1MDFlZmZjZWYyNWYyYTc3NGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d035a7a4b0004aadb9f416e5a289793a",
+      "statement": "Subscribers use individual single-worker pools; queue processing submits callbacks without waiting for completion across subscribers.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L120-L145",
+          "version": "repo-lines-v1:sha256:2b4d64d781083f672acaae859c25745032bbaa812b5a6b6202ec9e15aeb10d27:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiZWI3ZmU0NTNmODQzZGMwYzFhZGIzZWZjMWY4YTc5MjA5NWQxYzFkMzkzZWE1YWEwNTFhZDY5NGU2MjY1ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjOTEwYzNjYWZhNzdlZDk2NmIzYTQ4ODczYTk2MGRjYWUzYjgwYjEwNjMzOWYwNDIyNTFiMDYxMmVlY2RjN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzZTZiZDkzZjk2YWIxYzVlODAzOWM4ZjljZTg5NjJkZDEwNjg3ZTNkMTc5YWE5MjlkNDM2YjU3NWVkYTJjN2MifQ"
+        },
+        {
+          "resource": "repo://openhands/events/stream.py#L254-L275",
+          "version": "repo-lines-v1:sha256:2f178d0fde673a43fd330e5593fb8c54b7568b6ee394d83c5bfd9356ca71893d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwYjRlMTkxNTQ1YzIyNDg0Yjc0YTk1N2I2NTI0NTI3N2U3NGZhYWRmMjY2Yjc5ZTJiMDVkYTY0YjAwZjUyOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhZDZjOGVhYTg1M2RmYjcwNzIwNTFhNWY1OTYyOWJiNzZmMDJkMTMzMDQyZjY0MTQzNDNmYTAxOWFiOGU2ZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjZGIyNDVjNmIwZTQ0OGU1ZDhjNzZkYmMzNzVkOWYyYzA2OTdkZGQxNjZkMjdjZmYwMmM1MTFjNmU0Y2U2OTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwZDg5ZGRkMTE2NDA2YTMyMzExNzcxNWNiZDc3ZDcwNjJmZTAzNjQwZDkxMjliMjM2YjZkNGI0MGVhZDE3NzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5549faddb6d04871a7ba8d8ff901f561",
+      "statement": "Controller pending actions clear on matching observation cause, except while awaiting user confirmation, and elapsed-time logging does not clear pending actions.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L536-L546",
+          "version": "repo-lines-v1:sha256:2383c0e6ad8f98b7dd81f7d3762de374520cef6a20e899c20683e8fef47476bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlZjJiYWQ3NjMyMmI1MWUzZjlhOWQzYjEwNDY0NTk4OWE5Njk3MWU0OGVhMmZiMDJlNmZiNmY5MzNlNTc5ZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhODA2NGUyN2UyMDU4ZWY0NjE1ZTU3NDc0MjgwNDg1MTU0ZjczMTJkNDc0N2NmNDZjNjhmMzU1OWVlMzAwMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyMTI2ZDFiNThjY2E5ZDRjNWU5YzE5M2RkNjE4MTExZjE2Y2JhNDFmNTM3YzFiYzZlZWE3MWJhN2I0NzE4NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3ZTczMmQxNTcxNDNhYjQ0MzEyZmM4ODJiMTc3ZTEwMDcwMTFlMDVmZTc1NDgwMDA3YTJlMzQ0MTI0ODNjNjIifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L978-L1002",
+          "version": "repo-lines-v1:sha256:3f19e7006048dfa981d1cac544f28a7b0d1c4fe0b5526f3034410792cba83969:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMzkyNTNjZDI0Nzg2N2RjYmI5MGQ1NmZiMTdkZWVjMjA0NWQyMGFmMDFhOTRlYzY1ZDhiNzgwNzgwZWIyNGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwMjdhMzAyOTM0MjdiNzg5YzM4OWYwOTcxNTRiM2YxNDE3ZWFiNjJmYThmNWViZjZiYzk5YmJjNTUwYjE5ZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3ZmVjMmNjZmMyNjc3NmUwY2Q3ZDliZWI0M2Q2NTgyOWEzYjBmYWNkM2Y2ZjcwZmM3NTljMWJlNGE4Mjk4NGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_83f1b510c95f4b1293015479720e94d0",
+      "statement": "State checkpoints exclude history and view caches; restore starts at LOADING and controller initialization reloads history from the event stream.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L1041-L1060",
+          "version": "repo-lines-v1:sha256:eccf75cb569dfce4b74a7ced761d2252898fe4f8ec4ab5c55c04ee3977847f67:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1MWY0YzQ0OTcyZTM0NGQyOGUxNzU4OTIzNmFjM2I2NDk2Y2ViZDEyZTg0YTdjMmQ5ZGE1N2E3YTc0ZThkNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlMmViODM4NzljYzQxYmE3Njg1OTE1OTM5M2JhNjlkMWNjYjI3NDI1MGFmODU5ODNhNTAyMDY1NDkxZDdjNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1MGY2MzY5NDAwMTI2ZjNlNjBhMTBmNzAwNjkwZjNkYTRhNzFhZmJmYWVmMzgxNjBlMjZkMTQ5NmQ3NDQwMjgifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/state/state.py#L177-L209",
+          "version": "repo-lines-v1:sha256:3fdacf6b371f66166e82f50a4b19b744ed4bf203b7267ce9f42d6b58aa461080:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NTY4M2EwMDY1MThlODNiODFkZGM5OGJhOGVkZDQ4NGE3MzQ1NGQ4YjFiYmQ0ZmQzZmQwMmVlN2RjZWI0ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMGExMTJiZWFkY2ExMDM0MjczMTcyMzkyN2NiNDVmMGJkNmRlMmFhZGNkOWMxNjk1NjQyOTIzNWMxNzMxMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczMDkyOTBkMjhhMjY5MTlmNjkxZWFmMTUzZTE2Mjg2OTBmYjNhMDY1ZjhmNjQyNTBiODBhYTNlYzA3NGZmNmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMjllYzMwYWQxMzYzN2VkN2ZlNzU2MGRhYWU4ZDZmYjQ3NTk1N2FlODE0Zjk5ODkzNDMyODgyM2Q2MTk5N2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c40f10c313634961bb92962f16809536",
+      "statement": "Delegates share parent iteration/budget flags, registry and event stream and do not subscribe directly; the parent forwards events and emits a delegation result.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L439-L462",
+          "version": "repo-lines-v1:sha256:dbcba1a5dbb3107cb97ae5fafea397454bb1a7f1e6e0b0d80d151683c294ef12:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0NjI4YWE1NWUzNGQ4NjY3MGZhNDA4NDhhZWU4YWU4ZTMzMjE5YzEzN2Q1ODZhOTdmZGE3YzQwZjI0YTEzNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyYWI1NmFjMGE4NjliZjgwOWVlZTFiZGRjZTM4OGFmMDc3YzlmYjM2NzI1MjFkYzdmYzk1ZTIwOWExMTc3Y2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxYzgxOGFmNGYwMDJlNWQyN2U1ZTViNWYxYzNhYjMwYzUyNGU1Y2UzZGZhN2NmZDYwMmFlOTZlYzFhMmJkZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkY2E1YmUwMjVkYzAwYzIxNGJhN2I2M2RjNmFiODUwMDYwZGI4MmU4Nzg0NTRiYWEzOGMwMzdlYjNiMzMzZGIifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L709-L752",
+          "version": "repo-lines-v1:sha256:4c4fae3d654f8087f45f63d18f9a489b3e00552866c7f8651952f17ce2790df6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwY2QwMjZjNWQ5OWIyMGRjZWMzZWVhZjdlZDJkMGMzMDMzYTQzNzg2OWRiZDQxMWNlMDAwM2E3YjIxOTQ3OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhMTJhMjE1OTkxZWY0M2M2ODViZWE1OWJiMzNkODYwNzUzODIwOGYyM2YyZDA0MDkyODVmN2I1OTlkZGFjYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkMGQyY2IyODVmYzM2MDliNzEzNmI4YjE1ODM4OTNiN2I5MGM4ZDFjNDNmNzBiNGM1NWM3NGZhNGM0YTEwNGQifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L804-L819",
+          "version": "repo-lines-v1:sha256:3179df90ad70db7c5bbcc217c4db7bc8fd600c901fc228dfa245f9d00b16880a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiYTAxOTc3Y2ZmMmQ5YWU3NWY3ZmM1ZGQ2ZGQ1ODZkMThlMTRmNDAzYWNjOTU5NzRiNjJhMjJmOGIyMDhlOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOTlhMzNlZDcyNWU3Nzg5ZTQ3ZGY0MTc0YmZmOTNhZGQwNDU3N2RkZmRiZTcyYjI2ZGNmNWFjYzU3ZTFhODYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0MzJiYWUyYmI4ZjVjYzdiMWI4YTA4ZTNmMDJhMTZjYTAwOGYyZThmZmNjZTRjMTIyOWQ2MzUyNDlhNjg1MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5NDE5MTFlYzQyOGYyMTAyNmQ3YjdlZWIwYjU2YjgwZjk1NWIwODAwNGVkZDFlMGI5NTcwMzY2NzFmMDQ2NjcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:50:03.393Z"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:23cbefa87cec0c254a103149f52d499d42a87b790ed83db21b39ed57b70c85f1",
+  "claims": [
+    {
+      "id": "claim_f9858c45d73547fdba046d1ed65e1a8f",
+      "statement": "User messages trigger workspace recall for the first message and knowledge recall later; Memory emits a matching-cause recall or null observation to release pending execution.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L566-L580",
+          "version": "repo-lines-v1:sha256:d9305825a162e33ae016295281bb6552c7744b08ebb5c813fbbc8fdc6a41b2de:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZmNiMmE3YzcxMmIwMzMwNzMzMTc2YjdlYjQ1ZGQ5ZmQ2MWRmNzkyNmNiYTYxYzA4M2EwY2Y2ZGFlMzNlMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlMTVjMzI1ZTlkZWQzMjljMTIxZjAyYjJmMTM0MGU3OTE2YmQ2M2Q1YjU5NzczNjhiMDg2YTI3NmViMzI5MmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzMjNkZWU2NGU1Mzk5ZjNmY2RmZTM5YzAxNWFjMjc1Y2Y4ZDkwOGUxNzNjMDQ1NWFmMmI5ODBiNjIwNzM5OWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4OGEwZDgwNTVmOTZjZTQzODdhYmE3YTA1ZmJhZjljZDNjNmZkZTNhY2U2MjE2YzE4OTQ0Mzk2ZTNlYWVkZjIifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L93-L132",
+          "version": "repo-lines-v1:sha256:e5b74b0627ddff007c5397de8660302b6d42bb1b657a4b17d0ca40e9c4a66d5a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjMTkzMzhlODM5YTQ0MDQ5NmVmMzgyNzNkNWQxYzIxNjVmODg1NzQxMzk1NWE4N2RlYTUzNjJmMWY1ZjY2OWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NDJkZDJlOTg0YjkwNzU5MDYzOGEyZjQ2MmE0YzlmZTFiYzNkMDk0ZDBiMDEwZDZlYTMwZDc5NDMxYTAwN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyZThiNzI4M2MxMzFjMTFmZWQzZGFhNGQ0NDc2NjEyNGU3N2VlMjY0MWI1NGRhYWJmNDEzOTc1MWM0NzgwYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2OTFkMzU4NGYwY2ZhYzkwMDhlYzEwZWM3ZmYyOTg1YmQwODJkMzA1ZDg3ZmVmMjY3ODAyNjhmNTA2ODNiNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68d78af54e8c4332a95116cf182a0845",
+      "statement": "Microagent types are inferred from inputs, then triggers, otherwise repository knowledge; knowledge matching uses case-insensitive substring triggers.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L136-L170",
+          "version": "repo-lines-v1:sha256:fdeeba6d515d7191d27199f6b19ca9541e6d86c6548ce9629173f4ec4cfb2e2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjY1YzM5YWNjMmUxNzI2ZjZlZjc3ZTM3ZTMxOTQ1ZWFiNTU4ODA3Yjg1M2UxNjg4OWNlOWY1ZThjMjZjMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlYjA2ZDdiZmU2MDQ5ZGMyMDQ3YjU5MTdhZjU4MmEwZDMxZTNlOGI3ZDUxMDUxMjI5MDI2N2ZlODg0YmJjMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3YzkxYjM5Mjg0NDZmZjkyODA2YjQ1NmRhY2M3Nzc2OTJmZGFjMjRmZGQ1MWNjNjMzYTRmZTA5MGRiYjkyNjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODcifQ"
+        },
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L189-L199",
+          "version": "repo-lines-v1:sha256:4386fb1a279f2999cc9bfb2240a364d9a02a44d61018d939e629cdb7cd862ee1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNjliNGZmZmE5YjAxOTBlNDczZDdiMTdmNzc3OTcwZGM1MWZiZDhhMTE1YmY2NmQxNGJhZDU3OGQ0MTFiZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M5NTdiY2I0NGZiNjczYzk4YjAwNTBhNzVkMzgwODJkYjgxZDkxOGRlMzEzYTNmMDdjMTIzNTMwNmQ3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4YmFjMGZmMWIxZDc1NTI5ZmE2YmI0YTQ2OTVkMWJmMjM3M2ZlY2QzMDE5NDYwZjExNjY1ZThiMzM2MjlhMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4YWRiNWIwZDc3OWVhMGZhN2FhZTMwNDg5ZmYwZmU1N2FmOTM3OGU3YzAyNmY1MTY1OGYxNTUzNzQ0ZTFmYTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d5533562c6b4b20a96d91d53633b2da",
+      "statement": "Memory loads global then user microagents and accepts workspace microagents into maps keyed by name, allowing later entries to replace earlier entries.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/memory.py#L254-L296",
+          "version": "repo-lines-v1:sha256:9a153cbdba46ff4ef2d5c5d1e8126a527ebd5fc72e468f82ab883a0af4e36526:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3OWM5NTAyN2E4ZmJkMWY3MTRkOTQ3YTRhZjZkZTc1YWM4Yzg3MmNlNTUxYWQ1YWQ2NzgwMTI2OWJhMTdlMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlODk4ZGJmZjkwZmZhN2VhYWU4NGFmZDZiZDg3MGY4ZDA4MDUwNzcwYTY1MmFmNzliZjg1ZmQ3ZjFiYTY5NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwN2NmMDFkNjI1NTY4MTY1ZjMxNzNlMTE3OWY2Y2UyODhlZmRhZjI2NmU2YTljZjc0ZWQ5YmRiMjkxODZhNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0YmRiMmRjOTliYTIxYmI0OTU2MTJjY2ExODQwMjE4ZWIzMmI0MmRjMzkyYzEwNDZkNWQyNTA1NDBmMDA3MGEifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L79-L84",
+          "version": "repo-lines-v1:sha256:73ea968c4d3e505b6c11cc9374dbf6110dc7f4212992bd7d60ca855362888fdd:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmNmY2NWIwMzE2ODBkMGFlYTFiNTEyYWZiOWVmZTYwNzQyNzJhMDZiNDRmNTBmNzAyYTU1NjQzN2ZhYWI4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdiMjlmN2QyNzc2ODkwZjJjYjQ4YTAwZDBmNjNmNjg1MzMyOGNjOWY0NTg3YzY0ODlhNzY5YmRmMTlmNzIyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODRjMjE0YTZhNjQyZjBkMzQ3YWI1MWJkMzI5MWNkM2QyMWMzYTRmZDQzZTY4MmJjM2YxMTA5ZmMwMDUwZGE3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjRhMWJiOWM2N2IzZDMwZmNhNTY3ODZiMjY1YjQxMDA2YTA5ZDZjNDJjMzk4MTBiNzcwNWRjYmQ1OTI3OGJjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fcc783f213e544a19edc9d488af50114",
+      "statement": "View.from_events removes forgotten and condensation-control events from the model view and inserts the latest summary at its offset without deleting persisted history.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/view.py#L47-L93",
+          "version": "repo-lines-v1:sha256:6d721d69ca72f1b1a69060a1fe76499e7e5bf4fbcad04224b712e6806db813ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYWJjZDBjYzY5MTNkNGY1MWViMjFlNGY1YWZjMmU5MGY4NmQzNmE0NTBiYjQyY2IwNWM2ZjNlMGQ3MDZmOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkYWZhOTBjNmQyNTNmNzE2MzYyYzg5YmIxMzhmYzVlOThmMDY0NWNlYTU2MTgwMzJhNzE5ZTc3MjQ3NjNmOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e0e31dbedfc46cb929eea53c20095f3",
+      "statement": "The LLM summarizer triggers by event count, summarizes forgotten events with prior summary, and disables prompt caching on its condenser LLM service.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/impl/llm_summarizing_condenser.py#L122-L178",
+          "version": "repo-lines-v1:sha256:1a4d5732a295ba7e3219b5c5db83b79186068aa45b6c2044a10c01a44c224b35:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkYzU5MDM2NTBjNTJlMmQ5MjA5NDQ5ZjI5OTY2NjZkZjc3M2Y1OGQ0ZTE3MGM4YzlkNTgyNGJjMWFkZWU1MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ZTFiNzI1YWYxOTEwOGEyZDYzZmJmN2ViNzhjOWZjZWZhZWZiOTZkZGExYjBlNTIzOGU5ZWZlYzAwNGE2YjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkMTA3YzliZWI5ZjQwNjQzMzAyMzA0NDgxZjEwYjA4ZDQ0ZTM1NzBmYzFmMGMxMjdiNGJjMWE3OWE1M2YwZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODcifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/condenser/impl/llm_summarizing_condenser.py#L52-L69",
+          "version": "repo-lines-v1:sha256:9fa468286333ae973bd418dc14a7ee0ba8d98e6320908cb3ae97098999bab93a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MTA3YjY4NGZjZDM1ZjkxYWYxMTg5OTM2ZDQ0MGVmYTZmZWFkOTRlZDYyNzRlZDFhOTA4MzMwM2E1MjM2NGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NTM4YTQ1MGFjNGZhZmUyNzc4ZWMxNGFmY2I0YTIzYjIzZjUxNDIwZGZjMjNhMWUwNTRhMTBhZmI2YmRhZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxZTMzM2ZlNDQzOWY2MjU2MWU3MmNmNGNiZDMxZGE3ZGJmOTkyNTM2YmY0ZjUzMDFmYzYzNDVkNDBmMjJmYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2NzQ4ODZmNjkwNTQ4ZDVhY2MwMjMxZjkwMTNiNzIxMTNjNmRhZWE3N2RlZDA1NjU1NTE0NzFiNmM2YmQxNjAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:50:03.393Z"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f0878b0458b1e1fbcf4419b1371e5767597ac647447d519c1a359b082875e6d5",
+  "claims": [
+    {
+      "id": "claim_94e84d110acb4ea5a0da827f48642bff",
+      "statement": "The Django fixup is installed only when DJANGO_SETTINGS_MODULE is set and the app loader is not a Django loader; a missing Django emits a FixupWarning and Django older than 1.11 raises ImproperlyConfigured.",
+      "evidence": [
+        {
+          "resource": "repo://celery/fixups/django.py#L47-L63",
+          "version": "repo-lines-v1:sha256:63070adcbd231f57e39268d4fb453ab22437fa4def579368a0e9e52cdeb3ef5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYTRjN2Q2YTBlZTM0ZjM4NmVmMTVhMWZkNDI1NjE2OThmMDkxZjI0NzNkZTZjMDYzNzc2MWVhYWJiZDI1NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTYwMGE3M2QyZTAyZjM1MmI5MGZlZjFkOGQ2MzgxMWJhNGE4ZWUwYzFiZWFhN2FlNDY1OGYzNmFhMmUxOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMjhmMzA0MGRmYmViNjhjYzk0NjA4NDdiODVkYjU5ZDNlMGFkNzA5Nzk5NzFhNzM0YzQ5NWEyMTBiOWViN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0NTBlYWYzYjRkOGU3NWFlNGUyMTE5ZjdmYjA4ZjU2MjBkMDA5YTkwNDZhMjNiYTk3OTZjNjAxM2Y2MWU1N2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_67d5ecb2b0b747f79b7390451ea34b5a",
+      "statement": "DjangoFixup prepends the working directory to sys.path, uses Django's timezone-aware now, switches the app task class to DjangoTask unless a custom task class was given, and runs django.setup() plus system checks on import_modules unless CELERY_SKIP_CHECKS is set.",
+      "evidence": [
+        {
+          "resource": "repo://celery/fixups/django.py#L146-L154",
+          "version": "repo-lines-v1:sha256:29bf43694687ee0bcfb929beb117782bbda4d2ffbf57fdd2542e2abcbdb2abc3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRkNzYxOTRhYmQzY2UwZmE4MzdkZDEwYzY2ZjEzODVjZjc5NWQyYjExZmJlMTkxMGRkMTg1OTNjNTVhYzQ5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjRhZjBkYzQxY2ZmMzU2NzQ4MDZkOTljY2ZjZTFlMmE0ZDE1ZTU4ZjgzN2NlNTJkZWI0MTdjYzAzMmEyMjY4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTM0NTNhY2I5MmNlZWU3ZDRiMDkyZDQ0OTA3YjFiOWIwMjEwYTlmOWFlZWI2ODEwM2ExODNkY2QyMWY0MTkzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWYzMzE1NDk2NDFlM2VkNWM4ZTAwMzQ0Zjg5NGRkZjY2NzliODcwNDhiYmY2ZTc5YjcxODZhODE0MWFjNGU5OSJ9"
+        },
+        {
+          "resource": "repo://celery/fixups/django.py#L66-L106",
+          "version": "repo-lines-v1:sha256:8042a1008d39f53e260c9c9f608efddc43a48fb65a5bbb827dde7a3519e83b3a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNjI1ZDI2NmYxMTFlNjdjYzRmMjcwYWIzZDk4Y2Y2NWY3OGU4ZDVjMzU5NzFhYmQ5NWNhMDU5MGM5YzA1ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMmQ5MDQ2YjRkOWQ2NDE2MzkwZjE2NmM4Mjg2NTkzN2Q4NzczMDg2Yzc1MTRjZmI0MzViZjkyOGIyMDU3MzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MDE0OWUwNjlhZDY3ZWNjZjQ3MzY0NmZmMWM3NTAwNTBkMzI5ZDExMDAxOGRjNTc2Njg3OGVhZmExZDYwN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzOTlmYTJjMTdjN2VhNmQ3YjBiODhkMDBhZmJkNDc5MDczMzQzNWQ5NTI4ZmRhNTI5NzkyYmU2MjE1ZWEzMDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_72dad0edbc2d4a9e8546488ac92a726a",
+      "statement": "Calling app.autodiscover_tasks() with no packages uses fixup-provided packages, which for Django are the names of all installed app configs, and discovery happens lazily on the import_modules signal unless forced.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L782-L844",
+          "version": "repo-lines-v1:sha256:e3ac78e905e1d85f8794ffb9ef44e4c2a91a2a0860467328910601e387d74c00:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZmVkMWI1ZGNlNTNjZjc2MzA2Yzk5OGVhYmFmZGMwNDgwNjgyNWU5MTNiZWRjOTk4MTYzZGNjMTkzMDBmYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNzI2YzFlZDdiM2NmMGJjNzE2MzNiMTUxYzgyZDU5YmE0YWUyMjhkZWU5Njk5Zjc4YWU1ZDdhZjcyZjFiYTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmMjBiYTlhNTEzNTNjMzNjZGQzNTdjOGQ0Yjk1MTIzZGEwNzE3OWNlYmQ2OGRkZDY0NzEwZjFlN2E1Y2YwNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3NTZiMTgxMDNjMWVlNDIyMzE0YWJkMTM0OWVkNGNlNTM5OWRlNTJkYzUyMDRkOGUxNDIwMmVjM2Y2YTA4MTQifQ"
+        },
+        {
+          "resource": "repo://celery/fixups/django.py#L121-L123",
+          "version": "repo-lines-v1:sha256:42d09cbce6ecf024496516990d8d88493c96e966813f5edc957bfb2811bc80b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjM2MzI1MTZhYzAyYTRhYjdlNGU0ODI4YjliMDk0YTA5ZTBiMzBhNmY5NGY4NjYyMTNhMDBkNzI0OGE1MzhiNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzBmNjk3NjBkZWM0NDRkMzIxNzcxZmE3YzBiMmMxMWY0OWQ2MmJlM2E5NzNmOTA1NTNmNzk2ZjYyZmY3MGQxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWRiOTdlY2E5NjJkNjc4NjYzNjI0NzU3ZWVhZGIxNGJlMDU4YTQ3NmQ2YjZkZGFjZDliYWVmYjVmYzE4NjRhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyNmNkN2ZiNzdmNjkyZGU4YzYwMzRlZGY5ZGYxMjY3MTZiMjFkZGMxYjg2MGVlOTQwOTRkYjhmZWVmZWJiMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_190a76ff7e1846a782340929941667f0",
+      "statement": "The Django worker fixup closes database connections before and after every non-eager task and closes caches after each task, and in each pool child closes inherited database sockets at the file-descriptor level before closing connections.",
+      "evidence": [
+        {
+          "resource": "repo://celery/fixups/django.py#L156-L203",
+          "version": "repo-lines-v1:sha256:6eec22165228c1a678a0e3625c7ead5a99e0f745609790ed8a632c08d42dfac4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZjZkOGU2NGE3ZTYwZDJhYWQ1ZDA5NjFmMTYzZWY1MDVlYWE2MDBlMmY1ZTFjNTU2NzQ4MGMwNDZkNWQ3ODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxZTI0ZjE1YmI1NTUwZDFhOTEyMjRkZTQwMTMzY2QwMDg4MzA4ZWQ0ZDIxZjg4Nzc2OTI1Y2M0MGMyNTE5OTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjN2RmYzJmYzMyZmE1MjNlNjhmZmE3ZjA5MGMyOGY4OWRkMDJhNmEyOGY2YWVmMGMwYjA5NmRkMTFmMmU5NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZWI5YWFjODg5ZGMzOGI0MjI4MmEyM2I2YmYxZjA2NmQ5NWFkMzUxNGU4NjQwMjdmMzVmY2M1Mjk3NTI1YzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e0b2c322799444d1b7cc24d3e7bda034",
+      "statement": "CELERY_DB_REUSE_MAX limits connection closing to once every 2x that many close requests, and with Django connection pooling under the prefork pool the pool is closed too.",
+      "evidence": [
+        {
+          "resource": "repo://celery/fixups/django.py#L205-L243",
+          "version": "repo-lines-v1:sha256:9465f4dfa32357bd4a54b4f8001226b695c5edd875cdc4138283a3963010c568:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0MjU3YjgzNDFmNDc4NGE4NzdhOWVlMjNkYjM2NWVmODM3YmUxYWFlNzI3ZWRjYzcwNWEwODJhNWZkN2Y1NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjljYjA5MjgwZWUwNzgxOTQ1ZTQ4ZDQwNDFiZDJkZmFhZTY5MWFkMmVhYmY1ZDNjYmEwODQ2YzcyMTZjYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMGI4ZmEyMWQxMDExOGIyYTBmOTQzZDdjZDY0Nzk1YzEwMDE2ZDVhYjZlMmZmNjI5YmFmZTJiNTkzNWMwODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2ZjViNDcxN2EzZWQzNzM3YWVhY2E0MzMwYTUwZjU5NmQ5ZTBhYTliNTU2MDZjNGIxZjQ4MWE2MDQwOWI2MTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_547482e5c5aa48639d887d9af88cd81a",
+      "statement": "DjangoTask provides delay_on_commit and apply_async_on_commit, which defer publishing until the current database transaction commits.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/django/task.py",
+          "version": "repo-file-v1:sha256:dbe09e1d736ae1544c814a1132c44b9cc149fb28f60b6581f277d234dc39f3ea"
+        }
+      ]
+    },
+    {
+      "id": "claim_b014fad3d573477286a10aef2ba4871d",
+      "statement": "The Django example configures the app from django.conf:settings with namespace CELERY and calls autodiscover_tasks().",
+      "evidence": [
+        {
+          "resource": "repo://examples/django/proj/celery.py",
+          "version": "repo-file-v1:sha256:4ea2c390384224cf5f49b4103700128d99474e8354ee65e6577b2243a6a3baec"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:57:55.789Z"
+  }
+}

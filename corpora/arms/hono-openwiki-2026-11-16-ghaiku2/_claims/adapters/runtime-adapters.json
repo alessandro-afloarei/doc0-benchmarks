@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8903599fc9abcb8f58ddf5d830b7e111be59c4c3b0a63bf7c6e79153a6b7e1e8",
+  "claims": [
+    {
+      "id": "claim_f7833754073b4e19a32dde59bd9ed495",
+      "statement": "The AWS Lambda adapter returns a 400 response for a TypeError and a 500 otherwise when request construction fails, and does not call app.fetch in that case.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L252-L266",
+          "version": "repo-lines-v1:sha256:1afd676e4ea260a7c5c32b0b33391e93424092e3e8d6c46ee17a5859b3535dda:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhY2JlODMwYTJjNDBhNjA3NTgyNTE3YTJhNzk5ZGE4N2YwZmY0OWViZTgyYzBkZjRkZDhkMWM3NzM2Yjk3YmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjMzBiNjhiNjhiMTg2NWE2OTE0OTExNjAxZWU3ZjkwZjY0ZjYxOGM2MmNhYWQyMDg3N2NiNWMzOTVhNDM2YjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkNThlYTI0MDAzZTliZjkzYzc5M2ExZGFkNzdkZGMzMmVlM2RiNzg3M2FjNWJlYWY4NmQyZDg1Mjk5M2I5ZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_78a4472ba8b24ec1b6927c6bd76827d5",
+      "statement": "The AWS Lambda adapter calls app.fetch with the Lambda event, requestContext, and lambdaContext as the second argument, then converts the Response with processor.createResult.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L268-L274",
+          "version": "repo-lines-v1:sha256:fb95b16f684e8f1dcb5277f4d2248032237b8dd5d4bb74c2675f61e5cb862afc:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjlkMzM5ZDQxYTE0ZTBiOTI4Y2E1NTA5OWIyYWViZTU2MjM0ODE5N2QzMWRlMzEzMmFmZTY3MWNjMTVhYmQzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWMwNTgxZjdhMmZmM2YzZGNmMmQ2YTk4YzNiNTgwZjg4MDNlZGNhNTEwNzJiOTBlYTZhZGMzMzgyNDU5NGU2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGVmMTBkYjkyY2M4NGU5ZTQ5Zjk5ODI4MmU4NTEyODlmYjcxZjIxMmUyNTliMmE2MmE5YTY3ZjJkNjI3MWRlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea4c1124ae364090a647d257432512f0",
+      "statement": "The service worker adapter responds with the app's response and, when the app returns 404 and an opts.fetch function is configured, falls through to fetching the original request from the network.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/service-worker/handler.ts#L18-L35",
+          "version": "repo-lines-v1:sha256:6c805e9dc1c98427c026e358675611f1fb7b6465ed10d1cb2fbd681b1f94cfff:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmODQ0ZmU1YjdlMGNhZTVkNzViMTZlNzM2NmQ3Njg0NTY1ZjAxZjRjY2JiNmMxMzYzYmI3ZGNjNTgwNDU3NTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkOWRlZWM0NzgzYzM2ZWZhMWNmNTlhNWQ0YjE5NGEzOTY0YTM2NGQ5MDhkZTEwOTljZjRmYjA5MWU3ZDAwNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNzM5YTA2YzFjYmIxMjQ0ZTMzNjNkMzhiY2Y5ZmE1MGNlODRmZWQzOTljMjE5M2EzYzdmMDhkNTk5MThiMmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_490099dc937a4ec3b6d16f98ae958a2a",
+      "statement": "The Vercel adapter's handle returns a function that forwards only the incoming Request to app.fetch, passing no platform environment.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/vercel/handler.ts",
+          "version": "repo-file-v1:sha256:ba1651134aa33156061ff81f727517c3e7ea4b6ef4be01c4f90db32fa5090db0"
+        }
+      ]
+    },
+    {
+      "id": "claim_920064a63405427cb3245c8a154be86f",
+      "statement": "The Lambda@Edge adapter wraps the caller's callback so the first error or result is recorded while every invocation is still forwarded to the original callback.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/lambda-edge/handler.ts#L124-L137",
+          "version": "repo-lines-v1:sha256:a7e626238bdfde453af90c1762df680bd089fe6828dc3f557b7724795a2ee28a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2ZGM4MWQ1ZTdiNmFmMGZiNjExMmYwYzVlM2UxYjcyNTc1OTZlNjE0MDM4OWQ4NzI3YmM0MjIzNzQ2NjU0ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5NzhlMjUwM2I4Y2YzN2EwNmY3ZDZmMGEzYTZiNmZlMzU2OTFmYmNhYjUwYjg3NzVjYWI2ZmFiYzcxYzU5MmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmMGE3YjM2ZjBhNDJiMzdlOTYwNjc1MzcyY2EwYzQ5OTdkNzU4MWNmMTI3YWQ5M2E0MjcxMzI4ODMxMWJiMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyZmY4YzU1ZGQ4MGQ0NzI4ZDFlZmNjNzU2OTc1NGJkNmUzMTQ1ZGYzMjFmZjNhOTY0MjJkMTk4NGVmM2FkN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d925fc2a8064097bccbef7d8b2c8238",
+      "statement": "getRuntimeKey detects the runtime by matching navigator.userAgent against Deno, Bun, Cloudflare-Workers, and Node.js before falling back to other checks, returning one of node, deno, bun, workerd, fastly, edge-light, or other.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/adapter/index.ts#L50-L90",
+          "version": "repo-lines-v1:sha256:7680e15412105669dff9b3e135e41cc3073d756b853da6000cb6b18bbcef9b42:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjNzNiYzAzYTNjMDM0NDU3OTk3NTI3OGYyN2Y0NDcwZGVmMDhiZWQ2ZmE3NGY5YTQ1ZGViZWIxOGExYmZkNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhM2VlNGM0M2U4YmU2YjAzYTNkZDlmMDI0YzkwNzJiMjAxY2E1MzBiZDRkODRiYTMwZTI3MGI4NTZjNTEyMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ccd5fa97c7b649e0aa42315d2d8a929d",
+      "statement": "The Cloudflare Workers getConnInfo reads the client address from the cf-connecting-ip request header.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/cloudflare-workers/conninfo.ts#L3-L7",
+          "version": "repo-lines-v1:sha256:ec7e88487e3c59028194a4df3a033ae9a0429636ea6d9ec7cc1aac349488e870:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGEyZGVkMzk1N2U0Mzg3NzA5NzU2MDhhOTlkMWYyOWZiYjk2MTcyNmVlYWU2MGVmMGIyN2UyNGViM2U0NThmNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODU4MGI3NjUxOGRhZTk3OWZhZWJkMDIzNjdhMjkyOTJhNTBkOTc2MDkyMjUxYTM4YTZjZTMwODgwYmE0MjgyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzI5ZDg4N2IzNWFiMTI5YjU3OWQyNGQyNTAxN2YwNWFmYzBhYTQzODQ5YjY0NjQ2YWViMTMzNGQ1ZDFkNjMzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b0a49c8d738a42bdaa4c6a7e559c6c4c",
+      "statement": "The Netlify getConnInfo reads the client address from c.env.context.ip.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/netlify/conninfo.ts#L53-L57",
+          "version": "repo-lines-v1:sha256:d13a1be7bd56e6e3630ea3957bc2639b5ad0a5a2e1d339667fca270935c481ca:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NjZWJhNTU3NzRhZDZjNDI1M2M3YzI1NzU2YjI1MGYyYzA0ZjNiODFiYWVjZjY3YmE2NTE0OGFhYTNmNzA4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODU4MGI3NjUxOGRhZTk3OWZhZWJkMDIzNjdhMjkyOTJhNTBkOTc2MDkyMjUxYTM4YTZjZTMwODgwYmE0MjgyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQ0NjNiNjBiYWNiMTUxYzdlYTkwNzM2MmQyYTZlNDZiMGVmNjJiY2NmYjQwYjcwZmQ0YTI0MDM5OTBmYzYyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

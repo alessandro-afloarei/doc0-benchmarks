@@ -1,0 +1,6 @@
+# Files
+
+- [Entry Filters: Type, Extension, Size, Time, Owner](entry-filters.md) - Semantics, parsing rules and metadata cost of fd's per-entry filters - file type, extension, size, changed-within/before and Unix owner - as applied in the walker's sender closure.
+- [Ignore Files, Hidden Files and Traversal Limits](ignore-and-visibility-rules.md) - How fd's visibility flags (hidden, .fdignore, .gitignore, global ignore, --ignore-file, --exclude, --ignore-contain) and traversal limits (depth, prune, follow, one-file-system) map onto the ignore crate's WalkBuilder.
+- [Output Rendering, Colors, Hyperlinks and Terminal Sanitization](output-and-terminal-safety.md) - How fd prints each result - LS_COLORS styling, ./ prefix stripping, path separator override, --format templates, OSC 8 hyperlinks - and how filenames and error messages are sanitized to prevent terminal escape injection.
+- [Pattern Matching: Regex, Glob, Fixed, Exact and Smart Case](pattern-matching.md) - How fd converts the positional pattern and --and expressions into byte regexes (regex, glob, fixed-string or exact mode), decides case sensitivity by inspecting the regex HIR, matches names versus full paths, and guards against common mistakes.

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:72c818f8a0fe764eb9214dbdd531af730db65cac64743f09efd539c9712918e5",
+  "claims": [
+    {
+      "id": "claim_5bc299b5053b41bd950a47be28bf9dbb",
+      "statement": "Components coordinate through per-conversation EventStream subscriptions: the agent controller, runtime, memory, server sessions, and CLI/headless main loop each subscribe to the stream rather than calling each other directly.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L163-L167",
+          "version": "repo-lines-v1:sha256:6555d61eb00f9ce12e796d481e325d6cc63982d363ed308e33a63c9d9782ca27:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JjMGE1NDQ3ZTIyNjg4NWRmNDMxMTgzOTU0NWJiYTk1ZDEzYzA2OTA1Yzc1MjA3YzkwNDc0ODE3NTYwM2YwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODE3N2E2YTI1MTcwOTEyYjRmZjQ2MmZiNWM1NjhlMWM2MTYzZDUwMDhhOWNmMGM4YzNmODA1NjgzNTYxMTlkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODIxNzRlMGZiYWUxNjM2OWI0ZTE4ZWQ0NTg4NGRkZTZmYWQxODFjNWUyZjAyOWVmNjU0YmIxNDIxYjAwNDA2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFhNGJhNTIyMzM0MGU5ODU3MmUzM2FjMGI0OGI5ZWNmZWE2NDEyNWFjNjFlZDYyODI5NWUzMDRkNzc5NWJjYiJ9"
+        },
+        {
+          "resource": "repo://openhands/core/main.py#L205-L205",
+          "version": "repo-lines-v1:sha256:709fb7e3b02ab930d6a0109eac1eb351e74f038fa8ae47e687409fe6cba6cef2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzA5ZmI3ZTNiMDJhYjkzMGQ2YTAxMDllYWMxZWIzNTFlNzRmMDM4ZmE4YWU0N2U2ODc0MDlmZTZjYmE2Y2VmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzA5ZmI3ZTNiMDJhYjkzMGQ2YTAxMDllYWMxZWIzNTFlNzRmMDM4ZmE4YWU0N2U2ODc0MDlmZTZjYmE2Y2VmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGMyYmJmNTk4MzA0Mjg5NzU2ODI0ZWI2ZGQ4NzFiNjgzYWFiMmRiOTUwMGMxMDUzYjRjZDI0MTUxMmM3ZGQ5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTVlOWU1NWMxMjNlNDM1OTM4Y2YyYzQ0M2IxZTQ4NzFmNDJkZWNiZDVhNjQwMjM1OTFmYjhkMjExZjI2OTcyYSJ9"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L53-L70",
+          "version": "repo-lines-v1:sha256:8e0e6bb8f3429479d107a6186a887ba549dee9acbb9ebaaf013ec77e894b4165:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDdhMDdhODNkZDE5OTZmYjUxNjg0YjQyYWVjYWY0ZTkwZmI3OGJhNzIzMGU1NDJlZDdiZDAxZDQyMzAxYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YWM4MjZhZjVlNGU2ZDE0MDM0ZmFlMTI1ZTZkZDVkYWY5N2E1MTgwZjk3NzBmYzViY2E2ZTNkZmZjYTQwZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2MzlkOTQ3NTI2Y2IwOGZjMjkzZjU3MjZkZmIzOGI2ZWE2MWUzZmRlZGMzYjJmN2QwYmM3YjVkZDhmNDZkODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViZjBlYjNlMWYyZWNmYzA5ODg2YzRlNWExNTYyZGFmN2FmMGM2MmM1NzkwMzc3Mzc1YWExNGNhNDk5ZmMwNTQifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/base.py#L145-L155",
+          "version": "repo-lines-v1:sha256:e270c26d41f7667e6c7d159fad49aebc4d0e1c030bc21222f26f7d6dfbb553be:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlMTZhOTA0NTAzYzBkZWVmMDg4OGZjYjlmZDU3MjFjMWQ2N2U2MGU1YmVmYjViNTczMTI5NzRkNGM0YzYwNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhM2ExNjkzMTUyMDQxZjBkNGNjYjIzYTBlMzRmNDkxNGI2YTk3ZTQyMWNlNzU2MDE4MjE5MmZkMDYyYjhjNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmZmUwNDE2MGUzZDJiZmYxZWNiODM3OTE4ZjUwMmEyNDAxYjMzYzM0ZjU3Y2IyMTYxYWM1MTlmZWI4OTIzNzAifQ"
+        },
+        {
+          "resource": "repo://openhands/server/session/session.py#L95-L105",
+          "version": "repo-lines-v1:sha256:53b5fae4e30205e601b01c6ed4602260200831cfbbe94ecda61473b19a0cfef4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1OTQ5ZTgzY2U2NjU5MDAzOWUxM2QxNTRkMDM3Mjc2NDJmNTI2NmFiNDVmM2QxYmQ2MTA5NWM5ZTkzOWZkMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiMTVjODNiMzUxMjM1YTVlZDMwMjBlZjhhYTk0Y2EyZmVlZDVhNmM0NGM3NzQ4Y2YzZDZkMDQ4NDJmNjY4YjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0MDA4NWYxNTM5MGFhZGQzMjljYjJlZWE3NWYxYzAzMWYyN2NjZTg4NjI1YjQ3MzFmYmQ2MDc5MDMzZmM1NGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmNjc3ZTNiMWNhNjc0MzgwZWNmMjIwOTg0NGIzMzQ3NDFhMzc5ZWY2NWQ1OTZiYWU5MjQ5NGVjODcxNGY0MDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f76f29c6685427f886e7a6cdf3c1539",
+      "statement": "run_controller assembles a headless conversation by creating the LLM registry and stats, agent, runtime with event stream, memory, optional MCP tools, and controller, then runs until a terminal state and optionally saves the trajectory.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/main.py#L52-L243",
+          "version": "repo-lines-v1:sha256:affd3a94a500c169583c0a83b4b080d1580b1913e974c621e686ef1b21ea5b94:eyJzZWxlY3RlZExpbmVDb3VudCI6MTkyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhZDU3MDVkYTA2MGQzODBmNTlkMmFlZTlhNmYxYTE3ZWU5N2MxMTA0OGI1Y2E3NzVhYzI1N2M3OWZhMDRjYjdlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwN2ZmMWU3OGQ0OTQyNTZmMjVlODhmZDFiMDQyNGQ4MTdkZDJhNGE4YTJjZjI3MjI0M2FjMjMxNGI1OGU1ZTMyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmMzM4YTg3MjYyYzg1YTZkNmE3MGQyYjIxMWNmYmM4NzU5OTEzYjY4NDcwMTIyM2E5ZGJlMTIxN2Y5ODI2ZjFiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b645628b81d34e78a65e47f2ff36f1d4",
+      "statement": "Headless runs end when the agent reaches FINISHED, REJECTED, ERROR, PAUSED, or STOPPED, with run_agent_until_done polling the controller state.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/loop.py",
+          "version": "repo-file-v1:sha256:33749753f53c297195584b62e18473f55ab9580b00733f1ca375e7d0390935f6"
+        },
+        {
+          "resource": "repo://openhands/core/main.py#L207-L218",
+          "version": "repo-lines-v1:sha256:9599989d19bd5c349ad106691e31bdf2a301ec7ea96a81a3ec2d8dc56efb82e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0YzZlYzRkMTE0ODhiNGQ5YjZlYzI2MWIxYzFhNjY1ZDg0YTc3NWE1MmRiMDkyOTlkYjc1ODllMWVmMDQwZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4ZWY4N2M3YzZlYWRiMzFmOTQ5NDU5NzMzYTA0MTE3NmFlYzA1MGEyODEwOGE5OWE0OGRkYjdjZmQwNjcwMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkMzJjNzM1NDk3ZDMyMWFkZTI5YjIzNjNmZDdkNjY3MzBiNmU4NGNjNzIxMjNjMzQyY2FmMDM2MzJjNTYzM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmNjM1NDVmYzZkY2YyMWYxNDg1MTFhYWY0OGRiMTQ4MmFiNTk5NzE4MzY2OWUxZTM2YzFlMDM0NDIyZGZmNTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_064135eeca2243039a2718a3b063f423",
+      "statement": "create_runtime builds the conversation EventStream on the configured file store and instantiates the configured runtime class with the agent's sandbox plugins.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/setup.py#L35-L80",
+          "version": "repo-lines-v1:sha256:00479a384b33e819d180f53906cbe59858e313bc725ac28e9b5fe75f7fd653df:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkZjY0ZmRiYjhlMDFmZTAwYzZmNTllMDAwYTU3Y2E0M2ZkMDVmNDExMjU0NDBiODU2YzlmZDUzM2E5OTJkOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhYjRmNzQ5OGI0NmVmN2Y1N2ViYzg0NmExODMyYWViNjkwNDlkNzliMDZjMGEyMjE0YmY0NmU1N2IzMTI3YjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyNTYxMTA2YWU3N2FjNWE2NDIyOGNjODNlYTc3OGY4NWI0OGRhMzhhMDg1NzRmMDY4NWJmNDc3OWY0ZjBmODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE3MzliNzg3YmY1NTVjNTBhMWYxZGUzNmFiZGJkMzYxNDc3MmZhMTY4NDIxYzAzNjg3Mzc4Y2Y4YzExZjc2YWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3833185bdfa74e0d9b267a29b57b9362",
+      "statement": "AgentSession.start creates the runtime, registers provider tokens and custom secrets as event stream secrets, creates memory, adds MCP tools before the controller so they appear in the system message, creates the controller, and then publishes the initial message with a RUNNING state change or sets AWAITING_USER_INPUT.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L90-L222",
+          "version": "repo-lines-v1:sha256:fbe3d423325de0c467086f034aec7834be3b610a44fde56255fa27ab1e4beb6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmOWI4MDkxNjQzZDFmYjU4NzA2NDAxNTQxYmI5MDA0MjQ2ZGFiNGZjMDY5ZTczYmViMTBjMGM3OTJmYmYxMTU1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1MTAzNDgxYzU3ZDBmMGRjMGY3NmNkMmNjOGIzNjA0YzRlODI5NmRhNDEyMmFkZDE5ZTgxNzQ1ZGM3ZTMzMWE2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjOWUzY2MxYTEyZjZiZWJkOTVlZjVmZmEwZWM4N2NhNDJkOGQwNjdiODU2YTQxY2M0NTI1NTc0NTYzOGJiYjg3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxYTNlOTIwOGRmNjViMzQwNzdkYWRlMmQzNTQ3YTE3MjNlMzlhZjFlMGRiZWRkMmZlYmY0OTM4MTU3OGExZDRjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_23ef393c9f3d4f80a2e9b34ff1504129",
+      "statement": "When resuming a headless session whose restored state has a last error, run_controller sends a message telling the agent not to resume blindly instead of the initial task.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/main.py#L176-L192",
+          "version": "repo-lines-v1:sha256:e7e7a256cef99a351508ca26851dcf4a1960e003d9445aea3bfe76cc9657364a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4MzNlODA3OGU4Njc1NmJkY2U4YTlkYzZiYTEzZDRmNjg5ZWJlMWNmMmNhMTY0ZDNlYTczNzNlNmE4MThhOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhZDU5ZmI5NjE3OTcwMWRjODBjYmRhNjc3ZjY1NjZmZTNhMWVhMWE1ZjlkNTBkNTNiNmUxMjMyMzBiNzM3ZGIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

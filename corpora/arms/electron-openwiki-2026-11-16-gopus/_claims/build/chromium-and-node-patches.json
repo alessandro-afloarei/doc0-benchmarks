@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2a7c47a2fda3013a0a169d8834847332c5597220f0e92f6262c3ab82ad0febab",
+  "claims": [
+    {
+      "id": "claim_8d21ec92e6cc4eeba03035b2ece1893f",
+      "statement": "patches/config.json maps each patch directory to an upstream checkout path relative to the gclient root, and each patch directory's .patches file defines apply order.",
+      "evidence": [
+        {
+          "resource": "repo://patches/config.json",
+          "version": "repo-file-v1:sha256:30511b8e410073d05c6ef91b9bd47d5fecafaf2eacab203c1c3a09046a195f33"
+        },
+        {
+          "resource": "repo://script/lib/patches.py#L31-L40",
+          "version": "repo-lines-v1:sha256:61854bca5c7582a01056cec9cdd0100f8a23a549c0dbb1f9b168d4ad8f57b01c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzZWRkYTE0ODk1Mzk4Yjk1NThkNzk2OTE2NTdmZGNkYzlkNjg4M2JmZDc3Njg1NTFiYmZjMDVhY2Y0YmQwOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4N2JiZDBmOTNiY2Y1ZmE4ODAwYjFlYTkxMTJjZDIxNWQ1ZTk4YmYyY2VlZTBkMWEzMTlmNGM1ZTI5MzViMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmNDE0YjI1YTIxZDc0YzJmNTMxN2U3NGEyMDA0YmFjODExMTAxZDRhYTBjMTgzMzI3MGJhMWJiNjQ2NjkzMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b5a6099681f491ca433bc3d398a75b7",
+      "statement": "gclient's patch_chromium hook runs script/apply_all_patches.py with patches/config.json; targets whose repo does not exist only produce a warning.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L127-L139",
+          "version": "repo-lines-v1:sha256:b9aaa98a34e38a5e33f7190572104751beb42c7c5aded8e4affe8a4fe2ee2ca2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMjA2NDE2ZmJiZTNkNTM1MGEyZDI1ODU4MzQxOTQ3Yzk2Y2U1ZWJkNjFkOWMwNjQxZWY5YmI1ZGIxMGVjZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxOWFkN2Y3MDhlNzNkZWUxN2Q0MGM1ODBjODdmMzUxZGRlNjAxMDczNTU2YjFiNDU5NDI2NjliYzI4OGIwNDQifQ"
+        },
+        {
+          "resource": "repo://script/apply_all_patches.py#L13-L29",
+          "version": "repo-lines-v1:sha256:9b74814a515ca47156ec6e13a29f3b30ca8c1377d4d35edf643de353c99c6813:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNmI4NzlhODk4NmY2ZmM2Y2U5ODdkODIwM2JlNzMzZmQxYmU2YzhlNGE5MjljM2VmZDEwZmMwOTQxZmFkNGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZjk0MTdlYzQxODRjYTcyYzZiY2RiNDI0N2YwMjU3MmY2ZjBkMGNmZDcyNDkyZjM3MjI5MWU5NWM2Zjc4NTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMzJmNDFiMDY1ZTE1MTI0ZGI4YmJkNzYyYWU5NDdmMTA3ZWM0N2E2Zjg5MTJhMDA5MjA2NDdlYTUyNTRjYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlNDcyMTU2YjY0YWZmN2Q0MWI2MzUxZWFlMDI2NDhhM2MwYmU3Yjg1OTg1MzZmZGFlM2EzMzVkMGM0MDJjNDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9002f60ec6f345d1a99ea1157f24f25b",
+      "statement": "When reading patches for application, Patch-Dir and Patch-Filename header lines are injected into each patch so export can write it back to the same filename.",
+      "evidence": [
+        {
+          "resource": "repo://script/lib/git.py#L187-L200",
+          "version": "repo-lines-v1:sha256:eabbf2f84539a1526de4e4a9e5c54a570cdb44e751177ce30a1fe944caa7b040:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhMDMxYjM1MjY0ZjA5YTBmNTMxYTAzYzQ3NDVhMjBkYTA2ZWU4MDQ1NmJjODQzZjI4Yjk4ZDg4NGEzZmE2ZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkZjNkYzRkYTI5MzA5OTE3MGFhNDVkMTI4MDUyNjIwODM5NWQxMmJhOGVmMWM0MzYxZWUxZjRiODlkOWVjNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzODk2YzdmOTRkOGU5MzgyZjU1NmMxMGM5ZDZmYmNkY2QwYmYzYzI3YTdiZGRhNjMzMzdjNmU5NjkwYzdiYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2MmVhYTY2NWE3NWI2MjQ4OGQzM2U5ZWQ5NjQ4N2JlZjQ2MTYwMjJkYjU5MGZiYmZmNWUzYTQ0Y2NlZTJiNzYifQ"
+        },
+        {
+          "resource": "repo://script/lib/patches.py#L6-L28",
+          "version": "repo-lines-v1:sha256:b1e8b8e6b6add0831ba3a4304a5e2a034da595fa3c9bf1c67dad3c71fb27e03f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljN2Y1ZjU3YTk4ZWY3ZmYyYTNmZDRmMDFkMTNjY2E4ZGE4NjhmNTYzYjA1NjMzZmY2OGMyODM3MWZkMWEyMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNWZmMDNjYmI0NDViOGNlOGZhN2U5NGUyZjU2YmM1MDgyMjliYmQ4NzM2YjllMDM5NWI0MWMyYzAyYTQ5MGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzNWVkNTZmNDIwYzM3MTNjOTE5MTMwZmI1ZDI0YmY5MjdkNDA1MzdiMjg3YzMyMGY1MzMyYzc2OTk1OTVhNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2ZTgyMWU3ZGI0NjZjOGI1NDgyN2Y5M2VmNzg1NjZkNDRjMzUxYTY3MGMxNDQ1NDUyYjNiZWE5YWU2N2MwMTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_435b00b458ea40feab5c10532a61d4e5",
+      "statement": "Importing patches records the current HEAD as refs/patches/upstream-head before running git am, and ELECTRON_USE_THREE_WAY_MERGE_FOR_PATCHES enables three-way merge.",
+      "evidence": [
+        {
+          "resource": "repo://script/apply_all_patches.py#L11-L25",
+          "version": "repo-lines-v1:sha256:5d9ad5989f6fdce658c6597060a68ddf8abe713fe418e1d53ba57746d29929ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1MDdlYTBhYTY3N2M5ZTgwNmUwN2IwOWMyNDE1ODZjYzg3MDNlZGFmOWZhNDYxYzYyN2I0OTE5NzMxYjZmZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MjY3OTM1ZmM2MzM0NjVkODQ4YjQwYTRlZDY5NjdlN2I3YTMyM2Y4MWNkNTNjMTEwYWUyMTAyOTY4N2FhMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjMDgzNjg4ZmIwYzk1MzU0YjA4Mzc2N2FmMjZjYzg1NmQ3NjU1ODFkMWUxZjQ0YzI1ZWY3MWU1NTcxMDM2NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhMWE1MDljY2ZhZmU1ZWI0OTJjZTc5NGY2ZDU1MzBlYWQ3NDQ0YTc1ODY5ODljMzI2ZmYwMmU2Zjg2NGJlMWYifQ"
+        },
+        {
+          "resource": "repo://script/lib/git.py#L21-L21",
+          "version": "repo-lines-v1:sha256:09f4eca6606c04c4e9233e4d35f2123ab65a6f8d67f57a5db0f1af6f76c26762:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDlmNGVjYTY2MDZjMDRjNGU5MjMzZTRkMzVmMjEyM2FiNjVhNmY4ZDY3ZjU3YTVkYjBmMWFmNmY3NmMyNjc2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDlmNGVjYTY2MDZjMDRjNGU5MjMzZTRkMzVmMjEyM2FiNjVhNmY4ZDY3ZjU3YTVkYjBmMWFmNmY3NmMyNjc2MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzY5N2RjZTkwNjZiZTE3MWM2MjY2YWVjYmYxMjc3ZTc5ZTYyODgwODUxNzA4ZDBlMzllMDFkNDE1N2JiMWRjOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmZjZjMzNDFmN2E5ZThhMmVlY2VlZGU3YmM3ZTFlNmVhODU2N2QwNDdiODkyOTdmYTFiOGY3MWE4NDZkZDg4OSJ9"
+        },
+        {
+          "resource": "repo://script/lib/git.py#L81-L85",
+          "version": "repo-lines-v1:sha256:810bd9bfbbdba0c9887b115d66d18153779c4c4162a4c5a2938840d6f136e90d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzdkNjBmYjM2YTE0OTM3ZDBhNWY3NTc5Zjk1OGVkNzdmYjFjYjYxMWJhODA3ODVhNTM0ZTdlOGFlYzBlNWRiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjNhOTBhNmEzM2U1MDFlM2QwZGNlM2FkNzY1MDc0NzU2NTJhM2IxMjU1OWYzMDhlMTc1Y2JlYWFlOTBhNjUyMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2MwZmQ5YjNhYmMxYmU0YWIzOGViN2ZiNmMxYjdiMGNlZmNmNTc2ZmJkMTA4YmZlMWE1ZTc4YTU2ZWU0MzM2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDQzOGY5YTc0ZTVkMTEzMTdiNzMwNDExMzg0NDUyNWIwMjk2ODA1OWE1YWVjNDI5NDlhMDFiZTQ4ZTA5YjRiOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_88b44d252f324bb894ddb070d4235c01",
+      "statement": "Exporting patches uses the range since refs/patches/upstream-head (falling back to git describe), names files from Patch-Filename or a munged subject, strips location headers, and deletes existing .patch files before rewriting them and .patches.",
+      "evidence": [
+        {
+          "resource": "repo://script/lib/git.py#L102-L117",
+          "version": "repo-lines-v1:sha256:e3bfdd65237fe1bf8a81a8827b121307d9c298d156bef1827445ba72734a4154:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NjkxNGJkMTBjMjJjZTMyN2FlODAxNmFmNmFkZTU4YWQyMzQ0OTgwZWZhMmUzNDMxYzQ4ZjZkNzdmYjE4OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkNDIyOGQ4MDA3ZTg1OGM2MmU5M2NiZThmODQyMGQwZjMzOTUxMTE5OWM3YjFiZmQ2NDQ0ZTlhMDllMjM1NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxZGIyNWMzMDAwNzYzMDJjNmQwNjg0YjJiYWRjYzA2MzZkMTVjMGIyNDY3NTU1NDY1ZWMwYzg2MzJjOWE3NjMifQ"
+        },
+        {
+          "resource": "repo://script/lib/git.py#L180-L222",
+          "version": "repo-lines-v1:sha256:bd93fb3389a95fc1046473aa4c8776f4c6e01d155375ec9ef9b9c1704ab1b557:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YTM5NDUyOWVlZTUxYzE4ZTExOWYwMjE0MTg0ZWUzN2NmM2Q5NTA0ZWQzMGVlNjMyMjU2YWQzN2JiNDMwMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1Mjg3OWY4ZjMxZmE2N2VlYWIwOTIyNmU2NmJkYjkxMzUyOWJiZTU4NWJmYTYyNDgwNDgyNmQ0NTgyNzEyNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwN2VlYzA2N2MyN2Y5ZjRlYWUzYjUyOGQ4YTY5MjcwM2Q2ZjI5YWE2ZDI4YTVhYjNmMmEyM2M2NmJmMzE0MjAifQ"
+        },
+        {
+          "resource": "repo://script/lib/git.py#L224-L289",
+          "version": "repo-lines-v1:sha256:d5eb2e28b1f884243b76b0a28a6c428bf6dd215a2fee91be24d304551d51d56a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMzg1Mjk1NTQzYWU0NWIzYmJjZGQ3YTNlZTcxZDgwZGM4YWRmMDQ0ZDU4ZDI5NDIyZWM3ZjU0M2E2ODUwY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkYzkxYjY4ZGUyYTVmOTAyMmY0NjI5NzY0OWFmOGQxMjljMDc3YzIwMTc0NmM3OTllYjNlMjY5OTBhMWZiNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1NjU4YTNiNWE2NjA2MmI3OGRiY2FmZTdmMWVhNmE4YjdhM2UwMDUxNGNmMWRmOWU2MWZiNzE4YzYyNDhhMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1697d256abc4dc295f9fc47a2dfae8f",
+      "statement": "A dry-run export fails with a non-zero exit when any exported patch differs from the committed file, and check-patch-diff.ts runs this dry run over all patch targets.",
+      "evidence": [
+        {
+          "resource": "repo://script/check-patch-diff.ts",
+          "version": "repo-file-v1:sha256:24aca5e09f566aee91174c3815fcd942f5c22d20101f2c67613f49729b56e21a"
+        },
+        {
+          "resource": "repo://script/lib/git.py#L248-L268",
+          "version": "repo-lines-v1:sha256:13729d8cef6341e7678ce0cae7311150c469c28b9b372438b3a7e50a697753c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2OWQ4MTY5ZmNhZDI1NjVhNWIwY2NhMzRkZjMwNWEzNzA4ZTZiMjkwYTg4MjBlNWI0ZDE1NzAzMzI5ZjcyMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjZDcxZTUwYTk3YWZhM2JlODdmNjcxYWQ0NjhjMTNjYTU5N2RlNTY2ODkxZWM1NDYwZjA1NTZlZGUwY2U3NDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3NDc2NjU3Yzg5NzY0NWQxNjNlNjBkMDVmNDhhN2Y2YjMzNzI1ZTYyYjdiYWFlMmU4YTYyMDU2MjhmM2JkMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0MDQ0MzQxNDE0YjAxYzliOTEwODJkZmNlZmJjOWMyY2E2ZTFhODQ2NDViMDIwYWE3ZTNmYjM1MGI4MGU3NmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_76d0d45d9d7641ff8985426b699b4366",
+      "statement": "Each patch's commit message must justify it as temporary/upstreamable, an Electron-specific compile fix, or an Electron-specific functional change incompatible with upstream.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/patches.md#L1-L20",
+          "version": "repo-lines-v1:sha256:0ac7b1467d197ecb637137bb0c1ab16bbbacb0be38b1351dc79a621931fec354:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkOGMxMTJiOTRhMGIzODNiMjNmMTU4MDlhMDI3ZThlODA4YjI2YzU1Y2EyY2JlZDc4YWFmMmI4YjNiYmZiMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0YmI2OTM1YzNhNmY1ZWVmNGVjYzRjY2U1YTM3MWRkYjBiZjU1MTQ2ODMyYWZjODA2MTczNmJiYzlmYWUzNjAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

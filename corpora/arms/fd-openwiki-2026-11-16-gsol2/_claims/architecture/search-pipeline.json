@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5dcc90c661c5798e73968599f25f81b161154ff0d2c5b5069b4d23d728f4d508",
+  "claims": [
+    {
+      "id": "claim_9081b89cc39c4c309b6a706ca942f960",
+      "statement": "Startup parses options, applies the base directory and search roots, compiles patterns and Config, then delegates to walk::scan.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L75-L112",
+          "version": "repo-lines-v1:sha256:787bb438302092d0f1e10a4be99cdf40b923ce013f7842ecdc60f1e20d3be880:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMDdhMGM4NTA1ZGU5NGNhMDcxOGQyMDhjYmYyM2U1YjAxOGQ3YTJmZjY3Yjc4ZGE3Y2M4ZTdlMDBlZTM4YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3616ba578b640ba9735090372ababf2",
+      "statement": "The scan uses a bounded channel with twice the configured thread count, and per-result execution consumes results on a pool of configured-size receiver threads.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L408-L439",
+          "version": "repo-lines-v1:sha256:9b1d99428177501dffd41bea30f38874f44c31bdbb5ccdcfc77260bb8588fc23:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViM2ZkYjcyY2ZkY2ViYmEwNjNlZDY2MWM3YWYyM2RjMTczMWM0YjU4YzA2Y2I3YWQzZjYyNDYxMjI2OWUyZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiMGM5ZTY1OTdkMGUzY2M2NThkOTUwYzllOWJkMDk1MTA1NzJlZDJjNjRiYTQzZDg0NzlkMDBiNjU1NjkzMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjM2ZjZTkzY2VkNzBhZDE4YmVhNGIxNjc2YWEwOGM1MjFjOTFjMDE1MWIxYTNhMWU1OTc0OWNjZDdkYmE0NDEifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L617-L652",
+          "version": "repo-lines-v1:sha256:38c20cc57d80845be9f979a4ad764cc77be12190e397e2258dc17eb677ac9ad6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MTM4MTg4YmI4YmE2YWQ1MDY5ZGMxYTgwMWE4YzJkN2JiMmM5ZmUxNzg5MjYxZDBmY2FmY2I2OTUzYTBlYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlMjcxNTNkY2Q0NGU2Mzc0MTYzYmQyOGFmOWRmNGQ2YWZjYmZmZjI4OWQxODg3YjVmYTVkMjVhY2M2MzZjYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15355e6ed9fb4f2fb5dcb1da801c5059",
+      "statement": "BatchSender sends a shared batch on its first entry and renews it when taken or full; the producer limit is 256 except multithreaded per-result execution, which uses one.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L443-L457",
+          "version": "repo-lines-v1:sha256:5b6b4840891e6f29a6a2b32c376c37b48ec878437ca8bb04dfb6e9546264a893:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiZTk3ZTc2NTFjZThkZTY1OTFmNmUzYTQwODE1NGMwYjQ1YWUxMDgyMmYyMWMwN2MyOGE2NzkwMDljMzVjYzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1MjhjNWFlYWZjOWZiMTVkOWQ3ODE3MWMyNWNhYzNlZTMyMjkyZWNjYzkzZjk0NGE2ZGE0ZDcxYjJlODAwY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjM2ZjZTkzY2VkNzBhZDE4YmVhNGIxNjc2YWEwOGM1MjFjOTFjMDE1MWIxYTNhMWU1OTc0OWNjZDdkYmE0NDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5YTdiNTJmYmY1YTUzNGU1ZGM5NTc2OWY0ODYzNjdkYWMyMWEyMTUxYjQxZmIyMjQ0ODJmMDk0OGE5YmM4MGMifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L47-L121",
+          "version": "repo-lines-v1:sha256:23b77b37f6ef200775ef256947c9067aefdb1b4a44004c7e3f0292a921ce7ee0:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNDg4YjUyYjUwMThlZWMxOTJhMGNmMThiNTFhNDBlM2Q2YzlmMmI4MjdmN2Y4ODIyMGY1MjBmODRmMzE4MzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkZDkyMjdiMDYzZGQ1ODcwZjNiNDE0YWM0NGZlMDM3ZjkzZmIwODAyZThjYjBiZjViNzQwZGMwODk2NWE4ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5YmY5NDgwODdmYTg4ODBmYWMzMzEyZDY4ZTE1YWJiYjM2ZDk0ZWI3NzlhZjgyMDY4MTFiYWQyYWI2NDliNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_217de721736d4f6ca8fdcb6afc8adce5",
+      "statement": "Printing sorts only if the search stops while still buffering; a 100 ms default deadline or more than 1000 buffered entries switches to arrival-order streaming.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L124-L127",
+          "version": "repo-lines-v1:sha256:18877b908b8c3f235cfe9f940ebfaad9c96c4c0a2f87a8e93da63ae34dfbfd19:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODg2M2UzYTQzYTJmNTEyY2M5MGU5MGRlNDg3OTcyNmVhYjA1NmVlYTRiYjVjNTU5MDZjM2JjYzk4MGQzMmY3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDU5NzI0ZDdmMzYxYTg2NmQwMjJmNmNkNWY4NzcyZTY4MTI3ZWQ2ZjZjYzIxMDEwYzJlNjExZDk2M2MyNGM2NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWNiNzBiOTgwZWI1ZjkyODlhNDI4MTkwNWI2YzE2MjNiYjQwMzcwNjM5NWYzZDlmNjg3MjNlMmNmN2FlYTE5MCJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L153-L242",
+          "version": "repo-lines-v1:sha256:672583189ac1fbc17b5642b00745472404972007318fa07c22cd4a87a2954df6:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiODNkZGQyNGJhZWYwNjZiZTZjOTFlMTc2NjRmM2IwZWE0ZTkwN2FjN2YxZTQ0YTQzYjEzZmQzN2QxOTc0ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2MzYxNTBjYTBmMzdkYTQ2NTY5Yzk2NWNlN2ExYzJjMDdiZjNhZTVlMDYzOWZjNGZiZDBlNGUxN2U0MWYxOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3YmViMzQzZWQ3MjMyNWNkNTE1NTdlNWZkODg0NGE2YjNkNjI5NDM1NTVlZTZkNGY4MTQzYmYxN2JkZDAxZWUifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L270-L293",
+          "version": "repo-lines-v1:sha256:0d8f52769354896fead1d1f5fc2f25121ad670d5b43f5278b320db3536658962:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNTY5ZmYwYjNiZjY1NzIxYWQ1MGFmZDVmNDA1NzE3ZGFhYmI3NDdlMTE0ZWM4ZjIzZTQ3MTgzMDgyMTIzODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2OWE5Y2Y5ZGZiNjgyYWI3ZDlhMGI5MzI3Mzc2N2JjMTQ0Y2FlMzRmOWU2MzFlZDdmZDJkNWU0NjhiOGZhNTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4OWM2YWVkNWUwN2EwZWE2MDMyZTViZGEyMDI3NzViOTcwZTlhNmI0NDE5YzA1NDc3YzJiZjA3YzRhZmVlYjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_53cf803fa6cd4dfb9846122b226086c6",
+      "statement": "DirEntry lazily caches metadata and styles, while recovered broken symlinks use symlink metadata and lack traversal depth.",
+      "evidence": [
+        {
+          "resource": "repo://src/dir_entry.rs#L18-L109",
+          "version": "repo-lines-v1:sha256:c4e95838d2fc5039c018e55385b71ae270144bf263984a84afdc51aba54f7d73:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3ZDgwY2Y4NWVhNjExOTExODFhNTJiZTg4N2I5OWY1ZGNjNWZiODg3MjhmNWI3NjE3NjAyOTFjODE1OGJiOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmZGMwMDg1ZmE2YjU3ZmI5NTc4YTFiNzAxNjIyNThjZGQ3ZTcxODliN2RkYmZkZjkzYzhjNjdjYTE2MDMzMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiNWU0OWFhYjc3MjkzNjQ0M2VjYjQ1ZDk0YTU1NjBiMmJiMTIzNWZmZjA0ODVmM2EwNTNjMmY5NTJmZWJkYjgifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L485-L505",
+          "version": "repo-lines-v1:sha256:dcb364dc6bbeb9e6220a5fea6272fc521031e010a6efa0571144eb138fe3bd03:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyNWVhYTkxNzE2YTQ1MGEyMDM0YzUwMTc5MTM1N2MxMDljNjJlMGJmMzJkY2EzMDUwZTdmMDRkMjM3NjZhY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkYjMzOWMxN2Q0Y2M1NGU3MGM0ZmNmZWNiNjExYmI5ZTdkMzYzZjI1YjE4ZTA5MjNhMWQzMDZjYzk1OTI0ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzZjBmNGM4ODkzZjVlMjAyNWNhN2ZkYzMxMWMzZTdjYzVlNWNjMTMyZWRiMGU2ZjlhYjMwZGFlNDJjMjQxN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NDk4ZGI4NmExNDk3NGI0ODBjZDQ0N2VmNDBjZGUzNTljZWI4Y2VjZTUwYzgzNjYyYmQ4OWViOWIwNzQwM2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e19756a0318e41258dd0f69eca4a7489",
+      "statement": "The printing receiver reports filesystem errors only when requested and returns quiet-mode status based on result existence; colored printing installs a two-stage Ctrl-C handler.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L198-L242",
+          "version": "repo-lines-v1:sha256:d677c4af06bc63af9c5e9ccbd2242cc468c00a9950d37218a67d6b2362ab3647:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkOWIxMTM3ZmMzZjc1ZDBmMDNiN2JmMDZiNDE4Yjk5M2VhZTNjYmM0Mzk1MzkxNTQzZjY1NTZlYWQ0ZTJlZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1OTFjOWFlZmM1YWRiNDlmN2VhOTkwZmM1NDMxN2QzMDE2NDg4Nzc3ZDljODZhOTRjNWUxYWFhYzcwMmM1OGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3YmViMzQzZWQ3MjMyNWNkNTE1NTdlNWZkODg0NGE2YjNkNjI5NDM1NTVlZTZkNGY4MTQzYmYxN2JkZDAxZWUifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L282-L293",
+          "version": "repo-lines-v1:sha256:b0ab2eefa8187d571a9114fefc42cfa0800def1d1fbc84a2e1f0da1825a9e1ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ODgzOTZiY2FhM2Q5OTExM2JiOTY5NTQ3MTkwNzNiYmFlNjcwYmY5ZWZlOTBlMzMxNGFiM2E4ZTQ4NDY2OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4ZmZjODkyNmMzN2FhY2ViODg0OWRkZDUwNTdjOTFhZTY4Y2MwMzMyZWJjOGNkNTRhYjNjODYyYjI5YzVhZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4OWM2YWVkNWUwN2EwZWE2MDMyZTViZGEyMDI3NzViOTcwZTlhNmI0NDE5YzA1NDc3YzJiZjA3YzRhZmVlYjQifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L617-L652",
+          "version": "repo-lines-v1:sha256:38c20cc57d80845be9f979a4ad764cc77be12190e397e2258dc17eb677ac9ad6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MTM4MTg4YmI4YmE2YWQ1MDY5ZGMxYTgwMWE4YzJkN2JiMmM5ZmUxNzg5MjYxZDBmY2FmY2I2OTUzYTBlYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlMjcxNTNkY2Q0NGU2Mzc0MTYzYmQyOGFmOWRmNGQ2YWZjYmZmZjI4OWQxODg3YjVmYTVkMjVhY2M2MzZjYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc27e68ad08848a9ade39f6f6731a2c4",
+      "statement": "ExitCode maps normal success to zero, quiet no-results and general errors to one, and interruption to 130, with Unix SIGINT reraising and aggregate failure collapsing.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L7-L58",
+          "version": "repo-lines-v1:sha256:6712275014b559cd8f15cccc69a1daa454bf74d94052f5d2997be220654454ed:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3NGIwZGRjYmU3MDYzYmE5ODM1ZTczODU0OGI0NjgxYzljNzU1Y2VkYjBkZjlhZmU4ZTJiNGY4NmM2NjgxN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMzc2MDZhMGFlNDQ4NmVjNDczMDkxNjkxNzQwNmZlY2YxMmE1YTJjNzk4MjkwNTI3YmVlY2ZhNjM1ZjQ0YTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjMmUwMGYxOWQwMzEyZDgwMGU5NmQwODc0ZDMzMDJmNzU3M2NjNjI2NGZlMmQxZjcwZmY5ZGM1NTZhNmE4MDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxZjZkZWJmNjk5NzBmODllMGMxMmQyYTUyOTAzM2ViM2Q0MDEzYTJmNTEzNTNlY2ZlNmVhOWVkMTYzYjc4NzQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:37:15.780Z"
+  }
+}

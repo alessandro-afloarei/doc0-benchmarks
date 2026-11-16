@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:74cb06cc5153f4b64a7b117d048c4ee3c39c41813a0d22199985c216bd5dbe6f",
+  "claims": [
+    {
+      "id": "claim_d8db5972355344ce8b319a63fb21bc98",
+      "statement": "toSSG only generates routes with method GET or ALL whose unwrapped handler is not middleware, where middleware is detected as a handler declaring more than one parameter.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/utils.ts#L61-L71",
+          "version": "repo-lines-v1:sha256:65cf4e2a992924ca535fa865a71621b054889dcfa88d8c9c2e25b92f6e3522bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZGI0YjhkYmI2NGVkZWQ4YzllZTkyMjUwMmUxYjZjMWI5NDIxOTdlMjk4MjdiZGQwMjRiY2Q1MzU4ODU1NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYzY0ZWRhZGMwMDljNmUzMzMyODk1Zjc1ZDljYjc3NjAyYTE1NTk5MzIxMGFhNzRhZWM4ZTNkNjdjOWJmZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1MTM3Y2RkMGQyNTkwZjU1OGI2MTNhOWFlNjYzZWJlNDZlMjQ0MjM5Nzk0NzFmMmFlOTVjZjI2MDA5OWRlYjgifQ"
+        },
+        {
+          "resource": "repo://src/utils/handler.ts#L8-L15",
+          "version": "repo-lines-v1:sha256:b8efc783170812193f0ba658bcd36a4f2d1ee8c47ec5758b1871af07777164a1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQyYmUwM2RlMWViMjhkZjU0ZjI0YjY0Y2MwMjMyZmY4YzQ4NWNlOWQ4ZDdlMzhhY2Q0YmFhMTNjZDBiYWM1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjY1ZDgxZjY2OTE0MzY3ZDRkNzVjZWJlZmZjNjc5YmI0MTEzYzBmODRhM2ZjNWNmY2YxN2RjMjAwNDRkYjliNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c8503c21514464c85b657db7c8699a7",
+      "statement": "For each route toSSG first fetches the route path with HONO_SSG_CONTEXT in env to collect ssgParams; dynamic routes without ssgParams are skipped and static routes render once with empty params.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L225-L251",
+          "version": "repo-lines-v1:sha256:c99db70c859c1ad94bc93b1b78e7189814099fff47b99c59024e10ba92680a45:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhYWM1NTBhZjRhMjg4OGZhNzkxZjVjMGQxMGQ3YWFiYzEwNDI4OWM3M2I4YWRlMjFjNDFiOWY0ZDBmNWI0MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5MzQyYjhmMGI2MjM0YzIwMTQ2ZjBjMzdlMGMyN2ZkMzMxNzQxYzI5MGE3NTkzYjhkNjgzYTk4NTBiYjg5ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3OTkwYjY1NDYwODIyMzk4YzQ3ODAxMDhhNjMzMjIxNmI2ZmMwMTE5NTBmYzU5MjhkYWM4YzEyMTFlOThlNmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9a34e38b50ce43548adb2fe597d26afa",
+      "statement": "Rendered responses with the x-hono-disable-ssg header are skipped, and afterResponseHook may replace a response or return false to drop it.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L264-L289",
+          "version": "repo-lines-v1:sha256:39aebb6994662feac6a7d29e328a18e9a6e329f67c2cca54e7bde9d91b214926:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmN2UxY2UzY2ZlOGU5MWMwMDMxZTVkMDFhNGIxMzgzMDQyY2ZkZjc5YjEzY2I0NWIyNzE1OWJiMGUxOGVhNTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0ODkzZjgyNmNlNjVjNWQyYzZhZDg1ZjEzMjlkYjNhN2Q4YWM3Y2QwZjIyYWRlNjY0YmMwM2ZhOGFkOTBhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhNGU3NTZkZWQ1YThkYjAxZWY4MDk5MmE2ZjI1MjFhMGIyN2U1NjQyY2MyMjY5OWVlYTlkZjU3MzIyZGEwOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljZDU4OTNjYmIxMTQzNGEwNTE5Yjg1N2Y4YzY3MDQ1MjhmNGE4ZGIzYTg5NTk0N2I0ODA1MjViODlmNjk5MTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_719e1481300a4d9cabc05d1248b69f23",
+      "statement": "The ssgParams middleware attaches the param list to the raw request and returns c.notFound() when the request path is dynamic; disableSSG returns not-found with the disable header in SSG context; onlySSG returns not-found outside SSG context.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/middleware.ts#L43-L83",
+          "version": "repo-lines-v1:sha256:a4c43b5686f96ed5227eb1043f9008f88c5d5a9ab416dbc03988297c157691e7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzYmEwMWVjYTIwOWE5ZWRkMzZkOWVlOGZkODMwN2YzZmQzZjA5YmZlZTYyYjUyMTlkZTBiYjQ0OGNhYjc3YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxMzNjZTA4YWEzNDJjMjk1OWEwZDI5MzNlMzc3MTRjNmQyMjY1NDliYWExNmE5MjIxNmMxYWNiNDQ5YmQxMDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_011fe58a4f35475c967b8ee133dbbecd",
+      "statement": "Generated file paths are checked with ensureWithinOutDir, which throws 'Path traversal detected' when the normalized file path is outside the output directory.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L50-L72",
+          "version": "repo-lines-v1:sha256:5ca0eabf7f0552e14dda15d9489ff5d1fd92d7688d9e826b4921b87d68ea7cbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmYjZjYTYwNzNhMTY0YzRmM2FlYTc2ZjdiYjMzZmQ5MzBjY2E4NzE0YWNjNjEwZGNlNzM3OTZhZDg0NDEwMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNTBkYzZiMmE2OTNkZDlhMDNhMGNkOGRjYjY0ODQzNWQwYjljNTRiOWEyMDU0M2FlN2NmYmI3Zjk2NThlMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExNjA4NzY1ODMyOTgwMTYwZWQ1Yzc5MjMxODMwNWMwNGJmOTBjMTMzYjljYTU1YzM3NjNmZjkzOTlkYjEzOGUifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/utils.ts#L77-L87",
+          "version": "repo-lines-v1:sha256:64b40025ef4acc84c65dbb61b6440ca31300cb9f512889f9e936e85dac805433:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMTgwNjlkNWEyZWZmMWY5YmY1MDlhYjVhOGQ4YmE2YmYwNTVjMGQwMmEyYmQ0ZDFjYzk1Y2NlYmRkYjhmMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViZjNjZjhkMmJmMDM0NjIxMzg5MWVmNTI3MTUxZTZhYzllNjgwNTE4NzUwMzExY2Q1ZTIyNmYxOTYyZGQzYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82929ceb4fd34812a9536c9b432150c3",
+      "statement": "Plugins default to [defaultPlugin()] only when options.plugins is not provided; defaultPlugin drops every non-200 response.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/plugins.ts#L11-L20",
+          "version": "repo-lines-v1:sha256:c468982794f0e92379689fd3a858d212b7007657b8c6c69ab7ca2a15d17b6bde:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwN2MxMTQxM2E5MTYyMzMwMmE0OWNmYjVmNDY0MDE1OGUxYTc4NmYxNDE5YzZhY2VkMDAyOTYyNjU2NGJlN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmOTFhOWQ2N2QxNmQ1MmUxMTlmNWQ5ODBlN2M1YmQwNjQxMWFkYjI2MzA4NmUwNWEzM2NkZDlkOTQ0NTBhZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMDg5NTFlNmNiOTY3Yjk3ZGY1NDFjOTUwZDBkOWY3MjgxZDYyNzFkMTQwYmJkMTQ2ZmI2N2QxMGQ1ODM2ZmQifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L372-L372",
+          "version": "repo-lines-v1:sha256:950e0f6b271f18e9c3ce21f343f4c1b3ebdca04d13f600f601f9835423c1c9a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTUwZTBmNmIyNzFmMThlOWMzY2UyMWYzNDNmNGMxYjNlYmRjYTA0ZDEzZjYwMGY2MDFmOTgzNTQyM2MxYzlhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTUwZTBmNmIyNzFmMThlOWMzY2UyMWYzNDNmNGMxYjNlYmRjYTA0ZDEzZjYwMGY2MDFmOTgzNTQyM2MxYzlhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmNhZjJjODhkZjdjMDg2NzBjMWNjNjJlZmU3ZDYxYzQ1ZTcxZWUzZTAxZDdhMGUyOTk5ZmM0YjA5NTYxNGJhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGVlMzE0NTcwYTM3MzZhYTEwNTJjMzY3YjkwZjFiMmM3MDQ2ZGMzZTljNjgyYzU5NDBmOTQzMTdkMGQ5ZjFjMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_905785ef344d46d8a0f408d6accc6b5b",
+      "statement": "redirectPlugin converts 301/302/303/307/308 responses with a Location header into 200 HTML meta-refresh pages and drops redirects without Location.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/plugins.ts#L22-L72",
+          "version": "repo-lines-v1:sha256:1ac98459b7d0fb247fbc1967e9c2cac327b241a91be75c64ff38bbe7a90b1223:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiMmQ4YzFlN2VjNjg4ODY3YThmMjRkYTYxZWVkMTc3Mjk5Y2JlZTE5MzE5MWRiMTk3ODRhMjc2MmI0NmViZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56766a10c91d4658ba82dcc7b161a76b",
+      "statement": "toSSG reports failures through the returned result ({ success: false, files: [], error }) rather than throwing, and runs afterGenerate hooks with the result in both cases.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L420-L470",
+          "version": "repo-lines-v1:sha256:eff75f467cceb968f817dac7521b4d27f7233593bd29a01c96d82db57fd3f395:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2NTk1ZjRlZTVmZjYzZDUwOTUwNDE5ZGMzNDQxNDUxMzg1MWRjOTczNmZkMTdhNGY3YmZhOTMwYjI2MWI2ZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwMGQyNTdhNjEwNTBmZWRhMWFiMDBlMGZkOWQwMGVhZmQwNzgzYTllMjFjZTQwY2I1ZmFjZjZhZDNkYjhlZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b658b40bc5874368b5349f670939b791",
+      "statement": "Directories created during SSG are tracked in a module-level set, so mkdir is skipped for directories already created earlier in the same process.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L309-L334",
+          "version": "repo-lines-v1:sha256:b79de5111161e7314a1938e5a5d1195e90d98db2cdfff45aa111db5ed5bdadff:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxOTczNTljMTJhY2JkMmUzNzFjYTdlNzhlODZmZTYyMTkwZWM0NzhlMDM1NzlkMzQwNzgwNTFiZDMyNzk5NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2OTIyY2E2YWQyZjg5NWRiNTk1ODc4ZjE4OTQ4Mzc1NzdkOThjOWZmYmE1MmNmNWVmNmRlYTJiYWZmOTQyYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkZGMxOTEzNjg5ZGMyNmNlNGQ0YjNiOThkOTZmNTIyN2I5Njg1M2ZmZjVkOTYyYjE5MmQ0ZTJhNjUzZDVjYmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb73f488e08f4a6287a12f1ae55250cd",
+      "statement": "SSG discovery and rendering requests share a concurrency pool with default concurrency 2 and default output directory ./static.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L17-L27",
+          "version": "repo-lines-v1:sha256:ce73abfea6bd62679bcd6ac5294333f23b068f429625888664b8f7f510afa0a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NjI5NmQ3MDMzYTQ5OGUxZjdhNTU3N2Y0NDRkMTc0N2IyZmRiMzdjMjQzMDhhODY2YTM1NDlhOWQ0Nzk2YzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkYjRjOTFhMWU2OTFmZjFlMzFlZTdmYmMwMGM3MzliOGExOWFlZTkxMjRiOWJkMzc5NTJmNWIxMGRmNzY0MWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzZDRmNTUwOGZhMjcxZjM4ZGZhOGIwMjRlNjMyZTlkYTA0YWQ4MDBiZmUwMGNmYjU0NTY0MzEwN2JmZTNmMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkZGMxOTEzNjg5ZGMyNmNlNGQ0YjNiOThkOTZmNTIyN2I5Njg1M2ZmZjVkOTYyYjE5MmQ0ZTJhNjUzZDVjYmQifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L420-L423",
+          "version": "repo-lines-v1:sha256:91d0ef625dfe535ee4478fabe102e274c1c19aab8415f95e5d2c53ed0521e464:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDY1OTVmNGVlNWZmNjNkNTA5NTA0MTlkYzM0NDE0NTEzODUxZGM5NzM2ZmQxN2E0ZjdiZmE5MzBiMjYxYjZmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTAwZDI1N2E2MTA1MGZlZGExYWIwMGUwZmQ5ZDAwZWFmZDA3ODNhOWUyMWNlNDBjYjVmYWNmNmFkM2RiOGVmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODg1Y2JhM2RlN2Q5OTRkODU5ZTdlMGE4ZmI2Zjk0MDg1MjQ1ZWM2ZThmODAyMGM1Y2MyNzcxM2E1Nzg4YWMxYyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

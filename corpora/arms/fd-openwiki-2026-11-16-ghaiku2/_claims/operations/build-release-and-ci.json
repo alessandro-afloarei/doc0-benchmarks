@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d179cd1e63097551561d17539f56bf7d4b48c93959ff950a59334ff37be008a8",
+  "claims": [
+    {
+      "id": "claim_8cecfd5a8201468ab963c2d9cd72fd6c",
+      "statement": "The crate declares edition 2024 and rust-version 1.90.0, and CI derives its MSRV job from that value.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L66-L84",
+          "version": "repo-lines-v1:sha256:5ce5c1c7cdc31a0defdf4c400d108c6b05e218dff49f3a4a80082160b0dc6918:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2M2RmMTI3MjVmMWY3MjFlM2Q5MDliMmRiYzFjMWI1ZmQyMzVkZjIwYjA0MzU1ZWJlMTZiYTBlOWEzMzJmN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMzNhMTZiZTA5YTk5YzgyOTNkZTY5ZWRhY2I1Y2NjMzZkYTE2ZjNiMTI3YTkyM2RiNTk3NTQ3ZGEzY2I1ZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzOWVmZDNiODg2YmE4MjRjZmQ2NDA5MTRmMTdlZDdlYjY2NDQ2MzBkNGU3NjEyYjFkMjEyNWEwYjkxY2RlYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMDUyMTI5Y2M4YmZhOWE0Y2E0ZjI4ZjFkMjhlZTIzZjFiODZhYzBkYWY1NjBhMDgyZDcyNmNhZThlMzVlMmUifQ"
+        },
+        {
+          "resource": "repo://Cargo.toml#L20-L21",
+          "version": "repo-lines-v1:sha256:9585f3c2ebd8496f6cd562aaccb3f1a73a0776a18e57e4d8cedfad2630f4e55e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY2ZDhmNDE2MGYwMmQ2OTJkMmE4MGY2MjJiZjBmMWQwNDBjZmVhMGRlYTIyNmVkNTRlMTNkNGI3OWMzNDJjNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGU2NzE0ZTEzMGI4MTk2YmFjNzMwNDY4YTU4YWVmNDQ5NGU1NDVmMGUzMjBlM2Y0YzQ2OTc4MWNiZDExOTQ5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTAwZTU4OTdiMzZlYjEzZWM5NTUyZjhlYzc0OTg0YzUzMzg2Y2ZiMTI4ODlkZWQxNTBjNzk1ZjZjZDE1YzNjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTEwYmViOGVkOWVjOWYyN2FlOTg4OGM4ZjI3ZTQxNDk2ZWM2ZTk0MGY4YzEwZjA5MGUwYjkwZjM4ZDg4OGYwZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e869d53446ff4df2a94dd08bc1f878a5",
+      "statement": "The default feature set enables completions, and the use-jemalloc feature pulls in tikv-jemallocator only on targets that are not excluded by the platform cfg gates.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L66-L71",
+          "version": "repo-lines-v1:sha256:a863ff622ce48e9677f48bbf047a6a705e5cc016a5e638c03cce3b6203df64b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjkyM2UxOGYyMmU5NmJiNmQzMzY5NjcxZjYzYjAwNmRiZjVkN2FiZmUyZWNhZDdhNjQ2YjQwOTAzZTRlOGIxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTUxYmQ4NjdjOTYyOTJiZDhjMjJjMDM3OWRmYzRkYmQyY2FkMGU3ZWU2MzlkZDZiMDNjZjcxNzdiMjJhYWFmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGE1MTAyNmNhZTJjYjJlZWM3ZWFiMGRjZmZkZWZmNjBmYzQyMWJkMzY0NmM5ZDJmMWNmMzJhMzFkNTNlMDI2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg1NGU2ZDFjOTQwYjQ1ZmYxY2Y5OTM5Y2M5YTljYmNkMGNmODVjNjQzOGQ5M2E5Mjg5MDlmMTAyYjIwMjQ2NCJ9"
+        },
+        {
+          "resource": "repo://Cargo.toml#L94-L98",
+          "version": "repo-lines-v1:sha256:7236d89c577de1fe68c57409ed893e1c1db88123efa5a04b83883e7120f39397:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmNmMxYzczZTQ2ODViNmY1NTc5MmFlNTM5MjU1M2ZmNzlkM2NjMDY3YjBiNzRlMDY4Njk4ZjZiMmM3NmI4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmEzNGU1YzNiNWYxODc1MGI3NGJkNTlhNGVmZjZjOWUzNWY0NjIyZTdmNTcyOTI2MTNmOTZjNjBkYTYyYjU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQwMWY5ZWRiYjgyNGU2MTBmNTU2M2FjZTZkYjkxMWM1Yzc3NDA0N2I0YWZkMzBmNzVlNDMxNWVmNmJiN2RhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDA1MjBhODZmNmVkN2NkNTVlMTk3ODZkZTcyMjI2ZmI2ZDA3OTBhN2IxMzE4MGRhMDRkODJjOTZiODhmYWRhMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_20800bde8d1d470fa3c0de3da9262104",
+      "statement": "The release profile enables LTO, strips symbols and uses a single codegen unit.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L89-L92",
+          "version": "repo-lines-v1:sha256:bc930dbe5de0bac10d28ecbce1727f1ee2b77f0b4f8d00d23ea2d40dcfca3dcc:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxYjk5MGFkOGY0Mjg0YzM1NGNkOGY5YjZiMWIwZDAxNTY1MDJhYmIwOGFiMjlhYjUwODI0OTRkN2EwNzYwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk2NWNkMjg1ZWExMzBiOWYxZDFmZDU4MjdiOTIwZjkwMGYwY2VmZGZkOWRmN2Y4YzMwMTNjNTVlYmNjNjg2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODNlYjNmNmZhNTIyM2ZhNmM2MjA5YmNiYjI3MmYxNGM2ODljZjA4N2U4NDk4M2M4MmRmNjZlMThmYjQzMWMzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTUwOGE3MzQ3YzBjNWNmODg1ZTg0NTMyNTMyZWJiMzcwZDU1YjkwMDI5ZTBiMDU3OWViNjVkMzZjMjU3MWU0ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_68e0a418eba2414288f113ae07ad271b",
+      "statement": "The jemalloc global allocator in main.rs is gated by the same platform conditions as the optional dependency in Cargo.toml, and the source comments require the two to be kept in sync.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L66-L71",
+          "version": "repo-lines-v1:sha256:a863ff622ce48e9677f48bbf047a6a705e5cc016a5e638c03cce3b6203df64b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjkyM2UxOGYyMmU5NmJiNmQzMzY5NjcxZjYzYjAwNmRiZjVkN2FiZmUyZWNhZDdhNjQ2YjQwOTAzZTRlOGIxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTUxYmQ4NjdjOTYyOTJiZDhjMjJjMDM3OWRmYzRkYmQyY2FkMGU3ZWU2MzlkZDZiMDNjZjcxNzdiMjJhYWFmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGE1MTAyNmNhZTJjYjJlZWM3ZWFiMGRjZmZkZWZmNjBmYzQyMWJkMzY0NmM5ZDJmMWNmMzJhMzFkNTNlMDI2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg1NGU2ZDFjOTQwYjQ1ZmYxY2Y5OTM5Y2M5YTljYmNkMGNmODVjNjQzOGQ5M2E5Mjg5MDlmMTAyYjIwMjQ2NCJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L33-L54",
+          "version": "repo-lines-v1:sha256:6464f31764513f4bba677a291cee68e6aa4c183506bb6d28a0ee38547c967e39:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZTFhYjJmOWNiZGI5MGQ1YWM5ODhhNDY3MjUwMjFkYmM1ZDllMjE4NWZiNDUyN2ZmOTYzNTIyYzk0MTIzZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NjMxMjFhYTUzZmIyY2VlOWViMWM0YWM1YmVkYTA4YzIyNTg1ZTY0YmZhYTNlZjA2OGRhOGM1ZjNhMTZhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmZDQ2NTJmZWZmZjY0MTAxZTgxYWNkOThlNTFlM2UzNTlmODcwOTAyZTI2ZTQxZTU5OGQ0MjRmN2E4MjI2ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjJjM2IxYTk2YjI3YWVhM2ZiZDViNDI0NzkwNTM4NzNkMDUwMWM4NzQwZmZiMjBjMGRmMDEzYWIzYzYzMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_734fbbf590d74ad0a201aac8d6fec9da",
+      "statement": "The Makefile builds the release binary with --locked, and make install installs the binary, completions and man page.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L44-L52",
+          "version": "repo-lines-v1:sha256:556932fd451043ed77c74e7e61223443f80e705e36e09303366fd0b5aad3e7c5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDRiMTc2YWM1NGNmYjdmOTBhYzJlZTcxYTBlZGI2OGNhOTkzM2I2ZGI2NGE1MzFmNjE0YzI1YTUzZGE4MjgzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q1ZjRjNDE0NGU0NWFjYzkwMmJlZjg4ZmU3YTQ4M2ZkN2Q0OGZiMzBlN2NhOGU3MjlkYzhkYTEwMGRjYTkzMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDhhYjA3ODMwMTE3OGQ1MzBlOTk4NmFmOTY4OWQ2ZjVlMjFjNWIwYTZmYmNmYjM1NzFhNjYyMGViNGNkOWMwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://Makefile#L8-L9",
+          "version": "repo-lines-v1:sha256:bcd6a6b4524928ac62c050e5ec6a7d0f95a718ef26ff1d54c2b907a4eaabef8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQyNjlmN2U5NzZlZTZlMzU5MDQzMDM4NjhlMDBiNGI0NWYzNDFhM2VlNDAzMmY2YWY0MGQxYzc0MWRmMGNiZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzMzMTVmOGE1ZWIxOWExNDBlOGU1ZTA4MjUzMDg5MTVhMmM5NGI4YWMwMzBmNWUwYTUwMWZjMzE1YTFlYTY3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGRjZTI3N2NjODkyNTQzNGE3NTY4Y2JkZGFiZDM1Mzk1MDdiZDRjZjM3NWFhNDRhNzc2MmU3ZjgwNDM5NzA5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjg1NTE4NTUyMDM4M2ZmODYxZDE0YTU4OTRjMzU5YWVlOTZhZWQ5MWIyNDBhZDc0NTJkZGZmYzBmZjYwMzU5NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c92351dece434b859f1a79b644695071",
+      "statement": "The CI lint job runs clippy over all targets and features with warnings treated as errors.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L54-L64",
+          "version": "repo-lines-v1:sha256:d4ebeeec0c35421b226f0da1f9ad9a64dd17e56a1d27ea0b73cb0b64a5a2d830:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlMDFjMzZmMDQ3OTM0ZjM0YjhkNGY5ZmRmMjg2OWVkZjQyMTNjMzU1NjRkOWEzZmUxZjdkN2E4ZTJlMmRmZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhNjM5NzdiYTYwZDFmNzZiNWY2ODNmMjcyYzE1MWViOTYyMDJiZGJjYWMyMmQ1OWVhZWVmNjdjMTc3NzIwNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3N2IxOTBmYzk1MGU1MmY4NGQwMWU1ZjFhMjkxN2EyOWEwM2Y2NWRhYWFjOWVlZTA2MjM2N2ZiYzliZTZjNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxYmM4ZDQ1YmJlMDhjYmI0YjRiMWViNTc3MzViMDhiYzE4NGZjY2VmMzg4NGJlYjRmMTUyMGZhZWU5MWZlZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9997ea709ecf44748d3e3b779196a5f6",
+      "statement": "The MSRV job runs clippy and the test suite with --locked and all features on the minimum supported Rust toolchain.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L66-L84",
+          "version": "repo-lines-v1:sha256:5ce5c1c7cdc31a0defdf4c400d108c6b05e218dff49f3a4a80082160b0dc6918:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2M2RmMTI3MjVmMWY3MjFlM2Q5MDliMmRiYzFjMWI1ZmQyMzVkZjIwYjA0MzU1ZWJlMTZiYTBlOWEzMzJmN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMzNhMTZiZTA5YTk5YzgyOTNkZTY5ZWRhY2I1Y2NjMzZkYTE2ZjNiMTI3YTkyM2RiNTk3NTQ3ZGEzY2I1ZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzOWVmZDNiODg2YmE4MjRjZmQ2NDA5MTRmMTdlZDdlYjY2NDQ2MzBkNGU3NjEyYjFkMjEyNWEwYjkxY2RlYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMDUyMTI5Y2M4YmZhOWE0Y2E0ZjI4ZjFkMjhlZTIzZjFiODZhYzBkYWY1NjBhMDgyZDcyNmNhZThlMzVlMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4befce4aaaae4d35971d06948590b8bc",
+      "statement": "ARM and AArch64 cross-target test runs are limited to the binary's own tests (--bin=fd).",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L186-L192",
+          "version": "repo-lines-v1:sha256:27643c8836349e1ee3c5e47256bf6ca80027d699df11b9bd51f642beb9f30cd4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWE4NDRiNWEyNDVmMjFmY2ExOTE1OGQ2NGFjYjE0Yzg5MThjZTA3NmJiODk5N2QyMzgxZDBmYmU1NDdjZWI1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjM2MjdiNDExM2U4YTdmYmI4ZDBhMWVmYjg1MmQ3ZGFlOGFmYzJkZWFjYmNmNTNlYjA0MmQ1ODhhNzNlZTNjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRiOTdjOTA1ZTVjOGU4ZGMxODc2ZmZiZTQ1ZDk0MWFjNWIxYjIwNjYwZTViYWY5OWRmNmFiZDhmMGVhNzQ0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGE2OTdlMWU2ZmIyNzI3OTlmMDNiOGViOTY3OTZjYzAzZjBhMDhkZmQwNDMyZDFlYmFkMjcyNjcwZTQ2MzFhNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e9a3d68124a496fa07fb228ad1e5376",
+      "statement": "Cross-compilation uses cross v0.2.5, downloaded from its GitHub release in the build job.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L136-L150",
+          "version": "repo-lines-v1:sha256:5d87eaf2dbb6c1feba0e8c46296738d5791aa48e525a67b15401c4225b32b996:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ODg2ODJmYzBmNzRhZjU4ZDg5NWUyZTQwYWM5OWY4YTY2NWRlZDQwOTU3MDRjZmNmNjJhMmE4MjA5NGM0YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3M2I4NjUzYjYyMmRjN2VmYmViNTc4MmY2ODI4ZWU4YWZiODg5ZWEzNGE3YWI3MGYwNWVmYWIzMzhjNzYwODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwZjQyNGExMjJkNzIwZWUyYWZmZGQ4MTIwYjQ5Y2JmNjQ1ZjAwM2U2NzNmYzZiZTk0YjI5MDM5MGRkYTRhODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyMGJiMmYzZDA5M2Q4ZTBjMzYxZjM3ZTEyNTcwMTE3NTIzNWM1ZTVlNGM4ZmQzYWVlODdjMTcyNTdiNzQ2YTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32c1e35c018e4aed84bed69be383e9ee",
+      "statement": "Attestation and GitHub release publishing run only when the ref is a version tag, and the Winget job runs only for refs/tags/v tags after build succeeds.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L280-L293",
+          "version": "repo-lines-v1:sha256:98bb73d0fc054e20d2fc4a0ec01d629d49b7ab44da983f5636e95c287d7cdb57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5OWUwYjI5MjFjNTk1MGFhMDYyNTBhOTdkMjI2NjI0NjIwYTJmNjc0YWI5OGUxMDk2ZTAyYzBlODY0ZDAxY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0YWViOTc5YzNhZDc2NGM5Y2MwZjEzNjRkNmZlODRkZWZmMGM2NmExMzk2MjhiZDZhNTZlYjUxYTdjYzE0ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxNGFhYmNiMzg5YjJjNTU5NzEzYTFjMmJmYjQ4ZDQ4ZGI3YTA1MmYzZjRjOWE5Y2QxY2I1YmYxMTUwNmQzNjIifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L299-L304",
+          "version": "repo-lines-v1:sha256:86515c79704eaad500f6a47c081f1d68f6042ca3e37b60dc2d86c9a311d9805b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk5NGQ3YWI5Y2ZkYjM1MTU2ODY0NzQwYTljNTdkMjBjNjkzYTY2ZGFlMDUwMzU0Yzc5OTgyZWJmZjc5MWM3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg5OTkxMTAzZjZiYTg4OGUzZGU3NjUxYzVhMzA1Yzc3ZTU1NDc2NzczYWJhODM5NTkxZWNjNWJkMGYyYWIxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTc3MWMwODA4MDc0ODUyMWFiMWU2ZmNjNjliYmI4MWIxZjdmNTdkOTExM2Y0MjYxNDY4MmEzOTExMmY1NjVhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDZmMmVjMWRmNTdiYTNhY2Q4YmQ5ODczYmQ3YzIwMWNkMzQ5ZGEyOGYzNmU4MjRjMTExZTRmZmQwNWI1Yzc0NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_893809e8799442d69eeaa609e8133f80",
+      "statement": "The workflow sets top-level contents permission to read, and only the build job requests additional id-token, contents and attestation write scopes.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L16-L17",
+          "version": "repo-lines-v1:sha256:e8f2263b0413f25128aa11d16dd3ae0ef6b0c660fb5b1dc08fe71e0a7daabb4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUyNjI0N2VkZTAwNmU5YmRhYjljNjg1MDcyODQyNWQxYjQxNjZjYWY1Y2FjNTBjZjA5NTVjNDRkMjRjMWE4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDllY2VkYzE4ZWNhZjFkYWY5ZTdiZWZiOWZkNzllMmMzY2YxNTU5OWU1M2U3OWNkYmQ5MDFlZTZlMmM5NzlkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWMxMzNjM2EyNDQ2ZDI0YTc3ZjVhOTIwZjBiNjgwYzRkODNkMGFiNTYwNWVkZjEyMDYxMzg0NjdiOTA0YWQyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjk3NDM4YzI4Y2U1NDI0ZWQxMWU1ZDQxN2RmYTEzOWJkOGFlNWRkYWYxYjU0OWMzMDJlYTA0Zjg4OGNlYmVmZSJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L86-L96",
+          "version": "repo-lines-v1:sha256:2e2f3ed6302b58baee33af3ab867684dcaabfdb5c50949fc788ee5d2484a9ad3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlZTNjNjBkYjI1M2NiY2VhNzI0YWFkZDkxOGViOTQ2NjRmN2M2N2U3ODRmNzk2Zjc4NGNmMTAyMjA3ZDI2YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNzgzYzI2NTVkN2Y2NmI1NjRjNTNiNjliOTU0MjM1Yjc2MWE4NzkwMjMzNTJlZDFjMjZiMjliZmE4YzJlNjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiYjYzN2FhNTMyNGM1ODAwMjc2N2M1YzQwZWMwNDUyZjE3ZWIyNGZkN2JkNDc5NTdiNGQ1OWM1MTY3MmVmMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxZGQyZmE3NWNiZGMwNDJhZDE5OGQ3MjcwNTE2ZGUwZjUzNTg0ZDVjOGU2MWM3NGFiZGM3NjMzZDNmYmIyOTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ada1dce4f9c845cdb2e3da1d683db735",
+      "statement": ".cargo/config.toml statically links the C runtime for x86_64 and i686 MSVC Windows targets, and Cross.toml passes JEMALLOC_SYS_WITH_LG_PAGE=16 into cross containers for aarch64 Linux GNU and musl targets.",
+      "evidence": [
+        {
+          "resource": "repo://.cargo/config.toml#L1-L9",
+          "version": "repo-lines-v1:sha256:9e9bb08e059a19c7070ea357774fdaa97ffcd3c09a035e63378973ddd6fcdeeb:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZiNGRmMmY3MGM1ZDQ4MzM1NDBiMmJhZjhlY2YwNmU3MTI1Mjk1YWRmZjE3MWVkZGZkNTU1ZDljNTQ4ZGRmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRlMTYxMzQ3NWVjNzU0ZTJjODNkNjVkNTRmZTFhYTY4YWJlZDljZWY3ZDMwNTU1ZDExYjQwMjQ4ODIwNDE4MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://Cross.toml#L1-L6",
+          "version": "repo-lines-v1:sha256:137bb285925ab649e70a86d6a4f5975c9891140b6590c82ab508af3025ff0bfa:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjhkYzQ2YTE5MzNiY2MwZWQxZjBmNWI5MDAwYmM3N2U1MjgxZTM3ZWVhZDgwNTU3MmYwN2VlN2M0NzYzMGYyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmEzZTEwODZiNTg0MDdmMDJmZjk1YTY5YzkzMzAzNzg4ZGMwMmZlNjg4NzE2MzkxZGEzZGNjNjgyZWYxNWY4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:10:54.611Z"
+  }
+}

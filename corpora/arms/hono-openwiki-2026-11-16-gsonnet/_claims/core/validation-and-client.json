@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9aad89a794a3b75f3610d40f28df907462958324d37172de0911894a6088b29c",
+  "claims": [
+    {
+      "id": "claim_0479f5603f6a43579f36ec5daa58fb74",
+      "statement": "validator() builds the raw value per target (json only when Content-Type is JSON, form only for multipart/urlencoded, query via queries(), param, header, cookie), throws HTTPException(400) for malformed JSON or FormData, and leaves the value as {} when the content type does not match.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L96-L158",
+          "version": "repo-lines-v1:sha256:56e5090afb5a4dacb0a49e255b78c91e4f440eace60538b1146f2d834bc3d015:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxNWJhODBmZDY4NTdmYmNmNTcxZGY1YzM0YzMyNmUxM2VmZjUzMmY3M2UyZjE5NTQxZTI3OTAzMDE0NjRjYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNmY4NWMxYTY1NmUxZWMxY2ZhY2JhOTg3MThlN2ZlMzJiYzZkMTEzMTNhOTQ4ODk5MDliZGUyZTU3ZTk2ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhNDI4N2MwMGUzOWM4YmI2MGJkNWJmMzgzY2IyN2NmNGRkZTU3M2E2NWFkMDgxNzEzZmI5MzEwNDBjYzVhYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczMGYxYWJkM2YxZGY4Yjg1YWEyZjZmYTNlMzgxNTdkNjdmYmU5MGM1MThmY2VkYWU1MWU3ZjIyNzk0MWI4NWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6636e2683aeb4f1b87bacef9c1e04068",
+      "statement": "If the validation function returns a Response the validator returns it without calling next; otherwise it stores the result with c.req.addValidatedData(target, res) and continues the chain.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L160-L172",
+          "version": "repo-lines-v1:sha256:ab8063227254fa10c9d9c4ab745b3154a422934e905efe970e09ff7a8abdd643:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmODUyOTVmNTkyZmUxNmQwNzI3YTFiNmQ2MzMyNjFkYmUxYWQ3ZGVkM2ZmOTliNGNlNzMyYmI4NTI3YzkwY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1Yjk3ZGVkZDhjZjZmNGQwZTY4NWE4ODgxNTk1NTM0ZjU2MTYxNjRhNGE5NjRkNmY2MDIxNjgxNDc4MmM0MTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ecef7a4efe042db8afd66bbd125b55b",
+      "statement": "The validator type system forbids json and form targets for get/head routes and extracts validated output and typed error responses from the validation function's return type, which feed the route Input and the client's response types.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L11-L14",
+          "version": "repo-lines-v1:sha256:8d56708145431cee8b0f8ae4812593daffcc57f1abec433947f1cf2bbe919291:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZjODk5ZmQyOTdlODBhMDU1ZDVlYjJlYzllOGFhYTNiYTM1ZmY5ZjEyMzNhZjlhMTgyZjEwZWI5N2I4NmRkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmM4ZWE2ZTQwMjAxMWQxYTBlM2U1ZGUwODExNGVhOTI3ZDE3NGQ4ZGE0ZmY5YjhhZGQyMDM1ZjBkOWFmNjJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTFlMGI1NzA0Nzc3ZTE0Y2MwMmNjYmE2ZjU3YWNjYjlmNGY2MGYwM2NiYmIxNTlmMzAxZWJiYTQ2NWQ3ZjJjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWNhOTFmYjU4ZjJmZTcxMTE4NGRiMTU0Y2M2MmVjZWM5OGViYmExYzRlNzc4Nzg4NTJiMThkNDBkODlkYTQ4MiJ9"
+        },
+        {
+          "resource": "repo://src/validator/validator.ts#L172-L185",
+          "version": "repo-lines-v1:sha256:4e6e70edd4006728e51ebd0fbd10b02ea4d4ccceb9c4011523d7bd5ccb037808:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmYmIwZTVmNjVmZTAwYjExZTU4ZDk0ODc2ZDVhNjZlMTM1YzY5MWZlNDkwMmJlNTc1NGUxMTU3M2M0NWFmZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhZmU0MDA2OTlmMzM0YTRiYjlmYWNiZWU4ODYzZmJhYWEwMGMyNGFjYWQ1M2JiYWY3ODE2MmMxY2QzMDViZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/validator/validator.ts#L26-L42",
+          "version": "repo-lines-v1:sha256:1b2d13062582b840051c938defb24c70b1495876c9af790ba57fc1c7e4dca098:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzMjVhNjQ3ZmMzNjE5MTNiNWVlYjcwNDJkODViY2MyZTNlNTIwOWI4YzI1Y2IzMGQwMjAzMTZjOTQ1MmM0YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlNDk3ODUzNjA3YWNmNDk5ZjA3NjUwNDY4OGQ0NTNjYzQyZDhiMDk4NTI1NTI3YzBjZDA3YTM5NDhlZjlhMWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0NDVmZjBhODQwY2NmOWJhYmRmN2NjYjc3ZmIyMGIyMGRhMDBiMmRmZjJjNGEwZjIxOWM4YzQxYTM5NjFhMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjYTRiZTE2NWYyMGQ2NjZkN2E4MDFiYjVlMTdjZmY3MTg5Y2FlM2NlZTNmYWI4YWIwNjQyYzU2OTc0ZjQzMGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d6d2398582754235809ed0d7102b614e",
+      "statement": "ToSchema maps each route path and $-prefixed method to an {input, output, outputFormat, status} entry, which the HandlerInterface overloads intersect into the app Schema; the hc client type derives from this Schema.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/types.ts#L311-L318",
+          "version": "repo-lines-v1:sha256:5017a5558ec1ebb0d4a1e57303e6a5601e60de3aa73c49a200a89cc1ffb60407:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODdlM2IwNDFiY2YzODRmYTliNGQ1ZjA4ZmY5MmJiOWJhOTk4MWEyYTQ3MDg2NGIyMTk0NTI4MmJiMmFhZmY2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MyOWMwOGRlMDliNTI3NWZjMjgzZWE5NGZkZjFjOTA4ZWJjYTAwNzFkN2Q3NTkzODBlNTA4OWRmODFmYmRiMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGNhODY1MDNmNjEyMmE1OTMzMDZmNDA1ZDY4YmU3M2I2MDU4MGY2YWM5ZWFlMzBhYjMxNjRkYjUwMDE3MGQ1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQzNTNjNzRhZTg4MTIwNGYzYmU4YWI4OGI2OWY3NzUwMjMxYWUxNDhkOGZiMDE5MzAyZWNiNTM3ZjdkMTcxYyJ9"
+        },
+        {
+          "resource": "repo://src/types.ts#L140-L148",
+          "version": "repo-lines-v1:sha256:0e5d470597b1ffda3a2f1675c10c737e08436856660fdc32a09d2560fbbcd35a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGU4OGQ1ODBkOTViMjc0ODdhZWMwNjJkNGNiMDNhNjgzNmVjZjdmYWNlZTkzZmU3NjExOWFmYTZlYzFmNGEwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM5N2JjNWQ4ODgzNTBjOTdjMTY4OTMzODYwYzg5MGQ0Njk4NWFjNzZlNzMwZjVhMTZmZWM4YzYzOWIxZDI5MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQ4YWJlZjY5ZTM4NzBlOWM4YjBhMWI5NTE3ZDgzYzMyZDhkOTAzZmJiNzg2ZTczYmZlZGRiNjJkMzE3YzlhMSJ9"
+        },
+        {
+          "resource": "repo://src/types.ts#L2500-L2540",
+          "version": "repo-lines-v1:sha256:0a0587419d57cbdaa0e333f4cf800dd2dc62851171e9267b63125fcac6c8492e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhM2ZmMGUwMDhlYzRlY2VkYzk2NjY0ZDM3ODkyZTRjZTkxM2YwMjA4N2RmOTY5YmRiZDc3MzY0ZWQ4ZmFiYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyMTc0YzVmNTViM2IwYTYzZDI5N2RjZDI0MTQ5ZTA5ZjFiZDlmNDhhMzM5NDA1N2FlYmE5NzliZThjZjhlNDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhN2UxN2RjM2ExMTRmODNiNjJmOGZmYzM4OWE2YjE5ODEzNDA1N2FiNDk4NWY5YmZhYmExMmU2NmI3NDk5MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjYmRkMmRlYmZjMjhiNWJmMjBmOGY4MDZiNGJiNGUzNTA0NjdkMjJjZWYwMDJlMjZhNjM5YmVlNjA0YzE3M2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05e1e918f8084f44bfd64c64458074ed",
+      "statement": "hc() is a runtime Proxy: property access accumulates path segments, and calling it interprets the last segment: $<method> performs a fetch, $url/$path build URLs, and $ws opens a WebSocket on a ws-protocol URL.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.ts#L135-L232",
+          "version": "repo-lines-v1:sha256:853042b49bb80591dff7caefb286595ea0adfde7daafa654236e7cbeaa731534:eyJzZWxlY3RlZExpbmVDb3VudCI6OTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYThjOTAxNDFjMzVmMDc4MmMwMjRmMTM3MjQwMjQ2OGY2Y2EyMzJhYzY4MTc5MmQwNjJmZmVhNjE2OWUzZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiMTM5NjQ1YzYwOGQ3MGNmNzk2M2ZjMGI2NTRiMGNmMTQ2MmU2N2RjMDNjODY1MDlmNTdjYjYxODk3NDEwYjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2M2FjNDUyZGE5MGIzZmIzNDBiMTNjZmMzMTYwY2E4M2EzZjVkNzhhNjJlODI5MGJhZjM4MTEyNjE3NzRiYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/client/client.ts#L18-L31",
+          "version": "repo-lines-v1:sha256:b846de75cb5121e32fa82c75b05ac542067c890324404eda730bb594dcec3c6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxZGYzM2JlYmQyODI1ZmI1Y2U1MzFlZTcyNWRmYzhiZDk0MGYxODMxMTJlZWY1NmJiMDc1NzJhMTY5NTRhMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5NmU4OGI4MGNkODVhNmE4M2I2YWQ1NzA5MzU3NmQwNjNkY2M2OWYxYjhmZjZjNzUwMWUzZTcwMjIzZThkNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ZDMzNTkwMWMwYTM0ZGE4NTZiMGIyMTI2OTBhMmRhOTc1NDY1MTQzYjRiMTljM2FkOTYyM2ZmMzZiYTYwMDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9be89e956d3649b08f4069d686d30115",
+      "statement": "ClientRequestImpl.fetch serializes json as JSON with application/json, form as FormData, substitutes path params (including regex and optional segments), merges static or async headers, serializes cookies into a Cookie header, only sends a body for non-GET/HEAD, and uses options.fetch or the global fetch with the URL string.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.ts#L58-L135",
+          "version": "repo-lines-v1:sha256:2b8f900ac035d73020a2c280377555eb5bdbdfd5c134207e760cd9cea1b88317:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYzI0MmE3YTQxNTQ0MjVkNDcwMTk1OWY1MTlkOWZiZjQ3ODQ3OGI3NDZhM2FkMzBlYjg1NDJlNzNhZWM3ZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYThjOTAxNDFjMzVmMDc4MmMwMjRmMTM3MjQwMjQ2OGY2Y2EyMzJhYzY4MTc5MmQwNjJmZmVhNjE2OWUzZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzZWZhMTk2ZTU1YzQ4NTM5MDhjNDE5MGU3OTM4N2E4ZmRlZGY5NGZmOTI1MzA0MjkxZjE1NjFiMjQ1YjRlYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1MWIyODBmMGE2MjI2NjBiODE2Y2NkODRlZmNjNmI4YjljNTM1ZDhkY2E2ODQ2OTIzMTg1ZTBiMzM5NDIyNjYifQ"
+        },
+        {
+          "resource": "repo://src/client/utils.ts#L18-L24",
+          "version": "repo-lines-v1:sha256:671b2c9608f5c2c0376f500deab91aa1d18fd26beea864c48981abea0168b106:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk3ZDUyZjAyZWVlNmI2N2MxYzdhMjk3ZmViYTYyN2NkNmRhNzEwYjc4YjQ2ZTI3Yzg5MDAwOTI3ZGE3ODJhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODA0YWQzZjEwNTg3MjExMjRjZWRiNDI4NTQxYWIxMjg4YWExMWRhNDJiNGM4NzM5YzU3ZDE3MzU4YjA2YTQzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzM5NmNmZDUwMGU3MTI0NmI5ZTFlMTNkMDEzNTk4NDIzNGY3NTE0YTZmMGM5YzhlZDA4ZjYwNDA0NDZhZDIxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ab7cac4b34d4ad3b16cba0c9ceb02a3",
+      "statement": "parseResponse reads the body by detected type (skipping null-body statuses) and throws a DetailedError with status and detail for non-OK responses.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/fetch-result-please.ts#L11-L42",
+          "version": "repo-lines-v1:sha256:d68158d3a08b437fa03cd9e2d7bcbd699cb7bc4454095dac7fd175debeaca52a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyM2NiNGMxM2Q2Nzc1OWQ1NGY3NjcxZDQ0MDM0OTcyZDA5MDNhMzlkMDhhZmFlNzNiYjk4MWViOWFiMGRjZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwNGUwNGEzZmFiMmIyY2JkZjkwMjI1NmQ1YzVhYzE2NmM1YjEyODZiMTFhYmQ5ZTMyNWMyODk5ZjYxZjJjYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhYmUwMzBkNDYzOWYyNWM3OGJhODdiODAwNGZjMzEwZTdlMmI4YWEyYmQ1OTUyM2Y1MGM2ZWVjZDcyYzYzMDAifQ"
+        },
+        {
+          "resource": "repo://src/client/utils.ts#L92-L113",
+          "version": "repo-lines-v1:sha256:ac1aa726c26155e672d94e332437ef92e9508663ccfe5a4a7364edabb9f5cfc8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNDI1ZDEyNDNiZjVjZWI4MjMxYTc5ZjZiZDIyYmM2ZGY4OGU2ZTEzZmZmMzY2NzAwZDJhZTdiZTY3OGE5ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYTY0NTNkZWEwMDRlOGZmZDFkNGFhNjE1ZGQ2N2I2NmUyMzgwMjY0OThlMTVkNDA0Njc5NjI3NzA0OWJmMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlOThlYjE5OGEwNWZlMGI2NTU0N2I4ODJmN2FlZGUzYmQzNmMzYzQ2NTBkMzYwZjM1NWNkMmM1NTczMTFlZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:09:53.543Z"
+  }
+}

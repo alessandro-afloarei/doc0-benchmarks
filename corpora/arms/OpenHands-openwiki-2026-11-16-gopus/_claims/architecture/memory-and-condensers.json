@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5d9d967837c8284aa017c3292ea72a39aed0cb241035740b914f8a8b1af70d72",
+  "claims": [
+    {
+      "id": "claim_eb10e61bcf034acfb52ee57f10607aa4",
+      "statement": "View.from_events removes forgotten event ids and the condensation events themselves, inserts the most recent condensation summary at its offset, and flags an unhandled condensation request newer than the last condensation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/view.py",
+          "version": "repo-file-v1:sha256:4deb65af8283a0e8bbfab876793b2f88a161a954ed7eb338778b970c5e97e3da"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a974e7cc1444425ac5730ab3a30e55e",
+      "statement": "State.view caches the View and recomputes it only when the history length changes.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/state/state.py#L298-L311",
+          "version": "repo-lines-v1:sha256:1787e25d6d27f99c50d24754e09714d772a2cdd6b6974e6422cdfc7b993c5f6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MzhkMWZiY2YxYWZjZjA0Zjk2YzgzNTUwNmRlMWNiZGExNTcyNTYzMzQ1NzIxMjEzYzQ2MzBmZDRiNmEwMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyNGVmMjhhY2MxZDNiNGNjOWI2YmFlOWFkYzE5Y2FiM2JmMzU4N2Y5NWYwY2Y3YmQxODA3NzRlNjhkYzRhNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73ac61dd546b4dc3b1aaf188d33aea18",
+      "statement": "A condenser returns either a View of events to send to the LLM or a Condensation wrapping a CondensationAction; rolling condensers return a condensation only when should_condense is true.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/condenser.py#L91-L192",
+          "version": "repo-lines-v1:sha256:6118b74340adede7fcf3a57fa87d1f61410dbc983a537b8939ebb41a34de6b19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmYzcwNjU1YTAyNDk4NTMyNDFlYzI0YTE0M2QzZDFmNWU2NjU2YjgxOGMxNGM5NGNhNzQxYTU1NTg5MzhjYzk3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhOTdiNDdiYjgxY2U5M2NiYTY3YWZjMDg2OThhODBjZmEwOTNhODY2N2U5YzlmOTY1MzM3ODE4ZDY1NzhkMTg1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjZmY3ZjE3NWIwMzRjOGU4ODM4OTE3NTMzNzE3NGE4OWRhMGJhNDZmODA4MGMxY2I2ZDBjNDU3M2RjODRjYWFkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhNjg4MmY3OGIwYjc1M2IyNjg4NDk5ZjlhYjI1ZjBmMWRlYTNhMjBlNjM2OTFmYzZlZTI2ODRmNGY2YTQ2NDA2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1552e47b197e468d9c919f40591a8771",
+      "statement": "Condensers are instantiated from configuration through a registry keyed by condenser config class, and unknown configs raise ValueError.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/condenser.py#L129-L166",
+          "version": "repo-lines-v1:sha256:c816293276f518b776a7ab27c22e61524056d761345cd5f2c926b5c58f6fda0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwY2YyYTA2YzgxMTNmZDk0MGY0MzUzOWM4ZDg5OGYxZDMxYWRlZWQ0YTZlOWMyYjM5N2FiMTBiMjg1MjllZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4NzA1Yjg0YWE1ZjNjODkyNmE4ZjBhMDgxY2QyNjkwODZiMmRiMzVkOWViZTlkZjE3OGY3OWVjYTRhODE2OTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxYzczZjVlMjM1Njk3MTlmYmU1MDg5ZmI2OWE3NzYwMzdmODNjNWFkNWMzMjlmNjA3MzdhMGJhNmQyYzE0OWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_da107302b13b42e387c1106d9bf2e147",
+      "statement": "The default agent condenser is the conversation window condenser, which only condenses when there is an unhandled condensation request, so overflow-triggered requests are always handled.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/agent_config.py#L54-L60",
+          "version": "repo-lines-v1:sha256:e9728ae06a3062a2dde873efe5f00334230428140461849d070bd87157a29c06:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg2MzIwOTJkNWE4N2ZhNGQ3YmEyMzdjMGU0ZmU3ZTQ5YzQ5ODdkOGVkM2QxMTFlYWEyMjc4MjkwMWY1Y2U0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBjMWYxODhmMTQyZWQ3YTgyNDY4MGIyMDcxNzJjNTUxOWJjNjE0YTQ4ZmRhN2NmMTY3ZWRiOGRkZjc5OTU2YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU4ZDFiMzQ4NGVhMTEzNWEzMWE4Nzg5ZGNkZmE0ZGE1NTU2MzY5YWMyMzlhZDUwODkxNmFiNjYxYzZlYjc3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWNlNjcxNzkwNDlmYTUyNGZkZDA4ZDcxMTUyZDc1YTRmMTcwZmI2OTA0MTU3ZGRlNGZjZTQ5NWM1NDQ3NTJkZiJ9"
+        },
+        {
+          "resource": "repo://openhands/memory/condenser/impl/conversation_window_condenser.py#L176-L177",
+          "version": "repo-lines-v1:sha256:cd72e72fc8940f69ce4ae012955d8fe47c9adb085e6b2d13ff122045ba3f2ef1:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UzZmRiMzFhMGNjMzI4MTQyMTQyZDNhNmYyZmUyNGM4OWIwN2QyN2UwYTI2NjE0NWIyODU3NjJhNjQxMWFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJiNmNmMDVhOTUyMjg4MzhiYTY4YTVhMWY4ZDZiYjk5MTNkY2JjMjUzMzQxOGYwN2EyZTY0NDliYTgxMjJiMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA5MTkzMjUxZDg4NmNlMzVhMDUzNzJhNjg4MTgyM2M0Y2EzNGY5N2RmMTJiMjY1OTA1ZWMyMmEzOWJhYTUzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjU0ZWJmM2QwZjNiNjZlMjYxMzlkNTYwYWM1NDIyYmVlZjhmMWI5ZjlhNmMxYzRkM2VlNWQxZTE0YzcxNjE1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_feec223c4d3e4232b302d90ef1b55657",
+      "statement": "When the default condenser setting is enabled, server sessions use a pipeline of conversation window, browser output masking with attention window 2, and LLM summarizing with keep_first 4 and max_size from settings or 120.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L217-L246",
+          "version": "repo-lines-v1:sha256:9916095958c357bc1b3d21c5bd092c4c57bee282d711e071f499901c01576443:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxOTg3MGU2NjYzOTkwOTdkNjg2ZjVhNmI1MDQwNTE3ZGUzZjViYjU5YmQzNjMwZDQ4MDJjZWZlZWE1MzYyMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiZTAxYjhjYTgyODZiZTQ1MmRlMTM4NDljNDAyZTA0ZjRkYzlkNjQ3Y2YzNmM4YTI4ZDQ0ODY4YmRmZmExMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1YzM0NDNkYTk5N2M4YTRlOTljOTZjYzAxOGI4ZDM4YmYwOTJjNzA3MTcxMTZjMzIzMWJkNjRiNTY3NDgxYmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_caf3ec1673b94bf49e276b67fff79a75",
+      "statement": "A condenser pipeline runs condensers in order and stops at the first one that returns a Condensation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/impl/pipeline.py",
+          "version": "repo-file-v1:sha256:2f06a42b1c46f3d8ae992bf5a8b49415304186d27c7666d70cd114f0384b303b"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea611ea159a5435ead665683ea20c5d9",
+      "statement": "The LLM summarizing condenser triggers when the view exceeds max_size and summarizes the events between the kept head and tail, requiring keep_first to be less than half of max_size.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/impl/llm_summarizing_condenser.py#L160-L161",
+          "version": "repo-lines-v1:sha256:3dfd0c082c78fa33d17a324cc47cb905cd3fcbbc8019b0ce4e7989a05945c849:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UzZmRiMzFhMGNjMzI4MTQyMTQyZDNhNmYyZmUyNGM4OWIwN2QyN2UwYTI2NjE0NWIyODU3NjJhNjQxMWFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTZhY2VlYzEwY2MzZDg1OTI0MmU0MWMwNGM4Y2MxZTFiYTIzZWFjOGU5NWQzOTViYzI5NzRlZTRhNzZiMWYyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjk2MDM2ZWJhNjYyYjQwZTA1MGM0MjRhMmVmMjA0NGI2ZDU1NjRjNWUyYzRjMTc5OTViZWVlMTFjMWFlMDcwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjU0ZWJmM2QwZjNiNjZlMjYxMzlkNTYwYWM1NDIyYmVlZjhmMWI5ZjlhNmMxYzRkM2VlNWQxZTE0YzcxNjE1NSJ9"
+        },
+        {
+          "resource": "repo://openhands/memory/condenser/impl/llm_summarizing_condenser.py#L17-L66",
+          "version": "repo-lines-v1:sha256:db15ed72c8e24835b9c6d099771b7d1e73675168bf671800fcbf0d040b47cac9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYTU0ZDhhMDU3Nzg1ZTJjMjU4MWY3YzFlMTg4MDA2MzIwYTE4Mjk2ODBkZjhkN2E1YTNmMTE5YTRlZGRhMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwZWM1ZTBjOTZlYmQ4MWQxOWQzYjNjOGI1MTI2Y2NiZDEzNDI2NmMzZmFhMWRlNWU1ZDBmZDBmY2JiZDBmNzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2MWY2ZDE4MTk5NGExYzJmMzU2MzFmMGRjN2NlNWE4NWRmYTMyNzFlOGZlNGU3NWRiZDZmOWU0OWZkZjIxNjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_02ee44a892e346f395ba1fdb6e1b7263",
+      "statement": "ConversationMemory emits an assistant tool-call message only after all of its tool calls have results, then appends the tool results, and finally filters out unmatched tool calls and responses.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/conversation_memory.py#L74-L164",
+          "version": "repo-lines-v1:sha256:0181ec567714a1c44f476409083bdcbcb1cbdd0affd0b304a4a003108814c291:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwN2QzNzBhZDMzZWIzOTQ5ZWY2NzQzNDhkOWU1Y2U2YmJhNWNmMzc1YTk4NGRhMTNhNWRlZTJlZjk4YWUwMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4ZDA0ZGI2NDdmNGUzNTk0NzJjNjhjNjA1MDZkNTkwNzIwNGY5ZmE2YjBlODhlYzA1MTQ4OTRmNmNiN2UyYzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjOGZkNjJkNWI0YThjM2RhYzU2ZjNhYmE4YzBmM2U3YTkyZWVhNDg4NGI0YjM2N2JhYjAyNzJmZGQ1MTY4YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2Zjg1ZTk5YzQ5ODZkNTk2Njk4YTIxOWY0YjI5YzliNzI0MTBjNzYyODlmNjE5YjY4MTdiZjJmMGJkYTAwZTUifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/conversation_memory.py#L747-L800",
+          "version": "repo-lines-v1:sha256:27ac4ece70614319a60ea2193fbcb4f69a9c279d9011eee2bc9efab946be5ca6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZGRkNTI5ZmRjNGRhMmUwYmY5YTQyNmNmYzZhODc1YmIzZDBhMWNjYTE0NGI2OGQ0YmUyMTQzYjY4MjMxY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkYmQ0NTBlNjc0ZDY1Zjk1NzI1YjE4ZTQyOTljNjRjNDc2NThjYWFhMmI1YzcwOTU5MTQ0MzAzZTQzZWE3Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiM2E1NGI5YzJmNjIzMjlhYWI3MDQwYzM5YTRkMThkNThhZTY1M2M2NzFiYzI5ZmFhZjQyODcxMmU3YWUzODEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c40392ed3bb0430a8fab3494eae5798b",
+      "statement": "RecallObservations are rendered into prompt content only when prompt extensions are enabled, and knowledge recalls skip microagents already shown earlier or listed as disabled.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/conversation_memory.py#L527-L660",
+          "version": "repo-lines-v1:sha256:8ef706d40565fa037bbdf7e72959a0899a6bf411d7b16e6536168cc4d7f70587:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkOGRmOGQwYzczZDk3YWMwMDNlZDBjOWFmYjk5N2E0M2U3M2JjY2FlOGRkNDU0YzBkNGI2YThkZjAzNjU3ZmU4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlNzViOWE3YjhiYWRlOTAyYzA4NmQ1YzA1ZTdjNDhiYjBkMGZhODRhMjc1NmRjMGVlYWY4ZjdmMzA3OWQxYjBlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiMjI4OTBjOTNiZjc1MTU2NzM2ZmY0ZWFiMDljNmZjYzA5N2M3ODI1MjYyNWUyYmNkYjE5ZWFlM2FjODdiM2VlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MjdlZmM5NzJlNTU0Y2E2NzNjZjFlN2I0NGU0ZTY5ZDNmYmNiMjMzNzg5M2Y1YTU1NmE1YTM3NWI5NGJiNTRhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_5963632d91a9458ea3305a70e785f70f",
+      "statement": "Prompt caching marks the system message and the last user or tool message as cacheable.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/conversation_memory.py#L683-L696",
+          "version": "repo-lines-v1:sha256:cc82bde2278426fb79d203e9533c543c80e9390a5a02bc44a0a5e892b97558e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4OGYzZWYxZDcxMzc1MTk0ZTI1ZmEyOTI1MjA4NDkyYWEwOGJiNGVhN2EyMTNhODFhM2I1NzA4YTc4ZjMxMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxYmQ1OWJhZjEwOThhZTk2ZmQ3ODY0ZjM2ZTg4MjJjNTExMWFlMGZkNzBmNmFiODI2MzZmZWUyZTg1ZjRhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1MDE2MmIyNTdiZjNlYWY4ZDU0YmQ4NzIxNzM5YTRjMjBkOGNkMTNjYzRkZTdjN2QwODg2NjQ3MDUxNWEwYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3ODEyY2UwMTFmOTNlNGQxNzQ1ZTI0OGE4YWU2YzA4YzgxYzAxOWI0MzcxYTU3YzNiMjBmNWMzMGYyZDRjMzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4128264d7a7f43a99faf905fb049df92",
+      "statement": "Memory answers workspace-context and knowledge RecallActions with RecallObservations, or NullObservations when nothing applies, setting the cause to the recall action id so the controller's pending action is released; errors set the ERROR_MEMORY runtime status.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/memory.py#L86-L137",
+          "version": "repo-lines-v1:sha256:4261c5e57aa4eeb88a0f5cce69a587a1896cd57a53231e5f4ccca7ef69f14be5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlNTViMDY0NTg3ZTY1ZDU3Yzg3NjU4NTM1NmEzZWY0ZDVkMDg4NDk2NDMzYzQ1ZDllOWU2NjJkNzk1YTg0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NjEwMDczNWJmNmFlMDJkN2EwZDFhZGE0MzFjZWEwMTIzODdkMGJjZGE0NDNlZmVlNTMzZDBjMWYzMTZmZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1NjgyNWU4NWM2MmU3ZmJiODVkMjhlZGE2YzBiOWJjMzE2OWQ1YjZmYmQxZmE4ZDc2NDY4MjVkOWY1NWFjY2UifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

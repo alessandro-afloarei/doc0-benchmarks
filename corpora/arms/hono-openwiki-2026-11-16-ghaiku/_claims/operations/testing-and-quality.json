@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5f9eef4879005622805f79c351efefc19834538c907d21654385a94bbcc177d1",
+  "claims": [
+    {
+      "id": "claim_9b8cf467a147424a89b4e4575960d36e",
+      "statement": "The root Vitest configuration defines a main project for colocated src tests and two JSX DOM projects, and it includes the runtime-tests project configurations through a glob.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L1-L73",
+          "version": "repo-lines-v1:sha256:b88f833a4df694d5c31da52f09b986a642e10616962a8ca2205990d5ae105a58:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyYzU0YjY4Nzc5YzBhNDdiNzgwZWQ4MGQzZDMwZjkwODgxOTkzZjZhNjEzNjk1NTJjOTliZjc1YmJmN2NjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03f6f21dac02499cb5b5ec04cebfeb30",
+      "statement": "The test script type-checks src with tsconfig.spec.json before running Vitest, and test:all chains the main test, Deno, and Bun suites.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L14-L23",
+          "version": "repo-lines-v1:sha256:0ccdf7eaf55e1cc9edc00123bf2f0b26db4cc53935996b39433d939f605abd1a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwY2FhMTQ5MzQ1ZGM1NjAzYmEzYjQ4YWE2YjJiNTgzMmIyN2NmMGY4MmY4YjJmNzY4MWUzZGNkOTUzYTlmMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwMWI1NTc2YjgxMTg0MmMyOTNhYmNhOTk0MzljYzQ1ZGI2NzRiOTI1NGNkZTlhNzFmNmRmZDE0YmI0YTM0MDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5MDEyMmQ4YTJiYTk1ZmYxYjJhMmYzYTgyZWY3NDcxNTM3NjJkOTZiZTc0M2MwYTRmOWIxZTgyMjA3OWZlNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlMzYwMThlYTc2NGFmMzVhMWQzMWUzNDhhNTZhY2M2NjYwNmMzZGU5NzQwZmE1ZWZjNTI5N2JkMGNiMGQ3OTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c58200c8764b4d76a1f1f466be9f1429",
+      "statement": "The runtime-tests lambda project is a small Vitest configuration, and each runtime directory carries its own platform test suite.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/lambda/vitest.config.ts#L1-L11",
+          "version": "repo-lines-v1:sha256:d114a77733a74573c6eaa459a343ef3df510200f8a4b4af5c9e6035aaae0e4ed:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlMmIxYWQ3ZjZlZDA2M2VhYzNjMGY4ZWNkOTY5YmFmOTVjZTQ3YmEyZjUyZWE3YTYyOWQ5ZWI3Y2IxMjNjODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1e763f7a58b4a56b944251326f8af1d",
+      "statement": "The CI Main job runs format, lint, the build, and the test script; the Node.js job runs on Node 20, 22, and 24.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L128-L132",
+          "version": "repo-lines-v1:sha256:1bceebfdfd8e925ce4ad43eb1cce5f051518338ae6f82ad562a4b4f1e2359b43:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmU5YjI1NmE3OWI1MmYwYjBlYzg3ZTliZjFkMGE0NzY2OTlmMjc5NDYyZjY3MDU2YWE2ZjA1YWZlOWYyYmIzOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmMyODBiZTZlNzM2YzQyNjMwYmE2MjlhODExNDMwNmJjZDQzMjg1ZjMwOTc0MGQzNDI2MmZiNjE3NTI3NTQzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2I0MmI1NTdhYWRjNzJhMjBhOWUzOGJiOTIzZTA3OGQyY2QwZGM3ZmRiNDdkODQwNzM3NGVkYTBiNjIyMTEzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzQyYTMwNmNlY2U0ZmYyNDAxYjRlNzBiODY3MTMwYWZjNjUxZjg3MmUwYTBhNDNhYmY5ZDRhMjEzMWZlYTQ0MSJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/ci.yml#L38-L53",
+          "version": "repo-lines-v1:sha256:880caee8ca5c13aa72b0614c5a8d66a7076d6107155bd8ca051a1be42b048469:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZTA5YWVhY2Y1MjI5MDBlNWIzMmRkNzlmZjUzZjJlYTljY2QyMDQwZmI5NjNhZDExZmExNDViYzdlZDliM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyZGZiY2RlYWM3YzI3NjBlZjg0ZGM4NzE1M2Q2MTY3NTYzZTAxNDZjZGVjMjQwMGU1NDgzNzY0MWFjNTFhZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlNTg0ZWRkM2M4NjMwMTI0YWFjNTFiNGE4MjU5OGE2YjQ4NThmZjg0Mjc4Nzc3NGQ4MmVjMDdjMDk4YzJjYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmYjIxMzI5NGQzMmU2ODNiMGE1ZTBkY2NmZGY2ZTNhYTRjNGEwYWMwNjMxYTliMTY4MDMzNjU0M2EyN2JkZTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_94c6593997544edcace83a7dc5090986",
+      "statement": "The CI pipeline runs a JSR dry-run publish, and the release workflow publishes to npm with provenance and to JSR through a tag-triggered action.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L59-L70",
+          "version": "repo-lines-v1:sha256:04ce38122526879000212e09db0df2954fe388957dc362ed378d527a57e54a56:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjOTZmMTdjMTI0NzU4OTkxNDkxNjhkZTdiNjAyNDUzMDFhY2FlYjM2OGZhN2MxMzgzNTAwZDEwMzBkMjE3NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1M2NiMmQzMmEyZWMzMDg5NTRmMTM5NGIyMWM3YTRhNGY5M2VlMjMzMDJjOGI5MTU1MWI0NTljNjE2YjdiMTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhZTFjYTAyZWUxNTdlN2RhOTA4NWI5YmM1MzJiOGZjMDUzMjJlNWUwNjhkNTYzZmZkZGI4MmNiZDk1N2ViZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1OGU4YWFjMjNjNWNkMjU0ZjFlNjc0YWUxMDUzYzZkOGVhMmFkNWUwNzJiNmUzOGU2NDRkNjRjMWVlYzg3NTUifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/release.yml#L28-L51",
+          "version": "repo-lines-v1:sha256:9b1e83a69d37f4797153db975c11a2443c4b2787e646f7bdd5ab8b2d9225c54e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNGNhNzc1Mzk5MGRjNjZhMTk3Nzc0MWNmNzQyYmNjYjRiZGFmYWM2NGM2YTE2ZTg5Nzg5Nzc3OTlhMTgwMGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1ZmU1N2U2MzMxYzMxYWEyMzdhNjU0NWZhZjk0MmM3MmFmNWU3ZWMxZGFmYjY5YTkxZGI4NmFiNGVhNjAwYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzZTQ3MDYxMDIwYjFjM2UyYThhYjU4MDkwNDk4MGM3YTM1Nzg3ODY0ZTJhYTM0MzA2N2ZmZGQwMGRjN2JiNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:23:45.579Z"
+  }
+}

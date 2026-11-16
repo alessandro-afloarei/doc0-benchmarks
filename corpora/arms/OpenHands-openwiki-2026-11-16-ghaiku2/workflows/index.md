@@ -1,0 +1,5 @@
+# Files
+
+- [CLI and Headless Execution](cli-and-headless.md) - How the openhands command-line tool starts (fast help path, subcommand parser, cli and serve subcommands), how the interactive cli session loads settings, builds the agent, runtime, memory, and controller, and handles slash commands; how the serve subcommand launches the GUI container; and how the headless python entry point in openhands/core/main.py runs one task to completion from a command line.
+- [Conversation Lifecycle, End to End](conversation-lifecycle.md) - One task traced through the running system, from the browser's REST and Socket.IO requests, through session startup and the agent loop, action execution in the sandbox, observations returning to the agent, streaming to the client, persistence, and shutdown, with the code that owns each step.
+- [Issue Resolver Workflow](issue-resolver.md) - The resolver pipeline that takes an issue or pull request from GitHub, GitLab, or Bitbucket, prepares a workspace, runs the agent through the headless controller, collects the git diff as a patch, records a resolver output, and then opens or updates a pull or merge request with that patch.

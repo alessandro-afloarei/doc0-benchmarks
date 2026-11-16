@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8ff42e9c625079bc659fbf94b84b04ca0d812e61567e2f7af2c65a6432f11b9b",
+  "claims": [
+    {
+      "id": "claim_7161651f04184dcea29d91d8269f64b1",
+      "statement": "The consumer blueprint's default steps are Connection, Mingle, Events, Gossip, Heart, Control, Tasks, DelayedDelivery, Evloop and Agent, extended with app.steps['consumer'], and the consumer uses asynloop when a hub exists and synloop otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L171-L255",
+          "version": "repo-lines-v1:sha256:3b2f53c0e44bb212c39f78c0cd18ab572ee69790a2c4b2861f6773f80cdcc99c:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOGY5MzExNjlkNWE3YThiNzA2MDk3NGMxMWVjZGRjNTJjMWVmYmViNzQyNGU4YjEzYmViNDU5MTZhMWJjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwZGZkYTIyMmEwZTk1ZmQ2ZmQ3ZmJiMDk0MDY3ZTUwYmJjMjIyZTRlOTkxZjI3ZjlhYWVkODU4MDAxMzczMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmMjIyYzQzNTM5MTJmOGE5OTU2OWMxNzA5OWI2NTM3YjQzN2M0M2M1NGRmZTU2ODIxNGRmZGU2NDBhNDM3MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyZjRjMDEzNTM1MTJiNTgzOGFiMmEwNWFhNjM3ZmJmZjgwZDMzOWNiMTBjYWRhM2E4MDBkZTZhODMyOTQzMTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_92c7eda512c24789b86c12e157397f3a",
+      "statement": "Consumer.start restarts the blueprint after recoverable connection (and optionally channel) errors, raising WorkerShutdown(1) when connection retry is disabled and WorkerTerminate(1) on EMFILE, and rate-limits restarts with restart_state(maxR=5, maxT=1).",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L366-L413",
+          "version": "repo-lines-v1:sha256:cc5744a42f8ac1eb60724108af5ce9aa1d2f7a7ab70dd535a4949be55cf8b4c1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYzk1M2Q2YjJjNWZhMzBhYzVhNTM5MGZlZjI1MDA3YzcwZGUzNTg4MWNkOGEzNDc4YjEzZWU1YzZlZmY0ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NjcxMWQxMDVkNjNmMWE2MjAwYmY1NjYwZjUxMGQxODliYTI0MDBkMTNjMjQ1OWNiZjJiOGNiNWZhMDY1ODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlNzBmZjI3NzBhZDVkYzA2ZmUyMzExMWFiZDc1NjllYmZjMDU3MjY0Y2IzMDllYTZmOGJlMmRmNTk3YjhkMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiZDZlZGI5YzViYTE4MmNlNzAwYjFiYzIyZGRiZDJlZDg3NjIxMTU3MzdjNGRmY2ExZTdmOGY2YTc4YWE0YTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb4b4457541a4a0c86ff1aa3530439ed",
+      "statement": "After a connection loss, unacknowledged acks_late tasks are cancelled when worker_cancel_long_running_tasks_on_connection_loss is set, and with prefetch count reduction enabled the prefetch is temporarily lowered based on active tasks unless per-consumer QoS is in effect.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L419-L491",
+          "version": "repo-lines-v1:sha256:ea35ff2cc3182fc5a95d42c697a4e5c3eec13c6f361aa37cf2515b3c02bc9a1b:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZTcwODA3Y2YxZjM1NzJhMGY2MjY5OGU1NjI1NWJhODU1N2M2MmEzNzg5MDVlZjM5ZjZkYTE1MjdlZWI2NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzZmUyNWY5ZTU5MzFhNTM1ZDQ0YWRlZGY3MDQ3ZDAzMjJiMTc1MDk1MDViYjg4ZmQ3NjU0MTZkMmQ3MjQxNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NWMxZGE1M2NmOWI0NmE1N2M4NmJkODA5OTk5MzEzNmUzNzZhYzdhM2M0ZTJlZmMyZmY2MzA3OGYxNTA2YjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0139741c4e0047008bf148f85d2d7496",
+      "statement": "Each ack/reject during recovery raises the prefetch count by prefetch_multiplier until it reaches pool.num_processes * prefetch_multiplier.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L788-L815",
+          "version": "repo-lines-v1:sha256:cc4741f7cb601fae4aaa386b40bd134d86f6c91030d33977a0f416c932c1ddbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MDYyODVlMjRiODcyOTYxZmQyZDI3ZDVlY2ZmNTkwNjdhMWJmNDA4YzE4NjVlZDkyNDYwZWY5NWQyMTU0YWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjNWI0YzQ3YTkwNmZmOGZjODUzMTY4NjEwZGFmOTViZjlmNzgzN2Y5OWM3NGRjMDJjZTliOWQzYjk4NjM3YzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1YjhlMmE5ZjRiNTg5Yzg0ZTQ5YTllN2JhYzI0NWY3MjAyN2M2YzAxMjBiZjBmMmNkMDQ0M2ExNmRkYWI4ZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViYmIyYWFiYWMwNGEyZjY1YjU0NzVjMDNmYzlkMTI2NWI3YjBmNjVhYmJkNmZhNzNmMDg4OGYxOTA2MmQxYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e6a38bdc9bd4ab89556a62f31ba05d1",
+      "statement": "The Tasks step builds strategies for all registered tasks, applies basic_qos with the initial prefetch count, disables global QoS when quorum queues are detected, caps prefetch with worker_eta_task_limit, and implements worker_disable_prefetch only for Redis.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/tasks.py",
+          "version": "repo-file-v1:sha256:2690626297ac4f1a6f3567e5a5de2db5e9c63e6961e01be55ef8c978979bae84"
+        }
+      ]
+    },
+    {
+      "id": "claim_112d8c814a384108817c5314cb5c632c",
+      "statement": "asynloop registers components with the hub, starts consuming, raises WorkerLostError if pool processes failed to start, and checks maybe_shutdown, heartbeat errors and QoS updates on each loop iteration; synloop drains events with a 2 second timeout and runs pending operations.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/loops.py",
+          "version": "repo-file-v1:sha256:d41ce3d8cb867d93e41ee5f65d576e7a4af6226030ed7b87bfe164c5374d5aed"
+        }
+      ]
+    },
+    {
+      "id": "claim_d4244fae77cd4679b7e061e366cf5fc1",
+      "statement": "Unknown task names cause the message to be rejected, a NotRegistered failure to be stored, a task-failed event and the task_unknown signal; decode errors are logged and acked.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L516-L531",
+          "version": "repo-lines-v1:sha256:73bc4b00ef94ab8d0e9cd4859865632677f829b04de2507987cbcb1dc2cd205e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwYmQxNzQ3N2YzMTQxMGNiZTdiODMxZTZiNWYxODAwYjY3NWVhNmI5ODJiZjYxOWZjNTM0ZjI1NTVmZjBkMTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwMGM1MWNjNmQyNTY2NGQ4NmY2YzhkNWMzOTJiNjU5MmQ0Y2FjMDRiNzU1ZjlkM2IwNjhjMjA5YjI1MTJhM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiMWFlN2NiNjU0ZmZkMzYwMTU3MjNiY2Y1NDMyOTI4YTI4MDE3YjgzNTRmMDVkMDUwNmNiYTQ0MzA0NzMwNTYifQ"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L672-L714",
+          "version": "repo-lines-v1:sha256:389df7781b3e6356a4b05c1de5689971b052b76c7178802fbe4d76f98a4f2950:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmMWM1YWE3NjI4MWI3Njk5MmJlMjNkOWQ1MTUwNDJlNzk2MjMwZjM2NzMxOTM5MmZlMjBmNGNhMzg1MDYyZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMDE5NWQ2ZmVjMDVhMDEwNzVmZmM1OTVjNTVjN2JiYzc2NjMyMzk5NzQ0Yzg1NWNlZWQ1ODhlY2UxY2ExOWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1NzBiZGU4YzMyMzAyZTZlYTViZTRhNjk4MTU2MzdiZWFhZmNkYzJjZTQ0OTUwZGJkYTU3YjVlZTVjY2RlMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlNzYzZWExYWIxMzE2OGY2ZmFmOTc2NWEzMDQ5YjA3M2Y4ZmIxMDUwNWFkMDU2ZDM3MDgwMDg2OTZlNDk2NzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_502283d0aff94f9b893960c7d3fcaf30",
+      "statement": "Mingle syncs revoked ids and the logical clock from other workers via an inspect hello broadcast on amqp, redis and gcpubsub transports, and Gossip consumes worker events to track node join/leave/lost and elections on amqp and redis.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/gossip.py#L23-L180",
+          "version": "repo-lines-v1:sha256:e314b7cb9b384151d7b8b78d80ed0343a1ac9434be79926347df2b176f95cb32:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2OWRiY2U5OTI5NzZjMWY3NDlkYjU2MGViNWU4ZTQ3ZGNjZjNkOTBkZGYxNDZiYzgxMGRhZDAwZmJjNmZkNGMyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2OTJiZDYxY2Y5MjZjODkxZGUxYzQ1NmJkZjE4MjAyYWNhY2UyN2I0ZTIyZDAwYWI0NzM5Nzg5ZjI3ODNiMzliIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0ZmJhNzZmYzY5MTY4ODM1ZmI2NjY0ZDBjNzRkYjUyYzM2NmI2ZDg5N2JjNmJlN2JiMDU5NDljYzk2MjRiMDYyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmNzA4NTc3OTViZTI0ZDE1ZWY2YTRhY2I1MGViZmI4NWVhZDU4MjM1NTU2YTE4YWFmN2RhZWQwODBhNjMxNTc2In0"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/mingle.py",
+          "version": "repo-file-v1:sha256:4ed4038c072b24b4c3393d78bff40fb15f31fcb368ed917390bd3a2da21acdde"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d1a0f86ec37445a96991edd5a4b781f",
+      "statement": "Per-task rate limits use a TokenBucket with capacity 1, and requests waiting for tokens are rescheduled on the timer.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L296-L364",
+          "version": "repo-lines-v1:sha256:bd480440640aa12618bd2913f088992fb68a9209fa72714fa1d4bb56e27baaea:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzZWIxYzdmOWEwNjU3NzUxNWY5NGQ3YzMxM2Y0YjBjMDYyMWQ5MzdmZmM3ZjMxMWRhOTVhNzQyNDAwMjBhNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjNzFlNzExN2QxY2JhY2ExYTczNmQxZmY1MzBjZDA3MTY3MGJhYTAxZTA3MWQxNjhhMDk0YmZlOGY0MDVmMWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZTM4YTg0OGNhZDhjMTJjNjE4OGIzNTM3MDM3ZTBkNzYyY2ZhNzQzZWYxMzRhMjEwMWYzNzY2ZjhmNGU4MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjYmY5NGIzYWI4MWE5YWVkMGY3ZjQ1MmY0NjFiNzcwZTNmY2RlMjIwMDlhOWY4Y2ZiYjNkZjFhYzc3NDdlN2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e90a38f060c44702a4999c9fa6f0cbb7",
+      "statement": "cancel_active_requests cancels non-acks_late requests and unacknowledged, not-yet-successful acks_late requests, announcing a retry only for non-acks_late tasks.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L823-L855",
+          "version": "repo-lines-v1:sha256:7f2d7a3b9616ab819a4efb0d2f5fd4f4793ba6efaff043ff95882cdf72be2b44:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMTQ1ZDg0YzVmZmQ3OWNmYjU2OWE0MjdiMWNjMDI1M2UzNjVjM2I5NGMwM2FiN2JiODJiY2FhMzliYmYyMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzMzYzNTRlMWZiZDIxYTJhNmFjMWFiYmJkY2JkYzQyMTZlZTZlZTc2ZjIyMjNhMzIyZmM3Y2JiODdhNDlkNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkZGE3MTEwMGM5ZWM0MWVjYmJlOTk5NjZmYmJiYmYzNzQ0YzQzM2NmZWQ5NTdiYzAzY2IyNDU0MGVkYWZmM2UifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T09:27:53.075Z"
+  }
+}

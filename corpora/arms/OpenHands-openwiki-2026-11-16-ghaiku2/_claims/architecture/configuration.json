@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b7c74a45491871d340e40893bcf9c8ace536593dc997588fc8b1ec13ccfa2a15",
+  "claims": [
+    {
+      "id": "claim_630a7a5a78604e959cf78aa62fbc60f2",
+      "statement": "load_openhands_config builds the config in order: TOML file first, then environment variables, then finalize_config and custom-agent registration, so environment variables override TOML values for any field they set.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L128-L135",
+          "version": "repo-lines-v1:sha256:80d75dc2283a373bd85b504fe9469450a3dde8d80daeba3303b024c73b27ba5a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhmZTc4ZDkzNDljNTAxMjRjMWRiNTMzMGJhZWIyMTc4YzY4M2ExOTIwY2NmYjM2NjBiYzQ5NGFlMjJiOWQyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYwZTBjZTdmNzlhYjhiNDlkNDY0OGYzN2IwN2Q2YmM3N2U0MjBmNDlmY2ZmMDFiMmQ4Mzc1ZGNkM2RlMDY1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM4NjY0ODE4MmM3MGZmMjA3ODQyYjI4OTZlMjkwNTVkMzgwMmY0ZmNhZTVjZmQ4ZWViMzg2Mjc4YzFmM2QwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmQyODgwZWE3NzcwYjExYmUyYThiMDdmYzMyNDg5ZWY4ZDQyMWQyOWQ4ZDBjYWU2ZWJiZWIwYWY4M2UyNGU1OSJ9"
+        },
+        {
+          "resource": "repo://openhands/core/config/utils.py#L819-L836",
+          "version": "repo-lines-v1:sha256:2dab5543eae655d97e8f38feeabdcfc50bc9c502cc89fa17391fc66d8a41d5e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZGFlNTAxZjlkNTlmNmQ5ZjA2YjI5MmQxZjc3NmIzMTNiNzg0NDg4ZGQ0YTZhNjVmODM3YzU0ZGE3YjQ1MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YjI0ZWViZWIyMTkxYWY1ZjFhYzNhYjNkNDJkNzJlMzA3NGE5MGZjMGI3NzI0ZDk1ZThlMmUwYTU0MTJmN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3MDJhNDI2ZWZkOWFiZGEyM2EwZGZkYzUyNzliZGI5ODFlMDI5NTEyNDY5Y2FkYzkxNTBiYjAyZTZlNzRiODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2f0973d0cd1468f808ac0341372369e",
+      "statement": "Environment variable names are derived from the field path in upper case with nested sub-config names as prefixes; LLM_ and AGENT_ prefixes apply to the default LLM and default agent configs.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L128-L135",
+          "version": "repo-lines-v1:sha256:80d75dc2283a373bd85b504fe9469450a3dde8d80daeba3303b024c73b27ba5a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhmZTc4ZDkzNDljNTAxMjRjMWRiNTMzMGJhZWIyMTc4YzY4M2ExOTIwY2NmYjM2NjBiYzQ5NGFlMjJiOWQyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYwZTBjZTdmNzlhYjhiNDlkNDY0OGYzN2IwN2Q2YmM3N2U0MjBmNDlmY2ZmMDFiMmQ4Mzc1ZGNkM2RlMDY1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM4NjY0ODE4MmM3MGZmMjA3ODQyYjI4OTZlMjkwNTVkMzgwMmY0ZmNhZTVjZmQ4ZWViMzg2Mjc4YzFmM2QwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmQyODgwZWE3NzcwYjExYmUyYThiMDdmYzMyNDg5ZWY4ZDQyMWQyOWQ4ZDBjYWU2ZWJiZWIwYWY4M2UyNGU1OSJ9"
+        },
+        {
+          "resource": "repo://openhands/core/config/utils.py#L66-L82",
+          "version": "repo-lines-v1:sha256:d29e8c918a332cf18de8d78388bc933995c98e0d1ed54b28e63ec309b7be178e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlMDA5OGUyMTViZDhmMDcwNzU0NDlhODRjMmI5YmQ3ZmVmMTRlMmUwMWRiNDMzN2NiMmQ3YjYxMjg0MjBkYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkZjVkN2Y1ZWY1NzMzZWJkMjZhMzFlYTdhOTQwNTk0Zjk5Y2Y1MjIwMTNkNmIyZWM2YzM1ZmYzMzY3YTNhOGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzMGU2ZjYxYTMyYWVkYjM4MGQ5NGQwZDFkNTRkYTY3YjU5YWUyZTcwMjA3MmNiYWY3Y2RlY2IzODNlNmRlMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0YWVhNDUwNjY3YjU2ZDRlZmMwNDQxYjJhYjM3OGY1OWI2OWY1MTdlN2VjZWNjYmJhMTgyYjgyNGIwN2MxM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7386bd3288c0495b89bf29bf9de41375",
+      "statement": "A parse error in the [security] or [sandbox] TOML section raises ValueError and stops loading, while errors in other sections are logged as warnings and skipped.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L215-L228",
+          "version": "repo-lines-v1:sha256:39571e3a9774d823789482a9e78983b0bd70c82062e97af470f782bb1fb80d61:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3ZWM4NjU4MDAxNTE4NjVkYmNmNDZjZjczZjFkYzBiYzU3MjEzZTczMDhmZTZiMGE3NWRlNTQ0NTNkODM0MmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxNTBlM2JmZmZmNmZlZDQyNjJkMWZjMDRlODhlY2ZmOTY5MWMxMjViYjU2ZjZhODIwN2UyZDExMTcwODU4MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhZDE2MDA4ZmViYjgyY2VkMTMyOGM5YjAwZDhiNzEzYWIwNzA5ZDk1MGY3NWVjYzQ5ZGI2MGEzNmRkM2NlMzIifQ"
+        },
+        {
+          "resource": "repo://openhands/core/config/utils.py#L259-L272",
+          "version": "repo-lines-v1:sha256:8a24805b63cebcacf7311b9849780a888560d739abaf7e71ee7ff6f2ad743d48:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhOTIxMGQ0ZDljYTZkM2Y5ZjExMjkxMTU5ODk3OGU1YTFhYTE3ODk3MjkwNTAyNDVjNjQ1ZmE5ZGIyZTNjMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyNDcyYTM0MTZlYTdiYTY1YTFmNmM2YWM2OGQ0ZmU1ZDAxMWNkZDdjMDRiNjllYWQ3M2E5OGNmMWZlMTVkNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2OTlkNGVjZTRiY2QxNzllMGVkYWZmOGU5OTFjMjYzYjMwOTZmYzBkYmE1NTAxMWMwNThlYzlmNWEyNjA1NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e754ef25fbee4cb29ca451a0e7eff0b5",
+      "statement": "setup_config_from_args applies command-line overrides after loading: a named LLM (-l) becomes the default LLM, and default_agent, max_iterations, max_budget_per_task, and the selected repository are overridden when provided.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L839-L904",
+          "version": "repo-lines-v1:sha256:b0ac1c1b83e9262233bbd589d47e3f50d2713ef77a5f66ccaf74bf27415cf021:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZGNlZWJkOWM3NTU4NzAwZGExYjc5NTM3MGQ5ODNkMzAwYTJjMzRiY2E1MGM3ZWVkMjk0MTkyNjljZjkzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkNTM4Njg5MGIxZDc3YWMzNjI5Zjc4NWY0YTgwNDY1NjA4ODgyYzY3M2E2NTVkZjZiNDQzYThmYjliODI4YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3383f4d29e4740ac8fb67a63b9f4ba31",
+      "statement": "finalize_config derives workspace_mount_path and workspace_mount_path_in_sandbox from a sandbox.volumes entry that mounts to /workspace, and warns that WORKSPACE_BASE and WORKSPACE_MOUNT_PATH are deprecated.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L377-L400",
+          "version": "repo-lines-v1:sha256:b3bdbd3134d801549bc00bfc95f35567f0d366eed6a443c993c7d5aa58de1b5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYjY0ZWFkZWZkNGFmYTQwZjM1NTY2MjMyMmQ4OGExODljNGE5YWZjNTRmYzM3ODFiYzE5YTZjYzU5Mjg1ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiZmNjMzhmYjM1MjIwODc2ZGU4MzJjODZhMTVlNTE1NzQ1YjFhMmUyYjhkYzQ1NWU2YjUzNGYyZjc5NWVkMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlYzMwNTdkNTZjZGFkMGEyNjA3Yjc1ZDdkMDczZWU1NDFlNjk1Y2VlNTY3MzU5OGRmNGFiMTQ2MThiYTFkZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e5454fc2a7048c789e09ae1063d7aab",
+      "statement": "SecurityConfig defaults to confirmation_mode False and no security analyzer, and SandboxConfig defaults the execution timeout to 120 seconds.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/sandbox_config.py#L59-L62",
+          "version": "repo-lines-v1:sha256:6bcce1d25f836c90fc5ee430400a28f2b47cfccf3ca6faf0ef8ddb4cbe33e1b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTBiZGVhMDMyZGFmZDA1Yzk4MzExMGQwNzZjYTM1YTgyNzBjYTRjMmRkOWE5N2I4MTZkYzk5MDYxODYxOTQwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGE3Nzg0NzJlMDZhZWFiN2I2Y2M3YjkwODlkOTIwZWZhZjJjZjUwZjMyNTUwOGM4OTIzMjViNjNiMTdjZmJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzAxNDAxMWMzNDZjYzJiYTQ1ODllOWYwOTZiZWYwNTdhMmNjNWI5MTE1MDBkMjQwNTQ5NGNkNTE1ODQ4YTNmNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODBhY2RiM2NiY2Q4MDg1ZGEwZDQwOThkZjQ0Njc4MjU4YWMzZjliYzQyMzhlM2EzNjdkOTBiMzdiZDdjZTE5NyJ9"
+        },
+        {
+          "resource": "repo://openhands/core/config/security_config.py#L12-L13",
+          "version": "repo-lines-v1:sha256:1e9c5a63e2e5945f3a1b55e1a52bf4dccb5de9bdf96415b77caa5a69b805872d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTBiNWYxNzZmZDUyYzE2YzYyMGE4MDQ5ZDIyOTMzZjNkNzg2YzBmMjY0OGEyYzM1OWM5ZDljYTA2YzBmMWQ5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODY1OWFiZDhmYTE1NmQ4MjM0ZTMyM2JkZjZmNWM1YzgyOGFkYWQxN2Q4OGU3NzMxMGRjNmFhNzZiMmNhNWQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzNiODVlYzAxM2E5ZTQxYTU2MjNmMjljNGViMDViMzZiN2M2NzlhNjYzNTI1ZTVkMzEzZDJiZDU4ODEyODFlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDY1ZjdhMTBiMjZkNTIzNzdmMWRhZmU2MmM3NDI4ODdlNmYzZTBlODZkNjE0Yzk4MDdlMWUwMTFlZjEzZjZmMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b785ba0f42e34cdaaea3f36f214b273a",
+      "statement": "LLMConfig.from_toml_section treats non-dictionary keys in [llm] as the default configuration and each dictionary-valued key such as [llm.<name>] as a named override that starts from that default.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/llm_config.py#L101-L113",
+          "version": "repo-lines-v1:sha256:0c6b8309360110a36a64c0a5e77b47d043f2db2efe0257645bc4a96e2a800114:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExZDY0NTk5YTA3MjUzZDMyMWE5ZjdmMWYzMTI5MGE1MzViZWRmNjI0YWY5ODhkZTFmOTA3NmI3YjhjZmY5ZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxZGY4YWU4ZmMyZWY4ZTJmMzRmYjgwNDE1M2RmMTk0NTM2MjUyZTY0ODEyZWMwZDA3MjVlMWQyOTI3MmJlMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwZjU3ODJkYjIxNDQwODZhNzRkMGU1MmI0NGU5ZDA3YzQ1NGQ0Y2EwODc1ODFlOWI4MDNhMGEyZGM4NzhlNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2YmZmMTQxZGE2YTllMmMxZWM5YTg2ZjExZjVlNWRjYmI2OGZlNGEwOTNmYzFmZTIzMTUzZmI3MThjNDFhNWIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d25b04e92311c56cba2527d7f30c3008d7041b5f0165c2287ea1706868e74e44",
+  "claims": [
+    {
+      "id": "claim_a6160162de11417ca41681e25064b868",
+      "statement": "HonoBase has no router of its own; concrete subclasses must assign this.router in their constructor.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L113-L118",
+          "version": "repo-lines-v1:sha256:1aec06e45be4b99df01e151eec75364f0b88075a8adfddd38e017cab2fa9a510:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmZhZTEzZDNmNTM4OGZlN2IzMzQ3NGNiZTNmMjE2YzQyYzU4ODk1ODhiNjBkYzBhYTBmYTU5YjI3Zjg2ZDcyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2NhNDUxM2I2NjNlZDkzZDg5ZjlmMWQwZGVlZDIzMmEyN2M5Njg2YTYyYTM1MDFiNjkxZjg4OTlmNDcxMjcyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzFjNDE4ZGYwNDYyZDdiZjA4OTljZDk2NDc4NDM4YmUzOTQzZTFjNGY2ZTc4NWExYTg5ZDVhYzEzOGIyNDJlZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_457c978f29ca45f3867a54b7a8c504ab",
+      "statement": "The default Hono class uses options.router if provided, otherwise a SmartRouter over RegExpRouter and TrieRouter.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono.ts#L26-L34",
+          "version": "repo-lines-v1:sha256:e9f33a190bfda48305579afb57bce9a79b140ddc991c278990f2c473318e5b33:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRkNWNiZWViNDNjNWU1Mjg0YTRjYzNiYjAyODU5N2ZlMjZlMThhMGFmZjg0YTU3YTE3ZTcwMGIwZDgzMzQ1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTA0MzMwNzE5MzQ5YWNhNTA3ZjI5NTUzYmNjZDdiODcwN2IzMmFiMTBmNjE1MTdmNTQwZTE0ODI2MThiNWY5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f1218cf4cb84b239ab64d1368fd09e5",
+      "statement": "The hono/quick preset uses SmartRouter over LinearRouter and TrieRouter, and the hono/tiny preset uses PatternRouter.",
+      "evidence": [
+        {
+          "resource": "repo://src/preset/quick.ts#L18-L23",
+          "version": "repo-lines-v1:sha256:3cfa7ae038bfc4140d2f4c71170c3a0555b3dc39fe2ed215d59701a431366ed3:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRkNWNiZWViNDNjNWU1Mjg0YTRjYzNiYjAyODU5N2ZlMjZlMThhMGFmZjg0YTU3YTE3ZTcwMGIwZDgzMzQ1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjRkYjMzZjI2NDdhZjk4YjZiNTMwNTRmNWIwYjVkN2FkNWFmNzk1ZjI1MmY4NjEwZGQ2NzFjYzUwMmJlNzE4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://src/preset/tiny.ts#L16-L19",
+          "version": "repo-lines-v1:sha256:072a8bfcae177a0b3b3b4e7f196ded28b4da4925c6835dc71f5b01f09fe200cf:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRkNWNiZWViNDNjNWU1Mjg0YTRjYzNiYjAyODU5N2ZlMjZlMThhMGFmZjg0YTU3YTE3ZTcwMGIwZDgzMzQ1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjRkYjMzZjI2NDdhZjk4YjZiNTMwNTRmNWIwYjVkN2FkNWFmNzk1ZjI1MmY4NjEwZGQ2NzFjYzUwMmJlNzE4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c90e80f4e4f4113840c414797268760",
+      "statement": "HonoBase copies constructor options other than strict onto the instance, and strict: false selects getPathNoStrict for path extraction.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L170-L172",
+          "version": "repo-lines-v1:sha256:4becbbc6eda62cace238062396d645dd6e38577bfba6632b4ec3cfb8cce4f50e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ3NmUwNjE3MTRiZTBmZDI0NGJhYTM1ZWI3YjVmOGRmMjY5ZmEyOWJlMDIxODM5YzZmODVlZGZmNWY0NmZiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ0ZmU2MjNmNThiOGUzZmYyYWQ4OTA1M2ZlNzM1OTBlZTUwMGNmYTExNzVkNTgxZWQ1YjhiNGUwZDFkNWJiNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzM0MTVhNDJhNzQzMjJjOWE0OTIxMzgwNDY2ZmIwNWU0ZGVjZTA1NWExNzRlMzI1N2I5MWRjYTEyZGQ3ZTcxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI0NDdlNmQ5NmUxMGM5OTIzODZmNDA1OTc2YjU0N2YxYWI3MGNmZDE3Yzc1ZTg0NWNmNmUyYTM1Zjc3N2FjYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_062d85880a8545629c67afa6ce83f5db",
+      "statement": "The root entry exports the Hono class and Context plus core types, while other features are published as separate subpath exports.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L13-L80",
+          "version": "repo-lines-v1:sha256:9583ed6fdf6e96dc170eb5d559a3de7c792c65350f8c46875fa846d0efd29934:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ODMzZDU5NDljMDNhNDBjYTk1MjQ5MTYxMGE2NjU5NjQ0YjNhYTQ2NjM2MmY3OTkwMjBkYmYxOTgxNTQ3ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNTFhMjgyODU3ODI1NmQzNGNjYWIxZjg3MzRlYzBiZjJmZGFlNGQ2MmU2MWVkZGEzZGQ0ZGNkZDM5Mjc3MGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyNjM0MzdlMDM0Nzc3MzQyZDlkMzIwYzFmMzkzNzY5MjcxOTQxZGFmOWMxNmMyNGMwNWIwYzY4MzkzMGIyODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhNjRmMDkxNTJiNmQxYjBhNTQ2NTM3YzU2YWIxZWFiMTUyZjUyYTIzNjJhN2VhZWE4YTllM2U2MTVjZDhhNTkifQ"
+        },
+        {
+          "resource": "repo://src/index.ts",
+          "version": "repo-file-v1:sha256:7b6cf83beb39bc315f65824bd5720f93609e673d6959dff369d911effeb2167a"
+        }
+      ]
+    },
+    {
+      "id": "claim_4cc064d2a7c347389fb497d444a605da",
+      "statement": "The build validates that package.json and jsr.json export maps match in both directions.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L22-L26",
+          "version": "repo-lines-v1:sha256:2e48be7780473672b3fc95268c1bf491f68344b701aa79bab0b431edb908a1e5:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzg5ZTgyZjVkNjIxZmY4MjFmMjRlNTQ3NTFkNTQwZGJlZjA2YjIyODRhYWMxNzk0NzlmNDhmY2JhYzMwMmMyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc0ZmY4Zjc4N2U1ODljODRhYmQwMDcwM2JlYjFhZjFjZjIxM2E1OTE3YmZmYjFhNTkwNjRkMDZlNWJlYzBmMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmZjN2E2NDJiNDdiNTk2YzQyMDhlYzhiYmJjZDUyNjEwZTFkNjQ1ZTNjNTQzMWQyOGM2ODg4MjMyYzRmMmQ0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWEwMGFlM2ViZmQzMDY0ZjNkYzk0ZjI5YWU5OTM0MjYxYzE0N2VhMTQ3ZWExNDFmMzJmYWE4YjU1ODhhOGI0NSJ9"
+        },
+        {
+          "resource": "repo://build/validate-exports.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:20f6fa4e27ec6106f07c149b007f39bda040d0e6d3921827ec7ab4fb4009f6d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNWZhYjQ0OWMzYjNkMDZhOWQ2YWJkNTAwODMwMjdkZTIwYTRiODU1MTY5NGJhYTRjZTAyYjMwYzQ1N2NmYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlODRhODY0NGJhMWI4YTQzYjUzNTA4ZDU0ODVmOGI4MzZlMmE0YzQ0Y2JlOTc4YTc0MDE4NzkwOWRhNDBhZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_25788d1cbc4649eda977199bcf0a8960",
+      "statement": "The build removes ECMAScript #private field declarations from generated .d.ts files.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L114-L114",
+          "version": "repo-lines-v1:sha256:dc20cdc873e03ea1824de987e7bc61a3dfc5499136ef1eab41fe3c3b5d3fa5fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGMyMGNkYzg3M2UwM2VhMTgyNGRlOTg3ZTdiYzYxYTNkZmM1NDk5MTM2ZWYxZWFiNDFmZTNjM2I1ZDNmYTVmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGMyMGNkYzg3M2UwM2VhMTgyNGRlOTg3ZTdiYzYxYTNkZmM1NDk5MTM2ZWYxZWFiNDFmZTNjM2I1ZDNmYTVmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2ZjNzEyZWJlMjkyZTM5OGRkNmFlZmE2ZDc3YmMxYzhlNDY4OTE1YTBjODQ0ZDYwOTI4MTI0NDJkMDdmYzQ3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://build/remove-private-fields.ts#L5-L40",
+          "version": "repo-lines-v1:sha256:0caef6f96cb553cf4eec747531d5c2f9860fbbad78c4db9a45964c8ef936e8cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmZjE2MGRiYjM2OGU2MGE4Y2VhMGU2OGQyNDY5NmVkZjZjZDQ4NDRkODU2ZTQ2YTE0YTAyZTg1ODIyY2E4NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjZDk5MWY0YmI1OWE0OGRmNTdlY2M5ZTA4NTUxNTJhMjEwYzg0ODY4NTJlNjg4YjRmNzZiNmEyYjk0ZTJlNDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNTJlMzkxODY5MWVmOWVjZGNlNDFjOGJhMmNmNTllZDMyMjA0OWNjNTE0ZTI0YmNhNThiYTBiZjIzYjI2YWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1MmQ4NTAzNTIzZGMwYjg3ZDFjOGJkY2M4ZmFmMWFlYWNmMGQzNjhlMWY3OTNlZjY1ZTE5ZWZkOTQ1ZTFhNGQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:39:44.364Z"
+  }
+}

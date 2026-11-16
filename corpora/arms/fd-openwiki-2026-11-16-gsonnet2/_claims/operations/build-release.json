@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:93ed6f6df465a8c3f3b89387ddfc4cc78e067bd9c56259f0061fd51895fbe875",
+  "claims": [
+    {
+      "id": "claim_cff39e58d4754cc2ba7e7bf43fd138e3",
+      "statement": "Cargo features: completions (default, enables clap_complete and --gen-completions) and use-jemalloc (enables tikv-jemallocator), with base as an alias for use-jemalloc; the release profile uses LTO, strip and one codegen unit.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L1-L28",
+          "version": "repo-lines-v1:sha256:d310f979e665f6aac8e2bf182795c2e9df5ebc025928ddb01fa979fb3b1b22db:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhM2NkNWE4MWIzZjlhNjIxYWE0OTNkOTBjNDVmNDJhYjU3MWQ0ZTQyYjhhZTVhZmYzNTFjYjBhMDJkMDZkODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjliNDM5NDg1ZjYxYjQ2ZGRjYTFhZjUxOThjYWZmZTRjODc3NjA3OWFlZjlkNWY5ZWMzOGM1MDYxNTEwYzAifQ"
+        },
+        {
+          "resource": "repo://Cargo.toml#L83-L99",
+          "version": "repo-lines-v1:sha256:63b9113090ebcec0797cfb84a89a0ad78b4454a1705218b3d66b99fb7a341f04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YzllYzI2OTEwOTZkNGY5YjhlNzExYjc3NzJjYjc4YjY0MWU5MThkZTY5NDIzYzkyMGUyMjg5MWMwNzEyZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxNjc2MGY2NDI0MmRmYjYyZjM3MTE4MzA4Y2JkNzdhNTA4MmZiN2VhYWIxYmQ4NTgyYWI5MGM0NzYwZWUwODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhOWU5ODgyNWRkNTE2NjljYmE0NzQwNzYwNmIxY2JkYjA3YjJiMWUyOGFiMGEyMWY0ZjY0OGQxZmZlMWExOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_55388ce1176e4fa38f4240a70c72e9ce",
+      "statement": "The jemalloc dependency target cfg in Cargo.toml must be kept in sync with the allocator cfg in main.rs, and excludes Windows, Android, macOS, FreeBSD, OpenBSD, illumos, 32-bit musl and riscv64.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L62-L68",
+          "version": "repo-lines-v1:sha256:b1a3e209dc70c985efc2d559175645c359410d2069776fe7c5c066eefaeda252:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Y4MjcxODQ2ODU4NDY3ZWYzNjNjZWQ5ZDMwNzJmOWU1M2NlYzZlYzgwZjIxZjJiMzIyNDNkMDI1NTQwOWNiZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTY4OWFkYjAyMTg1YjYxNzFkNTYzYzU5NDY2Yjc4NzU3OTEwZjZjM2I5NzkwZjlkYmIwNzdkYzJkNjk1YTU5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTVhYjc4Yjg2Zjk4MzM2ZjA1ZTZmYzE5N2QxNTA2YTEyYWE2OWVlNDkxZTZhOGY4MWUxMGI3YWQzOGI4YWJhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWY2YjIyZTU1YjQ5N2Q5ZmQwZDRmNGNjZWY0ODU5MWQxM2RlZDZlZWQ4ZTc1ZGZmYmZmN2VhMWFjY2UyYTNiYSJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L24-L40",
+          "version": "repo-lines-v1:sha256:f85f60440ce3d4eed0b334ba0f9ab5814a26078c3c0306344307b102fcb5f47b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYzZhMDg5MTYyNWI3ZTA0MzE1MzNiODMzMmE3MDk3OTQzMmNiNmExZGU2MzQ0ODNlYmJlYTJlZGY1N2NjYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMDViZmQ2OTJkNGQ2NjRlYWMwZmRmNzE4OWQ0ZGEyNWE1MGNhYmQ0ODU2MjY3YjM2MDQ3YWJkZWY5YWU2ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0YzAxMzMyZGEyZGVkZjczMmJlNjY4ZWEyOGNlNDgyOWRmYTk2ODcyNjQ0NTE5Yjg0ZjdmM2U2ZjQ0NDQ1OTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1ODIxNjYzN2YwY2Y5NmJmZDVhMzY2NzI2NjIxNTA3Yjg5ZWJmYjdhODBjYzcwZGZkM2MxMzc4N2M2YjBjZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc2032fb0b7c4e70ba586dc469be4bbd",
+      "statement": "Windows MSVC targets statically link the C runtime via .cargo/config.toml, and Cross.toml passes JEMALLOC_SYS_WITH_LG_PAGE=16 for aarch64 Linux targets.",
+      "evidence": [
+        {
+          "resource": "repo://.cargo/config.toml#L1-L8",
+          "version": "repo-lines-v1:sha256:3e34abbab088f54f6bce6d6b9f2e113d4e77de7b1b9476077ac814f39a26d3bc:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZiNGRmMmY3MGM1ZDQ4MzM1NDBiMmJhZjhlY2YwNmU3MTI1Mjk1YWRmZjE3MWVkZGZkNTU1ZDljNTQ4ZGRmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjA2YjZmNDc3OTliYTA2ZDI2NmUzMDZiNWU0ZTIwMjg4MTgxYjMyYTc5NWUyODc1MzVmM2Q0ZjNhZDNlZTM3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjRlMTYxMzQ3NWVjNzU0ZTJjODNkNjVkNTRmZTFhYTY4YWJlZDljZWY3ZDMwNTU1ZDExYjQwMjQ4ODIwNDE4MSJ9"
+        },
+        {
+          "resource": "repo://Cross.toml#L1-L6",
+          "version": "repo-lines-v1:sha256:137bb285925ab649e70a86d6a4f5975c9891140b6590c82ab508af3025ff0bfa:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjhkYzQ2YTE5MzNiY2MwZWQxZjBmNWI5MDAwYmM3N2U1MjgxZTM3ZWVhZDgwNTU3MmYwN2VlN2M0NzYzMGYyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmEzZTEwODZiNTg0MDdmMDJmZjk1YTY5YzkzMzAzNzg4ZGMwMmZlNjg4NzE2MzkxZGEzZGNjNjgyZWYxNWY4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4926efd4a914171add408f8cccfef7a",
+      "statement": "The Makefile builds the release binary with --locked, generates bash/fish/PowerShell completions via --gen-completions, copies hand-maintained zsh and fdfind completions from contrib/completion, and installs the binary, completions and doc/fd.1 under prefix/DESTDIR.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L1-L52",
+          "version": "repo-lines-v1:sha256:f3d6f25da159316795ec3dc84e2f4a8e3cee873b679233674ab9e5c36d41cf47:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMjI2YWRjNmU4NmM5MWY3ZGNlNjRjYTc0MDdjOTM0M2M0YWY3NThkZTNkYWVkNmY3NGE0M2FmMzAyYTA1YWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkNWY0YzQxNDRlNDVhY2M5MDJiZWY4OGZlN2E0ODNmZDdkNDhmYjMwZTdjYThlNzI5ZGM4ZGExMDBkY2E5MzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8825ebcdbb724070a072eaabd382722e",
+      "statement": "The CICD workflow runs rustfmt, clippy with -Dwarnings, an MSRV clippy-and-test job, and a 14-target build matrix that tests, generates completions, packages tarballs and Debian packages, and publishes on tag builds.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L1-L110",
+          "version": "repo-lines-v1:sha256:7151be5b63d4e88b8a8e202c327f0aea8a91eef099c1d0b88c4fac88ba1534fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiOWJmYjEwNmQ2NDQ3NTNhYzVjNTE3YTZhZjMzN2NjOTQ4ODBiMmYxYjJjYWEwNzMyMzY5ZWIwNDg5NDgxY2M0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlZWVhMzllYzYxNjg3N2YxODIxMGFhMTFlNWM1Yzc3ZDg0NWVmMTdjY2ExZjJmODE0ZDIwOTU1MmY0Zjg4MzkzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxZjJhMWY5ZTEwNWI3MTQyMzk3YmM5Y2Y4YWFlNTQzOTM5NGUwYzViMTFhZTMzMmFlMzRhMDhjOTk5YzQxMGJkIn0"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L200-L309",
+          "version": "repo-lines-v1:sha256:c07aaf659e28c19b680f3855305ddf5907bfac6c4c65a8772800fcb388f80a76:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlMjc1MTg1ZTdhNWY5YzNmZTdmNjk5MjgzODFiOGYxMWM0ZmQ5NTcwYjRkZGEzNzUwMmJhOWZlZjMxZGM5NmE2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxYWUyYmI0ZDRlZGY4OGEwZjY3N2NhNzYwMWYzMDEyZWE2N2IyNTkyMmRhN2MzNGUyYTRhNWFjYjY5Njk4OTQ2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzZDdjM2NjNGM3ZjU2YTQ5YWQ5YTI0M2VhNDhmMWYwNDU1YmJmN2U5ZjMwOWNhMTk0NTE1M2I2ODRhYTdjMzVkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_e67f5bdfa24c411086ab7f7d64d3343d",
+      "statement": "scripts/version-bump.sh automates the version bump by creating a release branch and updating Cargo.toml, the README MSRV note and the CHANGELOG heading; update-help.awk regenerates the README options block from fd -h.",
+      "evidence": [
+        {
+          "resource": "repo://doc/release-checklist.md#L1-L40",
+          "version": "repo-lines-v1:sha256:c2e1da2a95c6eaf205a957ce876e84c431bbe2ad21d370e3d73faf8f3bf8c15b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwZjNhN2M5YjFlNzYyYTE2ZWE3YmVjOGFlZTkxYmMxMTFmYmU1OGVjMzUzNDBhMThiZjcyMTAxNjFiN2NjNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNjNkZjg1MGFjY2IxNTE5ZjM5MjQwYWFiMzJiZjkzMTMzODM4ZWRjMTViNjI2NTU5MDkwYjcyZjNjNWRiMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1ODA1ZGVlODdjMjQ2ODNiZTk3YjdkYmVjM2U3ZGRmZDg4ODY2ZDdiYWQyZGJmOGVjMmI3N2Y4ODY5MmNjYTEifQ"
+        },
+        {
+          "resource": "repo://scripts/update-help.awk#L1-L20",
+          "version": "repo-lines-v1:sha256:6258b25f016e55f9af2c3d217104d616acc01c3ccd7c1a5dddb0775e53da6785:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYjEyOGVjOTA4NDA1MGE2NDEyMDMyYTIwYWU3YTkwMGE1MDk0ZTE3ZmViMzg2Mzc3Njk3YmZhOGEyMzA5OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyODVmZjY1NWU4ZmZlOGFlNzkwMjM4ZTdlZjM3OTIxMmZiNDlhNjMxZWVmODkyZWRjM2I1OWE0NWU5ZTgyNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmOTNjN2JjNWU0MTEwNzJkMmY4MDZjYjFiOTM2Y2RlNWM0MjUzN2ZiNzQyNzhlNTk5YzE3NzY0ZWQ2ZWFiMDMifQ"
+        },
+        {
+          "resource": "repo://scripts/version-bump.sh#L1-L22",
+          "version": "repo-lines-v1:sha256:af75990740712df6d3c08be10faff4360908fd2c6bf63580beb9a1d9707cc721:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyNDFmYjc0YzRhNmQ3ZTdjYmZiZDY3NmZjNTYyZGMwMWZhZmY2YzMyNDAwOGQ3YjY0NDRiYTg3N2FhOTE3MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:38:21.850Z"
+  }
+}

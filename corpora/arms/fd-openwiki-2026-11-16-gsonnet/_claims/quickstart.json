@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:bd97c222c4a18176bc956d42b9a73ecc31d850b98d2490a5842dc2cd98c67a67",
+  "claims": [
+    {
+      "id": "claim_ba5620ded144489c9a216c217d00f96a",
+      "statement": "fd is a single-binary Rust crate (fd-find, binary fd at src/main.rs, no library target) with MSRV 1.90 and edition 2024, whose runtime pipeline is Opts to Config plus byte regexes to walk::scan with an ignore-crate parallel walker feeding a printing or exec receiver.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L1-L28",
+          "version": "repo-lines-v1:sha256:d310f979e665f6aac8e2bf182795c2e9df5ebc025928ddb01fa979fb3b1b22db:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhM2NkNWE4MWIzZjlhNjIxYWE0OTNkOTBjNDVmNDJhYjU3MWQ0ZTQyYjhhZTVhZmYzNTFjYjBhMDJkMDZkODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjliNDM5NDg1ZjYxYjQ2ZGRjYTFhZjUxOThjYWZmZTRjODc3NjA3OWFlZjlkNWY5ZWMzOGM1MDYxNTEwYzAifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L75-L112",
+          "version": "repo-lines-v1:sha256:787bb438302092d0f1e10a4be99cdf40b923ce013f7842ecdc60f1e20d3be880:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMDdhMGM4NTA1ZGU5NGNhMDcxOGQyMDhjYmYyM2U1YjAxOGQ3YTJmZjY3Yjc4ZGE3Y2M4ZTdlMDBlZTM4YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_731d9fe40fce4ec8a235cb348e5f94e0",
+      "statement": "CI enforces cargo fmt --check and cargo clippy --all-targets --all-features -Dwarnings, and the Makefile provides release build, completions and install targets.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L35-L70",
+          "version": "repo-lines-v1:sha256:697de9994a35995fa41e5b03708c6569f3c0760ecc18fd408671f2271cfd3324:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjNGQ5YjgyNGJmMzI1MTNjMTMxN2E3MDY0ZWUzYmQ4NWFjMzU2MjJlM2QxMDFkODVmOWM0ZTUzN2YzNzJhZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4OTk5MTEwM2Y2YmE4ODhlM2RlNzY1MWM1YTMwNWM3N2U1NTQ3Njc3M2FiYTgzOTU5MWVjYzViZDBmMmFiMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMTJkZDY5MWNjNmIyNDdkYjdmNzM2OWZlMGEyZTk0ZWY5OTM3NTRmZDFlYmYyMTQwOWU4OWY2ZDVhNmIxOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhNmYzOGE1Mzk3YjEzZTE4YmM1YTJkOWNiYzgwOTdlZTI3NmFjY2Q3ZTc5NDBiZGY3MTg5ODkwMGFkMzg3ZmMifQ"
+        },
+        {
+          "resource": "repo://Makefile#L1-L15",
+          "version": "repo-lines-v1:sha256:d0efc79180d89f6cf38291f9aec00880d81823754a2406791316862679a0d340:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMjI2YWRjNmU4NmM5MWY3ZGNlNjRjYTc0MDdjOTM0M2M0YWY3NThkZTNkYWVkNmY3NGE0M2FmMzAyYTA1YWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjNDQwMDRhZTUyNTI1ZDE5YWRhMjVjNGNiNjYwZjQ2YTU1NWJhNWY1MTk0MDhiNDljNDJhMjg0MTkxMjMzNGIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:03:56.385Z"
+  }
+}

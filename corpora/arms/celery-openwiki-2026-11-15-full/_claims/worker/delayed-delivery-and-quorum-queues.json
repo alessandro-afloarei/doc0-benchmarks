@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:04a5c5d4c39c73009114dbef0b331930a728e36e23c511ec97f54dc9f6ff4c12",
+  "claims": [
+    {
+      "id": "claim_9f8ad56165614d0fbc338252a9a64263",
+      "statement": "detect_quorum_queues returns true only for the amqp driver when any configured queue has x-queue-type set to quorum, returning the first such queue name.",
+      "evidence": [
+        {
+          "resource": "repo://celery/utils/quorum_queues.py",
+          "version": "repo-file-v1:sha256:1d5734d62188f3e83812cb9cea1e6123ffc97a564b5fd6442a62ec996b0c304b"
+        }
+      ]
+    },
+    {
+      "id": "claim_e6cca1e3632d4ed3b380ee360f38688f",
+      "statement": "When worker_detect_quorum_queues (default True) finds quorum queues, the Tasks step disables global QoS.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L373-L373",
+          "version": "repo-lines-v1:sha256:2843ab01e37485d60f219b69ff13923c22ff185c7f5f52276636ee64efd382fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjg0M2FiMDFlMzc0ODVkNjBmMjE5YjY5ZmYxMzkyM2MyMmZmMTg1YzdmNWY1MjI3NjYzNmVlNjRlZmQzODJmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjg0M2FiMDFlMzc0ODVkNjBmMjE5YjY5ZmYxMzkyM2MyMmZmMTg1YzdmNWY1MjI3NjYzNmVlNjRlZmQzODJmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzJmYjVhMWUyZjY0OTI1YmViM2VmZjFjODVkZGJhZDgyZjEzOWFiYTI4YTNmNTVjNjA3NWIxYmZhZWE4Yzk1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWI4MGQ3NGNjMzJmY2RiMDJmYzE4Njc0OTkwMDk1YThjZGYxNzhhNmQxMmQ3YWI2ZjdiMjQ1Y2RkZTMwODg1NiJ9"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/tasks.py#L100-L124",
+          "version": "repo-lines-v1:sha256:12fe9f11bb61f3cbfeadb9792c0723019b0636d31ea777d09294fa6089abe36e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkMmJjYmUxZTM4YjM4M2Q4MmMxZTYyOTQ3ZGY5ZTM1MDY2ZWViN2MyOGRkNWVjMmQ2ZmRlZDZmNzkxY2IyMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiOGNkYWEzNzU2OGE0ZmFlNzAwMTZhZjc1Njk0YjRhMzdmNWU3OWI4NmU4YzAyYTM3YTc4NjBlZGI1MWI1ODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3ODM4ZDA1NzJiMzA0YzVjYzI5N2I5ODFhMzczMGM0MThjMzExYmU3NDNkZWFlYzNkMTcwNGQ1NGExOGIxOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2717f889f49b464597d923e5fab62e06",
+      "statement": "The DelayedDelivery consumer bootstep requires Tasks and is included only when quorum queues are detected on the write connection's transport.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/delayed_delivery.py#L39-L64",
+          "version": "repo-lines-v1:sha256:0f6506f0a89bc3ccb41307acf48ccb96b209ba7e2ae6e436ce21ae714cc3302f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExYjU4ZjE5ZmM3OTEyZTdlMDE2MGRiNjM3OWJjOWU2ZTBhNjk3NTUzYzQzYzYwMmQyYTc4NzY0OWY2MTcyYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxMzI5YTYxNzU0OTBjMDEwNDdiYzRlN2I1OGU3MDQ4MzZmNzAyZDRmMTY2YThlZDJiYzJlODRjNGZkZWZmMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3Yzc5M2M5OGZlZmI3ZjA1NGZiNzMxOTEyYmE5NWNiM2Q4YjUyYjc3NGRjOWE2ZGEyNGM3ZjI2NjQzYzA3MmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlMjk2NTJjMjU0NGExZmQyNzEwOGJjNGQ3MDJhNDU0OTJjMmFkZWIwOGM5NWM5NmY4MmRkODlhMGE5YTg4NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_23e7152043d74d3ab4f4e48c1cd75c94",
+      "statement": "DelayedDelivery validates broker_url and broker_native_delayed_delivery_queue_type (classic or quorum, default quorum), raising ValueError on invalid configuration.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L98-L98",
+          "version": "repo-lines-v1:sha256:905dfabe01d1526a77c46e5676834f8c09211d86db92eae37bc01523ddb25f2e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTA1ZGZhYmUwMWQxNTI2YTc3YzQ2ZTU2NzY4MzRmOGMwOTIxMWQ4NmRiOTJlYWUzN2JjMDE1MjNkZGIyNWYyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTA1ZGZhYmUwMWQxNTI2YTc3YzQ2ZTU2NzY4MzRmOGMwOTIxMWQ4NmRiOTJlYWUzN2JjMDE1MjNkZGIyNWYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWVjZDYwYTVlODgwOWRjNTgxMmQ3Yjg5N2M0YjhlYmU1ZjM2Yjc1MmFkMWNkZWE3MmZmZTIwYTEzNTQyMjZhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTNiZGFkYTU5MjZmZmUwNTllYTAyMWQ0YWFiYjdlMzBmNzUyZDAxNmZkY2VlMWZlNzY0NDhhNjdmZmRhNTU5OCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/delayed_delivery.py#L216-L279",
+          "version": "repo-lines-v1:sha256:4409c672cedd7e474a3269b989e598c75d68afbb5db28181f280c4bc3c61580f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMWMzZDcxOWMyZDYxMzYwNjQ2ZTcwYzE3Njk1MDQ5NzUxYzNlNTFjNjFlY2ZlY2JlMjQxMDczMzBjYTUyMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4YWEyMTUwMTE4ZTgxMTY0YzAyZTUzNTExYmM2MWY5N2I0N2E5MGRjNDhiZGFiODM1NzczZWE5OTRkNWY1YzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_38a054cb7ca9404d9fa7b87826e6702b",
+      "statement": "For each broker URL, DelayedDelivery declares kombu's native delayed delivery exchanges and queues and binds all non-Broadcast application queues, retrying ConnectionRefusedError/OSError up to 3 times and logging a critical message only if all URLs fail.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/delayed_delivery.py#L66-L199",
+          "version": "repo-lines-v1:sha256:23c3bd8beb0380211989a95194b1e15fa5eb42d5377a67393fedc50ca6c7cf08:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4NWVkNWNlMzI2YzIxODQyMDg0YzljNDhhMDZiMzU2YzBiNzhmNmM4YjhiYjI0YTE3YjUwZWVkZmQ3MGYxMmQ1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1NTAzMmU5NjRkMDkzMjM1MWU1ZDE4NTI2OTI4MWIxNzFhM2EwOWIwOGIyODZlNjYxZWE0NzAzMjNjODJlYjRkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiM2Y1NzMxZTBlYTg0MDBlYjlhOWNiZjQyNzgyNDZjNmY3ZjhhNmIxZTRjYzI4OWY1ZTJhOGY0NzI3OTYzM2JmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5M2RmYzhiODYzMGQxNTA4MTI3NTQ5ZjcwODQxNDZiODU1NWQ4ZmUyMTJlZDViZDRjYjg2YjU1M2MzMzlmN2M4In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_f146c4cde9cd4c499756e0f9a7b87e4b",
+      "statement": "send_task routes eta/countdown tasks on quorum-queue RabbitMQ setups with non-direct exchanges to the celery_delayed_27 topic exchange using calculate_routing_key(int(countdown), routing_key), and only logs a warning for direct exchanges.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L929-L967",
+          "version": "repo-lines-v1:sha256:b23f32c6038ab48da5a132d90c506d7eeca65e01cd128ca39ed4a3732dbfdb72:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmYjViYTAwMjI2MzE4YTYwYTNkMDU2MzIzY2VmYjYzMmEzYTFmNmVkN2Y2NTQ5N2I1OGEwYjRhMjllMTA5ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkMDY3ZGE4NGQ4MDE5MzllMTJkZTRlZTUxN2QwMGZhYWRiNGNlYTM3MTI2ZDg0NTM1OGIwYTExYTFhNWRiODgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T09:27:53.075Z"
+  }
+}

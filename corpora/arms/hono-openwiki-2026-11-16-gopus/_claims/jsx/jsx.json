@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c7922d5d7294a00f1f4637f09b3a604c02fc4e3564e020b4f348bfa077215de0",
+  "claims": [
+    {
+      "id": "claim_7f1ca3ec7a1c46978b7b19c8d15dd2d8",
+      "statement": "raw() creates an HtmlEscapedString marked isEscaped that may carry callbacks, and escapeToBuffer escapes &, <, >, ' and \" when writing into a StringBuffer.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/html.ts#L1-L120",
+          "version": "repo-lines-v1:sha256:8ce8a966c9608107a6dc79cf1e3fc7d9045f6b5df114b5bdedc0179796dc6e0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3OTk0NjBiMzYyMjYyNzNjMjc5MGFiOWNkNWM0NzJkMzgwMGVjMGY4N2U0MDg2MTI2NTgxYmI1YmM4MGEwMmViIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5e2ae7a39f6402fb8280a1aeb088955",
+      "statement": "HtmlEscapedCallbacks run in Stringify, BeforeStream and Stream phases with a per-tree context object, enabling deferred replacement such as Suspense content and CSS injection.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/css/index.ts#L72-L130",
+          "version": "repo-lines-v1:sha256:a56d773455a1fa1393a5d37958670970b8a9b691fa2004200e75747b344a8ca5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyYzNkYjcxODU4ZWViNGRlZTA2YzgwNzI0ODc0OTg3MThjMzE2ZmQxZjcyMmRjMTVjMDc4OTdkMzBhNTM0MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNmQ3Y2IyYWY0NTM1MTU3MTMzYjhkZTBhODdjMjRjNWRhMTczOWI3NDMwZGJjZWY5NWFjNTY1MzhlZTQ3NTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxMWNiYTdhMWI2NjRkMzQ4YzcwMDFiMTdjZTZkMDE5NmY2ZDQ2ZGVkOTNlY2UyN2JhMmQwZGZkNWQ0NDJmNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzYTc0OGIzMGI0MjEwYWE2MTNlMjgwZDk0NThlMjRkMDM4MDJmYmM1ZTIzMDk0YzhjMTkxZjlhMzc4YmUzNzAifQ"
+        },
+        {
+          "resource": "repo://src/utils/html.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:14cd01d2330ddb0ff460b41d21c4d1a947ac8f1baa8ac40f9e69cff3ad3f9340:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3NDViZjZmYTVlNGE1NzkwNmI5OGFjODI1NzJlMjM0N2NjNTIxMzQ0YzIwZWJhY2QzODIyNjYzMWJjYTc2ODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_557892453d7546f69c36195d0b84b060",
+      "statement": "The html tagged template escapes interpolated strings, inserts numbers directly, drops null/undefined/booleans, flattens arrays, and defers Promises and callback-bearing escaped strings.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/html/index.ts",
+          "version": "repo-file-v1:sha256:53fd1ae2adc9ff5ad80a51589b7ee5833076cb2a23af132d44240f3480d2c256"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c76ecbb1f444357be82cc375eb5641b",
+      "statement": "JSXNode serialization normalizes attribute keys, converts style objects to CSS strings, escapes string values, renders boolean attributes as empty values, maps dangerouslySetInnerHTML to raw children (rejecting it alongside children), ignores on* and ref function props, throws for other function props, and self-closes void tags.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L179-L252",
+          "version": "repo-lines-v1:sha256:9e108d86f82a0cff37ada51510aef336e03041383adf3e2ad5e613d0e6c0995c:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4OGNkODc1ZTk0ZTI0ZTE0ODk4MDY2Y2VhMTdkOTcyODRlOGQwNTg2ODMyZWMyMmY5YzZhM2Q3NDNjZmI2NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzNDRkZWViMDEwMTM4ZjY5YWZjNGUzYjc3ZmJhM2RiNzIyOTExZTcyMzk3YzI5M2U5ZWIwZjM4NGQxZTVkNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0NDhlMzBhMjk2ZWE1NzUwYTJmNmIyZmViNDRkZDhjODZlNDBiODNjZWM0NzgxYmYyMWYzMjBkNTgwZjk3NzQifQ"
+        },
+        {
+          "resource": "repo://src/jsx/utils.ts#L1-L15",
+          "version": "repo-lines-v1:sha256:73fdbe5d613b45641ff9724bc182187b6663b837607a3f1a5e7bb6aca7915fee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhMDQ0MTMzMDkyM2UwMTc1OTk3NzAyYmZiNWYxMjIzMzU5OTU2OWRmOTkwYmE4NDljMDQ3NDA5M2E2M2FlMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmYzc0MTg2NWFiZjFiODExZmNhNGMxNTMzNGQ5NGE5MmY2Yjg1NTI1YWFiNjgyNWJjMmExYzU0Y2U5MGJlYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmMTM5NWRlOTVmOWEzYmJhYzZhOTcyZjVkNzIyYWIwNmZjNTBjMmMxYTA4MTI3MmY1NzlmMzBkYzVkMzgzOWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0184bb8d0c354509b242b527c4360a41",
+      "statement": "A function component returning a Promise is deferred into the string buffer, making toString() resolve asynchronously, and the current render context is captured so the suspended subtree resumes with the same context values.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L254-L296",
+          "version": "repo-lines-v1:sha256:1a9039bb4b0aaf54d7b5b9d95def82603829361449368bbc71f2b67943a45b68:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYTY1NWQ2OTBlYjU3YzkzMmIzMjE5MDFkNTczZjNmYmM5Njk5ZjU5OTllMGEwMjQyM2FlMWI2NjliNDhjMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1OGQxNmZjMDhhNzM2ZmNhYjVmZWI3YTMyYzg3ZmRiM2JmNzcwOTE1MTI5MjNkZDY3YjM2YjA4NWI3YmIxMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_92eb006724d3442198349dfce594b316",
+      "statement": "JSX context isolation uses AsyncLocalStorage from node:async_hooks when available and otherwise falls back to a synchronous store, warning that useContext after await returns the default value.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/context.ts#L161-L210",
+          "version": "repo-lines-v1:sha256:116267cc7b4d96b9ff79bc9b8d5bf5dd31c4dbad116837feb4fd6849a95d2617:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZjJkNjlhODA3NDA3MmEyNDljNTIwMjljZGE2M2I2ZTAyMjg0M2VlODcyYTkwMjg2OTU4ZmVkNWUwOWEwNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmZTAyZDA2MTNlN2JkMjAyYzJjMGQ4NDZhOTY0NjAxM2RhOTdkZDAyNzY1ZjI2YTFlYzQxZWJkMzUzNzEwZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzODZhNTc0NWQwMzkxYzEzMGU3Njc2Mjc3ZTNmNWVlNzVlODFmNTI0ZmQyMzU2MjRiMTM1YmEyODZkMmQ3NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZGI3N2Y4ZjdkN2FjM2ZhMTZlYzU3NzUzYjM1ZWIwMzYyYTZjMjRkOTNjODliMGExMzg0YWRkZWNlOTY0MWMifQ"
+        },
+        {
+          "resource": "repo://src/jsx/context.ts#L18-L80",
+          "version": "repo-lines-v1:sha256:a5eae0a39c0f3287746323a2120fb444387f1ca74524b9c30b08344391b2dce6:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYmQ5Yjg1N2IyZGJkY2RjNTBhYmI3M2YzMWM0ZjAzZTFkZGViNDg1ZjJiY2VhMGE5Y2E1MTBiMzIxNmQyMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhMDA0MWUwNzM5Mjc1MzQ0NDQ3YmMwNjE5OTM4ZGI2MzJkNGJiODRjOTc5OTc5MDE3YTdhYmQ2MGUxMDY2OTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3YTgyN2NjYzVmZTc4MmJiZWRkNTdjZmRlMWMyNzliOWNmYjk4NzQzZGJmM2VjMmNlNzg2ZDEwZTBlMWM0NTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22d55e2d9d4846d2a286c3853b44fe39",
+      "statement": "Suspense emits a template placeholder plus fallback when children are pending and attaches a callback that either replaces the placeholder in the buffer or, when streaming, emits a data-hono-target template and inline script to swap content, honoring a StreamingContext script nonce.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L42-L138",
+          "version": "repo-lines-v1:sha256:326d22129807f3be3b8ac717af3a82575fa951328a7c8e56c90fd1560055814d:eyJzZWxlY3RlZExpbmVDb3VudCI6OTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NGI0OThiNzk2ZmFjNWEyMjJkYTI4ZjFiMGIxNWNmMTEzMTg4NjVhZWQ2ZTYyOGY3MDRlYmY3MTA4MzM1ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YjFhOTAxZjNlYjIyYTdiNWU2Yjc1ZDg3MDY1YTQ1NDBiNGY4MGE2YjI5NTJkMjRhMGI2MTJjOWM1MTBlOWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjMTBlOTIwMjc2YjJhM2ZkNmVlZDFmM2ZiMzVhMzkzZTI3ZjZhYTIxNzIxZGVmNzY3OGJhZjc3NzI4NGVhZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3OTEyMTQ0NzgwZGM2Y2UwM2Q3NWEwM2ExNDI4NDI2NjJiZjNhNGI5YzBhMDY1ZWE3MzVkYTVhZDM3ZmU1MDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7017d6c8cbd4c6681a70ecc6236558f",
+      "statement": "renderToReadableStream enqueues the initial HTML, then repeatedly resolves Stream-phase callbacks and enqueues their results until none remain, reporting callback errors via onError and substituting empty strings.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L146-L220",
+          "version": "repo-lines-v1:sha256:4cafcdb7ab6f3af1349e726ae84b9349ba68b45f1d95dbbb4ef12806e8b107a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViOTI5MDBmMGQxNzlmNjJiYWM3YWEwYWUzNGE1ZmYyODdmZGZmZjE3NmI3ZTFhNDNkMWM5YTVlYjA5NTNiMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2NGM1MTJmNTE3Y2I2ODgzNzc4NjY3MDk4ZjliODI3MzkxMjc5YmVjNzIzYzJhMzVlZmUwMDgwYTE2OTAzZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41f0661b46af41e1a83c74100b2815ce",
+      "statement": "ErrorBoundary renders fallback or fallbackRender(error) and calls onError when its children throw synchronously or asynchronously.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/components.ts#L55-L120",
+          "version": "repo-lines-v1:sha256:6090cf23031ce9f39fd4d64cd53ca12ff35686659b642d7ea8b312c9c00f834e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiNjgwNDgxZjYzYTg2MjE1NzZjYTIyMTM0ZmU0ZTUyNGI5ODRmMjY5NDRmYWQ3MWI1OTBiMDZhMzQ3ZmU3ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3MTQ5ZWM3MzY4OTNiOTI3MDgzNjNmZThhN2E0ZjQxOTU1ZjBlYTlhYmZjZTBjOThjNWY0ZjgyM2RmMTc4NjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyNjFiMzlkNzlmZWIwNDc4ZTE0YTIxZTJkNDRjMzJjMWE1NzMwYTFkOTJkMWIzN2E3YTA4OTE1MjdjNjkxZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyZjA5MTRkNjNkNDM5NDk1OGQxZGZhMDc5ZjczZDk3ZmM5ZTEyMDNhMjkyZDgxMzAxZWNjNjY0ZTg4N2E3YzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f0878c500694dd8acd6d3e95236aca0",
+      "statement": "The DOM renderer coalesces updates per node so only the latest pending update runs after a microtask, with flushSync forcing synchronous execution.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L740-L813",
+          "version": "repo-lines-v1:sha256:2cada4c01c89d7aa059a23b254650bd824b9784e5cae2a2c08ddf7ecc5172cce:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyMDg0NTlkYWM0ZDA4NjIzOWE3ZTgyZTNmNDAyOWMyMTdhOWFkOWE5YmM2Njc1ZmViNzliNjE5ZjM3MmRhZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkN2I4NzZlN2QwNTFhN2ZjNjU2MzhlNzhlZjA3MzJhZTM2NmJmOWVkNjdkYWM4M2UwMzkwNWQ1YjQ4NWQ1NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NTNhN2NhYWJhZWM3ZjdjNGUzZGIwNjI1MzNkOWU1MTBhZDY3NWZlNjlkN2UwZmY4Zjg5ODUwYzI2NzZiMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a1ed1f57dd1476daf677953e8d5a71a",
+      "statement": "hono/jsx/dom/server's renderToString throws for async components.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/server.ts#L11-L20",
+          "version": "repo-lines-v1:sha256:f087c0ad9f0001e8b07db37198d21cff6188449d7306b82c069663dd0b2cb3e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZTk5MTZjOTVlNTdhNTViYjQyY2JkMDQyY2M5OTAxNzAwODAxMGVhNDJhN2ZhY2Q5MGMxYjU3MjkxYWQ4NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkODE2NzZiNTIyMTU3NDAxMjI3NzZjN2QzMmM3NmU4NWFkMmE3YmE0MWYyM2MyMTc1ZGIzZWY5Nzc1YmNiY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2YmQyNWMxNzZjYzM4NTIwMDZmZGM1NWU5ZDY0OGI2NTVjOWUxY2FkN2ZjODhiNDI2OTczZGVmYWRlMzc1ODUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_10cafe843e51428d9521afda9066f72a",
+      "statement": "The jsx-runtime exports jsxTemplate (the html tag), jsxAttr and jsxEscape to support precompiled JSX.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/jsx-runtime.ts",
+          "version": "repo-file-v1:sha256:544c4706165150390a6885dc89dbd306e25ee98ed59be1e204751f3e40c04161"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:17:44.986Z"
+  }
+}

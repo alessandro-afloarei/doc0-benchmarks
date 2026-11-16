@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:94e6e85c0e67c353da435d36cb774e03f1e6847767e171b20756ca0285b20d91",
+  "claims": [
+    {
+      "id": "claim_68e3e95265244f4c845056f2bde5f9e6",
+      "statement": "ElectronMainDelegate implements Chromium content hooks, including creation of the browser client and the renderer, utility, and GPU clients.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L446-L480",
+          "version": "repo-lines-v1:sha256:3e5d191e4d5fe07e382250c41d60750250e1860bf23f3a6c76b148402650ebad:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNTg3MzU1OWRkYmRiNTUxNDY0NjA3MTFlOWUyYmNjMmUzZDMyYWIxZGVjZjViYzZmZGVjZjAzN2E3NzVkMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNjQxOGI1ZjUwOTE0ZTg5ZjFhYzhjYjI4YjM1ODY4ZDUyNDAxNGNiZWJmYTU5MjYzNGM1ZjZhYWFkMzIyMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxNjE4NTg0MzQ2ZDMyMGQ3M2VjYjY2OWIxYWI5NTQ1MjZiYzkyODM0NjIyYWY3NjlkNjE1YTVhMDRjYWJmNDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9b3d33b0c8b47b98170c4d3888a1ef1",
+      "statement": "ElectronBrowserMainParts creates the browser-environment NodeBindings and an ElectronBindings object bound to the Node libuv loop in its member initializers.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L175-L182",
+          "version": "repo-lines-v1:sha256:15a7a7596498e2c438ad608ec754c98fcee27dcc5270cbdd3206178e882178ae:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMyMzlhMjJkOTllMGMzZWY3MDc2MGE4Y2ZkOWQ5MDM2YmY1ZmI1ZDU0NjgzNGUzMjNkYWRhMDFiNTk5ZGFkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTcwYWZhNjkzNTg4MGEyMzE3ZjA2MTQ0ZjY4ODA4M2UxMDQyNTBjNGNiNzBkZGMyMjc5ZDNiMWU1Zjc5OGViZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmM2NzA4N2JjN2MyM2EzMzBhNjZkYmM3ZDRkYjUzNzBhZmQ1NzBjZTJiZTdlMzU5Yzg2ZGQ0YzExZTZmOTRmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTM3NzI5ZjJkZDc1MjRhNmNkMzRiMmEyY2RkNTZiYTQ4MDI5ZDI2NTZkMTM0NzhiN2ZkYjFmYjJhNTE0NmIzNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7c93c1a28144e86a73c477b6dd1b081",
+      "statement": "PreMainMessageLoopRun starts the Node polling thread and locks URL scheme registries, and sets up the extensions client only when ENABLE_ELECTRON_EXTENSIONS is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L425-L446",
+          "version": "repo-lines-v1:sha256:a0e2f2e804142a3d63224255573bf7eb0d03e94bc4d9726bac4a6e5cd2f8a8a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzOTgyZTU2NTdiN2ZmZWI5MDAxNmY2NDNmOWEyNDdmOGVjYTU0M2FkYzJlZWI0MTlkZjFlOWJmYmQyMjU2YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhMzQ5YmJkMWEyMTEwNGYwNTFlMzRiMmM4YTllNzBjYzdmYmI1MGJjMTlhNjc3ODFmMmExNDBjMzg2ZDk0MzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MTU3ZDJhMTVmM2YzOTA0MGU4ZGI3NWVmNjFjNThmOWYzZWNlOWU2Y2QzNDM4MjAxYTVjNmRmMDcxYTA2NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmYzgxMTNkYjA1NzhmYmUxMDliMjI5ODhlYTIxMjNjNjg3YzVmMmNmZmQ0NWQxYWI3MzQ4MTY5NzU0OTUwNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0e656a128684a57a39e82da49d218fa",
+      "statement": "gin_helper::ObjectTemplateBuilder wraps a V8 ObjectTemplate and is the helper that native classes use to expose methods and properties to JavaScript.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/gin_helper/object_template_builder.h#L23-L26",
+          "version": "repo-lines-v1:sha256:3939aa3c3181153daa7ce99f47cf0c7bc995b748a7051ac2bb6bcc43a1f98674:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc0ZTRmMzQ2ODFjODRhMTJjOWJlMzcyMTgwYzg4YWJjOWUyOWUyYzg1MzA1ZTc2ZWZkZWQ4NDllYTRjNjdjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVmNGRjY2FlNWQ5ZDNjNzdlZjQ1YjY4OWNhMTI1YzQ5ZDQ2YzYxNDBmNmI1YzJkYWUwYjJjOGFmOGQ4MTA4YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTJiMTA0ZGU2YTllNWYzYTFkMmJjNDhlZWJjMjA0YTdiOTg1ZWY3ZjQwNmYwZjU2NjdiNjY4MmE0ZDk5YjA1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNkMzZhODE0ZDU4ZTQ5ODYwZjkxZGY4Mjc2YTIzMjM3Nzg3MzdjMDIwMDU2NzQwNWQ4ZDQzMzNlZTcyNzRmMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4eab4924d1114d4c9201fa36d8a2a508",
+      "statement": "Native modules register context-aware linked Node bindings with NODE_LINKED_BINDING_CONTEXT_AWARE, for example electron_renderer_ipc in the renderer IPC API.",
+      "evidence": [
+        {
+          "resource": "repo://shell/renderer/api/electron_api_ipc_renderer.cc#L278-L278",
+          "version": "repo-lines-v1:sha256:071c1844ac901dfa84b6f8ded83ed5a908d34cf5e0561b2e92c63da98befa197:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcxYzE4NDRhYzkwMWRmYTg0YjZmOGRlZDgzZWQ1YTkwOGQzNGNmNWUwNTYxYjJlOTJjNjNkYTk4YmVmYTE5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcxYzE4NDRhYzkwMWRmYTg0YjZmOGRlZDgzZWQ1YTkwOGQzNGNmNWUwNTYxYjJlOTJjNjNkYTk4YmVmYTE5NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWUzNzVhM2NiM2EyY2JlMmY5ZGVkOWM4Mjk2YTZhYjY2ODQ4Y2M4MjZmZDcxZjkxOTI0NmFjYjE3ZTBiZDQ1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_022f83ee6aac44acbf55bcc9043f0241",
+      "statement": "shell/common/node_bindings.cc groups binding names into per-process macro lists, including ELECTRON_BROWSER_BINDINGS, ELECTRON_COMMON_BINDINGS, ELECTRON_RENDERER_BINDINGS, and ELECTRON_UTILITY_BINDINGS.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L53-L111",
+          "version": "repo-lines-v1:sha256:6f547ec2adea04426693ae65b292e7d972fc112bfe84b0a286acbef0af891b3d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhODE2MGMyMGFmNGE5NjUyNzU5ZWUxNzJmY2U3MzcxZjY4NWMwY2I3Zjc4YzUxOWQxMTViMGVlMmMyMzExMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1ZDMwMWIyZDg3MmQzN2RkOWQ4MTZlZWNhNzMyNmQyZWQ4NzlhYTk0MDc4YzJiOTI0MTI2ZWIzZGQ2ZGEwMTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzNDE5MTdkMDU1ZjAxNzFkMzQ4NjY2NjI2ODU4YzJhYTUwNTFmMzJjZjNkMDU3ZjVkOGM5YTgxZjlkMzQ1NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhZmVkMzQwMjBhZjVkOWQ5MGZmZDUxOGQ2YzM1NGIyNDM5ZTk2NWVkMDk3MGJlYTE0ZWViZGIyOGMxN2I5M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d7a772335aa4dcf8d103f3c462fa525",
+      "statement": "ElectronBindings::BindProcess attaches process-level native methods such as crash, hang, getHeapStatistics, and getCPUUsage, and attaches getProcessMemoryInfo only in the browser process.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/api/electron_bindings.cc#L18-L52",
+          "version": "repo-lines-v1:sha256:d9737f7e33bf89f0652b41a77576253f3d3cff735155c45f0f1e709a2cd00879:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2MDA4Njc1NmJmYTg0YTY3OTM0MmJkMzFlYmNiOGFhNDZiNjM4MTI0Y2FkYTUyZGU1ZGQxNzgzMzJiNjIzZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiNGY1YjY2MWUxOTJkYzc1MmMyOWYyMTkwN2I3NTc0MzNlODkzOWY5YTczYmI0YmQ0NDk3OTJmNzk3MjM4M2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkZTcyNDAyYWFhMzVmNmQzMmEwZDZlZGY0MTQ3N2MwNzI2N2U1ZGY3ZDMwNDc2ODZjMTliMzgzM2I2ZDM1OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3ZTIwYWZhOTFmZGQ5OTcyZTZlYmE4YTAwOGZmYzQwMWFlOTQ3MTkxMDcwZjdkZjhmMzM3ZjQ4MTRlNGU1YWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5d8107f30501424590a80f843c9df27f",
+      "statement": "gin_converters provides per-type converters, for example GURL and file path converters, that decode JavaScript values into C++ types.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/gin_converters/gurl_converter.h",
+          "version": "repo-file-v1:sha256:ed7c26f6637d588b895581936fe07e53577fc83a6987110d5e3560f408fe2b0c"
+        }
+      ]
+    },
+    {
+      "id": "claim_74b19921383c4ed399cc6706f6c53538",
+      "statement": "Source files for each platform are selected by lists in filenames.gni, so a file not listed for a platform is not compiled for it.",
+      "evidence": [
+        {
+          "resource": "repo://filenames.gni",
+          "version": "repo-file-v1:sha256:b7440184dad99e23753626e31a2058a82dcdbcdb5fd763e81f08032d13aa2ffa"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:50:06.090Z"
+  }
+}

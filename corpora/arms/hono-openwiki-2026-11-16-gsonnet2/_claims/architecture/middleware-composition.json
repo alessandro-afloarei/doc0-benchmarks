@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c908eb81115b130fb360c4fca453638473680ec844e38eb1c80be4553c831bf7",
+  "claims": [
+    {
+      "id": "claim_ad250f32bc73490a9d53ce1cbc0c08f9",
+      "statement": "compose() throws 'next() called multiple times' when dispatch is re-entered with an index not greater than the last used index, and sets context.req.routeIndex to the index of each running handler.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L25-L45",
+          "version": "repo-lines-v1:sha256:6ddade06b215fd5c06a8dc37db45b21824495f1ed66c4797b8548a05e5adb10b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5Y2JiYzY1NDY5ZGIxY2EyODQyZWZkOTdkZjdlZTJjZTZjYzE1NzE0ODJkMDFhMThiNzkwYTEwYzdjNTEwZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMDliMjYxNDlhNzI0Y2E5ZGQ0ODJkOGZhMTc4YThiOGZhMDA0NzAzMjBhOGVlY2Y0YzRlZDU4Njk5ZTExNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmZjNlZDNlNmE3ODgzZjU1ZjRkY2NjZmI0MTYyOWFhNTFmNmI3MGFlNmE3Y2MxNTU3YjEyMjBmYzBmNzhhNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExN2YyMmUwNzY4YTgzMDU1ZWRkM2NjYWI5ZmJhNDhiZmE2MWJmODRjZTdkNWZmZTNmNjZlMzg3ZmYxZWYyYTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a5e32d7c5bb4a379f6dde3f184ef0dc",
+      "statement": "When a handler throws an Error and onError is provided, compose stores it in context.error, uses onError's result as the response and forces it onto the context; otherwise the error is rethrown.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L47-L58",
+          "version": "repo-lines-v1:sha256:9b3c848ec4a110874d4c49d0cb65ae37dd91bb0f75298b10fd16901725ad4492:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyNDgyMGE4MjRmODAyMTNhNjAxNGUwODY1MzA2ODdmMjU2MDJmZWZmZTVjNzAyYzE0NThkOTczYTc1MWQzYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5MmI2NWZiMmFhMmMzYzZmYzI0MDUxN2VmZGY5YmVjNDBmNWJhMDAxNjNhMmVmM2VjNjQ4NzY2YjczYWZhNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2N2ExZjQxMDNhNWE2YmY3MDcwZTdmNTVmZjkzZjNlOTA2NzZjYTY1Mjc2YTNiMGZhZGNlOTBhZWQ3M2YwNTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b671ba0a19ad4e45a6b4bf1ea9cfc3b1",
+      "statement": "compose assigns a returned response to context.res only if the context is not yet finalized or the response came from the error handler, and invokes onNotFound when no handler remains and the context is unfinalized.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L58-L68",
+          "version": "repo-lines-v1:sha256:3ace48d9a9778e4933ccf4919898dc4c6a7b81ef7365972f5600b9121849da2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyNDgyMGE4MjRmODAyMTNhNjAxNGUwODY1MzA2ODdmMjU2MDJmZWZmZTVjNzAyYzE0NThkOTczYTc1MWQzYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmNzM0MjFiZTcyYjA2YmM5MGQ1MjI2NzQ2N2RjYmYwOTJjOTJiNjdhZTU1Y2QxOGU3ODJkOGZjYjFiYWQyYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhNzFmNjMxZTA4ZmQ5ODYwMTk3NTE1NDNmY2JhMTk5YzY0YjZjY2YyMDQ4OGRiMzhlYzZkMTNjM2Y3MzgwNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0NTViZTIzZmEwMmE2ZWUyZGNiNjMyODZmZTY5MzdiMmQzYmUzZmMyMDVhZTU1OTBjMjY1NjBjODM5ODBlOGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd20a716bd994c39978076e70f326728",
+      "statement": "HonoBase.#dispatch skips compose when exactly one handler matched, and after the composed path throws 'Context is not finalized' (routed to the error handler) if no response was produced.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L428-L469",
+          "version": "repo-lines-v1:sha256:0f94ae912d39194764c18bf20557dba11a278307311cd3c4fdfbbde806644fdd:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3MjIyOTg0NWIzYzU0ZDYwOWVkMTU0MDViMDliNzkzYzc5MDViYjk3OTJlMTlhYWM2ODZhY2RhYjQ5YTdkZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNTFmM2FiYjZkZDdiMjQ5NjgyNzc5YTdlMDJlZTBiMmY4M2RmN2ZiOGZlNTQ1NzA1MTU5YzAyMmVkNGFhZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwYTM5Njk3MDFmZWRhYjRhMDBlZDVmMWJkYTlhODNiYjJjOWViZWRjYTRkODczNWUwZTQ1NmFiNGI1MmI3ZmEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:46.600Z"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:02567f71bcd8cdafc6fbcb655276746ccee9c997d5e4c98c3329b819315cc40d",
+  "claims": [
+    {
+      "id": "claim_3da417eb1cdc48d398cd09193016c457",
+      "statement": "Task publication uses a broker producer and returns an AsyncResult correlated by task ID, separate from backend result storage.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1007-L1041",
+          "version": "repo-lines-v1:sha256:6d902f519e6474181fcd793c2cd5b11fb97c6a33758eb99d870fa59a3b2e0a0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwMjMzNTgwZWU0YTUxMzJhZWQ5M2I3NzAwNmNhNWZhN2VjNmJjYWI2MGYzYTAxMmNhOTRjOTE5OGI5MzcwZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4ZDAxOTAyZTI4ZmVhM2M2NmVhM2Q1NTcwOTljZDA5MjZhMzE0YjNiZDI4ZmU5Nzg2M2MyNmQ5Nzk4ZGI1ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyY2ZlMzMxN2IzODk4MmRlYjc3YjQyM2NhMDBlOGU5ODE1YzU2OGQxMWI0NGVjNTA3MzA4ODg2ZGExMDJkODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b528c1e03a88496d9c8e8bdac07a154a",
+      "statement": "The worker controller initializes its loader and assembles pool, timer, consumer and optional services through a bootstep blueprint.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L63-L140",
+          "version": "repo-lines-v1:sha256:22cd2a4a4a9e0abf7756bb3d5fd652d1164712dbfca6a173df0348f54f80e5e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5ZmRjMTAwMGJjNzBlMmRiNTIzYzcwNjIwZmQ2NzNhNDFkMWE3NGIzODAwYzJkMDlmN2I1YzAwMDMxNzBiMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4YWU2MGEwOWE3ODRiNDdlYTA4NTMxNmJmZjkyYzY4MDExZGQ2NzBkODlmMjhkYWY1ZGE5YmI2YWU0MWJjNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4Nzk2ZWIzMTI4NGFiMTFkMmM2NmZhYTU4MzZmMDU0OTdjZjliNDE1M2Q1ZGUyMWZkOGQ1YjEzNzk3MDQxYzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2dc8d36ec2254a159e9e88e4813a07c0",
+      "statement": "Unknown task names are rejected and recorded as NotRegistered failures by the consumer.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L679-L709",
+          "version": "repo-lines-v1:sha256:a35a38803ac5d2feb42124304e7a8bc60de6dae850a5c565c5ac7ba4cd6a592c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0YWYxOGQ0ZDI4ZmRmNjAyOTUzNDcyZjNjYzgyZWEyODkwOTJjOWMyM2ExM2VhMmU4YWZmNjY3ZTRjODg3MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjYjJlOWEwNmI3ZGNhN2UzNDQ4YWI5NGExNWZjYzRmOWY0ZTI3MDgzY2UyMmZhMzA3MmFlMjZhZjU1M2VjMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlODZlOGM3N2NmNWJiMDc1ODk5ZmQxYzViMjkyYjk2MTgzODY4Yzg2NmM1ZWUzYmRkMjExNDY4OWRjOTYwYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_18cf1a6c53aa4765a91a38a4134127e2",
+      "statement": "On normal task success, tracing dispatches callbacks and chain continuations before backend mark_as_done; backend completion also triggers chord accounting.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L609-L630",
+          "version": "repo-lines-v1:sha256:9b8205b5a6c78f07738a434bb916dec01057af17de0e73d3c8cf9f12f27a973d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiZjA0N2JhMzVjOGQ4Y2Y3YjA4ZmFlMDc1ZTkxMzRkYjc2N2IwNTc5NjkxNjZlMTExYWI5NmE1NDBmZDU3NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YmVhMjZlNzRiMWU4ZjUxYjQ3OTM1ODI0YmYxYTMxODAxZjE2NmJiMDZlYWM2MGMzY2JhNGNmNzhlOWJhOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkZjNmM2ExOTg2MDlmY2QyYWVlMTVmYWRhYzFiODRlZTdlYTA0NDcxMGI3ZDQzMDRiY2JmNDY3ZjJhNmI3NTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmYTY5M2Q3ZjcyN2JiZTU5MWM1ZTg0NWZmYjc0ZjZiMWJhY2ViY2Q3YWQ3OWM5MTRlOWY1ZDU1MzhlMWNlMTMifQ"
+        },
+        {
+          "resource": "repo://celery/backends/base.py#L180-L186",
+          "version": "repo-lines-v1:sha256:87fbe4a218b7d6f9d4a2c7de2d5b6c6f57420902899804004519e1689c797bd9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk5ZGY4ZTZmY2QyNGEzZTcxYjcxMzhkMDZlMjAxNjI3NTY3OTY5OTI4Mjc1ZTk0ZTkwZjFjMmUwYTRjMzE1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmJmNTEwMjhjMzE4MmQ2ZjAxNWUyZDVjYjY3NzVhMGIzYmZlZDE4ZTNlNTM2MTc0YzhmODQ5MjkyMzZiNzdhMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFiNzA5N2JmZWNjYmEyNmJjYjU2ZjNhMTQ2MThlNTg3ZjNmMzhlOGViOWJkMzA4NDlhNjQ3MjI5YzcxMTAyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjVmYmQ3MWI2ODk2MGRiMDQwNzQ2ZDQwMTdhYTFkMjdmMTJkZDUxNDJkYjMyZmUwMzkyYmZmMzVlYmI4YTViZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e45ff4de648e461fb2076015a3535c82",
+      "statement": "Beat publishes due work using task.apply_async or app.send_task and the default persistent scheduler uses shelve for schedule history.",
+      "evidence": [
+        {
+          "resource": "repo://celery/beat.py#L393-L422",
+          "version": "repo-lines-v1:sha256:ca6f589550d6270415ebaee9a3ccd7c4c1a447a43ed8acaa0ddb1daa5434312f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MTEwNmU5NGI1NmRkNmY3ODliMDZkMTk3MjE5MzcwZmYyYjE3Njg4MzIwMTI2ZDc4MzM0N2NmMjZhMGFmN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMGVjMmMzOWQ5ZTY0NzIxMDhhOGMwNzZlNzQzNTVlMjNlZDZjYjYzNWQxMmM1NGQzOTMwNDI1YWI5M2E3MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1NGJlZmFjYzc4MTUyODI2ODJlOTRhNjdkNGE1ODE0Y2JmOTI2ZWRhNDY4MWQ5M2NlZWViNTEzMTI0NGJjOGUifQ"
+        },
+        {
+          "resource": "repo://celery/beat.py#L505-L522",
+          "version": "repo-lines-v1:sha256:b3b0547b93986f0f7075815b13a7fe4665ca87bc77e8b7db7683d85215378293:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTYyYmQ5MDViODA3NWMyZTA3ZjVjZDEzZThmZDdkMmQ3YzUzYTBiNGRhNDlmZjYyMzU4ZGJmMDZhYTRkZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhZjVmMjUxOWY4OTM1ZjViOTM2NTgzYTg4NjZhZWVmMTMyOTcyNmUxMWRjZDk0MzlhMDFhNjljMTFjZTNjMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlNjJlYThmZTRkMjY0NGYwM2VmMTc0OGI3YjJmNTg5ZDlmYmFiMjg3OTQ4NzJhZGE0MWJmZjE3NWIxNTc4OTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0YjE2YmE2ZTk4ZmM1OWI5ODY0YTg2MzhlNjUxNTY4YThkYzBjODgzZGEyYTQ5N2M3NTIwZjk2NmM0OGIzYzYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:55:28.912Z"
+  }
+}

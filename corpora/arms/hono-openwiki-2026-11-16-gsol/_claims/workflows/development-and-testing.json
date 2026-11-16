@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:da5a61e697b8f3c358b71e2ee0dea4d06e1c377fc25ec0665d662c3de923fa20",
+  "claims": [
+    {
+      "id": "claim_6d89bc606d7d4822902df18f0ea096cf",
+      "statement": "The test script runs TypeScript spec checking before Vitest, and runtime-specific scripts select native Bun/Deno execution or named Vitest projects.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L13-L23",
+          "version": "repo-lines-v1:sha256:4f2a4568adc103d4cf16a58740f2ad033fc7cbe7fa49c58acf78102839f04bb7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ODMzZDU5NDljMDNhNDBjYTk1MjQ5MTYxMGE2NjU5NjQ0YjNhYTQ2NjM2MmY3OTkwMjBkYmYxOTgxNTQ3ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwMWI1NTc2YjgxMTg0MmMyOTNhYmNhOTk0MzljYzQ1ZGI2NzRiOTI1NGNkZTlhNzFmNmRmZDE0YmI0YTM0MDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyNjM0MzdlMDM0Nzc3MzQyZDlkMzIwYzFmMzkzNzY5MjcxOTQxZGFmOWMxNmMyNGMwNWIwYzY4MzkzMGIyODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlMzYwMThlYTc2NGFmMzVhMWQzMWUzNDhhNTZhY2M2NjYwNmMzZGU5NzQwZmE1ZWZjNTI5N2JkMGNiMGQ3OTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_857c35b8e72943ab93fdd9d7c93c0c23",
+      "statement": "Vitest enables coverage globally, defines main source/build test discovery, and runs DOM suites using two different JSX import sources.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L5-L73",
+          "version": "repo-lines-v1:sha256:f43cd2743613da443921ce7e22764574ac3d339c82b14a82d1219c3c25a4e1e8:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMWNkMzlkOTAxZmQ3MmNiODM3ZjQwMjk3NWU2OTQzMmNkODRlMmFmMzliOGY3Y2EzY2Y2MjRkZDE5NTE4NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1ZmVjNmY2Mzk3YmY3ZTA4MDc4ZGZlODE4OGQ3ZWEyNjgzMTE2M2M2MTZmZjAzNjBhZWI5YmY5M2YyYTQ3ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4bc4b80bd4842cf99f8e5249c909434",
+      "statement": "The build validates npm and JSR export coverage in both directions, builds ESM and CommonJS, emits declarations concurrently, then removes private fields from declarations.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L20-L39",
+          "version": "repo-lines-v1:sha256:8eef9affd2b0cd672ff94db1792bac86b72172517eb08967c9584fa65e26fd80:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxNGZlZWIyNzNmZWE3NWE4Njg0NDNhNGZiZDNlMjZmYjQ4ZWI1ZGRiZjhiNzNiNzhkNmE5Njg5NmYyNDM0N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzYTQ1YTg4NDIwN2M4YWM0ZGZlMDNiNzExMTMyOTQyOTQxZTgyZTMxYTgxMzdhYTFiMzEyYjIyYTMzZDU1YzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljMzc2YzUzYWEwM2E4YzcyZGYwZTRjMjk3OTA5ZjBkZGIyNmJjMDgzZDEyNWY1YjZlOTM1MTdmNzMxOGRiODMifQ"
+        },
+        {
+          "resource": "repo://build/build.ts#L78-L114",
+          "version": "repo-lines-v1:sha256:39b8d0a0b3373ed3ac9966571aa4734b942043bda7e47b62145ae84cc2f211fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMDE3OGYxOTBhMjUwYTEyZDBiNjRlMzZlZTkyMTM0YTFmZjYxMWJlN2FkYjg1ZThmOTRmYmQ3NzFhMTY4MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjMjBjZGM4NzNlMDNlYTE4MjRkZTk4N2U3YmM2MWEzZGZjNTQ5OTEzNmVmMWVhYjQxZmUzYzNiNWQzZmE1ZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3ZjViYTQyMDBmZjBhZjM2NmM5YzdkZjY1N2M1NTI0ZDc0OThmYjZjMGI0MDJhMDNiNGExNTk2NGY2Yzk2MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_78ef8149f35a4974b95a5555ffecccc2",
+      "statement": "Export validation permits wildcard-covered entries and throws when source export keys lack coverage in the target.",
+      "evidence": [
+        {
+          "resource": "repo://build/validate-exports.ts#L1-L36",
+          "version": "repo-lines-v1:sha256:55b0eb767893682be112b912df41d3d47e083b19997d520063dbcd17d13562b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNWZhYjQ0OWMzYjNkMDZhOWQ2YWJkNTAwODMwMjdkZTIwYTRiODU1MTY5NGJhYTRjZTAyYjMwYzQ1N2NmYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzUyNTg5YzM0ZDNjNjA2ODU5MzFiNmVjYzRkNTA5OTFhN2M1NmM4ZmJhMjg5NDExNDY1NzY5MDI3MmNhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_61421de6db9f49fea6307fb7200f189c",
+      "statement": "The package build clears dist and copies CommonJS package markers to CJS and declaration outputs, with publint configured as postbuild.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L29-L36",
+          "version": "repo-lines-v1:sha256:4c64d1af541e968326a02a1d2993cc50665cf3cabc3e788ad2d5a25124d2da40:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U5ZTM0M2Q5NmZiYzY5MzlhNWUxYmY5Y2FiMzZlOTA1Y2FiYmMwN2RhNjFiMjY0NjM5NDc0NzVjZTg5ZmNjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTE5YTNlZDNjN2RlNzE3YTUwMjY1YTY2MmRiYTNhNjgyYTA0M2VjZjZmZTk5MmIyNDljZTg5MjBlNjI4OGFlZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDgzNTlmZDkyNmQwMDgxZDllODlkMzFmOTA0NWMwZWVkMzU5Yzg3ZGFhYjdiOTc0N2U0ODNhMzgwZmJjMWY5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGJjZDg3MzlhYWE2MjQwNTFmMDg3YTdkODAwYzQ0ODEyYzVlNjMzN2ZiZmE4MDU4MmMwYzY1MDMzNmQ4NjU3YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d1cd2b316b94453e8f29e6444dc03e21",
+      "statement": "CI's main job installs with the frozen lockfile, checks formatting/lint/editorconfig, builds and tests; host-specific jobs separately verify runtime integration.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L151-L238",
+          "version": "repo-lines-v1:sha256:8dc4e76f8abde4b23b5a6a3d04418ce2d65bc93e643fb4b5cd480d8376b98865:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiMzJiOTg3MjYzZGYyMTYzZTcyNmQ0OGI5MmY2Zjk2NTE0OGNiNmI2ZDI4MzE3OTE1MTRjOTM5ZjgzN2ExNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkMTVmM2UwNTkwNDk1NGVmNjNjZTQ3NDQwNWFlN2U1ZmU0MWJhZjM1MmVlMzYxYjg4MmI4YThjNzgxMTE0MDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0MmEzMDZjZWNlNGZmMjQwMWI0ZTcwYjg2NzEzMGFmYzY1MWY4NzJlMGEwYTQzYWJmOWQ0YTIxMzFmZWE0NDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhODQ4MDI0YjI5MTU3YWU2YjViYTRmMGU0M2Q2Y2M4MDAwYjkwYzJmYjQzM2Y3NDEzODZlYzAwNGY5NWI0ZjUifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/ci.yml#L36-L57",
+          "version": "repo-lines-v1:sha256:456d1ec159a8bc1d8f0e19eeee8bc96f1a720d3505657879e0a747c27032ed38:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzRkN2E0ZDY2NjI4YTMyYWVmMmZlMTRiY2EzZjhlYTVmYzg5MDQxZjYwODU3N2FmMGU0ZjdlZWU0NjA3NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzZTg0ZTUzZWFmODQwMjkyY2NlY2Q5MjgwZmJlZjQ5OGJlMWNkM2IyMjk3YzllZWE4NzBjYWE0ZmM1MTc3YzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjMmFkOTg1Mzg4MTliZTQ0NzlhZTlmYTVhZmM5OWRmYzY1OGEyYWNlNGQxY2ZlMjQxMjIxN2Q3NjUzNzU1N2QifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:16:56.556Z"
+  }
+}

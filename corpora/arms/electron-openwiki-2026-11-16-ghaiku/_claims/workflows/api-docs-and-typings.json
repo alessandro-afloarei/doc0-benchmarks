@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d17f46f0a510351f1019eacf39420677893fef43191f05735559db2026179b15",
+  "claims": [
+    {
+      "id": "claim_2dac14b23c1549be8a5eee6440324288",
+      "statement": "script/create-api-json.mjs parses the docs with @electron/docs-parser in single package mode and writes electron-api.json at the repository root.",
+      "evidence": [
+        {
+          "resource": "repo://script/create-api-json.mjs#L5-L16",
+          "version": "repo-lines-v1:sha256:94a7e93edd94c4c962b5437133d5112a6e136bf71f37020ca8ff73f4c9d72fd4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0MDc5MWNiZTYyMDZiMzcwZjEzYjM0ZDU0YWZmNzA4YmI1ZGEwNTY1N2RjMDg1MjE3YjJkODU5OWE3ZTQ4MWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxZDQyZGU5ODk2NjA2NjM3ZmEzMTg2YmYyNGQ2MTVhYzVjOTRhZDU4MzM3YjVjMmU3Zjc1MjE1OTVlNzMyMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkZmU5MmY3NzNjOTY4YTFhZWMyNDg1NWU0NTVkZjI3NjdlZWMzYWQ0YmJkZWEzOTY0MWQ1OTlmYWQzNjk4YzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2ef5b699e564ca395073ebb441e3415",
+      "statement": "The create-typescript-definitions npm script generates electron-api.json, runs electron-typescript-definitions on it, and then runs the ts-smoke runner.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L80-L80",
+          "version": "repo-lines-v1:sha256:eaad6960d7f26fbdf5ac04becec29850ed5f769c0736728a2a41f0c594b61239:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFhZDY5NjBkN2YyNmZiZGY1YWMwNGJlY2VjMjk4NTBlZDVmNzY5YzA3MzY3MjhhMmE0MWYwYzU5NGI2MTIzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFhZDY5NjBkN2YyNmZiZGY1YWMwNGJlY2VjMjk4NTBlZDVmNzY5YzA3MzY3MjhhMmE0MWYwYzU5NGI2MTIzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2JkM2YyNjhiYjYyODNkNTM1ZWQ1YTZkZWM5NjM3YmYxZDE1NmVhZTRmMmFkN2RlOTk2ZmNhMjcyZTMwY2FjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWMyYmM3MGUwM2M3ZjhlNGQ2ZmY3YmM2N2EyNGExMWNiOGMyODE1ZDUwNzg4NjA4MmUwZTkxN2I1MTJkYjVhYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff2c38dcb3e640aea09f4144cea68163",
+      "statement": "The pretest npm hook runs create-typescript-definitions before the spec suite, so generated definitions are refreshed before tests.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L86-L88",
+          "version": "repo-lines-v1:sha256:def49a5f2d303af4228a6983e38b75adc8937d9ffb49da8d8d776c354528595a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg1NzY5YTVjZmVmYmJjMjUxZGYyY2QyYjMyZWQyMzA2MTZkYWY5ZTY3MzcxZWE0ZTFiYWFmN2JmNmUyNGE5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWUwZmI5YjU4MGFlZGM2ZDZkMDc2Mjk1YjQyMzU3MDQwM2IyZWM4YWRmYWQ4YjYxNTUyYWQyNjdlZGQ0ZGFkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTQzNGZmZWM0ZTJjM2U4ZTUxM2VjZWU2MTFmZGUwNzllMDBiNTFlMDU0ZWYzYjBmMDVjOTY1YjU5ZTVhM2QxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTg2NmI1MDljMmIxNjkyM2E3OGVlZjhhNzI1Y2M1MDM0Y2IyZDAwZDA3MTZiNDc4MGY0YmUxZDM3YTY0ZDg0ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_897fa821ad19464a882fb7628fbda682",
+      "statement": "The ts-smoke runner type-checks the spec/ts-smoke project, which includes main, renderer, and utility smoke files and the generated electron.d.ts.",
+      "evidence": [
+        {
+          "resource": "repo://spec/ts-smoke/runner.js#L1-L15",
+          "version": "repo-lines-v1:sha256:648910ea0b03e4c31dce497229866e0a8d5307365658141661d7609fc9331361:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4MDk2MjkwYmJlYzhhZTU4ZmYzMzI4NDNiZmMwNGY1NzUyOTg0ZmFjN2Y4YzlkMmI0ZTkwYzNhOTQ4MDhkYzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4MGU4Mzk2OWRlMDg5NWYwOWQ1NTdkZjllM2FkYzhiNjFlODA5MzZmMmFiMmU2ODE4YTdiZjc1YWE4NzlhMGMifQ"
+        },
+        {
+          "resource": "repo://spec/ts-smoke/tsconfig.json#L1-L20",
+          "version": "repo-lines-v1:sha256:5a0b8003180cce7a99530171d51085e00e6d56381b76c9a924ad25d1c6d50948:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwNjQ4Zjc3ZmQ1YTljNjNiM2NkZDBhZjQ5ZGFhMTI5OTIyMGI3NTQxZTg4Y2ExN2VmZTFhNmExMTRiOWZmMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4e89b5d6e584116b2fc0b20f918f3c2",
+      "statement": "The lint:docs script runs Markdown formatting, JavaScript and TypeScript code-sample checks, fiddle lint, relative-link checks, Markdown lint, and API-history lint in sequence.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L72-L72",
+          "version": "repo-lines-v1:sha256:a4b49d5655bfdfef87d2d17acb90c9525607d3d8671e1ef9b479ef848c63bf05:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRiNDlkNTY1NWJmZGZlZjg3ZDJkMTdhY2I5MGM5NTI1NjA3ZDNkODY3MWUxZWY5YjQ3OWVmODQ4YzYzYmYwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRiNDlkNTY1NWJmZGZlZjg3ZDJkMTdhY2I5MGM5NTI1NjA3ZDNkODY3MWUxZWY5YjQ3OWVmODQ4YzYzYmYwNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQ3ZDJmOThiOTA1OWY1YWRiYzRlMjdmNDNmMDZjOWU0NDcxNDYwZTY2ZTU3M2NmMTgzYjUzNGNkOGVmMWI2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQxNjJiOTI5NDI1YjgzMDc3ZjM5MjcwZWM2ZDZkZWU1ODQ4ZmY2NjZmYmY0YmM1ODE5NjVmOGYzNTQwMTA0ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c15cc03618b24647800abd8b518e6c6f",
+      "statement": "The docs API-history JSON schema requires a pr-url field that matches a main-repository pull request URL.",
+      "evidence": [
+        {
+          "resource": "repo://docs/api-history.schema.json#L1-L20",
+          "version": "repo-lines-v1:sha256:5ff3ffa6776fb90c5484269a3c6f6c2ae9dee2b96c3d0a211bec44d7fca0aed8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxZDVlNjJhZDQzMWM0YzlmMTk5NGI3YzRjMjlkN2FlMTZlN2JjOWVmM2IwYzM4OWRiYTRjNGJjZDUwYzg5OTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkM2RmMjIwOGI2NTQxM2QxZWUzNjA1OTZlMGY1MDEyMjFkNWVmZjY1OGRmNmJjOGU0NTMyOTQwMWYwMWI2MmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c18d9e79102a48a491d0d534cdb26ad9",
+      "statement": "The root tsconfig maps @electron/internal/* to lib/* and @node/* to the bundled Node.js tree, so lib code type-checks against both.",
+      "evidence": [
+        {
+          "resource": "repo://tsconfig.json#L1-L26",
+          "version": "repo-lines-v1:sha256:1408fd5574379b174e401554cfa4f772fd9aee919bf74f2b686fcc0ca126e98e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_58d8862b00bd48d68fb997764b94f9f1",
+      "statement": "spec/types-spec.ts checks that the @types/node range in npm/package.json has the same major version as the bundled Node.js.",
+      "evidence": [
+        {
+          "resource": "repo://spec/types-spec.ts#L1-L10",
+          "version": "repo-lines-v1:sha256:79fbdee623f2ea0c767d399e83075cdb4c52876a811768ff39a66b4be74910b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNTZiZDQyMDBkZjI5ZTY1Mzg2NjQ1YTM1NDkxNjM0NjkyYmIzOTgwMTEzZjliYmRlNmM0OWY5MGQxMmI4ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

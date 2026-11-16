@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:63e1518d802d119895975036de4a92c84717a5d9386ab11fd29c62de746703ac",
+  "claims": [
+    {
+      "id": "claim_3356cf81e1214e189a02e96561cb4216",
+      "statement": "RegExpRouter merges all routes of an HTTP method into a single regular expression built lazily on the first match, after which its route tables are released and further add() calls throw 'Can not add a route since the matcher is already built.'",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/matcher.ts#L9-L33",
+          "version": "repo-lines-v1:sha256:dc1827e5bb797ec86796bc853ee0202f95c0e53b9944d9266eaf22a8b95ed2ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkMjY2MzFhMmZiZjZhMjkxZWY5NGY2NjUyMTY5Zjk2ZjJmZDM4MTQwNjQxZWY0YzhkZWQ4NzRhYmVlNTJkYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1YjFlYTZkZWIyZTI1NjQ1YjE1YTQzOWYwMmFkMjc0NDRkMTg1NmE2YzZhODg2OWJiNDM5MmY4MGI3ZDQ4MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/router.ts#L118-L252",
+          "version": "repo-lines-v1:sha256:3e277e800e902186a33b3452d1ff98612b8b26786669e178750902f1871cf48c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1ZTg5NjQ2YzU2OGY0OTg1MDVjZmVlOGQwODE5ZTcxN2Y3MjhkOWU0MzllMzcyNDlhMzkzNjllZDBhYjYyMzU2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_20503825f40d457c85bfca6c9563a2d3",
+      "statement": "RegExpRouter seeds each newly seen method with copies of everything registered under ALL and pushes wildcard (middleware) handlers onto every matching route entry at registration time, so each path holds its full ordered middleware-plus-handler list by build time.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/router.ts#L132-L225",
+          "version": "repo-lines-v1:sha256:4add2ef2d8bb2a7673a1ef04e301c6e93647772deee112a59b74c5f24e93de22:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MWIxMWIwMTI5MjM3ZTVkOTcxNjFjOWNmMzg3ZDM2YmY1M2EyODYxMWRhMjFmMGRkYzFiYTUxMTUxZjg1ZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkNmVkMThmMWViZDk1OWUzNDIxYzAzYzhiYzU3OWUwMTNiNzM1MzgyYThlOGM5ZDdlZjIyYTAwMTFiNzhlNGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3NjhhN2FlZTllZDU0ZGZlYmE0YTVlZGIyYjU5ZjJiYTg2ODRkMDc3N2U2ODU3MjJjNDg1NTRiZDEzZjZhNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMTcwZDA1NTQ2ZDdiMGM5MDE2MzY1NWI0ZmMwMTUxMzI5NjFmZWU2OWNiZTVhY2UzZDZkMDViODM0MDYwY2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3defbea966ef46d2b11f2dc534a48f3e",
+      "statement": "Static paths (no wildcard or parameter) are stored in a staticMap that is checked with a hash lookup before the compiled regexp is executed.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/matcher.ts#L14-L33",
+          "version": "repo-lines-v1:sha256:e0ea646c3c5b2505b06c9cf2622674bfd68df23ee26025bd145979debd0d2b07:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MzJhYTU5ZThlMmQyYWJlNDE4MWY1NDk5Y2FlZWE1ZjU1NmRlMzUzYjE4NWJlNmI0MDU3YjYyOWQ5M2VkNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2OTE5MjlkYjkzOWEzYzRiMDk3YTNjODk5MzhmZmNkMTk3ZTEyY2UwYmJkYWRkNTUyNjZlMWU2ZDY4YTAwMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/router.ts#L52-L92",
+          "version": "repo-lines-v1:sha256:8b3ff838cd5518c93081025f97f6671b1bc7aa7aa68db6c5dc33700805753be7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkZTcxMzlkNTA3YTBjNGExNmFjNTA3ZDI0YzU2ODY0YWJkYWFlNDBhNTcyMTBhMjg0MWY3MzY5M2MyYWQ4MDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4ZWI0YmVhODg1M2YwMjkxODgxNDdkMGVhZTQ5ZWU0M2M0MTc1NDJhNzNkMjdmYWZhNWViNDgxZDg1MDk0NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c19a92096bb94c3f85fcd81dac89a2b9",
+      "statement": "Matching executes the method's regexp and uses match.indexOf('', 1), the first empty capture group, to pick the handler list, returning the RegExpMatchArray as the shared param stash.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/matcher.ts#L14-L33",
+          "version": "repo-lines-v1:sha256:e0ea646c3c5b2505b06c9cf2622674bfd68df23ee26025bd145979debd0d2b07:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MzJhYTU5ZThlMmQyYWJlNDE4MWY1NDk5Y2FlZWE1ZjU1NmRlMzUzYjE4NWJlNmI0MDU3YjYyOWQ5M2VkNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2OTE5MjlkYjkzOWEzYzRiMDk3YTNjODk5MzhmZmNkMTk3ZTEyY2UwYmJkYWRkNTUyNjZlMWU2ZDY4YTAwMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd634dbc34684263ad1f7ff5e0dac08c",
+      "statement": "The internal PATH_ERROR raised by the Node tree for ambiguous or unsupported patterns (duplicate terminal nodes, conflicting parameter and literal siblings, '.*' or capturing-group regexps in params) is converted into UnsupportedPathError so SmartRouter can fall back to another router.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/node.ts#L45-L125",
+          "version": "repo-lines-v1:sha256:8af162facbdbb77de41e3584e0c8ee8527baaeae5f810b99fcd853075af615c8:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwYTBjMGQ0MzQzNjY0ZTEzOGIzOTFjMDRjYjE3MzZhNmEwYTFkODZkMjRhNWIwYmVkNjY5ZjRmYzYwOWNkZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0MmYzZmNjZjRjMWUyZWVjMDE5M2I4MDhmM2YzNmJlYWY1ODdjNzEzYWY1ZGQ3MWFkYzYyYzNhZWVjZTMyNzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxZjI2N2ZmZTZiYjEzY2MyYjhkMTIwOWQ4Yjk4ZTc4ODg1N2FjOWQ3NDBmMDM1MDgxODg3MWEwYTcyYzg2MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhZGUwNjUxZTY4MzlkM2E2MzJhNjA0ODc3ZDkzMzE3MmUxMGRlMGIyZGM0Zjc2MjExMjViZDBkNmQzOTRmOTYifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/router.ts#L75-L85",
+          "version": "repo-lines-v1:sha256:b37740f9f63cad9fd948a4501f074275a557fe9af1ae1621e64d309b2f84354b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjM2YzMzQ1NzQ3YzljMzFiZDEwNzIwZTU4ZjZjMzdjZGEyZTU0MDNiNjFkMzFlOTM1NjExNDVkNTAwNjJlNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNjQxYzFhODEyZWVkYTEyMzRlNjM2ZDgzYzFlMTBlNjMzNTg1ODE3NDY2MjRkODNiMDU2NzVmNjZhYTE0ZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1MzAxZGQwYmFlOGM1YWFjZTZkZWNhZDI1OThiOTk1YmZhMjE5ZDg2ZTllY2E3ODMyMjBlNzc5NzU5YmI3YzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjM2NiMzBmMDMzNjExZDg2YmQwMDZlMzkxMjFmMzU0ZWJkMTliZjk0ZGU3NTFkMDNmMTE1Y2U0ZjMwNzU1M2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dc1f24b7e0d74db9a2b4b2907cee1b83",
+      "statement": "The Trie/Node compiler builds the regexp by emitting an alternation of children sorted so literals precede labels and wildcards, with handler and parameter markers replaced by empty capture groups and recorded in replacement maps.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/node.ts#L128-L162",
+          "version": "repo-lines-v1:sha256:fcd906965923de381c8e8c9c7af57c0af23f826eaa168c192d760aa733930170:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljNGUwNDAzOTMxYzFjZjRjZmMzMmJkZDc4YThiZDhlYzBhYmMyNzQ5Zjk3MTljMWI1M2YwYWY4NjJhZjg2YjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzNDdjMWM3NzkxNjkwY2U4NzIyOGZkZjQxZWQzYmM4NGI4NDQ4YWU0ZGM2Y2IxYmU2OTQyMTQ3ODk3ZDI4OTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/node.ts#L15-L40",
+          "version": "repo-lines-v1:sha256:0ec3d19f56db610d1baac1032fb4a9c8cca5d149f30167b574f2d69e5feb3677:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyMGZmMWY1ZGY0NTIyOWU0NmZmZjUyNGUxZmI4NzZiNDcyMzQzZjZiYjU4NzZmZDkwOWM3ZmVmNTlhYjM2ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzYTBkODYzZGIyNTE4YTU4MDRlZDhjZmExYzc3NmVhYjJkNjYyNTI4OWYzNTA4NzQ4ZTg5OTc4ZjQyM2NmNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwNDI0MGU4MzUzZDFlNTE0NjJlZjQ2MzhmMTA4YjY3OTVjNzNmYTE1YmI3OTY4Mjc1YTkwNzM3MDkxOGU4ZGQifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/trie.ts#L45-L74",
+          "version": "repo-lines-v1:sha256:e54f6e357142ac0f44916f6ed315351736621fed09945d22998b6f0b5a9b9aaa:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxYTlkYjc0ZmQzYzdlOGUxOTZmZDVmYjMyYTRkZjlhNDU3OWU0NDdkMTdjNTE5MmU3MmM2NGZhNjI2YmViZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d51afe303a1a400fac9be132b5167e21",
+      "statement": "PreparedRegExpRouter replays handlers into pre-built matchers using a relocate map produced by buildInitParams, with serializeInitParams emitting a JavaScript literal, and throws for paths that were not registered at build time.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/prepared-router.ts#L1-L165",
+          "version": "repo-lines-v1:sha256:58d3056767f5be328c8bc8003e3cceb388f046a1ff6798ca049272ee1510cdab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTY1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmZTkzOWJhYzlmYWUwMjE5ODk4MmJlYjIxOTQyMjY1NDY1NzNiOWRlOTU4ZDNlYzM0MzA3YzY1ZTAwMWRjNDkwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:46.600Z"
+  }
+}

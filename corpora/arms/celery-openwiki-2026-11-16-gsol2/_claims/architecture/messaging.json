@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:966dcce664ea36f7ac9e91863f14683ffa5df5b1eb74b96e9dc73ff9dee4ffe5",
+  "claims": [
+    {
+      "id": "claim_bb640e91b1ea4f82a813d5904d43e6ec",
+      "statement": "Task.apply_async merges task execution defaults and caller options, executes a serialization round trip in eager mode, and otherwise delegates to app.send_task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L659-L707",
+          "version": "repo-lines-v1:sha256:bf8faafa1920c8ebb5607851a953599f31ae30d1b1739f2bdff12f04421603a1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZGJhZmFiMWY1MTM2ZDI3MjUxZjQyOWIyYmM2MGQwNjQ3YTZiMDEzMjFlZmFjYWYxNzlmZDVhODVmYjYwNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkMTY2NWIzZDEwNjJhNjc5MGZjMjk4MGQzMGVjZjFlYjFlNjc3MTQxYzRlMjcwMzA4NmY5ZTI4MTk3ZmZjOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0ZWZhNWI2ODU4ZTRjM2ZkZTkwNWE4YWNlYjhhNzllYmFmYzU3MzVlYTU1MzcxMmE1Yjk4MzBlNDE4MzkzMjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4YzRkMzhkZWIxZTAzYTE3NjdjOGZmZWYxYjk5NTAwYzEyOTgxOWU1OGZhM2MwM2E2MWMxMWQzMmY1NWU4MzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2610b2df09f143e3a8de769e693e00f8",
+      "statement": "send_task can send unregistered names, consults the local registry without autofinalizing for task defaults, and allows explicit None to clear time limit and expiry defaults.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L869-L941",
+          "version": "repo-lines-v1:sha256:ef637a3bff196078ca4cc41daef4265cb1907d2b354334d26ebc0ac7cbf62610:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZWZhMTliNDJmNzU0NWIyN2UzZjJhYzg1ZWFlNDhhYTU5NDA2Zjk4MTI3OGFmMGI2NjBiYTZmZGQyM2ZmNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlOTU1ZTAwMzllYTdiMjNiYjI5NTIyOGUzYWY3NmYzYzk3ZDU0MDI0MzI5ODg1ZGI2YWZiYjVkOWRhNDU0NGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmZGQwZmMyNzRmM2VjMTFjMjZiYjY0MDE2YTU0M2NkNzNmNTI5OGI3ZDQwNDg2Yjc4ZTQ4Mjc4NDA5OGRkYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyMWJkMWFmNDEwMmFkZGRkMjg3OTNhOTVjNWRlNTIwMzAyNzk0NmU1NGJiMjYyYWMwODhkZGMzYzcxMDk0NWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_964af71672bf45508123fdd74c52dd73",
+      "statement": "Router selects the first non-None route and merges caller options over routing defaults, supplying a default queue when absent.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/routes.py#L66-L111",
+          "version": "repo-lines-v1:sha256:79e9d9f3281b9e5f8ec6ef097c3b3527e9f37af800639bedbad7e5020f1646fa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmOTM1N2RlMTIxZTQ0YTQzNWJiMzkzMWFhYTAwYTNkYTEzMDA1MzY2MzExZDBkYjQzYmFmNDE1ZTdmMGQ0M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2YTZiNzBmN2ZmZWE5YjRjMTZmYzRkMWI3YjM5MjNlMGI5NmEyOWM2MGUzMjA0NTAyMWJjM2EwZjk3YjI5OTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiMTc2ZjI5NmViMGNlZDI3NGFmZTJjNzdmMzYwNTZiNzAzYTBhNWJjN2Q1ZDg0YTAxZDYzZTg5ODM2MjA4NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4MTRiZjY1MTI0ZTQxODZiMDJiZTAwNjhmMGJkNTllN2FkN2Y2ZDcxZGE3NDRmMjVkMjk0MDU5MmYyMjRiYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa657b4955ed4faf8a9929b112d18060",
+      "statement": "Protocol 2 separates task headers and properties from an argument body containing embedded workflow metadata.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L367-L414",
+          "version": "repo-lines-v1:sha256:2fcd2fb964d14ba0736bf251f112d5962d70fc7bc4f5068133243fa322b15b92:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1MjQzNTIxMTM5ZDVlMDJlMTBjMDZhMjcyNzk3NjlhNzE1MzM3YzliNWNhZDcxMTg0ZWYzNzE4YmNkMGQ5MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNjI1YTRmMDY4MWNiODE4NDgwZjhlMjgzZjU5MTk4OWJlMTA2YmUzZWE5YzU4NzhjMDljMDk0OTI3Yjk1NzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4ZDZkY2U0NDQ4NzhmOTcwZWUwMTA4N2Y3ZjEzYzM5N2M2ZTU4MjIzNzY4Y2ZjNjljOWI5YTk1OGM5MjAyMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiZDM1ZDNhMmI3MTk1ZmQwNmZhMWQ5MzliYTkwMzdmNDZiMDhjYmE2ZmMxMjcyMzJmM2MxZGUyODEzODk4N2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a30b247877ab441cb813704b1a823b2a",
+      "statement": "Publication resolves declarations and delivery settings and passes serializer, compression, and retry policy to the Kombu producer between publish signals.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L506-L579",
+          "version": "repo-lines-v1:sha256:7e642936f9617c2c744012a11d845ca1456e0680417e18b5e3aaf1bcb145921f:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZGQ0MWU3NzYyYjA4ZDEzYjYxMTE3MTcwZGNjZmY3YTEyNDI4MTE3ZDk1NDI0NzIzYTI3ZDBhYjZkOTJkNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlOThjMWZjODYwNjhkN2Y5MjMxY2IyNjA5OGQ3Y2M0NGViNzZhNzg2OTIxN2Y4M2JjM2FlYWE3NmM1NjRiZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwYTRhNWNkN2JlOThjNTZlMDQxMTRjY2NmMjQ3MWJlM2ZlMzQ5NGVkNGFiYjJmNjA5NjQ0ZDI1NGY4ODRmZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwN2U2MDk1MzQ4ZmU1YWZiMDFiOGM4Zjg4YTZhNTkxM2QyMGI2YTgwZGYxNTQ5Yjg5YzhkNzYzOWE3ZmE5ZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_53e4a03e7b904c2a906e9521ac6a8f19",
+      "statement": "Quorum-aware delayed submission rewrites positive delays for non-direct exchanges, while worker delayed-delivery setup attempts topology initialization per broker and logs total setup failure.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L948-L984",
+          "version": "repo-lines-v1:sha256:28133a26151371c83ac6bb1a688eb95a21b8e26e549e67a450f5755c05e108e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3OWJkNjM3ZTBlNjEzZDg2MTcwMGZkZTk2ZWI4MThlNTVmMmYxZjYyODU2YjBiOTE5M2YyNjJlY2U1YzNlNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhOWY5ZjkzOGIxNjBiNDQ3ZWQ2MzUwMDQ5NGRjN2VlM2FkZTM2Nzc1NTQ0ZjcxMTk5YzNjY2ZmMGFkMzNiMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxODVhZTA4OTM0MmY2ODRhYzAwMDdmMzFlNzdmMzIzYmRlYWE3MGI4ZDU0MDk5NDdjNDQ5ZGMwZDZjYTljMTAifQ"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/delayed_delivery.py#L55-L109",
+          "version": "repo-lines-v1:sha256:d3d0f19f0fd17016e3594248041c77ab2f30ae9ca6219b2fae88dffefdf26bcc:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2YTIwNmViZGViMzg5NWNkZDE1N2VkNzg1MjA3YjUyODNmZGVhODMwMGQ5YmEwYmM5NTc0M2RmZGFjOGZkZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1OWY2NTcwZjI1OTdmY2E5MjVlOWNlYjc0MGQ1MWU2NGFiZmExNDdlNTllNDViNGZmZDhjOWIwZGVhN2Q1ODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczYTg4NzMxZTE0Y2E0MmFjNzc5ODU4Zjg1MzFhOTQ4NjQ2ODNhMDEyMDhjZGIzYTk3YWEzMjg0ZDQ5YmZmNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1ZjdmZTE5YjhjZjNmODE4ZTIxYzBjNGM1ZDgwZDdhN2RmOGEyYjUzMjZiMmM5ZDE3YzBlMjc3YTA3MjcxODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7c81667acdc4660a8ea768dc90f9045",
+      "statement": "Broker read and write URL resolution supports dedicated environment overrides and falls back to the common broker URL.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L84-L105",
+          "version": "repo-lines-v1:sha256:e583c0f360f645a41fa913a26916ab8a6fb999b650c238238557af5a0f9ab8ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxZDFiODNmYWQwMzZjZTBkZWQwNjIyNjE4MGRmMDE0MGE2ZDA3N2UxNDFiYTA3Y2Q2NGM1NjJmOGZhZmU5ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkOTQxOWI0NzViNTg3OTZiMjFjYTc5Y2M1MmZiMTllYTljNWVjOWFkZjk3ZTgzNmQ5ZDhhMTU1ZjViZGVmODcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:38:41.370Z"
+  }
+}

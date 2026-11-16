@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e03e101f84e2d59353d6120acfbf6a7136d9f15e4b41d9610b372c156b28af26",
+  "claims": [
+    {
+      "id": "claim_f5ce44db870243beb3a7bc4287dee62a",
+      "statement": "run() parses Opts, optionally prints completions, applies --base-directory, resolves search paths, converts patterns to regex strings, builds Config, checks the leading-dot warning, compiles regexes, and hands off to walk::scan.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L75-L112",
+          "version": "repo-lines-v1:sha256:787bb438302092d0f1e10a4be99cdf40b923ce013f7842ecdc60f1e20d3be880:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMDdhMGM4NTA1ZGU5NGNhMDcxOGQyMDhjYmYyM2U1YjAxOGQ3YTJmZjY3Yjc4ZGE3Y2M4ZTdlMDBlZTM4YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c7794b719414428994c5798c9c976e65",
+      "statement": "The search is a producer/consumer pipeline: ignore-crate parallel walker threads filter entries and send them in batches over a bounded crossbeam channel (capacity 2 × threads) to a receiver run in a scoped thread.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L443-L614",
+          "version": "repo-lines-v1:sha256:2aebe953bc533e8889821a2fe4a264f6abf07d4f89f402c183410b6dfce48e2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwYmU5N2U3NjUxY2U4ZGU2NTkxZjZlM2E0MDgxNTRjMGI0NWFlMTA4MjJmMjFjMDdjMjhhNjc5MDA5YzM1Y2MxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzYzNmY2U5M2NlZDcwYWQxOGJlYTRiMTY3NmFhMDhjNTIxYzkxYzAxNTFiMWEzYTFlNTk3NDljY2Q3ZGJhNDQxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1YThiMTA0NDA0ZDEzZTBjYmZmOGUwMWYxZWM2ZjhjZjhkNzViMDY3YmUyYzU1NjVlZGNiNDMyY2Y3MzZiZGE4In0"
+        },
+        {
+          "resource": "repo://src/walk.rs#L636-L646",
+          "version": "repo-lines-v1:sha256:a3eda4ff902fee4b4bafdd09bc39fdb892900775b9a5e3fed0e479edf8850636:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3ZDkyMmI5MDVjMjMxMTk1NGEyZTg0YjQ0N2IwZTViNjA2NDRkMmFkNmRhNDNlMGYxYTM5ZWEwZGVmMWE0NWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzEzNTkwNjY1NjMyM2QxYzVlYTQxNjU0ZWU2NmFmYjU4NWFjZGNmYWVhY2ExMjFkNWUzMGJmMTkzZWVkZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxZWRmYzY3M2MzNDQxZTUzNTQzZDlhZGU0YzdjNjVhMjIwYmJlN2EwZTE2OTNiMDJmYTkzNjAxMTQ4Yjk0NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5MDFkNTc0OWQ0ZGEwYjU2NmY1ODVhMmQwYmRmMmY2MTFkNzY4Y2UyOGNkNmMyZDY2ZjQyYjgzOGVjZjFiMGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_92accdf5a6f14cb386b6ea51dacc2b2a",
+      "statement": "The receiver either prints results via ReceiverBuffer, runs exec::job on one thread per configured thread for --exec, or runs exec::batch for batch mode.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L406-L440",
+          "version": "repo-lines-v1:sha256:d50f6b44581d8a9c84e14722025c83e683dfc1944563f992729c956040bc1c36:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzODIwMWY1MjhkZTg0Yjc3MTg3Yzk5MDQxZjhjMjU0ZmRmOTExYjQ4MzhlYmUzYmIxNDdkYjM3YWRmNmNjMDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViZjkzMmM2OTI4N2QxNmRmMmZmZTc5MjlmODA5NTg1OGMzMDE3NzYxOTA5ZDMzYTE0ZmUxOTIwYzUzMmNmN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxZWMyMGY1MjcwYzUxNjQ0ODU4MzBlNDZjYjZhYjIxMmRjM2Y4NmRjZWRiYTJiMjllY2M1YTE2NDk3YjdkMzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4fe7121ef22c420089b4a4e173b07f4b",
+      "statement": "Within the walker callback the name/path regex check runs before metadata-based filters (extension, type, owner, size, modification time).",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L514-L591",
+          "version": "repo-lines-v1:sha256:eeb73a86f70952c72bc54aee7f21b6727e1798bc3690ce46caecad9e1c43b6ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNWJmOTljOGQ4Y2EyYzVhMDE5NjgwNWQyNTNlMDEwNWJhNTdhMDdmYTk2ZGQwNDRlMjdiNjYxMTAwODM3ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmMwNzYxNDQ1YjVkMTM5OGI0YmRmNGQxZGYyNTBmZmNmZmQ0MDRlMzRiMTZhMTBiM2IxNDRlYzZhNGM1M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlM2Y1YzRkNjRiNDEwZWZmODgzMTMwZTRiMzgwZWQ1MWNmOThlODYzNzRkMDdmYzU0MmJmYTNkYTM5MjViMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9b52fc7bf8144f9ba3e410309e1090f",
+      "statement": "Patterns are compiled as regex::bytes::Regex and matched against the file name bytes, or the absolute path when --full-path is set.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L541-L555",
+          "version": "repo-lines-v1:sha256:4aecbe6430e27f08136ec95199aa800c7ef17b176bc451821f3756ebe25ccba2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMWUwODU3ZjAwZWQ4MmI1OWQ3Mzk4MjM5MmI0MGVmOTNkMjNiYWFjMjU2NDhjMDdiZWM0YmM3YTg0OTMyYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L656-L678",
+          "version": "repo-lines-v1:sha256:6378b5bf532fe34c62093043e8ca2f314839fe70aac0d5b3cb56718444f06532:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlOGFkMDg3Y2I2YzhiZWQ4YTIwMTk2MTVmNmQwZTE4N2JjZGIyOWVhYmJmNmNmMDY5ZjRkNmQwNzQ3ZWY4OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjNzk0ZTQ5NzI5MmVjNDRiOTQ2MTcwZmUwMTUzODdmZGZkM2UxMjQ1ZDVmOTgwN2ZiNTczMTBhMzUzNjU4NjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7aa3076370c74a5e906da46db8334958",
+      "statement": "jemalloc is installed as the global allocator when the use-jemalloc feature is enabled on supported targets, and the target cfg list must be kept in sync with Cargo.toml.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml",
+          "version": "repo-file-v1:sha256:47baccc733814757a01ff7f43c2e336a5bfcb27bc9c10ba03df3b656c6d3dfe1"
+        },
+        {
+          "resource": "repo://src/main.rs#L38-L54",
+          "version": "repo-lines-v1:sha256:fd812b0beb7149ffc44869d10d720dbe1b6d74f89bfe087acc834ca7ae06ab5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5YzlhODVmNzc1NTE4ZjdlYTk2YTI1ZDlmNzE1ZTI5OGNiYTZmZTA2MWM1YTZhZWRkOWU0MWFkNjI4ZDM1ZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NjMxMjFhYTUzZmIyY2VlOWViMWM0YWM1YmVkYTA4YzIyNTg1ZTY0YmZhYTNlZjA2OGRhOGM1ZjNhMTZhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5MjQ3MDA5ZDE4MDE4ODMxMzJhNzg3ZWZhNGQ1YTVkYTkyY2RkMTgyZjc0ZDBiNjc4ZWVmZDRmODY3NmI1NDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjJjM2IxYTk2YjI3YWVhM2ZiZDViNDI0NzkwNTM4NzNkMDUwMWM4NzQwZmZiMjBjMGRmMDEzYWIzYzYzMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3cff13726c124d479eeb47adb7bc6555",
+      "statement": "Top-level errors from run() are printed with the '[fd error]:' prefix and the process exits with the general error code.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L1-L9",
+          "version": "repo-lines-v1:sha256:1b74058d291942cf80c2b879cabb02171ffa44cebc7deb6ce62d12641c2dd427:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY0YzNhMWNhMjFhZDIyYTRiNDUzZjg3YzY2Y2QyNDI4ZDQ3MGJkZDg5NmI4ZjUwZTBmOGFmNDNlMWM0ODkwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L62-L73",
+          "version": "repo-lines-v1:sha256:13c65d2c2e9294fdae79f679c0ae84913ca26313f2fcb5474b41a7e5509f19a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYjllZWU5MWJjMGIxYTc3YjVmMjI0ZmQ2OTQ1ZjNkZWMyMzRlNTU5NmI5NDc1YzkwYzVhZWM5ZTZhZTIwYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYzM3ODVmMmUzODI3NDk2ZDU2NTMxMTE0ZGEyYjc4M2IwMWUxMDAyMjg3ODgzN2U2YjdmMDZjMTI1NDdhNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0N2ZhZDJhM2IzZjkyOGE4MmIyYjQzNjZlZmEwNDlmZGYyMGJlMTZiZjliZTYyZTVhMzZmMWFmYzIwY2FhODkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:39:25.366Z"
+  }
+}

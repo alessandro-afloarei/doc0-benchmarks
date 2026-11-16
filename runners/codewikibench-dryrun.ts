@@ -2,7 +2,7 @@
 //
 // MANUAL SMOKE TEST, NOT part of `pnpm test` / CI. This script:
 //   1. Clones the CodeWikiBench evaluator at the SHA pinned in
-//      `docs/codewikibench-pinned.md` (5e728fb4…) into `results/codewikibench/evaluator`
+//      `docs/codewikibench-pinned.md` (00f56b65…) into `results/codewikibench/evaluator`
 //      (gitignored — the evaluator repo ships no LICENSE file, so its source
 //      is never vendored/copied into this repo; it's an external pinned
 //      dependency invoked at the pinned SHA, exactly per the pinned doc's
@@ -60,7 +60,7 @@ const VENV_DIR = join(CODEWIKIBENCH_DIR, "venv");
 // Pinned per docs/codewikibench-pinned.md section (a). `main` has no
 // released tag; this SHA is the tip of `main` at research time.
 const EVALUATOR_REPO_URL = "https://github.com/FSoft-AI4Code/CodeWikiBench.git";
-const EVALUATOR_PINNED_SHA = "5e728fb40492effb54d59041f908dbf9079fe238";
+const EVALUATOR_PINNED_SHA = "00f56b656b9fb8f23b87aecbfdcf19510e3e4f36";
 
 class GuardError extends Error {}
 

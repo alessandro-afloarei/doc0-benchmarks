@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f20c4abbce8401a59eea168d829c4b46508e26c90c43b1c0d080db3aeb2d8919",
+  "claims": [
+    {
+      "id": "claim_e4bb4485ace54c93a8947719ebea7b42",
+      "statement": "The process exit status is 0 for Success and for a --quiet match, 1 for a --quiet search with no match or a general error, and 130 for KilledBySigint.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L14-L22",
+          "version": "repo-lines-v1:sha256:d7fec88bf3476c243fac7c49cbf336509b91abcba643fe422c6060085e9c53f8:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTBhZmFkZGVhOGRjOWFhZmYyMzUzMWNmZjZiNjhmMGU2ZWM5ZjNiYTkzOWU0MDkwZDFiMjQ1OWUzZDZiMjgzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTZkNzJlZTE3ZTI5MWFjODEyYzcxY2JhNzlkYzdjZGE3ZThiOTllMWU0MzBlZmJlMzg1N2M5M2Y4YTk1ZDcyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODI4MTk3OWE0MjlmNGQ0YWI4ZDNkNTUyYjQxOWQyMjQ5ZjM2NjM2NTJhOGY0NWNlZjA5MmU1N2MyOGFlYjgwYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e5f291292284066816cda53d7cd7a42",
+      "statement": "Without --quiet, a finished search exits with Success even when no entries matched; only with --quiet does the receiver report whether any entry matched.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L282-L293",
+          "version": "repo-lines-v1:sha256:b0ab2eefa8187d571a9114fefc42cfa0800def1d1fbc84a2e1f0da1825a9e1ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ODgzOTZiY2FhM2Q5OTExM2JiOTY5NTQ3MTkwNzNiYmFlNjcwYmY5ZWZlOTBlMzMxNGFiM2E4ZTQ4NDY2OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4ZmZjODkyNmMzN2FhY2ViODg0OWRkZDUwNTdjOTFhZTY4Y2MwMzMyZWJjOGNkNTRhYjNjODYyYjI5YzVhZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4OWM2YWVkNWUwN2EwZWE2MDMyZTViZGEyMDI3NzViOTcwZTlhNmI0NDE5YzA1NDc3YzJiZjA3YzRhZmVlYjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b6771b1ed9a47c59b77065e470dcceb",
+      "statement": "With --quiet, the first matching entry ends the search immediately with HasResults(true) rather than waiting for the walk to finish.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L203-L206",
+          "version": "repo-lines-v1:sha256:5ffbdcbc3377c9432cb339c36c09790c5b94d83459cdf94bb9533e310c0363a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjg5ZWEyMTA1ZTU2NWY0YTI5OTI0NDU3ZWNmNjJlM2FhYTA0YjAxYTEyOWZmZGQwMzIwOWE4ZjNhMzY2YTY1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdiNGUxZjFjYWM5YmZkNmZkMGIzNTA4NjRmNjViNzllNzFmZDkzZjBlYTIxZTA5MWQ0N2Q2M2ExODkwZTU2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzkzZjk2OGYzN2JhNTY3NDgzY2E4NzE4MmNlODM5YjU0NjQyYTAyNDEwYWE0NDE1YWExYzc5MjI4MzlhZjEyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjQzNDk3NTIzZTRhMWVkYWExNjgyNWMwZGY5YzA4ZDQ0ZWMzZDY5YTVlOTFlMTdmYTRiNmUxYjNjY2NmMGQ2ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c86197cb8374c0b96ff049f4b8a71c7",
+      "statement": "When the interrupt flag is set, scan reports KilledBySigint regardless of the receiver's own result, and ExitCode::exit restores the default SIGINT handler and re-raises SIGINT on Unix.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L31-L43",
+          "version": "repo-lines-v1:sha256:b0bc752332f9f1bae96b4fc7121792ea1268927d2500fc5ed9330e8546c25929:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhMmRkNzIwZWQ2ZjMyY2JjMGZmY2I0YzBlMGQwYmI2ODJkMjBmZTE5NDc2NWJiNWNmMzUwYTEyOGVmNDJjN2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0NzJhODk1YjhmNmVhZTYwZGY1MTgyOTc5NTE5NGNmNjQ1ZDE0ZWU0NDUyZjBlYWUzNzY2YjgyNDZlNmM5OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyNjJkZWZiNGM4NGFiNGU1NDc4YzA1MTBlZDAwMmVjNjgwNjkzM2Y3N2FlZDE4ZWJkZjUwYjk0OGIyNTA5NDYifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L646-L652",
+          "version": "repo-lines-v1:sha256:8106abe21370484ced954a06d321f5334b6aad25140b61c1bf0632c5d129ce9f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTljMTM1OTA2NjU2MzIzZDFjNWVhNDE2NTRlZTY2YWZiNTg1YWNkY2ZhZWFjYTEyMWQ1ZTMwYmYxOTNlZWRkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjFkYTliN2MyMGRiNmJhZjMwM2U1NmIzZmZkNjhlN2ZmYWQwZWJkMmMxMjY1M2I5MTY5YmM5NTlmMzRkNDg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_72496270c5974ccbb2498c9cec51c996",
+      "statement": "merge_exitcodes returns GeneralError if any input code is non-zero, and Success otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L46-L51",
+          "version": "repo-lines-v1:sha256:a03c6eaff4a6df26239c71e05121ffb7d204634840661f19581c3a2941e045ea:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmIzMzllMTc4ZGQ2ZjI1N2ViZmNiYzdjZmJlMjdkZmUzMGU3NjQxMjc1ZDc0YjUyYjA2ODQ4ZTAxNGFjNzAzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JjOThkNmIwZGM0OTJjNTAxNmRmMTA4MDVhM2E1NGViOWMxODRhNWE2MTM3ZTdmNGJlY2ZhMGMyMjA1NTBkMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d36910e1919f40f5bb7776cb1947edd6",
+      "statement": "A command run by --exec that exits with a non-zero status, or fails to spawn, makes its job return GeneralError, so fd does not forward the child's exit code.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/command.rs#L84-L92",
+          "version": "repo-lines-v1:sha256:fd831088b209347d66e124a384fc711437153fd735181cab6724a5afac3a21e0:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI1NmRiNTk1OWZhMjE3ZTA3MzZjZTAxN2IyMWQzZTdkYWZjM2Y2YjBmOWVlOTNiNmJiOGIyM2MxMjQxZWJlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTBlOTU3NWY3MDNmOTRkNmE2ZjJlNTE2ODkyZDI5YTBmN2E4NDliY2MyMTk3NzMzNjVlYTAzZjhiODg2ZTAzNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmNjNzA0M2M0YjhjMWI3M2E0YjM1MDEyNWFlNWNmZjI3YjU1YWFjZThhYWE4ZDU0Yzk2OTAxYTRkMzVkMGM5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzlmZjM0MDY2YjBkNjIzMjA5NDAyZjY4YjJlNGIyMjQzNjE2ZGFiMGVjMmI0M2JmYzdmMzgzZWEyNzA1ODExZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d8e0f8ae902440a872dfb9a123583ac",
+      "statement": "Fatal errors from startup or traversal are printed to stderr through print_error and terminate the process with GeneralError.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L5-L9",
+          "version": "repo-lines-v1:sha256:fa65f6b86656c189702aed519a65d72b0e4cf5e276fea34e7a11bb69376ade21:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWNmMjFmNmM1Nzc0MWE4MjFkNzY2YTk5YjJkOTk5ZmY4MDc3ZDYyMDJlODg5MzJmZTRiMDc0NTg2NDRmNzU2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTVmNGZiZTA2ZDU0MWM1ZTM5NTgzMzBmM2E2MDJjZDE1ZmNlODcwYzhkOTExYTkxYWE4YWM5NDEzMWFmZGFhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L62-L72",
+          "version": "repo-lines-v1:sha256:c4f80b51309d540cae8ffa3478fca8fc83bcef85006e40a74a6ac8b150af7f60:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYjllZWU5MWJjMGIxYTc3YjVmMjI0ZmQ2OTQ1ZjNkZWMyMzRlNTU5NmI5NDc1YzkwYzVhZWM5ZTZhZTIwYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYzM3ODVmMmUzODI3NDk2ZDU2NTMxMTE0ZGEyYjc4M2IwMWUxMDAyMjg3ODgzN2U2YjdmMDZjMTI1NDdhNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyZGMyY2ZkM2JmOWExMzhmNWY4ODc5MjUyMDFkNDVlNjllZmIxYWI4YjU4OWNjNDc0ZTc4ZTFmZmJiZjVkNDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_536dd17b83924503b7b5531281557343",
+      "statement": "Traversal errors are printed only when show_filesystem_errors is set, and a write failure other than a broken pipe prints 'Could not write to output' and ends the run with GeneralError.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L226-L232",
+          "version": "repo-lines-v1:sha256:9637a53a4852775ba7693d3ea5b1def51f4c338b0d4a4bbfc8beb35d3d8c50b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdhNWZmYTNlMDk1ZGYwNWI2YjMzMzM4NzFhYmExYzFiM2UyNWFiM2RiZjFkNDkyZjE1NGMyY2MyYjEyMmY1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRiMzM5YzE3ZDRjYzU0ZTcwYzRmY2ZlY2I2MTFiYjllN2QzNjNmMjViMThlMDkyM2ExZDMwNmNjOTU5MjRlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE2NGI3OTViMDYwZTUyOTllMzllMjU5MzFmZmM5MjYzMWJkM2Q2ZDk0YjYzYjI2N2U4YzZmY2VhZGYxMWVmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzU5NGY1MDJhZjZmMGYwYThiMzczOGI3MWZmYjYwNDAyYjY1YjY5ODFlYTIyMzNkMzk0ZTA5MWZhMzE0MTM0YSJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L252-L262",
+          "version": "repo-lines-v1:sha256:1af694eb18f46f7c78bf32dd7592bfd774cd8ddcc9030934b7b3d0838c1b1eee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlMmY2YzJjN2M0MjVkOTY1OWRiMzNlNDMwOGM1OWU1NTVmYzQzNGUwMzNiYTUzZGRkNGIyMGNiMTI4NjEyMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMGIwYWRmMDE2NWM5YmE2NWQ1NjJlYzE5OTIxNGI2ZmQ4MzEwN2YxOGNhMWYwNjQ1YmE2MzEyZDhjM2MxNzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2YTJjOTJkZjExNTMxOTAzZGZlMGZlYjc5NzdjZTI1ZjFmZTMxMjRmODIzMzk5MjZkMWI1NmFiM2Y5YzczNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzZjBmMjhmMDJmMmVhYzVlNGNjYTc1MDQyNWY5MzQ1ZWIxMDVhMTAxYzNlOTRlOTExZjMwYTg3MTU3MDk0MzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_580a912f153c4a7cb78f2a8538dfceb8",
+      "statement": "Terminal output is escaped only when the destination is a terminal: control, bidi-override, zero-width, and language-tag characters become \\x or \\u escapes, and redirected output passes through unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/sanitize.rs#L1-L60",
+          "version": "repo-lines-v1:sha256:a5d015c29dbf4537fc9bc74de6940e5ca54dd92a4214d67f5549d2d9f3e52916:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlMDYwNWFhYWE2MTMxNzYzOTg0MzcwMDE1ZTI3ZWQ1MTAzMmEwNzMxYzBmMWVmZDdhMWZjZTI2NTQ0NmM5N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0NWUzYmEzYTQyMDhkYTgyYTI3Mjk2NzA1ZmU5ZDNkMmU2YWYzNGQ5MTViZjFjMzk1NzcyOTMyYmVlZDU0YjMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:13:27.224Z"
+  }
+}

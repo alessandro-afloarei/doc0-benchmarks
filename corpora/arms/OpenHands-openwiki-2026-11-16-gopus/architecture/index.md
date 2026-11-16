@@ -1,0 +1,7 @@
+# Files
+
+- [Agent Controller and State](agent-controller.md) - How AgentController drives an agent by reacting to event-stream events, manages AgentState transitions, enforces iteration and budget limits, handles pending actions, confirmation, delegation, stuck detection, errors, persistence, and trajectory replay.
+- [Events and the Event Stream](event-stream.md) - The Action/Observation event model, how EventStream assigns ids, masks secrets, persists events to the FileStore, and fans them out to subscribers on dedicated threads, and how EventStore reads and filters stored history.
+- [LLM Layer](llm-layer.md) - How OpenHands calls language models through a litellm-based LLM wrapper, including configuration, retries, prompt-based function-call emulation, model feature detection, cost and token metrics, the per-conversation LLM registry, conversation stats persistence, and experimental model routing.
+- [Conversation Memory and Condensers](memory-and-condensers.md) - How OpenHands turns event history into LLM messages, how condensers shrink long histories via CondensationActions and Views, the available condenser strategies and defaults, and how the Memory component answers RecallActions with workspace context and microagent knowledge.
+- [System Architecture Overview](overview.md) - End-to-end architecture of OpenHands — how the event stream connects the agent controller, agents, LLM layer, sandbox runtime, memory, and the server/CLI front ends — and the control flow of a conversation from first message to finish.

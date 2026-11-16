@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:de781611a32fefdb1357deacb6632f17f499bbb5ea996b7571244ef6e11ff011",
+  "claims": [
+    {
+      "id": "claim_9f5318055dea4b73b35ebcc7895c9406",
+      "statement": "LLMRegistry keeps one LLM per service id and raises if the same service id is requested with a different config; it publishes a RegistryEvent whenever an LLM is created so stats can attach to it.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm_registry.py#L23-L56",
+          "version": "repo-lines-v1:sha256:928e14b7eea7678abcfdc980202a49ffe02253913c220f587bbd1592ec64d9f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNmZkYzBiZjJjMjgzZjU1MjhmMWM0Y2JjZDA1MDcyNTFlZjFmYzU5YzQyMDU5OWU1Zjc0YzFlMjAxMmYyNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMjhiNDJjNjVkM2YyODg0ZDM1ZjM5YzE1MjYyNjdiNmFjMGQzZTc1MWQzZDcxNWUyYTIzNDY1YThjMjFlMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkNzAzYTYzZGFiMTdiZGE4M2RmMDdiMTRmMTllNTEyMDdhOGE5OTUzMjVlZWQ2NThjYzg0NmQ5N2ZhYjUwMDMifQ"
+        },
+        {
+          "resource": "repo://openhands/llm/llm_registry.py#L82-L146",
+          "version": "repo-lines-v1:sha256:d18a6ed6649411f9b65362f251f99092b078be54c4f5bbf8b65ab5fef66e3c9c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMzFiMmRiMmE3ZmIxMDE0MTAxYTUwZmFmOGYzNmRiMjgyNzQwODg3MThmMWIzOWVmOTYxYWQzNjgxMDFmNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyNjMzMTE0ZTFhOTIyMDZjNmQyN2NkMTk4YjQ1MjdkNmJiMTlhNjVjNTQ0NTI5YzQzODc0OTE4MWZjODBhN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxOWQzNDRkMjg4M2NkNzQwYjU1OGFlMWMyYzdmMjM0MzlkYzE3NDMxNzU1MDA1OWIxYzIzMDdkNjI1ZDZhYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00cdecd77d8d4c50846e7f347d336780",
+      "statement": "LLM models prefixed openhands/ are rewritten to litellm_proxy with the OpenHands LLM proxy base URL, and reasoning-effort models drop temperature and top_p.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm.py#L118-L158",
+          "version": "repo-lines-v1:sha256:576e458f01c2fcf577279c3380d101cbbe686fa37650a633ea57d5e72c470dbe:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwNGFjMGMxYzY3MDZjMjdkOTYzYWQwMWM2MWI2MjEyMzE3YTU4MjFkN2EwMjcwNTJlYjY3OThhNTQ0MTE4ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiYjMwMjkzODMwODE0MDc5MGZmZTYwNWNmMmI5Yzg5NmU2NWVhYmJmZDc4N2M4ZDJjMDU2NDUxN2EzZjNhYjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5YTJjY2EzMjA0NTM3OTMwZWU0MTNmZGJlMzc5NjJmZmM3MjFiNWE1YTEzNDE5MGExNTNmNmNiYWZlODM1NGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3M2UyY2YyZDdkM2Q3YTk4NjNmMWQ2Mzk1MTFhNjM2YzUxNjljNGI2OWZkNmJkNDJjMjAxNTRjMWRkZmYwODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c388103f3d547eea3bb1e93392d3dba",
+      "statement": "For models without native function calling, the LLM wrapper converts tool definitions and tool calls to prompt text (adding stop words when supported) and converts the text response back into native tool-call format, so agents always see tool calls.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm.py#L252-L297",
+          "version": "repo-lines-v1:sha256:0135db21c95e6b6cab073a4de153ec44ab18e7bee8cd1f56106773d950660bc1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MDkyNTA1NWIzNDQyMTlmYjFjZTg3MmY4MzQ1MmI4NGI5YTE5YjljMjZlNzg0Y2M5NTUwNzI0MWQ0YTg1NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlY2E2NTE1ZTM5MGQ4NWNiNmQ3YjY0ZDk3MThjNGY0YThjYTUzODczOTAxYWIzNDlhOTFmNjM2NTFiMzliNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2MDY1MmRjYjE4NTlkMmJlMDA2MzRkYjRkYjE0MWZlZTc5M2ExNzMyZDUxYTNmODE5NzZhNmIzMzNlNTBiMmEifQ"
+        },
+        {
+          "resource": "repo://openhands/llm/llm.py#L318-L345",
+          "version": "repo-lines-v1:sha256:20ca9432bb688261f1466a15a1f7bae38552f244edaa5101b31a815e6bfa8653:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1MWU3OWQ3MmQ2NWQ4OTQ4ODMwNGRiODNiOGM3NjM2YmYzYzA4NWIzMWUzYWI0YTFhN2YyMDcxMDk3NDMxZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZmM3MjA0YTBjYmQxMTJiMDFiMmI0OGE1Yjk1ZDFjZDY0MzBhZjk3NWFmNzIxNGE1MTg4NjAyZTY5MGNiZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlNmVkNTBhYWFmZjM5ZDU3YzRjOTlkMWFjNDY3NjI0NjA1YTU1ODA1MjZkYWFhZmUwZjEwYmQ0NzJlY2QzZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5OTgzNjNlYzUzZDNkZWNiZDk0MTA3Y2FlZDg0NmJiY2NmODFkM2IwNzkzYTgwYTBiMDgxMzQ1NjQwMWE2MTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2f88d9b6ef84d1292ca0e8ea8de8baf",
+      "statement": "Completion calls are retried with exponential backoff only for connection, rate-limit, service-unavailable, timeout, internal-server and no-response errors, attaching retry counters to the exception and raising temperature from 0 to 1.0 after an empty response.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm.py#L44-L51",
+          "version": "repo-lines-v1:sha256:fd3f9f170656e6e8209ef8ae219646b1178de200dcea9403b78aa13ad60d430a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFkN2M2NjNmNjU4ODlkZTJlNTA2NzI0YTFiMTg3YWYwMTM1ZTU0NzA2YjFkNGI2MTU2NWU4OGRmNDU1OTNiYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTQyOGFjOWJkNjA4OThiZjFiY2VlZTFkNGQ4ZTRlYjNlOGRjMWFkNDllYjFhMGYzZjQzNTZjMDA2YzA5OWE1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWEzNGM0NTY5NTUwYTJhZGVhYzM5MzkxMGM1YmRkNTAwZmUzYTRiYWNiODRmY2VkYTg4MGJhOTEyOTllYTA2ZiJ9"
+        },
+        {
+          "resource": "repo://openhands/llm/retry_mixin.py#L1-L100",
+          "version": "repo-lines-v1:sha256:dbf0d2838cdcdd06930e1d7629a2a55f461b7dcbf41fbaa4264a75a08aa17b99:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzMDgxNGJkMTVkMmQ3MjIyNmY1ZjdlNzNhNWUwMTA3NzMzOTYxMGFlNmRiMGU3ZDIxMzljZjNjNzRjNGU1YjdmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1OTA5YTUzYTYxOGQwMjhlMWQzMDAwYzBhN2FiY2VlY2JlNWZiMzdmNGU1MTFlZmU0NjY0M2ZhZDZlNjY4NzJmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_69ec6024a1bd4a58acc966eb7f5e6515",
+      "statement": "Model capabilities (function calling, reasoning effort, prompt caching, stop-word support) are determined by glob pattern tables over a normalized model basename.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/model_features.py#L1-L139",
+          "version": "repo-lines-v1:sha256:4a8fe37cb681b5964fa92e29fca263e96d7fd84c9d9618edfedae930d271100a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1Mzg0YmZkYjJkZjM4MGI2NTU3Y2M3YTcxZDE2ODkxNDE1YmNjYWE4NzY5OTQwNmUyMzZmNzUyYzY0MTUzODlmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMGMxZjE4OGYxNDJlZDdhODI0NjgwYjIwNzE3MmM1NTE5YmM2MTRhNDhmZGE3Y2YxNjdlZGI4ZGRmNzk5NTZjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_dc031fb255254702a3a01c1ef3997391",
+      "statement": "Each completion's cost, latency and token usage (including cache read/write tokens) are recorded in Metrics, and ConversationStats persists per-service metrics to the conversation directory so budgets survive restarts.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm.py#L583-L666",
+          "version": "repo-lines-v1:sha256:75fd420ce86abc459f8165fff86751e92f9ee40f2bc3fc3592dd803fc9ad46e8:eyJzZWxlY3RlZExpbmVDb3VudCI6ODQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmMTc5NzgzODZmNmFiN2EzYTY5OWU0NjI3M2M3YTUyNzEwOTc3ODhhOGFiOGE5NzViZjFmYWEyMjA0NTQzYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmYzRmY2E3OWQzNDlmNTYwZWNjOTUyM2NhMmVmNTc5YTk2ODdmOTIzMWM3OTFjNGFhNDY4NmRhODc3ZmMzNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyZjNhNjkyZGQ5ZTkyN2FiZjA0YWFmODA3YzkyOTY5ZjEzYmU2YWU5MmQ2YmYzNDk3OTJiZjk3MmQzNTE0MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5YzU5OGI2ZGE5Njg4MjcwOGJlNDEzMzQ5ZTFjZWFkNGQ4ODM1ZTI1NGMwMTU5YzE2OWMwYWNhYzA2Yjg1ODUifQ"
+        },
+        {
+          "resource": "repo://openhands/server/services/conversation_stats.py#L14-L104",
+          "version": "repo-lines-v1:sha256:d1c5455c3c617d06056be217f7119b3ee9f7cf4eb61fd03b406cc63429ce0518:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkNGQ1ZWNlZTgzM2UyOTc2YmRiNmIzYWQ2Y2I4ZjhmYTc5NWE4MWYyODFmMDBiMDQwYTZkODcwOTUzYjQ1YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1Yzg0OTJhODA2NTQ3MjM3MjVmZDM2MWUzMmI3N2FiNTY4MmRiNjgwYzQ3OGY0Mjg4Yzk2OWNkZDI2MTIzZjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7d6101173124794a73a692d78d9a22f",
+      "statement": "RouterLLM subclasses LLM and delegates each completion to an LLM chosen by _select_llm; the multimodal router sends requests with images or exceeding the secondary model's input limit to the primary model and everything else to a secondary model.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/router/base.py#L17-L135",
+          "version": "repo-lines-v1:sha256:28837bcafa4c777d61b348f04263d4ef6198d57cf62090b6c7d18ac4e5c63939:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwOGU1NTNjZmIwYWM1YTYzNDhiMmNhMjhmNGE2ZjgyNWEzYmQxY2U3YzZmMjdkMDJmMTBmNDhjOGEyMGY1ZTMwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiNmExMzc5NTEwOTgzNGU5YzlmNDI5ZWExZTQyNzdmN2Q1YWEyODlmY2ZlZTI4MTEzMGE3MmM1MDU5YzBlZmQyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4ZTEwZmIwZjRmODEyNzhhNGJmZTYyMTkzYzI1YTYzM2I4NmY2MTBhYjUyYjc2MzE3MTE2YWRiYTNhODQ4MjQwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiYmQ3YmViODQ1MTViNTIyZjE5MzA1MDlhNzllNzQzODVlOWM1YTFmM2MxMDVhOTI2OWQwNGM1M2I0M2FlMmJhIn0"
+        },
+        {
+          "resource": "repo://openhands/llm/router/rule_based/impl.py#L10-L74",
+          "version": "repo-lines-v1:sha256:68cd62e75bdbfa3c472213de1f7e36b739101a9fde17af5e7dd4be63e4d62c6e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMzQ1ZWFlMDk4NWFhMDdhZjA2MDRmMTRkMmY2NjUzODNjNmEwZDllY2YzNjIzOWU2ZDRkNDBiYWU0MmQ4NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyZTJjNzc1MGRlMTFiNDVkZmM2NjhlZDliYmFiZTk5MmQxMDI2MWNiYTllNmFkZDhjOWMyMzQ3YWIzZjc5MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4Y2M4MzBkMjEwODIwZTMxYjQ0NjBlNTZmOTQ4MWRmMGMxM2JhMzFmOTNjYmE2M2Y3NTRlMmFkNjljM2Y5ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_84a5d55a5ce4417fa7f86e1a462398ee",
+      "statement": "CodeActAgent's LLM goes through registry.get_router, which returns the plain agent LLM for noop_router and a RouterLLM otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/codeact_agent.py#L94-L96",
+          "version": "repo-lines-v1:sha256:7719f5e45d908698b70e482d71774bbfaed6bc458b22d421b77f35c1de3899ad:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRmODVmYjEyNTgyNTZmNTE4Y2Q3YmU5OTYxMmUxOGJiMTQxMTQ1OWM2Y2JmZjgyMTlkMTkzOTAwNWY2YjE3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTMwNTBiYjJhMDVhZWVhNDljMThkMzAxOWQ0MjVkMWIwMGMwNjFkMGU2ZDM1YWY0NzUyMWRlZTc5ZTc1ODRjYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjBiOGIxNTkzZjg4MmRiODQ0NDc4Mzg1OTM5YTY4NGJkZmIwOWU4ZDVmMGE0M2I3OWNmZGI5ODg4ODdkN2JlMCJ9"
+        },
+        {
+          "resource": "repo://openhands/llm/llm_registry.py#L111-L128",
+          "version": "repo-lines-v1:sha256:6822a68b5e6855f2d8e592a4f6762b0f8c92727b8e399726e57b5d769fb466f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4NmQ0MDFmOGM4OTQ5NzBiOWUxZWJmNzU1NWRkOWU4OWY3ZDI2MTU3NjY5ZDAxN2YxZmI0Y2FkMTZjOTQ2ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0ZDllZGY5ZjM2ODQzMjZiNDlkYjRiMjYxY2RiM2VkMzI5NTdlNTkzZTFiNDdiMWFmZmNiNmRjZTc2MGI5MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmNzk0Mzk3MmE4NmZkOTA4NTJkZDg5MTQyZjFiZjk2N2FmNjcyMmFkNWI3OTVhY2EyYWFkZmU2NDg4MmY1ZDQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

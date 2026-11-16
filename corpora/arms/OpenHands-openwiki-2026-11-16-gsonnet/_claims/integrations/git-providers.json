@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c55d6e0cb8a6b2dcdcb5fc72fc1bbb8991f804ecea631e960ee358d4431c844d",
+  "claims": [
+    {
+      "id": "claim_b807b96add874dcba610c945f7ebd2f2",
+      "statement": "ProviderHandler requires provider tokens as a read-only MappingProxyType and builds the provider-specific GitService from each ProviderToken (token, user_id, host).",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L113-L160",
+          "version": "repo-lines-v1:sha256:cd5abee30dedc240b29318b2c0a1b78e8dbdcc60bb3486c7b05cb94e857a9066:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDdhMDdhODNkZDE5OTZmYjUxNjg0YjQyYWVjYWY0ZTkwZmI3OGJhNzIzMGU1NDJlZDdiZDAxZDQyMzAxYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmQ1YzU1OTA0NDA0NTlkZGJjNmY5OTc3ZTEzZTE0ZDNlOWNlNDUwOTgzYjc3MDg4MjFlY2ZiY2VjNWMxZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyY2Y0YzcwZTEyY2FjNTlmZGI3ZGZiNTdmMzg4MjBjOWQ4NmNlMDMzMDhkMTFiOTBjZDM0ODM3OTMzYmJkN2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b140e4acfc7147358676eb4eee66d05e",
+      "statement": "GitHubService supports GitHub Enterprise via base_domain (switching REST/GraphQL URLs) and the implementation class is resolved with get_impl from OPENHANDS_GITHUB_SERVICE_CLS, an extension point for SaaS.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/github/github_service.py#L19-L78",
+          "version": "repo-lines-v1:sha256:5bc823b79a6437ae00482e64122e3176696571d3d04375288557d2977d0dcd38:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NjVjNTRlYTcxMmY1YWE3YTE0M2JlZWEwZTRmMDk1YWY1YTFmYTMxNGFmOWI1YjBhYTRjYThhNjU1YzcxZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhZGIxOGM1YWNmYjY2NWVhODE4NDU2NDc0Yzg0YTk3MTc0ODkwZDRkMGI4MWYwYmI0ODZhZjNiZjZkZWU3ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c76c5674f8c948e3b479e40d4a09f59a",
+      "statement": "verify_repo_provider tries the specified provider first and then each configured provider, raising AuthenticationError after logging accumulated errors if none can access the repository.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L447-L470",
+          "version": "repo-lines-v1:sha256:4e229eaab34059ba1a6eebace9708b01b3285568fdad0a331afe139bf969cfa6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhYWY0OGM5ODU1MzI1OTZjMmMyMWRmYWIxYjU3M2EzNDc0NzBjZjBhNDdkOTIwZWY2ZjJhY2UwMDNiYTY1MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhYTVkYzRkYjk1Y2ZhZDVlNWIwYzM5MjdhMzcwMjllMDNjM2JlODEzY2JkMWFiMGJjYjU1MDcxMzVjZDdlNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwY2Q0N2VkNjk2NWU3Njg1NjNhYjUyOTFhMTg2MGUzMzllZWFkYTEwYjgyNzMwZWQ3NTRhYjgxMmFlYzFlZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0OTQ2NDgwMWJiNzZmYTU1MWZkZWNhYTE0OTYwNTU0NjFkYzk4NDQ4ZTYxOGZlYzhlYjdmOTBjZmQzOGEwYjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7c4e86a1c0b4eb5adbd96a02442f275",
+      "statement": "get_authenticated_git_url builds provider-specific credentialed clone URLs (GitHub token@host, GitLab oauth2:token@, Bitbucket user:app_password@ or x-token-auth) and falls back to a plain HTTPS URL without a token.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L613-L662",
+          "version": "repo-lines-v1:sha256:7cc8676e5f9875181a3c3f872db57b81e7f4542be956fa6ed4382919241a8161:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjZTdhNTU4MTVjYTRhZTJiMzQ3MDEyZGUwZTg3MGJkZTE5OTJkNTAwYTRiNmQxMDA1NjAxOWQ0ZGE0MWVhYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3ODk1YzY1MzlhYTZhMzBlY2E5ZGQ4YWU2YzA3NzA1NTBjZjJiZDg2YTYzNTFmYjZiNDcyNmE1MjYzZDAyYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxMmU2NDYwM2Q1ZDEyODhiMjhkM2YwNjk1NGVjNWY1OTk4NzA4OGJhOWRiNmFkMGQxYzc4ZTEyYzNjNTM0NjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_658b1364e5ef4690916f4959b34b0ad0",
+      "statement": "Provider tokens are exposed to the sandbox as lower-case env vars (github_token, gitlab_token, bitbucket_token); with get_latest and WEB_HOST set, a fresh token is fetched from /api/refresh-tokens using the session API key.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L172-L194",
+          "version": "repo-lines-v1:sha256:dfdfae78b216ea940336ba49bd3729696f1e324fcdd481fbadca6ee360212171:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0YTlhYTE0ZmQ2YTVhMjM4OWEzYmFlZDQwOTdlNDA2NmQxMjVlNmRlNTlmNWNlNWIyZTFhN2MzYmRiMDQwZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZTY4NDMyNWQ0M2E5NjYzZThjMGYxYTc5ZWFhZWY1NTI3MzI5ZmFlZDlhNzcwYjY0MDg3MDNmYzQ2YjUxZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3N2YzMTdmYmRkOGVmMDkxZTkyYTY2YjQxMjZlYWQ5YzA0N2VmNTY3ZjQ3NTQ0NzkyZDUwNjlkYWY2MjYyMmUifQ"
+        },
+        {
+          "resource": "repo://openhands/integrations/provider.py#L385-L446",
+          "version": "repo-lines-v1:sha256:31e735a6f7f8f2484b8dc792bbdd36da331bc09d1468584a24abfb707c23f40d:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlN2Q4OTJjY2JmOTg5NWJhN2VmMTRhYmI4MjE1NGQwYjg2MGEzYzlhYjFiNGUzODZmYWZjZGZlMDMyZWMwNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2MDlmNGJiZmYwOWNiYmExMTA5YTAwYjRiYzhlNGE0Y2Q4NTI3NjZmODJiN2UyMDg4MzIyMDgzNjJmNjZkODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjMTFkZGM4ZWJiMjcyNjY0OGRmMjI3N2IwMzliNDg5M2FjNTJiODZmZTcyNzNhZjdlZTYzNDY4OTc4NmQ4NjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2bb6ef8c124d42c1b2c84f1d418b6158",
+      "statement": "Before executing an action, the runtime checks whether a command references a provider token variable and, if so, fetches the latest tokens, updates event-stream secrets and exports them into the sandbox environment.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L324-L360",
+          "version": "repo-lines-v1:sha256:f5a64363b5618ab7e172168afc9ca1c5d56b2cebff2cddf348f5975ff10313d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNzVkYzJmMGQ2NTUyYzkzZDQyNDhiZjU0ZjgxYzViMjczZjA5OGI3NGE2MzcyOTk2YWU3MWUyYmRlYjE4OTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyOTY5MzA0NzJmYTVkN2NjMTc5NjEwMmYxYjI0ZmEwMDQwMGM3OTRiNmQ3NDA1MGNlZDQ0OGUwOWZiYTg3NmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4NzdlNTBmYzI4ZDFlZTZjNzY5OGM1OGU0Y2JhMmIwMmRiMWUxNjQ0ZGE4YWRjNzdkNzMyNmE4OTdjMmZkMWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_89d12e635d1346fc82ca8c383610535f",
+      "statement": "Runtime.clone_or_init_repo clones the repository into a directory named after the repo and checks out the selected branch or a new openhands-workspace-<random> branch; with no repository it runs git init only if init_git_in_empty_workspace is set.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L401-L461",
+          "version": "repo-lines-v1:sha256:1879ca46cbcaf540c7cd44216f90652aa008bdd50848a9d852190abb29c10de5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NzM5YjdiZWU2MDRhNjRhNWUyOWY0MTI0ZWQzYTRkYmYzMGY4NjcwNGExY2M0NTYyMWQ1ZjkyNTJmZTM2MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNzA2MGM1MGFiNmUxZjUxMjRmOThmYjE1MzU1N2E4MjQ5YTRmNzBhMGVkZjZiMjI2NmVjOGE4NGE2YWRmZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwNjllMjYyMTQyMDAyZjViY2M1YTEwOWMzMDU2ZDAxMDg0YjBhZjE5MTM3Y2JjYWFhYzMzMmM2YWZmZWZhZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjYmFkZTA5ZDc1Yzc3ZDBiZWFlNzBlNGYwMmU0MDU5NTMxYmNiOGJlNjU3ZDY3NmJhMjUyMDY3ZDAzZmYwODEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68f556b9674546159b9b2099e87fff30",
+      "statement": "Headless runs read provider tokens from GITHUB_TOKEN, GITLAB_TOKEN and BITBUCKET_TOKEN environment variables.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/setup.py#L92-L116",
+          "version": "repo-lines-v1:sha256:e6c7938e648347c31587fb68b90fde82c23cbd4a7c7b844e2503815e96231384:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyM2JlNTFmMWJjOTZiZDA5Y2IzNGJiZjIzOWU1MGYwZmM0ZWI4NGZiNzhlNWMxMjU4NzNjNTQ2OTU0ODIxM2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4MTZhMjcyMTExYjQ5MmIwZTVhNGJkYTVjN2UxNTUxYTU4ZDE2OGRiYzlkOGUwMmQ0OTMzYmJjNmViMGYzOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViYjI0M2QzYWZiMTA5MTk1NGU3NzZlYTEwZTM2MTI3MTlmZTIyMzg3N2E1Yjc5Y2ViODhiOTM1YWNhMWFlYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwNzJlMjY1ZGY0NTNjZGY1MGY1MmI0ZDc5NGYyYjJlNGM2MGZhY2U1ODExYmI3NGFhZmRiZWJlNDFiMDNhZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_06ad742bba1a40e9acaf8802da941cdf",
+      "statement": "The /api/user git routes are only included when the server runs in OSS app mode.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/app.py#L83-L84",
+          "version": "repo-lines-v1:sha256:b661d689e2b4c38187313c781b74d8b86c29ce097a4672af384a4e3407790b80:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFlZDU0YWMxZTZiNWE1ZjRhMWIzZDgzZTJjZjhjNWI5YjRmNGM3YmI3YTFlMTM2MjNhNmNmZTNhZjA2ZDEwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2MwNjlhYjhiNDFkOGJjYzIzZDE0NGNlMDg4N2Y5OTUxM2ExMWExMTYzMTU3MmM0Yjc1YTQ5YjlhMzY0MDY1NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU5YzUwOGE2MzVmZTk1MzJlMzMwMmM3YTkxZjQzYjJkZWVlNmRjNTAwYWQzODhhODBjYmU1M2Q2ZjE5YzVmNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTY4ZjcwYmRiODgzMGE5MzBjOTdiMzFiYjg3YjI2MTAwMGVmNzBjNzhkZDMwYjFmMmI5ZTZiNTY5MWI2MzdlNiJ9"
+        },
+        {
+          "resource": "repo://openhands/server/routes/git.py#L35-L36",
+          "version": "repo-lines-v1:sha256:ae85513e7ff7ada5e1d66297bb5e36294d71068024ae4377d690f6222814feb8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY3NzU4M2ZkYmI4OGVlZTA0N2M0OTQxNjVkMDA0ZWZhYWQ5MTZkOGUzMDYzMzM0MDg2MmI1MzY1YWM4MDgyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTNiZmM0NGVmMzkwMDQ5ZDM4MTFlOTA4MWUyM2E2NTY2ZTk5NjQwZjMzNjAyNjJiYmYxMWI1ZGE2NzYzMjYzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI4Y2U3MThlMGI1MDI4OWU5ZWM1ZTkyMmFiMmMzNDZkMjNiMzBlMGI3YTgxZmJjNWZiZjA4YWM0MjUxYTJhMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b2520ecfd0f4cc48c7c6b55efa2dfb6",
+      "statement": "set_event_stream_secrets registers provider token values with the event stream so they are redacted from events.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L338-L354",
+          "version": "repo-lines-v1:sha256:ee77bbe443da6d5455ff397c25f439747cb9ab1a429ebc4c77648a7575a50d6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5YTQ1NjQ2MmIwMmQ4NzgxNThmZTgyMmRhNjc3MTA5NmMyNWRkYTUyYzM0MzRjMDAyMzAyZmQ1ODkwMWJkM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZTM3MzNjYmNkZDk3OTdjMTU2MzliZmQxYjFiNzE1ZjBiMDQ4MTRmNjAzZGE3NDViN2IxYjU0ZGUxYzI1ODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3YTBjYzZmOGIwYmNjZjQ4MjU5MThmMDhhM2IzMmMwM2ZkYzgyMDEzZDA5NTRlMzM4M2RjOTVhZDZmZTkzNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzOGQ5YTQ4ZTgzNDBlMGMxNzM0MWFhMDczNDkxZTA1NjFjMjAxODUwMTUxMWEwYTliMWJmMmIwY2ZkNWQ4ZjUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

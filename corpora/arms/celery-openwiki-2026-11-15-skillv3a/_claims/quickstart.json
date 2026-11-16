@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:daa0a22b12317c1d0bb7cd3320f092440d6a8ae84e718349cd4a6874e1487e27",
+  "claims": [
+    {
+      "id": "claim_9f9aa5655bc941f8be8295fcc1395621",
+      "statement": "Celery requires Python 3.10 or newer and exposes a single console script 'celery' mapped to celery.__main__:main.",
+      "evidence": [
+        {
+          "resource": "repo://setup.py#L150-L159",
+          "version": "repo-lines-v1:sha256:197a6fcded253d951afddc4249f31e44f93e40f6584916367142018977af1a80:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmZmFhMzM0N2EzMTdlN2Q0YmI2N2VmNTgwNDU3ZWQwYzJkZjMxYWZjN2JhZDE0MzE0N2JkZDdjZjk0MWNlYTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxZDZmYjMwODBjYmVlMGRjZDk3MmZjMjhkNWE2ZTU2YzZkNDBjZTIwZjJlOWE2NWRmYTFkY2JlMWRiNTY4M2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4MjNjZDkzZWEwMTkxN2ZiYzZiMTE5ZWEyNGJiN2ZmZjMyZGRmMWE5MWViMTI3NTRkMDBhOGE5NjFiZjI1NGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf1012a3da674e9eb649ed56c6fdbbf4",
+      "statement": "Celery's core runtime dependencies are billiard, kombu, vine, click with didyoumean/repl/plugins, python-dateutil and tzlocal.",
+      "evidence": [
+        {
+          "resource": "repo://requirements/default.txt",
+          "version": "repo-file-v1:sha256:17b8070018ddf52ea728f54c711f076ef112fc8a7b590e5863129e46fc50f36c"
+        }
+      ]
+    },
+    {
+      "id": "claim_28fba03843b74b65934e57d44ed69b22",
+      "statement": "Optional features are provided as setuptools extras built from requirements/extras/*.txt files.",
+      "evidence": [
+        {
+          "resource": "repo://setup.py#L113-L126",
+          "version": "repo-lines-v1:sha256:3b53ffffb77a829de4fd9ff98bf72e795e18ae77cde229177fbd9745d1418aba:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhOWMyYWYzNTc3YmUzMjdkZWY1NmIyYTY1M2M5NGFiMGFjNWZhMGNmZmUwYjEyYTRhMjRiN2IxM2NmNDYyMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyNDk2MDZmYjUwZTcxZTNiYjliNzFhMWI5Y2MwMmU4MjE5YTlmNTVlNjI5MjQwMWRhNGE1MTZlNzdkODI2MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlMjJmNWJhYTAzYzg5MDVkMGVkMmMxNjhjMjNmNzE5ZWRlNmZiMGY2MTZiMjhlNjg5ZThmMzMxYzMzNzhkNGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5087e995f7b646219de14af78e68c83a",
+      "statement": "The package version is 5.6.2 in the 'recovery' series, and the top-level celery package exports Celery, shared_task, Task, current_app, current_task and canvas primitives.",
+      "evidence": [
+        {
+          "resource": "repo://celery/__init__.py#L1-L40",
+          "version": "repo-lines-v1:sha256:025761f0f6ef3ae285a92453a6639fe592a6f5e21af738e525a385f9b6381bc3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNGZjMDRiOTcwNTVlMDkwMjNlZWIyNmQwNjM4OTU4MDcyM2E3YzZhYjNlN2ExZjhiYWZkNzQ4ZGYwOWVlOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMjE3YmQ2MmIwOGEzOGQ5ZjkyN2ViYzFiMjYxMzM0NDc3ZDE3ZTk4NGZkYjc3N2Y0ZGE0ZGY2NDI5YzJlNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4MzcyNzhjZDQyMzg3M2NmYjIxZjRiNTYxZjI3MmRhM2U4ZGUwYTIyYTA5YzA0YWE0NDVkZjFjNTkwNzhmZjQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:49.645Z"
+  }
+}

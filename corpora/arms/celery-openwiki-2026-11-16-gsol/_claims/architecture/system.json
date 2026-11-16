@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b0258260457f1a1889fcce313d8037819915fee2e927519184c1b47b3846ca14",
+  "claims": [
+    {
+      "id": "claim_a19f267b802f41b293aa1ca364baf7e0",
+      "statement": "Task.apply_async merges execution options and normally delegates to app.send_task, while eager mode serializes arguments and executes locally.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L656-L718",
+          "version": "repo-lines-v1:sha256:488bcfadaf4961de5cb6aed3a1b8f99a9ca395132318ac53fc1034f2fd039889:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxYWZhNDk0MDQ5YTdiYjdlMDkwOGIyOThlYzY4NjVkY2U1MTgxMDA5NGVlYjY2ZWZlNjg4OWM0N2ZhMzM5NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmMTMzMWEyMDJhYTY2OWZmNjI0ODZmODRiZjgxOWY5YTU4NDdhNjAzZjE1Yzk2YjJlZmEwZWQzZmQ0OWQ2NjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxN2M5MGNiZGZlNDZkMzVmZGZlMzFhNzdhOGM0ZGFmM2FhMGY2YjQzZDNkZWQwYzEzNjk5Zjg2MDRmNjEwYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkN2I5ZDA3MzRlZDExODk3N2M0YWNlOTYyZGNhZmU2YjU0NDk1OWNkNGQ3MTEyZDBmNjA2NTNiYzVmMWZmNWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1428790f22c49d2b4ffd8b95130c16b",
+      "statement": "Celery.send_task routes the invocation, constructs a task message, publishes through the AMQP layer and returns a task-ID result handle.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L934-L1050",
+          "version": "repo-lines-v1:sha256:e487210fe8ab36c1bd6125e9ee33f4d0f3804abf30a926748fdcd146b992d760:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2ODk1MGE4Njk1YmNiZWMxYjkzMWFjN2UyMjJjNmQ2M2M1MDk3NzBiMTZiYzE3YTY3NTk3NGZiMDM4N2YyZjVhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3MWE1ZGU0MmU4NmI5YWNiM2NmN2I3Mzc3MDM5MTkwZjViZDI1MzUxMjY0NTM3Y2EyZTBlZTc2NjhiODI0NDRiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhZmUzM2ExNThjNzA0YWFjM2QzY2U4OWQ2YzU1YmMzMTY4YTk4Y2MzYWUwM2ZkNzM0ZGYzZDA5MmY2YmU1OTZjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e4b62aadee74a988d7daaec106f44d8",
+      "statement": "The worker task strategy constructs a Request, checks expiry and revocation, and delays or rate-limits work before controller dispatch.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/strategy.py#L126-L208",
+          "version": "repo-lines-v1:sha256:b0ac57277b24e5535268af2d234cadddc3e6086aa490b4cf371d5d555cdb61f8:eyJzZWxlY3RlZExpbmVDb3VudCI6ODMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyODJlZDZhYWIzNTkzMTdmNmFhNThlOTQ4OWE2YTA1YzVmOThhMzdhNjEwMjU3YmIxNWVmYjU1ZThkOTRkMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhNDE0ZGRjMjM1YThmZTM1YWFiNjc3OTA4ZWVkMWM2ZTEzNjg0YTBlNjE3Nzg1NDc5MThiMDBmYjQ1NmRhMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NDFlZjNlOTdjYjcwMDA1YmRmZGRhYmI5YWUxMmFmMjAzYjExMWZiNjA1Zjc1YTE3MzA2ZWY4OTIyOTlhYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3YTgyODk5YjUyNjI1ODdkMTMyNjljOGI3ZjEzOTYxOWVmN2Q2NzgyNjc0ZTc3MWY5ODhlNWExNmEzM2QzMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_073086e64f574282be29f51313af54ae",
+      "statement": "The execution tracer dispatches success callbacks and chains before marking the task done, then runs task context and process cleanup.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L610-L670",
+          "version": "repo-lines-v1:sha256:2319c9f15333a8eb9dab7795316b8fe628f7a5c86cae36cc06dc2c8b68a71d3b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMGNjZTIyODM1N2QxNjM2MDRhMzllYTM0MTFhNjYzNGJiMmI0MmZjNTFkYWM2YmMyMDQ1ZmQyMGRjOGFjZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwYThjNjc3ODVhNTRjMDRlNDBjMjQ0NmVkZDBhMGFlZjMxODMxZDJlNjU0ZTYxNGI1YmNjZDhjZWZlMjY3NWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxM2NlMGM0YmYyYmY2YjExNzJhOTJkZjM3NGFkYjlkYzExYmE3MmY0OWMyZWY3NzEyZjg3ZjdjMjBmOTRkZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhOGFmN2ViNThjMWM2NGQzOWI1MDFmNjg5ZjJlNzYxMDJkMGQ3ZTVhYjc1Y2RjMzEzOGIzMjE1NThjZDNmY2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e9e5969c2a644aea0a291ed55cbb588",
+      "statement": "Backend mark_as_done conditionally stores success and notifies chord coordination when the request belongs to a chord.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L180-L188",
+          "version": "repo-lines-v1:sha256:2be87846a2a705a6a534db002daae7ca0152cfe1c3810c5f6f92a3b4b05c467f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk5ZGY4ZTZmY2QyNGEzZTcxYjcxMzhkMDZlMjAxNjI3NTY3OTY5OTI4Mjc1ZTk0ZTkwZjFjMmUwYTRjMzE1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDczNDFkYjQ2MWZiYWFkNmU4NGYzZWQ3ZmZmOTFkNzNkYTY5NWVkOGZhYjZiOTcwOTgwNjEzZDY3NDZkNDgyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFiNzA5N2JmZWNjYmEyNmJjYjU2ZjNhMTQ2MThlNTg3ZjNmMzhlOGViOWJkMzA4NDlhNjQ3MjI5YzcxMTAyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDIxN2VjYWRjYmE2MDRmOGVkZTY4MmZmZDUwYjQzYWUyZWIzODNiNWRmYzM5M2IxMTQ1ZDRlMTYyODA1ZTA3MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae870eda59a74896bddb5d1e18cfddde",
+      "statement": "Application service access is lazy and app.tasks access auto-finalizes the task registry.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1560-L1609",
+          "version": "repo-lines-v1:sha256:1494d17ae1ee773fdcfe909e79536c72e37b35f8d04b8c1b8d4087f317c186b7:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4OGM2YTliZjNmODcxYmU2MDI2NzNjNzRiYTdmMTNlZjEwNzBlYTYxYTUyYjBkNzc3MmJjMjMxZDgwYWVhNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlZTlmMzU2Y2MwODU3ZWYwZDgzYTBiZDkxY2E5ZGY2ZWE4YTFhYWFjMDQxOTE5MzgwYjIwNzA5ZGRlNDRlOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyMjE3MjI3NGY5Y2Y5M2I2NzFjMWU2ZmQ0ZWFmZGYxNWY0YjdkNjBkN2RjZTIyNWQxNjZkYjZlZjJkZThkOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyY2UwYTAwYjJhYzI3N2UzODRlYmVhZTI2NDVhYTRkMmFlMjQ0YjhiNTVmZDJhMjk4ZmI4OGNjZTQxOTRjNzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3cf20a8abd53406fb5d818664a1267e4",
+      "statement": "Beat publishes periodic invocations using a registered task's apply_async or send_task for an unknown task name.",
+      "evidence": [
+        {
+          "resource": "repo://celery/beat.py#L393-L418",
+          "version": "repo-lines-v1:sha256:2fa28ac9b7f1c6f807563ca387814c5d23332f068f1bf876237e8f0c51fa1a03:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MTEwNmU5NGI1NmRkNmY3ODliMDZkMTk3MjE5MzcwZmYyYjE3Njg4MzIwMTI2ZDc4MzM0N2NmMjZhMGFmN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNTA3ZjI1MmU3NjQ2NDM5MzlhZDc2ZWY1NWMwODYyMWMxMmNkZWNhYzZhNmEzZmZjM2NhNjA1MWEzMTc1MDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMGVjMmMzOWQ5ZTY0NzIxMDhhOGMwNzZlNzQzNTVlMjNlZDZjYjYzNWQxMmM1NGQzOTMwNDI1YWI5M2E3MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2OTM0NmM2NGNmMDhmNzc0OTk5OTVhODU2YWZkMThiYTc3OTNiNzk1YzNhOTE1ZDIxNjc4MWRjYTdhMGI3NGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfd31055152c4fe0be5b871c3444ee78",
+      "statement": "Plain send_task warns that task_always_eager has no effect.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L864-L873",
+          "version": "repo-lines-v1:sha256:554cbf8e4b2036d679e0868c3302b7c26700ea46928fd4123fc802ba0da34ac3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNjA5ZWUxYTU0ZmM0YTcwODdjMTc1YWQwYjMyODc0MGQwZjNmMmY0MGQ2ZWFmODcyZDU4NTllOTc0YjVkZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyYWNjOTNhYzEyODZiZDQ4MTYzMjU3ZWJkZmM2N2IzYmYyZThkZDM3MGQ1ZTQ1YmFiODc4MGUyMjRhMzIzNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5N2UzOGZiYzEwNjI3NGIyZjlkOGFiY2ZiMjIwMGM1YWEzODMxNTAzNTQ0NWU1ODZmMjAwZDQ2NmY5YzllMjMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:34:04.042Z"
+  }
+}

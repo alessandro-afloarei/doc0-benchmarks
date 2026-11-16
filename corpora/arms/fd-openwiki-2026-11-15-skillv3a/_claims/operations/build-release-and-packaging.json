@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6b1fd80402ff47fb8cd2663af9e0bf3632c3802135af5bd422b665b060b16ec3",
+  "claims": [
+    {
+      "id": "claim_fe47933cd2e445ae9305ef5f54fb8d12",
+      "statement": "The default Cargo feature set only enables completions; jemalloc is opt-in via the use-jemalloc (or base) feature and is restricted to targets other than Windows, Android, macOS, FreeBSD, OpenBSD, illumos, 32-bit musl and riscv64.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml",
+          "version": "repo-file-v1:sha256:47baccc733814757a01ff7f43c2e336a5bfcb27bc9c10ba03df3b656c6d3dfe1"
+        },
+        {
+          "resource": "repo://src/main.rs#L38-L54",
+          "version": "repo-lines-v1:sha256:fd812b0beb7149ffc44869d10d720dbe1b6d74f89bfe087acc834ca7ae06ab5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5YzlhODVmNzc1NTE4ZjdlYTk2YTI1ZDlmNzE1ZTI5OGNiYTZmZTA2MWM1YTZhZWRkOWU0MWFkNjI4ZDM1ZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NjMxMjFhYTUzZmIyY2VlOWViMWM0YWM1YmVkYTA4YzIyNTg1ZTY0YmZhYTNlZjA2OGRhOGM1ZjNhMTZhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5MjQ3MDA5ZDE4MDE4ODMxMzJhNzg3ZWZhNGQ1YTVkYTkyY2RkMTgyZjc0ZDBiNjc4ZWVmZDRmODY3NmI1NDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjJjM2IxYTk2YjI3YWVhM2ZiZDViNDI0NzkwNTM4NzNkMDUwMWM4NzQwZmZiMjBjMGRmMDEzYWIzYzYzMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f186c8a1ef14aa898342ce24c37924c",
+      "statement": "The release profile enables LTO, symbol stripping and a single codegen unit.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml",
+          "version": "repo-file-v1:sha256:47baccc733814757a01ff7f43c2e336a5bfcb27bc9c10ba03df3b656c6d3dfe1"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f98696f85a348e6b1f403c27d3ef94d",
+      "statement": "Windows MSVC builds statically link the C runtime so the executable does not depend on the vcruntime DLL.",
+      "evidence": [
+        {
+          "resource": "repo://.cargo/config.toml",
+          "version": "repo-file-v1:sha256:9e9bb08e059a19c7070ea357774fdaa97ffcd3c09a035e63378973ddd6fcdeeb"
+        }
+      ]
+    },
+    {
+      "id": "claim_4954e78d530a4147a4e11f0c9072a7f2",
+      "statement": "CI checks formatting, runs clippy with warnings denied, tests the declared MSRV with all features, and builds/tests a 14-target matrix using cross for Linux targets, running only binary tests on ARM targets.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L42-L198",
+          "version": "repo-lines-v1:sha256:5a856485a631ceb860b8976696b202a585b8795d56ea15376dba3f2275f46ff5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmMThkNDY2YjU1YjBiZWM3OTNkMGYyOGFiMThkZGI5ZTJhYjE4OWY0MDVkZDhjMTMwMWNlYjJmMzhiZjA3MDVlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxYTE1ZWFlZWE5NDFhZTEzY2I5MzZlNmIyZDhmNGQ4ZDIzOGM2ODRhNjJmNTE0ZGQ0YjhhYTg2NDhiYjdlYWQ0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmZTE4NDdhODhlMGViY2M3M2M3OTg5ZmQ4OWMyOGYwZmQ4NjljZGM0Mzc0NTkxMTg5MDRlYzE4Njg2MDU1OWI0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlMDM4NTYwN2Q5NGRkNDVmZTdlZjQ5NWQ5NWIzNTBkY2JlNDAyMjlmM2JlNTc4ZDNmOGJlMmE3ZDFmZTljMTZkIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_29e898ee67e84eb8915856fce82197c5",
+      "statement": "For v* tags, CI attests and publishes per-target archives (tar.gz, or zip on Windows) containing the binary, docs, man page and completions, plus Debian packages, and publishes MSVC zips to winget.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L200-L309",
+          "version": "repo-lines-v1:sha256:c07aaf659e28c19b680f3855305ddf5907bfac6c4c65a8772800fcb388f80a76:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlMjc1MTg1ZTdhNWY5YzNmZTdmNjk5MjgzODFiOGYxMWM0ZmQ5NTcwYjRkZGEzNzUwMmJhOWZlZjMxZGM5NmE2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxYWUyYmI0ZDRlZGY4OGEwZjY3N2NhNzYwMWYzMDEyZWE2N2IyNTkyMmRhN2MzNGUyYTRhNWFjYjY5Njk4OTQ2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzZDdjM2NjNGM3ZjU2YTQ5YWQ5YTI0M2VhNDhmMWYwNDU1YmJmN2U5ZjMwOWNhMTk0NTE1M2I2ODRhYTdjMzVkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_084adf15d75142609a5666984a023647",
+      "statement": "The Debian package installs fd plus an fdfind symlink with completions for both names, and is named fd or fd-musl with mutual conflicts against each other and fd-find.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/create-deb.sh#L1-L66",
+          "version": "repo-lines-v1:sha256:59a581ca9814d5b8c588f954be04da39029eae2c346d4743117b2e77d6144a85:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NzVmOTI4NTQ2YWVlNzg1NWNiMWRiOWFmYzhhYjNmMWE4YTM0ZDQzZGU1YmJkNjJmNzA3NmQ3YmE5ZjM5MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4YjczNTAwNzY0MTcyNjRiODIxZTU5YjVkYzYxYjJiZjBiOWRjZGUxNTkwZDNiNDFiYjgyNDkxODUzZmE2ZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d6e3694a98064505920af0c039ad51bc",
+      "statement": "make completions generates bash, fish and PowerShell completions from the built binary via --gen-completions and copies the zsh and fdfind completions from contrib/completion.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:f3d6f25da159316795ec3dc84e2f4a8e3cee873b679233674ab9e5c36d41cf47"
+        }
+      ]
+    },
+    {
+      "id": "claim_05a7e5af97894231970e10bb7b7a4e1b",
+      "statement": "scripts/version-bump.sh creates a release branch, updates the Cargo.toml version and README MSRV note, and renames the CHANGELOG 'Upcoming release' heading to the new version.",
+      "evidence": [
+        {
+          "resource": "repo://doc/release-checklist.md",
+          "version": "repo-file-v1:sha256:a40f02b71e9db710b884ba85a64cb12542f1c22a9c1dabedecb183b1b5be0808"
+        },
+        {
+          "resource": "repo://scripts/version-bump.sh",
+          "version": "repo-file-v1:sha256:af75990740712df6d3c08be10faff4360908fd2c6bf63580beb9a1d9707cc721"
+        }
+      ]
+    },
+    {
+      "id": "claim_273ba2c0543d46d69fadada0578b3bbd",
+      "statement": "Cross builds for aarch64 Linux pass JEMALLOC_SYS_WITH_LG_PAGE=16 through to the build environment.",
+      "evidence": [
+        {
+          "resource": "repo://Cross.toml",
+          "version": "repo-file-v1:sha256:137bb285925ab649e70a86d6a4f5975c9891140b6590c82ab508af3025ff0bfa"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:39:25.366Z"
+  }
+}

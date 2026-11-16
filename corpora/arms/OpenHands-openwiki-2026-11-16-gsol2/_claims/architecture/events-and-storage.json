@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9ce3b3597b07032e1b3bc341a64952cf536dbaecbc93f42add5e46dd8d1d27ed",
+  "claims": [
+    {
+      "id": "claim_569c0ad2d6cd4cc8836d842b4a64e0f1",
+      "statement": "EventStream rejects preassigned event IDs, masks serialized secrets, writes event history before queue delivery, and dispatches callbacks through separate single-worker executors.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L130-L203",
+          "version": "repo-lines-v1:sha256:a4d495226085287fd0b7fc83faefa956daa0954bfc92573b845a9207919393dd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4MGJhYTRjNjBlNmQ4OTBlZWQ2N2YxMWVlMzRkY2U0Mzk1NWRjNGM4N2E2YTY5ZWI0OThiMjNiZDE4YzU3MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ZTYyNWFlM2E4NDYwMjhkZGJmMTM1MTgyOTE0YjZjZjY5ZjU5Y2MxYzA5ZGNiNTQ3YTA0NjNjMDI0NDA0MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5OGM3MDQ5MjkzYTgwN2I4ZGU4NjMwYWY1NDliNGJmMDg1YjdmMGViYjFhMjVhYzYwOWQyZjY0MTBjYjgxNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4YzEyMDE3ZDU0NmI2ZGY4NzEwMjg2MzVmZWU3ZmEzY2FhMWQxZGM4NjNmNzkwODY4Y2NmMmYxM2RiNWNiNDQifQ"
+        },
+        {
+          "resource": "repo://openhands/events/stream.py#L246-L275",
+          "version": "repo-lines-v1:sha256:5d8b904af78e50731ac78ecc4e842a225ba2c2eec5824a3ac4e67b97100e7424:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxZWFjZDJhNjAxOGU0NzRjNzFjMzRiZGEzNzg3MmM5ODlkMDdkNzlkZjNjN2E2ZTUwNTVmMTNiOTRhOTU2MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhZDZjOGVhYTg1M2RmYjcwNzIwNTFhNWY1OTYyOWJiNzZmMDJkMTMzMDQyZjY0MTQzNDNmYTAxOWFiOGU2ZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OTZkMWI0MTM4M2RkZTZjZmJiMWZkODEzMDhmOWQxZjA1Y2NkOWRlZjU0MmI3Yzc3MDc3ZmQ3MTdhYTE5ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwZDg5ZGRkMTE2NDA2YTMyMzExNzcxNWNiZDc3ZDcwNjJmZTAzNjQwZDkxMjliMjM2YjZkNGI0MGVhZDE3NzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f906cf1d7ca84f139d424b20f03b16b6",
+      "statement": "EventStore resumes IDs from the highest persisted event filename and searches cached pages with fallback to individual JSON records.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/event_store.py#L50-L170",
+          "version": "repo-lines-v1:sha256:b993274e336f958c85b2035d17d699424f6d91ad656bbaed76e63f102adc9699:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjMjVkOTEzZDkwYWViY2JjNTkxZDM4M2U2OThlN2JmZDIzZjhhNmVjYmM0ZDJmODMwZWU0ZDYzNDMxMjhmM2ViIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhMWU0ZmRlZGE4ZjI3ZGIxOGI4MjFhN2FiZWQ1ODVmZjFkZGUwNGJmZWUzOWRhOThlZGQwZjBlOTJlZDhlM2E4IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1M2QyOTcxNDdhZjQ3MjQyNTAyY2Y0NjAyNGYwYzQ1YzM2MjRlYmU3NGU4MGU0Y2QwNGM0Yjk3MDA1YTIxZmMzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwNWFkNjU2YzdhNGUwMDg2YzkyZGIyOTQwMjc5ODNmN2YwNzU0NmNmODU5NWRjOWRkMWIwNWE3ODk4MDA4YzRiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e6b43e0f9e54befb58f498524fc00ea",
+      "statement": "File-store selection supports local, S3 and Google Cloud backends with an in-memory fallback and optional webhook wrappers.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/__init__.py#L14-L57",
+          "version": "repo-lines-v1:sha256:9a1d3d449d7e2e8d42ddcd1bbc1c6c31c379d4845539590fcf1bffa7e4d74a34:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhNDZiOGU0MjFjMjJjODZkMGMwODIwN2YzZmY5MzFkYTM5NmQxYWEwZTk1N2YzZmFjNWU2MmRiZjRlNjQ5MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjZmJjMzMxODQ2NmQyZDQ2MDJiNjY5MjZmZGFjYjdkYTZiN2QwMjhlZjI4ZDQzOTYyMzQ4NzE4OWQwZWY0YTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4MzM0OGQ4MjU1MGNiNzY0NmY1NjIzYTNmMzRmMjg2MmY3YjQyNDYyNTFjNjcxOGFhZmQwY2Q2YjI2MTRlMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c0092e49f80477f891677ca1b0bb72a",
+      "statement": "Controller state is persisted as base64-encoded pickle separately from numbered JSON event history.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/state/state.py#L123-L153",
+          "version": "repo-lines-v1:sha256:d9a3d7cefd4256890d47e0c0d87c79a375b81bd9c648812ade73c273ac12231a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYzM2MWI5ZmY3OWUxNzAxM2I1MTZkZGRkYmNmN2NhYTdhODc1NDA2ZmE4M2UyOWYzN2IxMDdiNWMxY2E3ZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0ZTA0ZTk2NjYwMmFhNmUzMzJlYmZlZjhjYzNiN2ExNTJhYjQ1Njg0MGU1MTA2OGM1ZjVhNzZlYmRjYWJjMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjMDQ5Y2Y5Mzg0N2ZlMzQ0NTQzNGI5ODliZTI3NDUyMTY4NGNhMzFjYTVhNjAzMzRhZTU3ZTZhOGU5MDQ5YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiMmU3OGQ5OWNkNzI3NDcxN2E2NWJiNTJiNWJhZGExNTUxMGQwNmZkM2NjMjE4N2I3ZTY2ZjVkOTQwYjc4YTMifQ"
+        },
+        {
+          "resource": "repo://openhands/storage/locations.py#L1-L35",
+          "version": "repo-lines-v1:sha256:38121c57c4e45431fdedaff85180f71b8fb7aba676957253dbca0eb6bc82d8e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjYTlkOTBkNjdhMzhlZWUxMDE4ODY1MWNlZTI1MTgwMjU3ZmZhMmRjNDZmZDYyZWQwZDAzNDE4MTY2NzRiOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0YmYxNzA5ZTA3ZDM5MWU3ZWIwYzk0NjhmMWY1NzU0MDZhMmUzNTIwZmQyODM3OGEzZjBkM2Y2ZTlhYTZiNjgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:55:05.802Z"
+  }
+}

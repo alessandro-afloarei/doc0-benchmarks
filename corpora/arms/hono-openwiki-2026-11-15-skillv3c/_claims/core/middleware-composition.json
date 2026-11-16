@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c03e7b348f27057cf24ef979b510ade0258c805b9a18bf746b3303d341e2cdc1",
+  "claims": [
+    {
+      "id": "claim_0aac51d692aa49d0b2c19cb57816aeeb",
+      "statement": "compose throws 'next() called multiple times' when a dispatch index less than or equal to the highest already dispatched index is requested.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L32-L36",
+          "version": "repo-lines-v1:sha256:57bdf511268823955a0c22072dc5af99ce0af203935f47f998fc25fa43c2071e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE5ZjVhOTA3OGNmODQ3NjhmNDlmY2ZkY2FhYzhmZmFhYTliNDJhNDVlYzg3ODUyN2JiZGE3OTJhMTI5ZjE5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU0OGE2YjZiMTk2MWY0MDcwZDhlNDc1NGJlMzJlNTA2YjMyMTUyZjNlYTViMDAwNTQ5YzI2YjlmMGM4M2FmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODlhNjMwNDA3YzZlODg3ZjQwNTdmOTI2ZTZiOTc4NTZlNjcxNzU0NzE5ZTA5NWMxNTNlOGViMGFmYTQ5YmYxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQ4NzliN2E1ODlhMzQ3NDk2NjA4YjI1MGM0ZGE0NWRhMjI2ZjdiNWQ3NjlmNGQ0MzFiNTM4NzAxMjIwYmIxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9a9b6de8b7e44a89ac7b7a0ef38bd2c4",
+      "statement": "compose sets context.req.routeIndex to the index of the handler being executed, and after the last middleware it invokes the outer next passed to the composed function.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L42-L47",
+          "version": "repo-lines-v1:sha256:e334ed7e41a25af80bd4905645712fbcf87be08cbec8054ffc0ef93b54f2ddba:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzVmZGM3NDIzN2I2YjYwMDRmYzk1NWYyZjVmYmE2OGQ4ZDk5NTI0YmM0NGQ5MGZjOWZlYzliMTg4YWY0MjUwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI2MmY2MGQ4NTkwYTU3OWNmNDZmOGQ2NzM3OGM0YzU3MmI5NjJjZWNjZGI5MGM3YTVmN2I0MmI5NjA3ODJhNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzU5ZDc0ZjNmNGFhNjhhODJjZGE3NzM2ZWRlYTA0NjY1MDc0OTJjMzk1NDZhZjZmMWE1YTQxOTZjZjBiNjJiNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjcyNmI4ZGJlZGQ3ZTQzZmM3MGM0YzcwMTBmZTZiM2VkMDRjNTc2OWIyZmViY2UxNTcxOThiNTBiM2NkZGU5MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c18af83da2b411289538527a48450d2",
+      "statement": "When no handler remains and the context is not finalized, compose invokes the not-found handler to produce the response.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L61-L65",
+          "version": "repo-lines-v1:sha256:e5c4f43868cc2bfcb7a48a8dff85049bdd49a7c23baf952c292171f947a5604c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYwOWIyNjE0OWE3MjRjYTlkZDQ4MmQ4ZmExNzhhOGI4ZmEwMDQ3MDMyMGE4ZWVjZjRjNGVkNTg2OTllMTE1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI2MmY2MGQ4NTkwYTU3OWNmNDZmOGQ2NzM3OGM0YzU3MmI5NjJjZWNjZGI5MGM3YTVmN2I0MmI5NjA3ODJhNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmZhZjMzYjkyNTJiYTE1ZjQ4N2Q2NjM4MDFmYTE4YzEwMzU4OWVhZmZlOGZiMWRhYTZiZmQ1OTgyMjVlZWI2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDhhODUyMjI4YWU2NTRjNDFkMGY1M2QxMjBmYjY2Yjg4ZjZiMTllMjg0ZGM1OTVlOWU4YmFhZTAxMzgwOWRjZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_08df277231ec470cb3621bf8a04f6c36",
+      "statement": "A handler's returned value is assigned to context.res only when the context is not yet finalized or the value came from the error handler, so returning a different Response after the context is finalized has no effect.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L67-L70",
+          "version": "repo-lines-v1:sha256:2448b4709e8f61f367d612224d9513120b17b389a1d71964d96a5893e43e3c31:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjRiNWVhNTA5YWNiOTI5Y2Q4ZDRkZGI1Y2VjMzBkNTkyNTNmNWEwZGIzZjkyZTUxODc3MjdhNjRjY2M2NmRkMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU4OGZhYzBjNjY4NjA1YzY3N2EwMTJjOTk4YjkzYjk0NTVjZDc5MDg3YTgzYmI4YjZhMDdlZjdmYjJiNGE3OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDEzNDFkMGM1ODgyZTkxYTY2YzYwY2I4NjAyMGIyNDdmMGFmYzMzNmNkZjc2YzBhZTE4YmNkMjBhYzhmZTFkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGUwZjcyOTNkMTU2YTZkMTI1MjhkYjEyOTMzNzllNTJhNWY4MzY3MDQ0Mjk3YjIyODJiOTdmZjJjODYwNDM4ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd2c7572202f44b59049590dff99b882",
+      "statement": "The combine helper some() stops at the first successful middleware or true condition, and re-throws an error immediately if next() was already called.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/combine/index.ts#L38-L69",
+          "version": "repo-lines-v1:sha256:5d008d43932931b17ac68837d2ac70060c29cf6895ae915a04e20ca8dce19f1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MmU3NzYwNDkzMGQwMzE4ZGE5Y2UxYzRlOWVhYjI3MDk0YmQ1ZTY5NWM1ODBkYTdjZWM5YWJmZjA5YjE1OTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0Y2Q2OTc5ZGZiNjhjODdjMjM0N2I3NTdlMmI3ODI5MTAzNDJmNDlhNjc2YjQ4YTFhZDAwODg4ZGQ2MWUxOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwZjFmYWRiMjU5YjQ3ZGUxNmRmMzI5YzA0ZTRkMzMyZTQ2NzhkNjA4NmJiZjVmMWI2YjEwNDdmYjA0MGM0NDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d88f3b36aa55445f81194ea5a1c56717",
+      "statement": "every() runs the given middleware as a nested compose chain, throws 'Unmet condition' when a condition returns false, and keeps c.req.routeIndex fixed to the outer route index.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/combine/index.ts#L99-L117",
+          "version": "repo-lines-v1:sha256:98045177ef5d54370183f6e3472c8d40f9fb26c4bda8be903aa09a1b837efeaa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MzVlNzdjNzA5NThmNjU1MTBlZjcyODc4NzI4YjQyMDc3MTcwM2IzYjcyYjM0OWQ5NWM3NGZiMmMyMTAyMmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0Y2Q2OTc5ZGZiNjhjODdjMjM0N2I3NTdlMmI3ODI5MTAzNDJmNDlhNjc2YjQ4YTFhZDAwODg4ZGQ2MWUxOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkZjYwMDZhYjc2MDcwM2EwOTViNDgwMjhjZjZlZWQ5YzBiODNkNWI0MTc5OTQ5N2U1ZmY5MTkxNmYwNmNmZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cbaf879cbc2e48e7b418d5cf3487bd4f",
+      "statement": "except() matches string conditions as path patterns with a TrieRouter and skips the middleware when any condition matches.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/combine/index.ts#L141-L165",
+          "version": "repo-lines-v1:sha256:806b93012ba166440bc738e1245c46efaa1ee4173758334093939bf233e74cc2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NzE3OWJiYjZhNzc4ZjIyYjRkMjhjZDBkZjA1YWM2ZjdhMjRlMzJkYWU0Njk4N2I3MjVjNzIyYjkyYTU4ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0Y2Q2OTc5ZGZiNjhjODdjMjM0N2I3NTdlMmI3ODI5MTAzNDJmNDlhNjc2YjQ4YTFhZDAwODg4ZGQ2MWUxOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

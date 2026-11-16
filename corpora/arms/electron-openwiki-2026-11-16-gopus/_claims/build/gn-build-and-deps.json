@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:163ba34aa32206fc15f7ecd3a5a856a26e2b41a452e54236b7cd8ba051c43d88",
+  "claims": [
+    {
+      "id": "claim_813847fd2e334aeaab60bea159972c2e",
+      "statement": "DEPS pins chromium_version and node_version among other dependency versions, and its electron_npm_deps hook installs npm dependencies in src/electron with the pinned Yarn using a frozen lockfile.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L1-L20",
+          "version": "repo-lines-v1:sha256:ac411e8e02a578c9e37ff2d3cb122cfa0b112b92b646730bd4595a9da778b424:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzOTc2YmZiYjVkMzZmMzk3ZGI1YWUwZjM3MmM3OWVkNmIwMDE4ZWRiMDg1YmYwNWY2NTBkMzQ2MDRhMzQyY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhYjgyMzZlOGM2OTE4NzU2OGRmYjg2MTU5ZDYwYjgzYjliMzdmZGUzNDYzNTkwYmZiMTA1MjA3ZTdlM2I1YmYifQ"
+        },
+        {
+          "resource": "repo://DEPS#L152-L160",
+          "version": "repo-lines-v1:sha256:374f54ec44b09a73fc07be2766ae987dbab83d23c91d666eeef41a489e16bdaf:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjExMWYyMzlhYzY1YzlmZWNkNGY3OTc1ZDRlZTBjNjc3YjU4YThlYTY3ODUyZWEyNWQyNzkyMzkyNTE4ZDJmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmY1OGI0ZDcwZTliNjk1MDIwNzY0OGI0NGNiYjQyMzI5ZjZkMWFlNDRlZDE2ZWY1YmIxYWI0ODZiZDZmMmQyMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGI4Mzg4NGZmZTc3YTg3NjNmNmM1NmY0OTc4NmMwYjVkNmQ1ZTUwNWZlYWVjNzE1ODY3OGFhYjRlYTFjZGVmNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b337a9160e464363bba24f05bab18f62",
+      "statement": "build/args/all.gn sets is_electron_build and adds //electron as a root extra dependency, and disables CFI and CET shadow stack because they are incompatible with V8 in the browser process.",
+      "evidence": [
+        {
+          "resource": "repo://build/args/all.gn",
+          "version": "repo-file-v1:sha256:6054e73d4de38a22d6027a8e04f577f081e694f49d0320cc7463cecc216d5861"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ee6730e55d04d73b208131c13ef4f55",
+      "statement": "The testing preset enables dcheck_always_on in a non-debug non-component build, while the release preset sets is_official_build with component FFmpeg.",
+      "evidence": [
+        {
+          "resource": "repo://build/args/release.gn",
+          "version": "repo-file-v1:sha256:bc458e0c299426a75536695aa25d6c1a0c65bc4fe756146b4f6e9e472d71e028"
+        },
+        {
+          "resource": "repo://build/args/testing.gn",
+          "version": "repo-file-v1:sha256:8d09bcf57bc6f25ae3d6c87e09f816e83f4a4291d3b9066c1d9403014106fa0d"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c6011a9630e4756b1f7ba2f19f83af3",
+      "statement": "The top-level electron GN group depends on electron_app, and electron_dist_zip packages the app, version file and licenses into dist.zip, stripping binaries first on official Linux builds.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1423-L1446",
+          "version": "repo-lines-v1:sha256:5dd9d3630bb5b75782ed8c092b344a0c22a4167cc0b6aae5fc840fd67cc2ff99:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZDE3MGIxMDI1ZmM5OTdiNDE0MmE4YWIwZTA0Mjc2ZGY4NmNhODYyOWJlOTIzZWEwZTY0ZmZmOTkyNGI4MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5MzVjOTRjMzdjNTRjMWIzZTJkMDQ5NzAxM2RiOWQ2N2FhZWQ4MDY2MjJhMGIzNWQ0N2QxM2ZmYzNjM2QyNzEifQ"
+        },
+        {
+          "resource": "repo://BUILD.gn#L1557-L1559",
+          "version": "repo-lines-v1:sha256:3f6fe0be69cb4a9e26e6845cce0b2a6e734cf61958d72717b124f487bb634808:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjJmZjVkMzRkMmFmNmU4YzllZDI1ZDNiMmFhNThlMThiOTJhZGVlMjE4OWNlMjJkZGRkNjBhMWRmNTBkMDIwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmMxMzI4YjY1MDViNjFmOTk1ZTVkYTBkZDg2Y2YxYzA4ZWQxMmU4MDVkZjY4ZDgyZDZjZDI5NzAwNmMxZjZhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmRmMDMyODRkODU4Mzg4NTdhMmQzMDFhYTExYjdlYjIzYzcwYjlhODk3NjAxMDlmYzNkMWVjZWFhYTQ5NGRkOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ab23c246aaa4c3995a5db2e7173a402",
+      "statement": "default_app is compiled with typescript_build using tsconfig.default_app.json and packed with static files into resources/default_app.asar.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L281-L315",
+          "version": "repo-lines-v1:sha256:dcca219865dfe49351fa8be8fd6ce48b512d11e017ec4c09be621f7390e9ea85:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhMjMzOGM3YjhhODAyYzFjMWZiYzE3ZWFiOTAwMmRlYzgwNzRiYTU4MGE0NzE5MjNjMjU2MDgyNmEwY2Y2MmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlMTNmOTVjMDA2YmM2NWIzYmM0ZjNlZjZhYmY3YzliN2JiNjhjZWFlM2EyZDI1NTIwM2RmNzcwMWUwNzhhMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2ZWE1NjllMjE4ZjM3ZDM5ZmQ5MzVmMzQ2ZTA4MjFhNTllYzY4YTU1NGRiZDEwNmEyZGQyYWM3OTYyYzEzMWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf2e38791fcb453ebc1dc1150fff5cd5",
+      "statement": "electron.d.ts is generated during the build by the build_electron_definitions npm action from the API docs listed in filenames.auto.gni.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L155-L163",
+          "version": "repo-lines-v1:sha256:1c782e7d507ab7e2da9e7dadfaf4771ce1727ac57607aba70a2b1da5a0641df5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGJiYjc5YTA4MjhjYWQzNzE3ZmQ4N2NkZjQ3YWVmNGMxZTU0MTBjNTA3NTY3YTY0OWZmYmFjNTRhYjI2NTE4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmYyOTAxYzQwMjEzMjM3NzJjMjIxZmUwYWI2MTAwZDgzZmUyOTVjYmQ2MmE1ZmNjZWE3YmM2YzQzZmUzMzA3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGUxYmNhNDkwYTg5MDg1ZGExN2ZmNWMzYTE0MjI4ZjQ1YzMwZTUyNjE0NmVmZTg3ZWZhOTE0M2UxNGRkMjNlMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c3d0412f02149578d1ce9c7b47521cc",
+      "statement": "The npm_action GN template runs a pre-flight dependency check stamp before invoking a package.json script through build/npm-run.py.",
+      "evidence": [
+        {
+          "resource": "repo://build/npm.gni#L1-L40",
+          "version": "repo-lines-v1:sha256:f477a95476da1e62b4412ad76d8285098a43da40d960a9b52231aaf542252daa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZTc0MjRiOGEyNzIyM2U4NGFmZmFkZjY2NjdlOWM0MDhhNDZmNzNjYzM5NDBlNDllMDBmZTNiNzIwMmY0NGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1OTUyMTkzOTRiMjQyNGFkYzQ0M2FkYWM0ZjM3ZDlkOTI2ZTZmY2U3ZTczN2YxNGI3YzhiMTYyNDUxZGU0NzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1NjNhZDYxZDc2NmQxY2U3OWQ3MDhiNThmYmY3NzUxNTNmN2E1YmRjZDFlNzM0MzcwZDg2MDJmODEwZTU4NDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a7cb5daa7d64704a787555f17ff28dd",
+      "statement": "lint-staged, run from the husky pre-commit hook, regenerates filenames.auto.gni when JS/TS or API doc files change, runs gn-check and gn-format for GN files, clang-format for C++ and check-patch-diff for patches.",
+      "evidence": [
+        {
+          "resource": "repo://.husky/pre-commit",
+          "version": "repo-file-v1:sha256:1b42d27781e331ac4210dff4a12bdaf9d0bff344797ef4df4edce5226a58521b"
+        },
+        {
+          "resource": "repo://package.json#L101-L128",
+          "version": "repo-lines-v1:sha256:9c8a1798753abbc2d603a8adee9bffe8f145408fc7e6120f077d51b452aa85f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3YWRkZWE3MTZmZGM0MDRmZjdhYmUyYzE3ZTAyYjg2YmRlZDg4MjVhOGY3NjFiYmVkMTlmZGExZDk0ZThmMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3ZGY2YTRhYzJjZWY5MDQ4NzJjYmMxMjAxMzEyYmI2OWZkMDdiMzY2MTcyMzk3MDA3ZjZjZmI0NTQ4MWEzZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4OGI2NjRkNmM4NTM2OTg2YjFkMzgwMGE0OTNiMjI2NTNmMmE5ODVhM2RjM2UwOWMxYWNmOWE5NzAzYzAyZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4NjY3OTYxZGY3OWMyMDhlNTBkZjVmMjIxODcxNzQxODExM2NkOTk1ZWNlMzljNTAyYmQzMzM3NzFjMWFjY2QifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

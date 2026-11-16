@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:bfe4b53be3aab5a1b941ba008f1bbd2edb3367b2bd73702455b995ac502007b6",
+  "claims": [
+    {
+      "id": "claim_1d9632dc36b4493789937fed45407434",
+      "statement": "Electron initializes ASAR filesystem wrapping from the Node initializer, and routes paths through cached Archive objects while allowing process.noAsar to bypass wrapping.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L15-L44",
+          "version": "repo-lines-v1:sha256:fcaf6d14e32faf47705a5b93bd938109164b67afa9c0a6d6df93ed1b355dd9dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkMWFlNGM2MTZiMjZhMTY4N2UzNWFhYzljMmZhNzUwNWRjMDMyNTE5NGY1NzU3YWU0YmMxYzk4NmE5YzA3YjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNWYwYjY2Yjc3NzVlMGI1NzBjYWUxMGFmMDdjMzRhNTMyZTVjYzc3ZjVlM2Q1YzE1MTRkNGY0ZGYxMWY5ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4OWViNzQ1YWU2ZGMyYmFhMTA2ZGFkNThiNzRhZTNmZjM0ZmI5NWYwYzZiNThmN2RmYzhjZDZkZGYwZGM2ODcifQ"
+        },
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L70-L86",
+          "version": "repo-lines-v1:sha256:410adca12f199dfcf5c53bd2b3857bc65bf8d76cf0475ecf020949f931a2ef1b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxMTYyOWUyYTQ5ZGNkOTU1YmEwNmM0MjhhMWUwMmE1MTk1Yzc4YzYwNTNkOWY3OTM3ZjNhYTRiY2U2NTY0OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1OWZkMTA1YTAxYjkyNjdhNGMxMjBhMmY1ODY4MDBjZmNlZjAzMWFlYmE1NjdhYWU2ZmNlZTEzYTM2NjVlMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3NzQ2MjM4ODg4ZWEzYTUyNDc2NTQ0ZDRhMTY2ZWIxNmVmOWY5NzVmNGQ1Y2Q4MDAyZWJlZDU5ZGQ4NTc4NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0ODQzNjg2NTJkMmZlOTAwYWJjZDc4ODcwZjg0YTI0Y2I2ODMzMTEyMWQ4ZWQxNThiNWI1OTEyNWE4YjA1MDcifQ"
+        },
+        {
+          "resource": "repo://lib/node/init.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:0c1a697fd7ab03a0ec9697e8ed1b423dd156028d373227aa7f44acae7622829e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUwZmY0MWZmMzE2YjcwNzNjMDc2Y2E0YjA0MjA0OWNmOWJhMzE3NmUzYmI5OGEzZmU0NWRjY2NlM2Y0NjI0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODQyYTRiNWRmNjU4N2VkNzJhNDhlMDQyMDQzOTZiMzQ4ZjRiMWIxNWIxYmExNmUyZmUyZTcyM2Y0OTM2MjI0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDgwZjY3OTZjNTE1Njk0ZWIyMTI2NmYxNzEzMzJiODk3Mzc5ZTg1Y2M0MTFjMTFiMjEyMDJmNjdiZmE3ZmQxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3289c101149045f4bf35adf929b42a5e",
+      "statement": "ASAR readFile handling reads packed members by offset and validates integrity metadata, while unpacked members use real filesystem paths.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L615-L674",
+          "version": "repo-lines-v1:sha256:366a92b2ce979afa59550734143376050d24f7fd1d6206f636f753a54af1ab4d:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlN2Q4MzE3MzFiZTdjZDc3ODdkNWUyNjk2YzgyNGNkYTE2ZmYzMDMxOGI4ZmI3MzQ3YzMxZTU4ZWVmYjEyMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzYTFiNzYxZTU1ODMyMDQzNzVlNGQwNjcxNzczZDI0ZWU1NDA5ZjA4MTU5NWRmNTE4MzI0ZjYwY2IxZjBkYjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzZjUxYjEwYTUyYzlhOTNhNGI4YmIzMGYyZmIyNTM4ZDMyNGFjMDc3MGI4NTQ1MDU4MGRmMjE2MTE0NmM0NjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5OWRmYWVhZjVjZDM0YmFmNTg4NzdmN2NiNWJhNmE1YWMxNmM5OTU3N2NlZjEzNWY2MmRkMGJiNTEzMzdkMWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf0255fb75574d349b1b1aef8a0c09bd",
+      "statement": "Archive CopyFileOut caches extracted temporary files and resolves unpacked members through the .asar.unpacked sibling.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L356-L392",
+          "version": "repo-lines-v1:sha256:9b29932dd470e8c03933630feb7a04153dd24924d2a64e726ec7ea2d975d35c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZTI3ODExZDVlMjU1Yjc1ZDI1M2NiMGI1MTMwZjAzMGU1Mzk0ODM0YTBlM2FmMGMwOWZiNzI0NWFkNWNhYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZDgyYjliNjZlZGNkMDQ0NDUxYzY5MDRhMjJlNDk0NGRkNDhjZWFjOGUxOGQ3MWZkZGQyZjFjMzlmMmM4MzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMGQxMzk5Mjg4YmY2ODVhZTgzOWJkNzhmYjhhNGMyYWVmZWRiM2U5MmVjMjRkNDQ1MjE3MGUyODFjODg1OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzMWU3Y2YyODYwOGY4NjJmZjA5MzY2ZTY4MjJiNGQ2YjcyZDVlNTY2ZTZiMmY5YzRjMGY4NDYwNTI2YjgxMTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2df95fb5b15641cb95c898cbb170e7b9",
+      "statement": "Real-path adapters cover native modules and execFile, while exec and execSync temporarily bypass ASAR interpretation.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L1218-L1252",
+          "version": "repo-lines-v1:sha256:dc99d3ba14377e2a40cc8f2196afa4bf2d9ea2798699bc050200d81ac42ea8c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhOGNlMWVkZDEwOWE3MDAzMjZkOTFjNDI5MjRlNjIzMTkzZDQ4MDc3Yzk5YjgwZjg4OTcxNjAxY2UyNDI5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjNzUwM2VmNGQ3NWUzMDA2NjllZWIwYjZhOWViODJlODUwZGUyMmNlM2NjZjI3ZDdlYTExZTJmNGJmMDg4MTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlZWVmZGQ1MTEzZDk5MDU2ZjFlMTlkZTFiN2Q1YmVkZTZlMGEzMDFmOWU4ZjdiZTRlYWQzZjhmOGRhODY2YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0NTkyYjkwYzliYTE1YjQyMjI1NzljZDMyMzY5NzYxN2JjZGEzZjkyOGU2NzM5YjQwNDEyMzJhYmIxMDFmYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_93fd5622bc414543a6da88eea9f91987",
+      "statement": "Node initialization filters module search paths outside resources when resolution starts inside resources, and adapts fork to launch Electron in Node mode.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/init.ts#L15-L59",
+          "version": "repo-lines-v1:sha256:89be172264a6e94b6f0ba7421c5d896bf97b28579da28fb5dc5c58d7a4e20daa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyMTZlNTUyNzVhNDA1NjU3MDc5NGEwN2NkNDVkZWMyZGRjNzI1Yzc1ZGI1NDQ1NjRjYmQ3YTM0OWVmMzcyNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:11:18.304Z"
+  }
+}

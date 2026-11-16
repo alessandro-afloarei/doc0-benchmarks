@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6ac47bdd179271b645f78e8e6cd078619d3cd365ed594b45b68e4bc7ea683542",
+  "claims": [
+    {
+      "id": "claim_a3fa3aa708ab47f59b6acdf37f08306a",
+      "statement": "Signal.send calls every live receiver for the sender, and an exception raised by a receiver is logged and returned in the response list rather than propagated.",
+      "evidence": [
+        {
+          "resource": "repo://celery/utils/dispatch/signal.py#L258-L290",
+          "version": "repo-lines-v1:sha256:12112f59508aaf2d374f27d8533a80b965375cb6ec6632614cad6c94d27e3d23:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMjYxNzkwN2NhODQzYzkyMmU1ODU4ZWUzYWU1ZjQ0NjgzMjNmNGRkYTQ2MmU1Mzg1NDk5NDAxYTE0ZWFkYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjYzUzOThhYjgwMDZlNTA5NDAyMGMwZmU3MDBkZWZhZmMwOGY5ZTIzOTkzOGRhMDM1MTI0NjdlNDQxZWRhMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlY2JjNzAyODZlMzA5Mzc1MmY1MmE4MDQ1MWZjOGIyYWQ1YzFjM2U3ZTU2ZjM1ZjA2NTAzZWM5ZGQwYmQwZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxNGRmYjgzYjAxYTY3MjJlZTM0YjM2NDgxZGMyNTQwYzM2N2I0ZjNjYTExYTdjNjcxZmUzMWRkYjBkNDYyYmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_74267809acbc45898f9ed5f4ae1c5df3",
+      "statement": "The task lifecycle signals task_prerun, task_postrun, and task_success are sent from the tracer through module-level send aliases.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L104-L106",
+          "version": "repo-lines-v1:sha256:5a0844e14868ee1a1f822e3785f24851617f7411efff42bd84f7432b2c6097e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhiNGZjZjMzY2M4YWI2MWU3Yzc0ZWIzYjM4ODNlNmY1ZGM3YmU1NGZlM2FhNzU5YjI5NzU5ZDNkMThmOGI4MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODkyZWMzZTU3NDQ4ZmViMjE3ZDdjNGY4MTFmYjc1OWEzMTIzY2EzYzFhZjRjYmUxYzYxZmE1MDMzOTNlOTkwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI3YWM2OTU0ZTI1Y2VhZjJkODA4M2VmYTZlMWE5Y2MxODEwYTZmZDQxZmViMTA4OGU2ZjU3YjZmMDMyNWM2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDdiODYxNWUzZTYzMWYwMzUwZDM1MjllYWMyY2RhNTIyOGI3OWI0ZGU2NDcwNDY4ZjdmZDFjYTJhOWMzZDU1MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_777900e00d36414292515f32dd37bad9",
+      "statement": "before_task_publish and after_task_publish are sent by the AMQP message-sending code, so they fire on every task publication from a client.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L491-L496",
+          "version": "repo-lines-v1:sha256:1ac802ca59167877d4c091c508216d407cbd981e589e1d7086986fc1dfe3fee2:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzA3NjBhYWM4MWZlN2YxNjkyY2Y3Y2IwYzA0ZDIwMGY1YTQ1MTFiNmI3M2JhY2ZlNWI4NWNiZDdiYWYwYWI2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzg2OTBhOWJmMzdkNjcxZmY3N2JmODk0ZWJkYWMzOWIyYjEyNDM0ZDNjZmFiY2I2MmNjMjg0MmZiMTYwYjhiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2RlNTI3MTM3NzRmMGIzZTMyMzhmMjc0MzZmNWFkM2Q2NTRiMTQ0MmQ1Zjk0NzM1NWFhNmY1YWQxNDVmYjJmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWFjYmFjMzBiNjA4NDIxNDM1ZThhNDYzMmZkZTg5ZTcwYWFlYjhhM2ViYzliZjM5ZDYxYzMzMDZhNzZmYWExMSJ9"
+        },
+        {
+          "resource": "repo://celery/app/amqp.py#L559-L560",
+          "version": "repo-lines-v1:sha256:5f2eb6c200e51884ecfd69d7432b11e6e8ebab6f207a60513e67584d953b65a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNkOWZkMDYyOGRmZTMxZGEyYzhkMzk5NjRiYzFmMGYzNjMxODFiZGYzNDMyMGM1NmFmOTI4MzBlYjYwMzcwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE3YjNkOTM2OWZmMGVmNjQ1OTk5ZjUwZTE0MDkzZjhlYTM2MDUzMDY0ZDFkMjMyMTRmMDFhNDY2ZjkzZjQ4MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTI1YTExOTc0ZTM2YjBkZTg0NjgwMjUzNDE1NTAxNzY5OGVkYWIxYjIzN2U3ZGRhZDNmZTAwYTBjNTEyMjAwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWY3OTcwNmI2ODc2ZTMzNDU3NWNhNjY0ZWIxZTJmODk1Zjc3ODAxNTRiZGE0MThhZWRiM2I5ZGZmYjE1NTZiNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c03caf46e224a8b97e33e00d6158eb2",
+      "statement": "EventDispatcher.send buffers events for groups listed in buffer_group and otherwise calls publish immediately, and it returns early when the dispatcher is disabled or the event group is not enabled.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/dispatcher.py#L164-L199",
+          "version": "repo-lines-v1:sha256:833608b9a1bd443a6a2b08dbbb8ebd2049ce32263269d637438fc20bb4000684:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5OThkZTljMjUyYzZiN2QyZGM4YzRmZjVmZmE2NDUyYzNlMTM3ZjMyMTUyZmVlYTA0YTRjMzYxMmJmODdiZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlYjkwNjgwNzA2ZmUyNzEyZjlhZmY5YjllZDExN2EzZmM5YWVmZjQ5ZWUyM2NlNzJhNTBlYmI1ZDMxZmYwYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2MDRmNjUyMzM1NmExMDkyMTA2M2ZiZmM3NDBhZGJkNjFhNjlkNWY1MWU4ZWU3MDk4NDZmNjUyMzY4ODMwMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyMWFiOGQ0YTIyMTk3MzRkMDJjMmFjMzhlYjBkNWU1YTgxZTJmNGE1ZTZkMDA2NmQ3OGFmOTQzZmI0OGVkZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b5646727b7d84a78adadae7ea13a3b20",
+      "statement": "The worker's request strategy sends task-received only when events are enabled and the task has send_events set.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/strategy.py#L113-L117",
+          "version": "repo-lines-v1:sha256:56340bf2b56fcaf148ab6739ba008d490353bc997df3eea0f96d859c4335759d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q5ZDMwZWZiMzg1ZmExYzE1YzkzODIyN2ZkYTIzYzZmY2Q1YzllZWJlMmIzMjZhYTMzNzNiZmVkYjNiMjVjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDYzZDY5NjA4MTk1ZjkxZDUyMGI2YjQ3ZDk3NjkxMzc3MmZhYWY1NThiZGY3YzZhOWQzMzJkMjcyNzJhMjM4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWIzYTc2MzI4ZTA2OWZhZGI5MGJmNTc0NTc0MmNjZGMxY2UyZjNhODAzMDQ2NWE1ZWZhZjdjNGU0OWFjNTU1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGZkYmMxYjkxNzk0YzIwN2MwZjM0M2E2NDg0ZmE1MzU2NGRlMzU5OTQwNjMyMGNjMGY1NGZkMjY4M2NkNWRjOCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/strategy.py#L168-L170",
+          "version": "repo-lines-v1:sha256:86872ab266ab5cde1f38811ab1258416bb95ad35f1f17a2f2b6d591dbc4322c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGJhMmFlNjRkOTc3M2E2M2UxYjI2ODA1M2NlNGQ3Y2FhMmYyZWRkNjE5MTQxZTUyYzk1NzFkZTc2YTA0OGNlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFhYTdhMTBkYzQyYTM1ZDgyYTYxN2E4NjBiNDkzZTA3NjljZjA3YmMwNTgxZDJiMDk1MmY0ZTRlZWYxYTNkMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGEzZDkwMmU1ZDFhYWQxNjkzYTM0Y2I4MDFlOWI5OTc2YjViZTMzMmZjYTU0YWY2MTUyZDA0MjcwOTE5YTVkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGUzODY5NTkzNmI2MTAyOGY4ZDQ2NTZjNzNkOTViZDhmMzg5NDI3ZWRiMzNmYzk4OGU4NzE5YmRlOWUwZDU0ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5fd90045dc094b349312235e304531de",
+      "statement": "The worker creates its event dispatcher in the events bootstep and attaches it to the consumer as event_dispatcher.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/events.py#L26-L46",
+          "version": "repo-lines-v1:sha256:4c62047b9f73d7a1ce441dc7dc32c96f73b56fa0929443f2b607403d7af4796b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxNGI5YjVlNDI1MDFhNTVhNmU0ZTJkMGNhOGUyZjliOGRhMGNlNmMxODk1YWQzOWZmN2U3NWM5ZGM5NzBkOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhNWE5ZGVlY2NiYTlkM2YwZWViMmUxNWQyMjdhMTc1ZTQ2MzQ1ZmZkZGY3YmFiNjNlOGJhODRjNWE5MDQyNmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiNDYwMGExZmM5OWI2Y2JiYmE2NzNmODUwNTllZDhmNDNmMWJlNjY4NDc2OTBiZWU3NzkwZDhhYWZkOGYyNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViMTQ3YTVmOWYxZmQyZTVjNDRjNzg1ZjBmZWQ4Y2JlMTg4Y2QwNjk5OTY5NjY4NjA5Yjg5M2Q0M2ExN2RlYmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_931062da2cc24a788756b3d254d5614f",
+      "statement": "EventReceiver is a kombu ConsumerMixin that dispatches incoming event messages to handlers by event type.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/receiver.py#L23-L35",
+          "version": "repo-lines-v1:sha256:88d92d988f05f9b34e4ddc2ca8d5d9fa5c07b96062ab12ee012a8a9959957f8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxZmFmNjZhOGQ4YmFkNWRmNDA3MGU4MTUzOTBlODkyZjcxNTZhYTUyODVkYjE3M2EyMmNkMjAyZWZjMzUxN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxYTE2OGZlNWU1NWNjNzg5YTQ2MDI0OTMwNjdkYTc0ZWM0YjhmMDNiM2E5MWRiM2JjMGI4NzI5MDBjODg2MGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmZGYxMDlkMTNhODY0YTA1OTEyNTljMmU5MDhlNGJlMmE4NzhkYzM5Y2YxZjYyNDE3NjFkMzI0MTBkNDU4MTMifQ"
+        },
+        {
+          "resource": "repo://celery/events/receiver.py#L80-L84",
+          "version": "repo-lines-v1:sha256:2cdfa0d770d2705dbdb8dbc28df7ff22d5087fba628a550e5e483439f61b9679:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2I0MmEwZTlmMjY2NWIxMjgxNjVjNWQ4Y2Y4NWE1ZDNlNzAzNjE4NmRjMzdjMzkyNGNhYzg5Y2UzNzdmMWU1NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjk1MzY1MWNmMDdhY2Q4ZTkzNjkxOTMzZGNlNTViNzhhYzY4OGM2YmNiYjFjNTI4ZDNiZWEzOGYyMWIwNmZkNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDNjYzc2YzMxYTRlNjEyNDExODFjNDQyYTY5NjU4OTI0NGUwNzljNmFhZWYzNDY5ZmM1MDFiZTgyMDM4NjA3YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8700f9dbd35c4de8a6a6abe2dcc6f60c",
+      "statement": "The State class models the cluster from events by tracking Worker and Task objects and their parent-child relationships.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/state.py#L149-L160",
+          "version": "repo-lines-v1:sha256:0daa7d47b3ba796015ca0f9f486fb72ffc9eb6564cedf2ca86f3abdaa2f59c2b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzZTBiOGUxOTE2NmY4MWY0NTAwNzE1MjAxNWZlZTUxM2UyNjc5OWM4ZjMxNWY3MTdjNzJlNjE2MWEwNTcwMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4NDhmMjMxNjg3ODM2MTU2OGViMWRmYmE4ZjEzNzU0MzU3NTQ5NDYwZWQ3ODc2OWEwOTM2OWRmMzliYzA4YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NmE0OGQ5ODkyNzBkZjBiMTFhZjYxYmIxMTYxMDVlYjE5ZThmNzFiNGYwNzUzODBkYzA1MGFkOTQzYmUyMTQifQ"
+        },
+        {
+          "resource": "repo://celery/events/state.py#L243-L285",
+          "version": "repo-lines-v1:sha256:a23ff0f09038f8aaef8593e79ed0cbd2a16bec7cdd8629f9b9fabd17c4541f5a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZDkwM2ExNGFlMzJkZmZmMTNkNzFhMGYxOWFlZWIyZTRiZTZmM2IyMTc0MjBkYmQxNGExMmQ4YjFmMzgwNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyMTgyMTU1MTMzOGFlOWRjYTQzNDVhZGI2YzdjM2Y0OTllYjA4ODYyNGM4MDBhNDhhZTgwNzY2OTgyYzJjYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlNDhhNGU3MjM3NjVhMzE2ZjMyNzlmOTNiYmQ2ZjQxNzFiNDUwYTZkZDU4Y2Y0NzBjNTliZDEwOWMzZGU1ZTUifQ"
+        },
+        {
+          "resource": "repo://celery/events/state.py#L398-L438",
+          "version": "repo-lines-v1:sha256:4872a21f125b2fc56918b119158bf33f5c248a367dffab266d076decc5c7a1d9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMWZkMzM4ZTE0Y2Y0NTdjZmFlY2RhYmUxMzFkYjNiM2VmNDVjMGQyMTQ5NjAzOGZlODc1NzY0ZjdmOTBkOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNWVhYTg0YmVkMjQ3YTAxMDAwMGMzZWNhNzI5MzA3N2U4YzA0Mzg5YWRiODNhNzkwOWZhOGI4ODQxYzNiNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NTMyZTFhYzBlYjgxNmRkODlhYjIwNTM5NGZlNjE5ZTcwZGExYmQ0NzVhNWE3ODExMGEwOGE0OTM1NTM1MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjZTRmMDk3NWUxNDg1NTI2ZWM3NzNmNjVjMGVkOGNmZDI1YWFjMWY2NGUxYjU1MTU5OTVlZTYzMzE2NmVjMmYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:42:35.525Z"
+  }
+}

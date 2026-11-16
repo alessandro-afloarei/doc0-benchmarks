@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d964c46dde7f5e764ee8dd61e1c498954da4ceedf8ce6a9cdf224fe7a46d0545",
+  "claims": [
+    {
+      "id": "claim_74906e4e4632441a8cc0c340ab82f8ed",
+      "statement": "The Linux entry point runs Node.js directly, via NodeMain, when the run_as_node fuse is enabled and the ELECTRON_RUN_AS_NODE environment variable is set; otherwise it starts Chromium with ElectronMainDelegate through content::ContentMain.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_linux.cc#L29-L44",
+          "version": "repo-lines-v1:sha256:e869a998eddebf513b1af62d7cbc8b494ea71d4c6c81fb069f9bcc722054af20:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZGQ0MTA2YWQxM2QzOWIzNmVjYmEzZGVmNTY3YzgyOWQ2M2QyNmU3ODhlMzE4NDM4N2RkODU5NTc5OTUxOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllMzc1YTNjYjNhMmNiZTJmOWRlZDljODI5NmE2YWI2Njg0OGNjODI2ZmQ3MWY5MTkyNDZhY2IxN2UwYmQ0NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f5b3d8c85e843dbb1c662180819a373",
+      "statement": "ElectronMainDelegate supplies Electron's browser client and renderer client to Chromium, and selects the sandboxed renderer client when the sandbox is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L452-L470",
+          "version": "repo-lines-v1:sha256:cc0c4642492323df16459cab7e80cb00b727ca1c43f0f17314c2de5c543f9c22:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3ZGIzN2U1YzU0OTBjNGI0MGY1NWNlYWQzYzZjNTdmYzZiYjc1YjhlZTBhNTg0YzM0Y2ExMjFhNDk1YmE0NTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0MjU3MmVhMjg1YzY3Y2E0M2NkNzNhNTY1ODIxZmRjMWQ3ZDk5YjZhNGM2Yzg5ZGI0NGM2NjIxM2EyYTU3ZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiMGNjM2MwMzkxMGNkMWI4ODdhMWRkZTA4ODA3NWQ1ZTdiMWRmZTczODU5MWVhNGZlNjQyZTNmNGZlYmRjYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_886ae90cb09142f0b949d9116339f78d",
+      "statement": "ElectronMainDelegate::RunProcess returns the relauncher process to its own handler and passes all other process types through to Chromium.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L481-L488",
+          "version": "repo-lines-v1:sha256:31be14bf7ec17484a908a46eef41d7891f028c104b1a79aeda21d0c9d6cb8e61:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRiMzlmNWY1MDVjNGE5NDFmZTYyNzIyYmQzYmJjYmZkMDdmYjQ5YTE4MzZhNDFmM2ZiOTlmNDY1NDNlMzhlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2YzMzA5MTZiMzFlMmY2MmZmYTRkYThjNmIwMzU0N2VhYzkyY2I0NDI2OGIxNWNjNzJhOWU0YmY1MmYyMjBkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTk0NzAwODFmMWVkYWZlNzZmNTUzNTZkZWNkMDVlMzFiZTUwNGQ0NTU3Zjk4NGZjZDM5NjBhZDg5N2NkNGI1NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_12f9f34d827446e89483050f828edcea",
+      "statement": "The Node.js sources are a separate tree at ../third_party/electron_node that the GN build compiles against, rather than code inside this repository.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1563-L1563",
+          "version": "repo-lines-v1:sha256:b4697d4f54b31a53f5da317f07327ac045debb6006a99f4d2ef12e19033d43f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQ2OTdkNGY1NGIzMWE1M2Y1ZGEzMTdmMDczMjdhYzA0NWRlYmI2MDA2YTk5ZjRkMmVmMTJlMTkwMzNkNDNmNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQ2OTdkNGY1NGIzMWE1M2Y1ZGEzMTdmMDczMjdhYzA0NWRlYmI2MDA2YTk5ZjRkMmVmMTJlMTkwMzNkNDNmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRmMDMyODRkODU4Mzg4NTdhMmQzMDFhYTExYjdlYjIzYzcwYjlhODk3NjAxMDlmYzNkMWVjZWFhYTQ5NGRkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDcyMWQyNTAxOTMyNjAwYjJiMTJlN2I1NjkxYjlkMWZkY2Y2ZGJjODI5ODNiOWJlNzE2MmRiN2NkODRiZGE3OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_99a1a9aefa90419294cd8267f8b5cd80",
+      "statement": "Browser-side IPC dispatch is installed by addIpcDispatchListeners, which registers the -ipc-* listeners on the session event source.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/ipc-dispatch.ts#L58-L58",
+          "version": "repo-lines-v1:sha256:3d87e3efc3f26b7a39759e10b4bba8c7e1eb0cc8dc663079a67ad3b507999659:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q4N2UzZWZjM2YyNmI3YTM5NzU5ZTEwYjRiYmE4YzdlMWViMGNjOGRjNjYzMDc5YTY3YWQzYjUwNzk5OTY1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q4N2UzZWZjM2YyNmI3YTM5NzU5ZTEwYjRiYmE4YzdlMWViMGNjOGRjNjYzMDc5YTY3YWQzYjUwNzk5OTY1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDhlNzdlZTkzYWNlYzQwZWEyMjY1ZjZhM2U1NDVlNmViOTNmZjhhNGUzZjE0ZDU5ZjFkMmRhYWY3MDcxOWExMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWJkNmI1M2M2MDc5MzE0YmRiZDdmYWJlYWRlZjU2NTdlZWU1ZTA3NWUzZGY2ZjkyNjhjNWE1Zjg2MWE2MWYwNCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

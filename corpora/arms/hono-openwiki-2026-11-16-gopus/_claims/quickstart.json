@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e54b1966eea477d9358c0c7e87b0abc76e6b272da5de5db654f72fde45c72b40",
+  "claims": [
+    {
+      "id": "claim_42daad249307426cb6fdafb9a602aef3",
+      "statement": "The repository pins Node 24.7.0, Bun 1.2.19 and Deno 2.4.5 in .tool-versions and declares Bun as its package manager.",
+      "evidence": [
+        {
+          "resource": "repo://.tool-versions",
+          "version": "repo-file-v1:sha256:a2bed04475b27ad64a8cdbd1ffee2d5591a8ef77f97a1d3d4a31cc121848b0ce"
+        },
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:9f8ce70b3ef3c999065cdb4688f60192a66a6f51a1da423d686695eb4d43677a"
+        }
+      ]
+    },
+    {
+      "id": "claim_92003761356c4d8f9a3372d96f40687c",
+      "statement": "Contributors install dependencies with bun install --frozen-lockfile and must ensure bun run test passes for pull requests.",
+      "evidence": [
+        {
+          "resource": "repo://docs/CONTRIBUTING.md#L29-L40",
+          "version": "repo-lines-v1:sha256:ac469ea2af582753db67123c9cc04fdbdfc69d9b564be24a830baa6488e7f7e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMDU1NzI5ZGIxOTI4ZTUzMDRkNDFiYmMxMzk3NDdhYWM3OTgyZDY3MGMyMmIzYTRiNzM0NzM0NjFlMWQ2Y2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkMGZiN2Y1YmQzNzU0MzBhM2RmNzMwZjYwMjk3MmJlMjNkNjI3NDVmODkxZjJmZGNiNzUyNjYyNzkyMWM5YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1ZmQ2YWEyOTZkNmIwYjQ0OWU0MWM2OGQxYjQ5ODk3YzJmM2UzMGY3YWIzMGQ1MDI4YWZmZjdlYmNhYTllOGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d05786e30cb4e71bb99825eb516bc89",
+      "statement": "The package scripts provide test (tsc type-check plus vitest), per-runtime test scripts, test:all, build, lint and format commands.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L10-L40",
+          "version": "repo-lines-v1:sha256:c4b6d408a7854a7db29fa53cc5eb344962bd49553ae5249acba5d7c36da37eb5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2YzNmNmE3ZmUyOGNhM2Q4Nzk4NDY2MmZiZmFhOTdjMDg3NzRmOTBiNzE2Zjc3NmY2NjcwMWFmZjY0OGQzMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5ZDYwNmIxNGE5NGEyNjZiNmIzNzZlNDJiYzBhNGFkYjk1Y2ZjYjZkYzkyMGZhOGVjMjE5YTFjODJjYjI2ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkZWZlNzA3ZTI1NGY1Zjc1MWYxNjVjN2I0MGRmNDY0OTEyZjU3NzU1MmYzNDc2ZWRkZDYyMzMyM2U4M2RiMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxMDdmYjhlMDY4YjY2ZDA2ZDRlYTE3ODI3YzY2MzNlN2UzNDAxYTEwNDMzNWQ0ZGIwYWIzZTg3NDUzNjc0NTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f8fbfd6b6eb4754b8764ec7a793ad74",
+      "statement": "Hono is a Web Standards-based framework that runs on Cloudflare Workers, Fastly Compute, Deno, Bun, Vercel, AWS Lambda, Lambda@Edge and Node.js, and is published to npm as hono and to JSR as @hono/hono.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L1-L40",
+          "version": "repo-lines-v1:sha256:c921ab8bf4f7e91835f56913e4404e8bdea4a6fa26107ec4ae11cad63b1cc9c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjOTk2NjBkYWMyZGNmN2E2MGNhMDIyZWUwNjM2MDU3ZjJiZmU1NTE0Yjg1YmJkZDQ2M2U0ZTMzZGI3NDdlNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhY2JiZWY4YWY0MDVhYzYzOWY4ZWRkM2UzZWI4MmEzYzYwM2MzYTcyYWYyMGNmZWQzNjlhYWU1ZDY3NDM1NmYifQ"
+        },
+        {
+          "resource": "repo://jsr.json#L1-L3",
+          "version": "repo-lines-v1:sha256:d58eb65233b42852075468d416ef972f23f57f4d19598c7b44eac1c77b07b1b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFjMWY5MDRlMjIwNjFiNjBlN2M3NTgyZjA4Yjc1MzI5MTYxMDdlOWRiYmMyODZlODE3YjZhNzNkM2FlYmMzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjM2YjEyY2UwMjBmNTE1ODkxMzMwZWM1MTk1NDhkMDczODFmYjhjNzY1MGJiNWI2MTljODBiYzBjZDUyYWVhNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:17:44.986Z"
+  }
+}

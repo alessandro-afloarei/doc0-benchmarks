@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c2862644b391c2288d3238227a1baebdef958c6bbcd20c17986e73e928065d88",
+  "claims": [
+    {
+      "id": "claim_e2adca375f5a428aa9b96c2fb47292db",
+      "statement": "EventStream.add_event rejects an event that already carries an ID, assigns the next monotonically increasing integer ID under a lock, and writes the event to the file store before placing it on the in-process queue, so subscribers only receive events that were persisted.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L163-L204",
+          "version": "repo-lines-v1:sha256:4cd16458a8dd5c35527b7f2b681dbbc23e8837411e275c8fe72bc9927a712d49:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1N2Y5ZGNlZDEwMTMxMzRlMjQ3Zjc4OWUzMzMyNmE3N2JkMDcxMWZlM2NjOTI2ZjY1MTEyMzNjMTg1OTRjNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzZDFmNzZkZjNlY2FkY2JkMGI3MWJjYjk4N2JmOWI1MDY0NGIzYWY1MDI4ZjZhYjU0MTQ5MDljYTA1NzFmZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyZGIyN2FkZjJmMDdkYzUxMTBjM2NjMzQ2MmU0NDFmYWYxNTU1NTg5YTIxYjdjNWMzYzk1YTYwNTdjYmRiZGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2f462b380db463998619d1d9626f57a",
+      "statement": "Before storage and delivery, add_event replaces every registered secret value in non-protected string fields with <secret_hidden>, and subscribers receive the rebuilt, redacted event object.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L176-L181",
+          "version": "repo-lines-v1:sha256:864bbca41b6fe6bcbe953fa169bb4d99f76fda7c18da78d377ffa266175a1bbc:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzQ3NjRhOTVjNTlkYmE4MTliNTE4Mzc3ZDMxYzZjYWM4ZGM1NmJkMWE2OGVkNDEyZTI3MTAwYmIyNjkxZTk0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDUwZDlhZWQ5NjI2Zjg0YWY0YTI0ZTI5YTlmMmUwOTc4MmY4OTRkZTM2MGVkYWQ3MTJkZTZiOWQyZmI3NTI1OSJ9"
+        },
+        {
+          "resource": "repo://openhands/events/stream.py#L221-L243",
+          "version": "repo-lines-v1:sha256:048f74434059aa565433c90d59022c5f33b96bba0b85e4ced464ed802496c0e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4OWFkY2JlYmE4NDVkNmY4Yzc4ZTIyZGMzN2MwYzBkZGRiZGNlNTRmYTgyOGNkOWMwYWJiNjlkMDg0ZTgyZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkZmRiMmE4ZDRhNjU0MmFhY2M2ZGE3ODkzNmJiYjdhNDVjNGM3OWQyZTk4OTE2NTJkOTBlZjVlMzQxZTRkOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxYTI0OGIwY2M1ZjExM2JlNjJjZjhhODQ4ODlkMjMwM2JmODg5NzczNTJiMThjYzNjOWE3OTlmNTIyMjM5OTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwYmM4YmVmMTljMGMyZGYwZTRiZmUyNDYwZGRjYzMwNjM3MWNkMmNiMWI5NmY2NDJlYjM5MjRjNDU3ZjM4NTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc5e4f0c5c1c44c8bc91562bbd446a3a",
+      "statement": "Each subscriber callback runs on its own single-worker ThreadPoolExecutor, so callbacks for one subscriber run in order and do not block other subscribers; registering a duplicate subscriber and callback ID raises ValueError.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L130-L148",
+          "version": "repo-lines-v1:sha256:44ccb36c14d9ad68fa54aeb51fa35479e46e8f1b5a689b1d37e46ce4a6cc60b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4MGJhYTRjNjBlNmQ4OTBlZWQ2N2YxMWVlMzRkY2U0Mzk1NWRjNGM4N2E2YTY5ZWI0OThiMjNiZDE4YzU3MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YmMxNTcyOThkYjg4NmZlMDlkNmE1YzMzMTAxYjgzYWM1N2E5ZTA3NzliNTczYTk3NGIwNTg1OGQ2YjExODIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5OGM3MDQ5MjkzYTgwN2I4ZGU4NjMwYWY1NDliNGJmMDg1YjdmMGViYjFhMjVhYzYwOWQyZjY0MTBjYjgxNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0YTY4ZDgwMmQ1MTMxNTEyNWVhMjc4ZjRiMjU3YmU5OGNjZGQ4Y2UwYTg4MzI4N2Q3YzkwMmYyNzQ1N2VhYjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ae21f9a32af4e75b7a40cd1f1c07d57",
+      "statement": "A background queue thread takes events in FIFO order and submits each one to every registered callback, with callback exceptions logged by an error handler that re-raises them.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L246-L291",
+          "version": "repo-lines-v1:sha256:251121e9cfbc5930c2665817cd5c483a2e49d65074caca91edd56ebebfadb571:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxZWFjZDJhNjAxOGU0NzRjNzFjMzRiZGEzNzg3MmM5ODlkMDdkNzlkZjNjN2E2ZTUwNTVmMTNiOTRhOTU2MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0MzM2ODZjMTJlODYwNmZjNGI1Y2FhZmU0OTc5YWVmYWE0OTVkYmMyYTMzNWM5MGZiMWMxM2JkYjhlZWUwYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OTZkMWI0MTM4M2RkZTZjZmJiMWZkODEzMDhmOWQxZjA1Y2NkOWRlZjU0MmI3Yzc3MDc3ZmQ3MTdhYTE5ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5e43657d11949d4ac9a590bf2eee866",
+      "statement": "event_from_dict chooses the concrete event class from the presence of an action or observation key and delegates to the matching action or observation deserializer.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/serialization/event.py#L52-L59",
+          "version": "repo-lines-v1:sha256:6b8b9eea8bb11eff14f79023405845f17c790cd76135b017ecc31c8aab0efd6e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk3ZjIyNzRjYzhmMTRhZGY4MWI3OTY4YWI0NTE2NDBkNTQ0MGY0YTg5YTY0ZjExZDc5ZGZhMTMzYzU1NTMwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzc2MjE2Nzk2ZWIzNjllMWRlMWJlY2NmMzY2M2IxMTA0NzcyYjdiNzNhNDk1MjQxMmExOWY2NzFhNGI0NTQxOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDlmOTMwODNjMTk3MTIxYjk4MjcwMGJhOGFmYWJkMTcyMmNmMWQzZTc0MDQ1MDllODBlZmEyNzI0N2Y2MmYwNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODU5YmM1ZjgwNTEyZDllNzk3ZDBiYmRmNzgyYmM1ODM1MDdlMTU2YzUzY2Q3MmU2NzM4N2YzZDZjYzRkZmZiOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_46118a8ec0604ed39a405aa8d60c15f9",
+      "statement": "EventSource distinguishes three producers: AGENT, USER, and ENVIRONMENT.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/event.py#L9-L13",
+          "version": "repo-lines-v1:sha256:839ac28c7a47ac4108c98b9265fa2c34701c325608c5911715f17ae98be46f4b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZmYTYzYjg5YzhkZDA2OTJmZDFhN2RkMDA1OTA2N2FlYmYwZDA4NzZjZTQzYWE4YzY3NWI2ZmY4MTA5Mjk4YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWE3MzhjNTU0NWQzMWYxNDNhNTUxYjIxYTU3ZDk5N2JlZGE1MmVmNmE3NWRkOTgwYjNiNTZiNGQ2MjAzZGZiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTFhYzU4ZTgwNTk4OTYyYzZiYjRhZTc5MjA0NDVlNDg1YzJjZGNiNjM1ZmFjMjgxZDc5NmQxZjI2NjQxODBjMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4ab52ec9ea304e5b80af26646b338d3a",
+      "statement": "EventStore.search_events walks an ID range, optionally reversed, applies an EventFilter to each event, and stops early when a limit is reached.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/event_store.py#L85-L137",
+          "version": "repo-lines-v1:sha256:d97ace8f52722b4eb2feb750ee20d9eb1a2c3a11eca69b2c9dc06799113545df:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwODQ1NjNkZTJkNzBjMGU2YzIzZWJjNWQ5ZGYzYWUyZTBkYWE0OGMwZmQ1ZTFmYzdmYTNjNmI2YmRjZGNmMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2ZjhjZDdiYjQ3ZTY1ODk1ODg5MTI5YTc0NThhZDAzZDZmNjEwMjVkNGVhNWE3NDAyNDE3MDAzNmU3ODgwOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwYmE2YzU1NmQwZDhhZTk4YWYxNmRmZTk2MjMxYWU1ODE4MDYxYzFmY2U0MjY1OWFjMDkxNDc2MDAyNGNjMWUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

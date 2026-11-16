@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0bbe273b6bf9b6c4e216af9ddb2ed1181e71cbc510c4c63f358012a567e4f67b",
+  "claims": [
+    {
+      "id": "claim_e0401794b8524aa6a067bdbf5c8d80c8",
+      "statement": "HEAD requests are served by re-dispatching as GET and wrapping the result in a body-less Response, so no separate HEAD handler registration is needed.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L412-L416",
+          "version": "repo-lines-v1:sha256:6ca9050eb95911021b49de021b018c8babc7de05054ae3f84b1e5e34eac4142a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU0ZGQ3ZWE2MTdlMDE2OGY5MTRmZjMzZjQ4YzEzYWJkOGNkZTEwNzE5ZWI2MmU1MTZlY2NmNGY2ZWZkNmM4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTYwZjdhNjUxNDczMTQ0NjhkMDY2MzJmYTRmMzFlMWYzOTBkOGY3MThjYzQ1NzgyZWNhZWNjZmVjYTNiNmZiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDM5NGVjNjczYTZlODVmNzA2NGYyNDE2ODcyODJkNWU1NTgyYTc0Zjc2M2NkYTMxYzk4NmJiYmRhODAzODhhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0be254dec3984c399345f69da6147f35",
+      "statement": "app.fetch delegates to the private #dispatch, which extracts the path with getPath, calls router.match, builds a Context with the match result, env, execution context and not-found handler, and runs the handlers directly (single match) or through compose (multiple matches).",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L406-L476",
+          "version": "repo-lines-v1:sha256:e9cb4a0bed17536dc91c5e52ef557839ff5b780655cd4baff37231422f413dad:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiMDBlMjNkOTU3YjY2YmUyZWNjMWEyNDMxMmI0Yjg5ZGU0OWVmNWNhYjcwNjgwZDVjMzFmYjhlNjdkMjdkYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNGFmY2MxZDBiMTgxNTM2ODViNTE1NTRhMjNkM2RjNWQwNmMwNDgxYzAwZjk1Zjg2OGE3NWRlNWRiN2Y5MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MTZlNGZmNWFlMGFlYjdjMTBkNTJmNjk0MmQ0OWRjYjhkYTNhZjczN2Y0Nzg0NmRhYTE4OTU4NTMwNDE4MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiZjdiMGE2ZWU1NWFjMWFiZDc4MDE2ZjI5NjMxZjRmNTFiYzg3NDNlM2ZjNjFmNTYwNjg2MmVjNWZlYjFmMjAifQ"
+        },
+        {
+          "resource": "repo://src/hono-base.ts#L479-L485",
+          "version": "repo-lines-v1:sha256:a48837339e00e39d494fdffb4c2182281d46af54b20de309171ce078d619c24d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNhMTYyYWFkZTQyNzg4Mjc2YmY1YTJlODkwYmQ2YWM3ZTdiYTdlYTk5Y2I0MTJiYjcyMGQwZjc1NWJhNDA0YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA0NjEzNTcxNTBiOWJmOThiZDRkYWU5MzQ4NmE0ODlkMDg2MGE2YWM2M2VkYWRlYjMwMGFlZjRlZWIwZTgwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTY1ZGYyMjA2NmFlOTllNzQxYzA0MGU5ODJjMjc3NjU4MWI3ZTk1MDhiNWUwYjhkM2I0Yjg4MDI5MGYwMDVlYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_21fa68b7ea214be4b6c1f1513ca19e71",
+      "statement": "src/index.ts exports only Hono, the Context class and type-only re-exports; features are exposed through separate subpath exports.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L36-L60",
+          "version": "repo-lines-v1:sha256:b5f1524ccb657397d62d3a81c96bc7900f5f4b996663e2311b531d6fc954e7ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExOWEzZWQzYzdkZTcxN2E1MDI2NWE2NjJkYmEzYTY4MmEwNDNlY2Y2ZmU5OTJiMjQ5Y2U4OTIwZTYyODhhZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3MDQwMzAwYjI2M2I5NzMxOWQxNTE3ZGQzYTNkODM5MjdkOGZiNzE2YzZhY2JlMjVhYTFiNDVlODVkMWVlNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNmUyMThmNzliZmM4NTMzOTMxMzAzNmFjYzNkMmFkYjQ0ZDU2ZGViYjc0ZmNlOTZhNWVkMjQzZjRmM2YwMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiZDM3Mzc4NWU0YmEyMTFlNGEyNWViMGM0Mjg5MjE0ZGVlYTkxZTYyN2YwODdmNGNkZjBmMzk4OTA4MTkxMzUifQ"
+        },
+        {
+          "resource": "repo://src/index.ts",
+          "version": "repo-file-v1:sha256:7b6cf83beb39bc315f65824bd5720f93609e673d6959dff369d911effeb2167a"
+        }
+      ]
+    },
+    {
+      "id": "claim_bca01cdbde9c44af90ed11fc316fbb1a",
+      "statement": "Adapters such as the AWS Lambda handle() convert a platform event into a Request, call app.fetch with platform bindings as env, and convert the Response back into a platform result, returning 400/500 responses when request conversion fails.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L239-L277",
+          "version": "repo-lines-v1:sha256:eff8ce3546112cc022f0e6c9e32b2d81b5224f4ea89614422105d8ebdfa290fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMzRhYTYyMWM1NDA4OWE4YmQzMDQ5OGZlNGVlYjAwNTEwZTFjYjZlZWY1NzllNDhjZmM3MmQ0NjY5MGRhMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczNzVjMzdkOTJkN2QxZTU0YmM2M2U0ZGExMzFiN2M2YWFiMjQ1YTEwOWQ3Yzg1ZTljM2Y4OTc1MmVkMTYxZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b07bc2d35efa4d1cbadde54bbee48944",
+      "statement": "app.request() builds a Request against http://localhost for relative inputs and calls fetch, exercising the full dispatch path without a network.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L499-L519",
+          "version": "repo-lines-v1:sha256:f06ab0ee7eac05a9cdef12282a479aad609d5ccbd79e2e1e72fd26da142d478c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMGU1MzJkNjc0NmI2NGM5YTA4YTFjNmIxMzY2ZjM3YWNlZmZkZjgxMjZjNTMyMzI1YjU3YjEzM2IzOGI3NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMmEyZjk5NmYwOGU2ODBiZDI5MjEzNWE2ZmE0OTc4YmRhMjZlNjAyZDg0ZjMzY2IxZDU5NDc3NWQ0MzA0YjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1NDhmZTMyZWNjNTg3NzBlZmMyNDY3YWZiZjQ2Y2JkODFiZWY0YzYzMDBhMmY2YjczZjgzZGUzZWIxNTE4OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliOGQ5YjQ0YzRlZDc5MjNhMDQzNDY2YzA4ZDAyNGVmZGFmZjJhZTk3MzhlZTYzYmZiMGRhOWUyZDhkMDgxNDAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:46.600Z"
+  }
+}

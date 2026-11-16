@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:91644d85e43ac420205802af1aa0bb0643ed24980916c0a23ad176b6eceb170a",
+  "claims": [
+    {
+      "id": "claim_f94e131c01ec4452aa2ae1440afdbd54",
+      "statement": "build.yml runs on workflow_dispatch, on pushes to main and to stable-line branches matching [1-9][0-9]-x-y, and on pull_request.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L3-L45",
+          "version": "repo-lines-v1:sha256:2edef930512872d65aaf685b77893037734282f410c11ffb7ad6e99233a672d5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmMzM1YjIxNjYxNTEzOTMxZWEzY2JjY2I5MTZmYzUyNTE5ZTIyNWVmMDY1ZDA2MDJkMjFhZjAzMjJjMTI4NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmYWM2OTA3YzlkMjk4MGI5ZTQ2ZWZiMWU0YzA2MzEwZGNlZDFhMWQwMTU3ODJiMmZlMWI0MjZmYzc0MDY5YjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_44f2a61c399c49919444d10fc5ad8758",
+      "statement": "The setup job sets a docs-only output that is true only when docs/** changed and no other source path changed.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L52-L76",
+          "version": "repo-lines-v1:sha256:e6a4bf007e68d4934ac5d3c2012673bcc2593d7068af7649b2b0e10b16d8e2d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNmM5NjUyODZhNjQ3YWY2ZWQwYjg2ZWRjYjA3NjhlMmE2NzdjYWMyMWNlYzNkOTQ1MDE4ZTJiOWZjNmE0MDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZDQ1N2ZhMDc3OGQ0ZGY3ZmQ1YjY3MmUxYzdjYzUwZTQxZGVhMTlkYzM4MzAyNmFhOTEyMjg4YzFmMTk2YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwM2FhYTA0NTMzMjRiMjlmMzE1Y2ZjMGEwYTgyNzYxNDNkNDNjNGMyNTNiYjY5Y2ZhMzMwMjMwZjhhNmFlZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4Yjg3Y2QyM2E4NjA1ZGU0NDRiMjIxMWQzYzY5YWJkNmVmNThmNTVkMzhiMmNjNGUxMzcyMWM4OGNlZGNmNWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_30f8101099ae489799fcd41785f1ebfd",
+      "statement": "The docs-only job runs only when the docs-only output is true, and calls pipeline-electron-docs-only.yml.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L88-L92",
+          "version": "repo-lines-v1:sha256:08f9b7b4401e8c7e4bd8fb3922c2a4ba3404edb3076cd2023c9a1cac4ae21499:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDVmMTg4OWI0YTQyYmM5ZjRiZTgzZTE5NThhNTE1ZDZiNWRkNTVjNjdiMThkNjRiNmRiNTM3MjJmNTE1ZmE5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRkNjgwY2RhNzJkNDJkNDg5Mjc0ZDQwOWMzMzIzNDM3NDVhN2FkMjQ0YTZlNmI3MGQ5NWI3ZWZkNzJlMGJhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjRlZjBmZmY3ZTU1MjU1MzY3YjI3NTUzZjUzNTNmNWU0Njg0YTZiNDZlNzhiNTVlMGZiOGQ1ZTY5NGQwNWFmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjgxYTVkYzkyYjE4MWViNWQ3YzEzODExMzBmNGM2YTg3YjQzNzIzNjMzY2M1ZWNkZjEzNmFiMzNiYWRjNGYzMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cf422e1f0b246d2b19617326c1f7bf2",
+      "statement": "The lint pipeline runs node script/yarn lint and then the script typechecker.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pipeline-electron-lint.yml#L67-L80",
+          "version": "repo-lines-v1:sha256:6afd75dbeaa6dcea5863aa3baacf70990b242ecc8cdb3cf4b055460f6d4df2f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwN2U0Njc2YjNiZTgwOTcwZjdkOTY2NmI0Zjk4ZWYzOTRjYzViYTRkZTVhMGMzY2MwZTYxZjYzNDY2ZmY2OTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlMTM2ZDViYzRiOTIyNDczMGNmYzhjN2VmYmYwNDZmNTdmMmJkOThmZjk3YWUzZTk1NmY0NTZiYWNhMjdkZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2N2JkNDY1YWQyMjdlNThiZTY4ZWYxZDEzNTA1NDY4OTM1ZWI1ZTQ2NjI2OTAxZmU0NWZhOGMzMzEyNzZjYTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwOWQxYzJkM2ZhNTk2OTNmNTY5NDhlYmIxM2Y2YzkxYWVmM2FlZGFiOWYyZjFkM2RkZjNjM2VlODJmMjQ0NzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e1b3873140a4503af0b1c55382a4151",
+      "statement": "The gha-done job runs when no upstream job failed and fails the pipeline otherwise, so it acts as a single gate for the whole matrix.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L400-L408",
+          "version": "repo-lines-v1:sha256:ea4f2a66efea9e69bbe69cd398c96014eb66e4cab44913dc980ca38a643f8c08:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjg2NzY4MjkyODMyZjc2ZjBiZDUwYjFkYjhhMmY4MDk4ZWU0NzJiOTVlODQwZDY1NzAxMWMyZTBhZGMyMWNjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE0MWYzNjlmMmViNDk1NDRjMGZjNDk0NjU3OWM1ODNkZmE1N2I4NDcxYWE4NDI3NWRkMTZlMGExOGYzNGQyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjRlNTliOTJhZDUyYjlkNGI5NDVmMjMwMmRlYWYzNzQzZDBhZTYzMDA2MzA3M2VlOTU1ODFjNWNjZTcyMzFmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_159b63e2a51f4ae5a2d261a83334f01a",
+      "statement": "The reusable build-and-test pipeline sets a concurrency group keyed by ref, or by run ID for protected refs.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pipeline-electron-build-and-test.yml#L63-L64",
+          "version": "repo-lines-v1:sha256:a849b3218b812be5cea37dedad546d2d654909a5384e6b6129b362fce1dbd61a:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRhZmUyNGRhZjM0ZDFiNWNmODNmY2FhM2Y1NmFhNGMxMDdjMDU4MDM5Yzg1N2JjYjZkNTE2ZDYyMTk0N2YwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzgzOTJmOWYyZmE2MzVhNmE5NDQwZDA4Y2M5MDlhYzNkMjFlMzE0ZTE5MzAyMGY4YmMxNWVjN2E2OWRiZWZlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGUwZmU1Nzk4ZjFkODY4ZmNkODcyNjAzM2UxMTVjMDYwNjVhZGQzMjExMjNkMmRjMjA1ZGJkZjRiNDIwNGY4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFjNWUxMDA1MzM1NjgzZTkxMjA3Nzg2NDVmMTk4ZmY3NTdiY2Y4M2YxY2U4NmNiZDRjZjQyYjQ2NjYzMDIwYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_efeb68437268487b9db0124182d68865",
+      "statement": "The build-electron action runs check-zip-manifest.py against the dist and chromedriver manifests for the target OS and architecture.",
+      "evidence": [
+        {
+          "resource": "repo://.github/actions/build-electron/action.yml#L134-L134",
+          "version": "repo-lines-v1:sha256:7d9b419fea3ea66582201e9f60e869700b9d870d4e54ed6c580bfaa34a5a07e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q5YjQxOWZlYTNlYTY2NTgyMjAxZTlmNjBlODY5NzAwYjlkODcwZDRlNTRlZDZjNTgwYmZhYTM0YTVhMDdlMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q5YjQxOWZlYTNlYTY2NTgyMjAxZTlmNjBlODY5NzAwYjlkODcwZDRlNTRlZDZjNTgwYmZhYTM0YTVhMDdlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGNlM2ZjZjU0OWFlYTI3MzNkODExODEzODViNzQ1MWNhNmY0NDNkMzZjODc5NWY2MjYwYzI2YTU0NWUzMDZhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWIxMThmYjc0ZTg2YTUyMWRlNGVjMTMxMmQ2NmY5MmE0MTBjYTNjOTRmYzM4NmU2N2M5M2VhMjczYTdmYzA3OSJ9"
+        },
+        {
+          "resource": "repo://.github/actions/build-electron/action.yml#L76-L76",
+          "version": "repo-lines-v1:sha256:20d9252f2fded2c38f7247ffa482059d25c2b25af9422f74a3c9f151b4f2ffe2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBkOTI1MmYyZmRlZDJjMzhmNzI0N2ZmYTQ4MjA1OWQyNWMyYjI1YWY5NDIyZjc0YTNjOWYxNTFiNGYyZmZlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBkOTI1MmYyZmRlZDJjMzhmNzI0N2ZmYTQ4MjA1OWQyNWMyYjI1YWY5NDIyZjc0YTNjOWYxNTFiNGYyZmZlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGNlM2ZjZjU0OWFlYTI3MzNkODExODEzODViNzQ1MWNhNmY0NDNkMzZjODc5NWY2MjYwYzI2YTU0NWUzMDZhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGRjNDlhZWNmOWI5NjBmNmMwOTFlZjA3YWE0ODUyYTAzNjUwYmFmMjI2N2Y3MmMzM2JmYTBmMTljNDJkMGY0MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_69022800f72f49e7965a0db75f32dde9",
+      "statement": "check-zip-manifest.py compares a zip file's contents against a manifest and returns non-zero when they differ.",
+      "evidence": [
+        {
+          "resource": "repo://script/zip_manifests/check-zip-manifest.py#L1-L20",
+          "version": "repo-lines-v1:sha256:b367a379e4c8611d182c15252321651a59dbc011f2324187fda151010f9b39d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ODJjYmRiNGM4YjA3NTE4YmY0ODZjNTg5OTBmYzM5MTc4M2FhMjBhOTE2YmZiMjdhZDIxMWViMWQ1YzM2NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5YTFhZmZkOTZmMGZkMGRhODNkYjEzOTk3YjhkYWRmZTU0ZjA1ODMzMjk4NTRmNzAyYmE3OGMyZGNhMjU4NjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6a6b5ba24564f6da11f6e61d586982c",
+      "statement": "On release builds, build-electron uploads the distribution through upload.py, using Azure storage when upload-to-storage is set and GitHub releases otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://.github/actions/build-electron/action.yml#L205-L216",
+          "version": "repo-lines-v1:sha256:7ec09d906622ad94c8a07129d27146a5bb8b2ffa5b515df82f036f32874af556:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MTIzODY1MTA3NDYzMWY3NjhjZjRlM2Y1MDE3Y2Q0MmQ3ODcwMTdlYzgzMzY5NjEzZGVkMDE1ZGEyZTM1ZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NTE0ZmU4NGFkY2Q1ODQxZjk5M2ExNmQwM2ZkMGUzOTcxYTU5YmYyODNlMGFlZTNiZTk2ZWM0NGFlYzhmMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhNjIwZTZmMDZkNzE1ZDIwNTEyYjhkOTIzNTI5MWIwZTk0NGQ2ZWVjNzJiMThlNTZiYzFkYTRhMGVjOGE1NmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzNWFjMWM0YmUwMjRiNTI2YzJmYmNlZThlMGMyZDAyODcyYzlkNjM1OTE0Y2Q4ZDU1NGViODdkZWYxNGNlMzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4ec0cba975845e1b1e7480a907513c1",
+      "statement": "The test segment sets ELECTRON_DISABLE_SECURITY_WARNINGS to 1 when running the Electron test suite.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pipeline-segment-electron-test.yml#L205-L213",
+          "version": "repo-lines-v1:sha256:6de0fd11928a00a21bd741f2711bdc3ba3b229301a687adb3511afd1bb1b0058:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjA1YTkwNzMwNzBhZTVhZTVkYWQ5NjIxZDRmOGRlZWE5MzMwM2RhYjY1ZWQ3MDVjZTA0MGZhMTMwODE5MWEyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDgzMzc3MmYyNTc2NmFjMGQ5ZjQ3NGQyNWVhMDBkY2JiOTk3Zjg1M2Q2ZGNkNTVjZTRiYzRkNWQxN2Y2NjZlZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjhmNzVlNzZmMjgyMTg4MjQ1ZmQwMGMyYmQ4N2E2ZmI2OTYxMjQ0MWYyOWVhZmQ0ZGJmMGNmNTFkYzVkY2FmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQ1ZTdlZmU1YWNhYjJiOWUwNjc0NWQyZmY2YmJhMTg2Y2JmZTMwNjBhNTRjMmEzZjcxOWU3NGViYjJmZjA5NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a045b3c9c8d4cfebc9ff154db320164",
+      "statement": "The macOS codesigning trust import step in the test segment is commented out.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pipeline-segment-electron-test.yml#L195-L200",
+          "version": "repo-lines-v1:sha256:830dae9aaf14224d4895a046b19aa0ebc1881d0dbe6f67ffe7873579d307fbfd:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzkxZjNiODBlNWRhOTAzMzE4YjBiYjNhNzRmN2U5YzBkNTA5NTJhYjYyY2VlYzI2NWNmZTdlZTdmYmJhZDMxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljYTcwMGIyNDc2ODkxNTgzMzkzODMwZDE2ODNmODc4ZTgwOGQxYjViODY0NzJmNjA1N2ZlMzdlMzAzYzc4YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTBkNWI5Zjc5MjgzODc0YmVjM2IwYjQ2YjhkZmQ0ZGJkMTIzNTMzODYwM2U1MmM3ZmNkNDRmODlhNzg1ZmFhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmFmZmYwNjkyZGY2NTYxODlmYmMzYTc5NGIyNzk1MWFkYWQwZmZjNzA5ZmQwNGRhYjY5ZTQ0NTk3MmY4OTIzOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b2174ba2bd842c8ba82b5f124446488",
+      "statement": "The linux-publish workflow is dispatched manually with inputs for the build image SHA, Azure upload, and whether to run the publish jobs, and its publish jobs set is-release to true.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/linux-publish.yml#L1-L20",
+          "version": "repo-lines-v1:sha256:c6f8b4077ac5a30f5309525a7987d42f01810d80ff1839312fa57d56d48c32ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmZmRhZDE5Y2YxNjQ2NmViYzBjMjFmZTY1MTk1OTU5ODdhODIxZGY1YmFkNjc0ZTE3ODI1Mjc2ZTkxNzI2MTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ZDgwMTU0ZWQ0MmZjNWM3NzliMTMzMTU3OGI1OGI4OWM4MDFlYWNlNzRmMjRjZDQ4ZWI0YTIzNTc5NDBhOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmNGMxMDIzM2VmOWVjMjQ0ZmNiZjdjZWY1MjE0ZGVjZTk1N2U1MmQwZDg4NmUzNDA2NjNkY2QxNjQxMmUxYmEifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/linux-publish.yml#L41-L55",
+          "version": "repo-lines-v1:sha256:1a4d0268d29e3926107324ec0ce467085e59d6dfa142dfd91e15d0571d6ca738:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NmIwODk5ZWU3NjdjY2JlMmNkZTk1NjQ2NWQzNjIzOTBiYjZmYmM5NjE4YWE2YTM0MmMyZjRmNTFmMWE2OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyZTU5ZDY3ZDk2N2FlY2FkOTMxZWEzYzhiOTYzN2Y0OTFkODFjNjEwNWQyNmMzMGQ4NDA0MDJiZDEzOGQ4MjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzYWVmOTBhNTRkN2NjY2JmMWFkMGE0ODFmMDQwODIzMDU4NzA1M2I2OWVhYTAwYmI3MTIxYjU1MWYxY2NmNzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_24a70c8d3c2f40ebb3be9f0c5ca53f19",
+      "statement": "run-release-ci-jobs.ts defines the linux-publish, macos-publish, and windows-publish workflows that it triggers for a release.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/run-release-ci-jobs.ts#L9-L30",
+          "version": "repo-lines-v1:sha256:4ce747bb35d283d91f6e4b47e4ad1fd2184a74fcb8cb6572b70f3d254ae12cb7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4YWVlNTExODBkNTVlOTU2OTE5ZTQ0NzA2YjU2NjA3MTcyMjhjYzA1NDA3NzQ5YjczOTI4NDNjNWI4NWM5MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5MDkwMzlhNzQ3ZTQ0ZjBhYzhmYTdiZGRmZjZjZjI3NjY0ODFiOWYzMzZhNjRmNjU4YTBjNDQzZTUzMmU2ZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkNmE2YWUwMDM4MTE3MTUwMDBmNzY3NzlhOTFiYzRjYjMyZTZkYjlkOTcyZjljMDg3YTFiMDNjNjM5M2UwN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkZmI4MzliODc2YTgxN2JkMTljMGQ3NWM3MDBjN2FkNTdhNTEyODkyNDk1OGE2OWNjODQzZjE3YjJjNWQxYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bdde107098eb42cd8c31cbff837507d5",
+      "statement": "validateRelease finds the draft release, validates its assets, and only then calls publishRelease.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/release.ts#L408-L432",
+          "version": "repo-lines-v1:sha256:1c766a768a7f7fc7a2e926e1f94c96372cfd0ec98343001f8ecaa10eb95da22d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxM2EwNWEwYmFlMzcxZTkxNWMyNzJkODI5MWVmYWVmM2MyNDRjMGRmNzM5MTU0YTNkNWFhYTFmMGI0M2E5MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmYWI3MTBkZGY3ODU5ZTU3NTc2NGE5MTNhMDAyYzc0NTg1ZmZhNzAwMTUxMGNiODgxMWRhODNkMmNmNzRiMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmNGI4OGU4ZTg5ZmE4MDFjZjg1Nzg1MGM5YTYyMDk3MWU4NjllMzFlODlmM2FkYzIwMjU4YmNlMjU2ZmNlMDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c96e0db35a6740b5b8b33454ef4ccd67",
+      "statement": "publishRelease sets makeLatest by comparing the release tag with the current latest release using semver gte.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/release.ts#L382-L400",
+          "version": "repo-lines-v1:sha256:7a8c6d6ab47cf319cf57d9663f6c87b0a6215e0f4e6e91c848546e65f77fe74a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiYWVhMDA1ZjBkZGZmNWUyZGMzMzUxZjZmNzQ4YTlkYjlkZmRlNjhmNzU1ZjQ2YjBhN2UyMzU3NTlmZTU5YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4NTI0ZGI3ODU3MDNlZTUyYTMyMjYwNDAxNDY4OGY1NzhkZWFmNDNiZGU0NmE4ZWZmZGEwM2ZmNTE0ZjI3YmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwOTYzOGE1NWUxOGE1NzgyMDIyYzYzMmEwNWZkNzU4NjVjM2UyZGNkODg0OGZlYWRjYjFjMWM0N2UxNjk4MTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e9a21c55f332476d8b67d54e8cc439c1",
+      "statement": "The release scripts README says the scripts are invoked by a release bot, and that cleanup-release is the only script that deletes an existing tag.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/bin/README.md#L1-L12",
+          "version": "repo-lines-v1:sha256:020e0573fbf6cecc34a20a83edbe35c09617c6816a6034adecca64b7125a949c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3NjdhMjU1M2UxMDQ3Y2YwMTlkYTVlY2U0NTZlYjc4YzcyY2Q5NDI4MzhjODBhY2E5ZTI5ZDM2NzNmYzhhODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NTJlYTE1N2RiMzlmN2FhNTgxOGUwMmU5ZTdmOTYxODhmNGM2NjUwNWI1MWU4YzM1YzU4NjkwZWQwN2U2NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0MDkwNTc3N2I2ZmNjY2Q1YTQ1MGRkNjNkMTAxYTljOTQyNjQ3NjEwZDY1MmQ2NzRlZDhlOTEyZjU4ZGJiZGYifQ"
+        },
+        {
+          "resource": "repo://script/release/bin/README.md#L14-L22",
+          "version": "repo-lines-v1:sha256:da226c827014237b9c68830c7212565c0337e4c39694149a3ae6df40bd7c8db9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGM1MTFhZjQxNjFhMmE3NGRjY2EzNWFjNjIyNTUxZDU3OTgzNjZkNDhiMzgxMWQwN2IyODA4NWM1OGYwNmRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWU3NGQ2YWQ0ZTgzNmFiMzRmZmFiOTM5ZTU1ZjRhYmFlY2NlMWZkZDVlOWI3MGI0OGY4NTRiMzJmNTEwNjg2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmM1NGM4NWViNzZjN2MzNGFjYjc3ZTNjMWJlNGQ5YTMwMzRiOWM5NjAyNTc0NDZiOWJjNmE2ZjE3MThlOWVmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjZmYTAxMzY0MWI3NzU0ZmM3YjUyNGY2MjFjZWNmMWUxOTVmOGRlNDJhYTcwYzM4ZDcxMGFmY2JmN2M4YTIyMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2716c9264bc4bf3a56d1219006bafd2",
+      "statement": "stable-prep-items.yml runs on a 12-hour cron schedule and on workflow_dispatch.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/stable-prep-items.yml#L3-L6",
+          "version": "repo-lines-v1:sha256:4cff3e07539283a8837be2b42f26a88e6846d883cfb9fa5376f5dcf417e43481:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk2ZGM0ODE0OWY1YTgzZDFlZDZkYmIzOWJiYzdlMmI5MDJhYTNkMzRkNmJkNWFlNGIyOTFiNjhkZjBjYTc5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2YyZmE3M2YwNzA0ODlkOTcyNGEwMjlkZmI1MDJhYTA4ODUwN2QwODU3OWJiYmNjOTRlZDkzNWMxYTA1MzMxNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDhhZjI3YzZlYWQxMTQzNzAwZDg2NjY3MzBjOWY4ZGRhOTY5MTU5MTkxOWVmNjA5ZjVkMmJmNjIxNWE1ZmU4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDQyN2Y1MjQxYjVkYmYzZGM4Y2VmNmQ5MzAwNTU1NTI3ZDQ5YjIyNGE2ZjRmN2Q3ZTMzNTE2NmU0MGU4YWQyNyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:50:06.090Z"
+  }
+}

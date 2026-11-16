@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0b2042275e8cdb3ff79466f37548becf8251ac4226b9242fb4545c172b117b21",
+  "claims": [
+    {
+      "id": "claim_94f8e0cfed76475595af1e2e1409c694",
+      "statement": "A Schema maps each path to $-prefixed lowercase method keys whose Endpoint records input, output, outputFormat and status.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2531-L2551",
+          "version": "repo-lines-v1:sha256:38f16c45009246aac84cf155462a774545b32a9638282aaf4f5b8894b083b791:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyZTE5YWZiMDliNGY2MWEyMWQ4MDg5YjU4NzRjNWQ1OWU0NzUxMDExNDcxMjlmMzNmNzY5MTQyNjk0M2NlZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3YzY2ZDZhODMwNzMyMGY2YzViY2RhYjcyZTA4NDBhZWVhOWUzNDNhMWQ5NTRjZjg2MDdjYjhlYWQwODVkYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliOTY1NzE5NmNmMDZkNTc2ODVkZmUwZTgwZjEwZWRkNWNhNjY1YTYxMTkzZTk3NmM1MDg2MWZmZTg0Yjg4ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c76d6568dcd49bdbe32ae4907ead73c",
+      "statement": "ToSchema adds path params to the endpoint input via AddParam and contributes no schema entry for handlers whose return type is Promise<void> or never.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2500-L2529",
+          "version": "repo-lines-v1:sha256:0ea6f5e4535ed24af700c2942d22005056516120a52b9d786ae8f6f7c3ed3763:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhM2ZmMGUwMDhlYzRlY2VkYzk2NjY0ZDM3ODkyZTRjZTkxM2YwMjA4N2RmOTY5YmRiZDc3MzY0ZWQ4ZmFiYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4MDA1ZDU3MTA2YTM2MmViMDAwZGFmM2RhNDY3NGM4MmI1MThmZjVhMmUyZjY3ZWU4ZTc1N2EzMzNjMmFmNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhN2UxN2RjM2ExMTRmODNiNjJmOGZmYzM4OWE2YjE5ODEzNDA1N2FiNDk4NWY5YmZhYmExMmU2NmI3NDk5MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZGYxMTAzMDJhMTc2NmNkM2Y3MzY2MWEyZjUxMjhhNWI3ZWZkOTRhMDhlYmJlM2M3ZGE0ZWVkMTg2OWNmNjUifQ"
+        },
+        {
+          "resource": "repo://src/types.ts#L2601-L2608",
+          "version": "repo-lines-v1:sha256:9c77576676d851b41f682be3cc12879bc47dd1054dd2e332796772f1b5e7263b:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmIwMjgxMDRkNjYxYjMxMDk1YWRlNmNkM2E4NGJiY2M0NTA2NjcxODYyOWFkOTU5OTc5MTQzYzcwMTA1ODgyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk0NGRmYmYyYmE2NzkxY2FlNDI5NmEwOWM3MGRiOTczNzdjZjJiMDdiOWI5NjUzODdmYmM4NzE1M2Q4NmJjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ZlMTI3YTUwOGYyMGI3YTJiZjdhNGVjMTcwODc0MDM0NTljM2U0NmFiZmYxNjE2ZGVmNmMxNDgyNDE4Y2IxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTJjNmYzNDY1NzI0NjNlNjg0NmM4NmQ3ZjMxMDQwOTljMDAyNmUzYmQ1ZDg3NDJkODI0MzJhNjZjMjBmYzY2OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_70f75c3bb5d34830a9adfad2c829c207",
+      "statement": "MergeSchemaPath re-keys a sub-app schema under a prefix with MergePath and merges parameters extracted from the prefix into each endpoint's input.param.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2563-L2600",
+          "version": "repo-lines-v1:sha256:e5f8a9aab74a89e783e0bee7081e166eb1999cc1ba2442e591467566175fb7a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3OTI0MTViZmI0YmQ0MjQwMDY3NDQ0MTcxMzRiOTk1YmVlMDZkMWIzYzE1YzMwYjY1ODc5YzNmOGM4MzE3ZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmYmIwZTVmNjVmZTAwYjExZTU4ZDk0ODc2ZDVhNjZlMTM1YzY5MWZlNDkwMmJlNTc1NGUxMTU3M2M0NWFmZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxMWY3MzQ1YTEwMDQ3MmE4NDFjM2Y5NTk4NDNmNDVjMTI0MTkzY2NjNzBlZDM0MmNjMzA0YmJlODAyZGYwM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwYTQxZTY2OWVjNTI2MGViYzE3NjJkOTMzMGY3MDM4Njk4NjQxMjUzMDhmMDg4ZDkwMzYwMDY3OTRlOWIwZTYifQ"
+        },
+        {
+          "resource": "repo://src/types.ts#L2610-L2626",
+          "version": "repo-lines-v1:sha256:f7a3cea8fc3c8ad78338a31f3bd858f737c7251769542fb529d86888463967e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhYjcxOWQwNjIzYmNlYzlmNjM3ZGE5M2NkYmMyYWExZDc2MmRlNDJiMWJhOGFiYjJjNmViYmFlYjhkNDExNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NDI5ZTA0NzAxMjkxNGFkNzFiNjFhN2U5N2NmZWY5YTRlZWNkNTY3YmI3YTM0NTE3MjU3NmVmZTJhMjk0MmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwNzQwNzI5NTk4NGVmNTIzOTI1ODc1YTYzYWNmYjIxMTQ1OTFkYjJiMDJiN2RjZmZkNzYwNmRiMWE5MmI1YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwYjU2M2M1MmZiMDBhZmQzZTExZmY2Yjg0ZjUxZmExZTI4NThiYTk0NDg1NmFmZjliODRiZmUyMTZiMDA1NDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9e74926d86a44e68034e21626d492a6",
+      "statement": "hc returns a recursive Proxy that accumulates property names as path segments, returns undefined for 'then' and non-string keys, and on call treats a trailing $-prefixed segment as the HTTP method.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.ts#L133-L172",
+          "version": "repo-lines-v1:sha256:97337d3b7b544a0b328eae38389b86952077a3c776096a84345a88e2aa380f06:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZGExYjk2MGFjYTFiMDQ5MDdmOTVlZGY5YmUxM2E0NjVjNTgyYjZmMWM5MWM4ZjA2NTI2MDNiMzAyNTRjZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YjdlMmI0MWRlMzJlYzhmMjkzNmUwMjUwMGQ5ODM4MjM2ODRhMWI2YzAzODU1ZWU0MDdjYmUxMmU0MzU5YTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkNDQ3NmRlZDAwYmZhZGRkYmRmODFjYTY1MDZkMjU0N2Y4ZGE4NzQwMmUxNGYwMGY5ZTU4MjRlMTA1MGJmYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxODQ3ZDU0MWZjODA4MWU1NTEzNzRkYTMzOTA2YmI3NmRhNDBiMGE5ZWM4YTRlODU4MzE0N2E4ZTU2YzFmMjEifQ"
+        },
+        {
+          "resource": "repo://src/client/client.ts#L15-L32",
+          "version": "repo-lines-v1:sha256:f1f8f2fd98209898824840e678cbc32068b8f593aba01af48940631db7fbdecc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMDNhOTM2YTQ3ZTQ0NzIyOWM0ODU2ZmEyZTFlMTBkZjRiY2M5ZTk0ZWNkNzE0MzYwMjYwMjA4ZGRhZTAxZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxNmI2OGYwYWRhZTdkMTcwMzVlMzA3ZjM1NjNlYjIwMTk0MWE4NzBmYjIzOGFiOTA2YjA0NmFmMWMxNjcyZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjZmQzMDc3NmUxZjVmZTM0YzQ4MTQyNGUxY2ZkYTM2OTcwMjA2ZDdhMTM3OGMyNWE3ZTk3MzdkZWFlNDBlZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_877c90e8e17749dcb761169f92c622fe",
+      "statement": "The client's $url and $path return a URL or relative path with params and query applied, and $ws converts the URL to the ws protocol and opens a WebSocket, using options.webSocket when provided.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.ts#L172-L210",
+          "version": "repo-lines-v1:sha256:534e7e6b66a10f9f3b56b23bb685319aa056a45c750d225edc8fc1d6568ae46a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YjdlMmI0MWRlMzJlYzhmMjkzNmUwMjUwMGQ5ODM4MjM2ODRhMWI2YzAzODU1ZWU0MDdjYmUxMmU0MzU5YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0Zjc2OTI3ZDNmMGI5ZDAxZDUxMzMxZWI4MjBkZTUxZGM4YTQyOTdjNDNmZGMxOGVmNThmMWE0OWMxNmIwYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNTZmMWM0OTllNThlOTI3MWVlY2M2OTcwNjQxODhhZjdhZDg0ZGJhM2I3MWZiNjNhOTkxNjU3MmI2YzZiMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_88579b92797d4b4281ee7afa9d586dc3",
+      "statement": "ClientRequestImpl.fetch maps query via buildSearchParams, json to a JSON body with application/json content type, form to FormData, param via replaceUrlParam, and cookie entries into a Cookie header, omitting the body for GET and HEAD.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.ts#L53-L128",
+          "version": "repo-lines-v1:sha256:f4ebad8f59bd98a29e8a391f09f1cc8e3cf1f6192ae9b1032db37d2e41c93dcd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMzk5MzM1ODcxYTlkNzM2M2MwYWExMTQxZDMxZmY1MzEzYzFkM2NlMzI2ZTRlNDY2ODRlZTAzN2E3YzI3MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhMmFmNDdkYmI5Yjk5ZjRmMWE5NjljMmE1ZTMyNzMxYWY0MGRjZjBjYTc4YzUwNzE5MmFlYTQwNGRlMWI0YmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        },
+        {
+          "resource": "repo://src/client/utils.ts#L11-L44",
+          "version": "repo-lines-v1:sha256:ed15660b93db93696c2245a9743eb90fef094ea931eb0a1f6e6fc6f9e50d893b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYjM3OGJkMGZmYmY1NzcyZTA4OTBmZjUzOTMwODYyOWJlYTMwZjRlZGVlZmQ0ZDkzM2RlZGQ4OTk4NjNlYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyMmU5MjBjYmNjMDM2ODZlYjRlOTI2MjRiMmI2ZmRiM2UyOTkwN2UxYmZlMjFiZjIzNjg2Y2ExZmM2NWNjMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhMWI4M2M5MDgxZmQ3YWVhNDdhMTgyYTA1ZTNhMjJmY2ExMmIwOGMyNzdhYTdkNmE4YjViZTg1N2YxMjBkZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f8b946ac7b7d40fca2e5652fa524446f",
+      "statement": "Global and per-call client headers are merged lazily, either may be a function, and per-call options are deep-merged over global options before fetching.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/client.ts#L212-L230",
+          "version": "repo-lines-v1:sha256:667b6536a3e12a1a2c65b1f71c3053ae0e54333c76b1e93db83e988079c110e0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyZWMyZmQ4N2QzZDlhMGRhOTE3MjZiZDc0YmQyODNmOWU0ZTIzYjM4YWI2NGQ1MGZkMzY3N2M4ZDQ1NGY0YzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlNDgxYWIwNTQxNzYzZDcwYzgwY2Y5ZWRhZmYxZmFiNjRiYjRiZTlkODQ2YTE1ODc1N2ZmMjBmYTc0MjgzOTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a36cfd2bb6ea4d15b6a4035f09572156",
+      "statement": "The client type expands an $all route into every standard method and maps the root path to an 'index' property, which removeIndexString strips at runtime.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/types.ts#L20-L26",
+          "version": "repo-lines-v1:sha256:44dbf945df71fb2e79f33de02589b4e3cde7c854e91a5b5894276c46a4b1a88f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTcxMjg4MDIzMWJlODY4YTFjZmIwMGM4NWE3Mjc0NGViODU4NTdmMDkxMzM2MmI1OTg2NTk5ODMxODNiZTIyYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY5ODIwYzNiNjk0NGNkZDRkMTQzMzlmNjM4NjhjM2ZjMjcwYmQyMmI4MDljMDFlNzgwZjgyMjMxMzgzMDUyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE0N2YzYTNkY2Q0MzQwMDMyZmIyYmEwMGU2OTJkOGI4MjM3ZTU0ZDkzNzk4NGZhNTY0ZTE0ZjM0M2NjYmUyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdlZTZiMGIyZjcyN2Y4NmEzNDA5ODg5YzhhNzNkZTFhYjdiODJmZmYwM2FkMTQwMzMwNDU2YWI4OTYzM2ZiYiJ9"
+        },
+        {
+          "resource": "repo://src/client/types.ts#L294-L318",
+          "version": "repo-lines-v1:sha256:95e0dc1f26affeca480245b81ed4eeeba2755436b269b2d5646db9c515a109d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyMzE1N2ViY2JmZGYwOTM3Nzk2M2UyMTYzY2YzMTczNzNkZjAxMTgzZGZlYjU0OTZlN2ZjMDA3MTMyYzU3MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMjljMDhkZTA5YjUyNzVmYzI4M2VhOTRmZGYxYzkwOGViY2EwMDcxZDdkNzU5MzgwZTUwODlkZjgxZmJkYjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViNWJmYzQxZTAzMzViMWEwNGFjMWY1MDBmMzhlMGI0OWJhM2MzZTNjOThlMzcxOTc1NTM3OTU0NDJkN2JlNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0MzUzYzc0YWU4ODEyMDRmM2JlOGFiODhiNjlmNzc1MDIzMWFlMTQ4ZDhmYjAxOTMwMmVjYjUzN2Y3ZDE3MWMifQ"
+        },
+        {
+          "resource": "repo://src/client/utils.ts#L55-L60",
+          "version": "repo-lines-v1:sha256:af513dd559747ae50fa8810fad74b79b8e4f8312214567dcd7cb364d7c140d22:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZlNzAxYzNiYjU2ZGVhZGQ2ZmE4NGI0YjQ4MTYyMzg4NjY4MGM3OTBjZjJiZTU0ZDdiNzViNzE1ZDY0NWJmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2NmMmE0YTU0NTk5YzNiOWUzNGQwMjQwOGEzYTQ0N2M1MDQ1MWI4MDZjY2I2NjRlNzU0MmMxMjZlNjMxOTUxZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ddc2a9fdcf314aa5ace3792a830067b3",
+      "statement": "parseResponse awaits the response, parses JSON or text depending on content type (skipping bodies for 101/204/205/304), and throws DetailedError for non-ok responses.",
+      "evidence": [
+        {
+          "resource": "repo://src/client/fetch-result-please.ts",
+          "version": "repo-file-v1:sha256:34d33d96442efc6160089d6d7180c87adcc97334846b3ad6cb7138cca382c87c"
+        },
+        {
+          "resource": "repo://src/client/utils.ts#L86-L114",
+          "version": "repo-lines-v1:sha256:5885dc87fb31fbf41601bac9f8cc222ccd199cd7d655c501c7e566c4c7197526:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyM2NiNGMxM2Q2Nzc1OWQ1NGY3NjcxZDQ0MDM0OTcyZDA5MDNhMzlkMDhhZmFlNzNiYjk4MWViOWFiMGRjZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmOTQ0NmY1NTkxZDZmODQxMjk4NGJmYmQ1ZmQxYzE5NjBiOWMzNTA0OTM2NWQzNTE2MWY3MTlmNThiNWIyNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:17:44.986Z"
+  }
+}

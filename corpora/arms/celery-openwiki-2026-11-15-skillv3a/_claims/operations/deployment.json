@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4fe4b3b67d08e3680be98051ef4c88e31bec2e9148cd53e573ccde14d206ff85",
+  "claims": [
+    {
+      "id": "claim_3b2a5f21c5f24922a5e7e110e5adbee4",
+      "statement": "detached() drops privileges, then DaemonContext double-forks with setsid, changes to the work directory, applies the umask, verifies the logfile is writable and the pidfile is not held by a live process, closes inherited fds except stdio and /dev/urandom, and redirects stdio to /dev/null.",
+      "evidence": [
+        {
+          "resource": "repo://celery/platforms.py#L310-L431",
+          "version": "repo-lines-v1:sha256:654dca214bda88c60eeaeeaad82d057dc54a558748fe7b93986a25f0bc7ed864:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwNjcxZjIwYjIwNTQzNGJhODEzNjU3OGU5YzI5YmI1ODdmMTIwODhlZWQ0MDhhNWY5YWI1ZmQ4YmVlMzI2ZDAyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiYTkyZmRmZGRlZTlmZjAyNTIxN2Y1ZDY2NTFmMjc1ODFmMDk2MmQxZTJhYmZjNWViM2I2NmQ1Yjg3MTE3ZDlhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1OWU5NTEzZWJjNDNkZDc0MmEyZDVmYWU5OGVmMjg5MTJlYTU1ZmE0OTM0OTg1YTBkNzk2NzkxYTc5ZTM3MWM0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7da60497d7b4408a5b11610a270f71f",
+      "statement": "create_pidlock exits with EX_CANTCREAT if a non-stale pidfile exists; stale pidfiles (broken, empty, containing our own PID, or a dead PID) are removed; the pid is written with O_CREAT|O_EXCL, fsynced and re-read to detect races, and released at exit.",
+      "evidence": [
+        {
+          "resource": "repo://celery/platforms.py#L125-L272",
+          "version": "repo-lines-v1:sha256:ec7d70df19ef08030c58ec4f120cff70652119f5ea7bcd27cbb67bd9219af0b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiZWZjZDg4Y2M4OGQ5MjliMTk2MTNhN2E0MTYwZTI3MjNjYTQxZmJlNzdmNzliMDU2YWI0YjhiYjI5ZTI4Yzc1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3NmNmODc2NjMzOTU0Mjg0ZjQwNWY1MDE5ZTEyOGU1NzBkMGFhYjQyOWExOWE5MmMxMmQxMDg5NjUzMjI2MzUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2Mzc3NWYzOTRlODRmNzUwMDFjYWIwOTZmNGU2NThjYzM3MmMyNDRiM2NlMTYxZGIxM2VhNWZmMThjYWQ4ZWJmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhMmNkN2E0NGQ5YmU1NjM4NDUwZGY5NzMxODM3Zjk1OTc5ZDFlYjViOTA4NWFhODAxY2UxMDA5NTliNDIwYTA5In0"
+        },
+        {
+          "resource": "repo://celery/platforms.py#L61-L62",
+          "version": "repo-lines-v1:sha256:7957efe3f297825f057e42b53e07ac8669e31615fe76c104d51ce99a7eaf975c:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdhNTIyOGQ0ZTc2ZTUzOTJmYTI2ZTQwNTllOGE3ZDdhMzkwOTZlZGNkMmExYjFhMTlhZjhlZTljNDE2YmRhNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTA4MzAzZDZhOWE0YzhjNjE3MmFmOWM4ZDEyNWJiYzdiYjM0ZjlhNDhlOWNlZGM1YTcxZTAzNTUyZGI4NzhiNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDVjMmVjNTY2NjBmNjAwYzc0ZTE0NzQ3NmU5YzI3N2MxMDk1NjUzN2I2ZGYxZjE1OGYzZTkxY2I4NzJlZjM1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmJiZmIxMDViZjllOGMzZjg3ZGJjZjI1NmY0NDMyNjJjNjhlYzdmNmVlMjQ0MzRkNjZhMDYyODAwYzIzOTY2NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eecfb22120644573b8f39d4eb967dab9",
+      "statement": "maybe_drop_privileges sets gid before initgroups and uid, then verifies root cannot be regained, raising SecurityError if it can.",
+      "evidence": [
+        {
+          "resource": "repo://celery/platforms.py#L528-L584",
+          "version": "repo-lines-v1:sha256:a84595f004cdd8fed6abad6e08edfb9b736c19aa9a3d94f3ee3044f02d62adec:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyOGVkNWU4NDYwMDhlMDVhMmQxY2E1NDQwYmZiYTViODcwN2YzMmVhOThjM2Y1YzE2MWU5MjdjZDdmYzA5NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhYzM2ODE0OWI1MTY5MDlmYjZjZTZjZWY2YzQ5NDI0MmUxYzRhNzNiMTE5MWJmOTIwZWEyMTU4OGM2OWI1NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiMTg5ZTQwMTZmY2I2Y2VmNzFjZjdlYzFkNmFjZDQyMDQ3M2VlNDgzYjA0OTBhZTRkNTMxMjQ2OTQ0NzhiN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_21053cdcb78248e2ae3a53cfb5242317",
+      "statement": "At worker start, check_privileges raises SecurityError when running as root (or sudo/wheel group) with pickle in accept_content unless C_FORCE_ROOT is set; otherwise it only warns.",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/worker.py#L104-L104",
+          "version": "repo-lines-v1:sha256:84760f73e433e5162dfcd25475490ebeb2af2662d1c4b128d444b7791038111e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODQ3NjBmNzNlNDMzZTUxNjJkZmNkMjU0NzU0OTBlYmViMmFmMjY2MmQxYzRiMTI4ZDQ0NGI3NzkxMDM4MTExZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODQ3NjBmNzNlNDMzZTUxNjJkZmNkMjU0NzU0OTBlYmViMmFmMjY2MmQxYzRiMTI4ZDQ0NGI3NzkxMDM4MTExZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzk2YjBhYjE5Yzc1ZjVmMzk4ZTNkZDBlOGYzOWM5YTEzMGNmOTFhZWViMGM2NTNiY2YwYTE3ODhiMWE4ODk5YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzE2MzI2OTBmYTNkNGRlM2U0OGQ4Mjc2NDRkNTFmNzgyZWFmODc0ZTllNGM4NDJhNmVlNTBkOGYyZWM4MDYxZCJ9"
+        },
+        {
+          "resource": "repo://celery/platforms.py#L788-L845",
+          "version": "repo-lines-v1:sha256:b799ba23a947473b013082fc6c1e3eb904ef911140fe171e37f05d812c236467:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1ZDgxMjFjNzFlMzFkMTdkMzg3YjBkZWNlNTg0OGFjZTMxYTMzMGM4YjQyNGU2Zjk0MGRjODVkZmJkM2IwNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxMmIzNWM5YTE3NDNhODgwOWMzMjI0NzA5YmU5NGM5Y2Q3M2YzMzhhY2IwMDIzYjg1YzU1MDc2NzFlZjcxZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9803b72e59c64c04b7e0110bb2aa9444",
+      "statement": "The sample systemd unit is Type=forking and runs celery multi start/stopwait/restart with node, pidfile, logfile and option variables from /etc/conf.d/celery as the celery user.",
+      "evidence": [
+        {
+          "resource": "repo://extra/systemd/celery.service",
+          "version": "repo-file-v1:sha256:f34e387ac953ebca22b93a8bc5fab03f27471ccd6ba6c5b315732a26a3945f85"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ee33213901742c6802090518d21041f",
+      "statement": "The docker-compose development environment builds celery/celery:dev and provides RabbitMQ, Redis, DynamoDB local, Azurite and a docs builder, with TEST_BROKER and TEST_BACKEND set for integration tests.",
+      "evidence": [
+        {
+          "resource": "repo://docker/docker-compose.yml",
+          "version": "repo-file-v1:sha256:ec7c711a72cfc8c319e98107396c9c8a35b5b760d807e33b58ec2b7e5a8fbc6b"
+        }
+      ]
+    },
+    {
+      "id": "claim_5798e86f2efb4c9c8a0dc7aa284c38ff",
+      "statement": "The Helm chart's default liveness/readiness probes import celery.task.control, a module that no longer exists in the codebase, and contain an <APP> placeholder, so they must be customized.",
+      "evidence": [
+        {
+          "resource": "repo://helm-chart/values.yaml#L55-L70",
+          "version": "repo-lines-v1:sha256:bf91c6feb71b40b6dc6faffb3ce3c29dada89651e505aa479d16176972e19bac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczMTVmMzZlYjcxYzNiMzdkZjE1YzA0MmE2NDA2ZWIzMWNhODlkZjNhODk0ZTZkYzJlMGExNDVhMzQ5MzQzYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MzU1MzY3ZmZmNWYzMDlmNmZiYjA3Yjg3YzE0OWJlMDViN2Q3YmRiYWI5MDczNTRmNDVjODAwNWYyMzA2YTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiZjUyM2JhMzNiNmU1Mzc0ZmM0OTBiOGFjMmU3NzM0MTEzMzI2NzhkODA4MDcxNzFjYzA4ZGYxM2ExOGExM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhYTY3YmNhYWE5YzY5MDU0ZTBjZWM3MmFlMDM1MDk5ODNhNmY2ODNkZWY1MmE4MWE3NDBhYjVhZDMxYTM0MTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b64646fbf116444594ec32018b6f1006",
+      "statement": "Makefile targets docker-build, docker-lint, docker-unit-tests and docker-integration-tests run tox inside the docker-compose celery service.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L170-L189",
+          "version": "repo-lines-v1:sha256:e043af5231e51f81b9c5e594c1fd14bab945fa1bb685e3753cc79e1db6cb8ab5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlYTYzOWRlNWFiZjQ4OWFjYjhhNmZiMDIzZGIzYTU3MWQ5NTU4M2M4ODIzNTM4NGZiMGQyN2ZjMGE2YjkwOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMTU4MGYyNDU4MDQzMzVmNjgzMzMxYjg4NDhmY2E4NDA4NTRmODMyNTJiMTc1NzIzNjlmYmQ2MTRiYTMwYTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkYjNjNDEzODE0MzdmYTczY2MyZDU3MGE2YWM3YWI1NGQ2M2JhMDVjOGQyNmQ3ZTM4NGI1NTA3ODNiZmE2YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwYzkyYzg2MmZhMTJlOWQyMmY2MGYzZjBjYmU3MTM0MjQzZDZlMzdiMTFkOGEwNDc5MDgzOWMzMDJkZDQzNDMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:49.645Z"
+  }
+}

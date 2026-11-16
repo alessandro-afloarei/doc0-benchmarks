@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b2f1783303addacc249609a479aaf7ecffda05629b7c011185fd688ee2047135",
+  "claims": [
+    {
+      "id": "claim_f6a1362401684349a5d5bd165d8cbaa8",
+      "statement": "View.from_events applies condensation non-destructively: forgotten ids from CondensationActions (and the actions/requests themselves) are excluded, and the most recent condensation's summary is inserted at its offset; nothing is deleted from the event stream.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/view.py#L48-L93",
+          "version": "repo-lines-v1:sha256:24b3013d4771abe4205d434927241a5ef87a6d9e99d441d00cef82c2af6e8d70:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4YzRmMTk5MTVjYzRiZjA1YjgwODdiOGY1OWIwZTMwMjAzNzMxZjdiZTQ5ZDRkMTNhNjAyMzIxNjgzYjVlNGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2OTIzNTA4ODZiMDQ3MTRiYjJlNWI3NTYyMzZhNDU2N2NiNWIzOGMzOTFkMTQzY2M1YjkxZTg3MjBkYWNmNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b919ec051c214e0c9ca945451120233e",
+      "statement": "When a condenser returns a Condensation, the agent returns its CondensationAction instead of calling the LLM, and the next step's condensed_history yields the shortened View.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/codeact_agent.py#L175-L195",
+          "version": "repo-lines-v1:sha256:06a59f2fec18d2cc4c22ab58a494d74b0a988ec91b739253c274bef68fff9ee2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMTVkZmFjYTFiNTJiYmZiOWY3Zjg5NTFhZjczOTllOGVjMmZkMGVmODc4ZTExZjVjZDFlZWJhNTIzNGI5NWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2N2RjOWU4NDQ4OTM0YmY1MTc3ZjhlNzA1NTI3ODVjYTc0ZTI2NDU3MjE1NzhkMDgzNmY5MGE1OWVmZWIxZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzYWUyZjkwMzkzYzVhOWQ0MjFkZDYzNGIyNmU3ODY3NTJjODQyZDlkZjhjZDhlODc1YTY3ZTkwYzVjODkzNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExY2MwZjAzZTc2ZTA4Y2RmNDY5NmEyZGYwZTcyMjNlYmI1M2E4NWQwNGQ5YTA5MmE1M2RjNTczOWM5ZjFkYzgifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/condenser/condenser.py#L44-L116",
+          "version": "repo-lines-v1:sha256:4a6fedf8df7a3643358230136575f0e770d157379733f43bc87268e29002cc82:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMmNkNzM2MDRiNTY3ZDNjMzNiNjc1NWJmZGE1MDVjMTk3NDJmMDU5ZmRiN2RmNjQyNDc1M2QxMWZhNjVhMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYTYyOTQxYTMyNmE3ZjI0ZDE3ODdiNWYwYjE5YzdhMTk0OTYyN2E3NTQwMzViMDBiZDFhYmNjYzk1ZmJhNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2YzRhMzEzOWZlYzZkNTMxMzUyMmZkNTdkYTA3NzUxYmZiZGU3YTE1MWFhZTY4ZTA2ZjBkOGE4ZmJlZTQyZjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ecfe832c32b64d6a81ba6d47e296c992",
+      "statement": "Condenser implementations are bound to config types through register_config/CONDENSER_REGISTRY and instantiated by Condenser.from_config; CondenserPipeline runs condensers in order and stops at the first Condensation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/condenser.py#L128-L166",
+          "version": "repo-lines-v1:sha256:1fe4609be656869b2b37a9e8e48459ffbe0210efab35fbb086739fe75cc47728:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwY2YyYTA2YzgxMTNmZDk0MGY0MzUzOWM4ZDg5OGYxZDMxYWRlZWQ0YTZlOWMyYjM5N2FiMTBiMjg1MjllZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4YTI2NzJlZGVhYzc1ZDRkNDMzNDI2Mjg1Y2EyYTFkYWNhOGU0MGIwZjNjMTY5YzRlODQ3OGUyNWVlMzAzZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxYzczZjVlMjM1Njk3MTlmYmU1MDg5ZmI2OWE3NzYwMzdmODNjNWFkNWMzMjlmNjA3MzdhMGJhNmQyYzE0OWUifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/condenser/impl/pipeline.py#L12-L50",
+          "version": "repo-lines-v1:sha256:a9feb8c046f38d186792f35221d4a56655b5ee9c2a31c598eda1dedc65691939:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiYTFkN2RhMWZjZDJkOTE0MTEwODk4MGUyNDk1MjFkM2ZiOThhZTBjMTMzYTBjNTMzMjY3M2QzYzQzMjg0YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmOWU2OGMxYzVkZTgwMDU2ZWEzYWVlNzkzZDAwMjU3YzliMjExOGRhOTA5MDg1MDY3ZDVmZGYwOWRkODBkZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmNGM4NGRkZmQyNzEyM2ZkNWE0YTJkMzBjYzA3ZGIxNWUyNTEzYjFjZWYzMDI4NDFiNWFhYWJhMjRhN2EwMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f446259f642d4c75a303a862095ca4cf",
+      "statement": "The default condenser is ConversationWindowCondenser because with NoOp a context-window overflow would produce a condensation request nobody handles; it only condenses when the view has an unhandled condensation request.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/agent_config.py#L54-L60",
+          "version": "repo-lines-v1:sha256:e9728ae06a3062a2dde873efe5f00334230428140461849d070bd87157a29c06:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg2MzIwOTJkNWE4N2ZhNGQ3YmEyMzdjMGU0ZmU3ZTQ5YzQ5ODdkOGVkM2QxMTFlYWEyMjc4MjkwMWY1Y2U0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBjMWYxODhmMTQyZWQ3YTgyNDY4MGIyMDcxNzJjNTUxOWJjNjE0YTQ4ZmRhN2NmMTY3ZWRiOGRkZjc5OTU2YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU4ZDFiMzQ4NGVhMTEzNWEzMWE4Nzg5ZGNkZmE0ZGE1NTU2MzY5YWMyMzlhZDUwODkxNmFiNjYxYzZlYjc3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWNlNjcxNzkwNDlmYTUyNGZkZDA4ZDcxMTUyZDc1YTRmMTcwZmI2OTA0MTU3ZGRlNGZjZTQ5NWM1NDQ3NTJkZiJ9"
+        },
+        {
+          "resource": "repo://openhands/memory/condenser/impl/conversation_window_condenser.py#L16-L30",
+          "version": "repo-lines-v1:sha256:453cf54a7e1b8577bec3eea2341b01f2ea1e5f161ff9b135bb9876d814286409:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMDUyZWMzMzJkYzcyYzUyMzUzYjk4NGNmMjdlMjUzNTZmZDVkY2Q0NmZlODBkZjgwZjNiMTBiMzFlNjg0YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxOTAzNDFhMjdkNmM4Njk4MjJkODMyNzczZmRmN2U3MzcwMDgyZTlmYmJkNTJiNDBiMTNlYTYxMmE5NGVhZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiYWY4NDkwYWRhZGY0NjRiNzk3OTg0NzI5NTIxOWIwZWQ3MTVjZmQ1YzQ2ODFiMTA1YTNhMTgyYTRhZGVmODAifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/condenser/impl/conversation_window_condenser.py#L176-L178",
+          "version": "repo-lines-v1:sha256:8254b27e0a526afcb626127bb643aa8a66918984a802df7514e66a80124a05bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2UzZmRiMzFhMGNjMzI4MTQyMTQyZDNhNmYyZmUyNGM4OWIwN2QyN2UwYTI2NjE0NWIyODU3NjJhNjQxMWFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA5MTkzMjUxZDg4NmNlMzVhMDUzNzJhNjg4MTgyM2M0Y2EzNGY5N2RmMTJiMjY1OTA1ZWMyMmEzOWJhYTUzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2NiZjI2OTZkMjkxN2QwYTk5YmJiYjA4ZTg5YTFjM2NlMTIxOTgxNGQ0ZTgwMDIwMjUxYWY3Mzg5ZjIxYzc1MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c5d74cda20b40ed96ec315483979876",
+      "statement": "On a context-window error the controller adds a CondensationRequestAction if enable_history_truncation is set, otherwise raises LLMContextWindowExceedError; should_step treats condensation actions and requests as triggers for another step.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L392-L432",
+          "version": "repo-lines-v1:sha256:fa1fb8a8df4c3fd043f4f4baec8a111213a2022d7fc14a155ce84e2cd525ce74:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmZGM1ZjhmZjc1ZTlmZTBiZWEwMTUzOWExM2E5YmMyYmRhMzU5NTZjNmFlZDVlYTQ5N2M2ZDFhY2U0OTYxOGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwZDNjYjEyZTIyN2Y1YTk2MzYzMDZmMzNiM2UyYWY4ZTJmYjliNDZmNzc0OTJkODMwY2Q1MTkzZmQzYWYzMDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2YmFhZGU1ODhiODMwMjNjNjQwMTI3MDM2NWQ2N2QwZWM1MmMyNDAxODljYWNhMjM4ZmY5MmNhOTExN2QwNjAifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L866-L890",
+          "version": "repo-lines-v1:sha256:832f123690ec86503f071e01a495f971f6943fb6914ff07548f11edfb6022c99:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzMWNlYjZhYWRjMDNmM2NhMWQxODU4YmI1YmUwNTlhMmU3MDU3ZjRiMTVjZDk3ZTQ4ZmM1Y2NmMGVkODJlMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzZTY0ZjBhYWMyMGQxYmI0Yzg1YTg5YmVmOWY5MWUzZDZlOTEwNzEzNzYxYjc5ODFkYWU5MjRmYWU3YTY4MGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5YjNmODBlOThhMGFjMjQ1MmY2MDY1MWU5NWU0NTZkOWMwNWFkODliMjBhNDIwNWU1OTdkZWQ3MjM1YmE4YTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjZWVkZjYxMWMxNWI0MTQyMGVkYjExZjBlZTE3YTBhZTNhZWEyMzk2YmFhOWVkOTAyOGE4ZDVjZWNmNzA2N2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_133dda69f19240fcbe71d9e197ea6cd8",
+      "statement": "ConversationMemory holds assistant tool-call messages pending until every tool_call_id has a matching result, then emits them together, and finally filters unmatched tool calls/responses so requests stay valid.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/conversation_memory.py#L74-L165",
+          "version": "repo-lines-v1:sha256:024e59df66d60d7f9b9adb88886bb491d741fb12669c4902d72b00d2655e825c:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwN2QzNzBhZDMzZWIzOTQ5ZWY2NzQzNDhkOWU1Y2U2YmJhNWNmMzc1YTk4NGRhMTNhNWRlZTJlZjk4YWUwMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjOGZkNjJkNWI0YThjM2RhYzU2ZjNhYmE4YzBmM2U3YTkyZWVhNDg4NGI0YjM2N2JhYjAyNzJmZGQ1MTY4YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlNjUxZWJkMDllY2Q0MzY5ZmU1MzExOWRmMDIwZWU4MjczYTczMjVkZmEyMTQyZDA2M2QxMTgxZjVkMjk3MjAifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/conversation_memory.py#L747-L800",
+          "version": "repo-lines-v1:sha256:27ac4ece70614319a60ea2193fbcb4f69a9c279d9011eee2bc9efab946be5ca6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZGRkNTI5ZmRjNGRhMmUwYmY5YTQyNmNmYzZhODc1YmIzZDBhMWNjYTE0NGI2OGQ0YmUyMTQzYjY4MjMxY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkYmQ0NTBlNjc0ZDY1Zjk1NzI1YjE4ZTQyOTljNjRjNDc2NThjYWFhMmI1YzcwOTU5MTQ0MzAzZTQzZWE3Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiM2E1NGI5YzJmNjIzMjlhYWI3MDQwYzM5YTRkMThkNThhZTY1M2M2NzFiYzI5ZmFhZjQyODcxMmU3YWUzODEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_521f2e941037431c97c2aa0f4e7de196",
+      "statement": "Memory subscribes to the event stream and answers RecallActions: workspace-context recall (first user message) builds a RecallObservation with repo, runtime, instruction and microagent info, knowledge recall matches triggers; the observation's cause releases the controller's pending recall.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L549-L588",
+          "version": "repo-lines-v1:sha256:924b1d01e10220df1e44b96573a5a3ba7736c8bbda62d68357204b57e1656c4c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YWFiOTFjMWE2NDdmYTI2OGU4YjhlMGIwNTlhMGQ4ZTAyYmM3OTgxNTY4MDI4ZGQ5ZGVlM2NhMDNjNGM4NTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhODA2NGUyN2UyMDU4ZWY0NjE1ZTU3NDc0MjgwNDg1MTU0ZjczMTJkNDc0N2NmNDZjNjhmMzU1OWVlMzAwMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0OTNjODI4MmFhZDk1YjgxYjIzNWY4MGFhZGU1NzA2NmUwYjdkN2E2ODljNzVjYTNlZTA2MTIyYjIzZDc3NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MDE1MWJmNWE1MGU0Y2YxZDg4ZjA4ODYzODBhMzg2YTc1M2JmMDEyMGUyOWU0MjcwM2JhZjk2MmJiOTEwNTkifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L139-L205",
+          "version": "repo-lines-v1:sha256:9cd359934964001265af087f22b93ba49082c88d5628c8b6e4266fbdcfd8fe30:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyNzA5OThjNDhkNzhhMjM4NjRlZDU5Y2MwYjU4YWQ2MWZhNjAyYzE5ZjlkYWM3YWRkYTI1N2NmYjQ3ZDVhMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M5NTdiY2I0NGZiNjczYzk4YjAwNTBhNzVkMzgwODJkYjgxZDkxOGRlMzEzYTNmMDdjMTIzNTMwNmQ3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczMzllYjUyY2FiNTJlYTE4YzcyYTJkMzY5ZGM1NTI2YjI0NWYzNzg0NmMyOGNhZTYwYzNlYWI4NDYzYjhiYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzNTBkNzkyNDQ0N2VhZjFhOTI4NTVjMjJhN2I1ZDliMjYwYTZjMTlkM2IxOWM0M2RkYWYyNWQwMTk1M2NiOWUifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L53-L137",
+          "version": "repo-lines-v1:sha256:34d66966b8b71f482a6e9019de955816f42a82eca4ef833dabfbcdd6c4151183:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDdhMDdhODNkZDE5OTZmYjUxNjg0YjQyYWVjYWY0ZTkwZmI3OGJhNzIzMGU1NDJlZDdiZDAxZDQyMzAxYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2MzlkOTQ3NTI2Y2IwOGZjMjkzZjU3MjZkZmIzOGI2ZWE2MWUzZmRlZGMzYjJmN2QwYmM3YjVkZDhmNDZkODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1NjgyNWU4NWM2MmU3ZmJiODVkMjhlZGE2YzBiOWJjMzE2OWQ1YjZmYmQxZmE4ZDc2NDY4MjVkOWY1NWFjY2UifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

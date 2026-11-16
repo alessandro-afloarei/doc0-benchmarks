@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d8dfde42907df525c0b8f9e06c68d3c8c7c0753e8ee0659e445045889bf325a0",
+  "claims": [
+    {
+      "id": "claim_cb176ff98c2340dcb5788c74d5ee945a",
+      "statement": "The enterprise entrypoint composes the base FastAPI app with SaaS routes, conditional integration routes, CORS/auth middleware and Socket.IO.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/saas_server.py#L38-L130",
+          "version": "repo-lines-v1:sha256:85c52574f9265a644df2696c4d6d4002d0d14a2d9af8b915bf6b0d89b810ff05:eyJzZWxlY3RlZExpbmVDb3VudCI6OTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiMzYxNDc5ZmJjYWZkZWE5NWZiZTRmY2VlMDM4ZmY0YWY0NGEwYzY5M2EwMzNkZTkxNGZjMjczMmZjZTIwYTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGMwNjFmNmEwMjc4MjVjNWFlNGNkODUyNzdiNmQ2YjgzZGNmNmIyYzU0OWVkMzk0NWJiZmQxZWEyY2QzY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1ZDEyMzg2ZDBjMjAxYzg5MzY3YjM2MjBkNzE4MjMxMjc0YzQ1NGFiZDk0ODRjNzFhNjI4MDRjZGU1NWNmZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_347469808b5448d4afcfd57bbb03f44a",
+      "statement": "SaaSServerConfig selects enterprise stores, SaaS auth/monitoring and a clustered conversation manager.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/config.py#L49-L82",
+          "version": "repo-lines-v1:sha256:c89e4d8b7d57d85faf48d4954dbb23016a872b2ce921c6af8e75724d54464cb6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhMTA2OTZmNWFlNzFjMmZlNDg1MzUzNmMzNzY5MTliOTg3YTA0MTJlNWIyNDVkMzc5YjAyM2YyMmM0ZmJmNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5MGU3MDA5ZjQ2MWE1MTcxMmJkYjNhN2Y4MWU2MGJkN2YwM2I5N2ZkZmZhYmZiZDQ5N2MwMjI2NmRiYzA5MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmYjJkZjlmOTA1ODEwODlhZDIzYjAyN2IzZTg2Njc0ZjZmNmExYTIyZWFjNzZkMjM2OWQ0OTM2OTA1MjQ1NzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5edc94925d244de1a22ea9688bf9535d",
+      "statement": "SaaS socket validation attempts bearer API-key authentication before Keycloak-cookie fallback and checks conversation access.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/storage/saas_conversation_validator.py#L78-L151",
+          "version": "repo-lines-v1:sha256:fdd16da00d3224f19f9f876ba06defed30d8fcaf3d210bf75c9f1b34c7fa7ed6:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ODg3YWFmZTE2ODkyZjMyNGFlNmQ0MDY2ODFkNWYzMTAyZDQ3NjVmYWJkNjE1YWEyZjZjZDcwODZiYjc5YzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMzgyOTZlYTYzZDg3YTZhODNmZWRiYTMzYjMzNTFkNTdlOTRjZWVmZmM5NTQxZWZmMmJiMWQyZTA4ZGIzZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzODJhMDAwODMwNzNkNGM0NmJmYWJjNGZiZDQzZjViNTFlMjI4MWJmZjY5NzY4ZTdlNzVmYzQyZmY0Mzc4MGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3MTkwNDMzNDEyY2ZkOWQ5YmUzMjRiYWY3ZGQ5NjMyZDViYTg4NzRkN2I5MjQyZDFjMTBlOTM4ZmM1NDJkMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3041329903a145d2813cf44477318858",
+      "statement": "ClusteredConversationManager starts Redis state-update and subscription tasks as an extension of standalone conversation management.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/clustered_conversation_manager.py#L60-L105",
+          "version": "repo-lines-v1:sha256:112f2aa5981af6e7cc5168ba7d66f0bb63db3c997211228ef29c14fadd49f8aa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4Mzc4ZDg4NDEyMDFiM2VmMDVlMTc2NjlhZjkyNzZjM2MxNzEzZTU1ZTg2NTFlM2FmNjg3N2ZiYTFkMWY3Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNTkwMzAzNWQyZDliYWZkOTg4NWE5Y2ExMGIzYmU3MTk1YzQ2MTc0ZGZkMTA3ZmE0NWRlYmJkNjNmZDc3MjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2ZTJmNDIzNjkyN2YyOTllNTY3MDhlNjdkZjQ2NWQwMTNjOWMyNjAwYjQzZTFjZmMzNzI4M2VjY2M1ZThkZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_17684702f7d94ec58915bc0f75843403",
+      "statement": "Enterprise storage configures PostgreSQL using direct DB settings or Cloud SQL with configurable pooling.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/storage/database.py#L11-L52",
+          "version": "repo-lines-v1:sha256:a97d7857eb9e42e19d50c068c14807bb46aaabb425dbec42263f23c52814b9d4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkMjc4ZWZjNTJjZGZiYjBjODdkY2QzYTYzNTg1M2UzOTkwYTA4MDNjNGQyZGUyYmNmOTc1ZWFjOTg0ZThlYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0Njg4Mzg5MzZlZDI3ZWI5ODhlZmIxZTUwMzk5ZjljN2FjNzJkZTJmMDU0YmZlNGI4OWMyOWRkZWQ2ZGNhOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiNzA5ODk0NjU1NDQwYjVlOTQ5OTY5ZTc2YTkwMTU2ZDVlNzE4ZWNiZmVkZmQ0MjlmMTAzYzcxOWFjMGE4ZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cdd89f5f87324b1f9a19db13e9579db3",
+      "statement": "Event callback processing persists incoming events, invokes active callbacks on state changes, and marks callback exceptions as ERROR.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/utils/conversation_callback_utils.py#L33-L126",
+          "version": "repo-lines-v1:sha256:fc246bf28284265ae40ab76fcf104c4c2a8677105103cb9d52c6f08f6589c501:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyMGNhNzJlZDFlNmExNzAyYmJiOGI4YWU3NGQ2YTM0MmRkNDUyNzE2NjkyOGE2YWRmOGIxNTRiMWM2MWY5YzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1Y2I2MTg0ZGY2ZjIzYjM2NTdiZDQ0ZjMzMzgwYTFmMWJmZDQxNjFkOTg5OTRkZDNjOWNiOTZiYzlmMjcyZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhMmEwOWVjNTg4MDBhNzBiMGIwZTlkZWUxMjJiYjZhNjYzM2U1OTY4NGZmMzA3MDMyNTY3MDIzZTVmMTM3OTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b8dc65d64f0841999313b95bbda34f38",
+      "statement": "The maintenance runner marks hour-old working tasks as ERROR and transitions pending work through WORKING to COMPLETED or exception-driven ERROR.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/run_maintenance_tasks.py#L15-L57",
+          "version": "repo-lines-v1:sha256:bb7478e3f31ea314f2ed1719c4cf4f0290ef4b4440a6d8ad8cbe0734f369975b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmNjhjMWM3ODY0OTc4NWFhNGNiOTYxNzk5YzgzNmNkMWE2YjA3ODg4NjlmOTUyOGJhYTMxM2E0YTZkZDRhMTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNDFlN2JkZjU3ODQzOGNjZDdlNWM3M2E4NjNmZTI5YzZjMzc1MTc2YmUxMTZhNjkzZjliYmI0M2M3MzAzOWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjYzAxNWMxZGEyZWM3Mzc3MGJhNmQ4MWYxYzYyMzZhNjJhNTM3NDA3Mjg0NjBmNzFlZDZkODhlM2M5Yjk4MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlYWZjNjAyYmIwYTMyYmU1MjdkY2M0M2IxYTJkNjc1ZWRlOGU1MTYwOGQxOTQ0YjQzYzZjYWE5MzJjMWRjOTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7b3b40716a84293954b457d5869fd7e",
+      "statement": "The enterprise image overlays enterprise code and dependencies on an OpenHands base image and launches saas_server:app.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/Dockerfile#L1-L26",
+          "version": "repo-lines-v1:sha256:3e7795518557a503ca922f4661e68d4a2128abbc5d07ed56fbf859da807ea901:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3NzBhYWU1OGJiNjFjZTY0ZTIxNTNjMTQyYzU5NTM0NDM4MTM1ZWYzOThmMzA5MGRiODE1ZTAzOTZlNWE0ZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MDgyMDJiMzVjOTM4MWU0ZmRkOTZhYjBiM2E2NWJhYjNmZDBkMTkwOTM3YmJkZGQzZWM1OGNmMGZlZTAyMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

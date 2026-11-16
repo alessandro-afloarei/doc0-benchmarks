@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c3c83f71849a28fbdfaa23a460d843be94e20dde15ad2b3c969d28eb4c0ffe33",
+  "claims": [
+    {
+      "id": "claim_d5ec227641444cf98123f561ba1bced8",
+      "statement": "CORS returns 204 for OPTIONS and lets other requests continue, while CSRF rejects targeted requests only when both fetch-site and origin checks fail.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/cors/index.ts#L96-L156",
+          "version": "repo-lines-v1:sha256:2f2266119ef16b3158a6a2f3cdb2013d5f35ce21c5b76d46bbc09782cf092088:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4OWMzMGNjZjk1MDAxNTI5NzE2ZGM2YzBhNmM1MTkzMzM4NWVhNjc0MzRkMjYzMzdlMjk5YmQwOWRkZDAwMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0NjUzOWE0MDRkMGRjNzVkM2UyNzU4YmYyYmZiN2M5NjExZjI0OTMzOTA5YTk1NmU5ODEzNDM5ZGNmYjVjN2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://src/middleware/csrf/index.ts#L94-L150",
+          "version": "repo-lines-v1:sha256:c78ca32f32121790e23a1fdf1716ba662772e80d5e954d52467318d68c1821f1:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMmI2MGY0MGQwMTgwZWQ4MzM4NmNlZDYzNDYzZTcyYTVhYTY5ZGM5YzM2MDU0NzEzY2E5Y2M4ODM0MTBkYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiODJmMTY2ZWUyNWJkNmFhMmYyNDQ0MmE3NTgzNGRjNjhiMjIzZjg1Y2Y3ZTdhZDRhOGQ0YWEwYjE4YTIwODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b599bb2af7d74bb08c1f5186b97bfd8c",
+      "statement": "Body-limit trusts Content-Length only without Transfer-Encoding; otherwise it counts and buffers the complete body before downstream execution and reconstructs the request.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/body-limit/index.ts#L50-L110",
+          "version": "repo-lines-v1:sha256:288114658566f98b1ba1194f2dd7a0aa43556fc6de1ed245ee01a88f3ede1815:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2YzZiNjI4MDk4NTgyZDdmNTZhZjAzNmQzMTA0NTc4YjhhODFlZWFiZDlhMTIwMGMxZmY1YmFlNWM0ZTJmMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3NzhkMWIwMTk3ZmE5MzQyNDFiODY0MTljNzA5MDg3NmU0MTEyNjMxMTZjNTgzMGUyNzFiNWY2YmQ1YmM3ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_48d92fa9724f488397646dce85854488",
+      "statement": "Timeout races downstream execution against a timer, defaults to 504, and clears the timer without aborting downstream work.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/timeout/index.ts#L12-L14",
+          "version": "repo-lines-v1:sha256:c83cad12c05967679c046fff1047f52d48f0b85f0cc59dfa54482bc04f938603:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODZjZjYyNTczMjlmOTBjM2QwMTg4YTdkMGY0MzA0OGEzYjBiMmFlNjkxNjk2ZjA1YTNiYjA3ZDM2ZDdhNzFmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODU4MGI3NjUxOGRhZTk3OWZhZWJkMDIzNjdhMjkyOTJhNTBkOTc2MDkyMjUxYTM4YTZjZTMwODgwYmE0MjgyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzRhZjc3MDc1YzY2YmQwNzI5OGZkMjM1MmQ1ZTc2ZTk3NzU5N2M5OTRiZmI4ZDUxMTFjZmM0MGI4YWMyOGE5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzA1MmFhOTczZWEyYmQ5NmUzMTA3OTgzZmQ1NzRjMmU0MGUzMjY3OWY5NmQ0N2EyZGY2YjNmZWI2ODQ3NGU4MSJ9"
+        },
+        {
+          "resource": "repo://src/middleware/timeout/index.ts#L38-L58",
+          "version": "repo-lines-v1:sha256:07552ac0d5e52f4901dd0ee7c6d968c390e5e81fad562b6a253550924b4cba97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNmI3NjAxNzZhOTVmZjY0ZDM0NzU5OTkwYmY0YWE4ZjQ0NWI0Y2JmNmZlNDFhYThlZmMwYzA4ZWQ5NTM2OTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb6861abc05a4ae391776bce92e61cd1",
+      "statement": "JWT verifies a Bearer header or configured fallback cookie and stores a successful payload in request context; missing or invalid credentials cause 401.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jwt/jwt.ts#L76-L156",
+          "version": "repo-lines-v1:sha256:6d7d3e10b0d2cd9f39f4996b6594f9701f2c4d13f4556a0ed37527986bcd3d72:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxZjBiZjg3Nzk4MDhiZTBjYWRkOWI2MmI2NzZmODcxNzZhMjEyM2RhOGNiODU1ZDVhMDNlYTlmMzg0OGFmMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4N2M1ODAwYTc1MDlkMzcyMTVjN2QzYmI0YzdjNDg4ZjlhNTJjMTA1N2M3ZWUwZjBiMGE4ZjIxYjZmZGU2Y2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2ZjVjNWYxMTM5YTMzNWJhMzU2MjFjYWY2Mzg1MTQ4ZDkwZWJjMmMyMzExYWY4MDBhMzEyNDIxMmY1NDc4NDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fcbb99dcdfe64a4ab2ad41b6cb99c8cf",
+      "statement": "Cache becomes pass-through if global caches is unavailable and bypasses non-GET requests or requests with Authorization.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/cache/index.ts#L141-L155",
+          "version": "repo-lines-v1:sha256:dfa0af2c77315cacef4677626a8f8a4686bf0182956aefc85e02ceadc0427ecf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNjFjNjg5NTgwZjM3N2I5MGNjM2Y1MTRiOTc5ZTlkNDUwODRiMzdkM2Q5ZDFlNjkyMmQ5ZTIxMDcyYmVlY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzYzcxOTQzNGJkY2M4MWM2YmFjNmNhZTZhZTQzZjEzOTBjMjY5OTI5ZGM2OTdhMmU4ZGU5ZDUxYWRjN2Q2ZTcifQ"
+        },
+        {
+          "resource": "repo://src/middleware/cache/index.ts#L73-L82",
+          "version": "repo-lines-v1:sha256:7a03b7807df97c96ccb0134975ca36819a3f3c940366fcb93cc7a183cc6ce1fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlZTI0MDA4NmY5ZTg0NjNmNGUxMjZkOTRiYzM2MGM2YzA5MDcxNWUzNjYyNDg4OTQyYzU2OTRkNjNlMjQyNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4NjAxYjA2MTIxMGI1MmI2ZjQ4MzkxMzVkNWJiNzE4NjhiYjZjN2E0OTc3ODE3MmM0Y2Q0ZDBmMzE1MTY5ZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMmY0ZWI2OGIxN2U0YmM4ZWUyN2YyYTZlYTM3N2FhMTk4N2RlZmY0MmRmNDBjNDcxNTc3MTMyZmJmNDU1ZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c3b103a02f34e6ab5ea1cea88558c04",
+      "statement": "ETag middleware examines downstream output, hashes a cloned response when necessary, and replaces matched responses with 304 while filtering retained headers.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/etag/index.ts#L84-L127",
+          "version": "repo-lines-v1:sha256:0d61b48e62e8b16540af1b6a7534675bf50611ae8cad54cdbc0df334a5bea21c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNjE5NzkwZDM0MjZkNWU5ZjQ0MTAxODk3YWQ2N2ViZDgzY2I5YzFmNWNhOGMyYTgyMjVhNTRjMTk5M2VlNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyZWM4YmE2ZmM1MjhiZWZlZjExNDNjM2JjNjNkYmQ1ZTI0OGE0OThiNzhmNjYyOWRlZDAzMGIxOWM2MDkyNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNzM5YTA2YzFjYmIxMjQ0ZTMzNjNkMzhiY2Y5ZmE1MGNlODRmZWQzOTljMjE5M2EzYzdmMDhkNTk5MThiMmEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:23:09.970Z"
+  }
+}

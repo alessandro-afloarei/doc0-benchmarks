@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:812debc1cbb1b8fc7a21b6c521598fe1bab78b2d77eb4b3352ba2d402b94b6ec",
+  "claims": [
+    {
+      "id": "claim_462bdea5c9af48e7ba13ffce5f3fcb7e",
+      "statement": "The FileStore interface is four operations on slash-separated keys: write, read, list, and delete.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/files.py#L4-L19",
+          "version": "repo-lines-v1:sha256:3bf84d08600c385dbbd9c4dc2565459443bc6d9639561223167855bce03950d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkNmNmYzEwZTRlNTEwM2ExZWU2MjM1M2Y4Y2Q5NGNiMzQ2Zjg3MWQyNzU3ODdiMjgyNDIyYzRkNzFiM2UxNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNjJlNThlYTBiMGZkMTk1YmEwNzY2MTNiNjMwZDU5ZTY3YmQ0NzBiYjE5ZTk3YTIwYzkwMjM2NmU1YmEwZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlNjFjMzkyZDMxYzRlZWRmYzhjYmVmZjViNGU5NjE1ZjhkZTgxMGJkMjI1Y2Y2ZDk4MDZiZDc5MDkxNTVlYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a22d748b4504e23aca61654d734eae9",
+      "statement": "get_file_store selects the local, S3, or Google Cloud backend from the configured file_store type, uses the in-memory store for any other value, and wraps the result in a webhook store when a webhook URL is configured.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/__init__.py#L14-L51",
+          "version": "repo-lines-v1:sha256:b0b26fbc10dd43bd5d4d7b5ae2cec3529ab1ade6c8bee576ce4132a435be01d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhNDZiOGU0MjFjMjJjODZkMGMwODIwN2YzZmY5MzFkYTM5NmQxYWEwZTk1N2YzZmFjNWU2MmRiZjRlNjQ5MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzYjFlYTNiNTliN2Q3ZmVkYzljYjQ4OTFjYmYyM2E4ZDhjZDNkZGJkM2ZhOTA2ZDE3NDdhOTgxZWQzZDFhYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4MzM0OGQ4MjU1MGNiNzY0NmY1NjIzYTNmMzRmMjg2MmY3YjQyNDYyNTFjNjcxOGFhZmQwY2Q2YjI2MTRlMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5NTVkYzMwMWQyMTdjOWU1ZDEzZGUxY2IxZGJmMmUyZjY1Mjg2NGM2MzFlMTMzNGM5ZTc4ZTYyYTNiOTFjNjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fc37b479d3c417193f7a3663514f06a",
+      "statement": "Conversation data is stored under sessions/<sid>/ without a user ID, and under users/<user_id>/conversations/<sid>/ when a user ID is present.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/locations.py#L1-L9",
+          "version": "repo-lines-v1:sha256:a5951a98676f058b53adc581cef71434f6d1c7a44b351ed8554f5bde0db1dc7f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGNhOWQ5MGQ2N2EzOGVlZTEwMTg4NjUxY2VlMjUxODAyNTdmZmEyZGM0NmZkNjJlZDBkMDM0MTgxNjY3NGI5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTlkYTAyMTE4YjdlMGIwYzVkNmMwYzA1ZDUxNzY4N2MyYTBjY2VkMTczMWYyMjQ3Zjg3MjExM2JjOTY1ODNlOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e1196854456f400a842cf6f40f063340",
+      "statement": "Each conversation event is stored as a separate JSON file named by its integer ID inside the conversation's events directory.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/locations.py#L11-L19",
+          "version": "repo-lines-v1:sha256:9d533923a20b0464d53fd71e6687bd6ecc948f65fb23049b4c0828971b52eabf:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdlMjQ4N2U3MWMxN2VkMmU0YjQwZmMyMDBkOWFkYjFjZTZmY2IyOWEzYWJkMGNhNTNmOTU3MjYyZTgxNmI2OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzM2NWMzZTM1ZDNjYTMzMDc1ODE3ZmQzZDljMDY5NTAwY2E5NGY0OTA5ZjRjNTFkYmMzMTEyZjEwYjg1MjlkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQwZjFiNTAxYzI2NTFhNDY0Nzg1NGIxNTJlOTMwZTMwYTlmMTJmM2QzMjFiNTg4MDkzNWExNDFkOGRmODlhNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d92b1a707a248b18bc94e5408a4f49d",
+      "statement": "FileSecretsStore.store writes UserSecrets as JSON with secret values exposed, so provider tokens and custom secrets are stored in plain text in the file store.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/secrets/file_secrets_store.py#L34-L36",
+          "version": "repo-lines-v1:sha256:379e9420134a88b27ea3822d414f26a8b5016a31c0d46f0dfe66ed4e683589e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE1OWU5MDc1MjhiODNmNzBjMGVlNDZiNThkYWZmMTg4YTA0NjFhMTAzMTQzNmY0YWJjNGFiMTBjY2MyZmFiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDVjNTEzZjFkNWVjNzUzNmRhOTc3OWMwMmE3OGZiMjZiMzU3ZDg2ZmQ4ZmUwMjA0M2I4MWE1MjE5Y2YyOWZhMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGY1NTBlMmU2YzRjNzZjY2RhODk0ODkwMzViYmJhNWIyMTIyOTVjMGVkMGVhODFmYjJiZTI0NzEzYTc1NzRhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTZiNDFlNzAyMGRmMGU1NWI3YTgwYTZmODA2NjlmZGFlNDZmMjZmNDcxMDVjZWRmMjE2NTM5OWVkOGE1OGQ5YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_38aca5c838a3471786bc872d6d713427",
+      "statement": "UserSecrets exposes provider token and custom secret values during serialization only when the serialization context requests exposed secrets.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/data_models/user_secrets.py#L44-L64",
+          "version": "repo-lines-v1:sha256:5fb143d5786998ca7adcf1fd22ed51817cbf43be97afbdffc2ac0634d1e10327:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5YWNlMDI5MTI5ODkwNzc4Y2Y0NWQ0YTRlMDY0MTc4YjFjMGM1ZTE3ZDczNTBlODhlZWY2YWNmZmYzOTQ2NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwNTNhZjI3MGIwM2JlMGRhYzhhYTM2NmFjM2ZlZjdiM2I0NTMwMDk4MTk2NDc3NGJjNmQ1MTM4MGEyZjA3OTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMjg2YTgyYjE1ZTlmNzAxMzM0ODdiNWY2ZGM3ZWI1YTkwMGNkZjI0OTIxYzc0MmExNzFiYjUyNzY4YWJmOWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4cfa6b9714e4874893f400f34f8ee2a",
+      "statement": "FileSecretsStore.load and FileSettingsStore.load return None when the underlying file does not exist, rather than raising.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/secrets/file_secrets_store.py#L19-L33",
+          "version": "repo-lines-v1:sha256:5a5582d884c06095e2fce0f80616a1b09556127c4c59f93acc14c30e1383e38d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhZDc5N2FiNjczZjRlY2Q2OWNjMGI5M2RkOGJhMjU0N2RlOTBhMDc3YzlkMDhlYjJiMzBjNDliNDUzYmNmZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmYmYwY2FkNWY5NGU0ZDBiYjQ2OTRlM2NhZTU5MjYwMzRhNDJkZDUxNDAwMWQyOTcyNjc3ODA1MzhjY2E5M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OWU5NDIwMTM0YTg4YjI3ZWEzODIyZDQxNGYyNmE4YjUwMTZhMzFjMGQ0NmYwZGZlNjZlZDRlNjgzNTg5ZTQifQ"
+        },
+        {
+          "resource": "repo://openhands/storage/settings/file_settings_store.py#L19-L27",
+          "version": "repo-lines-v1:sha256:e827dc53ec88ed9509c004c7b704a1580d5b41b2e07cd19a16de2fb9de5b10c8:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTgxMzAyZjA0MjcwYjJjMWJhMjZjMTBjMDA5MTljM2Y2MGE1ZjljZGJhNWZhZDkxNGY1MmFmZWM1Y2E0MWY5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmU1MTdlNDRiN2UzMmRkMjBiNzEzMTAyZTEyYzkzZTU2OTY1YjYwMzk3N2IyYjYzMGVhMzBiYTdmMjU2ZjY5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWU4MmY5MTVlODIzMzYxODc0ZTY3MzJiODY1OWVmYTU4YWRiMmFlM2Y3MDhmM2RjMTA2ZGRkNjFlYzE4ZDE0YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a244e91ec4940eea705592e701e893f",
+      "statement": "S3FileStore takes its bucket from the constructor argument or, when none is given, from the AWS_S3_BUCKET environment variable.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/s3.py#L23-L31",
+          "version": "repo-lines-v1:sha256:719d648a0336327fe3e9607518e31ef3c56ee2c2e745515a65a7b65d5b5bb0fb:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJiODU2ZDM3NTk2ZWU0ZTAzOTM3OGQ5NjAwNzljY2NhM2FlMDRhYWYwYmZmNzU1MTVlNzFlOTFhYTVlZDcxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWYyNzIzNDUyOWRiZWI5M2ZkZWE3ZTQxMWY1NDhjZTJiNTI3ZmYwNmU5YTMxNzhlMTY0M2JkZDk4NGJhNDdiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNjYjU1MmEzYzcxOWMyNmRiZjM5ZDNkNzcwNWQ4YjBiNWFhMzY1NjBiMzg5ZTIwNzIyOTQ1MGY5MWI2NDVmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTM5ODcwMmZmNTdkZjkxMTdkNGIzNWM1MzQyNDI4YTBjYTg5YzVjZjIxZTU3ODBlZWY3MTBjY2Y0ZDg3NzY0YSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:04d86c66debb0c4c23a90457d331ee6ea58aa104da1a5b16ee1d6dda3546c2fa",
+  "claims": [
+    {
+      "id": "claim_0878ccb5a690402eab69de0a0fda0f84",
+      "statement": "The Consumer blueprint's default steps are Connection, Mingle, Events, Gossip, Heart, Control, Tasks, DelayedDelivery, Evloop and Agent, and extra steps come from app.steps['consumer'].",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L171-L190",
+          "version": "repo-lines-v1:sha256:144e7887eb09d9e295db93ec4a7d91cbd0d803748107ae76a1683a6e1305d9f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOGY5MzExNjlkNWE3YThiNzA2MDk3NGMxMWVjZGRjNTJjMWVmYmViNzQyNGU4YjEzYmViNDU5MTZhMWJjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmMjIyYzQzNTM5MTJmOGE5OTU2OWMxNzA5OWI2NTM3YjQzN2M0M2M1NGRmZTU2ODIxNGRmZGU2NDBhNDM3MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjMzgzZGE3OGU1ZDM0NTg1NDhlY2Y0YTM3ZTIwZDFjZDYwMjViM2M1MDFlMjQzZDk3YWQxZTExYTUyZTMwNmUifQ"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L248-L253",
+          "version": "repo-lines-v1:sha256:eefa491f333f2b2b7cfbafb5c8cd4dbf084d8e37260b47c0e1492b57b1d1c739:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmZiYzkwMDJkY2ZlNzFjYzJmNGRlOWM2OWU2ZTM0ZTI2ZTAxMzg3ZGYyZmYzZDBhMGQwMWEzNTQxZGJhMmM3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk5MTdjNzVlYWY3YzM2MGNlYmU5NTJiM2NjYzI1ZDllNmFhOGY0NjE1MGVjYTVmOWQyNjU3NmE2NGNkZWI3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWVkMWYwZDQ3ZmRkY2I0YmFlOTkwMmIxNTM4MTk0NjBiNDZmZTliNDBhNjRmNGM5ZGQ4OTZjMTNhMGEyNTgzMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2YwOTMxODY3OGQ5ZWJhOTQ4ZjQ0YjQyZDZlZTMyOWVjMGY1ZTUzZTFkY2IyOGJlZjVjZDc5MmQzYWJmZWFkOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd6f129b4d16468b86fb7e83ffa17555",
+      "statement": "On recoverable connection errors the consumer shuts down the worker if broker connection retry is disabled, terminates on EMFILE, and otherwise closes the connection, optionally cancels unacked acks_late tasks, reduces prefetch by the active request count, and restarts the blueprint.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L366-L491",
+          "version": "repo-lines-v1:sha256:bc70ae2ce8e837de7fd51b09bceaf42999837c03831c4ce7d955e4b8bc42c915:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzMWM5NTNkNmIyYzVmYTMwYWM1YTUzOTBmZWYyNTAwN2M3MGRlMzU4ODFjZDhhMzQ3OGIxM2VlNWM2ZWZmNGYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkMDAxMDVlMGE2ODUyMWMzZDMzMjYxNTM5MGU4NTllMzljZjI0MTI3NGE3ZDc4MWQxOTZhM2FkYTA3YjEwZmQ3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1ZTcwZmYyNzcwYWQ1ZGMwNmZlMjMxMTFhYmQ3NTY5ZWJmYzA1NzI2NGNiMzA5ZWE2ZjhiZTJkZjU5N2I4ZDI1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4NjVjMWRhNTNjZjliNDZhNTdjODZiZDgwOTk5OTMxMzZlMzc2YWM3YTNjNGUyZWZjMmZmNjMwNzhmMTUwNmIyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_6193680a81ca400a8a3686aee464e3b4",
+      "statement": "The Tasks step sets the initial basic_qos prefetch and wraps it in a kombu QoS capped by worker_eta_task_limit; worker_disable_prefetch is only honored for Redis brokers.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/tasks.py#L1-L90",
+          "version": "repo-lines-v1:sha256:65554cf9d8b0a493e4330316fb5293ab363840dac9c9b856ef2fd72ef48412b3:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5MWY0Y2Q3ZjU3YjcyNzI1YmUzODM3YzAxM2RiMTU4NDI1YjFkMzIwN2YxZmVjZTM1YzQ1MGEwOGQ3Y2ZhNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2YjhlYzM3YjIyMWU5YmQ2MDcwODg4NTQyMTNjYzRhM2RlZWFjMDM4ZjI3ZGNlZmQ0MjQzZTZhODZiMzA3NWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_07d217bb8f6745c3920d429e3188d0cf",
+      "statement": "worker_prefetch_multiplier defaults to 4.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L356-L356",
+          "version": "repo-lines-v1:sha256:0bcf7992ca8b0d6add7dcd123313462cb2b105346ed0deaa1460211141cf9017:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJjZjc5OTJjYThiMGQ2YWRkN2RjZDEyMzMxMzQ2MmNiMmIxMDUzNDZlZDBkZWFhMTQ2MDIxMTE0MWNmOTAxNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJjZjc5OTJjYThiMGQ2YWRkN2RjZDEyMzMxMzQ2MmNiMmIxMDUzNDZlZDBkZWFhMTQ2MDIxMTE0MWNmOTAxNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjgwYWY1M2NiYmY1ZDc3NWUzMWExZTlmNDdhOTBiNTdiYzg0ZDIwODhiMjIxYjJkNjQ5YjMyM2UwYWY0MTljMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWU3ODI5NDU2YWQ2OGY0NGIwMjEyNGE4M2EzM2UxODRlMjI2MDkwNzE4ZDA1OGQwOWMzMDY5YzY4YmRmMWJhNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a96537f9b954dbc8a9a2d974705b591",
+      "statement": "Messages for unregistered task names are rejected, recorded as a NotRegistered failure in the result backend, and announced via a task-failed event and the task_unknown signal.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L677-L708",
+          "version": "repo-lines-v1:sha256:35e6cbe564947a25f688027d2f581e242993ca9ca68f7281302db35aa78ca42c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjZjVmNjg3NjVmN2EwZjRmNzBhYzhhZWUzZjlhMTJmOGIzYjkxNzU5M2JmZjM2Mjk4ZmRhYjc5NWNkNWFmYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5MzU1ZmZkNTIzZGRiZWQyN2UxNjEyNTg2ZDM4OTMwNWVkNTNhMGY5OWY2ZGVmYTY1NjJjOGY1YTM5MjliZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0Mzk1NjYyNDQwMjBkMmJmZWEyYWNhZGJmNGEyMzc2NjVlMDQwN2FhYTYyZTAzMmYyNzk2MzU2NDI5NDhjNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2a37136eb424e208cb5fc656d3a777f",
+      "statement": "update_strategies builds a strategy and a tracer for each registered task; the default Task.Strategy is celery.worker.strategy:default.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L222-L222",
+          "version": "repo-lines-v1:sha256:8f4a5aa190daf72a342592dc661aa21612bd83b8d254a3d999aaac1532fccfe9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY0YTVhYTE5MGRhZjcyYTM0MjU5MmRjNjYxYWEyMTYxMmJkODNiOGQyNTRhM2Q5OTlhYWFjMTUzMmZjY2ZlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGY0YTVhYTE5MGRhZjcyYTM0MjU5MmRjNjYxYWEyMTYxMmJkODNiOGQyNTRhM2Q5OTlhYWFjMTUzMmZjY2ZlOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJkZjZiOTMzNzA3ODA5OGRhMmNlNTZkMWM5NTQ4NzE0MWQ5NGVkNmM2OWJiZDAzOTY4NzEwNTI4ZThiZDE2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGFkMWI2N2JmNDRhOTFlMDU3OTE2OTIyNDE2MDU5Njg1ZjdjMGQ3MjJkYzI1MTg2ODQyMjZiOTRlNWMwYjFjNiJ9"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L716-L721",
+          "version": "repo-lines-v1:sha256:3b6d9ae0872fe3d1f9a5322cf9eb714bae927b95d3f1e048c1175b6043c0e582:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNmOTFjNjAwZDcwMWM1YmM4YmViNjZiNDRhMjFhOTg0MWEyMzk1MGU2NWI4YTU4NWNjZWY2ZWNlYjU0OTQ3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjhlYjQzNGFkYjcwZDkyYmZjYmM0ZjQ4MzllMjAxYmU4OTYxN2Q1NjVlMzZiY2EyODk4OTZhNDU2ZWRjYjI0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTJmNDM5M2MxZTNjZTRiMzc5NGIzZTQxZjQzOGQ0NmQ3MTVkOWM0Zjg3MGVlMzI1NjBjODY2ZGU5ZjQxZTZiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQzNmQ5YTQ4ZDNmYmNjOWEzOTlkOGZhMDA4ODY1OGYzYzZkNDcwY2ZhYTg3MjkxZTU1YWUyZTRlMWEwNmI3MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d98e6da438974c8d99808e617dd34754",
+      "statement": "ETA tasks increment the QoS prefetch count and are scheduled on the worker timer; apply_eta_task later reserves the request, hands it to the worker, and decrements QoS.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L659-L663",
+          "version": "repo-lines-v1:sha256:e8d993208d35a634f509322ae94600c49f1aab318a5342bb58edbdc998148441:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2UyNjIwNTMxNmRhY2QzYWQzMjVkM2Q1OTU3NzZkMzVlYThmOTc1YjVkNWI4YzdjYTFkYjY4YTc4ZjA3NmI0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY5ZTNjMTNmZDNkZWM2MDcxZWQ4NjE1NzE1OWVjYTdjODExMWYxY2QwNzU5ZGJmY2RjZjBjYTQwNDg4ODMyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjU0MDcyZjcyMDQ2M2IwZTFjMDMyMmJiOTFmMDg4MDMwMmY1YmJhNzNkMjZkMzBiNWZkZGE0NTUzMjVkNDI0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTBiMmE5MGNhMjNiNTMzYWI2NzcwNGI1YmZmZWQ0Y2FlMTkwNWMzY2Q1MjlhOGU0NGMzMmQwMzdiMzk5NjQxMCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/strategy.py#L185-L209",
+          "version": "repo-lines-v1:sha256:e1252b50b07c8d043f943f41641dcf613ee3bba034a975ebf8679beb43bf47fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMTA0Mjg2MTIxNjhiNWMyMjJmYTg3OTNjMzlhNDE3ZDVlODFkNTExNGI3NDkyM2M2NjVjNWU4M2M0ZWYwYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3YTgyODk5YjUyNjI1ODdkMTMyNjljOGI3ZjEzOTYxOWVmN2Q2NzgyNjc0ZTc3MWY5ODhlNWExNmEzM2QzMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwZWUzODBiMDk0MTdlODNlNTMwMjU1Mzk2MzIxMmU1NWIxNTk5N2I4MWExOTc3ODc3ZGI5ZGZiZDEwOWViZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4614375fb48f4126a1e8c95e4e92007c",
+      "statement": "asynloop drives the kombu Hub, verifies pool processes started on first start, applies QoS updates only when changed, and resets the hub on errors; synloop blocks in drain_events with a 2 second timeout.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/loops.py#L40-L160",
+          "version": "repo-lines-v1:sha256:43a32b975934414ed26ea32276754f2163896f67e543daf317d1dda15f10c021:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmMzAzODA3ZDZkNjE0MGQ5MDhmMzIzNGY2NzgzODJiZmExNmQwZjI4NjhjOWJkOTlmM2VhNGM2OGM5Zjk0MzU4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlZjU5MDA3OTIzN2QwZThmOTQ3N2FlY2Y4NGQ2MGI3MjBmNjM3ZTdlYTFhZjAxMzdiZjY4YmIwNTc1NTY0MmQ5IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0ZjZhMGNiOWZkMDkxZjA3OWQ3OGQzNjI5NGQzZWI5ZGY0NTk2NWEzNmYxNTdmYzIxOTZiYzAyMjkwZGNiN2ZlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyYjQzNTVlZWNiMjlkNmYxNmExNWQzODI0MWMwMzE1NTRhZThmNDM5MGY1ZjcwYmFhZjZlMzVlZGNkMzBhMGY3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b3ca99252394fa998e7fecb89cc44b5",
+      "statement": "Request.revoked treats expired requests and ids or stamped headers in the revoked sets as revoked, marking them REVOKED in the backend and acknowledging the message.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L408-L509",
+          "version": "repo-lines-v1:sha256:20ba1303c7e2380c3d6a659c3491d84a37200b3fc69822492c5818d41b991edf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2NTYyMmJkZTkwMDkzOGY5NmE4M2M0MDY5ZDc5OGQ4NWFiMTA4ZTFiYTkxMTE5ZjEwZjkxODUxYmE2MzlkNTE3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiOTdjNzEyNDdhZjNjZDFlZGY1NTVhN2QxMDc1OTMxNTdmNmRjMmEyMmFmMGRlODJlNzc3NGFiZjEwZjhhZGUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyMmQ5ODViODNkNGM5YjhkMmY0M2ZmODYyZGViYTU2NGNjYzg2MTBlMTAzNDNjZGZlNTA5OTljZjRmYzBkZjBmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3MWJkYmVlMjE5MDdiZjJhMGIyZGRlMmVlZTVmYzFmMmZjNzlhOTExOTdhNWQxZWE5NDk2NWRjZTI3NTg0NzFlIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_64f8202b0f704e86ba090d89ff81185c",
+      "statement": "With acks_late, a lost worker with reject_on_worker_lost or a time-limit failure without acks_on_timeout causes the message to be rejected with requeue and no failure stored.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L622-L728",
+          "version": "repo-lines-v1:sha256:f37dd2dbe308b4eb935cc2b39283da4898220530b8f4e7e59ff89d2f8864c0c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5N2UwNTA5YjhjYjY1MWZhODZlMGMzOThmM2U4MzU1Zjg3ZTc5M2QwNGFhOTg2OTIyMGE5MGNkZjVlZjYzMmQxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJjYTFiODhmNDE5YjE1MmUwODNlNmVlMDNhOTAyMmYwNjhkZTc0NzUzZGY4ZTcwZDY4MThmZmVhZjM1ZDRiNDRmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3ZmMyNTM2Y2M1YjM2YjA0ZTliMmEzYzNkZWVjMjE1MmU5NzdlYWYyMWMzNDBhZjk1ZjljNTlkZTJlMWI0Y2FkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2YWQxMWVmMmIyYWNkOGIwODIwYTNhZmM2NzIyMDc3M2FkN2EzOTliNjM3ZjYzZGNjYzk4Yzk1OGU4YTRhNjEwIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_5cb8ef94a23f498ca2e5262315eaf474",
+      "statement": "When quorum queues are detected, ETA/countdown tasks on non-direct exchanges are published to the celery_delayed_27 topic exchange with a delay-encoding routing key, and the DelayedDelivery consumer step sets up the native delayed delivery exchanges and bindings.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L934-L960",
+          "version": "repo-lines-v1:sha256:5def203de7eea2c58a7c9a815bb0ad445d2dcbfd7500071ca4e8fd4b50c737b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4OTUwYTg2OTViY2JlYzFiOTMxYWM3ZTIyMmM2ZDYzYzUwOTc3MGIxNmJjMTdhNjc1OTc0ZmIwMzg3ZjJmNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMGNjZTIyODM1N2QxNjM2MDRhMzllYTM0MTFhNjYzNGJiMmI0MmZjNTFkYWM2YmMyMDQ1ZmQyMGRjOGFjZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxYTVkZTQyZTg2YjlhY2IzY2Y3YjczNzcwMzkxOTBmNWJkMjUzNTEyNjQ1MzdjYTJlMGVlNzY2OGI4MjQ0NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1NGI5MjlhN2RiZTU3NjViMWE0NjdjMDFiZDRmNGE3NzM2YmRkMzY1ODBlMjVjNjkzY2EzZjg2MTBiYTE3ZmUifQ"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/delayed_delivery.py#L55-L70",
+          "version": "repo-lines-v1:sha256:a1b3d68aecd208ec0bb1f5d9c9ee2818fd3fb8c75dfef6f55dafb4d26155ce69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2YTIwNmViZGViMzg5NWNkZDE1N2VkNzg1MjA3YjUyODNmZGVhODMwMGQ5YmEwYmM5NTc0M2RmZGFjOGZkZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzMjZlYmU0MDM5NzVkNDgyODYxNTA2YjgwMWNjMjg1NGY1Njk1ZTI2NjU2ZjZkZWY4ZWY2MTNiODBhZWRjYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczYTg4NzMxZTE0Y2E0MmFjNzc5ODU4Zjg1MzFhOTQ4NjQ2ODNhMDEyMDhjZGIzYTk3YWEzMjg0ZDQ5YmZmNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5YzJhZGVmMzlhZWU1MTExZTFiYjg4YjE1ZWY4M2VlZmRlN2M2MzE0OTIyY2YzODY3MGIwYWM4M2I5YmJiMmUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:57:55.789Z"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:37e18b39ca9198b9543af7f82077ae2778293cd5d076268b279b4bdd5873dfad",
+  "claims": [
+    {
+      "id": "claim_80c2ba7ab8674475ad09d390eadf1360",
+      "statement": "createRoot returns render and unmount functions and wraps the first render in a component whose useState setter is used for later updates, so subsequent render calls go through the normal update path.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/client.ts#L23-L70",
+          "version": "repo-lines-v1:sha256:9560085fb05639160ee724a37e8afa973480e1ad8075debf03551dbc338e0510:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZTNiMjRhYjVmOWM0YzZhODRiOWE2NDg4OTU3NjY4MjRhMjM0MmE3MjkyY2I2N2U5MmI3MmI5ZDQ2MjcxY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4N2IwYTk5OWVlZTc3MGNkZDBiZDMzMzIwZGQyNzkxYzQyMzY0MTY5YTdhZDc5MjAxMGZhZjM1ZTM1NTEwM2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmZDhiMGFjYmNkNDgzM2JhZmE2ZmFjNjMzZGM3ZTJhNWI1YzFkM2UyMzM1ZmE1ZGU3MmNiYmFmMGM2NWM3MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyYWU3NWUyZWEwOWZhMzQ3NjBmZGIyN2U2MmYyNTVkM2I4ZjNlMzVkMjRmMDkwODY3ZGFmOWVmZjExNzlmZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff4adc51b143452d80d27fd698ae1a7f",
+      "statement": "createRoot warns and ignores any options passed to it, and a render on an unmounted root throws 'Cannot update an unmounted root'.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/client.ts#L23-L35",
+          "version": "repo-lines-v1:sha256:9484fae7601b2918db3638b41f2dcf32debb63157c29bc0b4c611478721f4691:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZTNiMjRhYjVmOWM0YzZhODRiOWE2NDg4OTU3NjY4MjRhMjM0MmE3MjkyY2I2N2U5MmI3MmI5ZDQ2MjcxY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmZDhiMGFjYmNkNDgzM2JhZmE2ZmFjNjMzZGM3ZTJhNWI1YzFkM2UyMzM1ZmE1ZGU3MmNiYmFmMGM2NWM3MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyZDhiNzY2YjNmNDc2NzZlZjY0ODQ2NjYzODllMDllYmNiNGE0YWZhMDA1YzY5N2Q1OTZmODQwNjc0MjliMzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bac8a34db68d42b3a7dd3ab7e16677d3",
+      "statement": "renderNode builds the node tree into a DocumentFragment and then replaces the container's children in a single replaceChildren call.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L783-L794",
+          "version": "repo-lines-v1:sha256:a9938df1c45ecea8541c3667d6999af30cd841617fb91c3aa0f4a951ea3adbfd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNmEzNmIyMWMwYTBhNDM1MTY1ODNmODRhODJiYzFhODllZDFmZGRmM2JiNjhmMzc3YWI0ZjcwOGE2YzRhMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5Nzg5NDI2MmY3MDc3NTlmZjRhYTg1Nzc1YmNkOTAyNGJhNDkyY2I0ODJkN2MzYjhjZmZjYzJjODRmZGE0MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxNzc3OTMxNzM0M2RkN2RjZmU0NDA5YTVlNTFhMDUwNGM0MzE5NmI1NDIzNTliZWM4ZTEyNGM0YTY5ZTViNWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec19d9503da24a25a44fff6deae23992",
+      "statement": "update() coalesces repeated updates for the same node so only the latest queued update runs, and outside a batch it waits one microtask before running updateSync.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L740-L780",
+          "version": "repo-lines-v1:sha256:0ea409b006a1e6d02311527dafd0cdaf64d9638c3a57d58ad3eebd14b9a8c07b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyMDg0NTlkYWM0ZDA4NjIzOWE3ZTgyZTNmNDAyOWMyMTdhOWFkOWE5YmM2Njc1ZmViNzliNjE5ZjM3MmRhZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2NmI1NGEzZTBiZTZmYTg0NTVjMjg0OTJmYzQ2YzAyM2Y3NmI3NDlkYjA0MDJhOWFjZjI5ODRlODg4ZWM0ZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkN2I4NzZlN2QwNTFhN2ZjNjU2MzhlNzhlZjA3MzJhZTM2NmJmOWVkNjdkYWM4M2UwMzkwNWQ1YjQ4NWQ1NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhNzRkMDg0ZDdlOTJkNmIwZWI0ZTI4ZGYyZDIwMWM1MzUwNDQwYjdkN2U1ZDFkYjY3MzAzMzdmN2MwNjJhNzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f00be0397aa4c2a8dfde0775f3c18c7",
+      "statement": "updateSync rebuilds the node and applies the DOM only after build succeeds, skipping application when the node is marked to cancel.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L713-L738",
+          "version": "repo-lines-v1:sha256:b383eef7261c5b5aab9a4095a74be5e278d7011a08cd3c129789bec1d77142fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2ZDM5MTNlNDlkZTQ1NjkzYmMxYTZkY2E2ZmU3ZGRiYWZiMDE2Yzg2MTFjYjQ1Y2E4N2RlODIwOWQ1NWI2NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmOWJhOGY0YmQ5ZmI2ZjA1MjU4Yzc5OWY4MTk1ODYxNDYzZGVmOWE0NWYwNmE3OTJiZTYzYjMzNWM3ZDliNzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlYmY3NjkyZGZiYzQyZTg3NWY2YWI5MmU5Nzc5YzBkNmZhZTNjNjhiYjI2MzY5MWU3NGM2MWE5MzEwMDE0ZGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ffa709d02154a00b88891a9af7af9bc",
+      "statement": "ErrorBoundary marks its child with DOM_ERROR_HANDLER and renderer code looks up that marker to find the nearest error handler.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/components.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:198d5e5db2b74921a0b2adb52b736f1f00488a54fe583603e40365c7eecfde5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzNzdhZjM4M2I1MDI2Njc2MDMyNmI1NjAzNDExMDNkMWZhZTk0ZGQyNGQwZmQ0MTYxNWVmMTgxZTRkNWZlNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMjRkYjU5OTU3ZmZmNDI0M2VjYjkwNDNjMTUzY2ZmYTk2ZGVlYWNlMzIzM2E3NzMzM2E5YWNhNjI1ZjUxMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxYjQ5NDMxZTg3MGUyNWFmMmI0OTk0YmU4OGEyYzI5NmVhNWFjMWRjN2M4ZDYyMDk2NGZhNWY1YTU3NjJlYjMifQ"
+        },
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L506-L512",
+          "version": "repo-lines-v1:sha256:4ac64c220f589986658a00fe9e73b668a91a1decfeee27286118ad62cdd56f53:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU4ZTAxMzQwNmQ1ZTQyMWUwNzkxOGY2YWQ0OTAwNzQ5NDcyNWY1ODE1NDA0ZGQ4OWUwM2MzNGMzMTI4YjViMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODM1NDQyNmYzYmIxZDI0Mzk4NzhiYTlhZjI1ZGU4MjkxOWQ1MGZkMzg4Mjk3ZmU1NWQzZjEyMjk2ZDQyMzM3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWEyYjdjMWE5MjA2ZDk1YjljNjA0MjRlZDJmZjUwNDNmMzAxZmRjMzVmMWU0MThiMGNlOGRiYjc1NWE3Y2RhNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e3aae15a3b84bc5919ed1a6816f8ffc",
+      "statement": "The hono/jsx/dom index exports ErrorBoundary, Suspense, useActionState, useFormStatus, and useOptimistic from the DOM-specific modules.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/index.ts#L1-L40",
+          "version": "repo-lines-v1:sha256:f999c175a7d07c660b994a375bc4133cdad28c3f53ee6a4bfa882816de259a4a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3NTQyYjFiMjZjYjViNzc4YTE5NDg5MjJhMDEwYTZiNDFiODlmMjBiZGRiMmZjNjIwOWFkNDhiNzI0MzU5YTIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

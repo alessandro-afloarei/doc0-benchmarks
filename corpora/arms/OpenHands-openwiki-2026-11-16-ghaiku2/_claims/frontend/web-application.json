@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d6c50743571c9c8ca61499a69ffd210603aef119d3106b098efe6477a4e8c9d2",
+  "claims": [
+    {
+      "id": "claim_3434133d80154bde9a728766927c4e34",
+      "statement": "The application routes are declared as a layout with home, accept-tos, a nested settings section, conversations/:conversationId, and microagent-management.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/routes.ts#L1-L22",
+          "version": "repo-lines-v1:sha256:f92154cbee01f5e1909868a6d2fe38bb9e6ee1c3df0ebb56543c9933ecd28297:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MjAwOTY0YTk3ODYzNTUyMmIyYWIwOTBjNjUwNjVkOGVmOGU4NWM0NzMwYmIyZWIwNDYwZDM0YzY3N2RkYmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYWIyMjhlMjFlN2JhMmQ2ZWFhZmM1MzE1MGU2ZGUwNTRkMWRkZTIyYzhjOGMyNWY1MTcyNDNmMDBlOWEwNTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1Mzc5M2Y1MjUwMzA0YWRmNTAwNzFjNTYxMjU3YzNkMzhiMDdlNWY2MTQ2ODQ1NTRhOTIxYmY2YjMyN2RjY2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8db324824d5b40f180d4703e561a87a6",
+      "statement": "The shared axios client takes its base URL from the page's protocol and host, or from VITE_BACKEND_BASE_URL when that variable is set.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/api/open-hands-axios.ts#L1-L8",
+          "version": "repo-lines-v1:sha256:1250a17265f6d50450cee6a0934bd23d191bd54561d1066c2d74d05b16a3041e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDViOWNlOWViYzdlYmI0NmY0MjQxMmJhYjJjNGRmMmJjNjc2MmRhZWVjOGU4Y2Y0MjdiYTIwZTlhMDlhMjk2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk3MWMxM2VlMzYyM2Y4Y2VjOWFiN2JlZjEyMGIzZDliOGJhZjViYTM3MmY0ODhiY2ZlNjM3MWZiM2FhYjk1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWI3YzA3YzM5ZjMzYWFmNWRjOWU5OTE2ZWQ1NWU0OTgwOWQ0NjEzZjA2Y2I3ZmI2NjZmOTFmYTJjMGRlOWEzMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_23175236c8174358b5d61958fa4f5f9d",
+      "statement": "The WebSocket provider registers handlers for connect, oh_event, connect_error, connect_failed, and disconnect on the Socket.IO client.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L336-L352",
+          "version": "repo-lines-v1:sha256:d705b01e7f9092391104758a2979e47fe6ef383b83466d563879805b42be1564:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiYTU1ZWUxZDNlYTMwOTgxNGY4ZGYwOGQ5NTIzNTUzNmYxMGM3NTNkNDRiZGMzMTExZDQ1Mzc4MTg0OWFiODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4N2M2M2E5MjY1MGUyMjBkMmZjODljZjA2ZjYzYjRjOTlhNzUwM2Q2YmIwOTE1MzJhNmIyNzhmYjI5MjU0YjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1MjVjYjdhYWY4MzU2YTAzZGRmNTZlMmM3ZjJjYzJlNmMxZjM4ZTVmNDUxYWQ0YjBkNTI5OWRmNGIwZWMyMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjMmZhZDU1ZTAyOWY1NTFkMjZkNjI2YjRhNmIxMDY1MWMwM2IwMzQ4YmM0NDc3ZjllMjliYTFjMzQ0NzU3NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce20e968b4f84c0c96d8adbf3ab44823",
+      "statement": "Each oh_event message received on the socket is passed to handleAssistantMessage, which routes it into the Redux store.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L159-L170",
+          "version": "repo-lines-v1:sha256:c34de2dd44066c579903d6aeb15aea7aca2e9d12a07809ec06b3fb677269cb78:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyMDQwOGJkNjEwOTFlOWRiMjY2NGNjMWFmMjk5NzYxMTg2MWJiNzUzM2QzMjE5YzE5ODZhMzk0ZDZhYWU3ZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiOTlmYTUwODMwZDYwNjhkOTNjM2FiY2ZiNDAxMDhhYWJhMTVlZTg1MTk4NjkyNDI5MTcwYzM4MzI1NmFkOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2MGFhYWQzNzdlYTc1ZmVlZWIwN2U1NWU5YjIwNTRiMWRhN2ZlZjRlYzI2ZThmNjI4NjhmNDQ2NThhZGNlNTAifQ"
+        },
+        {
+          "resource": "repo://frontend/src/services/actions.ts#L69-L72",
+          "version": "repo-lines-v1:sha256:d9dcdd56794286bafb2c940abfa9a1743854f2398c2e13fcab5ad614a8733d1e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDgxOTI3NTJjNGY4NTk4NzNmODYxOTIzODg4MWJmYTNmZmE2ODA0N2FiYWI4OGNhZmY0YmMxZDliMjE2MDdjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE2ZTg1NjA3MGI0ZmEyNzcxMjQ5NDdkMDEyMWM5Yjk4MzIzZTliMzU0MWRiYTgxNTIzMDhjOGE0Yjk4ZDYwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmVlZDMxZTIxMzQ4Y2JjMWI0M2YxOGY5ZTZhNGY2ZjBkNDYxZmQ4YTBkY2M0YjRiZWQyZjhhYjFjMDdlMjg5YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e81ac86e59a47b0bf5e1cd4560d35a3",
+      "statement": "The Redux store is built with configureStore from combined slice reducers for agent, browser, code, file state, initial query, command, and Jupyter state.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/store.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:97fd23e3672c5e2ebaf74c1c779d25c152d14f176d37945e23221a3a1d6326f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyNmNhZWM1MDBlOTU3MGU0ZGUxMmE3MTc4MDkzNGZlZjYzNTBjNTMxZGQyY2ExNjU2OGIwYWQ3ZTk5NDk1ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0ZGQ3YThlMzNhOGI4Y2M2Y2JmMGMyOTU0MzQwMmZjZWQ3ZDA2Yjc5NmRiMjhhNDJjZTExZGY5ZWM3ODk5NzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkZGIxMTc5N2I3YjA4YTMxNTYyNjdmZTk0NTVjN2NjMTI5NmMxOGY2NjMxNTIzOTlkZDQxY2JmY2M0MjhhNGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d8504ff2581443e8943dc7cb6ba0845d",
+      "statement": "Query hooks wrap TanStack useQuery with keys that include the resource name and ID, as in the user conversation hook.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/hooks/query/use-user-conversation.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:2aaa11b663a55c8c440b283372046bcb76fddd1d2b68a0979ec4d8daeb0967bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzZWU1YzViMGYxNGNjOWFjOTY5OTUxZTM0Y2QyYjc2MDgxYzJkNzkzOWFiMDhiYTZjZDgyNjZmODg1NGUyZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNjQxMmFkNzhjMDNmZGEyNTU0NTIwN2RmYzMwY2ZlYmJkODgxZTgyMjE5ZDJmZmE0MGU0MDVjMDNjYjY0NjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwYmIyZmQ5ZjhjZjJkYTM1MzY4NGIxYWRjNDYwODc0NDUyZDY5Nzc0ZmE2NWJjNWY0ZGM2ZjAxYTExYzk3M2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce1911458a7f420ea4e5df0762f21f26",
+      "statement": "The openhands-ui package is published as @openhands/ui version 1.0.0-beta.9 and builds with Vite and runs Storybook for development.",
+      "evidence": [
+        {
+          "resource": "repo://openhands-ui/package.json#L17-L17",
+          "version": "repo-lines-v1:sha256:6592d72ae13ba8863ba169565f7e3384f43d596b4edd5b5563373d6e4d0cdba7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU5MmQ3MmFlMTNiYTg4NjNiYTE2OTU2NWY3ZTMzODRmNDNkNTk2YjRlZGQ1YjU1NjMzNzNkNmU0ZDBjZGJhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU5MmQ3MmFlMTNiYTg4NjNiYTE2OTU2NWY3ZTMzODRmNDNkNTk2YjRlZGQ1YjU1NjMzNzNkNmU0ZDBjZGJhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTQ1OTFhOWNiNTdlOTNhNTQzMjBhODJjZDlkMTk5OTZjZjBlYTMwYjc2YmJhNWNlYWI4ZDFlMGE5NDc4MDk5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmZmN2Y3MGNhMzQ5ZGJmYTQ4MWE5ZTkyYWNhNjNhMGRlYTJmNzM0ZTIyYThjNTJmM2FlMzhlYjdlYjY5YTgxOSJ9"
+        },
+        {
+          "resource": "repo://openhands-ui/package.json#L91-L97",
+          "version": "repo-lines-v1:sha256:9b6ddad0efe815d3d8a4a4bddc2ad74f87e7152cbe58a8fa21da275233667fb7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ4MzNkNTk0OWMwM2E0MGNhOTUyNDkxNjEwYTY2NTk2NDRiM2FhNDY2MzYyZjc5OTAyMGRiZjE5ODE1NDdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDBhMzI0N2Q0YTU0NDdkNTc4YjZiNGNlMjQ4MTNlNTlmZWNjNGUwNTYxZmNjMjU3MTIxYTM3MjZlOTVhNDk4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGU0ZTVjZGJmNzdiOTc3MTYxM2U2YzZiYTE2NTJkYjQxOWI4NTMwYzFmNWRmYzg4MDRiN2Y3MmI1ZmY4ZjE0ZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

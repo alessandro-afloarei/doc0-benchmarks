@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:92710fed8a26112c288114c04b940bf80bf4d4de6b1f2a79085ae8822451bd4a",
+  "claims": [
+    {
+      "id": "claim_17a6e13a54cd412cabe9218e36e508ea",
+      "statement": "build_pattern_regex converts a non-empty glob via globset with literal_separator enabled, an --exact pattern to an anchored escaped regex, a --fixed-strings pattern to an escaped regex, and otherwise uses the pattern as a regex.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L218-L232",
+          "version": "repo-lines-v1:sha256:b9afab2e17423f97e8e3b2bb17622db621566158c5b4ec42c02ca77be8798af6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NWQ5ODY4ZmNmN2EyOTE3NzcxYzE4YzlhMmUxMWUzNjUzNWRhYmViNDU5OGVjNWYxNDg3NmFkNmE4OGI1YzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiNDA0ZDk1YTZlZWJkNmU3NDU0MWE1NmI5ZjU2OGQxM2VjNjBiMDU3OTBhNzBmZDQ0NzBjYjgzMzg1NTUzMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0884eadaa7e04f3284f150d971b71ee3",
+      "statement": "Pattern regexes are compiled as byte regexes with case insensitivity derived from smart case and dot-matches-newline enabled; compile errors suggest --fixed-strings, --exact or --glob.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L541-L555",
+          "version": "repo-lines-v1:sha256:4aecbe6430e27f08136ec95199aa800c7ef17b176bc451821f3756ebe25ccba2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMWUwODU3ZjAwZWQ4MmI1OWQ3Mzk4MjM5MmI0MGVmOTNkMjNiYWFjMjU2NDhjMDdiZWM0YmM3YTg0OTMyYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d02adf6ae9ac45449d93a5a0c1b4ad2d",
+      "statement": "All patterns (positional and --and) must match for an entry to be reported.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L94-L100",
+          "version": "repo-lines-v1:sha256:cccad61d720c854c1d2e0a791758404e8a03327e2ba414106ea81c12a4d48092:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTMzZmNjZGY0ZjM5NWNhMDExOTI3OTk1NTc2OWE5YTI1NzA2OWIzMjRjYzhhZjI4NTNjZmQxZTJhMzMxYjJjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQ5YmYzZDJlMzQwMjE2ODZjNjQ4NGQ0MzE2NTdjMDAxZTk4ZDIwMTU2NjVjZjJlNGNiMjJhNGUxMDZmNmU2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGRiNzMwZDVmNzQ5MjhjNGEwOGYzMTYxMGEwNjg4ZTkzYTJhMTMwYzRiYjNhZDA5YjcyOTllYTQ4NzU4ZDczNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjEzN2I4MjM3YzUzOTYzYTM0MGIzZDE2OGQxNTA1YmYzZTU5MDM1NDlkY2VlNjc5N2ZhN2UyNjIzYjIwM2U0MCJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L519-L524",
+          "version": "repo-lines-v1:sha256:be0044bfa7d51a80337a7e9633e49d6f21def913de6a28eef76ca91434477ad1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTVhNDEzMGIxMjhlMjQyMjc3NjZjNDE1MGVhNDM4YjRiZDc1YjZkYmQ5NDE4ZWM4MDAwOGIzN2IwMTc2OTgwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM2NDc5Y2MyMzA0NDBmZDQxZTgyMjQyMTg2Nzk2OTg1NTlkMjg5M2JkNjdiNDM4MGFmYWI4MTFiMzhhNTVhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU4ODMxNGRmMzcwOTNlZGU0NDU0YzVkYmM0M2E0YzcwZjlhNzAzM2UzZWMzOTRkNDFhZTY2YmEyYTljZTYwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDJkODlmYmJhMDg2ZjcxOGQ0NzRiY2M1Y2QzNjc2NGNmOTI2YzQzZDAxNTUzMjY4MmY4ODk5ZDQ4ZDc1OTQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7a9a3d3856044c19272360734bd929a",
+      "statement": "By default patterns match only the entry's file name; with --full-path they match the absolute path built from a current directory cached once at startup, with a leading ./ stripped from relative entry paths.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L301-L308",
+          "version": "repo-lines-v1:sha256:699beb6268b37583d57639c7802e74a6c159bca526f3f175689d399de0fed1ef:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhlODJhMTYxYjA1ZmQ2ZTlkZTM0MTM5MjI3N2Q2Y2QyY2JmYzFhYTA3OWM1NDFiZTM5NTIwYWNlOWJjNDU3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ5ZTEyNTQ2NDI1NTc2ZDNkZWFlOGM5YjlkYmYxMjhkNWQ2ZGRhZjVkN2ZlODU3OTM0OTI3ZGVmZmEzYjlkZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmYyODY3NDM1Yjc3YjlkNzQ3MDgwZGFkNDI0YWJkMTczNjZmY2YzODEwYzAwNTFmNjZkNGNhMjNmNjljNjYyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmY0MDFmOTY5YzZiYWZkOGQ0ZTg5MjYzYjM5MmUwOWFkMmUxMGZkMDUwZWNlNzUwZDNjYmVkNzcyZGIxNzQ3MyJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L656-L678",
+          "version": "repo-lines-v1:sha256:6378b5bf532fe34c62093043e8ca2f314839fe70aac0d5b3cb56718444f06532:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlOGFkMDg3Y2I2YzhiZWQ4YTIwMTk2MTVmNmQwZTE4N2JjZGIyOWVhYmJmNmNmMDY5ZjRkNmQwNzQ3ZWY4OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjNzk0ZTQ5NzI5MmVjNDRiOTQ2MTcwZmUwMTUzODdmZGZkM2UxMjQ1ZDVmOTgwN2ZiNTczMTBhMzUzNjU4NjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6be193e19c064f82b9b19fbb77672132",
+      "statement": "Uppercase detection for smart case inspects the parsed regex HIR (literals and class bounds), so escapes like \\A or \\x6F do not trigger case sensitivity and unparseable patterns count as lowercase.",
+      "evidence": [
+        {
+          "resource": "repo://src/regex_helper.rs#L4-L37",
+          "version": "repo-lines-v1:sha256:91ae0b2fce33d16fa3fed0c35731905e93c81e25068dbc2781cfb58194b52a9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYTUwZmEzZjBmODVhNTVlNWMwOWVjOGI2OGY5ODgwNjgzNmQxNjJiZTA2ZDM0NjUzZDNmYTA1MjZiMjFkZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkNmNhNDY1NGMzNDQ2N2UzMDBhZDZkNDkwYTUxZDhlNjhkODJiYzY0YTdmNzJkOTZiOTkyYjBiYTA4NmY0ZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4NWMwMWQ4Y2MzYjc1ZjQ1ODIwMWNhYjQzN2JjMDQyMjQxM2UxZWMxMGJjZDMyYmQ4YWFhOTJmMTlmMzJkMTgifQ"
+        },
+        {
+          "resource": "repo://src/regex_helper.rs#L90-L96",
+          "version": "repo-lines-v1:sha256:e2635832c83d91450de00a2bcd8c61506b0f010a5ee3a634535ebdf79b8dc0c9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJjZDRkYjQ4YTM1MGU4ZjBiNDc5NDRjNDZlM2ZmZGJiYTEzMmQyMjkwYTkxZDcwMTJiNTZlYjQ2YzhhYjRmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDU5YmE4MmUwYTk5ZTk2MzdiMGYzN2QxOTBmYTg3OTI2ZmUwZDk5MDk2Njg2OGM0NmZmZjUzZmM3M2E4MjlhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTU0M2IxNTljN2I0YTNkZTEwNDNjYWJiYjRkMzBkYWFiZTE0ZTA4MGNlZTE4ZDg2MjBhMTc1MTMxMjA5MGFjZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2ff0ccef4b74618a52fe1455cf79035",
+      "statement": "Without --full-path, fd rejects any primary or --and pattern containing '/', and on Windows any pattern containing '\\\\' that names an existing directory, with guidance to use 'fd . <dir>' or --full-path.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L149-L216",
+          "version": "repo-lines-v1:sha256:7ffcf277acff1b93fb929f1450ebdee3e5264c862966246675c7caa49723bc91:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5OTlhNTIwMTEyZjg4ODdiMzg1ZTFkNzZjMzUxMjVhNzFjZWM1ZGQwYWIwN2ZlMWU4NzQwY2JhNTQwMjEzYzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ZjZmNDY2ZTU5Y2ZjMzA3MDNjNDVmNzJhZjY1ZGU1NGFjMzYzZDM1NGNjMWEzMzMwMzUwYWNkNDUyNDM0YzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwYWUyNDhjYzg4OTU3OGFlNDIwYmYxMzhjNDEzZTNjMDU0YWY1ZTUzOWY4OWY3NzUzNWEwNmVkOWQ4YjhlYmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_26f71b8d005c4608b6f0237d24d9869d",
+      "statement": "Leading-dot detection only recognizes regexes that start with a start-of-text anchor followed by a literal beginning with '.'.",
+      "evidence": [
+        {
+          "resource": "repo://src/regex_helper.rs#L39-L79",
+          "version": "repo-lines-v1:sha256:29eb5723ad36a96c0a10d8ca1764d9e94ffbd4bc30e49273ab5c77aff3509f0b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmZDQwYTEzOGYyOTIwNjMwMTM1OTM0ZjYxOWY3MWY5ZTBhNzI4NzAzNDMyMTRjNGY4NzBjOWM5ZTdhZjdlNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkNjkzODUzOGVkMmRiNmU3NmQ0YWRhMDIwN2RiN2I0MGZiOTA1ZDhhMWZkOTM1YjRkY2ZjMWRlODlkNmRkZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc3e2893b8f74cbead69bb9f3c2dfa11",
+      "statement": "Extensions are matched case-insensitively against the file name with a regex requiring at least one character before the extension dot.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L361-L373",
+          "version": "repo-lines-v1:sha256:2f947cc2bd5f4bfe2b3a05459630101b2feb3f1f1fd74513887cbe051a3a8324:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwNWZjZDkzNjZjZDFjNDkwNjRlZDkzZmViZWQ1ZDViMWEzYzZlOTRhMWZiMjMzYjhkZmYzNWYxZGJiNmZmZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExZDY2ZWU3ZjM4YzRjZTA2OTIzYWIzODgzYjU3MGZhY2VlYzA3YzU1MTJjMzJkMzdhYjQ1ZGFiNDk2MDljMTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2MTUyYzc2YzQxZjFhMjc0NGNlYThhZWU2YzI4NmQ4YTIwOTA2YjhmZTdkOWEyZTg2YTA1MGY1NjBlZWMzNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwOTE5MDNkYTZkMGU4OTYxOTkyYTI4YWE4MzM0ZGViNmVlOWEyNjIwODRhZTZiM2FjYWUxMmEzOTE1NGQ5OTkifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L526-L535",
+          "version": "repo-lines-v1:sha256:2422582a8bf43d91e39c4c9d1eeb6fa35e2adb72ce0c5a8c3454dd17b3d55b04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNzgzYjM4YWM4OWEyNjkzZGRmMWFmZTM5MTNhMjZhN2UxNjYyNjA4YWVhYjhiNzY4NGIyNGE5NjU2N2I5YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmMwNzYxNDQ1YjVkMTM5OGI0YmRmNGQxZGYyNTBmZmNmZmQ0MDRlMzRiMTZhMTBiM2IxNDRlYzZhNGM1M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjNWE5MThkMmI5NDUzOWRhZTA5M2IzOWFkYWI2YzdjZGE0MjkzMjBhZDQ1MGU4MjY5YWI2ZjhhZWY3NzlmY2EifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:39:25.366Z"
+  }
+}

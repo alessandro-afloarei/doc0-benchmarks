@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6ef07f202e336c287640224b7658c7a8a02646ecc33bed64fe4c26aec1730734",
+  "claims": [
+    {
+      "id": "claim_6655897ac70b415e96fcb3532a20147d",
+      "statement": "SaaS composes openhands.server.app with additional routes and middleware and wraps it with Socket.IO rather than importing the completed OSS listen application.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/saas_server.py#L124-L130",
+          "version": "repo-lines-v1:sha256:46ed6c51829ff51a97bea1efd5dddc84beb386b4c3045d8eff084d8b45f1d0e0:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk5NjY2ZDZhZGEyMjZhOTJlZjA0ODAyYWJiYjk4OWU4OGVhNWI1NzA0ZTNmNDVhNjdiMDBkZTM5ZjgyYzY3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YwYzA2MWY2YTAyNzgyNWM1YWU0Y2Q4NTI3N2I2ZDZiODNkY2Y2YjJjNTQ5ZWQzOTQ1YmJmZDFlYTJjZDNjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGNjNGE3ZDFjYzc5NmFiYTNlNDY3MjMzMjdmNTE3ZTlmODExOTgyZDI1MGYwNzAyOTg2ZTRiNTc2NGFkOTU4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://enterprise/saas_server.py#L40-L108",
+          "version": "repo-lines-v1:sha256:8430efddaf5333451f43a6bf19a0d703d12173e4489d664034fb1f6e435a5484:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwZGZlN2IxNzJjOTBiNjBhMmNmYzhmOWViNTg1ZDVlYTU2ZDExNDNkZDBkMDdjYmQ3ZDI0ZWQ1NzVlMmU3MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliZjhjZDc5OWRkNzYyOTA3MzkwODlkYjgyYzFmNzY4OWFiZTBhYTNjODI2NDI0NzZmYjc0ZWMxZjQ4NDQ4MWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5MmRlNTNkZTU2ZmU5OWFiODMzZTcwZDE2MWFlYTM0N2NlZGZhNTBhYTM4YmE3NDg2NzU2NjY3Y2Q4NDAyMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhODBiNjhiNTRiNzlkNGNiZTkwYTM0ZTk2ZGRiMWExNWYyMTUzMzNiOWRhOWNlMmU2YzkwYzdkODg0Njg5NDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f7846db4a9a45d68f228e91d80f3494",
+      "statement": "SaaSServerConfig replaces user auth, stores, monitoring and the conversation manager; shared OSS initialization dynamically resolves these configured implementations.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/config.py#L51-L71",
+          "version": "repo-lines-v1:sha256:3f256c7c56c88f29e69d77e4608367e5a9d8e118d56c0675ec018a6dead7b699:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMWNjYzM0MDY1YTQwMTUxYWU2N2NmODE0Nzk1NjJlNzc3MWQwZmFkMzJkZjIyY2Q0NjAxNzdjZDRmZWVmMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1NzkwNjM1M2U0YmExMGVhZTk3ZGFlNWRlNTBiNzUxZGRiYzA0MzIxNzM3NTVjZWIzMjNiNDk0OWZlNDQ0OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYWIzZjFjMmQ5NTFiZjU5MDM4OGI4NGFmOTNlOTJlMGYxY2I5NTQzNzQxNTJkYjJiMGQxYTdjNzk5MTgzOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhYTE1ZWRhMWVmYzgwYmI4MjAwOTc0MmY5NzcwMjA1MDk0NWRiNDYwYzA1NWZmOTAwMGNiODI0ZTM1Njg0ZGUifQ"
+        },
+        {
+          "resource": "repo://openhands/server/shared.py#L54-L77",
+          "version": "repo-lines-v1:sha256:2c6594f38dddaa027a5a73f284b182c3e6b20cb86ea68dd3f5481b0bcee9ebc5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzMmQ5M2I3MDJlNWMyOGYzOTgwOTFhNjQ1OTcwZmFjYTAyZGU1MThjYTlkZThjZWEzNDliMTU4NTg2ZTU2ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5YmI2ZDhhMzZiNjUyNzM1NjdkMzI5MjUwMzQ3MWVlYzUwN2VlNDllNWNiOTY5Nzc1ZjJkYWU0NmQzZThjYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a42a310ad3a0466db6f4afd0c8502668",
+      "statement": "SaaS access-token retrieval refreshes missing or expired tokens, with bounded retries for Keycloak refresh errors.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/auth/saas_user_auth.py#L130-L139",
+          "version": "repo-lines-v1:sha256:53554b3f2c9106577a1c47091c618514239c995fb88aa8b7b13ce49f9648d483:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjZjFlN2IwNTQ0N2VmY2QzYTQwNjNhZDhmMDk0ZDA2YTI4MDFjODE5ZmIyZTcyZjk4ZDE4MzY1MzA0ODgxMzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyOTllY2M2MDJjMjU3OGUzMDFkYzhjM2FhMzBkMTNjNTViYmJmMWQ3MjkwNGY0NzE0ZWNmZjIwMjE2OGNiYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljNWMxODFjODcyNzU5Mjc0OGY5NDJjNTVjNDg1MTk0YTY3ZTk4NDljODhmYzRhM2I4YzE5YzRmZjkxZDIzY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjZTY3NGEyMTQwNWQ3NzdhNTNlYTk5ODU0MzVlNjViMDFjMDBkMzgwY2U1MzNkNTZhNjI5NTZkNjYwMzdlYjgifQ"
+        },
+        {
+          "resource": "repo://enterprise/server/auth/saas_user_auth.py#L64-L77",
+          "version": "repo-lines-v1:sha256:3c5cb84be7d48c89e2a14995ece72cfb8f0316d13e16cccc978e714c0a05139c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjMGE2ODcyNGUxNGY5NTA3OTQ3NzM1NjVlZTg4NTYwOTA1MTNkYzQ1YTgyNjU5Mjg5ZmEzNWU3MzcxMWRmMDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NzQ2NzhkNDg2MzAyZWZlMjBiNjU3YzljNzQ0NGU3MTY1NzFmMzJlYjYyNzhiZDdjMjkzYmQ2YWNlNjk5OWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3MGJkNjIxNTkzMzZlMzU1ZDcyOTY2NzBiZGJmOTBiYzA2OGYzNGIwZWUxZjZjOTBiMGI1MDYxZTVkZjQ4MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwYTM4ZTQ3NmIyNzQ0MjYwOWVjNTI4Y2IxMjFmYWI3MjFlZjQ1YjUwZGRlNjdlMDI2Yjg1OWM1MmFhN2VmOGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_30a93207a2d04602aad1be778f818636",
+      "statement": "Enterprise database configuration supports direct PostgreSQL and Cloud SQL connector paths and uses NullPool for asynchronous engines.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/storage/database.py#L25-L97",
+          "version": "repo-lines-v1:sha256:646cb4ce3865fdd509315b1a08f390262e9a56247044f842e6d75b9f8f7678eb:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZTA4ZGE5NWNhOWE0NDIzMGI2MTA0OTc0YWM3NGRmYTkxY2IwYWFhMWUwOWRiYjMxYmRiOTRjNzU5NGZiZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhYmVlYTM4MGM0MjNiYTE4ZDBmMzdjNDFlMzE0MmFjNWZhZmI1YjhlMWRiNDM1MjA4ZGE1ZTg3MzZlZjFiNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiNGQ4ZDZmNGU5M2NlOWFiZjUyZjQzYjBkNzczZTIwYTFhYjc2ODQ0M2YwMDM4ZTE0ZjY1NTllMWE4OWJjMjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb176705443d46d99e3a746dd6103690",
+      "statement": "ClusteredConversationManager extends standalone conversation management with Redis subscription and state-refresh tasks.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/clustered_conversation_manager.py#L60-L105",
+          "version": "repo-lines-v1:sha256:112f2aa5981af6e7cc5168ba7d66f0bb63db3c997211228ef29c14fadd49f8aa:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4Mzc4ZDg4NDEyMDFiM2VmMDVlMTc2NjlhZjkyNzZjM2MxNzEzZTU1ZTg2NTFlM2FmNjg3N2ZiYTFkMWY3Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNTkwMzAzNWQyZDliYWZkOTg4NWE5Y2ExMGIzYmU3MTk1YzQ2MTc0ZGZkMTA3ZmE0NWRlYmJkNjNmZDc3MjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2ZTJmNDIzNjkyN2YyOTllNTY3MDhlNjdkZjQ2NWQwMTNjOWMyNjAwYjQzZTFjZmMzNzI4M2VjY2M1ZThkZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af1841dcc53546379ee0a982a4108bba",
+      "statement": "Conversation event processing persists content and invokes active callbacks on state changes; callback exceptions mark records ERROR before commit.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/utils/conversation_callback_utils.py#L34-L118",
+          "version": "repo-lines-v1:sha256:9ba5ab62b59ccd063f0f66d78c761239666a0de73aa8640d3b5045633a61e137:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YTZiOWRhMmQ5Mjk1MjBhNzhiZWMxMjQ1NjFjMTY0ZjlmOWIwNGM1ODgzMDAzY2E2YjUzOTNmM2E2NmU1OTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYjUzYjBhMTIyYmQ1YmRmNWI2ZDk5MGRhYWYwZWFmMzAxZTJjMmY4ZDQyZTBhM2VlNzIyYzM0YjYwMGE5MjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4NTc0YzIwMDZlNTkwMjY5Y2ZjMjEyNGE4YTFjZGYzNjE2OGRlNGM4ZGJhNjRiMGU3ZTRmNDM0ZmNlN2Q0MTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiNmRiZWIyMTEyYjg5NDFjNDg5NGRjYzU4OTg3YjBiY2E2NTUwNjI5ZWI1NTEwYjYxZWUzNTYxNmM5YWE5NzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c3b2e6409ae449cc9525b2ffd6f7c602",
+      "statement": "Maintenance task records persist status, processor class and JSON configuration, timing and outcome fields, and reconstruct processors dynamically.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/storage/maintenance_task.py#L45-L97",
+          "version": "repo-lines-v1:sha256:cc30c2f7f0c47ccdf49d96c722f87f6812816624e4c84b219ac73f33a9472440:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZjA0YmRiMDkzODJiMmVkYjU3YjhhYTIxN2M2N2ZlMGNiNmYyZjAyOGU3Zjg5OWNlZDg0YjMyNDEyM2E3MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNjc0NzZlZDRkYWZlYzU2OGE5OWMzOTRkZGI5NTliNWEzYWU2NmRlMTI4OTM5NDZkM2QzNGQ2OWQ5M2ZlMjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4MzA2YjE3YTFjM2I3MjA4Mzc2OWI4OGM1YjAwN2I5NmEzNWEwNDJmNzllYWI1ODUzMDY3Y2JlZGQ0MWFjOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlMzdlOTA3OGRmMjhhMzBmYjY2OTk2Njk3YWQ4OTFjNjYyNTdhNzI5Yjk4NzA3NTM0YWJiNjU3YWNkNGJmMTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:51.947Z"
+  }
+}

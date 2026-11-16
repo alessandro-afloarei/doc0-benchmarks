@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fb05b03962535b293e5d6b58ee50aaad9908e9d0ba3825f9c7a8c2a977cbfd46",
+  "claims": [
+    {
+      "id": "claim_5407d409033f4748b65ac9ebfc051d13",
+      "statement": "Condenser.condensed_history records LLM metadata for the condenser and runs condense(state.view) inside a metadata batch, so every agent step passes the full state view through the configured condenser.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/condenser.py#L104-L116",
+          "version": "repo-lines-v1:sha256:54f0760c006b2a1cf86747f4232a32d3f523349fc48df128b7f99753053c370b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4N2QzMTY4MWE5NDNmNTAxOTVlYWU5OGNmYzJhYTg0ZDZjNDc2MzhiOGYyNDUwNWNiMjM5MjEzOWQ3NWYyYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjZmRjZmU4ZGE2ZjU0MDc2OGE5N2Y4ZTAwYzJiMGRiZDRkZWMyNjgwMGNkYjFhMTk2NWE1ZmVlY2VmYzRjNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2YzRhMzEzOWZlYzZkNTMxMzUyMmZkNTdkYTA3NzUxYmZiZGU3YTE1MWFhZTY4ZTA2ZjBkOGE4ZmJlZTQyZjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11a043c29eff43c08784866e9711f99e",
+      "statement": "RollingCondenser.condense returns a condensation only when should_condense is true for the view, and otherwise returns the view unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/condenser.py#L185-L193",
+          "version": "repo-lines-v1:sha256:26f037ebc5a695f765b491f25c8795316fa52915ed2d870275043d13fac931d2:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU4YjI0MDY3NjRlY2Q3NjQ2NzRiYTAxNTRkMTBmMzllYjI3Nzk4ZmEwNGQ5NTk1ZDI1NWM2YjA5OTM3MWE3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTY4ODJmNzhiMGI3NTNiMjY4ODQ5OWY5YWIyNWYwZjFkZWEzYTIwZTYzNjkxZmM2ZWUyNjg0ZjRmNmE0NjQwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTEyMTUwNmE4MzdjZWFkYmU4NWQwZTcwNzY1YTUyMjNhYzBjYzcxNDdiZTBmZTQ5NzA3MGVmMWI1MzhkYThkZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fac7ce9cc7846bca10f21207b311d61",
+      "statement": "CondenserPipeline applies its condensers in sequence and stops at the first one that returns a Condensation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/impl/pipeline.py#L34-L40",
+          "version": "repo-lines-v1:sha256:57795dfaf9d4a231278f05cc86206809c5f602196404e73e12e604865bd37a4b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU4YjI0MDY3NjRlY2Q3NjQ2NzRiYTAxNTRkMTBmMzllYjI3Nzk4ZmEwNGQ5NTk1ZDI1NWM2YjA5OTM3MWE3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcyZjk2OTVjNzQ2N2M3NDc3M2M5Y2U3ZmM0MjljNWQwZDBlNDg3ZjNjNTFkMTVkNjY2OGEzZDI0MDcyYmI5NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmNhZDA3ZDdmZWMxYWJiZWUyOTg0YmJhYzIwMzczYWQyMjg3M2FiYTY5N2Q0ODM5YTk0Zjg3ZGUwYzUyZjdmZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjU0ZWJmM2QwZjNiNjZlMjYxMzlkNTYwYWM1NDIyYmVlZjhmMWI5ZjlhNmMxYzRkM2VlNWQxZTE0YzcxNjE1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3a17c4432c74e3184c2d5ad799ab3e3",
+      "statement": "ObservationMaskingCondenser replaces observation content outside a recent attention window with a placeholder while keeping the event records.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/impl/observation_masking_condenser.py#L11-L30",
+          "version": "repo-lines-v1:sha256:a1aca22bf6e37deb30e5c7558427fbfcb4dc71aaa482e04b19215f6a384843cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NDBlYmJkYmI0MTNjN2M1NmYzYTI5MDA5MGJhNWMwYTUwMjgxOTA0ZmE1MTE1ZmQyOTYwMmNhYjk4OTE2ZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1NTViMjY5YjM2MTQ0Njg0M2FkZGMwZmMzNTM2NzA1MDY0ZjJhNDAyYmZlZThlZTQ4NTgyZDBkNjEwZmVlZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiZTI5YWM3YzUyY2Q2NjQ0ZmI4MDIyOTcwM2IwNjkxNzQzZGVlYWEzZTcyZTkzZWFjZWEzNWU4YjRmNGMwNjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39a158f898f44b95a95277a7eab48d77",
+      "statement": "When the TOML file has no condenser section and enable_default_condenser is true, the loader assigns an LLM summarizing condenser that uses the default LLM to the default agent.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/openhands_config.py#L111-L111",
+          "version": "repo-lines-v1:sha256:8e07a30f0c18f30de66f345117cd859c63137da24d21777ed52faf8e045fa8e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGUwN2EzMGYwYzE4ZjMwZGU2NmYzNDUxMTdjZDg1OWM2MzEzN2RhMjRkMjE3NzdlZDUyZmFmOGUwNDVmYThlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGUwN2EzMGYwYzE4ZjMwZGU2NmYzNDUxMTdjZDg1OWM2MzEzN2RhMjRkMjE3NzdlZDUyZmFmOGUwNDVmYThlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzFjYmYwYjQyZGJkM2Y4Zjg4YjlkOTRlOTM4MDAwNjQ0ZWM2YjQ5NjIxODZiNjg0NGU5YjJmZDhlODJjN2JmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzA3Y2M1OTA0ODc2MTgyMzAyOWQwODJjNjNiMTlkNGE0YjMzOTMxZWIxM2EwMzk2NGMwNmVjNDUwMDA2ODAwZiJ9"
+        },
+        {
+          "resource": "repo://openhands/core/config/utils.py#L322-L336",
+          "version": "repo-lines-v1:sha256:8f47a17225a70df266c5291ab98562af485519dc4045e8545d77aeedc4143a95:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMTY4ZDhkYmFlYzcyM2MxNTMwMTIyM2IzMjQ3ZmFmZjhjNjMzYmVjZmI1MmI1MWZkZWQ2NjEzM2ViY2ViZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhY2ZiYTM5NDYxM2IwNDYwYTg0MzZhNmFkMDY5NTY2NzFiNWI0YjA1MjI2OWZhOGE0NGFmMzFjNTdmMDM2MDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5NGNjZWRhYmJmZjM1NDlmMWYzMzllM2I2ODg3NzAyNmViZDcwNmVhMjk0NGY2NDQwNzI5MGRhZWJjZjU4MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4YWIwMzA5ZTQwOTc1MmUyMTc1ZTc5ZDlkMTI0N2M1ZGI3YWNiMTE2NWFjZTAxMDk1ZDYxMTBjZjEwZmI0YjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a91b8109ca774e7691a18be7b7efbc3f",
+      "statement": "Memory subscribes to the event stream under the MEMORY subscriber ID, and answers every RecallAction with either a RecallObservation or a NullObservation linked to the action by cause.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/memory.py#L64-L66",
+          "version": "repo-lines-v1:sha256:e932b333dece7800f242a2962bcc0bc498c7d85e1bd956400be380d2396fcc74:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYyOTljMDEzMDdkMTZkY2UyOWJiNWFmNzZmNTUwMGE2Zjg4NjNiN2E1OTk3YzJiZjcwODk0Y2VmYjRiMTY5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYwODUzMzdmMzA2ZTA1Yzg4NGZmZWZhMzk0YzY2ZmIzMDgyMGI0NzZkODJkYjIyYTlmODg0MzY4OGZjY2Q4NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGM4YmFhMGNjZDA2MjVlMjA5ZjczNjAwOTEwZGFjNjFjNzBjMTJkOTA3NTk0OTIzNTU0ZDkxMjA2ZjFmMGY2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRjYjQ4NmY4ZDExYzI5OTA5MzE5YTJkNzJmYmQ2ZjEyZWQ5M2IyY2M0YTJiN2JmNWY1YWFlNDNhNGQ5Y2Y4OSJ9"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L90-L135",
+          "version": "repo-lines-v1:sha256:b15f6081bbafa163f4344876970e971a649f7492d9688f8048b0ab9cd14a8d69:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlYTc2MjAwNjk2ZGM1Yjc0YjVkZWVkNWZmYmM4NzNlNTZmMTkyY2QyNTExYThlNmVmYWFkYWUxNmU2N2U5Y2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMjE2Nzc3NjhiZDE5NTZhNzk5ZWU0M2IwNjE0ZGNjMzJjMDNlMGUwYjg1NjlmMDQyYWU2ZDQ2MmQwYjRiYTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlZmUyZDUwOTQ4MDRjNWFhNTliOGQxZWE4YjNhNzRiOWJkYjk5OWY3NDZiY2ZlMjk5M2RkYTlhZTNiMmQ2MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczMzllYjUyY2FiNTJlYTE4YzcyYTJkMzY5ZGM1NTI2YjI0NWYzNzg0NmMyOGNhZTYwYzNlYWI4NDYzYjhiYjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27c905ceff8f4489906467b950d2dcd7",
+      "statement": "Knowledge microagents are recalled by testing each microagent's trigger keywords against the message text, and an empty query recalls nothing.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/memory.py#L225-L252",
+          "version": "repo-lines-v1:sha256:47e4046650d917073b7327910ed9700561f8f34827c93af13aede81c64579c32:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYzA4NTM4NTFjMjgxYzAzYjNjODVjZDYxZjRmMjkwNTE1N2I4YjAwNjU0NGVlYWM0OGE2OTZkNGY0ODdiZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwZTYxNDYwNWQ4ZGYwNDFhNjcyNjI5YTgwYWVjNzNmNTgxZjAyNGZlNTBlZTIxYjJlNTRlN2JkZTM5MDI5YzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMGYwOTYxNzNkOWQ2YWJhYTNlYjBlZDVmOTdmYmVkMjkzNGNmNTJlYjJmYmFjZDBmY2NhMzcwYTg3OGM3OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjMzAwYjI2MmY5MWRjNWE5YWE5ODViYzIyZTA2YjkyZDA2NjRiOGNmZDk0OTkzODU0YjQxMDc5M2Y3MmFjOTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b9b7048c2e94935a60a8a306c0cda89",
+      "statement": "A microagent's type is inferred from its metadata: declared inputs make it a task microagent, triggers make it a knowledge microagent, and otherwise it is an always-active repository microagent.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L138-L160",
+          "version": "repo-lines-v1:sha256:a67a02eff96a39774fd91697736f1c7337746d61eaf806c82b68beeaa7711511:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjYzQ2MjY4ZGNhOTNkZjM1ZWJjYjYxMDZhZWNkNGQyY2E5MDVhMTdiYzYwZTFhNmU5MzRhODVkYTU4N2U5YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlZTNiMTIxZmFmNmYyYzJiOGQ4YmNhZjBiMzE0MjhhNWQ5N2QxZTQyNDZhOGY5Y2UxYzkyOWU4YjFlOTk4NzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjNjRkNjcwNmE5OGFhODcwOGZmMjcyYjgzODU5MDdlYjVmNDRlZGE4OWM2ZGVmMWI4MTgzYTM3MzE5OGI2NzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ffe2bc5b0c3349bdbf7659b418f8917d",
+      "statement": "Memory loads global microagents from the package before loading user microagents from the home directory.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/memory.py#L78-L86",
+          "version": "repo-lines-v1:sha256:3b13c96a0db05aaa337d0f9677ffec11a56dafd815b5c057a50942e3d124a600:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2U1NWIwNjQ1ODdlNjVkNTdjODc2NTg1MzU2YTNlZjRkNWQwODg0OTY0MzNjNDVkOWU5ZTY2MmQ3OTVhODRiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjBlZjk0Y2YyYmQ0MTUxODU3YmQ2Zjc4YjU2YjU5YTk2MDJmNmQ4NTFhOTYyZDEzMDQyMzYwZjQyM2NmM2UwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmVmZTJkNTA5NDgwNGM1YWE1OWI4ZDFlYThiM2E3NGI5YmRiOTk5Zjc0NmJjZmUyOTkzZGRhOWFlM2IyZDYzOSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

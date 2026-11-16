@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fdb970537299fc6219e93ed3aed329afbb1a7f89920db7d55d6166fc9bbfec7c",
+  "claims": [
+    {
+      "id": "claim_fcec2ae5e9be4e5c92411af107e61201",
+      "statement": "Python unit tests run in CI with pytest --forked and parallel workers on Python 3.12 over tests/unit, and runtime tests run with TEST_RUNTIME=cli.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/py-tests.yml#L44-L54",
+          "version": "repo-lines-v1:sha256:c07975cf2d81e055c4da3a69c470194e1a6f80127c1786752cbc0ce6eb3743f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NzdiZmFlMWE5YWJmOWI4MGQ4NmZmOWRhYmI3ODAwM2Y2NmE2OWE0NDBhNDhlMzc3YWFkMmJiOTk1OWI3YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhZDdjOGUzZWVjMzk2OTFjNGQyZjNmMzI3OTdjNTdjY2MyMTk1M2FkYmNkNDk2MDViNjFlYmE1MDQ1YjBkNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwNjJlNzQ1M2MwYzY0NzY0ZDNlZmJhYmU0ZTlkYzZkYjAxZDZlOTJlMDVkZGVmZGIyNWI3MWJmMzAzYzJmOTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_244fd758255c446cb411e5b113d56213",
+      "statement": "pytest is configured with asyncio_mode set to auto and warnings disabled.",
+      "evidence": [
+        {
+          "resource": "repo://pytest.ini#L1-L4",
+          "version": "repo-lines-v1:sha256:02c440af59e9b72e8e4f735afaff7ead1527815263dd287a09e2978553c299a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MGQyMGY0MmI0MTlhZjQwNzA2NDkwZWFkNzhhYWJhYjlmZWJhOTNlYWIwOWEzZjYyNmUzZGU1MjU2ZTFmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQwNjlkMjcxY2Q2ZDBmZDU4ZDU2MzcxNDVhMWZlMmM1ZWQ3ZWM3NzkxYjQyNDAyODZjOThiNDYzNzViN2FjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2025e79a029a47f3ab1f687380f30c05",
+      "statement": "The Makefile build target checks the required tools (Python, Poetry, Node, Docker, tmux) before installing dependencies.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L25-L33",
+          "version": "repo-lines-v1:sha256:5351f6466a3a458f2b6a3dbaea4262fe48e7e2583cb6d77ca395537223a601be:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRmZmEwOWExNDRhNzI3OTlhNmJkNDk3NWM3MDVhYjA5MjY4ZTY5YTk3MWFjZDYzMGVmMjUxM2EzNDRjNDBhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzVjNzg5ZmZjODdhN2FhMDZlMWE3YmM2ODRhMWFlYWVjOGNhMjRhOGQyMWI3ZjlkODAwNTYyNjdlNjg2OTk1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA4MzRjMDFhMTY3MThhMWU1ODQ0ZjBhOGIzMWM0OGZmYWFiZWU5MTcxOTAzMWU1OWYwMDNhYTk3Y2MyOWU1OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f56640bfdf1749519e8006a1221ab81d",
+      "statement": "The openwiki-update workflow runs nightly and on manual dispatch, runs openwiki code --update, removes the transient run file, and commits the openwiki directory and AGENTS.md.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L60",
+          "version": "repo-lines-v1:sha256:422434d1ae13dcdeea041cefc4b473849140ce20f7928ad5e81bec58f3420c19:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NDNlNzZlZDg3Nzg0MGZkMzU2MjZjOTg4NzFmZTg0MzYyMDc0NWQ4MmIxN2U2YzE4NDJjMDcxNjM4YzFkZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiZTFhZGFkYTE3YWUyZjRmM2Q4ZDQ3OTdkYjM2ZDUyNjc1OGJmNDlhOGM0YTc0OTg5ODY0YTQzY2NiMThlMTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_756a17e58ca74e4fb211440698833fd9",
+      "statement": "The integration runner is scheduled nightly at 22:30 UTC and also runs on pull requests labeled integration-test.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/integration-runner.yml#L1-L20",
+          "version": "repo-lines-v1:sha256:86501daf17c90f7dd5b937ae9cac36e1c101d25a1a24e889903db5f347505c3c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MDYzOTczMWVkNzVhYWZhNjc3ZjlkOGQwYWFlYWU0OGI4MGI0MmM0OTZmYmVkNzljMjEyMzhiYjIzZjY5MmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0MzlhZDhlYTI1NjZiYTZiMDZjNWE5NDM0MzgxZGYzNjU0ODgzMWU1NTRjYWExZWFiNDk1NDIxNjQ2ZDFkODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5NjYwZjVkYmM4YjcxOWNhNWRkZWI5MGFhY2U1NDlmY2QxZjc4YWMwYmM2MzdiYzA4Y2NjMjZmNTVhMjAyMzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_689a874c89f54cafbf1b95ce6930de22",
+      "statement": "The end-to-end workflow runs only on pull requests labeled end-to-end or on manual dispatch.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/e2e-tests.yml#L1-L14",
+          "version": "repo-lines-v1:sha256:fa8285657fc47bae160a0333431ea64201b4a65ae1f80e1a1421e6f1bdc54456:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkZGI4NTQxMTY3Y2ZjY2I5ZDM1NTkxMjFlNzYwOTVlNzgxYTQ3NGFmZTQyYjI2Mzc0MjM4MGRhNDliNGE1ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzMzczMzRhZWMwZGNiMjRlNDBlM2MyMGRjMDlkNTlhZjY3NDNkMDI3ZGJmZjUwYzFhY2EwODk3NDcxMTc2NzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlYjVmYWY0M2M4ZDQ5NDMyYjMxZWYwYTM3YzAzZTM3ZjE2MmRlYzBmZDJhMzc4OTQ2ZjU2MGE5YzZjYWE3YjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_830c87f6062e4d67a3e1d9804c03e37f",
+      "statement": "The frontend unit test workflow runs npm ci, TypeScript compilation, and the test suite with coverage on Node 22.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/fe-unit-tests.yml#L24-L44",
+          "version": "repo-lines-v1:sha256:7d57305ee0cd3c794baa4ba0af6716136ef344c4e41731fc07e9580181189522:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3OTk5ZGU3NjY3ZWJhMTZjYjEyY2RhZjY3NWNiZDBlNDAyODAyOTNjOTUzMmM4ZmQxYTJmZWQ3MGQ2NzIyMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwOTA4ZmEyYjcxMTYwMmNjYmNiZGE3MjBmZGRhN2QyNzM3ODE0NjM0NTNlZTMzZWMxMGY3Zjg2MzQ1ZTU4MmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1NWFkOTFmZjRlMGM4YmVlMTFkNjlmNTc5NTE2NWZhYjJmMThmOGY0MjAxODFiOGMyMmM2NjVjN2U3Zjk0MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

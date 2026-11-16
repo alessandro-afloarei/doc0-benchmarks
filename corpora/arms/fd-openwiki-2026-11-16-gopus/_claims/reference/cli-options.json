@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2d2f81a79b27c6479490a6c8543003b59fe0aa62435c584d05ca83793eed341c",
+  "claims": [
+    {
+      "id": "claim_9de22170530b4599826189bb38f059c7",
+      "statement": "The fd CLI is a clap derive Parser with args_override_self enabled, so repeating a flag keeps the last value, and an execs group conflicting with --max-results, --quiet and -1.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L21-L31",
+          "version": "repo-lines-v1:sha256:4c09c207825936694647c1b70e962f5ee985fbfc70e7a4282379b2a5b1b2bb3a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5OWI5M2NiODVkZDYwZjk5NTcyOWY2NjE5Yjk3Zjk3ZjBjMzQzNTAwOWNlNzUzOTA1NzBiZGQ1ODNmMDBhZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjczYjA3MzgxMjIxMzY4OWU1MmZjZGY2ZTVjMzMzMWY5NjUwODIyNjIzODk1NDEzMTczOGM2Y2IwODdlMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExMWY0YTA5MGRhNzMzZDAxMjFjZWVhNTBiOTQwMzZlMGE2NmI2ZjI4MzIxMTdkZTI1ZjY5YWNiZjk5MWQ3ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMjAzMmE1YWU4YzhmNjZkYTgzNjRhNDQ2ODhmYmRiZDM0YmVlMTA5N2ZhZDFjYjZlZjg0YjZkNjg1MDE0MTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c9bbbc20c9c4f60907c29dafa59353d",
+      "statement": "Boolean flags such as --hidden, --no-ignore and --follow have hidden opposite flags declared with overrides_with so the last one given wins.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L223-L225",
+          "version": "repo-lines-v1:sha256:5ec37a074e1b23dc21cecaae1bedabda42492765ddb9af50d55635504d5dded0:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTYwZjA4ODBlYjQzMDg4NDFhM2YyYzU0YzgxNTlkMWIzNDgwNDhhNDc5YzIzYzZiODI5M2IwOTRjNmE0OTlkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjZkYWZjMjM4MTFkOTZlM2M2YTcyN2I4ZWFmOTQzMjdmMGNiMDI1YzQ3YzUwYTIxMmI2ZTg4ZDVmZDBlZTA4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTk2ZTdkOThkYmE1ODliMWY2NjM3ZjNhMDc1YzE3ODY2OWMzNzNiNjE4MjAxNGExYzZmNDBlOTNjNjYzNjQyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmE0YzUzMGU1NDc4MjhiODY3MTdhZmQ1YTRmMWE0YzdmNzYyMmVkMTIzODQ1ZDM5NWFkZGI0MTRhOGU3ZjVmYSJ9"
+        },
+        {
+          "resource": "repo://src/cli.rs#L251-L253",
+          "version": "repo-lines-v1:sha256:b168c6c8d49574a35123dfe404016afa6c09ed47a694f8b16d1d8cd7213ffb14:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FjZGZlNjI3ODI2MjcxYmVlZjM3OTJmZDQ0NjMwZDA3ZmE4MzU1YzQyNDdlMGIzY2FlOTM0ZjZlZmIxZTlmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdhNGVkODA0MGFiN2IxMmVhZmJhOTI0MjM2ZDYxNGQ3MjdhOGU2ZTg3NjgzZDllZjQyNzgxMDkzNDMxNGEzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjk1M2QzN2RiNjg5YzYxMDA5MjgyMzJkMjIyNzBhMjAwYzhkODhiMjMxNGZiOGMwYjE0ZDljOGNhZTI3NGZmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWVkNTc4MWZkNjMwY2E4M2I4NTM1M2Q4NTlkNDAwMWE4YTU0MjUxZTRhZWRjN2Q5NzEzZGU2NTM1MjkwZjFkYyJ9"
+        },
+        {
+          "resource": "repo://src/cli.rs#L46-L116",
+          "version": "repo-lines-v1:sha256:99c1a339ba1d63077141992a269a5d39460872a9f25ad596e654c044d3585647:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMjI4MGJhYzAwYWVlN2E1Yzc0ZGFkZTY0MDlmMzgyMTg5YTYyNjliOTNkN2U0NjY2Nzc4Y2JlZTI2ZjU4MmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5ZWUxZjAwNTE2MDAzZGJmZjBjZWIyZmEwN2U5OTNmOTAxNDgzZWI0MjRiYjFkYWZlYWM1YjkxMDJhODI3ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwYWY0Njg2NDk5OTAxM2RiYzQ1NmI2ODY2ODU3NThjM2RkNzgzZWQxNjY5NWQwYTBkZDAyOTg0NmJmMmQyZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1a84c5b705b4acbb27881b36ff78845",
+      "statement": "The default thread count is the available parallelism capped at 64, falling back to 1 if it cannot be determined.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L755-L757",
+          "version": "repo-lines-v1:sha256:2b2c860498f824d93fb5fe250580f865ad09c6f443b58c9c0d8322755e5e7a4f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFhY2IxYzE3Y2VjZTA1MTVhM2U4MDRmOGUwMDQ4Yzg0OTRkY2ZhY2Q1YzI5YzEzMjI2ODIzN2Q1MmIyZTM4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTgyYjIyZTAyOGZjODQ3MDZjOGM1ZWJkNTg4ZDhlN2ZkODFhOGE3NmU3NGQxOTdlZjJlN2U5MjE4MWZhMzRlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTVkNDMxMTRiZWUyMzFkMDY4Y2JlZTA0NDFmNDI0YjY2NGNhOTZiZDBhNzlmZmQ1MDI4ZjMzMGZkYzhkNWJkOCJ9"
+        },
+        {
+          "resource": "repo://src/cli.rs#L788-L801",
+          "version": "repo-lines-v1:sha256:e0987367835c2aac02e12012ff68de0f9197482c718ab4d4c22e9565e946d954:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyNWRlODY4NmU5NTg0NTFmYTBjMzIzMGNkNzYwNjZhYWRkMGZjNTNlOGRkNjUzNzg3MTBlNzgyMmE2OTE3M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MTI3ZGZjNDMyYjEwYmUzN2ZhYWI5MGEyOTEyMGY2ODQ4ZWFkMDVlODliODg4MmFkMDUyNmMwNmVhOGNjNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b378029c2094a668c9fed2adb59b46f",
+      "statement": "--max-results of 0 means unlimited, and -1 is equivalent to --max-results=1.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L759-L763",
+          "version": "repo-lines-v1:sha256:8ae9f94364b2ab8170f243cc2555365d4221722dd2ebeea90b15be369c2bec31:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJlZGIyZDkyNWMxMzI3YjFmYWVlOGI4OTg4MTI4YWQyYjAyNTJiNWJmOWFlYzE4YjQ1MGRhOGRiY2NiODMxMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNmYjk0YTIyZWU3Yjc2YzQwYmVjOGJiZTk2ZDY3YzgzZjFmZGFiNmZmNDdmYTFhZTVlNDNiNzNmNzk1MmEwOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDdhMDBkZGJmNzEyODFjY2Y5MGI5YjA1Y2VhZTA4ZjEyZGNmMzJhMGM2ZjJlYjU0MDdlMTE1NjQ4MjZhYjRmNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8255e39b3ca4437891243cd30539a22f",
+      "statement": "--quiet (alias --has-results) conflicts with --max-results.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L587-L602",
+          "version": "repo-lines-v1:sha256:c3f59258a96ac2948ac2524bbb0d6bd55949b6c5f01782782b867b4fb7fe19e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ODU3YzI4MTEyNWM3MjgyOTZlMjc0ODkzYzZhZjU1ODQ4M2IxYzg4MjJhOWVlMjg4NzFlYjNmNjQ1YWE2YmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzZWU1YjhiODdhMGUyMDg4M2M0YmIxOGJmN2NjZjM3MTIwOGVkNjM3ODFhNzhkOWQzNjc4NWJhMmE1OWUyNzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fde7fed1d3074f32bf9b24e83e047896",
+      "statement": "--search-path conflicts with the positional path argument, and --strip-cwd-prefix conflicts with both.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L660-L679",
+          "version": "repo-lines-v1:sha256:4fc40830b0f6ef67b8ad2a5e1ffe1278124db20334746951f49f6ddbda306b62:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZTRmMjcwOWVhODc2ZDhjNWQ0Y2Q1YTA4MDhkYjZmYzI2NzUyZWFmYTM5NjMyMTAzY2FkZTQxYzU5ODg5M2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmY2ViZTIzY2FiNjk5YWU4ZjU0NWEyYTkzNDM4YTRhZDU1ZGY4NzU1NGYyOGFjM2RiYmZmYmIzYjYxYTg1ZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyNTJmY2IwNWNkMGQ3Zjc4NWYyZjcyZDU5OTM3MzdlOGM5ZDEwZTliYmI5ZjVjOWY0NTA5NThjYWYzN2IwYTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_990dd13255fb48948151250463e967fa",
+      "statement": "Exec arguments are implemented with manual clap::Args and FromArgMatches impls flattened into Opts because the derive API cannot return grouped occurrences.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L486-L487",
+          "version": "repo-lines-v1:sha256:8cf0808c7bb3fab0d5442cf9721d8934599fae86198ad9055ef7cd8b613dc4a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU5Mzk1MzA0MWE1OTAwNzcwY2Q3NzcyOTg1OGZmZGZhNWFhNjViZmUzY2NmMzMwMzBmYWE5MGNlZTQ2YTI3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM3OTIwMjIyOGNkZDllNzM1MGI3YTYwYjIwMjE1MzYxMDA1NjNmZGJjOTY1MzdmYmUzZjUwMTE0MTNhMjEwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTcwZWViNmI4OTc4ZTc3YTZmMmFmNTcxMWU2OTZmYjM5OGYwNTYxMzQ1NTEzMGUyMTFmMDdhMmRlZDVkMjBmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmFlNzQ1OWQ1MzJiOTYyY2MyZTg5MTVjMTk5YWJkZjA4OTVjMThkMWU0ODk2MTAwMWU4ZmIzZmFlNGJkMGViNiJ9"
+        },
+        {
+          "resource": "repo://src/cli.rs#L855-L957",
+          "version": "repo-lines-v1:sha256:faeaf2f8fbdef59134735271f68651aec32772be35b20d00eedf0b75d7d3153a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1N2FmYWVjOGE5MzA0ZWMzNDA5NzZkMmVhZTdlYTc1ZWRjNzZiYTBjY2ZhMmM3MDc3ZDM4NzQwZDE5NDNiYTkwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5ODYzNjdhYjdjMTg2ZmY5N2EzMjc1MTUzOGJkODk0ZGM0MmM4MWNjZWZmOTNlZDVhZTViMWUzY2MyZDU4NTdjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5YWJmOWM4MTg4OGVhYWMyZDExZTQxNDVhYTFmNjJiZTE2MGJjODhlNTJmNWRiZjgyN2I1N2VjYWM0YzRkNjQ2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_7788a0118f2b45979c96c41721d92e1f",
+      "statement": "--gen-completions is a hidden, exclusive option available only with the completions feature and falls back to detecting the shell from the environment.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L690-L692",
+          "version": "repo-lines-v1:sha256:493a4eb2fc40edcc206b432c01e6009811bfd4b43cab205147d3c6c31d0cd732:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzZkZTI5ZDIxNTc3OWYyNWIxMjk2MWY2NmFlMzhmYmE5NDZlNjZkMTZjMDA1MmMzNDRkNTAyMzhmYjQ0NjI5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDE3NTRlMTJiYjdlNTFhODkwMjgwN2JkZjFjYTJiZTg0M2FhYmI0YmQ2MWRiOTJlNzg2OGFiZTkyNWY1M2RkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmQzMTJhNDQxZTAzNGZkMWEwZGVmOTc3ZjBmZDc0OWE1ODI4NzIxODk4ZDFhZjZlYjlhYTMzODQyMjMwYmI3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNkOWI3NWRkODEwODBmNDdhYTdhY2I3MTZkOTNhNGRiMGEyYjcyYWM4ZDQ3NDM4ZWI5NzhmNDVkMGQxNmJhYyJ9"
+        },
+        {
+          "resource": "repo://src/cli.rs#L775-L786",
+          "version": "repo-lines-v1:sha256:e287588ac4b16648ca4984afd99bbb05f0d3e944315cb3f9f08c4666d7334199:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZGUyOWQyMTU3NzlmMjViMTI5NjFmNjZhZTM4ZmJhOTQ2ZTY2ZDE2YzAwNTJjMzQ0ZDUwMjM4ZmI0NDYyOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzZTZlMjQ4MzhhNTIxMzQxNzA1OTIxOGEwN2UzNWUyZjFjNmNkZTk0Mjg3NDZhZGNlOWVhNmI4ZTFmN2Y2M2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwMTA4OTViYjFiYzkzZjJiMmNiMmU3MDBkM2I5ZTU3NzNhMGUwZTExNTMwM2E5MTY1ZWQ5ODc1NzkzOWNhODEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df3ca16199ff40fc9926bdc7fa6d7dce",
+      "statement": "zsh completions in contrib/completion/_fd are hand-maintained (based on ripgrep's), while bash, fish and PowerShell completions are generated from the binary.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L15-L30",
+          "version": "repo-lines-v1:sha256:6314ff228ca44fbeff18a6b45a5b65918d9deeb15476365aef6abc5b5205559c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNjczOTc3MTNlYjI1ZDllM2MzMTNhNzcwNTMxNmEzN2M1ZDQxYWY5MjUwNzZkODVhMTdiMWY4ZjcyNjhiZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxYWY2ZjFjODc4MGE5MWUwZTJjNTc2YzcwZmJjNmYyN2NjY2FkMGJmYjJhZWFkNTVlOWZmZmM0NGI0MGE1YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmYTUwODQzYzU1ODVlYzVlM2M3OTJmNDk0YTAyOGIyNTcyYjY4ZDcxODAzZTk3OWUxMWZkYzhkOTFjODAwOTYifQ"
+        },
+        {
+          "resource": "repo://contrib/completion/_fd#L1-L8",
+          "version": "repo-lines-v1:sha256:263bb8a3f0360638abe0ec6b71b2fb6c90a9ca6155f9019a335c43b838802a26:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjMxOWM3ODMwMWIzMzRjYzAwZmVhOTNjOTQwNTVkZjI0ZTc3NDUxNzg4M2I5NWMyMjZiMWFlZjAwNWU1Mjk1NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2QxZjJhOTI3NTdmMWE2MWM5NzQ4MjE5NTYzMzdhMmI4NzhlOTIyYWJkYTg3NGU1YzgyNDYwZjI3YzhhNTExNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODU0YjA5MWM5NThkZDE1NDU1ZWFlYzEyNzA2YjhiMGE2OTNkMTZkMTJkY2Y1YTI4Y2RhZWQ5NTY3ZDBkMDQyOSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:05:54.272Z"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:365ae81c573426f5734fdcfbe4afdcefb018fbd0354b923fc74099cd34f21919",
+  "claims": [
+    {
+      "id": "claim_8c2281f09a4945d4949ea6fc5cb1988f",
+      "statement": "Pytest is configured with testpaths t/unit/, --strict-markers and xfail_strict, so a bare pytest run executes only the unit suite.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml",
+          "version": "repo-file-v1:sha256:2f46121a037f2470525106f7d657d63a9500e84f8665f77287497ab201ddc797"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b7dace4315a4f668f0ec9c8ded6cdf8",
+      "statement": "tox defines unit, integration (with broker/backend matrix factors setting TEST_BROKER and TEST_BACKEND) and smoke environments for Python 3.10-3.14 and PyPy, plus flake8, apicheck, configcheck and bandit gates; smoke runs with reruns.",
+      "evidence": [
+        {
+          "resource": "repo://tox.ini#L1-L95",
+          "version": "repo-lines-v1:sha256:9fd2e57a475770d1cf5fb1e00c89b94ff13d344db56e7708eddba5dc54599863:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwYWI3NjVkOWU2MGJmN2U3MGQ1ZDU4NzU4NDNiZjdmZjMxMWIwOGYyZjBmNzZiOTc0ODc3NzQxZTc0MDJiZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyYjhiZmQ0NzUxNGE3ZjczYjU0ZDRkMjNlOTNlYWFjMjg1NGJmMjc4OTRmMTBjNmI0NzcxYzA1Yzc3N2ExYzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxMmUwMDI4NzkzMmM2NWYyMDYyYWUwMWM2OGI2ZjRlZGUxNDI1MjBlYzFjODZjMjYyMWI1ZWJkYTUxN2U1ZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b679d547dd4b41c38f0406167868f66c",
+      "statement": "The integration suite reads TEST_BROKER (default pyamqp://) and TEST_BACKEND (default redis://) and runs a session worker including t.integration.tasks with a Manager fixture.",
+      "evidence": [
+        {
+          "resource": "repo://t/integration/conftest.py#L21-L112",
+          "version": "repo-lines-v1:sha256:4b6cc7558f091f440baff02f6427b2936a811a6f7475ed22885f8becde95365f:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3NjVkOTVlNWRkY2U5NzliYjg4NzkxYzg4N2YyNmZlOGFjMjMzNmY1YWYzYjlkMjBkMmE0MTViYWEwMWUwMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiZTY4NDU5OGQxOTZhMWY0NzllZmY0MTIzM2I2OWZhZTlhMjBjMGNmMTIwMjJiMzI0NTRiYWE4MDI2NDExZGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1YzFjNDYyZTJhMzlkNzQ3NTlmNWUxYjEyNmY3NjgzYTJiNzMwMTE4ZTE4ZjUxMjJiMDhjZWRlZWI2NTBlMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlZjExYzliNzE2N2MwYWRjNDJmZWE4NTRhYjYzNDk5NzcwODE0YjBlNzE4MTAzYTllYzBmOWJlN2FmNjk5NzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_177ac164aad34fdf88a09bebde957367",
+      "statement": "The unit suite imports celery.contrib.pytest fixtures directly and uses autouse fixtures to enforce isolation such as thread, stdout, logging and shutdown-flag sanity checks.",
+      "evidence": [
+        {
+          "resource": "repo://t/unit/conftest.py#L20-L265",
+          "version": "repo-lines-v1:sha256:6d1db250cb03fbe240fa8f9dbd0582f862c1a5b7f748fcc91b0e04aa3f64338e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQ2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhZDk2MTIzMzViMTk5ZjhlMDQyMzVjZGVjNjlkNDEwOTA2ZDYzZjE3OGM4NTI3YTcwYWQzOTRhY2Y3MWI5MDhlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlNjhjOGI0MDI4NjcyMmY4ZWNjMjYxMmI2Nzk1MmExYjYzOGMwZjZjNWQ3ZDVlOGRhMTJiMmM1M2YzZmU0NmJmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjMWY5Y2RkYjVmMjVlMDcxOTQ2OWM0MjZmOTQ1NjM3NWI5YzljYTViZDY3YWNkZWE4Yjg3ZmE0ZjIxNDY1NTkyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlODY2ZjA3YzI5NmY4NWEwMDdlYmQ4M2JmNjk1M2ZlNWExNzY4M2IwOWRhYmE3MzE3MDNjZjAwYWYxM2ExM2VhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_2433bb17b3874a828a65d1e588e658f8",
+      "statement": "The smoke suite builds on pytest-celery and pytest-docker-tools with Docker worker definitions and operations for worker kill, worker restart and task termination.",
+      "evidence": [
+        {
+          "resource": "repo://t/smoke/conftest.py",
+          "version": "repo-file-v1:sha256:33e185308025df3a4d30f93dad3a5e919958d8125a42bf5b2810524481598bd1"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca0564d9f5d0459390de5c83044a66bf",
+      "statement": "celery.contrib.pytest provides celery_config, celery_parameters, celery_app, celery_worker, celery_session_app, celery_session_worker and related fixtures, and registers the celery(**overrides) marker.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/pytest.py",
+          "version": "repo-file-v1:sha256:ced6ea219d0cb9644b4c0f914fa93904a56fbae936f873e8143f7eab7b87a3eb"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2c10f4960fe43ad852072814d4d7f82",
+      "statement": "start_worker runs a TestWorkController in a thread with mingle and gossip disabled (heartbeat disabled by default), asserts celery.ping is registered, checks broker connectivity, resets task_join_will_block, and raises RuntimeError if the thread does not exit within shutdown_timeout.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/testing/worker.py#L100-L200",
+          "version": "repo-lines-v1:sha256:9558f835ee1358a983e365e03388f50df5bb40a9f09b4ebcb799b8495a600e2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlODA3N2FkZGY3OGE5ZGU2OTMxOTdiZWE4NzExMzk5NGM5YjgxYjhmODNmM2U2ZDg0ZTdiYjU4NjUyMWFmNzkyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4ZDkyNDgyZjYxMGRkMTc4Yjg3M2ZjZDdhMjY3MTQ3NDQ3YTU4ZTJhMTVlNzRiMDkwODBlZGNkNzVkODM4ZmMyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3OTdiOGE4OGU2M2E2NjRkMDNlNTc1NmFiYzhiYTE5MGE3MmVkYzQ1NTkzMDdmM2FmYjQyYTcxYWYzY2MzMTcxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkODkwZWM5NTI3NjJiNmU1NzEzYWU2YWUyNTU1NDQ0ZmZiNTAyMmE0ODQyMDFlYTRkNjA0OWI0YWY1MmUyMTkyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8490a155e42444a87d6a63a19f9f344",
+      "statement": "TestApp uses a memory:// broker, cache+memory:// backend, JSON-only content and UTC by default, and imports the celery.ping helper task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/testing/app.py",
+          "version": "repo-file-v1:sha256:96f5be618d87d7c07ad260394907ad3b70b34c8ee329046c6571ad851dbb8711"
+        },
+        {
+          "resource": "repo://celery/contrib/testing/tasks.py",
+          "version": "repo-file-v1:sha256:a4933769a6f0eee75ca69cf840d794835fba9e59db925ad3fa13f925798bfa03"
+        }
+      ]
+    },
+    {
+      "id": "claim_11a91f6763a547f69134cfda196650f2",
+      "statement": "The Makefile docker-unit-tests target runs tox -e 3.12-unit inside the docker compose celery service.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L178-L180",
+          "version": "repo-lines-v1:sha256:433e0f2a75e880f37fcf68f5ce690f8de6f92cbfc73dee9faf73cb0249d40a07:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU2YTc5NmE2NTRkYzlhOThhMWI2ODAyMmYxNGQyODU0MGVmMDgzY2U0ODE5ZDEyZDBiNDBhZTBhYjAzNmZkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWEwODMxMDBjM2U0N2QzYTRlYjEzMWNlMjE2MzhmY2NhYzJlZGI0MWMxOWJkODc5MDExN2Q1ZTQyNzkxYzhiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTQ5Mjk1ZTFkMTg1MTZlNTZjNjcwZTdkMDUxMDRjNTIwNTZhNzFhMDViZWQxOTNmZGYwMDJmOWNhMTRmM2IxNSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T09:27:53.075Z"
+  }
+}

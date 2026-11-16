@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:59375c67a7a03f40ce111ec51263628134059e7ffad79325b52a078e57307cdd",
+  "claims": [
+    {
+      "id": "claim_f1b3ddf243cb405fada47558b4eaa1f8",
+      "statement": "The celery console script maps to celery.__main__:main, which applies eventlet/gevent monkey patching based on -P/--pool before importing the CLI, except for the multi command.",
+      "evidence": [
+        {
+          "resource": "repo://celery/__init__.py#L123-L152",
+          "version": "repo-lines-v1:sha256:52683484b1cac1fbc9e7033bff9569970f8df2dd2cdfb50733c9adf99ffb7c98:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhOGUxYWNiYjI4ZjAyYjg1NzNjZDQ4MDJiYTlkOTQ2MTRkZjJjOWYwMTA0N2YyMzU5MjY4MThiMWI1OGM5MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyZDc2NGFiY2YyYjU1NzAzY2Y3Y2VhZGIzMTIyNTk3MmM5MWY1ODFmMjcxMWJhZWVkYTFiYjExODU4ZTE1OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxZDEzMWJkYmEwZTg4MGE4ZGQ5Y2QzMDlmYWQ1MjhjMzcwOTg0ZmRkNzEzZmRhOTRiMjk0NWRjY2M2ODJlMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhZTBhOGMyZDcwODY4NTQyNzVkMzZiZjk4MzI5NTIxMzkyN2EyYTFjZGU5OTJiYWUxN2I3YTg3OTkxOGRkYWQifQ"
+        },
+        {
+          "resource": "repo://celery/__main__.py",
+          "version": "repo-file-v1:sha256:d224f758273cd2603cf1785d0314e9b7f83a4c54609b01d273d186f8788fce41"
+        },
+        {
+          "resource": "repo://setup.py#L156-L158",
+          "version": "repo-lines-v1:sha256:8c033bd3d3cba780e0d6521884660d34d70b69885e91c881ab9a91da5e2fbc4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTg1ZjA5MGQxNzA2ZTJkNDBiMTU2MzU2NjRlNGNiODgwMTMzYmI2MjUyNDFlNDU4NTllYzhiYzMwMGNlZTQzZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFhZThhMGNhNzZmOThmN2I3ZGM3OTg0OTUxZDYzZTU3ZGIzYzY0NTU3OWNhNTFiYWQ2YTUzOWQ2MTRlZGJiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTA5ZmNhNGIwN2U0ZjMwZTgwZWM5N2U3ZWY4YjBkZTgzOGI1NGMxNmY1ZGVkYzdiNTFkZTU1NTc2OGFkM2RhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjZkMjQzMjM4OWI1YTA5NTdjNzBkNmVhMGY1Nzk1YjdmMTAzN2M4MGY2MzU4NjI1ZjYxYjk4MGI5ZWQ4ZGNlNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6465370abe394910a9a8ebc0777ad6bc",
+      "statement": "The CLI is invoked with auto_envvar_prefix='CELERY', and the global --broker, --result-backend, --loader and --config options are exported as CELERY_BROKER_URL, CELERY_RESULT_BACKEND, CELERY_LOADER and CELERY_CONFIG_MODULE environment variables.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L120-L136",
+          "version": "repo-lines-v1:sha256:aeee0f2bc06853246385101852c677680870fe33aa72a13789a3cc915482ce45:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwYjc1YTk5YzQzNTg0N2E4MWU1ZmY2MDNhMjczODdiMjY1NzI4YzcwNThjZDBjYmI5YzBhMzYzNDAwOGEzMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjljYjA5MjgwZWUwNzgxOTQ1ZTQ4ZDQwNDFiZDJkZmFhZTY5MWFkMmVhYmY1ZDNjYmEwODQ2YzcyMTZjYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhOTUzYTRmN2NkNjY3MzJmYmNhMWMzYTVmOGM3OGRjYzIxZDQ5Njg3MzQ1Y2JhYjQzNDA5NGQzNTIwMTFjZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1MTM0Zjg1YTBjNzJhZjJmNjQzMTYxYjExYjBmMmRlNGJkM2FmZmM5YWJjYjYwZDA3ZWU2Y2U4YmI4NDVhZjAifQ"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L221-L227",
+          "version": "repo-lines-v1:sha256:567c31104d42e214f12604f452737ce2e53069a4b70e48b66b3352c7867a717b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ5MjBiYzE4MGJjNjhiYzNkM2U0ZDBiOWRjMDFhY2Y2NWJhN2JjMWZhYjk5OGU1Y2I3ZjZhMTA3YjcxMGM1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdlNmQ3ZDc1Y2MwODllOTcyOTczMWNkOGY3MGMwZDUwZGNlNGFkNGJlYjA2ZWViNWZlZWU1Mjk5NzY3NDZiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTQ4ZDc0ODNkMDYwZjE3MjJlMjQ1MzY4ODgzMzQyNTZiNTQ5MGU4YmJlODY5ODIwNjc2Y2E5ZWFmMzUwOWNjOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b6f0a19f16d49d1af62e211334faea0",
+      "statement": "find_app resolves a module to its 'app' attribute, then a 'celery' attribute that is not the celery module, then a '<pkg>.celery' submodule for packages, then any Celery instance among module globals.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L378-L415",
+          "version": "repo-lines-v1:sha256:5e334dec645ff8bbeffb40fa293a91c08b739eff47b75cbffa3a5e5c0044934c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYmZkZGZlZGQ4MTlkNWFhNWIzNzc3NmEzNDQ1NTg0OGEyZGUyYmJkNTE1OTQ1ZjIyNTk4NzAzNjRlOWM4NDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMDRhNjVjZWExOTViYWY0MDE1MDU4YThjNWVjZjNhNGE4ZGU2ODlmNWVhMjdhNTNmODFhZDA4ZTZjOGY0NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e68db9a724ad4feaa9b7d5c5925d82e6",
+      "statement": "App user_options for worker, beat, events and preload are appended to the corresponding click commands, and preload option values are delivered via the user_preload_options signal.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/base.py#L143-L160",
+          "version": "repo-lines-v1:sha256:b8b2653ae2760cb115bcc93fca6d65aa1b657a8d3c3fe100631f11c3d429a254:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwN2Q1ZTdkODJiNTZlNTliODY3NTYxYmI2YWE3YWQzNjQ2YTlhNDBkOTFhOWY5ZWMyZDI2YTVhMzQ5ZGI4MzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NTJjOGRjODE4ZjEwNzUxODc4YWIyNzM0OGUwOGY1YjdjOGQ5ZWE0Nzc1Y2Q4ZDFmZjdiMjIxY2FhMzA1OWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwYmQ2NTNkMjA2Njg0MmExM2Q4MWI1OTY2ZTMxMzdjMmZkMTY3M2RjZWYyNWQ4MTVkN2MwZTVkMjJiOTlkOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MWEwMzJiM2ZhYWYxZTA5YTdmNmE1ODFjOTAxNGE0M2U3ZDU0ZjAxZDk0OWYyODg5ZWI3OTg4Zjk5YzRjMjkifQ"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L156-L163",
+          "version": "repo-lines-v1:sha256:814351f0711a44315ec4d978c0ead84d53604f3202923206e80e40d72c0e3ad4:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIwOTI4N2VkNjliODNiMDRlMDRjZDdmY2FjNjJiNTBiZmVlMDYwYjQ3OTk1NzFhMTkxNTI0OWUwODQ0MDg4NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGY2YTQzMDZiOTM5ZDJjZDE0YTAwMzMwY2Y5ZDQ5MDQwNzA5YzEwMGM0ZjM4YmNhNzk0NzFmYzNjZTNjZWYzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTE5YzQ2MDIyZmMwYzgyYzlmZDA0ZGRkYzgyNzkyMzM2NWNmYTlmMmQ2YzYzNTAyMWNjYWQ1NTRlN2M3NDg0YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f44fa90f4e5472b91a0f29f3e6beb39",
+      "statement": "Daemon commands add --logfile, --pidfile, --uid, --gid, --umask and --executable options that fall back to the '<command>_<option>' app setting.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/base.py#L197-L227",
+          "version": "repo-lines-v1:sha256:7b9809620914eb4abe45f29542dc26a5366bbccdf414867e0dfb0b4e760eb678:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiODI0NmFkMjA4ODZhZjdhMDBmNGQwOWZhMzU3MzEzYjVhMzc1NzA5NWY5N2E0MTQ1NzM1NzBkNDExMTBjYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4YjhkNGVlY2FmNGQ2NzA3NWRlZDRiMzZhNjA1ZDhiZTU4OTBjNWVlZjQ3M2MzNGMxOWI1NWQxNmMyM2UyYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmZWM5YmJmZjE4MjEwOWJmMWNkMzJjMzVkNjQ2OGRjY2IwY2E0N2RiZDNkZDExYzc5ZmNmZTMxMmQ1NzlhOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5M2EwOTJlOTRkNGQzNGMwYTRmNDBiZjMxNzFmOTA5Mjc1Zjg5NzE0YjIzYjViYTBlNjBkOTA4NGU2NTQ5ZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_79257790c4ff4de5817cf1b1e07e8e90",
+      "statement": "celery worker --detach re-executes 'python -m celery' inside platforms.detached without --detach/--uid/--gid; otherwise it drops privileges, builds app.Worker with node-formatted pidfile/statedb, starts it and exits with its exitcode.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/worker.py#L109-L133",
+          "version": "repo-lines-v1:sha256:ad5f2bb0265c89ed8366179e3f4f6f32a9a31542d45a59172bc8d8d3fe4005a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4YzNmZDA0MzlhOGYyZThlZTEyYjNjZGVkNjEzZGU2ZWY4ZDhmOWVmMDYyZjc2ZmFiYzYwZTk1NTY2ZTY0MWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNDhkNzk3NzgxNDJkOWZkYjY5MDJlOGQ3Y2I0MGIyYjcyNTQxNGFjZmQwYjA1YzEyYWRjMDc0OTcwODY5M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2NWViYTU2MzZjNjFiNGI3YWJkOTQyZjg1MjFhNDVhYWVkMjJmYWUyYmRiMzE0ZDBlZTFlYTRkZTYxMmVjZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2MWM3Y2Y0MzRhMDQ2YzYxYWI3NjBmMWZjNmEyYzY4ZTgwMTdlNWIzM2JlYzE5MWY5YjdlZDk5OGIwNmFmM2IifQ"
+        },
+        {
+          "resource": "repo://celery/bin/worker.py#L307-L371",
+          "version": "repo-lines-v1:sha256:46b1c0fb73ecf0147d70195ad6f61d16db0f5f87eca663eb6b1795c550033b1c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0OGM5Y2M3ZjhiZTI0ZDRlYTg0ZmM2MTk3Yjg3NmQ3ZTYzNzQzYzNmMGIxYjE1MjVlNzBiYmNmYTQwOTk2N2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NTVmMjZiMWQ5YTAzZmRmODQ2MzFhOTIwMzNkYjg0MWM5ODVjZGVlNmYwOTk1MjU1MWRlNTQwZWRiYjk2OGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYjhiNjRjZjA0ZGQxNmNlZGQzYmZmOTgzZDBlM2ZkODMwZTQ5MWFhYWEzNzA4Nzk2OGIyY2U0MGFjMDA3ZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b643f2922c943aba877493b9d2eaaa7",
+      "statement": "celery multi gives each node default --pidfile=/var/run/celery/%n.pid, --logfile=/var/log/celery/%n%I.log and --executable, creating missing directories.",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/multi.py#L137-L154",
+          "version": "repo-lines-v1:sha256:a807292ca1d0976d749f36d110642b72a922567f3ab29c30b7e2241a8ae04117:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0ZjAzM2Q1MjM3Y2NjMzQwNDY2NzczOTAyMGMxM2U0YzBlMjlmYjU4OTFmYjE4MGQwM2Q1Yzk3YTg1NTliMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlM2NmY2ViMzNlMDExZjliNjk1MDg4ZTBiM2FhODNiMTYwM2Q2OWRiNGRjNjU4MDNhYTgzNjM1M2U4MWIwZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0NjRmZmU5OTljNGJiOTI4ZTZmZWJlMWIxMGZkOTE2M2RlNDMxM2YzOWI4NzdkODQ0YWQ4MjMyMzIyMjU5N2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2OTU0NDFlNGJjMmZhOTVmNTVlMjIxMWJhNDI1OTIwMTBlNmU4NmJmMDcxZjQ1ZDRmMWU2NDNmNWJkOWY1ODAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T09:27:53.075Z"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6a56fc552a273fe8f10cd2f3b3b81ed067849a95943595fd5d374dc0e012122b",
+  "claims": [
+    {
+      "id": "claim_bafdd7295e2c425e88aa87117a020a1f",
+      "statement": "PreMainMessageLoopRun prepares the embedded Node thread and starts Node polling, and locks URL scheme registries, before the main message loop runs.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L425-L436",
+          "version": "repo-lines-v1:sha256:7358f4be67c7d37ccbff10b4959c617b59cf72b99fb3bf0004810b99c3eb8fcb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzOTgyZTU2NTdiN2ZmZWI5MDAxNmY2NDNmOWEyNDdmOGVjYTU0M2FkYzJlZWI0MTlkZjFlOWJmYmQyMjU2YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmZTNiY2U3OTk0ZWYxM2U4NzI1NWUxYmJiMmRhZGUwNWQ3NjkzNTUwZTY0MzIzOGZjNmMzNTkxMTNiZDNiMjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MTU3ZDJhMTVmM2YzOTA0MGU4ZGI3NWVmNjFjNThmOWYzZWNlOWU2Y2QzNDM4MjAxYTVjNmRmMDcxYTA2NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmN2FlMTE0ZmY0M2E3ZTlhOGVhY2ExNTk4MzEzN2FmYzRhYzY0ZTA1NjQ2OGZiNjk5MTA2ZTJmZGM1OTEwMzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa1ea55c62174e589e2b47e7f3c7dc15",
+      "statement": "PostMainMessageLoopRun shuts down each browser context's DownloadManager before Node.js is destroyed, so download callbacks cannot run against torn-down Node state.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L549-L566",
+          "version": "repo-lines-v1:sha256:fb59ffaeb5aab429016db15f84971903f0aa21a326f18e4f51205f2a45a00a65:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5ZjY3ZmRkNTVjZmY2MTkxNzk3MDU0NjE2ZWQ4YzA5YTU2MmRiYWNkMGUxN2VkNDdlYzRjMDIzYTkwYTQ3YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MmM4ZmJiZGU1ZGUzNmM3ZWMxM2IyMDFjZWJkYjRjZjEwNDgzYWJkYmMwM2NkYTMwOGRlNDllMjgxMDUzNGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MTU3ZDJhMTVmM2YzOTA0MGU4ZGI3NWVmNjFjNThmOWYzZWNlOWU2Y2QzNDM4MjAxYTVjNmRmMDcxYTA2NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhMDJhNGQ3NmZkMThjNzg4NjlhZDRjNzk2Mjk5ODQxODRiMGYyNzU1MDc5ODM1ZTQ3NjI5NTA5MjhjYzhjMGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d3b6cb19764c41f1baaeab6a843365e3",
+      "statement": "Browser::Quit consults BrowserObserver::OnBeforeQuit through HandleBeforeQuit; an observer that sets prevent_default cancels the quit, otherwise windows are closed and shutdown proceeds once no windows remain.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/browser.cc#L246-L250",
+          "version": "repo-lines-v1:sha256:07c5c745cba694c249a6399605ba302d91051b218f7aec0077fba3a4870458d8:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODIwYzJkNGU2ODVmM2IzZTVlYzJkZjQzNzYxOGM5MjE1ZDljM2I0M2IxYzIzMGI0ZDYwNjExNzhmZDVjMWYxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTIyYjVlMDM1NzkzYzRjMWYyZDhhYTNjYmM3MzcwYjY1NzA1ZjRhMjQ0MjVkOTU4MzVjNjU3Njc3ZGEyNDczMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjBjZWIyNDhjMDBmOTIzNzgxYzdiYjFmMTc0N2JjNmNkOTVjYTdjMTkxMWJmYTM1MzBjOTU4ZDVjYjBmYjJjNSJ9"
+        },
+        {
+          "resource": "repo://shell/browser/browser.cc#L86-L98",
+          "version": "repo-lines-v1:sha256:26a227c4e08f6fffd243b5a19ceb1fe15009acc759ea91d3481ef1ab3a43639d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0YTNlZjgwYjgwNjMzY2EzNjc4MDYyMmY3MzVjMTljODY3YTk1Njg0ZWIzOGZlZGI2YTJhNjY1YWJmMjI4NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZGIwMGY3N2MyYWEwYzI2MGUwMjQwNGQ2OGQzZTczMmE2NWY3ZDE5MzM5YzcyZGQxNmQwNTNiYmZkMDkwYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0ZDc1YjliY2FiOTY0ODQxZWNjNjRmYTRhMDY1MjU0NGVhYTJlYzY3Mjk4YzYwM2RkNzk1NGFiNmVlNDRiNzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b40c29d0f1b43a795a1d96ed19b349a",
+      "statement": "A BrowserWindow's native window is created through NativeWindow::Create, which returns NativeWindowViews on Views-based platforms and NativeWindowMac on macOS.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_base_window.cc#L112-L115",
+          "version": "repo-lines-v1:sha256:2a3d4156be26fbd24a413682768b87851ec15c114cb205faca235ed97316ed7a:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2E3MjFlM2JkZDRjMGFiN2Q4NGI2ODMyNzY2Mzc3Y2JlYTVhZTM3MjA1OWIzYzU0MmIxOGM2ZmJjZmQwODgzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTVlMzVmYzRlYTZlM2M2ODBmOWExYTMxYmFhYTUyOTllZmQ2NWFmMjZiZjg4ZjM0YWZkNzFhN2MwYjZhNzQ2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjkyNDZmYTk5OTZkZjBhNzcxOTVkODdkYjJhNzM3ODg5YTk0ZTgzZTU4ZjNjMTI2MDQ2NjI2Mjk4ZWIxNmVmNiJ9"
+        },
+        {
+          "resource": "repo://shell/browser/native_window_mac.mm#L1879-L1883",
+          "version": "repo-lines-v1:sha256:ea5c155783e531682a0f4aec36eb4f2ff5d155abbe6d09a509a73458cfa47952:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ0NDYwMDA0NDc5Y2IwOWMzYjYzNzU5Y2UxYjQzYWY2MWM2Mzc5MDZiYjdmNTVkNTg1ZjJkODViMGE2ZDYxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2FhYWZhYmU1ZjBlNjQ2ZmYxZTAwNzljY2U3ZjJhNWYyZmNmZWY5NzY1Zjk2MzA2NTAzN2IyMGExZTg1ZmJmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzgzZGIyODVmZWRmNzM3YzgzMTYzZjRjYjE5MmY4ZmYyZjM3N2QyZjFmYjRjZjk1YTQ2NzMyZjY3NzNhZGM0ZSJ9"
+        },
+        {
+          "resource": "repo://shell/browser/native_window_views.cc#L1950-L1953",
+          "version": "repo-lines-v1:sha256:e2ecfe55ade083d47709238c5404b3dbc4111dddec0bf24b07fc80de68d036f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ0NDYwMDA0NDc5Y2IwOWMzYjYzNzU5Y2UxYjQzYWY2MWM2Mzc5MDZiYjdmNTVkNTg1ZjJkODViMGE2ZDYxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTcwZGQyYjRhM2I4OWZjYTNhMjViZjE5NTMxNjljMDkwNWQzOWUxNGZhODdmMDE5NmQ5OWQwMDhmOGUyMDNjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2FhYWZhYmU1ZjBlNjQ2ZmYxZTAwNzljY2U3ZjJhNWYyZmNmZWY5NzY1Zjk2MzA2NTAzN2IyMGExZTg1ZmJmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODY2NTFhYmFkY2MwZTcyNmRhYzY0N2JmMmU0NTc0YWM3MjMzMzZkZTA5ZmQ1NDg4NTY2MTNjM2I1MzcwYThmMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a2996c764b745cb8635b0b78d76fb5d",
+      "statement": "ElectronBrowserClient::ConfigureNetworkContextParams is the browser-side Chromium hook where Electron sets network context parameters for each browser context.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_client.cc#L824-L826",
+          "version": "repo-lines-v1:sha256:89bb5c392e56033632806c42fc65fdce6f788f25056abd0a6d2179ade82426da:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZjNTJkZmQwMTQ2NDUzZjQyMjcwNTJlZTUyMTQwYjcwYmRiYzgwYmI0NjZjOTViYjlmZDAyOTY1MzkzMjk4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODBiMmY2YjE1ODlhMmZlYjllNjExZTgxNjQyMTgxZjgzMjU0M2ZlZWEyZWVlNzc0ODU5NGMyZDYzMGNjZDlhMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUxNTdkMmExNWYzZjM5MDQwZThkYjc1ZWY2MWM1OGY5ZjNlY2U5ZTZjZDM0MzgyMDFhNWM2ZGYwNzFhMDY0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGZmYWRiNDdmYzI4NTU4MTUzOWJhZjYzOWM1ZmJjNGQzMWIwOWJiODUwOTdjZjA3YjAwMDUyNGQ0YWM4MzFlMyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

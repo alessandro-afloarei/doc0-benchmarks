@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8dd4e7ef824a9236fb4599d1f8d543431de8757849a256cd70cae1b75e9549af",
+  "claims": [
+    {
+      "id": "claim_d6de4433bc414336bed3b91d13f74e1c",
+      "statement": "LLMRegistry owns service-ID instances; get_llm rejects config changes for an existing ID, while the agent accessor currently reuses the existing instance even for a differing config.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm_registry.py#L24-L106",
+          "version": "repo-lines-v1:sha256:9c27fca35ac0ca8e0676078e343626f810b87bc6128424889ad381ab1d093fec:eyJzZWxlY3RlZExpbmVDb3VudCI6ODMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDdhMDdhODNkZDE5OTZmYjUxNjg0YjQyYWVjYWY0ZTkwZmI3OGJhNzIzMGU1NDJlZDdiZDAxZDQyMzAxYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YTEzNGU2MzUwZTE1NGUzOWJkY2ZiMjA1MGVmMTY2ODg2ZWUyZGIyNWE1NTQ5NTRmZjA5ODQ0MTI1MzIwZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0ZjIwYTQ2Yjg2MGFlOGM3NjhjZTE1OWZmODAyZGI1YTVjMzQxMGUzMDVmYmYzYjM2NWU4YWI5YjdlYWNiZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNGI0ZjUzOGJmYmE1NDQ3NDBmMGJlMDlmN2UwYzU4Y2M0Yjc0YmUwMzE3NzdhOGY0MGI5YjRlZDNhZDE3MDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfd1d6fc788e4581b8ca67987f0ddc48",
+      "statement": "LLM configures provider requests via LiteLLM with model capabilities, credentials, endpoint, timeout and provider-specific options; completion logging requires a folder.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm.py#L61-L228",
+          "version": "repo-lines-v1:sha256:5793841b12b3fe732342dabe2883c2596997428e0f98ec3afaee543d77cdcbdd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTY4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5ZmQ3YTA3YTgzZGQxOTk2ZmI1MTY4NGI0MmFlY2FmNGU5MGZiNzhiYTcyMzBlNTQyZWQ3YmQwMWQ0MjMwMWJlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlZDNhZWU2YWZhZDUxZDVmNWU1NmM1MTVhM2ZiMWJiOTcwMjc4N2FlMDQ5MDhlM2QzOWY4M2RjOTY0MTgyNmJjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzMTkxMmExNjcyZWFjZWU1NDg2MWE1YzAwNmJjMjE1YjdkNDkzODIyMDEwMzI2ZDlmNjcyYzIxMDMxZmYzODY4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzYThkZjY4M2JhNWUwODBlYWVhYTk0YzI5NWU4NzRlMmYzYjE0Mjk2MjEwNzNmODFmODA4MWY5OTYyNGQxZTM4In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ecf277eadded43a49e1118eb374e2ff7",
+      "statement": "RetryMixin retries selected exceptions with exponential waits and bounded attempts, reports retries, and changes zero temperature on no-response errors.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/retry_mixin.py#L18-L69",
+          "version": "repo-lines-v1:sha256:3ba2f7ef3e2b8479d8e8aeb32bd044668094b89191365694464dd342e47929c7:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZjIzODBkZGE3Mjc0MWQ0NWEzZjIxMjdmNWNiZTRiYjYzNDFlOTc1ZjhlMjRmMjVmMDU1MDBkZDEzMmM3N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZmQyNDQ0NDYxZDk2NDczNTdmYjBlMDVkZWQ0ZDcwNzIxYmY1ZDhlNzg5NDg5YzZiOGEyNjA5NTEwMmYwOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlOTcxZDU5MzUxODlkZDcwNGZkYTE3OTVlMDc0M2NhOWNkZDk4NjVjNjk3OGZjYWE5MWI1OTA2Mzc3OGUzZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxODI0OWE0YjhlM2Q3NTZjMGJhOGUwYTkxODEwZGI4ZmE3MWVlY2UxMWFkNzFhMTQ4NDg1ZjEzNDY3M2Q3YzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_48af85aa9e3e4c9dab0ab47b52684449",
+      "statement": "Condensers operate on state.view, return a View or Condensation action, and record metadata in state.extra_data.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/condenser/condenser.py#L17-L124",
+          "version": "repo-lines-v1:sha256:ebdddb89ec27c3d3f5ede09e54a673c86ec673ca8c4c9dc5c7168025182931fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwZGE3NTE1YzgwMjk5MmEzNDM5N2RiYTBjNDQ0ZDU2NWYwMWYxMTNlZGVkNzEyZTJmMWI1Y2I0NTQ5YmE5YTRhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhYTQ2NzFkNTNlZjM3ZWYwMGFmODQ3MzMxNTE4ODA1NTViM2ExZWIzOTFlOTY0NWU3MzM4NjVmNzg1MzljNGU1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxZGQ4NGZlYTgwMTc0MzEwOGM1MTM2MWQ5MDZjODViODJkM2Q4OTAxNzkzMzQ5M2EzMTIyNTMxMzg4NGNmYTk0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhOGEyNjcyZWRlYWM3NWQ0ZDQzMzQyNjI4NWNhMmExZGFjYThlNDBiMGYzYzE2OWM0ZTg0NzhlMjVlZTMwM2Q2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c740b9c1df043e5a819a4feba2fb621",
+      "statement": "Memory returns cause-linked recall or null observations for supported recall requests and reports unexpected failures as ERROR_MEMORY.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/memory.py#L86-L137",
+          "version": "repo-lines-v1:sha256:4261c5e57aa4eeb88a0f5cce69a587a1896cd57a53231e5f4ccca7ef69f14be5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlNTViMDY0NTg3ZTY1ZDU3Yzg3NjU4NTM1NmEzZWY0ZDVkMDg4NDk2NDMzYzQ1ZDllOWU2NjJkNzk1YTg0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NjEwMDczNWJmNmFlMDJkN2EwZDFhZGE0MzFjZWEwMTIzODdkMGJjZGE0NDNlZmVlNTMzZDBjMWYzMTZmZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1NjgyNWU4NWM2MmU3ZmJiODVkMjhlZGE2YzBiOWJjMzE2OWQ1YjZmYmQxZmE4ZDc2NDY4MjVkOWY1NWFjY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f57ac5e34f143fb8973e024922b7b39",
+      "statement": "Memory loads global then user microagents, accepts workspace overrides by name, and collects MCP configuration from repository microagents.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/memory.py#L254-L318",
+          "version": "repo-lines-v1:sha256:5f2b15e4203e026f807d46e0e1bfb7bd3eeaa92eb13a1d0c30fe4fe9c12b088e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3OWM5NTAyN2E4ZmJkMWY3MTRkOTQ3YTRhZjZkZTc1YWM4Yzg3MmNlNTUxYWQ1YWQ2NzgwMTI2OWJhMTdlMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwODkzYzRiYzVmNGM1OGY5Y2ZmN2QyZTc2NmY0N2E4NzE4ZmE4NTQ3NDdhYjc3Y2RmOTNjMWMxNDYzOWNlYWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwN2NmMDFkNjI1NTY4MTY1ZjMxNzNlMTE3OWY2Y2UyODhlZmRhZjI2NmU2YTljZjc0ZWQ5YmRiMjkxODZhNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNDhhODFkYTZhZDRkZmU4Y2EzNTExZDA5NTlhY2JhNjBlOWFlZjQyZWNiOTliZDMwYzQwYmMxNDYyMTEzZDIifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L77-L84",
+          "version": "repo-lines-v1:sha256:765758648e9c1e9a0fc37302864c34bbd15312b515195bf9a66ea971f8477336:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdlMDdlYTkzYTg2ZmFmODY4OTQ5NWZlZmI5YTExYTRhN2MwMmE5NWE0N2Y3ZDkyZmVlNTIzY2MxMGIzNDU5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdiMjlmN2QyNzc2ODkwZjJjYjQ4YTAwZDBmNjNmNjg1MzMyOGNjOWY0NTg3YzY0ODlhNzY5YmRmMTlmNzIyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2I2NGU0NTc3NmYwOTM0Mjk3MmI3NmZjMDA4NzhkMzYyYWQ1MDIxMzhkNGI2NzI5NTJhOWYxODA4OTA3MDllNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjRhMWJiOWM2N2IzZDMwZmNhNTY3ODZiMjY1YjQxMDA2YTA5ZDZjNDJjMzk4MTBiNzcwNWRjYmQ1OTI3OGJjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0f48a7694a244f6a7378190ffa833fb",
+      "statement": "Microagent loading recognizes legacy and third-party instruction formats and infers task, knowledge or repository types from inputs and triggers.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L132-L172",
+          "version": "repo-lines-v1:sha256:96658d8860491958a4a170ebff04cf3abdcb0d0dc1b72db6c42cb35ca51e6875:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxMzMyYWE4OTUwNTI3MjQxOGFiNDMwZGQyMzVjNmQ5YjEzNGM2OGY3ODBiZDVmZTgzNWQ4N2FjMjI5NTAxOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhYzc2ZDMzMzBhYjZhYjVmMjdhYjZkMGQyYzFjZDViMTdkMDFlZTIxYjE5ZjY3MTQ5NGNlNWFlNWFkOTJhNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyYzdiOTM3NWEwMWNmNjQ0NmIwNGFjODQzOTg0OTk0NmIyNDNlYzYzMTFiOTcxMjk5ZWQzZTRkMjA4YmZlODgifQ"
+        },
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L26-L96",
+          "version": "repo-lines-v1:sha256:cf511548653938bdb35b10bab07eb12ba93ba07d15c77b9bbb92b3e01d219c85:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NmEzYWM2OTljMjY2Y2ZmZmExMWQwYzI1ZGJmYjBhZTYyMTk0MWVmOGI2OTZhYjJmMmFkMTdhMmQ3ZGE3NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2Y2UyNmIxOTMxNDA2OGNlZjcyY2FkOTczNzU1OTQ2MGQyZDYwMjFmNjA0NjQzN2IwMTdkNjZiMGNkYTM1ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0ODdlOWVhMWY3ZmRkNWIxZjVmNDUzOTFmMDRiMjEyMTU2ZDQ2OWJhNjM5ZGFkZDA3N2NkNGQzYTBjZDc0YjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_755b1f8c6afe4bc8be4d07d07fea6c46",
+      "statement": "Microagent MCP metadata must include stdio servers; SSE-only configuration is rejected.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L108-L122",
+          "version": "repo-lines-v1:sha256:5303aed440c3f582beab85f4b598ce07163bdbaa107cf814f7c46c8396faf62a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMDIzMzM4OTc2NGVkMzQwNTVhY2RlY2EyNjU5ZDk3NGUzMjY5NTk4ZjNmODNjMGYwYmExNWE4YmEwNDNlNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzOGI5MDA2OWY4ODAyYTk3NGVhODJiYWUyZGNhYjNiNTg0Y2M4YmNjYmJiM2M4YzBmZjYzMzIxMjJkYzc0NTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljMDQzZmNiMDIyNDdhOGIwOTkyZTlhOTJlYjUyNDBiY2JjNTBkNDY3ZDI1MmI3ZjY0NGY4ZTg1YjgwNGU3ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhNWM0M2YwMGViMjAwNjk2ZGQ1YjBkYTE2NTdjMzZmMDk1NjI5ZDE1YmVlMWU1OWMyOWEyMGMyM2M4MjU5MTgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:04e16cd8d867e872a580a10cc9d7a74b34804c79144e5e9899cb67b9ed541f93",
+  "claims": [
+    {
+      "id": "claim_a4c311cedc4b4eb8846f7cebf255f512",
+      "statement": "The controller steps only while RUNNING with no pending action, then synchronizes budget metrics and checks stuck/control limits.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L821-L865",
+          "version": "repo-lines-v1:sha256:2a8259d415f74579a0ae27fa882fc42b5a97bbc93d0f0af5c83499c4e4eb3be8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1ODc1ZGMyNTRkOTUwYTk5Y2Y2NjViZjBmMDJhYzBhNzhhMGIwOWU2ZTYyNTdiNWVlM2QyMTJlZGZjMWFhNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjYTAyZWNlODY2MTljMWIzOTNjNDU2MjkxZTNjN2ZlMWQwNDgwZWEwZjIyODA4ODQ2Nzc2NGM5NTg0MjcxOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmOWI0NzM4NGUwZTA1ODAzMjE2NzE3NDBhMzc1MjY2YjU0MDc5NTA1OTVmODE1NzE5M2MxMzVhOWVjMjMyYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmYWE5N2NmYWUzYmUyMDY5NzhmY2ZmN2E0NTczOWIzODk0ZWNlYTEyNTQzZmM5MmIyYmZiNmZiOTc5MGFlODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e319b806b5ff4440b40a9332e353ede1",
+      "statement": "Visible events update history; eligible observations trigger stepping, and matching observation causes clear pending actions except while awaiting confirmation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L392-L548",
+          "version": "repo-lines-v1:sha256:6d61e1e4dda6685493e817dd7bed288810cb5b5c95b16c40859b32b7eeb3dc85:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkZmRjNWY4ZmY3NWU5ZmUwYmVhMDE1MzlhMTNhOWJjMmJkYTM1OTU2YzZhZWQ1ZWE0OTdjNmQxYWNlNDk2MThiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2MGQzY2IxMmUyMjdmNWE5NjM2MzA2ZjMzYjNlMmFmOGUyZmI5YjQ2Zjc3NDkyZDgzMGNkNTE5M2ZkM2FmMzAwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5MmRhOTczY2Y2YTVlZWFkOTFmMDhmM2M4ZTk0ODRhYWU5Yzc4ZDYxNDZkMGFjMzViOWFhM2RmMGI3ZGQ1NmJjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2ceebbf59ab4464ad090609f468a98f",
+      "statement": "CodeAct drains pending actions before new completions and returns condenser actions before constructing a new model request.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/codeact_agent.py#L160-L225",
+          "version": "repo-lines-v1:sha256:0592075c2f5e1bb414706e177514997ca9bc1f5b24f0b745f07c26d67b1e5e53:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjZTBhYzM2OTBhNzY3YmM4Zjk3ODhkNzZlZDg1NzRkN2NhNWE4YzgxZTdiMGFhMTZkMmFiNDFjYmFmMGE4MTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYzUzNTg1OGU5MTZiYjY2MDQ4MWJhNDVlNjRlMmFjZWQ1MmIyZmY5MzA5OThkNzBhNmZiNjZlZjIzMWU2ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhMDBjODNiNjkyYTNjNjU1MDA3OTliNjlkOTAyNzQxNGQ3MjkxOGZhYjQwOTFjYjVjZTQ2YjYzMDEzMGQ2ZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_19cc933610c144e493032a82a6f1e668",
+      "statement": "State transitions emit an AgentStateChangedObservation and save state; confirmed or rejected pending actions are republished with a cleared ID.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L631-L683",
+          "version": "repo-lines-v1:sha256:f6ea94a06d85e24d971fa461c5ab8823bb6ac4331d5328cd055ec772b2542a2f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMGJlMjlhNmZhZWNlMmVlZDhhZTI0ZGNhYjVhODVlYzdjZDU4ZDQ5OWYxNTM1MGZmMzY2OTBmZjIxYWVmZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMGUwYjIzZTRiNmZhMTkwYTQzY2RhMWFlY2FjNzhlNzkyOWUzZGU4MmQ5ZWM1OTExOTk5OTdiN2JhODU4NTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwYWY1NDk0NTBiNmU3ZjEwZWVhOWNmOTBlMGQ0NmViZDRkODM4NmY5YjlmMWVhMGQ2OTZkNDY2NDNmYTljNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjNjA0NDgwNzhhMmUxNjM3MGY5NjU0MDAxMzY0NzI4NjZiM2E4MTdlZDY3MDQyMDI1ZGQ4OTA2NTE2YjU4MDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d7a6fdf529c4936845c6b4471dffc4b",
+      "statement": "Confirmation checks in the controller cover specific action types and branch on risk and CLI mode.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L919-L970",
+          "version": "repo-lines-v1:sha256:5c56c52f1efb3a400a4bf139fcea3f8bd7eacf0b86bf35586773d51428a3c8e0:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyNTdlZDQ2NTI5NDE5MzI3NGZjZTQ4YThkMDgzMDU2NzNiODZmNzdhMjg2ZDEzODJjOTY4YzU4MmE0YzMyMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZDE4NzljNDYwMmU5ZjhjOGJlZTljNTNmOTAxOGZhY2M1NzVmNGVjMTA2Yjc0MTUyNTFmZjRhYWI0ZDhkYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3N2Q1OGE2ODExNzE2OTUzZWFkOGJhY2ZiMTIzNDhlYzYxYTBhMjdmMDk1MTJmZTI3NzVlNzFlY2M3MGVjYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2YzM4MTI1NWQzNWNiODEwN2NlNjJlNTE3OGY4NWQ3NmE0Yjk4YmRmOWVkNDRkOTMxNjA2N2I4ODI2MjU2ZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_81a1f3e17ac945038e0a74435b3636f7",
+      "statement": "Context-window errors request condensation when history truncation is enabled; malformed model actions become error observations.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L867-L917",
+          "version": "repo-lines-v1:sha256:22a2fc2524cf9c21e3ae1a8fcef7c6c36d435afe23a64139ad0aaaf48bf8b101:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhMWNjZTliNDIzNmI2ZTY5MjcxYWY0MWNjM2Y3ODNmZWI1MzRjNzNkZmUwZjQ0OTA0MDVkNTI5MTJhODljY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5OGNhMjAxMmQ1NjAzZDNjY2ZlZjE1MzdjZmI4MTBiNDE4NTE3ZGM3ODliNjE0YTVlOWVlZjQyNjdmZjVjNjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4M2NiYTk4NTMxYjA3YzYwNWZkMGY0ZTg0YWU5NDZmOWE4MjkxNDAzMjE1YWM1N2VjNGNiMThjMjZhYzNlMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MjRiNWZiMjAzODUwNTk4ZTFlOWYwY2RjMzExN2E0MGVlOTViN2I1ODIzMTRjYTM2MzlkYmQwZjViNzc5YWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1f7a21ba552045929e50e61fe996e82f",
+      "statement": "Delegates share their parent's registry, iteration and budget flags, and metrics.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L693-L753",
+          "version": "repo-lines-v1:sha256:9797546a0b1f20087a6453e89270ac5a34720d9fe6d8992b6573b84297dad547:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlY2Q4ZGI5YTE2NjExODQ4ZjUwMWVlYWM1ZTM2YjFlZjljZmUwYzE1MDE3ZWQxNDFjMjJlNjQ4M2ZmM2M3ODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwZDI1OTgwY2Y0M2MwZWY5OTk2NTE0NzczYzliMjcyYmU3ZDgzYzViYTM5YzlhZGRjZTQ1ZGQ2ZjUxOGRhYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyNDUzMmI5OGEzNTQyMTEzYzJlNWNkNWU4MTk4YzRkODEzMmJiODcxMGJkY2Y5YzNkNjMyMzNiMDVjZjI0MGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_53fc527294eb49e5a69863dfc541434c",
+      "statement": "Interactive continuation can extend exhausted iteration limits while headless mode does not.",
+      "evidence": [
+        {
+          "resource": "repo://tests/unit/controller/test_agent_controller.py#L446-L505",
+          "version": "repo-lines-v1:sha256:bdd32ef973822ca50993bbe00f1e7c59dd4eb5e2ff2f520482df09360274e376:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxYmQ4NmRmMGI4OGE3MzNlNzAzMWUxYzc0ZjhmNjkwNDhkNWVlMDEzZjlhZGMyODJhYWE2MDE3MjRkZmNhNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZWM2YzNmNTFhYzA3YzE1OTNiYTY5ZTRlNWI1OTIzYmEyYjc4MzE4N2RhNzdiYjc4ODFjZTVlY2NlMGUwMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhYjdiMjcyYWI0ZTI1MTc1YjVmZDI0YzEzY2ZlNTYzNDI1MTRjMDI3OTQ2ZjAzYjUzMDVkZjIwMzM3ODc5ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhYjdiMjcyYWI0ZTI1MTc1YjVmZDI0YzEzY2ZlNTYzNDI1MTRjMDI3OTQ2ZjAzYjUzMDVkZjIwMzM3ODc5ZjkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

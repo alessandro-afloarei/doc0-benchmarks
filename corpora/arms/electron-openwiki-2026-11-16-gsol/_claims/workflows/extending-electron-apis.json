@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:93a54b21e0118ba10dbd40b1903a1c25604c939a68ad2ba186d0393370e53159",
+  "claims": [
+    {
+      "id": "claim_40ccbfa53e6745c98f4452a1c74ae70d",
+      "statement": "NativeTheme owns a native theme observer, posts update events to the UI task runner, and exposes theme properties through its object template.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_native_theme.cc#L100-L143",
+          "version": "repo-lines-v1:sha256:3463d7a54faf895f9048499196e12f3dde300ec61798e9368468cd920ea6720d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4MDI1ZTFlYWE2YWI0ZDBjZTZkZjE2MWNiZWM2MTM2MTM4NmE0ZTMxN2QzYmFiODE5MjRkNTYxN2Y4OTQ3NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MTU3ZDJhMTVmM2YzOTA0MGU4ZGI3NWVmNjFjNThmOWYzZWNlOWU2Y2QzNDM4MjAxYTVjNmRmMDcxYTA2NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllMzc1YTNjYjNhMmNiZTJmOWRlZDljODI5NmE2YWI2Njg0OGNjODI2ZmQ3MWY5MTkyNDZhY2IxN2UwYmQ0NTUifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_native_theme.cc#L25-L53",
+          "version": "repo-lines-v1:sha256:50f53fb0f65a3d9ab915e76f40bb67967f4ce013fd773a6cb99c2ecaae4c0710:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkNTlkYWMzZDBjZjViMTlhMDE5N2RkM2YyZjkxYjNmMjhiMWQyYWRmYTJhNDM0MTcxZDIyMTAyODFmMjg5MTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjMjIzNDBkNWMzNGY1OTdlZTE4NGM1M2NiOWRmNjdlMTUxNjI1YWE5YWJhZDA3N2FiZDZiOWViOWJiN2EzM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxY2ZmMjBiNDIyMjBmYjc2MTdlYzhhZmU1ZDEzMjZhMmUzMGQyMzg5ZGNmZmZjNjU0OGY0YWY2ZDY5MzRlZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e606f95845514dfabf29d078cd9ac232",
+      "statement": "NativeTheme's TypeScript wrapper obtains a linked native object and the browser export combines common and browser module lists.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/exports/electron.ts",
+          "version": "repo-file-v1:sha256:b4da389bd662e88c36dca9d8db45a5dd24282583cceb73f36363c47919a90d56"
+        },
+        {
+          "resource": "repo://lib/browser/api/module-list.ts#L20-L24",
+          "version": "repo-lines-v1:sha256:693e4277e3eefcb7771fa9eb237f1d92e10dead1542e81c15c244d272d22e62d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjhlNWI5MzU3OGMyNzBlNjZiMDY4YWE5MTA2NmYwMGFmOGEzYmY1NTA1MDczMDQ2MThmNzM4YTU1OWMwMWMxMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFiNjM4ODRlZTg5YzU4OGUwNmE4ZmIxZDIyMGJjNzIyZGQwMDFmNjkwZGY1NjBkOWVlZDg5NjM5ZTBiZTNjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDFkODdmOWUwODJhMjlhYjQxNjM1NWQwYmNiOTM4MWZkOTJiYzk4YjlmNzhiZDEwY2VjZTIyZTE5MzUxZDJjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTUzNTc4NzM3ZWFmNjI3ZGY0ZGVlNmYxNzAwN2Q1NWUyYzA5N2RjY2VhZjllZTQwOTQwODUzZDM2OGMwYjk5ZCJ9"
+        },
+        {
+          "resource": "repo://lib/browser/api/native-theme.ts",
+          "version": "repo-file-v1:sha256:817e237daea3a666f1224367c4ea0b751c12c88564fdbb64574c42a13ba0cf2b"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a125a3de4134bbfabc9d83b18e5c126",
+      "statement": "NodeBindings explicitly registers process-specific browser, renderer and utility binding lists and common bindings.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L53-L119",
+          "version": "repo-lines-v1:sha256:08c35879011eb659359f199664367b6c1accdf51208eb8a71bfe012a7e976c24:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhODE2MGMyMGFmNGE5NjUyNzU5ZWUxNzJmY2U3MzcxZjY4NWMwY2I3Zjc4YzUxOWQxMTViMGVlMmMyMzExMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZGU5MzRlZjIzOGNhMTA5MzRiMDUzYTQ4N2FmZDlkYjBhYTFlNWMxYTIwMmM0MTRmN2EwYTk4NmVjNzg3OGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzNDE5MTdkMDU1ZjAxNzFkMzQ4NjY2NjI2ODU4YzJhYTUwNTFmMzJjZjNkMDU3ZjVkOGM5YTgxZjlkMzQ1NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwMTBjYWRmODEyOGViYjQzYzY2YjBkNGZhMWUyYmU1YTNmMmE4NWZmNDVmN2QwNzZhMzRjOTFmYzhmMTk4NzMifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L531-L546",
+          "version": "repo-lines-v1:sha256:a285103900303841bc2db1de80e8d28eff2804c2c9229cc269020da16039465d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlNDlhOWUxZWM1NjllMGY5ODhjM2RhYmM4OGM2ZDk3ZGIxZGIxMDQ2MDM5OGJjNWU4NDRmNDdlNDY0Njg2ZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxOTNjZGFhNmZmYTM3MWJmMTFhZWUwNTdmMzc0YjcxMWRhODhlMGIwNWNjOTFjZjQyZWIxMjE3ZGRlZjI3NzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiODMyMGIzNWQ2MmZkZWM3MTM5MmE1MDZhM2Y2ZGUwMzZhZjMwZTg2ZGQ0ZDk5NGFjYTM2ZjA1Zjc1ODM5Y2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzODgxMjIwOGQzOTcyNjZhNTE2ODllNTU4ZTZhY2MwZTBkZTBhYmI2MmEyNTEwZGJkYTM1NmE3YjY0MmU4YTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_17481c6138a34c1ebd7e52338e0939dc",
+      "statement": "Public module properties are enumerable loader getters that unwrap ES-module default exports.",
+      "evidence": [
+        {
+          "resource": "repo://lib/common/define-properties.ts#L1-L16",
+          "version": "repo-lines-v1:sha256:74ab2409fdd2d90812583d8968fe14eb0133b9f6cf6c1192075372a5182620b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NzRjZGVlY2M1ZDQwODA1NDE0MGU1YzIxMmE1OGUwODdkY2RhYWZiMWNhOWY2YTMwM2E2ODZjYTE0YWI2MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MTIzNjE5Nzc3Y2Q2NzlhNDVlNTY0NmM0MDZhNWNlYTA3YTdmMzY3MTQyZmExM2YxNjRmYjQxOGQ2M2RlNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6e35ce1b1ba43bab5cb5537280daab3",
+      "statement": "Public API documentation is parsed into electron-api.json and used to generate declarations followed by TypeScript smoke tests.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L79-L81",
+          "version": "repo-lines-v1:sha256:7858caebda32346eb1485cc87f4ea37efdf71d667bf7194974d6f6d4dabae9e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjliZTY2ZmE4MTA3MGIxMDliNDExYTRlM2VmZjVlNTM5YmFjY2M2ZjdkZDU3ZjQ5MDdjMjhiNmY4YWRiZDU3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmVjMzA1NzJjNDVmZWIyMDIyZDM2YzA0ODc4ZWU2MGY3YzYwYmEzM2UyNWM1YWQxMzdjODE0Mjk3N2I4MGRmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTkzMTYyYTNlN2IxYTNhMDlkMmY5ZDYwZGE0N2I3YTdmMjA4OGE3YjAwNWJiMDNhNjk3M2YyMmI0YmZjMWFmMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmI4MThmNTI2YTY3YTY4OGUwOGJjOWUwZmI0OGI3MTFiN2NjZTZjMTQyZTNjODMyZjQyZjM3YmZiZjVmZWVmNiJ9"
+        },
+        {
+          "resource": "repo://script/create-api-json.mjs#L8-L18",
+          "version": "repo-lines-v1:sha256:fce6167d4c5e99706baf34076bc597da4ebd04612affcbf2bc322364142b4989:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwN2M1ZWE2YWEyNWI1MjMzZGFiODRkYWM0ZDg4MDExMjU3M2ZlZWZjZGUzYTE2YzkzNTBiYjFhM2U1Njk5MmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3ODRhNDAyZjQ0ZjQ4YjViN2U4MzNjZGM5NzNiMTIzZTg5ZmI1Y2QwNDI5YjNhYjBmZjAwZjM5ZDZhYzZiMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://spec/ts-smoke/runner.js#L4-L18",
+          "version": "repo-lines-v1:sha256:3e091f5f64d96871a32293fdf39c459d0d55336277e133e11c0de205259069d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMDExN2E0NTA3ZTEwOGY4NWNjMjNmYTQxZDEwNDBkZWNlNzNjM2U5NmI2YjdlMGY0NDU3ZWVjMWZlYTI0NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhN2U5MDBlODQ5YjAxYWE0MGY4NDZjYTUzNjQ2OGFmNzUwMmQyODVmY2EyNjM1NzM2N2VjMWQ3Yjg0YzEwOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlNTIwZDBmNDk1YmU3Njc1MjI1OWUwOWVhZmM0MjBmMzY4ZDdmYTA2NDg2YWU5MzkxYWRiYjc1NjAzZjIxM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_74fb5f643c214d0295adee900e144488",
+      "statement": "The filenames generator derives API-doc and webpack dependency lists and writes filenames.auto.gni.",
+      "evidence": [
+        {
+          "resource": "repo://script/gen-filenames.ts#L54-L112",
+          "version": "repo-lines-v1:sha256:7b782411052e617712882f3c5dacedec9d735559846c09590898a158cfbfb0af:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ODdkZmMxMmQ1ODNhYzZhNzgyYzg5MmIyNDhmOWFiNDZkNTNhNzBlNzhjZDE4ZDdlNTY2YzUzYzlhMTU5YTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmN2JlOGMxODdmMzk5MDE4MjNhNzg5MjBmYmI0Y2ZiYWFmZjA5Nzk1ZDY5NWUxOWUyOGRiOTEzYjZhYTAyNzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjMzgzZTZhYTQyNmM5YjUxOGI5N2JhOTkwYjg0YTRiZGVjMGU4ODNkODkzMzQzNzcwNTg1NTc1YThhYjIxMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMTA2MTU1Yzg2MTMzYTI4YmE0MzM0OTQ0MTY0MThkMWVhYTRmZDc2YzdlMmRlMjNmZjE3Y2JkNzc5MjUwYTEifQ"
+        },
+        {
+          "resource": "repo://script/gen-filenames.ts#L6-L16",
+          "version": "repo-lines-v1:sha256:21778d1806f7abfe72dcd3f1a0a44f833df04f2f096ef0494220bcb10278f3f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmOTFhMzlkMzkwOGJhMjdiZDE3MjRmM2U5MWNjNDhhOTk3NTc1NjhlZTQ1OTVhNjQ2ZDBkOGU0Yzk0OTExZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0OWI3NWY3OTZjM2UxN2E3MDJhMDBkM2ZjZTE0MzBhNzIyM2JiY2RjZDFmZTE2NTM1MjNlNGY3ZjYwOWNhNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZDM2M2U5MTIxYmZmMGY4ZmNlOGNlNzM2MGRiZDBkZGUwOTYyYWQxYzBhNTZlNzA4NTg3YTdkMzMwY2I3MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0ODBlNWJjOTEwMTFkYjVkZWQ0ZThhZTA2OTAzYTRlOTVkMTgzOTcyZDZmZGEzNmU1ODBhYWFlMzA3NjdmNTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:11:18.304Z"
+  }
+}

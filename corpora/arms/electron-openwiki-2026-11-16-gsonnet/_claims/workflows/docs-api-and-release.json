@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:543db8cae3932dc453e32e8075d35fec525baf25a50c0c2fd91ece33dc32e1d4",
+  "claims": [
+    {
+      "id": "claim_eb73c11e8e1644ae9954239a313d404b",
+      "statement": "script/create-api-json.mjs runs @electron/docs-parser over the repo's docs to write electron-api.json, and npm run create-typescript-definitions feeds it to electron-typescript-definitions to produce electron.d.ts and then runs the ts-smoke type check; pretest runs this step so npm test regenerates types.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L78-L92",
+          "version": "repo-lines-v1:sha256:8cffee93f4f946d397482ddf773ef8dbc5098862b1d4d872de77885093c47ca4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYTRkMzQwZGI5MTA5MWU0NzEzNmM4YmIzOGE4MTM0NzFmZTZjN2VmNGZiNmJhN2FlZGZhM2U4YWY2NzJhMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYWM0YWFkNmJkMWVkODlkZjMwNWYwMTk0N2U5MjVlY2UxN2E3NjE3YzQzNTExMmJmZjIyNjYwOWVhNjIzZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5YzZhNGIxNThhMmM2ZDI4NmU1NTMxNjJmYjJhYjQ0NTkzZmEzMjNhMWE3NzYwMGM2NThjYTJjNDg1YjFhODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxZjk3ZjVkYzNmZWM1ZDFhMmVmNzA2NTczMWJkMTU5MGQzZTNkMDZiNGY1MzM4ZGNhYzQ0ZTdhNDEzYWM3ZjgifQ"
+        },
+        {
+          "resource": "repo://script/create-api-json.mjs#L1-L18",
+          "version": "repo-lines-v1:sha256:80892b11e2662e7e21527d63c2035871a75091573485592789f98586a41163d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyYzI5MTY4OTY0MThjZTk5N2QyOGViNTM3YjQ5MGFiMTYxZjMxNWYzMzg3MDk2OWIwY2I4MjUyZTdjMzQ1MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eef583463c6949c0ac1a28ac9f90964e",
+      "statement": "API history blocks are validated against docs/api-history.schema.json by lint:api-history, with breaking-change headers required to match headings in docs/breaking-changes.md, which is organized by planned breaking changes per major version.",
+      "evidence": [
+        {
+          "resource": "repo://docs/breaking-changes.md#L1-L30",
+          "version": "repo-lines-v1:sha256:0f626e978a5f674c9d4d95baff4c43148d04e14ccd17b579fbb8cd4d3ea19878:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNzg0ZTQ3NDhjY2RkYTI1ODY2NTE0YWE3NTMzOTY3MTk3ZDlhYjBmYTJjMjFhNThmZTFhMzgwMTQ4NDMzYzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyMzE2NTUwOTRkNzQ2Mzk0NWNhNjRmZWJjMzk4NTg2MDgyOWU5Yjk1NDM1OTRjMzkxN2Y3YzMwZTUzNjM1MmEifQ"
+        },
+        {
+          "resource": "repo://docs/development/api-history-migration-guide.md#L1-L80",
+          "version": "repo-lines-v1:sha256:05d7eda114857eec844e22855d9a7413aa47f4c10f9f5fbf533a9ff106fc5d9f:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0OTE5YjVlMjQ0OGQ3OTdiMDY2YjZjNDJmZjhjNDIwMzZhNzMwNGJhZmFmYWZkOTZkYTMxNjRiNjczYjUxZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4NmE5MjYxNjNmYjI5MjZjNTQ3MDY4YTNlNTQzYjNlYmRhN2RiMjM0YjM1NjA3MGUyZWJhY2YxYjY2ODQwNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwNTY0Yzk3MzViYzg1OTcxOTJiZjI3ZjZhYWI1ZTNhMDliMzRkNGY2YjQ1MDViZWY2Y2YzZmY1MWM2ZDk3ZjcifQ"
+        },
+        {
+          "resource": "repo://package.json#L76-L79",
+          "version": "repo-lines-v1:sha256:4bc32623a8c4b86a446ebf01e245e3728c432fed2bbbdd2175478b60aa4cf906:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIxNThmYWQ4NmM3ZThhOGM1YmNkZjQzNGRjMTg3MDhjNTMwOTcwMDBlMTgxZGVmZmJmMmUwYTA3NDRkODEyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjliZTY2ZmE4MTA3MGIxMDliNDExYTRlM2VmZjVlNTM5YmFjY2M2ZjdkZDU3ZjQ5MDdjMjhiNmY4YWRiZDU3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQxNjJiOTI5NDI1YjgzMDc3ZjM5MjcwZWM2ZDZkZWU1ODQ4ZmY2NjZmYmY0YmM1ODE5NjVmOGYzNTQwMTA0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzVjOTcxZDAyZjk1YzAwMWM1Mzc3M2IxZTI5MmI0MzdkMmI3ZjAwNWQzNWI3NzE2ZTQxYjJmMWZiNGJlMThlOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b60939387f446faa649e72e554464b9",
+      "statement": "script/lint.js defines a LINTERS table covering cpp, objc (cpplint and clang-format), python (pylint), javascript (ESLint), gn, patches (validates patches/config.json, patch directories and .patches files) and markdown.",
+      "evidence": [
+        {
+          "resource": "repo://script/lint.js#L57-L290",
+          "version": "repo-lines-v1:sha256:5ba126b2b0b29bc69e85a27160dbe23f6a745df2171d8d5c1450c537ebee9a22:eyJzZWxlY3RlZExpbmVDb3VudCI6MjM0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1ZDgyMmYwNjIxOGZkOWQxYmRhNDczYTUyZjViYTg3NjdhMWJmZmFjOTE3ZDM3ZjMzZTU3YTZhMGM1ZjM5NzhlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1YmRiZjNkYjdhZjUyYWQ1ZDMzM2Y4YTIxYWYwZmZlMWE1YTc5MGYyYzdjNzIzYzc0NTJkN2MwM2JkYjcwY2NlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzMDVhOTEyMzQxMjFhMDQ5NmRhMTJiMTA4MzJlNWEwZGIxNjA4ZWJiNzM4M2ZhNjc5YTBjNmQwODZhYjE0ZWNhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_82c55fe5786e44b282d7cfe411c4cd80",
+      "statement": "lint-staged runs per-file-type checks on commit, including regenerating filenames.auto.gni for JS/TS and docs/api changes, clang-format for C/C++, gn-check and gn-format for GN, docs lint for markdown, and patch diff checks for patch files.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L100-L135",
+          "version": "repo-lines-v1:sha256:c02962f75c1badd1875e93199f72695804f3b03b496e73952f7359fed9394244:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NGQ4YzA3MzQyOTg5MzEwMTU3NmQ4OGQ5OTEyN2U4OWQ2ODkxZDNiMTdlODlkZjAyZWM5YWU3MDcwNWQ4YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2OGJjNmU3NjljZWQ3MDUwZmRkYjI0M2ZiYmIzMDU5ZTM4NTM4OGRlN2M4NzU4NWM5NjM4MjNjZDAyNjYwZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwY2FhODUxZTdiZDc3YzdhMjFlMDA2MGNkZDhkNzhhMTk4YTljMDlkNmM3N2E5ZmMzNzhhNWY2NDA0YWVhZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhMjk4OWYyYzk3OWZkMTliYTNmOGU1N2M1Zjk1ZjBhNDNhMDJkNDRlZDkxYzhjYTYzMmVhMDVhNWMzYjQ2NDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_553c18319fb9427ebf46dca9febb15be",
+      "statement": "default_app/main.ts parses command-line options (--version, --abi, --interactive/REPL, --require, --app, or a path) and, when given an app path, marks process.defaultApp, reads its package.json to set name/version/desktop name/v8 flags and app path before loading it; otherwise it shows the default page, and --interactive starts a REPL with Electron modules pre-bound.",
+      "evidence": [
+        {
+          "resource": "repo://default_app/main.ts#L1-L120",
+          "version": "repo-lines-v1:sha256:5c759e4b2f8f3808f3a802cbe889b620bc4085f2716a2f149d3aeca17433762a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1MzYzN2MwODZiYmRmODIyZjNiYTgwMmM0MmZhY2RhMzE3MjRiMjMzN2RjOTdkNjQwOTFhMDdiMDViYjJjOTY4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1NjMxMjg1MTc3NzJiZmQ3MmMzMzFkODFiNzUyNzlmODczNjdiYzJkNjY0MmY5N2U0MzdhMGZkN2RhODMyMDNlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3ZjA3NWY3ODMyNjhmNjdjOWE5ZjE1Mzc4M2VjNTg0Y2I4NjViMzhhZTIyZTg0YTI3YWVlMmVkZWFmM2E5NTllIn0"
+        },
+        {
+          "resource": "repo://default_app/main.ts#L150-L230",
+          "version": "repo-lines-v1:sha256:d4c48acf922fd25d3c90252ab836a5a593789ec9f1e76fcbd64d284de4ec0702:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5NmMxZDcyODQwNzAxZjUxZjg3MWIxMjg2NGQ3N2NmMmI2MTU4MWJkZjYxM2Y2ZjcxMTEwMTkyODViYjNjNjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmNjAzMTY4YzQ2ZDY1YTEwOTMzOGJiOGIzZDMzNmQ4YTFhOGUxOTZlMWZiNjExNGI2YTcwYzYxNGQxNDg3NzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5NzRkYTcwNjA4ZjI3ZjVjNjA0MTA3ZTRjMzMwYTQ0ZDE3ZDkzYThmYThjYWM1OTg5MTBhNDc3OTliNWY5MzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9982b362a5464b8e992a5c7d330b0069",
+      "statement": "The npm package's postinstall (install.js) skips when ELECTRON_SKIP_BINARY_DOWNLOAD is set or the installed version and path.txt already match, otherwise downloads the platform zip with @electron/get (using bundled checksums unless remote checksums are requested, with a macOS Rosetta arch check), extracts it to dist/, and writes path.txt; cli.js spawns the binary and forwards signals and exit code.",
+      "evidence": [
+        {
+          "resource": "repo://npm/cli.js#L1-L25",
+          "version": "repo-lines-v1:sha256:193a59dc9f5842c9564c88cc00e50bcb83c9bd771d1c47e7c1f2180ae2238404:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhZjQ1NzVlYmMxMDQxNmIwZGIwNWM3MzlkNjM1ZDU3ZmZhNGE0YmY1Mzg2ZDg3MjU2NTk3ZTZhNmE3NjgxOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://npm/install.js#L1-L109",
+          "version": "repo-lines-v1:sha256:3fa1166ed4db6831ed0d1aeec05295e460127d92b1216c794719e817eaefe0fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNTljNDc4NzJiNzFmMTI1ODk5NDI4OTI0NjRlNzY0YzBkYjM1MGMyMGI3MjIyODY0NTYxNWNjMzZlMGEwNzI1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_88df3563db1841f99d3b741431df0476",
+      "statement": "Releases are driven by scripts documented in script/release/bin/README.md (cleanup, print-next-version, prepare-for-release, run-release-builds, validate-before-publish, publish-to-github, publish-to-npm), where prepare-for-release creates the tag and starts GitHub Actions release builds and validate-before-publish checks assets, checksums, headers and symbols.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/bin/README.md#L1-L58",
+          "version": "repo-lines-v1:sha256:9f4b4264b6bc16da1bc1cec614401102c8d2153cd008ab1e8c67d6bc75c55a46:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3NjdhMjU1M2UxMDQ3Y2YwMTlkYTVlY2U0NTZlYjc4YzcyY2Q5NDI4MzhjODBhY2E5ZTI5ZDM2NzNmYzhhODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4OGU5NzE2ZDE5MDkyY2QyYjUxM2QyMGEzMGZjNDQ0NmI4Nzc2MzJhY2E3YTMwYjhlNjU5MmVlMjMyNWE5ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e13104cea79c4ccfa001cbd7458b9c0f",
+      "statement": "Release validation requires exactly one draft release with real release notes (no placeholder text) and all required assets for the version to exist.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/release.ts#L30-L110",
+          "version": "repo-lines-v1:sha256:98189f73b7aa535f4c55daf3029d75ab9931c0e8cd0484af6df32edb1a5ac23b:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViZTdlZmJkNDIwYTQ1MDQ0NTc1YzlkOGNjZjEwNzRmM2NkMDRhYTYzNjdkNzhmOTU3MzdmODU4OTY5MmE3NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdkZmY2ODRlOGE4ZjU5MDliNjg2MjA2ZjUxNmVkYzkxNGZiNTMzYzIyNzQzMDc1NzA2ZDUwNmNhNmRiNmE4ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5NThlNzE2NWExZTI3YmU5ODZmOTY3NmZmYTdiYjk5ZTg4MDVjMWI2ZjgwNjUwZDVhZDRjOTVhNWI2OGEzZWQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:64d7410ed59ecb3f5f7c7a7ab49e79af90ffc24f90b418537fef9591348559f8",
+  "claims": [
+    {
+      "id": "claim_0128ee2b8f3349579b91f6e1baabf321",
+      "statement": "Runtime action handling supplies timeouts, refreshes referenced provider tokens, correlates observations to action IDs, and distinguishes permission feedback from runtime status failures.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L320-L399",
+          "version": "repo-lines-v1:sha256:f06390b6af7d8a069e09de32ed199959d7501b92a59d26ab0f65e00acb076126:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYTgxYzNlNTdiMmEyYWQxYzZhODg1MWVlYTQ5NDRlYWUwMzdmNzIzNzYzNjgzMDRlMTVkYjBjYzgzNDAxMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNzNkOGU2N2VlYzg5Y2M2NzE5MTNlYTU4MWE0NDU0MmZkZTQ2OTU3NjEyODZlZmVhZTUzMTgxYjA4MmU0ZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1NzNmMDQ0MTQ3MTcyNjZhYmRjMjk4NjNkMWIwNjc5ZDM5OWFlNmY1ZTI5M2Q4ZDY3MTMzYjFiODUxY2Y0ZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMzk4YjZlODViNzNjNGNkNzMxMmQwOTIzMzY4OGNhMjgwZDJmZWIwNDlhNzJiZWVjYjQ2ODUyZmYyNzkxNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_838ab9b84c46432585778a95acfe7db6",
+      "statement": "ActionExecutionClient serializes action transport with a semaphore and posts to execute_action with an HTTP timeout five seconds beyond the action timeout.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L272-L338",
+          "version": "repo-lines-v1:sha256:054ee2d8eb9b88b812fe40afe182a3dfd5ecf6418013e6920f90d35cb3487927:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzMzBjMWNmZDRmY2NjMzc5YzJiYTIwYzJmMzcxZTQ4MmNkMDZlY2YyZDBmZGVhNmJiOWQ5MWYzODYzYzljODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YjMzNjcyZjVmNjljNzFkNWUzZjljZjRlMmE0NTY3OTg4YTcxZmFhNDI3ZjcwN2M0YmNjMmY2OWU1NzJmYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4MmJjMWM4Mjc4MTFmNTdhYmJiNjUwOGYyOGIzNWVjNTA4MWQ0OWFlYjkxZDBlYTdjMzcyODRjNjZlYzdmYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmM2I4ZjFkNWJjOGQ5ODFhNGFiMzhlMGViNDMwNjZkMzBhMWY2OWVhMzQ0YmZjNTliYmFhYjU5YWM0YzI0Y2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d617b5e8ef948519a8ab2844953fd93",
+      "statement": "Docker connection attaches to an existing container or builds and starts a fresh runtime, but attach-only requests fail when the container is missing.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/docker/docker_runtime.py#L170-L245",
+          "version": "repo-lines-v1:sha256:a75aeaea91d023faa8316afde890d792915a4220653037c5fd4841b849d0edd3:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzYWI3YzAzZWZiOWVhMTI2MjliOGI5YmQzNjI0OGJiOWZlNzMzNzA0MDM4MmYyNjY2OWMwN2E4ZDcwNTkyZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NzVlOWIzMmIwNDgxYWEzYjFjNjI2MDI1Y2VhNmU3NzVhYTU3YTQxYzBjMTM1YWQyYWNlOWY0MGMxNGFiODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2M2JlMmE4NWNhNGFkOWY2YjY1N2RlMGNjNTljNTRkYWFhOWZjZWY0YmVlOTU3NzQ0YTFiNWRiNmExZWE4ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5ZDYxNThjNDdjM2JkODYwODMyYzM1MTFlYmRkNzhiMTMzZjFlOWYxODk2YzZjNTRiOGZiZjM3NTU5YzFhNzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ddcc13c34ded42a7b8c662d0504a297d",
+      "statement": "Workspace setup clones selected repositories and checks out a chosen or random branch; optional .openhands/setup.sh execution has a 600-second timeout.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L401-L489",
+          "version": "repo-lines-v1:sha256:23776d7635ba57b407f769f9987b2cb93dcfb5fcf74a9dee03ca527afff9bb60:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NzM5YjdiZWU2MDRhNjRhNWUyOWY0MTI0ZWQzYTRkYmYzMGY4NjcwNGExY2M0NTYyMWQ1ZjkyNTJmZTM2MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwNjllMjYyMTQyMDAyZjViY2M1YTEwOWMzMDU2ZDAxMDg0YjBhZjE5MTM3Y2JjYWFhYzMzMmM2YWZmZWZhZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4NmE3YmZkMDAwZDQwODhmNWE0M2EwOWZkYmJjZmUxYmJhNWUxMDdhMWI4ZDBhZjVhNTk0YTkxNzE5NmExN2IifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:55:05.802Z"
+  }
+}

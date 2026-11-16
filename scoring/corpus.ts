@@ -12,6 +12,8 @@ export type WikiPage = {
   title: string;
   content: string;
   verifiedClaimRatio: number | null;
+  /** The section the wiki's own navigation puts the page in (generation arms only). */
+  section?: string;
 };
 
 export type ReferenceWiki = { source: string; pages: WikiPage[] };

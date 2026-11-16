@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7ca6c236f5eebe3bf1cc40c720a69542b103e616847c2016ef3b36a43c2be8ff",
+  "claims": [
+    {
+      "id": "claim_8db0e55a28df4fad9c81127b2f668b5e",
+      "statement": "timingSafeEqual for strings hashes both inputs (SHA-256 by default) and requires both the hashes and the original strings to match under a constant-time comparison.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/buffer.ts#L29-L63",
+          "version": "repo-lines-v1:sha256:522f03d2e35f0e0766d2fb17a5a00224212bf5911cd78731d969017d4e01b116:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhYTE4ZGE5NGM0NTBjYjhiMzhhMjZiMmFhNDI5MTY3NzRlMWI3NGM2YjgzNGQ2Y2UwYTJmN2I3NWIxNDM4N2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmYjdkNzhkZGM0M2U5YTAwYmMzNzUwZTIxYjAzOTVmYTA4NzRiZDUwYzVjZTJjM2M3Nzc4NjIzZDRjZmY3ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1MTdmYmY0YzQyZWY4YTU3N2EwMDY3ZWIwOTg5OWRiZmUyYjA1MWUzZjY1ZGJhMDVmODA4YmNhZTc3YTQ5YWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1cb47ed072b64582923b701dce1e2266",
+      "statement": "basicAuth compares username and password with timingSafeEqual against each configured user, or delegates to verifyUser, and otherwise throws HTTPException 401 with a WWW-Authenticate Basic realm header (default realm 'Secure Area').",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/basic-auth/index.ts#L80-L153",
+          "version": "repo-lines-v1:sha256:f5d7d18c92f8da8002bd88a3ea4ec72238bc75b4bd65b7758cbcaddb02b16f2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MzY0YWE0Y2QzODBhNDhhZWIzM2ViMTUzNWJlNzhlMGFlZGM1MWU1ZWM1ZGVkNGNkYWI1OTc3YTg1OTg2MjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3NzhkMWIwMTk3ZmE5MzQyNDFiODY0MTljNzA5MDg3NmU0MTEyNjMxMTZjNTgzMGUyNzFiNWY2YmQ1YmM3ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c8102a10c2b42198520d8f57cb51186",
+      "statement": "bearerAuth returns 400 with error=\"invalid_request\" for malformed Authorization headers and 401 with error=\"invalid_token\" for token mismatches, comparing static tokens with timingSafeEqual.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/bearer-auth/index.ts#L104-L221",
+          "version": "repo-lines-v1:sha256:762fb15946a517497da0936617c66d895df950e1b3c53762451ac159f627b3e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkMGI2NGEyMzUzMGE1ZGU4MjYyM2Q4ZWM5NzM5M2ZiMTFjMzg3NjI0OTM4ODlkMGY3Yzk0NDE2OTNkNDE2YjYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhZTM0ZDc4NWVlYTk1MzYzOGViYWY4MWFiYTMxOTE5NjdjZjhmYTVmZWJiNmZkMjg5OTY2OTExNjUyYmYyODQwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b6bf4f096f0400ebd7505e3ab41cfb3",
+      "statement": "The jwt middleware requires secret and alg at setup, reads the token from a two-part Bearer Authorization header or a (optionally signed) cookie, throws 401 for malformed, missing or unverifiable tokens, and stores the payload as jwtPayload.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jwt/jwt.ts#L53-L172",
+          "version": "repo-lines-v1:sha256:0e311b8d2c20cfd46af47ca440c4c4ab9f97c747f164292d68ddf2a1d8d4d853:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4MTdiNDI5MWVlMDA5ZjIxOGNhN2RhZWEzNmVhM2FhM2MzZDMyOWMxNTU3Nzc5MTU3ZmRmNjg3ZTdjZWIyMGVmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiMjM1MjU4OWMzNGQzYzYwNjg1OTMxYjZlY2M0ZDUwOTkxYTdjNTZjOGZiYTI4OTQxMTQ2NTc2OTAyNzJjYWMzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhZTM0ZDc4NWVlYTk1MzYzOGViYWY4MWFiYTMxOTE5NjdjZjhmYTVmZWJiNmZkMjg5OTY2OTExNjUyYmYyODQwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjZTRmN2QxNWFlOGQ5YzllNTc0ZTk5MzEwODgzZGQ5ZjVjNmUzOTAxMjQzZDk4OWE5MDA0YmJiOTlmMGUzMzE0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_174b99b001534c88add36715042a6188",
+      "statement": "JWT verify requires an algorithm, rejects tokens whose header alg differs from the expected alg, validates nbf/exp/iat as finite numbers and checks iss and aud when configured.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/jwt/jwt.ts#L96-L186",
+          "version": "repo-lines-v1:sha256:00557118a5b3863ca58a587bfd58ac306aba1e14a9cb7347da29e14a8a7b0b79:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0ZDVmNTJjNDMyMDQxYjhlOTg4ZjJjYjk5OGYyNjI4Mjk5OGE2YTY1MTg0ZGMyNDkwNThlZGMzYmVhYThlZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwNDc0NDhhYzQ4ZGJlYjBmOGJlODQyOTY5YmVjMjUzNjMwYWE4Y2YzMzZjMjZhNTQwMGE5MzQ0NTIzZTI3OTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzN2E4NDFkZTRiZjA1OWYzYzNhZDU0ZWU1MzIxNjIxMjgwZTdiMWVkYWY3YTk1MjUyYjEwYzgyM2M4YzMwNDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_77be15bddc52459ab92ad22d12dc5c69",
+      "statement": "verifyWithJwks requires a kid, rejects HS256/HS384/HS512 tokens, enforces the allowedAlgorithms list, selects the key by kid from static keys and fetched JWKS, and requires a JWK alg to match the header alg.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/jwt/jwt.ts#L189-L263",
+          "version": "repo-lines-v1:sha256:6fd871af8976f7e3a5ffb4ecb02246a4d339c55d73d9917e411da7c8569f1a3e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiZTJmYTM5MGEwMTAyY2EyMzdjNzNkNDcyY2I2ZGFhODU1NzY1ZTliMDhiOThhMjZjY2Q4NWEyNTQ2Yjg3NWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxZjk0ODBlMmJkYmIxODg1MDY5NWIxZGUzOTg5Y2E0ODI4ZDliNDA4M2MyNGRmNWM1MmU4ZGIyMDI5ZTJmYzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aacea80f48494024b66b65c45e75f441",
+      "statement": "Supported JWT algorithms are HS, RS and PS 256/384/512, ES256/384/512 and EdDSA.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/jwt/jwa.ts#L7-L21",
+          "version": "repo-lines-v1:sha256:4f0334f97ed1b97ce353bbe5613336b7ba9030ccde89f9432dd321a8c62fcb04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxODE2Y2U4NDkyNTk0N2UxMTZiOGRiMjlkMzk3MTJlYzJhM2JkOGQyYWIwYjAxM2NhYmM1Zjk2OTIxZDQyNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzYmY2Y2UwYmY5M2I4NjE5MWVlNTViYmNiMWZhZWFlNWMyNGZlZjg4MWExYmQ2MDI4ZjU2NzBlMWFmYzdjNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyN2MzOTUxYTg3MjczNTBkNjZmNTk0YjIzNjg5YTZlMzNkZWU5YzFmYmQ4MmQ4YmVlYWU1MWFmYzZmNzMwMDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d72e4f6efaf546a59905e5cce7187f9a",
+      "statement": "csrf rejects with 403 only non-GET/HEAD requests with a form-compatible content type whose Sec-Fetch-Site and Origin are both missing or disallowed; by default only same-origin Sec-Fetch-Site and an Origin equal to the request origin are allowed.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/csrf/index.ts#L28-L151",
+          "version": "repo-lines-v1:sha256:767259ab937cbf23ae7908e2285e69715219cb4a81c8bac6b86a583a1f1bb001:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwM2RmNWEwZjkwMDIyZDAwYzkxMjk4YTM2NzNmYmUyY2Y4MGM1M2VkZGFlZjUwOGVlZWUxODkwMmNhOWE5NmExIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkMmYzMDRhM2ViYzgyZWQxMzMzZTU1NWFiZDhmZTNiOGExYjZiODU5OGY5MDVmZDc5Yjc3ODE5MGFhYmYyZDNmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_899174a14e2b429aab209a848af543ee",
+      "statement": "cors answers every OPTIONS request with 204 No Content including allow-methods, max-age and allow-headers (echoing Access-Control-Request-Headers when none are configured), and adds Vary: Origin for non-wildcard origins.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/cors/index.ts#L63-L157",
+          "version": "repo-lines-v1:sha256:64f8e009b570c1a4913b4289b2fffb2b8d095ef7ba1c5b9420997b544079b6ca:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlNWE3MjljNjBkNGY3YWI2MmRhMDFiZWVlNTE5ZGJjMzZkNjBjOGNjMGFkMTI2YTA0ZjU3NWE5ODBiNTQ1MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_045d294475bb4ebba9e02b5f6ead2112",
+      "statement": "secureHeaders applies default security headers after next(), leaves Cross-Origin-Embedder-Policy disabled by default, and removes X-Powered-By by default.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/secure-headers/secure-headers.ts#L94-L230",
+          "version": "repo-lines-v1:sha256:5cd3664c07e699ac0d8af582076479398594b5258e92b315b758ef559f1b0fee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4ODM0NWE3NzNkZTEyYWNlYmRkZGRmMzc5YTljNmNmMjgyOTFiYzczMmQzNjZkMWQxNzU1ODliZTI1ZjUzYTZhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmNDc3NTZhMjVhYTRjOWNjNzE4Y2RiNDA4YzJiYjFlYWExM2M5OWM3OTgyZjZhYWJiNzEwNjgxM2QzYWI4YWQ3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2ZDQ1MmQwNTBlNzNiZTU5MGM5OTVkOGQ1ZTQzODY5ZjBiYTU5YTgxMTdlOWU3MzU4YjgwMjZjNGQ0YzE4YWNhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ab1c82669c641d49d1519d5fa47fdab",
+      "statement": "The CSP NONCE helper generates a 16-byte random nonce once per request and stores it in the context as secureHeadersNonce.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/secure-headers/secure-headers.ts#L131-L145",
+          "version": "repo-lines-v1:sha256:d079abbffa5e6e4f4e2d94d6cd5174a4fe24cfd71015865d1b2d06634015ef6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkOWJiNTY0MTQ1MmYyNjUwZjA3ZGRkN2EwMDBjMGU1MDYwNDk4Zjc0OWY0NTgxNTNmMzUxYjhiOGFkYWI2ZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0OTY4ODQxNDA5MjFlYWNlYTI4YjAyN2ZmN2Y5MmE3NDA4MTI0ZDcwMzM0NWIyZGRiZmUyMjA3MDllOWIxY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1NDYwZmZlMWEwYTQwYjY3YWVkMzg5MTM4MjY2ZWYyYzdmY2FkYzU3MzBiMThkOTM0ZTRjNmQxNzNmMWM3OWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f26337b7961420a993697580745885f",
+      "statement": "ipRestriction denies missing or invalid addresses and denyList matches with 403, allows allowList matches, and otherwise allows only when the allowList is empty; IPv4 rules also match IPv4-mapped IPv6 addresses.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/ip-restriction/index.ts#L218-L279",
+          "version": "repo-lines-v1:sha256:476ac6636421242376cc14ffa2bf0d3b579f0227d4e523b874d638e03a4d5239:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZjMxNzBmMDUzMjM1M2EwZDdmZGFiN2FjOWYwNTkzNjFiMzQzZTBjMzA3MTc2ZjEyZjNjNDFjNDdiZTc5ZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmNjI3YTAwYjVjMmNmZWI5N2JkNTI0OWVlZmNjYTkyZGI3OTBlZDY2Y2FmY2VjOTBhMjY3YTkwMzkyZmY5NmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/middleware/ip-restriction/index.ts#L55-L120",
+          "version": "repo-lines-v1:sha256:774edd34a0cf2ab80f1d4290a7bc04a9ef9b4b0e4875bb75f38ba6a48e15d166:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0NDVhMGM0MGNlNjdiYzQxNDBlMjFmYWJmOWQ3OGFiNzE5OGY3OTY1OTc3YWE2ZGM1ZWE5NmRlOTBkYWE4M2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhYWViZGVhNmM0YzVlYmQwMTBiZTRiM2Y0ZWQyN2RhNmYzOWRiYjc3N2VhZjRmNjFjMDI4NTVhYTFhMzNhMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkZjc0N2MxY2Q0MzI5ZGVlYjYxMzQ3YTk4OTA5ZjBkNDE3ZGM2Yjk5NzRhOGI0MjEzMmI0M2E4NjhjY2Q5NjIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:25:20.453Z"
+  }
+}

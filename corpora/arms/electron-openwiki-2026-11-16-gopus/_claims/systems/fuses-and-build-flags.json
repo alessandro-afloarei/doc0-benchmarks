@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b06b55cb0b1059713eb0724030dbe65801f9aa21206d981093053a12e83dae39",
+  "claims": [
+    {
+      "id": "claim_4efb5e0269124271a83bb511f2b1e8c9",
+      "statement": "Electron's GN build flags (PDF viewer, extensions, builtin spellchecker, fake location provider, version overrides) are declared in buildflags.gni and emitted into buildflags.h via buildflag_header, with the fake location provider defaulting to non-official builds only.",
+      "evidence": [
+        {
+          "resource": "repo://buildflags/BUILD.gn",
+          "version": "repo-file-v1:sha256:300f303fac75e663e8c7928bd29068c51d8e94d7504052b6e960c69d1cc4e23b"
+        },
+        {
+          "resource": "repo://buildflags/buildflags.gni",
+          "version": "repo-file-v1:sha256:231a2b95514447434cda4de9bcd4ccd17161b5c6363adabccb7b202573ae68bc"
+        }
+      ]
+    },
+    {
+      "id": "claim_108dc344f8eb4414a9c49d26506ecc58",
+      "statement": "The electron_common_features binding exposes runtime queries for whether the spellchecker, PDF viewer, fake location provider, printing, extensions and component build are enabled.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/api/features.cc#L12-L52",
+          "version": "repo-lines-v1:sha256:2f62a5e93a950826b48fb89a0b1d0bbc67715834d5138fa6f410198d6cdd6736:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzOTFlNWE2OGM1ZDhiMWNkZTUyZjAyNDhlNmMzMTQ1NTUzZDIxOTk5ZmI4ZTA3MDhlZDNjNTFhY2JhZTEzMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ZjE1Mzg1ZDhmZjU5YTUxNTJhMzdmYWJjNzdkOTQ3NGRiODQ3YjliODI0NzU3NmQ2M2U3OWM1NGNlMmI0MjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiMmUzNGI0NDZmODQ5Y2UwMzY3NGFhYTE3YTMzNmEyNjY1ZjQyY2JiNGRhN2JkMDE1YjRhZjA5NzBjZmJhZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3MzkxNGE2ZTMyOTAwMjZhYWJiZTk4YWQxMzEzNzMzYjA2OGJhNGEwN2E1NzAyMTcyNmE2NjliMzljNjc3MzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ec2b218eeba44cbbcbed85c655d437c",
+      "statement": "fuses.json5 defines fuses in fixed order with defaults 0/1/r, and its rule is to never remove or repurpose a fuse but mark it removed and bump the version for breaking changes.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/fuses.json5",
+          "version": "repo-file-v1:sha256:54b905d53aaa1974297cd60ad84141db8490becbf71d752401f5aafaa15cfb8c"
+        }
+      ]
+    },
+    {
+      "id": "claim_42cedbbe8f46411b89932dd35fc4ec9b",
+      "statement": "build/fuses/build.py generates a volatile kFuseWire array consisting of a sentinel string, a one-byte version, a one-byte wire length and one byte per fuse, with an exported Is<Name>Enabled getter reading each byte.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L393-L404",
+          "version": "repo-lines-v1:sha256:c333d0f0b3ec752ad68240c2735d9d7461aa1dbe3da49ba6ba2d2ca3f192497f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkMzZiNGJjYzA3OGIwN2U0ZjQ3MjY3N2M2ZWUxNDhkYjA5ZjI5Njk3ZDcxMmI2YTk5NTRmODEwZTA2YzgzOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhOGYzNmFhZDRkZTQ5MjM5NjAzYjU2NjM2MzQxNmEwMmFiNjAzYjYzMzIwZGRmODdlNGIwOGExZWI5MDM5NmIifQ"
+        },
+        {
+          "resource": "repo://build/fuses/build.py#L10-L105",
+          "version": "repo-lines-v1:sha256:6d77b9697a8690c8817e9b41d9ea0dd33ebf44e51f93b4af7c918a34e992130e:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjOWM3Yzc3OWNjZTA4NzQ5YjdkMDliZjMwNmQ3NDdjNzNmODcxMjc2MmVlYjkwNjcyNjk3ODY1ZTVjZmE4NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOGQ5OWRkYjBlN2JkYzU0ZDY3ZTZiMTk5ODViMTY5MzE1YWFlN2M2ZmNjNmI1ZTYyMjY1ZDgzNTRlNzUxNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNjM1MTdjYzViOWFkNTk0YmNmMmNmMTMxMzgyOWRmZDdiNTIyODdkODljZGQwMjZiNzViZjY2N2EyMjUwOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2MDlmZGNkMTA0NDk4YWMzNWMyNzU5MDIwYmIwMDMzZDU4OWNjNDgxZGU4MzBjYTA3NWYyNDM0NjdiMWU4OWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a1900fba6a84d51a11dbb3def37f6f1",
+      "statement": "In DCHECK builds, a --set-fuse-<name> switch overrides a fuse's value.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/build.py#L73-L88",
+          "version": "repo-lines-v1:sha256:94a8dbc1a8b396790cbb9689a2a762e3e027ce81823d5090aae179b27d5ac19c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZTdlYTljOGQ4OTZjMmY0YjEwODg4ZGRmZDdjMmVjODYyODE3ZTQ5OGZlMWQ2YmZmNmViNTVlMDFmOWY1ZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0YWU4NWFiMjYwZGRkZjNiZWQyZGJlNWU3MTQxZDk2YTczNzM4ZTBmZjNkNWEyNDIxN2FkYmUwZGQyY2QyYjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxZjI4OWY5ODdkOTk3MDE5MjNiMzg0MTM1NTJjZGJlNDAyZmVlMDhiZGMwYjIxMjUzNjhkYjkwNGVhNDM5YWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiZTgyZGZkMjYwMDUzNGYzODIwMzNjNzgyMmE1NTU5ODk2MjdkODJhZDlmNzA3MWExNmY4NWM0MzFjYTRiMmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2c84ff03ef84536a5ab2396b4ad34c2",
+      "statement": "When the NodeOptions fuse is disabled, NODE_OPTIONS and NODE_EXTRA_CA_CERTS are removed and Node's NODE_OPTIONS handling is disabled; when enabled, packaged apps keep only a small allowlist and BoringSSL-incompatible options are always dropped.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L396-L455",
+          "version": "repo-lines-v1:sha256:0e8183e8be537d29b6dd3f40d80e5b99954a7e50066d5bf8bc49b85a65ce4b97:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhOGI1YjgwMjEzMGVkZjhmMTM2NDhhZDMzY2NlYmEwNjg0YzEyNjIwNjEzNWJlNzExOTZmOTUxMTZlYjI0N2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmN2IyOTNhOGJjNDU3Yzg5Mzg0YjkwNTNkYzEzYTg0MjUzMWRjNDM2ZmIxODJiMTRkYTU2NmYzMzEwOTY0MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3MzkxNGE2ZTMyOTAwMjZhYWJiZTk4YWQxMzEzNzMzYjA2OGJhNGEwN2E1NzAyMTcyNmE2NjliMzljNjc3MzkifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L620-L626",
+          "version": "repo-lines-v1:sha256:d05cd895e496cd29f939864eb463aa2279bc658414825e3729159d70f6669f73:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjdlYzRmNzliZWRmMTdhOWE4ZDQ3ODY2YzYzZjZjNGI0NjQ4MzdkNTYyYzgwODRiMWFkNjQ1OTNhNTgxNjNlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGViYjQ0MTI1NTA3MzQ3M2M3NWJlNDIyYmMyNzdlZDFlZWE2MmYwZGI0NDIwZGIzMjMxMWNhMGIxN2E2MmJiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTdkYjM1NzhiNTNlOTM1MjU5OTk2NTllYzUxZDdiM2UzMGIyMTZjZjY5Y2IyMDA4MjYzOTNlNDM5YWNiZWNjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzQxOGI3YTJkYzRiMzI3Y2Q4YjkwMmM0MGZmYmI0MTFkMmFhYTYzNDZmZTJkZjA1ZjFmZTIwMjdhNDQ4MjI3OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_77236cdecafc42d7b9554f4959746d38",
+      "statement": "Node CLI debug options are only accepted when the NodeCliInspect fuse is enabled, and --expose-internals only for unpackaged apps; disabling the fuse also suppresses the SIGUSR1 debug signal handler.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L380-L392",
+          "version": "repo-lines-v1:sha256:2a984f611476f299b43b16a5eb0da06f115f760ef9d4c60a0500de317089f6f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwN2E2ZmQ4OTkwMzI1MzI2MmIyYTVhNzAwNDIzZmYwZjM3ZjVhZDZjZmJlYzBkOWJhOGQ5M2VlOTQyNGEwMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmOTc0NmNjY2U0ODJkYjM4MzljMTkzNmJiNjg2YjVlMjU3NWRjMTQxN2Y4NDEwOTgzNjc3NjMwMjVhNDNhYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3OTQxMmE4YTYxOGQ1MWE2OTU4NjIzODFiZGVmMTgzZjFmYTQxMGUzNDE4MTVhZTE2ZWI3NjQ4MjgxNzgzNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmN2IyOTNhOGJjNDU3Yzg5Mzg0YjkwNTNkYzEzYTg0MjUzMWRjNDM2ZmIxODJiMTRkYTU2NmYzMzEwOTY0MTYifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L728-L734",
+          "version": "repo-lines-v1:sha256:486b1d49d04deec52bad754c66c698f2c08e417b5a3633129a639242c932b538:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTMyZmI4YWJjNWJlMmJmNzQ1MWMyYjAxNzVhYTdkYjE2M2ZjNmNiY2Q3ZjQ1MGRhNjc4OWFmOTUwM2JiOTE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTg5NWNmNDZhNTM5OTJiNTg0NDE1NTYxNTZiZjQxZWY3ZGYzZjk3ZDk0OTE2NWM0ZDBlNjFlNTg0OGZlMzk4MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc2aa77e65af497dbb3f1654d8c4f884",
+      "statement": "The LoadBrowserProcessSpecificV8Snapshot fuse makes the browser process use browser_v8_context_snapshot.bin.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L436-L444",
+          "version": "repo-lines-v1:sha256:b8978f0dce08019d95b78831b1189da24399b42a1eb7a2934c67075f74db4100:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRhYzdmODJkZDFmYWU1NDU4MzFlM2ZmN2Y5NWM5NDAyYTBiNDI2ZDAxMzRlZTY1YTIwOGQ3ZjVlY2JhZjNlNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDNhMDg2ZmYxOWY4YTJmMWYyMzUyYmE1YzgzMzczODcwMjc4NTBmZTE0OWM1NGM1YzBlYWY4ZTczZTViNWZjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU1NDM5ZDllMTA4NzhlNGIzM2M5YTRjY2E0NjM5NGNlNjMwMTY4MTFjMWQyNDVhYzQxODBiZTcwNzYzMmVmNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_030019bc8bad4324bf960c919cbbd0c2",
+      "statement": "InitializeFeatureList appends Electron's own feature overrides (such as disabling SpareRendererForSitePerProcess, and MacWebContentsOcclusion on macOS) to the user's enable/disable-features switches before initialising base::FeatureList.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L207-L270",
+          "version": "repo-lines-v1:sha256:81a0a462e724c553472d4fe6a9635eef9939e87616c7d4a6ff5c99e2a2de1262:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjOGU0ZDcyNTAwNjdkN2VhMDQwMWI3NDNlMmQ1MzBmYmIyNDAzMjljOWJmYzY5ZTE3NTdjZmRiOWE5NmZkMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzZTE3ZGM3NGI3OTZjMDY5ZTc2ODA2YTYxZDMzMTc0OWJhMGRlN2NkOTk3NTMwNTkxMzFiMzgwNDllYmEyYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4Yzc5YjI0YmUzOGVmYmZmN2Q3Y2U3ZDc2OWRhMTI0ZmRjZmE4NDYyOTBhMDZjMzAxNDVmYTMwMzlmODI1MmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1YWI5YzRlYjdhYTMyZTRjMDJjNzY1MTRmYTdhMGYxY2E2NTg5Y2ExNjc2ZDU1ODZiYzk2YTk3NTU1OGFhMzQifQ"
+        },
+        {
+          "resource": "repo://shell/browser/feature_list.cc",
+          "version": "repo-file-v1:sha256:08cc31fcf7bc4d84b8f6c5b24ad4c4ac2b79d2afc5d2ec0aa3e61b9b3567e4d9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

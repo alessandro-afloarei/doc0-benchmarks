@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b581335219d8c277f9207bf563b23fbc6556fe389201df77c77236c975b7fe10",
+  "claims": [
+    {
+      "id": "claim_87cff4fb40eb4920af9574e38306e983",
+      "statement": "Evaluation runs apply only the [llm] configuration section (including named LLM variants) from config.toml; other settings such as save_trajectory_path are not applied.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/README.md#L24-L30",
+          "version": "repo-lines-v1:sha256:b3d63e142aa0ccb68fdbc0bbdf05f7f85035aa3ac8abd75b83033d09b1f8b91c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IxYTk4MzQwNDg2OWM5YzFjZTlkYmIxZjEyYmMyM2Y1YTYzMDBkNzk3ODIyMWNjOWYwYjIwZDhlZjM4MTQzZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTc2MGE5NTI0NTYzODdlMzU5ZmY3MGNhZGZjZGM3NjQ2ZjRmZDMzN2RmMGIzNzBhMTVjM2Y2Zjc3ZTdjOTA0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjlkYjM0OGRlZGI2OGI4OWFmOWIwMjA1Y2MxYmRkOWZhM2U3ZGZhMTRmMWU4ZTRjNDdjMDEwMDdiMTg0MDhlMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f8577a64a9e243a5a051e68d54c82bb0",
+      "statement": "get_openhands_config_for_eval builds the evaluation configuration from a default evaluation sandbox config, and takes the runtime from the environment with docker as the fallback.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L692-L740",
+          "version": "repo-lines-v1:sha256:2281a78df56bf2ac7a3beb1a602968f84132c869a255945da9e69730d7e2d5fb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMjExYTFjY2UzODg4ZDVmYzI2NzU3NzkzMTFjNzdhMGY3ZWY2NzZmODE0YjgzMWMzMjZkOTY3NjQ1MTJhMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjY2YzOTI4OWZiMjBjMTc2OTNjN2E1YmRkMTE2YTFhYWU1ZTRlMjczYjkxODkwZmFmZjM4ZTI0N2M3MzNhNmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjZWVmMmE3YjcyYTVmZDA2NzI0ZjViYWU2NGJlYWNjZDEzOTZlOTY1Y2Y0YzJlMWI0MjM0ZGE1OTQxODk2MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjNDEyMjBjMjk2MWY3YzFlNzllNjNjNWM0YjZkZmYwMTM0N2FlYjI4NGMxOGY2ZDRkMDJlYTU0OThmNTBjZDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_167553ffc7bc4c7b805ca51983d40466",
+      "statement": "EvalMetadata records the agent class, LLM config, iteration limit, output directory, git commit, dataset, condenser config, and related fields needed to reproduce a run.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L44-L58",
+          "version": "repo-lines-v1:sha256:b87e08b888262aeb4397e05fad99cd98d21df0dbfe7111a9c7f3e074d09bea69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzNWU3YmIzODlmYjU1ZDE3MWQzYmVlYjE4N2JmYTU1YTk0NGQzNzdhZWE1ZDdhOTc4OWJlMTdiODA5YzQ5MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3MzQ3YmZiZGJlZWQyNzNkNjQ0MWFhYjRlMmJjMTAwMGIxOWE3NWY5NDcyNjI1MDA0ODAwNDgwNmU5ZjM3NGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlNGM5ZTc4M2UyMGQwNDJlNDZkOGM2NDNjOGI0YjUzNDY1ZjJmZGY0MmU0NWM3NjI0NzQ0MDBjNjliYmYzMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6061f304678440e967891810cdfccf6",
+      "statement": "The per-instance wrapper retries a failed instance up to max_retries times, applies a per-instance timeout, and classifies errors as fatal or not so that fatal ones are not retried.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L387-L400",
+          "version": "repo-lines-v1:sha256:5575a66ef79417aa182a4c1116e442a9761eb66875c0b37a261b0080d87f1b36:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZmI2ZDA3MTNjOTAzNjQ4ZWRhZjAwNzIzMWRjNTUzZTdlZTZmZGNjNjk5YzIzOTM4YjFkZWI5YTljMTdlMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NTY1MDQ4ZDU2ZTUyNTQ0OTNhZTI3OWMzYzQ5N2ZlYWVjYmI1OGY4OWFiYThjMWM0ZmE1ZjhlYTEwYzUxNDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkNTZmNzAzZWUwZGYyNWEzZGU4ZGU2ZDFhYTliMjQ5ZTc3YzEwYzVlNGFjYjgyZGU0Y2M2NzRlZTU4ZDY2MjAifQ"
+        },
+        {
+          "resource": "repo://evaluation/utils/shared.py#L626-L670",
+          "version": "repo-lines-v1:sha256:c54cb73596e915378e6f8410859a48ad5f2abbad217c5d4822769d2539bf392f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlOWU4ZmMyOWY4YWIzNTM3NDlmYzQ1YzkzNWY3MzJhNGM0YzMzNTdiYmU2MWEzMzkyMGY0NmY4ZWNhNzJhNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmM2VjZjQ5ZDczYmMxYzM0YTY2MTNmNGZiZGE3NjI3ZTkxM2NhOGY1YWQyZDZkMzdkOTY2MDQzNDQxOGI4NWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MjRiMzI5MmU0Yzc4ODk1ZGJmMjMwYmIyMDc0YTVhY2MyODM5MTdmNmU3MTg4NWVkY2UxYmE1MGI2Y2ZmYTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczNDJiMzg4OTE2MGE2MTMzNzlkZGQyMzdjNTI2MWZmN2E4YmQxNjU5YjU1OWJkNTMxMGRlOTI4MzRjYzRjZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db653a7e2e374b618f2bcf88d9716bc8",
+      "statement": "run_evaluation uses a multiprocessing pool when more than one worker is requested, otherwise processes instances serially, and appends each result to the output file as it finishes.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L486-L550",
+          "version": "repo-lines-v1:sha256:144889ae11ce1e09322105f2f9130cc245ef58e8a43b0a768dc0a127c678cbf2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYjEwMDhmNDE5YTBjMDI0Y2M0ZGM5YzA2ZjRjNDRjNTgxMTBlY2FjMmEyYmY4YmUzMGRjMjkyODI2ZTUwNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZDAyNzlmNTJmYjQ2MjRjZTQ2YjMzYjc5N2U2ODdkMDZlNGIxYzI5NzE4MzY5YzExMmJiYjM1NWFjMjQyMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1ODg3ZDg0YWNjNGNlMzkwZGQ2OTU1MzAyZmM0MWY2OTlkYTc2YTg5ZDM5MTUyOGMzM2VmYjdjYTI0ZTMwZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_02735d165ded4ee89673fb4f00a88e5d",
+      "statement": "get_metrics prefers the combined ConversationStats metrics and falls back to the state's own metrics, then adds condensation metadata.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L670-L690",
+          "version": "repo-lines-v1:sha256:ae74f2552e4801fb5d2942ecb4c1dc63b4e7d81e4cf1b4fc325dea165570577c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmM2VjZjQ5ZDczYmMxYzM0YTY2MTNmNGZiZGE3NjI3ZTkxM2NhOGY1YWQyZDZkMzdkOTY2MDQzNDQxOGI4NWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwYjIxYmY4OTVmYWUyZDczOTIwZDkzMTc4Y2ZkNTg0MWNkZjhmOTUyNDUxNmM4YTU2NTg0MzZhNGFjNDhmM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2YjUzYjY0Yzg5ZTJhOWJkYmY1NmEwMDA3Y2Q5NTIwMGZiNWM2OGEyZDQ3YmU4NDA2MTgwYzE4YTRiNjM5YWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_825eacd5c81f442b886400c50eecbff0",
+      "statement": "The SWE-bench process_instance creates a runtime for the instance, runs the controller, collects the git patch with complete_runtime, and on runtime failure retries with a larger remote resource factor recorded in the metadata.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/benchmarks/swe_bench/run_infer.py#L606-L660",
+          "version": "repo-lines-v1:sha256:361f8a14cd8640b8ca4fa45abf5cdcd1a9bad0eac370332ca1347788c5042dfc:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyNmEzMTFlYWJjYzgyNjlkNjViYTNhZTRiNzcyZGQ0ODUyYmQ4YjFiYjAzNGIyMTg3Y2UwZTZhYzVkMmI4NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkMWQ5OTE3ZjQ0YzNlYzdmZDlmODU2NDRlODkxZWU0YWFhOGU4ZDc0ZDJkYWUwNjU4OGY4NWEyYmM2NGEyYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5YjZjYjZjYjUxZDI4Njc5OWYzMDlkYmU2NmI1NGUxOTg0ZmQxZWJhMTZhNjU2ZTI1YzI3YmQyM2UxMGExNDUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

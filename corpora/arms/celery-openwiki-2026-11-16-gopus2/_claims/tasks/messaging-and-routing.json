@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:db6ee21dbee70340b2ffba4d785607f4d83b47f2b3c8ec7be6ac61b6bb948584",
+  "claims": [
+    {
+      "id": "claim_115532a903524cfea8dea5b0a74b2c78",
+      "statement": "Protocol 2 task messages carry task metadata (task name, id, eta, expires, group, retries, timelimit, root/parent ids, argsrepr/kwargsrepr, origin, ignore_result, stamps) in headers, set correlation_id and reply_to properties, and use a body of (args, kwargs, {callbacks, errbacks, chain, chord}).",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L326-L418",
+          "version": "repo-lines-v1:sha256:7742fdedd211a3d1f879338704ed137ee5c13512fbb45c7dca1d6cabc2707cd8:eyJzZWxlY3RlZExpbmVDb3VudCI6OTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4NjJkNzg1MzBlYzVmZjgxNGQ3Yzc2ZDYzY2RlZWY4NmJiZmYyOWUzNmU5ODRjZjUwZDdiZmI5ZjMyNGZmZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllMjBiODRkMjNiYzcxMTQ5ZjU3YjRhYmU4NDYzNGY2YTVhOGViMDVkMGFhNGJlZWVmMmM1ODdmOGFmZTRmZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4Y2IyMGE5MGM1ZDkzOWUxNGJiZTZjMmU5MWViNjAxMGMyYTFlZDQzNTVmYzllNDlmM2YyMzIyODUzNTg1MGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6452eb3c9c4b40f0abdee08033204ce6",
+      "statement": "as_task_v2 rejects non-list/tuple args and non-mapping kwargs with TypeError, converts countdown and numeric expires into timezone-aware ISO timestamps, and defaults root_id to the task id.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L337-L368",
+          "version": "repo-lines-v1:sha256:15c8a00fd51b7d008ed44e2d5eb4fd393d0e652cdbd7dc91bda96e323756297a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkZGFlMTUzNTFiNjc4NjFlZWMzY2VlMzJjN2Q0MTg5MDdiYmYyYjA3NjY0NGU3Y2UxNjI5YzFkYzFiMWYzYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5NGY4MWY5OGM1MWJjMWQ3ODU4ZjY3ZDM5MmY3MGUxMmJkMTA0OTRjZDYxOWNiZTdhOTk1YWUwNTI5ZDAwMTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2Yjk2YmU2ZWVjMzVkMDFkM2VkMDU0NmIyNjJlMTBhYWMxZGI4YmZlNmQ0ZTFlZTllNzc3Y2NhZTU2MDMyMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3M2NjMmFmYTI4YzY0ZWQ0ZjBjNWU1MzExNzJkOTAwYjgwYTg2Y2VhYjk2MWZjYWY0N2ZlNGMyYTRiYTRiOTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0d63bc83b244c49891c00b8e09c5192",
+      "statement": "send_task_message publishes to the anonymous default exchange with the queue name as routing key for direct exchanges lacking an explicit exchange or routing key, declares non-broadcast queues, merges the default publish retry policy, and wraps publishing with before/after_task_publish signals.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L506-L590",
+          "version": "repo-lines-v1:sha256:52fc8bf783890c3d7e238f94a3dcd5153be69e28c9bfce772aa2241c592cb5ed:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZGQ0MWU3NzYyYjA4ZDEzYjYxMTE3MTcwZGNjZmY3YTEyNDI4MTE3ZDk1NDI0NzIzYTI3ZDBhYjZkOTJkNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MWIwZTljMzI1NDczZmZiMWYzNDdhZDliYjU4OGJkZDcyMzdiY2YwNWRmYTVhYjk2YTYwZDQwYWM5YjI3MmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwYTRhNWNkN2JlOThjNTZlMDQxMTRjY2NmMjQ3MWJlM2ZlMzQ5NGVkNGFiYjJmNjA5NjQ0ZDI1NGY4ODRmZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2NTc5NzI5MTQxMzA3NjdjYTY5ZjEwNjZiNzk2M2NjOWM4ZjNjM2JhNGFlOGY0MjU1YzYzNWVkNDdlYWI2ZGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_309a3c6d477d4105a77dd28a07ec67fc",
+      "statement": "app.send_task converts expires into a message expiration in seconds, clamping past expiry to 0 with a warning.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L967-L991",
+          "version": "repo-lines-v1:sha256:b6e82ec1d2c7a59829ff4749dbeadc610329f30f2353306666c8ec92e56138b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjZDQyN2FjYzc3YWZhNzI3M2YxOTkwNDNkYjg5YWU3MDNjYWIxMDU1MjUwYTMzODY1MzIzOWE4OThmYzkxODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkYTUzOGI3NzFlYWRlOTk5YmYzMWM4MTc0ZmQyZTk4NGQ1ZTIwYTcyYmYxNzcwM2NiMDcxMWExMGIxNjJhY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f669a2545f2240dbb39aeba11f092cec",
+      "statement": "When no task_queues are configured, a single default queue named task_default_queue is created on the default exchange, declared as a quorum queue if task_default_queue_type is quorum.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L287-L295",
+          "version": "repo-lines-v1:sha256:5ff819aa5204d893c6dbc3dd54cb83c5b89e312bfd45012a7c832aeb1989279d:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWM3NDFmMGZjYjcxMDc1MzczZDcxMjllNzgyMThmY2MwNTE2NjI3NDRiYzIzMTExMjYxMWRhNmFlYzAzNTlmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFiNGE0MzhhZDNkZjliMDFkMWZjMzRhZWFiY2NmNmExYmQ2ZGYxYWUwOTE5ZmU5ZGI3ODU2NzFjNmU1ODk4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNThlNDQyYWM4MDQ0YzFjYTMyODdhOTc0YzhlZmJmNWQ4M2M4YzI4ZDUwODNiNDljZDllYWM0ZDQ3MjdjYzExZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzVhZTNhNGI5MzQ4NTViMDg3OGQwOWQ3ZmY4NjhmMTJmYTRmNDI5ZmYyZDI0OTI1NDg1MmE3NzFiYzQ4ZTk4ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e6e6b89c4dec4d1eb74da700bade29e2",
+      "statement": "Looking up an unknown queue auto-creates it (with an exchange and routing key named after the queue, optionally of quorum type) when create_missing is enabled, and raises KeyError otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L201-L216",
+          "version": "repo-lines-v1:sha256:7b82308964e02f031752c0c4c35b7cce5bb89d22124f1cd9ea9485930f6ce50f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhYjA3NDU5OWE1ZGI1YjBmNmVlOWNmMzA5MGI2OTA5NzVlZDU4MzQ4N2IyZTQzMDAwMWM5NWE2NzRiNmJlYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4MTQ5NmU4NTY3YmQ4MDRlYTE5OTAyZGVjZDhkMzJjOWYyYjJhYTQ5YWY4NzAxNmY2OWNiMWE3YTViYWEyYzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3NDI3MTdkNmQzNzE3MTA2NDY1MmJjMjNlODY3MDY4ZWZlOWZiNTc2NTExZWE5N2Y1N2U0MDhmMjI0ODMxMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjYjBiOTVjZTMzMzAzNmMwMTYxNjBkMTNhZDA1MzRjYjQ3NzNhMmRiNDZiYmEzYjBjNGY2M2JiYWJjYmY4ZDcifQ"
+        },
+        {
+          "resource": "repo://celery/app/amqp.py#L99-L102",
+          "version": "repo-lines-v1:sha256:76452514145da5f8baa3e4226e0b77b8a1e358707b7f25a3c09f0e37ab337d91:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzIxNmM0YzRmMTRmYzgzODU1NjVlMzI3M2RlZjlkZTI2MzRlYmU2NTkwYTdlNzEwMzdjZWZlNjQ1YzIyZTE1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNiNWY4OTMwYTdhMWM5NTYyYjcyZWUwMTllZTQzNTQxNmM4NDZhYTJiZDU4ZGI0Yzc0NjVlZTY0NDYzMWQ2NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzE4ODc3OWQzNzM1ZmNmNzExZmY1M2MyZTZiNDY4MzAyMGY0Zjk0N2MxNTBlMGYwOTcwZjE0MjQxZjk5Y2E5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTM0ZjM0MDkzN2Q5NzcyZWY2MGUyNGRhNWFhYTQ0MDc3YzJmNTRmNjc1OWRjNzUzY2I2M2Y5MDU1NmJhN2JlOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fba4986356fa4c45934306a69d708e93",
+      "statement": "Dict routes become MapRoute instances matching exact names first and then glob or regex patterns, string routes are lazily imported router paths, and callables are invoked as router(name, args, kwargs, options, task=...).",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/routes.py#L23-L50",
+          "version": "repo-lines-v1:sha256:b800cb1b4f9affec2f848d295f74c9599e5d764d8831d784f37bdc4ffcf5b9e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0OTcyYTNlYmI2MGNhNTFmOWY3NWE0ZjhlYTQ4YWQ4MGI3ODAwNTdhYzY4ODRjZTg3ZGI0MGE2Y2ZmYzNmOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3M2E5MDY4ZjdhYmM0NTY1NmI5ZjQ1YThlMTRiMTkxMDJhOGIwZjIxOWJlMGI2NTY1MTY3ZTM5ODUzZmEyNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0NjM5MWZhZTc3MGMwNDBjNWRjMWE1MTFlMmIxNjJjYjIxZjRlYTkwN2JjYTE1NDAxODhmMzBmYTFjNDgxYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5NGUzNTYyNTBlMjg2NzkzOWM1YzA4YmIxYjZlMzcyOTU5ZjcxYWIzNWM4ZmMxYjE5ZDllYjMzZjU2MzJlNDYifQ"
+        },
+        {
+          "resource": "repo://celery/app/routes.py#L94-L136",
+          "version": "repo-lines-v1:sha256:7d5ec3cfe516d167eca23b501fd0c7f45bddd18eeb836c790a9e2a6cefa40aa0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMTE3NjUyNmUxNTQ5NjhjN2RiMmY5MWZmNmNlNTYzNWY5MzBkYTZhYTIxMDQxNzgwYzA3OTgzZmM4ODhkZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZTBiNWUyMGM0YzgwMWRhODVkNjM0ZDY4MTg2NmQ4YjJiOWFlNjg2ODYwMWYzZmI5OGNkM2EwNThiMzVlYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxOGMzMzExY2MzZGIyNGQyYzRmNmY0MjFmN2VjYTJjMTE4NzJkYjQ3NWRjNDJkNzVmOWExN2RjMDU2ZTUyNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_64bd8e505aac4c28b1b9ff47f4e56f30",
+      "statement": "Router.route merges a matched route underneath explicit call options (non-None explicit options win), raises QueueNotFound for unknown queues, and falls back to task_default_queue.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/routes.py#L61-L92",
+          "version": "repo-lines-v1:sha256:280d5a6f22dc9ce0122abc1680c7a619a75663c4e65c4f5f66f65fa8f5199c2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxY2NkM2ZlMGE0NmNjYjFiYjA2ZmRlYmMxY2JlNWIwMmFmYmQ1ZDNjZjEzZDc3YzYyYTM1ZmE5NDcwNzI5YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhZjJhMTkwNTY0MzU5YjczNTEyYzY0YTIxYzM5MjcyMjg5NzNhNGQwMjM4NmJlMjhkZDA1NWJmMWNlOTZhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlMjlhZTg1YThhNGQ3OTVmMWQyYzI2ZWVhNDQ5YzY3YmZlNWZjMGQ5ZWNhOTBjNDEzYmZmZDVjYjg4MDlkYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwZGY5OGMyMWExYmY2MGUyMGQxYzE5ZGU4ZGUwYmI0YTAzODE3Yzg0YjM4MThlZDg0ZTVjZDk2NGQxMWViM2EifQ"
+        },
+        {
+          "resource": "repo://celery/utils/collections.py#L47-L55",
+          "version": "repo-lines-v1:sha256:a503b4ca5b21e85b05a34a8c82678fb774c6032dcbab125f9c3864b1a070f7c7:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTcyOGU0YzFiZWViNDkwNGEwMzM4Y2ZmYjhmYWQ4NWIzZTQ3NDAzZGRkN2M0ZjhhOWI2NjAyMjc4YmM4N2Y2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM4YTkxNTZmNTAzMzBhY2MwOThmZjMxNjU1Y2FmNDliYTYyNWFjNGVlYjE5YzJjMWZhZTlkNGY2YWExOTdkOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQzNTEzYTdiYTFlODRhNDVjZTdmODhkNzExNWU1OWIyNTJiYmM5MTE0NGIxN2JkYzNiMmVkODlkOTZjYTZjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODU0M2UyMDI2M2U1OTZmYWU2OWE0MTQ5ODA1Mzg3M2I5MjIxMTZhNTkxY2MyZTE4YWZmOWUxMzc4YmJlZmMxZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d1b963a6cf4f4b49a16161f95f141898",
+      "statement": "When quorum queues are detected on an amqp broker, tasks with eta or countdown on non-direct exchanges are published to the celery_delayed_27 topic exchange with a delay-encoding routing key; for direct exchanges a warning is logged instead.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L934-L965",
+          "version": "repo-lines-v1:sha256:807d45a59d7110e230617e92038846c49569bfac45649e4261a93d2370068e6a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4OTUwYTg2OTViY2JlYzFiOTMxYWM3ZTIyMmM2ZDYzYzUwOTc3MGIxNmJjMTdhNjc1OTc0ZmIwMzg3ZjJmNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNDRiMThmMDc0ZTA0ZjJiYWM5NjMzZDAwOTU4ZWRhYzZkMGMwNDIwMTI4Y2NlMjk0ZGE3YWZmZThhNGM2YzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxYTVkZTQyZTg2YjlhY2IzY2Y3YjczNzcwMzkxOTBmNWJkMjUzNTEyNjQ1MzdjYTJlMGVlNzY2OGI4MjQ0NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyZWM1ZDg1MjBlZjdjZjA0NmNkZDQ1YmJkNWZkOGVjZDRiZDFjYWY0NWUxOGVhNTkzNzI1NTBjMzY0YjNjMWQifQ"
+        },
+        {
+          "resource": "repo://celery/utils/quorum_queues.py",
+          "version": "repo-file-v1:sha256:1d5734d62188f3e83812cb9cea1e6123ffc97a564b5fd6442a62ec996b0c304b"
+        }
+      ]
+    },
+    {
+      "id": "claim_24845339eaa84606ad195584ab2d1339",
+      "statement": "Changing task_routes in app.conf rebuilds the router via the AMQP configuration update hook.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L659-L663",
+          "version": "repo-lines-v1:sha256:a4e8945c05a08000a6c48a10fc21d45274c3aa2acd2c1aa2f198f13c011a1cbb:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ1ODJlNGNmNWI5OWNjZjhmYzFiMWQwNWY5OWE3ZTAxNmQ0MWM2OGY4YjAyODk5OGZmNTU4OTY2MGNhNjU3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI1YzgyNjMyZmM4MmQ0YjJjMzQwZjQyNTU4YmEzZGZhMzFjNzY1NWRmNmZjYzE2OGI0ZmRjZTU3ZmFjNjA0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGE4ZmE3MTUxMjEyODQ4NTVhMzU1ZDA0MDg0ZDNiOWFlN2ZiYzM0MzI1MmEzMDZiZGE5MTQ0NWE1YjgwMGE2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:05:29.073Z"
+  }
+}

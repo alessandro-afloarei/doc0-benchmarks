@@ -1,0 +1,4 @@
+# Files
+
+- [Build and Packaging](build-and-packaging.md) - How the hono package is built and published - the build script (per-file esbuild ESM and CJS outputs, the import-extension plugin, declaration emit and private-field stripping), the dual package.json and jsr.json export maps and their validation, the CommonJS marker file, the publint check, and the release workflows for npm and JSR.
+- [Testing, Runtime Matrix and Quality Gates](testing-and-quality.md) - How Hono is verified - the Vitest projects and colocated test layout, the runtime-tests matrix that runs the package on Bun, Deno, Node, workerd, Fastly Compute, AWS Lambda, and Lambda@Edge, the type and bundle-size and HTTP benchmark checks, lint, format and editorconfig gates, and the contributor workflow from docs/CONTRIBUTING.md.

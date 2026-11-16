@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a59d42f23ae0e8342058991f40580167adf17df4652c9c2f9a4220db4811f106",
+  "claims": [
+    {
+      "id": "claim_8e01a5ffbd914ded9711afa0c81b8666",
+      "statement": "Worker and consumer resources are managed by nested blueprints, with application-provided steps included in their respective lifecycles.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L171-L186",
+          "version": "repo-lines-v1:sha256:e78dc55249f8e24caa39c15e969bd996758651c36bc0066e5e20f6aebef65c2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOGY5MzExNjlkNWE3YThiNzA2MDk3NGMxMWVjZGRjNTJjMWVmYmViNzQyNGU4YjEzYmViNDU5MTZhMWJjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhYWU4YTBjYTc2Zjk4ZjdiN2RjNzk4NDk1MWQ2M2U1N2RiM2M2NDU1NzljYTUxYmFkNmE1MzlkNjE0ZWRiYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmMjIyYzQzNTM5MTJmOGE5OTU2OWMxNzA5OWI2NTM3YjQzN2M0M2M1NGRmZTU2ODIxNGRmZGU2NDBhNDM3MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmNmRkZGM5N2QyZmY0ZDUzMTdlZWZjMDM2YjMxMWU1YjJlYTA2NzM2MjA5ZTdhMWQ3MDIyZDMzMTcxNDZjZWEifQ"
+        },
+        {
+          "resource": "repo://celery/worker/worker.py#L76-L138",
+          "version": "repo-lines-v1:sha256:111f2c92d8661c35641251fdf854f09154ae10a64cd566afe6366059ad831c53:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOGY5MzExNjlkNWE3YThiNzA2MDk3NGMxMWVjZGRjNTJjMWVmYmViNzQyNGU4YjEzYmViNDU5MTZhMWJjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3Yzc2OTY1YmJjZjZhODIwOGJjNDVhMGJiODgwNjVjNzg4MWQ2MTBmNzA4NTljZjcwMWRkMGQ5MzI5YjJlMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyZjMyM2E4MzNmMjU0MDI0NjQ4MDcxM2E4ZWU2ZjQxMGM2N2FiYjBiNzFlYTU2OWZkZDIyYjlmZTgxMTAwMDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82b351929de547269efc940c8c5c4c72",
+      "statement": "Bootsteps resolve transitive dependencies and topologically sort startup, while shutdown normally sends lifecycle calls in reverse order.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bootsteps.py#L109-L176",
+          "version": "repo-lines-v1:sha256:595bb56a2d42f98ff6dac8d2b3fc9c7d13fcfda4e390e374c6bceee3b1d44a6b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZjUwOTgzMmY2Njc5OGY2ODYzNWIzYzc2MWYyNGExZjBmN2VmZjE2OTc2MmMzYTYzYzllZDI3YWRkYjM5MjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMTI2ZmQ5OTBlMTQyYTE5OWRjZDM3YWUyY2ZkOGYxOTliMTQyNTcxNzg3MGIyY2FjZjc3NDNiMjIzNGM3ZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkOGUwNGZmNmJkN2Q3OTNlYjExNDBlYjgzYjc0Yjc0Mjc1YTEwYmJhY2FmMGEwYWEzNGJkNzhiN2I4N2Q2NjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmNWQyMmNlMWQ0YWQxMzczNzJmMTE5Zjg3ODE2YmI0ODZiZjc2NWFjOTI5YzI4ZGY2NzE0ODk4YTk4ZTg1Y2YifQ"
+        },
+        {
+          "resource": "repo://celery/bootsteps.py#L186-L249",
+          "version": "repo-lines-v1:sha256:8d426b838651c1fc17b08febc08dc482a96ae543ccfdbb3b1e9b6780ffe55dd1:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4OGUyZmZlMjlkM2I3YjhiMjQ3YTBkYjE5OTEwNDM1ZGJmOTU5MzdmNWFhN2VkNjE0OTFhODAyMTVhM2U4YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljMjBlODJjODYwMWZkMTUwYWQ0ZWJlMmM2ZWFhZjc5OWI4NjVlMTg2NjA0MzBmMTBkNTc4NTQ3NzBhN2YyMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmNmMwYWQ4NGVmYzZlMzA0YjkwMDNkZTZmYzJkMjUyMWNmYzUyYjBhNGFlZjgzYzNkMDM5OGU2NTVlOWM5NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ODI5YmY3ZDY5ZGJlOGY1YjM2MzVhMDNhNzIyNzg4MGEwZjE5MDFiNmY0OWVhMWU5Y2MzZjk1Zjk3NjFjZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b10e6738c92c4bd4878dcbf49e6b85d3",
+      "statement": "Consumer strategy initialization builds a per-task strategy and tracer, and protocol v2 dispatch uses the task header before deserializing the body.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L716-L751",
+          "version": "repo-lines-v1:sha256:8b4bf49e09829f3eb5946c7dc5e7149c2be45f8b7885b5ab16d82820cb7deea3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZjkxYzYwMGQ3MDFjNWJjOGJlYjY2YjQ0YTIxYTk4NDFhMjM5NTBlNjViOGE1ODVjY2VmNmVjZWI1NDk0NzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZDZkNTY3MjRiMWNhZWQxMWZlNzUzMDAyYjAxMDllNDVhMTdlZTUwOTdiNmQwN2Y2YWVhNWZkNWU1OGI3ZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyZjQzOTNjMWUzY2U0YjM3OTRiM2U0MWY0MzhkNDZkNzE1ZDljNGY4NzBlZTMyNTYwYzg2NmRlOWY0MWU2YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZDk1ODZkYzVlMzA4MDNjZTllN2Q5NmJkYTY0ZTkxN2UzMjk1YmExZTMwYWJlOWU0MzU0OGMzNTJhMjdlMTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d79215f1b57c470286b739b7eec35df1",
+      "statement": "Prefork delegates execution to Billiard pools; green pools require early command-line selection and cannot run embedded beat.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/prefork.py#L19-L23",
+          "version": "repo-lines-v1:sha256:13e8292910153ca761a8c3faa27b607d6e324212242884aceef42be732ff06b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWIxZWQ0Y2UwZDhmYTdmYjQ4YzBiZDI1Yzk1MzAyYWJjMjYwOTRlOTA5OTVmMGYwNjg3YjJiMGI3MDhkNDNhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTczNTZlZjEwNDI1ZjQ3NWNhZWE5NDRkM2NiYjA2Nzg5NjE1NzQ3M2NlZWIyMzMwZWNiMDJjNDgwZTJjZmNjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWYzNjdlZGFlZGRmNDU4ZTc0MGJhYzgzZjVjYmI0NjEwMjVjYWEyNDMyNjJjZDdiNjIyMTc1OWM0YWUzYWE1MSJ9"
+        },
+        {
+          "resource": "repo://celery/concurrency/prefork.py#L95-L125",
+          "version": "repo-lines-v1:sha256:9b5537f7634eb2c265e0a97dbef18ed9bf7777e753690411d52085ad7cd34703:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMmIwOWI0ZWVlZDE2ZGE4N2QxZTE4N2M5MjRjMTE0M2RkNDNhMDBiNDY1ZGUxMDZjMDY5OWYxYWJlMjUyNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMDgyNDdiZTlmZTcxODlmMzM4ODU0MzI5YTgxNGU4YjQ1YTAwOTVkNmVmMDNjZGU4Njc2OGQ1YjVjZjQ1ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwMGNkOTY5MzlmYjhiMGMyYTUzNGI4ODQyYzgxNGJjYTVmMWZiNmQ3ODNmZmE0ZWMyZTY3OGQ1YzMwN2E4YTgifQ"
+        },
+        {
+          "resource": "repo://celery/worker/components.py#L20-L31",
+          "version": "repo-lines-v1:sha256:c0bcf6df899a18aa9c808079c67aa6a83d656507ed0f5e17f8f029e80f5bd76a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ZGYyZmUwNTI5YmQ1MWFjN2M3MTZiMWY4NDQ0YjJmMjYyMzg0YjRiMmExNjQyODI2NjA3MjQ1NTQ3MjJkZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmYzEwZDhkNjVkOGE2YjVjMzQxYjY3ZmZmYTUxNmJjM2ZmYWZiYzRlMDk0OTFjNTM5MTc1NDQxNWJhNTFjMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhOWNlN2E4NTBhMTgwMWY0MmRhNTcyMTgxMTBlNTgyNmFkMDFmYjcxOGMzODQwMTk5ZDdmMzVlZTZiNjJlODgifQ"
+        },
+        {
+          "resource": "repo://celery/worker/components.py#L200-L230",
+          "version": "repo-lines-v1:sha256:3090831642106dd1ec5ea4e11950b0c3a1df007b46499563ea918eb47d9af01d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZmJmNjQ5ZmJhMjYyYzIwMDNiMjE3YTg4MWJjMGE4NzFlYjVlMWE0NGRhZmI5MGUyY2E5YjA0MmQwOWU0NjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNDc4NGJmNzE2OTUwZWU1YmJlNThhMjA0NDFkYzE0ZmE4MDQzOTA5MmM2NTJmMDAwNGFlNThkOWEwY2QxMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1YWNhOGIzOWU5NDU1YjcxMjEzOWE2NGQ0NzM3OTc1NjJjMmZmYmY5MWZlMWQ4MmU3NDI5MTY1NDM4YzJjNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5NGYyZDI4MzgyMjJlMmNlZjNhYjY0ZjAyY2UxZmJjMDUzZWU5YzhmYzhmODc4YmI2ZjdkNmYyNzE5MGZkYTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4564da4ff74442938b46235cf0660e19",
+      "statement": "Task consumer QoS applies the ETA task limit, and worker_disable_prefetch is implemented only for Redis brokers.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/tasks.py#L29-L83",
+          "version": "repo-lines-v1:sha256:e0165bf1d620fb60027a3d98a8b212acd0ec7e9a05bb8d42a8cd9e08e3a998fd:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZDBiY2NkMjc3OTcwM2FmYzVmZjU3MDE2OWNhNWM1NTUyNzViNWVjY2MzNWFiYTk5MTlkYWZiZjU2ZTJlYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOWQ5ZThhNzg5NzRlZTkxOGM4ZjZmMzNlZGQ0NGFkZGE4ZWE0OWMzYWFhMDViMmM1NGQ4NjMyZDA2YTFmZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3ZTQ2ZWMzYzM4NWYwNmVmMjM2NWJhY2ZiOTRjMTVlZmMyYjc1N2QzZTdjOTVkZDhlNzRkOGQ1MGUzNTM3ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYjVhYzY2YzA3NDZmZTg3YWQ4OWE5YTVmZDcwNDNiMWE5YjljYzJlNjRmYjNmYWE5MTBhMjk5ZTc3ZjcxNGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2215b99b0f68432c8c99eedbac632b43",
+      "statement": "Consumer restart distinguishes initial broker retry from reconnect retry, and only includes channel errors when broker_channel_error_retry is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L366-L413",
+          "version": "repo-lines-v1:sha256:cc5744a42f8ac1eb60724108af5ce9aa1d2f7a7ab70dd535a4949be55cf8b4c1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYzk1M2Q2YjJjNWZhMzBhYzVhNTM5MGZlZjI1MDA3YzcwZGUzNTg4MWNkOGEzNDc4YjEzZWU1YzZlZmY0ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NjcxMWQxMDVkNjNmMWE2MjAwYmY1NjYwZjUxMGQxODliYTI0MDBkMTNjMjQ1OWNiZjJiOGNiNWZhMDY1ODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlNzBmZjI3NzBhZDVkYzA2ZmUyMzExMWFiZDc1NjllYmZjMDU3MjY0Y2IzMDllYTZmOGJlMmRmNTk3YjhkMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiZDZlZGI5YzViYTE4MmNlNzAwYjFiYzIyZGRiZDJlZDg3NjIxMTU3MzdjNGRmY2ExZTdmOGY2YTc4YWE0YTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_070eaf4e719d4ff4bcbaf4dfde8193fa",
+      "statement": "After connection loss the consumer can cancel unacknowledged late-acknowledged work and skips prefetch reduction for per-consumer QoS.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L419-L489",
+          "version": "repo-lines-v1:sha256:725a815429f25d2e3b69f24eefcfc4ba78657a55b9ed0e77604b00fb17fe3e79:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZTcwODA3Y2YxZjM1NzJhMGY2MjY5OGU1NjI1NWJhODU1N2M2MmEzNzg5MDVlZjM5ZjZkYTE1MjdlZWI2NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlMjhiOGI3ZGYyN2I2NTliNTc4NjRhZWUxZGNjMTM4ZDgzYWMzMjY4OGU3OTZhNDVhMDZjZThjYzU1ODE4ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzZmUyNWY5ZTU5MzFhNTM1ZDQ0YWRlZGY3MDQ3ZDAzMjJiMTc1MDk1MDViYjg4ZmQ3NjU0MTZkMmQ3MjQxNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmNmI5MWVhM2ZkOTY0ZjhmNjhmNzg2OTVlYmE2YzJjNmE2NmY2MDA1YzFmMTQ4ZDRhYzJlYWM2YWY5ZTUwM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91a7a687343c4ec1aff2ac0229f1ee7e",
+      "statement": "Warm and cold worker shutdown stop consumption and stop or terminate the blueprint, and soft-shutdown waiting is configuration controlled.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L244-L267",
+          "version": "repo-lines-v1:sha256:b91f3a340668ea4819865a9a3c1bf09fb9ae6096e2c4e13acc309b591f877af8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxYzliZDhhZWJhY2M3NjNjNjY4ZWUyYjk0MTg0YjNmNTc4MmVkZWIzNTJjNjg0YTIxNmEwYTQzZTk0YTNhMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ZDA0YmM2ZjAxYzZhZWQ2OWY5OWVmOWMxZjg0N2Y1ODViMGQyODJjODBjMzEzZDJkNzFhODQ5NTFlYjgwNDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxZjdmMTJjNmJmM2JhMzliMWI5NTVkODY2ZmFhYTQ5MmEwZjg0MGFlYzJhNGUyNTNiODZhYTlkYjlhMWJkZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2NGM3YjgwYjIwN2RhZWNmODY1NWYxMWU5ZGIwY2Q5ZTg5ZTE5ZjA2NjNlNDFkODNlMzE4NjFhYTYyNDBhNTMifQ"
+        },
+        {
+          "resource": "repo://celery/worker/worker.py#L412-L435",
+          "version": "repo-lines-v1:sha256:2dda1a44e1f22b87f76a3d46b05166c440b8ecd02cabe8b79c5233261d240f7a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1YTYxMmFiYzNkZWFmYzAyYTExY2FkODVhNDNjZmRlODQzYzI2MjM2MGJkODBlZWYxMDBlMzdmZTc3MTNkNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNjAwODhiYWJiMGFmYmJhZDIyN2Y5NGRjZDE2ZTI0ZDJiYjlmZWEwZjU5ZDBiNWJkNjcwZWE1YzZmMmU3NjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0MGU1Mzg3YjUxMDZiYzZmMDBkYTYxZmRlZGZlMTIwZGQ5YTNhOTcxYjc2MmE2NTRiN2RhN2RiOGY2NTg2YzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cdba27fd99814c70bcf2c60b9cbd8c4d",
+      "statement": "Prefork graceful shutdown closes the pool and keeps hub timers firing while waiting for it to drain.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/prefork.py#L142-L184",
+          "version": "repo-lines-v1:sha256:e0b2d657fdd94f62f99a0d43a803ddaded1d59de137053151d103f8d7bc26541:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExZGJiYTY1MWEyOGRkOTkyNGU2YWI0MzUyZmQ3MDlmN2U0YmVhYTMxNjU1NDViODc3ZTVjNzNjMjZlZWY5MjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhZDZjOGVhYTg1M2RmYjcwNzIwNTFhNWY1OTYyOWJiNzZmMDJkMTMzMDQyZjY0MTQzNDNmYTAxOWFiOGU2ZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3ODI0ZTRkM2YwNWMyMGYyYWE1Zjk5Nzk4NjI0ZDlkMGQ3NWM4Mzk0NDMyM2E5YWEwYjE3YTIwOWQ3OGNjMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwYzY0ZmZlZjdhMjlmODQ0ZGM4YTc5YzU4OWQzZGNmODA4MzZiMDdjNzg0ZTM3Mjc1NGMzMjBmOWRhYzBkYjcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:34:04.042Z"
+  }
+}

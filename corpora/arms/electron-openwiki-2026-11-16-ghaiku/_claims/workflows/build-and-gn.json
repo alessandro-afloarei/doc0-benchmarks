@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:132de6afec69cdd696fdfa986e9cf02a3873869ab528369d84ea0ef6f35a9866",
+  "claims": [
+    {
+      "id": "claim_f373a65b79cb40afaaaa18077c31fcb9",
+      "statement": "script/lib/utils.js defines ELECTRON_DIR as the repository root and SRC_DIR as its parent, which assumes the Electron repository sits inside a Chromium src checkout.",
+      "evidence": [
+        {
+          "resource": "repo://script/lib/utils.js#L8-L9",
+          "version": "repo-lines-v1:sha256:765f67cc2ea9a8cb283f9cd815090abb126023d187366c11a866bafca60abcf7:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZmYTEzZmY5ZmUyZDg3MDRjMWE2ZGZmNmI5MWNkZWNiMmUxMTJiMDVjMTI0NTQ1YTE2NzY1YzgyYjBjMzU4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGM2MWMzY2MyMjliZTY0OWIzYjA4NWVkZjFhYzkxMmE4ZGZlNGZjOGZiMGM4OWVmNDEzOGRlNDdlMDg5MTdmYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmU3YzJmMmJmYTk0ZjkzY2JjYTZjNDA4MWVjOWMxMDE0ZmU3MjQzNDhiMGRlYzQ4YTRlMGRiYmU2NjMwNmVlZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDJkNjU1YTA5ZTU5NTE1OGRiZGVkZmQ0ZDgzMDk0ZWU3OWMzMGZiMmRlMmIyMjE4NDA1NGZmMzBiN2Q0MmMwNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cbe0018569aa4d9f902c6e8c30658dbc",
+      "statement": "build/args/all.gn sets is_electron_build and adds //electron as a root dependency, and is imported by both the testing and release argument files.",
+      "evidence": [
+        {
+          "resource": "repo://build/args/all.gn#L1-L2",
+          "version": "repo-lines-v1:sha256:dfd303532e8c2750f02b407f08db3bc6daa6a18f8bfcbf0f0b1c26430c9493a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWI4MDRjODFmNzFmMmViYjIzMGUzZWVlOTYwZWVlM2E4OTQ2OTE5ODA1ZDUzMmZlY2FkYWIzMTA2OWQ1YTBiNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTcyMzE1YmRmYjM0OWJiM2U3MDA1NjA4ZTE4YjJlMDQ3ODQ2NzRjOTI3NjRhN2FkMGM2ZDc0NTI2MjBmNjg2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTdjNjc4ODY1MjJjOTdhZjhmZDU1N2FhNmExZmE5ZGFkMDQ4MmY1ZTMzYmMzNWRjNWJjOWE5MDQ3NGEwMTI0MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_898f2fcc4a0c4aeda56f5aa068257358",
+      "statement": "build/args/testing.gn sets dcheck_always_on and is_official_build = false, while build/args/release.gn sets is_official_build = true.",
+      "evidence": [
+        {
+          "resource": "repo://build/args/release.gn",
+          "version": "repo-file-v1:sha256:bc458e0c299426a75536695aa25d6c1a0c65bc4fe756146b4f6e9e472d71e028"
+        },
+        {
+          "resource": "repo://build/args/testing.gn",
+          "version": "repo-file-v1:sha256:8d09bcf57bc6f25ae3d6c87e09f816e83f4a4291d3b9066c1d9403014106fa0d"
+        }
+      ]
+    },
+    {
+      "id": "claim_0066b61ff17341bda3361906db415d16",
+      "statement": "The top-level electron GN group depends only on electron_app.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1557-L1559",
+          "version": "repo-lines-v1:sha256:3f6fe0be69cb4a9e26e6845cce0b2a6e734cf61958d72717b124f487bb634808:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjJmZjVkMzRkMmFmNmU4YzllZDI1ZDNiMmFhNThlMThiOTJhZGVlMjE4OWNlMjJkZGRkNjBhMWRmNTBkMDIwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmMxMzI4YjY1MDViNjFmOTk1ZTVkYTBkZDg2Y2YxYzA4ZWQxMmU4MDVkZjY4ZDgyZDZjZDI5NzAwNmMxZjZhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmRmMDMyODRkODU4Mzg4NTdhMmQzMDFhYTExYjdlYjIzYzcwYjlhODk3NjAxMDlmYzNkMWVjZWFhYTQ5NGRkOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2cc8dfeaf6ee46998af8e3b83807473e",
+      "statement": "The electron_fuses GN action runs build/fuses/build.py on build/fuses/fuses.json5 and declares fuses.h and fuses.cc as outputs.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L395-L404",
+          "version": "repo-lines-v1:sha256:812f74592d369b94afc1230177423bf288660367070b2e98d24681954dcf4dd8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1OTNjZGQxYjQ1M2VjNGQwY2Y3NTViODAzN2M3NDZjZDhkMTBjNGFjYWM4NDkxMmZkNDg1YTRlYWNiYjk1NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhOGYzNmFhZDRkZTQ5MjM5NjAzYjU2NjM2MzQxNmEwMmFiNjAzYjYzMzIwZGRmODdlNGIwOGExZWI5MDM5NmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b501d595adfa4d8ca893b19a7297b690",
+      "statement": "The dist_zip GN template is used by electron_dist_zip and the other zip targets to package the build outputs.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1423-L1423",
+          "version": "repo-lines-v1:sha256:5cd170b1025fc997b4142a8ab0e04276df86ca8629be923ea0e64fff9924b808:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNkMTcwYjEwMjVmYzk5N2I0MTQyYThhYjBlMDQyNzZkZjg2Y2E4NjI5YmU5MjNlYTBlNjRmZmY5OTI0YjgwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNkMTcwYjEwMjVmYzk5N2I0MTQyYThhYjBlMDQyNzZkZjg2Y2E4NjI5YmU5MjNlYTBlNjRmZmY5OTI0YjgwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjM4ZDMyOTQxYzliYTQ1YzNlYmNmZjBjOTI2ZDFmZDAxYWJiOWJkNDgwY2FiNzdjZmZjZmE0ZDUwZTYyNDMyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmUyNzA2ZGJmZWJlMTExMzQzZmE4MzUzYjg3ZDZiMjY3MzlhZmIxMzJhYWNlYjc2NTY3NTcxZDhhZGE1YWYzZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_778f1f5a1cd74694b4467144dbf93170",
+      "statement": "The webpack_build template runs webpack with production mode when is_official_build is set and development mode otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://build/webpack/webpack.gni#L1-L46",
+          "version": "repo-lines-v1:sha256:0e9204897661ba4824bdbe592750226908999c5fb92a308a7b78e92dc97ca79c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMWE4OTliYzc0MmUyZjQ3MWJkZDUzYWQwMjQ0OGFkZTRlNGI1ZjlhOWYyZTAxNjZkZmZhYmMzMWJmYmJlM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb04dfc517244f9f998bed97cc86101e",
+      "statement": "The npm_action template runs a pre-flight action before the npm script, keyed on package.json and yarn.lock, through build/npm-run.py.",
+      "evidence": [
+        {
+          "resource": "repo://build/npm.gni#L1-L45",
+          "version": "repo-lines-v1:sha256:7995543de66b6a917387c3ed5c3a10fae8afc4944f14d94b8e149d16ce0e5c3e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZTc0MjRiOGEyNzIyM2U4NGFmZmFkZjY2NjdlOWM0MDhhNDZmNzNjYzM5NDBlNDllMDBmZTNiNzIwMmY0NGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d06b5d6e57cb4d65843e18f1e7531d80",
+      "statement": "script/start.js runs the built Electron binary and forwards SIGINT, SIGTERM, and SIGUSR2 to it.",
+      "evidence": [
+        {
+          "resource": "repo://script/start.js#L1-L19",
+          "version": "repo-lines-v1:sha256:c2bc4ebe6aa8baa2b72f75dbdbdaef1fe54ac83079ab163dbe629254ccc993ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1OTkzYmY2NDYwZjBiYzZiMjVlMWU3ZGNmNjg5YzFiNDk5OWNiMjQzOGJjY2NjMDI5MzUwMzZiYzU3YzIzNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjNmJlNzRiMzMwMWQ0MTk3Y2NjYmNlZTg0ZGM5Nzk5ZjM4YjZmYTZhYTEzMGQyOTY1NzllYWNjMWJkNDc5MWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7663a4927e2848e08c69e4d141efcc7a",
+      "statement": "The default_app TypeScript build is declared as a typescript_build target in BUILD.gn using tsconfig.default_app.json.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L283-L290",
+          "version": "repo-lines-v1:sha256:63e5210eb5cc9e42e7a817de9886a6629176a60829dda9f9f18c3a951478d2b8:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDA0NTA5YWRiMWI0OGMxNzEzNGQxZDZmZDE5YzI1MTBmMDdiOTkzMGQ5MWYzNmI4MDg1NDE1YmM2ZDI1MzhkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmIxZWY0NGFkYTQyMzRiOGVlMDQ2OTc2NGE2MDc3YmQ2MzFiYjM2MTBlZmIzODFlODA4ZGFkYTljMzFmOWQ1NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmJhOTA0OWI0NGUxNDA5NDE5OTk5NzcyMTM2MWY1NzFhYWMwNDMwODdmMzc1Y2ZlNTdiZGU0MTYyZWJhZjkyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTZjNjExOTA3ODM4MjdlOGE2NjRmOGQ1NTAxMDExYjZmOGZkMzIwOWJmOGEzZTM4Y2YzYWVjMDdlMTk0Y2JlZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

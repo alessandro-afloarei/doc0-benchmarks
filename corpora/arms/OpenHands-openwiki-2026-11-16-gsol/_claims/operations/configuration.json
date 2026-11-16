@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:629410d2555c82f0196f93596e54dc2d523bba4466713e901cc1016550cd58c4",
+  "claims": [
+    {
+      "id": "claim_5bdfe0667adb4a6093f470d8e3c6be11",
+      "statement": "Core configuration loads defaults, TOML, environment overrides, finalization and custom agents in that order; supported command-line selections are applied afterward.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L819-L850",
+          "version": "repo-lines-v1:sha256:b01cd98d2104a8e09a00e0a313c6ebe20b7335beddc9215a076d5be9ba039ef9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZGFlNTAxZjlkNTlmNmQ5ZjA2YjI5MmQxZjc3NmIzMTNiNzg0NDg4ZGQ0YTZhNjVmODM3YzU0ZGE3YjQ1MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MTc4YWZiOTI2Mjc5NzllZTJlNzNkMjk0NzIzYWM1ZjQ0YTdkMjQ1YWQ2OWI5YzE3YWVhYmI4MmVkZTI5ZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YjI0ZWViZWIyMTkxYWY1ZjFhYzNhYjNkNDJkNzJlMzA3NGE5MGZjMGI3NzI0ZDk1ZThlMmUwYTU0MTJmN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmY2ZiYjI2MDI4N2Y2OWQ4OTgwZGY2MzU1YTQ3ZjNlZmVjNDg5MjAxMGZkMjkyZjk5MjA4ZDU5NDU0MTc1NDIifQ"
+        },
+        {
+          "resource": "repo://openhands/core/config/utils.py#L884-L904",
+          "version": "repo-lines-v1:sha256:6366090f9a0528ed36a7a775829d8231c26fb431e0c96517bb83f7346c78a6f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YmRlZTZkODYwNzNjN2M5YTRiODFjYTIxYjQ4ZjIzZGQwYzI3OThhZjUzZmI0NmExOTQzZGE5MmYxZjc4N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4MzllNGVmOTE5MTU5NzM0MGU4ZGY2Yzk4OWY1MjVkNTQyYTJhNGJhYTFhMzkyZDUzN2ZkNWIxZGI0NGVkNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f15c5c28cc14ed18c0d012b520c4b1e",
+      "statement": "Environment loading skips empty values, parses booleans from true or 1, and uses literal parsing for list and dictionary fields.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L66-L125",
+          "version": "repo-lines-v1:sha256:b586a5b60cfe8148de158b48a6023f728057e300c2c8eb48d1edb1140eacafef:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlMDA5OGUyMTViZDhmMDcwNzU0NDlhODRjMmI5YmQ3ZmVmMTRlMmUwMWRiNDMzN2NiMmQ3YjYxMjg0MjBkYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzMGU2ZjYxYTMyYWVkYjM4MGQ5NGQwZDFkNTRkYTY3YjU5YWUyZTcwMjA3MmNiYWY3Y2RlY2IzODNlNmRlMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiNzQ0NDFmOWNjYzIyM2Y1ZDBkYTk5MzJlM2QxNDZlZmIzNzQxMGJhN2MwMWQ3NzJmZmM5MjM2OTVjZGEyZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e9b03b1f99e841aeab661ee47adabd39",
+      "statement": "Agent LLM profiles resolve through llm_config and missing named LLM groups fall back to the default configuration.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/openhands_config.py#L131-L169",
+          "version": "repo-lines-v1:sha256:fca91a9386d9568a4654be5afa2895fd8d71e898e1dbb7837c737f1a76dd061c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjNmE4YjI2NWUwZDhlZGMyNmNhMDE3OTUyZTAxYjVmZDUxZTNlMWNmMzQ5YWY0YzgwMTMzZjRhN2UxNWY2MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NzI3ZWNkNjliNzkyZjU2ODA1NDgwZTZmNWIyYzdkODUyMjJmNWVhMjNiMmQ5NTA1MGQwY2FmNTlmNmUwNDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2NWY3YTEwYjI2ZDUyMzc3ZjFkYWZlNjJjNzQyODg3ZTZmM2UwZTg2ZDYxNGM5ODA3ZTFlMDExZWYxM2Y2ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyOGIwZGVmZDU1NDdmZTA0MzY5YzE4YTAzY2E1YTM1ODk4ZWE5YjkxZTliMGU0OGVhZGQ3NGRiMzAyYzdkYTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_143548b4781a43faa40a7b50b225b319",
+      "statement": "The OSS file secrets store writes explicitly exposed secret values as JSON through FileStore, rather than encrypting them in the store implementation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/secrets/file_secrets_store.py#L15-L36",
+          "version": "repo-lines-v1:sha256:460f786726158bc22177c240aafe0c3e0abd0ba1f7938708cac19ba0ea941c2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhOTQ4MWY1NWM2NDUxOGRjODliNDQwZTI5ODdjZGZjNDU1N2Q1MGI0YjY3MGUyMDY0MjdiOWIzOTE4YTYzYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1YzUxM2YxZDVlYzc1MzZkYTk3NzljMDJhNzhmYjI2YjM1N2Q4NmZkOGZlMDIwNDNiODFhNTIxOWNmMjlmYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2YjQxZTcwMjBkZjBlNTViN2E4MGE2ZjgwNjY5ZmRhZTQ2ZjI2ZjQ3MTA1Y2VkZjIxNjUzOTllZDhhNThkOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc685a7b6b9345debd4e340998679c7a",
+      "statement": "Selected runnable action types in confirmation mode use risk analysis; no analyzer sets UNKNOWN, high risk or unknown without an analyzer requires non-CLI confirmation, and CLI has its own approval handling.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L204-L242",
+          "version": "repo-lines-v1:sha256:8a4d7ac22cda99947d6c6819e1ffb2f034a8a8b57944987850b30e3f1a34f066:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyNjA1MzYzYjI1ZDgyNWNiNWM2Mzg4OGZjODg0MGQ2YmYxMTg0YmUxMmFjNDg5ZjBlMjI0N2U2MjQxODJlNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhODFiMWY0OTQwYmE4ZmRmOWQwN2RmZjFlYmI4NDE2NzczN2NkNTI0MGNiNDAxMTQ4NWJhM2QwZDczNTcxYTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMDk1ZWFhYzkxYzhiNDI4NDViNGNjM2ViODRiOTc1MzhiODgxMjI3NTEyM2E2Mjk4YzAzMjIyMzM3ZTIwNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1MmY2MGQ3YTNmY2E5NTY3NGYzOGNkNDM4ZTNhYTBiMWFiMzg3OThkMDBmZTZhNGEzZjk1MTc4ODJmYzdkNDUifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L917-L965",
+          "version": "repo-lines-v1:sha256:bb5c0cf1cdacd85dff4ed1d82cb41a4af233bccd89ce65a2529d778aae8e4d89:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5OGNhMjAxMmQ1NjAzZDNjY2ZlZjE1MzdjZmI4MTBiNDE4NTE3ZGM3ODliNjE0YTVlOWVlZjQyNjdmZjVjNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NDc5YzcxM2IyYTZkZjgxMzM5Yzg3YzkwZTBlZDdlNTk4NWE0YzNmZTEyYmM1ZTY4YjJiNDNjMjA5YjZhZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2MjUyMDlhM2RhOWNlM2M0YWM0NmE1MTdhNjhiNTg0Mzk4Yjk5NmUyODE0ZGUyYzg0NDNiYzcxNjNiOTgzMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3MDllYjE0YzVjMGI3OTgwNGMxMGI1MGMzNDdmMzk4NGNlZDBkODFkYjcxOTJlYjMxZDJkYjI2YWY5ZmExZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_29a6887285c64e3287be61e190499b55",
+      "statement": "Runtime.run_action skips actions awaiting confirmation and produces rejection feedback for rejected actions.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L951-L972",
+          "version": "repo-lines-v1:sha256:2d22aa36c6d3e3265f4993082e92de5d792577204463c87b6f8073a1f13273b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiZWI3ZmU0NTNmODQzZGMwYzFhZGIzZWZjMWY4YTc5MjA5NWQxYzFkMzkzZWE1YWEwNTFhZDY5NGU2MjY1ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NWI2MjUxODg0N2YyZTc3NjFlNGU1OTA1NDg0ZTAwNTZiMzY1ODRiYTZiOTg4OGY1MGZkOGNiZTcyMmY1NzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMGNhMzVkNmRhNTNlNzY0YzIyOGU3YmQxY2RjYzY2ODcyNmYxY2JjNzFiM2FmMTE0ZGU5ZDcxYzVkOTUxOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkZjdjNjAwZjAwYjg1NmM4YzNjMDg0MDdhYTgwZGEyY2E5M2M0MzZiNzAwMGE1OTYxZTJkYWQ3YWViMjEyNWEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:50:03.393Z"
+  }
+}

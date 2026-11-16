@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a08ceb1031f773311f4594a9e2b3a41ba5b2846753176631460883d84dba2134",
+  "claims": [
+    {
+      "id": "claim_1c4651eedc4a4222b1822e07271c0fa8",
+      "statement": "Resolver orchestration records a cloned checkout's base commit and skips issue numbers already present in output.jsonl.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L535-L616",
+          "version": "repo-lines-v1:sha256:2f7f762279b459439399afcf4e6db7f84eb08fe36dce4fcd609413f384c41d06:eyJzZWxlY3RlZExpbmVDb3VudCI6ODIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NjY2MzRjNWJkZDRiYWQxOGUwYjc0MTZiMmU0MmZmYjQwOTIwNWE2NjEzYjQ0NmJmYjE1MWM0NTZhOGM3NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZGU3NWU5M2U5ZDg2Y2M2ODJlZWUxNmMzOTlhNmZhNTk0NTY4ZWI2YmQ2ZDUyNzBmZGVkZDM2NDVhOTcyMmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiNDM2ZjE3ODE2Njg2ZmRhNzRhM2U3NDE1ZjgxZjE4ZmI0ZGQwNzcwOWZjOTVkNTEzMDQ5OGQ2OTJkZDQ5OWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a4ed83ef29c435b9668357015e2591f",
+      "statement": "Resolver processing uses run_controller with a supplied runtime and assesses success using issue context, state history and the collected patch.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L430-L517",
+          "version": "repo-lines-v1:sha256:b541701645c97c2d73126074d2f2dee9a24be06f7a4e7e79a087941052e79494:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmOGRiZDY2Y2FkZDRkZGVhMWNmMGQ3NzM2NjlhYjY0MmE2ZWVhNTM2NWMyYjczMzM3Njk4ODczNDYyYzc1NWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGU3YmI2YWQzNmM2MTlhYjFmMmIzYzJiNDM1NWM2MWU1YjU1NzcyYzgyZTY0ZTViZWRmZmRkNDljNDM3MzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkZjYwYWFmNWE4N2E3NmE3ODA1ZWE0OTgxYzExMGFkYWQyYjI1NWQ1ZTM1ODIwMTFlYTBmMjA0NTAyOTUzZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkMzM0N2I4OWU2OWQ2Zjc5N2E0M2Q5YTc1ZTQ0YmEyYjY3OTcwMmYyZjlkMWRkMjVhMGZmM2JhOTAwZTA3YTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0b5e00240c84131ba47499d64241578",
+      "statement": "Resolver completion stages workspace changes and collects a cached diff against the base commit with retries and increasing timeouts.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L309-L386",
+          "version": "repo-lines-v1:sha256:900b0cda4a558263c69d7b1a48a34fb9b0c369f142e20e5d529d59a7b04a7ba7:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNzM5ZDYzMGViYzM2NzNjZjEyN2YyYmMzMjc1MjA0ZTUzOWIyMWQ5M2I4MjE4YTFkYTJhOTdlMDNlZDYxZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxN2VkNGZiOWNkYjdmMjk3MDQwMWIyNGQyZTZhMmVjZDA3ZDg0Y2NmYTJjZTFiNWUwZDhmYjk4MTEwYzNhODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNzAxYTRlZGM4NWEyZmE5ZjIyZDZlMTU3NzQ4NWJjM2E4NDA1ZGQxNWFhMWU3NzJlMGM5ZDAwZGY2Njk4MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZmMyZGU4YTMzOGMxOTc0ZjhlY2I1MTlmNjIxM2UxY2Y4MmMwZWEwMzY5MjUxNTFkZTMwMTg4OTI4N2U3NDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32b0ff3579bf4d0f8ef0ca6f6a1340e1",
+      "statement": "Publication supports branch, draft or ready modes and skips failed resolver outputs unless send_on_failure is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L233-L266",
+          "version": "repo-lines-v1:sha256:64db5db3b2a7dbab22ee69388cfa6af4af73f48d03442414240df9ea9d50a386:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4ODM4YzU2NWQ2YzU5NTgwMjVjNmZiNmZmYzdhY2U1NmFiZjk1ZWY3ZWY5ZjBmMzQ2NmNjMGE3NDQ1NzkzZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MjkzZGQzOThhNzY2MWFlOWNiZmQ0Mjc5Mzc2OWY0OTVhNGM4ZWM0Zjg4MTBhMDZkODUwOWU5YWFlNzk1NzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxMmMxMjZkYzgyYTBlZWRkMDY3MTQzYjM4ZTZmYjI2ZGMzNTBjOGM4MDUyNTQ2NTM2OWUzZTRiMjcwMzk4MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwMzI2NjNjNGU0ZjkwMzcxMTE3MTBmNTgxOTRkZDJkNjFhOTMxZGE5MDg4ZTA2MzA2MjQ5Y2VhMzI3ZTFlZTkifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L329-L377",
+          "version": "repo-lines-v1:sha256:14915c0f265430676db0e2c3f51095bfb5b49cf2a4747bf073944d1db3e07d33:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyN2QxYzgwOGE4Mjg0YTU1NTVlNWRhNGZhMzlmYzgwMDA4OWFlMDI1N2FkMDBkODEyNTFhZjQyY2ViNTljNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlYmNjY2QwMzBkZDI2NGQ2NjgyYzQwMDIzNzcyZGFmOWU2MTBlZmI5YmY4NzFmMTM5NzIzMDQ2OWJmOGJmY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2NDM2ZDYwMzJkNzM2YjhkNTI3YmQyMGJiMzc4YTVjNjBiNTFjYzlmYjZmMmVjNTUwMTRmMmFjODUwYWRkZWMifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L502-L527",
+          "version": "repo-lines-v1:sha256:113002cfb05995971aa13bdc2d026c8c9fa7e00355aaedfbf5b6f9bcad2fb58f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTQxMzk4ZGRiZTMyOWViOTU2YTkwMDI5ZDBjYTNjN2Y4ZmVmMzAzMmYzOGY1YTE5NmRiNDdlMDhlYjJiZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MDYzNGVjOThmZWU1MDc0NTU3NTFkNmY2MzlkNzcxMjU2NmExY2Y3NTQ0MDAwMDhkMDE4ZGJhMjJiNDg3ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkYTY0MWU5ZTA0YTE0ODA3MjEyYzgzNjg4NGE5NGM5ODQ0NzVhMDVlZDlhMmFlNTJjODViYjk1NTk5MzZhY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_196b139cf04c44a688bc56533f553667",
+      "statement": "Evaluation dataset preparation excludes recorded instance IDs and applies explicit-ID or fixed-seed limit selection.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L219-L290",
+          "version": "repo-lines-v1:sha256:8c8f00b99381c99d1cacef2e723a6104b31b2d1f9ca8c938263bc4b2c378007f:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YjVjMGJkMmVmOTVlMzg5NGQyMTk1MjM4MmMwZmUxNWU0OTg3YWZlYTkwNjljYzBlMmYyZGM3ZjM5MmRiNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxZmJhYjUxYzczN2ZmYTIwNzdjZmMzYmFjYjM2ZGFmODg5MmRjYzU5MWNhMWZmZGUxMWRlMTVmMDMyNDM0Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiY2U1ZGQxYWI5YTBmYzEyYmMxZWIxY2YzYmNmM2FkYjU4YmJmOTM2MTA3N2Y2YTYzMTQ4MGI5ZmZjOWIyYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e36ab792955947e3875c799f8e18e249",
+      "statement": "Evaluation writes and flushes JSONL results and uses unordered worker results for multiple workers.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L292-L306",
+          "version": "repo-lines-v1:sha256:e803de7ec20e89de1e166a3299d97c48a4e4a74393b0636483a024983fac78cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliODkwNzE3MTA5MjViYzJmODBhMzcxYzE2NGI4MDIyN2JmODRmYjcwZTQ3YTY0YjU2NWIwNTlkNzFlYTc1ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0NjNjYTU1MmNlNzhlN2ViOTFlZDZmZDNiMzczNjg5MGE5ZDliZmRjOTlhNDZhZjVkNTZmYzQxNDc4Yzc4MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZjU0YThmMTYwYzkzNjdlZTgyYTk0NjJjMTk5MmM5Mzg1NWMyYzNmMWU5YjRhNTY0YzAyNTA2NjYzMmQyZDAifQ"
+        },
+        {
+          "resource": "repo://evaluation/utils/shared.py#L486-L547",
+          "version": "repo-lines-v1:sha256:0c5e5391704d18057bfdd34deeaf398d56f3167e1062eb20a85ce4bd85c1388c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYjEwMDhmNDE5YTBjMDI0Y2M0ZGM5YzA2ZjRjNDRjNTgxMTBlY2FjMmEyYmY4YmUzMGRjMjkyODI2ZTUwNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5Y2Y5NzFkYTQ0MWZkNDQxNmZmMjEzMzYzYzdmMTc0ZmI0OTRjMmY2ZGIxY2IzMGJmNTk1OTU1NDRhNjRiMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZDAyNzlmNTJmYjQ2MjRjZTQ2YjMzYjc5N2U2ODdkMDZlNGIxYzI5NzE4MzY5YzExMmJiYjM1NWFjMjQyMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1NTc1NTcwMjc0ZGVlZTRmNTkzYmU4ZDBlMTdjYTMzYjNhNWM3OTBkMjQ0MDc0YTA3YWNhYTJkZDlkMGM2ZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aaa5afb584b54117866e4a3e77f7f236",
+      "statement": "The evaluation wrapper retries exceptions, returns timeout error output and normally raises at exhausted retries unless skip behavior is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L387-L478",
+          "version": "repo-lines-v1:sha256:a666a0dae4ea86d571aea2885e0054a6e2a52492e386f90d62e0e1195b1e938c:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZmI2ZDA3MTNjOTAzNjQ4ZWRhZjAwNzIzMWRjNTUzZTdlZTZmZGNjNjk5YzIzOTM4YjFkZWI5YTljMTdlMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZjhhMGE5ZmE4NjRjYjdiMDU4MWYxZDdhNmQxNDFkMDRhYjc2MTg4Y2VkMTgzNzg5ZWI2NzAwYjgxMTg2YTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1ZDk0NWI3ZGY0M2FiNTQzZTM4YTM2NWM0MmI3ZWE0YTcwMzMxZGFiOTJiNzY5MjVjZDU4ODBkN2E4ODY0ZTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5c560b7050d4fd2a0d10705a6866ad9",
+      "statement": "run_evaluation forwards timeout_seconds for multiprocessing but omits it when invoking the wrapper in the serial path.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L511-L538",
+          "version": "repo-lines-v1:sha256:a80fe98602bee56e1353127abb030f6afe7f87bb3dffe560dc49dad3b6f867f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjM2Y3NzY3YThiZDMxZmJiYjVlNGVkMDEzNjlmNDQwYWEzM2Q3ZGY5MTNhNjRmMmEwOTg1NmFmZjk5OGYyMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiMGE0NDQ1ZjZhMTFiYjAzZmUyMjI1ZmY4NjdmMjY2MTNiNTM0YzRiNWM0ODFiYzQ2MzJlYTVlMzAyY2FmN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5ZjdkN2MyNzE4MWIzMWM1MWU2Y2Y5NDNmM2E2NWY5ZTM0NWJhZDU2ODZkMjIyODgxYzRmOGE4ZWQ2MjQyNzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e3d406f11c14e5f81f9dd6fd6f0176f",
+      "statement": "Integration evaluation verifies task results after controller execution and closes its runtime in a finally block.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/integration_tests/run_infer.py#L69-L150",
+          "version": "repo-lines-v1:sha256:58c134266fb828b56fc14371688d495d8e2689942babd5c9705c30ee3f58b63a:eyJzZWxlY3RlZExpbmVDb3VudCI6ODIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyNmEzMTFlYWJjYzgyNjlkNjViYTNhZTRiNzcyZGQ0ODUyYmQ4YjFiYjAzNGIyMTg3Y2UwZTZhYzVkMmI4NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkNTM4Njg5MGIxZDc3YWMzNjI5Zjc4NWY0YTgwNDY1NjA4ODgyYzY3M2E2NTVkZjZiNDQzYThmYjliODI4YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmOTMzNTljNzE5MDg2ZDFkMDAyZTY5ZTAyZDgwOWJkMzQ3MjdhYjcxNjU4YzY2N2U2NGExN2FkNDNkODYzMGUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

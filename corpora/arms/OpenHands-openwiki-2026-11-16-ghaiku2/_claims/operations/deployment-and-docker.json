@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:43769464ddf1f1c7ba50d99a6f5ba604076e4803da3c0b3c59690a9b2eb47aa7",
+  "claims": [
+    {
+      "id": "claim_3a0d2e890119474187e11d5b5e24797f",
+      "statement": "The application image is built in stages: a Node 24 stage builds the frontend, a Python 3.12 base stage precedes a backend builder stage, and the openhands-app stage sets runtime defaults such as FILE_STORE=local and WORKSPACE_BASE=/opt/workspace_base.",
+      "evidence": [
+        {
+          "resource": "repo://containers/app/Dockerfile#L2-L31",
+          "version": "repo-lines-v1:sha256:5937a8795a8a16e23c33d2e83e2eca4f32307b99d12a2e4b2b6c1e0ab3e399c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZDI3Y2M4YjA2ZmJhMjY1ZDk4ZmVhZWFlZDY0YjljMGIyMjY5M2MyMDU1N2NjODVkMDdlN2VmZTJkNjBkY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhMjZjOGVmYWI3MTE2OTkyZGVlNTk0N2VhMTVmMGI0ZmFjMmY2ZTFiZTc2ZGM1NDc2NDA3N2UzMWVhZTk3OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoxLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ZDQyMmJlYmI5MWM0ZTFhZDgwMGNiMDE4YjE5ZGMxODcxODEwNDRjMmE5YWUwOGM4MGJkN2Q0NGI2ZTAwNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhODJmOWRjN2UxNzRmMjA0NDM2YzNkZmFjNWRlZmI4NTAyNmM3MTY4NWFmMzc2OTU2ZWNlZGFlZjkyODg4MDEifQ"
+        },
+        {
+          "resource": "repo://containers/app/Dockerfile#L33-L50",
+          "version": "repo-lines-v1:sha256:c402edd995b0a1175b7392560cf77dede60c4c84420d4cad6bf04548e0f2bc0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxNDU4MTEwMWY3MDhkODNlYzA1MTQ1NTdiZDc3NjQ1NmVhNmY1Mzc0ZGEwNDk1MzhmYjQ3MjE0OGI0Nzc2YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyM2Y0M2Q3ODUzNTdjMTk2ZWYyYjhmOTkxNjcwNDM0YWVjOGY1YmJjMmM4YjhiOTAwY2FjNDY5ODYxYjYxNjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5YTVmYmI1NDUyODA4Yjk3MjIwNmM0MzY0ZWY3MjY5YTZiMTA2ODEyMDM0MGNkOGM3NGJhODVlYjZhMmFiNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwZmEyN2RlYmIwOTY4MWQ5YTYwMzY5NTMyNDg4NzBlZGY4NGI5NWYyYTYyNWEyNjE4NDVjOWNiMDZjOWJlZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a794b0870605408bab48909f0ff33188",
+      "statement": "The application container's default command starts uvicorn on openhands.server.listen:app bound to port 3000, behind the entrypoint script.",
+      "evidence": [
+        {
+          "resource": "repo://containers/app/Dockerfile#L94-L95",
+          "version": "repo-lines-v1:sha256:b2195d26b893f27ae36fbc868c6d68488badec518a0f638f5b3bf8ad4340955b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjgxY2Q3NTkwYTM1ZDdkYzFiOTcwY2FmYzNjZjdiZDdhNmRhMDRlODlkMjVjOWRmNTFmNzczMjg0NWQ5MzIyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI1YjhhMmJiMDdjMzExNzUyNjkwYWVhOWI0YTA4MDM0YzI0YmZmMDk1ODRmNTUxYzQ4NjE3NTE4MjBjNTAyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2E4MmY5ZGM3ZTE3NGYyMDQ0MzZjM2RmYWM1ZGVmYjg1MDI2YzcxNjg1YWYzNzY5NTZlY2VkYWVmOTI4ODgwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c4dba956c6d4ddf879c6b768ea562de",
+      "statement": "The entrypoint script requires root and a SANDBOX_USER_ID value before its setup, and NO_SETUP=true skips the setup and runs the command directly.",
+      "evidence": [
+        {
+          "resource": "repo://containers/app/entrypoint.sh#L1-L20",
+          "version": "repo-lines-v1:sha256:aa935d9673fcb5140f442209a04e7d6e98f92513714e65b62937a383ab4ba8aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NzVmOTI4NTQ2YWVlNzg1NWNiMWRiOWFmYzhhYjNmMWE4YTM0ZDQzZGU1YmJkNjJmNzA3NmQ3YmE5ZjM5MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjNjBhNTRjYmQyYTljM2QxNGQxNjgxNTNmMWY5OTc5MzU5NDAyODRjOTU5ZjgzMjhmZmFlNmVmMTRkNWFmZGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_28b435de81914dad858dda5a63201fdc",
+      "statement": "docker-compose defines an openhands service that builds from the app Dockerfile, publishes port 3000, and mounts the host Docker socket and the ~/.openhands state directory.",
+      "evidence": [
+        {
+          "resource": "repo://docker-compose.yml#L1-L23",
+          "version": "repo-lines-v1:sha256:09ddcf301d5d1bee7ca966696b9174266f4ffdbc7754fde192d50408a04bb340:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZWU4ZWVmOGIxMzIwNTIzNTY4ZWIyNjUxMDhlYTA0ODgzOTQ0NmY4MTVhMmJkOGUyYmNlNjMwYjk0MDgzNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_054396d39a5a41ed94d41a36d4692172",
+      "statement": "DockerRuntimeBuilder.build uses Docker Buildx to build the runtime image, and image_exists checks for an existing image and can pull it from a repository.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/builder/docker.py#L251-L256",
+          "version": "repo-lines-v1:sha256:4990e3cafc38b75c58620ea1800068a68847bd103070064d032bd7a6dd8982eb:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlmMWUwNTcyZTllYjM4MjRiYWZiYzU4N2U3YjhkZjU2ZTBkMzA2ZGU3ZGMwOWExM2M0ZGVlMzJhYTkxYmY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU2NTQxMjYxMjNlZGJmMThjNWE5ZmY0OTU0ZGZjYWRhODZiNzY1Y2Q2MTE0NWYxMGRjNWRmZDI0MTQ4MmYzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGQxNTBhNGM4ZTkwOGIzMjRhY2MzYWNkNzZjODE1ZDhhYzA0NzZkZWU3NmRmODE3YmViMWFiOGFjZTA4MjgxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTY2MmUzMjEzNDIyOTkxNmEyOGNjMWU4YWY4ZTg1ZDIzMGQwYzAyMDZiMWJmMTk4OWNlZTdmZTQ4NzQyMjEyMiJ9"
+        },
+        {
+          "resource": "repo://openhands/runtime/builder/docker.py#L51-L60",
+          "version": "repo-lines-v1:sha256:58fc097af0363c60e4a4eed58afdb9ac1496dc38a1cf1fa725a44eabb942a0ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyYjhjZjU2ZDIyNTM0ZDI0NzkxNzRkZmRkZWU3YThjMDg5N2QxYTVhNjVjNmRlNWJlYTMzNDNmMzZhZjJmNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2ZGUzNTU3OTYzMGU5YTg3MmUwMzYzOGRkM2Y1YzVjYzE0NWYyM2YwY2EyNDc3NGQ5YTcxNTIzM2MwMTY5NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjYzNkODAxY2M3YWNmNGM2NzI2OTQyMzdmYjVjNjhlZWI0MzZiZmRhMmZjMzg5ZGFmODZkMDc1MTg2MmMxOWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_44ba2ea80d374dc598d026df3b601628",
+      "statement": "Build cache entries older than seven days are pruned by default when the runtime builder cleans its cache directory.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/builder/docker.py#L371-L375",
+          "version": "repo-lines-v1:sha256:a296a4ce6c230a053af614baf15e8b8d1634e472cfcecf4a27b2d8b67219e9b8:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc4ZGFjYzNmYTMwYmU2YjRkOTI0MjU0ZWU0ZDM4YjRkYTc3OGYxY2E0ZTk2M2MyNjU1ODkzNmZhOTE4YTNmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjMxYmY0MTgyZWMyNGJhYzliZDFmN2EwZTQ4N2VkZWE1YzJhZTAyOTM2Yzc1Yjg2ODUzOGU5MTVlN2Y2ZDdjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTdhMjA0MzUwNTM0YzI2YWM4ZTliMDcxMTU2MDI0ZDA4NDFlNDFkMGYwMWI2YTQ3MDljZGM4Yjk0OTg5MzY5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjhmOWJlN2UyYTdhNzYyZWI0N2I1ZTdlNWY4NmY3Y2FhZTUwMWYwNTVkOTBhOTRkM2E4ZWJlNGIwYjdhMTVkOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7b35cb063a34b12a3af4bf0448018e1",
+      "statement": "The Docker image workflow runs on pushes to main, on tags, on pull requests, and on manual dispatch, while the PyPI release workflow runs only on manual dispatch with a reason.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ghcr-build.yml#L8-L14",
+          "version": "repo-lines-v1:sha256:035213cb964775e6bca9d63db1e4f9ea2109be7746dae8ae4582cb5bc91e0692:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk2ZGM0ODE0OWY1YTgzZDFlZDZkYmIzOWJiYzdlMmI5MDJhYTNkMzRkNmJkNWFlNGIyOTFiNjhkZjBjYTc5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjBhODYxMTcyZTY0ZGVmN2E1NTAxN2ZlZDc5YzgyMTY4YzA2ZTc5ZGM2ZWE0YjQ4NWIwZmQ3ZjU3MDFjZDE1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGJmMTBlM2E3YzQzZGY3YmFjZDExM2Q3YjFhYmNjNjBkN2ViMWQ2MThiNDYwZmM5YjYxNGJjOGI1YjdjYThlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmRhOTY3NDZiYjIyMzcyM2VmMDFiN2QzYWQxZDc1MTU0ODYxNTBkM2VjNTlmOGM5MDhmOGE4MDFmYjI5YWE2YiJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/pypi-release.yml#L5-L11",
+          "version": "repo-lines-v1:sha256:a62ea22f7fd097369306d6880f5ad4ef82fd188c1c142eff712b2d2a1c014830:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk2ZGM0ODE0OWY1YTgzZDFlZDZkYmIzOWJiYzdlMmI5MDJhYTNkMzRkNmJkNWFlNGIyOTFiNjhkZjBjYTc5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDY1OGRhZjcwOGEzNWMxZTBjNTBhZDBmMDJkMzJkNTE3ZmQ1MzM0YjQ4NDlkZDNhYTU4YzIwNGQ0YzVmMzdhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTJmOTVkMWU1MTZhMDg3MTYyYTMxMGQ4YjA2MzM2OTkzYjBlYjE4YmQ3NjJiMGQwYWY2ZGRkMDMwNjI1OWI2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTZiOGU5YTBlYmM1ZWZiMjJjMDMxNDM5NTAwOGNjZGZkZWUwZGYyMDEyM2Q1YTljODU2ZWUwZGRhNDA4NTU3YSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:47e1545825ce3cc96191ccd3538ae3b7fd554116b554371ad8b66b05c796c09b",
+  "claims": [
+    {
+      "id": "claim_7179a138bab246c68dc2b50fd50023b9",
+      "statement": "The DOM renderer invokes a component's DOM_RENDERER implementation when present instead of the component itself, pushing the node onto buildDataStack so hooks can locate their storage.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L274-L291",
+          "version": "repo-lines-v1:sha256:deebecb12491ee8dfeaf7a31dbc7d21240674d0cacc7a2093b7c9e31c8b8b364:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4ZjA1MDE3Yjc1YjI3MmY1MWRmZTg2YTg5NmU4ZjgzMjJhZjE0ZDgxNzAyNzFiODM0MTUwOWQ5ZTVjZjljNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5NDUxMTM3ZDAzMzRhMmY2MTlkZTlhZjA0NDZmZmNlODgzODk5OTQwYTI0OTgyZGQwZTk5NjA1ZjRkNjYyMjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c62cf8cd0c2148e5a6549de1d4aba927",
+      "statement": "During reconciliation, old children are matched to new ones text-to-text, by key and tag for keyed nodes, and by tag alone for unkeyed nodes; unmatched old children are queued for removal in vR.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L497-L605",
+          "version": "repo-lines-v1:sha256:cd47f00a5f354d37e58eb8a3db31e59d864a0707f1492167c4eab60a41502e44:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyYjk0MjkyNjA3ZDIxYWE3YWIzNzk2ZTRiNjkwYmQ2YWYyNTk3MzA5NjZiNDA3YmZiNTMxOWQxODBiYjQ5MGEyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhOTFkZTFkZTJjZTUzYzY5OGIyYWY2MDZhZjEwNjg5NjQ4ZGU3NTRkMzQ0YmY5ODVlZTYwYzU1MjU5YWVhNTQ5IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhNTlkNDdjNjY2MTA2NTNlOTk3MDAxYWIzZWY2Njc2YTk1MTI3ZWY4ZGU2ZTM5ODE4ZTgyZWY3YmVlNzdmZGQ0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwZTFkOTlkYTRlNWZkYmY5M2UxZDlkMzQ0NDk3ZWZiYmVhOWRhMmUzZDYwMTdiZjVmOTc3MzQ3NjQ0YTZmYzhiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8b7598f980342a9af0a7cfa27cbb165",
+      "statement": "A reused function component is skipped during rebuild when it is not force-built, its captured context values are unchanged, and either its original node is identical or its memo comparator reports equal props; memo defaults to shallowEqual.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L383-L391",
+          "version": "repo-lines-v1:sha256:692e5563f4f2d53f92b6f41df78267a4643df781c9a3e032a5fc89bcba5c09e0:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRkZDk5NTVlNmNhNmQwYTNjMjczYTgxOWE2Njc3NWUzMTM0MzJjNWY2OWQ0ZTEyMTQ3ZTczODQyMmI5N2U0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFlNjBiYWZkNzBhMTQ4NWVjOTUzODI3NmEzZjVjYWYzNDBiMDFkMWU2ZTgyZmIyZDgwNDc3MjIxN2QwZjk5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjAwOTVkMzIwMDBkMTk2ZjNlMWIzN2I0NjY1OGQ2ZDg3ODcwMTA1NDM3Y2RjNjQzMjU5YzdkZmNjYjk2M2MzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmJlMWE1ODNlMWQwNDQ5MzliNzBlY2NiNjFhODY4ODA1MzY2NGMzNGVlZTY5Mzk2YjkxNTAyNDgzYTVmYzhmMyJ9"
+        },
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L560-L580",
+          "version": "repo-lines-v1:sha256:357a7be851d68d154359cd4f2137b9c89729ce27a1e966131ef54ecf205dec3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NjA2MWJkNTI3M2QxNjUwZTZkZDMxNzBjMGI5Y2M5ZTAxNjYzMTk5MzY5ODc1MTU3MDJiNGIyNDRmZGMzZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzODJmMjUyNDAxMTJiNjExNGUzZDMxNTg4ZDU2ODAxNjA1Y2YxMWI2NWFlMDczZjk0OTk0YTNiYzBhOThmMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2MjFlZThmYmFiMzI0ZTdlY2NlNzM3NDhkNGFjZGNjNGVmMDAzYThhY2FhZjdlMWNkMDIzZTdhNTA3OWM2ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0OWZkOWI1ZmQ5MjNmMzBiNTY0MGY5MTczMTlkN2RiNjk3MzBlOThlNTlmMTEzYjlmZGM2NjM0YmExNzRkOTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6cc7b0dc4254c3ea6d5c2fd62418f1a",
+      "statement": "update() coalesces updates per node so only the latest call runs, executing after a microtask unless inside flushSync, which runs collected updates synchronously after the callback.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L740-L813",
+          "version": "repo-lines-v1:sha256:2cada4c01c89d7aa059a23b254650bd824b9784e5cae2a2c08ddf7ecc5172cce:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyMDg0NTlkYWM0ZDA4NjIzOWE3ZTgyZTNmNDAyOWMyMTdhOWFkOWE5YmM2Njc1ZmViNzliNjE5ZjM3MmRhZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkN2I4NzZlN2QwNTFhN2ZjNjU2MzhlNzhlZjA3MzJhZTM2NmJmOWVkNjdkYWM4M2UwMzkwNWQ1YjQ4NWQ1NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NTNhN2NhYWJhZWM3ZjdjNGUzZGIwNjI1MzNkOWU1MTBhZDY3NWZlNjlkN2UwZmY4Zjg5ODUwYzI2NzZiMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db030c7783ce407fb4e2d32969b81aa3",
+      "statement": "The initial render builds into a DocumentFragment and replaces the container's children with it.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L783-L799",
+          "version": "repo-lines-v1:sha256:27fc5bcfca6fed206376bc9835ec9cb39a8e459c2395113d492a774bd5091f16:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNmEzNmIyMWMwYTBhNDM1MTY1ODNmODRhODJiYzFhODllZDFmZGRmM2JiNjhmMzc3YWI0ZjcwOGE2YzRhMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5Nzg5NDI2MmY3MDc3NTlmZjRhYTg1Nzc1YmNkOTAyNGJhNDkyY2I0ODJkN2MzYjhjZmZjYzJjODRmZGE0MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMGJiZWU5M2M1NjBhMzAyOTg3YTI4OTQ4ZjQ5MmRmMmI2NGQ5YzAyMTM1MzY0MTA3NmY5NzZmZjFiMDc3MzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00224a24f1c24650ba78bfeed488c4b1",
+      "statement": "After applying DOM changes, useInsertionEffect callbacks run first, then useLayoutEffect callbacks synchronously, and useEffect callbacks in requestAnimationFrame.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L462-L480",
+          "version": "repo-lines-v1:sha256:ef397129c1517c6c00ca720f840c9b6f24ec62b6edf3acbe8fa660b88f55859e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxOTYyM2I3YzExMGEwZmRmODI0NzExNzI4MWQxZDEyYjgyN2IxYTNhZGMwNzhhZjIwM2QyN2JhMzc2YzA2OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlZGFiNTQ5MDdjNDNkN2NmZjAxM2U4YzE2YWZjZTgwZjllODBmNGE5OWI2NGNmOGM5M2I1MjkyZDZhYWJhYWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkMDlhMzMyYWRhZThiNmZlMjdkMzVmNzg5ZDUxYTNjYjBkZjVjZDY0MzMyOWQyNzNhOGIyYWE0YjI2MmRiOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_984a07e471a8427fab3605533e79bb87",
+      "statement": "useState stores state in the current node's hook stash by call order, returns the initial value with a no-op setter when no component is being built (server rendering), and skips updates when Object.is reports the value unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/hooks/index.ts#L182-L243",
+          "version": "repo-lines-v1:sha256:0ef62263bbd00aaa4ae200d83ec96852480a28d0b8d3c482cf83e5e2147b4c4b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyYTMwOGEyYWRlZWRiYWQxMzNlNzFkZDI1NDMyNzUzMDE1MGExZWM1MTFmNjgyN2YxNjdhMDY0ZThhZDc3NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5MDllMDkxZGRiZDdmNzI4ODc1ZTUxOThiZWFiOTMyMDEzZmVmMjI4OTdhYTBmZjkyOTRhOWU3MzdmYTBjODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMjAwN2M2YjQxY2Y4ZWJjNjFkZTI5YWJiMzFkMzZhNGMyNDAyM2Q3NTI5NDU3Mzg1ZGFiNzE1OGViMWNkZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca52ce55b12a4f2da84e5a1e9755ef75",
+      "statement": "use(promise) returns a cached resolved value or throws a cached rejection, and otherwise throws the promise to trigger Suspense.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/hooks/index.ts#L332-L346",
+          "version": "repo-lines-v1:sha256:0148f9ea481c8c80da978a62890d4b6d8b4421605586fa872110da9945c6c179:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzZTliZGEzNTNkNjA5ZWJiODcxYTQ2NjI2ODY4OGEzNTc3MzY0MWMxOTVjZWYyYjcxYzRkY2FkNDE3OTFlYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkZWUyMTA1MjQxYzk4M2Q1NjhkYWM0NmY0NWVjYmEwZDYyNzE5MzQ2MmVjMmE1NjMxMDkyM2E2ZTYxN2Y3OTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMjFhZTI2MTJkNDY4OTk5ODJhOTE3OWUyZjExYjdmOGE4ZGYyY2IzNTJiOGU4MjdkODg2ODNjZjVmZmU1ODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_381535442bd04946a26eb411a74c499b",
+      "statement": "In the DOM runtime, ErrorBoundary and Suspense are Fragments carrying a DOM_ERROR_HANDLER: ErrorBoundary re-throws promises and renders fallbackRender/fallback for errors, while Suspense re-throws non-promises and retries when the promise settles.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/components.ts#L1-L39",
+          "version": "repo-lines-v1:sha256:c7bf77b3b5bf4cc92527e5a086c7516dd6a8b1dc5ed228f011ef4c4d1bda1c3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzNzdhZjM4M2I1MDI2Njc2MDMyNmI1NjAzNDExMDNkMWZhZTk0ZGQyNGQwZmQ0MTYxNWVmMTgxZTRkNWZlNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYmNhNzUwMDI5MTJiYjM3Y2FkMzc3MzdkMDk3OWIyMzkzOWQ5MmJiNDgwZTgzMWE0ZGU0MGFlYTdiNjEwYWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_42b99d0e4f3a4b088c6965d7659774aa",
+      "statement": "When a build error occurs, the nearest captured error handler's fallback is built in place of the boundary children and the remaining build is aborted with an internal cancelBuild sentinel.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L613-L665",
+          "version": "repo-lines-v1:sha256:0a4e38ded504fac56acdf0b16953b5d999492dfbc4e41124d48c45146dcd932d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3YWFmMGMwMzgwYzg2ZjkxNTA2ODFkNGE1YTRiOWRiMzljMTQ0MGQ1ZWM5NTYxMzU4NzRmMDBhMzcxMjRhOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4ODU0YzI3YjQ1MzZlYzg4MDVjMmY1ZDU4YTFhNzMwYmRiMjczMjExZWMxOGFkYTlkODAxMjlmNGEyYTJiN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxYWNlZGU5OTdiN2FlZGY5OTllNGI3OTJjNDYzM2JlM2RlMThiODdlNzc1NjAxNWY1ODViMjE1ZDRjODA1ZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1664c27cace4eb88c59f5d66124c06b",
+      "statement": "In hono/jsx/dom, hydrateRoot is equivalent to render, and createRoot's render throws 'Cannot update an unmounted root' after unmount.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/client.ts#L23-L89",
+          "version": "repo-lines-v1:sha256:ff59bccae154f6f2bf7a300fb842a697987f938473be68dcda3dd277081d012a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZTNiMjRhYjVmOWM0YzZhODRiOWE2NDg4OTU3NjY4MjRhMjM0MmE3MjkyY2I2N2U5MmI3MmI5ZDQ2MjcxY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmZDhiMGFjYmNkNDgzM2JhZmE2ZmFjNjMzZGM3ZTJhNWI1YzFkM2UyMzM1ZmE1ZGU3MmNiYmFmMGM2NWM3MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

@@ -1,0 +1,4 @@
+# Files
+
+- [Storage, Settings, Secrets, and Auth Extension Points](storage-and-settings.md) - How the OpenHands server persists data and identifies users — FileStore backends and webhooks, conversation metadata, settings and secrets stores, user authentication, the session API key, and the ServerConfig/get_impl class-loading seams that let deployments such as the enterprise SaaS replace each piece.
+- [Web Server, Sessions, and Conversation Management](web-server.md) - How the OpenHands FastAPI + Socket.IO server works — app assembly and middleware, the REST API surface, Socket.IO connect/replay/user-action flow, conversation managers (standalone with concurrency limits and idle cleanup, docker-nested), Session and AgentSession lifecycle, conversation creation, and event forwarding to clients.

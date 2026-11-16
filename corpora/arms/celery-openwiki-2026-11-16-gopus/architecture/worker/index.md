@@ -1,0 +1,6 @@
+# Files
+
+- [Concurrency Pools and Autoscaling](concurrency-pools.md) - How the worker executes tasks through pluggable pools — prefork (billiard AsynPool), threads, eventlet, gevent and solo — including pool selection, monkey patching, time limits, child recycling, scheduling strategy and the autoscaler.
+- [Worker Consumer, Strategies and Requests](consumer.md) - How the worker's Consumer connects to the broker, consumes task messages under prefetch/QoS control, dispatches them through per-task strategies into Request objects, handles ETA, rate limits, revocation, acknowledgement and failure, and recovers from connection loss.
+- [Task Execution Tracing, States and Signals](task-execution-trace.md) - How build_tracer/trace_task run a task body inside the pool, record STARTED/SUCCESS/FAILURE/RETRY states, dispatch link callbacks and the next chain step, deduplicate redelivered successes, and fire the task lifecycle signals; plus the state constants and the signal dispatcher.
+- [Worker Startup and Bootsteps](worker-bootsteps.md) - How a Celery worker is assembled and run — the bootsteps dependency-graph framework, WorkController and its default components (Timer, Hub, Pool, Beat, StateDB, Consumer, Autoscaler), the Worker application wrapper, shared worker state, and warm/cold/soft shutdown signal handling.

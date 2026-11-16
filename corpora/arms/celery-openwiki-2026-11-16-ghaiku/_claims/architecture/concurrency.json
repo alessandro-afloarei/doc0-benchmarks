@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cfc2f512281372e7c5fc0ed4c2fd73893c9d9986a90b66f91ce056a7c6e5572e",
+  "claims": [
+    {
+      "id": "claim_b009d1c6cedd4c099e2178a292583ed2",
+      "statement": "All worker pools implement BasePool, whose apply_async delegates to on_apply, and the concrete pool classes differ mainly in execution model and class flags such as is_green and signal_safe.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/base.py#L140-L157",
+          "version": "repo-lines-v1:sha256:fc89794d00001f6534b8ba2fa7dac3692319afcac2822bcec75d22aaf833d950:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkMDJhODVkNjU2MTdjYjU0MjA5Y2UwZjZmYTFlYTU4ZmNmZGMxMjU2Y2RhZmEyNmNjNjI5OTc0YTA5NGJmMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzMWVlYmQzNDk0NzlmNzA3YjA3ODlkYjAyOTNiY2I5MWQyNTNkZWVkMGY2OTFkZjVhODQ4YjVmMjQ5Y2ZjZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxMGI2NGY5YzMxZDdjODNmMGJlZTFjYzdlNmUxZWI3NGMwN2ExZWM0NjhjYjRjNzc2ZjViMTA1NDg3ZmQ1YTkifQ"
+        },
+        {
+          "resource": "repo://celery/concurrency/base.py#L47-L80",
+          "version": "repo-lines-v1:sha256:8fb1fc0cc94ad056ee8b51d7d932a5a57ad97cc851ce70f2ef97061876fe09f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkMDI1Y2I4MDQ3ZjYzMmQ4NzkwOTYzY2ViZTUzNDZmMjdmZjk3MjlkNGY0OWMzZTkxYWQ0MDVmMjQ5YjA0NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxY2NkM2ZlMGE0NmNjYjFiYjA2ZmRlYmMxY2JlNWIwMmFmYmQ1ZDNjZjEzZDc3YzYyYTM1ZmE5NDcwNzI5YzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExMDU0M2RlODMwMzBkYjk1N2YxNTYzMmE3NjUzY2NiY2FmNWZjNWMyOGNjOGJiMzBlNzE5MzI2MGQ3YzM2OTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhMGRmZGJkM2ExM2JkZDhkZmM0OTRmMDRhYmU4Y2M1NGQxODhmNjQzYzc2MzRlOWE0Nzc3M2E4YzM5Mzk3ODMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b710648c45114bf4a450dbb8683279f0",
+      "statement": "Pool names resolve through a registry mapping prefork, eventlet, gevent, and solo to their TaskPool classes, with processes as an alias for prefork and threads added when concurrent.futures is importable.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/__init__.py#L10-L26",
+          "version": "repo-lines-v1:sha256:6f31f969e08dbb9b5577ae073a91685d1efb9bd72d1994baa25d3c806d563b5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyZDBhOTlkMTA2NmI0N2Y3YzM2N2NiNzc4ZTQzZmM2MzM5ZDI2Y2E3NTljM2Y3MzljMDhjZGNhMjFjNTdmNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3ZmE5MmNkNDczYmRjOTMyZDI3YjYyMDRjNmU5YWY2NzA1NjVhZmMzNDdkMThiZjBhOWQ1ZGZiYjdkNzExZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmMGVkOGVkMWFhYmFiNGY1OThkODNjMDU1ZTM5NTM5NTkzM2M1MTRkZDc4N2UwZmE2NDFkMjA2NmQ1YTBkZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bef3033ac4eb4d3fbfe84feb7598ebd5",
+      "statement": "The prefork pool uses the blocking multiprocessing pool when the worker is not using an event loop, and the event-loop AsynPool otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/prefork.py#L104-L110",
+          "version": "repo-lines-v1:sha256:d6a11aa91e0afb2129db5f149131cbe1fc6df652fc8b62fafe648e80c1c21cf8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQ5ODQwMTUzMDFkYjUwNDI2MTEzZTc1NmU0NTIwYTU4MWY4OTFlOGY3NTQ5MmM0OWYyYzg2MWY1NGM3OGQ1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAzMWYxY2ZhZTBmNGEyNjlkNzkyZTg0MjI4YWZkZjUxYTZkYTEzOWM5NDZiMmYxZGYwYTI3YjBiMWI3NmUxNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFkMmVjZjVmNzZiMGY5NGUzYzVmYmY0OWM1Yjc1ZmE5MzljYzg1ODg3NThlODZiZDdmODAzMDdhMDQ4NGM5YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjliYjUxNTFkOWExN2MwMTBlMDI2OTFmNDljMjk5ZDJkNTE2NmZjNzM5OTcwNWNmYzZlNDEwZWE2N2NlYWE3NCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/components.py#L141-L165",
+          "version": "repo-lines-v1:sha256:6ffbb3877d7b875333fab1b77866f28fffc70ac6202cecfd8b635d44e534823d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmYTgxMTBkNDM4OTZjNjc5ZTc1NWM4MzRlNjkyOWU1ZjYyMzFmY2JmMzRiM2U4M2QwMDY1MDVhYTk0NzFhZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyY2VkNGMzYzE2NTJmNGVlM2FlMWVkOGVlZTk1YmFiNjlmYjBiOGRmNmQwYTdiYjA1Zjc3ZTkyYmNlOTcwMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhMmZhYjFjZTIxZTU2OWFmMTIyN2VjN2EzNGFlMjBiNDMwMmMzOGNhM2VkYzI4MDkzYjgxZmJmMGIzNzg3OWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2YjAyNGJmNzZiMjQ5NDg2Y2QzMDY2ZDI0MTU5MGM3YjM4YTEwMDlkNjBmNzUwMWNlMWIyYzNkOGU4ZjM2ZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2f29ce7b2e24ba791d8cfffab1e6e2c",
+      "statement": "The worker's pool bootstep sets threads to threaded, which is true when the worker does not use an event loop or when running on Windows.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/components.py#L143-L143",
+          "version": "repo-lines-v1:sha256:e86e1465aa4a206b58554984cf374948eb836b184661021ae61383ef75337da5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTg2ZTE0NjVhYTRhMjA2YjU4NTU0OTg0Y2YzNzQ5NDhlYjgzNmIxODQ2NjEwMjFhZTYxMzgzZWY3NTMzN2RhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTg2ZTE0NjVhYTRhMjA2YjU4NTU0OTg0Y2YzNzQ5NDhlYjgzNmIxODQ2NjEwMjFhZTYxMzgzZWY3NTMzN2RhNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDUzMTBjOGY4ZDIzODZjYzNjZjAyZGM0NWUwMDE2ZGQ3OGYxMTQzYzEzZTg5YjEwMzc2Y2QwMGZlMmVjZjA4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWEzODQ0MTVmZDE3MDdjZmRiYTBmMTdlMzkyNmQ2ZWFhYjhiY2Q1NmFmZDhkMDZkNDJkNzA1YTgzMWNhYTliOSJ9"
+        },
+        {
+          "resource": "repo://celery/worker/components.py#L163-L163",
+          "version": "repo-lines-v1:sha256:eba9ba80e6034d830f3123cc1897a25611607efeeaf8af8751dfc08e6aa10291:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWJhOWJhODBlNjAzNGQ4MzBmMzEyM2NjMTg5N2EyNTYxMTYwN2VmZWVhZjhhZjg3NTFkZmMwOGU2YWExMDI5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWJhOWJhODBlNjAzNGQ4MzBmMzEyM2NjMTg5N2EyNTYxMTYwN2VmZWVhZjhhZjg3NTFkZmMwOGU2YWExMDI5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDliMDQ1N2UwMzZjOWVlZWY4YWZhMDZlNzM2ZjM3NDdhYThlOGRkNzBkN2JmZmRkZTMwNzczZmM1ZmE2MjVlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjQzYTUwYzk4M2E2ZTVmYzBkMzBjYjQyZmUzYTYxNjg1MzQzZWQxMWQ5MjU4M2I0ZjMyNmU5ZTRmNGZjNWFiMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_15c51e5ee3e6413c85613cb725af7492",
+      "statement": "The solo pool runs apply_target inline with a limit of 1 and no separate execution slot.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/solo.py#L11-L24",
+          "version": "repo-lines-v1:sha256:af9ed2c543037b4a292466131309c6c02b2e9f47e47df73f9b3216907f6ff8a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMmIwOWI0ZWVlZDE2ZGE4N2QxZTE4N2M5MjRjMTE0M2RkNDNhMDBiNDY1ZGUxMDZjMDY5OWYxYWJlMjUyNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0OWI4NzY3YTdjOGEzMzhiMmY0MGZiN2EzOTUxYWI1MTQ1MTIyZjdkYTNkZjk0N2Q4MWZlY2E4MDc4M2ZmMDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1YWI3NmE3YjQ0ZWUzMDg5YmE1YzBmNzQ3NTU2ODU2NzAxMDU4Zjc1Yjk2OWE3NTI4MTI2MTFhOWQyZDgzYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlODQ4YzRjMjRjODM4ZjAyMTcxYjI1ODU0NWI2NDQ2NzI4OGY2ZjkxNDNiNjEwMTg2NDVhYmE0ZDIzMTc1MGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f8b529f4870340d59a2d055a4e7a2f02",
+      "statement": "The thread pool submits each task to a concurrent.futures executor and returns an ApplyResult wrapping the future, and it sets signal_safe to False.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/thread.py#L30-L58",
+          "version": "repo-lines-v1:sha256:eb500183313c02efdab9c49b091fde5d3435e4bf2752f6bb84095d72c72f4819:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMmIwOWI0ZWVlZDE2ZGE4N2QxZTE4N2M5MjRjMTE0M2RkNDNhMDBiNDY1ZGUxMDZjMDY5OWYxYWJlMjUyNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ZTZjZmQ2YzRjOTc0NDA1ZmUyZjc1M2Q2MTYzN2IzZWM3YjA5MTFlMGI5ZmIwZDM4ZTA2NDc2Y2VmN2UxYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlMGFkMGM3NzZhNDlkZjNjZTVhY2JjYmU2YWUyM2MyY2NhNGY3ZGQ4NzJhYTc2OTM5N2NhYzg4YjUzYmZiODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhNzE2MmM3NGIwMzgyMTY1ZDAzNDY2NjFlNTEyOGE4YTRjNzdhNzhmMzY3Yjk2ZTMyMTBhYzY4ZThlNjkxMjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_65020879094c4ad6922aec417bc2507a",
+      "statement": "The eventlet and gevent pools are greenlet-based, set is_green and task_join_will_block to False, and implement grow and shrink by resizing the underlying pool.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/eventlet.py#L88-L146",
+          "version": "repo-lines-v1:sha256:09ee2a3d964e975dcd6f7699ae3ab40fb8cae565faef3b98c83e3f4e84b8ceb6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwYzFlZjI5ZmZiOTc0MDc1MDZmNjViYmExOGRmMzliMzUwYTc0ZWRhMDliMjYxYjQzMWE2MGRkN2Y2NjVjZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmMjI3NDgxNDQxZGQ5Mjg4NWIxM2Y5ODg5NTYzMmZlMjNhYmY2MzAwMTAyMjEwZjY3MWU5MzRjNTRmYjUzM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiMWFjNjJhNDY5YjYwYjlmZDM1MjBkNzdkNmZhZTIxNjJjNjFiZTk0MDM4ZGUzMDcxNjllNTlmNmU5ZDIzOGIifQ"
+        },
+        {
+          "resource": "repo://celery/concurrency/gevent.py#L85-L134",
+          "version": "repo-lines-v1:sha256:e0ad27e1331ae58a60eb5c476a09f4781b41b979e7f38d6182938f4be95d345f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwYzFlZjI5ZmZiOTc0MDc1MDZmNjViYmExOGRmMzliMzUwYTc0ZWRhMDliMjYxYjQzMWE2MGRkN2Y2NjVjZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiYjY5Y2JjYTc4NDVmMjhkMWY0N2NjNzk3MWVhNzRhZWYzNmQzZDNiMTlmOTBmNGUzYzcyM2Y1MjFmZmUwMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmMjI3NDgxNDQxZGQ5Mjg4NWIxM2Y5ODg5NTYzMmZlMjNhYmY2MzAwMTAyMjEwZjY3MWU5MzRjNTRmYjUzM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwYmFlZTUyMWMzMjAwMmE5ZTAzY2Q2YzdlMmYyYmNlNTE4Y2E3MDgyNDM1MDNiOTE0MDMwOTA0NTU5OTA3MzYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:42:35.525Z"
+  }
+}

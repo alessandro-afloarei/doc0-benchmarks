@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d6567239e3fd49dd06083982337cc79873321d8439f352891e70871690758802",
+  "claims": [
+    {
+      "id": "claim_87a0fe58316b4c2da2ee1e33e5625ab3",
+      "statement": "The celery entrypoint applies eventlet/gevent monkey-patching before importing the rest of Celery, based on scanning argv for -P/--pool, and skips this for the multi command.",
+      "evidence": [
+        {
+          "resource": "repo://celery/__init__.py#L123-L147",
+          "version": "repo-lines-v1:sha256:74c13bcccfa1f95d160c4caf3db159f4419d5c89d252dd16141bf126a4d617a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhOGUxYWNiYjI4ZjAyYjg1NzNjZDQ4MDJiYTlkOTQ2MTRkZjJjOWYwMTA0N2YyMzU5MjY4MThiMWI1OGM5MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1N2VjNGYwYzM4Y2RlNWU2YmQ3MmQ3N2EyMmEzMjU1OGZiNjQ0ODBmZjRmMmNhOGYxNDc5OGM5ZTkzN2Q4N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxZDEzMWJkYmEwZTg4MGE4ZGQ5Y2QzMDlmYWQ1MjhjMzcwOTg0ZmRkNzEzZmRhOTRiMjk0NWRjY2M2ODJlMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE3ZmUxYmMxZjAwZTQ3MmVhMGNjNDY1ZGUwMGU0MDM0ZmMyMjAyNGZkYTExMDgzNTUyYzBlNGI3YTg5NzFkN2YifQ"
+        },
+        {
+          "resource": "repo://celery/__main__.py#L8-L16",
+          "version": "repo-lines-v1:sha256:1df5da055e3401b4193c22d2204049a39e4fefe066c63d6c5a29f90326f93063:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc5MmNkNDk5NTFjOGYzN2JhOTg4OTVlYTFkZWY2MDk3ODdjNThkZDU1ZTk0MDFkNmQ2YjhjNmJlMTU4MTM3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWRjZTBiMmJlYmE4MjY0OGU5ZTExMzBhZTc5NmU2MjAxMjdmYmFiY2ZlZjk5MjFmZDE0OWU0MzJlZjU3ZWJlOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fcdb17b16f1b422a934b930a27903c1b",
+      "statement": "The root CLI group exports --loader, --broker, --result-backend, --config and --skip-checks as CELERY_* environment variables, resolves a string --app with find_app, stores a CLIContext, and extends worker/beat/events/preload commands with the app's user_options.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L108-L165",
+          "version": "repo-lines-v1:sha256:8e202ee302a0de8e6e04c55e880fe2e15cadd71bda6ec93402e4e36aa0a9db38:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMmM2MDI2NzRlZjIzZmYwOWU2OGFlYzEzMmRkMTkxZDgzMjAxOTc3YjhhN2UyZjMxOTgwNzNkZmExZjZiMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5OWFiY2I0MjA4M2I0MGUwOTFjOTdjMjg0ZDllMjcyMzRkMGM2NmU2NWE4OWI2MmIzZWZiYmQ4ZDA5ZmMwNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmZWRiNTUyNzM0MjhkYTQ3NWM2MzJiOTI1ZGVhYjliOGZlYjZmMjBkMmIyMjY3NWIxYjEzZDgxZmE5ZTNjZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_deb9fb2531ec402ea338d67e58436a9f",
+      "statement": "find_app resolves an app name by importing it relative to the current directory and, for a module, trying its app attribute, then celery, then <package>.celery, then any Celery instance in the module namespace.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L378-L415",
+          "version": "repo-lines-v1:sha256:5e334dec645ff8bbeffb40fa293a91c08b739eff47b75cbffa3a5e5c0044934c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYmZkZGZlZGQ4MTlkNWFhNWIzNzc3NmEzNDQ1NTg0OGEyZGUyYmJkNTE1OTQ1ZjIyNTk4NzAzNjRlOWM4NDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMDRhNjVjZWExOTViYWY0MDE1MDU4YThjNWVjZjNhNGE4ZGU2ODlmNWVhMjdhNTNmODFhZDA4ZTZjOGY0NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b69f33e704da4e6a942aa46e8bc32aa7",
+      "statement": "Third-party commands are added through the celery.commands entry-point group, and the CLI reads options from CELERY_* environment variables via auto_envvar_prefix.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L220-L227",
+          "version": "repo-lines-v1:sha256:0204581f5c96a47034175780b0986735039eccde5da654f0d4ffc0b01e09e9f9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIzOTc5MzNhMjRhODAxZWU5MjMzMjdiZDY5YTAxMDQ5YzA3NzkxNTAyMWNmMmVjMzlkZGE0ZjgxYWE4MzdlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdlNmQ3ZDc1Y2MwODllOTcyOTczMWNkOGY3MGMwZDUwZGNlNGFkNGJlYjA2ZWViNWZlZWU1Mjk5NzY3NDZiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUyMmQ1NGNjZWI0NGRjMjEzYTQ5OGYxNjIzMGYyOGI3MDBiM2Y4Y2Y4M2I2ZTZhZGY5NWMyN2VkMWY3MGEzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L38-L56",
+          "version": "repo-lines-v1:sha256:55a38d92aaf654bd22a61602ad79a0d4fa2644782de4617ca16d87eee2f0adc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNzUwM2MyMzA2ZmUwZTQyOTdmYWMwOWI3YTBiMGU1MDg0ZjA4OGQ3MjdlMDYxYmMzYmJiZGYwODlmN2FjNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NjA4MTU2YWUyZTI2YTUxMzE2YzExNGMzOGNkYWUxMTFkZGFmMWQ5MGJiZWEzZTJiN2U3MDc1MDkxYmJhNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlN2JmNzQzOWE2NTYwMzFjM2E2MmQ0ZGFmZDYwNWJkMDkzZWIzNDAxN2U1MzdmNDM5NTI3M2U4YTBiZGJiMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5Y2U1ZmU0MjgyM2MyMjJkYzQzM2MzZjIyZDBmZTFjMzY4YTVmZWViMjkxYmZmMGY5OTI4YWRhZDVlZWUzMDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1dbd689fc6a24fc7930d6d6da2d89f16",
+      "statement": "handle_preload_options sends the user_preload_options signal with the values of app-declared preload options before running a command.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/base.py#L143-L160",
+          "version": "repo-lines-v1:sha256:b8b2653ae2760cb115bcc93fca6d65aa1b657a8d3c3fe100631f11c3d429a254:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwN2Q1ZTdkODJiNTZlNTliODY3NTYxYmI2YWE3YWQzNjQ2YTlhNDBkOTFhOWY5ZWMyZDI2YTVhMzQ5ZGI4MzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NTJjOGRjODE4ZjEwNzUxODc4YWIyNzM0OGUwOGY1YjdjOGQ5ZWE0Nzc1Y2Q4ZDFmZjdiMjIxY2FhMzA1OWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwYmQ2NTNkMjA2Njg0MmExM2Q4MWI1OTY2ZTMxMzdjMmZkMTY3M2RjZWYyNWQ4MTVkN2MwZTVkMjJiOTlkOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MWEwMzJiM2ZhYWYxZTA5YTdmNmE1ODFjOTAxNGE0M2U3ZDU0ZjAxZDk0OWYyODg5ZWI3OTg4Zjk5YzRjMjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04f9fa8dc38146e7989b5e1fd80a08ea",
+      "statement": "Daemon command options (logfile, pidfile, uid, gid, umask, executable) default from app settings named <command>_<option>.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/base.py#L197-L227",
+          "version": "repo-lines-v1:sha256:7b9809620914eb4abe45f29542dc26a5366bbccdf414867e0dfb0b4e760eb678:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiODI0NmFkMjA4ODZhZjdhMDBmNGQwOWZhMzU3MzEzYjVhMzc1NzA5NWY5N2E0MTQ1NzM1NzBkNDExMTBjYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4YjhkNGVlY2FmNGQ2NzA3NWRlZDRiMzZhNjA1ZDhiZTU4OTBjNWVlZjQ3M2MzNGMxOWI1NWQxNmMyM2UyYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmZWM5YmJmZjE4MjEwOWJmMWNkMzJjMzVkNjQ2OGRjY2IwY2E0N2RiZDNkZDExYzc5ZmNmZTMxMmQ1NzlhOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5M2EwOTJlOTRkNGQzNGMwYTRmNDBiZjMxNzFmOTA5Mjc1Zjg5NzE0YjIzYjViYTBlNjBkOTA4NGU2NTQ5ZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8848c428fd804e1a87ac02ef38da1386",
+      "statement": "The worker command applies extra arguments as worker-namespace config, supports --detach by re-invoking itself under a daemonizer, drops privileges, constructs app.Worker and exits with its exit code, turning SecurityError into exit code 1.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/worker.py#L324-L371",
+          "version": "repo-lines-v1:sha256:6a964df43125b9d188f0776d81975fbfa6ccbac931d6b1eed66843ed4b97249c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYTVjNjZlMTdiMTQ1Mzk3ODM0YjhjODU0ZGM0MTkzZTIxMjUxODBhODk5NmExNGMzMTg4MzMyNmIyZWZiY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NTVmMjZiMWQ5YTAzZmRmODQ2MzFhOTIwMzNkYjg0MWM5ODVjZGVlNmYwOTk1MjU1MWRlNTQwZWRiYjk2OGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhOTEwMjVhZTExZjU4ZjYyMzAwZjU4ZmZkZTdiZTA5ZjI4ZGNmNzQ2OTdiMTMyYTNjZmFhZjFhZmYwZGJkN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_83da505e15164f6fa78b807003fe339a",
+      "statement": "The Worker program class sends celeryd_init and celeryd_after_setup signals, finalizes the app via worker optimizations, and installs platform signal handlers including a SIGHUP restart handler only when not attached to a TTY.",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/worker.py#L254-L274",
+          "version": "repo-lines-v1:sha256:f4df0c2ca8dacae47ec0dd40d1475d8a7b39419be715f0f41608f2a16717633a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3YTA3NWE3NjU4ZTdjZjMzMTY0MGVmZTY2ZWIxMTA4MDBmNjBjYTIxZDA4MjIyMzEwMmE4YTg5NjkyNDk5ZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNmNhOGQ1YTQ1YzRjOTBjNDhiNDgzN2RkOTM4NjFhZjg3NWM3YmNhZmMyNzAxZTQwYWZhZWFmNzA0NjExYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiNDRhZmY5YTA4MzI1YjIyYTRmY2Q2NjVjZDQxMTUzZDM4MmQ1NzEyZTBhMjZmYTMzYzIwZDdkZDg0ZDU2MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2M2QyOTg2YjczZGQ0NDM1MDY0ZTdlMDg0ODk2OWMwNmM0OGY0MTY2MzE1YTU4M2YwZmIxOTQxZmIwYjdlN2YifQ"
+        },
+        {
+          "resource": "repo://celery/apps/worker.py#L94-L166",
+          "version": "repo-lines-v1:sha256:e67898cb32681303e711e3856d4203ea9cdf0eb63b8c352ad4b87f523f09c336:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZGY0OGE0Mjc4YjVkMjhmOTk5ZjJmZTE3MTRlMTFhNDUyZGNiNjJkMDRiZWMwNzVjOWZjNjZjODQ3NDJkNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzYWM4NDdmMTcyYzEzNTUwNDZkYjllYmU4OTJmZTZhMTliMzZmZDU3ZjZhNzU5M2FiZmRmMjQ1YjY5NTIzYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyYjE1NDYyZjQwMDliYTkwOGE3MTk2MzlmMWVjM2QzZDg5NjMwOTQzNzUyZjY1NTEzMzQ4ZTEzYzJiZmNmYTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03c8dfdb53ef444e813350e57e010584",
+      "statement": "celery multi rearranges argv so global options placed before 'multi' are parsed by the legacy MultiTool, which drives Cluster/Node objects that spawn 'celery worker --detach' children with default pid and log paths and manage them by signals and pidfiles.",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/multi.py#L122-L170",
+          "version": "repo-lines-v1:sha256:ae9ddf1d0eaec895da0724f0261d9e11c53b28b2ccbcb7a623caf7c86162a8ee:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MzBjYTZhYmJjMzBhODE0OTY5ZjRjN2I4NmE0YjRjMThjMTYzNWZiOGRmMzA1ZDVmYjE2YjFiMGRjMTQ4YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNTRjYmU0MDVmNWNhMzNhYWM4NWNiNWY1YmI2OTlkODQ5NGU1MTIwZGNhMmNlZGU3M2MwMGVlZjUxMzI1ZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhOGRkNzYyY2JhYjZmNDFhMTYyYjZjNzA4ODVlZGUxMGJmMGQzYmI1ZjkxZDg5NDhmOWEwZDdlMzQwMTRkN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmYmIxZGE2ZTY1Y2EzNmQ4MWJiZDc4YzE4NWU2ZTg3NjVkYWYzYjM4MWNjM2Q1OTI3ODZkNzk3ZGYzYzUzZDgifQ"
+        },
+        {
+          "resource": "repo://celery/apps/multi.py#L367-L460",
+          "version": "repo-lines-v1:sha256:74fd22045fa5476153a09844b1c0b26c139cca894ec00974c9458cfab47bcdc4:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNGUxZmUwZmJhMzM4NDE2ZmNiZjE3YTgzNDgwMmU4ZDdiMzU1MWFjYzlmMmJlZTJjMTA3NzA1ZGU2M2MzNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzZjU5NWI2NDk1MTMxYTA3MGRhZTA0MjEyNTU3YWIwM2ZlYjE2Mjc5NWI5YzQ3ZDg0M2RkMjQ3MGMyNGMxMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ0MDRlNjc2ZDlkY2YxNDA1NWY4ZTMwYjlhYjk2NjE1MzUwM2VhODY2MTFiZDhkMmMwNTg2OWFkM2FmZDgwMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhYTZhM2RlMWZjYjA0Njc3ODJiYjAyNjk4YzU5OWI5YjU5ZmEwMGQxYTg2YjgyNmI3NmJkMjQxZjYwMDlkZjkifQ"
+        },
+        {
+          "resource": "repo://celery/bin/multi.py#L470-L480",
+          "version": "repo-lines-v1:sha256:574e7b8b65da1faa1657236a07ef388bb903ae02e1672e6458bee48d5188437e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjZTE4YThlNzM0NjFiMWI1YmJkNmIzYmU0Yjg2ODliMjhjN2Y4YjViNzgyNmI3OWJkYzU2ZmZlMGM1Njk5YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1YmJiZDliN2UzOWMxNzRmNWE5ZWIyODk4NWQyZTIwMDM5ZDY4OGI1NGUxZjAyYzgzYmIwNDYwZTJlYWU0YzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YzA3N2RjYTQwZTk4MzE2NzJhNjZjNjZlYTkxNDlmMjAzMjgwNTUzODRiZjIwN2EyNTk1NzRhZmYwNTQ2NDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:22:47.483Z"
+  }
+}

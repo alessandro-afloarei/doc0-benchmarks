@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5568a010d891912ecee9e16e79b9c3093f7bc0f05c02b71b248df886ef33ed84",
+  "claims": [
+    {
+      "id": "claim_c596b2b3a1ba43e2b279578c43ec33af",
+      "statement": "Hono dispatch creates a request Context after path extraction and router matching, bypasses composition for a single match, and requires finalization after composed dispatch.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L406-L465",
+          "version": "repo-lines-v1:sha256:2268d33b97dfbf5a3c059f093fa0db92913e726f8bb98bbf4c2b2e66e8da1c03:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiMDBlMjNkOTU3YjY2YmUyZWNjMWEyNDMxMmI0Yjg5ZGU0OWVmNWNhYjcwNjgwZDVjMzFmYjhlNjdkMjdkYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OGJjYjFjNjdhMDYyZWU2OGQxMzNiM2M4OWU2ZTE5NWZhYzRiNzE3MWYwNTg5Y2I4YWExOTk3MmQzYWI4ZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MTZlNGZmNWFlMGFlYjdjMTBkNTJmNjk0MmQ0OWRjYjhkYTNhZjczN2Y0Nzg0NmRhYTE4OTU4NTMwNDE4MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhOTI5M2ZkODA1NGI2ZTQ3MjQ4MzczZjM5ZjRkZDc3ODAwMTA1ZWI3NTgzNDg2ODcyNTQyODVjZDEyODJiNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e21dbd4c57e545229b8507798fd65b6e",
+      "statement": "The composer executes handlers through next(), rejects repeated next calls, and records Error failures on context before invoking onError.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L20-L72",
+          "version": "repo-lines-v1:sha256:f7676d955823f76eb2d9e6710198f1a963db7cfefda7692aa559c85af37b756f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjM2U2MmEyZjEzY2E1YmQ0YzExMzgyMjY1NWQxZGRlOTNlYmE1MDNhYWNiYmM4ZmE0YWRjYWE2NDAwZTNiNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5MzJlYzQ3ZmU0YWE1MWVkY2Y3MWEzMDlhMTg1MDNjMmE2NjVlY2M2ZDBmZWFmY2I0YTMzZjlkNzJhMjE3ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae0760b0afcc4219bdd85d76cc9e98ed",
+      "statement": "HEAD requests use GET dispatch and return a response with a null body.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L412-L416",
+          "version": "repo-lines-v1:sha256:6ca9050eb95911021b49de021b018c8babc7de05054ae3f84b1e5e34eac4142a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU0ZGQ3ZWE2MTdlMDE2OGY5MTRmZjMzZjQ4YzEzYWJkOGNkZTEwNzE5ZWI2MmU1MTZlY2NmNGY2ZWZkNmM4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTYwZjdhNjUxNDczMTQ0NjhkMDY2MzJmYTRmMzFlMWYzOTBkOGY3MThjYzQ1NzgyZWNhZWNjZmVjYTNiNmZiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDM5NGVjNjczYTZlODVmNzA2NGYyNDE2ODcyODJkNWU1NTgyYTc0Zjc2M2NkYTMxYzk4NmJiYmRhODAzODhhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec77050c102c4299940cf44131601061",
+      "statement": "Route grouping wraps handlers of a child with a custom error handler so the child error policy remains active.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L218-L230",
+          "version": "repo-lines-v1:sha256:31a7440a9d1ece6f866ff11214f88bbf4bfb2806b9a5857073508a8b84c53e0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2OGI1NDdkMGViMjgzZmI1OTc2NjU1NjQ2MTlmYWQyNTdlZWU4YmQxY2YxMDBlNDYwYzY1ZmNkNmVlMDFlYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjOGVmNzBkMzQ4NzY5YWI5NzU0YWU5MTExYmJhNTkwODE2YWQ3ODc4NTQ1NmYwNmQ4ZTc0NjllNzMyNDFkZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5ZmEwNjdlZjY1M2Y3OWU2NjRiMmQyOTg1Mjc3OWViYjUwNjZkOGIzY2NkNTRiZGYxOTMyYjAwYWMxNTVkZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_079ccfa049ca49cf8167067313753204",
+      "statement": "The default error policy converts errors exposing getResponse into context responses, otherwise logs the error and returns status 500; non-Error thrown values escape the handler error guard.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L31-L42",
+          "version": "repo-lines-v1:sha256:93465142d4a40af04cef431b054cdd7ca5ee473128688c5a24b4ef44eaf3b044:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MGFiYzFlNmFkYjA4NGZiODFhZTFmOTM1ODU2ZDM3ZWRhMjljNjU2MWRmMTM5ZWNiNDFkZTBiM2ZmYWVmNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NTk5MzBiMTM3MjM2ZjExYzAxOWIyZDZlOTlmNThhNDMzOWQwZjJlM2Q3MGVlZWZmYzQ3MWI1YmYxZGQyYmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyYmZhMWFkZTAzNzdhNjUxMmQzYTNjZTIyYjlkZjM3M2E3OGQzZTZhMzU5NzVmYzAzZjYyOTA5M2IzZDU1NGEifQ"
+        },
+        {
+          "resource": "repo://src/hono-base.ts#L399-L404",
+          "version": "repo-lines-v1:sha256:fb83d79a246fdb82819606d42f34a01146cb1309688b1b35f9157a7f012211f1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAxYTY4ODg1NTUzMmE1NzBlYzNmODY5M2MzOWI1YzUxYjgyNjY5MDkxNzQ4YWIyODk3NzYxY2U2YTk1NDI0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTAxMWRlYzI2OGUyNzgzYWQ2ODU2YjBlNDc4ZjkyYzBhOGQ1ODQ4MmNkZjFiNTY1ZmNlMzU4YTczM2ZjOGJlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQxNzBlOTFmYWJjZDY3NDY3OTEwN2QwYzRhMDdhYjEyMWFjMDY2NjMzYjMxY2VkNzFhYjBhYTMxMjg2OGZlYiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:16:56.556Z"
+  }
+}

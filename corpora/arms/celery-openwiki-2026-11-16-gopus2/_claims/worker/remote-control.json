@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:46ce63f1a3173c72f828f4fed0f1db635c1408c1a63175a516e073ef93dcdd43",
+  "claims": [
+    {
+      "id": "claim_7d2d58f39ed84abb857c79d0c323b0fb",
+      "statement": "app.control builds a kombu fanout Mailbox from control_exchange using accept_content, the task serializer, control queue TTL/expiry/exclusive/durable settings and the app producer pool, rejecting durable plus exclusive control queues.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/control.py#L426-L455",
+          "version": "repo-lines-v1:sha256:737e11bb67a8c5eac94f7a7f2ecbec9f36b45243571fdf7465991e58cbd4e53b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMDJkNDhlYjIxNTU0ODQwMDlkODU2ODVhMDEyMjQxMGI1MjFmN2YwY2MzNjg1YTA1OWJiM2EwYzE0YTZmYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkNTYyMjIxMmVjM2IwMTEwODNhYTEzYWMwYzk1NGZiNDk5NWI2ZmNjZTQ1Y2ZiZTg5MDYwY2VlMWUwZDJhYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4NTQ3ZjRmMmRlNTRmZjgwMjA2YTg0YTQ1MThhN2M1NjA2Yjg5ZTJlOTcwMDM2MzgzMDI5ZGNkODNlNTU1Y2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlNTA0ODNlMmVlZDljNWE2MDg1YWExOGVmOWFmYmQ3N2RkZDdiODNlY2YzNjBhN2I5ODc1NWU2MjdiZjliYTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ea78c25b35c490baade3a69cbd6eada",
+      "statement": "flatten_reply merges per-node replies into one dict and warns with DuplicateNodenameWarning when multiple workers reply with the same node name.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/control.py#L38-L63",
+          "version": "repo-lines-v1:sha256:a6193ba6a1962170e0778eff1d15f06f2f610c7e41afeb78f7cdab19f9582db3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNzhhMDg5NzQ0OGY0ZWM2MmY1NDQwZDRiMDMzMGQzOTQ0N2RhNjkzNzVlZGUxNmE4NDMzNmUwZGYxMGM1ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0NjM4NmQ4Y2U1N2Q5OGFmYTliODQ0OWEwMmM2ODUyMGI5NDU2NzlmYjliOGVkZTE2Y2ZjYzg5ZmY5ZmFlYzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4YWU2MGEwOWE3ODRiNDdlYTA4NTMxNmJmZjkyYzY4MDExZGQ2NzBkODlmMjhkYWY1ZGE5YmI2YWU0MWJjNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0MzQzYWNmMjI5NTU1YWQzMGVkYTIxNmY2MWI3NTNhM2YwNDY1MzEyNDczNTMyOWY2YTJlMjU5NWE2YWVkMDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2179dc232a99423bae76ea6e50388e5c",
+      "statement": "Control.purge discards all waiting messages from the configured task queues using a task consumer rather than a broadcast.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/control.py#L462-L477",
+          "version": "repo-lines-v1:sha256:46db3c53fccb58e96c364030add11eaf9070489a3f9867eb0fdf83dc7dbaeeb7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMTFkNmMwNTRkN2U0MTljNDI1NWIxNjZlZjlmOGU2YjYwMGFhODA5ZDhlZTAwYjA4NDIwNjJjMTY5YmIxNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjYWNlNTYwMWM4NDcwZmY0MTcyNGVkZTBkNDBhZmEwYzM2NDhjYTc2MWFlZmU0YjNhZjc2ODRjM2I4YzMwMTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2M2IwNjAzNjg0ZDExMTMwNzBkMmVlM2Q5NTRiMDJjNWI0ZmVmOGJjMmFkOTZjNTM4YTAzNWQ3MzkwZDZlMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3NjBkMDkxZWYzZTczYmVmMmMzY2FmZWRlZWZkNDIxMTgzOTBlYTllMGI4MDdlZmJhNmQzYzUxMTM3M2NiMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3aed70a87174bd8a37f7360d9101c7e",
+      "statement": "Worker remote-control commands are registered in the global Panel registry via control_command/inspect_command decorators that record type, alias, visibility, default timeout, help, argument types and signature.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/control.py#L39-L75",
+          "version": "repo-lines-v1:sha256:433fd58032b4ea8a1a588afbbfb91e3e1f46c0e4c5f8c9b4ded7d368f6576d22:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NzQyYzA4NjdhMDYxOTNlNDNkYTlmMTVhODkzZDBlYTljZmUxOWI2NmQ1YzFmMDg2ZGNjZDg0YzIyMmZiMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlNzZjNjAxZDQ3YWVmMjkzMjU0MDczY2ZlOGRmYmU4NzdkODZlZDU2NzY1OWJjMTA5NGU3NGNjYTJjMTEzNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxNGExZjc1Y2MzYjc5ZWE4NTViZjc2NGIwMDhhNzVjMDI4YjRkMDY0ZjgzNzM5ZjliOTVmOTNlYzVhZTUzZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_64c9c834d4154d14b463cce79e5143d5",
+      "statement": "The worker Pidbox creates a mailbox Node named after the hostname with Panel handlers and forwards the logical clock on each received control message.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/pidbox.py#L19-L45",
+          "version": "repo-lines-v1:sha256:77c202118777759d8e063476f680166d920f70aa964e95c5c6a6006a687dd9a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2NjRkNDM3NmRmOTBjZDIwM2E5Zjg3YTAzMjQ5MzVlODVmYzAxMmNlYjRiMDg5OTE3MGFlZjkwNDUzNmI5NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2OGIwNDgyM2NiOGJjOGI0OTQyMWIyYzdmNzA5NWU0N2E3MTc4NmFmNmVhNjVlNzQwNTNkNTdmZTE3NjI4OTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4OWI1Mzc4MGVlMjdkMTA5MGUxNzI3MWVjNjhlMWRmNTQ1NWNmNmIyM2NmOTdiMDEyZDEzNzRjYmM4MzgxYWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5de24a77328b4ccbbbab87571e07d8a1",
+      "statement": "revoke adds task ids to the worker's revoked set, marks them REVOKED in the result backend, and with terminate=True signals the processes running matching requests.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/control.py#L134-L155",
+          "version": "repo-lines-v1:sha256:44470149c903facdc866c34c2494c696976da47b2088e3d3721b3be1f8d30042:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwY2JiMDlkNjQ2NGVhMWQ4OWJjYjU3ZDhlY2RiM2FlYWFjOGNiNTFiZWJhOWNkMTdhYzhjNzcwOTE5MjFhMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwM2M2ZDU5MWI3YzU3M2I4YThmOTBiOGYwMDZjOWNlZTJlNzE0NjY0NDg3YmYzZDNmMTQ4NzEwMzkxNmM2MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1ODc3ZTc3NDVjM2E2YWE0ZDY1MzE4ZTQzOTc3YjQ4NmExYTJiNzIwZGMxOWQ4ZTlhOWNjMTU3NzExYTdmZDQifQ"
+        },
+        {
+          "resource": "repo://celery/worker/control.py#L214-L243",
+          "version": "repo-lines-v1:sha256:d337d20913e5c645b857bec728fd4f0eda0d9ab16c97f27df0ceeb1af490bbf0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YjU3NzUyZDZmMWNjNTc1ZjdiYWUwNGJjYjcyYjRlMDBkMjU1YjJkNGMyYTMxOTRkMzlkNDdmM2Y4YzUzNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlNGNmYjk2YjYxNDA0OGUwZjc2YjVlYmU5YmQzMzc2ZTZhYTc0ZDcxMWQ2ZmU1NmE5Njc1MDkxYWM1NTAxY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyNDE4MTMwNTlmNzdlYjc1YjlhYzBhYTNmZDJhMzIzMTBjYjUyYjc0NjgyMTlhN2M0Nzg2NDZkMzBkNDI4YzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6afa472423ad47aeb368575d462ee07b",
+      "statement": "The worker's revoked set is a LimitedSet capped at 50000 entries with a 3-hour expiry by default, configurable through CELERY_WORKER_REVOKES_MAX and CELERY_WORKER_REVOKE_EXPIRES, and persisted when a statedb is used.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/state.py#L35-L68",
+          "version": "repo-lines-v1:sha256:75c5909f32a9af4565d2b396033cf21852b58208f5b4c13523fcf4cbcdbe575e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0ZTMzMzM2MTg1YjhjNDdmZDIzMWUwMDk1MTBhYWVmZGRlM2NjZDA1MjllYTk5ZmQ0N2M1NTI5ZTExYzlhZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhM2I3Y2VjZTkyYjBmZTY5ZDk5ZjJhZTZjN2M4NWNmNjZiMjkyMTRkOTljOWU0YWI2NmJkZjE0ZWY1ZDRmYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxZTliNmFmYmY0NDE2NjI1Y2ExMGZjNWQ3NGIyZDE2OTU4ZmY4NWI4MWIzMWMwZWRiNzBjMzY3YjAxZGUzZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2MTc5MGExZjY2Yjc5ZWNlYTNhMjU3NGZkYmYxMDlmMjllZThjOWNkMjU5YjRlNjY1MzRmYzEwYmQzMWExZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0808b0f1372147e5a22ad03eff135bd7",
+      "statement": "rate_limit validates the rate string, sets it on the task and rebuilds the consumer's rate-limit buckets.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/control.py#L255-L293",
+          "version": "repo-lines-v1:sha256:42b461c272a55b502056e2bb1b703092eac0e1d0d21e282d2839d9505a8ae3fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwY2JiMDlkNjQ2NGVhMWQ4OWJjYjU3ZDhlY2RiM2FlYWFjOGNiNTFiZWJhOWNkMTdhYzhjNzcwOTE5MjFhMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwNWQ0ZjcwN2EzMDZhMGY3ZjBhMGM1NDRjMjlkYTljYmM1ZWUwMGVmMjIzZWM5MDY2ZjEwNDEwZTlhYWY2OTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5YTVkNGQ0NjA2NzI0ZDVmMmE0ZTRlNTJlYjgxYThjMWMxYjFkMTNmYjVhYzRmYjU1ZGM5NjhkY2EzOTg2ZTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d8839666b0ea4d5d85aaa72f79ddaef2",
+      "statement": "pool_grow and pool_shrink resize the pool and adjust the prefetch count but are refused when autoscaling is enabled; pool_restart requires worker_pool_restarts and shutdown raises WorkerShutdown.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/control.py#L541-L598",
+          "version": "repo-lines-v1:sha256:16c9e8f90f34209e35a12f343a5cf2f814a4595bfbc8a111c102e4ba21982e13:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwY2JiMDlkNjQ2NGVhMWQ4OWJjYjU3ZDhlY2RiM2FlYWFjOGNiNTFiZWJhOWNkMTdhYzhjNzcwOTE5MjFhMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1ZjlmOTM1ZmM2Y2ZkYjllYzQ3OGRkOTg0YTdmNzg5NTllYjUzY2VhMGMzNGI2NDdkZGU5Y2M5ZmUyNmJhMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmYzQ4OTdiNTMwN2Q2YzgyYmU2NzcwMmRiYmQyMzUwNzI5N2Q4ZGI4ODA0ZDhkNGQwOTFjYzUzYmIxNjc2YWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6789c3baff34f7691b195412f6bef3d",
+      "statement": "The CLI inspect/control commands compile arguments from Panel.meta argument types, and celery status exits with EX_UNAVAILABLE when no nodes reply.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/control.py#L129-L145",
+          "version": "repo-lines-v1:sha256:7036da1e88d6e4070b67b5a5a0b0abdce63cdd52b3468d23b3abeadfd26a044a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2ZjBiNmE1NGVlYjI1Yjk2OTc4NDk5YjRhOTJiNjY4ZjdkNmY0ZTlhMjZjMWY4MGU0YTExNTBlODViOTQ5NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExYzIzZTUwMDY2YjYxZWU2M2Q3ZGUzZTYzMjJiM2U4ZGQ3ZmU0NTg0NWU5NzQ0YTQzMzJlODNjMmIzMWQ1ZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2Y2Y1OWMzOGJjYTQ5YmQwMTBhNjVhYTJkM2E5NzEwNDZkZmIxYWQzMzI0ZTEyZTBkMmIwYWY2OGNjZjI1ODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZTlkNDMxNDQ4OTdiMjA5MGExY2FhZmQ1MDZlYzA0NTNhNmVmMjY5YTQ3YTgzZDI1NzExY2U2MWVlNDRmMTgifQ"
+        },
+        {
+          "resource": "repo://celery/bin/control.py#L26-L56",
+          "version": "repo-lines-v1:sha256:dee3f47f65931b2bce2ff01c845c1b603d16c7942c27d80d75374a761019f33b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3ZGI1MjU3MjM2ZDEwZWM0NDg2NjNiZjFiNDFjYTFlMjA5ZjFlNzg1NjQyMzAzNTYwZGY4YjUwOGZlMDc3ZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4N2FjNmEyNmQ2YzVkYjhlODljMTIwZDg0ZTAzMGZhNjZhOTM1NWJjNTY1ZTI5ZTgxNWMzMzFiYzg5Y2NkMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MDdjMjc1NTIwMDAzYzkxNDU2OTgyNTc5OThiMzRhZjRhYzM5MDVmZDU4MTJmNmE1OTc2MmMzYmVhODljNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyYjgyZGM3NmZmZDdkYmU4YjQyNzNjYzJhZjBjMjg4NDdhMjFkYTg2N2MzNGZkZGE1YWUxOTM5MzA4Y2QwMzYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:05:29.073Z"
+  }
+}

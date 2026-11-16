@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1a93137c92a9c2e73f173be62a4eb8cf834691971c07b58c644a75c57ead7d6b",
+  "claims": [
+    {
+      "id": "claim_594933ce331a4e94b97d00061598dbd1",
+      "statement": "Runtime selection includes Docker/eventstream, remote, local, Kubernetes and CLI, dynamically discovered optional runtimes, and custom Runtime subclass paths.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/__init__.py#L14-L108",
+          "version": "repo-lines-v1:sha256:d3d4ea4de44aa52f1794e047264e0b36ab49b2cec08c0bfa5edae3615a94675b:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyNjJhNGQ4MzZhNDMwZDk0NGFmOThmZmQ2YWJiNDJiNWQzZTBjYTZlZDJkODIwYzQzOTZiYTRkZTU4ZmU0Y2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlYmM0NTNhNzAxZmViMzZiOTc0YzczMzlkOTdlYmY1MTU3ZWNiYjMzM2FkNmY2MDYzM2M0MWE5MzIzYTNjODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyODk0YWFiMzk2ZDk2ODg0Njk1YTJmMmY5MTFmMWEwY2ZkOGE1ZWIxODdiYWZjYzYxZjdmODk5MjEwOGJlYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczZWM2OWMzMDJiMzc2N2M1MTU1YTlkNWE1OTJiMjAwN2ZhYTU5Zjk3ZjMxYmE3ZjcxNDE5YTk4ODhhZWUwZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b541214f31dc4d15a4ea41b02b9a208c",
+      "statement": "The shared action client posts serialized actions to /execute_action with an action timeout plus five seconds and reconstructs observations with cause IDs.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L313-L338",
+          "version": "repo-lines-v1:sha256:e966c5ee430cfcdb3b7c0dd110ae9006f3831aa1142f1683c2ad19e7bad0e7fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxZGM2MjU3NWI4ZmIzYWI5NjdhMDA2ZmRlNWU4YWRjYzMwM2VhYWE3ZWJmZWNmOTQzNDg5ODgyYjdkYTRjYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YjMzNjcyZjVmNjljNzFkNWUzZjljZjRlMmE0NTY3OTg4YTcxZmFhNDI3ZjcwN2M0YmNjMmY2OWU1NzJmYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkZjAyMjg1NzJmNjg4OTAzODRhYjg5ZTFjNmNiMjEyNjk3ZjdlNjA4Y2E3NzViMzJjYThjOTAxMzJmZThmODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmM2I4ZjFkNWJjOGQ5ODFhNGFiMzhlMGViNDMwNjZkMzBhMWY2OWVhMzQ0YmZjNTliYmFhYjU5YWM0YzI0Y2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc0b8163037e4cd3ac4142faaee61b3e",
+      "statement": "The action executor serializes action dispatch under an async lock.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/action_execution_server.py#L379-L383",
+          "version": "repo-lines-v1:sha256:778327026f866999f62b094bbea4a1104e40ced2682e9921260596ec8db32881:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjc4MzY4ZWM1ZTJhOTU2MzIzN2ZmNmY5ZmQ0Y2QzZjY0MjNlZjIyNGY5ZDFmOTJlNTM3ZWFkYWE3ZmM5Y2Y5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZlMDQ0MmE5ZDBhMDM0Yzc4ZjgzNDE2MTM4MjAwZjdhNDY1MDE0ODA2YmEyZGM5M2E0OWJlYjc2YWEyMzc2NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTU2MmNiOGJlYzMzNzlmYzQyN2FiZDYyODlhZGFlZDRiMjdlOWUyZGM5OWQ1OTdmYmZlMjEzYTlmOTFlNmQ2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGYxODdiNGI2YmYyZTQzZmRmZWNhZjA3MzU5ZjFkMWJmNzU4MTg5MTg0NDY3YjBkNTgzNzJhZGFlN2IxM2ZhMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9197639f69364cbb99566ed388f2d1aa",
+      "statement": "Docker connection attempts attachment first, fails if attach-only cannot find a container, and otherwise builds or selects an image and starts a container.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/docker/docker_runtime.py#L170-L213",
+          "version": "repo-lines-v1:sha256:ca7e66e1ac64816fc285bedd0bb63aa945f7f68a465d21362e69057ee235c2d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzYWI3YzAzZWZiOWVhMTI2MjliOGI5YmQzNjI0OGJiOWZlNzMzNzA0MDM4MmYyNjY2OWMwN2E4ZDcwNTkyZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2NzhmMGJhYjQyOWY5ODExNTJiYzZhZWY0MmVjMTRkODEwM2IyMDAwZjAxNjkzMWZjZDlkYTA4MTQ1ZjI4NDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2M2JlMmE4NWNhNGFkOWY2YjY1N2RlMGNjNTljNTRkYWFhOWZjZWY0YmVlOTU3NzQ0YTFiNWRiNmExZWE4ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4OTY5MDhiZWViZmRhNDkwYTAxMDg0MmY0NWM0MDE2Y2QwZGZmYTdjOTZjN2NmNDk1NDEyYjQ4ZjI4ZjMyMWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c54cb6d1dbb843adb895da3a7eb0c39e",
+      "statement": "Runtime setup can source .openhands/setup.sh through a hidden environment action with a 600-second hard timeout.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L463-L488",
+          "version": "repo-lines-v1:sha256:b8721be6e7326d02c5bdc95311075f448a3346964f577ff5bb1df956bb24e6b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMmZhZjlmODA2MWJmODFkZjRkZGFiMTM5OTI2Mjk1YzA2OGIwNzY3OThjNDY1NmY5OGVhMTc4YTM4MzE5M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNjk5ZDg5NGNlZDNjMTNlYTk2OTU4OWNjOTJhYjNlZGZmMmU2ODFhYzNiODc0MDU4OTJkN2Q3MTBkNTRmODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmNDMyNzUwZmU3NTY5ZGIwZDY3NDJiOTE5MDA4OGNlZjgwNWNiNTc2YzhhN2Y3ZWRlNGY1NWI5YjU2MDZmYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3ZjQzZTc0NGU4NWM2ZWExODUxZjQ4ZDZlYTZkNDEzYmQ5ZGEyYTFmYTRkYTY2ZmQwNDRkMTE5ZmExYjQ2NTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b0403df1b713440ea97adf66421979cc",
+      "statement": "Permission failures become ErrorObservation, while network/disconnection and unexpected action errors set runtime error status without adding an ordinary result observation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L361-L399",
+          "version": "repo-lines-v1:sha256:3e32bcc3c022aedd0dbc8d20ef9680aa50dbf9e6724512b14fb216900744087f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNTc5OGUzNWRhYjQ0NDIyNzhkOTU3MTRiNjc4NTY5NTBkYjljYTliNDQzM2I3NjU1NmFmYjMzYzUyNWRiMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNzNkOGU2N2VlYzg5Y2M2NzE5MTNlYTU4MWE0NDU0MmZkZTQ2OTU3NjEyODZlZmVhZTUzMTgxYjA4MmU0ZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNjcxYTUyYjYwMDk1NDNjNmI2YzBlMzVhN2EyNzVlMWI4YzhlMGUxNTVlZDIxM2JhY2Y5ZWU4MDA4OWM3MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMzk4YjZlODViNzNjNGNkNzMxMmQwOTIzMzY4OGNhMjgwZDJmZWIwNDlhNzJiZWVjYjQ2ODUyZmYyNzkxNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca36b1326d5847de913c640cff936dd4",
+      "statement": "Executor API-key verification only rejects mismatches when SESSION_API_KEY is configured.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/action_execution_server.py#L85-L98",
+          "version": "repo-lines-v1:sha256:36de9b0f674cb1b152c65d4d9d35779b780789ac0f3ff3207dc13705cfc391ce:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlMjk1ZGYzM2I5ODU2NzIzOWUwZmM5MjliNjMxOTk2MWY4ZjU1N2ZjZDk5MWE2OWZiMmIyY2IwZGM3YWVhZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmNDI4MzdiMGQ0NTJjNzBiMTk2MjFlODI4ZGZiNDE3NDk3YTFhNWU5ZjYyNjUyYzQwYWU3YTQ5NDM0YjMwYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxMmY3MjBhYmI3ODA4Y2NlMjBhYWRiZDViNDJhOWQ2M2YxNWY1ZGUyNDBkNGQxZTQyZjRlZDA4YTQ5NjllOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8bba2b319e3c4847853fd75fb24d669b",
+      "statement": "Base runtime dispatch suppresses awaiting-confirmation actions and turns rejected actions into user-rejection observations.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L949-L972",
+          "version": "repo-lines-v1:sha256:c421ba3f52256fc38ed9615c791b0f3d1bcaa3a5800e9a4d1625fd9edd2137fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NWI2MjUxODg0N2YyZTc3NjFlNGU1OTA1NDg0ZTAwNTZiMzY1ODRiYTZiOTg4OGY1MGZkOGNiZTcyMmY1NzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyMTZhMWFlY2RkZmY5MjMwNDk0NjQxMGU4YzI3NjY0OTJkZWMxYzRmN2Y2YzhhZTk5YTFjZWU4ZGYzMDZmZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkZjdjNjAwZjAwYjg1NmM4YzNjMDg0MDdhYTgwZGEyY2E5M2M0MzZiNzAwMGE1OTYxZTJkYWQ3YWViMjEyNWEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:51.947Z"
+  }
+}

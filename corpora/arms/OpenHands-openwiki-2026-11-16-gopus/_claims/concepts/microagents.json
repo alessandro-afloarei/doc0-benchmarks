@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:91e69b28b88b68b0da13cbad16954f717bf700a248cb4b641b4473e94ab9240e",
+  "claims": [
+    {
+      "id": "claim_f0adf2f8492a49cab7f131e129b448ad",
+      "statement": "Microagent type is inferred from frontmatter: declared inputs make a task microagent with a /<name> trigger, triggers make a knowledge microagent, and otherwise it is an always-active repo microagent.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L129-L172",
+          "version": "repo-lines-v1:sha256:0a1031aa20abcb7fd2931be30df3bf91dccf294e4c3ba6607fdff01fb9439ce7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZjdiZGI5OWRiZDJlNTI2OGVjZGVmNTIxZjllNmY2YTAxZjI2YzliZjdiN2I1ZGQyY2Q5N2I2MmQ3ZjNjMTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlM2NkOTFjYzI0YTkxMWZhMzI0M2YxMmQ0NWIwZGUyMTE3NTVkMzRmOTQ2ODg2MDlhYTJiN2EzOTQ5ZGIwY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyYzdiOTM3NWEwMWNmNjQ0NmIwNGFjODQzOTg0OTk0NmIyNDNlYzYzMTFiOTcxMjk5ZWQzZTRkMjA4YmZlODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d06a9f05f5914990a28a52a6d3c76529",
+      "statement": "Legacy .openhands_instructions, .cursorrules, and AGENTS.md-style files are loaded as repo microagents without frontmatter parsing, and repository-root AGENTS.md/.cursorrules are always checked alongside the microagents directory.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L17-L90",
+          "version": "repo-lines-v1:sha256:1200c0698f3ef996c0d008ecaad54ed99f330f26757caccbb167f5a7a62002db:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MjMxNjIxZGEyMTk1NTUzMGQyOWI1MzAyNTkzMjExMmY4NWRhZDBhMGZlMTAyYjJjOTI3NTA3MjhiNmVjOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOTA3Mjk3Yjc0MTUyODUzMWQ2MGY0ZTAyMTExMGQyNjJiNjBjOWUxOWE4MTkwYzZhOWRlZjI3Mjg5MTVkMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiMWZmMzdmYTAxNjIyNjBhY2U0NWFkMDAzODc4NTA0YmYwYTdkNThhYzZkYTI4MGM4ZjkxN2QyMzViZjViNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1MjkyN2YyOTAzZjY5ZWJiYThkNzQzMTI4ZDUxZDMyY2E3N2NjMmM1ZTRlMjViYTU0NGUzZjE2NmNjMmYwMTUifQ"
+        },
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L277-L330",
+          "version": "repo-lines-v1:sha256:992ca1c0a0a6247895351340111a4ae978739218537fc4c95833141a8adfa93b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliY2E0M2NkNjQ5ZjQ3ZGY5M2YwNDNhYjYyOGYyNzAyZWMyMjRiZWRiYThjZmZlZmNjYjIyNGI5NjYwNTNmZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwY2E3OTM0NTNiNzI2Y2RhYWJhMGE3NjYwNjI1NjVkNGE0N2FkMDI0ZjFiYTNlN2ZhNTMzYTlhNjA5ZTNkMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1MzNmNGMyZThkMGM5NzViNTRjODdiN2YwZTM5YmM4ZDFkNTlmMWE1ZTIzZjFhNzUzZmE3MzJjYTRmMmQ1NjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwMzRjMzdjMDI4YTdhNmZlNDhkN2FlMTZjMzMxYmM1YTA0NTRmM2EwMWQ0NGRhODRhMDQwYWUwNTFiNjgzYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7d1cb974c024b6eb0cc233ef055cc9b",
+      "statement": "Knowledge microagents match when any trigger appears as a case-insensitive substring of the message.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L189-L199",
+          "version": "repo-lines-v1:sha256:4386fb1a279f2999cc9bfb2240a364d9a02a44d61018d939e629cdb7cd862ee1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNjliNGZmZmE5YjAxOTBlNDczZDdiMTdmNzc3OTcwZGM1MWZiZDhhMTE1YmY2NmQxNGJhZDU3OGQ0MTFiZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M5NTdiY2I0NGZiNjczYzk4YjAwNTBhNzVkMzgwODJkYjgxZDkxOGRlMzEzYTNmMDdjMTIzNTMwNmQ3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4YmFjMGZmMWIxZDc1NTI5ZmE2YmI0YTQ2OTVkMWJmMjM3M2ZlY2QzMDE5NDYwZjExNjY1ZThiMzM2MjlhMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4YWRiNWIwZDc3OWVhMGZhN2FhZTMwNDg5ZmYwZmU1N2FmOTM3OGU3YzAyNmY1MTY1OGYxNTUzNzQ0ZTFmYTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ccd6cfac33fb45f580d46e16cb8aaf7d",
+      "statement": "Task microagents append an instruction to ask the user for missing ${variable} inputs before proceeding.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L226-L270",
+          "version": "repo-lines-v1:sha256:b28a9c83248c075ee4e8b00c53d808906b63f51a032187dba8223f1dec900578:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwYzY5YWExNTQwNzgyZjdiZTVkNDM5ZDA4ZTc3YzQ0NTUxMDg1M2UzODZiMWNlMzJjNmYwYWY2NTk0NzA4OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2ZGZiZjQ1M2Y3ZjFiZWJhYjcyODM2MWIwZjM5M2VlYjRjMWZiNjY4ZjllYTIyYjkxNmRhY2Y1ZGZmODFkODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1ZjE4NGQ0NDc0OGNmNWM5NDM0MWYwZGViMmFjZGRjNDAxMTQ1NTFlMjc1MmEwYzQ4Mzg1NmU0YzJmNGE5MzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca823bbc49594d29b6d18080ded0806a",
+      "statement": "Memory loads bundled microagents from the repository-level microagents directory and user microagents from ~/.openhands/microagents at construction, and later receives workspace microagents loaded by the runtime.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/memory/memory.py#L254-L300",
+          "version": "repo-lines-v1:sha256:27f1159c505fa98b65076085a69a001f62560dff5ed5913f7839f6bd89e97758:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3OWM5NTAyN2E4ZmJkMWY3MTRkOTQ3YTRhZjZkZTc1YWM4Yzg3MmNlNTUxYWQ1YWQ2NzgwMTI2OWJhMTdlMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwN2NmMDFkNjI1NTY4MTY1ZjMxNzNlMTE3OWY2Y2UyODhlZmRhZjI2NmU2YTljZjc0ZWQ5YmRiMjkxODZhNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMWMwOGY2YTQ1NGM1MjMyZTZkNzY3MWY0NjUyMjc3NmEyOTJiZmZlNjA4ODc5Mzc1ZGRhMjhiNTQyNjI1MzMifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L33-L38",
+          "version": "repo-lines-v1:sha256:a78aa8a7581bff4f0888f5cca32ef7ddaff853c006d25492b1f44ce2ca4a5f04:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDYzY2IzZDRjNjIyM2VhYzc1MDBhYTQyNmJkZmE4NzA0MTAyYjU4ZGMzYTRkYTYyZjIzNzdmMDAzNDIzNDgxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODJmYmYzNjNlZDA2YTNlMWZhN2ExYzU5Yjg5NmExMDBhNDc4ZmE0NDJkZWFkMzVkOWZmMjZkOGJhNzk0ZTRkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTM2MjQ3M2I2NDU0MmQzMmQ2MmEzMzJlNWUyMDQxNDBiZWY5ZmM2ZGNhZDJlZjVjMzY4ZTA2NjE2NTExYzdkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzM0YTI2MmNjNmE2ZjBhYzNmZGQ3NzY3Y2RjODM0NWYwZGUxNGY3ZGJjODI4YzJkZGVmY2FhNWU4MGJiYzBiNCJ9"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L53-L85",
+          "version": "repo-lines-v1:sha256:29a83aacec0814ce371213cc4c0962f4d384e921dd9169af13df9cd3d35939f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDdhMDdhODNkZDE5OTZmYjUxNjg0YjQyYWVjYWY0ZTkwZmI3OGJhNzIzMGU1NDJlZDdiZDAxZDQyMzAxYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2MzlkOTQ3NTI2Y2IwOGZjMjkzZjU3MjZkZmIzOGI2ZWE2MWUzZmRlZGMzYjJmN2QwYmM3YjVkZDhmNDZkODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzNjk4OWUyMzc4NThjMGU4NzEzNDIxNmNjMTIyMjczY2MwNGU5OTU2NDhlMmEyNzY1YzNiOTVhNzYyNDdhYTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aab0fcced7e8413d98a0d8848be1ac52",
+      "statement": "For a selected repository owner/repo, the runtime shallow-clones owner/.openhands (owner/openhands-config on GitLab) with an authenticated URL to load org-level microagents, removes the clone afterwards, and ignores failures.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L666-L821",
+          "version": "repo-lines-v1:sha256:eb016d91256b33e62f2b1c07405e05bf04aaa65726ff1ef5f6d43ea69c856d38:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0NWMxNjM3NjNiZTFiM2I4Mzc4Y2E1YmQ4ZDQyYjliODk4Njk4OGIyMmI5NWZiNjE3OWE0YjBhMTM4OWY5ZTU0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0OWQzYjM3MjNiYmM5ZjE2NWY1OGEwOGFmYmNkNTUyNjRlNjYzZjBkZDE0ZWRjMTQ0MDBhOWY0MDA1MGQ0OWViIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiNjhkYzRiOTM2YTM0YjEwMjY3NzE0ZmZlNzZkM2E0ZGZkMTIyNTkzZGMxOTVmYmU3OTNmNTJjYWFlNTg4OGMzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzYTZhYzU3MjFmMDUxZTVhOWI4ZjEyODA0NWRjZDE1YTE1ZDI5OWEwYjE0ZTlkNGMwZDhhNjhmNGE1NzhmZTdjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ae786cce02d4c84bcc8633cfc95f5a5",
+      "statement": "Repository microagents are loaded from the selected repository's .openhands/microagents directory inside the sandbox, or from the workspace root when no repository is selected.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L823-L888",
+          "version": "repo-lines-v1:sha256:2ea48681fe4f2db91c2b71ced41ccb5c6601e2270239fc89d4c7c604da674e17:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwOThlMjBmMDM4ZmU5MTU4YzkyNjU1OThhMzQwZGRjMjdmMjEwYzIwNzljNGU2Y2I1OGFjZjU4ZjQ5Nzg5MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5ZDNiMzcyM2JiYzlmMTY1ZjU4YTA4YWZiY2Q1NTI2NGU2NjNmMGRkMTRlZGMxNDQwMGE5ZjQwMDUwZDQ5ZWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjMjk1NmNjMTA4Mjc3M2Y5ZDFjYTBmNjE4MmJlNmE4MDIwMDA2MzE1Yzg4YzdhMWRiZTZkNDc0ZmZkOTg3NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxNWNiMjQ1YzAzNjVlNjE2NDI4MTcwZjNhYmM1OTYzZjY2YTBiNWMzNGZmOTc3NTQ4ZTM5MzViZWU4MTQ2OWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_027a899986bf4171b3e52600c2b4d8d6",
+      "statement": "Microagent MCP tools must use stdio servers; repo microagents' MCP configs are collected by Memory and added to the agent's MCP tools.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L284-L300",
+          "version": "repo-lines-v1:sha256:73ccd22634b83a2675462f29ba26220af5f10aa1be3a55b18f57f10fdd652ff9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3NWJhY2EzMmRkMTYxMDNkNGNhOGU0NjFjODlmYmI1MjkwNjk4ZGYzYWM5ODYzYjhiNDZjOWUwMzE4NDk4MWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NzFiMTI1MTliOWFiMmNlZmFhM2I3OTc3MTJjMTllNDM3NzU5ZWUwZDBhNTZlNmI2MzkwMmM1YjAyNDNiNjQifQ"
+        },
+        {
+          "resource": "repo://openhands/memory/memory.py#L302-L318",
+          "version": "repo-lines-v1:sha256:d165ff7242d038adfa7ddb4a857f620d2208cc6815c0ff1749661a0a01253c40:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxNDM3YmFmNmMxY2JlZWY1OTM4MjAwYjFmYzMzNjQ1NzQ0ZDhmODFmYjNjNGNmNTdmZjg5NTFmMGY2NzQ0MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwODkzYzRiYzVmNGM1OGY5Y2ZmN2QyZTc2NmY0N2E4NzE4ZmE4NTQ3NDdhYjc3Y2RmOTNjMWMxNDYzOWNlYWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1MjhmYzVhOTlmMGM3YzZjNjU3Yzk2MDEwMjAxNWU5YjVkZjY0OGIzMDNlNmQwMmFkN2ZiYzJjMDE3NGJiMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNDhhODFkYTZhZDRkZmU4Y2EzNTExZDA5NTlhY2JhNjBlOWFlZjQyZWNiOTliZDMwYzQwYmMxNDYyMTEzZDIifQ"
+        },
+        {
+          "resource": "repo://openhands/microagent/microagent.py#L98-L112",
+          "version": "repo-lines-v1:sha256:7643d7cee6075d4cfe66e4763a635eb6900d7e21b1657228d2fd52a3fada8e28:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1Y2RhZGE4OGZmMDQ0MmI1ODBiMzBlODg2YjRjNjVhYjg5YmMyNGJiMGEwNzNkMjFkMjEyOWIyNWNlMmUzY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxMmMxZDFkYjEwMzQwNTc0OWVkZTg2NGU2N2QzMDU0Y2NmNTdmNjhmNDcyYzA2YTMyODEwYzRmZGExZTRhNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2MzU1ZTQzN2U2NTU3MDY5ZmY3NjE5ZDFkYTY0MGYzOTE4MDlhZjEzZWIxMTM3NDQwODQ4NTMyYTlkOWUwOGEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

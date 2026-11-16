@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e19620ef98ff3128304c8e3a726a3e3d29c46b8607fd27ac58e6539a074e77f3",
+  "claims": [
+    {
+      "id": "claim_738f77a63a5f4ed5b0dbbf7041cbfd94",
+      "statement": "Public API documentation under docs/api is parsed by @electron/docs-parser into electron-api.json, which is then used by @electron/typescript-definitions to generate electron.d.ts.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/creating-api.md#L39-L39",
+          "version": "repo-lines-v1:sha256:2db08af88bca81cd005467ec23e19a9a2c731f2a187e57c407e8272782566681:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmRiMDhhZjg4YmNhODFjZDAwNTQ2N2VjMjNlMTlhOWEyYzczMWYyYTE4N2U1N2M0MDdlODI3Mjc4MjU2NjY4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmRiMDhhZjg4YmNhODFjZDAwNTQ2N2VjMjNlMTlhOWEyYzczMWYyYTE4N2U1N2M0MDdlODI3Mjc4MjU2NjY4MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjkyZTk1NjAwNzMwNjZmZDgzZjY4YzA3Zjc5MDdiOTFiYTY4OTIxNzAwNmY0YzU3NDVmNTYzMTgxNDEwNDQ3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGU0Y2ZmOThiNGQxZTUzNTQ4N2Q4MGM1M2U2MDc0MzI3ZDdkYjg0OTc2ZTg0NTRiY2NiOWUzZTQ0MjQ2OTUyZCJ9"
+        },
+        {
+          "resource": "repo://script/create-api-json.mjs",
+          "version": "repo-file-v1:sha256:80892b11e2662e7e21527d63c2035871a75091573485592789f98586a41163d4"
+        }
+      ]
+    },
+    {
+      "id": "claim_bae0bf4378534d128953c8a869e123c6",
+      "statement": "The create-typescript-definitions npm script runs create-api-json, then electron-typescript-definitions, then the ts-smoke runner.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L80-L80",
+          "version": "repo-lines-v1:sha256:eaad6960d7f26fbdf5ac04becec29850ed5f769c0736728a2a41f0c594b61239:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFhZDY5NjBkN2YyNmZiZGY1YWMwNGJlY2VjMjk4NTBlZDVmNzY5YzA3MzY3MjhhMmE0MWYwYzU5NGI2MTIzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFhZDY5NjBkN2YyNmZiZGY1YWMwNGJlY2VjMjk4NTBlZDVmNzY5YzA3MzY3MjhhMmE0MWYwYzU5NGI2MTIzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2JkM2YyNjhiYjYyODNkNTM1ZWQ1YTZkZWM5NjM3YmYxZDE1NmVhZTRmMmFkN2RlOTk2ZmNhMjcyZTMwY2FjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWMyYmM3MGUwM2M3ZjhlNGQ2ZmY3YmM2N2EyNGExMWNiOGMyODE1ZDUwNzg4NjA4MmUwZTkxN2I1MTJkYjVhYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c8833637e324313a3bfdd2e9d64edec",
+      "statement": "The BUILD.gn build_electron_definitions target runs the gn-typescript-definitions script, and the browser and renderer webpack bundle targets depend on it.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L157-L163",
+          "version": "repo-lines-v1:sha256:8126632c79eaea2628eed049b331fb7fa3ad5f2c41893aa3c0edcbc8c66f23f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODk0NDJhMTAwYzU1MWIyMjE2ZTVhMjRjNzhjY2JlMGM5MTM2M2VjMjg5MjBjNDI3ZjQyOWI1NDBlMDlkZGVjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmMxMDUxNWJjNjcxNzQzMTY5ODcyYzJmNTQ4MDA2ODQ0MTc4YTdlMjRkNTkyY2IxZmQwNWQ0ZDQxYTI3NDAwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGUxYmNhNDkwYTg5MDg1ZGExN2ZmNWMzYTE0MjI4ZjQ1YzMwZTUyNjE0NmVmZTg3ZWZhOTE0M2UxNGRkMjNlMSJ9"
+        },
+        {
+          "resource": "repo://BUILD.gn#L165-L172",
+          "version": "repo-lines-v1:sha256:394ca5fb4ca1c68cccba18a411c45a56c3815e5aa4c768e06581c13df949eab5:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNmN2I2NWQwYzNkMmJkMDIyNmY1MDY2ZjgxN2Q3NmZmYjJjNmRiNDQzZTIwZjY1ZDQ2NGJiMTk2NWYwYTJlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTBmZmU5ZGMzNTczNDJjNGE2NDE2MWIyODhmMTg1ODRlYTQ5ZTFmY2RmNjBjOGU3MTUyNDI4ZTA3NjkzYjhhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2VjNTAzZWJkODg1NDAxNzkwZjQ4ZTdmZjE0MjdhY2YwOGRhNTMyMDExMjYwMDQ3NjQ0NTM3ZjYwY2M5ODQ4YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9bcabd7444d4809a57c2762793187be",
+      "statement": "The api_docs input list in filenames.auto.gni enumerates docs/api files as GN inputs to the typings target.",
+      "evidence": [
+        {
+          "resource": "repo://filenames.auto.gni#L3-L6",
+          "version": "repo-lines-v1:sha256:237c69388aa0daeda485a3efefdd5739cca77ac01cece00fd21c0e2be52cc744:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGFhNTQ2M2E1ZWFkMWI3MDNmNGVkZDU0YzFiOWY1ZjM3YzFkZDgzMDU3MGIwZmI5MGZjMTM4YTMwZTdhYmUyMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmM2MDQ1Y2E1NTRlYTliYmU4ODU4MDY1NTkxZWJmYzM3YmIwMzI1NzBjYzU2ZDNlZjI0NDZjZjhiNTU5ZDYwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmZiMGEzMzNhNmM2Yzk5ZWE4ZmVkYjEyOGFkOGUyZDVmNDdkZTYzMWJhOWRkZGQ4Yjc2NzgyYTc3ZjFhZDZlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWJiMjVlYjUxNDgyMjA3ZmUxOWE4NjVhZmM2NTRiNWIzN2VkOWIzY2M1NWRiNzMzNzFlM2VmZTg1ZDliMTYyMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba8a5547df804f46993ef7d40134b514",
+      "statement": "electron-api.json and the root electron.d.ts are generated artifacts listed in .gitignore.",
+      "evidence": [
+        {
+          "resource": "repo://.gitignore#L34-L35",
+          "version": "repo-lines-v1:sha256:86b9e1b99a69c07eb95112201b05d26afeddff3a833bec4277caaa89cd8a3b8a:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg2Nzg0MjJiZjQyYmRkOTMyMTBlYmFiOTVjNDJlZDAwZGY3YmZhY2VlZDY1MmM4NDI0ZGQ2Yjk5ZmE0ZTU3YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzIyNzg1MDZlODc2NzhjYjhhM2YyODA2YWNiZDVkZGYyODE3OTcwMDFlOTI3OTlmYjUxYjE5MDI5ODAyYTVmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTI5Y2I0OWJlMWZlYmFmNTBmYzkyYmQ5MzUzNGNkZDdjMzhhOGRiNGZkOGMwOTM5MWFmYmI1YmQyZjE2ZThlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGZhNGNjMDM3MzdkNjIyMzZkYmFjZjhiMGY5ZTVlMTIxM2JjZGQ4NzA5MWEzN2M2ZGU1YWI2Y2JiODc0YTk4MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a21d0e3ba4245029d261fc758932960",
+      "statement": "The lint:api-history script validates API History blocks against docs/api-history.schema.json and checks breaking-change links with --check-placement and --check-strings.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L78-L78",
+          "version": "repo-lines-v1:sha256:31a4d340db91091e47136c8bb38a813471fe6c7ef4fb6ba7aedfa3e8af672a39:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFhNGQzNDBkYjkxMDkxZTQ3MTM2YzhiYjM4YTgxMzQ3MWZlNmM3ZWY0ZmI2YmE3YWVkZmEzZThhZjY3MmEzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFhNGQzNDBkYjkxMDkxZTQ3MTM2YzhiYjM4YTgxMzQ3MWZlNmM3ZWY0ZmI2YmE3YWVkZmEzZThhZjY3MmEzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjljNmE0YjE1OGEyYzZkMjg2ZTU1MzE2MmZiMmFiNDQ1OTNmYTMyM2ExYTc3NjAwYzY1OGNhMmM0ODViMWE4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzg1OGNhZWJkYTMyMzQ2ZWIxNDg1Y2M4N2Y0ZWEzN2VmZGY3MWQ2NjdiZjcxOTQ5NzRkNmY2ZDRkYWJhZTllNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb1860c6cd7e4f918dcd7a1adf48d5bc",
+      "statement": "The API History schema rejects unknown properties in base change entries because baseChangeSchema sets additionalProperties to false.",
+      "evidence": [
+        {
+          "resource": "repo://docs/api-history.schema.json",
+          "version": "repo-file-v1:sha256:e83fc25f04fbd7363e102901ca9cb8a2f00bb7186291d465ed1d7a9c9534d799"
+        }
+      ]
+    },
+    {
+      "id": "claim_10825ed97d224601af9ce55a85f46ad0",
+      "statement": "spec/ts-smoke/runner.js type-checks the sample main, renderer, and utility files against ../../electron.d.ts and exits with tsc's non-zero status on failure.",
+      "evidence": [
+        {
+          "resource": "repo://spec/ts-smoke/runner.js",
+          "version": "repo-file-v1:sha256:1041583130c20000625c5a46bb3f61f8143b5259b6c674e5a47bb60cc99eb7f7"
+        }
+      ]
+    },
+    {
+      "id": "claim_35d6d27ee7364f97bb05aa7982e2596a",
+      "statement": "typings/internal-electron.d.ts augments the public Electron namespace with undocumented members that lib code uses, such as App._clientCertRequestPasswordHandler and the -touch-bar-interaction event on BaseWindow.",
+      "evidence": [
+        {
+          "resource": "repo://typings/internal-electron.d.ts#L1-L22",
+          "version": "repo-lines-v1:sha256:bbb5179e38c42224b48d571e9cd44e0634121a6d97b141d222ff713fdc848e11:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0OWUxYzYxNDdiMmU5MWFlODY5MzRhNjg5OWRlMmI1MzIyNjBjNzE2ZGRlMDY2Mzc2MTEzNDc2ODRjNzdiMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5NzE0NTQzYWE5YmQ0NGI0MTYyYjRlNzU4ZjAyY2UyNDBmYjczMDAzMjY4M2E4NmJhNWRmMDExZTkwN2Y2NzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec429bd0aec74fbaa677650c5cb2b7d2",
+      "statement": "typings/internal-ambient.d.ts declares the global BUILDFLAG function used by lib code.",
+      "evidence": [
+        {
+          "resource": "repo://typings/internal-ambient.d.ts#L1-L6",
+          "version": "repo-lines-v1:sha256:cdfe6610088039c79ec7fbccf9f88864a3d26d93b51397679af57740e02a7289:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzRjY2NjZDkxZjk0ZTdlNjc0ZTQzMjkxYjIyYjkzYzhlZWQ0YTg1MWUyOGQ1NjYyNmFhNWQ3YWIwMTBiOGI2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmFiOWJmNTViMzc3YzRkOTIxMTg4N2JmODI4ZmQ5N2RlMTA5MmMxYjVjZmNjN2EzZjU2Mzg5MTJlN2RmYjBiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDhiNmVjMTcxOTM5YTZiMmJiMTVjOGQ4ZTRlMDkyZjgyNDEyYzMzYzRjNzc5NjhjYzU5NzQ5MWM2YmZhN2IxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_632f6367d76c47d293de6874d2c35da6",
+      "statement": "spec/types-spec.ts asserts that the @types/node range in npm/package.json has the same major version as the Node.js version Electron runs.",
+      "evidence": [
+        {
+          "resource": "repo://spec/types-spec.ts#L3-L9",
+          "version": "repo-lines-v1:sha256:6d6d34920882b8790bf28d6dd2aea32b1ed2b993f67780dc071030432c487a9e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQzMDY0OTQyNjdjN2I1ZmRkM2EyMzIxZmJjZTc0ZjQ3MmI0ZTg0M2Q3ZWIyYTBkZDgzZjg2ZDZkZGU0ZTM0ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjMzZTIwNDdjZjQyZTVlMTQwMmMyNGQ4MjdiNTJiNDgwOGYyMDUzZWUyYzUyNzBiOTc4OWI2MzczNzRlYjJkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3144851d12a348fab82b0bbce712c0a6",
+      "statement": "The release script includes electron-api.json among the release artifacts.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/release.ts#L172-L172",
+          "version": "repo-lines-v1:sha256:09b10e4cce4954b08b4d3900b10defe7665667314890a5b3632403d1bd592f52:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDliMTBlNGNjZTQ5NTRiMDhiNGQzOTAwYjEwZGVmZTc2NjU2NjczMTQ4OTBhNWIzNjMyNDAzZDFiZDU5MmY1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDliMTBlNGNjZTQ5NTRiMDhiNGQzOTAwYjEwZGVmZTc2NjU2NjczMTQ4OTBhNWIzNjMyNDAzZDFiZDU5MmY1MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGY5YjNjMzNhYTg2NDJlZWM5MTJlODk3ZjhhYWZkMTFjZDQ3MDA1MjY4NWY1ZmZmOWQyMjI3YTkzMWNjZTM2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI1NmE4OWQ2ODNiNzQ3NTVkODc2Mjc5NjBiMWRmN2JhYzIxYmRjN2U4ZjM0YWQ4NzVhZjlkN2IwOTNmMDQyOSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:50:06.090Z"
+  }
+}

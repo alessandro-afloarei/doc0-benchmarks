@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7c30f011ce32e6248478d4c1fb4ab409c38f4959132cab9a685599a4d52324a2",
+  "claims": [
+    {
+      "id": "claim_2cae047840e947869a6fbc3c8b41d8e2",
+      "statement": "Integration fixtures create temporary trees with a synthetic Git marker, default ignore files and a symlink, including when caller-provided file lists are empty.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L13-L62",
+          "version": "repo-lines-v1:sha256:25395e8823f625ca09172b58fdcb6f13c908ae06ba6b8710cfe7548d54365bef:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwOWViZWI1YzQzNTM0MzdjMmQyMjU5ZGRjMGJkNTFjYTFiYzU0YzJhNWI5YzE2MzZjNTM1NmI4MmVmM2Y4NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMTMyYWNmMDc1YzljYjNjNDlmMjQ5ZDIzOWNlZTY2NTViZDY3NWQxZGJlYjcyNDgzMDc2MzdiMGU5N2EzM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0YzYxODVjYjVmZjIzMTRhNjQ2NjYzNjNjOGUwN2M1NDViOTc3N2I4YjE1NGRmNTcyNTdhNDljNDFlNTUzMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllM2IyMGI2NWVlNGUwYmQwMDZlZGJhZjU2ZGIyZjgyZGM0NmZkYjRlYmVjMjU4Mjg3MTk2MzA4MTU0YzU5MDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_46917603712d4b32ab34e987f124aaf4",
+      "statement": "The harness resolves fd from CARGO_BIN_EXE_fd, runs it in the fixture, disables global ignore unless overridden, and sets LS_COLORS without clearing all environment variables.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L300-L316",
+          "version": "repo-lines-v1:sha256:4b80b65304f9fc8c0f897fbbd090574d65fa23370e6f54d5b6c5560a3d676d61:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiOWUzYzQ2ODkyYzVjZjE5MzMyNTgzNmRlNjIyYzYyNDYwNjk4NTUxOGFlYWQ5NjQyZTQwODg4MTI5MGFmNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzN2U4ZTBhYzJkZGQ3Mzg5Y2IwMWM5NDJmYjlmOGRmNDliM2U2NGZiMmEwYjkzOGYwMTFkNDZjY2IzNjY5YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllMWE0YjkwNzYzODZhMWRkMGNhNzdkOGFjMzU0YmFmNjljNzk5NzI5NWMyZTg2NWZiNGUwZDg2ZDZlZjc2NTgifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L75-L79",
+          "version": "repo-lines-v1:sha256:5bcd015fbdf5b1025bef704f64dd4d34d1ba23ee7e9e2b743c3bf3f93e4161c7:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFjZmViYjNjODNjNWNkOGUwMzc3NGVjZDRlOTdmNmFjNGZkMzlkYjJlNGUzZTQ4NzRkMTg5MDU0NzgwNTc2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Y3ZDNlNTA3ZWJmNWFhY2JkZDJkNjRmN2I3NjZlNzBmNTY4YzU0MDU5MTAxMTA4NTMxZGM1ZTU1OTBkMjUyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDZiNTFjNTUyZDFkZjdkYTc2YTBiMTBjZjljNTY2MjYxYWFlOTY5Zjc2M2VkYzlmMTkxOTA1Mzk1MzY0ZWJiZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_22b7aa7701a04b53b915851a8be0c099",
+      "statement": "Standard output assertions sort normalized lines and optionally words, so they do not establish output order or byte preservation.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L114-L134",
+          "version": "repo-lines-v1:sha256:f4c06d340496055a22bd81ba3d2e72f3553fce5fcc60c2552dc42cf4496c1282:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2NzY4OWM5NzdmZjJhZmE0NTAzYmY1NzUyM2JhZmEzMzdmMzAzNzRjYmY2Mzg0MmQ5NGM5MzNkZWJmNWFiODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5NmY4Y2IwODNmYTgwMGE0ZGNkMjk2OTcyMmQ3YjkyNjg2YWRkOWViZTM2NTU0OTJmYTY3MmIxYTdjZWQyNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2Mzk2ZjllY2FjZWUyMTAzZDBlMTAwNTAxNDZmYzg4MGZmNDNmMTMxMTdkYzEyNjY3ODJkMzk1OWRkMzMwNGYifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L234-L275",
+          "version": "repo-lines-v1:sha256:7cac1ab18afde912adb863e6bb7869f53908456f98d5cb52b08a813ca42835a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwNmNiM2E1Y2I5MzQ5ZTgwMzJlYjIxYzJkNGEwMTk5NThiYjM0MDBiMTAzNTlkYWYyZTViNzVkNjg3YTUwZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2OTU0NTJiNjNhODY1MTU5ZDRkZDY1ZjljN2E0YzQ2MjFjMGIxNGVkZTA0M2Y3Y2Q2YzhjNTA2Y2Q5MWQxYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmMzI1MGFmZDllNjBjMWMzNjA4ZGQxYTFmOWJkMTQyNjE5YmE3NzBmYzI3ZDBhNWI1N2I3OTZmNDliYTU1NTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_55447396c3fe40a8aba1fba57d7d64da",
+      "statement": "Raw-output helpers and process::Output access support byte-level checks; error helpers use normalized stderr prefix matching with separate status assertions.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L216-L297",
+          "version": "repo-lines-v1:sha256:262aee493aca7fdb6614962abb761c9562483b56da9ad11e12ea62c24d8006cc:eyJzZWxlY3RlZExpbmVDb3VudCI6ODIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkN2MxNDhhYTQyOWFiYWYzYzE1NTQ0ZDQ2OWZjMGQwMGFiODU1MTIyOGRhODY5YmUxMGRlNDZiOTBhYTQzN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxZjlmYmZiMDE1NzhmY2IyN2MxM2ZlMjY3MmVlNzZmOWRmZjc1YzNiZjQ1MmJlMWY2MDJlNThjNTQzYjk3ZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3MGNlNWRmYWQ1ODY3NmYyNTA1MjFkODlkYzExMjZhOWJhNDE0MGFkM2EyY2NjM2M2YWMwOTUyNTE3ZmJiMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiMTA0ZDhjNWE4ODhjZDFhODlkZGMwOTAyZWQ0NjQyZjc1MDRjYzBmYTgwYWQ5MGFjYzBkNjQ2YTMxNTRlMjgifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L318-L343",
+          "version": "repo-lines-v1:sha256:9f4eba807493540b1578fd70379d65c41a708205354d43037eb3c1a6f5e80717:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkN2MxNDhhYTQyOWFiYWYzYzE1NTQ0ZDQ2OWZjMGQwMGFiODU1MTIyOGRhODY5YmUxMGRlNDZiOTBhYTQzN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5MGJjYjMzZDk0N2ZlZDkwMDI5OGQ2MTVjZDY4NTQ1MTE0OWIyNzliNGQ0ZDZhOTc1MjgxZmI1OWQ3MjQ0MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f335871ac9b42f2a129f3fb3b0758b3",
+      "statement": "The Linux invalid-UTF8 integration case uses normalized text assertions rather than a raw-byte equality check.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L234-L275",
+          "version": "repo-lines-v1:sha256:7cac1ab18afde912adb863e6bb7869f53908456f98d5cb52b08a813ca42835a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwNmNiM2E1Y2I5MzQ5ZTgwMzJlYjIxYzJkNGEwMTk5NThiYjM0MDBiMTAzNTlkYWYyZTViNzVkNjg3YTUwZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2OTU0NTJiNjNhODY1MTU5ZDRkZDY1ZjljN2E0YzQ2MjFjMGIxNGVkZTA0M2Y3Y2Q2YzhjNTA2Y2Q5MWQxYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmMzI1MGFmZDllNjBjMWMzNjA4ZGQxYTFmOWJkMTQyNjE5YmE3NzBmYzI3ZDBhNWI1N2I3OTZmNDliYTU1NTMifQ"
+        },
+        {
+          "resource": "repo://tests/tests.rs#L2266-L2289",
+          "version": "repo-lines-v1:sha256:58e14fa578b68f611397b1c7e0347467c1eb7294e2119d33be42b75f16ecf1e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmN2RmODY0YWNkZTEzMDEzNWYzN2RjZTdkNTQyOWY4NWM1NzE3MWU3ODA4MjUyNjY3YWQwMDkwNzllNWUyYWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1OTM3Njc5MWU2OTQ3NmY3YTA3MTg5NmRjMjViOTEzN2VmODQyM2UzZTk2MzQwY2NmYWMzMzIzZDQyY2E1MWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyMjA5ZjVmNzQ2OTY1ZTQ1YWZjOTA5YmE1MzFjODIyNjA2ZTJlZTJkZjZlNDJjMzM1NjZiNDJmZmY5MTJiMmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_35a3ae9c5bf54cbd8ac16807b9b05e49",
+      "statement": "Time filter unit tests replace current time with a thread-local clock and restore the clock override through a drop guard.",
+      "evidence": [
+        {
+          "resource": "repo://src/filter/time.rs#L12-L25",
+          "version": "repo-lines-v1:sha256:5dadb2d3b62376f09da6ad7721dd97255d0f85f1f2aaa962aa59e28748a72cd4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzM2QyNzY0N2Y3MzQ1N2RkODE2MTJiZWNiY2M2NWJmYmE3ZDk3MWY4NTk0MTFmODZiZGRjYzg5ZDFkNWIyZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1ZDBlYTViMGQ3MmQ5YTQzYzQ2MzA0OTBiZTYyNzAzN2UxNjUwNDA1OTM2NzFiYzE2N2Y2MDg0ZTZhYThkMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjZmFiMTQyYzEzYThiNjA1MTVkNjExNTUyZmRjN2RjMzIwMTk2MjdlZDQzNWZlYTk2NWVmMWUyNjQyMGQzZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlOTY2NTNiZTkxNmY0ZjQ4ZTg3MWY1NWRhOTVlZTI4ZWVlZDQ2ZDUwM2RiYThiM2JmYmJlMmJmMzYzM2ZhZjAifQ"
+        },
+        {
+          "resource": "repo://src/filter/time.rs#L70-L93",
+          "version": "repo-lines-v1:sha256:c5778557d9d2319fce34bdc3ffd9c2d680289d4c2034cadef37d6e379b4140ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4YjViYmQyNTA1ZmYwMzFiMDY5NTI5ZWIzMWU2NTcyYmM5NTc3MDgxMDA1YTNhMDY3NWIwNTgyNTBkYmQ3M2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1MDNjMzg4N2Q5MDFmY2ExMjk0Y2M2NTYzOTU3NzA2ZGY5N2QzYTgxOTRlODM1YWNjNDg5MGIyNTg4NGViODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2ZjliNWRhZDIxMTFlZDBhMjUwNWQ5MTVmN2Y5OTFlMWM3YzA1MTIxZTIwZDhlOTM5NTg3ZGZmZmQ4ODY1NjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d48431668454235b0b672c9586a48d2",
+      "statement": "Windows symlink fixtures need privileges, some execution tests skip Windows, and the Unix filesystem-boundary test can return early based on host filesystem conditions.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L49-L55",
+          "version": "repo-lines-v1:sha256:19971eaab0253413eed9d9912a8b76800c215d56fcc1a082a162044a5903ac9e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBhZmM5OGM0NmQ0MjNmYjZlY2UzZThkNWQzMzA0NzcyNWZkNWRmZGI0MGY4MGU1MjA0ZWI2NDlkODBlZGJhNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlhZTFlYzhjYzE2ZDEwM2I4ZWY0OWMzNTkzYzA5NWU4YjFhOTZlZDFlYmRiNmFjOGE1MWIzNzZhZDNjZDQ5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmI3MDlhZDI5MWRlYTJhOTM1MmQxZGE4NjRkNWRhMDhjYWIwMTU3ZDljYjYzYjk2ODBhN2JlN2QxYWJhMWQ3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM5ZWUwNGE4ZTEwZTQ2ZTRhZDc3MDMzNmY4YzM4ZTRiMTg0YTcxODE3YWVjY2I1NjE5YjgxYTI3ZGU0Y2Y0MiJ9"
+        },
+        {
+          "resource": "repo://tests/tests.rs#L1072-L1109",
+          "version": "repo-lines-v1:sha256:825e3e0c3855af71f1475e5cdd10b4f439d5805f13e9a754c4bd0c4ae44fdb0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyY2Q0ZGI0OGEzNTBlOGYwYjQ3OTQ0YzQ2ZTNmZmRiYmExMzJkMjI5MGE5MWQ3MDEyYjU2ZWI0NmM4YWI0ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2OWRkNTAxMDA2MjJhZGE2ODliNDBkZjYwNDA4NTIzYWE0OWFiZThjOGRlN2Y3Y2Y1Y2RhZDEyMWY3MTk1N2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyYjMzMmRjODYxODZlNmNlNmNjMWI1ZDE4ODAyOWE0YjFhZTI3ODgwMjQ4YzY4M2FmNmUwMDQ1N2RmNjlhMzIifQ"
+        },
+        {
+          "resource": "repo://tests/tests.rs#L2064-L2099",
+          "version": "repo-lines-v1:sha256:39e36e54b763af20d07705385c5eed398779c4cccacceb03385a80320646cfb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyY2Q0ZGI0OGEzNTBlOGYwYjQ3OTQ0YzQ2ZTNmZmRiYmExMzJkMjI5MGE5MWQ3MDEyYjU2ZWI0NmM4YWI0ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1OTM3Njc5MWU2OTQ3NmY3YTA3MTg5NmRjMjViOTEzN2VmODQyM2UzZTk2MzQwY2NmYWMzMzIzZDQyY2E1MWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3OGUxYjIxZGE3Y2NlNGI3MmMwM2JlZmZiM2YwNzE0MDllMWFjYjJhNzFhYTI2MjYyZmY4YjViZjE1YWExNDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_032242f90ecd40c293024c473bdade81",
+      "statement": "CI runs formatting, all-feature Clippy and MSRV checks, while ARM/aarch64 build jobs choose binary-only tests instead of the integration target.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L182-L198",
+          "version": "repo-lines-v1:sha256:0914b3a341771746b182b82cd395990dfeaaafb042d95ecd3d11579eae56b9a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzNjU0NzZjN2RlOGNhM2YzYTVkMTE5ZTZlNTg1NGU3ZjY0M2ZhMTkwMGZmZTI3ZmRkOWIyNTk0YzQzZmM3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTVlYWVlYTk0MWFlMTNjYjkzNmU2YjJkOGY0ZDhkMjM4YzY4NGE2MmY1MTRkZDRiOGFhODY0OGJiN2VhZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljODlkYzM4YjM3ZDNhOTFiMGU2NGUzZGVjOGRiZDQ4NmVmYmM3YmJmMGU0NDMzOTU4YzMwMTg2Mjg0MDY0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwMzg1NjA3ZDk0ZGQ0NWZlN2VmNDk1ZDk1YjM1MGRjYmU0MDIyOWYzYmU1NzhkM2Y4YmUyYTdkMWZlOWMxNmQifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L42-L84",
+          "version": "repo-lines-v1:sha256:95d13330fbc125043bb3fe2b24478623c2e9a184155021329a5991133599e5b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOGQ0NjZiNTViMGJlYzc5M2QwZjI4YWIxOGRkYjllMmFiMTg5ZjQwNWRkOGMxMzAxY2ViMmYzOGJmMDcwNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMzNhMTZiZTA5YTk5YzgyOTNkZTY5ZWRhY2I1Y2NjMzZkYTE2ZjNiMTI3YTkyM2RiNTk3NTQ3ZGEzY2I1ZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlMTg0N2E4OGUwZWJjYzczYzc5ODlmZDg5YzI4ZjBmZDg2OWNkYzQzNzQ1OTExODkwNGVjMTg2ODYwNTU5YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMDUyMTI5Y2M4YmZhOWE0Y2E0ZjI4ZjFkMjhlZTIzZjFiODZhYzBkYWY1NjBhMDgyZDcyNmNhZThlMzVlMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e1ac8349eb2e4e1daccbf2bbee8bc9e7",
+      "statement": "The contribution guide asks for discussion before a PR, compilation and tests before publishing, AI assistance disclosure and changelog entries for behavior changes.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L10-L39",
+          "version": "repo-lines-v1:sha256:9024217d41ec2339fc8f5603dceebe281a909788c3bd34d3ca2d533eacdc42a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZWY1ZDUxNDg0NmQxOTNlOTc3ODM4NjcwOGVjNDNlMmMwY2YwNjQzZDRmOGUyNDZiZmU2MzkxMmIwM2UxNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3NWUzNWU4OTFkMDc0MDlmYmU1ZGVmZDk0MWYzYzI5ODM3YmE0NzIxNTg5ODgyZDE5YWViOGYxYWI1OTNhNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkMDBhNDczYWJhMDM3ZTU5ZjhiMjY0Zjc0ZGJjNjZmODY3MGU2NDU1YzU0ZWQ1YjUwNDA4ZDhmNTZhNDExMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZGRhMWFjZjg0NmFiOWE5YTkyNzcxMjUxOTNlNzE1YjdmZmM5NTllOWM3ODAwODVmNWJhZTYzOGUxMDNkNzQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:26:52.841Z"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2092472995db65d3c59ae765f528e3a1faf0d8baf2ee6aeeb5300a88d00a1525",
+  "claims": [
+    {
+      "id": "claim_c27d5555624e45cf96314de39992646b",
+      "statement": "vitest.config.ts defines a main project, two JSX DOM projects that run the same DOM tests with different jsx importSource values (./src/jsx and ./src/jsx/dom), and per-runtime projects loaded from runtime-tests/*/vitest.config.ts.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L22-L73",
+          "version": "repo-lines-v1:sha256:cedaa03246dc0732247d3fc8a945cfaa7f16bedaf2903e4cc3640b63b36796da:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ODMxYTdlOGZlMmRhYTRiM2YxMGRlZWMyZmNjZTRhZjIwN2I0MjhjMjA2ZTg2Y2Y0MzFjODk4OTAyMWRjNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjNmM3YjAyNzVhMzE4NDhjODdmZmIyMmIzYTBmNWFmNGRmMjE0NjZjM2YwMjQzNzhiYTBhM2IyMjVlYzQ3ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22c948d3cff44a4b89ee5d4b4f619484",
+      "statement": "Coverage uses the v8 provider and excludes benchmarks, runtime-tests, build/build.ts, perf-measures and compile-time-only type files; Codecov targets 75% project and 80% informational patch coverage.",
+      "evidence": [
+        {
+          "resource": "repo://codecov.yml",
+          "version": "repo-file-v1:sha256:39c8544f849463464b2a8db09958c147107060cc6d555ba11a7c93d44b5c3dba"
+        },
+        {
+          "resource": "repo://vitest.config.ts#L3-L21",
+          "version": "repo-lines-v1:sha256:0167547f93c39bd21d129be2bb0e6fce61dd07f2f12c7fcac2248d006e562ca4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyY2VjYjE0NGE0NmY1ZGNmMTJhNjE2OWZjZWVkNzY5NWU4Mjk0YjA5MGRlNzZmMzY2MWNkZDAyNDkzMDAxNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3OTU2NDE2NTM3MzY2ZjUzYjM1MTFiOTk4Yjg0MGY0YzI4NGIxNGExNDA4ZTRjMWU2MTQ0NzcxNmM5OTA3MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjZDgzYTljZjc4YTVkYjA2Yjc5MjUwMGM1MjdlMjAxZjcxYTQ4NWM4Yzk5YzQ1Zjg0OTE4YWUyOGY2YTg0MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjMzhjYmUyMTJlOWRhODVkODhkN2NhY2U0ZGU0OWYyZTczMWZlYzUyNjM0NTc1YzU0MWZiYjU0YWRiNjc5ZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9bfadc72e444c6baba446947abc6d4e",
+      "statement": "The test script runs tsc against tsconfig.spec.json before vitest, so type errors, including those in type-level tests, fail the test run.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L11-L12",
+          "version": "repo-lines-v1:sha256:90b142c66f3a8aea0ee0547b2816e457d3100ec23a0eb4ffc2adfe82632eb59e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc3MTQwNGJhYzNhMThiNTRhOGQzZGJhYzhjMGI1MTExZjFlMmUyYjFmY2NhYTU4ZDIzMWQxNjc4ZmIyMmYxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY0ZDhjMDczNDI5ODkzMTAxNTc2ZDg4ZDk5MTI3ZTg5ZDY4OTFkM2IxN2U4OWRmMDJlYzlhZTcwNzA1ZDhiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzJkN2Q5N2RmNGJiMjU4ZmRkN2M1OWI4MTlhMGIzZjVmMTdmMjc3MmViMjJhZTM3NTRlNjlhZTA3YTBjNmZkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2E2NzVmMGY2OGNlMDYzZDNkMzZkMzdmYzI2MmI3YjVkNWEwZmZmMGY5M2RmMWQzNGIxNTJhNmFmMTMyOWZlYSJ9"
+        },
+        {
+          "resource": "repo://tsconfig.spec.json",
+          "version": "repo-file-v1:sha256:fb97bc443e930077ff966e316fd02fe05bbadaa0e03e575516757f15d244f7d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_da22f326ae32405ab0c95ed24d788e8e",
+      "statement": "All router implementations share a conformance suite (runTest in src/router/common.case.test.ts) that each router's test file invokes with a newRouter factory and optional skip list with reasons.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/common.case.test.ts#L14-L40",
+          "version": "repo-lines-v1:sha256:c5b5dd5c0e102bd0c8fc029950352253a573cc660a11c9ba2b935265144369ce:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3ZDg0OGZmMGNjNGIyMmY3ZDI5YTk0OGNkZmJlYWQzZDA2YWEyMjVmMTBmNzliYTJiOTkxOWY0NTZkOGIwNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2Y2NkYTBmODU5ODhhNzFmNDAxZGQzZjBjY2E0MmRjYzc3NmViY2Q2Mjg0MTI0YTFhNGE2MmVlMTZhZGE1ZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjMDIyNzg4ZTE3MzAxNzdhYTc1ODMyNzBhNDkxOTBlNjE0NjZiOGNlMmI0NWQ3MDEwMmY1OWQ2NTk4YzMxNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmYjRkODNjMjRhYjBkNzlkMzU3OWQ4YjEwNGY5ZDNiZDQyMGFiZjYwY2NiZjI2OGQzMDNjZjgwMDNmMDYzMjcifQ"
+        },
+        {
+          "resource": "repo://src/router/trie-router/router.test.ts#L1-L8",
+          "version": "repo-lines-v1:sha256:3044a064381a692c3ea6d339910bd0e5eb6cf3394ed77155dc2f0373e9f71645:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzUxMjQ4NWFiN2VkMjEwODYxZDkyZjQzNDFkYTBjNzAyNzU2NjYwYzRiMWI3ZTNhZTkxNjI5ZGQxZTE2MzRmMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODU4MGI3NjUxOGRhZTk3OWZhZWJkMDIzNjdhMjkyOTJhNTBkOTc2MDkyMjUxYTM4YTZjZTMwODgwYmE0MjgyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6456e54f12ee4f1ea9f0dada0a2681e9",
+      "statement": "Runtime tests run apps from src inside real environments: workerd via wrangler unstable_dev, Fastly via vite-plugin-fastly-js-compute, and Bun and Deno via their own test runners.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L12-L22",
+          "version": "repo-lines-v1:sha256:16a3e95b879b93f39d7cf1f5cfc2d0d20d3c874bb32242c4c93a40aa87ee37f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NGQ4YzA3MzQyOTg5MzEwMTU3NmQ4OGQ5OTEyN2U4OWQ2ODkxZDNiMTdlODlkZjAyZWM5YWU3MDcwNWQ4YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiZjNlN2MwYmVkZTI3ZjNjYTJhOWE1ODMxOGQ0OGUxNTM4OTQ4MWY1ZjE3YmY3NGE0NDg5YzZiOTFkZDFlZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlOWY5NDk1NTYxMjBiMTliYzFiYmIyODA1YWRhYzg4ODk5ZDcxMGMxNWYzNmE3MzdjZjgxNTdjZDMwMmViNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlMGNmMDE1OWUxNWI0NmMwZjhhYzFlMWQxMWI2MzYzNzdhMzQ2YmRiZGRiOWUzYzlmYzQ5OTgyZTRlMDNhMjIifQ"
+        },
+        {
+          "resource": "repo://runtime-tests/fastly/vitest.config.ts",
+          "version": "repo-file-v1:sha256:0dde78adec8e603c4b51c2c00dfef373159926a97ceeaf18f29bdc34de0f5ae1"
+        },
+        {
+          "resource": "repo://runtime-tests/workerd/index.test.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:88b9398aad894ff636090a9b1f6d7989e7f9a9dfeb46c734f0b1082a40488c35:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1MjA3MWJkY2M2ZDQ0OTYwNWJhOGZlYmVhOGVhYmM5NDBlMTZhOTNiYmRlYTJlNjg1MjNmOWQ5ZjU2ZTQ4MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzUyNTg5YzM0ZDNjNjA2ODU5MzFiNmVjYzRkNTA5OTFhN2M1NmM4ZmJhMjg5NDExNDY1NzY5MDI3MmNhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3NjkzNDZiMWJkNjU4ODVlMjBjOTU5MjA1MTIwM2VlMDZiYzE1ODJkNDA4NGJhNmQwNWUxNjdjZmQyNDQzM2IifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:46.600Z"
+  }
+}

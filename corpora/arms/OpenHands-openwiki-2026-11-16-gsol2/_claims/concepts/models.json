@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f562aeb33b45cbc9ebf506259db869d3810938a9fe041246a6b3e8e5cff5061b",
+  "claims": [
+    {
+      "id": "claim_5fb03240a12f45ca877d2c700ff545d9",
+      "statement": "LLMRegistry owns per-service LLM instances, rejects conflicting configs through get_llm, but its agent-config helper currently reuses an existing service even when configuration differs.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm_registry.py#L23-L112",
+          "version": "repo-lines-v1:sha256:3c9aacf49509823701e132bc164d0e60a1609d4d0e2f1c9a2a52d34cd160dcad:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNmZkYzBiZjJjMjgzZjU1MjhmMWM0Y2JjZDA1MDcyNTFlZjFmYzU5YzQyMDU5OWU1Zjc0YzFlMjAxMmYyNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZGUyNTg3MTk2MTQ5MjYwNzFjOGZiMTlmZDg2NjE1MDU1NWYxYjAxMzU0ZjhjZDE2MDNhMTA5YTdkZGFlNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzMDQ0MzQ5MmQxZTUyY2ZjZjdiMDNlYzczYTk2OTE4Mjk2NmRhYjY4MTc2ZTY2MDkxYTNiYTQ3NDRiYTZjOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_42dfdbd7dcd542f9820641f3cd05edb2",
+      "statement": "The completion wrapper normalizes messages, emulates non-native function calling, performs non-streaming provider calls, checks choices, and records latency and optional completion logs.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm.py#L215-L407",
+          "version": "repo-lines-v1:sha256:6fb54d4eacc2f226b2734322581278522d4f9cffe923f353fe9ff48f70f67802:eyJzZWxlY3RlZExpbmVDb3VudCI6MTkzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1MDVhMmI5YzU1N2ViYTBhOGYxNDMxZTI3NjkzM2UwOTgyOTc5NDZiZWMyNDlkNWVkZjRmY2YwZGJhNWE5YjJkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzY2JjODYxMTA4MzliZTUwMGI1ZjdhMTdhZTc2OWJlYTc2NDE5YTVkN2I1MGM1YjE2Y2RkMTVjZThmYjFmYzM2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkZDYwZWRmZGUwZTkyZDVhYjUwMDg4ZmE4ODA4ODIyMDU1ZjAxYzQ0MzE2MjE3ZDIxZTA0ZDQ1NWIwMGM4ZDkzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlYzc5MThjN2Y0ZWFiN2FmYTljOTg0NjcyNzRjZmFkMTFiOGY2OTFlMzYxMTg5MGM2ODI4ODgwMmM3ZDEyOWEwIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_51d578b28f9c40b19a1d153ccd964037",
+      "statement": "RetryMixin applies configured exception-based exponential retries and changes zero-temperature no-response retries to temperature 1.0.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/retry_mixin.py#L18-L67",
+          "version": "repo-lines-v1:sha256:59f3cc4a3eb5e2cce401f1392a60212f3016bf1334d00e51a829a6a966afb9dd:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZjIzODBkZGE3Mjc0MWQ0NWEzZjIxMjdmNWNiZTRiYjYzNDFlOTc1ZjhlMjRmMjVmMDU1MDBkZDEzMmM3N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkMzRhOWRmNzc5Yjk1NjZiMDRhZDJiOWU2Y2RkZTNiMWQ1ZTZjMWE4YzhiOTdhYjdjMjhhN2IxM2EzM2JkNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlOTcxZDU5MzUxODlkZDcwNGZkYTE3OTVlMDc0M2NhOWNkZDk4NjVjNjk3OGZjYWE5MWI1OTA2Mzc3OGUzZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYWI3MjA5ZTkxZWRjNDg0MjgyZDEyYTY4OTA3NTkyMDUwZjNlZjUzNjliMGNmYjYzYmMwZTA3MGJlZDM2YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb28cdaf6e9640008edce7a32b203968",
+      "statement": "LLM post-processing records available token/cache usage and tolerates failures in cost computation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm.py#L583-L666",
+          "version": "repo-lines-v1:sha256:75fd420ce86abc459f8165fff86751e92f9ee40f2bc3fc3592dd803fc9ad46e8:eyJzZWxlY3RlZExpbmVDb3VudCI6ODQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmMTc5NzgzODZmNmFiN2EzYTY5OWU0NjI3M2M3YTUyNzEwOTc3ODhhOGFiOGE5NzViZjFmYWEyMjA0NTQzYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmYzRmY2E3OWQzNDlmNTYwZWNjOTUyM2NhMmVmNTc5YTk2ODdmOTIzMWM3OTFjNGFhNDY4NmRhODc3ZmMzNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyZjNhNjkyZGQ5ZTkyN2FiZjA0YWFmODA3YzkyOTY5ZjEzYmU2YWU5MmQ2YmYzNDk3OTJiZjk3MmQzNTE0MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5YzU5OGI2ZGE5Njg4MjcwOGJlNDEzMzQ5ZTFjZWFkNGQ4ODM1ZTI1NGMwMTU5YzE2OWMwYWNhYzA2Yjg1ODUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:55:05.802Z"
+  }
+}

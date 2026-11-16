@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:492a5a7ee5350e6b43bbc217522e0ddcfd72209969defe13f2683bebdc0e79fd",
+  "claims": [
+    {
+      "id": "claim_da3a680aa6d34ee3ad59ddeb769a830c",
+      "statement": "HonoRequest.param resolves parameters from the match result entry at routeIndex, dereferencing indices into the param stash when the result includes one (RegExpRouter format) or using values directly otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L102-L128",
+          "version": "repo-lines-v1:sha256:052adf03f34255d6d3ff440611004b397b4df68ba47d515beaef4389c85d2678:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYzg0YTJkMmY4ZTY5ZGRkY2MwMDM1NjI4NjEyOTVmNWUxMTUwNDg3NjNkNTk1ZDMxMDFkOTlmMjJlNGY5ZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiZGNmNTk1YTVjNTViYzlmMzQyNWU0NmNkMzEyNTU4MGEwMTc1ODU2ZGQ3ODY4N2ZlNDNlNWU4ZThmMDFkNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0NmE4ODYzNzc5ZmY0NGRhY2M0Y2ZmMjE0MTE4ZmU5N2JlZDU0ZDUyYTQ5ODI3ZGU2N2NlM2Q0Y2VhZGVmOGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5d850fcaabdc4f76925f5a11671b8ac1",
+      "statement": "Route parameter values are URI-decoded only when they contain a percent sign, with decoding failures falling back to the raw value.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L106-L124",
+          "version": "repo-lines-v1:sha256:af5a11a92f139b81710125dcc94169fd6ed45b86b124fab5d47b4d01312f54c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2M2U4ZTBkNGI0ZjJjZGQ2YzNkMDY2ZTUyNTllYjgxYTQ2MjRkZTUxYzA3MzhlMTc5NTI1NmEwNWZlY2VlMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhYzRkNzM5OGMzNWIxOTg0OGE1ZjUzOGE0ODM3M2RlZDFmYWRmMmMwMThhYjhmODVlZGY2NjM1YjkwYWExZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlYmU3YjA5Njk2MDgzZWFiNDU1MjRiMGE2Y2UwYzZmYzYyNGY3MDlmZGM1NzRlOGIwZjk4NDVkMzAzOTFmY2IifQ"
+        },
+        {
+          "resource": "repo://src/request.ts#L34-L34",
+          "version": "repo-lines-v1:sha256:070e963d70557ad00409a846bdfe9214d4df38c3b6cb53cdfdc58faec8a5d960:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwZTk2M2Q3MDU1N2FkMDA0MDlhODQ2YmRmZTkyMTRkNGRmMzhjM2I2Y2I1M2NkZmRjNThmYWVjOGE1ZDk2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwZTk2M2Q3MDU1N2FkMDA0MDlhODQ2YmRmZTkyMTRkNGRmMzhjM2I2Y2I1M2NkZmRjNThmYWVjOGE1ZDk2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTlhMzFkNDFmZTAyZTIzODA5NmRkMWFkMTA2MDhjMzZmM2FjOGY5MTU1NTU2YWU1OWMxYWYzNGI1MTVlNDc3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRlYzRkYmI4ZTIxMzBjMTBmYWQ3NjQyNzE5ODNjMGFlODkxMTIwMjc5NjY1NDc3YmU4MzBhMDdmNTIyYTA3ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5189312e1831404d904bfd2fe9fef210",
+      "statement": "query() returns the first value for a repeated key while queries() returns all values; names and values are decoded (with '+' as space) only when the URL contains '%' or '+'.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/url.ts#L209-L217",
+          "version": "repo-lines-v1:sha256:89c7e6f6d3228d5d42171d9f0ecfa0099f438f460e7ebed35792f1bb6c025a5f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRmNDNlOWIwNTE1NDIwOGMxNThkZjU4ODI3NzgwMjcxNDY2Mzg5YzQxNmM4NDJhZTAwNDQ3YTg4YzA4NGM1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzZlN2EyZDI1MjZlYzVkMWNiNTI0MzY4ZjQzZGU4ZDJkZDA0NzliY2MzOWJkZWVhOGRjZWIyNDdhMWNmMmJjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I5Njc3NDI3NGE3MDNjNmJjYzA3NGMzOGU4YTQ5MDFlYWY2NWJlMDJkYjEwZDRmYjJkOWU5ODY3NDFiNjAwZCJ9"
+        },
+        {
+          "resource": "repo://src/utils/url.ts#L219-L299",
+          "version": "repo-lines-v1:sha256:8e6ec0e6e3edc7c8bacca38ba9e6e69136b1c39bccc80d6a31cae8c0d273fc09:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3MWU2OGEwNWQ4NzIyMzJlOWM0MTk2YTExMmZmYTFmZmJhNWEzNWRlZjRkN2UwMDU1MGZlNTU4ZjUyYzhmM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNWY2NmRiYmI2MGEyODQ0ZWRkZmQ4YTViY2M2M2ZiZmQ0YmQwMGY4ZDdlNGExYzcwN2E4N2I5ZjBiZTBmOTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNDk3ZDdkOTZlNTk2NzU4NGU3ZjEwOGIyM2I2OWU4OTAzNzJhOTRhZjU3YWQ1OTU1NGE2NWUyNzBkYzdkYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzMDZjZWMyZmViMjczN2ExNGEzYjUyZTFhNDdiMmZmZWRiMDYxMTMzYzU2MWNmODNkNjExNWJhOGVmOTQyMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3246b173b8c9469196bd7f6f72e7d293",
+      "statement": "Body readers cache the body promise per kind in bodyCache, and a request for a different kind re-materializes the body from the first cached form via new Response(body); json() is implemented on top of the cached text.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L220-L255",
+          "version": "repo-lines-v1:sha256:25766eb1f182a7ab2b06f6a84a1ba09f0c61317673cb63673fb39e7d423e5add:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkZjZmNDFjYzNkNTU2ZTJlZGI2NDRlNzU0OWQ2ODBkOGNlZTYxN2JhMjhjYWM1YTYxOTMyNzE1ODNjMGUyMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3NWE3MjI1YjhmNDkwN2QwZTQ2YjcxOWVjZDJiNzZjOTY2NTUwYjE3NDA4NDNkY2ZjOWUzNzU4NDY1MDZiMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzNzI0NTA0MGY5YmM0NmU3Yzk2NTg3ODYwODc2OTVkZGE0MThiNzE1Yjk0NDNkYTY2ODU3ZTY1YzVlOWIzMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a63de62dbb74544bd039ede1cd98d30",
+      "statement": "cloneRawRequest returns raw.clone() when the body is unused, rebuilds a Request from the cached body otherwise, and throws HTTPException 500 when the body was consumed without being cached.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L476-L505",
+          "version": "repo-lines-v1:sha256:df8f3b72e487762660eaefaf177de6ac18a6cd81c71d69ec29fdd05270a1e170:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MDFkOTFhNTFmYjc2NDgzY2FiZTdkNDJmNTM3YjEwYzM0NWE4YmYyNzRhZmRlNjJjODRiNzFmNGViODFiMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3NzhkMWIwMTk3ZmE5MzQyNDFiODY0MTljNzA5MDg3NmU0MTEyNjMxMTZjNTgzMGUyNzFiNWY2YmQ1YmM3ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9b5be0d0fa34eb9b90cdfccf625a578",
+      "statement": "parseBody only parses multipart/form-data and application/x-www-form-urlencoded bodies, returning {} for other content types, and caches the parsed FormData promise in bodyCache.formData.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/body.ts#L97-L141",
+          "version": "repo-lines-v1:sha256:b8a86e54000f21f0782d800c4ddb3723b8983445794422f3c86890f7d8c176ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiMTY1OWZkNWJjNGVmNWFjOGJkYTJiYmQ5NTJjMjUwZjgxOTBkYjg1N2ExOTRlYjUzMjAzYzEyODZkMmUxNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzZDQxYmFlZTMxZmZmMjUyMzZjYWM0MDc1Nzk0ZjFiYTk3ZjdjMTQ1N2M5YmUxMzEzYTNjNzliMGU4MjU2ZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlMjYwYzhlNTcyMjVkNTgxN2VjOGRkZjNmMjlmMjEzOWFiZGRlZTgwMTM4MTlkZGYxM2YzNjc4OWMxYjU3ZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0617b9c37fea45428064efa8faa3b086",
+      "statement": "parseBody collects keys ending in '[]' as arrays even without the all option, and with dot enabled expands dotted keys into null-prototype nested objects while ignoring keys with a __proto__ segment.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/body.ts#L151-L242",
+          "version": "repo-lines-v1:sha256:f4b8c634e240b893f2dfe7b70c7b0fb04efcee62cb85ae41eb69844ab6dc0767:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5ZmI5NGFiYmQ5OWVjYjQ3N2JhZGFiYzQzNDZkMjZjNGYxZTRhOTQ0MTg0N2JkYjU5YmMzN2YyNjdiY2NlMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyNjdkMWNlZTBmM2ViNTRlOWRiZGMyZDJjYWY2ODRlNjJhMTcwZTU2M2EwZmE3ZThjOTFhOWQ1YWNiOGJkOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3aca45ebc529439aa22398aad5f1f566",
+      "statement": "Validated data is stored per validation target via addValidatedData and retrieved with valid(target).",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L339-L354",
+          "version": "repo-lines-v1:sha256:830fc341af7ccc9cff44802fdde38682afd75c2b2733c2161e775a4711dcf847:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NGQzODBjMzYyZmI3ZDg4YjEyZjEwNDE5ODM4NzM4ZmZkMzhjOWNmOGY5MDI3YTUwYjkwMzYwM2ZjZGMzYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjNGViYmRjZTc4ZDBkNmMwZTQ5M2Q4Mjc3NGQ1ZDJmYmU0OWM3NjM3MmQyMDI0YmQyZGYyYzY0Mjg2MTMwNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZmJkNDYxZjI5NDQ3Y2M3MDhhOGZlMjE4NTU4NmFjYzg1ZTJmMjYyMjgyZWIyNjQ0MDIyZmZmMzgxMjhlYWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_158c5e0adfad4a6a9ca2e09b5d75ab3d",
+      "statement": "matchedRoutes and routePath are derived from the router match result and routeIndex; hono/route helpers access the match result through the GET_MATCH_RESULT symbol getter.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/route/index.ts#L30-L35",
+          "version": "repo-lines-v1:sha256:3ff44598d64c9e0f65496395c8a5131a99db72bd67bcdf38885c48bc3b906c85:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODU5ZTI0N2UyOGYyYTg1MzhjMDg5NjQwNzU2NTE0NjQ1NjA0MjZlOGMzZjAwNDY4ZTFjODY2MjMwZWIzN2FlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTc2MGQ3MzhmNjI4NDg2NjZkNDEwZTJlNWM5YzU3YjAzYWVmNTEyMGFiY2VlNmNjNjUyYzk1YmJlOTJkOTk0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzk1N2U4NWY3ZDdlZjIxZjkxYTBkMGJjNjU1OTk3MWQzNTA2MWU4MmMxNTdhNjhiMmFjNDAxNDY1NTk1YjFhNiJ9"
+        },
+        {
+          "resource": "repo://src/request.ts#L389-L442",
+          "version": "repo-lines-v1:sha256:e9ececac19c72c0e23f75f5ae0c4a64c5fbf521897dc341422c69bcc732b5d02:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzZTJiYjYyYWUxZTNmZTc4YjhlMzZiYmFlYTIyODk0YzQ5MmE3YmJlZmVhYmY5MWQ2OGZhM2UxNzAzNDczMzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwNDAyOGQyODE3OTU4YTRkM2NkOWMwOGRlMjE2YTQ1OWM1NjQ0OTQ4YmFkNDEwNzA3NzQxNjFjMTNkNWZkOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T17:08:50.203Z"
+  }
+}

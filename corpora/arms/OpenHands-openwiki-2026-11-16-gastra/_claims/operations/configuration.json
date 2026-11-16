@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5d326105e23a5f3a5c362549aac3b5a3dd54cd9a19627ba9ad26c2457304a4c4",
+  "claims": [
+    {
+      "id": "claim_4c497d57ef044770b4d32289156f266b",
+      "statement": "Base configuration loads defaults, then TOML, then environment variables, then finalizes settings and registers custom agents.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L819-L836",
+          "version": "repo-lines-v1:sha256:2dab5543eae655d97e8f38feeabdcfc50bc9c502cc89fa17391fc66d8a41d5e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZGFlNTAxZjlkNTlmNmQ5ZjA2YjI5MmQxZjc3NmIzMTNiNzg0NDg4ZGQ0YTZhNjVmODM3YzU0ZGE3YjQ1MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YjI0ZWViZWIyMTkxYWY1ZjFhYzNhYjNkNDJkNzJlMzA3NGE5MGZjMGI3NzI0ZDk1ZThlMmUwYTU0MTJmN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3MDJhNDI2ZWZkOWFiZGEyM2EwZGZkYzUyNzliZGI5ODFlMDI5NTEyNDY5Y2FkYzkxNTBiYjAyZTZlNzRiODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_055e0e6d3fe34dc68aaf5eec6dbd2507",
+      "statement": "Environment loading maps typed uppercase prefixed fields, skips empty values and casts booleans and JSON dictionary/list values.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L40-L137",
+          "version": "repo-lines-v1:sha256:f90220e54279746dd3cf4069435bc06039820fb782072ede5c8b8413a13959f8:eyJzZWxlY3RlZExpbmVDb3VudCI6OTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZTlhYTE2Mjk4NmQ2ZjViYTkyNDkyNWE2N2E4OTNhMzYyNDgxOTZhZTdjODZmM2Q0OWZhMzdmZmY5YmQ3OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2MmM1ZGRiM2E0MWY0NjRmZjM2MTE4NmNhYWZmMTY0ZmY0N2IyMThiNGMwYTBkMjEzOGNhNTJlNGM0NWE1MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0ZWFmZGU2MDczMWJkMTFkNzEzY2NjMDUxZTBjODZkYWI0NzM3YTMzNDczNzkwNGM3NjdkN2Q4MzUyNDRiMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c168fa7d201249b3b7025dee4961cfd3",
+      "statement": "CLI setup applies named LLM overrides after base config and can look up missing named configurations in the user config file.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L839-L888",
+          "version": "repo-lines-v1:sha256:eb51b8649900c3e28352014d6d3e2c0606b444bb9a3949e77fc6fd708e48da66:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZGNlZWJkOWM3NTU4NzAwZGExYjc5NTM3MGQ5ODNkMzAwYTJjMzRiY2E1MGM3ZWVkMjk0MTkyNjljZjkzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkNTM4Njg5MGIxZDc3YWMzNjI5Zjc4NWY0YTgwNDY1NjA4ODgyYzY3M2E2NTVkZjZiNDQzYThmYjliODI4YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhOWQ1MGU5NmRmY2VjNDU1OGQxODVjODEwNjgxOTRhYTE1YmU4ZWYyMmU1MjcxZWE0YmE5NTY5ZDBkMjcwNDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d36834721b34977bb5c2460b22e2868",
+      "statement": "OpenHandsConfig defaults to Docker and a local file store at ~/.openhands.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/openhands_config.py#L67-L76",
+          "version": "repo-lines-v1:sha256:33b8ff4b0b9975c76e9c11e36b9d10ab8da0dd007028edd849dde28f9f22dea8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzZTFiZmI2ZGYxZmM3YjFlOTgyMDhhODUxNWI3NGE5OGMwZTNhZjNjNWMxNGMxYmViY2FmZGY4ZWViNDdiZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MDU1NzkwMDI2M2FkYmFhM2ZkMmUyMDMwODM5YzA4MzRhZTZiMmYzYmYwOGI2ZGM4NGRhZDdlMTE4NDZmMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwY2NjMzIzNGZjOWZiZTk4OTc3NzJkOGE3MmZlODM3ZDlkOTFhYzU1YWJiNDFjNmE4ZTUxOTY0OGE0YzI1M2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwNDI1N2NjNjdkYzVhNDZkNjM0N2E5MzFlNGE4M2I3ZWY4YjVjZDRlMzQyMzFkOGZmZTdlNmRhZGM4ZDg4YWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_644270455b8a4256978852ff53d9de36",
+      "statement": "Config finalization handles explicit sandbox volumes and legacy workspace mounts and disables Jupyter and browsing for CLI runtime agents.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L377-L470",
+          "version": "repo-lines-v1:sha256:82273d70366564a9feaf19d3c9f9b5921a0ba2c6ccdca3ea147ce90675ab168d:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYjY0ZWFkZWZkNGFmYTQwZjM1NTY2MjMyMmQ4OGExODljNGE5YWZjNTRmYzM3ODFiYzE5YTZjYzU5Mjg1ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiZmNjMzhmYjM1MjIwODc2ZGU4MzJjODZhMTVlNTE1NzQ1YjFhMmUyYjhkYzQ1NWU2YjUzNGYyZjc5NWVkMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYmYxY2VjMTAzMjUxNWE3M2E1MWNjYThjYmNjNDgwMTYxMDgwYTM4YWFmNWMxYzAzYTZkZGE0NmYxOTRhZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31e6d21f963a4c1880ee2f66c02efeb5",
+      "statement": "Compose builds the application, exposes port 3000, and mounts Docker socket, persistent OpenHands data and workspace paths.",
+      "evidence": [
+        {
+          "resource": "repo://docker-compose.yml",
+          "version": "repo-file-v1:sha256:09ddcf301d5d1bee7ca966696b9174266f4ffdbc7754fde192d50408a04bb340"
+        }
+      ]
+    },
+    {
+      "id": "claim_a44f3c253727425bbdfbdecfd82d52e6",
+      "statement": "SecurityConfig defaults to confirmation_mode false and no analyzer.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/security_config.py#L4-L16",
+          "version": "repo-lines-v1:sha256:a4a7585f0c910c37eb1c437d88742a397857804bbea3a7c37b39fc6bd2dbaac9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiMjA4ZWU3YjE5MzkzMGNkYjllNjdmMDEwYWNhNGY4YjE3NmNiNDY1Mzg2MzE5OWM3Y2MzNmFmYTZhNjdiM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NTMxZjNmM2EwMGVkNjcxNWMyYTI1MjhjODdjMDI2OWUyZmQ5NjllOWFjZGQyZjhiZGU3NDdlNDdjYzU2YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyMDVjNTllNDYxMDA4NGU1NGYxMGJjYTM1YjNlOWRjMzgyZWEzNWVlZmMyNTBmMzczZTI2ZjY2ZDJiOWE5OWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_785590e9375842e5b93f0be0ee6c2cb7",
+      "statement": "The source Makefile starts the backend with openhands.server.listen:app and provides separate frontend and combined run paths.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L249-L283",
+          "version": "repo-lines-v1:sha256:0623809dc02431d35bd34182004ebeb70fd4be1da5ac58cc7f0df91214876fae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiNTBhMDJjYjU0MDkxZjhhMmE5NmFmNDA4MmM2YjBhYzYxYTg5YmY1YWEzM2I1MTU0N2FjMDQ0YWY3NjAxZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYzMwZWQ5NWM3NzBiODI5ZWExNDkyMWI0ZmM1NTlhOTNkYTk0OTI2YmM5OTQyZDg2NTg2OGUxZDQ3OTA0NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1MGEwMTcwZWNmY2NmN2YwYjlmNWRmOGEwOTg0ODY0M2U0MTM1NmUwMjQxYTcwMDczMzMyZTExYWEwYWMwMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3ODUwYTdkMGM2MDkwYjFkZDg2MzgyYmIwZjAwMmZhNTk2OWNlOWQ4MTdmYWVlZjNmYjEyZTUxZDcyNGU0YzgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

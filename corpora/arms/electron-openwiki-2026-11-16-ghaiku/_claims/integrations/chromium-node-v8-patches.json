@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c994a17b7717d0a90df1aa91c1a806530585df6613c4fce69d8d63d9200e6d6f",
+  "claims": [
+    {
+      "id": "claim_adefe40ab3364a03b2ac1ebd28fb1c18",
+      "statement": "DEPS pins the upstream Chromium and Node.js revisions in its vars block, using chromium_version and node_version.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L1-L12",
+          "version": "repo-lines-v1:sha256:e401e4f013fedb05a9ddea3fc4dda0c93fbf800d34799f4badaac39e53a6ba54:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzOTc2YmZiYjVkMzZmMzk3ZGI1YWUwZjM3MmM3OWVkNmIwMDE4ZWRiMDg1YmYwNWY2NTBkMzQ2MDRhMzQyY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YjVjYTVlMjFhYzNjZDAzY2QwNmViOGJhZTFmZWU2YzA3YzMzN2IyZGUyODU0NTFjZGQyN2Q2NzkxODU0MjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmYjllYTY3ZGZmMDc2ZWYzN2E5ZTYwZGNlYzFmN2YyYWRmOGQ0Y2EwM2RmMTM2YWFmM2QyZmQyZDE4MDUzYzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_50365196581b4cefbcdfef2fd13f0a4d",
+      "statement": "DEPS maps the src checkout to Chromium and src/third_party/electron_node to Node.js, using the pinned versions.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L78-L88",
+          "version": "repo-lines-v1:sha256:624ed035d6ab0bc1ce90e4cda26a9983cf5c8be551f9c813ce7f2e286993cb95:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZjUwMjUwNjc4NDU4ZmNkNTBhNWJkMTgwMzgzNmM0ZDY2YTM3NGMxYjY3MTdkY2MzMDQxZTg1NjI4YmNjM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1OGY4ODNiOWFiMDE4OTUwMjBiMjIxMDE4Y2I4NmY2NzI4OGM3ZTk3MGExZGQ5ODliZjIzNjliN2RjNTZhYTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3Y2FlMjBmNTNlMDkzYzNmZGNkMzZhMTBjNjBkYWQyNTBlZTRlMjk5YmYwYTA3MGQ0YjMzNzlmZWI1MTBkY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1ZGZlOWU2OGZmMGU4MTg4YzgzNjkwYTVhOTAwODZkZTVhNzNiNDAyMWUxZDg0OWE2ZGQxOWM2NzgyYmExNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f88cc5748b3436ab1a0a0e8c1a46716",
+      "statement": "patches/config.json maps each patch directory to the upstream checkout it applies to, for example patches/chromium to src and patches/v8 to src/v8.",
+      "evidence": [
+        {
+          "resource": "repo://patches/config.json#L1-L16",
+          "version": "repo-lines-v1:sha256:30511b8e410073d05c6ef91b9bd47d5fecafaf2eacab203c1c3a09046a195f33:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZDJiMTkzNDkzMTY5MTY2OWNjMzVhODc2MTk1MTgwMTUzMzYyMTNkZGEwYTYwZmUxYjA5ZjliOGUzZTk5M2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6512c0331e9643069eba37ba162c56bb",
+      "statement": "DEPS runs script/apply_all_patches.py against patches/config.json as a sync hook when patching is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L126-L141",
+          "version": "repo-lines-v1:sha256:6dcb15b5f7450e717884e1260c4ba99ab71c331274c403e3a24baa6bf3f11611:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzYmIyYWY1MDU0Mzc4ODZlYjYxY2M4ODQ1MGQ4OTc3MTJiOGIyMjRjNmI3NmQ5NTM3NDFjNmQ3NjU4YTE2ZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwYjk2YjM4MzZmMTE2MTlhNGRlMDUzMjdkOTcyNDRmZTU2NjI2ZTllNmJlM2MxM2ZmOTYzMTgyNDI1ODg1YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyNGM4ODgzYTgwMDUwNTcyZDVhZGNhMjdiZTc0MGQxNGJhY2RmY2Y4ODE4M2U5NWRhZjBiODU0NDc3YWM1MDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9ef4797ff6184e94aca3cd12821e4aea",
+      "statement": "apply_all_patches.py imports each target's patch set into its repository as commits, and switches to three-way merge when ELECTRON_USE_THREE_WAY_MERGE_FOR_PATCHES is set.",
+      "evidence": [
+        {
+          "resource": "repo://script/apply_all_patches.py#L9-L27",
+          "version": "repo-lines-v1:sha256:bae2b3372cb436a197e03f5c4bbd86301f7b55fe12f8ac190121efbb71890aa1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MzY4MjdjZWI1ODY5ZTQzOTJiODlhNGM0ODM2MGE4NGQyMzMwNmYzNDEzMTRhYTlhNjIxNWM1YmVkMWJjNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmMzE3OGVmN2QzMDU0ZGI2NDcxYTI2ZTFjMjZiMGJmNjM0NGQ4NTQ4NjM1ZTY3MDJmOWNlYTQ0ZjBlOTkxY2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjNDI5NDczZjJmNjA0NjY5MmQxMjhhYzhiOTQwNmMzNmEwN2I2MDM0NWEwYWZjYmI5MmMzYThlYzUxODRjYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5YWVjMTEyMDcwMWFhYzkwM2M3MjMzY2QxOTllMzM2MWE3NTNiMjYwZTVkMWRmOGFkNTQ1YjE4MTQwNTM5OWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f815096970e4c2db98aa0a66e5bfab9",
+      "statement": "apply_all_patches.py warns and skips a target whose repository directory does not exist.",
+      "evidence": [
+        {
+          "resource": "repo://script/apply_all_patches.py#L11-L23",
+          "version": "repo-lines-v1:sha256:a66d105280a01f7b2485e34fb3f2de6878b0619f1ebe498d5e427ae13dc144b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1MDdlYTBhYTY3N2M5ZTgwNmUwN2IwOWMyNDE1ODZjYzg3MDNlZGFmOWZhNDYxYzYyN2I0OTE5NzMxYjZmZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiZjgxZjlmZmFiYjBiMzcyMjRhOGU4OGJmNGM0ODljZDQ4ZDE5ZjUxMGZiNDRkMWQxMWUzY2I5ZTIyZjMzMmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjMDgzNjg4ZmIwYzk1MzU0YjA4Mzc2N2FmMjZjYzg1NmQ3NjU1ODFkMWUxZjQ0YzI1ZWY3MWU1NTcxMDM2NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzMDdiYTM0NTlhM2NiNmE2ZGQ0ZTBiZjA3YTA5Mzc5Y2MyYzQwMjYwZTk0MmRjNGJjNTE1ZjI3MWU2ZjI3Y2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a51b477958a34060b8df8b3878b4eb01",
+      "statement": "check-patch-diff.ts runs the patch export in dry-run mode and exits with status 1 when that dry run fails.",
+      "evidence": [
+        {
+          "resource": "repo://script/check-patch-diff.ts#L9-L17",
+          "version": "repo-lines-v1:sha256:a3897e302f4058331366fc2acc284b1245f8db187cd04ba5a2f06ff987c664d9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ0N2U0OThmNjRkNTMzZWE0YjZkN2U2YjRlZDBiNzQzMDJlZTAxNGRkMWZmMTI4NzUzNWZiYzEyYTA0Mzc5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFiNWNkYmUwNzI2OTk1MWFhNmY4NGYwZGQyYTU0NDNjNjBjOWExNWM2ZWNkMWFlZjk3NWE1NTBiZDZmZjdiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6db17af3a3ac47f8872af597468a080c",
+      "statement": "export_all_patches.py exports each configured target with its optional grep filter and honors a dry-run flag.",
+      "evidence": [
+        {
+          "resource": "repo://script/export_all_patches.py#L11-L21",
+          "version": "repo-lines-v1:sha256:81a7c302d89833f025b9e9b930e5d8ba75180937bf8f7314d678cda50350bd5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxMjI3YzQ4YmU3YWI5YzlmMmQzNjQ1MThiMGE3NWIxZGRjYmI5MDBlNGExYTMzMDUyYWMwMzg4ZDRhZjkzOWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MjY3OTM1ZmM2MzM0NjVkODQ4YjQwYTRlZDY5NjdlN2I3YTMyM2Y4MWNkNTNjMTEwYWUyMTAyOTY4N2FhMTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1YzZiMjVlM2Q4OGJlMGJjOGY2OTE2NzVkYjQ5MWRjZWM5MzViNTUyY2Y4ZmJiYWJhYzAxMDYwMGI2NmIzNGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmY2JkZTQyZTJmN2RlZGFjZmUwZWRhNjg0Y2EwNWY1NGY2NDU3NThhYjM1NGU0MzlmMmRkNTUzMjkyYzM0MWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1bee9e8792134b448279a9c6151cf0a4",
+      "statement": "chromium_src/BUILD.gn defines a static library named chrome that is visible only to //electron:electron_lib.",
+      "evidence": [
+        {
+          "resource": "repo://chromium_src/BUILD.gn#L11-L16",
+          "version": "repo-lines-v1:sha256:5040bfb68000b4e7e8d6209f9ade9f77715b5c35175c57061a8499494f32a74d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDgzN2YzMGQxYWRlYmRmZGI0ZGI3YTgwYzk4YjZlNTdmM2Q3YzkwYTc0M2NjOTdhNDgzYzczZmM2MmQ3ODExNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzEzMDk4MTdmYWExNzRkMmVlNTNhZDI5ODYxZTJhMTg0NjU2MmIyY2UzOGJiZTBmMzkxODk4NGJlMzk4Mzk4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDU3M2U1M2YwMzU1YzNiOTdlNTQ5Njk3ZjYxOTcwOGU2NDI0MGRiMDBiZDJhMzRlMzMwMGEzYTk0MjBiZGY4YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e2569c9b61f4f238463a2e280ad962d",
+      "statement": "The contributor documentation accepts a patch only if it is temporary and meant for upstream, compiles only in the Electron environment, or is fundamentally incompatible with upstream, and requires the commit message to state the reason.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/patches.md#L5-L14",
+          "version": "repo-lines-v1:sha256:0b006e7985793f5239a10972000ed781e410029ab938013a1b53951df00ee8f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmYzg3OTczZmRjNmQyOWQxYzIwODQxYmYyZmQ4ZmE5NjQ3NjJiNDU2Nzg2YmYyMGQ1ZmYxMWZkNWVhMzllYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkZjIzOTFkZjJiNzRiODYzYjE0NTEwNzkyYTUwMTUzNTU3MWExZDIyNWMwMTRlYjMyNmIxM2FkMTJlMDBhYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5NGUzNTliNDk4YjhiMGY1NzJhNzVjZmE5MzZmODdiNWNjMGU4YWJjODllN2M0ZTcyYWIxYWE1M2MzMzBjMTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

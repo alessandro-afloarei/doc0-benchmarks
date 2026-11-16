@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3c4dea7128d828803d7714e691aac8a5964a7d565efa8b2920ac547f761601e1",
+  "claims": [
+    {
+      "id": "claim_1d963c16a22f412b94e6aa8e2666f203",
+      "statement": "Cloudflare Pages handle forwards event bindings plus eventContext and supplies waitUntil and passThroughOnException to Hono execution context.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/cloudflare-pages/handler.ts#L32-L46",
+          "version": "repo-lines-v1:sha256:7d54959f814976b8004b2fdc373e8e005323d85ade057194d0633cdebe588928:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllOGI3ZGE2M2Q5MDBiMzNjNTAwMjEwYWZiZDQyMGRlMzRlYTBmMWU1NTM3ZjgxYjNlNGE2YWNjNGFjYTdlZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2MjljOTkxYmRjYTI5YzBkZDM4MGYxNDViZGMwMGYwMzNmNzBkYzI5YTQ3OTgxY2U5ZDM1ZmVmMTNmNGNjMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2NmFlYzNlMzY0NWE0YmY2MTJmNDljOGIyNmJmZmJhMzczODZhZWU2ZjFjOGRjOTNlYmFjMjdjOTE4OWZiOGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e1525f94fa44735a83f54814ad638cf",
+      "statement": "The env adapter helper selects one runtime-specific environment source rather than merging process environment and context bindings.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/adapter/index.ts#L10-L40",
+          "version": "repo-lines-v1:sha256:ca7d2fcaeae11b17fc37d790bedec7a49f246fb3ab8ab9f0f16d78b9c5518b68:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjYjhiZTViYTNhMjJiNmUzM2FjMTUxNGE0M2RmMzdmMjVmNTlmYjE4Nzg3Nzc1NzBlMzUyYTFmMjcxM2FkNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZTk5ZDhhNDM3ODE0MmVlZmJiZmQ5YWM0YWU0MjgzYTg4ZWU3OGE3MjY5MDQ3OTkxZTdlNGU2MTI1ODNhOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1N2FkZGIwZDlmYzFlZTU4YThhOTYyYTYxNDAwMzdiMDNjZTI1OWYwYTE5ZTQyNjhlMzg5ODNhMDg5NjM5YWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiNjg2NThhYWNmNTE5M2Q4Y2ZiNThiMDhjOTVkYzBkZDJjMjRmOWRhZTMxM2MyNWI2M2I2NzdkNjBmOGIxNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f0b97a0fb6149cd84a7c115ecff0f89",
+      "statement": "Lambda handle converts events through a selected processor, exposes event/requestContext/lambdaContext as bindings, and turns request conversion TypeErrors into 400 responses.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L239-L275",
+          "version": "repo-lines-v1:sha256:060ad959823beafc461dd0aad08f40ee6a5e35bccddaf03d9e58e812082898ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMzRhYTYyMWM1NDA4OWE4YmQzMDQ5OGZlNGVlYjAwNTEwZTFjYjZlZWY1NzllNDhjZmM3MmQ0NjY5MGRhMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0ZmZjYjcyYzg4ZTk1MTg1NTg5MTgwMGQxNDY0ZmZjZmFiYTVhYzhhYzgxYTkxM2M3NTk1NzhkNDgxMTMyY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e620c23bf5814d5787fd1d869da3cdcc",
+      "statement": "Lambda request conversion decodes base64 bodies and sets byte Content-Length, while buffered result conversion chooses text or base64 using content type and content encoding.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L318-L385",
+          "version": "repo-lines-v1:sha256:defcfa7b740390e8829eb9987311b5ff6e9f9219ed183631e1422761fde615c1:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyYzM1ODVhNmU2Yzk1ODg1Mzk5NmI0NWQ4Mzk2ODRlMWY2YWNkZTcwMDExYmY5NmU3ZmEzYWUyMzY1NjNiNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMTFjMDU2N2QwYTVmOWU5YjEzNWY2NWNkMjUzNzJkZmQ2Mjg3NzVmN2MxZWQyNTNmOGJhZDQyZGQyZDY2NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljMGQ0YjA3NTEwODVlYjEwYTM1MzQwZDU5YWZmMDYzMGU2ZjljMGZiMDAxNGVhNWU0NjFlOTJkNTljNzNlNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyNDE1MGJmMDY1ZmQ5ZDM2Yzk2ZTUyMzI0MjdmN2FjMmExYTZmZGJiNjMyYjg0NTRkNzM1YzE3NDQ5OGYwYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7774cabfd16d4541934ec4e2a4905aa3",
+      "statement": "Lambda processor selection distinguishes ALB, API Gateway v2, Lattice v2 and v1; API Gateway v2 requires rawPath together with requestContext.http.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L625-L650",
+          "version": "repo-lines-v1:sha256:12f07582eea21478104c115dde32ff4ca87a212c60de1b1e2b841e77e5d24a61:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMTJhNzNmZTRlMzc4MTRhMWI2NjQ1YjQ1MWIyN2U1YzVlZTc0NTJiYjdiMDQ3YmQzYjlhMWU2OTgzYWRlMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNGMyMjk2M2Y2MzU1YWYwODZlOWVkYzJkMWFkZDg5OTYxZDMzNTU1MTg4Y2NlN2MyNDQ4M2EyZDNlZDYyOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlYmI1MDMxNjYxZDM1MzM3MTBhY2FjYjI4Mjg5ODIzYjg0ODIxMTc0ZDc3NWYxMzkzNDNjNjIxMzBmYzM2MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlYzE2YjMzYWJmOWQ4NTlmOGExNjdjMGQ5ZTcxZjJmNThlM2I3M2RmM2E4NWVjNGZmMmE2NjMxYWI5YWM0ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe54ab013a6546a389f96c9f6ddb80e4",
+      "statement": "The Service Worker adapter responds to FetchEvents through Hono and can fall back to network fetch when the Hono response status is 404.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/service-worker/handler.ts#L18-L37",
+          "version": "repo-lines-v1:sha256:6d0082f89597beabb6f7c7334495b71e025cca6d6d7450502ab64076f7802b69:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmODQ0ZmU1YjdlMGNhZTVkNzViMTZlNzM2NmQ3Njg0NTY1ZjAxZjRjY2JiNmMxMzYzYmI3ZGNjNTgwNDU3NTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkOWRlZWM0NzgzYzM2ZWZhMWNmNTlhNWQ0YjE5NGEzOTY0YTM2NGQ5MDhkZTEwOTljZjRmYjA5MWU3ZDAwNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:16:56.556Z"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:271f5d02d508a55187e2591755c44cd0987c7c2a13bbb64dbf3308f25570e438",
+  "claims": [
+    {
+      "id": "claim_040abc75167c45d2a526fb154d8b1134",
+      "statement": "setCookie appends a Set-Cookie header and defaults path to '/'; __Secure- prefixed cookies are forced secure and __Host- prefixed cookies are forced secure with path '/' and no domain.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/cookie/index.ts#L78-L102",
+          "version": "repo-lines-v1:sha256:55154bad4094104d4194a9052874b4561e2ef6a3c272d12a0d1719adac2fbfc0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MGFhYzdmNzQ4OTNmOGJiMDE1ZWJjYWExYWNlZDczMDA3M2VmN2ZiMjEwMjJmYzNmNzkxOTM2NDcwMTU4YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3Y2MxODk5MmMwNzZhYmY5YjBmMDQ4ODlmZjY5MzY0OTFhMDM2NGRkMjlkYWYwMDcyM2I5NTQ2MjM4NmIwZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjZTI2MmU3YWMxM2YxOGNmMTFhNWJiMjY2Nzk0OGZjYmQ5Mzk4ZmJhM2I1MWQyM2Q4NTg1NjRiOGQ5NDNhYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c860ba4be5cc49b1a9a0d480be738513",
+      "statement": "Cookie serialization rejects Max-Age or Expires values beyond 400 days, attribute values containing ';', CR or LF, and Partitioned cookies without Secure.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/cookie.ts#L165-L250",
+          "version": "repo-lines-v1:sha256:df04d7dbbb323cb8991547f8fdafc13c2d17ee3ee8edccc02661141d33ced0dd:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0MWIxYzY5MDNjNjA0YmJmNDdkNGRlYTViYTRmYzFiMTQxNjA2ODk1YzE3YjNlNDEwNjBhMmQyZmU1YjRjY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZTBkMGVhMzdmZjAxMTM1YWIyN2QyNTAyMGU5NjM5MDVmNTIwYzVkZTFhNDNhODIyNTY1ZDU2ZTEyZmU3YWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae1dfc48cabd408a922a35f0cedbd109",
+      "statement": "Signed cookies use HMAC SHA-256 and a cookie whose signature fails verification is returned as false.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/cookie.ts#L161-L161",
+          "version": "repo-lines-v1:sha256:11923281f46b2136185d5fe908ad487040a3652e1e20d32c648af61cee1884d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTE5MjMyODFmNDZiMjEzNjE4NWQ1ZmU5MDhhZDQ4NzA0MGEzNjUyZTFlMjBkMzJjNjQ4YWY2MWNlZTE4ODRkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTE5MjMyODFmNDZiMjEzNjE4NWQ1ZmU5MDhhZDQ4NzA0MGEzNjUyZTFlMjBkMzJjNjQ4YWY2MWNlZTE4ODRkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQ0Yjk2OWNhMjQzY2E1ZmNiOWFkNjU3NDNlYmYwNWEzOGFkYjQ3ZWMwMjkzZTA5OTI1MWVjZDU0MzZhZDk1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjQxYjFjNjkwM2M2MDRiYmY0N2Q0ZGVhNWJhNGZjMWIxNDE2MDY4OTVjMTdiM2U0MTA2MGEyZDJmZTViNGNjYSJ9"
+        },
+        {
+          "resource": "repo://src/utils/cookie.ts#L37-L41",
+          "version": "repo-lines-v1:sha256:2329f9aa173524b35687748388be5205fb75932c03838a5af1bc47419b7a0933:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTMyOGI2ODUxNGNkYjFhNDU5NDJmODBiYjQ1OGFkNjk5MDMyOTExMTJjY2VlZWIyYjBlODY4MWQ4MWRiZTg4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzkxZmM0Y2MzMTU0YTIyYTIwYWUzZWMyZWVkMDI2ZjRlYjM0MDUzZjViMGFkMDFiYTYzYmRlZTZiNTBmOWU0OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDc4MjY3Nzk1MTQ3ZDZlNjMxOWQ3OTk0Njk1ZjY4NGUzNWQxZTg3MGEyNDdmMmQ3MWZjMzVhYWZmZTA3MTgwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDRmNWZlODgzMmU5NTMwY2ViMjhmMDNhNTIzMGIyMTcwMzUyNzQxYWQyMDk4OWFlNzYxZjVjZTg5ZTJkNWQyYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c448278cda854830ac25f4452ac583ef",
+      "statement": "stream() returns a Response immediately while running the callback asynchronously, routes Errors to onError when provided, and always closes the stream in finally.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/stream.ts#L7-L45",
+          "version": "repo-lines-v1:sha256:0a280b87fb1dfa529d0c50dbc636bbe9dcaabda0d43a20a1ffce718fefc02ad7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxYmMxNjFiZDExNjY2NjE4ZWVkY2RjNzA4ZGNjM2NjODY3MDMzNTgwMzVlMTI2MDNlNmRkZDA5ZDNjNzJhNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmNzUzZDlmODJiYmM3OWRhYTRhMzI4NDkzMmVhOTY1YjM5YjkzNWIzNDI3YzNkODEzYWJmYzZkZWVhMjExMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e8dadbc930b4ab59204344c821cbdee",
+      "statement": "streamSSE sets text/event-stream, no-cache, keep-alive and chunked headers; writeSSE splits multi-line data into data: lines and throws if event, id or retry contain CR or LF.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/sse.ts#L18-L45",
+          "version": "repo-lines-v1:sha256:c7f75fa2e2f6b2a153f4a1fc828f7b42ff9302ff5194b332fa8729b7e56fce31:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMDFjY2IwZWFiYzYyYzA5NDUwMTY1ZTMyMTA2NGJkYWYyZTRkNjY5YjI4OWM4NWEwZDJmNDE2ZDdiZTEzMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyZDIwZTcwNWQyNmE2MzM5NTQ5NzczMDI2OTQ5MDhjNWUwODY2OGI1MmNjMTgwYTM2M2Q3MTAyZmVmMDVjZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlYTg4NTE0YzRkZmNmN2NiODc5OTNhNzZlMjUwYjE2OGU0ODE3YjJlNjYwYmNhNjM1NWFiNzYzZGFmZTZmNWEifQ"
+        },
+        {
+          "resource": "repo://src/helper/streaming/sse.ts#L72-L100",
+          "version": "repo-lines-v1:sha256:4bac1696a6507c1ccb21272a51cbf2f77797a03dbc45302193e83b0cfc63e370:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1MWZmNTgyMDg2YjA2MjdlNWNiOWJlZDIyYmE1OGU3MmY0NTdhNGE4NzQyYWMzNTY4ZjBmODI3OTE2MjY1NDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmNzUzZDlmODJiYmM3OWRhYTRhMzI4NDkzMmVhOTY1YjM5YjkzNWIzNDI3YzNkODEzYWJmYzZkZWVhMjExMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_18ce01c38919442fbbcf44edce3c2b7c",
+      "statement": "When the response stream is cancelled by the client, StreamingApi calls abort(), which invokes registered onAbort subscribers once.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/stream.ts#L35-L97",
+          "version": "repo-lines-v1:sha256:1cd8f7d696859472fc4791819ff5e044a538ac0e1178d2aea68d807a5043f77f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlY2Y3ZmQwZjljZTQ0ZWQxOGRlNDYyZThiMmFhYmIxZmE3OWExZjllYjhiMjcxOGQ0MTg3YzY5MjZlYWVmMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhYzhmN2FiYWI4MmY0YzM4M2I1Njk5N2Q0ZmM2MmFiMzM0YWZhMWZhNjYyOTg1MWVhYmJkMzkyYjBhMzc4MzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f3c174b0a20439f8e28a129ca5ab269",
+      "statement": "defineWebSocketHelper produces an upgradeWebSocket usable as middleware that calls next() when no upgrade response is produced, or imperatively where failure throws 'Failed to upgrade WebSocket'.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/websocket/index.ts#L111-L140",
+          "version": "repo-lines-v1:sha256:5e72a020f1b913dcfabdf68daa264b5ba7b8c14831825e3b515374afd187ba6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZTMwMjA5MWZhNmM5MDEwMmUzMjY5NDUyMTA0N2FjNTM3NjZlOTUyYmQ0YjI1YWNkOTAxNGExYzM5YWM0NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyOTY5YzQ4MTg2NTExNGM4NTIzODMwZTFlMjYzOWIzODA3YWYxMTVkNGNlNWJhYTdiNmM4OGE0OTYzMWVhNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_83f34421c1704b9b8d2a5bdc86e59978",
+      "statement": "proxy() removes hop-by-hop headers from the forwarded request and the response, always drops Accept-Encoding on the request, and drops Content-Encoding and Content-Length from encoded responses.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/proxy/index.ts#L10-L19",
+          "version": "repo-lines-v1:sha256:a8d464095bba3f27ec76e966aed4ff4262e78ec62b20cbd9084899718b859083:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3OWNmMzkyMWMwNjEwOWVhMGNiZDQ1YWI1MTk1OTlkNzk2NWRhNTQ0ZjUzNjM4YTg2Y2I4YzUyYjY5YzgwZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzZTg1MmFmMTg2ZDY0MDFkZTJiMjRiYzc3ZjRjN2Y2NGQ2YWY4OTRjMzBkOTU1ZjU0N2RhZTNhNWM1NTkzNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4ZGVmNjQwM2RkMTJkNjIwMjdjN2M4M2E2NjMxYTg5NDYwNWQ4NGFkNzJlYTBlMjMyYzUzYjc1MmFkNjE0NzgifQ"
+        },
+        {
+          "resource": "repo://src/helper/proxy/index.ts#L160-L190",
+          "version": "repo-lines-v1:sha256:83f2ad88b2b122fa31be1aa58f58fc2d775dc572b687cd90901944a5002a3587:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZTM5NDdiNGI3OTUwMzZhZTA3YTFlZTI3N2IxYTZjMTQyODVhNWMyYmQzMzJhYTMwMmM2NzU1YTViMmYyMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb0a8fdd5d5942b08e65f6a41ef63e46",
+      "statement": "proxy() only removes headers listed in the Connection header when strictConnectionProcessing is enabled, rejecting invalid header tokens with HTTPException 400.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/proxy/index.ts#L50-L91",
+          "version": "repo-lines-v1:sha256:a29f7d9944c6ecfa71220ee5e9209bbbcef05beb586802a8d92120e8cbbc1ab9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwOGRhMDExZGM2MzQ1NWQ2NTU2ODQ4ODlhYzlkMzg1MWQwZGNkODlkZDMxZDRiNjg0MjNhODNkNmJhNmQ1YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5OGQ1MThmNzQ1M2M4Yjk0MGVhYzA2ZjJmNjhiNDQ0Y2M2MmYxMjc2ZjkwYThhMjRlYTI5ZGJmZjNlM2RmMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4NGM4OTZkZGZkNTliZTZkNjBmNWI3MzU3NDYyYzJkMTgxNDlmMDJmNDc0MzM4ZjM5Y2FjOGMyYzVlZGYxNWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3926ac94e54840f6bccb3f669d938a65",
+      "statement": "testClient builds an hc client whose fetch delegates to app.request with the given env and execution context.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/testing/index.ts#L16-L27",
+          "version": "repo-lines-v1:sha256:c2bc4086efc731b13dd9901576db6b8ae03c7126487f5b7be7ac920d5721e6f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MTBmNGZiMTQxZWQ0ZWY3MDIzNDY5YmJkNTk2Y2RkOWVjYWRkODgzYTMxM2RlMWUxZmJjYTM2OGZjYWQ2MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNGQ0NDYzOTA0NzZiM2MzYmIwMGU2MDJmMzk0NDk0ZmIwZmZlYWVhYjFlZmIxYzVkNmVmYjZiYjJhZmZlNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_59114a9bb5fb4e9cade53316e49e6294",
+      "statement": "getRuntimeKey detects runtimes by navigator.userAgent prefix, then EdgeRuntime, fastly and process.release.name globals, falling back to 'other'; env() reads process.env, Deno.env or c.env accordingly.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/adapter/index.ts#L10-L90",
+          "version": "repo-lines-v1:sha256:94e08e09d918e79160ebc29c9636ec1cb05a73e83b08b1066f0eccd44eecb76f:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjYjhiZTViYTNhMjJiNmUzM2FjMTUxNGE0M2RmMzdmMjVmNTlmYjE4Nzg3Nzc1NzBlMzUyYTFmMjcxM2FkNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1N2FkZGIwZDlmYzFlZTU4YThhOTYyYTYxNDAwMzdiMDNjZTI1OWYwYTE5ZTQyNjhlMzg5ODNhMDg5NjM5YWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_993f85b3e74a44b3877f86ba95f9c271",
+      "statement": "Factory.createApp merges defaultAppOptions with given options and runs initApp on the new app; createMiddleware is a typing-only identity function.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/factory/index.ts#L332-L375",
+          "version": "repo-lines-v1:sha256:ac555df5e7dd159a2622bf7a19e495b93ae1d4172a86d6152741d43924bc5ac6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMmJlY2M5M2U3NjMwZDEzOGFmYmZkNjMwMjY4Y2RlNzgwMGQ4NDNiMjY0NGFmOGJmMzI0OWJkZjM3MjUyMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxZjg3NzkzY2FjOThlMmIzYWJjOTEzZGZmZWMxYWQ4ZWFhYWY0MGEyYzRkMTQwMmMwOWMyMGFhMDY5OWU5NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_42382daedaf040309279dd92b6ced643",
+      "statement": "toSSG only generates GET/ALL non-middleware routes, skips dynamic routes without ssgParams, skips responses with the x-hono-disable-ssg header, and uses a request pool with default concurrency 2.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L17-L17",
+          "version": "repo-lines-v1:sha256:666296d7033a498e1f7a5577f444d1747b2fdb37c24308a866a3549a9d4796c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY2Mjk2ZDcwMzNhNDk4ZTFmN2E1NTc3ZjQ0NGQxNzQ3YjJmZGIzN2MyNDMwOGE4NjZhMzU0OWE5ZDQ3OTZjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY2Mjk2ZDcwMzNhNDk4ZTFmN2E1NTc3ZjQ0NGQxNzQ3YjJmZGIzN2MyNDMwOGE4NjZhMzU0OWE5ZDQ3OTZjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzNkNGY1NTA4ZmEyNzFmMzhkZmE4YjAyNGU2MzJlOWRhMDRhZDgwMGJmZTAwY2ZiNTQ1NjQzMTA3YmZlM2YxYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmE5NzNkMTU3OWRlYjVjZDkxMzhiNGYwYTI5NTE1OTRiMzQ3ZjYxMmQyZTQ2NmRhNTc5ZDZjMWI2YmU1OTQxMCJ9"
+        },
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L205-L300",
+          "version": "repo-lines-v1:sha256:b2dd6621adfe93281cfd53f3c7c65be651f67afe0ba3e1abe68b02fee9d2e267:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNDljYTc0NDg0ODRhZWIwZGY0NDFmMTQyNThmYWMyMDdhNTFkZjJkNzUwNDM3M2NiY2I2ODQ3Mzk1Y2MxNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiODFlZTEzMWE4YTk0OTBiYTA5Y2RjZDJiOGM3MWFkZDQ3NjFjOWEwMDM3YjEwYjdmODFiMWZhMTIyODg2YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/utils.ts#L61-L75",
+          "version": "repo-lines-v1:sha256:42f1809607e6826ece598f6cbf02af9a84ec31cfbea57d2a1bbbfcd2ebdd5291:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZGI0YjhkYmI2NGVkZWQ4YzllZTkyMjUwMmUxYjZjMWI5NDIxOTdlMjk4MjdiZGQwMjRiY2Q1MzU4ODU1NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYzY0ZWRhZGMwMDljNmUzMzMyODk1Zjc1ZDljYjc3NjAyYTE1NTk5MzIxMGFhNzRhZWM4ZTNkNjdjOWJmZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1ZGU5OWRlZmUzYmI5NDFiZDQwZDIxZTQyMGNlODUyZGQwYmYxODVmMjE2YWE5ZjlkYzZkYmQ1ZDVmMjc2ZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e752afd3e994d3089001d7690893f66",
+      "statement": "When no SSG plugins are configured, defaultPlugin is used, which discards non-200 responses; toSSG returns success false with the error instead of throwing.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/plugins.ts#L11-L20",
+          "version": "repo-lines-v1:sha256:c468982794f0e92379689fd3a858d212b7007657b8c6c69ab7ca2a15d17b6bde:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwN2MxMTQxM2E5MTYyMzMwMmE0OWNmYjVmNDY0MDE1OGUxYTc4NmYxNDE5YzZhY2VkMDAyOTYyNjU2NGJlN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmOTFhOWQ2N2QxNmQ1MmUxMTlmNWQ5ODBlN2M1YmQwNjQxMWFkYjI2MzA4NmUwNWEzM2NkZDlkOTQ0NTBhZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMDg5NTFlNmNiOTY3Yjk3ZGY1NDFjOTUwZDBkOWY3MjgxZDYyNzFkMTQwYmJkMTQ2ZmI2N2QxMGQ1ODM2ZmQifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L368-L470",
+          "version": "repo-lines-v1:sha256:fb44c5ccb032a6e64aa68b046959081bff607bded335c89a50425c11eed1037d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0NDFmYzQ3ODYzZjM5MjYzNDk3YjFlOTg2OGFkMWFjZTZjZjE3YzRmYzczZTA3NjQ3ZWYzNDNmM2Q3OWRlM2VhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkZmRkNWIyYTA4MmI1NzgxMGYxNWMzNGJkZTc1NTQzMjAwZTMyZGJkZGY4NWIyNTM0ZmZiZDUzOTdkMGYzNzViIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b60d7937b6741ca82a46b1e566d3c7e",
+      "statement": "SSG output paths are checked by ensureWithinOutDir, which throws on path traversal outside the output directory.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/utils.ts#L77-L87",
+          "version": "repo-lines-v1:sha256:64b40025ef4acc84c65dbb61b6440ca31300cb9f512889f9e936e85dac805433:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMTgwNjlkNWEyZWZmMWY5YmY1MDlhYjVhOGQ4YmE2YmYwNTVjMGQwMmEyYmQ0ZDFjYzk1Y2NlYmRkYjhmMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViZjNjZjhkMmJmMDM0NjIxMzg5MWVmNTI3MTUxZTZhYzllNjgwNTE4NzUwMzExY2Q1ZTIyNmYxOTYyZGQzYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:25:20.453Z"
+  }
+}

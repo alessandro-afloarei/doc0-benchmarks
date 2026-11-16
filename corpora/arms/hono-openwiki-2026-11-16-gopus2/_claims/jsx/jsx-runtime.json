@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6f990f125448c23048e7c99963bee6f3ba188ecd03bf6d84f6c3c386df484143",
+  "claims": [
+    {
+      "id": "claim_a8e61846ba2a43e890cf468dbce4b263",
+      "statement": "JSXNode rendering HTML-escapes string attribute values, serializes object style props to CSS, emits boolean attributes only when true, rejects combining dangerouslySetInnerHTML with children, and throws for function props other than on* handlers and ref.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L179-L251",
+          "version": "repo-lines-v1:sha256:56add2a6be8963ad2d933e90e111ee592e629e4e9c086379b797abbddd0a1610:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4OGNkODc1ZTk0ZTI0ZTE0ODk4MDY2Y2VhMTdkOTcyODRlOGQwNTg2ODMyZWMyMmY5YzZhM2Q3NDNjZmI2NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzNDRkZWViMDEwMTM4ZjY5YWZjNGUzYjc3ZmJhM2RiNzIyOTExZTcyMzk3YzI5M2U5ZWIwZjM4NGQxZTVkNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1MTA0ZGFkYjIxYjcyNzY4YmQxYzZiZjFiZmQ4Zjk5MzcwMzY1YzBlOGFlYjI3MzNiZGIwZGVkNDMyYjNkNWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eda7bc05b2934d5eacbc8642bc5edd08",
+      "statement": "JSXNode construction throws on invalid tag names, and invalid attribute names are skipped during rendering.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L147-L151",
+          "version": "repo-lines-v1:sha256:52972c42eed0d96ac734cb3e1577fece35b03ac16eb0e685054b0625db333606:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODcyNjIyYzQ5YzVmN2FjZTBjNjdjM2VhOTdkNGYwMmY2YmM3NzNjZWFkYTdlMmY4YzM4N2IzNDM1MjdiODU1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDRjNTIyYjNjYTVjMTMzMGYzNDllZTM3M2JhYzQ5ZmJmOGFkYzk3MDVkYTMxY2M2NDlkNmY2NDg5NjE4NWE2NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWI4NmFlZGZiZjJjNThlYjBjZTdkNzI2N2Y5NmJhODU5OWM4ZWI2MTE2NjExOGEzODVjMzExOGE0MjJmMzllMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQ5MjlkYzllMjNhZTg2YTg5ZTA3OTBlYmUwNWRjZTNhYWNhYjBlY2NjODYyMzBjN2U3Yzc5OTNiZjM0OGZkYyJ9"
+        },
+        {
+          "resource": "repo://src/jsx/base.ts#L189-L192",
+          "version": "repo-lines-v1:sha256:417a449630d1e278c7516d8389e4da28ded527877bf325c0bb6fdc9cb0163487:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjk5YTY1ZDZiNGMxMTZiZGIyOWJjYTFjNmUwYTk0YmIxMzk2MTc4YjYwMTA0OTU2MmQxNzYzOWRkNmE2ZjBkOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZlYWQzZDM1ZGYxYTNhZTViNWU1OTE2YzA4MWI0MWY1NDc2MGZlMTgwOWY2MDNkNTY2NzgwODQxMGQ3MDBhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2RiOGE4YTdkODFiODZkNGU3ZGUzZWZjYjRhMThiZWZhYTBmOWM1NmMwMmYxMDZhYWM1ZmQ0ZWEzOTA1MjAxMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjIwY2MwMWI5OWFmODM3Nzc0ZTkxNjAyMjZiYTFhNWJhZTAyYzk0ZDZjMjljMDA4OTBiOWYyYTNkMTU3ZjE5OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf6a3fe609ea40ca82fb71b548ea59d1",
+      "statement": "Function components returning booleans or null render nothing, escaped values are appended raw, plain strings are escaped, and Promise results are queued in the buffer as async entries with captured render context.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L254-L296",
+          "version": "repo-lines-v1:sha256:1a9039bb4b0aaf54d7b5b9d95def82603829361449368bbc71f2b67943a45b68:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYTY1NWQ2OTBlYjU3YzkzMmIzMjE5MDFkNTczZjNmYmM5Njk5ZjU5OTllMGEwMjQyM2FlMWI2NjliNDhjMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1OGQxNmZjMDhhNzM2ZmNhYjVmZWI3YTMyYzg3ZmRiM2JmNzcwOTE1MTI5MjNkZDY3YjM2YjA4NWI3YmIxMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_954b574d73584b67a0683b9ab995408d",
+      "statement": "JSXNode.toString returns a string when rendering is synchronous and a Promise otherwise, running inside a render context or a captured suspended context.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L166-L177",
+          "version": "repo-lines-v1:sha256:1840f305decb59ad2f2c6d40c36d04529c56d80dce4927bf1faf6e181372b8ad:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZTc1YWU2YjM3ODBkNTZkOWNkMzlkZjZhMTk2Mzk1MTJjMzE4MTk5MDZkODYzNTI0ZTczODc5MTA4YmYwODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwNmQ1NmJlNzMzNDBjOWU1YjJlOWQ0NDg1Nzc3ODI2NTFkZDM3MjEyNDhiZDMzZDNkMzczMjEwNjk2ZTJmZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzNzA2ZDY3MzI4MDQyMDBiMzAyOTY4NzJjNjZjMjdkNzI4Zjc0Y2QzNjA2OWUyNDkzNWMxYjI4M2M1ZTkxMmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_550ffbf0d0ea46d982eebb031e049a6e",
+      "statement": "HtmlEscapedString callbacks are resolved in three phases: Stringify, BeforeStream and Stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/html.ts#L6-L10",
+          "version": "repo-lines-v1:sha256:30a510ed805a0be47aad036337753e9aa3dcc5adbe134e45e6f1fe5ee3ad6131:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGIwYWUxMjA0NmJhYWE2MTUyOWYwYWU5MWJhYTBmZDk0OGMwOGVmODUxNTA3YTQ4OWRlZWE0NzJmZmU4YTNjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc1ZWQ5NTI0MTk5Y2ZjZGMyMjIzZjg1NzM3ZDY2Y2FiYTI0YzY5ZThjZTc5YTAxNjU1YTZmNWRiZDVkOWU2NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODcwMThjYjFjZDA3ZTY2NjM5NjYwMDExYzllOTFmZmZlNmNhYjhiMDg4YWIzZDFjOTQyYTA0ZGIxZTM4NDg3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzYwMDFiN2FmM2ZjZWRkYTcyYzg4ZDYyNTg2N2UzOGM4NGYzYTNhNGM5YTE1NTAxMGM3YTE1ZTc0Njc5NjMxNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_59ff5a7838ff4551b95a749fdfa935fb",
+      "statement": "Suspense renders a <template id=\"H:n\"> placeholder followed by the fallback when children are async or throw a promise, and later replaces it inline or streams a data-hono-target template with a swap script.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L42-L137",
+          "version": "repo-lines-v1:sha256:0fe0ae007cce218ae84d8954b1c5ccb718c18d8cebf082710e07071b13168c1e:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NGI0OThiNzk2ZmFjNWEyMjJkYTI4ZjFiMGIxNWNmMTEzMTg4NjVhZWQ2ZTYyOGY3MDRlYmY3MTA4MzM1ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjMTBlOTIwMjc2YjJhM2ZkNmVlZDFmM2ZiMzVhMzkzZTI3ZjZhYTIxNzIxZGVmNzY3OGJhZjc3NzI4NGVhZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3ODdmZGU3NGE1YzFhMjgyM2QzZGM4MTA2YjQyNzA1ODI3MWE2NmI5MDY2NWVjYjRkNjg4YWVjOWFmOTIxY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_009171a03bb644dfb3e7071dc639b515",
+      "statement": "jsxRenderer installs a renderer via c.setRenderer, prefixes <!DOCTYPE html> by default, passes the parent layout as the Layout prop, and when stream is true sets chunked transfer-encoding and text/html headers.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L36-L128",
+          "version": "repo-lines-v1:sha256:f00567f24ffff0450bbae1e8f3371be666a5c41260d4bba61cba9e3c1803d6cc:eyJzZWxlY3RlZExpbmVDb3VudCI6OTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZGY2ZTk3MjJlZTM5YjQ2YWVlODA1NGMyYmQyOWE2YTFmMjc4YzJjYmQ4NWQzNDNlODQ0M2FiZmQ1ZGYzYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3MzBkM2I1ODMxYmZkMzQ1ZDg1MjllMWEyN2ExMjljNDlmNGQ5NGYwMzY0YjAzMDFkOTdhNjFkMTJiZjY5YTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNTExNzJiMmM4OTU2YTM5NGI5MGI3MzNmMGZlYjdhZjVmMTJjNWNmOWU0Y2YxZTYxYzNmNzMyZjZiZDc5MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0Nzc0ODBmYzczNTRkMTRmNTI1M2ZhMjZlMDYxODYzYWU5YTVmMDkzMjk3YTE5NjMwY2Y3NWUxMzIxNjc3NzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7ce1637e49b4aa5aff97496d8c634e0",
+      "statement": "The DOM client API provides createRoot and hydrateRoot, and dom hooks add useFormStatus, useOptimistic and useActionState.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/client.ts#L23-L86",
+          "version": "repo-lines-v1:sha256:6363461d014b4b5b18f5f47168b321f5a5b201e5edadc0b342e61c3786f97576:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZTNiMjRhYjVmOWM0YzZhODRiOWE2NDg4OTU3NjY4MjRhMjM0MmE3MjkyY2I2N2U5MmI3MmI5ZDQ2MjcxY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMjdiNmMyNmNjYTI4MDRiMjY2YTc3YTJhNGYxMTU1NTBkOTNiNmUyYzI3MjI4MmJiMGJjZjY0OWQ1Y2MzMDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmZDhiMGFjYmNkNDgzM2JhZmE2ZmFjNjMzZGM3ZTJhNWI1YzFkM2UyMzM1ZmE1ZGU3MmNiYmFmMGM2NWM3MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyY2UxZGU0YTBhZDM4ZjY2OWM4ZThiYTUxMzJhMmNkMmQyNTRiY2ExMmZmNDkyODgyNjZiNjQ4ZGFlNTZhNzAifQ"
+        },
+        {
+          "resource": "repo://src/jsx/dom/hooks/index.ts#L41-L90",
+          "version": "repo-lines-v1:sha256:be14910b1ce0097fb8b5695f5d57806b438f652d590dc4764e60b5d5fa8a3c1a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzMjAxMDg0NzQzYTM1N2Y1YWNiNjBkNTc5ZDlkNzI1NDMzODZkYWNmODU0NGE3YjBiMzBmMTg3NzEyOGFmNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmOTQ0ZGI4YmQ0YzZjMzI5MjU0YTliMGY5YzdhZjVkMWQzMjk3ZWEzYTkyMzI5MjgxMzdjYTFjNWE0N2YxMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiOGVjMWU1ZTZjNTkwNzE5ZmZjY2YzYjU4Yjc0NmJmOTg2MzRhZGRmZjQxNmM5YzFhNTgzNDI3YjQwNzE2YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6950d4a390354d359717b8ddbbc06578",
+      "statement": "Vitest runs JSX DOM tests in separate jsx-runtime-default and jsx-runtime-dom projects with different JSX import sources.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L48-L73",
+          "version": "repo-lines-v1:sha256:92124f175bc34a5d9b14d28ce8a32d72deaff55e2186b6743b1e78336a2c8b0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3YzliZDYxYjA4MWIxNTVmOTc0YmI0ZmM2NGI4MDRkYWYxYTU5MzhjNzJiNTE4N2MzODMzYTc2NzYzYWE2ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1OTFhNzA5N2M0MWU5ODFjZGFiNWU5ZmViMzVjNTU2NTE2NjRkOTc4NjhhZTQwMTBjNTc1ZTRjZmZhMDYxZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:39:44.364Z"
+  }
+}

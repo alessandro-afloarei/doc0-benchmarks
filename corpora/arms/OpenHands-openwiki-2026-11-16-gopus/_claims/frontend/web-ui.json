@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:786348ff7691809177042e30bda72dca56d7efd8b7bad42a3e6767411a69615c",
+  "claims": [
+    {
+      "id": "claim_fffb76b355c64f22bbda6d23844dc930",
+      "statement": "The frontend is a React Router single-page app with SSR disabled, and its production build is served by the backend from ./frontend/build unless SERVE_FRONTEND is set to false.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/react-router.config.ts",
+          "version": "repo-file-v1:sha256:57a4fb5f5edc620cedd60fefcdfcf81aae1e1b2f9f68127f60660b18a309f516"
+        },
+        {
+          "resource": "repo://openhands/server/listen.py",
+          "version": "repo-file-v1:sha256:aa744743c97739d69b0989f7408ee1c98388edb338934b6bc7972ed20f17938a"
+        }
+      ]
+    },
+    {
+      "id": "claim_d1c77d5adc144b27835c3769f47c0c8b",
+      "statement": "The frontend route tree includes the home page, a conversation workspace at /conversations/:conversationId, nested settings pages, microagent management, and terms-of-service acceptance.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/routes.ts",
+          "version": "repo-file-v1:sha256:7074a130797f7965cd2061ae00290bd54c5a276fe5829a58f3ca031fcfbbcedc"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa1c06c3adfa49569228c35d26acaa5a",
+      "statement": "The websocket client connects with Socket.IO using query parameters for conversation id, latest event id, providers, and session API key, and connects to a conversation's own host when the conversation URL is absolute.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L300-L345",
+          "version": "repo-lines-v1:sha256:edd0bb21c7975dd1457f667e618f1e14ab3aa7d991275ea9f31b71729117143a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2M2U5OGJlOTVhNDE5ZWYyZGVjMGNjOTI4ZGIzZGYyOGE0NDhmODk5NGVhMjY0Zjc4NDJkN2M4OTM3ODQwZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5ODhjOGMyMmFmN2VkODQ4OWE2NGZlNzY4ZTliOWVkMDc4YTc1YzUxZjExZjI2NDc0Njk5N2E3ZTcxNTI3MmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyM2RiYmZkNzk4Yzk4NTMzM2U2Y2YwYTM2MTFmYmFjMWI2MDBjZTAzMDNkZTlhNGY1ZTMwNjI5NmVlNTc2MjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyNDAyYTgwYWMyZTE1MDIzNDg0YTA5MTRiM2FkZTgyOTE0NjVjZGQ4YjA1NTQyYjA0ZDdjZTUwYmE4MzVkNTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d877cf9057694a02aace4095159913ec",
+      "statement": "The frontend receives events as oh_event messages and sends user actions with oh_user_action, and on reconnection updates latest_event_id to the last received event.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L150-L160",
+          "version": "repo-lines-v1:sha256:b4561bcb0ba6359e980efad0e65890776d13dd217304eb7ee34f3e97be0dc032:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NzJmMDA1ZTg5ZjUzMjkwNWI4NDlkODZmOGMxMGMyZTc2NGQxNWNiMTc2OGNkZTIzNjVjMjlmMzkxYzJlYWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiM2VmZTI5ZjQ5OTZkZWE2YzEzZTE4NmIyODE2MmE1NTM0ZWU4NjIzOGVlN2JmMGJlNTk2ZmQxNjY4YWYxNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmNjBlOTRmYTc4Y2ZhNjM5ZWQ2MWM3MzA5OGU1ZDgyYWVjMmRkY2Q4MTJiNTdiZmIzMDU1NjRmYmYwNzRmNzkifQ"
+        },
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L260-L270",
+          "version": "repo-lines-v1:sha256:73a639029aba24dd1a0b9f0990832eaf9c18fd9d906b4c28b45d6dcbd230f2c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMGVmNzJhOTI2NjI2MjZiYzM4M2FkMDk4MTdlMzJhYTMyNzc0NWQwNGE2NTlhYmQ0MGFiNWY1MTNjZTkzMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlYjYyN2FlYTVkODgzNmJiYzJhMjVhY2VlZTBiMThiMWI5ZTYzZjEwYTk5YzkwNjJhOGEyZWJlMGU2YjI3ZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzOWUzOWNjODFjMzI4NzAyZDU0YjExNmY4ZWI0N2Y0NmRmYWMzZTY5MjM0NWY0YTM3YTE5MWFmNDU3YzZmZjcifQ"
+        },
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L340-L355",
+          "version": "repo-lines-v1:sha256:d5e45a00c0d6b3559360fd9b25ab0f989ee3735795649cba4e159a60fefe41e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1ZWRmYTk4OTg1M2NkM2M2MTUzZTcyOWM5YmRlMmQxNjU4NTBmZDYwYjQzNDc3NmM0MWQzYWQ5ZDljYjFkMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjZWFjNTA2ZjdmYWEzZjZhZDkyM2FiMWQzNzI0MTc0YTliYTdkZmY0NjM0NjBhYjkxYWRjNjg5MmJmNjhmMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_197bfaee73c64c3aa3426024f2177b1d",
+      "statement": "Incoming events update the parsed event list, surface status and agent-state errors, clear optimistic user messages, and invalidate cached diffs when files are edited or written.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L164-L250",
+          "version": "repo-lines-v1:sha256:7d057b2ac24969132bb9aa859e821f639a695e213acbc448c7f62a19124eb84f:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5MDI2MzJjYTJjNjU4ZDk5YmU3MGE5YmI5ZWJjNjJjY2JhM2I2OTQwODkyNmM5ZmIxZjczZmRkYWRkOTZlY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNjBlOTRmYTc4Y2ZhNjM5ZWQ2MWM3MzA5OGU1ZDgyYWVjMmRkY2Q4MTJiNTdiZmIzMDU1NjRmYmYwNzRmNzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1ODNkNWMxMjJjYWRmMjNkZTEzMTIyNzJlZTYzY2FmMWRjYTE0NTY5OTY5NGIwMWNjODE1ZjdiNzlhYTYzMjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2782f2d66a4a401d9865fb2b156a34c6",
+      "statement": "UI state is held in Redux Toolkit slices combined in the root store, while server data uses TanStack Query hooks.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L136-L136",
+          "version": "repo-lines-v1:sha256:ddc32ae68ae5016da1675e5a9e9adc86620f44418262263aac4501775899cb1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRjMzJhZTY4YWU1MDE2ZGExNjc1ZTVhOWU5YWRjODY2MjBmNDQ0MTgyNjIyNjNhYWM0NTAxNzc1ODk5Y2IxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRjMzJhZTY4YWU1MDE2ZGExNjc1ZTVhOWU5YWRjODY2MjBmNDQ0MTgyNjIyNjNhYWM0NTAxNzc1ODk5Y2IxZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjZlODYzYzk5MzEzNWI1NDc5ZTYxYTc3OWFkZmEzMmMxY2NiZGU0NTE0M2RmNTQ4NGE0ODBjY2ZjMTU4Yzk2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWQ5NDIwMmQ5YjMwOGU2ZDQ2Mjg3Y2U1ZmNjNWIxNzkzZDM5Zjc4Y2VmMjgwNmM5ZDc5OWJhMjcxM2E4OGE2NSJ9"
+        },
+        {
+          "resource": "repo://frontend/src/store.ts",
+          "version": "repo-file-v1:sha256:2f31953f8eebc95ee0595125036890ebfb16e1a94b08549254d4769fc0e6bf84"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d6e0937db444da086b95a54465644fe",
+      "statement": "UI translations are maintained in a single translation.json keyed by message id and split into per-language locale files by the make-i18n script that runs before dev, build, and lint.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/package.json",
+          "version": "repo-file-v1:sha256:5e4b3ed427fa4f1ce4ec10fe0f2f63750441b1f6dcc66834099ec6dd0a3b2b5b"
+        },
+        {
+          "resource": "repo://frontend/scripts/make-i18n-translations.cjs",
+          "version": "repo-file-v1:sha256:7463facc3b6bea59222bfe1ca0d0f10a0c9aa859ffa62aaa3fa17f32d09861a5"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd03b618da62449b877857445ddbd3e2",
+      "statement": "API mocking with MSW is enabled when VITE_MOCK_API is true, via the dev:mock scripts.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/package.json",
+          "version": "repo-file-v1:sha256:5e4b3ed427fa4f1ce4ec10fe0f2f63750441b1f6dcc66834099ec6dd0a3b2b5b"
+        },
+        {
+          "resource": "repo://frontend/src/entry.client.tsx#L45-L60",
+          "version": "repo-lines-v1:sha256:517d83a3db59003ae97aeaa2e826d9c16ca988c12610a9fcc8594e0693cfd671:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzZDg4NjljYmEyMjJlMDAwM2IwZjI1YmExODMxM2I1Nzc3YTU1MDkxZDdmZjE4NjA5OTZkODg3NzY1OTI0ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0ODc0MGQxNDAyMGE4ZTVkMGQwZDVkMGIwNTk4ZTNlNzhlYmViOWEzZjMxMjM2N2IxMDQ5YWYyZjc3MGU4MmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkYjhmY2MyMzUyOWIyYTgyY2NkZDdkZDNkMGYyMDI0MzJlMmExZDc5NGUzZDgwOTc0OTM1YmE4MjM2NTg2MmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4bcd5e84f08d40e0a27e33432dceb58a",
+      "statement": "The openhands-ui directory is the separately published @openhands/ui component library, published to npm by a workflow on main branch changes to openhands-ui.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/npm-publish-ui.yml#L1-L20",
+          "version": "repo-lines-v1:sha256:046ebc21014af31ba440d4fd37e5cbcaedb453ffea0a91235d682d660d2dbb68:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyNzE3YmVlYmJjNjc5NWYzYWJkZjIyZWY4ODIyZDI1ZGE5ZTJkYzcyOTU5MjQ4ZmRlOGY0OWEyZWQ0OWM2NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiODNkMTk3ZTU2MGQ5NTBlZWQwMTc2MzUzNGFlOGU2ZTNhNzFkOTNiZDFiMjIyMmY1OTU3ZTI3YmUwNmRhNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhNTE5ZjQxYmQ2NjUzOWNjMjE3YzlhYWIyMTU2ZmU1MmRhZmI1MThkNzBhOTEzMDEwMjEwZDZmOGQ2NDc1MWUifQ"
+        },
+        {
+          "resource": "repo://openhands-ui/package.json",
+          "version": "repo-file-v1:sha256:8bdb9e318f67a9e963a54e4a7e1baf31768d2eef1653bf1f530227ff13d1aeaa"
+        }
+      ]
+    },
+    {
+      "id": "claim_a4feae27642d42478ed3132045ad8bdc",
+      "statement": "The backend exposes frontend configuration such as app mode and feature flags at /api/options/config.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/config/server_config.py",
+          "version": "repo-file-v1:sha256:bc098c2b599fa600e1a914926612ec008b052b733dacef44b55bb5ad62f1ac54"
+        },
+        {
+          "resource": "repo://openhands/server/routes/public.py#L11-L11",
+          "version": "repo-lines-v1:sha256:9743529d2906d675f8a75742d136b0d35436e432e30471c1549ac735ec1cd4ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc0MzUyOWQyOTA2ZDY3NWY4YTc1NzQyZDEzNmIwZDM1NDM2ZTQzMmUzMDQ3MWMxNTQ5YWM3MzVlYzFjZDRiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc0MzUyOWQyOTA2ZDY3NWY4YTc1NzQyZDEzNmIwZDM1NDM2ZTQzMmUzMDQ3MWMxNTQ5YWM3MzVlYzFjZDRiYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjQxMjUxNjVmYTViZDQxNTc5YWI3MWEyODU4ZWZiMDNhYmQ4MGNjOWM1YWE2MWU2Nzg1YjIxNjYxYTA2ZGNhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmY4NzJkZjJiMTQzZjhhNjJjZmE1YjgwNjcwOTMwZjUxZmJkMmUyZjBhODhhZjk0MzM1MWQ4MzNhNjI1NTBhYiJ9"
+        },
+        {
+          "resource": "repo://openhands/server/routes/public.py#L62-L69",
+          "version": "repo-lines-v1:sha256:196a7bd410f5167bbaf07dd3dc9927b0352d9868cce2d4e6119999bebc92ce5e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFhM2JmZGNlYjM1ODAxMTM0YTU2MDNiOTgxMjY0OWJkYjEzNTNhYTdmMjg3MDcyZTI3ZmJlMGY2NWVkYzk5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmE1Y2MwZWQxNWY4YzFkYjVmZGMzMGY1NGI2N2M5ZjAxNzhiZjE5N2ZiMjZmOWQ2MDkwMWQwMWE0NWE5ZGY5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjdlNTExZDZhZDkwYjcxZGE5Njg4MDhmNGI2NjZhMzNhYTgxMjllMzMyMmFkN2RmNDY3NTdiYTIyMjM5OGMxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

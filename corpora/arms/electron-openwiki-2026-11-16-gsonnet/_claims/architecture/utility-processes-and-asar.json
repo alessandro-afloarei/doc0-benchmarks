@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e9a2bfcd0fc8060d75a38e66614492212698b161ed149e549f1c8b2831cca907",
+  "claims": [
+    {
+      "id": "claim_25eb51152dcf404dbe6419d44c042bb9",
+      "statement": "UtilityProcessWrapper launches the child with content::ServiceProcessHost for the node.mojom.NodeService interface, wiring stdio, working directory, environment and exec args, and uses a separate Mojo message pipe wrapped in a mojo::Connector for postMessage so messages queue independently of the service interface.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L60-L240",
+          "version": "repo-lines-v1:sha256:89e0942053150e2f8b590605bb7532f4935f534231b0770076b93478d35e9510:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjN2JmZTJmM2RlMTMzZDc4YTJiYzhiYjFjNGEwODQ1MDU2Mzk4NmVlODI1NGZhY2VlNjk4ZTFkY2M1N2U4MTYyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4OTNhOGVkZTdkZGEyZDQwOTE0ZTFmY2EwMmQ1ZWU0NWNmY2IwOTYzZmEyYmE3MTdlODhlYzQyYjc2NGJmZTcwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwOTZiMWU2Njk1ZThlOGE1OGVkOWI4M2U4YmVlYzRmOGY5ZDI2YzQ1ZGI4MjE2NjFkNTc1ODU3ODI3MWVhOWY3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzZDI2OWViZGFmNGIxNzFiOGJjNzAzN2QyNzY2NjhlZjJlZjgzZTUxZDExYzViZjM2ZWI1Y2M5NWE5YWZkNDk1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_6317eb7e7cae44d3972fc527e6c2e363",
+      "statement": "The parent creates a URLLoaderFactory and HostResolver from the system network context manager's NetworkContext and passes them in NodeServiceParams, so net works in the utility process.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L212-L238",
+          "version": "repo-lines-v1:sha256:c99e59f27047d69e6b3f3d275e35ae9a0a677b3a3d36cddabd312291ddbdb8c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NGRhYTFjZjQ2NDgyNjc4NDZkZjZiZmFmMTA3OTY1MDQyZjA0Mjc2ZjJhNmY3MDE4M2U2ZWIyOWM0Y2M3YTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4YjA4ZDdjZDE3MWFlZGQ0NzI4YjYxYWNjNThhZGZhOGIyNWQyYjkwMWFkNjJkZjg5YTNhOTA3MmJkOTRmYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ODQxMDMxYWQwMDc4YjI2MmRkMDdkNjFhYzExM2ZhNjQ1NzdkMjQ2ZWViZjZkMmY3OWQ1YWM0MGIzMzhhYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5df2e316b7c40318175672892e887d5",
+      "statement": "Utility process termination from clean exit, crash or Mojo disconnect all funnel into HandleTermination, which runs only once, emits 'exit', and normalizes SIGTERM/SIGKILL exit codes to 0 on POSIX after kill().",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L244-L330",
+          "version": "repo-lines-v1:sha256:3d122a4f22ec3b35750e2781a642cf02c3f841682f982dbb8cea00f6e5672280:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwMzc2MDQ5MTAyZTM1Njk3NWY0NDllNWRlMjc3ZTA0NzMwNTYzMDllNDFiMzM0YzU3MzA4MjI1Yzg4NTAzNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkMjY5ZWJkYWY0YjE3MWI4YmM3MDM3ZDI3NjY2OGVmMmVmODNlNTFkMTFjNWJmMzZlYjVjYzk1YTlhZmQ0OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkZTUyMzAyZTI1ZDBmNzcyODY4N2IxODVkNDFhZmViOGM3N2I1NDNjNTE4NmI4ODU2N2RlYmY1YjQxM2Y2MmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c422f26e5b2431ea64d6af50a5528d2",
+      "statement": "The NodeService mojom interface is annotated with kNoSandbox, so utility processes created by utilityProcess.fork run without the sandbox; the utility client registers RunNodeService to host it.",
+      "evidence": [
+        {
+          "resource": "repo://shell/services/node/public/mojom/node_service.mojom#L1-L31",
+          "version": "repo-lines-v1:sha256:11102472d88a7837ae7ffe491233f884b2712101ed84d5a583767bd102d17ccf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzOGJkNjdmYjU2M2Q0Y2NjYzA0MDc0Y2JiOTQzZGUwNzZhZmM5MGQyOTdlZDI5MmRhOGI1ZmM3ZGQzOTI4ZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://shell/utility/electron_content_utility_client.cc#L100-L160",
+          "version": "repo-lines-v1:sha256:699ab4b3361b52efbfcaff51f35de0ee8d9a402d1969c4ff35883e88782f39f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYmYyMjE4MmUxNjM4OTQ2ODgzYzg3ZGM5OGM2NjEwODZhZWMwNWY4OWZlMzQ2MGRlN2QxNzg3MDIxMjBmZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmMjhkODUwMmRjMGY5OGY5ZTkxZTMzOTYyYzQyODhhMmFiNGMzOTM4MTg3MjAwNjA3ZjdkZGI5ZGQ0NDZiYWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NjUxYWJhZGNjMGU3MjZkYWM2NDdiZjJlNDU3NGFjNzIzMzM2ZGUwOWZkNTQ4ODU2NjEzYzNiNTM3MGE4ZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2aa053592e344fe0880057400dc0bc53",
+      "statement": "NodeService::Initialize builds a kUtility Node environment, installs a process exit handler that tears down the parent port and resets the Mojo receiver with reason 'process_exit_termination', stores the entry script as hidden process._serviceStartupScript, and creates the microtask runner before LoadEnvironment so startup exceptions can shut down cleanly.",
+      "evidence": [
+        {
+          "resource": "repo://shell/services/node/node_service.cc#L96-L196",
+          "version": "repo-lines-v1:sha256:91563ab94f6ccfe27d14b09fe2d5788e7d7b21187c9694324c31fc574d3cb319:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiYWQ5YjQwYzQxZDRlMDQxMTI4NzY0Mjc2ZjkzYTk2ODE5YjhjMDQxNzc4MzRjYWZlNTZkMDc2NzJlZTdkMzI2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1YzNlODgyMDE1YjJhZTllZWY2ZGQ5Y2JiNmUzMWEzMzFmYTk0OGNhZDVlZWY3NDY4NzcyNWVjYWI3OTdjYmJjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_6890906589394752a7f28deb3cd6cc95",
+      "statement": "lib/utility/init.ts defines a read-only process.parentPort that starts or pauses the native port as 'message' listeners come and go, and imports the entry script via Node's ESM loader, routing failures to Node's uncaught-exception handler.",
+      "evidence": [
+        {
+          "resource": "repo://lib/utility/init.ts#L1-L50",
+          "version": "repo-lines-v1:sha256:9c068906f4acf5997e51788f7d83d4b95a0b2045aed914526938ed2f0dc92e7f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1NmE3OTJiYWQwNDNlN2E2ZmQzZGQ3MjZlOWUwZWY3YmM4MGM4M2EzODM3MjZiNTMyNjEwM2I4NWZjODc2MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/utility/parent-port.ts#L1-L32",
+          "version": "repo-lines-v1:sha256:51e0dc1c8d4bc32b1f3b7d9abd45e9dbccfdbda3a42835b9b634c6d9f726a78a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjODE5YjU1ZGI2MDIwZDRmMjAwY2E1MjI0ZThkNGMwMzZkMTZiMmU4NWE2OTliOWVkZjI1MDM3MDllZmJlNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_875dd99fc1b2470ba8c7224ad0f7a960",
+      "statement": "The node bundle's init wraps child_process.fork so children run with ELECTRON_RUN_AS_NODE=1 (using the helper executable on macOS), restricts Module._nodeModulePaths for code inside resources, and applies ASAR support to fs.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/init.ts#L1-L59",
+          "version": "repo-lines-v1:sha256:56698b67c578c6fd91dd1c412c65afe6c78911dbd085404012a5383e264b44c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1MGZmNDFmZjMxNmI3MDczYzA3NmNhNGIwNDIwNDljZjliYTMxNzZlM2JiOThhM2ZlNDVkY2NjZTNmNDYyNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5847b82a57f34d59b0e97674ed9ac381",
+      "statement": "wrapFsWithAsar patches fs (sync, callback and promise APIs), Module._extensions['.node'] and child_process.execFile so paths inside .asar archives are served from cached native Archive objects, with archive.copyFileOut extracting real files for operations that need them; asar handling is disabled by process.noAsar or ELECTRON_NO_ASAR outside browser/renderer.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L1236-L1275",
+          "version": "repo-lines-v1:sha256:129058552798d53485b40523881fd1faed17b6cbc548bcc2077cb173193256a7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZjA5YmVlOWM4OGQ3MGNhNzk0NTY0ODZmZDAwYTUzYzBkZmYzYzEyMmIyMWU0NWUzOTg2ZmUzN2IyOWQxNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4YmRkNzM2NjVhZGFlZDljMzBlMGZkNDJlMjdiNGVlNjlmNjJjZjJiYzMzMzQ2YWVmMmJjOTQ0YWUxOTU5N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMGEyNjFmNDk2YTJkNTg5NGJhOGViNGQ1ZWUwMjkzNTQ0YmE1ZTcyNDM5OGFhYzZiODYyZDA5MjlkMzJiM2UifQ"
+        },
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L15-L125",
+          "version": "repo-lines-v1:sha256:b886fd4a692822bf33d95852db329f19ea8c22e684a4dbdcd437c431d055282a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTExLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmZDFhZTRjNjE2YjI2YTE2ODdlMzVhYWM5YzJmYTc1MDVkYzAzMjUxOTRmNTc1N2FlNGJjMWM5ODZhOWMwN2IwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzMDVmMGI2NmI3Nzc1ZTBiNTcwY2FlMTBhZjA3YzM0YTUzMmU1Y2M3N2Y1ZTNkNWMxNTE0ZDRmNGRmMTFmOWQzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwZTBjYTcxZjVjOGI4YTA3ZTIyOGMxMTBhYjViN2M4MmM2ZjczZTJlMmI2ODJiMWJiMDFmNzEzYzdjMTVkY2NkIn0"
+        },
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L185-L250",
+          "version": "repo-lines-v1:sha256:3068536bf928954cb89ea301ac4a35bf5ca1e84b9be40b28a4e253aee4210e36:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhOTU3YTQ3OTBkM2QyZTBlYjg5MDEwNjE1YzIwZDdjOTZkODU5YTc5MTU0YTgwMTA1NGQ1MDE2M2NmNjNjMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlOWRhNzgwZWIyNjA4NjA3OGM4MTBhZWFlZjdhNmYwNmNjNjRlYzIzZjVkMzk4ZmQyMTRiZDA3ZjJjYTI4MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NzU3MWZmMTFiM2RmMzg1ZmJmOWVjNjlkMWI4MjRmYTVmMThkMmIwNTEyODk4Mzg5MTIyMWI0YjVkZjc1ZWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e2cbb1fa2b643ef8a87338852f150ea",
+      "statement": "Native asar::GetOrCreateAsarArchive caches archives under a lock, and GetAsarArchivePath finds the first .asar path component that is not a real directory.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/asar/asar_util.cc#L40-L125",
+          "version": "repo-lines-v1:sha256:93919a8442036622d1b11a156f80e32bff33bf0d105c46025a1f6d1c5a27f0ea:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiMGIwOWNjOGYzNWU2NGE0ODBkMzBmMGNlYjE4MTc4NGE5NWQyY2U1YzRkMjczYmJkZThkNGMzZmIyOGNkNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4OTYyNGZiMDYxMjhhZGI3MDMzNDlhNWMzNTZkYWU5OWY2ZmUxMjE4ZGEwMDA4Yjg0ZTU4MzhiNTIwM2ZmOTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwZTdlNTZjOTZjNWI0NDkxNzllY2VkOTA4NTljMTg0MGM4OGZmNmYwMjkxYTc2Yzc2YmI0ZjVmNGFlNzUxYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwZWQ5ZTc1ZjJmZjA0ODI2NjJjMmRhNDQ1NWExNGZlYWQxNDZmZmIzMzExMjU1ZmRlNWRhZmE4YjZhNTRjMTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e2edade597e64393a84523570a2d3407",
+      "statement": "With the embedded_asar_integrity_validation fuse on (macOS and Windows), Archive::Init validates the archive header's SHA-256 against a hash supplied by the app bundle (Info.plist ElectronAsarIntegrity on macOS), each file entry must carry SHA256 block integrity data, and any missing or mismatching integrity is fatal.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L120-L155",
+          "version": "repo-lines-v1:sha256:554d570131d33597dfaaaa28f43ba6a0822a1ebaa24c0ef79a41487beb03046e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MTM2Y2VkODdkMTgyZjU0OTA1ZjI0NzcxOThlZjhlY2EzNWViZTlmYzRjMmY1MjA1MjdiMzkyOGMwOGQwOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZDgyYjliNjZlZGNkMDQ0NDUxYzY5MDRhMjJlNDk0NGRkNDhjZWFjOGUxOGQ3MWZkZGQyZjFjMzlmMmM4MzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkZjBjOGMxYTNmOTdkYzdkNjk4YThmNDEyMjUxYmNlM2NhYjk1NzFiM2IyNmQ2MzY0ZTM1MzZmYjkzZjQyZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3MzkxNGE2ZTMyOTAwMjZhYWJiZTk4YWQxMzEzNzMzYjA2OGJhNGEwN2E1NzAyMTcyNmE2NjliMzljNjc3MzkifQ"
+        },
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L232-L257",
+          "version": "repo-lines-v1:sha256:e4abda0f1b4b94e33eebd08206f6323142fcc46232cab0ee0ab24758b173978e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1ZDNlMWJhOTY0ZjE3ODE5ZDAwZDY1MmE2N2IzMTMxOTliMDAwNGM1MDQ2NDdhMGMwNDJlN2M3YTJjNzljOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjMmEyMjUyOWIwOGMyM2E1MGFhODhlYWI2MzVmMTFhY2YyZDcwZTc4Y2UyZmMzMWQ0NDBjM2JhNTNiZWRlMDYifQ"
+        },
+        {
+          "resource": "repo://shell/common/asar/archive_mac.mm#L34-L60",
+          "version": "repo-lines-v1:sha256:4f729c6f01498106e2a8465ab783a89b48566e59bbc2be10137f57f7f63520a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjZDdiODJmZGY0NTYyOTA1MjYzNDNmZjFmNjU1MTY0NzVkZTRlMDZhZGFhNTM4MGRhZjM2NWEzOTBlYWFjMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZTQ3MWRiNDE2OGEyZGJhYThlYWYxMWM0ZWJkYjlkMDJiZjFhYzcxYzdiMmU4ODE4MjkwYzUwMjY5OGJmZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiMjNlNjUyMzgzMjVkYjIyYjRhZTE0ZGM2ZGJiMTQ3OGEyYWJhYmM0MWQ4MWFlOGFhZjBlNTNmYTEzMmM0NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxYzY5YjU1ZDMyMjU2NzY1ZDcyY2UxMWM1NWMwYjJjNDNkMTNjNjk1ZGFjZGFiZTJhYWE5ZmUyNzg3MWNjMDgifQ"
+        },
+        {
+          "resource": "repo://shell/common/asar/asar_util.cc#L103-L151",
+          "version": "repo-lines-v1:sha256:c50b41d073ee23b3765fa3bd281233896c642ca5ce477e09a296917b3033769f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NTAzZWMzMGM1YWZhYjM2YzdhMjc3MDM3MmI1NzE3NmE5MGY1ZDQxNDJlMjRlMWUzNjE1ZDdkMGEzMWJlZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwYjQ1MjUzYjM5NzJiMTZkZmQ4NTFhNTFmYjIwMmRmMjZmNTY5NzBiNDg1MmVlMzQ2MGI2NGNkZTE3NThjMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMGQxMzk5Mjg4YmY2ODVhZTgzOWJkNzhmYjhhNGMyYWVmZWRiM2U5MmVjMjRkNDQ1MjE3MGUyODFjODg1OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1be14c23ff714eb6881ce87b7c224a3d",
+      "statement": "The only_load_app_from_asar fuse restricts the app search paths to app.asar and sets appSearchPathsOnlyLoadASAR, which lib/browser/init.ts uses to skip search paths that aren't valid archives.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L74-L92",
+          "version": "repo-lines-v1:sha256:0019a2f3ef32bb354bd26f329f8a34bc6ff5d28e51429b3af6afb7dfc74233f2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjOTM0MGEyZmYzOTUxNTZhZTc1NjYxNDFiNWY1MDNlZWQ0YmViMmUzN2Q5NTcwNmZmZGU2YzIxYzgzOWQwY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzYzgwZDU2NDViYzY1MGI4NTcwZTRlZjY3OTQxNGMxNWE5YjY4OGE0ZjE5YzBjM2RjMGNkZjU5ZTU4YzM0OGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmYTllMDQ4ZTAzNDljY2RiZjUwNmE3MmMzYzg4OTM4MjE3NDRiNDA2MDlkYWM4MzFjZTUwM2U5NTFmNjg4NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYzgyNWE2YjY3OGU0Y2FmNzlmOGM5MzM2ZTM5ZmJlNjA5NmNhMTY2YTg0MmNhMTM0YjgyMDVlZDYzOTY1YjYifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L680-L700",
+          "version": "repo-lines-v1:sha256:73f3c76bf456698e52679e45b6cf5a37970a9d875a97503a689fd009228d5610:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmZTc0MDk4OWVkNGY1YmY0MjYwMjI2YWJiMWVjNDkxMmQyM2QxYmYxZDM4MzkxNTBmODdiYzEwMTExZWE2ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1NDYwMDllOTNjYTVhNDZhYzBmMWJiNjUzZTM5NjljNjMwN2Y3ODkwNWYyNzI5NjFmMmZkYWJhMDA5MTFjNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2NWQ0ODFjYzBjOTUzMjgzNDQzOTRlZmFiODU4NmI3NTk2OGZhZjYxNzA2NWVjYzJmODhlNjU3ZDg5NTA3MGUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

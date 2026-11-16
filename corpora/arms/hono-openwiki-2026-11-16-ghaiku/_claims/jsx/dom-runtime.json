@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f23ecb0437dff6a199efe882f0e092d0c5785ef2bc8514ce68d4957e77ed247f",
+  "claims": [
+    {
+      "id": "claim_b7ca632fcae14f809a6950e37c64fff0",
+      "statement": "createRoot returns a root whose first render builds the tree and inserts it into the container, while later render calls update an internal state wrapper; unmount marks the root so a later render throws 'Cannot update an unmounted root'.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/client.ts#L20-L60",
+          "version": "repo-lines-v1:sha256:d91d72cecddfa600ebc4b6e24c698767cf822010d868ad77349e77b8cd633d1e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3Yjc0OTcyNDMzNDJlOTUxN2JlMDY0NTBlODViZTBlMjRkNTNlNTA5ZTg5ZTk1ZWUyZjU1NWE3ZjRmOWFjY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4NDM5OTkzZmM5NzIyNDNjZWJkMzAzMTQyZDc4OGNiOTQ5ZWQyNDU5OTYwZWEyNTNlYWE0OTRmNmZiMjA5MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYzExMTUyZmJlZjI3MTY1NDJmMTE5ZWVlM2U4ZGM4YzdlZjhjMzI0Zjk2NDU1M2NlNmNhNjUwY2FlNmVhNWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_919ffa78b8e2409a91443dd92ccc93b7",
+      "statement": "hydrateRoot is implemented as createRoot followed by render, so in hono/jsx/dom hydration is equivalent to rendering and replaces existing markup.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/client.ts#L62-L76",
+          "version": "repo-lines-v1:sha256:a404b919d358d60e12b5de1ac6befc1074edf6da4c43bfb4da03e9c742f4166a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiOWFhMTIyMWUwZmE1N2IyYTJkMGFkZDRiN2ZmZTRiYTM1YzY0MmUwYzI3M2ZkNzViMWY3Y2U5YzMwNzhlYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzNDg1YzA1MzBkOWE0N2VjYmMzY2RmMzAxNGQyZWNjMzZiNzA3ZmZiYTAyYTAxYTZmOTkyNTEwNDg4NzVkZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2YTU5NmVlZGY3NzYyNDA3ODYyNjFjMTk4ZGFhNTg1ZGJhNWNlMTE1NDc0YmMyNzNmYmZhNThmODBhNDZlZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2YmY5M2JhOTE2YjY4MTBlMzY5NGI0MDRlYjQ0MTNmYmI0MWRlYjBlNzE5ODNiODA0OTVlOGU5MGEzNzViM2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9d497112742473487be2500151d3d8e",
+      "statement": "The DOM render pipeline runs buildNode and build over NodeObject trees before apply writes DOM elements, and renderNode inserts the result through a DocumentFragment and a single replaceChildren call.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L497-L520",
+          "version": "repo-lines-v1:sha256:3d2ece783d6c83e1ee65a61500bb57347c64f5a895bd881636e019f7f7db175f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiOTQyOTI2MDdkMjFhYTdhYjM3OTZlNGI2OTBiZDZhZjI1OTczMDk2NmI0MDdiZmI1MzE5ZDE4MGJiNDkwYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MTc3NDhhNDMwYTg0ZTRiODczYjc3ODk4YWMyMGMwOGRiZGRmMDZjNzk5NDE3YjUwMDQ0NzQ3MmU4NTg3ZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1OWQ0N2M2NjYxMDY1M2U5OTcwMDFhYjNlZjY2NzZhOTUxMjdlZjhkZTZlMzk4MThlODJlZjdiZWU3N2ZkZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjZDZhNGRhZDk1NmU3MjE0NTRlMmFlZjkwMjg2MGVlZjYyNTA0ZTYzZTJiYzRhYTg3ZDVkNzM2NGRiMWM4YWQifQ"
+        },
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L783-L794",
+          "version": "repo-lines-v1:sha256:a9938df1c45ecea8541c3667d6999af30cd841617fb91c3aa0f4a951ea3adbfd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNmEzNmIyMWMwYTBhNDM1MTY1ODNmODRhODJiYzFhODllZDFmZGRmM2JiNjhmMzc3YWI0ZjcwOGE2YzRhMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5Nzg5NDI2MmY3MDc3NTlmZjRhYTg1Nzc1YmNkOTAyNGJhNDkyY2I0ODJkN2MzYjhjZmZjYzJjODRmZGE0MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxNzc3OTMxNzM0M2RkN2RjZmU0NDA5YTVlNTFhMDUwNGM0MzE5NmI1NDIzNTliZWM4ZTEyNGM0YTY5ZTViNWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b260d59b2c94135b33323d390b2472a",
+      "statement": "update cancels any pending update for the same node, defers execution by one microtask unless inside flushSync, and flushSync runs the updates collected inside its callback synchronously.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L740-L781",
+          "version": "repo-lines-v1:sha256:6a991c2c43b87259667823521720e5f4b8545216fd909fe272be14a3d565b508:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyMDg0NTlkYWM0ZDA4NjIzOWE3ZTgyZTNmNDAyOWMyMTdhOWFkOWE5YmM2Njc1ZmViNzliNjE5ZjM3MmRhZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkN2I4NzZlN2QwNTFhN2ZjNjU2MzhlNzhlZjA3MzJhZTM2NmJmOWVkNjdkYWM4M2UwMzkwNWQ1YjQ4NWQ1NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhNzdlZjQwNDM2MWE1YzdhY2NhMDk3YTg1ZGUwMTdmMjc1MzUyZjhiYTE4MDlmNjZlYmRkYTA2YjhhODU4ZWIifQ"
+        },
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L801-L813",
+          "version": "repo-lines-v1:sha256:d2f932184f17b8181bff5f3036d896040849497cbf07a93242f94d4c188d9e59:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMjY2M2MxZGFlNWJlMzQ5ZjIzNWJmM2VlZTE2YzE5MDVkNjEyMTNhODllNjZkNWE2ZmM5ZWM4ODU5NTIyYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiMWM5NDY3NzlmZjY3NGJhNWI1YTJjZDdkMzRlOTYwNjZhNWU2YWFlZWU2MjlkMmNhYmJlZDZjNGU5MzBhY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NTNhN2NhYWJhZWM3ZjdjNGUzZGIwNjI1MzNkOWU1MTBhZDY3NWZlNjlkN2UwZmY4Zjg5ODUwYzI2NzZiMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a99cf8c5ff7840f4b559550f0c0e69cf",
+      "statement": "useState stores each hook value in the node's stash at a per-call index and schedules an update only when the new value differs under Object.is.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/hooks/index.ts#L182-L215",
+          "version": "repo-lines-v1:sha256:5ecec702e2db8f3db9e0ed3371ffe4bbb64e1f7bca2847a9adf2686ea96b82cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyYTMwOGEyYWRlZWRiYWQxMzNlNzFkZDI1NDMyNzUzMDE1MGExZWM1MTFmNjgyN2YxNjdhMDY0ZThhZDc3NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4YWY1NmUxYTljNzRmODkyOWNiYWY1Njg3YmYyNzk0MTlmY2RmYmFhMGVlZmJlMWRkYmU3ZjI4NDhmZDg2MmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5MDllMDkxZGRiZDdmNzI4ODc1ZTUxOThiZWFiOTMyMDEzZmVmMjI4OTdhYTBmZjkyOTRhOWU3MzdmYTBjODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmZGY4NTAzYjVlMTZmMjk4YzdlNDJlZDE5NTViNWEyZWMwYWZlOTk5MmNkNDg5ZTFjZmFjMWJkMDkzMjRiZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8dfd9c506b254c1fb1f4a6f99c93dc28",
+      "statement": "ErrorBoundary and Suspense install a DOM_ERROR_HANDLER on their fragment: ErrorBoundary rethrows promises and renders its fallback for other errors, and Suspense renders its fallback for promises and retries when they settle.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/components.ts#L1-L39",
+          "version": "repo-lines-v1:sha256:c7bf77b3b5bf4cc92527e5a086c7516dd6a8b1dc5ed228f011ef4c4d1bda1c3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzNzdhZjM4M2I1MDI2Njc2MDMyNmI1NjAzNDExMDNkMWZhZTk0ZGQyNGQwZmQ0MTYxNWVmMTgxZTRkNWZlNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYmNhNzUwMDI5MTJiYjM3Y2FkMzc3MzdkMDk3OWIyMzkzOWQ5MmJiNDgwZTgzMWE0ZGU0MGFlYTdiNjEwYWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L504-L512",
+          "version": "repo-lines-v1:sha256:e263423b7260a74480e930de1b867be589269cb92e30d3307e7327013f1c573a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDY1OTVmNGVlNWZmNjNkNTA5NTA0MTlkYzM0NDE0NTEzODUxZGM5NzM2ZmQxN2E0ZjdiZmE5MzBiMjYxYjZmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2M4MTE3NzQ3MzhiMzAxNDJhMDc4NTM5MGI4YzhjYTNiZWI4MDczZGRiNmY1MzU4ZDkxNmRlMTY3ODFhMWRmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWEyYjdjMWE5MjA2ZDk1YjljNjA0MjRlZDJmZjUwNDNmMzAxZmRjMzVmMWU0MThiMGNlOGRiYjc1NWE3Y2RhNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fc87fc3ab5a43639e116568752ac15c",
+      "statement": "eventAliasMap renames Change to Input and DoubleClick to DblClick, and nameSpaceMap assigns the SVG and MathML namespaces to svg and math elements.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L19-L29",
+          "version": "repo-lines-v1:sha256:f876489aefd82301c1a44a13622e8312a3f1da2e9a5b45f373692fba8783383d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NDdhYWZhOTI4MzEzMDg0MGM2N2NlNjY1YzI0NzY0MjNmZjA5ZjFjMzBlNjQ3OTIyYzRmNDI2MjhhOGU5MDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5NzFjMTNlZTM2MjNmOGNlYzlhYjdiZWYxMjBiM2Q5YjhiYWY1YmEzNzJmNDg4YmNmZTYzNzFmYjNhYWI5NWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzNThhZDA4MTY5NDY5OTZhMGM1YWFjYmI0NDQ4MDBiZjc1ZTJlMzMzMTM2NDQxMmYwYzAyY2EwMDJlZGY1NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwNjhjYWZiMjBhYTNhNGJlZTRiZmVkZDMyMzcwYzVjZWUzOTBjMzFjNDJlYjc3MmVkODgzODAyMGIyZGZjYzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bbf4d66daa08427cb751dad9ae6b7475",
+      "statement": "useActionState keeps the action result in component state initialized from initialState.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/hooks/index.ts#L79-L91",
+          "version": "repo-lines-v1:sha256:86c9613d2c1740245535543184e09a6d08b9c652a61e31f1346ab5f89e54ce7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkY2Q0N2ZiNWY3ZTdmNzAwOWVmZTQ4MzE4MDdjMTMwZjgzZGU0OGExYTg5ZDE1ZjljZmQ1YTlhYzBjYWJkOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllZjAzNDk2MTAyZDBhODI0YTRmYTFiYTJmMjdhZjlhNTdkMWJmODU0MGY2NGI3N2M4ZTE3MzYxM2M3ZWVlY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:23:45.579Z"
+  }
+}

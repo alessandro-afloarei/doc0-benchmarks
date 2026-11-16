@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:125d77353afe6b47087ed76ae34e902b423c528ee980292a078db4fcf2652323",
+  "claims": [
+    {
+      "id": "claim_f5bf501b508e4f11a1467394e8ec3c5c",
+      "statement": "MCPConfig holds separate lists of SSE, streamable HTTP, and stdio server configs; stdio args accept shell-style strings parsed with shlex and env accepts comma-separated KEY=VALUE strings.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/mcp_config.py#L46-L215",
+          "version": "repo-lines-v1:sha256:da0511b469981ce48cfcdbe407f1815da5ca6a5e1ff4966dfa0ed4279f7f27e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhYTJkNzBlZWI2NDRjZWE0NDhkZjkxYTgyNzIwZTJmMTllYjZhYTNkODJkNzhlMjM1MzQ0MjI1MjZkODE5ZWY4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxZDcyNTZlNDA2ZTViNTUwNGY1NWY1MTcwZGNjOWNkNzc5MjI3MmQ3ZGZlM2U1M2VlMDllYzk1MjRkMWEwNDA3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhMzA3MTQ4ZmI4NjdjOWQ0YzMxMWEzODE3NzMwMzNiZjE2YTQ1NjcwY2Y3MWU4ZDljOGY5NjllYWFlYWEwMDk3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_87590d648161415f91fc985ad4b3a291",
+      "statement": "By default OpenHands adds its own MCP server as a streamable HTTP server at http://{mcp_host}/mcp/mcp and adds a Tavily search stdio server when the search API key starts with tvly-; this default config class is replaceable via OPENHANDS_MCP_CONFIG_CLS.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/mcp_config.py#L315-L362",
+          "version": "repo-lines-v1:sha256:ace601ccf5d525c4ba479cc1a6efc42b8d7d48474f9838417c485d2eb2e90c62:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MmFjMDkxNDM5MzlhZTExNGNhZDYxY2YyOTA3Y2E1ZDlhMDczYjkzOTM0OWE0ZjgyNjA4MTRkMjgyMzRjNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkNWZmNmNmZTAzM2I3MGRjMWM0MGU5NzU4ZWVlZjQ2OWMyNjczMTJmZWI0YTc1MmZjZTg0NmQ3OTU1MmYwOGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_63095417df064e59872fd886e9df13bd",
+      "statement": "add_mcp_tools_to_agent merges microagent stdio servers into the runtime's MCP config, fetches tool schemas from MCP clients (using stdio directly only for the CLI runtime), and registers them on the agent.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L267-L317",
+          "version": "repo-lines-v1:sha256:7c349b9cd2dcf22a82261e945a41c1fbc02c38be3605625f73e2453266231577:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNTMyNDM2ODVlYzhhNzZjZDI3OTk5ZWY1NjUyZWQ4M2ZiZTU1YjgwYjlkOTFmZTdkYzBkOWU2ODAzYjVhYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NGRlODM1ZGNkMTIxNzRmNjZkZTMyMzkzZDk1YmEyNGY3YmRiNWM5NDE5ZDI0Mzc3OTgyMGE2YzU1ZWU5NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68aedc32439d4d1fab549818db7fe9c4",
+      "statement": "MCP stdio servers whose command is not found on PATH are skipped, and failed connections are excluded from the client list rather than aborting tool discovery.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L63-L149",
+          "version": "repo-lines-v1:sha256:6fc3ce967132341337286db31edcb54bb9c6da04ed3eab54d6df0ac2dff1d0c7:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YTc3MTMzMmM1ODczYTQ5MjdkZGUxMmE0YmY5YmI3ZWE1MTJlYTdmYTU0NzkyZmMxZTk4MzA0OGJiYzc5YmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3OWQ4MmJkM2FhYzc3NDIwNTQ4OTA2ZDAxYTAzMTJmNDA2ODc3YjNiZmI4MzM0N2Y3MTEzNDgzM2M5YzYwNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4NDBlMTEzMjhiM2FmZmYwYjdjMjcxMzM5ZTMwZjM0NGJmOGMzZWUyYmI4OTc5ZDVmYTQ3ZDk5MmY0MThlOTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb8d1b6b9f014ba895e01825c118f064",
+      "statement": "MCP tool calls create fresh clients for the configured SSE and SHTTP servers, route the call to the client exposing the tool name, and return the JSON-serialized result as an MCPObservation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L206-L265",
+          "version": "repo-lines-v1:sha256:f08d5ca3ca64175a0b404daa27f7cf819cf0eeae9a3710ff68064871cbbd0cc0:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyNDQzNjdjODNhMTBhOWY2ZWM4Mzk3MTZmNGM0OTM0OWU3NGExMjljMmM1Y2ZlZjgzNWFlMTY2OTBmZDQ1NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YzE3ZWZhMjc4NGU3MjFiMTZkYTUxN2I5ZDYxMTFlMDJiZmQyNGE5NzlkZWEzY2FjMDcwMGVlMmI2OTU3ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzNmQxNmJhNmNiNTVmM2FkNjMzZmY5MWU5NjE0OGYzMWJkZDcwYWE5NWExNzVhOWYwZDI0Y2UzYmRiZWViM2UifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L452-L481",
+          "version": "repo-lines-v1:sha256:14dcba29271b54ff803eee54792a86b91c757b2da13e0d39daad501f8d789de8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNjc0NWI3YjUzOTZhOTY5OGRmYTkyZjhiYWYxMjJjNjQxYmM0YTFiNTgxNDM5NjVkZmI2ZTZjMTVlYWJhYzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhZjdhNjQ5M2RkZjgzMTZhMmY3NTEzZGI5NTBlNzcwOTY2YWMzMWQ4MzA2OTk5NWM0YWRhMmUyZWM1ZWM3NjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4MzQ1OWMwZmIwYTEwMGYwMDM4ZDU0YzcxY2FhMzljZWJlODAxZjQ4YTM3Yjc3ODk0YjNjYTcwNmI2YjhlMTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_459a0e34478e4681bffb1370190ad389",
+      "statement": "For sandboxed runtimes, new stdio MCP servers are pushed to the action execution server's /update_mcp_server endpoint, and the sandbox's MCP proxy is then added as an SSE server authenticated with the session API key.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/action_execution_server.py#L833-L870",
+          "version": "repo-lines-v1:sha256:d4d47682c2133c3f9b1eec64241a5e919df06918a5dd6108c3e20a26b44d33a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNzE2MDA0M2JlZGJiNWVkOGZhM2IwYzgyNmYwYzQ1MDZlZDIwYzMxZjE5ZjIxMzdlNDRhYWNiZTczYzc3YWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1NjljYjA5MjgwZWUwNzgxOTQ1ZTQ4ZDQwNDFiZDJkZmFhZTY5MWFkMmVhYmY1ZDNjYmEwODQ2YzcyMTZjYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzMWFjYTkzZWNiYTlmMjNiNjllZjhjYjdlYTI1NzU3MGVmYzVkOWZkODQ3YTQxMGZhNWI0NGMxMjEyNTY2NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczN2MxNTAxNWQ1ZTk3ZjRiNmRkNDgwNGNhMjU0OTJhMTIzZDRjMDI5MjJiMGMwYWQ3ODE1OWYzOTBiZjVkNTYifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L361-L450",
+          "version": "repo-lines-v1:sha256:62c704c44ee5320857176cf9eb48eaeff45c4a708fa5360c82182c2977f94daf:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMzJjMDI1ZGNjNjRhMjQxYWRjZjMwMzdhNGU5NmQ2MWUyNzNhYjdiZmUzMTM4OTQ4Mzg2ODNiZTAyZmQ1YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxYTE2MGZjNjhlZDAyYzcwYjYxZjc4NDhjYWUxM2IxYWU1NTI3OTBmM2U5YTBiZWE2MDRjYzgxOGQxMTM0NWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4ODEyMDUwMzMyMDIxY2M4M2ZkZDIyM2M3MTAyODRiZjQ0YWQ2NmM0YWI0ZTJiZjQyODkzZWQwYzhiNjQxOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4YzUxMDAwMTk1NzViNDk0YjU4ZDk4OWU0YTllN2Q1ODc5MWE2MGRiYjA0OTI2NzliNWY0MzYzNjA5YjE3NjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_601e7c1a10a544d79a98310624d3e48a",
+      "statement": "MCP is disabled on Windows across client creation, tool fetching, and tool calls.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L206-L225",
+          "version": "repo-lines-v1:sha256:4b4f1feb49efe28a1d58fbef3706e2e226df317ca6d25bc1f2de6aa41ff4336a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyNDQzNjdjODNhMTBhOWY2ZWM4Mzk3MTZmNGM0OTM0OWU3NGExMjljMmM1Y2ZlZjgzNWFlMTY2OTBmZDQ1NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZjk4ZGYxYTA5NjVhNWU2NWMwOWE3N2NlODkwNWI3NGEwNmFkNGVlMzhlODAyZWQ3M2M2ZDdkZjMxY2MyZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YzE3ZWZhMjc4NGU3MjFiMTZkYTUxN2I5ZDYxMTFlMDJiZmQyNGE5NzlkZWEzY2FjMDcwMGVlMmI2OTU3ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmMzY4ZDFhYTJhOGU2MGI2MzUwMjg1ZGZhZmFjZjFmOGE1MDY3NTlhODA5ODUyODA0ZjgzOWM2OTcxNjllZWMifQ"
+        },
+        {
+          "resource": "repo://openhands/mcp/utils.py#L63-L80",
+          "version": "repo-lines-v1:sha256:142b19ffb164e2d439106352da19346cc022ccb977c5340bb9bd44f1d13eec36:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YTc3MTMzMmM1ODczYTQ5MjdkZGUxMmE0YmY5YmI3ZWE1MTJlYTdmYTU0NzkyZmMxZTk4MzA0OGJiYzc5YmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3OWQ4MmJkM2FhYzc3NDIwNTQ4OTA2ZDAxYTAzMTJmNDA2ODc3YjNiZmI4MzM0N2Y3MTEzNDgzM2M5YzYwNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxNWU3ZGNlZDdmZTU4Nzk0OTI0ODI2OTI5ZDM1ZGE4Zjg2ZDdjODk3YTUzZWZkYjBlNWQ0ZjhhMjMwMGEzYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac77ced150e94cbc8c74de75152c6187",
+      "statement": "The built-in OpenHands MCP server is a stateless HTTP FastMCP app mounted at /mcp that provides create_pr, create_mr, and create_bitbucket_pr tools using the authenticated user's provider tokens and appending a conversation link.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/app.py#L28-L63",
+          "version": "repo-lines-v1:sha256:5169db4a1316f18aacc39abc1484423ccebebd0a8b357a47477865cb00241f5b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxNjA0ODliYjFhMmU1ZTA0NThlZmU1NDFkNjVmMWJkYTU3OWNjMDdmOGZmNWQwZmQxY2E4MWM2MjM5YWRjZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNTQ4M2VkMjQzM2ViYjQ2NmRiOTViY2E5NmQyNjc4YzVhYmUwZjQyZTUxNWI2ZTk5ZjE5YWMxY2NjNzZkNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4NDIwZTJmZWVjZjhkYmZkMmE0ODcwYjU1NjYxNjExZDJlN2M1MzE5N2I3MTdhNzMyYjhmZmZjYzI5NmI2YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUifQ"
+        },
+        {
+          "resource": "repo://openhands/server/routes/mcp.py#L26-L150",
+          "version": "repo-lines-v1:sha256:396c4d8a768d220e5185087fb083288eabc23abc23cc4ceb1a8d8821a2fc4503:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1ZDU2ZWMxN2Y0YjY1ODMzZWJjNTE3ZjI0Y2ZjYTlmN2IxNzg3ZTM5OTgxMzQzYmU1NzFjMmE3ZTlkODdmMGYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkNjUwODQ5OWFiNDVjZTRjYjZmNzhhMDA3NjIwZWY0Zjc3MTNiNWFkM2M5NmRkMjkyYWRlMmUwNTFhMDg5MDYxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2NTQ5YjE1ZTYzMjk3ZWNmODZmYzc3Mjk4MTE4OTVkNGE0ZTkxYTllODFjN2JlNjU2YmE1ZjkyYTVjNjQ3YTc3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ca5cd559c274f0db0f062603bf2e589",
+      "statement": "HTTP MCP clients send the server API key as Bearer, s, and X-Session-API-Key headers and include the conversation id header when known.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/client.py#L57-L95",
+          "version": "repo-lines-v1:sha256:0d0cd06447a6bc27e77bd3967afa033ebbac12d940e3b618d8bee1fed82f7a2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MGRkOGVlYTI5ODlkYzg4OTZlODdmNmYwMTA1NmMwYTgzODdkODJhYjAwNTdmNWQ2YzQyYTZjMTk3ZmYwOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhZGVlNGUwODRjZGVhYWU3NmFlYzYwODc5NzY5MTg3OGYwNWUwY2I2MzNkZDE2ZGRiMzkxNzlkZTNlODZlYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMDc5ODZkNWEyNDM2OWIzYzU0NDA2YTc5OTU3N2NkY2RkNzY4YzQ4YWRiZjU4ZmRjMDAxYjEzMDM2ZmY0ZTAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

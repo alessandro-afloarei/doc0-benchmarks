@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5b30b618f2c7529c6103c6eeb3ba89af9dd328e425e57d2459ee6f7b0f2f6ad0",
+  "claims": [
+    {
+      "id": "claim_3a229aea2fed4efba0fbf2b7f03447cc",
+      "statement": "accept_content defaults to json only, and the worker's task consumer is created with accept_content as its accepted content types.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L317-L324",
+          "version": "repo-lines-v1:sha256:b3be71d95494c51b2efb8d7984802be3e57c78863aae99af6d1c95fa954a9d74:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFmZjlmYTliODA2YmI1YjVhNWFlNTVmZWE3ZjdkMmRhNjgyYmFkNmZiMTk1ODZmNjdiMWIxOTk5NGVkZTZhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODRhYjA1MDRhY2Q4OTllYjNjZTQyZWZiNWUxODM4MWFlYWE1NDA1ZjU1Nzg2OGY2ZWU2YjBhMDhkNjQ2MDI3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODYwODA4MDEwMDRlZmMxMGE4ODhmOGMxNDJlNDQzODE2Yjk1MWEyOWYzMzZkOTNjNWJjY2Y0YzI2MDQ5MzAzNyJ9"
+        },
+        {
+          "resource": "repo://celery/app/defaults.py#L13-L13",
+          "version": "repo-lines-v1:sha256:7c5fa47e2bc11f0d4886785a886b3b3308ebf31eab12abe41da43c48984866d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M1ZmE0N2UyYmMxMWYwZDQ4ODY3ODVhODg2YjNiMzMwOGViZjMxZWFiMTJhYmU0MWRhNDNjNDg5ODQ4NjZkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M1ZmE0N2UyYmMxMWYwZDQ4ODY3ODVhODg2YjNiMzMwOGViZjMxZWFiMTJhYmU0MWRhNDNjNDg5ODQ4NjZkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGIxNWVmODM1N2RkZWQ1ZmZkNTc2ZjI4NGUyNjY4ODQ1YjVkMGVhM2U1NzFlNTVjOTBiOTY3YzM4Y2FjZjE5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTgyYjE0M2M5ZTJjOWFhNmM3MmViNjFlNTZlZmRiOWE0YmZmOTljOWEyZDdlODU2ZGM1NzRmYjcxMGRjNGFkYSJ9"
+        },
+        {
+          "resource": "repo://celery/app/defaults.py#L67-L68",
+          "version": "repo-lines-v1:sha256:921870c31bb5c3dfc41e816135697042b282503892168dcdb0ed8c172a157035:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRiYjE3YmYzODJmZTdmZjQ4MTRiYjU2ZjI1MGY0ZDFhN2E1YjIzN2UyNGFkNjdkYWM1YjhlN2M0ZmIxNWMzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI1YTdkZjQ3NDViNmEwYTljZjc2NTlhOTZjM2MyNDMzM2JjZjQzYmI4YWUyMDJkNGRmYzFjYjFlZjM1NzE1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRiZjMxYjlkYmNiNTIxZDBiMDM3YzUxNzA1YjYwODI3OTg3NGQxYzQ5MDI2MDJkZGFhMTA4ODk3ZmRhNzU0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ4NjI4MDQwNmI0ZWEwOWE0MTI4NGU3ZmZkZmI1MjAwNmVjZGRkMzdiNDNhNzAwMDkyZDUzZWQ3MGViY2M0NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_70644ed167714b56ab60d9107e8bbc56",
+      "statement": "Messages whose content type is disallowed (ContentDisallowed) or that are otherwise invalid are logged and rejected by the consumer.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L710-L714",
+          "version": "repo-lines-v1:sha256:9893e7a4eee33a33d9f4d138731f694609c8ff2f4981f1028411019f2238915a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGEwYzU3ZTE0ZGQ2ZDNkYmNmNzZkYTQ2ZjU1ZTI3ZTgxYmRmZDNjNmU3ODBmNjZmMTIyOTNlZTM3MWRlYTZlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzIwMTk1ZDZmZWMwNWEwMTA3NWZmYzU5NWM1NWM3YmJjNzY2MzIzOTk3NDRjODU1Y2VlZDU4OGVjZTFjYTE5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGU5YjExMDgyYmMyYzk4NWYzY2ZhYjkxM2E1M2E2ZDY5ZjA0N2Y1OGJiNTVkOTcxZTA3MWYzZWU0ZmY0MDYzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2U3NjNlYTFhYjEzMTY4ZjZmYWY5NzY1YTMwNDliMDczZjhmYjEwNTA1YWQwNTZkMzcwODAwODY5NmU0OTY3MCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L779-L784",
+          "version": "repo-lines-v1:sha256:d2e3dae674545246e5ac653e9ac79d962399e6a3f7d3f91f9044356dafbf6b75:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzUwNmU3NGYyMzVlM2VmYWQ0N2Q5OWQ5Y2ExMjYyYzAzNjk1ZjU5YzZmZWU3MTJjZDM0YTJmZDJlY2FjM2U0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDIzODgzZWM5NzczNTUwYzEzNGY5YTEwODMxNGM3NjQ3ZmQ0Y2M5NWM1MWRmZmY5Y2E3NzEzYjBkOTc0OWRiNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWVmNmZlODc3MDU4M2E2Y2E0YjMyZTFiOGMxMzg4N2JiNzkyOWM3ZTNhYzE0NWE5OGZhNWQzMTk3MjBkZWRiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzViOGUyYTlmNGI1ODljODRlNDlhOWU3YmFjMjQ1ZjcyMDI3YzZjMDEyMGJmMGYyY2QwNDQzYTE2ZGRhYjhlMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_49b44a286090434bbf554bd49e79680e",
+      "statement": "Unless the result serializer is pickle, exceptions are stored as exc_type/exc_message/exc_module dictionaries, and when rebuilt the resolved class must be a BaseException subclass or SecurityError is raised.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L38-L38",
+          "version": "repo-lines-v1:sha256:1660053d774aadd485e664c08dac63048cca3ce977eea0607a9bf19d112ac703:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTY2MDA1M2Q3NzRhYWRkNDg1ZTY2NGMwOGRhYzYzMDQ4Y2NhM2NlOTc3ZWVhMDYwN2E5YmYxOWQxMTJhYzcwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTY2MDA1M2Q3NzRhYWRkNDg1ZTY2NGMwOGRhYzYzMDQ4Y2NhM2NlOTc3ZWVhMDYwN2E5YmYxOWQxMTJhYzcwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDBkMjE0NWU0NzM3N2QwZjU5MzIyYmZjZDlkYzk4NzM4OGY2MDQ4OGY0M2NhN2ZkODEyYjNkNzZiZmExMGE2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTAxYjAwZmM2ZDFiODJkOTM1YzA5NDc3YmQ2M2MyNmE1YzM2ZTZlMGQ0MTk2MzQ4YWQ4NDkzODBhZGZlNjk4NyJ9"
+        },
+        {
+          "resource": "repo://celery/backends/base.py#L447-L526",
+          "version": "repo-lines-v1:sha256:bb5a9883bf1abde93f553e4501272edcd08bb6714462f7bc2f47ddddc7cab547:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjZDA4ZDExMGM5ZmI5YmE5M2FmNmNkYWNjZmMyZjY4OGEyNDgzZDU5ZDI2ODI4N2U3NzNmZmRiZmEyMGQ4ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyODU2OTVlMTJkMTFhYTE1ZGE3NmE1YjI5ZjQwNDZhNzAzYmMxNmRiMzEwNjQ2ZDBjZGQ0ZWJjY2FkZmJiZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2MmMwMWJkOWQ3NzBiNjMxYjE0ZmY0MjQzNGFlZTUzN2RhNDA5ZjAxNGQ2M2JjNDk5ZjgwZjBiY2E1Zjc0NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0NmJmYzJlMmFlODIxNmI1Yzc4OThmZWZlN2JjOTI2ZDU1YjcyZDA4Zjk5Njc5ODBlMTE2ODVkZDllZDgzZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1c8ac36f8564e1c88eb293af70b106a",
+      "statement": "setup_security disables insecure serializers, requires task_serializer='auth' and accept_content=['auth'] plus key, certificate and cert store settings, registers the auth serializer and makes it kombu's default serializer.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/__init__.py",
+          "version": "repo-file-v1:sha256:235a71fb1e7ed7d3be15c0909b50071df541e8fa7e6dabb06d9f82d5fc462727"
+        }
+      ]
+    },
+    {
+      "id": "claim_84157e5514ac4093adf731d1d70a94ea",
+      "statement": "The auth serializer signs the already-encoded message body and verifies the signature against the signer's certificate from the store before decoding the body.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/serialization.py",
+          "version": "repo-file-v1:sha256:6462ba305a6985082e7bb465dd70349f5e1ff75a3e26f0172416c9b936803607"
+        }
+      ]
+    },
+    {
+      "id": "claim_060196bdb3f249f8b99f6488346bfcb7",
+      "statement": "Signatures use RSA-PSS with MGF1 and maximum salt length; non-RSA certificates are rejected, and a certificate is identified by its issuer plus serial number.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/certificate.py#L22-L70",
+          "version": "repo-lines-v1:sha256:b2ceb594bf757a058ba8f50c70a9498353e484dded4f8cdd8fb6ee40e138e46e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1YTMwMzg0YTNlOTY4NWRkZGQwY2JhMWZkMDU4YTE2MjEwYzBiNDUyYzllMWQ3YmZiM2FlMTIwNjI1ZTBkYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MjczZTZiNjRkNWI2N2ZmYTE3MDRiOGY5MWUxMzhjOGQxOGY2YWUyZGE2NTBkYjNiNjlhZGI0ODI5OWM0MWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyMjY4Zjk4M2JjNDNhZGUyMWMwZTAyY2Y2ZDA1NjBkMjFmMWJkZDgwN2M2NDZlZjUzZjhlYjBkZmU4OWIxMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmMjNhYjA3MDZiOTU2YjEwMzAzZDVjYmM4NjEyM2MzNDVjNDQzNjhmMDVhMDFlMzE5ODJkMjQxODczNWJlZGUifQ"
+        },
+        {
+          "resource": "repo://celery/security/key.py",
+          "version": "repo-file-v1:sha256:35ba1c755fda26340c66cf43259ad2b694e7905670fcaf1220210cc1a96c3ea2"
+        }
+      ]
+    },
+    {
+      "id": "claim_7dbc60b4b3424e46a01cde42803fe3b8",
+      "statement": "The filesystem certificate store loads all certificates matching a path or glob and raises SecurityError for expired or duplicate certificates and unknown signers.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/certificate.py#L73-L113",
+          "version": "repo-lines-v1:sha256:6ea672997f304e7da70e82240241a835e9212a62fe3b22215aad641db9424dc8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyOTk2MjMyMWQwODMzNmM5MzMzYzExMjNjM2Q5M2RhMDBjMDJhNjVhODMxOGQyZTBkYzY1ZTFiYWM1ZmQ3NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNjIyMTk5ZmNiMzlmNTFkNGQ3MTRiMDdhZDg0YzNhNjBiOWUxMDdjZmZhNjllMDg0NWFmMzQ1MGE2OTY2MWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkYzM3NzFlN2ZmZDUyYWE5NzhhYmI4MmZiMzY5OTg2OTZjNWVjNjYwOTliOWQ4YjhhMmYwNWYwYjc5NjkxZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c1a977ed4a5249c892da07d5ff57bf76",
+      "statement": "Importing celery.security without the cryptography package raises ImproperlyConfigured.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/__init__.py",
+          "version": "repo-file-v1:sha256:235a71fb1e7ed7d3be15c0909b50071df541e8fa7e6dabb06d9f82d5fc462727"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:57:55.789Z"
+  }
+}

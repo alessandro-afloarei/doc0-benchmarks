@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:308a79b2420b36a082d95a410247f63bef5f2a82111aba83c0224d3b17dec724",
+  "claims": [
+    {
+      "id": "claim_326bc45e01fa4c079e19760ee8ba3b95",
+      "statement": "ExitCode maps Success to 0, HasResults(true) to 0, HasResults(false) to 1, GeneralError to 1, and KilledBySigint to 130.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L6-L23",
+          "version": "repo-lines-v1:sha256:cb65fb0966050be507bb3fd12ee94e719b9df3b22ac8f6279f3ace575bee00c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MTZhZjcwOWZlZDM0OWNiNzdjYjRkYTYyZjk2ZjI3NTEyMmE4MzEzMTRlNGM1NmNkZjdlOGI4ZmZhNDFjZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNmU2NTA4NDVkNjBkMjVhOGMzZDU0MGI5MTYzOWUzMDliNmVjMDMzYjQwOWU5ZTg4NjJjMDlkMWI4NWRhZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyZDE5ZDdlYTVmZDIzZDhiOGFiMmQ0ZWVmZmZjZDhiNmY2Mjc2MjVhYzMyNTg0Yjc4Yzk4YzgyNDAzNTkyMTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a9f879475724ba88243a8af1f33bd12",
+      "statement": "merge_exitcodes returns GeneralError if any input code is non-zero (including KilledBySigint) and Success otherwise, including for an empty input.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L46-L51",
+          "version": "repo-lines-v1:sha256:a03c6eaff4a6df26239c71e05121ffb7d204634840661f19581c3a2941e045ea:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmIzMzllMTc4ZGQ2ZjI1N2ViZmNiYzdjZmJlMjdkZmUzMGU3NjQxMjc1ZDc0YjUyYjA2ODQ4ZTAxNGFjNzAzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JjOThkNmIwZGM0OTJjNTAxNmRmMTA4MDVhM2E1NGViOWMxODRhNWE2MTM3ZTdmNGJlY2ZhMGMyMjA1NTBkMCJ9"
+        },
+        {
+          "resource": "repo://src/exit_codes.rs#L57-L93",
+          "version": "repo-lines-v1:sha256:7e696b5d6440f87bc7ed83411e8ffe0414533a41134e9474f7a72bcb191df407:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ZWMzYjNmYzljZWRmMDgyMDRiY2M0YWUwYTVmMTMwYzhkODEzYjgxNTQ0ZWQ0NGVhYWJjYTA4ODEzOTg2MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9df68aea8a5439e938b72eca07db5c4",
+      "statement": "On Unix, exiting with KilledBySigint resets SIGINT to the default handler and re-raises it before falling back to process::exit(130).",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L30-L43",
+          "version": "repo-lines-v1:sha256:0d910f4a7267ca814ce1a68c1b527b38bb622a68d8145a82ff3504bc822b8bfe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YzYxZWRlNmU1NTAyZjFiNGZmYzlhZTUzNmEyMjJhMWI2ZTMwNTBkZWFjYWU4Mzg0YjU3OWYyODFjNjlhNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjMzI2N2UwNmQwMTUwZGE0ODg1NjllYWFmMWQwNDE2YmYxMWE3NWU0Yjc1OTU0YjM3OGU1MDM2MjI0OTA5NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyNjJkZWZiNGM4NGFiNGU1NDc4YzA1MTBlZDAwMmVjNjgwNjkzM2Y3N2FlZDE4ZWJkZjUwYjk0OGIyNTA5NDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e199c3dde2dc41e8a6199f63f777d309",
+      "statement": "Without --quiet a search with no matches exits with Success; with --quiet the exit code reflects whether any result was found.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L282-L293",
+          "version": "repo-lines-v1:sha256:b0ab2eefa8187d571a9114fefc42cfa0800def1d1fbc84a2e1f0da1825a9e1ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ODgzOTZiY2FhM2Q5OTExM2JiOTY5NTQ3MTkwNzNiYmFlNjcwYmY5ZWZlOTBlMzMxNGFiM2E4ZTQ4NDY2OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4ZmZjODkyNmMzN2FhY2ViODg0OWRkZDUwNTdjOTFhZTY4Y2MwMzMyZWJjOGNkNTRhYjNjODYyYjI5YzVhZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4OWM2YWVkNWUwN2EwZWE2MDMyZTViZGEyMDI3NzViOTcwZTlhNmI0NDE5YzA1NDc3YzJiZjA3YzRhZmVlYjQifQ"
+        },
+        {
+          "resource": "repo://tests/tests.rs#L2180-L2191",
+          "version": "repo-lines-v1:sha256:ba7c58e5cc42e6f72d546c036e3d801fcd90de3a1f7657d1f367c731de03141d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5MDc0OGNiOWIzMDg5NzQ1NmFmMTA5OWZiNmVmMjZjMzZmYjFiY2Y4NzkyZTZiMTA4MWNjMDYwNGVkODk1NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1OTM3Njc5MWU2OTQ3NmY3YTA3MTg5NmRjMjViOTEzN2VmODQyM2UzZTk2MzQwY2NmYWMzMzIzZDQyY2E1MWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2OGUxMmZmNTJmYjY4MGU2NWVhMDRhMmRlZjkzNDA3MWIxMWViZjIyMTI4MTE1YTdlNWZhYjhjM2M3N2ZjZTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f3ee2c67e47647beb73680b6a22d9de6",
+      "statement": "Filesystem errors encountered during the walk are forwarded as WorkerResult::Error and printed only when --show-errors is set, without affecting the exit code, in both print and exec modes.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/job.rs#L17-L26",
+          "version": "repo-lines-v1:sha256:49611d49bb54ffca52a072c2b60436a0326507d611fa2f5c87ac73b17f48664c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ZTIyYTcwZDhmODI1ZjA3ZDViMzYzZjJkMzQxZWIyMGRkYWQ0ZDQyOTU2NTJlMzQ1ZWU4NTkwMzU4MzY3OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NTJiM2YzNmRlM2ZlYjI4NWE1M2QwNDI1NDQ1ZDlmZTBiMmQyMzc0MWVhMjgxNzg5MTU1OTAxYzkzYjExOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhY2E4MDkxNDRlYzNmMTc2OTJhODdlZTA5NmU1NTczNWE4MzFhNDhkMGJjMzQ1MzczODkxNTA1NWYwOGY3ZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0Y2MzNDk2NzY4Y2Y0MTI3MDkyYzI0NmM0MmFjYmIzODA0ZjNmNjg2YmQxMzUwYWJkOGVkYTg5MTFkNTdmNTgifQ"
+        },
+        {
+          "resource": "repo://src/exec/job.rs#L51-L57",
+          "version": "repo-lines-v1:sha256:8291f798fd3bc640a1bd14d7a071a34cbaf60ddcafa89bef11bcbd592c56cc34:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmM3MmM3ZGIxZTM3Y2RiOWI0MzVhOGVhYjYxZjM4YmM1ZWY4YjhlZjRkOTY1NTgzM2IzNmExYmRmOTc1NDQ4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzMyZDkzMGE2ZTY1ZjBkMDUwNDI1YTQzMmYxYWRmNzFjYmJiMmZlOWQ5N2Y5MmJlMzAwZjFkMGU4MTE4NTYyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTkwYTA3ZDYyMzRjMzExYzc2OTg3NmFhZjk2ZjBlYjM1Y2YyZjdkMTc4NzZmY2JlOThkNjAzZWEzZWM3NTFkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmU1OTFjYzkyMDBjMDc2YTY5ZjJmMTYyNzFmNjU4Njg4NDQ5MzkxNDBiNzI4NTU5NWE2NWRlYmVlMzQzOWJjZSJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L227-L231",
+          "version": "repo-lines-v1:sha256:ff3b8b7b2040a2544367237ad4611437ae6d7b08368709f138759d111f6109ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU1NjJlMmZjZjk4ZTkzMWJmODRmZWFmMmYzMGQyNTc1NTUxNzdmYzNiZmQyYjM5N2U1MDI5NjM4OTY2MDA5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdhNWZmYTNlMDk1ZGYwNWI2YjMzMzM4NzFhYmExYzFiM2UyNWFiM2RiZjFkNDkyZjE1NGMyY2MyYjEyMmY1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjk2NzZkODgzODQ5YmFjMzE0OTA5OTMzYzg5NDA1MzRiM2I1MWE4Y2JlNjQxOWYwMjYxNTJhNGQ2Mzg1MDQ4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNThmNDgwMmVjZjc2YzEwM2FiNjJmZWMyMTM5OTMzZDU5NmZjMTQ4OWE5ZGU3Y2VmZWIzNjRlOWFmMWZhZTE2MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_58a0e794272c4a8891c5bee84d2ee9c1",
+      "statement": "Command execution returns GeneralError on non-zero or signal exit and on spawn failure, printing 'Command not found' for NotFound errors and 'Problem while executing command' otherwise; the first failing command in a CommandSet stops the remaining commands for that entry.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/command.rs#L59-L115",
+          "version": "repo-lines-v1:sha256:2509475b7997acf023ad30cb1af946804d4a90ce8d5385513f2faab2783409fd:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhMTUwZTNlMDYyNmFmZGRmZGJiNDA4ZGE3MjRiZDg1Yzc0ZjY4NDcwNjc5NzRlMTM3ZjY0MzZlYzEwMzlhMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_35e18fc1eb6d4487ad215c72124f75d2",
+      "statement": "Non-directory search paths are reported as errors and dropped rather than aborting the run.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L707-L720",
+          "version": "repo-lines-v1:sha256:9803ab454a08d182d0db63e3313f917a893c48900bcb70d7efc3f5ba8b1024d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGE5MWVhZTM1M2I0YmZkZDg0M2JjYzZlMTc3YjBjZjQ1MTkwYzFjOGY4MTdiNzA5MTg2NTc1YmZiNzk0MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjODFjMzVmMTM5YzNjMzQwYWVlNTA1ZmI4NjAxZWNiYTQyYmFiOGEzOTU5ZmQ5NjdiN2ZjZmVkMDhjNTkxZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1OTFmYmMwODY2NGNiZTllZmY2NDgyNzRmNTQ1OGE1OGJjZDU5MTNiMDM2ZWIyNjNkZTU3NjM4Mzg1ODQzMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4NjdmMmIyMTJhNjA4ZmVkYzY3MDAxY2IxMjc1YTJlMDFlODIxNjNjZjhhZTNlODVmYzZlZGJiZmQ4MmVlMTkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T08:44:06.029Z"
+  }
+}

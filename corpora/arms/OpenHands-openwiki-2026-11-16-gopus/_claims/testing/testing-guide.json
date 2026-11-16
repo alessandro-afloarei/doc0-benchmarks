@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:775918b5fba360fa3d8f8e3c6903a5b5ccd1e4d35af6a761d7f58f0013badbac",
+  "claims": [
+    {
+      "id": "claim_85b0f7043feb4527ba0fcc002aeac663",
+      "statement": "pytest is configured with asyncio auto mode, a function-scoped default event loop, and warnings output disabled.",
+      "evidence": [
+        {
+          "resource": "repo://pytest.ini",
+          "version": "repo-file-v1:sha256:02c440af59e9b72e8e4f735afaff7ead1527815263dd287a09e2978553c299a3"
+        }
+      ]
+    },
+    {
+      "id": "claim_6201690303ca41548ffbdef6a9bd795a",
+      "statement": "CI runs Python unit tests in forked, parallel mode with the repository on PYTHONPATH, runs bash runtime tests with the CLI runtime on Linux and the local runtime on Windows, and runs enterprise unit tests from the enterprise directory.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/py-tests.yml",
+          "version": "repo-file-v1:sha256:45c68007025ff24f9a9c7c6b7191a67659a9ec9ba72fb1b73337decbe8de3201"
+        }
+      ]
+    },
+    {
+      "id": "claim_f500a7564f6f499aa3dc8e17bc916e89",
+      "statement": "Runtime tests select the runtime with TEST_RUNTIME (default docker) and the sandbox user with RUN_AS_OPENHANDS, parametrizing fixtures by runtime class and user.",
+      "evidence": [
+        {
+          "resource": "repo://tests/runtime/conftest.py#L20-L210",
+          "version": "repo-lines-v1:sha256:3fc10e3d48f2c09f10667902c4f18fceb864d2a195be9bb81edd840a56b69c3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTkxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkMjJiOTk3YzNhNTZmODY1ODJhZmUwNGRmMTE3ZTY3YzU5ZDE3NGUzNDk5NWJjMDFjMGMwNTg2ZTJiZjdhMmE4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJjY2NmZTI4NjczNTc3MGVhZDE1NDAwODZhOGZlMjk3Yjc2YjJiNTE5YjI5MWU2NmRlZGNmZDhmYmJlNTJmZTVkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzZjAzOWRkMjhkNTE2NmFhZjI2NDExNjIyNDdhOWM4YWEwYzEwM2QyNDcwZDUxYmZiNjkxY2ZmYWMwNWQxOTlmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwODBjN2I2ZjQxMmI1MzBhMmExZmRlNWM4NDdkMzE2YThjYTBhZGQzYWU1MjRkODViMTM4YTAxMTU1NDdhYWIwIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_40d54d45775b47ddb279b5239b0656ff",
+      "statement": "The Docker image workflow runs runtime tests against freshly built runtime images with reruns, excluding browsergym environment tests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ghcr-build.yml#L254-L316",
+          "version": "repo-lines-v1:sha256:344388e51060f741ce5536540a848a842166ea2334b27e3dee1fdf41080c9c3f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiMWVjMzFhYTYyMjFjOGE0Y2MzYWZmZTE3MDJhOTY1YmJjNWE0YThmZTA5OWU2OGMzMTIzYTE5M2NhZTE3YmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzNDc5Yjk2Nzc2YmQ4NmU2ZDRjMDFiODM2MzZkNjhjYTFkYzcwZDMzMjJlMmE4NGNkOGFlNzJlZDljMWEwZTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxNWY0NjQyMGI2YzdjYWY4OWIyZTA4NGRhZjgxNmVmZTM3NDdiNjU3NTY3NDA1MDYzYmViZjQ2NDdmNDhlODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwNmMwOTUzNzEzYmNiMWEyZWFjZGQwMjMwZDM3YzdlY2UxYjU2NjA3ZTU2Y2JkYTUxNTUxYzUxYjc1ZTM5NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b77d63583d34978854c88fd374161af",
+      "statement": "End-to-end tests use Playwright against a running OpenHands instance and require GitHub and LLM credentials; the CI workflow runs them only for PRs labeled end-to-end or manual dispatch.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/e2e-tests.yml#L1-L20",
+          "version": "repo-lines-v1:sha256:2171cac8a27b9d15c71de905ad48a86f78f16c0a7631c994eefeb0244e45e495:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkZGI4NTQxMTY3Y2ZjY2I5ZDM1NTkxMjFlNzYwOTVlNzgxYTQ3NGFmZTQyYjI2Mzc0MjM4MGRhNDliNGE1ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4OTk5MTEwM2Y2YmE4ODhlM2RlNzY1MWM1YTMwNWM3N2U1NTQ3Njc3M2FiYTgzOTU5MWVjYzViZDBmMmFiMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3M2ZhZWJjMTM3NWUzNTg3M2E0OGVmOTQ5MTdmYmIyZGEyYjQ4MWY0NzRkNTkxYzcwZDgzZmU2OGU0OTBjNjYifQ"
+        },
+        {
+          "resource": "repo://tests/e2e/README.md",
+          "version": "repo-file-v1:sha256:c7fa6a7a3b59ccb0dd95e7853b2a5aa3899f33e0186e5c5ebb78988bf2e722d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_3dbdacda947b4da98f8156f43531b4b0",
+      "statement": "Frontend unit tests run in CI after npm ci and a build, with coverage enabled.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/fe-unit-tests.yml",
+          "version": "repo-file-v1:sha256:d5e49a9b0152c081c9ba990f66971eb42b57a7fd7cb1909a5b3d07459ae230b5"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca0fd6d03a3a4cfa8b09b26fed430fbe",
+      "statement": "The lint workflow runs frontend lint, Python pre-commit hooks from dev_config/python, enterprise pre-commit hooks, and a version consistency check.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/lint.yml",
+          "version": "repo-file-v1:sha256:95762acbad0860b534275e162ca30d10d6d34305f1b8403a6cea01d19f7947aa"
+        }
+      ]
+    },
+    {
+      "id": "claim_275f65d9117749429c52bb3250d5f38a",
+      "statement": "Repository agent instructions require pre-commit hooks to pass and recommend running focused pytest files for new backend code and vitest for frontend code.",
+      "evidence": [
+        {
+          "resource": "repo://.openhands/microagents/repo.md",
+          "version": "repo-file-v1:sha256:d0d51003cf0ac8612e4cb27394d2546788274112e6e5969abf46f562834bfed4"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fe04e5c7269e1d0ff0eb31b2b478585b4ce83427dfa64fc14658dfd2faaac435",
+  "claims": [
+    {
+      "id": "claim_4aa21e1b7952441eb3cba0080591752c",
+      "statement": "toSSG runs the requested routes through app.fetch with an SSG_CONTEXT env flag set, so handlers can detect static generation through isSSGContext.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L205-L270",
+          "version": "repo-lines-v1:sha256:819352638ec481f07bbb52e0211b953017dc3c5a396ad44929a494547949165e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNDljYTc0NDg0ODRhZWIwZGY0NDFmMTQyNThmYWMyMDdhNTFkZjJkNzUwNDM3M2NiY2I2ODQ3Mzk1Y2MxNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZGFhMDY4YTc1ZDhmYjFlMTlhYjBiYWRkOTRkYjI1Y2I1YTIyNjFiODc0NjQ0MTdmNDg4MTc3YmRiODgwNTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiODFlZTEzMWE4YTk0OTBiYTA5Y2RjZDJiOGM3MWFkZDQ3NjFjOWEwMDM3YjEwYjdmODFiMWZhMTIyODg2YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMjg2OGE2ZDUwOWZmZDA0OWZmMWE4YTY2NmU2NmRmZmVmMjI3NzFkNjY2ZDQyM2U3ZWVkMzc3MjhiYmUxODYifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L368-L372",
+          "version": "repo-lines-v1:sha256:2a9248d3912b4086d9c364af4297ef71fde3e905f9232d476ecbd5837f2ff385:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQxZmM0Nzg2M2YzOTI2MzQ5N2IxZTk4NjhhZDFhY2U2Y2YxN2M0ZmM3M2UwNzY0N2VmMzQzZjNkNzlkZTNlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTUwZTBmNmIyNzFmMThlOWMzY2UyMWYzNDNmNGMxYjNlYmRjYTA0ZDEzZjYwMGY2MDFmOTgzNTQyM2MxYzlhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGZkZDViMmEwODJiNTc4MTBmMTVjMzRiZGU3NTU0MzIwMGUzMmRiZGRmODViMjUzNGZmYmQ1Mzk3ZDBmMzc1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGVlMzE0NTcwYTM3MzZhYTEwNTJjMzY3YjkwZjFiMmM3MDQ2ZGMzZTljNjgyYzU5NDBmOTQzMTdkMGQ5ZjFjMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3612a95414be4e488a6aed96ff012ad9",
+      "statement": "toSSG collects beforeRequest, afterResponse, and afterGenerate hooks from the options and from every plugin, with the default plugin used when none is supplied.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L368-L410",
+          "version": "repo-lines-v1:sha256:7c8167d6e0c7052216dcf28f464eb223b4bc68a550e8085847fa5db43fb04752:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0MWZjNDc4NjNmMzkyNjM0OTdiMWU5ODY4YWQxYWNlNmNmMTdjNGZjNzNlMDc2NDdlZjM0M2YzZDc5ZGUzZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2MjIwZDFjOTgyNmFiYTNiYzc2MTRjOWQ4MDMyZDY3MDU1M2ZhZmI1ZmE5ZWQyZmU0MzZhMGRlZDQ3YjgzYjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmZGQ1YjJhMDgyYjU3ODEwZjE1YzM0YmRlNzU1NDMyMDBlMzJkYmRkZjg1YjI1MzRmZmJkNTM5N2QwZjM3NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjNmI0OWVjMzQxYWE1YzIxNTAzMWU2MTc2ZTFmZDQwZDliMjkxN2U5ZDU3ODU3Yzk0NzBhOTFmYmYyMjM5MjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7bfb3c2426e346848fc243ce0151eaf5",
+      "statement": "defaultPlugin returns false from its afterResponse hook for any response whose status is not 200, so those routes are not written.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/plugins.ts#L11-L20",
+          "version": "repo-lines-v1:sha256:c468982794f0e92379689fd3a858d212b7007657b8c6c69ab7ca2a15d17b6bde:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwN2MxMTQxM2E5MTYyMzMwMmE0OWNmYjVmNDY0MDE1OGUxYTc4NmYxNDE5YzZhY2VkMDAyOTYyNjU2NGJlN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmOTFhOWQ2N2QxNmQ1MmUxMTlmNWQ5ODBlN2M1YmQwNjQxMWFkYjI2MzA4NmUwNWEzM2NkZDlkOTQ0NTBhZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMDg5NTFlNmNiOTY3Yjk3ZGY1NDFjOTUwZDBkOWY3MjgxZDYyNzFkMTQwYmJkMTQ2ZmI2N2QxMGQ1ODM2ZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_94017c1a20604a1e871ddb2462c5284b",
+      "statement": "The stream helper creates a TransformStream-backed StreamingApi, holds the context in a WeakMap keyed by the readable side, and returns a Response built from that readable side.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/stream.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:6b63ff735729ea20e166f60a7a9545fc63b7f1b01af7f0523366321a57755ac2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5Y2ZjYzkwYjQwNWJhNzNhNjlkODJhMWVmZjg0NjExMTZkZDdhYzhlOGE3NmVlMTA3YWFiM2UxYTE2M2NiZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhOTIzMGEyMGVlYjkzOThmMDZkMDZiNmFmZmM3YzcxYzQxMzM2ZmFiOWVlNDcxZjgxNzUzZjY4NjlhOTdmNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExYzMwNDI2ZTc1NzNlMTQxNDkxMWI3YTg2YzVkYTIyN2NlYWY1Yjg4ZmNhODQ5MzAxZjU4ZTMyNTQ3M2Y4MzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3998f81693404ec3912ad5af24fe07cf",
+      "statement": "testClient builds an hc client whose fetch calls app.request in process with the given env and execution context, using http://localhost as the base URL.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/testing/index.ts#L16-L26",
+          "version": "repo-lines-v1:sha256:e648d15d826351858310591849538ca4305bebec1227d24d118cb57d9f50fc1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MTBmNGZiMTQxZWQ0ZWY3MDIzNDY5YmJkNTk2Y2RkOWVjYWRkODgzYTMxM2RlMWUxZmJjYTM2OGZjYWQ2MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MWUyYjQzNmE4M2UwMmQ1NzZlZjZlMGI3OWJiNzVmNDEyY2Y3OGMyMjg3YWNkNzAwOTA1N2UwZjJlOGU3NTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNGQ0NDYzOTA0NzZiM2MzYmIwMGU2MDJmMzk0NDk0ZmIwZmZlYWVhYjFlZmIxYzVkNmVmYjZiYjJhZmZlNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f14942bdd8184db3b94b5c01c0522419",
+      "statement": "The proxy helper removes RFC 2616 hop-by-hop headers from the forwarded request and validates header names against the RFC 9110 token pattern.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/proxy/index.ts#L10-L30",
+          "version": "repo-lines-v1:sha256:04fdae84b481ac5e34a368f3ed596cbb06291f44e8d683739cd7c2274f4ccf1b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3OWNmMzkyMWMwNjEwOWVhMGNiZDQ1YWI1MTk1OTlkNzk2NWRhNTQ0ZjUzNjM4YTg2Y2I4YzUyYjY5YzgwZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMzJiOGJlNTU5OTg2ZDM5OTYzZGU3ZmRjNDkyYTMxYzM5NzkyZmJhOGNkMDNiMDczYTY4MGViNGVkOThjMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzZTg1MmFmMTg2ZDY0MDFkZTJiMjRiYzc3ZjRjN2Y2NGQ2YWY4OTRjMzBkOTU1ZjU0N2RhZTNhNWM1NTkzNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1YzBmMmIyODdjNjYzODRkZGFkY2Y2YWFkODhjMTY1NDYzZmFlNzU4NWY0MGEzM2QyN2M2NTEwYzgxNTYwYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2502bbd069474b75aa71599595b707cd",
+      "statement": "The Factory class merges its default app options with per-call options, constructs a Hono instance, and runs its initApp function on the new app.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/factory/index.ts#L332-L351",
+          "version": "repo-lines-v1:sha256:c654a83002578b4cb05b64680cff057aa6a262ba3c58c13be27d6e2bd8bf608f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMmJlY2M5M2U3NjMwZDEzOGFmYmZkNjMwMjY4Y2RlNzgwMGQ4NDNiMjY0NGFmOGJmMzI0OWJkZjM3MjUyMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NDM1M2IxOTE5MjhjZWNmYmRiM2Q3NTJlMmI1ZWU0Y2JlZDhhNjdkMmZjYjBhYmFlOTE2Y2E3YTU3ZTJjMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac5b7b0add06444988fb512ed1e51226",
+      "statement": "generateSignedCookie with the secure prefix adds the __Secure- name prefix and forces secure cookies with path '/'.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/cookie/index.ts#L104-L116",
+          "version": "repo-lines-v1:sha256:bd2e632b74856bd02df7e3100431f64ee84f7d801645860df4563e76bcff3bc1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhZTY0NzI3NjkwZWFlNmY3MjRkNzU4ZGVkZGRlYTEwN2EyZWM2OWZmNDVjMzdkZGQ5Y2Y4ZjRhOTc2ZWZiM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwYzdiY2QyMzhjYTgyZWNhZWZjZmZjNDBlNjEzMzRjMTlkNmZlMzYwYjM3YjllMmUxYmU1ZDdiZmMyMGU2YjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmNWI3YTdkMTJkMzUyODM0ODJiZWFjYmQ2ZDIyMjg4ZTU4MTBkOTZiNzlhOTYwOTMyODdjZjUzYTY2Njc0MDEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

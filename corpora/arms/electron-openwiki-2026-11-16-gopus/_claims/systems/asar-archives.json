@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2044cd7856e77a760fde5631d77a52916abd004c004e86b9d0c96ad67f54fe27",
+  "claims": [
+    {
+      "id": "claim_52191d517cdc4041bd5d286ae2017063",
+      "statement": "Archive::Init reads an 8-byte pickled header size followed by a pickled JSON header string, and file offsets are rebased by a header size of 8 plus the pickled size.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L189-L267",
+          "version": "repo-lines-v1:sha256:95f99efc818641588315fe3636a631abb201794d786171252f34944acfc00c7a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5ZDBlY2FhMmFmOTQzZTEyNjRmYjU0ZmM2YzdhNjBlODUxZDNlZGUyNGZkZmM5MWZlNzM0ZDhhODBhODlkZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiMzU5NjAzZDIzMDU3Y2I2MWZkNzBhODRhYTY5OTM3M2EzMGY0MWVjMTc3YTJlZTVlNzU4N2E5NmUzNjUyODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwMzNkMWRiZWNlZjhiMTgxNTJkMDhhNTQzN2U3YzljOGFmNDM1MWZjNDZlOWQwNmFmM2I3YjdiMzNjN2IxZmUifQ"
+        },
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L91-L115",
+          "version": "repo-lines-v1:sha256:2666a560db76dbf6b78c90ed2279ae2dd53313f81fbc55ed53d62cf584a30fbc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4YWE0YzFiYjgxZjM5OWJhZTM5YzZkZjBjZDc5YTU1ODRiMjhkMTJmODIwNmY1ZWNlNGNlNTFiNDgwYjRlYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlZmFjODdiOTZiNDQ5YTdhNzQ1ZmRlNDQyM2M3MGI3YzYxY2YzZTY3MzA1ZjViNjk1MjBjOGZiM2MxNzVlNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzMTc1MmIyMjRjOWY5OWY5Y2QxZjI5M2RiMjFlZDE0ZjE2MDBlOWEwNGY3ZGJjNWQzMjllMGEyMGYzOTgzY2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2d81e81c8a947879a585229bdd01611",
+      "statement": "CopyFileOut returns <archive>.asar.unpacked/<path> for unpacked files and otherwise extracts the file into a cached temporary file, marking it executable on POSIX when flagged.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L356-L392",
+          "version": "repo-lines-v1:sha256:9b29932dd470e8c03933630feb7a04153dd24924d2a64e726ec7ea2d975d35c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZTI3ODExZDVlMjU1Yjc1ZDI1M2NiMGI1MTMwZjAzMGU1Mzk0ODM0YTBlM2FmMGMwOWZiNzI0NWFkNWNhYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZDgyYjliNjZlZGNkMDQ0NDUxYzY5MDRhMjJlNDk0NGRkNDhjZWFjOGUxOGQ3MWZkZGQyZjFjMzlmMmM4MzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMGQxMzk5Mjg4YmY2ODVhZTgzOWJkNzhmYjhhNGMyYWVmZWRiM2U5MmVjMjRkNDQ1MjE3MGUyODFjODg1OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzMWU3Y2YyODYwOGY4NjJmZjA5MzY2ZTY4MjJiNGQ2YjcyZDVlNTY2ZTZiMmY5YzRjMGY4NDYwNTI2YjgxMTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2957d3745d164f2fa665a0d179ad02d3",
+      "statement": "When the EmbeddedAsarIntegrityValidation fuse is enabled on macOS or Windows, the archive header hash is validated against an embedded integrity value and any missing integrity, unsupported algorithm or mismatch is fatal.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L235-L257",
+          "version": "repo-lines-v1:sha256:d6ede2303e7c5f969ce2ed2120c1178edb80d7b50671f8ef63f0e84e270c2c9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZWM3MWVmZDYzNjc0ZWYxYTI5MGI2NGFiNWEyMzE1N2ZiMjZlNTQ2Mjc1Y2FhMjk0ZTQ4YjNlYmQyMDFjYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjNDUyY2FhM2RhNjEyZWZkMGEzNjVhMzE0NTg4M2NlMjlkMWEzZTljNTA5NTczMzlhZmQ0ZTc1MzNlNDYxMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjMmEyMjUyOWIwOGMyM2E1MGFhODhlYWI2MzVmMTFhY2YyZDcwZTc4Y2UyZmMzMWQ0NDBjM2JhNTNiZWRlMDYifQ"
+        },
+        {
+          "resource": "repo://shell/common/asar/archive_mac.mm#L34-L60",
+          "version": "repo-lines-v1:sha256:4f729c6f01498106e2a8465ab783a89b48566e59bbc2be10137f57f7f63520a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjZDdiODJmZGY0NTYyOTA1MjYzNDNmZjFmNjU1MTY0NzVkZTRlMDZhZGFhNTM4MGRhZjM2NWEzOTBlYWFjMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZTQ3MWRiNDE2OGEyZGJhYThlYWYxMWM0ZWJkYjlkMDJiZjFhYzcxYzdiMmU4ODE4MjkwYzUwMjY5OGJmZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiMjNlNjUyMzgzMjVkYjIyYjRhZTE0ZGM2ZGJiMTQ3OGEyYWJhYmM0MWQ4MWFlOGFhZjBlNTNmYTEzMmM0NmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxYzY5YjU1ZDMyMjU2NzY1ZDcyY2UxMWM1NWMwYjJjNDNkMTNjNjk1ZGFjZGFiZTJhYWE5ZmUyNzg3MWNjMDgifQ"
+        },
+        {
+          "resource": "repo://shell/common/asar/archive_win.cc#L25-L55",
+          "version": "repo-lines-v1:sha256:79d01b0d6cd0bdb3b4e2afcce4b7f88d6a87f0db0e854c9a519efda37489cc5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2YTI0MzE3NDJmM2QwMGEyNDYwNzc2NzExNDljYWYyMzVlYmI1ZDFlM2JjMzgyYjVhNGFhZDRlYmY0MGUyZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhMzE5YzM2NzhmNzlhYTI1M2U3OThlYTMwZjJmYjhlYmJiZmU4ZTQyM2NhOTFhZDY0ZDE3MzZmN2RiNDgzNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5YWU5MTZiMjJjMzFmMjVjMmFlNDBmNzFhMWU5MzIyNjY4ZmVhZWZhMGJiOTBhZjczMTIwMTU3ZjljODU4YTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f67275b1a7a4d2db966da4b3d95a0b0",
+      "statement": "Per-file integrity is loaded only from a validated header and is enforced on JS reads by hashing the buffer and exiting the process on mismatch, and on streamed network reads by AsarFileValidator.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L254-L265",
+          "version": "repo-lines-v1:sha256:5cf504b1c496dcc0609509fc49c7d42d1f2abe327797e5a321ee1654c99c9572:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmN2IzNGQ5NWVhMmM4ZWJlNTg0ZGY2NTMzYThjMDExYzNhYzlhOGM0ZDdiZDUyMTdkOTkxNWMyMjBkZTc4YWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0NzU3MWZmMTFiM2RmMzg1ZmJmOWVjNjlkMWI4MjRmYTVmMThkMmIwNTEyODk4Mzg5MTIyMWI0YjVkZjc1ZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3YmFkNGYxZDVmNGFiMDlkNTc2ZDJmNzY4NzJmZjg1OTNkYTFiMjUxNzNmM2Q3Mjg4ZDkzMGQzMDEwY2YxYTMifQ"
+        },
+        {
+          "resource": "repo://shell/browser/net/asar/asar_file_validator.cc#L43-L75",
+          "version": "repo-lines-v1:sha256:90090c248e3a15625d372c5e4dee1c86828146dc65e373d41a2c3a2bf6187bbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZTYzODZjZWY4NGIwNjhlNzRkOTRlNDg5ODQzNzcxYjZkYjUwNjkwNGVmOThjZjkzYWQwYWZkZGFhMjQzZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmMDk1NzNhMzg5ZmFkOWI3ZTViZmNmMjBjNTY1YjM4ZDdjMTdjOGNjMWRmNjAyMGY1NzQyNzNhZjdjOWJkMjcifQ"
+        },
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L117-L152",
+          "version": "repo-lines-v1:sha256:ead6b7cc4b7024d58f9e7291e8991201be445ce63730ebce599205dd03104264:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxOTgzNzJmODM1NjEzNmUwYzgyNDhhNjE1MjhiOGJhYTM5YjM2MjdkZDFhZGFkNDg5ZTY5Mzk4Y2EzMTNjZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwNGRmY2ZiNzc2YzE3NWY4YWVlZTk4ODFlMWU4N2YyNmVkNGJkOTFkMjU3NGVkZGFjOWJmOGUxNjQzOWE0OTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhZjhjZmEyNGFkN2U4NWQ0YWNlNjYzYTAzZDQ4MTFkMjc2YWJlYmE4ZDEzZTAzMTRmYTNiNjE3ODMyNjYzOTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_50f6c39759ae4708b3a93bd738f640a2",
+      "statement": "lib/node/init.ts wraps Node's fs with ASAR support first, and the wrapper caches Archive objects per path and lends getOrCreateArchive to browser init via process._getOrCreateArchive.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L30-L47",
+          "version": "repo-lines-v1:sha256:d9f4e5cac94e984836db194fb5f2d35f15ab0c75181b0845cdb80adbdcbe2f4c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMmVmOTJiZDhmZWJmNzJlOTk5NmJhODhiMTg3OTY4MWZlZWY0ZGRkNmM4YzYxOGVmMGFlMjA0ZWYwZTkyNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0ZGY1YTQ4NDllNzBmZTVkZDQzNjU0NWQzYTkwNzc0ZTcwNmMxZWUzMDlmN2E1NDBmZWE4OTNmMTFiZmM1MDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNDg1YjA0ZmRlODgzN2M3NjlhMzMwZGUyMGI0ZTQzNGExMjljZmU4MjIxYjZjOTYyYTc2MTBlODJlMWNmNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2ZmRiYWE4ZDY0Yzc5OTNkYTEyMWI5ODlkMTBiZGJhZWMzN2EyZDEyNDU1NDVjODMzYzQ3YzFiMmI1ZTM2ZjQifQ"
+        },
+        {
+          "resource": "repo://lib/node/init.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:0c1a697fd7ab03a0ec9697e8ed1b423dd156028d373227aa7f44acae7622829e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUwZmY0MWZmMzE2YjcwNzNjMDc2Y2E0YjA0MjA0OWNmOWJhMzE3NmUzYmI5OGEzZmU0NWRjY2NlM2Y0NjI0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODQyYTRiNWRmNjU4N2VkNzJhNDhlMDQyMDQzOTZiMzQ4ZjRiMWIxNWIxYmExNmUyZmUyZTcyM2Y0OTM2MjI0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDgwZjY3OTZjNTE1Njk0ZWIyMTI2NmYxNzEzMzJiODk3Mzc5ZTg1Y2M0MTFjMTFiMjEyMDJmNjdiZmE3ZmQxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3be20d6e4a264858b566a2a201029fe7",
+      "statement": "APIs that need a real OS path (copyFile, open, openSync, process.dlopen, the .node module loader, child_process.execFile/execFileSync) are routed through copyFileOut, while exec/execSync run with ASAR disabled.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L1218-L1253",
+          "version": "repo-lines-v1:sha256:e8e3979b01e6810060436f7475b04517f91e422dbd830a1bdcbfae1d0cfbdb72:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhOGNlMWVkZDEwOWE3MDAzMjZkOTFjNDI5MjRlNjIzMTkzZDQ4MDc3Yzk5YjgwZjg4OTcxNjAxY2UyNDI5ZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlZWVmZGQ1MTEzZDk5MDU2ZjFlMTlkZTFiN2Q1YmVkZTZlMGEzMDFmOWU4ZjdiZTRlYWQzZjhmOGRhODY2YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhZjNkZTU2NjU3Zjc2NDJiZDUxNDY5ODdiNWM1NWM3ZjkxODNhYjQwYTQ5YjJmYTRhOTdiN2ViYmRjM2ZkMzYifQ"
+        },
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L185-L240",
+          "version": "repo-lines-v1:sha256:5ef3659d63c718f83f54dbae7fbdb2c846419337961fc1fc3a31f88b0d8dd0b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhOTU3YTQ3OTBkM2QyZTBlYjg5MDEwNjE1YzIwZDdjOTZkODU5YTc5MTU0YTgwMTA1NGQ1MDE2M2NmNjNjMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlOWRhNzgwZWIyNjA4NjA3OGM4MTBhZWFlZjdhNmYwNmNjNjRlYzIzZjVkMzk4ZmQyMTRiZDA3ZjJjYTI4MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhZTAwYTNhZWY1N2ZiYjVjYTMwYWVjMTA2ZjNjMjgwZGRiMDM5ZDNiZjY4Y2ViYWE3Nzk4ZGI1MjBlNmJiZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1c1065dc7674c9e912be532219c2dbd",
+      "statement": "ASAR handling can be disabled with process.noAsar at runtime, and ELECTRON_NO_ASAR applies only to processes that are neither browser nor renderer; ELECTRON_LOG_ASAR_READS logs read offsets to a temp file.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L15-L18",
+          "version": "repo-lines-v1:sha256:71155e97417736ebffc4241c28f08bbbe5bc1825204f075081d56c14cd9efb22:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmQxYWU0YzYxNmIyNmExNjg3ZTM1YWFjOWMyZmE3NTA1ZGMwMzI1MTk0ZjU3NTdhZTRiYzFjOTg2YTljMDdiMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGMxZjAxNzE4OWNkNGY3NDFlMzVmZjI4OTMwZjFiYmM3NGYwNDdiMmQwZTJmNTkwNmQ2ZDZhNjBjNDFiNWU1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzA1ZjBiNjZiNzc3NWUwYjU3MGNhZTEwYWYwN2MzNGE1MzJlNWNjNzdmNWUzZDVjMTUxNGQ0ZjRkZjExZjlkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTc4ZjQwZmRiNWZmNjhlYjRkODI4NTEwNzRiN2RkYTdlZjYzOTJiY2Y5NDI3OWNiMDkxYjA4M2Q0Y2ZiMTA4ZSJ9"
+        },
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L290-L301",
+          "version": "repo-lines-v1:sha256:88c1ad983398ad899ce04c324310d0771c9c505a926afc9b428fcc1ced937358:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNmUzZTdhNWVjYWYxMTgyYjk4MGUxYWIxMDI2YzIyODEzNjkwZjQ5OTE1YzgyYTg2OTg4ZThiMjY4ZmFkYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZjk5ZTg4NWVjMDNjMTA3YmNhMGZiNDQzYzJkM2Y5YjQzZTY2NjBlNzY4OTYyOGYwMGZmMjQzZWU3ZDUxNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiODBmMGY2NzVmMGEyNmZlMzk3MGIyNTQzYzUyNGI3YTg0ZmJiN2NlM2U3N2EwYzU3YTQxNjYxNzczODM3NjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_afdd6f7025ca4c9c8c2c737d5c92621f",
+      "statement": "mkdir inside an archive path fails with ENOTDIR, and missing files raise ENOENT while corrupt archives raise 'Invalid package'.",
+      "evidence": [
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L1195-L1215",
+          "version": "repo-lines-v1:sha256:35bfd6c0ea5a303317e69836862d877e3538421a1cb6879d618e7e38e4a26350:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyMTcwMzhjNTg1MDQ2NjdhN2Q4MzU1MzRmNzU0MTAyYWRmMWM1MDlhZjYyMGRhODFhZjYwZjY4N2VlMjcwNjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhZTBiNDZlNmRmMjZkYWY1ODBjMGI5NzYwZWQwN2Q4ODE1YmM0M2QzZTliOTlkYmZkMGE3YWJmMTBhZGVkOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZGUyZTcyNzg1MTRjZmRjZGJlZDE2Yjc2YmUyM2FhYTQ2ZmQ1MmRkNDA4YzNmNDJjNzIxMThlNjQxOGExMjcifQ"
+        },
+        {
+          "resource": "repo://lib/node/asar-fs-wrapper.ts#L158-L182",
+          "version": "repo-lines-v1:sha256:df8d6fe9dbd800155292d93ca04877abb1513f11d0a43020a0be4b389687ab9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0ODk5OWUxNjJjM2NiNDNjNWFhMDdjMzE4MTMyYzA0NDFjZThhZWY5ZWM3YzEzYWUxMThlMWUwYjBlMmE1NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViZmM5NmJhNWIzYWE4NjNiZjViZjFiZWUzN2YwNmIwMDBkNzQ0MjhkYTNhOGU3MjA3NzlmNmQ5YjljMjExMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0NDA4YTI1OTAxNWEzM2MxNjJmYjRhMmI2MWI1ODc1OGQ0NTNkOWEzNzM4ZTMyZGYyMDA2MGRjODU0OWFhY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYmM2ODk5ODBiZjc5MDllYjczMTFiMWEyYjRmNjg2YzBlNjM4NTk0YTUyZDM2MDgzNDViMmY5NTVmOTVmNmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f95a67e9e7c44c919045a0fb5b97ae16",
+      "statement": "file:// loads are served by AsarURLLoaderFactory, which can read from archives, only when the GrantFileProtocolExtraPrivileges fuse is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/fuses.json5",
+          "version": "repo-file-v1:sha256:54b905d53aaa1974297cd60ad84141db8490becbf71d752401f5aafaa15cfb8c"
+        },
+        {
+          "resource": "repo://shell/browser/protocol_registry.cc#L22-L62",
+          "version": "repo-lines-v1:sha256:6115a9b3dc3d897922b1732d24cb2039d1262d737cba9bd4c23738440b64cd1d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNGVmZTQzOGQzYWIyMDIxMTc0MGY0YzcwNmViOTgwYjYxN2UyNjM2ZTIxMTNiNGZmYTI5NjBkY2VjZWQ5OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5YjU2NmNlOWVjNGFmOGNkYmMyZmQxZGQ4ODI2YjUwMWJmZTMzMzllZTZkY2FhZDU3NGJhZWNiMzdjNDhlZTcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

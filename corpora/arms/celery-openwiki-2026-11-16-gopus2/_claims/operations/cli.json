@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a9845b684bbff5304e71c14b579a66cb9497633121670baadd6c6a9db64e12ae",
+  "claims": [
+    {
+      "id": "claim_c0ba9a19f207408baad845160e3c0085",
+      "statement": "The celery console script runs celery.__main__:main, which applies eventlet/gevent monkey patches based on -P/--pool in argv (except for multi) before importing the click CLI, invoked with auto_envvar_prefix CELERY.",
+      "evidence": [
+        {
+          "resource": "repo://celery/__init__.py#L123-L152",
+          "version": "repo-lines-v1:sha256:52683484b1cac1fbc9e7033bff9569970f8df2dd2cdfb50733c9adf99ffb7c98:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhOGUxYWNiYjI4ZjAyYjg1NzNjZDQ4MDJiYTlkOTQ2MTRkZjJjOWYwMTA0N2YyMzU5MjY4MThiMWI1OGM5MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyZDc2NGFiY2YyYjU1NzAzY2Y3Y2VhZGIzMTIyNTk3MmM5MWY1ODFmMjcxMWJhZWVkYTFiYjExODU4ZTE1OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxZDEzMWJkYmEwZTg4MGE4ZGQ5Y2QzMDlmYWQ1MjhjMzcwOTg0ZmRkNzEzZmRhOTRiMjk0NWRjY2M2ODJlMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhZTBhOGMyZDcwODY4NTQyNzVkMzZiZjk4MzI5NTIxMzkyN2EyYTFjZGU5OTJiYWUxN2I3YTg3OTkxOGRkYWQifQ"
+        },
+        {
+          "resource": "repo://celery/__main__.py",
+          "version": "repo-file-v1:sha256:d224f758273cd2603cf1785d0314e9b7f83a4c54609b01d273d186f8788fce41"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L220-L227",
+          "version": "repo-lines-v1:sha256:0204581f5c96a47034175780b0986735039eccde5da654f0d4ffc0b01e09e9f9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIzOTc5MzNhMjRhODAxZWU5MjMzMjdiZDY5YTAxMDQ5YzA3NzkxNTAyMWNmMmVjMzlkZGE0ZjgxYWE4MzdlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdlNmQ3ZDc1Y2MwODllOTcyOTczMWNkOGY3MGMwZDUwZGNlNGFkNGJlYjA2ZWViNWZlZWU1Mjk5NzY3NDZiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUyMmQ1NGNjZWI0NGRjMjEzYTQ5OGYxNjIzMGYyOGI3MDBiM2Y4Y2Y4M2I2ZTZhZGY5NWMyN2VkMWY3MGEzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://setup.py#L155-L159",
+          "version": "repo-lines-v1:sha256:e951e41147ba7a11e27e0ba208623eafd9187ad3dcfc7e948fa94d1d17147d6e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2EwZGY4MTQ1ZGJhZWRmMWFkNDcyZjA0ZjgxOTliZDdmYmU2ZjljZGY2YjZjZDI2MjMyOGQ0Nzc2YjQyZTQwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwY2RiOTcyYTdiZmI3ZWQyNDZmOWZmNjcyMzg1ZTU1ZjQ5NjhmYzExMDQzZGM1YjY4NGQ1MWRmYTMxZGJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNhNGM1ZTA3NDgxZTU1ODFmYzA2MzQ2MmZjMWUzYTIzNTg4NjdhMDAzODM0ZTkzNGM4NjRiYjhmZTQzZWQ4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTgyM2NkOTNlYTAxOTE3ZmJjNmIxMTllYTI0YmI3ZmZmMzJkZGYxYTkxZWIxMjc1NGQwMGE4YTk2MWJmMjU0ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a18a15ed903840809b3529a628a0fb5e",
+      "statement": "Global CLI options such as --broker, --result-backend, --loader, --config and --skip-checks are applied by setting CELERY_* environment variables before the app is loaded.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L111-L131",
+          "version": "repo-lines-v1:sha256:bfe290bf20fb4f7b4f86e01f265406d8929da680a35fbdbb92380583c7b8a767:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5NTE5OTMzNDBjYTM2ZmRjOTdmYzg1OTUzMDJkYzRlOTlmZjliMzA2NTViNDdlNDBjYmNmNjE5Yjc3ZjQ5MTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhYWUyYzFkMTY3MDg1MmEwMmVjYmFkMjk3YzliZDdhM2NjOTQ1OGExMGZmZDEwZWY3YmRjMWMxYTM2YWNiZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhMmJiYmYxNzkyYzBmMzY2NWQ4NmY2ZmU4ZWVhOGQzZTY5MThiZGM2ZWNiY2RjMjRlMDA5NTViNTYxYjE5ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyYjIwODcwYjdjMGIyMjJhNjg1ZmY3NTE1MWVmZTczNmM1YzMyZjUwZmYwZDZkMTAzYmRjNDU2MjUzYTNkY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a988ec1bfb4447bfbf0bd2ed409cfa85",
+      "statement": "find_app resolves -A by importing the module and trying its app attribute, then celery attribute, then a celery submodule for packages, then any Celery instance in the module namespace.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L378-L415",
+          "version": "repo-lines-v1:sha256:5e334dec645ff8bbeffb40fa293a91c08b739eff47b75cbffa3a5e5c0044934c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYmZkZGZlZGQ4MTlkNWFhNWIzNzc3NmEzNDQ1NTg0OGEyZGUyYmJkNTE1OTQ1ZjIyNTk4NzAzNjRlOWM4NDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMDRhNjVjZWExOTViYWY0MDE1MDU4YThjNWVjZjNhNGE4ZGU2ODlmNWVhMjdhNTNmODFhZDA4ZTZjOGY0NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b197f89d32ef416a846edcbabf363887",
+      "statement": "After loading the app the CLI appends the app's user_options for worker, beat and events, and adds preload options to every subcommand; extra commands come from the celery.commands entry-point group.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L155-L163",
+          "version": "repo-lines-v1:sha256:d2e3a5be2f02a00d0ff5d63790426a2f428d1a565700c0d2888d825bc035ff3b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2I2ZDRkMzQ4YTI5NzA2YzVhNTJhNWZiNzFjMWU2NDgyYjllODA3N2ZkN2JlYzc0Y2E4YmUyYWJhYjM1MTdjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIwOTI4N2VkNjliODNiMDRlMDRjZDdmY2FjNjJiNTBiZmVlMDYwYjQ3OTk1NzFhMTkxNTI0OWUwODQ0MDg4NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg4OTIyMzNmZGMwOTU1YTc5YjZmZDE3ZTA1ZGVlODJhMWE2NjcyNWUwMDVmNTBiZmQ5OTZlMjY5NWY2NTcwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTE5YzQ2MDIyZmMwYzgyYzlmZDA0ZGRkYzgyNzkyMzM2NWNmYTlmMmQ2YzYzNTAyMWNjYWQ1NTRlN2M3NDg0YyJ9"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L45-L55",
+          "version": "repo-lines-v1:sha256:a7d210d6e8fc38b8a193ee390615f6188cca9d64761351a0ad131e1a715da082:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZjUxMGMwNTI5ZWViNDBlMGViMjdhYmIxMzFkYzZmNjEyMWEwMmNjZDI5ZDM5ZDhkNDBkOTFiNTk3NmM5ZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyZjJjNTlkZGM5Yzk3NTU2NTJkYmEzMzY3ZDE1MjY0NGYwNzY0ZGM3NGE3NTg0ZGI4ZTMwZmI5YjBmNmQyMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzM2YwOTU4Nzc5MWNlMGY2ZjlkZjA0ODIwNDk1NzkwMjI4OTNkZjYyMTA3MTY2ZGI0OTIyNDdiMGMyNTQzZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_876be3c4802e438ead0c120d90a4d64f",
+      "statement": "celery worker parses trailing arguments as configuration overrides in the worker namespace, re-executes itself detached when --detach is given, and otherwise drops privileges and starts app.Worker, exiting with its exit code.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/worker.py#L324-L370",
+          "version": "repo-lines-v1:sha256:e9d212368dadafb5f1cd4a9012dfeb7dd44335cc6a9a91ffcb98c391ead11d1b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYTVjNjZlMTdiMTQ1Mzk3ODM0YjhjODU0ZGM0MTkzZTIxMjUxODBhODk5NmExNGMzMTg4MzMyNmIyZWZiY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiYjZmMWVhYWE2MzkzMjEwYjM0YjE4Yjk0M2I5NjM4NjUzMzc4NGYxY2I1M2E3NmU0YzJhMDIzNzQxZWZmNDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhOTEwMjVhZTExZjU4ZjYyMzAwZjU4ZmZkZTdiZTA5ZjI4ZGNmNzQ2OTdiMTMyYTNjZmFhZjFhZmYwZGJkN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5NTVmMjZiMWQ5YTAzZmRmODQ2MzFhOTIwMzNkYjg0MWM5ODVjZGVlNmYwOTk1MjU1MWRlNTQwZWRiYjk2OGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_69ba90c448a645149a2b972e245ab919",
+      "statement": "celery multi nodes default to /var/run/celery/%n.pid and /var/log/celery/%n%I.log, creating missing directories, and are started via 'celery worker --detach'.",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/multi.py#L122-L155",
+          "version": "repo-lines-v1:sha256:6f5ef2c016e6ddf8489ecfdf2ab54c8dacffa84fb81793541534b52d68944cc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MzBjYTZhYmJjMzBhODE0OTY5ZjRjN2I4NmE0YjRjMThjMTYzNWZiOGRmMzA1ZDVmYjE2YjFiMGRjMTQ4YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhOGRkNzYyY2JhYjZmNDFhMTYyYjZjNzA4ODVlZGUxMGJmMGQzYmI1ZjkxZDg5NDhmOWEwZDdlMzQwMTRkN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhNzhhNmEzNjk4YmVhNGQ1Y2MzMTAxMjJiMmFmNDc2NzM1ZmMzMTFkMjljMjA2YjM5NDVhYjFlNDkwMjdhZTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd86f1e3c6c34590ac2deacbc79b8eec",
+      "statement": "The shipped systemd unit manages workers through celery multi start, stopwait and restart.",
+      "evidence": [
+        {
+          "resource": "repo://extra/systemd/celery.service",
+          "version": "repo-file-v1:sha256:f34e387ac953ebca22b93a8bc5fab03f27471ccd6ba6c5b315732a26a3945f85"
+        }
+      ]
+    },
+    {
+      "id": "claim_98356e3726784719a72ed3ea7acc98ac",
+      "statement": "The Helm chart's default liveness probe imports celery.task.control, which does not exist in this codebase.",
+      "evidence": [
+        {
+          "resource": "repo://helm-chart/values.yaml#L53-L60",
+          "version": "repo-lines-v1:sha256:040cf821aa97e10149f69823efba65a67a4f4c82d50945f2c085e15016c8823d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUwODNkMWNmMjI4Y2Y3N2ZlZjA0YzY4MTUwZTIyOTAzZGI4NGQ4ZjFiYTFmNGUxMDQ2ZWVlMGQ5YTg4MmE3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzczYzc4MmVkZWE3YzU0YmQ4MTdiYTRiNDMyZTkxZDRmMWM5OTAxOTlmYTM1ZDNiM2IyODQ3NDBiN2U2Zjc3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFkYzA0ZDZhOTk0OWIwYjBkNzQzNmMzYTljYTI5NjYwZWVmZWVlZTFiNDM2NmY5NmY5Y2I3MTk3NGFiODhhYSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:05:29.073Z"
+  }
+}

@@ -1,0 +1,5 @@
+# Files
+
+- [Entry Filters: Type, Extension, Size, Time, Owner, Depth](entry-filters.md) - The per-entry filter chain fd applies in its walker threads after name matching — depth limits, extension, file type (including executable and empty), owner, size, and modification time — with parsing rules, evaluation order, and metadata costs.
+- [Ignore Rules and Hidden Files](ignore-rules-and-hidden-files.md) - How fd decides which directories and files the walker visits at all — hidden-entry skipping, .gitignore/.ignore/.fdignore, the global fd ignore file, custom ignore files, parent-directory and git-repository requirements, --exclude overrides, -u/--unrestricted, and --ignore-contain.
+- [Pattern Matching: Regex, Glob, Fixed Strings, and Smart Case](pattern-matching.md) - How fd interprets search patterns — default regex, --glob translation, --fixed-strings and --exact escaping, additional --and patterns, smart-case detection through regex-syntax, file-name versus --full-path matching, and the diagnostics that catch common pattern mistakes.

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0583cab8c167d1d6baab31620b95f41cd76e6557f36da72f7085db78b8c57024",
+  "claims": [
+    {
+      "id": "claim_f263343c73fa495ca3533582d829f85b",
+      "statement": "The openhands entry point inserts the cli subcommand when the first argument is not cli or serve, dispatches serve to launch_gui_server, and dispatches cli or no subcommand to run_cli_command.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/entry.py#L20-L44",
+          "version": "repo-lines-v1:sha256:eaf3d5867243542065f097281c2da1a9f1fb731bd8306b2a32585ec3f66b0571:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxNzc4N2M1YTU3NmRlN2JiY2NhM2Y5ZTkxNTg1ZDkxZGRlZjZmNjhhODMxNDI2MjllZjU1ZGYyOTgwMzFiNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkYzBmYWI0ODE0YmQ4YjQ0YjMxMjcyZTBkMGQ4ZGRlOTE3YWIzYzYwNzE2MzU2NzhmNmJkNDdjOWNlN2NiNzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b3c2dc31a154f529bc2558b18f2cd46",
+      "statement": "handle_fast_commands answers --help, -h, and --version from a lightweight parser before the agent stack is needed.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/fast_help.py#L143-L160",
+          "version": "repo-lines-v1:sha256:e051fdfb8048202c9105fc1ae7548cb50f421c540909128287a80a11eae344d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMmE5MTFmYWM2MzM3ZGU0ODlhMjI1ZjhiMjdjNDZmYjg3MzczZmZlZjM1YTYwMWU3NWFkODQyZTIxZTY2ZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllNmE1YTE3Yzk2MmFhODNiNTM4NTFmNTZhN2MzZDNlZGJjMjVkMmVjODdiYWE0OThlYzJjNjA1YzQwNGZlNGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwZjQzMzRiNWE1MTIxMjhmOGI4MDlkNDA1YzFhYzViNzVkNjQyNTc1YTA3ZDc5YzdkMjVkNDE1NDhjNjFmODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmZDJmOTQ2MWM4YjAyNmE3MTY5ODQ4NWM2MTA2OGM1ZjAwNmQ1ZGU2NDA4OTNmODQ5ZWI2YjFhNjU4OGNmOWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc1f2ed7f5c641a98a1b5b9b49dcc2df",
+      "statement": "The interactive session resolves the config file to ~/.openhands/config.toml when no config.toml exists in the working directory, then loads configuration through setup_config_from_args.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/main.py#L565-L592",
+          "version": "repo-lines-v1:sha256:22f0e836d291b7cdbd8baea31059892bd178e7a212010bdfdca61732e095790e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjYTBjY2ZmYTlkOTdjM2UyNDE4YTZhOGI4NTQ3M2VlNDQ0ZGU3YzdmOTMwYjBkZDU3OTk1YWUzNzdhYWIyNTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlODlhYmI5NTQwYjM3MzUzMTY1NmJiOWRmMTNhODBjYWMyYzk2MGQ4YjE5MGY4MTU1OThmNDAwYmI3OTI2ZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2ZDUyYmUzYzVjODJjNGYyZmRiMDZmOTc3OTYzMzJlYzU4NDM1ZTFkOTE4YzRiNmI1NmQ0Mjc4Zjc4YjAwYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5OTI1NWE3MTE1MWM1MzhmMWNkMDNlNjk5NjkwMWJlNWMwYzcxYzgxMjM1YWUzOGQxZGE2NjI1YzUxN2IzYzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dbe50ef4fd06408c9ad2a434bab35867",
+      "statement": "run_session builds the registry, agent, runtime, controller, and memory from the shared core setup functions, and the controller runs in headless mode.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/main.py#L125-L180",
+          "version": "repo-lines-v1:sha256:47ae1dbdc94d2a10f11482798eefabf07f6e96d6335b795f9bbbc8a7f7973224:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTk1NjNkODkxNDk2Yjk2N2MxNjc5ZDBmYTc2ZTA4OGMwMzI1YTNlZTRhNDQ0NDM3ZjMxMGU0NWI1YzM0ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxODkwYTI3M2JlMjQ4OTZhZWE2ODFiMzcxNTE3ZjczNmRjMmY0YWE5YjEyMTg3NWZmMGRkYzNiZTA4YzgzMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkMDZjMWRiN2MyMzYyMGMwNzY0ZDQ5Zjg5MTFiNDQyNzEzODZmZjYyMmQzZjgzZGZmYjY5YjY5YTczMzI1MjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1cf3adcaaa914941a420bd248e10cdd8",
+      "statement": "Input beginning with a slash is dispatched to handlers for /exit, /help, /init, /status, /new, /settings, /resume, and /mcp.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/commands.py#L137-L167",
+          "version": "repo-lines-v1:sha256:d08a694e4e0860cab9b2e6420c65ec8cd2ae91afbe8877a543ed12402797119b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MDgyNGFhZWNjMWFiZDkxYzY4ZDM2Nzc3NWYwMzhmZDExMTRjOGY0NDYxMDVkMDZiY2JiNTU1M2NiOTBkY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwZjdjNGM3ZmRkOTk0MDM1Njk5MzA4NDU0ZTdlYWYzYWFhYzM2MDM4N2I5YWU1ZGE0ODI1NDIxNTFhNmYzYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1NTQwY2VjZjgzZjc5MDQ3ODU1MTk0NzhkNDcyNGIwZjczZGY2MWNiYzIyM2Q0OTE1YTkyMDQyY2IyMGRjNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkZDFhODdkZTdjZDFhMTlhYWNkYmJjNjFmMDM2OWY3OTk0MmZlNjBjNTJlNGYxYjViNjdlMWIwYzcwODdjYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f84419d01c7e4780b3703cce495be693",
+      "statement": "The CLI asks the user to confirm the working folder before the session starts and exits if the user declines.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/commands.py#L384-L390",
+          "version": "repo-lines-v1:sha256:8dbcc36a9983902ba34d308371bfb59724dceb494cc455b771687755b1f58208:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJkYjYwZGMyOThhNzk5YThiNjQ0MjRhNDNhYWFiOGI4Yjg2ODFkZTIzYmVhNWY3YWZmZjYxZWRkNmFjYTFjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdiODFiYzlmNzEwMGY0MTc3ZjVhNGRhN2QzNzQ3MjdlMTc5YTVlYTQ1NzAyMjZmNWZkNDgxZjllOTkyODY0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzJlNGM2MmZiNzgyZTIzZmM3Y2MyM2E1MjM3MGZiY2VlMWM4MDA5MGZjZDE1NDQwYjBkOTIzMGIwNTFlYTk1NiJ9"
+        },
+        {
+          "resource": "repo://openhands/cli/main.py#L710-L712",
+          "version": "repo-lines-v1:sha256:3a2c1c97053e1ce3cd03a7c453421bb504f64467a7e901a86df2442ebe0bf24a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YzODAzMzMxNDcxMTQ0ODEwNzU5ZDdlMWIyNTZhYWQwOWFlNTdhMjMyODUyMTI2YmEyZjljYTlmODU1ZjBlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI1YzgyNjMyZmM4MmQ0YjJjMzQwZjQyNTU4YmEzZGZhMzFjNzY1NWRmNmZjYzE2OGI0ZmRjZTU3ZmFjNjA0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDc1MjUwOWYzMGIyN2VlMDNjYjkyMjUwYzQxYmJhODNiMTBmNzdkZjNiMjQxMWZhYTQ5M2IxNDZjNDQ3ZTA0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjI2N2QxNTQwMDIzMGFjZDBiMjdkODVjNjE2NTc2ZjY1YjY2OTQ0ODhkM2YwODIyNTViYTZmYzcxODIxMDkzOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c270653312b4386967225da6f2c956c",
+      "statement": "launch_gui_server checks Docker, pulls the runtime and application images tagged with the package version, and runs the application container with the Docker socket and config directory mounted and port 3000 published.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/gui_launcher.py#L133-L150",
+          "version": "repo-lines-v1:sha256:d3985c36feed1c22091ab933660a516ea161b86e1f0ce0572d638cd1f38448bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkOTRjMTc1MzNlOGNlODVjODJkMjJkYWMzMTJhMDc5MWM4ZTgzZmI4MjEyYjQ3YmU3M2ZkOTcxZDRlOGE0MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNDFjODRiMjEwZjhmNzQ0OGQ5NzcyNzhjZTk2ZDk0MzU1MmY1M2RiMGI3MjgyMDdlNDE1NmEzZTEwZDdmNDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlNzVhMTNkZjk2ZTFhZjgzODg4NTgyZGI3YWNkMjRkZDYwOWJiMGE5ZWQzNmRlYTlkMjlhMGYyNmVlMTkzZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhZDMyMWNhYTYwZmM3N2NkNzIwYWRiOGJiYjBjZTk1N2M4NmYxZmZlMDI0MzI5YmYwZDM2ZTkwMTRkM2E4YmUifQ"
+        },
+        {
+          "resource": "repo://openhands/cli/gui_launcher.py#L191-L200",
+          "version": "repo-lines-v1:sha256:ae70087d1968d62f56772746e68abdfd1eee6a79c3c5cb5e66769294f27bab0d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNGY5MTg2NDRlMzk3MTY3MDhiODk0NmRiZTZhNDE5ZmU2MTI3NDhjYTA2NzI4MDA1N2M3NzA1OWQ5NThmMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhYWU4YTBjYTc2Zjk4ZjdiN2RjNzk4NDk1MWQ2M2U1N2RiM2M2NDU1NzljYTUxYmFkNmE1MzlkNjE0ZWRiYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5NjAzNmViYTY2MmI0MGUwNTBjNDI0YTJlZjIwNDRiNmQ1NTY0YzVlMmM0YzE3OTk1YmVlZTExYzFhZTA3MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwMjA2NzlmMzhlMWY0NmJjZTJlZTg3NTM3NDIzOTZkZmM0YTY4NDVlMDA5YzQxMmU1N2Q4ZmIzZjczZjc1YjgifQ"
+        },
+        {
+          "resource": "repo://openhands/cli/gui_launcher.py#L76-L100",
+          "version": "repo-lines-v1:sha256:b5ea39b1826c0545b7815557ffa1e502f118bee1a249bffcd0f081a8e022987a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYmI3MWQxNmY3MTExMjFmODU5YzRhNzU1NjlmMDNkNjI0ZmJlNmQ4ZDc2MTg4YjRiZmQ4NzRiNWIwYWNkZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YWI3NTA3Y2U0ODI4N2Q1MGI2MDk2ODU0YTNmMjNjOWUyYzJlNTlkZmZhOTNiMWFjMzkzODJiN2IxMzg5ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzMDE3ZDJjYTZjMzMyZmEyZDAyYTI2NTNkZWM1MzVkMjk2OWIzN2NjYTE0NTY5NjdjMmZiOTgzYTBhZTNjNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3NDg4MzQzZTNmOGVhZDdkNjk3OTAxNzMxMzAyYTBmMDlkZDhkYWI5NzM5ZWZiZjMxOTEzYjk1M2U0M2QwNTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d4a61951f60b415886ca79accf6ccdda",
+      "statement": "The serve --gpu and --mount-cwd options add GPU access and a workspace volume mount to the application container.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/gui_launcher.py#L155-L172",
+          "version": "repo-lines-v1:sha256:9cf7e27f77af5f3c8e999da58fac762e47289d5e297eab91ad1bb5190e928ebb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlYmQwM2IxYTZkZWY4MzdkZWEwZjE5N2Y4NDBkNjEyZjdhZDI2YjI5ZTg3ZWQwNTZkMjMxNDBhNTdkZmQzODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MmQzMGU4Zjg4OWJmMTMzMTU5NWI0MTgwMTgyYTgzZTEzZTczODA3NGIwODk1ZWQxZjhhNWE2ZDhjYTdiMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxNDFlYzI0MGRiMjE0Zjk0ZjY1YzA0ZjMxM2QxNThjOWY1OWM5NTJmM2FjM2E0ZjQ2YmY1OGQyYjhhNDM1ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNTk5NGEzZDA4Zjk0ODQ0MmMxNWIxMDQwZWEwOWI3MjY3YTQ5OThkZmE3NzhiYTVlMzY5YTRkMzNlYTY0YmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4dad5502647e42f58c506e2eee8eb9b6",
+      "statement": "The VS Code extension installer tries the bundled .vsix before the GitHub release, and the marketplace path is not called.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/vscode_extension.py#L110-L121",
+          "version": "repo-lines-v1:sha256:0c3f869492ea24121ff121a6ae836365f2352c76e9ca0077f92802e21b7c4ea8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNTQ0NjFjOWMwNGFjNTJlNTZmNzI4MDc0NmIzZTAzYTI4MTNkNzgxNTRiZjY3YWM0MzUzNWFiYTk0NzM3NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNzZiMmM2YzI0OGFkM2QyMTU3NWI5M2E5YmQ2ODAxOTM1ZDU0NWEwMDQ2Zjk3NWFhOWZmYmIzNTkwZTMyMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyNjM2ODQyMDIyMTgwYmZhNjFmNTE3MDI0NmY0M2IwYWJjNmM2ZWMyOTIwZjJjYjhmYzQ2OTc3MzEyYmUwODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2MWQzYjYxMTE1ZjlmZDYzMGY1NTA3NGQxZGIyZWRlZDc1NmNmZTIxZWU2OWUzZmYxYWFlMGEyYWE0ZTNhY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fabb6abbd1ef4ad2aa1c20a47056f544",
+      "statement": "The build hook compiles the VS Code extension and includes the resulting .vsix in the package build.",
+      "evidence": [
+        {
+          "resource": "repo://build_vscode.py#L95-L107",
+          "version": "repo-lines-v1:sha256:7daaca04100d2589fa61ade76e911197dfdbff6669e1ef5f72ce3601c891061b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0MmUwZjNmZDljMTBkNGM3MDFjNDc4OTgxZWM3NGI3NThkZjY4YzMxNmZiMjdmMDRkOWMzZGJkODhkNjc3OWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YmU1MmEyYzBjNjU5ZWEzYzYzNGQ3ODI5MmM0N2ZhNTM2MDY3YzNjZTgzMTM0ODc1ZmVlYWUyMjkwOTY0NTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2NjJjNDYwM2FmMWJkMTdhNTAwODcxZDIzZGYwZWVhNTg1ZWNlYzc3NThiNDkxYmM0NDk3Y2YxODc5OTk3ZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwMjY5NzZiOTI4ZmJjYjU3NjJhZDBiZWYyYzM4MTViNDMyNDRiZDlkMDYwZGRkMjhiM2U5NWNjZmIyNTQxYzEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:aeb1872a89989c5c160bb58839c1ef88670e8357ffa04b19354241e609042236",
+  "claims": [
+    {
+      "id": "claim_853e6f6ec9c447eeae0a172858fb9223",
+      "statement": "--exec and --exec-batch are hand-rolled clap arguments where each occurrence is a separate command, values may start with hyphens, and ';' terminates a command.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L859-L952",
+          "version": "repo-lines-v1:sha256:6a275e5df8d4c15018f7155cc043a3824550f5ac8c48bd638c8e0fa58d463857:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5MGQ4MzI0YWViODQ4MzFiZGQyZDE0OGY0NjY5YmQwMTM2YWFhZTQyMTkzYTg4NDQzMmU3Y2E4M2ZlYTI0YWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NTE0OTMxNDQyYjY2Y2U4YjMzMzcxMGYwZTIxZDE5ODg0OTc0M2I1MDVlOTE0OWI5NzlmMTc4MDg3YjBmYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4633bf07e8d74572a8798d44c0d7d2b1",
+      "statement": "The exec/exec-batch/list-details group conflicts with --max-results, --quiet and --max-one-result.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L29-L30",
+          "version": "repo-lines-v1:sha256:8c348b6c721db39b6a4cdc73a860dd692cc186277d4e4c1463c76164b394a90b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODgyZWY4MjZmZjY4MDgwZDE3OGE3ZTE5NmU5YzQzYWQzMDEzZDU3NWEwM2JhNTQ0ZTJlZWYzMDBhNTUxYWIyNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RlMDk3ZjVkMzI3MWRmMzkwNDA4YTA1Y2MxMTg0MWFjMzZjNjI0YzQ0OThkN2FlYjRlNzE3NGFiY2EwYWNjMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNlNDA3MjdmN2I0OTQ0OWM3NzcwMTAwMThiNzI3ZTEwMTljMjdkNjA4MjQ4YjVlN2I1MzQ1NDExN2FhYzljOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGI2MmM2YjI3OGZkNGE0YWNjMzdlN2ViYTdlYmVlOWIwYzQ2ZWI1YWNiMGM5MjEzYzljOWNkODM3OTQyZGU2NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_034aad96d48d4ddba1f9c9bf1aa603e3",
+      "statement": "A command template must have at least one argument, a batch command's executable cannot be a placeholder, and when no placeholder is present an implicit {} is appended.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L220-L256",
+          "version": "repo-lines-v1:sha256:a9132080dd9784c266da21bc6c459534b62059998fd54871c35a84b0f5f3634f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0ZGI3ZGVhYjE0MzU4ZDIzN2RiMzNjYzg4ZGZlZTdlZDg3MzRlYTRkMGRkZTI2NDE5N2ViMDM4OGJjN2ZhNDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhMzVlZTAwMzk5ODQ3YWUxY2JiZTFlNzZkZWUxNTA2MTkwZTYwMmQ0NDFhOTMxNjQzZTgyOTVjNDRlNjAyM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxOGM0MTZlYWNjMDhmOWU5N2EwMTMxZDIzZWMwODk5NGU2Y2Q2NmIxOWEwNDM4NGI2YjhhOGM3ZGUwNjE1MjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_71e8cfd67cce4829b0e9490b4c514df9",
+      "statement": "Batch commands may contain at most one placeholder argument.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L51-L70",
+          "version": "repo-lines-v1:sha256:8734bb3ac070e1aba8c988a77a118c50f06da2002781ae3017ee229f8c3eb7fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNTUwOGI0MThjNzU4MjdjZTFjN2U3YzA3N2RhOGNjYmIzNjdkMDM4YjI4NWFlNzkyYjEzMTQwNWU0YzFhNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOWEwOGJjMjlmNmViZWJlOWE1ZjAxOTAzZDk4NDVkYmNiNTg0MmE0NTVmMDdkNWY0MDAyZGFjMzJhNWM2MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2ZTdhYWEyYTI0NzljOGQ5ZGY4M2U0MTFlZWQwYWVlOTUyYWY3YWY5YzE5NjNmNTNhODc3ZTYyZWI2MmFhYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af8dfcccf07246b685baa7581c3c28cd",
+      "statement": "Placeholders {}, {/}, {//}, {.} and {/.} expand to path, basename, parent, path without extension and basename without extension, with {{ and }} as literal braces; the path separator override applies only to placeholder expansions.",
+      "evidence": [
+        {
+          "resource": "repo://src/fmt/mod.rs#L17-L140",
+          "version": "repo-lines-v1:sha256:a4bf31ea0d38fdbd753bff08117493d7032613f710137bfe3a74b0cdaa598311:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1NzIzYzRjNGYyNWYxY2UzMmZjYWRkOTkxYzA3MjIyMDQ3MGJmODMwNTFiZDVhZDVmMjkzOWQ4MTFjZDc3MDE5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlNmIwNDQ5MTQ2OTcyMmU4MzYzYTk0ZTQwNDQ1MzhlMDEzYTJhMjE3ZTM2YjFlNTY4YmE2MGFjYjdiNGM4ZjJlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4NWE5NjRmNzk2MWM4OTMzMmM0NGUzZmEyNjBlYTNlYmJhY2FlZDQ3MWY3YTljODE0OTA5Zjc3ZGJhNmI1ZDJhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhYWQzYTRlM2NiZDIxNmM2ZTYyZmE1YWI0N2IxYzQzM2YxZjhkN2UwYTJhY2MzNzM2MTBhYTE5MDg0NTFhODM4In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_542c07a19c7c4be08fa3e2bbed2acb87",
+      "statement": "In one-by-one mode each job thread runs all command templates for each result; with more than one thread output is captured and written while holding stdout and stderr locks, and with a single thread commands inherit stdio for live output.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/command.rs#L30-L99",
+          "version": "repo-lines-v1:sha256:44b64f7e0ee3df781d3b89eed3298e3dcc47ecd7167f11019603fbc61e80a724:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMDIzZWMyZjY3YjQ5MmU5NWY4MzIzOTRhOTRlMzI5YzFhOGU1ZTg4MjJhYmEwMTcwMzM0ZjY3MjAwNTAxYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkOTIxYjUyM2U3MDVmMTA5MDMyOGZkZTRlMmJhMGZiMDFhMmFiYTZiY2M2NzY1ZDQyODBjYjExOWQyMjVhN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyM2JiZmI0M2FiODE3NGI1ZTE4ZGIwNjZjMjVmOGY5YmY0ODc4ZTk5ZDU4OTAyMTAyZGM4MWNkMzJlMDU2ZmUifQ"
+        },
+        {
+          "resource": "repo://src/exec/job.rs#L11-L44",
+          "version": "repo-lines-v1:sha256:af12956ad4051b69e57fe747c2b3605f905acce508174e5bbbde2ad7787aa235:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzMjA1MDA3MmI3YjUwMzBmNGJhMzM5YjZmOTgyMzQ0MWQ0NWI2OGI3MmEwNDViYmNjY2FjNGZhNzZhZmVhYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExZTQzNmRjMzc3YWM2NzU0NWExYWRjOWU4MDA3ZTRmZWRiODU1NmFhYmNhMGVkNWZiMTQ0NjMwZDZhYmJkN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkNzgzOTA1ZTRkODliZTg4MjNlNzk1ZWUwZTk2Y2VmNjYxZTRlNTkwZGIyYzUzNmM4YzIxZGYxZjc3YjRlMjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a85d922b1714332926c80d0e27bf387",
+      "statement": "A non-zero or missing exit status from one command stops the remaining commands for that entry and yields GeneralError.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/command.rs#L80-L95",
+          "version": "repo-lines-v1:sha256:72891cc907891ba06e33d67aa45bb7aa24b76808a0779a737ae230c294ee3f2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2NzYxZGEwOGU5OWY0NzI5MGE0YjAwNmU1NjA1NjMyZmE0YjFjODEyMmZiOThmZGQzNjg4ZjJhZDRlYmRhODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyMWExZjllMDgyN2Q3Mjg0ZWMyOTYzMGU4OThkMDZmMjk5MDI3MTEwOTBmY2EwZTQ2MjZjYjViMWUzOWMwMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkNGYxNDM0YWMzNDk3NjliNzJkNmM3MjZkM2EyYzQ4YWZmZGY2NTFlMzRlOWZmZWVkZmYyNjI2OGQ4OTViNDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_474f1e3275af4257a75c9769fb752d89",
+      "statement": "Batch mode appends arguments to a command until --batch-size is reached or the next argument would exceed the OS argument-length limit, then runs it and starts a new command, so a batch command may run multiple times.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L123-L208",
+          "version": "repo-lines-v1:sha256:f54ff3cda8b45bcde108b2f91bb82cf9728a89cd12b0e3e126dc00530d6fca5c:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljMWI4ZWMzZTY2YzE3OWYyYjQxZjE5YzI5ZDdhMzI5Y2U5ZTI2NDUyZDE1ODUzMzMzMGFmNDBmYWQ2NWIwNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkOGRlNjg0MmMxMjNmZTZlYTQ3NGVlZDAwYTIwZTk5NTI4YTI3MjhhM2VkNjNhYThjNjRiOWZkZmMwZDlmMjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a0ccf69704604efba136ca986ed296c5",
+      "statement": "--batch-size defaults to 0 (unlimited) and requires --exec-batch.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L495-L508",
+          "version": "repo-lines-v1:sha256:407215fa7fb422f9d1d27271c463e3e1d25ee53a5941d167de1aa5eec3ce48c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlYzY1YzgwMDE5ZWZiNDkzMTk5OWU0YTYyNDA0Yzc4OTFhNmMzYTA3YmE2ZGNjYjAzYjRmMmI3MmI4Y2ExMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5MmJjYzAxYTc4NDc2NTI4NzRjMTJjZDY5NTJjOTQ4ODhhMTliMTZiYWFhMTE5MDYwNzM3YjJlNTQ5NjIzYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3MDEzY2MzNjFlNmY1ZDliOTcxMWQ2YWU2MjY4ODljNTQ2ZWE3YzAzMDI5N2Y3YjYyNzk1YjI2NGUxYjQ5MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5NGFmMmFlOTAyZWI2MjRlNjZmZmZjYjlhZjhlYTkyODc4MjQ1MzFjOTBjZWZiMzJhZTAwNzgwOGRmNjQ0MmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11134bc3b53f4d5cb9b368fc46029c03",
+      "statement": "--list-details synthesizes a batch 'ls -l -h -d' command, using GNU color flags on GNU-like systems, preferring gls on macOS/BSD, and requiring GNU ls on Windows.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L395-L494",
+          "version": "repo-lines-v1:sha256:18bf87ff362f8947883d442da143330f9726fbc55b904918ea89a12c23878534:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1OTFhOTRhNzU2N2U0NDliN2ZiYWRiZGQ5Yzg4MmQxOTg3Y2NkOTFmNmYxNmM4ZWU1NTQ4NjgxNGRmZDFkNTYwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2MDYzYzRkMWFmOGNkODliYjBiZGQ3NjU3ZmZjYmY2ODA2YTYxMGQ3OWQ2YzhkNGMzMDdjMjQxZGYzOTAwNTIyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjZjk3NWRhY2NmMjUxMGVlMTc5MTVjMzZlNjg1NDY5YmY3ZmJlYTRiZTkzNzE1NDJhZWY2ODJlNTI0M2MzYTk5In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_42bfe7eb91bd404a9255bf13ff0bf6cd",
+      "statement": "Exit codes from commands and job threads are merged so that any error yields GeneralError.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L46-L51",
+          "version": "repo-lines-v1:sha256:a03c6eaff4a6df26239c71e05121ffb7d204634840661f19581c3a2941e045ea:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmIzMzllMTc4ZGQ2ZjI1N2ViZmNiYzdjZmJlMjdkZmUzMGU3NjQxMjc1ZDc0YjUyYjA2ODQ4ZTAxNGFjNzAzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JjOThkNmIwZGM0OTJjNTAxNmRmMTA4MDVhM2E1NGViOWMxODRhNWE2MTM3ZTdmNGJlY2ZhMGMyMjA1NTBkMCJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L416-L432",
+          "version": "repo-lines-v1:sha256:706c567b6206dfb91123ea71acbebc7db0d6bea8f7a3274f1ed6e263d1670844:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyM2QzODFjNGQ1ZGI4ODYyMDAwNDYxYjg5YzgxYzZiZDE3ZmZlNTZlMDYxOTQ0ZGI4NTA0Y2QxNGQ3NWFmNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMGQ2YjQwZGZlYTQyNmVhNWZiZDE3OWRhNmZlMDBkYjQ3ZjcyYzcxMDczZDU3YzMzYjhlNDA5ODBhOGJhZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4ZTQxNTg3NmI1MjkzMDVkMjI2NDRiYzBmMjgzMGRmYWI0ZjU2ZDJjY2RiZTQ2YWNmZmNiNTdmMmZhODY5MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3ODM2MDk0NmExMjgxOWExZDA2NjcyNmZhZTE2NzkxYjBkZjQ4YTRiYjdhOWRmNGNmM2MzZWY4ZTgyMDgxZGMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:05:54.272Z"
+  }
+}

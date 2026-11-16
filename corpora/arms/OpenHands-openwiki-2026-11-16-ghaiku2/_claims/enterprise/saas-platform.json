@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c2aa6f49c77a24d2c47a7d398716c71748a3e3593f522f4065af0028d75649b1",
+  "claims": [
+    {
+      "id": "claim_c1ded18008244481bb47d6fcd20884fb",
+      "statement": "The enterprise entry point imports the open-source Socket.IO server and builds the hosted application on top of the OSS FastAPI app, adding enterprise routers, a metrics mount, CORS, cache-control, and the SetAuthCookie middleware.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/saas_server.py#L14-L86",
+          "version": "repo-lines-v1:sha256:320ed49ef075d01846c2e56923f460bc53259c6df986b01e36f1ae45fd731600:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNTVkMjE0MjFlOGQ5OGE0OTQ1MmFlNDA1MTNmMjVlOGMwYjg0ODFhYTk3MjFkZTc5YjJhOTk2ZTJkZjZhMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NjVmZDRiMjgwMGVhOTZiMDQ4NzdlMjNiNzFlNzFjMGIyMTY1Y2I4NGJkM2I2NjA1YjE5YTI4NWYxZjkzYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyNTkzM2E5ODYwZjYwZWMyNGY4MDM2YmRhN2FjMzMyOGZhMGEwNGU1N2I2YTk1YjQzZWUyMGI5YzFjOWQ5MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4YjBkMWUxZTgwMThiNTgwNGQzODEyMDg1YjJjOWY4MzBkZTg1MjBlZjllODUxM2UyY2Q4ZGQ5Y2UyNmYwYjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_58663963c474489ba568c1dfc6aaa4b7",
+      "statement": "SaasServerConfig is an enterprise subclass of the OSS ServerConfig, so enterprise deployments override the server configuration rather than duplicating it.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/config.py#L51-L52",
+          "version": "repo-lines-v1:sha256:829e1a4cb7e668f4dc8b161d07e52dde33cbdc74f2db642e0428fa83f335ded1:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmExY2NjMzQwNjVhNDAxNTFhZTY3Y2Y4MTQ3OTU2MmU3NzcxZDBmYWQzMmRmMjJjZDQ2MDE3N2NkNGZlZWYyNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQwNmE1MDgwOWVhMzRmMGUxMDc4N2YyZTJiNzU4ZDY4ODk1OTBlMDJlMGJiMDViNDc4OTZjYzI0Zjc1ZjEyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2ZhYjNmMWMyZDk1MWJmNTkwMzg4Yjg0YWY5M2U5MmUwZjFjYjk1NDM3NDE1MmRiMmIwZDFhN2M3OTkxODM5MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2ExOWMyMzgyZjJiOWM1NjY5NGRmMjUwMGVjOGM3MTIxNzlmZTMyMWI1NWQ4M2UzYTIzZTk4ZmY5Y2NiN2FlMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe9d660450b647d09e8070674ebab5fe",
+      "statement": "The enterprise README states that GitHub authentication uses an OAuth flow whose tokens are kept by GithubTokenManager, and that a signed cookie carrying the GitHub user ID identifies the user on later requests.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/README.md#L27-L35",
+          "version": "repo-lines-v1:sha256:159fdb56c88e4ed558d5fcfc99976ab9aa635e03ff5bed7a62659ea11c0dc195:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjljNzFmZjQ0MTQ0NmIyNDJhZjE2ZTRhMmVmNWZkODZiMjM1Mjk0YTA2NTM2ODM3OGY5ODU2ZjVlZDgxNmY0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg5ZWNhYmI4ZDg2NDcxNDhiYTMyNmZiNjExMjYwZjdkMDBmMjk1MTEzMmJhZDMxNTZlZjNiOGNjM2JmMTM1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTUzMzY0OWU0YTI2ZWMwMWI5YTQyMGQ2ZGM5N2MxZmVhMjExOWRlMDA3ZjFmMDViM2E5N2E0ZjQzZGYyYjEzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjk4MzlkOTBmZjJkMzQwZTM2MzJjMDUxYjVjYzY1N2I3MGNmYjJlY2MzMmM5MjJkNDhmM2ZjYzRlZDM4ZGQxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9ebe4703c8494b39abce0c6679eb56d8",
+      "statement": "The billing routes compute a user's credits from LiteLLM user information and expose checkout, subscription, and Stripe redirect callbacks.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/routes/billing.py#L258-L262",
+          "version": "repo-lines-v1:sha256:90727594710e42319462eb4edaab7ef1968c720cb5a1ff9963d4b16a6a8e0f39:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMzZTMyNTBhZWNlYWRkOTAyZmQxY2MwMTk5ZjgxN2I5NzM1N2VhZGM4OWI1ODM2ZTI3NzIzNDk2YmFiMzA1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODFmMDgwYTgwYTYxYTFmMGVhZmE4ODZhYTQ1NmE5NTM4ZTcyMzk2NjE3NjRlMDk0N2UyZGZmOWNmYjE0NDUxMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGE4ZGQwY2MyNWVlNzIwY2M0ZDg1M2YyMjY1NjUxMzBjZDMxY2FmMTBjZDFlOGY5NTdiOTcyMGM3MThlZGIxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEwNzQ5Yjk4ZjY3OWIyNTg0ZTRiODg0N2IyZWRhODZmZDA1ZjdiMGUxY2MwNzFjOGFhY2MxYWUxMTJjMjVmNyJ9"
+        },
+        {
+          "resource": "repo://enterprise/server/routes/billing.py#L65-L84",
+          "version": "repo-lines-v1:sha256:47a3b9f5517e01c340afcbca2dc3effcd40a834a5167da31a204ef5af5c26875:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZWJlZmY3NjlmYTIzYWYwYjkxMmExNzJmOTUxM2Y2ZjJmNzExYTNjYzcyMmI5Yjk5YmJkMThjNmQ1OGIyNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MDcwOTcwY2I4ZjQ1NzcxMDhlNWNjZjdhY2VhM2FkMjY1YTRhODViMzdjNTMwNTI3MmY5NjU4MTEyYTc4OGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4M2NmYTA2MzIxNjdlNTI0Njc2YjViOTI5NTdiYTUxYjhkODhmOTVhZDFlNWQ3NGY1NGMwOTZhMjdhYWNlYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhM2U0ZTY2ODdjNjE0YzdmZDU5NjQ0MWM1ZmU0NzQ5NzdkMzJlMmM4NGUzNzYzOTk2NzMwNDQ4NTI3ZTYyOGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2bc7cece83e84b8b91f0fd4c5b5677df",
+      "statement": "ConversationCallback stores a conversation ID, a status (ACTIVE, COMPLETED, or ERROR), and a serialized processor, and the processor base class defines the interface for the platform-specific callback handlers.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/server/conversation_callback_processor/README.md#L1-L20",
+          "version": "repo-lines-v1:sha256:f26142bec723bf2f4b4a4aca583277bc9105748236b8e035fa25c6ccb0a2fdf9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMWFjZDkzNzRkNjQzYzhjNzYzNDE2NTEwNmVjYjAzYWYyNWYzOWQzZjdkZmYzZTk5ZWY5OTA2NDg1N2Y4ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3Yzc0YTVkYjU3NWJiZWM3ZjQ2YzMzNDc0ZGRhYjM4YjI0ZjZhYmUxOGI4MmRlNjVkYzA2ZjFkYzQ0ZGU4Y2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwY2Y2YWNlNjBjMGNkODc2OTM3YmQ1ZGM3MWE5NTZlNTQ2ZjFkYzhjZmRjMDNmM2VjZTU5ZmNlNWQzMjhmOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4888572808dc46e2b24a12d8418c9520",
+      "statement": "The maintenance runner runs on deploy as a separate program that executes pending maintenance tasks from the database.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/run_maintenance_tasks.py#L1-L30",
+          "version": "repo-lines-v1:sha256:be6ee98081290040ffc080cd0cc9bb6b92f4234ca96e83a8ae733347bba12085:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzNGM5Y2RkNDJmOGQ4OGMwNDQyNTM3M2E3MzM2MjA5ZjZiMmEyZGNlYmVjMzJiNGQ0MDU5M2Y5MGJlMmJiMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYjUzYjBhMTIyYmQ1YmRmNWI2ZDk5MGRhYWYwZWFmMzAxZTJjMmY4ZDQyZTBhM2VlNzIyYzM0YjYwMGE5MjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3YjFiY2M1OWYzMThmMWU4NDU2Mzk5MTBjOTUzNzNiYmE1NWQzODc0ODk1NzExZTE1MTI4YjU2MTg0ZDY3OWUifQ"
+        },
+        {
+          "resource": "repo://enterprise/server/maintenance_task_processor/README.md#L1-L10",
+          "version": "repo-lines-v1:sha256:cb8ff85e27e2d493105002a7d9d9f311ff53e3c0d4b604b230034ad9f55feb38:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1YWMzN2EzY2U3Y2ExN2UzNzQ2YWY1ZjA0M2ZlYWQwMGMxNDUyMzUxZDIxYmMzMjNiN2Y1MzczZTczMGU5YmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4NmI0ZDhiOTJiMDZiYjhkODFiMjJlMGUwMzUyZmViMzJhYmZjNTA3NGY1ZDc3ZWQ5N2UzYzE3ZjZiMDRiYjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_60f4bbce206a46f8924cc8a94727d2c5",
+      "statement": "The enterprise migration history includes the subscription access table revision, which is the latest in the sequence of 74 Alembic revisions.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/migrations/versions/074_create_subscription_access_table.py",
+          "version": "repo-file-v1:sha256:701da0ba281622e9813d558728804ea10ddd2b3e3ed051a5ef1937a68e3afd68"
+        }
+      ]
+    },
+    {
+      "id": "claim_45a38e44ee78456b889209506d90f907",
+      "statement": "SaaSExperimentManager assigns users to a conversation configuration variant through the experiment manager base class.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/experiments/experiment_manager.py#L16-L18",
+          "version": "repo-lines-v1:sha256:b5f627d128eb552bcb21439da9f01adfa9944f43ebc9c20e1c8b475b4b961170:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc4N2Q0Nzk0ZWEwMTBlYTRlOWRjMjI5YzQ0NGJmMWUxYzg0MzRkODZlNmE5OWU3NzQ5NTRmYTIxZTQxZGM3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjg0N2FmYjMxNDJhNjU5YjBhNjkyN2ExNzg5MWIwZjcxMzA4MDFmODYxMWJlMTRkMjg5OTYxOThmNThiMmM0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzRhZGE5ODBjOTBmYTdmMmUwYjY0MDdhOTJjYTNiYzE3MzM4MjFjZTU0ZTQ3Y2I5YmExMzMyNGQzNTMxZTNkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODc5NzRmYzBjMWUyYTIxNzNiNDNlNDAwNDUxZjg4MTUwZjUxZGEyZjQyYjZhN2FmZjAyMjg5ZmRhMGQ2ZTI0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_17ff5431cef44345b3987050459798ae",
+      "statement": "The Jira, Jira Data Center, and Linear integration routers are included in the SaaS app only when their feature flags are enabled.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/saas_server.py#L63-L70",
+          "version": "repo-lines-v1:sha256:57ca627e9ac7e42f552a7382d7a62081359ceef7d7f8505903178a447150658f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWMxMjgzNmQyOTI2NjYwY2M3N2FkYWJmZTY1M2RlZjIyZjU3NmQ2OGY2YTJhZDg4MTYwYTAwY2E3OTljMTkxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk2MWMzYzczOTMwNGRkN2Y0NjZkY2JmMmU3YjUxNTRhYTAxNjRhNzFiNWVhMzlmNDIwMjg3NmQxNWYzNTc5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjJkNDBkMTM3MzNmODE5NTAyMWI2M2FkOTE2ZDliNjY5ZjYwNjNlZTEzOWVmMjM5MjEwOGNhMTY4NDNkNjg1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmJhODBhMDI2ZTg5NTIzYmJiOTU5ZmM5NzM4OTZmNTBhY2ExN2Q2MjliYmQ0MWNjMWQ4ODBhNDlkZWJlMjk0NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

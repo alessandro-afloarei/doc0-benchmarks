@@ -1,5 +1,11 @@
 import { describe, it, expect } from "vitest";
+import { mkdir, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import {
+  corpusPageFiles,
+  emitEvaluatorInput,
+  frontmatterTitleToH1,
   hoistPreambles,
   neutralizeNonFinalLists,
   normalizeHeadingLevels,
@@ -204,6 +210,75 @@ The following files were used as context for generating this wiki page:
     const input = `# Title\n\n<details>\n<summary>Relevant source files</summary>\n\n- [a.ts](x)\n</details>\n\nIntro.\n\n<details>\n<summary>More</summary>\n\nExtra.\n</details>\n`;
     const result = stripLeadingDetailsBlock(input);
     expect(result).toBe(`# Title\n\nIntro.\n\n<details>\n<summary>More</summary>\n\nExtra.\n</details>\n`);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// frontmatterTitleToH1 — doc0 arm pages (frontmatter title, no H1)
+// ---------------------------------------------------------------------------
+
+describe("frontmatterTitleToH1", () => {
+  it("turns a leading title frontmatter into the page's H1", () => {
+    expect(frontmatterTitleToH1('---\ntitle: "Celery \\"Overview\\""\n---\n## Overview\n\nBody.\n')).toBe('# Celery "Overview"\n\n## Overview\n\nBody.\n');
+    expect(frontmatterTitleToH1("---\ntitle: Workers\n---\n## Overview\n")).toBe("# Workers\n\n## Overview\n");
+  });
+
+  it("leaves a page that opens with its H1, or a later rule, unchanged", () => {
+    const h1 = "# Title\n\n---\ntitle: x\n---\n";
+    expect(frontmatterTitleToH1(h1)).toBe(h1);
+  });
+});
+
+describe("emitEvaluatorInput — a doc0 arm corpus folder", () => {
+  it("emits every page with its title as H1 and ignores _meta.json and navigation.json", async () => {
+    const root = await mkdtemp(join(tmpdir(), "cwb-arm-"));
+    const corpus = join(root, "celery-doc0-nomap-2026-11-16");
+    const out = join(root, "out");
+    await mkdir(corpus);
+    await writeFile(join(corpus, "overview.md"), '---\ntitle: "Celery Overview"\n---\n## Overview\n\nCelery is a task queue.\n\n## Parts\n\nWorkers.\n');
+    await writeFile(join(corpus, "workers.md"), '---\ntitle: "Workers"\n---\n## Overview\n\nA worker consumes.\n');
+    await writeFile(join(corpus, "navigation.json"), '{"sections":[],"pages":["overview","workers"]}\n');
+    await writeFile(join(corpus, "_meta.json"), "{}\n");
+
+    await emitEvaluatorInput({ technicalDir: corpus, outputDir: out });
+
+    expect((await readdir(out)).sort()).toEqual(["module_tree.json", "overview.md", "workers.md"]);
+    expect(JSON.parse(await readFile(join(out, "module_tree.json"), "utf-8"))).toEqual({ overview: {}, workers: {} });
+    expect(await readFile(join(out, "overview.md"), "utf-8")).toBe("# Celery Overview\n\n## Overview\n\nCelery is a task queue.\n\n## Parts\n\nWorkers.\n");
+    await rm(root, { recursive: true });
+  });
+});
+
+describe("emitEvaluatorInput — an openwiki arm corpus folder", () => {
+  it("flattens nested pages to unique names and skips index.md navigation and _claims/", async () => {
+    const root = await mkdtemp(join(tmpdir(), "cwb-openwiki-"));
+    const corpus = join(root, "hono-openwiki-2026-11-16");
+    const out = join(root, "out");
+    for (const d of ["architecture", "helpers", "_claims/architecture"]) await mkdir(join(corpus, d), { recursive: true });
+    const page = (title: string) => `---\ntitle: ${title}\n---\n\n## What it is\n\n${title} body.\n`;
+    await writeFile(join(corpus, "_meta.json"), '{"schema_version":4,"system":"openwiki"}\n');
+    await writeFile(join(corpus, "index.md"), "# Directories\n\n- [architecture](architecture/)\n");
+    await writeFile(join(corpus, "quickstart.md"), page("Quickstart"));
+    await writeFile(join(corpus, "architecture", "index.md"), "# Files\n\n- [Overview](overview.md)\n");
+    await writeFile(join(corpus, "architecture", "overview.md"), page("Architecture Overview"));
+    await writeFile(join(corpus, "helpers", "overview.md"), page("Helpers Overview"));
+    await writeFile(join(corpus, "_claims", "architecture", "overview.md"), "not a page\n");
+
+    await emitEvaluatorInput({ technicalDir: corpus, outputDir: out });
+
+    expect((await readdir(out)).sort()).toEqual(["architecture-overview.md", "helpers-overview.md", "module_tree.json", "quickstart.md"]);
+    expect(Object.keys(JSON.parse(await readFile(join(out, "module_tree.json"), "utf-8")))).toEqual(["architecture-overview", "helpers-overview", "quickstart"]);
+    expect(await readFile(join(out, "helpers-overview.md"), "utf-8")).toBe("# Helpers Overview\n\n## What it is\n\nHelpers Overview body.\n");
+    await rm(root, { recursive: true });
+  });
+
+  it("refuses two pages that flatten to one name", async () => {
+    const corpus = await mkdtemp(join(tmpdir(), "cwb-clash-"));
+    await mkdir(join(corpus, "a"));
+    await writeFile(join(corpus, "a-b.md"), "# A b\n");
+    await writeFile(join(corpus, "a", "b.md"), "# B\n");
+    await expect(corpusPageFiles(corpus)).rejects.toThrow("a-b.md and a/b.md both flatten to a-b.md");
+    await rm(corpus, { recursive: true });
   });
 });
 

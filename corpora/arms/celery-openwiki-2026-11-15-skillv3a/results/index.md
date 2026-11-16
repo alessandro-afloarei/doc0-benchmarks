@@ -1,0 +1,4 @@
+# Files
+
+- [Result Backends](backends.md) - How Celery stores task state and return values. Covers backend selection from result_backend URLs and aliases, the Backend / BaseKeyValueStoreBackend class hierarchy, metadata encoding and safe exception reconstruction, retry policy, caching, expiry and cleanup, chain/chord failure propagation, and the behaviour of the main concrete backends (Redis, RPC, SQLAlchemy database, MongoDB, cache, cloud stores).
+- [Results API: AsyncResult and GroupResult](result-api.md) - The client-side handles to task outcomes in celery/result.py. Covers AsyncResult state, get() semantics and parent error propagation, the ban on blocking joins inside tasks, ResultSet/GroupResult joins (join vs join_native), saving and restoring groups, EagerResult, result serialization tuples, and the async result consumer and drainer machinery used by Redis and RPC.

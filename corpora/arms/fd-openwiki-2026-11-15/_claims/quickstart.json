@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ca2279d3b76b0320c1904bef7484aba12aa1f3886ce1344b46d2ad2ceb7b27fb",
+  "claims": [
+    {
+      "id": "claim_eba2d46813004c55af0acb93d33263da",
+      "statement": "fd is a single binary crate (package fd-find, binary fd) whose entry point is src/main.rs, where run() parses options, builds patterns and Config, and calls walk::scan.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L1-L28",
+          "version": "repo-lines-v1:sha256:d310f979e665f6aac8e2bf182795c2e9df5ebc025928ddb01fa979fb3b1b22db:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhM2NkNWE4MWIzZjlhNjIxYWE0OTNkOTBjNDVmNDJhYjU3MWQ0ZTQyYjhhZTVhZmYzNTFjYjBhMDJkMDZkODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjliNDM5NDg1ZjYxYjQ2ZGRjYTFhZjUxOThjYWZmZTRjODc3NjA3OWFlZjlkNWY5ZWMzOGM1MDYxNTEwYzAifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L75-L113",
+          "version": "repo-lines-v1:sha256:ea1a22c97718c43b8fb9b0749955605e724e09c74258f113a30752334fb32bc6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlMDBiY2Q0Mzg4ZTAzNTZkNTdjM2ZjOWYwOTJiMzYyY2E1YTA3NDVlMWQ5ZWI1MGFjNTI4YWZiNjVmNzhmZTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee42074200b34b62bb8c915de5535b0e",
+      "statement": "The default completions feature enables --gen-completions via clap_complete, and the use-jemalloc feature selects jemalloc as global allocator on a platform list that must be kept in sync between Cargo.toml and src/main.rs.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L109-L113",
+          "version": "repo-lines-v1:sha256:32a52c25b58edd62dff4903e4e78e4cc9e777ab951dc66af947def60f533b96f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTZjMmI4YjQ2ZmRlMDg1MDE3NjI3NWUwODZjNTNiOWRkMjExMGZiMGI4MjJmNzMzYWEzMDBiYmMxODBjMzBkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmZiY2Y4OTUzN2MzZjhjZjk3NDIxMTRjZDlmNGJmZmQ4N2UyYWQzY2M5ZGZmMTY3ZTQ3YjI0MTQ5YjE0ZjJjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTQ5NDI4OWI3NWQzM2M0ZThlMGIzZjlkYTkwNWExODg2OWUzNGFkZDNkYTg1Yjg2MjE0MTcxMzU1ODc3YTE2NyJ9"
+        },
+        {
+          "resource": "repo://Cargo.toml#L68-L76",
+          "version": "repo-lines-v1:sha256:29b4923b07cca5643707f38454f432a98a86f59338a92461378c6a56095d4773:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTY4OWFkYjAyMTg1YjYxNzFkNTYzYzU5NDY2Yjc4NzU3OTEwZjZjM2I5NzkwZjlkYmIwNzdkYzJkNjk1YTU5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjRkOTcxNmIwZGE4YTc5MDg3YWYyYTQxYzU1ZmZjMGZhOTc5MzQ1MjY5YTFjYmFiNmEwODc4MTc0OWMwZWU4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjlmYzkzMTQ3YzkxYjA4NDA1ODk5NmJhMzVjNDkxOTM0YzllN2Q2YWE2YTcxNWM3Y2E0OGU3YjZiNzMzMjQ2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTE2ODY2OGI4MDQyNzk1NTI3Y2ViYzdhMjcwZmU1ZTExZDBlNzljNWQyZGI5YzdkMzNhZGVjOTA2YWY0ZGNhYSJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L39-L56",
+          "version": "repo-lines-v1:sha256:46367a467fbe9fcbb753eb87d9d92b99d89c257096c9b6fb9d09a5ba03b85508:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZjljNWRhNWM2MmMzN2UwMzQ3MGMwNzY0ZTEzNTA4MDczMTM5ZjZkMGJhYjk4OTQ1MzRhMWRiNDYxNzJiZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNDliOGE0NTFlNWMwYWNmN2E4ZDAxYjA1ZDNjNDNmMmVhYmY1N2ZmMGNkYmVhODJhZTc1MGI5NTEwZmY4OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiOTgyYWRhZTIxMWEzYjQ0ZGIxZDA1MzgzOWM3MTQ5NjgyYjA2ODdmMmM3MDQwODFhZjcyMjkwZGI4ZmY1OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkMmU4OTE3YjdmNDBkOWUxMzY3NjUwMTc5Njg1ZWFhMjc4Mjk0YTk0NWYzYTdjYjRjZTlkZjUwNTcwYTVkNDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d481ed51f0aa4ab386f94170b767b502",
+      "statement": "CI enforces cargo fmt --check and cargo clippy with -Dwarnings, and runs MSRV and cross-platform build/test jobs.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L42-L84",
+          "version": "repo-lines-v1:sha256:95d13330fbc125043bb3fe2b24478623c2e9a184155021329a5991133599e5b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOGQ0NjZiNTViMGJlYzc5M2QwZjI4YWIxOGRkYjllMmFiMTg5ZjQwNWRkOGMxMzAxY2ViMmYzOGJmMDcwNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMzNhMTZiZTA5YTk5YzgyOTNkZTY5ZWRhY2I1Y2NjMzZkYTE2ZjNiMTI3YTkyM2RiNTk3NTQ3ZGEzY2I1ZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlMTg0N2E4OGUwZWJjYzczYzc5ODlmZDg5YzI4ZjBmZDg2OWNkYzQzNzQ1OTExODkwNGVjMTg2ODYwNTU5YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMDUyMTI5Y2M4YmZhOWE0Y2E0ZjI4ZjFkMjhlZTIzZjFiODZhYzBkYWY1NjBhMDgyZDcyNmNhZThlMzVlMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_93698d64c3b6410ea65787d139abf1d7",
+      "statement": "Integration tests use the TestEnv harness, which creates a temporary directory tree and runs the fd binary against it, comparing normalized output.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L148-L300",
+          "version": "repo-lines-v1:sha256:311c735a21634a205d0cd4dc6784b3c79793765e62fbff35442405c43e92cc22:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyMWY5NDEwNzAxMzYwNTk0MzEzMmI2OTQ4OTg5MWIxZmI0ZjkyYjQyYjE4MjkxZmI0MDhmMjViOTZhZThhNTk1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4YjllM2M0Njg5MmM1Y2YxOTMzMjU4MzZkZTYyMmM2MjQ2MDY5ODU1MThhZWFkOTY0MmU0MDg4ODEyOTBhZjUzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyN2RhN2I4YjRmNzIxNjcwOGQ1NWM2MzQ5YjE1OWQyODA4M2Y1M2JmMDU4YmNkYjllMDM0N2I1MTgxMDU2NzY4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjNzEwYWFhMmJhYTEzYTNkNDkzZjVhMzMxYzYyMTVjOWE5YmI1ZGE0NjU0OTUwM2FmOTlmN2FmZTRmMDQ4ODlkIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_927dc3f8c80c41688cc89b18b90262e0",
+      "statement": "Behavior-changing contributions must add an entry to the Upcoming release section of CHANGELOG.md, and AI tool usage must be disclosed.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L13-L46",
+          "version": "repo-lines-v1:sha256:2af1fcdc91d94f06412c7a48d1fbdb165b31bd10f89fa241996bd8373c200dce:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0MzNhNDlhMDZmNmNlMTViNmFiOWU4MTk1MTM2OGJjMmU5ZmIyYjc4ZDA2ODQwYzc1NDBhNjU1ZTBlZTk1N2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0MzdiMGZiZjAzZDU3YjQxYmE3OGVhNDkzMWY4NTFhZDY5ZWQzMTE5YjVkNTVhZGViZjA0ZDllNGI5OTRiM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5ZmFhZDE3NjE3ZjI1ZTIzNmM1ZDFjYjk3OTk0ODg5ZTdmZjUyNTQ1YzJlMzRhNDQ1YmFjZTdlNDYyMmQzMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1NjNlY2U2MThkNmMxNTBhZmRmNzg5ZDZiNTkyYjU4ZTUwNDY2NzM4OWI5NzdkMTUxZmQ0YzZkMGQyNTNkZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9efa960af404bc1824453de2b4afce8",
+      "statement": "make install installs the release binary, shell completions and the man page doc/fd.1 under the configured prefix (default /usr/local).",
+      "evidence": [
+        {
+          "resource": "repo://Makefile",
+          "version": "repo-file-v1:sha256:f3d6f25da159316795ec3dc84e2f4a8e3cee873b679233674ab9e5c36d41cf47"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-15T06:14:47.054Z"
+  }
+}
