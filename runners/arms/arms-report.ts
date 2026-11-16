@@ -22,7 +22,7 @@ import { judgeClaimGroups, LINK, liveAccuracyJudge, parseRef, PROXY_ACCURACY_MOD
 import { framedSampleForJudge, judgeComparative, liveJudge, type CellVerdict, type JudgeFn } from "../../scoring/judge-comparative.ts";
 import { judgeModel } from "../../scoring/judge-model.ts";
 import { computeStructuralMetrics, wordCount, type StructuralMetrics } from "../../scoring/metrics.ts";
-import { ARM_REPOS, ARMS, capMinutes, CLOUD_PAGE_COUNTS, REPOS, type RepoName } from "./arms.ts";
+import { ARMS, capMinutes, CLOUD_PAGE_COUNTS, REPOS, RUN_REPOS, type RepoName, type RunRepoName } from "./arms.ts";
 import { CORPORA_ARMS_DIR, isRunDate } from "./run-arm.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -199,7 +199,7 @@ export interface ArmCell {
 }
 
 export interface RepoArmsReport {
-  repo: RepoName;
+  repo: RunRepoName;
   arms: Record<ArmName, ArmCell>;
   comparative: Partial<Record<PairKey, Record<ArmDimension, CellVerdict>>>;
 }
@@ -231,7 +231,7 @@ export interface ArmsReport {
 
 export interface ArmsReportDeps {
   corporaDir?: string;
-  sourceDir?: (repo: RepoName) => Promise<string>;
+  sourceDir?: (repo: RunRepoName) => Promise<string>;
   accuracyJudge?: AccuracyJudgeFn;
   comparativeJudge?: JudgeFn;
   judgeNames?: ReportJudges;
@@ -293,10 +293,10 @@ function projection(repos: RepoArmsReport[]): Projection | null {
   return { minutesPerPage: round(m, 2), timeCaps: Object.fromEntries(REPOS.map((repo) => [repo, capMinutes(m, CLOUD_PAGE_COUNTS[repo])])) as Record<RepoName, number>, costUsd };
 }
 
-export async function armsReport(o: { repos: RepoName[]; date: string; judged: boolean; label?: string }, deps: ArmsReportDeps = {}): Promise<ArmsReport> {
+export async function armsReport(o: { repos: RunRepoName[]; date: string; judged: boolean; label?: string }, deps: ArmsReportDeps = {}): Promise<ArmsReport> {
   const {
     corporaDir = CORPORA_ARMS_DIR,
-    sourceDir = (repo: RepoName) => ensureSourceAt(ARM_REPOS[repo].repo, ARM_REPOS[repo].sha, `arms-${repo}`),
+    sourceDir = (repo: RunRepoName) => ensureSourceAt(RUN_REPOS[repo].repo, RUN_REPOS[repo].sha, `arms-${repo}`),
     accuracyJudge = liveAccuracyJudge,
     comparativeJudge = liveJudge,
   } = deps;
@@ -313,7 +313,7 @@ export async function armsReport(o: { repos: RepoName[]; date: string; judged: b
         continue;
       }
       const meta = await readArmMeta(join(corporaDir, name));
-      if (meta.arm !== arm || meta.repo !== ARM_REPOS[repo].repo) throw new Error(`${name} holds the ${meta.arm} arm of ${meta.repo}: its folder name says otherwise.`);
+      if (meta.arm !== arm || meta.repo !== RUN_REPOS[repo].repo) throw new Error(`${name} holds the ${meta.arm} arm of ${meta.repo}: its folder name says otherwise.`);
       metas.push({ arm, meta });
       arms[arm] = usageCell(arm, meta, meta.reason);
       if (meta.status !== "complete") continue;
@@ -442,7 +442,7 @@ export function renderArmsReport(report: ArmsReport, template: string): string {
     title: `Local generation arms, ${report.date}${report.label ? `, ${report.label}` : ""}${report.dry_run ? " (DRY RUN)" : ""}`,
     dry_run: report.dry_run ? `> DRY RUN: ${maxPages ?? "a few"} pages per arm: tests the harness, decides nothing.` : "",
     run: [
-      `Repositories: ${report.repos.map((r) => `\`${ARM_REPOS[r.repo].repo}@${ARM_REPOS[r.repo].sha.slice(0, 12)}\``).join(", ")}.`,
+      `Repositories: ${report.repos.map((r) => `\`${RUN_REPOS[r.repo].repo}@${RUN_REPOS[r.repo].sha.slice(0, 12)}\``).join(", ")}.`,
       firstMeta ? `Host \`${firstMeta.host}\`, model \`${firstMeta.model}\`, effort \`${firstMeta.effort}\`, credential \`${firstMeta.credential}\`.` : "",
       report.judge
         ? `Grounded rate judged by \`${report.judge.accuracy}\`, every claim group (full population); blind comparison judged by \`${report.judge.comparative}\`.`
@@ -472,8 +472,8 @@ async function main(): Promise<void> {
   const { values } = parseArgs({
     options: { repos: { type: "string" }, date: { type: "string" }, judged: { type: "boolean", default: false }, label: { type: "string" }, "accuracy-judge": { type: "string", default: "gemini" } },
   });
-  const repos = (values.repos ?? "").split(",").filter(Boolean) as RepoName[];
-  if (repos.length === 0 || repos.some((r) => !REPOS.includes(r))) throw new Error(`[bench:arms] --repos takes a comma list of ${REPOS.join(", ")}`);
+  const repos = (values.repos ?? "").split(",").filter(Boolean) as RunRepoName[];
+  if (repos.length === 0 || repos.some((r) => !Object.hasOwn(RUN_REPOS, r))) throw new Error(`[bench:arms] --repos takes a comma list of ${Object.keys(RUN_REPOS).join(", ")}`);
   if (!isRunDate(values.date ?? "")) throw new Error("[bench:arms] --date YYYY-MM-DD (or YYYY-MM-DD-<tag>, as bench:arm was given) is required");
   const date = values.date ?? "";
   if (values.label !== undefined && !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(values.label)) throw new Error("[bench:arms] --label takes lowercase words joined by dashes (instrument-v2)");

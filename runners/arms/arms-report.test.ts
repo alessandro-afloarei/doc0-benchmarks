@@ -201,7 +201,7 @@ function meta(armName: ArmName, extra: Partial<ArmMeta>): ArmMeta {
   };
 }
 
-async function fakeCorpora(arms: Partial<Record<ArmName, FakeArm>>) {
+async function fakeCorpora(arms: Partial<Record<ArmName, FakeArm>>, repoName = "fd") {
   const root = await mkdtemp(join(tmpdir(), "arms-report-"));
   const corporaDir = join(root, "corpora");
   const source = join(root, "source");
@@ -209,7 +209,7 @@ async function fakeCorpora(arms: Partial<Record<ArmName, FakeArm>>) {
   await writeFile(join(source, "src", "walk.rs"), Array.from({ length: 50 }, (_, i) => `line ${i + 1}`).join("\n"));
   const supported = new Set<string>();
   for (const [armName, spec] of Object.entries(arms) as Array<[ArmName, FakeArm]>) {
-    const dir = join(corporaDir, `fd-${armName}-${DATE}`);
+    const dir = join(corporaDir, `${repoName}-${armName}-${DATE}`);
     await mkdir(dir, { recursive: true });
     const statements = Array.from({ length: spec.claims }, (_, i) => `${armName} claim number ${i} about the walker.`);
     statements.forEach((s, i) => spec.judge(i) && supported.add(s));
@@ -243,6 +243,19 @@ async function fakeCorpora(arms: Partial<Record<ArmName, FakeArm>>) {
 }
 
 describe("armsReport", () => {
+  it("judges a CodeWikiBench repository's arms, and leaves the rules not applied there", async () => {
+    const openHands = { meta: { repo: "All-Hands-AI/OpenHands" } };
+    const corpora = await fakeCorpora({
+      openwiki: { claims: 4, resolvedClaims: 4, judge: () => true, ...openHands },
+      "doc0-map": { claims: 4, resolvedClaims: 4, judge: () => true, ...openHands },
+      "doc0-nomap": { claims: 4, resolvedClaims: 4, judge: (i) => i > 0, ...openHands },
+    }, "OpenHands");
+    const report = await armsReport({ repos: ["OpenHands"], date: DATE, judged: true }, corpora.deps);
+    expect(report.repos[0].arms["doc0-nomap"].judged?.groundedRate).toBe(0.75);
+    expect(report.decisions.rule1.outcome).toBe("not applied");
+    await corpora.cleanUp();
+  });
+
   it("an incomplete arm is listed and never scored", async () => {
     const corpora = await fakeCorpora({
       openwiki: { claims: 4, resolvedClaims: 4, judge: () => true },
