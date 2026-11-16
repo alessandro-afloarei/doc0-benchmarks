@@ -1,0 +1,6 @@
+# Files
+
+- [The Celery Application Object](application-object.md) - How the Celery app (celery.app.base.Celery) is constructed, lazily configured and finalized, how tasks are registered through decorators and shared_task, and how current_app, proxies, loaders and fixups fit together.
+- [Configuration System](configuration.md) - How Celery settings are declared in celery/app/defaults.py, merged from constructor arguments, config modules and environment variables into app.conf, and how old UPPERCASE names, namespaces and command-line overrides are handled.
+- [System Architecture Overview](overview.md) - End-to-end map of Celery's runtime pieces — the client-side app, the message broker accessed through kombu, the worker with its consumer and execution pool, result backends, the beat scheduler and the event stream — and how a single task call flows through them.
+- [Signals and Extension Points](signals-and-extension-points.md) - How Celery's signal dispatcher works (weak references, sender filtering, retrying receivers, error isolation), the catalog of built-in signals, and the other supported seams for extending Celery — bootsteps, custom Task bases, task annotations, entry-point plugins for backends and CLI commands, custom pools, loaders and fixups.

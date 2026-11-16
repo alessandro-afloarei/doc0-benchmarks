@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7fcbdff4118e01c46f7f0ccf448aeb5656c2f60d356919d3f2e3162c21a5ae63",
+  "claims": [
+    {
+      "id": "claim_6bb70ee819ab40838e37868e9fa86312",
+      "statement": "The common static middleware validates decoded incoming paths before optional rewriting, chooses directory index files through a runtime callback, and falls through when content is missing.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/serve-static/index.ts#L118-L124",
+          "version": "repo-lines-v1:sha256:259807eb17b980178087def5fdb5a104eaf6bc295bef2f19c22afe09f2561e87:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTUxY2U5ZmRhOWMwYWMyYTk5MDJlNDU1YjNlMGMwMzQ5MWQyODFiYTQyNzg5OTNmYTY1ZTE5Mzc0OTdiZjcwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNkOTkxZjRiYjU5YTQ4ZGY1N2VjYzllMDg1NTE1MmEyMTBjODQ4Njg1MmU2ODhiNGY3NmI2YTJiOTRlMmU0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjQ5OWU4OGE0MGYyOGE5NjE5ODY5NTI5YTNkNmViZmJlYzljMzMxNzA4ZDQ4MjA5NTI2NDA5YWQwYzRmODczNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGY3MzlhMDZjMWNiYjEyNDRlMzM2M2QzOGJjZjlmYTUwY2U4NGZlZDM5OWMyMTkzYTNjN2YwOGQ1OTkxOGIyYSJ9"
+        },
+        {
+          "resource": "repo://src/middleware/serve-static/index.ts#L50-L90",
+          "version": "repo-lines-v1:sha256:969f699f30ea6ea05b391e1befcb45eaea707f4a8d1d7f3739995638ef149917:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiZDE2M2M5NmIzMmM0ODlmOGQ0YzZlOWZjOGMwM2VhNDVhMmJmYWYwNjBkMjU3NTkzZWJhYjk4YWYxZGYzODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzYTJhMjIxN2NhZGU0MzQ4NjBhZGY3MDBhMTYyNDNjZDU3N2U3MGEzZDQxNWNiMmUyMTExNTRmYjMwMTI4MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyNzY5ZmNjNjA2NjQ5MjliNWM4YWMyNGVjZmQ2OWU2ZDA1MjI3N2JlYmE3MmM2YjFmNzc0YjRhYzE0MjVjNTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31d1f7edb82b4a888cca9abe5ff48294",
+      "statement": "Static middleware can select precompressed br, zstd and gzip sibling files in that order and adds encoding variation when selected.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/serve-static/index.ts#L23-L28",
+          "version": "repo-lines-v1:sha256:70de45cd573ebe062d15e20e35af5b2bf660e39056230d8fa8c5939309e41330:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTljYTMxZGU4MWI3NDU2Y2RkMTU2MjdiNjYxM2I0ZTc1NmEwNDZiMDYyZWI1Y2IwZTUxYjcxMmEyZDE2NWZmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDkwMDVmODMzYTg4NjA5OGVmMGQ0NTBhMzRhOWRmNTEyMGQ0YjI2MTQ2Zjc5YjBjOGZhMDk4MTQyNjllNjY5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWFkNjc0ZDExYTUwYWIzNmI4ZmQwZDdiMTVmZTA2YzQ4OTM3N2I2YTAzOTQ2NGY0NzgwOWYxZDNkZTE3MzI0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGZkZTlkYmY4MGRjMzQ5NGIzZjA5MGJhZTIzMzQ4MzM5ODY4MjFhYTIzNDI2M2Y2ZGEyNmUxZTAwN2YzNDYxOSJ9"
+        },
+        {
+          "resource": "repo://src/middleware/serve-static/index.ts#L92-L115",
+          "version": "repo-lines-v1:sha256:3b5baae49bd9273775012d8d9a9f1e435792e0f2df2a9f399796cee8b5f571bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwZjBiZDgxMDEwNzBmYWZiMTFiYWYzNDg1NzJkZjNmZGUzMDNmZTkwZjZiNTVmMzA0NzhjNGZhMjVhNDMyNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4MDA1ZDU3MTA2YTM2MmViMDAwZGFmM2RhNDY3NGM4MmI1MThmZjVhMmUyZjY3ZWU4ZTc1N2EzMzNjMmFmNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmYWRjNjU4NGM1YTQxZTM3NzU2NGQ5MDJkNmI0MzM2NTI4Y2ZiOGMwYWZhNDQ0YjU1YWE1NjY2YzkxYmRjM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0MjRjYWEyNTk1MWMzMDUxNTBhNTY0MzdhNWZkMTlhYTQ0YmI5Y2M0ZDk1MDIzNjk4MTYzMmE1NTViMjIyYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2947e61e8a564f8f8e4395fa3301cb01",
+      "statement": "SSG selects GET/ALL non-middleware handlers from app.routes, makes discovery requests, expands ssgParams and skips dynamic routes without concrete parameters.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/middleware.ts#L43-L48",
+          "version": "repo-lines-v1:sha256:f4672b21d6f5fd31c2abbcb196eb77f2765df6e60f058e84be3436c2b3958839:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjNiYTAxZWNhMjA5YTllZGQzNmQ5ZWU4ZmQ4MzA3ZjNmZDNmMDliZmVlNjJiNTIxOWRlMGJiNDQ4Y2FiNzdjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODM3MTAzYTViMTM2MTkxYWZiMDZjY2NlNzIwYmQ1ODk5MjNiNzA1ZjlmODkxYmEwYmJmNDJkODE0MmI1NTdkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjEzM2NlMDhhYTM0MmMyOTU5YTBkMjkzM2UzNzcxNGM2ZDIyNjU0OWJhYTE2YTkyMjE2YzFhY2I0NDliZDEwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5MjllOTFlMGY5OWMzZTgyNWRlNjliNDM1ZmI2NDg0ZDFiMGExZGYyZjQ2NTYxYWJmMWEyOWYwNDE4OGI4OCJ9"
+        },
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L225-L281",
+          "version": "repo-lines-v1:sha256:d5a4ec8b9c5985af7ee6c62829eb5e4fe5cab8bf8022da37dd9de610b59018a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhYWM1NTBhZjRhMjg4OGZhNzkxZjVjMGQxMGQ3YWFiYzEwNDI4OWM3M2I4YWRlMjFjNDFiOWY0ZDBmNWI0MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjNGYwNjU4ZTI1M2VkZDkzMTg0NTY1NWI4YmY5NzYxMDdjMzgxZWJjMmYyNjc3YjVkOWM2NjZiZWY2ZjUxZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5MzQyYjhmMGI2MjM0YzIwMTQ2ZjBjMzdlMGMyN2ZkMzMxNzQxYzI5MGE3NTkzYjhkNjgzYTk4NTBiYjg5ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2MDcyZDk1ODYwNzBiOWZlZjM5MDAxNzU0ZWFmMGIzMWNkOGYxZjA2ODMwOGNiYzMwNjk4OWQzZWIyYTY3ODgifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/utils.ts#L61-L74",
+          "version": "repo-lines-v1:sha256:4d9c701090808a1911f7c99ac8c48ed195be14c945203b87bb06584f756d3721:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZGI0YjhkYmI2NGVkZWQ4YzllZTkyMjUwMmUxYjZjMWI5NDIxOTdlMjk4MjdiZGQwMjRiY2Q1MzU4ODU1NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkOWI5OWY4YjQ1NDNhNWE0MzljMzY4MTk5ZjA0MmM2ZmVmMTdkNGZjNGE5MTA3MzlhMjExMWNkMzdiODY0NWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYzY0ZWRhZGMwMDljNmUzMzMyODk1Zjc1ZDljYjc3NjAyYTE1NTk5MzIxMGFhNzRhZWM4ZTNkNjdjOWJmZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhN2NhZTRmODRlZWE1NjhmYzkyOGNkMmVjZTFmMGNmOTVlMjNlZDM0Mjc1MWYyNDUxNjA0OGYzZGRhOThjN2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d193535fe8f4941a1456c1fe7a5d556",
+      "statement": "SSG installs defaultPlugin only when no plugins array is supplied; defaultPlugin filters non-200 responses and redirectPlugin must precede it to turn redirects into saved HTML.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/plugins.ts#L11-L19",
+          "version": "repo-lines-v1:sha256:b543060067587c630645a1fe89ef6ee45860a4d4c51fcc37ba95a25f43a2c985:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDA3YzExNDEzYTkxNjIzMzAyYTQ5Y2ZiNWY0NjQwMTU4ZTFhNzg2ZjE0MTljNmFjZWQwMDI5NjI2NTY0YmU3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmY5MWE5ZDY3ZDE2ZDUyZTExOWY1ZDk4MGU3YzViZDA2NDExYWRiMjYzMDg2ZTA1YTMzY2RkOWQ5NDQ1MGFkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA0YzE5OWI3NzQ0ZTg2MjdhMTMxMzRjZTMxN2Y1Mjc5ZTA3OWQ2OGFjNjQ1YTg5N2Y3ODQ1OTA1YjU4YzdiZSJ9"
+        },
+        {
+          "resource": "repo://src/helper/ssg/plugins.ts#L38-L70",
+          "version": "repo-lines-v1:sha256:5311f7f575f16a55a957fdff785ad9de2dc09d217a2286d968b27fe7d85e0388:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkZTQ2MmQ1NDQyZjYzMWZlZmE1M2RiMWU2MWQ2N2E0ZDc4OWRhMGVmNzcyODkxOWZlNWRhNTA0N2RmMDdmZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNzM5YTA2YzFjYmIxMjQ0ZTMzNjNkMzhiY2Y5ZmE1MGNlODRmZWQzOTljMjE5M2EzYzdmMDhkNTk5MThiMmEifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L368-L375",
+          "version": "repo-lines-v1:sha256:4456a97beab5f4b055e56fbc774d1544b1c9a3e0c2d46114e97844f7933f8921:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQxZmM0Nzg2M2YzOTI2MzQ5N2IxZTk4NjhhZDFhY2U2Y2YxN2M0ZmM3M2UwNzY0N2VmMzQzZjNkNzlkZTNlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTE5MDRiNjI1OTU3YzQzYmFmYTMwMTM5Y2VlZTM1YzRjYjRkNzczMjdmZjY5NzhmOTAyN2EyMjM5ZDhkM2ViNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGZkZDViMmEwODJiNTc4MTBmMTVjMzRiZGU3NTU0MzIwMGUzMmRiZGRmODViMjUzNGZmYmQ1Mzk3ZDBmMzc1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTRiNDQxYmNlZGMyZDJhMzQ2MzkzMmU1M2JmYjg2OTgxN2ZhODA2MjUwNzM2ZTlhZjk4Mzc3YmNhMTJiNmNkZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e72ec2a48494a20a78dba7eafd1f6e3",
+      "statement": "SSG derives file paths from route and MIME type and verifies that normalized paths stay within the output directory before writing.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L50-L71",
+          "version": "repo-lines-v1:sha256:fd303b4f8b72fd4c00f6645a47b67ebb1cf783fddf46ec27ad3b324789c72e2e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmYjZjYTYwNzNhMTY0YzRmM2FlYTc2ZjdiYjMzZmQ5MzBjY2E4NzE0YWNjNjEwZGNlNzM3OTZhZDg0NDEwMTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4Y2I1NmJiOTA0ZjA5YTI2NjEyMzk3ZmIxMmE0N2NiYzhlZjM1OWYyMjk5ZWY4YTUzZjZkY2QyY2VlYmQ2YmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNTBkYzZiMmE2OTNkZDlhMDNhMGNkOGRjYjY0ODQzNWQwYjljNTRiOWEyMDU0M2FlN2NmYmI3Zjk2NThlMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyZjhmM2I4ZDU1ZGEwMDBlNzc0NzFiMjU1MmQ2NGJiNTdmOTlhMWE0MmEzZGI5YzY3ZDdjNjI3YWMyOGE5MjgifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/utils.ts#L77-L86",
+          "version": "repo-lines-v1:sha256:1fff7b206cec11ac35ebc91509e763ea4ac8b51b30b285a7c92faf400fac7b27:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMTgwNjlkNWEyZWZmMWY5YmY1MDlhYjVhOGQ4YmE2YmYwNTVjMGQwMmEyYmQ0ZDFjYzk1Y2NlYmRkYjhmMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViZjNjZjhkMmJmMDM0NjIxMzg5MWVmNTI3MTUxZTZhYzllNjgwNTE4NzUwMzExY2Q1ZTIyNmYxOTYyZGQzYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1bc58e4005e340c1a2925dc2a4e31b91",
+      "statement": "SSG catches generation/save failures into a success:false result, does not roll back earlier writes, and invokes after-generation hooks after constructing the result.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L310-L333",
+          "version": "repo-lines-v1:sha256:dd69cc5658271c3588067463b51ec23c181c0fed9daecec21aca58daadeb5d49:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmZDY3M2I1NDkxNzg2YTg3ZWFjMWYyNzQ5MDFjZTUwMmU2ODcwMzY4M2FhZjI2Yjk4ZWY1MGFhNjY3MDM1NTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4Y2I1NmJiOTA0ZjA5YTI2NjEyMzk3ZmIxMmE0N2NiYzhlZjM1OWYyMjk5ZWY4YTUzZjZkY2QyY2VlYmQ2YmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ZWM1NDNiZTNkZGM5MTlkNWUwODQ4NTQ4MGQ5NWJjZjZmMjhhMGE1MDUzZmM1NGE1OGFhMDA4MGYzNWUyYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L436-L469",
+          "version": "repo-lines-v1:sha256:76ef40a2f0ce68a158b35e6ea9eddfdd71b3343918906c6c1c574dbc8b50d65a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5YzkzYTRiN2YxYmZkYjRkOGEzNmY1Nzc4NmExMzU2YzE4NjA5ZjY3NGUzYWE4NWVjNWMxODY1YTZlYWFkNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3ZTJjM2RjZjFiOWExNWI2ZTljMDA5M2RhNzE5MDExNGRhYzFlNTAzMmM0ODFiN2U4NWFhNzU2MjM1MDVhOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkNjkyZGExMGI2ZjdhNTE4YmNkZWY1ZTFhMmNiMDE1ZjNlY2EyZGE1N2YzNGVmMDI1NTc3YzVjMTczYzAxYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:16:56.556Z"
+  }
+}

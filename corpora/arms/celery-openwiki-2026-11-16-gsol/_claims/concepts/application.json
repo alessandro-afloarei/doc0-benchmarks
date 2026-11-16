@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f3fa98e024c296d1fd82fa6f1669e207d9334d4c7c47752747b4a8670476601d",
+  "claims": [
+    {
+      "id": "claim_a696037c602f42628938cfb96dab283d",
+      "statement": "Configuration from an object is normally lazy, while config_from_envvar resolves a module name and rejects an unset variable unless silent.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L703-L743",
+          "version": "repo-lines-v1:sha256:54fba6d5d98f7dddd5f8e8faeb5cd7a6a4d28d92b2b2e0a330b415f9117693f5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYWY0Njg2ZTEyODdkYWVjOGFiYjgyNTgzZTVhZDQ2MmRhNWIyNGM3ODc5MWY3ZDQ0OGE0NmIwY2IxZWM4M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ZDBhMjJlYzU1ODg1NTg5NjFjZjdlZGVjYmE4ZDJlNGI1N2ZmMGZhMDAwMjlhYTQ1ZGIxM2ZjNjNiMGVhYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxMGQyZGVkODgyNzZkZTlmYTc2YWM3NDE1ZDg1ZjNjNGFmZjQwMjJlMGVmNmY5NzhiZmEyMzMyZTU4ZGI0NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5YTQ0OWRmZTI5YWE5OWFjZmU0ZTY1YTI0MTI3M2I4MDRhYmYwMjQyN2E4ZTY2MTcyOTdhNTMwNGU0Y2IwZTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_be4e62cd7b464c28be3663eeab0119a1",
+      "statement": "Configuration loading normalizes settings and pending defaults and periodic tasks before sending on_after_configure.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1247-L1280",
+          "version": "repo-lines-v1:sha256:f8fde51dee549843c507d24ee317ef3bb5950f701aeb2dab005e8c9119a45e21:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZGM4YjIwZDYyYzI2YjY1Y2VlZTg1MTU0MTE4ZDgxZGQyNTQ3MTQzMTBiZjRkNTQ5YWRhMDljNzFhMjI1NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjZThkMGRmYTZhMzhmYzYxMzI1MzM4OWM5YjhkOTFkYzRkYTkxZDZjNzFkOGQ4YTI2NWMzNzQyNDNlMjhjMWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5MjJmNWU3ZjJiNTBiMjk4N2FkN2I4ZGM0MWY5MDhmNzJiN2Q1MTUzNjc2MzgyNjU0YWY3OTkyNDQ5NTU2OGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0NWFkODAxMzdkNDFhYmVkNGYzMjAzY2NlNmFjZGY0MDUzNjYwMTFkZmMxMDMxMzFmNWU2MjUzZTU5NmJmOWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_83d3db92f9db4aaab08539e461083c57",
+      "statement": "Settings expose explicit broker read, write and general URL and result backend environment overrides.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L84-L112",
+          "version": "repo-lines-v1:sha256:c78072f367ccc2606afb4957790342ff7319b32830fac68c3f573b4f4de90a5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxZDFiODNmYWQwMzZjZTBkZWQwNjIyNjE4MGRmMDE0MGE2ZDA3N2UxNDFiYTA3Y2Q2NGM1NjJmOGZhZmU5ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjYjI3MDBlYWU2MjM4MWU0OWMxOWU3Y2I3NWQxNzdkMjE5YzFlNzJlNGQ0ZWIwN2E4MWZlYWYzM2M0YTJjNDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73a23918bda14821bff5b6ee52070bc3",
+      "statement": "Task decoration can defer creation through PromiseProxy, and task creation registers and binds a task instance and installs autoretry behavior.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L545-L632",
+          "version": "repo-lines-v1:sha256:837fc7fb4427e84b378d6c115a2bf212762f126bb31ba91cac99828cdb12aeaa:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NGQwZjE1MmUxYTg3NDc0MWZlNjQ2MjYzMDQ0MWNiZGU5ZmI0YWNjODE2Zjg2ZWI4ZTdjYTEzZjE3YzRmMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhYzMwNmNjNmFmOTU5MjI2MWEwYWVhY2FhNzQwNzI4MGJmMmRkMWZiYzdkNzY2NDdjODMyNjQ2MWE0MTRhMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3NjVmZWUzNDg4MDNlOGY2Nzk0NzcwOGViZDlmMDVjN2JlYzY3NzJjYWI2M2QzMTA1YzdkN2M0MzBkN2NkOGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzNGRkMjkyYzI5YzM3ZmVhNWY1MzM2Y2MzM2U4YzZlZTE5NzcyMTEwN2RkZjc4MmQ0MGE2ZGM2NjdiM2Q5MTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_40d975499c4548a8b2657581580a9e9d",
+      "statement": "Finalization resolves pending tasks and binds the registry before on_after_finalize; app.tasks triggers automatic finalization subject to autofinalize.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1601-L1609",
+          "version": "repo-lines-v1:sha256:272864085336dbe03310915746c7ac56af61f2bb0b10f67a2fd8dd2c80b072c7:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA1ZWFhODRiZWQyNDdhMDEwMDAwYzNlY2E3MjkzMDc3ZThjMDQzODlhZGI4M2E3OTA5ZmE4Yjg4NDFjM2I2YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGVlOWYzNTZjYzA4NTdlZjBkODNhMGJkOTFjYTlkZjZlYThhMWFhYWMwNDE5MTkzODBiMjA3MDlkZGU0NGU5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWFhODg1NDcwMjFlNzI3N2Y3Y2UzZjZlNzA4YzU3MWUyZDBkZjU5YTljNWJlMzNhMjhhMTUzZjQxZmY5ZWViZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODJjZTBhMDBiMmFjMjc3ZTM4NGViZWFlMjY0NWFhNGQyYWUyNDRiOGI1NWZkMmEyOThmYjg4Y2NlNDE5NGM3NCJ9"
+        },
+        {
+          "resource": "repo://celery/app/base.py#L657-L678",
+          "version": "repo-lines-v1:sha256:c230280754c755d38a1122c26444be82cbd9f31ded32dad1bfe2b89e509bf92e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMmM4N2I0MjY1NjMyYzIzYmI2NWZlMDY0YjIyZWNkMTVmMTFmODM2MTI5NzNlYmUyMDg2ZThjZGZkMDY0MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5YzNjN2RjNGM1ZjFiNGRjNzM3MTRiZmU2MzI1OWJlNDU4MTlmYzZlNjk2YzJiNGViZmQyMzQ4ZDA3ZTQ4M2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlYmVjZGY2NjgwOGVkMGE2NzQ4YjgyNTdkYTI2N2MxMzAzZDZkYTA2ZTU4NDQ3YTc2YmYxMDVkMGY4ZWFiYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_89c59d501f5e4142889a5eebac0712ea",
+      "statement": "Shared tasks register definitions with app finalization and existing finalized apps, returning a proxy resolved from the current app registry.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/__init__.py#L48-L71",
+          "version": "repo-lines-v1:sha256:5dedb2df9ed737a467b3fb98707c457508ee675fd4c90dd0e45f13529048513a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YWU5YzEzMjFiNTEwMjhiNGNjNjJlMmQzNWFkMzg4Yzg4NDZkZTNjZDdhZWU3NmNjMzVjNjEzOTBjZWJiNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZjUwYjU1NmU4NWEwMzU4MWRkOTBjNmRmYTkxNDY0YmMyNGNmOGUzMWZiZjNkM2VkMjI5Mzg3N2U4ZmM1NWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YTM1MjcxNjc0NjQzZTM1NWIxZDEzMGIyOWQyZGMzNGIxNWQxOTMwY2NlZTg4MmJhOGIxMmJiZTdkMzg2NGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhMTYwOTc3ZDcxNjA5Yjg3MGNmNzJmZTRjZjk1NDlmNmNiNjhiMmJjYmY4N2Q5ZWM5ODgxZDljOTU4YzQ5MjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f3bb549df6b54f7c9cfa3875a19f73f5",
+      "statement": "Loader worker initialization imports built-ins and imports/include modules and re-raises errors received from the import_modules signal.",
+      "evidence": [
+        {
+          "resource": "repo://celery/loaders/base.py#L223-L229",
+          "version": "repo-lines-v1:sha256:6cb3cf2bbcbe9d0143f230c80da9efcad32e1ea5e17d2f4bec3e3863cab1a171:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA1ZWFhODRiZWQyNDdhMDEwMDAwYzNlY2E3MjkzMDc3ZThjMDQzODlhZGI4M2E3OTA5ZmE4Yjg4NDFjM2I2YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGExNTg3N2JiMDlkYmQyZjc2NzA0YzhlMzFmZDVkZGQ0ZjYxMjBmYWU4MzY3NDIxM2FlMzMzNWNjMzI1YTc2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2I3NmM4YTg4YzQ5MTM0NDk5ZmZlZTQzOGIyOGY5N2JmZWU0ZGI0N2Y0Mjk0MjdiMDJkZmIwMGM0MTdlZjM3NiJ9"
+        },
+        {
+          "resource": "repo://celery/loaders/base.py#L97-L111",
+          "version": "repo-lines-v1:sha256:902e35b67a24fec247cbd49ac14d3704b4fcda9065c8836a3c1e4736b1c82585:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjIxYjQ2MzVhYjQwYzIzOTgxNzIzNmFkMjhlNzU1YmQzN2UzNjJmM2I1MTkzZDNjMDU1M2IxOThjMGFiNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiZTJkNjI0M2M1NTExNDc4MzQ3ZTM1MDcwNjQyZmI2MDk5MDc5ODIxYzM1NmM1MGFhYjA1OTk5MWU0MThlOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMjQwOGM4OWVhMjJkYzU4MDVkYjk1YjI0MWNhNDg2M2M1NzQ4NTRjNWJmODUzZGIxMWIxZGNjZDA0NTc5YzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMWVmMzE3MWJmZjk3Yjg3Y2U1ZGMwMTMwZGIxMjUxN2I0Y2JlMWJlNTIyYWYyZDExMjM1NjcwMThjYTdiYTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82b1fe5d48cc47a081ec158eef18a7a0",
+      "statement": "Autodiscovery is deferred through import_modules unless forced and falls back to fixups when no packages are supplied.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L817-L844",
+          "version": "repo-lines-v1:sha256:5cffcc8e62094a20dc0aa247cc8b97e63515ff6bce35e851f27d2e67c66fcd63:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0OTg5ZGZlYjZkMWYxNGRjYTBiZWM5MmZhNjA4MDNhMGM3ODFmMjlhYmM3ZTMyYTU1ODc2NGRiNGI5NjIwODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNzI2YzFlZDdiM2NmMGJjNzE2MzNiMTUxYzgyZDU5YmE0YWUyMjhkZWU5Njk5Zjc4YWU1ZDdhZjcyZjFiYTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMWM4ZGUwMzZlYmNlMmYzYjFhYjYzOWQxZmUyNjQ4MDQ1NDAyNTUyZTcwODkwMjBmNWU0ZjgwOTM3ZWE5ZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3NTZiMTgxMDNjMWVlNDIyMzE0YWJkMTM0OWVkNGNlNTM5OWRlNTJkYzUyMDRkOGUxNDIwMmVjM2Y2YTA4MTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2be47acb6389420ea9a656e80079e29a",
+      "statement": "The application constructor accepts runtime service classes and provides steps and user_options extension registries.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L343-L373",
+          "version": "repo-lines-v1:sha256:b1507d8218ceb1c89f836cd6c3a65540795490102e7e46aa322a673a7105dc11:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyYWFhMmI0NDY2MzFjZjE2NDkzNDY5M2ZkOWU1MjE1MGExMjUzYTMxNjBmN2EzYjY5YjZjNThlNDg4MmVjMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZDYyODU4NzcwNmNiZDEwNDhhOGMzMDMzMDU4MzQ4ODgwODdmNjA2MmZkZjZiNWRlMjhhMWVlY2Q1YTM0MTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyYWY0YTBkNWY1YjM4Mzg5NmQzNjBkM2FiOGRhNGFhMjM5Yjk5MjBjOGJhODhiZGE1NmQ2M2I1MzY4MWNhNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwNTM1ZWQxZDU0OTIxMWMyYzJiMTM1M2M5YzMwNThhODJjMTlhZjRiMWJhNDk4MjUwOTg1NWE5MDA3M2Y0NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a87cc595a3564c81bea1474bcfa178f0",
+      "statement": "Settings normalization validates incompatible mixtures of legacy and modern configuration keys.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L232-L289",
+          "version": "repo-lines-v1:sha256:13c1d808e991762c2b2f4b4a178330e135f533039407fa0ee0e8d662e1cef49b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiN2ZmODExZjlmZGMwNGUxNzg0ODViYTI4ZjlkMDA3OTNhMTYxNmY4MjU5OWM0YzkwODdlZWQ3YzUzYTMzNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMzFhYzE0YzBmOTVkOTRiZTJhYmFmMDk3Njg0MWQ0ZWJmYjVjZTc2MmUyNWEzYmQyNWExYzA3NDQ1MmRiNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2YjMzNDllZjk1NDI4YzM2NWJjZjE1NDNjNDQyMTBhZThjMGMyN2U1YWE0NTNhNmNkYjEzNzljMjQ4MTA1ZTIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:34:04.042Z"
+  }
+}

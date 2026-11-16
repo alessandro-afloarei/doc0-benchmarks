@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f18c8153cd61bf19f7fc3e3f524181bf5d62a2014ebe44fa4acfa36e74f93047",
+  "claims": [
+    {
+      "id": "claim_eb0d5fb690b2437b9fc83b983acacaa6",
+      "statement": "The platform main() runs electron::NodeMain() instead of Chromium only when the RunAsNode fuse is enabled and ELECTRON_RUN_AS_NODE is set; otherwise it runs content::ContentMain with ElectronMainDelegate.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_linux.cc#L29-L44",
+          "version": "repo-lines-v1:sha256:e869a998eddebf513b1af62d7cbc8b494ea71d4c6c81fb069f9bcc722054af20:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZGQ0MTA2YWQxM2QzOWIzNmVjYmEzZGVmNTY3YzgyOWQ2M2QyNmU3ODhlMzE4NDM4N2RkODU5NTc5OTUxOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllMzc1YTNjYjNhMmNiZTJmOWRlZDljODI5NmE2YWI2Njg0OGNjODI2ZmQ3MWY5MTkyNDZhY2IxN2UwYmQ0NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3363a7531884b8bb9d11c3adb322e38",
+      "statement": "In node mode, NODE_OPTIONS and NODE_EXTRA_CA_CERTS are removed when the NodeOptions fuse is disabled, and on macOS hijackable environment variables are removed when the parent process is not the same signed app.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/node_main.cc#L122-L150",
+          "version": "repo-lines-v1:sha256:ffeecb1d16d41a0f8efa88acba442bfbc5e7617c0d98ef9b29076cc3a256283f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NWEzODAxZjgxYjkzZTNiYWQyNTZkZjJjNDAzMjkzZjE2MmRjNzljNmExZTE5NjRmYTQxOWMyNzBlNmNhYTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwMDgyMTFmNTIwNzRhOTcxYjcwN2FlZjkzMTJlMjdjMmI4ZjhjZDdjNjU2ZDViMDI2NWJmODc3NmJlMzMxNGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxNGQ3NGRkNTYwNTZkYjRlODhmNzcxOTlmOGIxM2QxNTYzZGMyYTg0Mzc3YzhlMmQ4OTZlNWJmOTQ4OWVmNjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e68806a2290c4ceaaae43dfd787116a4",
+      "statement": "Node mode runs node::LoadEnvironment with OnNodePreload and then spins Node's own event loop until exit.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/node_main.cc#L285-L296",
+          "version": "repo-lines-v1:sha256:dc5dc23324018510ed24e4d8dae05b534909b11465e2f10d7c29f0901c3839a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxNTZjMzdmYmQzMjNkMjJhOWU2MTllZjU0Yzc2YjlmNWNkZjRmZjJiZDZlNGMzM2YxNjY4YWI2ZWEwYWYwMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3MTU5MWJhYjVmMTgwZTBhZTViYWVmOTZiZGQ1YmY5YzE3MTYwYmIxNDY2MDUzMThkOTNiMzdkYjFhZTkwNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_669d2622f0964e10a3d719838794d009",
+      "statement": "ElectronMainDelegate creates ElectronSandboxedRendererClient for renderers when the sandbox is enabled and ElectronRendererClient otherwise, and intercepts the relauncher process type.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L446-L488",
+          "version": "repo-lines-v1:sha256:2af678dcfdbeeb10118b9f018a7d2b4f1ae6903f12bd144686f355fd297ce44a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNTg3MzU1OWRkYmRiNTUxNDY0NjA3MTFlOWUyYmNjMmUzZDMyYWIxZGVjZjViYzZmZGVjZjAzN2E3NzVkMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNjQxOGI1ZjUwOTE0ZTg5ZjFhYzhjYjI4YjM1ODY4ZDUyNDAxNGNiZWJmYTU5MjYzNGM1ZjZhYWFkMzIyMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5NDcwMDgxZjFlZGFmZTc2ZjU1MzU2ZGVjZDA1ZTMxYmU1MDRkNDU1N2Y5ODRmY2QzOTYwYWQ4OTdjZDRiNTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_883d9e74c66c4b87a4011eb47942c285",
+      "statement": "ElectronBrowserMainParts::PostEarlyInitialization creates the JavascriptEnvironment and Node environment, sets unhandled rejections to warn-with-error-code, loads the environment (running browser_init and the app's main script) and then calls JoinAppCode, so user main-script code runs before the main message loop starts.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L225-L261",
+          "version": "repo-lines-v1:sha256:cb916d1a8660fa06a48b404d34eb40b39b5d0a25c0e5982032dea2adfa8629c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NDQ5ZmM4Y2Y2Y2NmODJlZjQyOTc4ODA5ODdkOTkzNjkxZjJhNzFjNzg1NGM0NDg1MzUwMGFhOGFiZDA0NTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNTcyODEyOWNkYzU3YTUzMWQwZWRkMDIwNGZkN2Y2MDFlMmExODMxYTMxNTFlNWNiNzIxNDc1NjFmODRmNzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4Y2VhYzdiZDdmMDFhY2M3Yjk4YTkyOTg3MGM2NmZjOTViYzZiZjFiMmU4YzVmYTAyNTY0MDliOWJiYzc2Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MjdiNGRhZjgxZTZmN2I5ZWMzMTU3MzU3YWNkZDk4MWNjYmM3Yzk0M2M5M2NhNjQzMWNkZGM1YmI4OWJlNjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03b2a529104146b789b26b9beb68b4d6",
+      "statement": "PreMainMessageLoopRun starts the uv embed thread and polling, locks URL scheme registries, and on non-mac platforms calls Browser::WillFinishLaunching and DidFinishLaunching.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L425-L472",
+          "version": "repo-lines-v1:sha256:8b0eac808ada054e35e6eaf9c1dc6e9ae1e7493244625c48374c7b120601ada4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzOTgyZTU2NTdiN2ZmZWI5MDAxNmY2NDNmOWEyNDdmOGVjYTU0M2FkYzJlZWI0MTlkZjFlOWJmYmQyMjU2YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhM2UwNjRmOWY2OTU1MDA5NmVjOWIyNTUzMDExOTI2MDY4Y2QyODY1YzJmNmI0YzI1YzM3M2I2NDE5ZDhjMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MTU3ZDJhMTVmM2YzOTA0MGU4ZGI3NWVmNjFjNThmOWYzZWNlOWU2Y2QzNDM4MjAxYTVjNmRmMDcxYTA2NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1YjFiYjMzM2ZiMGU3ZThlNzkwYzU0MGE0YWNmZjczNWY3NDgwNjkwZjc0MzkyZGZhNWE1NWJkZTY1NDBhNDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_416916355a214d7e870a81d605ee55fa",
+      "statement": "process.appCodeLoaded is installed for browser and renderer environments; lib/browser/init.ts calls it after a CommonJS entry is loaded or after an ESM entry import settles, and JoinAppCode pumps uv_run until that signal or browser shutdown in the browser process.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L201-L227",
+          "version": "repo-lines-v1:sha256:de84e37ccfbd2a63e6dbfb49053019b044d6525df703b8410398d0a0a104e5b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZGVhNzdjNTg5MTY4NDUyYzMxZmI1YjYwZWE4MWQ4ZDBjNzc5YzQ2NmMzZGUyZDhmMGZiNTdhY2Y1MjQ3YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkZWNlMTgwYjQ2MmZlZmY4Y2JjNjkzZWU5OTQ2N2UzMDdkNTZkZTA1OTUyMmM5YTQ1NDE3ZTcyOTZhMDdjYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L815-L824",
+          "version": "repo-lines-v1:sha256:49d338b4773107650a3af265bd06ef967788f413a92dfba3ad4876ce4ace6916:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3OTE2MGZkM2YwZmJhNjQ4ODlhNDM5NDhjYmEzMDUxMGViYTY2MjFhOTE3MTIwM2UyY2IyNDJlYzRhZmY3MzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwZTdkNjFlOGZjMTQ3N2Q3NGYyNjY4MGZmY2VhOTFlMWZjYjk5NmZiNmZjYjE3M2ViYzY5NmEzMTNmMzg5NjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0OGRhNjg2NjMwM2U2NjY2YjU5OWFjZDBiNTRkYjBmYWE0M2I3NmMzYzFkN2UyYmNiM2YwMWRlNGE2YTAxM2EifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L899-L924",
+          "version": "repo-lines-v1:sha256:5ffe41312233335d460001bc3fa3ec3ca77403f4a6cc70fcd9efd40b22326ac7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMGViYjM2YTU3OGZmMzExMTIyZGMzZTdiZTI2OTVlMDhiMDAxZmIxZWVkYTM1MGRiNGM4MjQ0YWE5N2QxMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1Yzc1M2I2OWFiNjBjNTgyODU3ZTUyYjcwNDMxMTZjNWM0MzRiNDhkNjg3NTllMmQ4NjNlNTcwN2E3NjZmNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5YTdmMjk2MjI5ZGZlYzQ0ZDQ3NzJhZGIzN2Q4MmI0YTUyOGE2YjZkMTUwYmZiMmU5YWNkYmMyOTFhNDhkMWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1dcb812bbdbb44ba98ea59c62788a44f",
+      "statement": "libuv is integrated with Chromium's message loop via an embed thread that blocks in PollEvents, then posts UvRunOnce to the main thread, which runs uv_run(UV_RUN_NOWAIT) in the Node context and signals the embed thread to resume; initialized_ guards ensure only one polling thread per process.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L860-L993",
+          "version": "repo-lines-v1:sha256:780e8acc8c745c9d1cdcb8da0bc747c1b29fe329aa9438e1ecf38082720ac423:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmN2JmYWRkNTI0MGEzYzFjZGQ3ODE2NTM1NWU2ZjNmNDM0YWIxMDRkNjk1ODQ3MTRkYzkxMWFjYTQxMzYyY2M3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMWI3Y2I2ZTA2YmRlYzlkYzFiMGRkYzRkOTgwY2NkNDZiMjMxZjQ5MDYxZGJmZDRjZDNmNGMzZGY0OGQ0OGFkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmMjQxMDU2NmZmYjdkMzRjMjZiM2YwNGU1NDgyMTIyZjM4OTdjMWQyN2VkNjM4YjBhMTgwNWQwMDAwODllNTM4In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1736fb31445416ea472a22b1c44931c",
+      "statement": "The browser process searches resourcesPath for app.asar, app, then default_app.asar, or only app.asar when the OnlyLoadAppFromAsar fuse is enabled, and throws 'Unable to find a valid app' if no package.json loads.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L82-L114",
+          "version": "repo-lines-v1:sha256:04155040d878b302c5cd2293d20ce802b5c7dd756eb6c6fb6f2a6bf877de06c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0M2ZkMzdiZDQzYzNiMjlmOGIyYzhmN2E3YWY3ZThmNTEwYjAxMDU3M2ZkOWI0OWE5YjA0NTM3MDgzYzFmMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwMTEyZGYwMjJkOGU3MjI0ZjMwYzNmYTkzNDMzNWZjMWMzY2Y4NTJiYTE4NGIwMjRiNWY2NDk0MWE2ZWYzMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhYTlmNTI5NzE4YWUxOWJjMzYwNjE3ZTRiZDA1ODE4NTM2NTQ2MTYyOWJhM2Q5ZTc3OWRmMmMyNWViNTVlZTcifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L680-L700",
+          "version": "repo-lines-v1:sha256:73f3c76bf456698e52679e45b6cf5a37970a9d875a97503a689fd009228d5610:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmZTc0MDk4OWVkNGY1YmY0MjYwMjI2YWJiMWVjNDkxMmQyM2QxYmYxZDM4MzkxNTBmODdiYzEwMTExZWE2ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1NDYwMDllOTNjYTVhNDZhYzBmMWJiNjUzZTM5NjljNjMwN2Y3ODkwNWYyNzI5NjFmMmZkYWJhMDA5MTFjNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2NWQ0ODFjYzBjOTUzMjgzNDQzOTRlZmFiODU4NmI3NTk2OGZhZjYxNzA2NWVjYzJmODhlNjU3ZDg5NTA3MGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27425aeb0a5c4189bbb844f959f32a3b",
+      "statement": "lib/browser/init.ts installs a default uncaughtException handler that shows an error dialog only when no user handler exists, maps process.exit to app.exit, and quits on window-all-closed only if no other listener is registered.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L186-L191",
+          "version": "repo-lines-v1:sha256:49633b7be936d936e70eef104ef3a2f8e16df4dd625876689decc7ba5ca637bd:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM5Mzk4ZDRiYTA1YTIzODUzZDhlMDUzOTE4NjZlNDM2Zjg3MzU2MDQwZmVhMGVkZDU3MDkyOTVhYjZmNDBiOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzFiZmExMzc3YmQ0ZmYxZGJhMjZjYTUyODdlNWZlZTRiOThlNTMyZGRmOGJhYTFjNjFhNGY3NzJhZDZjNWU2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIzYTU0MmEzNjVmZmZkODRjNzQwMzM2MzA5YjhlM2Y3NDJjNjJlMTQzNzAyNGJhZjk1MDljNWU3ZTMxZjdlYyJ9"
+        },
+        {
+          "resource": "repo://lib/browser/init.ts#L21-L74",
+          "version": "repo-lines-v1:sha256:891ce7c1606582647ee064e387889f1589e1bec104f4842a1a58ca21f3043181:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYzg1YjBmMTk3ZmM4N2Q0ZmI0YzU2MGQzMGUyZjYyY2I5MGY3NWIyZTEzZGI0NzI0MjZjNTE4Y2U0NDk5Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjOTM0MGEyZmYzOTUxNTZhZTc1NjYxNDFiNWY1MDNlZWQ0YmViMmUzN2Q5NTcwNmZmZGU2YzIxYzgzOWQwY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5OGZlNWU5MmNmY2NkMTAzOGU2YTU0YTQ0M2U4NjAxZmNiM2ZhODk4N2JiNzA0ODViNGVhMDQxZWMxOGRlNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjNTZkMTNlNjJmM2RiYjBjMTRjZDNmY2JlYzZiMzRiZjIzZTBkNjg5NWY2N2I3NGU4M2RlZThhMTA4ZjRjMTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b282a358f784e598912b6b5a5f98d4d",
+      "statement": "Browser::Quit emits a cancellable before-quit, closes all windows (or shuts down immediately if none), and NotifyAndShutdown emits a cancellable will-quit before Shutdown emits quit; Exit destroys windows without asking and skips these events.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/browser.cc#L232-L268",
+          "version": "repo-lines-v1:sha256:c07dcbef4fe4e536a3e96b474c96dcf67c6c62fc7e58559ffa7077cc2aca2c02:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5MTY5NDRlYmMxZDkyNzExM2UxYmU5ZjljMmRhNWM0MTEwNDE0YmE2MGQxZDNiYjEzN2RmMmMxNzQyOWVmZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkYzYwMzhlMGU0YmM5M2Q1OGEwOWQwNTYzZjI3NDIwYWNmNjk0ZmU0ZjdiNGIyMWM4NWU0N2Y5ZTcxZjFkYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2OTNiYzdiNmE1ODFiMDMyZWIyYjcwYmY0ZmMxZjM3NWQ0ZTM1MzdjN2UzODZmNzczNzRlN2ZkNGJkM2VhNmIifQ"
+        },
+        {
+          "resource": "repo://shell/browser/browser.cc#L86-L135",
+          "version": "repo-lines-v1:sha256:16257ae3534b256fa70fdb0fd70be06e836416d747a350db1869a6394f334ccf:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0YTNlZjgwYjgwNjMzY2EzNjc4MDYyMmY3MzVjMTljODY3YTk1Njg0ZWIzOGZlZGI2YTJhNjY1YWJmMjI4NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlZjkzMDUyMTgwNmUzMDE2OTYyZjhjZGQ1OGU3MDMwMjVjZjIzMGZjNzM2MDU5Yjk0ZGNlNTY3ZTU2NTQzMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZGIwMGY3N2MyYWEwYzI2MGUwMjQwNGQ2OGQzZTczMmE2NWY3ZDE5MzM5YzcyZGQxNmQwNTNiYmZkMDkwYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzMWQ5MTMyMzNlMmQ0ZjgyZDY3ZDkxNjcwZGE3YjVjNzExYzg4Y2RiYjIwYTExNDJjNTg1NGViMjUzNWRmZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_267dbcd2edce4336bf08b6666031f138",
+      "statement": "DidFinishLaunching creates the userData directory, marks the browser ready, resolves the whenReady promise and notifies observers.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/browser.cc#L183-L202",
+          "version": "repo-lines-v1:sha256:4e4f4889dd2869368b47e539085f77f55b4ff60bfa6a3e9d280fe1714c14ab60:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNTRkNDZhZTM1Njk2ZGRmMGU4MjkxMDBjNjk1OTNiYTY5MTQyYTRlYTMzYmU1NTU0YTU3YjBlNThjOWI0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiODQ2MzBkN2QzYzZlY2M5NmQzNTcyMzgzYTgwYTBlNGQxODdjN2NlMzkxMDU0NWZkNDI5N2E2Mzg4MDhmN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjZDNkYmYyN2NjMGVjNDBjNzBlM2NmMjcxMDljZDc4MjY5ZjllYTU5MWU1NzExYTA5ZGFiZDkxMDQyYzNiMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_78e9a2d9756d40eaa552ad03d821b564",
+      "statement": "default_app parses CLI arguments such as --interactive, --require, --version and --abi, and sets process.defaultApp when loading an application package.",
+      "evidence": [
+        {
+          "resource": "repo://default_app/main.ts#L21-L110",
+          "version": "repo-lines-v1:sha256:3f28616b02183b2edeaa7fee97ce2ab74064e2f55bf96fc2f344e9795b408ce2:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhNjUyN2I5NjViOWIxMjFlMTVkY2M0ZGM2ODQ2ZTI0OGI0MTkxMTM2NWM0MGM5Y2QyMWIxZjcwYmZhMTRmMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NTFkOWM1NTU4ZGQwNTY0MTkxZGRhYTExMWVhZGFhZTVmNzRjODA3MmU5N2JiMGM4YTMwODNkM2Q0MjNiYzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkZTY3OGMzOTRjM2M1ZWJlNzRkOWNmYzk3OTYzMGZmOGI4NzUwM2ZhNTA3ODQ2YjRjN2FhYTc0M2QyOTRmODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM5NjYzYjFiODFkMTE5ZmY3MzI0NjAxZDQwZjYwNGU3Nzg0YjhmZWQ1YWZiZmMyOWFiZTI1ODBmNjg1MTkxZTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

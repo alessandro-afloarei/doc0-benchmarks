@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:26889e29e26422a38d9933dacc739de72ca32f9b02d061453323134d99aa130c",
+  "claims": [
+    {
+      "id": "claim_08aa4979eb0e4dbcb476c62acc2d8d78",
+      "statement": "EventDispatcher.send drops events when disabled or when the event group is not in the configured groups, buffers events of buffer_group groups and flushes them as one '<group>.multi' message at the buffer limit, and buffers failed publishes in an outbound buffer when buffer_while_offline is set.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/dispatcher.py#L120-L190",
+          "version": "repo-lines-v1:sha256:c5b1f31d18af331981f50c196d8e428f38dc27c6c67194cb3024a439f75ab530:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMWViODNkMzBmNWE2ZWU4ODU0NDU1YzgyZGYxMWUyODc0Mjc2YzA3YzJiZmU0Mzk0ZDQxMzQwZjcyNjhjYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGFmZTk5NmZkNWQzYTk1Yzk5YzViZDNiOWI5NjhjMDA4Y2Y1YTZhZDQzZjlmZDUzYjM5ZWM4NDgxMDNlZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5M2ZmYzM5YWRjYjY2MDcyODAzM2M0ZjFkNTI3NGNlNWMxMmUxYmMzYjI1ZGE1ZWExNGE0MzYxN2YyYjcwOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyZDY0ZTFlNDMxNWQ5ZjI0YjM1MjQ3MTk4NzQ1YWFkY2ZhZmNhMmZhMGYxMTAyNDNlY2IzMTU2YjBhMWQwNzYifQ"
+        },
+        {
+          "resource": "repo://celery/events/dispatcher.py#L196-L215",
+          "version": "repo-lines-v1:sha256:b55daa50f3e64d54fb94c62df7a7521d2f47695c39848da8a2c86da5d89d9589:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1N2QyYmZkYWI1ZjI1ZTc5ZTIzZWI0MjlhMjg1N2EwYTcxOTc3NTM3NDA0N2ZiNjViZGM1MDU0ODkzMzQyMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDcwMzA1MzBkOGI4NGMwMTEzNzgxMmI4NjIyNjE5NTNjYTVkYWE2OGZhZmQyMTA2NTAzOTgxODcyZThkNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjYzdlMTFkMzZlYTNmMWFiNGRjYmFiYjczYzFhZDY3MTQ1NjVhZGJmYzNjNTQ2MjI1YTAxMzUzMWFiZDZjNTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxNjc2MTM0YTFiZDcwMGJlNTUzNDNhNjIyYjQ3NGU4NDZhYjc2NmIwZWYwN2U4OGY5YmY2NGMwMTI4MGFiNGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e868bfa0114941288b017b17a6421ecc",
+      "statement": "The event exchange is a topic exchange named by event_exchange (default celeryev), switched to fanout for Redis and GCP Pub/Sub transports, with routing keys derived from event types by replacing '-' with '.'.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/dispatcher.py#L162-L180",
+          "version": "repo-lines-v1:sha256:d5e6dd7ed19930d14529080cf29a0d747ffb63723275a27f69c7e0abfff5e896:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkYmVlYWExNTZhYzdiZGFjNTA0OGNmZTAzZGU3NGUxNGZiZDUxZTczNDE1Yjc0YTAyMGZjMWM2NDVhYWRjMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZGUyNTg3MTk2MTQ5MjYwNzFjOGZiMTlmZDg2NjE1MDU1NWYxYjAxMzU0ZjhjZDE2MDNhMTA5YTdkZGFlNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNzM2NDY3M2ViZTA0MWNhOTk4MDE2YTJiYWU0NGQ5MzVhZTY1NGE4OTk2MGRlZDkzNjFkOWQ1Y2RlZDA0MTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzZjAwMWQxMjE4M2JkMjkxYmUwNGRlOGNhZDI5ZWUxOGEyZTljOTYzMGFlNzk0ZWU0Y2RkZWE4YTRjYWMwM2EifQ"
+        },
+        {
+          "resource": "repo://celery/events/event.py#L13-L63",
+          "version": "repo-lines-v1:sha256:19432d7a6f3bdcef583ab9f0c6dbc672c5b81d4d0a11e17d8c2d440f7c85af5d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMjk1YjU4NTIxZGFmNThiZDk3YTAzYTRjYzhkNDZkMDhmOTM0OGZhM2Y3OGQwMWI3NjQ4MGJmMTFmZDA5N2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4NDk2YTg0NzdjNTRjOTdmZjcwYjBmZjY4YjFmM2M1OTE0NDZjMzc5MDEzYTM2NGQ1NTMwY2E3MTdlOGRiZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYmIzMDE3ODU0OThkMGNmZjQyNjY4NWQ2YzY1Zjk0ZDAxYmZhMmZiMmJhZTg3YzY5YTI0MjNlZWI2NzE2YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e425ad575344549a7ade6171cd38bb6",
+      "statement": "The worker's Events bootstep creates the dispatcher (buffering task events only when an event loop exists), carries over a previous dispatcher's buffer on reconnect and re-points reserved requests; task events are off by default via worker_send_task_events=False.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/defaults.py#L366-L368",
+          "version": "repo-lines-v1:sha256:fcbae925f481c48c53ed0717fb01b10e613ee8d955b7c730e71e31497df105d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZkYThhYWNhNTQzN2MwZTQ3NWIzZWM0MmMzMTkyYzg1Y2ViM2YwNzQwMTNhNGY2YjE2ZTFiYjM2NDA5MDlhNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQzM2QwZWE5ZWNmMmYzOWM5YTUwNDA3Mzk1ZWU0MTE3MmZlNjgyYzljODg1YTM1MDhmNzViZGVlMTUxZWZmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2NlZGE1YzBiM2U5ZTgxYjcwMGIwMGZiNTY1N2Q1ODNiNGRiYzM0ZDU5ZjMzNTc2ZTk1ODdjNTg3N2E3OWVlNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2VhMzYxMzEyNTA5Yjc5OGE0NjgzZDUxNmVmYzgyOTEzNTlhN2Q5MWRkNTg3MjI2MmNmOWM3MjNlODZhODgwNCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/events.py#L15-L71",
+          "version": "repo-lines-v1:sha256:57626f8d8c777131e72c2d1d779b1d6a45813d50a6f67c627f5d27f56baaa4ed:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNzk0Y2M2ZTY2YjA5OTcwYjA0ZDk5ZjhiMTlhYjQ0ZjI0MGU0MjJmNGI3MmQxZWQ4ZWI0ZDlhMjA1NjI2YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1NGI2ZjA0OWU1ZjJkNjY4YjVjYTMzZDEzNDAxNmY0YThlZDUxMWQ2ZDdlMzIwZThiNGUyYzVhMjU1ZTk1MjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmMjQ0ZjU5NGNjMTQ2MThkMzMwYjI3NGFmOGQ0ODIxMzU0ZmQ5MjQ3OTg4MzVhMTNjMWE2OWRlYWI3MmU4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5ebc087da424b6784666278b01bc589",
+      "statement": "The worker Heart publishes worker-online, then worker-heartbeat every 2 seconds by default (including active count, processed total and load average), and worker-offline on stop; it starts and stops with the dispatcher's enable/disable callbacks.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/heartbeat.py#L22-L61",
+          "version": "repo-lines-v1:sha256:4c92ff85958bd1c2eb9b786c4acaea326fec7bee8c4e923414ddfd358da957ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4Y2JjNWNlYmJiZWQ4YjRlZDYzNWE2NmMzZGY2ZjE3NDU0M2I4NWQ3YWMyYTQ0MWVjYjc4NWU4NjhmNmVlNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1ZWQ4MGZiYTljYTg3NzI5MTUzOTI4YTRjZDQwOTM1YWI3MWNmNmU5YzkzM2NjMWY4MWEzNGZiNmZhYmViNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmNjk5ZWI4NGZlMmNiNGIzYTVmYzllZDVjM2IxM2ViMDIzM2UwYzUxNDUxZDRiYmIyNjdiZjU2YzM5OGI5MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d64a1dd8e7a4774b2ed19e80c602ed8",
+      "statement": "EventReceiver binds a private queue named <prefix>.<node_id> to the event exchange, rejects exclusive+durable queue configuration, adjusts the Lamport clock and localizes timestamps for each event, and on capture broadcasts a heartbeat command to wake workers.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/receiver.py#L25-L124",
+          "version": "repo-lines-v1:sha256:aca8094a2e62dd845dccc65c71693f80cb82084d67f1b1ce68156f62df5f67bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2NWQ1MDZiNWY4MjdlNTg2NWNlNWM3MGI0M2ZkMzYzODVhZmE2ODgyY2NmN2NkZmQzODAzOTIyN2Q1YTU3MDAxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyZjdkNTc3ZWNlYWQ4ZGZlNTU5ZDA1ZWY5NjczMWNjNmYxYjY5NzcxNDg5ZWRjMzA4MDc1Y2YyZTAyMThkMDRkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3YTk2MWUwOGI1YTU1NjI4YjBlZWYzYWJiOGMzM2NiNDUzMzJmMTlkMDlmZjhlNDA0ZmNmMzZhZGI4YTg5MWQyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_07630551d65d4e128d5b078b5c4c2bce",
+      "statement": "events.State rebuilds cluster state from events with LRU-bounded workers (5000) and tasks (10000), a bounded time-ordered event heap, merge rules that pin fields like name/args to the RECEIVED event to tolerate out-of-order events, and lazy resolution of parent/child links.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/state.py#L243-L283",
+          "version": "repo-lines-v1:sha256:f625b29bba11f627cbf2b548f1d017ab3cf1ba814d7c6d0fb4bcb25a094d5e28:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZDkwM2ExNGFlMzJkZmZmMTNkNzFhMGYxOWFlZWIyZTRiZTZmM2IyMTc0MjBkYmQxNGExMmQ4YjFmMzgwNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1NGU1NjU0ZmIzOGNhZDExZmU3YTIyZjU4ZDAxOWRiOGViNDdiY2FjNmJiM2I4NjBhMDNlZWUxZGU2NWNlODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyMTgyMTU1MTMzOGFlOWRjYTQzNDVhZGI2YzdjM2Y0OTllYjA4ODYyNGM4MDBhNDhhZTgwNzY2OTgyYzJjYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3Y2Y3NzAxOGUyYWZkZTEwZjQ5MjYwZTRjYWMwY2E3OTY1ZjM3ZDEwZDYzYzIyOTVkMDJjZTA3ZjU2NWRmMjEifQ"
+        },
+        {
+          "resource": "repo://celery/events/state.py#L398-L440",
+          "version": "repo-lines-v1:sha256:60fa24892a64784887d69687fd480982234a18d161eb64dcc160958da4f01226:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMWZkMzM4ZTE0Y2Y0NTdjZmFlY2RhYmUxMzFkYjNiM2VmNDVjMGQyMTQ5NjAzOGZlODc1NzY0ZjdmOTBkOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOGQ2MTc0MGI2M2FkYzNmOTU5YWJjZTI5MGI5NjQ0ZDU0MDQ4YmRiNzE3YTBhZDdhZDE4NGUxODZhNmU5MjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NTMyZTFhYzBlYjgxNmRkODlhYjIwNTM5NGZlNjE5ZTcwZGExYmQ0NzVhNWE3ODExMGEwOGE0OTM1NTM1MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5NTcwNDdlNjVhMTg2MDY4MDViM2M3ZjdhNTQ5Y2FlOTJmNGRhYWQxNDViODgzMmQwMmUwYTc2ZmI5MWVlYzEifQ"
+        },
+        {
+          "resource": "repo://celery/events/state.py#L513-L640",
+          "version": "repo-lines-v1:sha256:26d0f76acb416e38c5fbfbaaf80cc95994df92c7f945142284dba7818988b29e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3YTVlYjI1MjdiYThlM2ZlZGYxNDU0NjExODhlZDBmNWNmMDRhODMyZGNiNmI5NTliMmZkMDFkNzk0MDZmYjk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJjMzlmNmQwNDk1NWUyY2RiMTM2M2JjNzM5MDA0MGUxODc3MDExMDFlOWQwZDZjYTAwM2QyMjYyMjU5MDIwMTA4IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiZGI0ZGNlMzgzMGVjMzYyMDRmZGUyODc3ZWE1MzcyNWI3OGNmYmE0Y2MwYmE0YzczNjk0NzE3NzdjMzkzMDBiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0OTIxOTUxMWFiNDk3ZDFjMjJjNzVhN2IxMWJjZWU0ZTEzOWJlMjFiMmExOTU2NmNlMmUyZjU5NWU4NzE4NzBmIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6f59cdf917c435da3b4e0db81c8596d",
+      "statement": "Mingle sends the 'hello' inspect command to peers at startup and merges peers' revoked sets and logical clocks, and is enabled only for amqp, redis and gcpubsub transports.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/mingle.py#L14-L76",
+          "version": "repo-lines-v1:sha256:35aaffb73a8e673c0bb3d8dc74caaf7d6be3dee56b52e97387daa9e34b6d9166:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4MTIyZThhZTZhNjEwYmQ3NTNhZGY5OWQwZjY1MmExNWE4MTVlOTg0ZmMwYmYxNzBhMGFkYTRjZWM3NDhjODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlOTRlNzk1ZjE1OTM4NDkyMTlmMzc1MTRhNDlmOTNkYjg3ZThjOGFlN2VhN2FjN2JjZTJhYmY5MGNjNjA5OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkYjVmMWNmNDI3OTcyOWUzM2MzOGUwZTU1MWQ3NmZjYzgwMmQzY2MwMDdlZTc1ZmViMTQxZjBjZTg2Y2UxY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://celery/worker/control.py#L381-L397",
+          "version": "repo-lines-v1:sha256:f7b2cea0f45f3bb51d36935e69ffebaa290c2c5aab42cf22da6536e0640f9a3d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1OGI3ODYzNDBlOTIyZjhkNmY2ODg4N2QwNjhkYjBlNzIxMzYwYjc0NTJmZmYxYTRiY2NjZGVlNjE4YjZiYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2MTYwYTU4ZjNmYWQyY2QzZjU2OGUyMzk3ZGNlN2E5N2ZjN2UwZTZhODU4OGEwMDEyZGYxZjE3YzE4NzkzZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjNDc0MWMxMzM1NjAxZTI0YmQ4MGRlNmFjMTUwNDRkNGQzNTIxY2I1Y2JmZDA2NTU0NGU1NDIzYWM2NTgzMjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e0928f5f7c6c4d3ba57b7de610f416f8",
+      "statement": "Gossip consumes worker.# events from other workers into its own State, periodically drops workers whose heartbeats expired, and implements elections where the winner is the lowest (clock, hostname.pid) once all alive workers acknowledged, running the handler for the election topic.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/gossip.py#L20-L206",
+          "version": "repo-lines-v1:sha256:027a7704fdf05f864240791fd6b2894fb76cdb500eba90fba2f12d21cb7ae0a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTg3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0ZWJhOTY5YzJmMzIyOTNlNGVmN2ZiOWQ5YjQ5ZDQxOGI0YWM2ZDhlOGZjYzExYTYzOGU0NDZjNTIwM2VhZjhmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlNzdmZDkwZTRhZWNkMjVhY2ZjYTViNWFmNGU3MGJhOTkwYmIyZWI4NzM0NWM0MzA4OTkzYmZkZWQ1NWYwNWViIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1NTkyMjIzYjQxZTRhYzEzZjY3OGNkYjg0ZjlhN2ZkODgzOTQ5ZDBiYjM2N2JmNzNiMzI1OWQ5ZDE1MDRmY2YwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_49caaff76038468885ef4a42397cb227",
+      "statement": "app.control wraps a kombu Mailbox on a fanout control exchange; broadcast() sends commands to all, named or pattern-matched nodes and optionally collects replies until timeout or limit, and Inspect flattens replies into a per-node dict with a default 1s timeout.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/control.py#L426-L452",
+          "version": "repo-lines-v1:sha256:b0a2c6cfc604e5aa773e8b254646dd63fdfd51b9ef5b4decbd8396c73deea1ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMDJkNDhlYjIxNTU0ODQwMDlkODU2ODVhMDEyMjQxMGI1MjFmN2YwY2MzNjg1YTA1OWJiM2EwYzE0YTZmYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMTYxODRiNmQzYmM5ZDY3NDcwYjk4MjYyYzE5MjUzZDk3MmU0YjFiNmRlMTYxYTgwY2MyMDQyYjM3MGE4YjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4NTQ3ZjRmMmRlNTRmZjgwMjA2YTg0YTQ1MThhN2M1NjA2Yjg5ZTJlOTcwMDM2MzgzMDI5ZGNkODNlNTU1Y2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2NWE3NWUyNDIwODc4NmE0MmZkYjY3ZjUxMTBlYTUzYjVhYjcwOTc5YWVmMGM4Mzg5MjA3MDcyZGQ5NWZjNzEifQ"
+        },
+        {
+          "resource": "repo://celery/app/control.py#L73-L118",
+          "version": "repo-lines-v1:sha256:06fd450d5459f6e3c19fbb9cafa0dc146b4cdafbb47d2547e7fefe52b6d056ce:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5MzJhMjE5ZjFmMmNkY2JkNmE5MDNjOTFmZjg1MmIwODdiZWI2MzZjYzUzMDI5ZWU5ODIyMTc5NGU4NGM0YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjNTE4MjNkNjU1YmVmZjVjNTRlN2UxZGMzY2IzNzViZmJjMjY4ZTg4ZmU1MjZhNTY4ZTAzMThlMTA3ZTllZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3ODgwZGViODcwZTg3NTI0NWE3MTJkZTg4ZGQ0ZWMyNzY5YjQ3OGM5NTljN2E2MTZjZDdjMmYyNmJmNGI1MjEifQ"
+        },
+        {
+          "resource": "repo://celery/app/control.py#L755-L790",
+          "version": "repo-lines-v1:sha256:2f173e5e42a207a7f528f362ed03e697742ba72339bbf90d4904c80ea1d5118e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MmFmYzVjN2Y1MTk5OTI4MGZkYzYxZGRmZTBlMDRhZmFhNWM5YWJlYzAwODYyMTViMGQzMjc3YmYyZjAxYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiMjA3MWU1MzE3NWFhOWVkYzVmODJjODk0MmFjNzc5NDNlNDExNWI0NGE2NDJjMzk5MTc0MzhlODU2ODJlNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_280752a39293464abf144d34e4c93ac8",
+      "statement": "Worker control commands are registered in the global Panel registry via @control_command and @inspect_command decorators with metadata, and the Pidbox/gPidbox consumer step (included only when worker_enable_remote_control is set and the broker supports fanout) dispatches them, advancing the Lamport clock and resetting the channel on unexpected errors.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/control.py#L15-L33",
+          "version": "repo-lines-v1:sha256:3f822bf45111db0784e2a540d73134fe40f4a5d304f0ee2fe74c118b281e4992:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkYzM3MmI2ZjZlZTc1YWI3ZDRiODBiYzcxZWIxMWQxZWRiYzIwZTMwNWVlMzc3NjE3YWQzZmZhMDE3ZWJlNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YmQwOGYwMjVjZjI3NjY3MjhmMjRiNzNhMDNiZTQzZTIzOWQ4YmE3OGNhMzhlZTNkZmEwYjNiNWEzN2I0MTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwZjcxZGZhMTFlZjlkYTg3Y2JlM2JjMzhlZDJjMDE4MjhlN2U4MWM4OGIwMzZlOTYyODkzZThkZGFlNmFiYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://celery/worker/control.py#L40-L76",
+          "version": "repo-lines-v1:sha256:336ce6f7f8bf006cc252d4d2d41b1af6555beb273aa6a324c77e00ce7ab5d212:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwYmEyZTVjZGVjNTc5YTliZDEzYzgxMWJkNTk3MjdiZDYxZGQxMzIxMWVlY2I0YzA5MTE4ZDQzNDMzZDVkOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxZWI4MzA3NTYyNDg5OTA2ZWNjYWIwNDgwZWQyOWE2MDg0ZTUzOWY1M2UwMDQ3NTJhYzkwMDZiYzQxYzdkZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmMzZiYzNlMTk0MTc2ZWQ2NmZjZWEyMzVmNDA5M2M0Yzc4YjY1OWI3MzNjZWQ5OTU1OTU0NTk1NmQwYjBjYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExM2M1OWNmM2NlODU4ZDRiYWM0ODZiYTk3ZGViZDc2ZGZjMDYzY2QzMDc3YWNhYzVhNzQxODFhOGU1Y2RmYjQifQ"
+        },
+        {
+          "resource": "repo://celery/worker/pidbox.py#L20-L60",
+          "version": "repo-lines-v1:sha256:86fb1fb6226545e399b7a731027e8c0fa59a190a10b724c42e9ea439b6bbe485:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1MmY5MTk4YTBkY2FhNmE1MzVlZDdiYTU2YTg4OTJjMWI2MmY0ZTJjYzgwOTFkZGYxNWZiMGIxYmQwM2I0NzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0YWQ4Njk5NzIzNmNiODVjYjIwNjY2MGUyZmE1OGIxMjg3NjRiMDM2YWI5NGFmMjU3OWE0ZDQ0YWEwNTFjMzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0MzdjMDUwMTcxMDk4MTIxYmUxMDJjMjAzMmE5MDRhZGY0ZGE3NzM5MWVmYzE2YTIzZDgwMzk2N2FhZTM1NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljYjEyMGJlYTkzNzg3MGU2Y2Q4NGFmYWRjYjQwNzg1ZTQ2Y2IyOWE2ZDY3M2ZkMzhiM2ZiY2Y3YjhhYjU5NmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8acaad8992b1483f97a566f89b96420d",
+      "statement": "revoke adds ids to the worker's bounded in-memory revoked LimitedSet (default 50,000 ids, 3-hour expiry), attempts to mark the task revoked in the result backend, and with terminate=True signals the process executing the task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/control.py#L134-L153",
+          "version": "repo-lines-v1:sha256:25c3bde7a118a14d8f364cc0ab56648618fc5246aba407eb1fcdfd0e5882e3e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwY2JiMDlkNjQ2NGVhMWQ4OWJjYjU3ZDhlY2RiM2FlYWFjOGNiNTFiZWJhOWNkMTdhYzhjNzcwOTE5MjFhMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4MjZjNzQxYWUwNmQzNzU2M2E3YmJmOWNiYjYzMjg5YTA0OTEyYWNmOTM4MmJmMjI2YmFkYjU3ZjU5MTRlNzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwM2M2ZDU5MWI3YzU3M2I4YThmOTBiOGYwMDZjOWNlZTJlNzE0NjY0NDg3YmYzZDNmMTQ4NzEwMzkxNmM2MjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczNTQ4OGQ1ZTA0MjY5OTI1MTdiZmUxMWMyMWE4M2U4NjQwZTFmYmYwMGE3NWJkODdkNjViNDczZGFlMzAxOTIifQ"
+        },
+        {
+          "resource": "repo://celery/worker/control.py#L214-L242",
+          "version": "repo-lines-v1:sha256:d6418b9ebb6a6c33d04ab6ccad6e0c392628dcb6cb76e7c0fd348cd491f3b41a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YjU3NzUyZDZmMWNjNTc1ZjdiYWUwNGJjYjcyYjRlMDBkMjU1YjJkNGMyYTMxOTRkMzlkNDdmM2Y4YzUzNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhMmVjMzhmYmQ2ZWU3ZmQwNTYwNjBhNzA5OWM3MWNkZGY4ZDY0NzdhMjc1YjQ2OWUxMTFmNmZlOGU2MzNkZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlNGNmYjk2YjYxNDA0OGUwZjc2YjVlYmU5YmQzMzc2ZTZhYTc0ZDcxMWQ2ZmU1NmE5Njc1MDkxYWM1NTAxY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczNTQ4OGQ1ZTA0MjY5OTI1MTdiZmUxMWMyMWE4M2U4NjQwZTFmYmYwMGE3NWJkODdkNjViNDczZGFlMzAxOTIifQ"
+        },
+        {
+          "resource": "repo://celery/worker/state.py#L35-L68",
+          "version": "repo-lines-v1:sha256:75c5909f32a9af4565d2b396033cf21852b58208f5b4c13523fcf4cbcdbe575e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0ZTMzMzM2MTg1YjhjNDdmZDIzMWUwMDk1MTBhYWVmZGRlM2NjZDA1MjllYTk5ZmQ0N2M1NTI5ZTExYzlhZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhM2I3Y2VjZTkyYjBmZTY5ZDk5ZjJhZTZjN2M4NWNmNjZiMjkyMTRkOTljOWU0YWI2NmJkZjE0ZWY1ZDRmYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxZTliNmFmYmY0NDE2NjI1Y2ExMGZjNWQ3NGIyZDE2OTU4ZmY4NWI4MWIzMWMwZWRiNzBjMzY3YjAxZGUzZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2MTc5MGExZjY2Yjc5ZWNlYTNhMjU3NGZkYmYxMDlmMjllZThjOWNkMjU5YjRlNjY1MzRmYzEwYmQzMWExZmIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:56:17.091Z"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:49c583ad93350b437338fb71bbb96f6e4a16d6a636c4d9bb84b110cbf098147d",
+  "claims": [
+    {
+      "id": "claim_0ad22cf5e7334bc2ae4370867da7eb58",
+      "statement": "Session creation reuses a live wrapper for its BrowserContext, maps empty/persist-prefixed/other partitions to default persistent/named persistent/in-memory contexts, and requires absolute nonempty fromPath paths.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_session.cc#L1683-L1755",
+          "version": "repo-lines-v1:sha256:8ca81fd0ea92a48f6fdefcfd1b71327e7d3c9351a4af9fad8a0dde98d0612fdd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmZTM1YTExODU5NTk2YzQyZDRiMTI0NzcwYjZkOTZjNTk2ODEwYWEwYWE2NmE4NDQ2N2ZlNDRmNGMzYWM0ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4MmJjOWUzNDA5ODFlNjliNjdkNzdjNzZiZDgyNDE0ZDRkYjRlNGFmODA1MGQ1MWNiZGYzODc0ZTYwNDI3YjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhYWFmYWJlNWYwZTY0NmZmMWUwMDc5Y2NlN2YyYTVmMmZjZmVmOTc2NWY5NjMwNjUwMzdiMjBhMWU4NWZiZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjNjczZjBhMzcyYzZlY2I0YjA3MjBiOTUzZDRlNWNjOWRkMzExZDQ2MjBlMGNlNjUxZDY5ZGQ5NWNkNjIxMWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e52e4f5a1dfb426397a4085fbec0d154",
+      "statement": "Public Session selectors require app readiness; BrowserContext caching means construction options apply only when creating a context.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_session.cc#L1874-L1905",
+          "version": "repo-lines-v1:sha256:7d8f1e22148538772620b1f8e4ae875c6d39c77ab2fa11d8d5e6c6f0cb0f7799:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlZmM4ODg3ZjhkYTgyMDRhZjJiOGMxMmNhN2YyYTRhYzE0NjYyZTdlNDBiMjA4OGE4NDRlN2M0ODBlY2E5NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiZjhhZDM1N2JhYjI2MTdkNDU3OTBhMjMzNmVhZGI5Nzg0NGQ4YWUyOWZkYzI1MWNmYmU0NTc4NjFhZjgzMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZDE1YmQ3MmY5MDAzNDVhN2I5ODFkNTgxYWEwODY5YTI3ODBhOWRkMGM3YjExZTFlYmNhYzJlODFkYmI3ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzM2Q4ZDYyMTJkZmM2ZmRlNTdlZTM4YjMzNGMyNDM2Y2JiZDJiYTg4YTQ1ZTc4ZDQ5NjFhNmRhOGVmMDRmOGQifQ"
+        },
+        {
+          "resource": "repo://shell/browser/electron_browser_context.cc#L869-L896",
+          "version": "repo-lines-v1:sha256:c37aad4f45c3e883ad99b06405d3c59d6efcf72cb57c9b7a5880b3387d1fff97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4MDI1ZTFlYWE2YWI0ZDBjZTZkZjE2MWNiZWM2MTM2MTM4NmE0ZTMxN2QzYmFiODE5MjRkNTYxN2Y4OTQ3NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmODkzOGE3OGY1ZjkwMmM5NTA4ZDA5MmRkZjYwNWJhZWJmZTgwNzEyMmMxYTlkMTVkMzdiZTFhNjBhZWQ5M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2MmM0ZmZlZGM1NzYzNTZmYzllZGE5N2E2NTY3MzU1YTFiOTZkNzQ3NTk0MTEyMWM0ZTcxMDY5ODYyZDQ4NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NjUxYWJhZGNjMGU3MjZkYWM2NDdiZjJlNDU3NGFjNzIzMzM2ZGUwOWZkNTQ4ODU2NjEzYzNiNTM3MGE4ZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f910e72e3af44a60822311544148343b",
+      "statement": "Persistent named contexts use a Partitions path under session data, and context destruction shuts down keyed services and storage partitions.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_context.cc#L376-L419",
+          "version": "repo-lines-v1:sha256:5350535bb6bfaee1ea326998a30405cdfb376bbcf5b2df8de329c99721464ee1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNzU0MjM1ZmQ1YzlhMzE2NjY1NGNiNmE3ODcxODliOGMyMDFkZjc2NjE0MDZhODQwMzY0ODJjODJmMmMwODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllODUzNjI0N2E5YTk3ZWNhNGMxMmJkYTA5MzJkNTEwN2ZiNGI4YTY3MGY5YTM2MjkxYWY5YzMwOTcyZmJlZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyNGIxZGJiY2Y4ZmE2NTI2NTg3ZDNjMjE5YzI0ZWJhZDE0NjQ2MWRmYjg4ODM1MjM5OWRjNDM5Mzg4NzQ4ZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmZTFiY2VhMjExNjBkMzI5MTdiYTNjMGQ0ZGE5ZWNmODVhY2YwNzI2OGY3ODhjYWRhNDI5OTU3NzdmNDQ0NjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2694dafbe59348658a00ee7d498cb805",
+      "statement": "clearCache clears network HTTP cache; clearStorageData uses StoragePartition data masks and resets media device ID salt when clearing cookies.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_session.cc#L712-L744",
+          "version": "repo-lines-v1:sha256:d77651e0c98645a05a202ac9c206072bc89ef3abbd21ed174f505a416c1f8abd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMTFiNmE3MTY4MjBhNGYyM2MwZjRiOWY1OTkxNjJmNTJmY2Y5MTQ2ZGYwNzEyYTNkZDU2MGFmNWVkMTAwMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiOTJhMDUxY2VlMDMxN2JhYmYyY2Y0ODMxZTI1YWNjMDJlMDJjNDA4NmM3ZjgzMTk4M2JhMjE1M2YyYjZkMzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMjdlOTI4YjI4NWZkZDhlYzIyMDY2NWZhYjNlNDVjZGIxYjU1YTEzYjMwYzM4ZjhkMjNmMzVlMGE1Yzk3ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkYmI1NzJjZTY3MmIwMGE5YzJhOGUyYTA4ZWM0ZGYxM2JiMjBhOTgwNDZjNmU0YzQwMzUzZWVhMDVmMjFkYTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_59af713445ea44caa4415e2b3d27dae7",
+      "statement": "Main net.request checks readiness, explicit Session options precede partition options, and net.fetch uses the default Session.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/net.ts#L8-L20",
+          "version": "repo-lines-v1:sha256:424a8b37eb84460cb21ecece10fe8a206ddb1cb74a64475c75c3d183a6da90f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NDkzYTA3YWQ4MzBmZTdlZjYyZGM2Yzg4ZWQ0NWYyZjY4NWVmNmFkMDliNjlhZWJjZTM0NTk4MzNjYmYzMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlN2Y4MjA0ZWI0ZTFhYTY4MzIzYTQ2YWVmYzE5OTMyNjcwYTBiODFlNzdhOGJhNjJkNTEwNmE5OTRjODdjODYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhNjlhN2M5MzNmYTFjZTM1NWU1Mzk1ZjhkZTZmZDgxM2RhOWJhNzIxZDcxNDM2MDNhMTMzMzgyMTc2ZTk4MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExNDM1MjhmYmVjNGU5YzI2YmU2ODM3NjU0YjA1OTkzMDhmMmIzMzhmY2RjYmRiNTc2OTQxZTI0NjlkNThlMDgifQ"
+        },
+        {
+          "resource": "repo://lib/common/api/net-client-request.ts#L303-L315",
+          "version": "repo-lines-v1:sha256:80043a5f5728c56a2259a7677f1681b38b17b6138a09f8d80f59db617b745153:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNjM3YzUwMmZjMDlhYjU5MjI1MDBiNzc2NmE3NWM1NDkxNDIwYzA5ZGU3YmVmN2Y4NjBiMTAwYTM5NGE0ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYjExZGUzYzQ1NjEyYWFiZTI0YjM4N2FkZGI4ODAxNWNkYzA0NThjMjhlN2FmNmUwYjdmOGIwOWZlMWFkYTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhYTE3ODBlYmZjNWVmODU2YjYxYWRlNmEyY2FlNjExYjkwMmVkMDNiYjE2ZjcyOGE0ZjI4NTc3YWE4MDJlZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d804cb5853f444d19b56794b13e9a127",
+      "statement": "fetchWithSession adapts Request/Response streams, propagates request abort and error, and maps originless same-origin credentials to include.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/net-fetch.ts#L18-L124",
+          "version": "repo-lines-v1:sha256:86d8df824fdca25f14db94b53f77411da2f8fc3c03ea27a11b98dee1e92b87f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkN2RhM2QxNjdhMDJlYjZiMTVhMjYzYWUzMzMyYTliMTc2NzVhYWYwYjFhMDU5YTcyMWFkYzczODYzM2FjYjZlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3YWEwYzIxN2FhNTg1OTk1OGFjODdhMDE0MjM0ZTA0MjU1MTZlODA5ZTZkYWIxODk3YzA2ZGQ4MWY4MDAzOWNmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMjNiNTVmMjZmMzg1NzdlNTQ0Njk1NjkxNTI3MmM2YTE5MTk0M2Y2NzNlY2I1YmZjNmM2MDEzMGJkN2RiYzU0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf316c9d1dfe4181935e04ceb55a5d06",
+      "statement": "Protocol.handle intercepts built-in schemes or registers custom ones, adapts Request/Response, and converts bad responses and handler exceptions to native errors; the global facade uses defaultSession.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/protocol.ts#L111-L151",
+          "version": "repo-lines-v1:sha256:be4be409834cab86f324aab1652a8e3d48b12813c2f33b78d2a789d94d71d4a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlYjI1Njk5MGNjMGZiYmZiMTJiODdlMjk2ODFhMTdlOGE0OWQ1MTkxYjM1OGNkMzRlOWJkMjEzMmVkM2ZkYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxODk4MTQxODEyMDM2ODM5ZWRlYzlmMTA3ZjAzZmU0MWM1YmI2MGExMTE4N2NhNjk5MzRkZjk5ODcwYTViY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMGQxMzk5Mjg4YmY2ODVhZTgzOWJkNzhmYjhhNGMyYWVmZWRiM2U5MmVjMjRkNDQ1MjE3MGUyODFjODg1OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwNDY4NWE3NGMyMDE1ZTc5ZjYyMmNmZmQ4NTMzNGYyNDMyODhmNzU1MzY5OTFjZWNlZWY5N2MyMDEwNDM5MWQifQ"
+        },
+        {
+          "resource": "repo://lib/browser/api/protocol.ts#L159-L180",
+          "version": "repo-lines-v1:sha256:9dcc585379099663c86c44583a5bff6c315a08457842e7b7d04775f22d33b0ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyYzFlNGU4YzNlNmJkMTUzMjYyNGZhOTIxYzg2NjkyM2M4YWYwZmIzMzk1NzQ0MWI2MjZiNmMzM2FkNTM0ZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNDhkOWQwMGRiOGE1YThhMWNhMWEzMTlhNzc2Y2RlOWY3MzNiNjdjMDI4OWYzYmE3NmExY2I2MDhkODNkMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwNGJlMDkxY2I5ZDU2ZmY0YWY2YmM1NzE5NjQ3NzU4Y2Q0YmU1Yzk4Y2Q1MDI0YmViMGYxOTRhYmRlYTczZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViYzdmM2Y0ZDFjZjYxM2JmZjA5NWRmMzU0YWMwYjA3YmRjODEyNDNlNzYxZjFlZjE2NzViZGMzOGQ1ODc3NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_198f98e28fd643beb1dc4753ecbd2a7d",
+      "statement": "Privileged scheme registration is rejected after app readiness.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_protocol.cc#L348-L357",
+          "version": "repo-lines-v1:sha256:e82b691ef5f9ad2f46190534964ff5c7a084fac709e2b41486ac016292a4b49a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5NWU4ZTkwZDgyZTQ0MTIzM2M0ZDUwY2JkNDBlZGZkNzYzZjFmZWU0ZGRjYzU3OWRkN2U1YzY2MDQxYjBiODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMTAwZTY5NTNmNjE1MGIzZjI2MmRlOWUxNDg3OGI1NmY1MzljNGE2Y2JhODEwZjhkMTA2ZWE0OWM4Mjk2MTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiMmUzNGI0NDZmODQ5Y2UwMzY3NGFhYTE3YTMzNmEyNjY1ZjQyY2JiNGRhN2JkMDE1YjRhZjA5NzBjZmJhZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyNzI1MDRjYjgyN2RkMDIyZjUxZDQzMmJmNmFhYmUxNGE3YmEzNDNkNWJjZTE4ZDRmNTM5OWIwNjRiMzY4ZTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1531b5fcc3734619ba29d5f2f0636c64",
+      "statement": "Permission request and check handlers are distinct; the general request path grants without a handler, and the general check path defaults true except deprecated synchronous clipboard read.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_permission_manager.cc#L181-L232",
+          "version": "repo-lines-v1:sha256:0b39d4630a7c9514954b6bdba6fd086c75c4f945a41582cf1906f74944a8e5d9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlYjJiZGIzZmZkNjkwOTM2MDUwMDdjZjNmZjQ2ZTE3NmJmNWMxYmM2NDJhZWFiYjIxNDc5M2ZkNTQxNmZkOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzMDFjN2JhNTVlNzFlNTJiMzMxOTMzZTBmMjQxNzcyYzAyNWM5ZjkyYWU0OTEwNjQ3M2JmMjdjY2Y2MWNkMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyYjI1MTRlY2QxZGM2YjYyNDQ4MGIyOTJlNzhjYjg0ZDlmYmYxZTg3YjQ2MzA0MWFmMTQyZDlhNjFlYmI2NmQifQ"
+        },
+        {
+          "resource": "repo://shell/browser/electron_permission_manager.cc#L308-L342",
+          "version": "repo-lines-v1:sha256:bf52a5485fb20ecf1f00564056ef56233eb15c3ad5f27fadcad64cdce013903a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzMWRkMGJhOTM4OGQwMDVjN2ViZTFiM2E4MTYzNzVjY2VjODhjZDUyODQyNmRjODRhNjhlOTViMGNmNWI4OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1NWU3NWY5MzQ5ZTI4ZmEyYmRmZTczOGRiY2QyNWVjZTUyNDRjNjA1ZGNiOGNiNTg1YWY1MmIyNmMzNDg4MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1ODNlNDQzMDEzMmMzMTM0M2Q4MmJmYjViMTFlN2QxYTJmNGM2MGYyYTg0OGUxNWVjYTdiYzY0MzlkNmZkNmMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:40:08.980Z"
+  }
+}

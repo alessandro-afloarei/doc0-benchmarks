@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e87c721d372a453a6c9f1a4c157c0e417d95a0e4d369f9d73426c21a496f64c5",
+  "claims": [
+    {
+      "id": "claim_6b5d09ed869b49498b1e20d7e94d42b9",
+      "statement": "The Python package openhands-ai is built with Poetry and includes openhands, third_party and microagents plus a bundled VS Code extension built by build_vscode.py; the openhands console script points at openhands.cli.entry:main.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L1-L26",
+          "version": "repo-lines-v1:sha256:293bb5b84120386bc8fffd241d207ba456e9a3fda3e4339fce7cfd12dc626777:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0NTY5OTQ2YWM5YmJlN2NiMmNkZWMzZjhiZWNmMzQzNzUwYzU4YjliMzIxZWMyMTk1YmZiYWFiMmFhOGM0YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3ZDM3M2ZhOGVmNWZjNjZkZmI4OGY4MGZkYmRkMzYwYzFhY2E1MWE2ZTEzODk3YzExNjQ2Y2IyZTMwNDdlMDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_37b958e86a3e4f46a5021060696142da",
+      "statement": "make run starts the uvicorn backend (openhands.server.listen:app), waits for its port, then starts the frontend dev server; Windows is unsupported (WSL required).",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L249-L284",
+          "version": "repo-lines-v1:sha256:a552b87a5c648db47fdab7b2f4fbf5fc04718e53b28d5276ee4044bbc65cb88b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiNTBhMDJjYjU0MDkxZjhhMmE5NmFmNDA4MmM2YjBhYzYxYTg5YmY1YWEzM2I1MTU0N2FjMDQ0YWY3NjAxZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1MGEwMTcwZWNmY2NmN2YwYjlmNWRmOGEwOTg0ODY0M2U0MTM1NmUwMjQxYTcwMDczMzMyZTExYWEwYWMwMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2OGM1MDA4YTcxNTUyMGNmYzM3MGI4ZWQ4YTFjOGE1NjhlM2I4MWQyNjYxNWNjYjZlODZjMmRkYzNiY2Q4NGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_613fc5fbc721459fa9fd68f12ecba8bd",
+      "statement": "The app image is a multi-stage Docker build (Node frontend build, Poetry venv, non-root openhands user) with defaults FILE_STORE=local, FILE_STORE_PATH=/.openhands and INIT_GIT_IN_EMPTY_WORKSPACE=1.",
+      "evidence": [
+        {
+          "resource": "repo://containers/app/Dockerfile#L1-L95",
+          "version": "repo-lines-v1:sha256:4339f723781bb2eb45eec7dc93e750c7360819c60e5f2817c5c1538efa06ff16:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5ZDQyMmJlYmI5MWM0ZTFhZDgwMGNiMDE4YjE5ZGMxODcxODEwNDRjMmE5YWUwOGM4MGJkN2Q0NGI2ZTAwNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNWI4YTJiYjA3YzMxMTc1MjY5MGFlYTliNGEwODAzNGMyNGJmZjA5NTg0ZjU1MWM0ODYxNzUxODIwYzUwMjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f6f9ce01b314ed69a40e1b165d7e169",
+      "statement": "The app entrypoint must run as root and needs SANDBOX_USER_ID; it runs the server as root or as a created enduser added to the Docker socket's group so it can start sandbox containers.",
+      "evidence": [
+        {
+          "resource": "repo://containers/app/entrypoint.sh#L1-L73",
+          "version": "repo-lines-v1:sha256:a9eba27922cc10e00cdce7a60669474b3d22d0cf37ff38fbe95053d60caf0a4a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NzVmOTI4NTQ2YWVlNzg1NWNiMWRiOWFmYzhhYjNmMWE4YTM0ZDQzZGU1YmJkNjJmNzA3NmQ3YmE5ZjM5MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NjlkMjM3Y2Q0MjBiOWQzOGI5ODFhMGE0ZjY3NzAxOTBhNGE4M2RjYTFmZTU2YzRmNWJhMWUyY2JjMGVmNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f61b5aec429e46e9ab12027630ef0e45",
+      "statement": "Runtime images are tagged by versioned base image name, a lock-file hash (base image, pyproject.toml, poetry.lock) and a source hash; builds reuse an exact source-hash image, else build from a lock image, else a versioned image, else from scratch, with force_rebuild forcing a scratch build.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/utils/runtime_build.py#L168-L256",
+          "version": "repo-lines-v1:sha256:61a17c37431926fe442f59e3c3d845dcbc53f7ef832e25e33a4dc4289910abe4:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3NzVjYmUyNzE5NjM3MzM5NTg5YjUwOThhZjU2MjBjZmY3YzkyZDFmMDQyZDdiNzlkZjBhNjhiZmNlYWE3MGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MjIzMTA2ZmQ4NzQyYjcwZWEyMzNmOWRjMzU5ZjRiMDJiYmIwNjliNzI4M2VlZjc2MjQ5OTUxNmJkN2I5YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyMGVmYjlkNThmZjQ2NDhlM2FlM2EwYjVjNGI3NjY4ZmE0NzU2YzNhNTNjYjgzMDE0MzQyMTExNmE2OWI5MWEifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/utils/runtime_build.py#L320-L360",
+          "version": "repo-lines-v1:sha256:d895e461aab4719ea4d2d7b500cb9667de03234f207cd191b72b650ca19608a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiYTc2N2MzMzk0NWViZDczNzFiZDUwNjA0YTE2YjZmNDQzZmEzZTEzMmQxYjAyNzQyYzY4MTE2ODU2ZWJmNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkZGU4MzI4MGFhZTgwOTdkZmNkZjQ2NDgxMTlhMmU0YmEzNTQ0NjVjZWRiYzA2Y2IzOGYzYzdlNGMwZjQ5MGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwYzU0ODFiYTRhNjk1ZWUxMDg3YjFhYmQxMjg5Yzg0MThlMzhiZGVkYmI0NTJkMWQ1NzBiNjUxNzJhMWU3ODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41b30417f31647ad8138376468287c66",
+      "statement": "The runtime image Dockerfile is generated from a Jinja template over a configurable base image and installs system tools, Node, Python, micromamba and OpenVSCode Server.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/utils/runtime_templates/Dockerfile.j2#L1-L60",
+          "version": "repo-lines-v1:sha256:45442478b7651e849aa78a38ccd974a17d78f58bfd5575b67f0aa940e92013b7:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MmFiZmM1OTZiOWMwYjBhN2YyNzFlMjgzODE0ZjAzNDg4OTAxNTZlNjQ3MTRlNTc1MWY0NDMyZTNjMjYxZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxNjJkMTkzZWI1OWU2ZTNjMDVkNjE3NDU0YzA4ODYwOWI4ZWRjNGFlY2ViODk2MDIxYjUxYWM3MTllZWQ3ODQifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/utils/runtime_templates/Dockerfile.j2#L150-L180",
+          "version": "repo-lines-v1:sha256:3d389d0a537447eddd0f3d9e3f083fb6d5848dc49b9693e2b2ab4758cb9b2ae2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5YmEwZDNiZmQ2ZDkxZDI3MTZiZGMzYTRjODY4MzQzMjk0ZTQwMDQzZmExYWU1N2MyMDc1MjI5MGJiNzBkMTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiYTFmMWRlNjBmY2I2Mzk3MDZiMjQzOTVjZDhlMmRjYmNhMDVjNGQ5NzRhMjZlZTRiZGUyYTJkNDlhMjVlZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5MjIyZDhjNDk3ZjQ0OTMyMDA4MDkyZThkNzNjZTQ4NDAwMmQyZjViZGQwNzg3YjFiYWQ3ZjYzZGExZmYxOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_69ee021a83644aefabb6371142dcaecf",
+      "statement": "docker-compose runs the app image with the Docker socket mounted so it can launch sibling sandbox containers, with SANDBOX_RUNTIME_CONTAINER_IMAGE defaulting to a published runtime image.",
+      "evidence": [
+        {
+          "resource": "repo://docker-compose.yml#L1-L23",
+          "version": "repo-lines-v1:sha256:09ddcf301d5d1bee7ca966696b9174266f4ffdbc7754fde192d50408a04bb340:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZWU4ZWVmOGIxMzIwNTIzNTY4ZWIyNjUxMDhlYTA0ODgzOTQ0NmY4MTVhMmJkOGUyYmNlNjMwYjk0MDgzNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c680aba621dd4e60aa445fe87ccc02b7",
+      "statement": "CI builds app and runtime images for nikolaik and ubuntu base images in ghcr-build.yml, and a scheduled workflow refreshes the generated openwiki pages daily.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ghcr-build.yml#L1-L50",
+          "version": "repo-lines-v1:sha256:cbce085485fd8b9a5a420a493ad2a9d1143eb7f02b5a81fa0a49200835201e3b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1YjhiOTU0ZjViZTNjOWJmOTJjOTNkMzZiNDQ2ZjlmMWU2NTBhYTEwZTU4ODIzOTgyZWY5Yzk0MDk3MDA5N2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwMjE3NDcyZGM0OTdlMDY3YWY2NGMwY2IyNjdlMmYxNjIxMWVlMjQ4YWNmMTA0ZmI5OTZhNzBkNzc4MzUzNjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2OGUzNDQ4OTQ5ZjEzMGEyMmQ4NzgzMDQzZmFjMGU1MTY3YzA4YjllZDJiNjU4Nzc4MDQ0Yzk1ZGY5MGI3MDIifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L10",
+          "version": "repo-lines-v1:sha256:c3d5eea0b554e2a6bc3e48f1f8fa058a38e6b5e21e256de6bb5d3a73b2a1fce7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3NDNhMmEyZmI4MmVhZWQyNDg4ZTI4NjRkNDIzYmViNTAwNjFkZDQyM2Q4MGI4NzIxZDNiYWU1YTY0N2E3ZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiYTVhZmZkODIzMWMwZTgxYmJjZDQyMTU0YTFjYzkwZTg2ZWZmNjYzNTVjMDQ4Y2U1NWIzMjM3YmRhYzNhMWQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

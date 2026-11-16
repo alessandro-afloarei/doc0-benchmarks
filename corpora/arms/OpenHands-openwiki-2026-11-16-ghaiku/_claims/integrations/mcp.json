@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2e95757cc4ce1a6be09586519b9d032748d80cb72508a7e30aa1c7ed83d42eb8",
+  "claims": [
+    {
+      "id": "claim_49a1281a01504ad8837acddf9707a7be",
+      "statement": "MCPConfig has three server lists, sse_servers, shttp_servers, and stdio_servers, and rejects unknown keys.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/mcp_config.py#L191-L215",
+          "version": "repo-lines-v1:sha256:6871212bbf78ade42e2d3deb80ace506e67ce1e19180367dd2ee5bbc72733209:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlNDY5NDhlMzQwMzk2NzZjZTc1ZTEzZmVhNGQyYmQwNzU0YmE4ZmQyNTUzOWU0YTRjMzQ5MjhlMWM1NjQ4OTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzMDcxNDhmYjg2N2M5ZDRjMzExYTM4MTc3MzAzM2JmMTZhNDU2NzBjZjcxZThkOWM4Zjk2OWVhYWVhYTAwOTcifQ"
+        },
+        {
+          "resource": "repo://openhands/core/config/mcp_config.py#L46-L70",
+          "version": "repo-lines-v1:sha256:22f6e59e16c30491fc0839b8d8686ec0207692c46d08162e15eea7058d62503a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMmQ3MGVlYjY0NGNlYTQ0OGRmOTFhODI3MjBlMmYxOWViNmFhM2Q4MmQ3OGUyMzUzNDQyMjUyNmQ4MTllZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiMjNmMmUwN2Q4ZmU4ZDE1OWZiNzc4YTA3ZGE5Nzc5NDE0OTA3NjgxYmVkYmZmODdhOWZjNTQyN2RlNGRiODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNzI1NmU0MDZlNWI1NTA0ZjU1ZjUxNzBkY2M5Y2Q3NzkyMjcyZDdkZmUzZTUzZWUwOWVjOTUyNGQxYTA0MDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyNWI4OWVmY2I3YzAxODA3MDRlMDhmNDkyY2Q2OTJjYzliNTBlYmRmN2Q4NDIyMWMwNDJmNzI0YmZkOGIxODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56ce48f47a294bba985ec1e9ccf9d3fe",
+      "statement": "The config loader reads the [mcp] TOML section into the MCP configuration.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L274-L279",
+          "version": "repo-lines-v1:sha256:76535bd224cc5fa67d1ffbb901c418028b1a63b0c1d3a3ebf68feb0c7c7e59b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNlZDViYzA1NmQxZTBlYmUwNGQ5NzhhZDZkOTY2NjRjYzEwZWZmZWNlMmY4ZWY3YzEzZDFjNGE3ZTFkMDg4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmEyNzQwZWNjNGIyMDRkOWI0ZjhjNTFiZmU5YmRlZDVhMmU0YjkxYTc2NWIxNjA5YjczZGI0OGE3NWYyNjU2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWMwN2U0ZDJlNWM0Y2MzNDJkZGE4OGNmOWI4NDc3ZTYxNWEyMDk3MzA1YzY0ZDNmMDEzMDEyMGU1MTQwMzU2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQ1OWU3ZTRhNmRlN2E5MThhNzVlYWFjM2Y4NzVlZDk4ZGZmZDljZjVkZjdkY2IyNjJiNTdjMmNmNDRjOWY4MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c8192319b523442c881026b0427b2e3d",
+      "statement": "A Tavily search server is added as a stdio server only when the search API key has the tvly- prefix, and it is skipped in SaaS mode.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/mcp_config.py#L315-L334",
+          "version": "repo-lines-v1:sha256:826fc646f0864423cd759e79db1c08b41b452c89d78b06c2c87d5dd10b5c6655:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MmFjMDkxNDM5MzlhZTExNGNhZDYxY2YyOTA3Y2E1ZDlhMDczYjkzOTM0OWE0ZjgyNjA4MTRkMjgyMzRjNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3ZDk4MjZlOTUwY2U4MGY3NGZkY2NhOGUxYTgyZjAzYTAyODQxNDY0YjYwNjViMjdhNzk4NWJiNGI1YjhhYzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a4aad782102e443b9274e74a39bb7cff",
+      "statement": "The runtime's get_mcp_config merges extra stdio servers into the configuration and publishes stdio servers only when the set has changed.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L362-L386",
+          "version": "repo-lines-v1:sha256:6d0c84682d279a64c1c9246585e69b8157a171a0dad503bd8cd0850ec4aa2782:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3N2Y4MTgyZGU5NjRkMDc3M2YzNmRjZjNlYWU0YjEyYWNhYTQzNzMxNzAwNmIzNDE1OTNjNDUwYTA2OGZmNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjOTE3OTM1NmJhMzliYTk4ZWYyMDMxMTIxMzM4ZDE0ODZhODE2MDI0NDUwZGQxZTUzMjAzZDQwMjNhNTJhZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhZjljN2IwOWU3NTlkYjM0NmRmYjFjMTFkYjMyODQzMmZkODViZjYxYmVlYTYzNzUyZmQyMWIwMjU4ZTM5ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwZTk0M2Y2MWNhNjYxY2YyZDAxNGMxOTAwODcwMzJkZWJiZWJhNzk4NGEwOGY0YjY2MTQyZGY0OWRiNTAyOGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15fd1a575ea742369d244f22b22132ad",
+      "statement": "MCP is disabled on Windows, where the runtime and MCP utilities return an ErrorObservation instead of connecting.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L206-L220",
+          "version": "repo-lines-v1:sha256:abb5f3b9d7048c646929f10032f57293bea1f21398deca7dbd32f4ea234b075f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyNDQzNjdjODNhMTBhOWY2ZWM4Mzk3MTZmNGM0OTM0OWU3NGExMjljMmM1Y2ZlZjgzNWFlMTY2OTBmZDQ1NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNjYyMWQyNjZiMDA0ZjNlYzcyYTQyMGI0MzFkNjUzYzc0NzUwMDJhM2ZhOWYzY2Y5OTEyNjVlZGRhZjViNjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YzE3ZWZhMjc4NGU3MjFiMTZkYTUxN2I5ZDYxMTFlMDJiZmQyNGE5NzlkZWEzY2FjMDcwMGVlMmI2OTU3ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2ODEzOWJkNzZiOWQwYWY5Y2RjYWQ2YjQ1MzRlYWI2OGFlZDE3MWU0YmU4YTVmYzM4Yjk2OTJjY2M3ZmZjZWIifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L452-L461",
+          "version": "repo-lines-v1:sha256:dc32418cc90b6ed199d2126b2193efaaa21439dc78d71d66883dd0902af8f714:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNjc0NWI3YjUzOTZhOTY5OGRmYTkyZjhiYWYxMjJjNjQxYmM0YTFiNTgxNDM5NjVkZmI2ZTZjMTVlYWJhYzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhZjdhNjQ5M2RkZjgzMTZhMmY3NTEzZGI5NTBlNzcwOTY2YWMzMWQ4MzA2OTk5NWM0YWRhMmUyZWM1ZWM3NjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlODM2M2M2NjM4M2QyZTE0MDIwZjk5NTNjMzk0ZmI1MTk0MjE0NDVhNTdkYTQ4YWVlODVmMzYxOWQzZWZjZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf517f0f347a4c23b6d4924e72e41e67",
+      "statement": "MCPClient lists each server's tools and builds an MCPClientTool for each, keeping a map from tool name to tool, and its stdio and HTTP connections default to a 30 second timeout.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/client.py#L125-L131",
+          "version": "repo-lines-v1:sha256:723f761d62b7759833b9887078f3eebbfa17eae6945a05359f1d55ebc777650f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdkNTUzYjE5M2FjMjE1NjE0ODI3YzRlNjViMGY0YmRlOTA4MjJiNWE5NWMxODY1NDAzZTY1NTUxYjdjYThlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2E4YThmYjRjNWFkMTIxYmMzZTI5NGRlNDdiMGJkMjQxOGRkNjQ2M2FkMDNmMTEyOGYyNGY0YjRhZmFjN2ZlOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjhlOGRhYjY5MWE0NjAzOWNiMzM3YjQxNGMyNDQ4NTMxOTkzNDViYTZlMTU3YzVhZTRiNmMwM2ZkYTgxY2I2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjJiMDEyYTJlNjk4YjJjNmI0ZDIzMDg5ZjY1ZTgwNWM1YWI1ZTYzYzljZjU2NWM1OTVlOTVlNDUwYzc0YzVhMiJ9"
+        },
+        {
+          "resource": "repo://openhands/mcp/client.py#L33-L55",
+          "version": "repo-lines-v1:sha256:16892412bf73ab0983c3320ab157b1ffeb7b2fdd391647d0db2a36394d8552d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlNDUxNDE1NmRiYWMwNzU3MTIwZTcwMDM3OGRmNTVkMDliZDhhMTZlNmMyZjBlYjQ0YzAxYzFhYmY0NzE4MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzNzMyMDBlNmE1MmRiNjdhZjA3MmNkM2M1NzZmMzA4NWYxYWI1ZDBkNjFiZDY4MWEzMGNmYjcwMmRhYWRlZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliMGE1ZTk1YTg5NDUzZjE1YmQxYWMwNWJhZWY3ZGRlZmM1MDZjYjVlZDIyMDEzZDI4YTUwN2FlYjhiY2E3ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5NGZlNDczNGNhNTU4NmZiOWI0ZTFhYzhkZjI3NDRlMGQyY2QwYWVmYjZmNjc2MGNiMmYwODEyM2MyMTY5MDcifQ"
+        },
+        {
+          "resource": "repo://openhands/mcp/client.py#L57-L62",
+          "version": "repo-lines-v1:sha256:d30a0baa44729258a46c25e43436b20b9d241d12444af0ae0cea49df04ecb546:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQwZGQ4ZWVhMjk4OWRjODg5NmU4N2Y2ZjAxMDU2YzBhODM4N2Q4MmFiMDA1N2Y1ZDZjNDJhNmMxOTdmZjA4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzAxNGFlYjAxNWU4YjhlNzEwN2M1NDI2ZmM4NjZkZmY5ZGJhYzI2MGM2ZjExNmFjMzU4NjFiNzA5OTk4YzhmZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWFkZWU0ZTA4NGNkZWFhZTc2YWVjNjA4Nzk3NjkxODc4ZjA1ZTBjYjYzM2RkMTZkZGIzOTE3OWRlM2U4NmVhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGFkMDBlM2U2MjQ3MzcwM2U2NjU1NzJkYmU3MmUxMjA1YjI1NmQ3MzBlOGI4ZDAxMTNiMTczYzk4ODEwMGE3OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7152fcaf4724002af350b6f27dffe67",
+      "statement": "A tool call is an MCPAction that the runtime sends to call_tool_mcp rather than run_action, and the call creates MCP clients for the current configuration before finding the client that owns the tool.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L206-L240",
+          "version": "repo-lines-v1:sha256:ede9a186b496066e358fb982bd0c4a88a2c8b810814ef79ca83bf37f1f80221d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyNDQzNjdjODNhMTBhOWY2ZWM4Mzk3MTZmNGM0OTM0OWU3NGExMjljMmM1Y2ZlZjgzNWFlMTY2OTBmZDQ1NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YzE3ZWZhMjc4NGU3MjFiMTZkYTUxN2I5ZDYxMTFlMDJiZmQyNGE5NzlkZWEzY2FjMDcwMGVlMmI2OTU3ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2ODc5NTk3NjRhYTcwNmU4MTljZTZlZDljOWVkM2JiYTQyZGJlN2I1OGNhNDVjYWEzZDZkY2E4YjA4MGQ1NGEifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/base.py#L361-L370",
+          "version": "repo-lines-v1:sha256:654bba8b417f43252c08010d5e1ae0ec6233016011e7bebc8c94966f2443be76:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNTc5OGUzNWRhYjQ0NDIyNzhkOTU3MTRiNjc4NTY5NTBkYjljYTliNDQzM2I3NjU1NmFmYjMzYzUyNWRiMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1N2QyYmZkYWI1ZjI1ZTc5ZTIzZWI0MjlhMjg1N2EwYTcxOTc3NTM3NDA0N2ZiNjViZGM1MDU0ODkzMzQyMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNjcxYTUyYjYwMDk1NDNjNmI2YzBlMzVhN2EyNzVlMWI4YzhlMGUxNTVlZDIxM2JhY2Y5ZWU4MDA4OWM3MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3MzUyY2M1NDg4OGVmYjk0ZTRmZTk4YzgyMmE0YTViOTVmYTFkYWQzMjE5MWFiNmViY2NiNTZkOGNiYmE1MWIifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L462-L478",
+          "version": "repo-lines-v1:sha256:fb42961aa1df680b1f827fe104b36ab92c479f5d0700da09075a2a7ddd3022ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMjkxNGM3MWRiYTZkMGI0ZjA1OGY0ODcxNjJlNWQ2N2UwNWU0NTgzY2MwMjliNzc0N2NkNzQwNWUyMGMwMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyMDM1NDNiYzViMTdlMjcxODk4MDQyM2YzOWNlMjg3YjZmOTNkNjlkMmRhY2NmNGZjZmU4OWU3YWJjYjBiNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwMTRhODczM2E2YjdmNmJhNmE5MTIwYjhiYTczMjg2MDc0ZmVhNDQ0ODQ1ZjM2ZDg3NzI2ZWU2ODE2MDFjMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjMGY1NDMwYjU5NTY5YjdiYTFiODQ2YjI5N2Q3ODE5NjJkNjg0MjJkYWZiZTExZThjYmNiYzU4YWE4YzcyOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f68a3195c5164c00aebdbaedf27d6947",
+      "statement": "OpenHands runs a FastMCP server named mcp at /mcp, with create_pr, create_mr, and create_bitbucket_pr tools that use the caller's provider tokens and raise ToolError on provider errors.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/app.py#L37-L37",
+          "version": "repo-lines-v1:sha256:e4f7b82ac206727afc1e1b997ce2e34eaa53edf2bc3f116395a415c2885573da:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRmN2I4MmFjMjA2NzI3YWZjMWUxYjk5N2NlMmUzNGVhYTUzZWRmMmJjM2YxMTYzOTVhNDE1YzI4ODU1NzNkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRmN2I4MmFjMjA2NzI3YWZjMWUxYjk5N2NlMmUzNGVhYTUzZWRmMmJjM2YxMTYzOTVhNDE1YzI4ODU1NzNkYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjVlYWE1NTdkMzkwZmQ5OTU3ZTJjMTYyNmRhODNiZTBiYWNmM2QwMjNkYWU2M2UyYzIxN2FmZmIzMjY4NGNlNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWI1MDRlMjBmMTcwZjBkOGU3ZjJiNGExOTM2MTUxNDVlODcwZTZiNTcyMDgwYTAzNWYxMGQ1NGJhOWJlYzM5OCJ9"
+        },
+        {
+          "resource": "repo://openhands/server/routes/mcp.py#L151-L152",
+          "version": "repo-lines-v1:sha256:f6d039a662ec310b72ac0005ddb7d2cba50c6ea5dacd82f1b44df20e7823d9ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQwOGZlNjBmMGEwNjRmNDBmZTA3YmE1MGE3ZTM1YThjYjc0YjY5NDI5MjE2YmFlMzJjMTYzMjQ1NzY1YWQ1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGZlODQ0YWNhMWZiNWIyYTQ2NDg4OTZkYmM5MTRhMzEwOWUwZmIzNzA2ZGFiODQxMDBhMDYzMTM0NmU2ZWY2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzMwMzI1Zjk4MGI0YWJlMGE1YmZkZWIyZDNlYjkzNDg3NmQzYTA0MzMyNTY0NDQ3MmMxMzZjY2EwMmI5YTgwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTAyNDhjNDcyZTQzZTYzNDY0ZThmMmRiOWZkZTFlYWZhNjE0OTU1YjBhZDM2NmQ0NzY5ZWMwMGE5MmRlN2QyYyJ9"
+        },
+        {
+          "resource": "repo://openhands/server/routes/mcp.py#L225-L226",
+          "version": "repo-lines-v1:sha256:5c60ca28e382e450f85c418509b1fbd5a8a80e733a414c1cba2bada5e924bf20:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQwOGZlNjBmMGEwNjRmNDBmZTA3YmE1MGE3ZTM1YThjYjc0YjY5NDI5MjE2YmFlMzJjMTYzMjQ1NzY1YWQ1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTg1MTAyOTQ0ODY0MzkzNzU5MWQ3ODljZGNlYzkxYmY4ZDYyZjJiYzk2MjM1OWU4YWU1ZWM4Mzc4N2EzMGE1NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzMwMzI1Zjk4MGI0YWJlMGE1YmZkZWIyZDNlYjkzNDg3NmQzYTA0MzMyNTY0NDQ3MmMxMzZjY2EwMmI5YTgwYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmFhMjBjOWYyZGVlY2QxOTJjMjBhOTc3MTEzOGYwNTZjZjExODhhZjAyNDFmYjhhN2NhNDEyYTA1ODk3MWY0MyJ9"
+        },
+        {
+          "resource": "repo://openhands/server/routes/mcp.py#L24-L30",
+          "version": "repo-lines-v1:sha256:e642009c93bebe297fdeead6102052f91c9834beafae79865dd8e9d028460c13:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTcyYTQ3MjM0ZjA5NzUxMTc3YjY4ZWY3NjUxNzM3ZDhkMTQ1N2UxNDQ0ZDBiNGFmYWFmZjI2YjhiZTAxYjYyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzdkZGJhZmRhYjA1NGU5MzZkNTA4N2U3YWE3OGFlNzM5OTliOTAwNDA5MjMwOGM4M2VjMjA4OWNhYmMzMGQxMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWM4OWJmZjUwZWRkYzQ4ZGY2ZDZiNGMwMzdhNDI5MDRhZjE4M2E1YTFmMjAxM2UxZTkxZWMzMjZlMTU2NzAwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmZhYmEwNGM0ZWYyNWNkZTJjZGFjNWI1NzEyZjZlNzI3M2IwOWY0YTQxODE4NTMyZGYyZjUxNmQyOTIxYWJlNCJ9"
+        },
+        {
+          "resource": "repo://openhands/server/routes/mcp.py#L83-L84",
+          "version": "repo-lines-v1:sha256:ba31e705ba2734410f5e9a8670a95702d837c240ce3cfb3476c04e71ca9689d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQwOGZlNjBmMGEwNjRmNDBmZTA3YmE1MGE3ZTM1YThjYjc0YjY5NDI5MjE2YmFlMzJjMTYzMjQ1NzY1YWQ1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFiMDdlYmFhM2Q1Yzg2MTFiNGI0OWEzMzZkOWRjYzczMTY0N2U4ZGUxOWQ3NjQ2ZTMwYjk4ZjllYWU0MzE5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWVjMWMxMGZhOWZmZGNiNGI0Y2U3ZGZiYmZlZGVmYjNmZjJjOGQzNDFmYmQ0YjNjZmI2ZjQyMTQ5Y2Y1NDJiYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzM2MGY4MzU1N2Q0NTBjZWJkNzg4ZmZhMDQ0M2ZkOGIzMWIyNTczZjBkOGRkZjJlODVkY2VjODBmZjE5ZmNjYSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

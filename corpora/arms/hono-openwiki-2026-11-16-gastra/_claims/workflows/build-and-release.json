@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f2b21e676b3a142c0e4e5b618ad5ad280b71862df4729d14b996417eb485c609",
+  "claims": [
+    {
+      "id": "claim_92d5cfe3d9994fe89bf0ff67e994f6d6",
+      "statement": "The build command removes dist, runs the Bun build script, copies CommonJS markers into cjs and types output, and defines publint as postbuild.",
+      "evidence": [
+        {
+          "resource": "repo://package.cjs.json",
+          "version": "repo-file-v1:sha256:8005a3491db7d92f36ac66369861589f9c47123d3a7c71e643fc2c06168cd45a"
+        },
+        {
+          "resource": "repo://package.json#L29-L36",
+          "version": "repo-lines-v1:sha256:4c64d1af541e968326a02a1d2993cc50665cf3cabc3e788ad2d5a25124d2da40:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U5ZTM0M2Q5NmZiYzY5MzlhNWUxYmY5Y2FiMzZlOTA1Y2FiYmMwN2RhNjFiMjY0NjM5NDc0NzVjZTg5ZmNjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTE5YTNlZDNjN2RlNzE3YTUwMjY1YTY2MmRiYTNhNjgyYTA0M2VjZjZmZTk5MmIyNDljZTg5MjBlNjI4OGFlZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDgzNTlmZDkyNmQwMDgxZDllODlkMzFmOTA0NWMwZWVkMzU5Yzg3ZGFhYjdiOTc0N2U0ODNhMzgwZmJjMWY5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGJjZDg3MzlhYWE2MjQwNTFmMDg3YTdkODAwYzQ0ODEyYzVlNjMzN2ZiZmE4MDU4MmMwYzY1MDMzNmQ4NjU3YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c81803e3ec1c435c9b29894915fb1499",
+      "statement": "The build concurrently emits ESM, CJS and declarations; the ESM resolver rewrites extensions while marking module imports external.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L45-L114",
+          "version": "repo-lines-v1:sha256:304b051b3ffe8aebae9e775441c9a35636111d06c771625ea3c486ca1d46fd90:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMDlmYjYyN2MxYjU1YzM5MDllZDU4OTNmMWY3MjE4ZDgwNDY0YTM0NThiZmUzM2Y3NzU4YmEwZDQzMTVjNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjMjBjZGM4NzNlMDNlYTE4MjRkZTk4N2U3YmM2MWEzZGZjNTQ5OTEzNmVmMWVhYjQxZmUzYzNiNWQzZmE1ZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3M2ZiMmE2NzYyZmFiZmQxM2JiNDhiMWU5NTdhZjQzODA3MDY0NGY0YjUyZjE1NDAwMmRlMDRlZGMzMDk3YjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_300a650ff5b54c8a926cbf5fe53f95a5",
+      "statement": "Declaration generation excludes tests and private-identifier fields are removed from emitted declarations using AST-guided whitespace replacement.",
+      "evidence": [
+        {
+          "resource": "repo://build/remove-private-fields.ts",
+          "version": "repo-file-v1:sha256:ebfc7dd9ac802a0cadbcacaa3c2b3f5afbb07bc5f08c3a6b8a31623cd866fdb6"
+        },
+        {
+          "resource": "repo://tsconfig.build.json",
+          "version": "repo-file-v1:sha256:e3105932180e5845959744d315a68fbfe887abc592eb795d0fbf0444996f418e"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c27e0247576404f8f32ad688cd10b4b",
+      "statement": "The build checks npm and JSR export-key coverage in both directions with wildcard support, rather than comparing implementation targets.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L20-L26",
+          "version": "repo-lines-v1:sha256:b156c0232c2fba3f08214cef858341fbc1bc8b1691aaaa58226e926ad4c26f47:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTE0ZmVlYjI3M2ZlYTc1YTg2ODQ0M2E0ZmJkM2UyNmZiNDhlYjVkZGJmOGI3M2I3OGQ2YTk2ODk2ZjI0MzQ3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc0ZmY4Zjc4N2U1ODljODRhYmQwMDcwM2JlYjFhZjFjZjIxM2E1OTE3YmZmYjFhNTkwNjRkMDZlNWJlYzBmMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTNhNDVhODg0MjA3YzhhYzRkZmUwM2I3MTExMzI5NDI5NDFlODJlMzFhODEzN2FhMWIzMTJiMjJhMzNkNTVjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWEwMGFlM2ViZmQzMDY0ZjNkYzk0ZjI5YWU5OTM0MjYxYzE0N2VhMTQ3ZWExNDFmMzJmYWE4YjU1ODhhOGI0NSJ9"
+        },
+        {
+          "resource": "repo://build/validate-exports.ts",
+          "version": "repo-file-v1:sha256:ff840cad785fc1f7d0c6ec5b7c2f6845423fd5ffbbc58ce400ecfd2f7e30af0c"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d54fb944ada4641a9fa5d5df893157a",
+      "statement": "npm publishes dist with types/import/require targets, while JSR exports point at source TypeScript and exclude test files from publishing.",
+      "evidence": [
+        {
+          "resource": "repo://jsr.json",
+          "version": "repo-file-v1:sha256:cc2619ca4018eb8f9c3f35b89c8e212a6eb960b4b719e8b1828231eb98f6c624"
+        },
+        {
+          "resource": "repo://package.json#L38-L57",
+          "version": "repo-lines-v1:sha256:6f7b0aba88e890cb617537fefb7a490fd52249d359ed69fd2887eacebf0bbf8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMDViYjlmNGE4Yjk4NDUxMGY4MTVhNWZjNDA3OGQ3N2M1YTIwZTkzZjMzNzNkYzVkZGU0YTM0MWQxYjQwYzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1YjVkODg5YzEyNjI4MTgyZDQ5N2NiYjA2OTA3YTFjNzRhYzA5MzM4YTNmYTE3NDY0YzRmNzBiNWQ1MGU4NGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkZWYyMDM0NTU1NjY1ZjhiZjQ1YzhkMDA4YTQyMmQ5NGE5Yzc3MTZlYWUyMjQxYjlmOWI0ZDFkYTYxNGVkMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjODQ5ODQwMzk3NDBkMzUxMGY2MmFiNDgxYjJjYjE5MzI4MjYwOGM5MWIzYWY4MzNkZmZmNTI3NzcwNTQ3NzgifQ"
+        },
+        {
+          "resource": "repo://package.json#L5-L12",
+          "version": "repo-lines-v1:sha256:3ff0b891f088b9b6ccff27675e1aa595a83e3024b8ef9a08852c03eba7b9a943:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFiZmM5YjRhNWU0Y2ViOWFmNzAyNzJmOGE3ZjllNzI1YWNlNzFjY2M3ZGFkNzgyMGI0NTI3NmNjNzkzNTcxNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY0ZDhjMDczNDI5ODkzMTAxNTc2ZDg4ZDk5MTI3ZTg5ZDY4OTFkM2IxN2U4OWRmMDJlYzlhZTcwNzA1ZDhiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTQ2NGFiMWRhMzQ5NDRmMmNkZTMxMGNiNzZmYzliYjI0NmY4MGU3N2YxMGZjZDY5Y2RhZDdiMjc0YjQ5YTY0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2E2NzVmMGY2OGNlMDYzZDNkMzZkMzdmYzI2MmI3YjVkNWEwZmZmMGY5M2RmMWQzNGIxNTJhNmFmMTMyOWZlYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b2f2523031e4194be4678241ed8a5e0",
+      "statement": "Local release invokes np --no-publish after a prerelease script containing Deno tests and build; pushed tags trigger separate npm and JSR publishing jobs.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml",
+          "version": "repo-file-v1:sha256:a74c8abd8346530a42e8f56ed5abe9be6c44c794f113522f4d6fb232e1164133"
+        },
+        {
+          "resource": "repo://package.json#L34-L35",
+          "version": "repo-lines-v1:sha256:cb6c255b488300c0f0146d78c6c966fdbd0bd99f2fba41387ec02caec7c6489f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWM2ZTVkNmM2ZTNmZDdkYzEyM2RlYmRiMzBhMjZlYjgwYWVjYmFhODI5NTRjZGNlOGExZjUyZGU3MWQwNjg2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGUzOWZhZjA5MDZmZDY3MWNmMjg1NzhmYWE5NjkxMTZhNzg0NTY1ZDk2NmNlZmFiZmQ5ODk4MDFlNWVlNDZlMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjZhMWI4MDkxOThjODQyYWE2YzdlMDNkZmU4Y2EwZmYyYzY2MTg1OGE3YzNhM2Q1MGM3MGU5YzZhOTQ0MjcwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODVlNjY1YThkMDE4YzNlNDRiNDBlMmFkYzczYzRiZTM1NzU1ZjBkMGE5ZjcyYmJkNjUyM2M2ZjRjYTljNjAzYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c60918365cf4f5cb1c1ca3a765ed3ab",
+      "statement": "Continuous-release automation builds and publishes via pkg.pr.new for upstream main or qualifying cr-tracked pull requests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/cr.yml",
+          "version": "repo-file-v1:sha256:a9c923ffc2f1fcf47383a20c7b8b84f1f81e7f529572212b0525efe6a3718d7a"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:36:56.362Z"
+  }
+}

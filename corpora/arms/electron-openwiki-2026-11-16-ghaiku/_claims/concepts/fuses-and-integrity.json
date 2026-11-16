@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5daa42575d24c3e09a9b91a12f89a4350d68627b28895ea7e2f975e4f67f3684",
+  "claims": [
+    {
+      "id": "claim_52039402be604323b99f222a0ea12b5d",
+      "statement": "Fuse defaults are declared in build/fuses/fuses.json5 as single-character values, with _version giving the wire version and a comment forbidding removal or meaning changes to existing fuses.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/fuses.json5",
+          "version": "repo-file-v1:sha256:54b905d53aaa1974297cd60ad84141db8490becbf71d752401f5aafaa15cfb8c"
+        }
+      ]
+    },
+    {
+      "id": "claim_45eb3e72c57647349c41abaa249fdf3c",
+      "statement": "build/fuses/build.py reads the defaults, strips the schema keys, and emits a kFuseWire array with a sentinel, the version byte, the wire length, and one byte per fuse.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/build.py#L51-L72",
+          "version": "repo-lines-v1:sha256:c3924f77af97c6680f90509c2c3eef41107e0242e712a0b4011327f192ef6b9c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4YTUxMDA0YjVhMDFkNWVmYjk2MWVkYjEzNWZhNGQ5MWI3Yzc4YmQyNTY1ZTExMmM4ZTIwNTc3YmRiOTRhM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YTk1NjQwZDk0YWI3NTM1NGRmZTJkNmVkMDQ3N2Q2ZTA1NzNiNmQ3ZDhkMTAwNjhmMDlhODIyNThjMTNmMmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMTUwMjlkNmY1NjY5N2Y3ZTU0ZDU1MjFiMDg2MzgwNDViY2Y3NTNlNjE5ZmJlOWQyYzU4NWZiYjU1MGM0N2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2NGFjODIyYWUxNTg1ODVjNzc5MmIyM2NiZDExNmI5NGU2NWFjNWZjMDY1ZmU0MTUwYzdkMTEzZTIyYWM5ZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_42c277ab02c24e4ab38a166d13f66396",
+      "statement": "Each generated Is<Name>Enabled getter reads its byte from kFuseWire, and in DCHECK builds it first honors a --set-fuse-<name> command-line switch.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/build.py#L70-L100",
+          "version": "repo-lines-v1:sha256:3adac86f92f9661237d84940b79f1cc86b8a06ea92d39e89274de03cfb7e6c10:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyMzY3YWU5MjRhYjY5OGQ2OWYzZWRiMDZjZmFkMDFhZjhmMGVjYTI3Yjk0YTY0ZTA4NmY0Njc3NmRhYTNjOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZjQ5ZDg0Zjk3M2FmNDIxYmNkMjQ2ZDc0NDAxNjhkMWJmOWQxMGJmOWM3OWVkZDllYjMxNzFkNTYwNjE0ODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0Y2U2MTg0MjhjNWUxOWI4MWZmYjBlNGEwNGJiODUxNGIxNTk4M2E2YTVlOWI3ODdkN2VhN2QxY2JiZWRlMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwNGQwN2UxMmQ0YzFkMTYzODQzYjlkMWQ1ODNiYTQ2NzU3ODIwMWE5NWNlY2Y5NzJmY2FlOGVjNTBhMDFjMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4b2816f55a14764807308bf568a166b",
+      "statement": "The generated fuses.h and fuses.cc are produced by the electron_fuses action in BUILD.gn from build/fuses/fuses.json5.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L395-L404",
+          "version": "repo-lines-v1:sha256:812f74592d369b94afc1230177423bf288660367070b2e98d24681954dcf4dd8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1OTNjZGQxYjQ1M2VjNGQwY2Y3NTViODAzN2M3NDZjZDhkMTBjNGFjYWM4NDkxMmZkNDg1YTRlYWNiYjk1NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhOGYzNmFhZDRkZTQ5MjM5NjAzYjU2NjM2MzQxNmEwMmFiNjAzYjYzMzIwZGRmODdlNGIwOGExZWI5MDM5NmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_218316379241472d9dc06f8fedeecd91",
+      "statement": "The node_cli_inspect fuse controls whether the inspect debug options are honored by the Node bindings.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L384-L388",
+          "version": "repo-lines-v1:sha256:5dbcc1cf557bca4b4a1a0532c29e3bc44c784d74ca6687d0a69b01deba4fd7fc:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE3YWYxMTAxYzk3YjdjMmY1MjU0MDc4MmU2MzRjYzQ0NDBmMGU5NzAzNDFlNTJmOTc1MjMxMWQ3OGI3ZDdkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjlmYjI2NTgwZjIzMTZkZTA2MGU0ZWE0Nzg2Y2NmYjhiYTE1YzRiMWI0OGU5NDM0OTNlMjRmNzAyNzc5NjU4NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTdjZTg5NTFlNDdiMjQ1NGExY2VjYWIxMGY1YWQzMDMxMDQwMWQ2N2NjMGRlODY1N2Y3MjZmMzAwODQ2ZjUxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ab32580494fc49c98b752570037dd335",
+      "statement": "NodeMain removes NODE_OPTIONS and NODE_EXTRA_CA_CERTS from the process environment when the node_options fuse is disabled.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/node_main.cc#L125-L133",
+          "version": "repo-lines-v1:sha256:0633588ed8595f36a095ecc54a3c57f4df501484739ffbcca94a0e406835dd99:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQwNjExYTVhNDhlMzkzNWMwZjc0M2I5NzA3YWEzNzU5ZmIzNTAyNmQyNWVkMTEzMTI1NzkxNDU3Y2RkZGUwYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjRjNDkxMTY2ZDFlNDg0MGUyMDRmZGQ5MmE2YjcyYjFjZTAzMDliZmNhMTBhZjMyZWZkMTcxNjJlMzQ0M2M4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I1NGI3YmUwNmVlOWE5NzU3ZmY0ZmQ2YTRmNDI1YTAzZWQ3MTlmYzRiZDRlMTgxNDAxYzlkOWI5NzZlMGY4MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a23b02412dde44618d0cfb9fb7893f6d",
+      "statement": "The grant_file_protocol_extra_privileges fuse decides whether the file protocol factory is replaced to load asar files in the protocol registry.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/protocol_registry.cc#L24-L30",
+          "version": "repo-lines-v1:sha256:c2b44c9f9d4f180f0576a73a9a288c6dbeb65b6bf4cc37ca0d3359e3b8ddf23f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNlYTE1YTEyZmJmM2I5OTNjMDgwZDUwZjg0Mjk1ZGVkMTAyODI1MThhNDQ3MDY2YmNiYmU2M2Q1YzVjNmNkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ZiZmNhYWY5NTMwMjkzMTYxZGUyN2Y1NjMxZjgzYzg3YjNhN2Q0Njk1OTNjMjFkOGJhZDcyYjY4YzgzYjMxNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDNkMzc3Nzk1OGRkYjVlNTM1NWVjMDAxNTZlYzQzNjQwMjBiZmMzNGZjZmI4ZmIxNjYwMTQ3ZTQ0N2U0MzNmNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2VkMTA2ZmRkOTY4N2IyYzJkMzhhYzU1M2E2ZmM1NGI3MjQwNzE3NDE0ZDYxMzNiYThhODhmNmE1OTM5ODZlZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a0db718c1864df3ba70eca72ee4ec26",
+      "statement": "The cookie_encryption fuse sets enable_encrypted_cookies in the browser's network context parameters.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/net/network_context_service.cc#L113-L117",
+          "version": "repo-lines-v1:sha256:9dc1f860dce93ac1bdd279777c33d0a35d9fd2578c5c734991e079e66ac34329:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWRhMmU2ODYzZmI0ZTc1MDE4NDRjMTIyYzM4MzFlYjQ0NmFhZjk2ZjFhOTJlYzMwYmQzZjYyMmFmNzNlODBmZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjhjOTM1ZmU5OWU5NmRiNzJlMDFkMWI4Zjc0Njc2MzU3ZGEzMjA1MDg2MTE4ZmNhYWJhNzhhZTMzYTBiOWE2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTg4YmIxNDVlN2Y1YmM4ZDhlYWM1YTNmYjQxOGMzMzBiMDM2NGMzMjM2Mjk5YjQ4NmIwZWNjNWExMmUyZWFkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a3cae39591db4ec58a0600cb68a5348a",
+      "statement": "The load_browser_process_specific_v8_snapshot fuse is checked in ElectronMainDelegate when choosing the browser process V8 snapshot.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L436-L442",
+          "version": "repo-lines-v1:sha256:c2d1a999210bbae54f39c4baa5e72e4f5f6415d660c0d44fb5baa78b6eaa4b6d:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRhYzdmODJkZDFmYWU1NDU4MzFlM2ZmN2Y5NWM5NDAyYTBiNDI2ZDAxMzRlZTY1YTIwOGQ3ZjVlY2JhZjNlNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDNhMDg2ZmYxOWY4YTJmMWYyMzUyYmE1YzgzMzczODcwMjc4NTBmZTE0OWM1NGM1YzBlYWY4ZTczZTViNWZjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmE2NDE4YjVmNTA5MTRlODlmMWFjOGNiMjhiMzU4NjhkNTI0MDE0Y2JlYmZhNTkyNjM0YzVmNmFhYWQzMjIyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_be728f68b8694b71b18e8985e2d1b2fe",
+      "statement": "spec/fuses-spec.ts exercises the --set-fuse switches for node_options, node_cli_inspect, and grant_file_protocol_extra_privileges in test builds.",
+      "evidence": [
+        {
+          "resource": "repo://spec/fuses-spec.ts#L11-L21",
+          "version": "repo-lines-v1:sha256:b36406b9e9ba293290e2ae69aebf4bac28aa4d4e0ada4c1f85a5af77b84f10fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZWIwMGE4YjczN2YxNjcwMTkzYjA0YWU5NTFjYWNhOGMwNmU3YjkwYTBhNTE3NzNlMWEzMGExYjg5ZWRlYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZmVhOTY2Y2RjZTIwOWY4ZmVkNWNlNTRiNWQwZTIzMmE1NWFkNjkwMDk1MjhkZjk0MzdiNTFmNTg5ZGUxNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5ZTU5MjE5ZjA2MjQzM2VlZjA1MjY5MzgzMGNlOTAyMjg2MmRjZmNkNTI5M2ZlNTBmYzI0NzkzOTAwMTlkNzEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

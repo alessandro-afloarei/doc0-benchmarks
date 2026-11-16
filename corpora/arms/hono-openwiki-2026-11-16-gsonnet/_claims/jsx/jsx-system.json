@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8db0e18d5d93b91588f97b23e6ea396b47b7d946e94d74f630fcaa1b5a9e0a9d",
+  "claims": [
+    {
+      "id": "claim_6eee2743b8f3470c9ef1ca0d5329f463",
+      "statement": "jsxFn chooses node classes: function components and registered intrinsic components become JSXFunctionNode, svg and head are wrapped in a namespace context, and other tags become plain JSXNode; JSXNode rejects invalid tag names.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L140-L152",
+          "version": "repo-lines-v1:sha256:1032488f1485cded60d95248aac1b6888b954c9f8a985ca979d3c28105193c55:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MDE2M2E1NGJiMGZmYjg4M2ZmZDIyMDBhODMwYTkzNWVkNzE5YmFjMTFmMTM3MmM0ZWQ3ZmQyZTliODkwOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ODY5NGVkNDAwZDUwYjQ0MTVmNzk2ZDdiNDVhOTcwZDM5ZjY1OGZjOWZmOWIwM2Q0YmM0YTY4ODA0MjRhNzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2ZmMyZTNmMjQwNTFiNDMyZmRlMTYwMjkzZTk5Y2NmNjU3ODEwODk0OGZkZTcxMmUwMzIyYmRiOWU2NjU0ZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzZTMyZjAxODFiYzA4NDkxYTA5YjJkMjQ3NGJhY2ZjODQ0M2JiMzM2MWI2OWIyNmY4MzZjOGI0NjFhZTRhYzUifQ"
+        },
+        {
+          "resource": "repo://src/jsx/base.ts#L319-L352",
+          "version": "repo-lines-v1:sha256:1ea461feea57836d638aca31283b616bec37850ed1a446ed7325069564be6be3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhYzhlMTIwOTdmNDM1OThiZGE3M2QyMWE3ZTE5N2MwMTEzMDU0NGYyYWQ0YTI0Njg0YzRjZmNkNWM0OGEyODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2OWQ5YTNiMGU5NWZjNTA4MjUwMjVmZTNhODBlMDcxZjM2NDk4YTgyZmI1NGQwNTZjNTcxZDVmMjFjYjEwN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjOTg1MDI3ZTMxZTU5YjQ4MGU0MDA0MDEyMjQ4NGFmMTNmOWZlZWJiNjA2ODkwNzIzOTgwMDk2MmZjNGM3ODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56dc102b231e421ea73d0be056fd9160",
+      "statement": "JSXNode.toStringToBuffer escapes string attributes, serializes style objects, skips invalid attribute names, rejects function-valued props except on*/ref, forbids combining children with dangerouslySetInnerHTML, and self-closes void elements; async components make toString() return a Promise.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L158-L252",
+          "version": "repo-lines-v1:sha256:3c7ac38f93fc03c22ad4804cb9e49924d6695f1e8e32bdb3d91b6b11be5d44e8:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmZWE3NzBkNTBhOWQ3ODNlNzJmZWJkZWYyNDZiNTliYjliNjNlYTY4ZDY1ODQxZGM1OGJjM2ExYWVjNzEzMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0NDhlMzBhMjk2ZWE1NzUwYTJmNmIyZmViNDRkZDhjODZlNDBiODNjZWM0NzgxYmYyMWYzMjBkNTgwZjk3NzQifQ"
+        },
+        {
+          "resource": "repo://src/jsx/base.ts#L254-L296",
+          "version": "repo-lines-v1:sha256:1a9039bb4b0aaf54d7b5b9d95def82603829361449368bbc71f2b67943a45b68:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYTY1NWQ2OTBlYjU3YzkzMmIzMjE5MDFkNTczZjNmYmM5Njk5ZjU5OTllMGEwMjQyM2FlMWI2NjliNDhjMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1OGQxNmZjMDhhNzM2ZmNhYjVmZWI3YTMyYzg3ZmRiM2JmNzcwOTE1MTI5MjNkZDY3YjM2YjA4NWI3YmIxMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_204102a8fd5c41159fca0a0861e9c530",
+      "statement": "JSX contexts store provider values in a per-render WeakMap store propagated across awaits with AsyncLocalStorage, probed lazily without static imports; without AsyncLocalStorage a synchronous fallback store is used and post-await reads degrade to defaults with a one-time warning.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/context.ts#L13-L120",
+          "version": "repo-lines-v1:sha256:153f1f07bdc4c6c2dfd23ccaacca2acb0a1c7ca57cac79b43c6f339ccd079049:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyMmQ3ZWY3NDBiZTEzODI5MWVhZWMzODA1NDY1OTRmZGUwYjQyZWRmMWEwZmM2ZjI2ZGZmMDY4YmQ2ZTY1NjI1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJjZWM3YmU4NGRmM2ExMGM5M2ViMzU5MjRkZjA2NDQ1ODlhZDg0NzI2NGE3M2RhOWQwZWYxMjA4ZDE2ZjMzYmFlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4MDA5MmJhYzZmOGQ2ODlmYTU5MjBhODg1NzJjN2VlNzdjYjQ3ZjRiOWQ1YzM1MjU4NGQ5MjYxYTBhNGEwN2IzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxN2QxMTZiZWYzZDdkNjA3NDA4ZTM0Yzk1MDlkYTVkMjNiODY2NzUyZWFlYTUzNTczZjEzNmIxOTM5NzJlM2I4In0"
+        },
+        {
+          "resource": "repo://src/jsx/context.ts#L161-L195",
+          "version": "repo-lines-v1:sha256:44fc707d0a64be2fc3190b10af0f34e2c008dcd9118d70ef15811aa4bc6ea472:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZjJkNjlhODA3NDA3MmEyNDljNTIwMjljZGE2M2I2ZTAyMjg0M2VlODcyYTkwMjg2OTU4ZmVkNWUwOWEwNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzODZhNTc0NWQwMzkxYzEzMGU3Njc2Mjc3ZTNmNWVlNzVlODFmNTI0ZmQyMzU2MjRiMTM1YmEyODZkMmQ3NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjODk4YmUyNzFkYWY1M2NhNTc4NGQxOGQwMjJhMDg4OGUxNmFhZWViZjNlYWMyZDI1OWExZWVmYmYxNzUwOGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e7645589d534256ae29cfa99072bc4f",
+      "statement": "captureRenderContext snapshots current context values so suspended async subtrees resume with the correct provider values, and Provider push/pop operates on the same array even when the pop happens asynchronously.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/context.ts#L120-L160",
+          "version": "repo-lines-v1:sha256:5141e5c44e789cca14f11a1e3e8e14a1bba9b27db411fdc3a51a8918c1a26679:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlYzdiZTg0ZGYzYTEwYzkzZWIzNTkyNGRmMDY0NDU4OWFkODQ3MjY0YTczZGE5ZDBlZjEyMDhkMTZmMzNiYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4YTRhODNiYTFiMDY2Zjg5ODBmY2NhZmNiMjA3ZWY5MzFmODVjNjVmMDExMzM5YWFiZDlhZWVjNmNiMDIxZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhNTIxYzA5ODU1MzAzNDExZmZlZDc4ODJlNTVkM2ZjNjJjMmVkYmYwOTdkNGI0ODdjNzkwYWVjYWU4Y2ZhYjUifQ"
+        },
+        {
+          "resource": "repo://src/jsx/context.ts#L196-L257",
+          "version": "repo-lines-v1:sha256:402971d9f0f6a3a8e100e846624192accc20d2dc993b0fbfe96420207262a541:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMWIwNWU2ZjRhMTc5MTgyZjA4NGIyMTRiNzIzNDVjMWM2ZWE3YzE3NGU3OGYwOTA3YWUwNjQxMTk2ZWM4MWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExNzVlZDFmZDIyMTk3MTZkYjY3ZThhYWM3OTI2YjQ0YjlhZWE5YjAyZjM1N2I2ZmMxNzE3MGVhNTI1NThhNjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwMzM4Yjk1MjIxYWM2ZmE5ZjRmNzM4OTExZTdkYWI3YTE0ZTY5OTY5ZDZhYTQxNDMyOTgwNTJiZTQyZWNlMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0YzJmZTYzN2VkYTQ0ODdhMTVhNzI3N2E3NDNjNzM1NzgyMGU5ZmFmMjJhZjc3ZGY4MTVhNGY0NzY3YjEwZjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e219fee12524413693ce0e0357512391",
+      "statement": "Server Suspense returns the fallback inside template markers plus a callback; during the Stream phase the callback emits the resolved content in a template and an inline script (with optional CSP nonce) that swaps it in, while in Stringify mode it substitutes content directly into the buffer.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L30-L145",
+          "version": "repo-lines-v1:sha256:d870d434e25bebd7496bf31987f37fb4145347d9ea47b69c4b235ecbcd30df99:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1YTkwNmVhNDBlZTFlMDU4OTE0N2M5M2YwNWI3NWMwYTE1YmFhYTU4ZjhjYWMzMWVlYWQ2NDU2NTk2OGIzZDkzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI5NzJhNDI5MzgyYjJlMTQ3MThlMGUzN2IwNTcwYThhMTcwMjk5MWZjZDg0OThjZDg0MDYwYThiZjRmMDUwMTdiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4MDRiZDEwMGEyNDc1MDA4OTJlM2QyOTlhZjAzNjZkNWI4ZDU4ZTY3MzhmZjUwZTJjMjA2YmMzMTAxYWRlZWU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmMTZhMDRlMjZlODE1YWQwMDI4MzYwNjI4NTMwZWQ5Mjk5MzAzODNhM2M0OWNjZTRlMGMxNmUzMzdkOWE1MWFhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_986cc075042142b9b68b4dcabd5be8de",
+      "statement": "renderToReadableStream resolves BeforeStream callbacks, enqueues initial HTML, then recursively runs Stream callbacks, sending errors to onError and stopping enqueues after cancel.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L146-L220",
+          "version": "repo-lines-v1:sha256:4cafcdb7ab6f3af1349e726ae84b9349ba68b45f1d95dbbb4ef12806e8b107a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViOTI5MDBmMGQxNzlmNjJiYWM3YWEwYWUzNGE1ZmYyODdmZGZmZjE3NmI3ZTFhNDNkMWM5YTVlYjA5NTNiMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2NGM1MTJmNTE3Y2I2ODgzNzc4NjY3MDk4ZjliODI3MzkxMjc5YmVjNzIzYzJhMzVlZmUwMDgwYTE2OTAzZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a2027ce58b64458afddf7855452b479",
+      "statement": "jsxRenderer composes layouts via c.setLayout, installs a renderer via c.setRenderer that wraps content in RequestContext.Provider with an optional doctype, and either returns c.html or, with the stream option, a chunked c.body(renderToReadableStream); useRequestContext throws when no renderer provided the context.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L15-L165",
+          "version": "repo-lines-v1:sha256:17a8f8086f8aeadd499bed4b81ddc520fd196f5c827eaf78c6ea2a52589a40db:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjN2E5ODMzNzQ4YTY1YmM1NjY2ODUwOWY4MjU2NjAxMDNkZjBjNjQzYzY0M2M4OTNlYzc4ZTcyOWYxMGYxYzY3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyNGQ0MjY2M2NlYzBiNGQwNDIxYjVhNWNmMTllZWEyYTdkY2E5MTY2Y2E0YTY3NmU2MjI4ZTZmMzQwMTc3YWM3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c107abe02cbf42ca9e79914daa873f77",
+      "statement": "useState returns the initial state with a no-op setter when no DOM build is in progress, so the same hooks module serves server and DOM runtimes.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/hooks/index.ts#L182-L200",
+          "version": "repo-lines-v1:sha256:58040e3174dcec1dcdb750e26cac60a41ca6f2b7bd6a7bfe41263e71729d929f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyYTMwOGEyYWRlZWRiYWQxMzNlNzFkZDI1NDMyNzUzMDE1MGExZWM1MTFmNjgyN2YxNjdhMDY0ZThhZDc3NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyZWIyMjBkNzIxYWM0Nzc1NGI5MDAwZTcxYzU2NjVlMzQ1ZGQ1YjE5OTM0MzRlZDg0YzZkYTY0MmI4NzBiMWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5MDllMDkxZGRiZDdmNzI4ODc1ZTUxOThiZWFiOTMyMDEzZmVmMjI4OTdhYTBmZjkyOTRhOWU3MzdmYTBjODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlMzlkMTg3NGIwMzc1NjNiOWMxNzI2MGI4MTY0YWQ3Yzg3ODEwMzEyZDY0YzI5OWUyZTdkNjBkMDU3OGQwMTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97a7801e31e64c00ad8c2a74c9bc61e5",
+      "statement": "DOM updates are asynchronous and coalesced: update() cancels a pending update for the same node and runs on a microtask unless inside flushSync, which batches and runs updates synchronously.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/render.ts#L735-L815",
+          "version": "repo-lines-v1:sha256:41ada9dc6dd1ec327ee267d97e21160efd82499fe4f25a9a0fb2341301d4a9e9:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0ZDhmMDA4YjE0MTQxZTM4NGI5ZTc3ZDVjZjg3NDQ3YTViZTZjMDBlOGYxYTc4YTAyNzVhZjE2NzI1M2EzZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0Y2Q3NWIxZGM1NzU1ZjAxOTZlYzhkNmNiNTM4ODkxOWVhYjAwMDhkNzI5MjMwOWUzY2QyNzRlMjk0OTRhOWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1NjA0NzgxYTYyNTU2NTU0MDAzNjY5MTUzZTdlNjcyNGQwYTBiZDBjY2FjOThkYzIzMWE1M2IwNTY0ODBjYTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyNmRmN2M2ZWYxNjRhZDA3ZWMyYWI5MmU0YWZmM2VhNjIxODI1OGMxOTE3MDg3NDY1Yzc5ZWU3ZGNlNDViMjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05c5281cb5564008af03583d24dc9d8d",
+      "statement": "createRoot renders by wrapping the node in a useState component so later render() calls update state, forbids updates after unmount, warns that options are unsupported, and hydrateRoot just calls createRoot().render.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/client.ts#L1-L89",
+          "version": "repo-lines-v1:sha256:ffdcc1e0f623b1c0205b3e66415722f71a9318deab3b31d5bdf748c939d7253f:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:09:53.543Z"
+  }
+}

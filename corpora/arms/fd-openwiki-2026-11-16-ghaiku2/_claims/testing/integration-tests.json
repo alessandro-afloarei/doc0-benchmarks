@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1c60ddaa09e1d2e0147b750c296a076c65ababba2722775f94ca34ff52d49e3a",
+  "claims": [
+    {
+      "id": "claim_026afca701da4b009e378dd7b92484de",
+      "statement": "The integration harness creates a temporary fixture tree with a .git marker, a .fdignore and a .gitignore file, and a symlink to one/two on Unix.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L28-L63",
+          "version": "repo-lines-v1:sha256:04a1cc106870d877fb10553f7b8c4cf69a5ee525b0f3e97b9c2037abf7b3210b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNWRmNzE0ZTdkMWJjOWNjYTdiZTFlZDZlOGFjMDA3ZjJlZjQ2NmYzMjMxNGM0MjQ5YTczNDlhMDE0NzkzY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNmIzNDYxMzg0ZDIwZDgzOTJiMmZiZDE4ZDQ5NWQ1YWQzMTU1NmU5Y2M0Y2Q4ZDU2ZjczZDc1MjdmMWQwMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4NTZmODJjZjlhODFjNDdjMTc0MzY5MWY5YWI1ZTBjOWE5NDlkYjAyOWM2Y2Q3NjVjNTM5NjU4ZTM4OTQ0M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39f81af9fb6445a8a39889c31ffa0bc7",
+      "statement": "The integration tests run the binary built by Cargo, located through CARGO_BIN_EXE_fd.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L75-L78",
+          "version": "repo-lines-v1:sha256:5406198eab148c7388521da512b9afe30b3ae1d3069f3f24de9927cc99b779a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFjZmViYjNjODNjNWNkOGUwMzc3NGVjZDRlOTdmNmFjNGZkMzlkYjJlNGUzZTQ4NzRkMTg5MDU0NzgwNTc2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFhYzgxZjBhNWJiZDZmNmMxYTMyYjZjNDA0OTMwNGZiOWRiYmE0MGE0ODZiMjg5Njk0OWI4YzY2NjE2OWVjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Y3ZDNlNTA3ZWJmNWFhY2JkZDJkNjRmN2I3NjZlNzBmNTY4YzU0MDU5MTAxMTA4NTMxZGM1ZTU1OTBkMjUyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTU4YmYzYWYyOGEzMGNhNDAwZTY2N2Q5NGU3NDAxMTZjZTY0YmJkN2VkNzVmZjQxOTRiZjM1NWUyNDNjZjNjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_96b4f7d4e7eb434bb3bb2b45e8b67e41",
+      "statement": "The harness runs fd in the fixture directory with --no-global-ignore-file unless a config directory is provided, and it clears LS_COLORS for deterministic output.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L300-L317",
+          "version": "repo-lines-v1:sha256:de512d610e1c0b5a9ac5b2a4f24e4767b316e43b8aba5ef1d9123f44610abcc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiOWUzYzQ2ODkyYzVjZjE5MzMyNTgzNmRlNjIyYzYyNDYwNjk4NTUxOGFlYWQ5NjQyZTQwODg4MTI5MGFmNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzN2U4ZTBhYzJkZGQ3Mzg5Y2IwMWM5NDJmYjlmOGRmNDliM2U2NGZiMmEwYjkzOGYwMTFkNDZjY2IzNjY5YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0M2Y3ZTY2MTY5ZTQwMWMyNzgwZDZjZDgwYzE1Y2ZlNzY5MjU0OThlNjBlODJjYjE1OGQ5ODc2ZmU0NjUwNWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_644381581e9845df853a0e756202bb44",
+      "statement": "Some ownership scenarios are restricted to Linux and the Windows hidden-attribute scenario runs only on Windows.",
+      "evidence": [
+        {
+          "resource": "repo://tests/tests.rs#L2480-L2482",
+          "version": "repo-lines-v1:sha256:56ca0a6c3e0ce5dfad3329aef79b921318f120ba4c371a920e19ca5899137d2e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjY2NzM5ODI5MmMyZTNhNjI0NWQ1Mjc3NjlkNzgxMDk5NGQ3OGUxZjFlMDI3ZmZmZDE0NTY3NzllYzRjMTE4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODIyNDc5OGU4YzU0NTNmOGVlZDhkYjQ5NWZjYWUzZmYzN2RhOTZiMjk1ODQ5MzBkYjUwYjA3ZDQ5ZmEyMjU2NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMxNGM3MzA0YTljNzc5NDlkZjYwYjU1OTcyNWY0MDI2MmMzNTNjYjgyNDdiMmZkYzI2MGZkNjIzODE1YTNmOCJ9"
+        },
+        {
+          "resource": "repo://tests/tests.rs#L697-L700",
+          "version": "repo-lines-v1:sha256:3394ebee45052267ead9a326fb54b8b6dcb9ab605ac2e9d958a0efa21b2fc2a7:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ0NTE5ODljNzM1NDQ2NjM5YTFkYTkwY2Y1ODhmNTE4NDBlZWE4ZmU3Y2ZmNjQ1MzliZWI3MjljMTJmMjc1NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFiOTIzYTRkNGNlZjA4Yzk3YzRlMTA0MDQ4OWQzYjhmMmNlNmIwODQyMzIwZTUwZGE1YjQwZmI5NDcyYzhhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTU5Mzc2NzkxZTY5NDc2ZjdhMDcxODk2ZGMyNWI5MTM3ZWY4NDIzZTNlOTYzNDBjY2ZhYzMzMjNkNDJjYTUxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWVlOGFhMGQxMDc1ZWY3MWEzODE0YjVlZjk4OTFkYzE4YjY0NjllOGU4ZGMxODVjZjNlMDc2NjNmZTdkM2M1MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4683b3e2aeb44edfa63c05422aa42a43",
+      "statement": "Only one integration scenario calls normalize_line(true) to make output comparison independent of line order.",
+      "evidence": [
+        {
+          "resource": "repo://tests/tests.rs#L1920-L1925",
+          "version": "repo-lines-v1:sha256:f1c5eb28f1ac9be0689967c383bb5520eb908c8c922a9fbdd6c3b0898b936925:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZThmYjg2OGYwOTJkNGIwNGJkYTU5NWM5M2M1ZTYyYjkzNjYxMGIyMDZiYzUzZmFhODM4N2M3Njc3NWIyODU0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI1ZjZhZDYzZDQ3NzQ4YWRmMzdkNjIwMDBkNjA1Mzk4YWE4ZWViZjJjMmEyYTNiNTlkOTZhNTM3ZjkyZGE2OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Y5YWQ0NjNiZTcxYzVmNDIwOTQ2YWZiZjA3ZDBmZTlmNWYxMWRhODJmMWU5NDkwM2NjMzM5NWQ4YzFhMGIzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDEyZmIyY2VjZDg5NTFmNzRkMjRmM2EwMTJkMzAyNzljNmM3NGI5NjZmMjMwNWEyNDhjNGNkMzE5MDQxMmNiNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb2c2999d11f47a7813a63afe59653ee",
+      "statement": "A scenario checks that --threads accepts a value of 1 or 16 and rejects non-numeric and zero values.",
+      "evidence": [
+        {
+          "resource": "repo://tests/tests.rs#L2648-L2662",
+          "version": "repo-lines-v1:sha256:12ce3c854c556b7db902c854e9c954a87fb66b8b4d80d9eef6119d0e85bb9359:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwYjAwZGJmODUwMzI4YjVjMGU3YmY2M2VhNThkODZmNWEwODg1YmNiYWRhYmQ1YWNhN2UwMGYxZTgyNmE3M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmNTNiNTM3Yzc0YmEzNGY0YjY1MjM1YmY2OGExMWM3ZjY2NDc0ZDE2ZmE3MTk2NjA3MGEwMDdhZDlhYzE4YTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNWM5NWI4ZmE2MmZhYThiODUxYWNiOTRlZjEyOTMxYzlmODc1MmJhMDVhZWFlNGY0ZDc4NDBlNzk3M2Y0YjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d45bac43e0a94381a6565b3b25c93b04",
+      "statement": "The walk module's unit tests cover search_str_for_entry, which selects the file name or the absolute path that patterns are matched against.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L685-L744",
+          "version": "repo-lines-v1:sha256:7ae01bbc9ec6d5ba58c888e22b763d406a56a2066780ba84d9013ace7dde91ec:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2Mjc2NDE2NzFlYjliYjAwM2NlYTdiY2Y0Y2JkOTM0ZjYyNDUxNjRlNzJhYTE0YTMwMTE2ZjhiNzljNGM1YzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwMGI4NDJiOTM1MjljNGIxMzFmYWQyNzI1OTFiOWJlZWQ2OTBiOGVmNTFmYjQxZDIzZTkwNGVmOTJmZmY1MGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3197b94841f4406bb2395b5fe3edeea",
+      "statement": "The time filter's unit tests use a thread-local fixed clock so relative duration filters are deterministic.",
+      "evidence": [
+        {
+          "resource": "repo://src/filter/time.rs#L13-L26",
+          "version": "repo-lines-v1:sha256:857b313e2fcd2fa9812d5fe0c2aac5f1bf2e06489677d2e8b9da5c33ea4ce504:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMzRjNjgxOGY5YTRiMWE2NzJjODc1MzhiZjJkOWQzMGE4NGFjMTNiZTc5MzAzMjk3Y2FkNzcwZTM0MGRhYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZjM0OTZkY2U2ODNhNGNhMzg3YjJmZWVjNDhmYjFhNWNlYTMyMDRhNmU1OWY1ZTliZWVjZTc1NjRiMjI1OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwZjhhMjMxZGFhYTFjZDdhZjQyZTk3ODk0YmI3MjllZWIxOWRlY2RjNjQ1YmM1NDNiNjNkOTQ2ZGYzZDQ1YjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_46f28b842fc1453e8dececb389a05362",
+      "statement": "merge_exitcodes is unit-tested for the no-result case returning Success.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L46-L60",
+          "version": "repo-lines-v1:sha256:616988c045cfbdfce94382d7af28de93a900361930b4a5891e96166b20469969:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiMzM5ZTE3OGRkNmYyNTdlYmZjYmM3Y2ZiZTI3ZGZlMzBlNzY0MTI3NWQ3NGI1MmIwNjg0OGUwMTRhYzcwM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyZTAzZTRiN2NmNGEyMmY4NWExOTFhZjE4OTFmMWNmY2JmM2E0YjA3MTQyODc4NzFkMDY5MjA4NjcwODg4MmMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:10:54.611Z"
+  }
+}

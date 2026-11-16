@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7899512c86fe3b7f4c421e0dc0f21e296dd772f3a87991164638c9cf652460ed",
+  "claims": [
+    {
+      "id": "claim_1860bf6473e147378a53fe69815bdb00",
+      "statement": "script/lint.js dispatches files to language linters by directory root and extension, covering C++ and Objective-C through clang-format and cpplint, Python, JavaScript and TypeScript through ESLint, GN through gn format, Markdown through markdownlint, and patches through a structural validator.",
+      "evidence": [
+        {
+          "resource": "repo://script/lint.js#L116-L200",
+          "version": "repo-lines-v1:sha256:136d707bbcc5cf9134d11a27bf8db32a58ea61a375cbe4c8b593f33914b61f27:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZWU3Nzc2MGNmYjZiNzE0YmFmNzE1NWU1MjAyZjM4YzgzNzI0NGJhZDE0ZGEzMjJhNGM5M2M0YWFmN2IwM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiOTc1N2M4ZmQxY2JhYTJiYjAxNDNjZjRiNjkxMjA0Y2JjZGIxYzU5ZjJmNzcwMGQ3MDQ0ZmU5NzBhMmE2NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlZjY2YmI5NTBmZWMwMDBmYjdmOWRhOTkyYjQxMzVmZDgxZTBlMTM1ZDUxMjUxMWMyMjNlOTg1NGUwMjk5YTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_02d4d286d4554d93b904ea55c6e65a7c",
+      "statement": "The patches linter requires each target directory and a .patches file, rejects duplicate entries, requires every listed patch to exist, requires a description in each patch, and rejects trailing whitespace on added lines.",
+      "evidence": [
+        {
+          "resource": "repo://script/lint.js#L202-L282",
+          "version": "repo-lines-v1:sha256:df8d6eba6f0c002bc3664779906865658ef04afcc5c4abbdca564b11430d497c:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3NmE0NjY0YzVlODhkYWEwYzYzMjg3MjViYWIxZDIzZjhjZWNlNTA3OTc2NDk5Y2FkZjdkYTU2MzYzNjk5ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5NjFkYWMwZjFkMjg3ZDdhYmEyOTlmOGNmYTk1MGJhYTRmYjc0ZDZjYTA2YzQ4OGQ2NzNkYzEwODQzZGQzZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4MWI4ZTUyYzM3NzNkZmFkOTE0YWVhNjI5NDYxNzBhMzQxN2QzNWY1MTRiOTMxN2FjNjBjOWFhZDc2NmI2YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmMWQyYTIxMWJlMmY0ODQ0ZTM5Njc2YmY2ZjBhMjhkY2E1ZTRlYmE0NjFlOTdhZDVhODg3NDY0MjM2NTQ0OGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a3799460d27344c6a5b1c1c602a3ca67",
+      "statement": "The lint:docs script runs remark formatting, code-sample checks, definition regeneration, TypeScript code-sample checks, fiddle lint, relative-link checks, Markdown lint, and API-history lint in that order.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L72-L72",
+          "version": "repo-lines-v1:sha256:a4b49d5655bfdfef87d2d17acb90c9525607d3d8671e1ef9b479ef848c63bf05:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRiNDlkNTY1NWJmZGZlZjg3ZDJkMTdhY2I5MGM5NTI1NjA3ZDNkODY3MWUxZWY5YjQ3OWVmODQ4YzYzYmYwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRiNDlkNTY1NWJmZGZlZjg3ZDJkMTdhY2I5MGM5NTI1NjA3ZDNkODY3MWUxZWY5YjQ3OWVmODQ4YzYzYmYwNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQ3ZDJmOThiOTA1OWY1YWRiYzRlMjdmNDNmMDZjOWU0NDcxNDYwZTY2ZTU3M2NmMTgzYjUzNGNkOGVmMWI2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTQxNjJiOTI5NDI1YjgzMDc3ZjM5MjcwZWM2ZDZkZWU1ODQ4ZmY2NjZmYmY0YmM1ODE5NjVmOGYzNTQwMTA0ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a492d2b72eea498fbd6beaa9e09b5835",
+      "statement": "Committing runs lint-staged through .husky/pre-commit, and lint-staged applies fixing variants of the linters to each staged file type.",
+      "evidence": [
+        {
+          "resource": "repo://.husky/pre-commit",
+          "version": "repo-file-v1:sha256:1b42d27781e331ac4210dff4a12bdaf9d0bff344797ef4df4edce5226a58521b"
+        },
+        {
+          "resource": "repo://package.json#L101-L125",
+          "version": "repo-lines-v1:sha256:65e02e545991cd876663df120e1bb20497af1b63662682848dcdb8eec0ac3b76:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3YWRkZWE3MTZmZGM0MDRmZjdhYmUyYzE3ZTAyYjg2YmRlZDg4MjVhOGY3NjFiYmVkMTlmZGExZDk0ZThmMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2M2Q1MzVjZTM4MDYzZDZiNGM1MWQ4YzM4NmE3ZjliM2U1ODBhMTRhMTBjMDdiMTk4ZGZhZjE5YzkzYTNiZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4OGI2NjRkNmM4NTM2OTg2YjFkMzgwMGE0OTNiMjI2NTNmMmE5ODVhM2RjM2UwOWMxYWNmOWE5NzAzYzAyZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzZmFhM2NlZTQ1YjE5MTM2ZDVjNmU5NjA0N2IyNzY4MGVmMzNlM2VkODg4ZDM5NDFiMjJiMDM0NzYyMzRkOTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a43e6d88742443dbf47ac1e7b47ed93",
+      "statement": "The lint script's --changed option restricts the run to files staged in git.",
+      "evidence": [
+        {
+          "resource": "repo://script/lint.js#L433-L443",
+          "version": "repo-lines-v1:sha256:8ae243cd1a3f86946d414548347dac219629044f8b8d1919f921abb7c59d26c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmYmIzMGVkNDUzNWUzNmZmYTU4ZTdhMmJjNjYwMDBkMjZmOWE2ZmNkNTFiYzg4NDExZTdlMDc0NzMyNWMxOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzNmQ0NjJmNGU1MDY1NDMzOTAwNTYwMmYxODY1MDg2MzI0MWY3MTYyZjViNjdlZjdjYWQ1MGEzMDhiYTZjMzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_33cfa3ddbd704517959241496e560c60",
+      "statement": "The markdownlint configuration extends the lint-roller Markdown config and sets underscore emphasis, descriptive-link-text off, and an allowed inline HTML list.",
+      "evidence": [
+        {
+          "resource": "repo://.markdownlint-cli2.jsonc",
+          "version": "repo-file-v1:sha256:526bde31b6c44969d97a4fea3fe0f7760f3e6e6dfe769b9cfa4f36e6a0ba62a8"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a576b527b164275a149636ecc767b67",
+      "statement": "The clang-tidy configuration disables the modernize-use-nullptr check and inherits the parent configuration.",
+      "evidence": [
+        {
+          "resource": "repo://.clang-tidy",
+          "version": "repo-file-v1:sha256:958c4a443cb018995e8f7928b0e36d7410bace7cd830606ac25e6dec6720d655"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

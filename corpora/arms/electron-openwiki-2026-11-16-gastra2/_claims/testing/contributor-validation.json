@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:73e74996060e58b2aa1e4f0e0e114862042239f84311e906eb765b4565228bd8",
+  "claims": [
+    {
+      "id": "claim_3cb65e922cb5459eb5b42dae9cfdf08f",
+      "statement": "npm test generates public types first and launches spec-runner, while the spec app uses title grep and file filters and rejects unmatched explicit file lists.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L79-L92",
+          "version": "repo-lines-v1:sha256:2d7878038f4eb5cb339c85ceda42f28176b100f05d67f255b38b690493a366fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5YmU2NmZhODEwNzBiMTA5YjQxMWE0ZTNlZmY1ZTUzOWJhY2NjNmY3ZGQ1N2Y0OTA3YzI4YjZmOGFkYmQ1NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYWM0YWFkNmJkMWVkODlkZjMwNWYwMTk0N2U5MjVlY2UxN2E3NjE3YzQzNTExMmJmZjIyNjYwOWVhNjIzZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5MzE2MmEzZTdiMWEzYTA5ZDJmOWQ2MGRhNDdiN2E3ZjIwODhhN2IwMDViYjAzYTY5NzNmMjJiNGJmYzFhZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxZjk3ZjVkYzNmZWM1ZDFhMmVmNzA2NTczMWJkMTU5MGQzZTNkMDZiNGY1MzM4ZGNhYzQ0ZTdhNDEzYWM3ZjgifQ"
+        },
+        {
+          "resource": "repo://spec/index.js#L129-L168",
+          "version": "repo-lines-v1:sha256:ce6d388d74da4edc40b9c31ea9c12179f2d7e080bd0502a18518c1d0e5d8dbfd:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ODM3MGExOGM4ZWE2YTE3MWRjOTRiNjdmMTljYmQ3YTZhYjNjZTk3YTFhMWIzYjI2OTZjMDNhYThmZWI1MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMzc5ZTQxYjhhN2UyNzE0ZmExNjVlODkxODQ1YWYwOWZmN2ZjNWU2MDNhNWNjZmFjZDQ1MTdmMGJlMDlkM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNDEyODU3YWYxZGJhMzJlZGQ4MGViZjBmYzNiYjJlZjhlY2UxNmVmZDhkMWUyMTliYWQ5OWFmY2NkYTg0NDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1906b8a97b9144a2b1bd2480c0fdee69",
+      "statement": "Spec-runner reinstalls spec dependencies when recorded hashes change, uses generated local Node headers or selected-release headers, and installs with pinned frozen-lockfile Yarn.",
+      "evidence": [
+        {
+          "resource": "repo://script/spec-runner.js#L224-L286",
+          "version": "repo-lines-v1:sha256:4d500da38e1c3cbd2f41bd84383efd913b763efe905f11a24960fa97bcc3a212:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1ZmY4ZjQzNWEzZTY1MzM2MGQxZjlkZjZiNTgyYTgwM2EwNmU0MDFkNjFkODRmMzRiYzZjZTkxZGU2YmJkYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmOWRiYzdmMmYyNGI1Mjg0MzU3Zjk4NjMwNmZlZjA0MTdjYzZmODFhODNhMDJiZjgxNTBmNzExMmY4ODNiMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmZjJiYmE0MGJhYzkwOWYzMTk0ZmZiZmJjNjA5YmQ2ZDFmYWE0ZDI0M2FiYmE2MzAzZDY3NTY0NzUyNjZlNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0YzEzZTIzMDZjZTNjZGE4OWZiMGNhZDE2ZGNmYWVjNzRjOWI4ZjFlZTQ4ZjhiOTc4OWRkZGExZTRiMzc0NDcifQ"
+        },
+        {
+          "resource": "repo://script/spec-runner.js#L92-L107",
+          "version": "repo-lines-v1:sha256:4b20669b2a29a78c823484ce591d159d0d64385cc948b5366374d9cb93e08246:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NDY5YmE0YjdlMDNhNTM5YjhlYWJmYWE1NDQzMGVmMjQ0ZWFhM2MzY2Q5NTNmY2U5NzkzNzNlZTZjOGU1YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NGI0YWQyZjY4ZDJlNmNhZGY1NWQ4YmRmZTVmODlhZWU5OTQyNDNkMzNhMzJhM2U4MmZlNTk2YzBlN2EzNmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljN2MwYzBlNmJkMDcxNGYyNzFlZDVmMDgyZTQzOWQ3Mjg1NjZhNDc0ZTIwZGE5YTAwZDc5ZjI4OTNmZjZkZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNzE1ODgxZGY1OTM3NjMzN2E4NDZjYmMyODNhOTVhODM5ZTIwOTI1NzNjOTcyNjBkZTRjNjIwZTZkZDg5NTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db721a19d60e4be08e9b8ee06deab0e4",
+      "statement": "Spec execution chooses a local executable unless electronVersion selects a published runtime, and Linux launch uses dbus_mock.py.",
+      "evidence": [
+        {
+          "resource": "repo://script/spec-runner.js#L194-L218",
+          "version": "repo-lines-v1:sha256:1ebe08ac397f393b74fd97efd938ff14aa4b6c1a2d4f62b1198052048003a2ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmZGYyN2IxY2I1OTEzOGE2Y2QwZTRhMTNjZmM1YWYwNTFmMDQ0MWM5NGZlZjcwMzc4Y2E4NzEzOWEwNjg2ZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiNjYyOTM1MDc0MGI4MWU3YjJkZTkyMGJmNDg0YTY3YjNlM2U4ZTY2ZjRlZGE2YjQ0NWY5YWM2Y2RkMDBkZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1580e7aaebaf494cb1b4c9391b41c722",
+      "statement": "The spec application configures test-specific browser settings before readiness, then loads ts-node and Mocha, honors disabled test titles and runs deferred cleanup before ordinary afterEach hooks.",
+      "evidence": [
+        {
+          "resource": "repo://spec/index.js#L15-L69",
+          "version": "repo-lines-v1:sha256:2afb4f1c2e323b945b99ba4af09315b633d2e56dc702bdc3f4d335458cd3db71:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmM2IxYTYyYTk4ODMwMGZmMTdmZWMzM2RmZjM1MDJiYjgwNTQ3OWNjOTkzNjIzMzE2Y2FmOTgwNTA1YmIzYmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwYmEzM2JjMjg3Y2NhMjg4MjExYWZlOTFlNmIzZGIzMzc1ZWRkZWJhZDYyMzRmN2Y1NjQzYWQ2YTJiYTE0NDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiY2IxN2U2NTE3YWQ1OWViNTIxOTY1NmM0ZjkwYjM5YWI4MTRmMjM2MzZlYzYxZTUxY2E4OTFmZWQ1OGRmMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0ODkyYzFjN2VjZDQ0ODMxMzFjMDQxZjU4OTY3NWZjMDgwZmRkMjk5OTg1MDZmNmRlM2E1OTcxNjY5MDhiNTkifQ"
+        },
+        {
+          "resource": "repo://spec/index.js#L71-L121",
+          "version": "repo-lines-v1:sha256:801aa5c770f8aaf4a7b6ebb80d67b8dfb5dca72071f280932fdf67d6cf2b6d10:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzZDI3YWI4MWE5Mjk4M2Y5MWEyNDVjNzIwOGE1YmEzN2FjZDEwNDZhY2RiNmExZDBmNzFjZDMxN2NjNjAyNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYzQwYzUzNjMyMTI5NjNjZjg1Yjc3M2E5N2I4ZThhNjA4Y2MyZmI5ZjVhNDgzYjZhOWY1YTYwMGFiYTUwYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwODEwYmVhNzM4OGNkYjVlZTA3N2ZiYTk0NDFhZTE3N2JjODU4MzY4MDZlOTNlOWU2MDFmNWI2MDFlYWI5MjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7de1d68393ac43f1aa06de8045e1678c",
+      "statement": "The spec app exits with the failure count or prints a failure marker in forced-exit mode, and CI shards files with Linux Xvfb wrappers.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/pipeline-segment-electron-test.yml#L216-L250",
+          "version": "repo-lines-v1:sha256:931417a362cacbef347ac07937532664b5993f506b83fe1ece57f42fe61e6c74:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzOTNkNzA4YjMyYzZiZWU2M2NkNTUxY2U1MDdiY2EyMDUyNmVmMGE4ZDIzOTgwY2I1Mzk4OWVhNzZlYTZmNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNTU5NzljZTczMDIwMzNlNmIyZmQ3ZDg4ZjUzN2EzYjhlMDkxZWEzMDVjODExZmZhMTI3NGJmNTc2NGVhNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmOTVkOTMzMTU0OGI1NjZmODEzZWI0ZmY0NGVlN2ZlYWQ3YWY5YmMwMjg1N2MwNDA0ZWYwOGJmOTFkNGE0ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyY2EyYWM2ODU4OGU3ODhmNDE5MzljODk4NWJjNjA4Y2RiZWM4NzA0MmIyMjlkNDFjNzE0ZjNmZmRiZjE5NzUifQ"
+        },
+        {
+          "resource": "repo://script/spec-runner.js#L161-L190",
+          "version": "repo-lines-v1:sha256:0fa0b01afb0160eeefa3028299f85bd7a74a28527d9e74dddca52db89972e0fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxNzIyNjA4ZTQ1NDRkNzVlYjM1NWE4MWU2Y2NjZDM2NzZlNmYwNzc1OGYxYzMwOTczYzU0M2ZiMmQyMjU2NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZDExY2FmNDNlOTdlZjM2OWU2YmVlZDFhMjY4YmQwNTgzOGYyOWI5ZGQyNTRiZjY5YmE2NDg4NDE0NzIzNGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIifQ"
+        },
+        {
+          "resource": "repo://spec/index.js#L170-L195",
+          "version": "repo-lines-v1:sha256:1c4154c23c475831bc08a6228ee2a7b8b67578c09ff38bdc8aedbcb0daac9bd1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzYTllNDBkZjZkM2NlOGY2YTdiMjIxMzZjZmNiMzQ0YmZiMTU4MmE3ODE0OTIwOTA5Yzc5YWU2ODU1ZjM0YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZWEwZjRmOWEwNDJhZmE0ZmYyYjkyMGUzZDY3NTVlZTFmYzRmYjA0NzAwNmZmNDNiMGU0OGJjMTI4MGM3NTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3NjZjYzFiMDM0YTI5NmY1MGNmYWQ5Njg4MTcwODA1YTAwZjgwZWY1YTEwMzc4NGFhMTExMTQ1NDNmY2FjYzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f3952eae157049eb9f26eddc3752b9f9",
+      "statement": "Node smoke testing runs the dependency's tools/test.py with Electron as shell and run-as-Node/eager-ASAR environment settings; the default preset adds a skip list and flakiness options.",
+      "evidence": [
+        {
+          "resource": "repo://script/node-spec-runner.js#L15-L57",
+          "version": "repo-lines-v1:sha256:b2809838c55bcaa40ec7b5ab6d9a43e89fca2d4f652cf503ef5f29c6c30d74c0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4YjVkOGQ5NmI3NDA5NmFkMTIzYjNjMzQ0OTVhYjA4Y2JjZWZjMzUyNzFmZjBlODg0MDkwNjMzNTRlMWEwZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2MDliMjg1ZTgxNGExNjVmMWVlNjAwZTBkODRlMzljYTE1ZTJmOWM1YTM2OGNmNjk4OTRkYmVlNDY3NmRjMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0NWM0NmU2MWZhZTljYzVmOTM0NjcxZjJkN2Y3Mzk0ZjA2Mjg4ZjY0NDk0MWFiZDFmMDQwZTU2MjlmODJjNGIifQ"
+        },
+        {
+          "resource": "repo://script/node-spec-runner.js#L80-L90",
+          "version": "repo-lines-v1:sha256:dee3f73c19202e40520d9c88d7aabea35a4687b1106c5fc3bc78ec50d843421c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNWQ1ZDBmNGI5ZTM3YTRiYjkwZWY1OTg2OTE0NGRmM2VlNjhhMjE2YjcwNzIyMjk3ZjhkZDNkZWIxM2RlOGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZjU2NmIyNGE4NGU3YjhkMDdiYWZhODg4ZWEzYTg0ZmRjZjMxYWU2YjJmNTkzNTY0Y2M2MDM2N2QwOGE0ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmMTIzYmU1MzZlMzZlODM2NTQ1MDBjODFhZjBlNDE2MWQ2MmYyZjRiNGQyN2I4ZjE4NTllZjRlMWY5ZTBmZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_07803ccc5bb54dbe9c1cff651e272cb1",
+      "statement": "Public type generation runs TypeScript smoke checks, and the docs lint workflow includes formatting, examples, relative links, API history and generated types.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L71-L81",
+          "version": "repo-lines-v1:sha256:66fcd070c3e0422fc4fd421ccbcff41fa297bda5cb7013e30f01dd24b7d2ad04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxODM0YWY1MTdiYWU4MmFlZjUyMTJlMDRlZjk1Y2QwYWJiZTZmNmVjM2Q3M2EyNWUyMGE2ZDA0ZmNiZTNkMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlYzMwNTcyYzQ1ZmViMjAyMmQzNmMwNDg3OGVlNjBmN2M2MGJhMzNlMjVjNWFkMTM3YzgxNDI5NzdiODBkZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlNmIzM2IyNGVlNDg2NGIyNGExYzI2MWI5YTQxZjNiNWJiMzU4NmE4Mjg5YzViOWNkYWRhNDE3MTYwYzZkYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiODE4ZjUyNmE2N2E2ODhlMDhiYzllMGZiNDhiNzExYjdjY2U2YzE0MmUzYzgzMmY0MmYzN2JmYmY1ZmVlZjYifQ"
+        },
+        {
+          "resource": "repo://spec/ts-smoke/runner.js#L4-L18",
+          "version": "repo-lines-v1:sha256:3e091f5f64d96871a32293fdf39c459d0d55336277e133e11c0de205259069d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiMDExN2E0NTA3ZTEwOGY4NWNjMjNmYTQxZDEwNDBkZWNlNzNjM2U5NmI2YjdlMGY0NDU3ZWVjMWZlYTI0NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhN2U5MDBlODQ5YjAxYWE0MGY4NDZjYTUzNjQ2OGFmNzUwMmQyODVmY2EyNjM1NzM2N2VjMWQ3Yjg0YzEwOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlNTIwZDBmNDk1YmU3Njc1MjI1OWUwOWVhZmM0MjBmMzY4ZDdmYTA2NDg2YWU5MzkxYWRiYjc1NjAzZjIxM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:01:04.581Z"
+  }
+}

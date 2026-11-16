@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1be00558072fa24cd068dfc9fdf8e52d3283bbf7e79a8c19c34fbc1deeb9a7f8",
+  "claims": [
+    {
+      "id": "claim_f081fd1ad08041a29130b9d8087a4b5a",
+      "statement": "BrowserWindow creates and owns its WebContentsView and WebContents, destroys surviving contents in its destructor, and closes when those contents are destroyed.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_browser_window.cc#L67-L117",
+          "version": "repo-lines-v1:sha256:eae915248dba819013dca74a42b7f0f6b3642bd52b068136da9979dbcaa0b418:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzM2FhMjc0YTEzMjBhNTYxZGU0ZTA0Yzc4NjJiMmRmYjAzOGZjYzY0MjY3ODMyYzZhNzU0N2UwMWEwOWU5MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNzc1NTBmZWM5MWZlN2E4MDIwZTVhMzg4ZjY3NmQzZmZmNzM3MDQzOGE1OGEyNDM5ZWI5MzViMDE1ZWI1MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4NDVhODI3N2E4YjZiMWVjNzMyNzEwOWMyOWQzYWFkY2JhY2I3MDUzODU3MzNkMTg3M2Q3NTY5MmIyOGExZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d3c0fec8db04cb3baf3ded80bfda6d8",
+      "statement": "BrowserWindow forwards page loading methods to WebContents.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/browser-window.ts#L131-L146",
+          "version": "repo-lines-v1:sha256:eaf5b71847788fb03fab159682b49432a4d0c35afff7536dd89d0ba8063f005f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiYTYzMzNhOWU5OGI3NTU2YTQxNzNhZmJkNDNjOGNhNmRjYjExZTE2MDJkM2E5M2VmMzkzN2NmNDE2ZWM4YzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZjM2ZTg3MjAxZGRhYjUyYWJlNjM0MDAyZWMwYmUwODdjNzdjYjdkZGVkOGIyMjY1NWVlZWZlNDg0Y2IyMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNmZmMzVlMjg5NGYyZDgwMjhmM2UxZDk0OWRiNTZmZmZjYjk1ZDljNGJmMmIyZmE5YjQ4YWZlMDliNjAxMTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzNjhjMmU0MDA2MDg4Y2EzMjk1MzQyOTFjMjQzNTE2YTdkZGQ3NjAyMTc4ZTUzMWM1MDdiMjY1MjFiNTBkMTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1299c581a65494bb58497abb77d267e",
+      "statement": "loadURL installs event listeners before native loading and returns a promise that rejects superseded or failed main-frame navigations and cleans up listeners.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/web-contents.ts#L345-L432",
+          "version": "repo-lines-v1:sha256:1482b4ac22ebf64ef73bd862e472ce2b51c8a1c2d4ed47bdbb36bf479ab93049:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1M2I3ZjFlYzgyNTlmZWFmYzYyMjdlODU1NWM0MTU5ZDFkNjMyNTcwOGNhNTNkOTY0ODkwOWEwZmY0YmRhNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjOGJiYzVmYTVlNzRhM2YyZjAwOTZkMmYwNTgxNjI2YzJkYjE3MTExZGZlYTM2ZDljZjgyZThhNTk1NTIwYmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxZjA4YmE5NGRkZTdhOWU3ZTJlMjdlNDYwY2IzZGZhMzc2OTZkN2ZjZjA3M2ZkYmY4MTdhY2YzNjIxZWY4ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxZjBjZjYxYWMwY2NjNmVlMmEwNzM5OTMyMWIwMmMyMTc4ZDYwZjczMjQ3MWI4M2QzOTFiZDlmOWM3N2Q5ZTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e52e3c965f514f1dac6a97b16e9fa8db",
+      "statement": "Invalid window-open handler responses prevent opening; allow responses support overrides, outlivesOpener and a custom creator.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/web-contents.ts#L435-L476",
+          "version": "repo-lines-v1:sha256:e775e47e71a14e5aa0106173104fe7dfe85eddd25b3ff5d4bad093dd57c1eef8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2MjYxNTkyOGNmNzVkZjk3NGU5Mjg0MzliOWIwMGVhNGFmYzliMDI1ZWU0MDYyMjdhNzRlNTJkY2YwY2ZhM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhNWZiMmE2ZjIyOTM4MGM5YzM1NjYyNjRmYWFhN2QyYWRjYjE2MTRlZWY1ZGZlODEwMjZkN2MzZjJlZTk4ZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ZWMyZDcyM2JlOWIyOWY3ZjExOGQwOGUzODA0MTk5Y2U3OTI1MDYxMTlhZmU5Mjk2Y2RlMTgxY2MzY2JjOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56e6fc9863984c5db5208edde852949d",
+      "statement": "The guest-window manager reuses live named windows and normally destroys guests when the opener render view is deleted, unless outlivesOpener is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-window-manager.ts#L104-L137",
+          "version": "repo-lines-v1:sha256:8f9c347407f51361294960f4c847a44696cecb1a68e02768ddd74be24596bba0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5MzRmZTQ2NDU5NDQyZTlmZDMwZGZiZWQxMDQzYjcyZDdhODNhNDc0Njg5ZmQ5OGYxNDFmOTFmZjg5OWMzMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzNDI3YjI0Mzc5MGVlZDk4MDViODIzNjhmMDI0MDM4NzlhMWUyNjc2ODQ5MDBkMTk4YWVlNjdiODk1NDRkZjIifQ"
+        },
+        {
+          "resource": "repo://lib/browser/guest-window-manager.ts#L50-L61",
+          "version": "repo-lines-v1:sha256:ed741f8a9dd434e0b7cccc7decd2df548bc33ee793686653206d1b499097f880:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YzUwYjlkYmNiZjI3NjI0YWNmZjVlZmE0ZDViZTFjNDY1YjU2OTZlYzA1OTQzMjhkMDEzNzVkNzY0MTgxZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiYWJkY2EyNzlkMWUzMTlhYWZlODAxMjE2NDYzOGU1NjI2MTIxNzc1MmVhN2E0YmU1MWRhYjdiOGQ0YWM4MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViNmU1ZTQzMmRhZTZiODdhZWYzZTYyMGIwNzE1NWUxM2RmNWY4MzhmYmMyMzkwZTgxNWNjYWE1NjJkMjM4NjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1063397f26e47c29923224eb481c2f6",
+      "statement": "Applications must explicitly close child WebContentsView contents when a composed BaseWindow closes.",
+      "evidence": [
+        {
+          "resource": "repo://docs/api/base-window.md#L68-L90",
+          "version": "repo-lines-v1:sha256:30b6df2570643607f5835170e081a0e04779b8b624cf6ee0204ea169fb60bffd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMTdjOGRmMTY2NTQzZDFmNjMxMTg1ZWE5MTFhMTZkMTYxN2YxY2M5YWYyZGZmZDFiYTIyNmM0OGJkZTkwM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmZTFjNGRlMDkzODU1YmVkMjdiZDdmOGVhOTgwM2M2ODI0NmZjYWFkMDFhNTdmYWQxYzkzMTlhNDYzMDhlYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhZGRmZTJmZGJiNTNmYzkxYTg5MTg0Yjk4NWFjZTkwOTUxZTZhOTI1MWQ1YzA4YjlkMzYyYzg4YjY0MTQ4NjAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:11:18.304Z"
+  }
+}

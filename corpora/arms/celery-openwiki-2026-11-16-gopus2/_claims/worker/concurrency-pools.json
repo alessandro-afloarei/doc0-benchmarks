@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:17239c57f39853e5f36134e63ba0ffe5c56524e1ede9da29018c4d68ed5e0ada",
+  "claims": [
+    {
+      "id": "claim_f7875469cb074c8eadaa6c640bf0aeeb",
+      "statement": "Pool aliases map prefork/processes, eventlet, gevent, solo, threads (when concurrent.futures is available) and custom (from CELERY_CUSTOM_WORKER_POOL) to TaskPool implementations.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/__init__.py#L11-L43",
+          "version": "repo-lines-v1:sha256:9a6fe852a37a6fc00328f94e1b300b728766ca217d38d969135652f332810d44:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4MjdlZjUyMzg4YWU3ZWQxMWJmYjViOGEyNDc2YTI3NDE1ZjAzOTcwZTMwMTQ3NjhmNjE2ZDE1NDU0OWIzN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiZGM3ZWE0ZmNlZWU5N2ZkZTJjMTE4OTZiYjhmMzljZTg0ODM5YTllMmJmY2RiOGI3NTIwZTgwOTg2ZDc0MjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwOGRjYzk2N2Q5ZTY4ZmY2NjYzY2I0Zjg1MjIxZGM4OWU4NjBkMzdlODUzNTg2YmE0ZTMzMjU1Mzk1N2FlNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMGRkNTIyYjQ0ZjliNmNhMzFhNzI0NzBlZGNmYjFhYTAyYjliOTE4NWNkNjJjZWNmODQ3OGE2OTViZWQxN2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3299bb5b6e794c9e99ae968758103f36",
+      "statement": "The prefork pool uses AsynPool when the worker runs the event loop and billiard's blocking Pool otherwise, configured with the process initializer/destructor, timeouts, max tasks/memory per child, lost-worker timeout and scheduling strategy.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/prefork.py#L101-L125",
+          "version": "repo-lines-v1:sha256:75843d975651e8a28229de77d49d80efa0256b25d38888cff3f0d17a9443a159:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkM2FmOTRiZmFkYmI5OTVlMWFlYTBhMDUzMGQwMjU4ZWQzYjJiNTRlYjc0NDgyOGUzYjA2OTZiYTVkYWNhMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMDgyNDdiZTlmZTcxODlmMzM4ODU0MzI5YTgxNGU4YjQ1YTAwOTVkNmVmMDNjZGU4Njc2OGQ1YjVjZjQ1ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwZDZiZWQxOGU5N2RkOGQxMGVkNGU2YjI5MTg0YzhmNmE5NzEwYTY5OTNjZGUzNzZhZGI3MjdmMGE0NjQ5ZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwMGNkOTY5MzlmYjhiMGMyYTUzNGI4ODQyYzgxNGJjYTVmMWZiNmQ3ODNmZmE0ZWMyZTY3OGQ1YzMwN2E4YTgifQ"
+        },
+        {
+          "resource": "repo://celery/worker/components.py#L137-L172",
+          "version": "repo-lines-v1:sha256:d9177eb2f027d4f6ea7aa6305adb823c641038c24c4e5de53e02e0a78f6ce705:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMDEyZTcwMGVlN2RhYTQzMzRiMmU5MDE2MTcxMTAyZGNjODA2MmRiYWM5YzE2ZmZhZDA0ODM2NGRhOTJjY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhYTQ0NDFlZjQzZmRjZGUwMzlhNjM3OWRkOWVjZGQxNGUxZmVhMWEyYzFlZmYxMDM0MjEyMTdjYjg1YmYwMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0NTM2MWRiMzY2ZTFkNzhlZjdjYjhkMDcwYzIyNGZhNjc3ZTZjZmQxZTczZmU0OWMxYjllNGE2MWRiMWY5NGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa4a3e793b254da7bf8aca263745507c",
+      "statement": "Pool child initialization sets PDEATHSIG to SIGKILL, marks task joins as blocking, resets and ignores signals, initializes the loader and logging, pre-builds tracers for every registered task, resets worker state and sends worker_process_init.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/prefork.py#L41-L86",
+          "version": "repo-lines-v1:sha256:02cd2fe3e657a2554dd1ace0ad8d2155b30cca97b1296b0b475fa2e635f5a8f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YmE2N2Q3ZmEwOTc5ODk1ZGEwNDY0ODVkMmIyNGRlZDVjMGE5N2I1Yzc5NGJmMjc1OWNhODQ3NzY3ODVhNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNDA2ZDgzYTRhODY4YmY0M2Q0MWVjZjZhYjk0MDc1MWMxM2RkNzhlNWFmZGU5MGQzMDU5ZjRlMjc3Y2QyMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhOWY5ODJlNDBkNDRjZjYxMTE0YjI5ZTMxOTk1NzcwOTQxYzQ5MGE2NmE1NjY0NDQyMDAyNWJkN2E4MDY0YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzMDU0ZjFkNTUwMjJiNmI1Nzg3MzliYjFmMzNkNDM4NGVhYzkzZTQ1MTcyMTA5YzBiMzU4NzFlYmJkYTQ5MTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0bf458838294e66a8b20b5a081d1ea3",
+      "statement": "The worker uses the event loop only in a default (non-green) environment with a transport that implements asynchronous I/O and not on Windows.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L239-L242",
+          "version": "repo-lines-v1:sha256:1f2e357258a17aeed60a4ebe73e18a122a4f2344dfc9bc95351ba5f8ab33e90c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTUxMmE0ZWU5YjcwYzkzMmJlOWYyYzg2NDU2Y2JmZjdlY2M3NDY4NWU4M2MyZTkyNWIzYzQ1NzBlMGM1ZDU0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQyZDJiMjZjZTMxODRlZmM1OTIwN2UyNmViOWI2YjczOGJjMWM3NzRjYTllNDhmOGVlMWJiMTM0N2JmZGFhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTMxNjI5NTk5OGE3NTNkMmFiZGJmZmVlN2M1ODQyNjBjMWE2Yzk3ZjA3NDAyYjJmOGUyYjYxZTMwZGVlMTQ3NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGU1MDU3NWRlMjA0NWYwMTlhYjk0OWNlZDU3NDYwZGMwMTI2N2U2ZWMwNmFkMTBhYmEzMjdjMTcwZWIwZDFiYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b98c378659f49859beed19517cdad5a",
+      "statement": "AsynPool's default scheduling strategy is fair, with fcfs/fast as the alternative, and the CLI -O option accepts default or fair.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/worker.py#L169-L175",
+          "version": "repo-lines-v1:sha256:3a8513a671b15cf161fd8f2af2f15e4595ca2ad4dbc7387998b32d419733e465:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc1YmFjMjQ4MDA0YWUzYTVkOGNlMGY1ZTlmODFkZDdmMGEyMDhkNDgxMzU4YmE1NjY2MGZkNmJlNzdmYTI3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk4ODAyYTlkNjkyNGZhMDUxMTBmYmZkZjkxYzMxM2M2ZDJmNTFkYTBhNGE0NTcxOTExYjFkZDk3ZjE0YzFkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjM2OTk2NzUxZjdhNTY3MGVjNWQwZmVhOGM3OTM0N2M5NThkMWRiZTA1NDhiM2E5YWUzYmNhNWMzODdlYjlkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjdlZTUyOTA0NWEyMDFiZTcwYTdhYmExNTNjNzdkMmRiZGFhZjYxNjUzNDljZjAxNTJlNjk4YmUzNWJkMzU2OCJ9"
+        },
+        {
+          "resource": "repo://celery/concurrency/asynpool.py#L77-L87",
+          "version": "repo-lines-v1:sha256:89b0b0462000032d25d445850b09496d59cc8c39fc55b43fa0ee70fceafe07b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzNTFkN2IyMDhmNDBmZmRlODEyZDcyY2FmYjNlODQ3NDY5M2M5MmE1NzMyNWRkNzcxMzk0NzM5ZGYxOWZlODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1M2FiMDZmM2JkZTJkOTNiYmMyMWQ5ZjU4MjE5MTY3Mjg5MWE3NWE0NjQ3OGUzODczOTU5NDhjOWQyODk0YzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwMGQ0YjkxYzA2MDY5MzE4ODlkYjM5MjgwOTdmY2RmYTgwMGQyODhjMDBmMDRiZGRhMjk1YjkwYzUyMTA4YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkOTZkYzFlOGM2NDU3MmY5MDY5NjgxNTEyYmU4ZDY0ZjViYzg5OGZiMjVjOTM2MzhkZjNiZDIyNjBkYjQxYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ce5b46ae0c9475e858f83e5835cde8e",
+      "statement": "AsynPool implements soft and hard time limits with event-loop timers per job, scheduling the hard timeout after the soft one fires.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/asynpool.py#L549-L606",
+          "version": "repo-lines-v1:sha256:aec19fbc1b0c4c1aadd98ff616dfbfcd0f4b221f955f69050abdb40f4e18457e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5M2E0NjRmODA0ZmQ3NmE2Nzg0YTZiMDFkNmM2NGRiMTAzNzQ1MjVhNjMxOGYyNmMxMGM2MmE4MjhmNTkxYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2Njg3ZTM5MGNjYzRmYzNjZmI3YTUzOGM3YzYzZDQ1OWFkMzI1NmMxNDcyYTJmYzYyYzZiMTY2YTliNTU3YmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkZmJiNmFjYTFmOGMwNTlkZGViNjg4ZTg2NWU5YjYzMzY1NjM2NDJjODE3YzcyMTY3M2Q4ZjlhZGMyNjlmNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7fc5a0c178754d579cb8f7c64a97b8ec",
+      "statement": "apply_target calls the accept callback, runs the target and passes the result to the callback, converting unexpected BaseExceptions (other than worker shutdown/terminate) into WorkerLostError failures.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/base.py#L22-L45",
+          "version": "repo-lines-v1:sha256:3d367252314a6beb1e9dd511d29507b2c95bd03d214053125ebcc3379fb85c27:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2ZGNjMjJiNmNkNjI5YTljNWY4Njg1NDdhZjMxMWZjOWI2YjFiMTc1ZmFhZTNjMDI3ZjIwMjdjOWQ4YjVhYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhOTI2Zjc2Y2QzNTc1ZWIzZmYzMzVlMmQ0M2JhYWJkZDljNDM5OTVkMjI2NDE5NzhjMzczNzZmNjE4YTRhNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhN2UyYmIwMWViMzI0Y2RiMzc0OWFkOWZjZDhiNzZhNjJlZDlmZjRiZGE1NTdmYmJjOWEzYzgwMDBiZTI4ODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7806fc66564a4c09baab03cfd913eb1c",
+      "statement": "The thread pool runs tasks on a ThreadPoolExecutor sized by concurrency and is not signal-safe; the solo pool runs tasks inline with a limit of 1.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/solo.py",
+          "version": "repo-file-v1:sha256:1fd65a57e4710b7d0cd585028d0bcb9db0d00932da7f01b20b88389f0ab3dee3"
+        },
+        {
+          "resource": "repo://celery/concurrency/thread.py",
+          "version": "repo-file-v1:sha256:8d586742cb69bfc5146b10ceb5d3386008e1c05c613819500af4cde202765a76"
+        }
+      ]
+    },
+    {
+      "id": "claim_499b87ccb7394aa297810dfa5cf451d7",
+      "statement": "The gevent pool enforces hard timeouts with gevent.Timeout and supports terminating individual greenlets.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/gevent.py#L116-L140",
+          "version": "repo-lines-v1:sha256:e51b2f195c07eadbc12bf6b1184cf6152e3a4ba834f043f91c7fb3e88ec403d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxODYxZjYxMTZkYTE0ZTdiYjgyZTQ5M2FjOGE5YTRkOGM0NDdkZjJjNTE4OTI1MzkxYjgzZWFmMmVjYzk5NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0YjRiY2Y2NGRhMzI5ZjYzM2YwNDY2MmI2NzVkMDRiNmE0MGJiNDY2YWRkN2RiYjQ5NTNlMDcwZmIxODFlM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjZmI0NTc3OTA5YWM3ZmM3ZWEyYzMzZmQ4Y2UzMzlmZTI5YzZhMmU0ZjY3NjkzYzMzMTM2N2U4NThmNGNkNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyMDM2NmU1NDljZGExZmYxM2UxMWQ0MTZiYzg5NThiZmZhMjRkMDZhZjJmODBkNGUyZTcyNTkwMGRhNTVlM2QifQ"
+        },
+        {
+          "resource": "repo://celery/concurrency/gevent.py#L28-L40",
+          "version": "repo-lines-v1:sha256:2c5f1285fb0630f0367664ba248d41d233f51211c46e6ecf8e3cba8602ea6b96:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MjU5YTg3MDc0YmIxNzQ5ZGJjNmMzNzZjN2FhYTliZDVlMmZmYTI0YjQzMGVlMzU4ZTkyMmI0OTAyYzEwZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhMDQyYTg5ZDA3ZDc1YzY4ZDExMTZjY2YxNjI0Y2Q2OTIyMTRkNDczNzQxZjlhNWVjMTNhOTlkZGEyMGZkZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlZTk4YmQ4YTk2OGMwYTc5ZjkzMjM3MTViOTg0NjM1NmI2MDNjMTY2ZmQxYzNmY2U0MDRiM2JkMjNlNDkzN2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_25973d41c0fa462e8899f058d8d622e1",
+      "statement": "The autoscaler targets the number of reserved requests clamped to min/max, scales up immediately, scales down only after the keepalive period (default 30 s) since the last scale-up, and updates the consumer prefetch count when max changes.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/autoscale.py#L28-L28",
+          "version": "repo-lines-v1:sha256:878acfc1d310ef5dd7dfb4432c1c6fa211fb82648f03c442730d775830027e94:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODc4YWNmYzFkMzEwZWY1ZGQ3ZGZiNDQzMmMxYzZmYTIxMWZiODI2NDhmMDNjNDQyNzMwZDc3NTgzMDAyN2U5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODc4YWNmYzFkMzEwZWY1ZGQ3ZGZiNDQzMmMxYzZmYTIxMWZiODI2NDhmMDNjNDQyNzMwZDc3NTgzMDAyN2U5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmQ3NzIzMWRmYzNkYjM0YjAwZmUxYzI2M2Q1MzVmMGQwNzI0NDIzNDQ1ZjgxYmYyZmFkMzUxZmUzYjI2OGEzYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGMxNDdlOTQxMmNiMjY5MjBiYzZhMWEwMmZmOTI5MzUzMjNmYzBiNmM5MTUzMDM0ZTQ1NTExNDBhYmFmZDAwNSJ9"
+        },
+        {
+          "resource": "repo://celery/worker/autoscale.py#L83-L154",
+          "version": "repo-lines-v1:sha256:e76cd8048640f3186d23f053c850ac006a4744fd1beaef95f8ce3847c5b2ab62:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkOGJlODVmODJiMjA2NzQ5ZjA0NDcxMjQzNWRlOTMzOTk5ZGQwYzcyZTEwZWMyZTZhODFlODg5ZTkwZTNkZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyNzAwYjMyMjQxNTAwYTZkYzkzY2QwZjg1ZDA0NzA0ODgxOGZkOTdhYWFhMWZjZWFkNjY4Zjg4NjY1MmY1ZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0MzMzMjk2ZDVmOTUwZmNjMWRiYmYwYjU1Y2NiOGU4Yjg3MmUxMzYzZTAwNjhjODBjYzM0YzRmMTg0OTFhM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:05:29.073Z"
+  }
+}

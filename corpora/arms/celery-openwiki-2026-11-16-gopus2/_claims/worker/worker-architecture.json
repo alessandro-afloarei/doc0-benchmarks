@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1a0608ab3dc2c361852f37a27b8586266e7f7babe0d3e78acd33d702af659d50",
+  "claims": [
+    {
+      "id": "claim_30d12b9a13994cd59d16984db6c172a1",
+      "statement": "Blueprint.apply loads step classes, recursively adds required dependencies, builds a dependency graph in which the 'last' step depends on all others, topologically sorts it, instantiates each step and calls include.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bootsteps.py#L186-L252",
+          "version": "repo-lines-v1:sha256:fb9adadd88b7bca9cba5d55ff6d291d24315697aebcab601c7f33f33e5897b27:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4OGUyZmZlMjlkM2I3YjhiMjQ3YTBkYjE5OTEwNDM1ZGJmOTU5MzdmNWFhN2VkNjE0OTFhODAyMTVhM2U4YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMmRmZDU3ZDYxY2VkZWYwNzMyZWM2M2NlOTVjOTA2MTM4ZGMyMDlmYzU1NjAwOWY3YzQ2Y2FiMjI2MTA1ZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmNmMwYWQ4NGVmYzZlMzA0YjkwMDNkZTZmYzJkMjUyMWNmYzUyYjBhNGFlZjgzYzNkMDM5OGU2NTVlOWM5NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlOWE4N2E0MWEzMTFkOWNkMDFhNmExNzIwOTg3MjE2MzMxNjYwZmQ3ZWY1OTI2ZDQ2NDA5Nzg3YzBkNTcyMWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d8127010ff19422bbc31b0adf90d34cc",
+      "statement": "Blueprint.start runs included steps in order, while stop closes all steps and then stops or terminates them in reverse order ignoring errors, marking the blueprint terminated and signalling shutdown completion.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bootsteps.py#L109-L176",
+          "version": "repo-lines-v1:sha256:595bb56a2d42f98ff6dac8d2b3fc9c7d13fcfda4e390e374c6bceee3b1d44a6b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZjUwOTgzMmY2Njc5OGY2ODYzNWIzYzc2MWYyNGExZjBmN2VmZjE2OTc2MmMzYTYzYzllZDI3YWRkYjM5MjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMTI2ZmQ5OTBlMTQyYTE5OWRjZDM3YWUyY2ZkOGYxOTliMTQyNTcxNzg3MGIyY2FjZjc3NDNiMjIzNGM3ZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkOGUwNGZmNmJkN2Q3OTNlYjExNDBlYjgzYjc0Yjc0Mjc1YTEwYmJhY2FmMGEwYWEzNGJkNzhiN2I4N2Q2NjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmNWQyMmNlMWQ0YWQxMzczNzJmMTE5Zjg3ODE2YmI0ODZiZjc2NWFjOTI5YzI4ZGY2NzE0ODk4YTk4ZTg1Y2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f836a8af2fcc4802a8319ac8a20c9747",
+      "statement": "StartStopStep adds itself to parent.steps when included and delegates start/stop/terminate to the object created by create().",
+      "evidence": [
+        {
+          "resource": "repo://celery/bootsteps.py#L355-L383",
+          "version": "repo-lines-v1:sha256:4a18d29acde33584f6321d7245042dcc92aed65a200ed9da5bf24996deecfb4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3NjU2OTAxMmZjMzE3NjIwYzU0NmUxNTdmNWIwZGY0MTgzZDNjNjRkMzVmMGVmMGI4NGRiMmZiMWRiYzY2YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0ZjBkZjFjMGE4YzNiMDI0ODNiNWJmMThhOWVmNzkzZmU5ODU2NWMwNGJhNmNlZWY4MDRmNDdkYTk1YjMzMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMjhmMzA0MGRmYmViNjhjYzk0NjA4NDdiODVkYjU5ZDNlMGFkNzA5Nzk5NzFhNzM0YzQ5NWEyMTBiOWViN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiMTY3NWI3YjM2MTcxN2Y3ZjU2NjBiMjFhZDhmMjNhNmRkNzczZDAwYWY1MzhiZDMwNmU4NWNkMjQyYjM5YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4791534346bf4eadba261a68e0e3cb07",
+      "statement": "WorkController initialization calls loader.init_worker, merges settings with CLI arguments, selects and deselects queues (adding a worker-direct queue when enabled), decides whether to use the event loop, sends worker_init and applies the worker blueprint including app.steps['worker'].",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L164-L190",
+          "version": "repo-lines-v1:sha256:f45fb5b55c15d3418a3525d30e66ccec98c84897613851237132c578c21b5452:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmZDQ3NGYwZWE5MmYwMzg0NGY0ZGYyY2I5ZjY4MDI5YjBhMGYxY2JhZTRhYTQwNWEyOWU5MzNlOTlmY2JmNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhMjE1YzJmYmM1OWEzYjU1YzcyN2VhODc4MTkxZDM5ZmNkZGZiMmUzZmMyNzk0MzVjZDY5YzQ2YzYxOGMzOGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyMjlmYmNmMDU4ZDlmNDgzZGVjYTBiMTdlODczNWI4NGMyOTkxNWNiMjNjZDg2YjI0NWJiODllNTMyNmY2MjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3ODUwODc5MjE5ZDQyMjc3Yjc0MjNjODg3NDZkYmU4NmI4NGVmZmU0ODRlZDZmZGVhMTU2YTBjODdhNDVjZGEifQ"
+        },
+        {
+          "resource": "repo://celery/worker/worker.py#L90-L139",
+          "version": "repo-lines-v1:sha256:deceee2e3bb1edebbaccc0e227553aff3f1c388133dab9172e4377124e948a1f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzYmQ4MWJlYWU1YTVmODVhOGRmZTg4ZWRhODYwMzE1YTNhZTlkYzJiMzcyY2Q2NGVkNjY5NTk2OTRiZTlhYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZGM5NzBlYTRmYjE2M2UyNjU5YWEwYWQzNjgwNjUyMzUzMWY0ZDU5MGRmNDA2ZTBlYjkwNjkwM2EzMTU2MDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwN2E1MjJmYjI1NDk5MDZiZjRjNGM3YWYwZTk0ODUzMTY5NzEwYWVjY2U0YWMzMWZjNmEwYmNkZWRkZTUxMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiZTNmMTA2MDA5ZmE4YTlmZmE5YzBlZGFiMmRmN2I1ZTBkNzQxMmQ2NTBjNzJkMjJiZjIyMDI0OTc3YzQyZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_828559fa6e5d477295376853016fd47c",
+      "statement": "The Timer step uses a hub-driven kombu timer with the event loop and otherwise the pool's Timer class; the Hub step is only included with the event loop and patches thread primitives to dummy locks.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/components.py#L32-L94",
+          "version": "repo-lines-v1:sha256:77ee77f2fa09dc1456563cd616b34d78f30ca044dae7a0bbb7d6be9b27905e0b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZGZjNDk3OWZkYTU3Yjc3MzBhMjJmMWZiODAxMWMyMDBjYWM0YjdmNDNjYWZlMjgzZjVjODM2ZjFiYjQxNDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhZmU1OTkwNTkxNTgxMzI2OWFhOTE0YjgzOTg1OWFjNTYxNGIwZjFjZmFkNzAzYjY1OTkwYmIxODAzMTJjZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4YWU2MGEwOWE3ODRiNDdlYTA4NTMxNmJmZjkyYzY4MDExZGQ2NzBkODlmMjhkYWY1ZGE5YmI2YWU0MWJjNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0NTAyNjJjMTUwNjM3ZmQ1ZjEyMjNjNjdiYmM1YmNlM2E0NDE1Y2E3YTIzOTgzZWRiZjIxYjcwZjM0YmYzNzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_726b0312395e4542828124f882cfcac8",
+      "statement": "WorkController.start maps WorkerTerminate to terminate() and SystemExit, KeyboardInterrupt or unexpected exceptions to a warm stop() with an exit code.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L200-L211",
+          "version": "repo-lines-v1:sha256:1dd52c3ac756b724b9f14c47fed88012809e53afe7250d1f30b8f54747e61461:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjZDdiMGYzODFjYTE2NzY5NGUwNDI2NTY3MGU2NjY3MjNmZTQ0MTBlZGFmZjIxMTE2YjY3ZGExOWExYzkyZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlMDkxM2NlZjQxOWM4NTQwNTBjMzFhZTBlYmJhNWZkYjRiZDFkMWE0Y2E2OWVmNDhmMjRjZDFkMTg0YmIwZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlODFmZWUzYTAxNzcwYmEwYWIxMGU3MzAzYWQ5Y2IyNDM3NmY5OTg5OTYzN2IzZGQzOGM3MTFkNjU2NWI5NDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eed543c70c5040ee80d1eb713a3da005",
+      "statement": "Warm shutdown closes the consumer and stops the blueprint, cold shutdown stops it with terminate, and both run under a default socket timeout.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L244-L266",
+          "version": "repo-lines-v1:sha256:7d01c8fa40cb5ff3d580f096fe9b525eab59e605230a1cc42c9bece048bec7ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxYzliZDhhZWJhY2M3NjNjNjY4ZWUyYjk0MTg0YjNmNTc4MmVkZWIzNTJjNjg0YTIxNmEwYTQzZTk0YTNhMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlZDg4OWIwZWYyMTg5MmNiOWM4ZDUyOWZlYTkxMmU4MzcyNDQ3ZjkxMjljNGViOWI1NDg2ZjlkNmMwZjhlNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxZjdmMTJjNmJmM2JhMzliMWI5NTVkODY2ZmFhYTQ5MmEwZjg0MGFlYzJhNGUyNTNiODZhYTlkYjlhMWJkZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiNjQ4NWQ5ZjZmYjg2NGQ4OWQ1M2YyODJiY2M2OWZkYmI1NGU5MWJiMjE5NGRmZjU2OGJkM2E3MGJlYzhkMWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_de6585084df14b7b835b3956f11ffdc7",
+      "statement": "Worker shutdown signal handlers in the main process send worker_shutting_down, run an optional callback and set state.should_stop (warm) or state.should_terminate (cold).",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/worker.py#L288-L316",
+          "version": "repo-lines-v1:sha256:a298378db835c0bf5108516986bfe8d766fd3c4cce13c942dd3b20b93c10f6a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMTQ1MDA1NjllYWFkMjA3Y2ViNTY0N2I4ZTU4ZjU4MThhZGJjYTc5NTkyMDdlZjEwYjIyNTg1Yzg0MDMyOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3NmUzOTg5ZWI4ZmYyNDZkMDU5NDEwMGIyNGFjNzIzOGYxY2NjZDViODVjM2E0OWJlZDI0ZDlhNGIzMTQ0MzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjNThlNjU1ZWRmOGVmOGNiZmM4YTMzMWRiZjExZWRkMTI3MWM2YTdjN2Q3MmZkYWI2NDFhMTZhNzM5MGU5YmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c2f549de4704cdead7f6a4769ba6fb4",
+      "statement": "The CLI worker installs SIGTERM (warm, or cold with REMAP_SIGTERM=SIGQUIT), SIGQUIT (cold), SIGINT, SIGHUP restart only when not attached to a terminal (unsupported on macOS), SIGUSR1 stack dumps and SIGUSR2 rdb when CELERY_RDBSIG is set.",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/worker.py#L254-L274",
+          "version": "repo-lines-v1:sha256:f4df0c2ca8dacae47ec0dd40d1475d8a7b39419be715f0f41608f2a16717633a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3YTA3NWE3NjU4ZTdjZjMzMTY0MGVmZTY2ZWIxMTA4MDBmNjBjYTIxZDA4MjIyMzEwMmE4YTg5NjkyNDk5ZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyNmNhOGQ1YTQ1YzRjOTBjNDhiNDgzN2RkOTM4NjFhZjg3NWM3YmNhZmMyNzAxZTQwYWZhZWFmNzA0NjExYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiNDRhZmY5YTA4MzI1YjIyYTRmY2Q2NjVjZDQxMTUzZDM4MmQ1NzEyZTBhMjZmYTMzYzIwZDdkZDg0ZDU2MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2M2QyOTg2YjczZGQ0NDM1MDY0ZTdlMDg0ODk2OWMwNmM0OGY0MTY2MzE1YTU4M2YwZmIxOTQxZmIwYjdlN2YifQ"
+        },
+        {
+          "resource": "repo://celery/apps/worker.py#L433-L515",
+          "version": "repo-lines-v1:sha256:6e08e5d470494d12c4caea5b4d8f7729924d5cb70d797702718f2899afb4e4e5:eyJzZWxlY3RlZExpbmVDb3VudCI6ODMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjNjkyNDE5NzhhNGZjZjg5Y2RmNTYxZGJlNTJhMGFmZjM1N2M2NmUxMjgyYzFlMDc5NDQ3MzdjN2I5OTVmMWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyYmVmNDU4YjRjYmEyNWNiOTUzNWE4NDRmM2YyODk5NTYwNTY4YTllNWI3Zjg4MjI2YmI2ZDUzZGExYTI5MWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZDIxYjI0ZDlkYWQ4ODc2MTE2NDdlMWFhYTE4NTk5OTQ4NGY3ZGNiNWJmNzg5MmUyYTljZjEyYzFmNDJmOWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_55076fb2303145daa287b95754fddeb3",
+      "statement": "With worker_soft_shutdown_timeout set, cold shutdown first waits up to the timeout when tasks are running (or always with worker_enable_soft_shutdown_on_idle), then cancels the task consumer and active unacked requests, sets should_terminate and stops the pool.",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/worker.py#L369-L427",
+          "version": "repo-lines-v1:sha256:4bee5b99e12245397b4a40f6e33ee0a6461db4f36250bc7cfca141a1c7834d81:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0MThiN2QwNGQ2ZjhkOWIzMmI0MzY0YTM5ZDc0NWIxMjBjMGM2ZmVjZmNmOWYwOTFkMWI1ZGJkY2Q3MDkzNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1M2UzMzY3NGQ5MjZhYWJlYmJmZmQ3YjljNTNkYWFkYjZlMzNiODM5NmFjMzBhYzJiZjRkNzFmYmZlNTYwMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjMjg2OGU0NTUwNjNkMTNhOTA2YjA5MjIyYzM2NTliOGQzODgxZDNjNjJjMjU0YWRlYjU5ZDgwMmRmMmM2OGQifQ"
+        },
+        {
+          "resource": "repo://celery/worker/worker.py#L412-L435",
+          "version": "repo-lines-v1:sha256:2dda1a44e1f22b87f76a3d46b05166c440b8ecd02cabe8b79c5233261d240f7a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1YTYxMmFiYzNkZWFmYzAyYTExY2FkODVhNDNjZmRlODQzYzI2MjM2MGJkODBlZWYxMDBlMzdmZTc3MTNkNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNjAwODhiYWJiMGFmYmJhZDIyN2Y5NGRjZDE2ZTI0ZDJiYjlmZWEwZjU5ZDBiNWJkNjcwZWE1YzZmMmU3NjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0MGU1Mzg3YjUxMDZiYzZmMDBkYTYxZmRlZGZlMTIwZGQ5YTNhOTcxYjc2MmE2NTRiN2RhN2RiOGY2NTg2YzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:05:29.073Z"
+  }
+}

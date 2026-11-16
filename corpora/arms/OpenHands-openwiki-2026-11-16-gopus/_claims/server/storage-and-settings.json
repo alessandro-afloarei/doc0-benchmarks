@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c057e498f382ef3ed428f97bc04cef826d2baa7169ae8c29522a965b1e3e4cfd",
+  "claims": [
+    {
+      "id": "claim_0758f972116049af90780f157052878a",
+      "statement": "At import, the server's shared module loads the app config and server config, creates the file store and Socket.IO server (with a Redis client manager when REDIS_HOST is set), and resolves the monitoring listener, conversation manager, settings store, secrets store, and conversation store classes via get_impl from server config.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/shared.py",
+          "version": "repo-file-v1:sha256:02a1358bc996d70d3a0a14e65a458139c02c9b8f0becfdca98fe12b29188ca28"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5c84da769b045b4b0b26ef281217d81",
+      "statement": "get_file_store returns a local, S3, Google Cloud, or in-memory store by type and wraps it in a regular or batched webhook store when a webhook URL is configured, defaulting the webhook header to the session API key.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/__init__.py",
+          "version": "repo-file-v1:sha256:bb846660f3b69d0ca8e77c8e3f433d90653efc887be5e9bb91def0ce2abf4311"
+        }
+      ]
+    },
+    {
+      "id": "claim_f224f80f71684e8abbb6492d7813a90b",
+      "statement": "The file conversation store saves metadata as JSON per conversation and searches by listing conversation directories, skipping unloadable entries, sorting newest first, and paginating with an offset-based page id.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/conversation/file_conversation_store.py#L29-L104",
+          "version": "repo-lines-v1:sha256:b7abc19d2231df9917fb78df52084557d07e27ec2b67a2bdf0a5bbad79b291fd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMzBlNzkyMjg0ODI4M2I0YWVlYjI0MWU2MmIxNzk5YmYyYjBlZTZkMTlhOTczYzRkNWM2NWU5Mjg1ZWY0NDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMTBhZDQyMWVkZGJkODgyMmQ5N2Q3ZGM1MGY4ZWJlZDZmODliNGY0MDAwMmM3ZjMxNDA0OTE2Y2JiZjA4ZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df71ca0c4ebb46cea4aaa62d79f10aa6",
+      "statement": "Settings serialize secret fields masked unless the expose_secrets serialization context is set, and file settings and secrets stores persist settings.json and secrets.json with secrets exposed.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/data_models/settings.py#L58-L72",
+          "version": "repo-lines-v1:sha256:5a448aa485184e0d97de8153af77f8482345e9d27d71cfb97183c4d7c51c1c90:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMjZkYmEyZjc2NzAzNzMwYzhjNjEwMzMxYzIxNTI1MGU4ZDAzNjZmZTAyODZiMGFkYTc3OWM4MTdiNTI3ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2MmYyOTI4MjJhMjFkZWUzZTkyYmQwZWE2ZmE2OThiN2VjY2RlOGYxZGVhZjAyYTdjNmUxZmQ5NmE2ZDAwZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4OGQ4N2Q2ODBhNzRmOWEzZjE1NDYxMGQyNjI1YmU0ZGUyYTZlNTA3ZTZiMWU3ZGIyODIwMzMyYTJiNWQ2MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkY2RlYTU2NzRjOGE0YTllNTFkMzVkNmZlMmVkNzc3ZTJkOGU2MTIwOTljZDZjODVhN2UyYjI4MzZmOTJkY2MifQ"
+        },
+        {
+          "resource": "repo://openhands/storage/secrets/file_secrets_store.py",
+          "version": "repo-file-v1:sha256:ddedf9f86d11c3cb417f33a4a170571a85c3c3f8662c13734c8d340a925557fe"
+        },
+        {
+          "resource": "repo://openhands/storage/settings/file_settings_store.py",
+          "version": "repo-file-v1:sha256:2d480f4603a58caacd2baf7c14464f3115ec8f5384afe4c81a197fdf1acaa51e"
+        }
+      ]
+    },
+    {
+      "id": "claim_adb9e4f708ad491aa1f9fd512b7a10d0",
+      "statement": "Stored settings are merged with config.toml MCP settings, with config.toml taking priority.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/data_models/settings.py#L158-L180",
+          "version": "repo-lines-v1:sha256:c7efd324b813c7f78bbf28e5cc5980b916f2273589123256dd6877d0caac964e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyYzk2N2Q3MjEzYWIxYjAyZDNjMDUzZDBiZmM3M2JlOGI2YWQxYjI2ODg0NjZiMmQ5MjMzYTY1M2M4M2I0OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0M2I4MTNjNGU2ZTUwOTM5NjZmYTc5MjQ4NjRmMjJmMzllZjQ1YjUyMGE1MmVmNTNlOTcyNTI3MjQwMjE5ZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNGVmOTcwNWE1NjI3NWRhNDc1ZDhkYWE2NmQ0ZDJkZjYwYjI4YjM3MzQ5YjJlZTQ0YTgxNmI4NDI2MWNkODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4YTMyOGUzMDk4OTFhNDk0MDMyMzg3MTkyMmM5ZThkY2FiOWM3ZTY4MzE0ZGFjN2ViMmQxOGE5YzgyODlmZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba7582de3ebd447f8b2e45853ac2e347",
+      "statement": "get_user_auth resolves the configured UserAuth class per request and caches the instance on request state.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/user_auth/user_auth.py#L84-L94",
+          "version": "repo-lines-v1:sha256:65f7a82d480aa589041b161acb6f8da060c82b6a037ba9abf3dcb36aaff1113e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMTMzZTdmNDk3NGRhNmFjMTg2ODJiZDg3ZDhmMmE3NjQwNGRkM2JmOGI1ZTE4YTViNDMzZmVjMDEyNjJmY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3ZWRkZTczZTBlYjliZTFiYTljMjkyYmFhYjk0MWUwZDkxMzRhZTAzMDAxMmVkMjYyMDBjZTk2ZmQ4YmQwMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxODkyZDc4Yzc3YjlmNTNhNzI4ZmIyOWM1OWI2OGE2MjJiZWY2YmExZmE0NjZhNzExYzcwNmU4MDliY2FkOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5cd84af21ac14377b331405aabf6a1fd",
+      "statement": "DefaultUserAuth is single-tenant: user id, email, and access token are None, and settings, secrets, and provider tokens come from the configured file-backed stores.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/user_auth/default_user_auth.py",
+          "version": "repo-file-v1:sha256:0f44d86987194c2a66c447ad856392f74cf849180898e5f4a299865885ef41c9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b9f142331c624a63881754c4cf049f68",
+      "statement": "When SESSION_API_KEY is set, all server routers require a matching X-Session-API-Key header and reject mismatches with 401.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/dependencies.py",
+          "version": "repo-file-v1:sha256:1b5e8ac10091f92950699fa27c8f2853aa8feb189950a592338b4cc1b0db024a"
+        }
+      ]
+    },
+    {
+      "id": "claim_57d2b9cc34d442768325bed89fd7a6e1",
+      "statement": "The settings GET route reports whether an LLM API key and provider tokens are set without returning their values.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/routes/settings.py#L28-L88",
+          "version": "repo-lines-v1:sha256:d820ab334a39df5fd636dcb5a6034a253ccbb5be50f99c255ea56f39bdb030c9:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3ODljNmZlY2Q4YzcyNzIxNzI3NTNiMTM0N2VkZGRjOWNlYjFmMjk3MGUyNDg2NTNlOGZmOTQ0NTFiZmFhOGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlZDNlNmRiNmYxMzg5OWRkYjgxZmE0NzRlNGIxYjNiMWIyYTRiYzQ1OWQzODM1MGVlYmQzNDI4OTAzOWI3NTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1MmQ5YTFhZTYzZGQwNzYxZGZhOTdhOTI3N2I5YzBkYmIzNjgyYWFhNTdkYzAxODA2MjVjM2U4ZmUxYWIzYjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56f8d41cb7504586b02e5aef895a0af8",
+      "statement": "Conversation access validation is an extension point selected by OPENHANDS_CONVERSATION_VALIDATOR_CLS, and the default validator performs no user validation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/conversation/conversation_validator.py",
+          "version": "repo-file-v1:sha256:76dd2a5701ab708e1c134621aa183293c9271b31682bbe62ce63c5cde51ed14d"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

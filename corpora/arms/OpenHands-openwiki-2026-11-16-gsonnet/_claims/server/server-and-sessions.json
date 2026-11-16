@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fa2a0aec7f04b03a4fdb95c1db163a491e00da87c0652943b3d6587b21c8c5db",
+  "claims": [
+    {
+      "id": "claim_c297c383137d4df0bd54f7a30cd2f7d0",
+      "statement": "listen.py serves the built SPA (unless SERVE_FRONTEND=false), adds localhost CORS, cache-control and an in-memory 10 req/s rate limiter, and wraps the FastAPI app in a Socket.IO ASGI app so REST and WebSocket traffic share one port.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen.py#L1-L27",
+          "version": "repo-lines-v1:sha256:aa744743c97739d69b0989f7408ee1c98388edb338934b6bc7972ed20f17938a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MjdhZGZmNTI0ZTA2MTYwMjJlYWRkOGY0YWYyMWEwNzc4YjI5ZmM0Yzc3YmRmZWZkMWFmY2UyY2JmNWU0YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGMwNjFmNmEwMjc4MjVjNWFlNGNkODUyNzdiNmQ2YjgzZGNmNmIyYzU0OWVkMzk0NWJiZmQxZWEyY2QzY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ecbc6b3a71ef443c817568ae169d7308",
+      "statement": "shared.py is the composition root: it creates the file store and Socket.IO server (optionally with a Redis client manager when REDIS_HOST is set) and instantiates the monitoring listener, conversation manager and stores from dotted class paths in ServerConfig.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/shared.py#L1-L77",
+          "version": "repo-lines-v1:sha256:02a1358bc996d70d3a0a14e65a458139c02c9b8f0becfdca98fe12b29188ca28:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MjdhZGZmNTI0ZTA2MTYwMjJlYWRkOGY0YWYyMWEwNzc4YjI5ZmM0Yzc3YmRmZWZkMWFmY2UyY2JmNWU0YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_302705f5e6764ecd80487c9f463314a5",
+      "statement": "If SESSION_API_KEY is set, every router requires a matching X-Session-API-Key header.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/dependencies.py#L1-L24",
+          "version": "repo-lines-v1:sha256:1b5e8ac10091f92950699fa27c8f2853aa8feb189950a592338b4cc1b0db024a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MjdhZGZmNTI0ZTA2MTYwMjJlYWRkOGY0YWYyMWEwNzc4YjI5ZmM0Yzc3YmRmZWZkMWFmY2UyY2JmNWU0YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMTFjMDU2N2QwYTVmOWU5YjEzNWY2NWNkMjUzNzJkZmQ2Mjg3NzVmN2MxZWQyNTNmOGJhZDQyZGQyZDY2NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1d2f67d23a1458a92590e3a89669afe",
+      "statement": "The app lifespan combines the conversation manager's lifecycle with the mounted FastMCP app, and the git router is included only in OSS app mode.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/app.py#L37-L86",
+          "version": "repo-lines-v1:sha256:9e803aea23ebeec994cadb1f19061eb901d2492ba91e7dc7c1ddb12486cab9ae:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZjdiODJhYzIwNjcyN2FmYzFlMWI5OTdjZTJlMzRlYWE1M2VkZjJiYzNmMTE2Mzk1YTQxNWMyODg1NTczZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3YTM3YTQwMWQwMWQzZjBiMWFiNDA4YTMzYmZhYjU1NTMxYTBiZGU0YjUzYzBkNzk4ZDc4NDNmMWM1Y2NhNTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1ZWFhNTU3ZDM5MGZkOTk1N2UyYzE2MjZkYTgzYmUwYmFjZjNkMDIzZGFlNjNlMmMyMTdhZmZiMzI2ODRjZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_10cc53886e5a42fdb95a9969bc3819da",
+      "statement": "On Socket.IO connect the server validates conversation access, replays stored events newer than latest_event_id, then joins the conversation via the conversation manager; client actions arrive as oh_user_action and go to the event stream.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py#L36-L168",
+          "version": "repo-lines-v1:sha256:acfb7b1fb29edf05980fae97820f27d7e0d779831760e4b119427ea9cc68ed39:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMjMwOWIwMjlmMDA0YmE5ODM1YjcwYzJhM2I4OTVlZDA4NDk2YjEyMzcyMzY4MTgwN2Q5MzBjZjFjYmE2ZjY3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMDBjNzdmNjRlMjg1NDczZjE2ZDljOGNmOTMzMzZlMWIxNDRjZGE3OTE3OGJiNjUyZTIyNWQ5ZDdhYjU1ODA0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxMTQyNTM1ZGE3OGNmYjRlYjY1MzVmMzk4ODNiMzgxYzA3ZWExYjAwN2RjNWUwZmViMTM1ZWMxMDBiYTFlMTBjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5d23745c923418e97ec0bace180c6e3",
+      "statement": "WebSession subscribes to the event stream as the SERVER subscriber and forwards events to the conversation's Socket.IO room, relabeling environment command output, state changes, recall and error observations as agent events for the UI.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L311-L352",
+          "version": "repo-lines-v1:sha256:6643b991644c0cededdd907feb464de8a89abf55e9d7d693233144450178b9ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYTgxYzNlNTdiMmEyYWQxYzZhODg1MWVlYTQ5NDRlYWUwMzdmNzIzNzYzNjgzMDRlMTVkYjBjYzgzNDAxMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjYTA5YTZhMWJiMjA2NDk1MTQzZWVhNzU0YzI0NWU1MDg5YWE2MTgwMTM4MGYxYjllNWYyYTk2NjQ4MWZkNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjODRkMDRjYjJlZGFiZGMzZjMxNGIwOTQyMDFiYmE0MDFmOWYxNzg1OWMwNGE3MmEzYzRlZTk1N2U1MjQ0NzAifQ"
+        },
+        {
+          "resource": "repo://openhands/server/session/session.py#L74-L120",
+          "version": "repo-lines-v1:sha256:370180e11bb173a5a7e8e85774d922dc8c260b62a545905143128e27d575bb22:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDdhMDdhODNkZDE5OTZmYjUxNjg0YjQyYWVjYWY0ZTkwZmI3OGJhNzIzMGU1NDJlZDdiZDAxZDQyMzAxYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNDA3NmE2MmJiZGFiMTkwMDQxOGE0Zjg4YThmNjE4YTZjNzUyZjMzMzViNDVjZTg1ODI5ZGU5ODg5NjcyOWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmODMwYmQ4MTU3NjYzZGUxZTFmZWYzMDlhMTYzNzNiMDJlOTE0NTYwMzA3NDNiZWNjMzY1NTRkMzVlMWJmYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkNmMyYjYwYmU3MDVkNzllYzllYWQ2OTVhMTU5MDA5ODk1YzI3ZGY4NmRiNDA5NWNmYmQzMmI0MjdiMWZjOWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4ad210d6d7034724bad4f4fdb1bac5ed",
+      "statement": "WebSession.initialize_agent applies per-conversation user settings over configuration (agent class, confirmation mode, security analyzer, images, iteration and budget limits, MCP config, default condenser) before creating the agent and starting the AgentSession.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L132-L300",
+          "version": "repo-lines-v1:sha256:fe59f9bd966016f14ab0db3cb02bf6b7b05f8d070f0f676cadb1b1bda3e96d5e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTY5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZjU5MTZmYzVhNjc0OGQwZjcwZDIxMmMwYjdiOTU4ZTRkYTI3ZjNjMDU4N2E2OTNhYTVhNGFhZGYzMmI4ZWRjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0YzAxYWQyZjZmYTZlMTZiNTI3ZDFkNjVhOTM2M2U5ZWM4MjU0ZDNjYmU4ZGZkM2M5MDZiZDIwM2NiMTU2NTY4IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1NGI5YzkxYjZlMjJlNWJkNzYyMjlkN2M1YTQwMDMzNDMwNWJlYmQ1OTJlZmZhZDVhNDQzODhlZDA3MjE3ZjcxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyMGU0ZTMzOGQyZWJiMjQ2ZDNmODM5NjNlNzM0NzBlZDkwYmRkYjgzNjZjMDdkMjVhYTBiN2MzYjQ1NGQ2MDQxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca6470ffa586443088e3317a0e8c641f",
+      "statement": "StandaloneConversationManager enforces max_concurrent_conversations per user by closing the oldest running conversations (notifying their rooms) before starting a new agent loop, and updates conversation metadata (cost, tokens, branch, auto-generated title) on events.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L296-L368",
+          "version": "repo-lines-v1:sha256:55e7438458ae3314042db71ad6e525452d4fda6c0ffde7245a382ebd0bf87467:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMzU4ZDNiOTMzYWY1YzFiMmVmN2RjZTlhMTFmNThjNjk5MTBmZGE3NDVmMGFmMTJjMGYyYmFjZWU2NTg2ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3OWRiMzkzMTAyN2RjYzRmZDc0MTkxNmVhZmUxNzk1ZWFmMzMyZDA4NGJjM2NhNTE4YmM4MWE3MWVhZTc2MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0MjBkY2RmNDdjMGI4ZDI0YjZmODQwOWZjMmE2MWQ2NzVhYmQyOWJhNGI3ZTRiOWE1NGRiYTM4ZjI2Y2RlYWMifQ"
+        },
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L493-L563",
+          "version": "repo-lines-v1:sha256:976d2edcaf6419838cae10d166f6d5366714937238d1a9facdda772eb3e80947:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNjQwMzdjZTE3NDZhZjdlMGNhZmRhZjY0Y2E0ODcxNzBlZTY2NDAxY2JlOGI3ZWM5ZWNhOTg4NTIyM2IxNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzM2RlNzZlZDA0MWU0Yzc0M2I4MmFhOGE4MWNlOTllY2NiYjQyNTBjZTZmOWE1YWExMWVlOTYyNzY5YmUzOWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MjBiYjgwZTAzMTI2NDMxNjc4MWMwNTIwMTAxMDlkYzU4ZTJjNTI0OTFlOTBmNDkyMDNkOWMxODViODMyODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxOWVmN2QzYjViZjkxOGI4MzdmZGRhYWZmYWQ0ZTg5M2FjNjczMTgzMTJmMWYxMTYzNGQ2YmVhZmFkMDUxMTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_493c7c674d1b41a18fc7c3e4f4b22ab7",
+      "statement": "A background cleanup task disconnects detached conversations and, when sandbox.close_delay is set, closes idle sessions that are not running and have no connections.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L179-L228",
+          "version": "repo-lines-v1:sha256:9e53e2336273544da614aa7315407108e59092ca45f9c687631580392c6387b9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNGE5NmFlNDZhYjNjNTYzMTk3ZjZjYjQ4ZjUzOTE1ZTEyZjlhNmY0YmJmZTJlYjU4MTk1MDc2YmRmN2ZhNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NjJkZDE1MTk3MmJhYzgwZTU2ZWE4ZjNjMTUwOGU2OWEyYWIyOGFhMDk4MTc3ZDBhMTIxMjAwMzgwZGU1MzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0ODUxYzcyNzM2MDNjMGE3ZTNmOTE1ZWY1MDYzNDE4MTU3OWM3ZDI0MDJlMmIwNGEyODVhNjFhY2RiNDdjMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwZTg4NGJhNmUxNDJhMzJiMjQ0YjE4MWU4MzY1MTVhYmVhY2NhNzY3NTgyNTM5ZmI4ODA5OTY4Y2EyZWRmM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e872a4407e8445cacb2298aafe357f7",
+      "statement": "ServerConversation gives REST routes an event stream and a runtime attached with attach_to_existing (or reuses a live session's runtime) and only closes resources it created.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/conversation.py#L12-L66",
+          "version": "repo-lines-v1:sha256:8a311769d12a69f78f45f0c14ec276c64504707e04ebfefe68a2826138e718f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MmUxZTMwOTVmMTFiNGNmYTA4Mzc2NDU5YWY2ZTg2ZDg1ZWUyYjg4N2Y4ZDMyNjhkMTU1ZmIzM2QxYWRmN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyNGFhNWY2OGE1ZWY0N2NkMjVkNTU2NWNjYzcyZDEwYjc0NmVlMDJiMThiOWY5MmY0MjdlNzVlMjQ1OTBmY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkYTA4NGQ4ZjRjNzk1NTQ3MmVhN2JmODJmZjBmMWJkZDMwN2YzZTNhZDg4ZjI3ODgzNzRmOTI1NzIwNjAyM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91b491e7c47544429ef2d662528689be",
+      "statement": "UserAuth is an abstract per-request interface (user id/email, access token, provider tokens, settings and secrets stores) and DefaultUserAuth is single-tenant, returning None for user identity.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/user_auth/default_user_auth.py#L15-L35",
+          "version": "repo-lines-v1:sha256:a8220a9a88adba1954c93b440015781642e1ac493112c6e3fcd94f56fd5399b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2ZmJhZTBiOTFkNDRmYzBkNDlmNWRlNjkxZGE2ZmM0MzFmMjYwMTM0YmY3MzFlMGUyMWY3NjQ4MDk0MzM0Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkN2U1MzFmOGZlNjk5YjExMThmMjQ0NGVjOWFkMzNhNmZiZmZiODE0ZDlmZWE3ODA0NmFkYmYzMzg5YjY2NTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2ZTJjM2IwYzBkYjY1ODY0ZDIzZDJlOTQ1ZTE5NGU1YWY4MmJkMjYzYjk3MTZhZWI0OTAwYjYxMmI2NWJhOGYifQ"
+        },
+        {
+          "resource": "repo://openhands/server/user_auth/user_auth.py#L23-L94",
+          "version": "repo-lines-v1:sha256:51f158912fe6236264e8679b5d8edfb8ab47990ca2b451ed97fe388cb865f995:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzOWQ2MGRhNGUxMzA2MDMyYmQ1MTdkNjBjNDNiNzc0OTlkN2Q0MzMwYmVhMzQxZWVlYTY0MGNmZTFlZDBjMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3ZWRkZTczZTBlYjliZTFiYTljMjkyYmFhYjk0MWUwZDkxMzRhZTAzMDAxMmVkMjYyMDBjZTk2ZmQ4YmQwMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyZDY1OTFmYTE2NzhkZTM0ZTY0Mjc4NTBhYzM5OWViNTY0ZDMzMzgxMGJkYjA5OWIwMmI3NGVmZDZkOTZhZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

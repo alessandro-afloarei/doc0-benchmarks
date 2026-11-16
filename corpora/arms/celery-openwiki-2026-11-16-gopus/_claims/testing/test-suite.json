@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6852373a1920e67ee84bc917f4e57f42d0b677edc51ac8f21ce97c710f951627",
+  "claims": [
+    {
+      "id": "claim_f4cfbd5482e34fbab4c100e93b53ec63",
+      "statement": "pytest is configured with testpaths t/unit/, strict markers, lowercase test_* test classes and strict xfail.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L1-L7",
+          "version": "repo-lines-v1:sha256:583e902a9c2ae2706fa2c77ce2aa1551cd6ed3cae1a6f6c519e978330a0493ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY3NmU2NDE0NjVhNjU1MWU5ZTljZmZkN2ZhYTFlNmE0MmY5YjcyNDgwOTgxM2M5MDNkN2VkY2I1MmYzMDA2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWMzMDJjZTM1NTRkZmM1YmUxZGEyYjRjMTg3YWJmYmM4Zjc2NThlNTU4ZmRkZjQ0MDk2NjkyODMwMjc0ZTdkYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_872dccbd88744bcbb2f2bc14d618ec83",
+      "statement": "The unit test app uses the memory:// broker, the cache+memory:// result backend, a testcelery default queue, and accepts json and pickle content.",
+      "evidence": [
+        {
+          "resource": "repo://t/unit/conftest.py#L59-L87",
+          "version": "repo-lines-v1:sha256:86c39dad8199fa070906831cef227272271dd3ca7f3abe397f29e6d0e491c9b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyYjBmMTE4NGQ1ZjQ2MTlmOTAxYjk5ZWQ4MjQ4OGUwNDA3YjQ2NDg5ZGM3ZGRjMjlmN2NkNWU5ZDMxYjUyNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0Y2ZmMGVjMmMxMjg2MDUxNTQ3YmU5NDk3MzMyZjU1YTJjZWFkOTczMzEyYWUyODljMDlmOTc4NjY2MmFiOGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b211f1ddb0a4deabc63b62e19d24fe8",
+      "statement": "Unit tests enable the app trap so tests that rely on the current/default app fail with a RuntimeError.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/testing/app.py#L23-L36",
+          "version": "repo-lines-v1:sha256:d5dcccbb38c67f4327b7e38a25d52d2f5b8cf83f7928fe2eca10d1ccfca236d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMmNlMGNmM2U0NDE3NWY1ZGQ5NTIwZjFiOTY4YWU2M2YwMjNmZTU5N2MzZGQ3YTI2ZGQxMmNkZjA2OGYzNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiZDM1ODA2OThkNmVmMmJhOWZhMDMzNjVmY2JjNTA1Nzc2MjZlOTJiMzRiYmNkYTI4MTNkMjY5ZTZmZTBiOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5MTYxNDg2OGUyZWYxOWM0NTNlNWVjMjJiMTQwNzcwNDBiZmE0MWY3Mzg5NjdmNjA4MDI4MDkzM2U1MjNlMmEifQ"
+        },
+        {
+          "resource": "repo://t/unit/conftest.py#L90-L92",
+          "version": "repo-lines-v1:sha256:a4384ec19b30f3afd06baa464e083afea94b704621961a7b3b44ea5e7648dc4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGVlMjc1Njk4NzNiMmJjOWE5NzBiNGY0NDFmZGJhNWRhODRhMzcxMTY3OTlkZjM0YWI0YWM1ZDJjNTY2ZDI0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBlMmE0NjUwMDk1ZmE5NWQwZTJiYjQxYjJkYjI5MDk0ZDM0MDRkMjhjZTEyMzM5ZWM4OGJiNGI1YzViZThmNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGZiZDAwOTMxNGJjMjcwODQxNjczNGEwMmFlNWZmMzlhMWU0OGEwNTBiZTkxZjQzYjJmYWE5MjAwMmM2MmJmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVmMTFjOWI3MTY3YzBhZGM0MmZlYTg1NGFiNjM0OTk3NzA4MTRiMGU3MTgxMDNhOWVjMGY5YmU3YWY2OTk3OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2417bc6d008d47009732aae1b8823f6e",
+      "statement": "Autouse unit fixtures disable multiprocessing and billiard process creation for the session and fail tests that leave worker shutdown flags set.",
+      "evidence": [
+        {
+          "resource": "repo://t/unit/conftest.py#L128-L145",
+          "version": "repo-lines-v1:sha256:ddc48fbcc3c56d2a761a9f9a1f40d3eca7a426391dc2a1cb994a43f5fec2a306:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3Njc2MGIxZjhmMjZjMTdmZmU0NzFhMDE3NDJjMjNlZTQ0NWIzYzk4Zjg0OGVhMjFhNWI3ODgwNTAyM2ZkZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjOTNjMTRjYmJkZjNjODViMjE5ZjIyY2RmODZjNTQ5ZmNjMGU3YzZjNWI3ZWE5MGI3YWJlNzM5OGIwMjNhYTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkYTRiZjgwMjA3YmQzOGZiYTNiZjdlZGI2OTEzYmQ1MmM2MzdkMThjNzk3NWQ4NDRjMjlmNGIwZTJjYmVkMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwZDhkODY1MGU0OGJjNzJmMDc4OWE4ZjUyMDA4ZTA1MWFmOGM2NzQ1MTNkOTljZTY1NGM2ZWE1YzYxNmQ1NWEifQ"
+        },
+        {
+          "resource": "repo://t/unit/conftest.py#L215-L227",
+          "version": "repo-lines-v1:sha256:34334f6a3c663954d97122abe4944a1dffdb54512746a88aab7b29fa744600ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMDg2NmY0MDExZTU4NWZmYzA5MDkyZWRmMDgzMmUxN2I1MmY0YzkwYzRjYTBiNDJkY2ZhMDUwZmEzNzViNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhMzAzNTU0NWRmZDUxZDEyYzBmMTNkZGViMTJhMGFlYTkxMjUxZGYxYWRkM2E1M2M0MDkyZmI5MDczODE5OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhZDg2NGRjN2VjMDgzMTMyNjA3ODg3YjJiNGY0ZjExMTk5M2IwN2YyZTI5Mzk1ZWZlMmNiNmNjMmNhNzNmNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlZjExYzliNzE2N2MwYWRjNDJmZWE4NTRhYjYzNDk5NzcwODE0YjBlNzE4MTAzYTllYzBmOWJlN2FmNjk5NzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c06267c8c004109bee1b8dd1c0c250b",
+      "statement": "Integration tests read the broker and backend from TEST_BROKER (default pyamqp://) and TEST_BACKEND (default redis://), and run an in-process session worker with the prefork pool including t.integration.tasks.",
+      "evidence": [
+        {
+          "resource": "repo://t/integration/conftest.py#L21-L22",
+          "version": "repo-lines-v1:sha256:f91b7c7b84837b0932d4c0fa16c34efc7e461af3c9a7de44af49194c27e17aa7:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc2NWQ5NWU1ZGRjZTk3OWJiODg3OTFjODg3ZjI2ZmU4YWMyMzM2ZjVhZjNiOWQyMGQyYTQxNWJhYTAxZTAwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJlNjcyNTlkNjZhZDI0YmUxM2I4OWZjMzYwYWNjOWEzM2VlODBjNTU1NmJhMmU5ZjdlZmU4NGJhMTk0YmQzMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTVjMWM0NjJlMmEzOWQ3NDc1OWY1ZTFiMTI2Zjc2ODNhMmI3MzAxMThlMThmNTEyMmIwOGNlZGVlYjY1MGUyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmIzYjUzZWRlYzUwMTI3OGIzNDdkOTM3ZjM1OGZmNDMyZDlmZDM2YjgwYjU5NmZlN2Q0MjdjODM4ZDYwNGRmMyJ9"
+        },
+        {
+          "resource": "repo://t/integration/conftest.py#L61-L98",
+          "version": "repo-lines-v1:sha256:de67e1f5adcf3fb152b3189c8a65c98a7e754b9efb2413e4184c986c53f60e62:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwYjIxYmY4OTVmYWUyZDczOTIwZDkzMTc4Y2ZkNTg0MWNkZjhmOTUyNDUxNmM4YTU2NTg0MzZhNGFjNDhmM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkMjJlOWQ1MjUyNWZjYTU4Njk5M2UyMWFjODU1M2FhNzE3MWJkZWQ0MmMyM2Y3YjQ3NTNmOGJkNWYwYzA4YjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b35032234e3249b191cfd1714edbdc21",
+      "statement": "tox defines unit, integration (per broker/backend factor) and smoke environments across Python 3.10-3.14 and PyPy, with smoke tests rerun up to 5 times.",
+      "evidence": [
+        {
+          "resource": "repo://tox.ini#L1-L58",
+          "version": "repo-lines-v1:sha256:ba7039d9684b874408d2be2542159d4f0f855f86090f94e6a00041b588d4711f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwYWI3NjVkOWU2MGJmN2U3MGQ1ZDU4NzU4NDNiZjdmZjMxMWIwOGYyZjBmNzZiOTc0ODc3NzQxZTc0MDJiZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwZjU2NjVkM2Y1NzY0OGQxYjU4OTc4MTlmNTA2ZWJiZGE4ZDc4ZTI2YjczM2Q1NjBiZGIyNmMxMGRhNTMwMjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlOGU0ZjA4YmNkNjBlMWFiY2Q5OTBkNzNkODZlZjUwNjEwODVlOWM3M2YyNDYzYjA4NmJmZTFkYThjMzVjNTcifQ"
+        },
+        {
+          "resource": "repo://tox.ini#L60-L85",
+          "version": "repo-lines-v1:sha256:9d7953cf819a55b280b452d310f2b28ec9570e32c5b4466e7fe850b74b6be410:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0MGZlYzc1MDZkNWRjNWQ2ZTUzNDc2NDFjOTBiYjkwNjdmNDA1OWI5MjEzNGZkYTYxZjg0MzhhNzdiNTA1YTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4NTNhMzYwOTY0OGJkOTlkNzQ1NmRhYjg4MTJhNmQ3NTUwN2JkZmU4YmJjODg1OWRkZWI0Njk0MTk3MDA5OWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ZWZkYTAwNjEwZmUyYjA2Yjk5MmFlN2M5MzE0NDQ5ZDZmMTE5NTJjOWMyMGI4OTRjZDI4NzQ0MmUzYzkyY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b256f01bca8e451c937d72a1f7c91011",
+      "statement": "The smoke suite uses pytest-celery and pytest-docker-tools to run workers in Docker containers, with operations to kill, restart and terminate workers.",
+      "evidence": [
+        {
+          "resource": "repo://t/smoke/conftest.py#L1-L20",
+          "version": "repo-lines-v1:sha256:450d0c5ff2ee576df1d7c6c67367dfa32808eb963c7c7c0f0a624b3f778d4861:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzODRiZmRiMmRmMzgwYjY1NTdjYzdhNzFkMTY4OTE0MTViY2NhYTg3Njk5NDA2ZTIzNmY3NTJjNjQxNTM4OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3ZmU1ZjNlMmE1YjBlMmU2ZDNiNzc2ZDgyODAzNDIyYWM4ZjE5ZGQwN2Q2YmViYjU2N2U5MzUwZDIxNWNjNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjNjM4OGYxZmIyNmI3NjM2MDgxNTQ4ZTBiZTc5OTI5MGNmMWNiODYwZDkxOTQ3ZjY1ODg5OWQ0Y2QyOTQ0MzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97438358c0984a3fab68f94d59b112e4",
+      "statement": "The celery.contrib.pytest worker pool fixture defaults to the solo pool.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/pytest.py#L126-L135",
+          "version": "repo-lines-v1:sha256:48a30f73894277ec2d568d1f66b0a7d96828ea443cdfaeaacf3aa7e2c0b53a68:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZTI3NTY5ODczYjJiYzlhOTcwYjRmNDQxZmRiYTVkYTg0YTM3MTE2Nzk5ZGYzNGFiNGFjNWQyYzU2NmQyNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhOTc1MjY3MjJlZWVmODQyMzZmMmViZDUyYmUzNzVmZmEzMGYzMzg2ZTk1MjczOTJiNDQzY2VkNjRlOWIyMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwYjk3MTYxMjNkZDRlNzZiOGRkYjE1OGFjYjgwNWNmYWM2YTIzNmUwMDU2NjFjNjYxMjI0MDJhN2VhYjMyNGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_09ae9a3af88f40b5bb8f6ac3ba503ae7",
+      "statement": "start_worker runs a TestWorkController in a daemon thread with mingle and gossip disabled, optionally verifying it with the celery.ping task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/testing/worker.py#L100-L190",
+          "version": "repo-lines-v1:sha256:94d5251eeda22ef87f83834f459535a454de4a926332c0bed9d06c94db18ccc4:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MDc3YWRkZjc4YTlkZTY5MzE5N2JlYTg3MTEzOTk0YzliODFiOGY4M2YzZTZkODRlN2JiNTg2NTIxYWY3OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiMGI3OWJmZmMxYThiNDljNTYxN2JkMWZmOWRlMmViMzVkZDE3ZDAxMDdjNDkzNTJmYWQ2MGUwMDY4MzA3ZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5N2I4YTg4ZTYzYTY2NGQwM2U1NzU2YWJjOGJhMTkwYTcyZWRjNDU1OTMwN2YzYWZiNDJhNzFhZjNjYzMxNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiYTAxMWM2MjA2NGNlZTk2MzMxNjVlZGRmODVkNDU3NDgxZjFhYmFiNDFkMTc3ZjRkNmI4ZTlmM2ZiNDRmMTYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:57:55.789Z"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:59a5fd5fe19ff10f5dbe42e3a78cc64bab9b354709c20eef34ce7ed387845b89",
+  "claims": [
+    {
+      "id": "claim_d50ffbd00a724b3498f67945272214b4",
+      "statement": "Middleware signal HTTP failures by throwing HTTPException, whose getResponse() returns the supplied res re-wrapped with the exception's status (or a plain-text message), and the default app error handler converts it into the response.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L35-L41",
+          "version": "repo-lines-v1:sha256:e398096ec17ba72a36f39d6c8d08a2654e0b35020f76bc21d98e957172c533e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk4YjFlYmU3ZWI5YzBlYTBhNWViNzU5NzJjNmU5YzdlZjhiZDVjOWI5NmE1OTQ5NjBlNDhiY2VhZGFmYzA5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzU3YjA5YjU5YTQ2MWZlNTc3NGY4ZTg2ZGRhYWI3OWY4Nzc3YWQyZmVhNWZmNDJiZDQyMjg3MmExYTUwYmE3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNhNWVjMDgxN2VkYTY0MDBhZjI5ZDNhN2EwYmUzOGIxZWM3MDBjMDA3ODA0MGE5MjBiZjQxNjhlYjIwNzUxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I2MWJkMjBlMmQ1ZjExNTU2NTliNDMxYmJmM2VmMDc2Nzg3MjU3ZjM4Yjg3YWM5MTlmYmY3YzU0ZjNlNDRhYyJ9"
+        },
+        {
+          "resource": "repo://src/http-exception.ts#L1-L50",
+          "version": "repo-lines-v1:sha256:90e27a63992c4db0c194e54e893667624da2e613e9811972cd466ae31f960821:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMmEyZjk5NmYwOGU2ODBiZDI5MjEzNWE2ZmE0OTc4YmRhMjZlNjAyZDg0ZjMzY2IxZDU5NDc3NWQ0MzA0YjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxYjI4NzRhMDFiNTdhNTA0OGY5YTM0MWIwZmY1YTMyYWYzMTVmNTIzMjU4MDUwZDIzODViMDI3MjczODJkZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe91f781b5294b1f8156b3545146a2cd",
+      "statement": "The jwt middleware validates secret and alg options at construction, reads a Bearer token from the Authorization header (or a plain/signed cookie), throws 401 HTTPExceptions with WWW-Authenticate headers on malformed, missing or unverifiable tokens, and stores the verified payload as jwtPayload.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jwt/jwt.ts#L35-L165",
+          "version": "repo-lines-v1:sha256:7dd371cef10d2d79d2f596cf04cd4cfd15ce991d098355fc961c6f6d135d0485:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzMmQ1NDI2OTU4MWQ2MjEyZDVmN2NhZDFhMzU1YzQ3YjRhNWJjMGI1YTNmMzdhYzkyZmFhOWI3ZDRkZTgyNzg2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmYjE3YWM0Y2Q1NGIzMDZjMWQ3NzYxZmY0YjgzODUxN2RmMDVlNmJiYmVkMzNkYzNkYTcyNmE5NGViZDlhOWM1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkOTdiMjM3NWQwYTczMTEwNjNjODNiYzVkNDJjNmJmOWNjMjVlMmQ1NjA0NzJjMjU0NWUyODgxY2JhMmZkZjg1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjMWE2NzM1YjZhZDE3YzQ0NjNkMmMzODFjODMxNmM2NDk4MzhiMWU4Y2JlZDViMDU2Mjc3YmM3NGQ5ZDQ0YmYxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_cdee6727161d4b9c9c01c3cbabeba448",
+      "statement": "The cors middleware answers OPTIONS preflight requests itself with a body-less 204 response (without calling downstream handlers) and otherwise calls next() and appends Vary: Origin when origin is not '*'.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/cors/index.ts#L60-L157",
+          "version": "repo-lines-v1:sha256:3aa0b1a7de523140fd6d9cef4dbdbd1b603d4e0fbf774678fb0a2d4de150ed57:eyJzZWxlY3RlZExpbmVDb3VudCI6OTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNTA3YWEzNTQyZjdlZmZjYzc3ZGZkMTE2ODM5YmFkNDIyNTgwN2ZiMzMxOWJlZmU5OWM5MWQ2YjViNDdmYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxYjE1YmJiNjc3MzIwZWFmYWE3ZTVlZWFhYjQ1Y2MwNjZiMTA4M2RhMzg3OTQ3NWNkNDA1Njk3OWM5NTQzNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6cceaae0ba904e27ad848d5f38a98d9a",
+      "statement": "The csrf middleware only checks non-safe requests with a form-style content type, allows them if either the Sec-Fetch-Site or the Origin check passes (missing headers count as failing), and otherwise throws a 403 HTTPException.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/csrf/index.ts#L94-L151",
+          "version": "repo-lines-v1:sha256:fb340643c969420a008a302bb4c9f135c054c7146c5dc3e97184c5567647421b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMmI2MGY0MGQwMTgwZWQ4MzM4NmNlZDYzNDYzZTcyYTVhYTY5ZGM5YzM2MDU0NzEzY2E5Y2M4ODM0MTBkYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiODJmMTY2ZWUyNWJkNmFhMmYyNDQ0MmE3NTgzNGRjNjhiMjIzZjg1Y2Y3ZTdhZDRhOGQ0YWEwYjE4YTIwODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_79e13f9cb82a4cf4a2e1368b1d08a2ea",
+      "statement": "The bodyLimit middleware trusts Content-Length when it is the only length header, but when Transfer-Encoding is present or no length header exists it reads the body up front counting bytes, rejects with 413 once maxSize is exceeded, and replaces c.req.raw with a Request over the buffered chunks.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/body-limit/index.ts#L40-L111",
+          "version": "repo-lines-v1:sha256:94998dcb8dfe1b1f9512ac087a21909370799f31fec731f11efa5bbae3e1c0c3:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YTY0YjQxZmFhYjkyM2M0MzNiZGY1NmYyMDA4YzE2OWZmZjNiZjYwZmVlZTI3NTg4NjUwMGM1ODliZTg5OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjNTljOTE1NjVmMzc1NDdmZTUwMWMzNzdiZGZjY2E0MjE0MDhiZjgyNDc0NTQxZDQ0ZTZlMWM3NzVlMDJkYmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e8ae3c1b872470fb644a5ee70453d8b",
+      "statement": "serveStatic is a runtime-agnostic middleware driven by a getContent callback that skips already-finalized contexts, rejects path traversal by calling next(), serves directory index.html, sets MIME type, and optionally serves precompressed .br/.zst/.gz variants according to Accept-Encoding.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/serve-static/index.ts#L35-L126",
+          "version": "repo-lines-v1:sha256:4403c4daf9bd0796c88947e0ac5231c55159f7ba735265f057d4934a715aa566:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhZWY3ZDNjMTBiZWE5ZjVkZGNiMzY4NDFjYzk4MGEwMTI1ZTM4YzM4NzZhMzliMzhhMzM3YWVkY2U0MzdiMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzMjYwMjUxNjc1MTY1ZmVkYjM4ZjMyZjFlZmRjYmM5MzEyOTE3NGEyNWNjOWU5YjMzYjJjMTA5MzI5YTg1YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a41b130f08864f81895d40971f56894a",
+      "statement": "The combine middleware helpers some, every and except compose other middleware: some stops at the first success and rethrows errors only if all fail (aborting immediately once next() was called), every runs all through compose and treats a false condition as failure, and except skips middleware when a path or condition matches.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/combine/index.ts#L38-L165",
+          "version": "repo-lines-v1:sha256:327fc8e1a1eb5238d61a43d6f88717f998b01d7dde5b813150461505b841af14:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwNjJlNzc2MDQ5MzBkMDMxOGRhOWNlMWM0ZTllYWIyNzA5NGJkNWU2OTVjNTgwZGE3Y2VjOWFiZmYwOWIxNTk2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4NGNkNjk3OWRmYjY4Yzg3YzIzNDdiNzU3ZTJiNzgyOTEwMzQyZjQ5YTY3NmI0OGExYWQwMDg4OGRkNjFlMTkzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_89c14ccbe8fe4df6a26d566f71e206f3",
+      "statement": "contextStorage stores the Context in a module-level AsyncLocalStorage for the duration of next(), so getContext() works outside handlers and throws when no context is available.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/context-storage/index.ts#L1-L59",
+          "version": "repo-lines-v1:sha256:f7ac028b4a02315bdf0d1f342272c96bba6bd1212ca50831f0dd60e31416c445:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:46.600Z"
+  }
+}

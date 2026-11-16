@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6d081849528110710ba9b2244d38dd20c3c48d8f3cb3f9e7a2169028dfa0a8d7",
+  "claims": [
+    {
+      "id": "claim_3f0f68f2390642d5b6fa8bfff49e9154",
+      "statement": "ProviderType defines GITHUB, GITLAB, BITBUCKET, and ENTERPRISE_SSO, and ProviderHandler maps the first three to their service implementations.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L105-L131",
+          "version": "repo-lines-v1:sha256:2f16f469b4c2321ed77db8a1e6dabfaeceb039915d6d181d9ab8839da997b74f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1OTA3MmM3MzY4MDYzYmJhMGY0MTgyMzhkOGUwYjUzMDkzODkzZjUxYjU5ZjU3MmExYmVlNWQwODdmNGU5ZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzZDE3MWRlNzU0MzFhMDIxYTBkOTRmYTc2ZmFiZjBkNzEzOWM4OThjMWEwYjQ0YjQzY2E2MDkwM2ZhMWI4NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3MTc1NTlmNzY1Mjg1NTAwZWUyMTA0NTdiMWMxZDQ1MzE1ZDZmZDYwZjQwNDg0OWIwODQ1YmI2ZTA2NjkxNTIifQ"
+        },
+        {
+          "resource": "repo://openhands/integrations/service_types.py#L20-L24",
+          "version": "repo-lines-v1:sha256:fd18ff6238fba083539ca827321945666982db3e00bd9f3957f898bcdbcf30ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2I3M2M5MWFlYTI3MmViMjRkYmRhYThhN2RmOGU2ZTI3OTdjZGNlMmJlYTI5YTkzMDYyNzRiNjViZGI0ZTVmYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWFlMjEyZWQ2MzQ4MGQ0NTQyNTk3ZGRmYzY5MmFjZjgzZWE4NWZiODg0MzhlZjJmMDdhNzVhZGNmMGYwM2Q2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjNmYzg5NDBmYTBkODA1YzFjNjU5MDY1ZDRkYjFjOTczZWQ3Njc3NjVjMTE4M2VjYjNkNjFhNTc2ZTdmM2U0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzZmMzQzMWJlNTMyM2FiZjhmNDhmOTU2ZTY3MDU0OThiODBhNmIzNTBlZWNjN2FhYzZmNjNmMDY3YjlkMTE1MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e4f0d4649f147b28ea193a46afb1a13",
+      "statement": "ProviderHandler builds a per-provider service with the user's token, host, and external-auth details, and delegates repository, branch, microagent, and pull-request operations to it.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L149-L161",
+          "version": "repo-lines-v1:sha256:a8a6ccb296b9556a1e2751cbf800911760a17b9fbe20cc345816b2da9a791e0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ZmQ0ODI2YzcyMTFkYmFkYzM4ZjgxNDUzMmZiMDIzMDM3M2VhYTE2ODBhOTU4NTAyM2NmNjQ1YmE4NTYxMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0OGFjOGZiN2UxN2E2MWIxNzcwMWEzYzQwODFiNDU5YjhiOTlhYWJiNjYyYWQ5Y2Y3ODRkZTIzOWM5NGNjNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4N2U2MjQ1MDNmYTgwM2QxM2NkNjE5NDE0MTMyNmM2ZmIxZDliZTAyMjc5ZjFmNGQyYjYyZGQ4ZWJhNjJiYzYifQ"
+        },
+        {
+          "resource": "repo://openhands/integrations/provider.py#L472-L515",
+          "version": "repo-lines-v1:sha256:b0c76fc17deca0233d2ff172a9b9610a3dc1c31d1ad24a7f78bc3416e5af02a8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5NTFhOWFmZmE1NGQ3MzVkNzIyODhmNjFlOTU1NzI5YmZmODFlMzkzOTRkOGQ2MTc2ZjgwYWNiZWMxMzRkYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxYTJiNDM0ZDYyNTRiYmRmMTI0YzhiY2NmYjg1YTIyZTk4OTIyODdlYmM5N2E5YjZjZjgzNDU4YmFlMzhmODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjNDYwMzIxYjUwZmYzNmY2MWEzY2ZlMjMxZjY3MTY1MzNmYjk3YmI4Njk3NDBiODA4YjhmYmRhMTE2ZDMwYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzY2QyZjlmNjkzMmQxNGQ3OWE3MmIzZTJlNThjZjFhZDNiMDJjMTdlNTc5NDA4ZGZjOTY0ZjA0Mzc3Nzg2MjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_784535f0ec8e42ec99359901b7569fac",
+      "statement": "Provider tokens are exposed to the runtime as environment variables named <provider>_token in lowercase.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L385-L400",
+          "version": "repo-lines-v1:sha256:4e7a9b9f992b5502f73f41c21f7dec71f9ab67dcda6b2dd1c84106716009cce7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlN2Q4OTJjY2JmOTg5NWJhN2VmMTRhYmI4MjE1NGQwYjg2MGEzYzlhYjFiNGUzODZmYWZjZGZlMDMyZWMwNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiZjVjOWUyYTc2ZDZjMmE2YTJjZTAyYTFiOWZjOTAxYTBiNTAyNTBhMjZjMGVkZjhhMTEzNjVkM2MyMzU0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2MDlmNGJiZmYwOWNiYmExMTA5YTAwYjRiYzhlNGE0Y2Q4NTI3NjZmODJiN2UyMDg4MzIyMDgzNjJmNjZkODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiN2M2ZDVjMGFjNjUyNWM3M2U4OGQwOWM2ZjZmZDZhZDA3MzY0OTc2MDRiMTMzYzBlNGQyZGJjNGMzODAwYjYifQ"
+        },
+        {
+          "resource": "repo://openhands/integrations/provider.py#L443-L445",
+          "version": "repo-lines-v1:sha256:3a967b483d4eff5d2e41c1ca3e55e82c3bfd78f28fd0a223c1c390dc64b7b95e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JiMjNkOTVmYTk2YmFjMGZlYTE0YWM0Nzc3MDdkYjRjNzY1ODQ0YWRmZTI0MmU1MWY1ZWRjMjJhYTc2ZmViZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWNjZWJiMjVmMGJjNzQzODk3NTg2MzExMDY4OTFlYzg5YTQ4NjM5NzIyZDBjOWU1ZDNkY2I3NWVlOTlkNjM1YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM2NTNkY2NmNWFkMmFjMjZiZGU2YTBlMDIwNjk2M2U4MDdlOTExODE0MjVkZmM4MTk0Njk3NTcxMjMyZTlkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDY2ZjgzZWMzZWQ2MzY3MTFjODQwYWQzM2IyODI2MjFmNzU3Zjc5ZTJiMGJkMTg0OTM5ZmNiNzkzZjkyZThmNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc11cba076ea443fb08c266f9c81b033",
+      "statement": "Before a command runs, the handler detects commands that reference a provider token variable, so the runtime can refresh that token only when the agent uses it.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L426-L441",
+          "version": "repo-lines-v1:sha256:f1209b73c5c9f7e302cf6deeec4281484978e57d6bd6f4d585922aa5a08a98a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2OTU1M2VhMTNlZDhlOGM3MjAzZTA4NDIxNDkzYjIxMjIxZjkwYjllYjk0ZDk2YmVhOGE4MWYzNWJhYjY1M2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyNjMyZTJkMGJjZjRjY2JhZWI3NDYxMWVlZDJmYmU5N2ExNjU3ZWQxNjdhMDcwMWRhNjcxMDk3YWMyYTQzYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmMDMyMGY0YWRlYzJmMDA2MzExZWZiNTRiNGMxZTY3ZWNjOGFkNjE1MzY0NjM0NDY1Mzg0MTUzMjUyOWJjMmUifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/base.py#L324-L330",
+          "version": "repo-lines-v1:sha256:ebc84a3f0e8caa0c7165344f3118f9f1f0eaadbce319aaef2aa852978d21a32c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA3NWRjMmYwZDY1NTJjOTNkNDI0OGJmNTRmODFjNWIyNzNmMDk4Yjc0YTYzNzI5OTZhZTcxZTJiZGViMTg5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWM3MjU3NzRmNTVmMDk3ZWU3MzdkNTM0Yjk2NWI4YjI5MmFjMWNkMWFmOTU3YjVjMzQxMmFjN2ViNjdiYzUwMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTI5NjkzMDQ3MmZhNWQ3Y2MxNzk2MTAyZjFiMjRmYTAwNDAwYzc5NGI2ZDc0MDUwY2VkNDQ4ZTA5ZmJhODc2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTIyNDk0YmIzNjI1NjM5OGZlMWZjOWJmZDliNmMxOWYyZWFlM2VmNDJmY2FkMmQwMzZiNDIyZTgyMTczNmNhYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0233a1df4b54fa7bf6260c01c1f3424",
+      "statement": "IssueHandlerFactory selects the GitHub, GitLab, or Bitbucket issue or pull-request handler according to the platform and whether the target is an issue or a pull request.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_handler_factory.py#L15-L60",
+          "version": "repo-lines-v1:sha256:b0742803940def7df82c28e46ca21d425d359ef521a7e5a8bb10e1581e817db7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0N2EwNjk5NWNkNWExYTU5MGMzNTFkZjdlMjBjZGUzZGEzN2U0YmQ2NjU5OWUxNjIxZjNhZWZiZDkwYzUxOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2NDJmYmNkZGVmY2IzNWQ5MGQ5NGVjNDRkNzRlMzQ0ZWI5ZDEwZDZjNmMyZmI5MzQwZmU0ZDJmZTE0ODU3ZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmOTZhNzFhODkxYzRmOGRmYjlmYTIyYmY4OGJkNTY5N2VlY2EzMTdkZTNmZjJjZjAyNTc1NzAzODQ0ZjM2YzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b2c5324e687430e86d7ba8b6681366d",
+      "statement": "IssueResolver.process_issue prepares the workspace and runtime, and resolve_issue runs the agent through run_controller before complete_runtime collects the git diff.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L397-L430",
+          "version": "repo-lines-v1:sha256:9713b3ee24c7ee0ad528493d595d5cb4be3cd2dcded50e0d33be02b5618514f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYThmODAzMDgyMTNkZjVkNDQ2YWM2NTI5ZWU4ZTcxYTQxMjE0NTgzOWE3ZDFkNThiZGRmOTBkNDc1NDRkNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmOGRiZDY2Y2FkZDRkZGVhMWNmMGQ3NzM2NjlhYjY0MmE2ZWVhNTM2NWMyYjczMzM3Njk4ODczNDYyYzc1NWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczZjc2M2I0NTY2MWJlMTljYTQ2ZmI0M2M1ZDFiMzIwMjM2ZjliMmY4YmI4YjIwYjQzOTc0ZjAzNzY4NzQzZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1N2RhM2IyODMyZWFiZDlmY2JlNzFlNmQ2YTM5ZGJkMDc4YzlhZmIxYjU0NmQyZTRhOGU4NDQ2MGViYzI5NjkifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L535-L560",
+          "version": "repo-lines-v1:sha256:f0c75cae497852e12a7dc1797eeefed98b0dc5aa306078bfb912c9f820f32236:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NjY2MzRjNWJkZDRiYWQxOGUwYjc0MTZiMmU0MmZmYjQwOTIwNWE2NjEzYjQ0NmJmYjE1MWM0NTZhOGM3NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZGU3NWU5M2U5ZDg2Y2M2ODJlZWUxNmMzOTlhNmZhNTk0NTY4ZWI2YmQ2ZDUyNzBmZGVkZDM2NDVhOTcyMmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliYTFkYzE3NDRmOTc4ODkwNmI1ZTc1NjU3YzkwMjNjZWQ1YjlmOWRiODVmYmQxNjJmZWZjOTcxMjEzODhkZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b415eb5d3c0a4680986a65ae9704d2df",
+      "statement": "The resolver CLI accepts issue number, comment ID, output directory, LLM settings, prompt and repository-instruction files, and runtime options, and send_pull_request accepts PR type, fork owner, and target branch.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/resolve_issue.py#L19-L122",
+          "version": "repo-lines-v1:sha256:c1a1ff630b16b8af3ec75244fa97d0a915e09881c07732337c827179ed2a90ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3MjM2NGVjMTJiMmJlZWM0MGZmODI5NWFhZTk3MDZjYTY1MTFlMWI0NDUxMzRiMTk5NTVmY2M1MjgzMmQzMzljIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlOWIwYjdkYmFhNjdlMTU0NzViM2FjNzljOTdkNTA3ZTVhYWQ5YTg3MjU2Nzg1ODU3MjhiYTU2ZGNkMGI5NmI5IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0YTc2ZTYwMjk0N2I5ZWMyOWM3MjI1ZjU3MzQyNjQ5NGEwNzMzNjIzZTRlZDNhNmY5M2UyMWM3ZmY0MWQ1OTNiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIzMzRlNzRiNDU5NjE0ZGQwM2U2YzIzODM3ZmQxMTNlYjNjZjMwMTI0NDJmOTk4ZDgxMDBiZTkyZWNjZmIxYWMxIn0"
+        },
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L592-L658",
+          "version": "repo-lines-v1:sha256:073af618b6c69de7d0297fd4eb92ce7acacbbb598e0049516943f346f72480a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMzY0ZWMxMmIyYmVlYzQwZmY4Mjk1YWFlOTcwNmNhNjUxMWUxYjQ0NTEzNGIxOTk1NWZjYzUyODMyZDMzOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDBmZWNlNTRlMWRlMTZiODg3NDQ2YzdkYjliNThjODQ4MzEzZjgwZmI2MDM4ZWVmYTliNTNjMmI5MDQ2YmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhYjhlNzNmM2MzYTJkNDU5MWM2YzYwOWZjNTEyMGU2MzUxMGYxYjM3M2NjMTliMDY3MmM5OGZmZTA5OGRlNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjNmVhYTNiMThmNzM3Y2Y5YmFmY2QwMjI1Zjg2MjcxNGFmOGI5YTM3NDY2NmRhNmM0NThhYWQxNTliY2UwNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4d38508f8034a3da3ef558cda4dece0",
+      "statement": "The openhands-resolver GitHub workflow starts on issues labeled fix-me or fix-me-experimental, on issue and review comments, and on manual dispatch.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openhands-resolver.yml#L1-L80",
+          "version": "repo-lines-v1:sha256:8fcead7f9f8915751064cdeb068849c523df83d3888bccf0b193cdbb9ea70f97:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMTMzNTI1NDE0MTYyYjU3N2VkY2JjZThkMmNhMDI5YzU3ZDQwZWU1Njc4M2I3OWFhNzRlNzhhMjI4YjJkZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5MTM1OTQzNWFmYThjOGUyMGVhMzhhZDU2ZjI4NmEzMjcwYjhiOTZmMjVhNzlhOGNjMzQzYjY1ZTMzODVlODYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

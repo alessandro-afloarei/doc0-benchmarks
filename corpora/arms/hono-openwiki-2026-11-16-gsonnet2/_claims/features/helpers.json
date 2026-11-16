@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ee19be0b900ea1bbd2ff51beb781f90c10ed23c6853d15cde0c4eb77cd5773f4",
+  "claims": [
+    {
+      "id": "claim_9a0a044587b9474cbf19859090658906",
+      "statement": "stream() returns a response immediately while running the callback in a detached async task, routes Error instances to onError (otherwise console.error), ignores undefined rejections from cancelled pipes, and always closes the stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/stream.ts#L1-L45",
+          "version": "repo-lines-v1:sha256:97d240f56482dedd1891067ae12c48e5a99cab8a6611eacef425582801d261d7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5Y2ZjYzkwYjQwNWJhNzNhNjlkODJhMWVmZjg0NjExMTZkZDdhYzhlOGE3NmVlMTA3YWFiM2UxYTE2M2NiZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_12f4203e583e4f3dbdd43a6bd18a712c",
+      "statement": "SSEStreamingApi.writeSSE splits data into multiple data: lines and throws if event, id or retry contain CR or LF.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/sse.ts#L17-L50",
+          "version": "repo-lines-v1:sha256:de8ca0c3e728326fb45784695851ab9ac2b275c944aaa7888db6c7f461254e9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4ZjkyYzM3YjUzZDYwNDZhZWQzZTEzZjIzZWY4NWEzNTc5NGMxMjU3Mjc2ZGFjYzliMjk3Yjg5Y2Q2NTVmYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1MTNlMmM0MjRlNjZjZmIxZjhjOWQwZmY4YzE0MDc3MjM4MDFjMWUzYzUwYjI3MGExMDkwMzk0NGZjMzVmMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwMTlhNGMzMjA3NWRmYzUwZmY4ODVjOTQyMDk1NTI5YmYzOGFkNGIzYmVjNTM2MjJlMTQwZmVhYjcxOTFlYzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bef19e5d8d7748198d0c79f21ae1b235",
+      "statement": "toSSG selects GET/ALL non-middleware routes, probes each with an SSG_CONTEXT request so ssgParams can register parameter sets, renders each parameter set through a concurrency pool (default 2), skips responses carrying the disable-SSG header, and writes files through a FileSystemModule.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L205-L290",
+          "version": "repo-lines-v1:sha256:55a0059d1d6feb22912b9312669796193af02b6475f676c51c30c951e72609bf:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNDljYTc0NDg0ODRhZWIwZGY0NDFmMTQyNThmYWMyMDdhNTFkZjJkNzUwNDM3M2NiY2I2ODQ3Mzk1Y2MxNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjZWMzNzQ2MTA4OWIxZmZiMzc0MTM3NTNiYTVlNWNmOWQwYzU2NDUxZWQ0MWU2ZWMwNjIxNWNjMDQyZWIwNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiODFlZTEzMWE4YTk0OTBiYTA5Y2RjZDJiOGM3MWFkZDQ3NjFjOWEwMDM3YjEwYjdmODFiMWZhMTIyODg2YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzN2ZiZDNkZGM0MjliMzc0NzgzNzgzMzYyNWM2NzlmNjliZTVjNWIxYWRmMzI2Zjk2Y2EzYTVkOTU1ZjlmYTkifQ"
+        },
+        {
+          "resource": "repo://src/helper/ssg/utils.ts#L61-L71",
+          "version": "repo-lines-v1:sha256:65cf4e2a992924ca535fa865a71621b054889dcfa88d8c9c2e25b92f6e3522bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZGI0YjhkYmI2NGVkZWQ4YzllZTkyMjUwMmUxYjZjMWI5NDIxOTdlMjk4MjdiZGQwMjRiY2Q1MzU4ODU1NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYzY0ZWRhZGMwMDljNmUzMzMyODk1Zjc1ZDljYjc3NjAyYTE1NTk5MzIxMGFhNzRhZWM4ZTNkNjdjOWJmZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1MTM3Y2RkMGQyNTkwZjU1OGI2MTNhOWFlNjYzZWJlNDZlMjQ0MjM5Nzk0NzFmMmFlOTVjZjI2MDA5OWRlYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb24faf72be64a1ba0576e3436766b4b",
+      "statement": "toSSG never throws on generation errors: it returns {success, files, error} and still runs the combined afterGenerateHook, with hooks from options and plugins merged.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/ssg/ssg.ts#L368-L470",
+          "version": "repo-lines-v1:sha256:fb44c5ccb032a6e64aa68b046959081bff607bded335c89a50425c11eed1037d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0NDFmYzQ3ODYzZjM5MjYzNDk3YjFlOTg2OGFkMWFjZTZjZjE3YzRmYzczZTA3NjQ3ZWYzNDNmM2Q3OWRlM2VhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkZmRkNWIyYTA4MmI1NzgxMGYxNWMzNGJkZTc1NTQzMjAwZTMyZGJkZGY4NWIyNTM0ZmZiZDUzOTdkMGYzNzViIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_20929af7a7f24de4b2f0a6cea438a544",
+      "statement": "defineWebSocketHelper yields an upgradeWebSocket usable either as middleware (falling through to next() when the runtime handler returns nothing) or directly with a context, throwing 'Failed to upgrade WebSocket' if no response is produced.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/websocket/index.ts#L101-L140",
+          "version": "repo-lines-v1:sha256:048f931f6a220110803014f0335798a963f6a892e2c2c6f61726a0c4f6ab87c4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhYzk2NzU1OTNiMGUxN2YxYjBhNTUxM2QzNWE0MGE3OThiNzkwMWNiZjEwOTUxMzliNzRkNmEyZWRjZjQ3NWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZjk1ZjJhMmZmNDU0NDJlMTM1ZDA0ZjY2ZmIyNTRiYTcwMTBlZTMyYmU4YjNhY2EwMDI3M2UxNzdkMDlmMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_58e3c951a45b4dd5a0b69ed9d1dedbe6",
+      "statement": "Factory.createApp builds a Hono with merged default app options and then runs the optional initApp callback.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/factory/index.ts#L332-L351",
+          "version": "repo-lines-v1:sha256:c654a83002578b4cb05b64680cff057aa6a262ba3c58c13be27d6e2bd8bf608f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMmJlY2M5M2U3NjMwZDEzOGFmYmZkNjMwMjY4Y2RlNzgwMGQ4NDNiMjY0NGFmOGJmMzI0OWJkZjM3MjUyMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NDM1M2IxOTE5MjhjZWNmYmRiM2Q3NTJlMmI1ZWU0Y2JlZDhhNjdkMmZjYjBhYmFlOTE2Y2E3YTU3ZTJjMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fe11dd2015f47d9b41d1a87292ebc22",
+      "statement": "testClient is the hc client with fetch replaced by app.request, so typed requests run against the app without network access.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/testing/index.ts#L1-L27",
+          "version": "repo-lines-v1:sha256:006672f8daad98315402e721dda5a05d7dbc838d49faf23586be2228583c2f69:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fc509e4a01d490e95799c28bfe0f308",
+      "statement": "proxy() strips hop-by-hop headers from forwarded requests and, with strictConnectionProcessing, removes headers named in Connection, throwing a 400 HTTPException for invalid header tokens.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/proxy/index.ts#L1-L75",
+          "version": "repo-lines-v1:sha256:a8d8d5c2a87a36e1339e16ce8fd7d9a4631df8793727dae8e91a0a03f2ffce7d:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3MmRmODc4MjZkMzQ1Nzg5N2UzYmIzZDg5MWVmYmVlYWE0ODA4ODJlNzY4MTU5MzYzMmUyODlhMjA2NWFmZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4ZTRmOGY3YjBmZWUxMDlkYzcwMmQyZTAzYzc1OWM3NTI1ZDkyNDExYmM0M2RiNjA5NzI1M2M5OGZjM2YxY2YifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:46.600Z"
+  }
+}

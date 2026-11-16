@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:076eed0413df8549f2de592e0f07b77f076c38edd47064eee8a5091abc92810d",
+  "claims": [
+    {
+      "id": "claim_7e742bc6c57f4feeabd0314c0b1a3766",
+      "statement": "The manifest builds package fd-find as binary fd, requires Rust 1.90.0/edition 2024, defaults to completions, and configures LTO, stripping and one codegen unit for release.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L16-L31",
+          "version": "repo-lines-v1:sha256:45b5aa157645de846b2f696bbb66da955dcd63460d6064dfde128bac26d4072f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzYWRlNGQ0ZTAzMmY0OTk1ZDM3YzkwOGFlMGQxZTEyZGVkYTc0YmRkNDM2ZTMwMTMxMTcwNDQ0YjY4YWQzYjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYWJiMmJhNWU2ZmI5MTQwMGQwNTdlOTMxY2U5MTk5OGI2ZjcwZmM1OGI3MzMwNTIxMzI2YTRlYzVlNWI2YzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5ZDZkYmQ2MGY4MjNlZjFkNjE3ZjI4ODI4NTkzZjNmNjlmZWJmNzc3YzAwNmY5MGU2ZmJiMDRiODM0OTBmODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3ODhjOTVlMDhmZTU2ODY1YTA4MTEyOWRkMzQxNTczNjFjMzExYTdkOTkwNDE3MWY0MGZhMmUwYjg5ZDU1ZjQifQ"
+        },
+        {
+          "resource": "repo://Cargo.toml#L79-L98",
+          "version": "repo-lines-v1:sha256:2f07c586798f5c878280ee1e45f7108f705342e6261fe36b942ae7fc2f55eb01:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZWZhMzI0YWQ5MWYxY2EzZDYwMDI4YTc2MDE3MDRkYTAyMzhjMjAyMWIxNzBjZDRjOTg5ZmVjMmEzMGMxOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMzRlNWMzYjVmMTg3NTBiNzRiZDU5YTRlZmY2YzllMzVmNDYyMmU3ZjU3MjkyNjEzZjk2YzYwZGE2MmI1NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4NjBlYjc3YTBkNThkOGVhOWQ3ZmZlYmM0M2I2MWZiNGZmZTY4MTAwOGY4Y2YzNGRjODdkMDAyZGY4MjFkMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNTIwYTg2ZjZlZDdjZDU1ZTE5Nzg2ZGU3MjIyNmZiNmQwNzkwYTdiMTMxODBkYTA0ZDgyYzk2Yjg4ZmFkYTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cda22d706d3f49d28c7851ab2e6a17fa",
+      "statement": "The optional jemalloc dependency and allocator declaration are gated by matching platform predicates and use-jemalloc; Windows x86_64/i686 MSVC statically link the C runtime.",
+      "evidence": [
+        {
+          "resource": "repo://.cargo/config.toml#L1-L9",
+          "version": "repo-lines-v1:sha256:9e9bb08e059a19c7070ea357774fdaa97ffcd3c09a035e63378973ddd6fcdeeb:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZiNGRmMmY3MGM1ZDQ4MzM1NDBiMmJhZjhlY2YwNmU3MTI1Mjk1YWRmZjE3MWVkZGZkNTU1ZDljNTQ4ZGRmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRlMTYxMzQ3NWVjNzU0ZTJjODNkNjVkNTRmZTFhYTY4YWJlZDljZWY3ZDMwNTU1ZDExYjQwMjQ4ODIwNDE4MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://Cargo.toml#L65-L71",
+          "version": "repo-lines-v1:sha256:9bf6f242c0daf167c7dc1bdd05cfd30b2662939b375af87f6f242275d5063d62:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzNlODM5MDgxMTAzODY1NGU2MjM0ZGQyZDMzOTQyZWU3NzA4MzA3ZjE3Y2ZhNjZlMjJkM2IxMDhiYmE0MDEwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTUxYmQ4NjdjOTYyOTJiZDhjMjJjMDM3OWRmYzRkYmQyY2FkMGU3ZWU2MzlkZDZiMDNjZjcxNzdiMjJhYWFmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2UwNWRkMmRhZWYwZTFkM2E3NTFiNjcyMWQ0MTQyN2UyOTc3ZjBmYmI4ZDg0MGYzNDgzZmFkMWJlMjA5MDlkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg1NGU2ZDFjOTQwYjQ1ZmYxY2Y5OTM5Y2M5YTljYmNkMGNmODVjNjQzOGQ5M2E5Mjg5MDlmMTAyYjIwMjQ2NCJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L37-L54",
+          "version": "repo-lines-v1:sha256:d1c4d596289b52d5917b0ab013adf84db7abd4e21b7f4235e3c83923132e4a49:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NjMxMjFhYTUzZmIyY2VlOWViMWM0YWM1YmVkYTA4YzIyNTg1ZTY0YmZhYTNlZjA2OGRhOGM1ZjNhMTZhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzYzBiMmRiNWYxNWNhZjk4Njc0MzUzMWYxNGVlZTdkOWIzNTE2N2NjOGFkNGM5ZDdjYjJmM2QyOTdiNmFhMjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjJjM2IxYTk2YjI3YWVhM2ZiZDViNDI0NzkwNTM4NzNkMDUwMWM4NzQwZmZiMjBjMGRmMDEzYWIzYzYzMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e907ef5cdac541cda427b5ad16d7de2a",
+      "statement": "Make generates Bash, fish and PowerShell completions with the executable and copies Zsh/fdfind assets; install stages the binary, selected completions and man page under configurable destination paths.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L1-L52",
+          "version": "repo-lines-v1:sha256:f3d6f25da159316795ec3dc84e2f4a8e3cee873b679233674ab9e5c36d41cf47:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMjI2YWRjNmU4NmM5MWY3ZGNlNjRjYTc0MDdjOTM0M2M0YWY3NThkZTNkYWVkNmY3NGE0M2FmMzAyYTA1YWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkNWY0YzQxNDRlNDVhY2M5MDJiZWY4OGZlN2E0ODNmZDdkNDhmYjMwZTdjYThlNzI5ZGM4ZGExMDBkY2E5MzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51199755a85e4812bd9934cb717771d2",
+      "statement": "CI builds locked release binaries for its target matrix and packages the target binary, licenses, README, changelog, man page and completions into zip on Windows or tar.gz otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L160-L245",
+          "version": "repo-lines-v1:sha256:f0410cc580047863ca130e361143b995e643810772128333727f13c20f891df1:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiMzk4ZGJmMmM3ZmEwODY5ODg3ZGI3YjZmZTdhN2FjMTNkMDg2MDAwNWQyNDc3ZmU2ZTRhNWFhYmRkNTM0YWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZDY3YmM2ODE1ZGQxOGI4ZDNiMWViYzMzODY2ODZkNjNmZjM5ZGIwNTNlMzQ3ODc3YjdmOGE3NzhmZjQ3YzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhNmI2NmY0MWE3NjliZmI5ZDU5MTZlYWExOTlhNzA2YmMyMzI2Y2M2YzI4NjljZThhOTU2MTVmN2U0NDdiZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjYTBjYjlhNWQyMTNkOTA0Yjg2Mjc4ODVjYTc3ZmQ2NWU2NWYxOWZiNzZkZTczYjExMGNhZTlhN2ZmNGIwYWQifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L93-L123",
+          "version": "repo-lines-v1:sha256:7e7cc160655332a63bcc5756709f6d5fef25387b20a08e6400a93e96e5b58f1a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkZjA2ZTA4MjkyZjg2YjFjNWRjNmQ1YzVhY2ZmNTc3MTYxMzU4NzkzZWIxMThmNDQ0YzJkNzVlZGJhNGFmNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlMTM2ZDViYzRiOTIyNDczMGNmYzhjN2VmYmYwNDZmNTdmMmJkOThmZjk3YWUzZTk1NmY0NTZiYWNhMjdkZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4NDZiMjJhMmRmYzdlZTY5NjNiNmYzYzcxMjJhMjc3NjVlNzc2NmE0MGFmNTEwOWM0NDUzZTk5NGZiZDQ4NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1ZWVlNzkxMDVkYTQ3NGVmMzFiZmU1NDcxNjFmMjhhYzk2MzA1ZDJhOTk2MWEwMzExNmM5OTMyOTdjYzc0ZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_faa28865f8c449d9a14a4fd48508a4c0",
+      "statement": "The Debian packaging script distinguishes musl package naming, stages shell/man/documentation assets, adds an fdfind symlink, and builds with fakeroot dpkg-deb.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/create-deb.sh#L127-L135",
+          "version": "repo-lines-v1:sha256:f0ecf38493a7b71dda6d3fa7b3bb7450827ad7ba5ab9a8b7f5256b6dbb0f9261:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTdhYTRkNDE5ODZkOGI1ZmUwNGJmOTQ2ZWVmMWY5ZDc3M2MwYzJjNzY4NGNhODg1MThhYzZjNDg4Y2Y1MDUyMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY2OTVmMWY2MDk3ZmZjY2Y5YjQ4MDQ3ZTQ2NThlZGMyODIzOWY4NDE2MTQ1MGNlNTQ1NjBkMDc2ZGNjOGQzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDM3YTc5Mjc4NjlhZTNkOTYwMDFiZTMyYTY3ODlkOGIyM2Y3ZmU5ZDg5ZDc1MTAwY2NjMDU2MmZlMzIzMjI5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://scripts/create-deb.sh#L13-L65",
+          "version": "repo-lines-v1:sha256:5a411871e258eeb5a9080c68e849e9662eb04fca2b41da8801dd304dd45768f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZGI2YzVhNDk5YTNlNTBiZDhmNGUyYzZlOGY3MWU1YTU4ZTY2MTE5Y2M3ZTJmMGEyMTgwZjZlM2RmZDI5MmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0MmZkNTZiOWUwNjlkODI1YjNiMDQ0MWZjNTVlODE3NGQ4ZDVjNDg3MGRkZTNkMDI0MmE5ZTYxODUxODI2NTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmZDQ4Mzc4YTE1ZDdmMjkxYmM5MzQ2YTY2NTI4YzdmNGRmYmEyYmQ1YTRlY2QyZTI4MTRiMjhkMjc3NzEyNTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkODFlZmU1NjYxZGI1Y2EzODA2MjU2ZTk4OWYyMWM2ZTY1ZGU3OWJmZmQ4ODU4ZDhmODMwNDE3NDgwOWU2NTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39a4c743abcc459fac039b2885279846",
+      "statement": "CI uploads workflow artifacts and publishes/attests release artifacts on version tag refs, with a dependent tag-triggered Winget job; crates.io publication remains a checklist operation.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L257-L309",
+          "version": "repo-lines-v1:sha256:f5f660c2092b25a947ae0826c0f06532d494d76d2edaae641821eef6101b9000:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1NDVhOWYxZWVjYWE1YmE2YTFkZjUzZGY0MGQ1MGRkNzdlYWIxMGQ0MDY0ZDU5NDI3ZjY1MDI3MWFjZGY1MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhZTJiYjRkNGVkZjg4YTBmNjc3Y2E3NjAxZjMwMTJlYTY3YjI1OTIyZGE3YzM0ZTJhNGE1YWNiNjk2OTg5NDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxOGY4NTJiNjVlNTE5ZTk4ZjdjZDFhZjQ4N2JlODkwOWViYTQ2Njg4YjI0Y2ZjMWUzODJlODBkOGUzNDMwYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://doc/release-checklist.md#L44-L62",
+          "version": "repo-lines-v1:sha256:86d8b58c9697b26d185608f995ab9ee8a41ae2c2bf81bccf6dcf04e6251db021:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhODNhYjkxYWQ4NWRlY2ZlY2I0MDQwODA3NjIzMDZiNTAzYjk0OGFkNDZiODRkMjQzNTZlNDBlYzA2NDNjMGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0ZTY2ZDA1MmE2ZTg2NDlmZDhjZTA3NTZhNDNkYzI0ZmJmNDM2MzJmNmRhZDZlZTY3ZjM5MmFjMTE5ZTc2NDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1ODA1ZGVlODdjMjQ2ODNiZTk3YjdkYmVjM2U3ZGRmZDg4ODY2ZDdiYWQyZGJmOGVjMmI3N2Y4ODY5MmNjYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyNWVlYTdjNDJkZjk4MDE3NGQ5YzliODFmOWE4NjQwNzU4YjY2Njc3OTllMTVmM2QzZTdjNDMwYTEyM2U4NWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31eb81b3087747b1bd72f3e47f660aea",
+      "statement": "The version-bump script changes the release branch, manifest, README replacement and changelog heading but does not build, update the lockfile, validate or publish.",
+      "evidence": [
+        {
+          "resource": "repo://doc/release-checklist.md#L5-L20",
+          "version": "repo-lines-v1:sha256:61a3585deb004e759830c03c3e408438ee328583056cacfa3dbd63df34fe0952:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NDAwNWI4OWNkZDgxYjg4ZGM4NDJiNzFhMDBlOGRmZGE5MGJjZmY5NmQyYzNkMDE5MDliNzYwMjNhY2I2NzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhMzAzMTNiZmQwNDhjYzdlOTkxOGQ5MjRiMmEyMDQxM2ZlMmJiYzQ2YWJjMWMzNGNiYTM2N2QyYmZiMGIyNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxZTdlZDcyMjE4NWM1NDQ1ZmIwOTBkNWYxMTc2YmYxOGY0NTU2NTE5MGM2M2E2MjE2Nzg3YmJhYjBjZDQ5OWMifQ"
+        },
+        {
+          "resource": "repo://scripts/version-bump.sh#L1-L22",
+          "version": "repo-lines-v1:sha256:af75990740712df6d3c08be10faff4360908fd2c6bf63580beb9a1d9707cc721:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyNDFmYjc0YzRhNmQ3ZTdjYmZiZDY3NmZjNTYyZGMwMWZhZmY2YzMyNDAwOGQ3YjY0NDRiYTg3N2FhOTE3MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:28:27.513Z"
+  }
+}

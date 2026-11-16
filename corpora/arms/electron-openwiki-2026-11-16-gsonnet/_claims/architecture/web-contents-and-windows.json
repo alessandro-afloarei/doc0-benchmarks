@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d9a6b290e1caee6757fc8f6eb5642f513bf2956f5d1927353299163ace55c133",
+  "claims": [
+    {
+      "id": "claim_4368f65c833340638af12ee102b9c4fc",
+      "statement": "BrowserWindow's C++ constructor creates a WebContentsView from the webPreferences, holds its WebContents, sets the owner window, and inserts the view as a sibling before BaseWindow's contentView so views added to contentView paint on top; destroying the WebContents closes the window immediately.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_browser_window.cc#L56-L112",
+          "version": "repo-lines-v1:sha256:32d7b01bc585215d28376eab87a0ed08cbe52ee422f25686e0a9f28b9b9b9b95:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhZWQ2NWI1ZTg1NTI2M2E0YWExYzM4MTNjYWE1MDYzNWVmOGZkYzIwZDViZGQyNzhmODEzMTY1MDFhYjExMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkMjVlYzZlNmNlZDViZGRjMDA2MzFiM2ZkM2JiY2M4ODI3NjIxNjJhNmZkNmU2ZTkyOWY4ZmQwZTNiZmIxOTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2314c0d8b96453f975ab2d16f3ae4f0",
+      "statement": "BrowserWindow in JS inherits from BaseWindow, redirects focus/blur to app events, emits unresponsive/responsive with debouncing (50 ms, or 5 s after a close that isn't prevented), forwards visibility state to the renderer, and emits app 'browser-window-created'.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/browser-window.ts#L1-L100",
+          "version": "repo-lines-v1:sha256:bfcff683e37b82820fea01d012bd7c3b5130020de866ba927337187cbb343d8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlMGU3NjVjZmQ0MGNmNWE3OTBjMjk0ZDllMTUwNzFiYjA0NjRlYmI1OTNhNThjZmQyOWZmNzFkMWUyYmU4MWNhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2MmZjYTE3OWM4YTFjYTg0ZjYyOTI2ZTY2ZGRjMmY1ZDY2MWQzZWYzNzBlZTJlODMwMWE2OTc2YTM0NWI5YjBhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_855af7ebed494fc5a49db0af53795ef7",
+      "statement": "BaseWindow creates a platform NativeWindow via NativeWindow::Create, which has exactly one concrete implementation per platform: NativeWindowMac (Cocoa) in native_window_mac.mm and NativeWindowViews (Chromium Views, Windows and Linux) in native_window_views.cc.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_base_window.cc#L105-L120",
+          "version": "repo-lines-v1:sha256:fbcaf4dc80fa6c32dcfb00928ddb0fd7a62f1bac0acfcb99c081294aa9305b86:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYTdhNzEzNjdhM2ZiYWM4OWFmMjNmODE0ZDI4ZGFhYzNkNTQ0NDgzNzhlMzA3ZGQ2ZDZmZmY2MmZmN2JhN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlMzNiNjVjNDM1M2U1N2JiZTYxMTk4N2ZkNTkxNmYzMjU4ZWM4NmUzNDYxZTNiMjY5NmQwMmQwOGZhMWE5N2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyMzQwOWVkYmEyMjhiMzQ5ZWI1NjYzZmU1MDA4ZWEyMjRlZGU2NjVjMmVjY2RlYmVjMmEwMGUzNTQyMmFjMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjNmJjY2E0MzdkZGU3ZGU3ZmViZjVkMDk3NTVkMTMxMjRjNzBjNjk4NWU1NGEzZGEzZmVjNjY2Y2UwZWI3MmYifQ"
+        },
+        {
+          "resource": "repo://shell/browser/native_window_mac.mm#L1879-L1884",
+          "version": "repo-lines-v1:sha256:f28cc443efa8bc3f2a970c83f8498b1e783d2b3138d8cb00a2e2c1e02d4a5c3b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ0NDYwMDA0NDc5Y2IwOWMzYjYzNzU5Y2UxYjQzYWY2MWM2Mzc5MDZiYjdmNTVkNTg1ZjJkODViMGE2ZDYxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2FhYWZhYmU1ZjBlNjQ2ZmYxZTAwNzljY2U3ZjJhNWYyZmNmZWY5NzY1Zjk2MzA2NTAzN2IyMGExZTg1ZmJmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFkOWI0MGM0MWQ0ZTA0MTEyODc2NDI3NmY5M2E5NjgxOWI4YzA0MTc3ODM0Y2FmZTU2ZDA3NjcyZWU3ZDMyNiJ9"
+        },
+        {
+          "resource": "repo://shell/browser/native_window_views.cc#L1950-L1955",
+          "version": "repo-lines-v1:sha256:0227443705eeb4e012563951f38ab2365c6287a51ea5d62da72c3f5f50629934:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ0NDYwMDA0NDc5Y2IwOWMzYjYzNzU5Y2UxYjQzYWY2MWM2Mzc5MDZiYjdmNTVkNTg1ZjJkODViMGE2ZDYxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2FhYWZhYmU1ZjBlNjQ2ZmYxZTAwNzljY2U3ZjJhNWYyZmNmZWY5NzY1Zjk2MzA2NTAzN2IyMGExZTg1ZmJmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFkOWI0MGM0MWQ0ZTA0MTEyODc2NDI3NmY5M2E5NjgxOWI4YzA0MTc3ODM0Y2FmZTU2ZDA3NjcyZWU3ZDMyNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd9595aeb2e34bdea066ffa46f2ffd47",
+      "statement": "WebContentsView subclasses View in JS and exposes a webContents; BrowserView is implemented on top of a WebContentsView with its own owner-window tracking and auto-resize emulation.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/browser-view.ts#L1-L50",
+          "version": "repo-lines-v1:sha256:ea11fb3694d2548f51da33bf1c6b5d7ec1c5434e854b6c1e02b338fbd808ac92:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhYmQxM2ZiOTA0ZmMyMDk3NzkyMjZhY2Y1ZmEzMzc1YjFiNWM0ODYxNzkxOWFhMTM2ODlhY2RiMjhiYTAzMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MDU2NjdmNWU2OWNmYTE0YTg4NGRiYzAyNDJhMWU2ODFjZWQ3NWFjYWM5YjQ0Y2Y0YTFhMTg5YzcwMzI5OTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiMmZjZmMwODRjMjMwN2Y0YmI5NDI3ZWE3YmZhNzNmNjAyMmZhZDEwODAzZDM0MGQ5ODEwN2I5NzRjNjkzYjMifQ"
+        },
+        {
+          "resource": "repo://lib/browser/api/view.ts#L1-L7",
+          "version": "repo-lines-v1:sha256:fb4db6224a3ca1e4bd23e30d8d71dc693ffd01dbcb03f718deff3376ebadb82a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJlN2E2ODA5NTZmNWY2N2MyMWIwZTAxNmYyOThiNzI3ODY4ZTQ0M2M5ZGY4YzU1YjI3ZTllZjNhZWM1MzljMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmI4NzQ4ZjE0OTQ5ZWM3NWFjMTBmZmEzNzY1YjA1M2M0MmEyOTU2NTg4NGE5NTA0ODA4ZGIzNWI0NGNmYTY0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://lib/browser/api/web-contents-view.ts#L1-L7",
+          "version": "repo-lines-v1:sha256:a9eac66bd1834f8854a6ea0dbf54cec1b3975b478a20c1b07e8c5fc0d55f32a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZjNjcyMzZmNDJiYjUxNWU3MzhmNjcwNzU1MjYxMTMyMTUwZjRiZmU2OGQ1NjZhMGYyNjY3YTRmYmMxZjgxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE5MjNmY2I4NjYyZTFlZDhmYzk2YTdlNDdlNTQ1MWJmZDEwZWZkNGMxZWEzNGQzMDRhNjViY2I5NTY3ODFlZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c72a71a0613b4e79aeeda316befd420a",
+      "statement": "api::WebContents chooses its session (explicit session, then partition, else the default session) and creates the underlying content::WebContents in guest, offscreen or normal mode; Destroy() defers deletion to a posted task except during shutdown or for guests.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_web_contents.cc#L1085-L1110",
+          "version": "repo-lines-v1:sha256:58469f42936d56aa1801c5b4b79eb91233e568e22d542a29229a690e89cc2161:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjMmZhYzM0ZTg3NmJhZGE4YjlhZjNiZDU5ZTk1OGY0Yjc3YjQ2ZDBkYTY5YmJhNTNjYzJhYjRjMjg4YzkwZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyNjA3YjM2ZTBjZmRmMzBlODcyYjFkMjY4Y2EyNzVmMzQzY2Y1ZDM2MWFjZWY0ZDk1N2Y1MjM3NjZhYzM0ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllYTcwMWRhMWJmYjhhY2RkM2UzZjI4NTRkOTcxNzJiYjAzMGQ3YTkwNWVlMDM3M2IzMzY3NTJlODYwYjQ2YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyOTY1NzIyZDJiMGRkY2FkYjY4MGQxYjQ3ZTZiNDUwZjI0NWNkM2E5ZmJkZDEzNzZjY2IyMzBlZjcyMWZiZjAifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_web_contents.cc#L825-L890",
+          "version": "repo-lines-v1:sha256:826ea6f7709b644236d5476eb10661b2d702b89db576b52a2e4f2b13dccf7663:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzMzRlNzQ3NzM4YmI5NDEwZmI1ZDEwZWE1YThmNTM5MzE1Y2VkZTA0Zjk2ZWFlY2FhZGU0MGQ3ODBkMTQzMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMWRhZTgwODU0ZWI5NmI0ZTNkYTcwMTEyMjQ4ZmU3ZmE2NWNhNzYxMjViMDA5NTAxNTk5OWE5ZTcyMmIxM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_94ac162ae83d4116b0805c3276d8fbc3",
+      "statement": "Popup creation emits -new-window and -will-add-new-contents events from OpenURLFromTab/WebContentsCreatedWithFullParams, and AddNewContents wraps the new contents as an api::WebContents, manually runs HandleNewRenderFrame for the initial about:blank frame, emits -add-new-contents, and destroys the contents if a listener returns true.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_web_contents.cc#L1145-L1200",
+          "version": "repo-lines-v1:sha256:2e151cdb5d3a0c1a81737c8f2286ac720f2e44b3d5da837e00763806c0a4dbcb:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4OWVkYWM1YWFhNjE5MjZjMzBmYTZhNDI1NDZlM2I3ZWI4MzUwNWMyYTMyZmVhNzA5YzM3MTk3YTVmYmU0YmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwODI4MzQ5YWI1ZmJmYWZkMDJhYjI4ODIwMTA3MjY2ZjkzZmUxYjg0N2VkNjk1MWYxMzAzZDYzYmZmYzQ3MGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzODZjN2FjOWQyNWI0MjQ3YmFhYjE2YmE3NTZhYzI5YzFmMTg1MDAxM2Y4OWNkMWZmM2M1Njk4ODdlYTRjZmYifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_web_contents.cc#L1239-L1295",
+          "version": "repo-lines-v1:sha256:b54b8fcf4fdbb7eea41dbadf3bd74b2a6d5f0600af9de33fa95ebaf0bb1a6898:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NzUwNjllZWNhM2Q0YzE3ZDFjZGRhNDAyNWVjMWMwZTVlNTcyYjBmZDdmYzMwMzk0MTRhMThlMTVjZGVkNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjYTY1MDNhN2E4YjUyOGY3NjVkOWRmODRjOTBjYjBjYTFhYzQxOGE4NzIxOTRlOWVmYmZhN2I2YzRiZjVmYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3ZDdjMWUxMGIxODk2YjRmN2YwMDNiZGFjZWY5ZTVkYmMxNWZkZmIzNDI0NjJmNmU2NGUyMmRjOGJmNjg3MzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_354406e48d6e447aa14f7250a469e93f",
+      "statement": "setWindowOpenHandler results are validated in _callWindowOpenHandler: non-object or null responses log an error and prevent the default, action 'deny' prevents opening, and action 'allow' may supply overrideBrowserWindowOptions, outlivesOpener and a createWindow function.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/web-contents.ts#L435-L480",
+          "version": "repo-lines-v1:sha256:84e20e66326dd1d8930112c04e0085a1ee03ebb5ba52f676ec85249e92600d46:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2MjYxNTkyOGNmNzVkZjk3NGU5Mjg0MzliOWIwMGVhNGFmYzliMDI1ZWU0MDYyMjdhNzRlNTJkY2YwY2ZhM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzYjk5YTExMjY3ODllYjRmMGQ3YmU5Y2MzYmVhN2M4M2ZhZWNiOWZiZGRhNDJkODFiM2JmZTYwOWU2MjQ5Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhNWZiMmE2ZjIyOTM4MGM5YzM1NjYyNjRmYWFhN2QyYWRjYjE2MTRlZWY1ZGZlODEwMjZkN2MzZjJlZTk4ZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlN2MxZWM4ZTVhN2ZhMDYxOTgxNjFjZWFkNmI4YTliYWM1YWUxMTUxZDgzM2ExYTY3MjQzYzgxZDNiNDA1ZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ff548721d5b4db9ac9fef6d47889369",
+      "statement": "On -will-add-new-contents the child's web preferences are built via makeWebPreferences from feature-string preferences plus the handler's secure overrides and set as the next child web preferences; openGuestWindow then defaults to a 800x600 shown window, reuses an existing window with the same frame name by navigating it, and supports a custom createWindow hook.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/web-contents.ts#L669-L722",
+          "version": "repo-lines-v1:sha256:fa5c4a3a9aa7a86979d4006602df53afa587908b28fd914683dcd19c3a0eee17:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4OTg5MGY1MTlmYzFjYjZhYTNkNDBmMGJhOGQ0NmNhZjc1OTNjZGU4NGQ5NTE1MzljZDQzNTk2OTA4ZDRjZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjNGM3N2FmMjg2Zjk4YTc3ZmQ0NmIzNmJhOWZmODc3ZWQ4NTUyYWI5NzU0NzRjZTQyNGQ4YzdmZGY3ZmM1ZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1ZWFlNDk1ZDA4YzRlZTU5NDhiZTE5ZjEzMzExZWM5MjgxNjliZDU1OWI5MDQ5OTg4ZWUzZjI4YWFlZmQzMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4ZjdmYWVhZDQ3MThlOTM3OGMzYmUwNDhkMWRhY2EzNzhiOWQ0YjhkNTBiM2VhZDhlM2U4MDg2ZDZhNDczMDIifQ"
+        },
+        {
+          "resource": "repo://lib/browser/guest-window-manager.ts#L25-L80",
+          "version": "repo-lines-v1:sha256:a8b8470077bd2e4411177b2b330598b2c062184b76c24be088f765969768c7da:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5MzdiN2YyODNmMmE1NjhjY2E0MTllNGIyMmJhZDUzMDlhYTY4ZDRhMTIwOGZhZmI5NzA2NWIxZGU3MDVlNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyZTEzZThjMzVlZjIyMmFkYWNhMTYyNDliNTM1MzVkNDgwMWQ4NmMyZmFkZjZkOTVhOGM5MDYxODk1YjBhMzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c18ff2cda8824cc1800326a251e93891",
+      "statement": "For <webview> guests, createGuest makes the embedder's contextIsolation:true, sandbox:true, nodeIntegration:false, nodeIntegrationInSubFrames:false, enableWebSQL:false and javascript:false values be inherited by the guest, lets the embedder veto or mutate preferences through 'will-attach-webview', and creates the guest WebContents with type 'webview'.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L24-L110",
+          "version": "repo-lines-v1:sha256:a1b0c39d568290fa161d5689374dbe637b3e1219d92c34819310e959e961de23:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5NTNjYmI2MzIyMzI2NmMyNTNlODZlMDNkNjc4Yjk3NzNiNmJiY2I2ZDE4YzYzMjNiMThlMTFhYTkxZmQ3Y2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2ODY2OWVmZjZkMTg3YWE4OGZmNGIzZTEzOTljZWI3NTI0ZjY1ZGZhYmE4NTkwNjlhZDY5NjE2MjQ3ZWYzYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyOTJlMDNlZjdkNjk2NzY5YzlmNjEyNWE2ODY3N2Q4ZDdkZThiZTdiMTE2ZjZjYTc1OGYxZWEzOGEwZmE0OTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d97c7b3ed64469a9015ac8bbbc98d38",
+      "statement": "Guest webview events and -ipc-message-host messages are forwarded to the embedder over internal IPC, a previously attached guest in the same element slot is detached when a new one attaches, and the guest is cleaned up when destroyed.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L80-L160",
+          "version": "repo-lines-v1:sha256:cf025d3ad073d8234a624d05022dc55c3642e6175137f5ec68c350ec66313f7d:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3NTFkYjZjNDQ1YTFhYTA4YjBjYWQzMjBlNWQzYTg5NDkzMTAwMzNmYzA1NjE2ZmU3OWFhMzA4NDNmNzUwZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhOGNiYzY2MDBjOWU1M2Y1ZGE0Y2Y4NGJiOGE5YzIxMmJhY2NmYjYwMTJhMGJjYTQ5MWJiNDNiNDJhZTZhMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyZmVmOWQ4ZTZmZjBkYTBhZTRlYmE2MmU4MzRmN2QyZDA0ZjA3MThhZmFhMWQ2OTIwNGE3NDM1NjU2ZmYyYTIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:76f406a39b739147e3e4676654aa716b112014c63dfbc13d9b9c3e514abfafe8",
+  "claims": [
+    {
+      "id": "claim_04d0383544514bbca590db3128d06e8d",
+      "statement": "Only the root AgentController subscribes to the event stream; delegate controllers are created with is_delegate=True and receive events forwarded by their parent until the delegate finishes, errors, or is rejected.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L163-L167",
+          "version": "repo-lines-v1:sha256:6555d61eb00f9ce12e796d481e325d6cc63982d363ed308e33a63c9d9782ca27:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JjMGE1NDQ3ZTIyNjg4NWRmNDMxMTgzOTU0NWJiYTk1ZDEzYzA2OTA1Yzc1MjA3YzkwNDc0ODE3NTYwM2YwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODE3N2E2YTI1MTcwOTEyYjRmZjQ2MmZiNWM1NjhlMWM2MTYzZDUwMDhhOWNmMGM4YzNmODA1NjgzNTYxMTlkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODIxNzRlMGZiYWUxNjM2OWI0ZTE4ZWQ0NTg4NGRkZTZmYWQxODFjNWUyZjAyOWVmNjU0YmIxNDIxYjAwNDA2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFhNGJhNTIyMzM0MGU5ODU3MmUzM2FjMGI0OGI5ZWNmZWE2NDEyNWFjNjFlZDYyODI5NWUzMDRkNzc5NWJjYiJ9"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L433-L465",
+          "version": "repo-lines-v1:sha256:67f99594e85050185621ab44d21c2d2b6ac04df4b52d42bd27b750d44cd3b92d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYTgxYzNlNTdiMmEyYWQxYzZhODg1MWVlYTQ5NDRlYWUwMzdmNzIzNzYzNjgzMDRlMTVkYjBjYzgzNDAxMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNjRhMGE0NWE0ODk2ODkwYjI3MDNkNWZiZDkyZTkyNDQ2ZmM1ZjYzNjkwNjFkOWMyMjQ3MjNkYjJjZmVmMGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhZGFmYWE5Yjg3MWY1MGNiYjQ1MDg1YTMxM2Q0Yjk0ZjI1ZDM4NzAzMDYyZWRmZjcxZTlkNjEyMjRlZDRlZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmZjI1ZTc2NTc0NDlmZjBmYzBjYWUyYjlmNTk1ZmQxY2YxODAxYmIzYjZhNTM1NmI0YjBhMTNiNzQ3YzZhYjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eda96d2bb40643bc9d66632f4ad69a0e",
+      "statement": "A user MessageAction causes the controller to emit a RecallAction, with WORKSPACE_CONTEXT recall for the first user message and KNOWLEDGE recall afterwards, and sets the agent RUNNING.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L549-L588",
+          "version": "repo-lines-v1:sha256:924b1d01e10220df1e44b96573a5a3ba7736c8bbda62d68357204b57e1656c4c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YWFiOTFjMWE2NDdmYTI2OGU4YjhlMGIwNTlhMGQ4ZTAyYmM3OTgxNTY4MDI4ZGQ5ZGVlM2NhMDNjNGM4NTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhODA2NGUyN2UyMDU4ZWY0NjE1ZTU3NDc0MjgwNDg1MTU0ZjczMTJkNDc0N2NmNDZjNjhmMzU1OWVlMzAwMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0OTNjODI4MmFhZDk1YjgxYjIzNWY4MGFhZGU1NzA2NmUwYjdkN2E2ODljNzVjYTNlZTA2MTIyYjIzZDc3NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MDE1MWJmNWE1MGU0Y2YxZDg4ZjA4ODYzODBhMzg2YTc1M2JmMDEyMGUyOWU0MjcwM2JhZjk2MmJiOTEwNTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_63c9e48e0db94e61b965150bed01a5b6",
+      "statement": "The controller does not step the agent unless the state is RUNNING and there is no pending runnable action awaiting its observation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L519-L547",
+          "version": "repo-lines-v1:sha256:7eb39837409a9f40c1587aead1a6917e1e45b2040cd8d05bc0f973662aa814f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNDA0ZDBhNDkxOWNmMGY4NzE5YzFiNTgwMzM5OWE0MWYwNmE2NTNjZDI4NmRmMjg3MDIzNmZkYTY1M2ZkOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5YTIxN2YzMzA4NTJhMjE5YTA2OWM3MGJiYmRmMGZhYjRjZGY4N2ZkOTJlYjA0ZDQ3NGEwZDYzN2JmMDc4NzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzYmI1N2U3Mzc4ODg4YmY3ZWIxMjI0OGYxYThjMzFmZGEwYTY4NjNiZWMxN2ZkOTZmNjE0ZjlkYTNhNzFlNzYifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L821-L840",
+          "version": "repo-lines-v1:sha256:80f61361d855c1481a8599f8adb7a583d6b29a9067e51fc0d942c5bed99397da:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1ODc1ZGMyNTRkOTUwYTk5Y2Y2NjViZjBmMDJhYzBhNzhhMGIwOWU2ZTYyNTdiNWVlM2QyMTJlZGZjMWFhNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmOWI0NzM4NGUwZTA1ODAzMjE2NzE3NDBhMzc1MjY2YjU0MDc5NTA1OTVmODE1NzE5M2MxMzVhOWVjMjMyYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyZjM4MzIzYmIzYTM3MDJlMjJkNjI5OTdiNWY4MTI3YmUzMjNmYTAyMjU0MTc2NDQ4OWE4YjMyMGE3YTlkNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3dad4838f91444fcacb679522d96d3d9",
+      "statement": "Before each step the controller syncs the budget flag with combined LLM cost, checks for stuck loops, and steps iteration and budget control flags; exceeding a limit or being stuck moves the agent to ERROR.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L845-L860",
+          "version": "repo-lines-v1:sha256:42f28a9d0a107a581f8dbb7cbe06119205ddfae369ed334d762f756adab68d2a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzZmZlYzYxMmE3ZGZmNTM5NWRkNmIyNDRkNTUxMTJmOTdhYTY1YzhlMWViMzEyOTZkMzlmOTEwOTllNTllMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0MWQ3NWY1Y2I0OTY5YzFlYzgyYjRjYThjMzBlMjk1ZTViNGRkYjgwNDFkM2Q1M2I0OTA0NDY2ZjI5NWE0NmUifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/state/control_flags.py",
+          "version": "repo-file-v1:sha256:dcd7e74db4fe1f8c6ade5cba1ad578bf1d4540bb721bde7e4a8a0aadd96b7e0e"
+        },
+        {
+          "resource": "repo://openhands/controller/state/state_tracker.py#L254-L268",
+          "version": "repo-lines-v1:sha256:dafd7388a5a72f96a834c9a5ecd540270c0388c055635586c73b63304c2e2456:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiMGM4MzA5M2Q1ZWUyY2QyOTQ1MjkwZTlhZTk4YTg0MjE2NDY3MzViMTZmNDMwOTFhMzQ2MjY1MDY1OTNkYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyNTk0MzA0YTJiMmEwN2FkYmQyZjEyMzY2MGQ3ODA4M2M2ZTRkNmZlMjI2ZWU1YWQyMmJkZGE2OTRmY2ZhYmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e11f50bbc2ba44668b79b64526de1946",
+      "statement": "On a context-window overflow the controller emits a CondensationRequestAction when history truncation is enabled, otherwise it raises LLMContextWindowExceedError.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L888-L918",
+          "version": "repo-lines-v1:sha256:327693ec87f943dcb37c26ac95e14f7e76bb960038ef17ffc04bf2a871b6adf0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxYjc5NTc4MDk1Mjc0M2I5OGJhNzFjOTFhYTA5MWIwNjU5YjZmMzRmOWRiMjEyOGJkZWU2ODk0YTNhZTA4YjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyNzliYzEzZGM3ZWJhYmY3NjMyYWNhOWNhMjk1NDEwY2MzYTQ4NTRlMDY5MjM2NWI1YTIxZTk0YThlNDUwYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkM2ZlMjVkMTBmNmQ3N2JhYzQ1YmM3ZWY1NWYzMmU1ZTg5YzRiNGNlOGRmYzY4NmUyYzUxOGZhNGUyZGFlZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3dd78ae494b242eb90c921ad4c439e85",
+      "statement": "Exceptions escaping a step are mapped to RuntimeStatus error codes (authentication, service unavailable, internal server error, out of credits, content policy) and set the agent to ERROR, while rate limits set RATE_LIMITED until retries are exhausted.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L302-L356",
+          "version": "repo-lines-v1:sha256:523e24bed6a4375b05e9a1395ec040c84111e07a3c640ed164e5ee71e3be3689:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNDdmNjVjY2VhN2U2ZWFkNjIwYmVjMDJiZDljMzRjMWUyMjRhODJhZDA5YTlkMzg1OGM1ZGE1YjQzNzQxZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0YWU2OTRiNDZkZjFmYmUyNDNhY2I2ZTUwNjJmOGE4NmI5ODMyNDcyOGRhOWY2NGNhNmNmOWY5NTQ3ZjdmMzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkNTU5NzMzNDlkYWUwYmZkZWQyZDkwZDI3ZGY4YzQzZWQyODE5ZGMyYjkzM2FkMGJiMzRlYWM4ZmUzZjlmNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxNzQxYjM3OTNkOTY3NWFkYWE4MzNiNDhkODkwZWExNWU1ZjMyN2UzYWU3ZGRmNDhmMmViYjQwN2ZkZjBjZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe1efe18f6dd4eb59885f1ea790567ba",
+      "statement": "When the agent enters STOPPED or ERROR, the controller emits a synthetic ErrorObservation with the pending action's tool call metadata if no matching observation exists, keeping tool call/result pairs consistent.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L590-L629",
+          "version": "repo-lines-v1:sha256:18f74a2b4791cf46d88db17277ee21d4ba954b726632aad174de6a51084b5fc6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ZDBlMDVmMWY5NGM1OGM4ZDFmNzg2ZjMzYTU1NTI1YWFiODFjNGI0NGZjYTZiZjhhNjk2Zjk5NTYzZWU3YTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYjgzZTBlMzc4YTFlZWE2YjQxOWI2ZWFiZDk3NTcyMjUwY2Q5ZTkyZTIwYWM2ZWEyOTliOGM5ZGJmOTVlZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlOTA4YTBhMTM1OWEzMGYzYzgzZTBlZGEwMzQ1YjA3MDkxNjkxY2I5MjZjNzZhOWM1ODNiZDI4NmE0ZGYwOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxNmM0NDc5NWRiY2ExNmRmODQ4NGZiZmUyMTU0MWVmNjZiYWE5NDEwMzMxOGFjZWNmYmM5MjRkNjc2MzFjOGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f274f006baac4cee9131aeb4569acfe8",
+      "statement": "Every agent state transition emits an AgentStateChangedObservation and persists the State to the file store.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L631-L683",
+          "version": "repo-lines-v1:sha256:f6ea94a06d85e24d971fa461c5ab8823bb6ac4331d5328cd055ec772b2542a2f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMGJlMjlhNmZhZWNlMmVlZDhhZTI0ZGNhYjVhODVlYzdjZDU4ZDQ5OWYxNTM1MGZmMzY2OTBmZjIxYWVmZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMGUwYjIzZTRiNmZhMTkwYTQzY2RhMWFlY2FjNzhlNzkyOWUzZGU4MmQ5ZWM1OTExOTk5OTdiN2JhODU4NTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwYWY1NDk0NTBiNmU3ZjEwZWVhOWNmOTBlMGQ0NmViZDRkODM4NmY5YjlmMWVhMGQ2OTZkNDY2NDNmYTljNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjNjA0NDgwNzhhMmUxNjM3MGY5NjU0MDAxMzY0NzI4NjZiM2E4MTdlZDY3MDQyMDI1ZGQ4OTA2NTE2YjU4MDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c3c1a55eeee40808c63162636926751",
+      "statement": "Iteration limits are only increased in non-headless mode when resuming from ERROR to RUNNING, while the budget limit is reset to current cost plus the original increment.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L652-L654",
+          "version": "repo-lines-v1:sha256:89531d1e37c4c863f4be2841ddd47caef45cfa562b10c6985bc697d60c468983:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOThhNDJjNGNjYzEzOTUxYTg4NTNiYjliOTExNTI2YzQ1MjJjZThhODZkMzdkNzU3YmU0MDU1ZDM5M2ZlOWU0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwZTg4MDQ0MDIyZmM2NDgyZjhmNGNhZjZmZTdhYjZjYjNkNjk5ZDYzZmZkYjllNjRkNTExNzc1MWQ3NTg2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDAyOWU4OGY1ZmUwMzhiNThlOGI5NzA2MjllMGI4ODliNDU2NjJmOGVmMTdmNTVjOWNhMzY1NzNkZWVjN2Q1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjAyNmE0ZTNiMjk0ZjcxODIyNGE2ZWE4NTcxNzE5NWMzM2I1MmRkZGE4OTJjMDA4YWYwYzYzYmRjNWE4ZDc0YSJ9"
+        },
+        {
+          "resource": "repo://openhands/controller/state/control_flags.py",
+          "version": "repo-file-v1:sha256:dcd7e74db4fe1f8c6ade5cba1ad578bf1d4540bb721bde7e4a8a0aadd96b7e0e"
+        }
+      ]
+    },
+    {
+      "id": "claim_2054d134779446cfbff9d82e7218d753",
+      "statement": "State is persisted by pickling and base64-encoding it into the conversation's agent state file, and restoring a state sets it to LOADING while remembering resumable prior states in resume_state.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/state/state.py#L122-L189",
+          "version": "repo-lines-v1:sha256:76f325d6daa3c0069abc888f64b9cfed3bdd0fe56e0512e8f203426ea9dcbae2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMDdiMmZhODgxYzkwZGEyMDlhNjY4N2E2MzEyNTk0NjQzYTNiZjRkMTc1NzY0ZDNlNzIxZWE3N2NiNDhkOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMGExMTJiZWFkY2ExMDM0MjczMTcyMzkyN2NiNDVmMGJkNmRlMmFhZGNkOWMxNjk1NjQyOTIzNWMxNzMxMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5ZGE2Zjc4ZDI4YjdiMzA5NDI0YzE2M2EyNmQyOGQwMDkxNDZhYjcxZTA2NGE5MTkwZDcxNGMyMjkxNDNhNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxYWE1MWZlNWNiMzlkNWJiMDJjMjQ0NmU3NTUzZGUzYTM3YjM3NWQxNjlmN2ZmN2RmYjQ3NjJmNDk5OTBjMWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04f10b616ac548189c6ca0ecc73677e7",
+      "statement": "Agent history excludes null events, agent-state change events, hidden events, and events inside a delegate's action/observation range.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/state/state_tracker.py#L104-L195",
+          "version": "repo-lines-v1:sha256:ea6475d281b53eb768e5d8a1f42db83480fcfad64ff66e18834755f35e6b17ca:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkN2U1ODhmM2QyZGE2NmEzM2Y3YzE4MzFlZDAxZDFhOTdkYzQ4MjBlMGQzOThiMzA2NWE4MGRiZDZkNThjOWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0ZmNlNDQzMTYyMDdkZTIyOTVjN2NkODA2MDkyOWI4YzQ4ZGM0ZjQ0MzBlY2M4NGUyNWMzY2U0YWNjMDJjNzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjYjNmODFmMmEyOGQ5NWY0YTcwNDU4OGFiOTI3ZTA4YzhhYzlkOWQyNDgzZjZmYzdjNDgxODdlNWMzOGM2YzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4MjBkMDI0NmE5Mjc4N2Y2YzRmYTE0MzA5MDIxN2ZkYzliZGQ4ODNiZDdjNmZiNzY2Mzk1MTU4ZmQzYmRkNjgifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/state/state_tracker.py#L40-L48",
+          "version": "repo-lines-v1:sha256:9b6b42a522c69a01592666130edaba64f66a0b784d17e6db89bf51826710c088:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzc0MWRjNWFkOWVlOGRkMWIyYTMyNTcwYzAyYTlhZDkwYjRkZTkzYmQ4ZjMzMTU0ODhkNzE5MzZlYTI1MzMwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmYxYjcxODM0YTA5NGU5MTJhYjU5MWY1ZWY5Zjg3ZjhkNzljODQxNDM5YjhiMWZmMGFjYmRlNWE1ZTI1NmIyOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTczYzgyNjc4MjNiMGVjNzVmNWJkYmY1OGI0MDdhYjJkMWNmYjIzZjE1OGIwNWQyMjYzM2Y4OTczODBiZjIwZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_092fc90285164c9bbaeeb80756b1b210",
+      "statement": "In confirmation mode, command, IPython, browse-interactive, file-edit, and file-read actions require user confirmation when risk is HIGH, or when risk is UNKNOWN and no security analyzer is configured; in CLI mode they are always marked awaiting confirmation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L204-L242",
+          "version": "repo-lines-v1:sha256:8a4d7ac22cda99947d6c6819e1ffb2f034a8a8b57944987850b30e3f1a34f066:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyNjA1MzYzYjI1ZDgyNWNiNWM2Mzg4OGZjODg0MGQ2YmYxMTg0YmUxMmFjNDg5ZjBlMjI0N2U2MjQxODJlNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhODFiMWY0OTQwYmE4ZmRmOWQwN2RmZjFlYmI4NDE2NzczN2NkNTI0MGNiNDAxMTQ4NWJhM2QwZDczNTcxYTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMDk1ZWFhYzkxYzhiNDI4NDViNGNjM2ViODRiOTc1MzhiODgxMjI3NTEyM2E2Mjk4YzAzMjIyMzM3ZTIwNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1MmY2MGQ3YTNmY2E5NTY3NGYzOGNkNDM4ZTNhYTBiMWFiMzg3OThkMDBmZTZhNGEzZjk1MTc4ODJmYzdkNDUifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L920-L960",
+          "version": "repo-lines-v1:sha256:8d64c7f8da344aff77463f83ce5c27b095526ffefeba5c1c6d96d6a7f3584a63:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZWY2OTBkMjNmZmM1OWE3MzY1M2RmM2QyZTFjMzQ5NTNjMDQ2OWE3NWNjYTExOGM3NzljNTllZjVjZDFmODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwOTI5MjVhYTZjODFjOTZmY2IzYmE5NTFiNGEzMTEzNGI0YWE4NDM0YTcyNjJjM2ViOWVlMTA0MTA4NGE2NzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyYTgwNjA5MGE5ZWI3YWI4NGNkNjc2MjZkMDBiNzRmMjhiMzkyOWEzNjFjM2UzYTgxOTlhNzdiYTUyYTA2MGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0ODAzM2U5ZWRjMWM3ZDk5ZjdlNWIwMDQzZDdiM2YwMzVlZGFmMTY3MzAxZjgxYmUyYWI5NTZhZGM4OGEzNmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f52a219f8f446d2be84047e934f35cf",
+      "statement": "Delegate controllers share the parent's iteration and budget flags and global metrics, start at the next event id, and on completion the parent emits an AgentDelegateObservation tied to the delegating tool call.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L693-L819",
+          "version": "repo-lines-v1:sha256:ba2439d4e2ae8deebd490923978e3f96a9eb0abaf2a97a13d1aae8e058dc6fdf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhZWNkOGRiOWExNjYxMTg0OGY1MDFlZWFjNWUzNmIxZWY5Y2ZlMGMxNTAxN2VkMTQxYzIyZTY0ODNmZjNjNzg5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxZDk5YTMzZWQ3MjVlNzc4OWU0N2RmNDE3NGJmZjkzYWRkMDQ1NzdkZGZkYmU3MmIyNmRjZjVhY2M1N2UxYTg2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMGQyNTk4MGNmNDNjMGVmOTk5NjUxNDc3M2M5YjI3MmJlN2Q4M2M1YmEzOWM5YWRkY2U0NWRkNmY1MThkYWJhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxOTQxOTExZWM0MjhmMjEwMjZkN2I3ZWViMGI1NmI4MGY5NTViMDgwMDRlZGQxZTBiOTU3MDM2NjcxZjA0NjY3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_16c1d2dcad634f3f9c96006b8a86913e",
+      "statement": "The stuck detector considers only history after the last user message in interactive mode and checks repeated action/observation pairs, repeated errors, agent monologues, alternating patterns, and condensation loops.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/stuck.py#L28-L110",
+          "version": "repo-lines-v1:sha256:053998bc4cf5ab04f0b0bffb762c1471652fddc821608e25d50823633d6f4249:eyJzZWxlY3RlZExpbmVDb3VudCI6ODMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNGZlMGJkM2U1MmE1YzM4MTQxNzE1MDFhZjIyYjEwNGIwMGZjNGMyMTcxMDdiYmE0ZDNjOGRkY2ZkNTY0YWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5N2M3MTI0N2FmM2NkMWVkZjU1NWE3ZDEwNzU5MzE1N2Y2ZGMyYTIyYWYwZGU4MmU3Nzc0YWJmMTBmOGFkZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzMmJlZjQ1ZDVlN2M4NjI4NDdlZTgyNDIzOGZlMzhhMzc3ODA1MjFjZDM4NWM4NzIyZDNhZjViNzk4MDRmMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwNGI1OTkxOTM5MzI5ZjBjMjQ0NmE2NTJiZWFlMTdjMmY1ZDA5ZGZjNDhiNGFkMWIwYzJjNGIyMWRmNjY0Y2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7df9ad6688bf4dcdb6c47768127703b1",
+      "statement": "Trajectory replay feeds recorded non-environment actions to the controller instead of calling the agent, and normal operation resumes once the replay is exhausted.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L864-L867",
+          "version": "repo-lines-v1:sha256:4a094ed3047e11141db92a1a0f3673d31ec1ec2469d4deb464a017e2303876bb:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWE4M2NjZDEzMWE1NDBkYmUwNDY0NjdjYzA2ZGYyZGVhZDAxYzkxNmVlZmJkNzRjZDMyYzBmN2JhOWI0MjUyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ExY2NlOWI0MjM2YjZlNjkyNzFhZjQxY2MzZjc4M2ZlYjUzNGM3M2RmZTBmNDQ5MDQwNWQ1MjkxMmE4OWNjYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzQxZDc1ZjVjYjQ5NjljMWVjODJiNGNhOGMzMGUyOTVlNWI0ZGRiODA0MWQzZDUzYjQ5MDQ0NjZmMjk1YTQ2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDA1M2Q2YThjNTYxYzlkNTczYTdjNTljM2JiYjUwYzZjNDQyYjUzNTIxYmQ2YTY1NTYyZGNjZjE4NjcwYzYyMSJ9"
+        },
+        {
+          "resource": "repo://openhands/controller/replay.py",
+          "version": "repo-file-v1:sha256:3fbc55bc995145985ea0021d6f2f902b6a94f305f8d144cd673fcaef562e69a8"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

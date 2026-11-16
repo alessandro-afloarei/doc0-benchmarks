@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cda429007bcef18207811bf8e0cb8bcfda41d0e7424b4e116dbd8390b84851cf",
+  "claims": [
+    {
+      "id": "claim_700cd1a79ff6427a99d7d1759f231adf",
+      "statement": "DEPS pins Chromium, Node, nan, Squirrel.Mac and related dependency versions as variables and checks them out under src/ via gclient with checkout_* conditions, with GN args inherited from Chromium (gclient_gn_args_from = 'src').",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L1-L95",
+          "version": "repo-lines-v1:sha256:5c81e025d262591826be6be40fd7b4c08a5f5d67537765572d962a603857312f:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzOTc2YmZiYjVkMzZmMzk3ZGI1YWUwZjM3MmM3OWVkNmIwMDE4ZWRiMDg1YmYwNWY2NTBkMzQ2MDRhMzQyY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmMWNjNWY2YTY5MDJjYmI0ZDk1OTYwZTlhMGUzMWM3OWViNDVkNzJlYmQxNDE0Mjg5MjA3NzI2YTMyYjlkYzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzODgyNmJhMGQ5NDE2MmQzMDU0MzQzODViZjdjMDJjMmZmZDI4NThjNmM1NDkzNDMzNmM1Y2QzNjQxYjFiNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_33810c0658cc424ca8c7340369072276",
+      "statement": "After sync, gclient hooks generate and apply an mtime cache, run script/apply_all_patches.py over patches/config.json to patch Chromium and other dependencies, and run yarn install --frozen-lockfile in src/electron.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L96-L160",
+          "version": "repo-lines-v1:sha256:8071b6c99fbdf518858f66addf4c443faf42001af9200dca68359a15b2d2e5fa:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3ODc5YTU1ZjdmYWUwOGZiNzQ0MTEyM2ViMjcyOTkyMDc3MWVmNDg0NGY5MWYwNzVjOGVjYjVlMzY0MjcyY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkY2RiOTdjMmVjZmZhZGE4NTQzMGQ4ZjY0ODY5MjdjYTg2YmM4MjVhNGE4NDYxMmE4YmVhYTA1ODU2OTg0NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiODM4ODRmZmU3N2E4NzYzZjZjNTZmNDk3ODZjMGI1ZDZkNWU1MDVmZWFlYzcxNTg2NzhhYWI0ZWExY2RlZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_34c07545bfe142e099a0ead67ddc7061",
+      "statement": "build/args/all.gn sets is_electron_build and root_extra_deps = [ \"//electron\" ] so Electron joins Chromium's root build, and disables Chromium features that conflict with V8 in the browser process; release.gn is an official non-component build while testing.gn is non-official with dcheck_always_on.",
+      "evidence": [
+        {
+          "resource": "repo://build/args/all.gn#L1-L74",
+          "version": "repo-lines-v1:sha256:6054e73d4de38a22d6027a8e04f577f081e694f49d0320cc7463cecc216d5861:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViODA0YzgxZjcxZjJlYmIyMzBlM2VlZTk2MGVlZTNhODk0NjkxOTgwNWQ1MzJmZWNhZGFiMzEwNjlkNWEwYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkNmZkM2Y2M2IyYWY0MzNiOWJlMTNlNmNjMGIwYjBjNjI1MWJjZjBhNzQxYzIwNWQ4NmRjNDUwZDYzOTEyNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b0bd14eaa13f43b9a70edd79fc4783e1",
+      "statement": "buildflags/buildflags.gni declares feature args (PDF viewer, Electron extensions, builtin spellchecker, fake location provider defaulting to non-official builds, vendor version) that buildflags/BUILD.gn converts into a buildflags.h via buildflag_header.",
+      "evidence": [
+        {
+          "resource": "repo://buildflags/BUILD.gn#L1-L28",
+          "version": "repo-lines-v1:sha256:300f303fac75e663e8c7928bd29068c51d8e94d7504052b6e960c69d1cc4e23b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOTc0OTNjZmNjODE1NTFjYWY1M2JhZDJkNTdkZDA0Y2M3MmM4OGVmY2I5NTI5MDliMmYwMTFiOWRiMjY1OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://buildflags/buildflags.gni#L1-L30",
+          "version": "repo-lines-v1:sha256:231a2b95514447434cda4de9bcd4ccd17161b5c6363adabccb7b202573ae68bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOTc0OTNjZmNjODE1NTFjYWY1M2JhZDJkNTdkZDA0Y2M3MmM4OGVmY2I5NTI5MDliMmYwMTFiOWRiMjY1OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_754042d817694cdfa60654cdcbc5cf8f",
+      "statement": "filenames.gni lists the C++ sources compiled into Electron with per-platform variants, so new source files must be added there.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/creating-api.md#L1-L40",
+          "version": "repo-lines-v1:sha256:c600b6f0acf3215f15c841ff752bd2e971ffa11ac3e2a0b5ceff20b9f38ffe86:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNzk0NGQ0ZTdkMmJjOTYxZWFjN2QyNTcxMTYwNjQ1MzFhMmEzMDhkMjY4MjI3YjE5NTYwOTFiZDBiODQ5YTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5ZDg4ZWM3OWFkM2ExOGVhOTQyY2YwN2Y4OTU1NjA4OTJlYzc1OGNiN2M2NTZiY2Y3ZDkwNjBhMTk0NDJkYWIifQ"
+        },
+        {
+          "resource": "repo://filenames.gni#L24-L240",
+          "version": "repo-lines-v1:sha256:bce0feaeac1cb1885d57bc1f977d94455c0ebc2f50a431be83bc3ebc8eb802e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjE3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkY2VlNzliYzhjOWQ4OGZiMjFmNDA4MmY5MjlmMjQ0NzNhYzY0NDFmYmFlNTBjNzg1YjRmYmU0YTdlMWVjMzZhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzYzM2MmJkOWMxOTk2ZDQ3MGU4MWViOGQ1NjQ4ZmQxYjNkODc5NGI4OWZlY2NjZjkzMDA5ZjAwNzU3MjY3ZmVmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzMWRhMzY5Y2E5MGRhMGNhOGFiNzBlYmE5MWJiMzQ2ZTI5OTkzYmU1NjFlZGFkZWVmN2JmYTY1MGZmNzFjODUzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlNzU5YmIzNGNjNjU1ZDFmZGMyNDg1YTNkZDI1Y2M0N2MyOTY3MTQ1ZDg3ZDU2OWViYWE4ZTc2YWE4N2Y5NjFkIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_61ff6fd326814bc7ad8ae101cf141a70",
+      "statement": "script/gen-filenames.ts generates filenames.auto.gni by listing docs/api files and, for each webpack bundle, running webpack in a graph-printing mode to record the lib/ files the bundle depends on.",
+      "evidence": [
+        {
+          "resource": "repo://script/gen-filenames.ts#L1-L120",
+          "version": "repo-lines-v1:sha256:0e58849dad70b55dee345fd4136da1e80f3a15c4ce520ce3b128df53002e02d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyZGMzNmY0MzU4MTFkNmJhZDFjNzJjZjA0MTdmYjI3YmJjMDU1MDU2MzM3ZjQ3YzkwYjM1OGMwNDBiMDY2YjMzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_14b6ef79fed64486aa5fcbbc1ea4f5d4",
+      "statement": "The electron_fuses action runs build/fuses/build.py over fuses.json5 to generate fuses.h/fuses.cc containing a sentinel-delimited kFuseWire array and accessor functions.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L393-L404",
+          "version": "repo-lines-v1:sha256:c333d0f0b3ec752ad68240c2735d9d7461aa1dbe3da49ba6ba2d2ca3f192497f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkMzZiNGJjYzA3OGIwN2U0ZjQ3MjY3N2M2ZWUxNDhkYjA5ZjI5Njk3ZDcxMmI2YTk5NTRmODEwZTA2YzgzOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhOGYzNmFhZDRkZTQ5MjM5NjAzYjU2NjM2MzQxNmEwMmFiNjAzYjYzMzIwZGRmODdlNGIwOGExZWI5MDM5NmIifQ"
+        },
+        {
+          "resource": "repo://build/fuses/build.py#L1-L111",
+          "version": "repo-lines-v1:sha256:53f21ff86efb7d430114b54b0e24c2c029dd51a0f2c2434fb4c681c7a7ed152e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTExLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkNjgyY2JkYjRjOGIwNzUxOGJmNDg2YzU4OTkwZmMzOTE3ODNhYTIwYTkxNmJmYjI3YWQyMTFlYjFkNWMzNjQyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyYTE5NGRmYzcyZTljYzgzMDNjYjVlOGQxZDBiMTgwMWU5NWY0NzczODY2YTQyM2FiNWQ2Zjg5MGM1OWUyZGUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://build/fuses/fuses.json5#L1-L12",
+          "version": "repo-lines-v1:sha256:f26ef9f002d440525c7d9d8f68ab7010c8e66d04680a6aa97096cd66b0347102:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjOWYwOTZiNGY5ZTA1YTZkMDFhMThlY2ZhZGJjZDY2YTEyYjAzNDY4MGVjNTM2NzJmMjNmYjQyMzlhMGNhMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_46c8d6a0b3444ea4ad5aedfcb753a0c3",
+      "statement": "default_app_asar builds resources/default_app.asar from default_app/ using the asar GN template (script/gn-asar.js), and on macOS the header hash is injected into Info.plist through asar_hashed_info_plist for integrity validation.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1090-L1100",
+          "version": "repo-lines-v1:sha256:780fb63840c3cd76fac6a28ea44ac49d7d310301f56cc2ca66f7a9011efa8dd6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhZjcxMTkwNGNlNTFmN2EyZmI2NjlkOTViN2RhMThhNmZiYTRhMDg0MDVjNGEzNmY4NmRlYzYyOWNhOTg4ODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlMzQxZmFkNTc3ZTUwNTI1NzdkZGY0YTkwZjE2ZTVhMWUyYTQ0N2UzNDkxYzQ0NDY2NTVjYmNkZTZhZThkMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlZDJmOThkOWU3Y2Y4ZDE1NWU3NTczOGZiYTM2NmYxNTg0OGQwZGJiYTczNWRlZTJiYjE1NjhmOGY4NzliYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjMTc4MGYwMWY2NDI4N2IzMTBiNzNkNDk3YjQ4MGI2OWIxZjc3MTc3YTFjZTA0ZjE2MGE3YjFmN2QyZGFmZDEifQ"
+        },
+        {
+          "resource": "repo://BUILD.gn#L303-L316",
+          "version": "repo-lines-v1:sha256:a6c3ea63f77ab581144fe4e382133e5eabc759716c8f8f6617f1f9d1d22a8fae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxZWE5NzU4ZjJlM2U5YWRlOWVhNGM2NzZjZDY5OTE3NGFlNjAyNjA1YWZkZmJmZWI4NDJjMGY0ZWRiZjU2MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjNTAxZDFjZTcxM2ExYjIxZDQyYTgyODViOWE3YTBlNmI1NjUyZTU3ZmIzNzAxM2IzZWFkNDY1OTgyMjZjZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2MjczZTc5NGYyN2YxZTVhMjM5MWM4ODc0NjU3OThlNzljZDQ1NmU5NTBlYjFhMmY0ZjAzM2M3MWY2NWE2ZWMifQ"
+        },
+        {
+          "resource": "repo://build/asar.gni#L1-L87",
+          "version": "repo-lines-v1:sha256:d577247d24408c0f3501e16d32174f530e8aa975db1ed16fc3701a85357aa70f:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2MTA1MjU3OTdjZGI2YjcyOTQ5N2Y3ZTI2N2VlM2E5YWI5N2NkZDA0MWY0ZWUyMjM3ODBmYTRjZWM0NjZmMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b7ba6e6d1b244f18074926558c6de80",
+      "statement": "electron_lib is the large source_set of shell/ code with per-OS conditionals and depends on generated fuses, js2c natives and libnode; the electron group simply depends on electron_app, and distribution artifacts (electron_dist_zip, chromedriver, mksnapshot, hunspell, libc++ headers, node headers) are produced by the dist_zip template and related targets.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1364-L1450",
+          "version": "repo-lines-v1:sha256:9f30af3c4bb04b3ab40c4081181d76945a8c620c95c823072ee2d4a44e8eb467:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzOTRkMThkZDE0YTY2MjdmNWY4ODJlNWQyMzZiZWJmM2E2MGYwYTVjYjY2NTNjNDgyY2EwMzA3NGUxOWY2MjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1ZGNiOWE3OGFmMjY1M2M5NjU5Y2FlYjdlYTQ2ZjVjYmMyNWU2ZDViNGI3NDU5MzVmNDYyNmUxMzY2ZmQxMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2NGE5MmJkYTVlYmY3NDU2OGYxNzM0ZjdkZjVjYTM4MTMzOWJlN2QyM2VkMzllMzgwM2M0NDBmNjU2MDI4OTkifQ"
+        },
+        {
+          "resource": "repo://BUILD.gn#L1557-L1625",
+          "version": "repo-lines-v1:sha256:af496da28876ee926f6f56fad185cedfdff6f4f7a05beb8dd9d18d2c5753195e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZmY1ZDM0ZDJhZjZlOGM5ZWQyNWQzYjJhYTU4ZTE4YjkyYWRlZTIxODljZTIyZGRkZDYwYTFkZjUwZDAyMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1Zjg4YmEwNWZjM2Q4NjlhNjFiMTI4MmU2NTkxOTc4MmEwZjM2YTA1YTUxYWFkNGNmNzViZDlkN2E5MzljMzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjMTMyOGI2NTA1YjYxZjk5NWU1ZGEwZGQ4NmNmMWMwOGVkMTJlODA1ZGY2OGQ4MmQ2Y2QyOTcwMDZjMWY2YWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5OTA3NTNhZGUxNWFhNWFhMjFkZTVmYTA2ZTcyMmE5OTZiZGQ5MjhhN2Y3YmM1OTcxY2M4M2E4YmM3YWE5YzkifQ"
+        },
+        {
+          "resource": "repo://BUILD.gn#L423-L470",
+          "version": "repo-lines-v1:sha256:10089e7cbb3a0b75911fd29607e2850841ed8846923e9ba1ff7616806f497a97:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyMjAxYTBlYmVhMWU0YmMzZGRiOTc0YzFiYzRiYzEwNTZmNzQwMjhlN2QzN2E2ZWQ0MGJjOGVhYjJiNWJkYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1NmUzZDhiN2Q0MWI1MWFmODg5OWJlYzVhNDJjYjFjZjJlYTBiNDQzYjhmNzdkYzg1MjkwOGIyODNlZTllNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhMTA3OTI1ZDgwMDRiYTU5MzlkNmI4NDc0ODJhNjRhNzRlZDQ0ODBjMGExODFkMDE5YjQzNDg4MjcwOWNjNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkOTI0NGZkN2NjY2JiZTVkZGM2Y2Q0YjYyNjVkYjJmNmQ3YmEwNjU3YjVjMDk0ZDAyYmU2NmRlMGZiMjIzMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_93fa957a26f34ef384e00282ec9bad10",
+      "statement": "On macOS the app is built as an electron_framework bundle with helper app variants and a login helper defined via templates in build/rules.gni, and shared data deps include packed .pak resources, locales and a V8 context snapshot.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1220-L1250",
+          "version": "repo-lines-v1:sha256:dcc94862a0fdb898ca65871413303394dcb187ef6320c995e684d0a0ec6435da:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNTBkNGZmYjMwZjY0OWI0YzA1MDNhYzMyNDg1Yjg3NThhZWM4OWVjYjZkNGQwNDEzMjM2NjQ2NThkNzIxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3Njc4MzcyZGYwZjVkZWNlM2Q1Mzc5NDIwYmZhOTBiOTEyZmYwN2VlZGY2Zjg5ZGJkNTJhNTZlOTAyMmFmZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4OGNmN2EzMTJjMmM5MDhlNmI0NGVlMGEzZGFhNTU4NDk3MjE2YzlmYmZjZGRkZWRhNGYyNTk5NDNlNTY4NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyZDEwMTgyMzRjYmNmZGRmNjFmM2U3Y2NhMGY4NmQ4NGMzYWY2NTE0ZDcyNGY5ZDMwNjljODMxNWM2NjVlOTgifQ"
+        },
+        {
+          "resource": "repo://BUILD.gn#L802-L960",
+          "version": "repo-lines-v1:sha256:ef47d023c21c18cd53a1d42e690a8805d9824c5c2515f0e4d9a732661e046459:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwOGE2M2YwNTljMjAzY2U4NDhlZGJhYWViNTNjZDlmNDY3OTE0MzViZmJhY2Y4YWJlMTA3NWNkYWJhNmYwZWE2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkMmI0NjY4NjU0NGVhMmM5M2FmY2M3MjQ4YzY4ZDVmYTI1YTAyNWNhNWU3ZjMxZTRlZTc5N2NmZTJkOGI5Y2E5IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmYjU4MGU5NjRmODNhNDczZjQzZDQ0Mzg0NjI5NDlkNjhiNTYwMGZkYTc4N2YxNjM3NDVkMDBkZTg5Y2JmMzZhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiM2YyNjdlZDlkMWIyYzBmNGM3OTBkZTNjMTljODJhZDEzNDMwODMxNWFlM2ExNjJkMDY2NTgwYTM5MDAwZTNjIn0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

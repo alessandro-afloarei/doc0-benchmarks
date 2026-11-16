@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a1b5d459604b98121609a579f4394a37b22184def22fc6c2250477eccd6ff8a3",
+  "claims": [
+    {
+      "id": "claim_933caf519c184907b23943eee3174e22",
+      "statement": "Creating a conversation generates an ID when none is given, stores its metadata, and starts the agent loop with the first message wrapped as a MessageAction.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/services/conversation_service.py#L164-L204",
+          "version": "repo-lines-v1:sha256:032ec52c8082999da40517ee0939fcb35b30d96707fe20d250e65185d67d11d5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNzM5OTZiMzI3ZWViNTg3Y2M0NjliMDZiZDY5MWJhMTQ5MzU0OTllMTFlYTkzMjU3ZjUxODgxMzJiNTNkNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwNjBmZjdlODg2NzNiZjc1NWUxNTEwMDFkMDQ3MzQxNDkwMmVmODFkZjJkMWJkYTE3YjNhZDc4ZTYzY2RhOTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjYTVjNTJkNTFlMWVhY2NjZGVkYTUyYzE2NzE1NzQ1OTkwNTY4ZDU0MjRmOTJlMmQyMDU2MTAyMzk5ZmIyMDYifQ"
+        },
+        {
+          "resource": "repo://openhands/server/services/conversation_service.py#L34-L80",
+          "version": "repo-lines-v1:sha256:4f04a782721878691284b426951d8fe06f588146cba5b9151266a08f18f6d9ab:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczY2ZmYzZiYTdiNWJjZmNlNzI2MDNlYTlhYWZhNWZmNDJiNDVkYTdlMDA2ZDA4ZDc5NzY5NjNiYTY2ODM2Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwNGMxNzAyNWVkYmFiODMwZjliZjlhZTJiYmY5MmQ0ODFiZDY3YjE4NTAyMTNkYjUxNGQyYTZhN2NkZjVlNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkZWYwYmRmNTk4N2QwM2VmMGVhODY1N2U3M2M4MmNjZDg1MmM4MDU5ODkyOGNhZTJiNzA3NmNkYjNjNWVmNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyZDJlNjUzMTRiMzA2NjQyMDQyNjg0MDAyYzNiMDRjYzJlMWQwNDBmZDcxYzM5NWZmYmIxZjU4OWM3M2IxNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e35ffe391d845bb9c63c04775e1a66a",
+      "statement": "The conversation manager reuses an existing running session for the same ID and otherwise starts a new agent loop with a new session and its LLM registry.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L280-L340",
+          "version": "repo-lines-v1:sha256:4f7752cc4702d7c33bd1b4cd0d11c7fc91384aa95512999b0e0b358bd2737801:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhMDk2YzE5MGEwNzIzMTlhNTk5MWFjMGVmODU3NDk0YTRjODE0YzE2MjE4NTYxMjczMWYyMzE2OTQ0YzA0YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllMjg1YWZlNTlkZmFkZDEzZmQxZjVjNWI2NDVlNDdjYWFiZWI4ZDM2MDM3ZTZhMjg3YWNhZmUzYTA0M2M2ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMDA2NTE5ODYxMThkMzg0NjQ4MWI5MTI0ZWFiMTE4ZTZlYjY2MGJmZmYyYzVlZDEyYThhZGJmM2JmYTM4NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5MTZkYjU3Mzg4ZDQxNzRjNDcyZDFmYzFkNzQ5YmRlMDIwNzU2MTc3ZDFlZmM2Y2JlMTQ3MTZlZjk3ZDI3M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d309858f0c094a33b85bad7b1e976757",
+      "statement": "WebSession.initialize_agent emits a LOADING state observation, resolves the agent and per-user confirmation and analyzer settings, and starts the AgentSession.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L132-L150",
+          "version": "repo-lines-v1:sha256:76bfc658d2672a829100c0743b18016adf5d3d7e114150435b5704ba71e56d4c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmNTkxNmZjNWE2NzQ4ZDBmNzBkMjEyYzBiN2I5NThlNGRhMjdmM2MwNTg3YTY5M2FhNWE0YWFkZjMyYjhlZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyN2MwYTZlMmQ1NjQwMTcxOTYwOTc3YWNiZDVjOWU1ZDJiNWZkMmEwZGM3MDMxMmNmNzBhZDBhZGJkZDk2OGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0YjljOTFiNmUyMmU1YmQ3NjIyOWQ3YzVhNDAwMzM0MzA1YmViZDU5MmVmZmFkNWE0NDM4OGVkMDcyMTdmNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMjMzYmEzZjA5Mzg5MDBkNGVkZjNkZmFkYmYwMjUyNDY1YjYwOWNhY2I4MTQ1MTJjZTgyYzc2YjRmYTdlNWIifQ"
+        },
+        {
+          "resource": "repo://openhands/server/session/session.py#L262-L268",
+          "version": "repo-lines-v1:sha256:89c2e67d0d2ac2dfeef6ee94112a5698bd1184b32a2eba427ad4f4d4336ffd78:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2IxM2IyMmZjM2E5MjBmYzhlMGIyNmQ2NGQ1NzRlMjI3MTA0NWI1YzU1YjA0NjRkYmM0OWVhMDQ1ZTMxMTU2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjA2OWY5ZTNjOWU5YjkyYWZmNGIyZGExMjBkNTgyNGM3YzZlNzA3ZDMwMmY4NTUwZDVhNmRkYTAyZGRmY2MyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2IzYzEzYWQ4N2FhNWZjYzIzN2Y5MmFmNTNmMDNmMTk4NGE5MGQ2ZjA5ZDZhYTdkMGVkNDY4NWVkZWE3ZmM5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzgyMTk5Yjc1YWU3YzZmNjMzODJjMTQ0M2M5NTAyNDEwZGYxYjU5YTQ2MjE0ZTJmOTA3MWVkYTkyODhkMGRkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_016bdb00830e4feca1bf7921c95e348c",
+      "statement": "AgentSession.start records an initial message as a USER event followed by a RUNNING state change, or otherwise sets AWAITING_USER_INPUT.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L186-L203",
+          "version": "repo-lines-v1:sha256:14ec0977107ba305c465924ff44928bd8da1ab957d1c2d5e8e76346c362e71e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxMzZhM2U2NmEyYzFhODNlZjg2ZmY3MGY1Y2QyNTg3YThlODI3NGUyMzZlYWQ5NjE2MGI3YjhiZjYwYTUxM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjNzM1MDQ5ZjJjZTVjOTdlOWQxODk4N2I0NDA5NDkzNDgyNjcyNGMzNGQwZThiYzk4YmZmODVkYTdmMmU1NjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhZDMwOTc1YTQwOGM1NmVhMjJlODc5NDAzZDI5YTNkM2FkNGMyMWQxNjM1MzViYmMwZmZiMTVkNmY3Nzk3NDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1Nzc1NzUzNmYwNDlhYzEwZjM5YzkzODE1ZDNkMWYzZTk0NDkwN2NmZDBiMjdhMWFlODA3YWI1MzY5ZjhiNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d1a3fcdfa31b4bfa838f7bc7b1f97757",
+      "statement": "Each agent-side event is delivered to the browser by the session's server subscriber, which skips null actions and observations and sends the rest through a publish queue.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L314-L330",
+          "version": "repo-lines-v1:sha256:ebcf1cb9e82a3fee4d9590f79bcbaa15ace836bc953c62c240eecb9241768423:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYzdiOGRiYjhmYTY3ODE0MjhiMDYyMzA2ZWI5YTBkMzZiMTIxMjg5NDY1ZWFlMDczZmM2NWZiODNlNTJkMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzYjc3YWMzM2YxNTY4Y2ZlNWFmODEyZDU2NWQ3YTU5YTQ5N2JhNmY4ZDg5ODIzOThhZTM1NjRiZTYzMjY2YTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNmJkZTQwNjE3ZTViZjM5NzEwNDc2ZTQ2ZTk1NTI0ZGQyMzNiZGI0ZTljNTU0MTUzNzczY2E0MTkyNmY2ZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwNTAyNTM2ODUxMmQ2ZGFkMjM5MTA5OGVhOWI1NmUzZWYxOTliMWVjY2M4YjMwZmY0ZmViZTU2NWUyZGM0NDgifQ"
+        },
+        {
+          "resource": "repo://openhands/server/session/session.py#L371-L382",
+          "version": "repo-lines-v1:sha256:f9882646b21654a890611f8c97bafbb7bb3623e6ddc10a22d08a544b722ea848:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxNjMwOTZkNTRlMGEwNzc2MjZmNzc4YmU0NTUwZWFiNWUwMTQ5N2JkMGFmNDhhMjExZTc3YjI0NTgxOTUxMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlYzRiYTk3NmRiM2FkYmNlNzM0NmRkOGFkYjQ2YzExOTZiNTFkYzdkYjUwYTJiNmYyYmNmZTRjMWQxZDNhNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjYWM5NGQyMmJiYzQyMDNiNzU1MDY1MDdjNjIwMzZmMjJlMDZjYjFiNGFmYjBiYTY4MGZhNTRlZTQ3M2MyYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2NDdhM2ZjZGI0NWU1NjRmM2FlOTA3YzliYzhlZDY3Njg2MjY2NDhmN2Y1MWViNzQ1YjZiZDNkY2ZjZWRkNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_36582710834941d297542f51ebd0c483",
+      "statement": "A user message from the browser is parsed, rejected if it includes images for a model without vision support, and otherwise added to the event stream as a USER event.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L353-L370",
+          "version": "repo-lines-v1:sha256:27951ab81bfd07099267948ae30fe266d0f9fc6e39c0c5ab2543f7df33f7cede:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjOTE5YjUzZTdlMzUzNWJmZDRhMjc0MGM3Nzc4ZmVlODNlNmMyNzRkOTE4NGIxMjg5NWM4MWNkZDg2OGI0N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhMzQ2NTM3Y2EzMmMwMjIyZmFmY2M3MGVlZTJkNjNiZGM0NTVkNWRmM2JjM2NlMzA5NTBmZmFlZTE4N2JmNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0YWFjODE1YTk0MTBlM2RmODBjYjZmYzVmNjYwZDdjZWI2ZjRmOTkzMjZiNGMyMTQ2MTNjZWEyNzU0NWNhODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c91f8dd5b314453c9e8d3e3f7420e608",
+      "statement": "Stopping a conversation calls close_session on the conversation manager, and the controller moves to STOPPED when the agent is stopped.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/routes/manage_conversations.py#L534-L570",
+          "version": "repo-lines-v1:sha256:26733f24ae0d79a3dfead32a2d068b29bbefdeb48495b22faa93b3c73ab23e59:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5NjgyNWI4MGEwNGQ4NjhhZjkzMWE2ZDBlNWIwZTAzNGZmZmNiNzIxMDQ4OTAyZGRlMDgyZWVlYjdmMmJlZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjMDIxODliMTg3ZDk2ZGY3MTMxMWE4ZGVlZDRlZTRmZjU5MzcwMzJkMzEzZmNhMzIyM2NjNGFkNDdkNzU2NWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyYzJmYWJmYTQ1NTMzNWE3YThlMDRmNWExNmNmYTE4NDhiMWU4N2M5ZmY4NjZkZTJhNTExNTExYmUxY2VkMjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0bec9381ebfa4fefa6018fb9e2a2b268",
+      "statement": "A rate-limit response moves the agent to the RATE_LIMITED state, and model-output errors are recorded as error observations rather than ending the loop.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L340-L358",
+          "version": "repo-lines-v1:sha256:8165cc0951b85b14f50c71181337c72d2af0c81586a1095ce24ba7e43c0debda:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMDhhZGI3NTkyZTU2ZWY1ZGFiNjk1MWVlZTAwZjZmZDc4Y2IwZjQ4MDQzM2NlZGU1MDU3NzJjNjJmZTVkNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNjA1ZWI2N2U5Mjc3YjVlZjg1YTAwMzU3NTMyMjc4YWNkYTIyM2ExYTk1MWQ3NzViMWZjMjg0ZDViYmIxMGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzMTQ3NzRlYjUwM2IyMDQ1YTQ1ZmJkYjRkN2RlZThjMjNiMzMzNTQ3YTVhMTQ0MWU1YzA5YTRhZjc4ZDNkNTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4MjY2OWVmYTg4YzNhYzM0MTBiYzg2NWYwOGRkNDA2ZDk0NGQyNTI4MjJjM2Q0NjM0NDNiOGM3OTY1NzhmOTcifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L880-L890",
+          "version": "repo-lines-v1:sha256:7587d23e607ce2cd0984ae4763529021dafd3e8d3b4c704952b00c2d05a87a12:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNjU5ZTQ1Yzc3ODJiMjRmYmNmNWU1ODczOTdjNTIyZjVkYzEzMjk4ZGM1YTk4MGJkNzBmNmEzMjNhMmE2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzZTY0ZjBhYWMyMGQxYmI0Yzg1YTg5YmVmOWY5MWUzZDZlOTEwNzEzNzYxYjc5ODFkYWU5MjRmYWU3YTY4MGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwMWZmMGVhYTg2NzhjZjA1ZTkzZDk1NzIyNzNlYmM5N2QxMjAzYTc5YWMyZGE4YTliY2RiYTMyOWQ2NjI1NTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjZWVkZjYxMWMxNWI0MTQyMGVkYjExZjBlZTE3YTBhZTNhZWEyMzk2YmFhOWVkOTAyOGE4ZDVjZWNmNzA2N2MifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

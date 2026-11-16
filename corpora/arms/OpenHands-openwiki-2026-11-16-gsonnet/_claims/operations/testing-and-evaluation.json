@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:72d61abdaf0abf3af3262c39d3c2a683977abe157683ffb9a2c1b73d5628ee12",
+  "claims": [
+    {
+      "id": "claim_417f66c62bc34f86a39520d40c82fb4a",
+      "statement": "Runtime tests select the runtime implementation from the TEST_RUNTIME environment variable (docker/eventstream, local, remote, cli) and RUN_AS_OPENHANDS selects the sandbox user, so the same test files validate every runtime.",
+      "evidence": [
+        {
+          "resource": "repo://tests/runtime/conftest.py#L123-L147",
+          "version": "repo-lines-v1:sha256:b11468e433368c5368a0ff9a873914767ca12e07b373fe975718bb47c11088fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwZmRkODcxOWVjODJkNmI1YmIxODg1MGY1NGI3OGNjYWQ5MWUxYmEwZWUyOWI1NzM1OTdlMDk0ZjcyYTFlZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlODk4NGJmZTYzMTg4NTg0OWNhM2NiMDU1MTIxNjAyMjNlYzUxOGZkODU4YWMxZmRiOTM0YzAzNTgxNjQ0NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3ZThmNTYyN2M0ZTkxN2ZhN2UxODQyMGVmNTIzOTFmNzU1ZDgxZDJlZmM3MTA0OWNlNmY2ZDNhM2NmOWNkMTkifQ"
+        },
+        {
+          "resource": "repo://tests/runtime/conftest.py#L22-L27",
+          "version": "repo-lines-v1:sha256:6bc6d3a76554b1906e71d60fd4a411614d98b494a70a733c11adc3dbc504a7e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNiMjdhNzY3YmE5ZTgyZWUxMWZiNGEyZjU2NTFkN2EwMDAyZTk4ZTBlY2IzYzJiZjdjNjNkZGYwNzk4YzExNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2QzNzc5NTYzMzViN2JhNTk5YmNlYzEyYzZkZjFiZGJmYTBmODQ0YzA5MDA1NDVmZThkZGRlNGJlZTNkNjIxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTZiNTQ1NDZlN2QyZjk0M2FhMTg0MDhjNmEyNmE5ZDRmZTI1NTU5MzVhNGNjNTQ2NzllZGE0OWU2ZGNmNGM0ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6da626f907b44ebab024a36d30133474",
+      "statement": "Python CI runs unit tests process-isolated and parallel (--forked -n auto) and runs tests/runtime/test_bash.py against the CLI runtime; a separate Windows job runs Windows-specific tests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/py-tests.yml#L40-L90",
+          "version": "repo-lines-v1:sha256:5a9fa1412b98db1a988c280d3867033703f7430343847710890dd4109b0e4a66:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyZDJmZTgxNTk5OTliYjVmNmYwYjVhNDdiNjIzODIxOWQ2YjU5M2YwMDI0MTE4NDIxNTNiNTRmN2Y3NTc5OGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNzgzYzI2NTVkN2Y2NmI1NjRjNTNiNjliOTU0MjM1Yjc2MWE4NzkwMjMzNTJlZDFjMjZiMjliZmE4YzJlNjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjMDA5MmNjY2RmZWNmYzBiZTM3MjU3YWE0NTE1OGVlMTFkYzk5NTVjMmQwNTQ3Yzg1Y2U2NzYyMmQxMDkyYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5MDc1MTU5MjQ2YmU5YjdjYWNhOGY3OGNkY2Q2YTA1ZDY0NWFjZGVlNDcxMzQ4NzY5MjM1ZmZhMjU4MWQyODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a0a104eb9bf1461daefd8db63e21ce70",
+      "statement": "pytest is configured with asyncio_mode=auto and function-scoped event loops.",
+      "evidence": [
+        {
+          "resource": "repo://pytest.ini#L1-L4",
+          "version": "repo-lines-v1:sha256:02c440af59e9b72e8e4f735afaff7ead1527815263dd287a09e2978553c299a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODI1MGQyMGY0MmI0MTlhZjQwNzA2NDkwZWFkNzhhYWJhYjlmZWJhOTNlYWIwOWEzZjYyNmUzZGU1MjU2ZTFmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGQwNjlkMjcxY2Q2ZDBmZDU4ZDU2MzcxNDVhMWZlMmM1ZWQ3ZWM3NzkxYjQyNDAyODZjOThiNDYzNzViN2FjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_027f880445074aa0a49389cd21122a7a",
+      "statement": "The shared evaluation runner executes instances serially or with a multiprocessing pool, appends each EvalOutput as a JSON line, retries each instance up to max_retries, and on final failure either aborts or (with EVAL_SKIP_MAXIMUM_RETRIES_EXCEEDED=true) logs the instance and continues.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L387-L480",
+          "version": "repo-lines-v1:sha256:4dd98afc8fe76dcdabd9f3ea4ca4c140e1e51fa2100024d6aff05f5d4b87d626:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZmI2ZDA3MTNjOTAzNjQ4ZWRhZjAwNzIzMWRjNTUzZTdlZTZmZGNjNjk5YzIzOTM4YjFkZWI5YTljMTdlMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1NDYzYjFhY2EwYjJiMjRmMTFmMDJkMGVmMzBlZWUzODg2YzRkNDEyMGQwZjFhODE0ZTI0Nzk1YTBlMjJlYWEifQ"
+        },
+        {
+          "resource": "repo://evaluation/utils/shared.py#L486-L550",
+          "version": "repo-lines-v1:sha256:144889ae11ce1e09322105f2f9130cc245ef58e8a43b0a768dc0a127c678cbf2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYjEwMDhmNDE5YTBjMDI0Y2M0ZGM5YzA2ZjRjNDRjNTgxMTBlY2FjMmEyYmY4YmUzMGRjMjkyODI2ZTUwNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZDAyNzlmNTJmYjQ2MjRjZTQ2YjMzYjc5N2U2ODdkMDZlNGIxYzI5NzE4MzY5YzExMmJiYjM1NWFjMjQyMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1ODg3ZDg0YWNjNGNlMzkwZGQ2OTU1MzAyZmM0MWY2OTlkYTc2YTg5ZDM5MTUyOGMzM2VmYjdjYTI0ZTMwZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_189b5ae7900d4bc580b00427cebe58b9",
+      "statement": "prepare_dataset makes evaluation runs resumable by skipping instance ids already present in the output file, and supports specific ids, skipping, and seeded sampling (random_state 42).",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L219-L290",
+          "version": "repo-lines-v1:sha256:8c8f00b99381c99d1cacef2e723a6104b31b2d1f9ca8c938263bc4b2c378007f:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YjVjMGJkMmVmOTVlMzg5NGQyMTk1MjM4MmMwZmUxNWU0OTg3YWZlYTkwNjljYzBlMmYyZGM3ZjM5MmRiNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxZmJhYjUxYzczN2ZmYTIwNzdjZmMzYmFjYjM2ZGFmODg5MmRjYzU5MWNhMWZmZGUxMWRlMTVmMDMyNDM0Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiY2U1ZGQxYWI5YTBmYzEyYmMxZWIxY2YzYmNmM2FkYjU4YmJmOTM2MTA3N2Y2YTYzMTQ4MGI5ZmZjOWIyYjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_617e952d1d644e23be973803c8d04c10",
+      "statement": "Evaluation sandbox defaults use a 300 s timeout, no host network, remote runtime class sysbox with long init timeouts and retries, browser disabled, runtime from the RUNTIME env var (default docker), and CodeActAgent as default agent.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L692-L781",
+          "version": "repo-lines-v1:sha256:15b4dbe0e8e0a30b59dcd1daa4a30b462ca8a1b71061d39f83565ca8622c8027:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMjExYTFjY2UzODg4ZDVmYzI2NzU3NzkzMTFjNzdhMGY3ZWY2NzZmODE0YjgzMWMzMjZkOTY3NjQ1MTJhMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjZWVmMmE3YjcyYTVmZDA2NzI0ZjViYWU2NGJlYWNjZDEzOTZlOTY1Y2Y0YzJlMWI0MjM0ZGE1OTQxODk2MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b8bb27b46d4542338779628a44a71751",
+      "statement": "Headless evaluation answers agent questions with canned replies telling it to continue, finish with the finish tool, and never ask for human help.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L106-L155",
+          "version": "repo-lines-v1:sha256:cc10dc360bbaf8484bd04480ae30715f5b443343338faf3d683b98314f594dec:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0YjFiOTA5ZjBhYTVjNjRjZjUxMDZmZGE1YmFhMzlmODlkZjUzM2ZmMTFmMjViMDE5NGIyZTAxOTY1YTVjZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjYzI2ZGY4MjA1NjBiZWE4ZmM5OThmNDI2MWRiNDU1NGEyODI0MjBlOGJlMmIyN2EzY2VkNmFiYzZiN2EzZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlOWJjMjYyYjY5OWRlZTg1ZGJlNGRmNzFjZTFjMGM3MjM0MWMxYmFlY2IyZmU4YmJhYmVlZDc5ZDI2YWFhNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_220a8cdf2145414eb1491aefaf42701d",
+      "statement": "Evaluation only uses the LLM sections of config.toml (other settings are not applied), and condenser groups can be defined per benchmark.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/README.md#L14-L60",
+          "version": "repo-lines-v1:sha256:43a73df32fac122e1f23c9441eaa1bc444566f1f48a1b4202b3a9feacf96e332:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmZWQzY2ZiYzY3NTMzNWUzYjlmNzRlZjczYjFkYTk2OGI0ZWM1NjBhMDkxMDQxNTZiNTNkZTg3MWFkZTg2NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwYzEzYTI2MWFmZDdiZGUyNmMwZWE3OWY1NTEyNGQzY2Q2ZDYyYzY2YTE4YzRlNmQzMzE2MmM4YzAxOTI0MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkZmUxYjkwNjZkNmMyNmE1NGI0MzczZDdlYWEyZDM4NWMyYWNiYzkzYTNkNTMwMmI3NDRmYzI2NWViMmRjYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjNTBiZGRiYjVlYWIyZTllNmYxNjkzYTdhZjViMDVmM2RkNDkwYzkzNjE5ZmMzMjk5YmI0NThmNGFmYjQxNGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_35f0da436dec41eeafcb9ef224bbe8de",
+      "statement": "Integration tests in evaluation/integration_tests require an LLM, so they run as scheduled evaluations rather than in regular CI, and are defined as subclasses of BaseIntegrationTest.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/integration_tests/README.md#L1-L25",
+          "version": "repo-lines-v1:sha256:a549e835af38b8c146ff7aa6a5738bab31d8afb85aeea8e6c50e5e97a3253bd0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNWU1NDk2YWFmMGNmYTQ1NWMxZjQyZWJkYmUwODIyZjYxMWI0NjNjMDNlZTQzMzdkMDQ5YmJkMjRmYWQxMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczMGQ2NjA4ZjBlYzY5OTc4MjI4ZmZhNGNiYmU3ZDRhMjU5YjRiYzlhOTI4MTljNjA5MjY2NTRkODRiYTJlY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5a2f1ecab624f6fae8df72c0facbf58",
+      "statement": "SWE-bench evaluation runs in inference then patch-evaluation steps, with an iterative mode that retries each instance up to three times and raises temperature from 0 to 0.1 on retries.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/benchmarks/swe_bench/README.md#L15-L40",
+          "version": "repo-lines-v1:sha256:68491e6ad2872d06434839670ebce47eaacc2e32973b6b58d4ddaa166d41022b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmM2E0YzMzNjhjNzQ3YWUzYjFjM2VmOGMzMDY0MTUwYWE2MjAwZDY3ZTE3NzUxZGUxYTBiYTM0Njc3Njc5ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlNmFiODljZGQ2ZjU2MTA0NDc1YmNlYWUzYmJhMDQ3YzA4MDU1MDA1ZWQyNzE2OTY3NDE0YmY3MjhkZDBjMjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNjkyM2MwNDFiMGRlZjhlZjJlYWM2NzUxZDJlOTE0Y2QxOWIzZjNlNDUzODI5ODIxNjIzYTU4MDdkZDNmOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyMTljOTBlM2FhMmM1OWFmZDkzNmJhOTJhMTYyM2NhZGMzMDRlOTMxMzNhZGRhMjkzMmEyZDZiNDI0YTJjODcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

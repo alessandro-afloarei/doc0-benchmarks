@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5113d1dad5a5baf092d212a0261a371cd73c3ef3c8785d467aaa06865eaddaea",
+  "claims": [
+    {
+      "id": "claim_221234ca3f41499a8b7e285a15de2dd7",
+      "statement": "The AWS Lambda handle selects an event processor for ALB, API Gateway v2, VPC Lattice v2, or (by default) API Gateway v1 events.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L624-L637",
+          "version": "repo-lines-v1:sha256:5bbe5aa5535eb102b6caaf81e7d5dea90cc20f01aba2e728d5dc8eebd765ed56:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4YTYyMzU1YmQ1YzMyNTEzMzAzMWRkNThkOWVmMGE0MjBjNzA4MzI1N2QwNTIzODI5ZTU5N2M5MGFhOTVmMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1MGU4YTVlODUyZWM5ZjlkMDRmNWQwYmFhYjRhNzE0ZmZmYzVhY2U0ODcwMzE1Yjc2MTc4ZTA1NDkwYzg0MzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9c22e772549442980888ba0cbcf3933",
+      "statement": "The AWS Lambda handler returns 400 for TypeError and 500 for other errors raised while building the request, and otherwise calls app.fetch with env containing event, requestContext and lambdaContext.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L252-L276",
+          "version": "repo-lines-v1:sha256:f681bab1247a933dc4d977c44e74d955ce698557de344267c8cd82386412d4eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhY2JlODMwYTJjNDBhNjA3NTgyNTE3YTJhNzk5ZGE4N2YwZmY0OWViZTgyYzBkZjRkZDhkMWM3NzM2Yjk3YmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjMzBiNjhiNjhiMTg2NWE2OTE0OTExNjAxZWU3ZjkwZjY0ZjYxOGM2MmNhYWQyMDg3N2NiNWMzOTVhNDM2YjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkNzc4NWE1ODNjNmRkN2Q2YTQ1MWNjY2JkZDBhYjY1MzU2Y2MxMmQ3NmVlMWI3NGUxNzQ2MWQxOGMwZmNlODIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d72f325596614c548b75c3b50e7a1d7f",
+      "statement": "By default Lambda responses are base64-encoded unless the content type is text/plain, html, css, javascript, csv, or a json/xml type, and also when Content-Encoding is anything other than identity.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L346-L360",
+          "version": "repo-lines-v1:sha256:e8e1ea8c05c1e5460046a1b73450cb4b060f51c0cbd162c201fc7862d38646c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzYzQxYjNkY2JiM2M3NWYzODYwNDBlZWU4NTBmYTZjNmM2NzBiYzRlMjIzYThmOWZlZjM4NGIzODFiNTlhYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzMjg2Y2IxZmI2YmQxODAxYmM3YTE2NmE4NzEzMzVmODEwMDEzYWY3M2NmNmIxMzNkOTliOWE5YjJmYmExOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4NGJhM2I4NzE0NTdiODgyOTMyNzNmMjllNmE5NGMwNmY2N2NlNmIyZWJlODZmMjk2ZGY3NDA0MjVjMmI4NGIifQ"
+        },
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L666-L674",
+          "version": "repo-lines-v1:sha256:0d080238614ce8a4be2ba30abc2da558900c6505ccbc54f92766a2fc1e7ef5f5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWMzYTZlYzZiODRhYmM0MzRiODNjYTg2OTYxNDlkZDAzMGEwZDJkNTY5MGM5MDFjYWZlMWEwNmYzYTM1NjdkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGFiYjE1OTczNTE4NWI0MTg3Y2Y4NWQ4OWIzMzA3MzJjMDYwNDVlZDllMWViOTJlNDA1YmM0YjcwMGIzNTk4YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e13812bb0c3342ce8fac74fca67562c7",
+      "statement": "streamHandle wraps awslambda.streamifyResponse, sending status, headers and set-cookie values as HttpResponseStream metadata before piping the body.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L138-L190",
+          "version": "repo-lines-v1:sha256:b543833c9cbde57fc21e91db774ce2e61dc14fdb40baeaab593f0da2cad5edb9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYWJiNDdlOTMwNzA4NjQ0OTBjNTFiNTI2Mzg2ODc0YTAxYWJlZDk5YTFhNDU3ODkyZTVjZThkYjI1NjQwNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzM2VjMzBlZTVmM2FkNGM3ODdmMDE1NjkxNWZlMDE0MmRmYjIyNmIxMjJlODJhZjllZTk5MmNhMGZmZDhlZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjNWE1MGVhMDhmMDRiMjljYTM4MTdmZWEyZTU2YjQwNWEzNWNkOWQxY2Y3N2Q3NDUxYWFiZWIxMmI4ZjNlM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9fc6026a4214fda82a6aeae808fd654",
+      "statement": "The Lambda@Edge handler exposes a wrapped callback in env and returns the callback's result or throws its error when the app invoked it, instead of the converted response.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/lambda-edge/handler.ts#L116-L147",
+          "version": "repo-lines-v1:sha256:b749f61de82c2012d27997815d5eb7135c729b608832ea73da88046d32ab65c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjMDgzYzZlMmI0NWE2MjRjZjcwMWRkYmI4MTQ1N2YxNmM1NTk2Y2QwNzc3MWY2NTM0N2UwYzIzYmUxOWJlNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NTQzODk4MTNkZGZjZDliM2NiOGIzODY0ZDc5NWVmZDgxYzNmODZiMjczNTgwMGJiNGM4NWNkYWI3OTEwZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyYjI3NjUxYmQ4MmMxYTBmZWE0NmMzZDg5ZTBiYjBjNjJlMzQzNTMwYmRlY2MxZDliY2YwZDVjY2M1YjEyNDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3e66606fb59e4354847874f81515f09c",
+      "statement": "The Cloudflare Pages handle passes env merged with eventContext and an execution context built from waitUntil and passThroughOnException; handleMiddleware maps HTTPException errors to their responses and rethrows other errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/cloudflare-pages/handler.ts#L32-L102",
+          "version": "repo-lines-v1:sha256:5bd26f8370ab03c8574e5937d35f50aacf7e2f01d31ed4b45e066af3ba762ee5:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllOGI3ZGE2M2Q5MDBiMzNjNTAwMjEwYWZiZDQyMGRlMzRlYTBmMWU1NTM3ZjgxYjNlNGE2YWNjNGFjYTdlZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2MjljOTkxYmRjYTI5YzBkZDM4MGYxNDViZGMwMGYwMzNmNzBkYzI5YTQ3OTgxY2U5ZDM1ZmVmMTNmNGNjMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NzYxNjE1YjAzMjkwYTY5ZGQ5ZDE5NTA5NjllZWEyZDdmNWUxMDU2ZGViODBiZDI3NTdlNGJjNDY5ZDlkZWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b11f76f5fdb54d859370e4f3358546eb",
+      "statement": "The Cloudflare Workers upgradeWebSocket ignores requests without Upgrade: websocket and otherwise returns a 101 response carrying the client side of a WebSocketPair; Workers have no open event.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/cloudflare-workers/websocket.ts",
+          "version": "repo-file-v1:sha256:b434dbf3d167edbd83b94f71da4e8885ea38bb9c74936f50652acdd7f6d404a3"
+        }
+      ]
+    },
+    {
+      "id": "claim_66c5470dd5d445108239922d15ae8e4a",
+      "statement": "Bun, Deno and Cloudflare Workers serveStatic implementations inject platform-specific getContent (and for Bun/Deno join and isDir) into the shared serve-static middleware.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/bun/serve-static.ts",
+          "version": "repo-file-v1:sha256:33c1bd627e2dcf4de0523d647927568ce31ebca9c4358063bd4c3fcf631ff695"
+        },
+        {
+          "resource": "repo://src/adapter/cloudflare-workers/serve-static.ts",
+          "version": "repo-file-v1:sha256:f0b14f390df9b2d84df72e94b3320ea3fb8a14858710d3cbe162963660c6fe4f"
+        },
+        {
+          "resource": "repo://src/adapter/deno/serve-static.ts",
+          "version": "repo-file-v1:sha256:b6bf0b7fcc2e33b7b585772210af07635d7cbf338e97c6fbacf64844220c86f6"
+        }
+      ]
+    },
+    {
+      "id": "claim_5098d152797049d89c49112e1571d7ff",
+      "statement": "getBunServer reads the Bun server from c.env.server or treats c.env itself as the server.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/bun/server.ts",
+          "version": "repo-file-v1:sha256:398a434b7a71edc637bc7bb26e478a2d133ccb419b1d42a4c7add1dbdba46032"
+        }
+      ]
+    },
+    {
+      "id": "claim_a01c4e4c3f0849ca9f368c8a2852f83a",
+      "statement": "The service-worker handle falls back to the configured fetch (default bound globalThis.fetch) when the app returns 404.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/service-worker/handler.ts",
+          "version": "repo-file-v1:sha256:95aec9c65c9a8690ca6648b9d778807bc281a60ae311584ccfa81c3af6aca2b5"
+        }
+      ]
+    },
+    {
+      "id": "claim_52e023f03fba4586b5c36685f5911165",
+      "statement": "getConnInfo on AWS Lambda reads requestContext.identity.sourceIp (v1) or requestContext.http.sourceIp (v2), falling back to the last X-Forwarded-For entry.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/conninfo.ts#L45-L73",
+          "version": "repo-lines-v1:sha256:d703cbcdee75ed385653c1f81f46214390d4ebc582f09ea14dfb71cf4ce6ba02:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiZjA3YzAxNTgxZjc1NDdlNjBkNTNlOWEwZTVjNmNlZGViNjg2ODhiY2Q0NWQ4ODEwOWEzZWI3NDhiZTViMTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0OWU2NGM0ZWYxY2UxODZmZTRlNzI3ZGEwMjBhMWZiYWMxMTc0YjMxY2NmNzMzNzJhOTQ1OGRjZDczZDUwYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bda3b388f5064220a64fe6a2799cb61a",
+      "statement": "Netlify's handle passes the Netlify context as env.context, and Vercel's handle calls app.fetch with only the request.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/netlify/handler.ts",
+          "version": "repo-file-v1:sha256:aa5ffa075c893f8a54f6c741bea95c477596531974b47e1dc9b25e253d333737"
+        },
+        {
+          "resource": "repo://src/adapter/vercel/handler.ts",
+          "version": "repo-file-v1:sha256:ba1651134aa33156061ff81f727517c3e7ea4b6ef4be01c4f90db32fa5090db0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:39:44.364Z"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7d1e66f3d049c76693220323800d11c3e01fffe80c78e235973a194f78a0094a",
+  "claims": [
+    {
+      "id": "claim_d46f2547cab446988d7829ecf9bbd27f",
+      "statement": "WorkController's default bootstep blueprint consists of Hub, Pool, Beat, Timer, StateDB, Consumer, and the autoscaler component.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L76-L88",
+          "version": "repo-lines-v1:sha256:c3f0910115b26b57cedb5bdff004986ae5142c8ab6dac08f69c06b7b15564c66:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOGY5MzExNjlkNWE3YThiNzA2MDk3NGMxMWVjZGRjNTJjMWVmYmViNzQyNGU4YjEzYmViNDU5MTZhMWJjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3Yzc2OTY1YmJjZjZhODIwOGJjNDVhMGJiODgwNjVjNzg4MWQ2MTBmNzA4NTljZjcwMWRkMGQ5MzI5YjJlMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxMjgxOTJiMTVjNzMyODg4YjEzMGM5ZDgzN2M5NzlhZDk0Njk1NTU3OTlmOTNjNTFhOTVhZGNiZDAxMzdlM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4304d77dc4c4c51bbfc0a80c11b220b",
+      "statement": "The consumer uses a token bucket per task type for rate-limited tasks, holds ETA tasks until their time, and performs deferred operations on the loop through call_soon and perform_pending_operations.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L257-L300",
+          "version": "repo-lines-v1:sha256:8f2e31764292891513b2024f78b9294bae237dec18572b802264059dae31da45:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxYzc5MmI4YzQ2YmVkOTExYWY5MTQ2MjZmYWNiMjgwY2QyMDMxNmFmYjE1ZTg4ZmMyN2FhOTFhN2E2ZWI1OGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViYjVjNTFiMGQxMjZjMWVhZmM5NTcxZTQ1ODA1OTY2ZWY4YzhlNWYzZTc2Yjg0ZDJiMTczNTc2ZjRkOGVlNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmMDkzMTg2NzhkOWViYTk0OGY0NGI0MmQ2ZWUzMjllYzBmNWU1M2UxZGNiMjhiZWY1Y2Q3OTJkM2FiZmVhZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2ZTg2ZWZiMjFhY2YzMzJkNDg4M2I1ZDYzYjAxMTBhN2M4ODdkMTQzYTkwMWZmMjJlMTUyMDM3MDRiYTNhZDEifQ"
+        },
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L329-L365",
+          "version": "repo-lines-v1:sha256:fd4a51576971411e467f5b150ad0bfd812ececd1ab450354ace893ae864d5f0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMDZkYjgwNTI0ZTYyYmE3MTZlYTJiN2U5YWE0MWJiZDhlYWRlNDk0M2ZiMTVmZTczNjJhOGNiNmIwMDBlNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhMzllODg1MzU5MTE5ZTY0ZjQwZmFjMzRkZGRmY2FjN2U2OWM5MzkzMGYzODY0MTQyOWZjNjhiNjEwZGU4MjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4ZjZhZDlhM2MzNjE2NTcwOTdlN2RiYmZiMzQ1ZmFiYjgwYjNkZTFiMDUxMzE2MTYwZDM1OTc0MTNkZWZmNmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7fabf8503b14d90a4a5c407270637d2",
+      "statement": "asynloop drives the event-loop hub for the asynchronous pool, and synloop is the blocking alternative.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/loops.py#L133-L140",
+          "version": "repo-lines-v1:sha256:195a740df291eebdf86a06c1ef95fbf2e6de72cef5805821fcde108e85e10b10:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGU0ODhjZTdkZjFmMWI0NWFhOGQ1NDg4YjUxNmVlMGQ3NzBmM2Y5NmI1OGZjMGJkZmNjMTI5ZTU5ZGM5OWU2OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTY3YzFkMThmZjcyZmE3MWNiOWNkNmQ3MjE3N2JlMmM0YzIwNzI2NmY4ZGIzYTQyZWYxZDk1Y2QwYjBmOTgxYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzllZmQ5ZTE3MmU1MTY0OGNjNjU3ZGJlYTA0NjEzZmI3NzkzZDZmNmNiZWI5MjJmMTZhZWRhNmZkNGExOWY1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2QxOWU3ZGIyYjNmODJiN2Q4YTI4YmMzZDJkMTAyNDNkMDhkNTA2ZTIyZjUxMzM0ZTgzNGU3MDE5NjgwNjQwZiJ9"
+        },
+        {
+          "resource": "repo://celery/worker/loops.py#L50-L56",
+          "version": "repo-lines-v1:sha256:f850453948bcfe15664a540ef9c540c963c00754e34a3acdd1c30baba9822c2b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjdiZDI1YjMwYjZiNTI2NjkzZWFkYTQ0NTg1OGIzZDdlM2Q2NmMwNTllZjZiODAzMzMyMWJlZjJjZDY0OTk3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjRiNDI3NjdmOTYzY2ZkMmZlZGM0MDBjNDlhYzc5NzA3ZjA4YzI5MDUyM2ZkN2RhYTkwZTU0MTkzNDA2MGFkZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmYwNTMxNmQ0MDBiMWMwYzM4ODFjNDg4NDQzNTkzOTExYWM1ZDhjNDQ1YmM3YTJjZjY1Y2RmNGQ5ZjU4MmUzNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_21a839f6422d4702aeca42a448e9e096",
+      "statement": "Request.acknowledge acknowledges a message at most once, and Request.reject rejects or requeues it and sends a task-rejected event.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L730-L742",
+          "version": "repo-lines-v1:sha256:e1903d30cdd6e54a80ae09e18293f5d501073b5d5af9dc14075e32da614c633d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YjQ5MDYzMDIyMTQxMTBiOTc0N2QxZmQ2MjAzYjYxNmZjYmY5YmZmOGY3MmJhZTI4ZjQ4YmQ3YjM3MzEzYzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5Y2I3OGVjYmM4MTIwN2UxMzllNjEzNTlkMDYyOGRhN2NiMmE4MTk0OTRiZjFhNTJjYWY1OWFiZGYzNTMxMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjMGM1M2VmZTA4ZTJlNjE1YjMwNTEwNTA0NGQ5Nzg5ODJjNTUzMDI1ZDlhMmQ2ZTNiYjQyMGI5N2JjZGYxNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0MDkyZDhiMTVjOGI0MGExNzQxYTUwZjRkODBkYTFiZjdlMDg2MDliNzE1ZDBkMjE2N2Q1OWMzYmQ0MjQ2NGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_35254d4a988a444ca41da29232550633",
+      "statement": "Pidbox.on_message delegates each control message to the node's handle_message, logging unknown commands and resetting the mailbox on unexpected errors.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/pidbox.py#L39-L50",
+          "version": "repo-lines-v1:sha256:95f248962be9668cac02864d4fedeb3d4cbd27ff0b6e723eaaefc93dd1c70f5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjZGQ1ZjYzZDRmZGNhMWFlMTgzZDI2MDc3ZDAyNDYxNzdmMWRhYTlmY2Q2MjhjMTBhYWJjYTQwYWU0N2U3NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNGVmY2MwODYwN2UxZjlmYjliN2MwYjk5ODZjZGUyYTAyNDcyODI1ZDNkOGE5YWEzYTU2MWQ3OGQxZDY4MTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4ZWM2YjY4MTU2MGZiOTdjOGRmZmU2NjFiNzVmYjVhNjViNTE4ZDMwYzg1MjIxYzZiNWQyZjIzYjNhOTA5ZGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_93e2965d9a9442898c2a106373748a53",
+      "statement": "The consumer control step selects gPidbox for green pools and Pidbox otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/control.py#L25-L25",
+          "version": "repo-lines-v1:sha256:a981cf87cc11fb2d76ddefcb6071aa3f62b50356c34e384c4aec2e3c1b2397aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk4MWNmODdjYzExZmIyZDc2ZGRlZmNiNjA3MWFhM2Y2MmI1MDM1NmMzNGUzODRjNGFlYzJlM2MxYjIzOTdhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk4MWNmODdjYzExZmIyZDc2ZGRlZmNiNjA3MWFhM2Y2MmI1MDM1NmMzNGUzODRjNGFlYzJlM2MxYjIzOTdhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTM4ZmUyMzYzNDZlNTkxZmFjYjhjZWJlYjUzZTU2ODBjOTk4NjZjZmEzZTI3MzIyNDQxY2QyM2EyODg2ZjExNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzMyYjkzZTJmMGMzMmUxY2M0Yzc3NTZkYTQ1M2JhZmU3ZjViMTA1NDlhZWRjNGY1N2VjMmQ2ZDdlZGNlNGRlYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b78f2066546244b8aed29a923b5dfc9f",
+      "statement": "The revoked-task state is saved to a shelve file by the Persistent class in celery/worker/state.py, so revocations survive a worker restart.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/state.py#L192-L232",
+          "version": "repo-lines-v1:sha256:f4fc749052ce7b2f963856e38023d1691797477c227d20b8f551fecd2b834f66:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzOTFmNTkzNWY3YTNiZGYwYTExNDlhYzkxNTNmM2RjYjBlYzY4Y2YzMDg2ZTdjZGNjNDYxNDhmNGRlNWVjNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZjZkYjJiMDhmNTcwNzAzYzZmZDYwYjQwODJmMzExYWJmY2I5NjgxNTRmYjIxZjY1YjYxOWFhYjgwNjFhNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4MmU5NDA5ODk3MjAxNDczMmViZDUzOTIyOTJjY2ZhNDNiYWQ0NWQ2MzA5YjQyOWYxYWE3OGRiODZkOWMyNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzZTAzMWM2ZTQ0NWJiNzVmNjZmM2FmY2U4NTgwZmU2MGUwMmUyYzZkYzZhYTM3OTBiYmM1NzgzYzU4OTUzNmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e0ab1dc2807243b2a9182e574a32e443",
+      "statement": "SIGTERM triggers a warm shutdown, while SIGINT and SIGQUIT install cold and hard shutdown handlers.",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/worker.py#L288-L318",
+          "version": "repo-lines-v1:sha256:b5ba25e648e2974ddfc742761b60262669454c04d8d5369d9d7f41f4913d51d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMTQ1MDA1NjllYWFkMjA3Y2ViNTY0N2I4ZTU4ZjU4MThhZGJjYTc5NTkyMDdlZjEwYjIyNTg1Yzg0MDMyOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiMTQxNzUwOWJlMjg3NTA0ZDgxOThlYTZmNjY3MWI4M2QwOGQwZTA0OWYzNjQyMjk3MGIxOGQ5MjJkMWVlYTIifQ"
+        },
+        {
+          "resource": "repo://celery/apps/worker.py#L340-L360",
+          "version": "repo-lines-v1:sha256:c082945ef5db81cfea662c4683d9c2e2dd451cb7dde13ed6b2c2a44595a6d672:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwMzRkMmMwNjhiNjQ1NmMxNzU2ODliODg0MzJlZjFlOTBiZDljMjU3Nzc3YWEwNTY3YmNmZDQyMmQzZmYwM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1NTQ0MjIzZmQwYjY4MzdhNjgyYzE1NDkxMjA1NjY4MDU1YzU4ZTJjNTU0OWQyNDg1MzgyZjNkOWRhM2ZiMjQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:42:35.525Z"
+  }
+}

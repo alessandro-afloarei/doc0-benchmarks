@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:276b9806ed836b09e1871b6a27dd09d9731501939ca47281ea708ae27785c9c8",
+  "claims": [
+    {
+      "id": "claim_800f6e44a387470fbb40fcb206b92092",
+      "statement": "The server entrypoint wraps FastAPI in a Socket.IO ASGI application and optionally mounts the frontend build with CORS, cache and rate-limit middleware.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen.py",
+          "version": "repo-file-v1:sha256:aa744743c97739d69b0989f7408ee1c98388edb338934b6bc7972ed20f17938a"
+        }
+      ]
+    },
+    {
+      "id": "claim_60620fe135e342e38f987a8558d02766",
+      "statement": "Socket connection validates a conversation, reads events after latest_event_id, filters null and recall events, emits the final state change last, and then joins the conversation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py#L35-L135",
+          "version": "repo-lines-v1:sha256:3882915e54c58a536e0943ee736846d138d2160aefe5c639c415be485dff34a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjOTNkODQ3YWYwOTM0YzE2OTNjZGIwZTMxMWI0YjY5YTc0M2IwZGU2OTRmYjZjOTNmYTY3MThlMjUzYTk0ZTgzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwYTA5ZTAxN2QxMjU5OGFjYzk1NTcyZmY1ZTFkNjQ0ZDZiZWNkMmM0YTY2Yjk5OTIyY2QyMDU5MmJhODNjZmM4IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhOThiMDYzZDliNDdlNjUzNzk2MjU1NzJjY2UxOTc2NjlkNTc2N2UxMmMxOGJlMDc1NjUyYjhjZDk4MWNlOGQ1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjMjU5ODdjZWFkMWNkNGEwYmY5MjllNzRjMjY5YTc5OWY2YmYzYTk5OGMwZTRkNzJlMWFmNDc2OWUzMTQyZDYwIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_bdc3c1d033c748cf90c6fa4b8992e0db",
+      "statement": "AgentSession initializes runtime and memory and adds MCP tools before creating its controller; an initial message starts running, while its absence requests awaiting input.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L138-L202",
+          "version": "repo-lines-v1:sha256:3de9ae74e15968d99d8fffb88bf3f4da18534971bb6ef90e456f40f7c2e5ef24:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwNjlmOWUzYzllOWI5MmFmZjRiMmRhMTIwZDU4MjRjN2M2ZTcwN2QzMDJmODU1MGQ1YTZkZGEwMmRkZmNjMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4MjA3OWE2YzNjZmVhMTA1YmFiYmMxMDAxNjU5YmI0NmFiN2E1Mzk3YmFiNWE5ZjAxYjc5MzA2YjIwZjI5N2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhZDFjZjhhMGQ1YzhjMjJhN2UwNTJmNDk4NTkzOTczYjNmOGIzOWQ3NTc1OTc4MzJkYmU0NDY3N2RmN2NmNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe46c55b92c742fc839d63d4fa9adcf5",
+      "statement": "Standalone cleanup closes inactive non-running sessions only if they have no connections, and a falsy close_delay disables delayed closure.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L179-L215",
+          "version": "repo-lines-v1:sha256:4371e99e7fc2c65a1c1d20ba5c78e109c500d81d69186dc04ef09f75458b8f7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNGE5NmFlNDZhYjNjNTYzMTk3ZjZjYjQ4ZjUzOTE1ZTEyZjlhNmY0YmJmZTJlYjU4MTk1MDc2YmRmN2ZhNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0ODUxYzcyNzM2MDNjMGE3ZTNmOTE1ZWY1MDYzNDE4MTU3OWM3ZDI0MDJlMmIwNGEyODVhNjFhY2RiNDdjMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiYWJhMmI2ODM0NDMyNjE3ZmFhYWM0MDQ3OGM2MmU0MjEyM2I1YWY5ZGM4MDdhMWEwNWY3M2NlZmI0YTAyMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5bffee7f87d64707ae591dd1543fc175",
+      "statement": "DefaultUserAuth does not implement multi-tenancy and returns no user ID, email, or access token.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/user_auth/default_user_auth.py#L16-L35",
+          "version": "repo-lines-v1:sha256:4d58bd05b40f1e3777eca86414a3f46577b5fc22004ac7fab2339703d57f92c9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1OWE0MzdjNDhiZTRiNmM1NDI0NzA2ODI1YTFlMWQ5ZGQ1OTc1ZmJiMzViOGViNjA4MjFmMzE3MjI4OGVjYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2ZTJjM2IwYzBkYjY1ODY0ZDIzZDJlOTQ1ZTE5NGU1YWY4MmJkMjYzYjk3MTZhZWI0OTAwYjYxMmI2NWJhOGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e602b2d4c0b494fac01bfd1e41d78f4",
+      "statement": "Socket user actions are routed through the conversation manager, with oh_action retained as a compatibility alias for oh_user_action.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py#L143-L158",
+          "version": "repo-lines-v1:sha256:42bff06cdbe5ad1770e84b99db83f8cb4393c5aed72291b6a3afcda15ec586da:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5M2Q4NDdhZjA5MzRjMTY5M2NkYjBlMzExYjRiNjlhNzQzYjBkZTY5NGZiNmM5M2ZhNjcxOGUyNTNhOTRlODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlNDc5MGY1NjU4NDViMWNmODAxNTNlOWI1ZTA4NDc3ODlkYTg1NzA2MjQ1OTI4ZWIzODJkYzdiMTNiMWNmMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5ZWZkOWUxNzJlNTE2NDhjYzY1N2RiZWEwNDYxM2ZiNzc5M2Q2ZjZjYmViOTIyZjE2YWVkYTZmZDRhMTlmNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1YjE2MGM1YTM3OWNjMGFjM2ZkN2RmZWE4NDE1MDA0ZjIzNDc4NzhkZjA0MWQwZmI1ZDVmOTQ0YmU0NjBhNTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f6a2d2455f54008b22f6d5e47e5ffa0",
+      "statement": "AgentSession closure closes the event stream, saves controller state, awaits controller close and submits runtime close to an executor.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L224-L245",
+          "version": "repo-lines-v1:sha256:3fcb747860b2def14bc8342e46dfaadda2b082895c6e1815d32b624df97123a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMzFhMWRlZTMzNGY3NTMwNTkwZjJhZjRhOGI1ZTJjZmQxNmU2ZDlhMzkxMDk0MDNhZWE2ODNlMmNjMzgwZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViNGY1MGUyNGY0ODU1NTZlY2Y2MTQ3MzY5ZmExODUyMTA0NDMxMTE0NDgyY2NhY2UyZGJjODIwYzNiYmVlMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiOGRmMGExM2UyYmE4NGZlMmYyZmJiNmE0ZjcxNDAzMjI4ZmM0YWZhMjk0OTI5NzAyZjBjZWFmOTkzNDEyODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlZjY4YWJiZTE5YjAyYzAxMWU4NzI4OTFjY2E5YmMxYzA5OGY3ODU1NjJkZDYzMjQ2MmNmNDA5NTIwMTlkZDYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:51.947Z"
+  }
+}

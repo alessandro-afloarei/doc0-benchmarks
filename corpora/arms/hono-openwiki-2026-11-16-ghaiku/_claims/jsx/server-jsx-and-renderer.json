@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:772c275c59110a06dcaea3dde3371e547749223928761d310c1a024f887645d4",
+  "claims": [
+    {
+      "id": "claim_422139ad47634ef4beb9e788f5fdb0fc",
+      "statement": "JSXNode validates string tag names and throws 'Invalid JSX tag name' for invalid ones; every node carries isEscaped set to true so the string builder does not escape it again.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L140-L160",
+          "version": "repo-lines-v1:sha256:167f2b99a650c45fc799db359922d453c48e40dd3ed8688f450cbfb7c9e64158:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MDE2M2E1NGJiMGZmYjg4M2ZmZDIyMDBhODMwYTkzNWVkNzE5YmFjMTFmMTM3MmM0ZWQ3ZmQyZTliODkwOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyM2NjOTlhNTZlYzkzMTRmMzQ1Yzc4MGZiMzMwYTM2MGFiNDU0ZTFiMTg2M2Q3NGZjOWVjY2VlNGY2NDk2NTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2ZmMyZTNmMjQwNTFiNDMyZmRlMTYwMjkzZTk5Y2NmNjU3ODEwODk0OGZkZTcxMmUwMzIyYmRiOWU2NjU0ZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1N2U0MjYxNDI0N2U2NDU5ZjhiMTRlZDZlMWQwYzQxYTczNTVmMDhmYzlkMDg2ODU0YWY1NDA5MGQ0MmYyM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7334c186c1414eb282c2f0860412d1fa",
+      "statement": "The jsx factory moves the key prop to the node and assembles children into props.children before delegating to jsxFn, which returns a JSXFunctionNode for function tags.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L304-L330",
+          "version": "repo-lines-v1:sha256:1413142c2eb6f542380fc5343a8f656e9f14d3c1a89f2ad25283b8aad1451b08:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4OTQ2MjU4ZGQ4NDFhNDkzZGU5ODAxOTk0MGI4MTRjOTVjM2UzNGUyYzA1MTMwYmVjZjBlYWJhZjNhMjcxMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlYjJjYjc2NmJhY2I4YWM1MTZhODE5MTllMjUyYTFiYTk0MjgwMmY4NTAzMDdmNTY4MTY2OTY0OTQwODJiYTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3NDc5ZjdiMTczMmFhMGExYWVmMGRlYmY2ZTFhNmQ4M2E4NDFmZDhiNGE5YzkwMmIwZjczZjU1ZWNhYTg0ZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3af20a14e4084f0887ea736521ddd475",
+      "statement": "JSXFunctionNode calls the component with its props and renders the result: null, undefined, or boolean results render nothing, promise results are deferred in the buffer, and plain strings are escaped.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L254-L296",
+          "version": "repo-lines-v1:sha256:1a9039bb4b0aaf54d7b5b9d95def82603829361449368bbc71f2b67943a45b68:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYTY1NWQ2OTBlYjU3YzkzMmIzMjE5MDFkNTczZjNmYmM5Njk5ZjU5OTllMGEwMjQyM2FlMWI2NjliNDhjMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1OGQxNmZjMDhhNzM2ZmNhYjVmZWI3YTMyYzg3ZmRiM2JmNzcwOTE1MTI5MjNkZDY3YjM2YjA4NWI3YmIxMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c3223e423de348f5abfac0bce6c05a95",
+      "statement": "When an async component is rendered inside a render context, the context is captured and restored on the resolved node so that useContext in the resumed subtree sees the active providers.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L254-L296",
+          "version": "repo-lines-v1:sha256:1a9039bb4b0aaf54d7b5b9d95def82603829361449368bbc71f2b67943a45b68:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYTY1NWQ2OTBlYjU3YzkzMmIzMjE5MDFkNTczZjNmYmM5Njk5ZjU5OTllMGEwMjQyM2FlMWI2NjliNDhjMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1OGQxNmZjMDhhNzM2ZmNhYjVmZWI3YTMyYzg3ZmRiM2JmNzcwOTE1MTI5MjNkZDY3YjM2YjA4NWI3YmIxMjAifQ"
+        },
+        {
+          "resource": "repo://src/jsx/context.ts#L161-L212",
+          "version": "repo-lines-v1:sha256:a222e7e759260a75e6c9d35a47acebacb8e442cafa92905efc657b8cbb466653:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZjJkNjlhODA3NDA3MmEyNDljNTIwMjljZGE2M2I2ZTAyMjg0M2VlODcyYTkwMjg2OTU4ZmVkNWUwOWEwNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzODZhNTc0NWQwMzkxYzEzMGU3Njc2Mjc3ZTNmNWVlNzVlODFmNTI0ZmQyMzU2MjRiMTM1YmEyODZkMmQ3NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0MjBiNmU2M2U0MDI1Mjg0YTU2NjI0ZGNkZDI4MDEyYWFjMGY1YzVkODUzNjU0MDUwZWFhNTM2NjYzZDU0ZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_552703fc0b154deb8ab4488d8ae2b4cb",
+      "statement": "The server Suspense emits its fallback when a child throws a promise and emits each resolved result as a template plus an inline script that swaps the template into the placeholder with id H:<n>.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L100-L118",
+          "version": "repo-lines-v1:sha256:79976f3d3e05f392e15892e2faaa64fb4739377af4fc1b0edbb07461146e4cb5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YmJiZmQ2MWNlMDZlYzFjZGRhMjYzOTI2MGVjNTNiOWQzY2YyY2E2ZTlhMzM5MGI5MzI3N2IyNjYyOTNmMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2MDMwMTdlODkwOTE3NGNmM2U4MmFmZDdkYTkyOTNlMTE2MTY2MjdhYzc0ZDZmZDNjZmJhY2ZlOGIxZjQzZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzNDE5MTI1NDlhNjcyMmQzNmExNzM4NWZlMDJkOTk4NWUxMTQzNmE1MDU4MDE2YTYyODYyOWI0MTgyNjcxYmUifQ"
+        },
+        {
+          "resource": "repo://src/jsx/streaming.ts#L42-L70",
+          "version": "repo-lines-v1:sha256:b899dea310ddf9948b69a24c6f345a97139730f3d455b595fdac1dd9ce434046:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NGI0OThiNzk2ZmFjNWEyMjJkYTI4ZjFiMGIxNWNmMTEzMTg4NjVhZWQ2ZTYyOGY3MDRlYmY3MTA4MzM1ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MzYxNjY1M2Q0MTEwMDYxMjE5MDBkMDlmZmUyYmEwM2I3ZDk5NmM5MWU0MGY1MWU0MjU0ZmU4OWIxNjUzMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjMTBlOTIwMjc2YjJhM2ZkNmVlZDFmM2ZiMzVhMzkzZTI3ZjZhYTIxNzIxZGVmNzY3OGJhZjc3NzI4NGVhZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzOTE4YTQ5NWQ5NGMxNzU1MTE3ZDRlZDEyYmIxYTNhYjUwM2ZiNGIwMGUwNGViM2IwYzU3ZDcwNjhhOTAyYmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22ffc82551d34666a9c194b21d327443",
+      "statement": "renderToReadableStream enqueues the static markup first, awaits pending promises, passes rejected promises to onError and substitutes an empty string, and stops enqueuing after cancellation.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L146-L200",
+          "version": "repo-lines-v1:sha256:8b260d4df468a7b360f2addffabbb6fbc15bd50733527fc71ae63598532c4439:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViOTI5MDBmMGQxNzlmNjJiYWM3YWEwYWUzNGE1ZmYyODdmZGZmZjE3NmI3ZTFhNDNkMWM5YTVlYjA5NTNiMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZThiZjM2NzNjNGJhZDI3NzNiNmRmZDU5ZDQ4YzE0MTBmMGFhODIxNjUwMmIyMjJlNDMzMGRiNDdkOGQyNmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2NGM1MTJmNTE3Y2I2ODgzNzc4NjY3MDk4ZjliODI3MzkxMjc5YmVjNzIzYzJhMzVlZmUwMDgwYTE2OTAzZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwNDJmZmIyYWRiMTI5YmVlOTE1MTE2MDAyZWI1M2FmNzAyMDRkMzJlOTc3NzU1ZDhkZWMxMjA2NTRkY2NmYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a0f11e055e84bb580bda84f5f4e6449",
+      "statement": "jsxRenderer installs a layout and a renderer on the context, and the renderer returns a chunked, streamed body when options.stream is set and c.html otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L116-L131",
+          "version": "repo-lines-v1:sha256:c2ffe3bb631b8e471820610fc695eacd0ba76fa85fbb5d94e8ef5854b07b29cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhOWRhNmU3NjMwYjE3Mzc5YWI2YzZjMDcwMTE0MjlmODYyOGQ5ZDhjYzgwYTEwMDZjZDBlYmM1OWNhNjgwYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkNmEzYjkzODQ4NTJhNzQ5Zjc0NjIzZWQ3MDgxNzEyN2UzNWNjYWYwMmJkYWM0MGQ5NzlhNTQwMGI2OGZkNzIifQ"
+        },
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L60-L100",
+          "version": "repo-lines-v1:sha256:1fb40daa7ea59bdf028e88bdb5ef3ee2fc6b7881922d31fbd5bb739d7183c619:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZjZlZDJmOTI5MGJjM2ZmNDE5MGRmZDJjODA0ZDM3YjBiMzJkZmZiMDhjYzUwYWZhYzVlMDk5MjM2N2Y4YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMzFiNGI4NjI0NDUxYTgxN2U3MDA3ZjUzNmVkMzJiYTNkYWY5MGQ0MGY4Nzg5NzQ5N2NmMTk2OTIzZTk2MzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiOWQwNWI4ZWZlNzhiNTk3NWZiN2QzZWMxODY3MDZhZjQzNjQ2YmFlNjI2YTYxMzYzMDc5YTk0NTNmMTMyNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiMTkzNzI4OThjZGZkZDU3ZmFiNzhmYjA3OTg4ZDA0ODU3YjIzZDExNzRmNTZmMmNmZWNkZjBiZjk1YTBhZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_09fdbf2abdab49ce821a673f210ce072",
+      "statement": "The server ErrorBoundary carries the DOM variant under DOM_RENDERER so that it behaves the same when rendered on the client.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/components.ts#L262-L262",
+          "version": "repo-lines-v1:sha256:734a74f0a82d5b1625b0b6b7c91e2c7d5906e29ebfc623217c15cf8daec22435:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzM0YTc0ZjBhODJkNWIxNjI1YjBiNmI3YzkxZTJjN2Q1OTA2ZTI5ZWJmYzYyMzIxN2MxNWNmOGRhZWMyMjQzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzM0YTc0ZjBhODJkNWIxNjI1YjBiNmI3YzkxZTJjN2Q1OTA2ZTI5ZWJmYzYyMzIxN2MxNWNmOGRhZWMyMjQzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWJkOTM4OWUwMTFjNzc2YmE4ZDU3Njg4Y2E3MTExZDIxNTkxNWI4YTRiNzdmNDIxODA5NGE1ZjUzM2ZmZDYzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c2a95fcf83544b5b7440748369a7d49",
+      "statement": "memo caches a component's rendered output and reuses it when the props compare equal under shallowEqual or a supplied comparator.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L383-L400",
+          "version": "repo-lines-v1:sha256:5c24b981436a10efb7d8a134bc4b818bb64acc966b93b011051f64716ad7f328:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkZGQ5OTU1ZTZjYTZkMGEzYzI3M2E4MTlhNjY3NzVlMzEzNDMyYzVmNjlkNGUxMjE0N2U3Mzg0MjJiOTdlNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1MDA4MTcwOGY3YTg0ZjFkYzY4MWVkZWU5NGM4ZmRkZGRmNzE2Mjg4YmIwMTFiZjcxYWQ1YmQxNDVlNzU0MTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwMDk1ZDMyMDAwZDE5NmYzZTFiMzdiNDY2NThkNmQ4Nzg3MDEwNTQzN2NkYzY0MzI1OWM3ZGZjY2I5NjNjMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1ODgwYzhhZTgyNDQ3NTIwZDJhNzgyNzZmNDUxNGQwYjQyNWM3Y2RkYjNkZWVhOTQyNzE0NDc4ODcyYThhMDIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:23:45.579Z"
+  }
+}

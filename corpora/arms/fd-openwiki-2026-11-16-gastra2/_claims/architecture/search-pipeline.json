@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e409bb6198312a3d123070b9db7d1006c3e38aa2a78471d80d51977a12d1113a",
+  "claims": [
+    {
+      "id": "claim_51207bd3b8e94e45b8191578f4d40f3b",
+      "statement": "Search startup parses options, resolves working directory and roots, compiles patterns and constructs configuration before invoking walk::scan.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L82-L118",
+          "version": "repo-lines-v1:sha256:c06315b02a64a6e2842ea07865802e6a99d0187ea46fea7d4f0b2b96474a0357:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4MzJmMjIzODI3MDRmYWEyYjMxMjU3NmRlYTU0YzNiMjZlMGRkMTVmMTkzMDg1NGJhYTQwNTMyM2QzYzg2ZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwM2NhYTc5MTNlYTJmMWRmOTkzNTAwMzg5YzAxYTQ3ODMxMDdmODNmYWE2NmRiMTg4MGU3ZTcxMDY3NjYxODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiZGEyMWE3MGY3NzlhODJmNTc5MTRlYzA0ODk4MmUzNWRmZWIwYmY0NGUzNjRlOWU2NWViYzVmYmMxYmQ4ZTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3729dcee746f44ada49a3d0539e4bb04",
+      "statement": "Root selection prefers positional paths then search-path options then the current directory; invalid explicit roots are diagnosed and discarded.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L696-L735",
+          "version": "repo-lines-v1:sha256:3b16f983cac5238a3631ab3b682fa089c3edf01d0eba04cf8385318f5ff0254f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZmJkYjRjZmEyMzg5NDAxY2UwNjg1MmZlNWEwMDk5NDkzNDg0YTBjNjBkOWM2OTdmYmQzZmMyNTNkNGYzODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZDliNzVkZDgxMDgwZjQ3YWE3YWNiNzE2ZDkzYTRkYjBhMmI3MmFjOGQ0NzQzOGViOTc4ZjQ1ZDBkMTZiYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3ZDkwNzYwYWJiNWIzODNiMTA1NjJiMWNkNTRlNjc5Y2FjZjhkMjBhNzJjODZmN2RjMjdhZjlkOGM2ZDc4ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9fce0a6f8a5d47619057a124e247df44",
+      "statement": "WorkerState owns patterns and configuration with atomic quit and interrupt flags; scanning uses a bounded channel of twice the thread count and joins its scoped receiver.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L305-L327",
+          "version": "repo-lines-v1:sha256:37f529f0ff4e1c7ee97dbefddd2281669967c4b3b60799961fc4132f98475ee7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1YzJiZDRiZjk3NDRkYmM3YWJiZGQ3Y2M0ZGI3Y2ZmZjA2Yjk4NmMxMmEwNDNjNWFlNmMwNGM2ZjM4ODU3OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwZDdlNTc1N2M4MTRiMTJkNTM5ODc0NTcwODNjNDA0MWUxMTI1NTBiNDI0OGI5NTRhOTQ2ZTg0ZjYzYzZkNjAifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L616-L652",
+          "version": "repo-lines-v1:sha256:58e94efe1362338e9264ef6bb2dd85ea5b05b250890c95dfeb0811fec83b1b3f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYWU3YTY1NzA3YzkzOTMxNWNlODE4YzkxNzZlMWFkNDRlNDViNmUzNTUwYzlkYmNjY2U1N2UyNjNjMzNiNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyY2MwZDQ0ZGRlMzkxMDE4YTQ1OWMwNmIwOTBlZWVjOGRmNTA0MTg4Mjk3MzIwMmQwYTc2NWZjOTM1NjRjYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d7f6933f0774b51a860aaae8ebde968",
+      "statement": "Receiver selection branches between buffered printing, a per-result execution pool, and batch execution.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L408-L439",
+          "version": "repo-lines-v1:sha256:9b1d99428177501dffd41bea30f38874f44c31bdbb5ccdcfc77260bb8588fc23:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViM2ZkYjcyY2ZkY2ViYmEwNjNlZDY2MWM3YWYyM2RjMTczMWM0YjU4YzA2Y2I3YWQzZjYyNDYxMjI2OWUyZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiMGM5ZTY1OTdkMGUzY2M2NThkOTUwYzllOWJkMDk1MTA1NzJlZDJjNjRiYTQzZDg0NzlkMDBiNjU1NjkzMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjM2ZjZTkzY2VkNzBhZDE4YmVhNGIxNjc2YWEwOGM1MjFjOTFjMDE1MWIxYTNhMWU1OTc0OWNjZDdkYmE0NDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c7da94cafc5442aa2089545b875bd4f",
+      "statement": "DirEntry lazily caches metadata and style per entry, and the worker checks names before metadata-dependent filters.",
+      "evidence": [
+        {
+          "resource": "repo://src/dir_entry.rs#L18-L109",
+          "version": "repo-lines-v1:sha256:c4e95838d2fc5039c018e55385b71ae270144bf263984a84afdc51aba54f7d73:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3ZDgwY2Y4NWVhNjExOTExODFhNTJiZTg4N2I5OWY1ZGNjNWZiODg3MjhmNWI3NjE3NjAyOTFjODE1OGJiOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmZGMwMDg1ZmE2YjU3ZmI5NTc4YTFiNzAxNjIyNThjZGQ3ZTcxODliN2RkYmZkZjkzYzhjNjdjYTE2MDMzMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiNWU0OWFhYjc3MjkzNjQ0M2VjYjQ1ZDk0YTU1NjBiMmJiMTIzNWZmZjA0ODVmM2EwNTNjMmY5NTJmZWJkYjgifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L514-L600",
+          "version": "repo-lines-v1:sha256:7959751baf329f3c6ad6318b850aeb3bbfff4bbecbeaf61eb3c0a9dd1e1b2e08:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNWJmOTljOGQ4Y2EyYzVhMDE5NjgwNWQyNTNlMDEwNWJhNTdhMDdmYTk2ZGQwNDRlMjdiNjYxMTAwODM3ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZTAzOTUzMjdlOWY5NGRmZWU4NTUzZTY0NTg0OGZkZjM5YWRkOTE1YTZmZjViNjcwNTFkNDMzYTMzZTE3YmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmMwNzYxNDQ1YjVkMTM5OGI0YmRmNGQxZGYyNTBmZmNmZmQ0MDRlMzRiMTZhMTBiM2IxNDRlYzZhNGM1M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzM2U1YjRkZGRkNThiMGQ4MmJhODI4ZTQ2YWEyNzdlNGE2MzRlOTJjNmQ5NTA3OGQzZjM2ZDIwNjBjZGIzYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_550a93cf68554230b895f3500d384058",
+      "statement": "Default parallelism falls back to one and is capped at 64, while an explicit thread count overrides it.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L755-L757",
+          "version": "repo-lines-v1:sha256:2b2c860498f824d93fb5fe250580f865ad09c6f443b58c9c0d8322755e5e7a4f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFhY2IxYzE3Y2VjZTA1MTVhM2U4MDRmOGUwMDQ4Yzg0OTRkY2ZhY2Q1YzI5YzEzMjI2ODIzN2Q1MmIyZTM4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTgyYjIyZTAyOGZjODQ3MDZjOGM1ZWJkNTg4ZDhlN2ZkODFhOGE3NmU3NGQxOTdlZjJlN2U5MjE4MWZhMzRlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTVkNDMxMTRiZWUyMzFkMDY4Y2JlZTA0NDFmNDI0YjY2NGNhOTZiZDBhNzlmZmQ1MDI4ZjMzMGZkYzhkNWJkOCJ9"
+        },
+        {
+          "resource": "repo://src/cli.rs#L788-L799",
+          "version": "repo-lines-v1:sha256:af47f7358aa9d4558d1001ec0dfc6f6ae0ef3131d581dfce546771175aff61b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyNWRlODY4NmU5NTg0NTFmYTBjMzIzMGNkNzYwNjZhYWRkMGZjNTNlOGRkNjUzNzg3MTBlNzgyMmE2OTE3M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwM2MxMzg0MDhhODJiZTc0MDIwNzRlMjQyODg3Yjc1MjZlMDFiODZkYzFiZDIzM2FmMzliMTU3OWJhZTU0NTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhNTI1YjgwNzVmN2Q4MzE1MTlmMzIyN2YyZjg1ZmUyMzc4YmQzZWRiMzExODQ3MmM2YjJkMjVkMTk1ZjY4ZDkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:13:39.635Z"
+  }
+}

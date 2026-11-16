@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b00b2e8dd0bdc75835a4853de96dc4cd289af1e9c45cd6e51f32a73cb347183c",
+  "claims": [
+    {
+      "id": "claim_93eb825a206245a8a5a0b2e301b5ef43",
+      "statement": "electron_dist_zip packages the app, version and licenses with platform dependencies into dist.zip.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1423-L1446",
+          "version": "repo-lines-v1:sha256:5dd9d3630bb5b75782ed8c092b344a0c22a4167cc0b6aae5fc840fd67cc2ff99:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZDE3MGIxMDI1ZmM5OTdiNDE0MmE4YWIwZTA0Mjc2ZGY4NmNhODYyOWJlOTIzZWEwZTY0ZmZmOTkyNGI4MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5MzVjOTRjMzdjNTRjMWIzZTJkMDQ5NzAxM2RiOWQ2N2FhZWQ4MDY2MjJhMGIzNWQ0N2QxM2ZmYzNjM2QyNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_88653dd511964cf999c3bbadefadde84",
+      "statement": "The npm postinstall downloads a selected binary artifact unless skipped/already installed, extracts into dist and records the executable in path.txt.",
+      "evidence": [
+        {
+          "resource": "repo://npm/install.js#L14-L89",
+          "version": "repo-lines-v1:sha256:1c1f5657e094515ec5e429d303bd4940de3b0d54318e65f92acc3cd263d8b4e2:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0ZGNjZjRhZTg4NGEyMTk0YjIwNDVlMTMzYmJlYTUzNWM4ZmMwZDBmN2RkMmI5MjBiMzhkZmM0MTRjY2Q5NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzNjNhMGM1ZjIxZmJmODUyZTRkMzUxNTI5MTc2ZTNlNGVhNjJhYTA0ZmJjOGY4MGNjMjE3OTlkNTBlZWRkZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkNGJlMTM2NDE0MDNhNjhmMzcwMzQxZmM4NmFlZGI0MDQ0MWEzZmI2OTc2ZWU0MDFiMWMyNzFjMTJiOTM4MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIifQ"
+        },
+        {
+          "resource": "repo://npm/package.json#L1-L16",
+          "version": "repo-lines-v1:sha256:0ced35ddf5b6481306888a47a181a8d659ec2653c2b2bb4a300178532978799a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiZTk2Yzg1MWZmOGVjOTRlYmY2MGQzYWJhZmMzNzc2ZDhkZDM4YzVhMTYzMTViNTg4MmIwMWZiZTYwN2JlODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNzM5YTA2YzFjYmIxMjQ0ZTMzNjNkMzhiY2Y5ZmE1MGNlODRmZWQzOTljMjE5M2EzYzdmMDhkNTk5MThiMmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_12b0fe8b8f9042f988dc17dad4aaa524",
+      "statement": "The npm package exports an executable path in Node and its CLI spawns that executable, propagating exit status and termination signals.",
+      "evidence": [
+        {
+          "resource": "repo://npm/cli.js#L1-L25",
+          "version": "repo-lines-v1:sha256:193a59dc9f5842c9564c88cc00e50bcb83c9bd771d1c47e7c1f2180ae2238404:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhZjQ1NzVlYmMxMDQxNmIwZGIwNWM3MzlkNjM1ZDU3ZmZhNGE0YmY1Mzg2ZDg3MjU2NTk3ZTZhNmE3NjgxOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://npm/index.js#L1-L21",
+          "version": "repo-lines-v1:sha256:46a7d3a2da5d96cd693612e5c3ec407c38ac9c15c44f97ad2be478cbcf80b43c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZjdmNDQ5YmQyYmU4MTRmNTA3Yzc0OGVjODFkNTYzMjg1MjJkYTkzMzE5MDRhMGEwZDI0ZGE0ZDMwZDhjNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzMmQxN2I2ZjQxZWI4OTFkZjE1NTA0MGJjNWE0ZTJjZDk5MGM5OGI0MzQ2OWVlNjgzMzYzYjdiZTgzZDZmZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b34b2dcf59b47d198915ad37545ecca",
+      "statement": "ELECTRON_OVERRIDE_DIST_PATH alters executable resolution but the installer still extracts the downloaded ZIP into its own dist directory.",
+      "evidence": [
+        {
+          "resource": "repo://npm/index.js#L11-L16",
+          "version": "repo-lines-v1:sha256:930f798cef424bdf7fb6d89bbfc1a0091a7772d29f015f32397755bd41815cec:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTNlMzQ5MGMzNmUxMWQ3MmJjNDNlZGE3YjM4YTVmM2I5NjE0ZTZjOTQwYWIwZGRlOTI3ODg4MjBlMjQzNjE1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY5ZGUxMTZhYTE5NGVkMTRjZmE3MTg4YTBiZjIwYThlZTliMDY4YzRmZmM5ZDUzYzkwZWFmNTVlMjk1MzkwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmJjNGRkYTAxNWY4ZDE4Mjk0YWYxMzNkMzIzY2Y4MWQ4MWEzNjc4ZjlmZWEzYmI4ZTVkZmNmZmIxOGVjMTZlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTY0MzY4ODc1MzRjODEwMmYyNDBjNWYzOTE4NTNhMTkwZDk4NTRiNTYwMzYxZWI3NGIyMDA3YmM3OTg5MTE3NyJ9"
+        },
+        {
+          "resource": "repo://npm/install.js#L73-L89",
+          "version": "repo-lines-v1:sha256:1b664b8bf812004e9b45a26bd867ca81d594eb580b110f243effb8fdb88a78a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyOGI1NzIzZjM2NDc4OWRiYjY0MWM3NmEwZDY1MDk0YzU2OGYxYWYxZDNhZjYyMzUwMWFjMDZjMjc4ODE4OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzNjNhMGM1ZjIxZmJmODUyZTRkMzUxNTI5MTc2ZTNlNGVhNjJhYTA0ZmJjOGY4MGNjMjE3OTlkNTBlZWRkZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYjlkM2Y1YjA4YzY5NTc3YTljY2FmZTk3YjRhNjRhZDIxNjFiYWFmMDgwZDk2Zjk4YjhkNDgzZjZiNmQ2OTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2e06a6e68ca41e68cae939aef361800",
+      "statement": "Draft release validation checks required asset presence while skipping the hash/CDN verification block for a draft; publication creates checksums and invokes fuller validation.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/release.ts#L204-L206",
+          "version": "repo-lines-v1:sha256:00b817cd0f9784827a5d95d986831bed8e2dfbd264659ec7206dfeb89db196df:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUxZmU3YWNjZmY4ZGQ0ODExMWE1ZGY4NzdjMzlkNTJjYzM5YzQ5NjcwNmMwNDk1NTg2YTUyMzhmZTgwYTZlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWU0MDEwZWVhYTYxMWFhMTVhOTY0N2QwZmRjZmRhZGQ2NzkzZjhjZjkyMmVlMjJhYzExZWM0MzQ2NDg4NmNkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmQ5MWVkOTU3Mjg3NTY5MGE2NDU2NGIzOTBiMDUwZGNjNWUwMzEwODM2ZmY5MTljOThhOGRhZmEwNDQ2YzA0MyJ9"
+        },
+        {
+          "resource": "repo://script/release/release.ts#L408-L428",
+          "version": "repo-lines-v1:sha256:847a21739f3f7339a3a80c7cbf1dbb8091a827ecd34545d8c261b2bfd188f86c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxM2EwNWEwYmFlMzcxZTkxNWMyNzJkODI5MWVmYWVmM2MyNDRjMGRmNzM5MTU0YTNkNWFhYTFmMGI0M2E5MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZmJjMGIzOTI1YzdlMjFkODk1ZjE2YWRhMTcxYThkMmQ3NjQ5YTQ0OTBiMWExZmYxN2E3MGEzM2NhMWQyYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmYWI3MTBkZGY3ODU5ZTU3NTc2NGE5MTNhMDAyYzc0NTg1ZmZhNzAwMTUxMGNiODgxMWRhODNkMmNmNzRiMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxMjJiYjUxNmQ1MzFjZTM1OTQwYjk1YWZhODQ2MWI3YWZlOGUxMTJiOGE4OThlNzg1MzQ5OTJhNDQ3ZDFmOWIifQ"
+        },
+        {
+          "resource": "repo://script/release/release.ts#L82-L115",
+          "version": "repo-lines-v1:sha256:969ad1e0b0dae0b75625aed8867daa0e78453df201dedec6a9e616b621f88c27:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4YWRjZTc2Y2RjNDIzOWJhY2FjODRmNTU4OTk3NjI2NTY0ZjhiNzg5OTI1NmEwYjU5MWIzMzIxYTZlZGZlYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3YzM5ZTMxZWUyMGFhMjUzZWM1MDYxMmI5YTk2ODcyYTkxMWZmODQyODc2OGEyMTA5ODRlMDhlNDBkMzRiM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4Nzk5NGU5MDk1YjBhMjU0ZGU3NzRhM2E4N2NmYjczYzg4MDQ0ZjY4ZDM4YjkzNzQ2NGFhNmQzOTc2MWNkODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a879f5704294d3784b7e6eb149a901b",
+      "statement": "GitHub release publication uploads the artifact index before making the release public, while npm publication packs and test-installs the package and verifies the executable path before publishing.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/bin/publish-to-npm.ts#L185-L217",
+          "version": "repo-lines-v1:sha256:4bbb96b00ba11a39ab765e9dbfa5030bf261ed5534c509da868139feae2135a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNTdkNTRiZTA1YWNhOGEzNjc1N2NhOGNhYmI1MzRhYjlmNTljZGNhZDYxODdkYzBiMGM5Y2I4MGZlYmY0YWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlOGI5ZTNjNWEzM2VhMDVjNDY5ZDkzODM2MzVkNGQ2YTE1NDk4MDhlN2ZkYmRhYmNhYWJiODEzNzY3NjIyM2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMTVjYTkwZTYwZGEwNzFlMjkyYjJjNjM4NTY4MjhmNmJiN2ZjYzc3MGU5MmE3YjNjNDA2MjMxMDkwYmRiZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxYjUzYTBiZjQzYmYxYjY1NjI0MTQ3YjU1M2NiODZjOWI5YjA1OTY3M2VhODhjNzg1ZmI5OGYxNWNmZmI4MGYifQ"
+        },
+        {
+          "resource": "repo://script/release/release.ts#L382-L428",
+          "version": "repo-lines-v1:sha256:bd2ee4c4093cab89fdf248e522d06dea450df8860fd84086bb1a4bb6e477bc1f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiYWVhMDA1ZjBkZGZmNWUyZGMzMzUxZjZmNzQ4YTlkYjlkZmRlNjhmNzU1ZjQ2YjBhN2UyMzU3NTlmZTU5YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZmJjMGIzOTI1YzdlMjFkODk1ZjE2YWRhMTcxYThkMmQ3NjQ5YTQ0OTBiMWExZmYxN2E3MGEzM2NhMWQyYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxMjJiYjUxNmQ1MzFjZTM1OTQwYjk1YWZhODQ2MWI3YWZlOGUxMTJiOGE4OThlNzg1MzQ5OTJhNDQ3ZDFmOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ebbdb2741fd466696a144e9269d8565",
+      "statement": "Windows autoUpdater requires a feed and a Squirrel installation, downloads through Squirrel and restarts/quits only when an update is available.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/auto-updater/auto-updater-win.ts#L11-L65",
+          "version": "repo-lines-v1:sha256:831eca917c023b4ed550aac7c2b7777968e35cd2e9d07f2ed2c3bdc165864c29:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0MjJlYjg2MjdlNzY0NWM3MmYyZjc4OGVkZDI2OWQ3MGJjNjU5ZmY4Zjk2Y2JiYTU1MGY5NTkyNjI2NmM0NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiOWI1NDI0NDNmMGJmOWEzYzFjY2QyZjBjYjg1OWNlN2YyMDA0ZjAxMzIwMzdhZDhlYTkyMDIzODBkMDliZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwOTllMTk0NzRkYWYyZmRkMjg5OGVhNzRkMGJhNTcyYWQ1NGMyYTAzNTQzYjI5MDFiNGMxMzQwM2E4ZTE3ZDgifQ"
+        },
+        {
+          "resource": "repo://lib/browser/api/auto-updater/squirrel-update-win.ts#L5-L9",
+          "version": "repo-lines-v1:sha256:44ed56d9f7fcc6c54daa90e549dda5bcb51c0dafb43c6dba8ed0d4fd5872f0cf:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE1YWEyNDc4ZDFjZjNlZGQ4N2QyN2JjZTYzYjEyMTdlZWZmMjJjYjQ5NmM1NDI5MWE3MGJiODY3NTVjNzMzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFiOWJkODUzZTU1NmU1NjU1ZDFlYWI2NmU4NjZjMTJmYTcwZGZkZTVjY2VjMmNhNTE5ZmIwZTY3Nzg1MWQzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzViOTIxZWI0ZGQ3ZmY0MmQ2NDFjNWRiMjZjNWFlYzI2YTdkYTAwNTQ1YWY4MTAxZWQwNjY5MDI2NDFjOGZlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTg1ZjhkODRiOGNhZTliOTkxYmEzMmI4MWVlMTVhZmUwYjJmNWJkOWQ0MjRmZTkxYzZmZjMwYzFlM2FjZGEwNSJ9"
+        },
+        {
+          "resource": "repo://lib/browser/api/auto-updater/squirrel-update-win.ts#L62-L90",
+          "version": "repo-lines-v1:sha256:c7211d7f078179efce2f3c320c32f0b5679d64594b1e5d50bceca5f9614af9e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NWQ5Mjc5YjkxZDNlZWEzNGFlMmUwZWQ5YmRlYjJiMDBjZmIxZjk4ZTE2YTEwOWU3OTU3MmE0NGMxNDQ5NzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4ZDVjOWQzYmQ4MmU2ZTJiZTA0YzhlOWY5YjBkNmIwMTA1ZTY1OWY4N2MwMDhiYjc4ZDAzM2IyN2VlMGE0ZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ab277b5dc85f4c2b9d57df772a095773",
+      "statement": "This checkout's application auto-updater supports macOS and Windows, with Squirrel.Mac requiring signing and no built-in Linux updater.",
+      "evidence": [
+        {
+          "resource": "repo://docs/api/auto-updater.md#L11-L37",
+          "version": "repo-lines-v1:sha256:70e83e93abb32cae818fdc3c384339077c15484350abc1e4d10df521cbb3c7e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMzM4YWNiNGM1ZTQ5YmI5M2E4ZjdlYmFlNjFkOTgyMGU0NmUwNmQ3NjFiMWViOTRmZGI3ODlkMTRhYzgwMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiM2NmNmViZWJiN2ZjMTVkMTc1Y2MwNTJkYjQ5OWRmMWYxYzg0NTNmZjk2NjNjNTY3MTAwYzY1ZDMyNDBjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0OTM4N2I5MTJiMTA1MjM3MGI5MjQwNjQ1NzQ4YjRjY2Y5NWZhZmNlODEzNWJkOGJjNzk1ZmM2MDkxNDc3MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmMTU3YTE1M2ZlYTRmNzc2YjU4YmMzMjI0OGQ0NTEzOGUwZDU4ZTg2MTZmYjMyY2RjYzNlMTRiMGQ0OWE2MTAifQ"
+        },
+        {
+          "resource": "repo://lib/browser/api/auto-updater.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:8330f336c6bc56311c2eba424507bb43e10638a7bf2070c097f6179345c4fa7b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRlYWY3ODEzZTM3Yzg0NjU0MmViZGJjNDYyOThjNjY5YjEzNTQ5OGI4MjJlNjkxZTUzOTBjYTVhNDAwMDA0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:01:04.581Z"
+  }
+}

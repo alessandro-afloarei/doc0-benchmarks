@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:dc7b1cdcf8c73398c1ab383b5a9f6788c5d31e6a7bc9faf2675fcdc3a137e396",
+  "claims": [
+    {
+      "id": "claim_c7a5372fb84445faa5de0693308f3362",
+      "statement": "NodeBindings integrates libuv with Chromium's message loop using a dedicated embed thread: it waits on a semaphore, blocks in a platform-specific PollEvents() (epoll on Linux, select on macOS, IOCP on Windows), then posts UvRunOnce to the main thread's task runner, which runs uv_run(UV_RUN_NOWAIT) and re-arms the embed thread.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L860-L995",
+          "version": "repo-lines-v1:sha256:3b26174a0042f97314808b09f24a1eb9b9af16c3ba378e39576ef0176fb0572e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTM2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmN2JmYWRkNTI0MGEzYzFjZGQ3ODE2NTM1NWU2ZjNmNDM0YWIxMDRkNjk1ODQ3MTRkYzkxMWFjYTQxMzYyY2M3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI5NWEzMGY1NzA2NzEyN2JkNjU5MDg3MmU2ODFmMmExYjJhNzkxMDZiNzdiNGVjZmZmZjk4N2NhYTZlN2IwNTcwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMWI3Y2I2ZTA2YmRlYzlkYzFiMGRkYzRkOTgwY2NkNDZiMjMxZjQ5MDYxZGJmZDRjZDNmNGMzZGY0OGQ0OGFkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkNDFjMWQ0MTdiZWM1MjBhOTYxNjkzMTY2YzY0Yzg2ODcyNjAzNmNlNjQyOGQ5YmMzMmVlZGY2ZDI4NTQxMDBjIn0"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings_linux.cc#L22-L32",
+          "version": "repo-lines-v1:sha256:ddb60ac867fbee70a5529a16d4ae4136817d7bb2e986749c656aeb578f532d9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjNWJmZjIyOTY4YmU4Y2ZhMjZlMjI4YmJhOWJjYTgyOWYxNjFlNmEyM2NiODUzNjI3ZjAwMTQ3ZjFlZmQ2NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyN2ViNzJhOWM1NWMxMThjYWZlODcwMmU1MTU0Yjc0NjUzYTA5MTkwZDQ5Y2I0ZGI0ZDhlZGJiMGNiNTViYzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0ZDk5Y2E0ODRmZDdiMGExM2NjOWQ4Y2MyMjFhMTU0ZWJmNTQwYmRmN2FlNWE2MGMxMDY4NjdhODQ2YzM3MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhYWFmYWJlNWYwZTY0NmZmMWUwMDc5Y2NlN2YyYTVmMmZjZmVmOTc2NWY5NjMwNjUwMzdiMjBhMWU4NWZiZmUifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings_mac.cc#L24-L45",
+          "version": "repo-lines-v1:sha256:ca5ac59ac81d68e71a80f76bc089bcc451f08a92285c84b8303debb8fd2488ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhYjJhZWEzYjZiMTYzMTdhODk1N2U3NWYxMTBkNDA5Nzg3Njg0YTUyZmE3NTNlMDE4ZWQ4OGVlMmQ3OGZjYmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwYzBkNzU5NDZmM2EyYjBkMDlmODIwZmE2OTJmN2Y4MzdiMmE0Yjg1ZmY0ODdhNmNhZmUxNTAyYWI5OTljMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1MTRhYzJmZGY2ZmNmZTY4MTRlMTE4YTMyNmUzNTFmNWU0MDhkNWM1ZjhkZGM5YmZkYThhMjZlZjU0YmNjMmQifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings_win.cc#L32-L50",
+          "version": "repo-lines-v1:sha256:2b4748b686836834b51f2c425cc13a9c34bd85d2291253c9faf92732465a70e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3YzBlMzc0NTI3ZWQzNzU3YjhhNzY1NDE3ZjljMjQ3NmI2MTEzZTBkOTZkZDcyNTY2NDdjMDFiZGQzZTc0YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3ZDI2MzY2ZjY5YzBhZDI4ZjIyMzkzMmFmZDVjOGQzMjJmNGI4OGU3MDc0YWViYTFjMGUwOGEzMTk5Y2Y4NTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e155b4ac74745629ee1d564c1547d86",
+      "statement": "Browser, renderer and utility processes share uv_default_loop(), while each Web Worker gets its own uv_loop_t; every loop is configured with UV_LOOP_INTERRUPT_ON_IO_CHANGE.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L514-L529",
+          "version": "repo-lines-v1:sha256:9a809a993a2d67742b3f708273c27f196883884cacbbe9d79ffa5eb11ed9a59d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNTMzYWMxMDFjOGViMTQzYzBiMTIzMGY0MmRlYmEzN2M2MDcxYzZlMWNmYmNhNjQ5ZjlmZDk4M2YxNmY5OTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhYWFmYWJlNWYwZTY0NmZmMWUwMDc5Y2NlN2YyYTVmMmZjZmVmOTc2NWY5NjMwNjUwMzdiMjBhMWU4NWZiZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwYjk2MzNhNDEwMTBkMmI4YTE1NTM3ZjI0MjU3NDYxN2U2ODUzZDExZjdhMTdmOTRiZjFhNjIzNzZiYmNiMTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7d784f29c3c42a7beb7dcf9b8bd3ed8",
+      "statement": "NodeBindings::Initialize calls node::InitializeOncePerProcess with flags that stop Node from initializing V8, cppgc and its own V8 platform, and disables the WASM trap handler because Chromium already enabled it; NODE_OPTIONS is only honored when the node_options fuse is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L587-L651",
+          "version": "repo-lines-v1:sha256:536ef0f3cb0482831be710e1b8f4ab5158f2ee1a7a82a27379518afd0e28c8a8:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyODg4MjZiNjgwYzEyMmQ0MzIwMmY5NjMzZGRkNjFmNzFkZmI0ZWUzYzVkYTI4YzE3NTEzN2E3NzU0YmQ0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMjhkOTRhZDUzOWYyNDZmNTNlN2E3ZDlhZjcwZTEyZWQyNTRjMzA0MDQ0NTQyNWJmYzkxYzU4OGJmZjJmYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0YzRhZDI4NmZiZmJlMDZmZTQwNmZiNjBhYjMwM2E0MGZhMjY1MmRlYThiMTMzZWFkMTUwMDUyYjIzYmIyMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d52c6be14254da8b2092bbafafe4938",
+      "statement": "In renderer and worker environments Node is created with kNoBrowserGlobals, kNoCreateInspector and kNoRegisterESMLoader because Blink provides those, and renderers keep Blink's promise-rejection, message-listener and prepareStackTrace callbacks instead of Node's; the node_cli_inspect fuse disables the SIGUSR1 debug handler.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L715-L790",
+          "version": "repo-lines-v1:sha256:033ccb1c5a91f21872d67b4f28fe3738a0e20fd9dc582b1b50665686893d0168:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjYTY5YjJmZmUzZjIxZTlhNTRlNzkxMDE0NTM4ODQwZGRjNmE2ODZlNmQzYTAyYWRkZmE5MmExYTlmN2IyYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZDU1ZTgwMWVhNGJjMWZjZmI2MTA3ZmUxMTVjNTQ5ZjI1NTBhYmEwZjczZmQ0OWY3MTdhNTNlMzBhNGQwZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfda896aff3a4ea9b87181d688de2cc0",
+      "statement": "The browser and utility processes use the explicit microtasks policy, and in the browser a MicrotasksRunner task observer lets Node perform the microtask checkpoint after each Chromium UI task; in renderers the isolate's policy is left as Blink's and is switched to explicit only while UvRunOnce runs.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/javascript_environment.cc#L144-L150",
+          "version": "repo-lines-v1:sha256:3dc38f56f33e997a340b17787dd503a94d01b4876e9bf9e4dac5b6280cdc7483:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmRjNmIxY2FlOWZmZjZhYjgyMjdhNDU1ZWEyMzlkMWVjZTZkYTRkZjk0N2I2OWExY2YxYzMyYzcyZjdkMjZiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTJmODdjNmYwZjVjMjQ5YTYzNzhkMjc4OWNhMTU5YWU2ZWIwNDE1ZjNjNTE3Mjc2MTQxYjJkOGZjYjdmMTM2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODJkMDI5YTBhZDI3ZjQ3OTkwYmIxY2JjNWY4MTA0ZjRkOThmMWRmNWE0Y2QxMzE0MmFjYzA3ZjRhODNlMTYwYSJ9"
+        },
+        {
+          "resource": "repo://shell/browser/microtasks_runner.cc#L16-L36",
+          "version": "repo-lines-v1:sha256:e3e1e52afacc41146e128f07e3df7d4559856dd551dbc238cd0c6f7d2838db9d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4M2FmZThmYTk5ZjU1Njg5YjA2ZDUwOWJiOWMyNzBlOWMyZGEyMzc1OTY2YzdmNWQ3YzIwYmQ1YWJhZjA5Y2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhZDliNDBjNDFkNGUwNDExMjg3NjQyNzZmOTNhOTY4MTliOGMwNDE3NzgzNGNhZmU1NmQwNzY3MmVlN2QzMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0YzFlNDVkNGZmMmE1YzYyMzAwNGM3YzU4ZDI4NTFkMTgyMTU2Yjc0Y2Y2NTJhMmJkMTVmOWU5Y2Q5ZGNjYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L765-L790",
+          "version": "repo-lines-v1:sha256:b94910584b9f9715a0a37d630c432169bdf06ae9f35c78355015e58a50977907:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjMmM2MWM1NzQxNWM5YjBkZDdhZWYwYzI0NTVhNWIxZjdhNTZmOTQ5NDA1MTdhNWM3YTFjZDJmMThjMDUzZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmNmVlMjBlYzQ3MDFkM2E0ZWRjNzJjNzJlOTE3Nzc2OGVlN2I4NWZlMjg5N2EzZmI3NmUzNWNmODM4NDExODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZDU1ZTgwMWVhNGJjMWZjZmI2MTA3ZmUxMTVjNTQ5ZjI1NTBhYmEwZjczZmQ0OWY3MTdhNTNlMzBhNGQwZTcifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L926-L960",
+          "version": "repo-lines-v1:sha256:2ae7c169bb31d5717aca154e4da7d095fedc9f2d1952e3a54d1d82ddfb138866:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1ZjY2NWRmM2UyYzZiNjAwNWNjYTc3MTIzZDUwNmU2NTE4YWM4YTFjODAzMzdjZmJkNzRmZjZmNmQxNmU4M2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4NWU0ZGUyYmExNDY5NTkwOGFkMDc0NTk5MmVhMjcxOTNlZDcwYjM4ODkyNWVlMjFiZTU4ZGFjMzQxMzU1MmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_87c360a05dc54a46ad8e83cdc7e409af",
+      "statement": "The main-process Node environment is created in ElectronBrowserMainParts::PostEarlyInitialization using Node's MultiIsolatePlatform (gin's platform depends on a Chromium task scheduler that isn't running yet), and ends with JoinAppCode(); the embed thread and polling start later in PreMainMessageLoopRun.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L225-L262",
+          "version": "repo-lines-v1:sha256:461f501b3a3531d7bea3cedd2565d35dac90a27c93fb50617b8b67219b78b2fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NDQ5ZmM4Y2Y2Y2NmODJlZjQyOTc4ODA5ODdkOTkzNjkxZjJhNzFjNzg1NGM0NDg1MzUwMGFhOGFiZDA0NTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4Y2VhYzdiZDdmMDFhY2M3Yjk4YTkyOTg3MGM2NmZjOTViYzZiZjFiMmU4YzVmYTAyNTY0MDliOWJiYzc2Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzZjgwYjVlZjQzZDU0MzI0NWI3NDkwMTE1ODdiZThhZTY3ZmI2OGUwOTM5NDZjNjVhYjEyZjQwOTQ4ZmQxYzUifQ"
+        },
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L425-L430",
+          "version": "repo-lines-v1:sha256:6fa1e1ab091d03f3046a82b2a722ff9cbf5e06c978120c072a10f6b72deb0665:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTM5ODJlNTY1N2I3ZmZlYjkwMDE2ZjY0M2Y5YTI0N2Y4ZWNhNTQzYWRjMmVlYjQxOWRmMWU5YmZiZDIyNTZhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUxNTdkMmExNWYzZjM5MDQwZThkYjc1ZWY2MWM1OGY5ZjNlY2U5ZTZjZDM0MzgyMDFhNWM2ZGYwNzFhMDY0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzRkZWM1NmYzMzJiMDk2MThmM2RlMDVkZDMzZmRkNzQxYTU0ZTM3NzRjNzIwNTZiZGUwY2UzM2QzMTY4MjZhMiJ9"
+        },
+        {
+          "resource": "repo://shell/browser/javascript_environment.cc#L94-L125",
+          "version": "repo-lines-v1:sha256:5a6401a97dd3e61c84e0cec3ecb23c89075c03efc36dd83e738f6d7ac0685782:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1OTE3ODVhYjJmMzZkZjQxNDNkYmQwMGVkMTU2NzU4M2IwYTZkNDA5OWU3MTM1NmYzYTVmODE5NjlmYjM4NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiYzAxZjA3MzdmYmQ0Zjc1MjhlODY4NjBjZTBjYmI1ODJiNjkwMzZiZTQ1MzZkYWI1NDcxYTBlMTIyZDBkNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2ZjJhM2VlY2M3N2YwZjk1ODg1NmE4YmYyZDhlYWQ4ZGYzOWQwNWJmYjhiZTAyNmQ5YWE1OWFiY2EzMWMxNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2NmU4MjQ1NjdkNjM2YTQ1YWI3N2QwZGMwYTJmNWFlYTYzYjZlNGEzMGNkOTBiODhkOTc5N2JkZjc2NjhlZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b07a2de72fc4701a5a39ac25f1df2ea",
+      "statement": "JoinAppCode (browser process only) pumps uv_run(UV_RUN_ONCE) until process.appCodeLoaded() sets app_code_loaded_, the browser is shutting down, or libuv has no more work.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L895-L925",
+          "version": "repo-lines-v1:sha256:d7cae82301d91a2fcd49e95d7b6a2ead344345aa01def41080c22fd6f33548c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1ZDJjOTlmZTBhOWFlYTk1Y2I3Mzc5ZTc2ZTI0NWMzMjYxNDhiYzRiNmQ5MjA5YTRiY2RjNjk3OWQ3OTFhYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzNjI3NDZhOGFlMzRjODE1ZmZkZTUyMTMwOTU0ZjhkOGE3NDg4MzM3ODhiNDE3M2E4NGFkMDM0ZjdhZmMxYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxN2UyZDU3NTMzZDk4NDY5ODYzNTIxYTYyMmUxODc3MmE3MTliZDdjZjY3ZGM3YWY4YjllMWU5NWYyNmIzOGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_284551bc908b4b02a2397be4f645d478",
+      "statement": "In renderers, ElectronRendererClient::DidCreateScriptContext initializes NodeBindings and the embed thread once, and only the first created Node environment is set as the uv env that starts polling.",
+      "evidence": [
+        {
+          "resource": "repo://shell/renderer/electron_renderer_client.cc#L92-L180",
+          "version": "repo-lines-v1:sha256:bc7572ad8ae060b91648cb83dd32256fc7cd491d849e5e144a032b0522eda078:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1Zjg3NzQ2MjQ0MGY5ODZlNGE1ZDJhMjBlZWQwYjk3OGI1YTJkZDNhY2Q2NmI0OTI3ZDE5ZWY4ZTE4NTIwYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhODFjNjlkYTY5ZDM1ZTFkNjIzZDlmZTE2ZmVjZTA1NTNlMDhhOWNhNWU2ODA3NzBkNWVmMGZmNGIxMDAyYWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2MDhkNmRhMzdlNjU4MTExZmE5NzBhNzk0ODY2OGY2NzgyNDQ0NzliYjY3MWZiMGVjMjc1ZDg2ZDMyNDg1MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhYzAyMWJlYzNmZGQ4YmVmMDk0Mjc0MDMwMGVkZjJkMTlmNTlkNGRiNGNmZDJlMTM3MjcxMDNjYTg3ZWVkMDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb670b71bf7a4e7eb5ddda3bb6b1fa5d",
+      "statement": "PrepareEmbedThread runs only once per process, because on Windows the IOCP is fixed at loop creation, and adds a dummy uv_async handle so libuv does not exit when idle; on single-core Windows machines the IOCP concurrency limit is set to 2 to avoid a busy poll loop.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L860-L877",
+          "version": "repo-lines-v1:sha256:92dd967b62691c29c270bc7af982cb41e45c91f0482ace4d516d5dc9fdef9041:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3YmZhZGQ1MjQwYTNjMWNkZDc4MTY1MzU1ZTZmM2Y0MzRhYjEwNGQ2OTU4NDcxNGRjOTExYWNhNDEzNjJjYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExYjdjYjZlMDZiZGVjOWRjMWIwZGRjNGQ5ODBjY2Q0NmIyMzFmNDkwNjFkYmZkNGNkM2Y0YzNkZjQ4ZDQ4YWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyOGQzOWY3OTJlN2E2MWY2MTllMzc5NDc3ZWQ0YjkxOTU1ZGVjZDRhZmNjZGU5YjZmM2E2YjI3OGNiODk0NzUifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings_win.cc#L12-L30",
+          "version": "repo-lines-v1:sha256:a27d15ae319da7337e213938b584a29a452109d1a90cb3f22c8239c8d744400a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkZjM4MjMyN2Y2NjljNTAxNWRmODUwNDgwZmFhMDhlZmFlY2ZjYzQxNGVkMjUyYzQ3ZWRmZDZlYTgxMDUxMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwNTFhZDBkMWM5NzJkNDQ2MzcxYzhlZTFjY2EyZGE0ZjU4MTY1NDljNWQyNzFjNDQ2NjlhODViYWJiZDNjZTkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

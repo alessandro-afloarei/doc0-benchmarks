@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:06f395641ffd8502407936113da3c3259641a873b70e0888bc208ff3a0d99d8c",
+  "claims": [
+    {
+      "id": "claim_73910dd58fe0498b8d9bd89f7039d256",
+      "statement": "DEPS pins Chromium to version 141.0.7361.0 and Node.js to v22.18.0, so Electron's upstream engines come from these pinned versions.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L4-L7",
+          "version": "repo-lines-v1:sha256:ea57a49e264c6514156fd03c8c5e06d854c0c02e67a2fb4bae41e37fa90822d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JjZTJmYzM4MTk1NmJhYTE1NzU0YTE4MjdkMGNhOTdiMTNjODZlZWZhMTg1MWE4Yzk0NTBlOGE0MGZkNTMxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM2MzFkZGQ4YmI2MWI5ZmM4ODRiNGYzZjU1ZjgyNzE4NjQzMGM1ZmMzNTVjMTY3MjQ0MGFkNWYyYWIxMGU5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRmN2FlNjc0NTg5MWUxMzcwNDBjNzk3ODQxZWE4MDM3ZDkyNTJhMzIxOWIzOTJiNGExNzcxMjMyZGIyZDg3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5YTk4ZTQxOGI0MDg0ZWNiZGFiNWE5OTI5ZDAzOTE0YTMxZjliYzA0NmNmMjdkMTFiZWQ5N2U3ZTBhZGU3OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cafdc9e8a5374d43bc0d486d4d5fc53b",
+      "statement": "On Linux, main initializes the command line, runs NodeMain when the run-as-node fuse is enabled and the environment variable is set, and otherwise runs content::ContentMain with an ElectronMainDelegate.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_linux.cc#L29-L43",
+          "version": "repo-lines-v1:sha256:dd9dc8c6782f3c7bc1f5fea74fe6851998da3fd423a2cbebc9d5867423d6af8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZGQ0MTA2YWQxM2QzOWIzNmVjYmEzZGVmNTY3YzgyOWQ2M2QyNmU3ODhlMzE4NDM4N2RkODU5NTc5OTUxOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzOWViNjAxOTg5ODAyMjczYzc0ZmFiMmMxN2Q0OTVlOGZhOTIwZmM0ZDdhYzgxNjBlNjFhYWU3YmY0OGFhYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllMzc1YTNjYjNhMmNiZTJmOWRlZDljODI5NmE2YWI2Njg0OGNjODI2ZmQ3MWY5MTkyNDZhY2IxN2UwYmQ0NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_24fdc4f49f804b7b9c846f863126d963",
+      "statement": "On Windows, wWinMain builds content::ContentMainParams around the Electron main delegate.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_win.cc#L232-L232",
+          "version": "repo-lines-v1:sha256:49deacdee54ef9989c566fa7dfc2f77478184e6e710c027e7f2aca10e5199774:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlkZWFjZGVlNTRlZjk5ODljNTY2ZmE3ZGZjMmY3NzQ3ODE4NGU2ZTcxMGMwMjdlN2YyYWNhMTBlNTE5OTc3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlkZWFjZGVlNTRlZjk5ODljNTY2ZmE3ZGZjMmY3NzQ3ODE4NGU2ZTcxMGMwMjdlN2YyYWNhMTBlNTE5OTc3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2YxNDUzOWI3M2FkMjNhNjQ1MWQ2YmVmZGNjNDg0Y2NmZTdiY2VkM2Y4ZWUyOWNmYjc0NTIwZDFiNTJkNmJiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWI3ZTMxZTQ4MzYzMGE3YWVlZGQ2YWZlMWQ0M2M0NjI4OWVmNjczZWViZWZlNzgxZWU5YmNkNjRmYzVlYWQ4ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_632e384ad66d47fa980d2c9113a74f28",
+      "statement": "ElectronMainDelegate::RunProcess hands the relauncher process type to RelauncherMain and returns the Chromium main function parameters for every other process type.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L481-L488",
+          "version": "repo-lines-v1:sha256:31be14bf7ec17484a908a46eef41d7891f028c104b1a79aeda21d0c9d6cb8e61:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRiMzlmNWY1MDVjNGE5NDFmZTYyNzIyYmQzYmJjYmZkMDdmYjQ5YTE4MzZhNDFmM2ZiOTlmNDY1NDNlMzhlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2YzMzA5MTZiMzFlMmY2MmZmYTRkYThjNmIwMzU0N2VhYzkyY2I0NDI2OGIxNWNjNzJhOWU0YmY1MmYyMjBkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTk0NzAwODFmMWVkYWZlNzZmNTUzNTZkZWNkMDVlMzFiZTUwNGQ0NTU3Zjk4NGZjZDM5NjBhZDg5N2NkNGI1NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8a1b05dbe644336bcc999aaf4b9a79a",
+      "statement": "shell/app/electron_library_main.h declares an ElectronMain entry point with default visibility for library-style embedding.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_library_main.h#L12-L12",
+          "version": "repo-lines-v1:sha256:eecbd5d0b1d9c19bab46c75a4cd5e83ceb17b3d9b920c17da43b35efe0dc0077:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWVjYmQ1ZDBiMWQ5YzE5YmFiNDZjNzVhNGNkNWU4M2NlYjE3YjNkOWI5MjBjMTdkYTQzYjM1ZWZlMGRjMDA3NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWVjYmQ1ZDBiMWQ5YzE5YmFiNDZjNzVhNGNkNWU4M2NlYjE3YjNkOWI5MjBjMTdkYTQzYjM1ZWZlMGRjMDA3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmZhOThmNWFiOTVkMzZlMTRiNjg0ZGEwZTQwNzQzNTU0MGU0OTg0ZmVjOWY0MjlkYzkyN2IxY2Q2ODRmNWE3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDdmM2QyMjk1MTZhNzVkYjg2OGJiZmM0MWQ5ODJkZjQ1MzEyYmFiODIxZjQ5MzQ5NTllZDQwNDI1NWRmODA5OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_209f1a91abfa46feae2fe24cae7e1762",
+      "statement": "BUILD.gn defines the electron_lib source set and an electron group that together define the shipped binary's contents.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1557-L1565",
+          "version": "repo-lines-v1:sha256:e566fc9b1409f6229de66683c379dd162fdd6e65bcb0d7e054b93228de936a79:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjJmZjVkMzRkMmFmNmU4YzllZDI1ZDNiMmFhNThlMThiOTJhZGVlMjE4OWNlMjJkZGRkNjBhMWRmNTBkMDIwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmMxMzI4YjY1MDViNjFmOTk1ZTVkYTBkZDg2Y2YxYzA4ZWQxMmU4MDVkZjY4ZDgyZDZjZDI5NzAwNmMxZjZhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjFiM2FiYjAwZjZmOWI3YTYxZTAxNjM1ODA2OTEyOGU3MmJiOTMwYTUzMzRkMjcxNjVlM2ViZGZjM2UyNWNhMCJ9"
+        },
+        {
+          "resource": "repo://BUILD.gn#L423-L423",
+          "version": "repo-lines-v1:sha256:62201a0ebea1e4bc3ddb974c1bc4bc1056f74028e7d37a6ed40bc8eab2b5bdc7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIyMDFhMGViZWExZTRiYzNkZGI5NzRjMWJjNGJjMTA1NmY3NDAyOGU3ZDM3YTZlZDQwYmM4ZWFiMmI1YmRjNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIyMDFhMGViZWExZTRiYzNkZGI5NzRjMWJjNGJjMTA1NmY3NDAyOGU3ZDM3YTZlZDQwYmM4ZWFiMmI1YmRjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWExMDc5MjVkODAwNGJhNTkzOWQ2Yjg0NzQ4MmE2NGE3NGVkNDQ4MGMwYTE4MWQwMTliNDM0ODgyNzA5Y2M2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmE0YTc0M2EwMmEwZWE3MzMyYTkzYTQ4YTIxZDUyN2IxOThlMzZiOTdiMzRiM2I4MDViYjIwYTFhNDg0N2QwYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e1714e72b2943858b03af1e2b09c98f",
+      "statement": "The electron_fuses action in BUILD.gn runs during the build to apply the fuse configuration.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L393-L405",
+          "version": "repo-lines-v1:sha256:c6977ae739f02faf1a07b8ea4fa1120c16f594aa75c12390a93364fdd29668ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkMzZiNGJjYzA3OGIwN2U0ZjQ3MjY3N2M2ZWUxNDhkYjA5ZjI5Njk3ZDcxMmI2YTk5NTRmODEwZTA2YzgzOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyZTAxZDQxNGY3NzBlOWU2MzdjOWExMzA2OTAwMDc0MWIxYzExNWRlMjcyYTIyNzMxNjkxMDk3YzQ5NzdhNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4962fbbb719346deb232b1f6138d8134",
+      "statement": "The fuse schema in build/fuses/fuses.json5 defines build-time switches such as run_as_node, node_options, only_load_app_from_asar, and grant_file_protocol_extra_privileges.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/fuses.json5",
+          "version": "repo-file-v1:sha256:54b905d53aaa1974297cd60ad84141db8490becbf71d752401f5aafaa15cfb8c"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f892bb0c23140e6be02fcfa2e0efc0b",
+      "statement": "The webpack_build template passes the generated buildflags.h path to the webpack bundles so BUILDFLAG values are shared between C++ and JavaScript.",
+      "evidence": [
+        {
+          "resource": "repo://build/webpack/webpack.gni",
+          "version": "repo-file-v1:sha256:0e9204897661ba4824bdbe592750226908999c5fb92a308a7b78e92dc97ca79c"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:50:06.090Z"
+  }
+}

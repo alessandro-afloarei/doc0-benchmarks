@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:840c7120dc2d0e528e735db66627217e63928b63e4b8c4d576a1c555d8a89c18",
+  "claims": [
+    {
+      "id": "claim_a13b7ff0becf410686adf90cb925ed75",
+      "statement": "Native bindings are registered through per-process X-macro lists in node_bindings.cc (browser, common, renderer, utility, and a DCHECK-only testing list); RegisterBuiltinBindings explicitly calls each binding's _register_<name>() function, with browser bindings only registered in the browser process, renderer bindings only in renderers and utility bindings only in utility processes.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L531-L547",
+          "version": "repo-lines-v1:sha256:0a041d5d9132ec2c07ddef5b36f449116a9f1f13ab83b6317fec5692a92a7dde:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlNDlhOWUxZWM1NjllMGY5ODhjM2RhYmM4OGM2ZDk3ZGIxZGIxMDQ2MDM5OGJjNWU4NDRmNDdlNDY0Njg2ZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiODMyMGIzNWQ2MmZkZWM3MTM5MmE1MDZhM2Y2ZGUwMzZhZjMwZTg2ZGQ0ZDk5NGFjYTM2ZjA1Zjc1ODM5Y2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxOWEyMWJiMTllZjg0YzVlYWI3NjE2Zjg4M2FjOTE0ODhjY2MxOGU3NTM3M2E1MDZkYjNlMDYyZTBiOTBjYTEifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L55-L148",
+          "version": "repo-lines-v1:sha256:8ab2dbc56d6cc7b7aa9a7ce0c32d2c8f9d4c17dc5970c9162f173234444bce89:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNWQzOTY2OGQxZTczNTU2ODFiYzIyOGRhMzIwODAzODg5ZWIzMDFmYzQ3YWE4NWM3ZjI4MGUyODFiZWJiMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhYTQwZjA3MjQzZmI2NzNkYTZlYjdmNzgyOTU1NDI0NmIyZDRjZDM4MmM3ZDA3ZDY0OGI2YWE2Y2EwNzY2N2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmZGUxN2Y5ZmZjMjJlODRjZWJiMGIwNTY1MDFiNDEzY2ExODk1MzMwN2ExODM5Y2NkYTE0YzY4ZTc2YTk2OWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2210dc5323245eca327c111debee475",
+      "statement": "Each binding source file ends with NODE_LINKED_BINDING_CONTEXT_AWARE(name, Initialize), whose Initialize fills an exports dictionary (e.g. electron_browser_tray exports the Tray constructor).",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_tray.cc#L449-L465",
+          "version": "repo-lines-v1:sha256:fc89e4ff2fb2bada15a4be58f26fde709326e43a33dd4083672d8b22c3a3eb35:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4NTYzZDAwZWY1MWFkMjQxZGYwNTZiNDM5ZTBmNTRmM2Q2ODQ0MjA0Yzg1NmFhYWUwN2EwNDE0OTc5OTE5NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkNDIyYjcwYWY3MzhkN2JmOGZhMTFiOTEyMmQyZTYzNzgxNjgwNjk5YTI5OGY1MTBiMWQ4M2Q1NWE5ZGEzNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91edae15a5934bc794d2a967a0391b97",
+      "statement": "gin_helper::TrackableObject gives each instance a monotonically increasing weak_map_id, stores its wrapper in a per-type KeyWeakMap that is leaked on purpose, and supports lookup via FromWeakMapID, FromWrappedClass (through SupportsUserData) and GetAll.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/gin_helper/trackable_object.h#L20-L135",
+          "version": "repo-lines-v1:sha256:8fb5dbe1be90da8bd6d874d997f030b71dd5af65ffbbb08ce4bdd491f7727cb0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1OTc0ODYyMDY3OWFiN2EzNTI5OGI3ZWNlMjFhZDRhZmM2NTUwNDc3MjVhYWVhMDkwN2VlMTBkMmViYzNlYmU2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5MjUyZGI2OTZkNGQ5NmZjYzhiYzNiODY3Mjc0MjUwNTk2ZDJlYmRkY2QwNjcxOThiZjllYWRhOWFmOTExOTk3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ac909f41ffb41bfaca29698b16aaef9",
+      "statement": "An object is considered destroyed when its V8 wrapper has no internal field or a null native pointer; Destroyable::MakeDestroyable adds destroy() and isDestroyed() to a prototype, and destroy() deletes the native object and nulls the pointer.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/gin_helper/destroyable.cc#L20-L74",
+          "version": "repo-lines-v1:sha256:171741d7d15a97c5320df64429972ea6cbed8aad1da2aa73f9c2c7e16fb9f2ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhODA0YTFmZjIxMzFhMGRhZGMwOGJmYTU2OGE1MTFhOGE5MDkwZGZjZjdkMGQ5MjcxM2QxY2RkOTUzMmYzY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4MDliZmFhMGE0ZWNlYmIwN2I0MWI0NzBlNTYyMDZmZTk0NDViOWVjM2MxNmY2NGM0ZmQ5ZjRlZjUyZDZlOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f88e7e077494ca68fb6d6d3304b74ac",
+      "statement": "CleanedUpAtExit objects are destroyed immediately before the V8 isolate is disposed, because V8 does not invoke weak-handle finalization callbacks at isolate teardown.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/gin_helper/cleaned_up_at_exit.h#L9-L26",
+          "version": "repo-lines-v1:sha256:844d83be235cfb17373189d5db7c4dce2292c5a4917f408b989a4e9c7830cc1c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmZTU2MDQ0MWVlNGM5ZjQ4MTc4ZDIwMmRlODczNzcwYzNmNTIwMjA1YWYxMWEzN2UzNTI3YWJiZGE4ZDVhODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjNGYyMmZjNTUzMTcxOTJjOTg4OThjMjQ4YWM5ODFhZmZjYzUxODkxYTdjNWIzNTdiMGY0YWY5ZTg3NDExNDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2bb3d0e10784af5b5c6beab72b23625",
+      "statement": "gin_helper::EventEmitter::Emit creates a JS Event object passed as the first argument to emit and returns whether it was default-prevented, while EmitWithoutEvent emits only the raw arguments; the JS prototype is set to EventEmitter by lib/browser/init.ts via setEventEmitterPrototype.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L19-L19",
+          "version": "repo-lines-v1:sha256:850e01dfe0a3dc9ad10492d862e328b669c67ad937a5cb721c4bd9937b7efd00:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODUwZTAxZGZlMGEzZGM5YWQxMDQ5MmQ4NjJlMzI4YjY2OWM2N2FkOTM3YTVjYjcyMWM0YmQ5OTM3YjdlZmQwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODUwZTAxZGZlMGEzZGM5YWQxMDQ5MmQ4NjJlMzI4YjY2OWM2N2FkOTM3YTVjYjcyMWM0YmQ5OTM3YjdlZmQwMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjI1MjVkZjc0OWQzMzYxOWE3MDVmMWE3NTkyOTAzYjA1ZjFjMjc4MWViZTI4NmFiOTRkNjRiYWI2NzMwMWM5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzg3MGUyYmZjNmY0NmJlMmRiZWUyMTI0MjA3MmIwYWZjZjdjYjQ0YWJlZWQ3ZGI0OTdkZTk1ZjFjYTE3M2MwMiJ9"
+        },
+        {
+          "resource": "repo://shell/common/gin_helper/event_emitter.h#L20-L55",
+          "version": "repo-lines-v1:sha256:12498ec6c31446a72b8986db2f70347091a62bd698d91156cf6c2a04c2b0c235:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjZmJiYzEyYWQxZTNlYjk4ODk0YjI3M2Y1OGQ0YjgwNTM2ZTcyZmMxYTlmZDgxOGRmMjA2MmY0MDg5MTVlNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYTdiZjNkYWI4YmMzNjBjZGY4MWRhMzI2ZDBiZWZlN2I2NjU0MzA5MDFkZGZjNzhmNTBkNzE0ZWUwYjcyNGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2MDE0NTIwZmZkMDYzMDk3MDY2ZTY2MzhiNmM0ZDY4NjEyZWIzMmRkYjM2YzljYzU4Yzc2YWJlYzQ5Y2NiNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkYjYyN2ZhZDA0YjcwZDJjNjE1MGI4ODJmYjkzMmMyMTYzZTI0NDc3Nzg2YjM3NGExNGY2N2U3ODBlNDcwZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_29aca6cf78c54a0b908a059d336eb7fb",
+      "statement": "Native Tray methods guard against use after destruction with CheckAlive(), which throws a 'Tray is destroyed' error instead of dereferencing a dead pointer, and Tray describes its JS shape with FillObjectTemplate and ObjectTemplateBuilder.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_tray.cc#L395-L447",
+          "version": "repo-lines-v1:sha256:dca75fbea2a10b304068e20e167fbffbfa846492e74102f7ae33a57c8b035067:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4ZTVlMjJkM2ZlMzEyNWM3MDZjOTZmOWViMWJkMTYzMmUyMjYwZDY0MzBjNzA5OWFhZjM1MTBlYjZmYmNiZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxZDIwNTY3OWNiMTIzNzg1YjM3YTdlOTJjNWM2MzA1N2Y2MWUzMDcwZDZmNDY3ZWMxYTM5OGI0ZjA2OTg5YTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2NzI2OTg1YTU3YzllM2Q4M2Y0ZjYyMGExNWZmMTM0MzkyMGRmMTdmOGUwMjJkMDZjZTEzMTAyNGJmOWJiYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9ae6ce700de24ca09a7230583c1bce0f",
+      "statement": "The gin callback converter turns a base::RepeatingCallback into a JS function that can only be called once, to avoid leaking cached FunctionTemplates.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/gin_converters/callback_converter.h#L12-L32",
+          "version": "repo-lines-v1:sha256:4a5eba010030c567137574edd607ed583928bc09d263784d0598268ac7b52da9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjZWI1YmQ4ZDE1ZDVjNTEzMDA4OGFhNWExMDA0OTM5MGVjZDNjZTIwZmFiZGRmNjhlZThiYzU3ZWQ4Mjg2OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1N2Y4YzUzMDE3OTIwZWMxYzEwOGEyNWU3OWNiMmY4YWQ4NjY5NTI4YmViNWIyOTUyMzY0ZjYzNDM3MzdhNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9128bd18b0e24afca1d25aa07ad97faa",
+      "statement": "Adding a new browser API requires adding sources to filenames.gni, a docs/api markdown file from which typings are generated, a linked binding added to node_bindings.cc and typings/internal-ambient.d.ts, and an entry in lib/browser/api/module-list.ts.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/creating-api.md#L1-L174",
+          "version": "repo-lines-v1:sha256:f490f9221770e63ccc9a830797296c395c08cc81a752636d7a84314b4c565838:eyJzZWxlY3RlZExpbmVDb3VudCI6MTc0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmZjc5NDRkNGU3ZDJiYzk2MWVhYzdkMjU3MTE2MDY0NTMxYTJhMzA4ZDI2ODIyN2IxOTU2MDkxYmQwYjg0OWE4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0N2MwNmM1NjFkNWMzMjczNDM2ODUyNjhhNDZiMzM5MWYzOTk4ZWVlODkwZDJiZTUxZjBkMjFjYzRhNTNhZTZkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6a2c7b4dac5be7cf04842dd636421541d1eb4ac560eff20fe325d1ff5447053e",
+  "claims": [
+    {
+      "id": "claim_0fd77476372e41dcab9f08f730923dcd",
+      "statement": "load_openhands_config builds configuration by applying defaults, then config.toml, then environment variables, then finalization, then custom agent registration, so environment variables override TOML values.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L819-L837",
+          "version": "repo-lines-v1:sha256:333dba3531fa431681c73ceae2ecf35a1e3b1477694a2a93760042804ad733c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZGFlNTAxZjlkNTlmNmQ5ZjA2YjI5MmQxZjc3NmIzMTNiNzg0NDg4ZGQ0YTZhNjVmODM3YzU0ZGE3YjQ1MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YjI0ZWViZWIyMTkxYWY1ZjFhYzNhYjNkNDJkNzJlMzA3NGE5MGZjMGI3NzI0ZDk1ZThlMmUwYTU0MTJmN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkMmFiNzgxMDAyMTczZmVkNWUwNzNkYjNjYWQ2NmM4OTc1M2Q3ZWRjZTIyNDg2ZTMzMTE1NmVkMDhmOTdlYjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_96e267f0daf54e51b40574718b04f668",
+      "statement": "Environment variables map to config fields by upper-cased field path, with LLM_ and AGENT_ prefixes for the default LLM and agent configs, casting booleans from true/1 and parsing dicts and lists with literal_eval while skipping empty values.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L40-L136",
+          "version": "repo-lines-v1:sha256:489635b9d16b92f7bae5bf601c19ffddf28fc977f08030c5c609818abf4c6340:eyJzZWxlY3RlZExpbmVDb3VudCI6OTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZTlhYTE2Mjk4NmQ2ZjViYTkyNDkyNWE2N2E4OTNhMzYyNDgxOTZhZTdjODZmM2Q0OWZhMzdmZmY5YmQ3OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2MmM1ZGRiM2E0MWY0NjRmZjM2MTE4NmNhYWZmMTY0ZmY0N2IyMThiNGMwYTBkMjEzOGNhNTJlNGM0NWE1MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhMGIzODBiZmY0OWQ3ZDMyOGIyOTUxZWI5MGU2NjRlMTFkM2VmYzRmNzg0YTUyOTY5MjAzODI4NWJjN2U1Y2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9721101d47e540d9ad8ae0243256a767",
+      "statement": "A missing config.toml is silently ignored, and each TOML section is parsed independently with errors logged so one invalid section does not prevent others from applying.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L138-L366",
+          "version": "repo-lines-v1:sha256:eb7a7a23b781c06f62cefeef9e3b960e16ef1cb0c639145ea95c34f1af8c4664:eyJzZWxlY3RlZExpbmVDb3VudCI6MjI5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMTA0NWY1MDQxZmYxNzRmMzYzMDc0MDgyMDQ0YzYyNjM3YWY5NGZhZjU3MjM5NTcwODJjM2RmMTA4YmNlNDY3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiOGI5OWEwMjEzMDI5MzI3ZmE5MTJhNGNmYmU1MjNlYzYxYTdkMjlmYWI0YzViMzgxZDEzMmE3NjM4OTYyMGZjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5YTMxMTkwMzc3MzQ3M2RlNTAwZDhlYzE0OTA4OTQzMWEyMWZlOTU2NTE2NTg5NDJhYWQ1Y2IzZjU3YmNkYWRiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e0b82185f1d4a22b3bbba873870761e",
+      "statement": "If config.toml has no [condenser] section and enable_default_condenser is true, the default agent is assigned an LLM summarizing condenser using the default LLM config.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L318-L345",
+          "version": "repo-lines-v1:sha256:811676f3fd319bd859bb7ab5c428df7b6f0555d5854bef2228ce43f65cd919e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYjhkODIzMGQ4MTZjMzAzZDc1NTc1M2U5YmIyMjQ1YzIzOWQ5NjAxNzgzOWQxZGU4Y2I5MDE5ZTk0MTgxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMDY4ZWU1ZTVkNWUwYWE0MmExM2VhMjc1YzhlOWVmOTVlMjVmYmYzNjI0OWM4NzdhMmFiNzhkYWRiNTQzY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3NDg4Zjc1OGI2MDMxN2IwZDBlZDU2ZDFhYTAyNWUxYzVhM2EzOWRjMGRiODA4ZGQwYzU5OTVlYWFlYWFmZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0ZDI0ZDc2ZDI1NDExZWNkMDlhYzdlMDA4ODBhODU2YWVkNjY1ZGY4MDM1NWUzNDE2MTljZjk5YzA4MWMxNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5c4a953363a49f2865c2710505dc00a",
+      "statement": "Named [agent.<Name>] sections inherit the scalar [agent] defaults and override them, and an agent's llm_config field selects which named LLM group it uses, falling back to the default group.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/agent_config.py#L80-L140",
+          "version": "repo-lines-v1:sha256:7db0cc92ea9617082e39296293f85e2ebc49a720994dd6a639f3b8199928ec7b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwZmZjYjFlNjZhNjZlMmIxZWRlMTk5NjA5MWNmZjY1NzYxZDBmZjkwZWIyZDFjOTNmM2VkMTgxZTQwNDE4M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxM2VjOTBjNjY0MjZiZjRhNjA2YjdiYjgyNjA5NTA1YzgwNjM1MTY4MmZhNmY3MGU3M2I0MGJkMjBjN2MyM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyNmRhZmFkNDA2MjlkODhhNGZkNDAxMjM0NmNmMzQyOTZmYTZiODAwNWZhNmJhNTc4OGIwNTAyOTEwZDFiMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1MGFhYjllMTMxMGUwNzk0ZWVlYzgyMDMyZWVjODNhYzIwN2JjZjNhZGFkZWU4ZTUzZDVjNDAwYWM2NDk3ZWQifQ"
+        },
+        {
+          "resource": "repo://openhands/core/config/openhands_config.py#L131-L169",
+          "version": "repo-lines-v1:sha256:fca91a9386d9568a4654be5afa2895fd8d71e898e1dbb7837c737f1a76dd061c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjNmE4YjI2NWUwZDhlZGMyNmNhMDE3OTUyZTAxYjVmZDUxZTNlMWNmMzQ5YWY0YzgwMTMzZjRhN2UxNWY2MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NzI3ZWNkNjliNzkyZjU2ODA1NDgwZTZmNWIyYzdkODUyMjJmNWVhMjNiMmQ5NTA1MGQwY2FmNTlmNmUwNDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2NWY3YTEwYjI2ZDUyMzc3ZjFkYWZlNjJjNzQyODg3ZTZmM2UwZTg2ZDYxNGM5ODA3ZTFlMDExZWYxM2Y2ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyOGIwZGVmZDU1NDdmZTA0MzY5YzE4YTAzY2E1YTM1ODk4ZWE5YjkxZTliMGU0OGVhZGQ3NGRiMzAyYzdkYTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c8d150f7eab34b2c932b334fd1cad9c6",
+      "statement": "finalize_config derives the workspace mount from a sandbox volume targeting /workspace, generates a persisted JWT secret when none is configured, and disables Jupyter and browsing for all agents when the CLI runtime is selected.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L377-L470",
+          "version": "repo-lines-v1:sha256:82273d70366564a9feaf19d3c9f9b5921a0ba2c6ccdca3ea147ce90675ab168d:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYjY0ZWFkZWZkNGFmYTQwZjM1NTY2MjMyMmQ4OGExODljNGE5YWZjNTRmYzM3ODFiYzE5YTZjYzU5Mjg1ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiZmNjMzhmYjM1MjIwODc2ZGU4MzJjODZhMTVlNTE1NzQ1YjFhMmUyYjhkYzQ1NWU2YjUzNGYyZjc5NWVkMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYmYxY2VjMTAzMjUxNWE3M2E1MWNjYThjYmNjNDgwMTYxMDgwYTM4YWFmNWMxYzAzYTZkZGE0NmYxOTRhZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_59db4ddaaa0c4af4ba0ace060d66b861",
+      "statement": "Agent configs with a classpath are imported and registered as custom agents after config load.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L796-L817",
+          "version": "repo-lines-v1:sha256:f64d4497f26c2ee143b1f967ac2b497ae6a528e51e9f535cab93e33e4107d589:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NDJmNDFlODJiZWFiNDMyMGFiZTdiODBhNDY5YjMwZGM2ZTJlMjNlNGU3ZTc1MTQ5MjMyOTEyMzk0YjhmZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyMjFmY2M1YmU1ODI4NTg4Y2RjYTBhYzZhYTZiZDc2N2ZjYzAxYzM0ZDgxZWUyN2EyZDY5NjI5ZDc2ZTFmZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1MThiN2U5NTYwMDM1ZDNkZTk4ZTVhNmUxYjlhOWRjNzFkZTA3Y2RlYjhhZWQ4MTA1ZGZhZmUxZTNmNWQ4ZjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_10ce7fa4a3a24184a6728d2aaca3be20",
+      "statement": "Command-line arguments override loaded config for the default LLM group, default agent, max iterations, max budget, and selected repository.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L839-L904",
+          "version": "repo-lines-v1:sha256:b0ac1c1b83e9262233bbd589d47e3f50d2713ef77a5f66ccaf74bf27415cf021:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZGNlZWJkOWM3NTU4NzAwZGExYjc5NTM3MGQ5ODNkMzAwYTJjMzRiY2E1MGM3ZWVkMjk0MTkyNjljZjkzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkNTM4Njg5MGIxZDc3YWMzNjI5Zjc4NWY0YTgwNDY1NjA4ODgyYzY3M2E2NTVkZjZiNDQzYThmYjliODI4YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_306206b6650c4d30afafb689a9e8e254",
+      "statement": "The server loads one shared config at import, and per-user settings override the default LLM model, API key, and base URL on a deep copy for each conversation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/shared.py#L23-L23",
+          "version": "repo-lines-v1:sha256:57161ca12c3cd045dc03dfb0a2966f92962899ef0b0d41238b86502bfadbc04e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTcxNjFjYTEyYzNjZDA0NWRjMDNkZmIwYTI5NjZmOTI5NjI4OTllZjBiMGQ0MTIzOGI4NjUwMmJmYWRiYzA0ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTcxNjFjYTEyYzNjZDA0NWRjMDNkZmIwYTI5NjZmOTI5NjI4OTllZjBiMGQ0MTIzOGI4NjUwMmJmYWRiYzA0ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmQxMDU2ZTVjYTZkZjhmZWY2YjBjZjQ1OWFhMDAxYjcxMDNhMjRlZTAwOWY4NDU4MDgxYmI4ODQxMDJlYjUzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTk4OTgxZmUyYmM1OTU0YTk4OTJkNzUyNThjNGNkYmEyNzMwOWMzNGFkZDVkZWQ1ODM4ODU0MzE5MDc2MTlhYSJ9"
+        },
+        {
+          "resource": "repo://openhands/utils/utils.py#L10-L19",
+          "version": "repo-lines-v1:sha256:05ec36fa40420a0ea6bb505b3fe7e45dba609305152de053049fb75516b899c9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzOWVlYjM2NmViMDAzODRhYjdmMjE5NDcwZTgzZWI1MGU2MWFjMmE3NDI5YzY4YmI4OGFjMzczOWQ5NjFiM2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjNTEyOWQ2NGJkZDUxZTczZDBkNTY0ZWJmODFlNzA5YmI3MDVjMjNkNDQyOTYwYmQwOWM4OGYwYThiZGRkMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiYmY2NzUwOTk1YTdmMWZkMzg3ZDg5YWQ0YzJkNGM3ZDIyNzQ3MmJjNmFiNzY1MGYxNDA0YjI5YTQzZTU0MTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_884c4d79507e472d999edb53f96bfb9d",
+      "statement": "The default agent is CodeActAgent and the default maximum iterations is 500.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/config_utils.py#L7-L8",
+          "version": "repo-lines-v1:sha256:a225b4e19464995c24290ece9dbac4a6f3f2f22359b3df3a8eff36574e07c859:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk3ZTU0YmJiZTM5OGJhOTVmNmJkYTdjODNiNjlmZTdmNjQ5ODFjYmViZmQxNTNhMDg2YTQyMjU3NWFiYTIwZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGMyMjM5YTMzYTBlYmQ1ODM4ZGJmZDEzMmExMzllMTg1MmFmNDY3MjhhZGJjYTZjNjFiNDI2ODllNjZjMmUwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Q3Yjk4MTgyNGYyODFjYzcwOTA2NGM3Yjg2YWRiMzNmOTNkMGEzNWEyNTc3OWY3N2VkMDA5M2ZkZGZjMjZmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzc1MzBiODczNDg2ZDQyNzA1OGY5OTE3MGMwYTY1YjFmNWNjOWViNzNiODc0NzVmMmFhNjEwZTE1MTQwOGYzNyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c38e5a06baa23e458102b2d011596e7110a40b43e2090883e84eed4959ef4499",
+  "claims": [
+    {
+      "id": "claim_40edfcf91327415a84de8823d37b8d78",
+      "statement": "fetch forwards the request method, bindings, and execution context into the private #dispatch method; request() builds a Request against http://localhost for relative string inputs and then calls fetch.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L476-L514",
+          "version": "repo-lines-v1:sha256:a1e7d812adcb994bff711cafc7c5ba3b7545cc13b4296f85af5eaa09946a0db3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNGFmY2MxZDBiMTgxNTM2ODViNTE1NTRhMjNkM2RjNWQwNmMwNDgxYzAwZjk1Zjg2OGE3NWRlNWRiN2Y5MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5ZTU4NDhhN2U5NmVmNmE4MTRiNTc4ZjZiZDFjOWQ0MGRlMGM1MDc2Yjg0MGY1NmRhODM2ZmM0YmJjNzAxYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiZWVjMWU2YzUxNzIyN2E1ZmU2Y2VmNTA2OGQyNTEwZGUyMGM0YTg1MGMxMjg3ZTJlNDVmNmI0N2YzOTYzMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkNzgyODM3Nzk1YzljOTQ3ODI3ZWRkZDU2YmNmZDI1MDMyZjUzZjIwMWMyNGIzMWQyOGIyZGI0M2U2ZmNiY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91694a08cbf244059904d6a986745df7",
+      "statement": "A HEAD request is re-dispatched as GET and returned as a Response with a null body, so routes do not need separate HEAD registrations.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L406-L417",
+          "version": "repo-lines-v1:sha256:ddd7e3de452ae3b048c8044912b5b4f509a3857c7b905be7e981061bae4728ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiMDBlMjNkOTU3YjY2YmUyZWNjMWEyNDMxMmI0Yjg5ZGU0OWVmNWNhYjcwNjgwZDVjMzFmYjhlNjdkMjdkYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MTZlNGZmNWFlMGFlYjdjMTBkNTJmNjk0MmQ0OWRjYjhkYTNhZjczN2Y0Nzg0NmRhYTE4OTU4NTMwNDE4MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MTQzZWFjNDQyNjdmNTAzNTE4MWEyZTVhNGFmNzMzNzk4MmMzMjlmOWE2YjQxNWZkZGYxNzhiMTYwZTI1MDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4855fed321f0420fa7bcee73d9ede9f0",
+      "statement": "Strict mode is the default: the path is taken from getPath unless strict is false, in which case getPathNoStrict removes one trailing slash from paths longer than one character.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L170-L173",
+          "version": "repo-lines-v1:sha256:8e5c8f0a565cbea9c79b4cc94ef00b1e57c5c876a1859c21df85fa020ede7757:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWQ3NmUwNjE3MTRiZTBmZDI0NGJhYTM1ZWI3YjVmOGRmMjY5ZmEyOWJlMDIxODM5YzZmODVlZGZmNWY0NmZiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzM0MTVhNDJhNzQzMjJjOWE0OTIxMzgwNDY2ZmIwNWU0ZGVjZTA1NWExNzRlMzI1N2I5MWRjYTEyZGQ3ZTcxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzUwZDNjZjUzMjM1ODVmMjQ2NzFkNGNmODIwYjQyNjliMGIxYTcwYjJjMjc3N2RmZmVhMGJmZDEwN2JkMzE1ZCJ9"
+        },
+        {
+          "resource": "repo://src/utils/url.ts#L141-L146",
+          "version": "repo-lines-v1:sha256:ac9e834b30fefbe1e69aff399dd76f9557cdc1b604a7ea4d2b4a5efb3c5515a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJlZjgxZjljN2Q5ZWY4OWVkNTk1MTg2N2MyOWYyNDg5NzQzOWM4NDYwNzczMmFkNTFiZjI5NTcxMDNhYjdiMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODE3Mjg2ZDQ2OGFhMDM5ZDgyMWQ2ZGRlZjQ3ODRmZDQyNDJhYTI0ZmU3MTlkN2I1OWJkMGIxZTJkNzk2MTVkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWVkZGYyMmU2NGJiODkwYzE1ODc4MGU3ZGIwZDgzNjM2MzFkMDBiMGQ4ODY2MmE3ZTUxYjgyMGE4YTQ2M2JlYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_85d2b71c87a14316b944623e8c868707",
+      "statement": "When exactly one handler matches, #dispatch invokes it directly without compose; the not-found handler is used when the handler returns nothing or resolves without finalizing the context.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L428-L448",
+          "version": "repo-lines-v1:sha256:8aff34ecf192ab11ac45aba8f350dde52aace4405285ba9753d68bc4725b1ca3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNTFmM2FiYjZkZDdiMjQ5NjgyNzc5YTdlMDJlZTBiMmY4M2RmN2ZiOGZlNTQ1NzA1MTU5YzAyMmVkNGFhZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkNjIwYmUwNmNhNzA3ZWE4YmMwZDU0ZjZjYjdiOWNjNWVmZGM0M2ZkMTljYzZlYzljMjE2NGQ1MWJmMTQ2ZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6bafdcc608d4a979b5b09251e0d8d0d",
+      "statement": "With zero or several matches, dispatch runs the chain through compose and throws a finalization error when the context is not finalized after the chain completes.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L449-L465",
+          "version": "repo-lines-v1:sha256:a3c337011b9ce86d0e51fd9ca005892582aae70f1925be4691d5e7dff1345fe2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OGJjYjFjNjdhMDYyZWU2OGQxMzNiM2M4OWU2ZTE5NWZhYzRiNzE3MWYwNTg5Y2I4YWExOTk3MmQzYWI4ZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkMTFlMGRhYjQyNzA3ZGQ4NzA0Yzk4YTFiMDA1NWRlODJkZjc2MDU4ZmY3N2M4N2RiYWEyOTYxNjc4Yzk5NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhOTI5M2ZkODA1NGI2ZTQ3MjQ4MzczZjM5ZjRkZDc3ODAwMTA1ZWI3NTgzNDg2ODcyNTQyODVjZDEyODJiNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f31445d292e64e3e91c3b6a1b7a28e5b",
+      "statement": "compose rejects a second next() call within one middleware with 'next() called multiple times', records routeIndex on each entry, and delivers errors to onError only when an error handler is configured and the error is an Error instance.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L1-L73",
+          "version": "repo-lines-v1:sha256:6c49ae86221a98c855ee8d3a4178ff85ffb6791154637be0c7f75e74541d61fd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0MzhlY2FmNjEyMDcyMmU3N2JiNDI5Y2NjZGUyYTg2OGNlZTgwZmZmNjk0MzQ3NDY5NGRjNTEwYzQ5ZGI4MTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f34d3300f84246369d35135060c2895f",
+      "statement": "The default error handler returns the HTTPException response when the error carries getResponse, and otherwise logs the error and returns 500 Internal Server Error as text.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L24-L33",
+          "version": "repo-lines-v1:sha256:cad081917bf00a3b54f07c7398024868c322c30e85329c432356af5fdc680da8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMjkxZjg2NzUxNzFmYzMwZTUwZjliNDk4ODg5ZDVhZGVkZGZiZmQ4ODRkMDIyNDBjMzBmNWE0YjE3ZGZhZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyM2MyNzM1ODQ4N2VkNDU0ZTc0Y2U0MzNlMzUwOTVmNzQ0N2QxM2Q1YzNiMzFhMmI2NWIxMTVkNmM2ZjAxMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1OWMxN2E4Mzc5MGQ2ODc1MTlhMGM2YzM2ZmMxMWRlYTA0ZDdkNDFkYWQyZWNjMjMxZDkxYjBlNWQ5YTgwNGEifQ"
+        },
+        {
+          "resource": "repo://src/hono-base.ts#L398-L404",
+          "version": "repo-lines-v1:sha256:81f2157e02223f9a3e12153112a4f873ab41420c94b0cacafe74571bd5734a73:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDYyYTU4NjRkZmZmNDA5NDZhNTI5MjZmYmM0ZGI4NjAwYTQ3YzZlN2ZmMWYwY2VmODIyODRjYWRkODQwMjU4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQxNzBlOTFmYWJjZDY3NDY3OTEwN2QwYzRhMDdhYjEyMWFjMDY2NjMzYjMxY2VkNzFhYjBhYTMxMjg2OGZlYiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:23:45.579Z"
+  }
+}

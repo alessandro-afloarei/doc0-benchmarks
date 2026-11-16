@@ -1,0 +1,11 @@
+# Files
+
+- [Celery App, Configuration and Task Registry](app-and-configuration.md) - How the Celery application object is constructed, how configuration is lazily loaded and merged with defaults, how tasks are registered and bound at finalization, and how current-app state is tracked.
+- [Beat Periodic Task Scheduler](beat-scheduler.md) - How celery beat decides when periodic tasks are due and publishes them, covering schedule types, ScheduleEntry, the heap-based Scheduler tick loop, the shelve-backed PersistentScheduler, the Service wrapper, and embedded beat.
+- [Canvas: Signatures, Chains, Groups and Chords](canvas-workflows.md)
+- [CLI and Process Management](cli-and-process-management.md) - How the `celery` command is assembled (click group, global options, app loading, preload options), what each launcher in celery/apps does, and the platform layer for daemonizing, pidfiles, privilege dropping and signal handling in workers and `celery multi`.
+- [Concurrency Pools](concurrency-pools.md) - The execution-pool abstraction that runs task bodies for a worker (prefork/AsynPool, solo, threads, eventlet, gevent), how a pool is chosen and instantiated, what contract it fulfils, and where its behavior differs.
+- [Events, Monitoring and Remote Control](events-and-remote-control.md) - How workers and clients emit monitoring events (dispatcher, receiver, cluster State), how worker-to-worker sync (heartbeat, mingle, gossip) works, and how the pidbox remote-control channel (app.control, inspect, worker control commands) is implemented.
+- [Result Backends and Result Objects](result-backends.md) - How task state and return values are stored and retrieved. Covers backend selection by URL, the Backend/KeyValueStore/RPC/Redis/database implementations, result classes (AsyncResult, ResultSet, GroupResult), async result draining, exception serialization, retry and expiry behavior, and chord support.
+- [System Overview](system-overview.md)
+- [Worker, Bootsteps and Consumer](worker-and-consumer.md) - How a Celery worker is assembled from bootsteps (WorkController and Consumer blueprints), how messages flow from the broker through strategy and Request into the pool, and how ETA, rate limits, prefetch/QoS, acknowledgements, autoscale, reconnection and shutdown behave.

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:460613427faa0f16ec9a65304f4f5da34f420bf6a00d42ba3f7b16c4944a83f2",
+  "claims": [
+    {
+      "id": "claim_690a4ab0031d41f9a78f3fbaf3238041",
+      "statement": "Process configuration loads defaults, then TOML, then environment variables, finalizes and registers custom agents.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L819-L836",
+          "version": "repo-lines-v1:sha256:2dab5543eae655d97e8f38feeabdcfc50bc9c502cc89fa17391fc66d8a41d5e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZGFlNTAxZjlkNTlmNmQ5ZjA2YjI5MmQxZjc3NmIzMTNiNzg0NDg4ZGQ0YTZhNjVmODM3YzU0ZGE3YjQ1MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YjI0ZWViZWIyMTkxYWY1ZjFhYzNhYjNkNDJkNzJlMzA3NGE5MGZjMGI3NzI0ZDk1ZThlMmUwYTU0MTJmN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3MDJhNDI2ZWZkOWFiZGEyM2EwZGZkYzUyNzliZGI5ODFlMDI5NTEyNDY5Y2FkYzkxNTBiYjAyZTZlNzRiODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8daeea295d8b44b2984db830d9e0c000",
+      "statement": "Missing TOML leaves defaults unchanged and malformed TOML logs a warning without applying TOML values.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L138-L158",
+          "version": "repo-lines-v1:sha256:95bf440807faff0b365a95999f1aab0dad51bb9747a487b5fe27d0453e7614b3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxMDQ1ZjUwNDFmZjE3NGYzNjMwNzQwODIwNDRjNjI2MzdhZjk0ZmFmNTcyMzk1NzA4MmMzZGYxMDhiY2U0NjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiNWM4MjYzMmZjODJkNGIyYzM0MGY0MjU1OGJhM2RmYTMxYzc2NTVkZjZmY2MxNjhiNGZkY2U1N2ZhYzYwNDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4Yjk5YTAyMTMwMjkzMjdmYTkxMmE0Y2ZiZTUyM2VjNjFhN2QyOWZhYjRjNWIzODFkMTMyYTc2Mzg5NjIwZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkNzYyMTIzMTZjNWYyZDljZGJhN2YxN2Y5MzllYmUxMTEzZWUzNGIzNmYzYjJmOGJlNzFhNTU1MDBkZjhjMDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd0f15847f3b4baf8f50f1cfd3bd798f",
+      "statement": "CLI setup applies named LLM and selected agent, budget, iteration and repository overrides after process loading, with a user-config fallback for named LLM lookup.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L839-L904",
+          "version": "repo-lines-v1:sha256:b0ac1c1b83e9262233bbd589d47e3f50d2713ef77a5f66ccaf74bf27415cf021:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZGNlZWJkOWM3NTU4NzAwZGExYjc5NTM3MGQ5ODNkMzAwYTJjMzRiY2E1MGM3ZWVkMjk0MTkyNjljZjkzYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkNTM4Njg5MGIxZDc3YWMzNjI5Zjc4NWY0YTgwNDY1NjA4ODgyYzY3M2E2NTVkZjZiNDQzYThmYjliODI4YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3956d73bf5c949b484d18e3476c44ad8",
+      "statement": "Mount finalization prefers SANDBOX_VOLUMES, recognizes explicit /workspace mounts and deprecates legacy workspace inputs.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L377-L424",
+          "version": "repo-lines-v1:sha256:06755cf819b7e3cba82bd390ac9f62ba368bf2cd1f261960a66a9c0f26538da8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYjY0ZWFkZWZkNGFmYTQwZjM1NTY2MjMyMmQ4OGExODljNGE5YWZjNTRmYzM3ODFiYzE5YTZjYzU5Mjg1ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiZmNjMzhmYjM1MjIwODc2ZGU4MzJjODZhMTVlNTE1NzQ1YjFhMmUyYjhkYzQ1NWU2YjUzNGYyZjc5NWVkMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4MzBjMDExYzUwMGIxYzgxNGZjNzg5MTdlZTA3MDcyYTZhNGNlYTU5NDU0NGYxZjYzZWIyNjRiN2ZiZmYyOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05cbb58b1d3c4d09928f2c10a4d5afcd",
+      "statement": "CLI runtime finalization disables Jupyter and browsing for configured agents.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L459-L469",
+          "version": "repo-lines-v1:sha256:3dc5ee20ad8d19b7d1b860139c433deab5e0021f4962616cbcb9a670a81669fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4YjRmNTJiZjcxNmY2MjE1MjM0NmQxNmIyZGQ2NTI3MTllZDRkNWFlYzcxODUzNWE2MjQ4MDc5NzE4YjJlZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4M2E2YzlkMDI1ZDVjNTVhZmI2NTU5YTliZTI4YmViNjAwZmEzMTlkYzdkYWYwYjI2OWE4NDM1OWFiZTgyNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5NjAzNmViYTY2MmI0MGUwNTBjNDI0YTJlZjIwNDRiNmQ1NTY0YzVlMmM0YzE3OTk1YmVlZTExYzFhZTA3MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ce51a88114d492a9d5414c737f0c292",
+      "statement": "Core defaults use Docker runtime and a local file store at ~/.openhands, while the app image uses /.openhands.",
+      "evidence": [
+        {
+          "resource": "repo://containers/app/Dockerfile#L38-L48",
+          "version": "repo-lines-v1:sha256:18e86c4f97ee346c299a2e072350aa6030097ecb8ea9ee6072e4289292cdcf96:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNmI2ZWRlYmNkYjkzMjg0MzNiMmExNTVlYjdiM2YwZTU5ZmNkMzIxNDMxNWU2NmE1OGQyYjNkMjA4ZmQ4MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMGI2OWFlMzJjMmVhZDdhYzUwYTI0YjNiNDc4YWI3MWNhNDI2ZmU1ODhkMzdhOWM4ZTZjZTZmNjY5NzJhZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlYTYzNDEyOWNhMTgwNDY1YzJmYWMxNmNmNGU2NGRjZjRmZDkyNDVlMDZjYmNkZmQxMDY0OWQ5NzhlNTI2MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5N2MxYThlMWYzZjVmYzcyNmEwNDFhYWZlNDhiOTI5N2MxYWNmM2NmYTFjZjYyY2I5NDE1ZmEzYzczODdiZmEifQ"
+        },
+        {
+          "resource": "repo://openhands/core/config/openhands_config.py#L67-L73",
+          "version": "repo-lines-v1:sha256:147aa452d258a40e4e992834006360f8c2208a808253c14ceb4ab29310ad9c1a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzNlMWJmYjZkZjFmYzdiMWU5ODIwOGE4NTE1Yjc0YTk4YzBlM2FmM2M1YzE0YzFiZWJjYWZkZjhlZWI0N2JkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjgxODIxOGI0YjlhODM3M2FlZGFhNTI5M2VhNjA5MTEwOTEyNTc2ZGZiNWUyYzBkNzBlYTM1ODgyMTk3MWY4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjBjY2MzMjM0ZmM5ZmJlOTg5Nzc3MmQ4YTcyZmU4MzdkOWQ5MWFjNTVhYmI0MWM2YThlNTE5NjQ4YTRjMjUzZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTIyMGNlMGU5ZTFkMzY5NTVlYjlkM2U2NTllNzE5NmI3N2QzMWVkMjZhZTJmNTM2YWJjOTQ4ZGUxODJmMDQxNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_badeb15a1c3d4cfdad386357fbc2d76c",
+      "statement": "Compose mounts the Docker socket, persistent OpenHands state, and workspace, exposes port 3000 and still uses WORKSPACE_MOUNT_PATH.",
+      "evidence": [
+        {
+          "resource": "repo://docker-compose.yml#L2-L23",
+          "version": "repo-lines-v1:sha256:5817a8a4c5870a868802f66a0f406a610b7d03f0eb41f24ea437159e6d12b0ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzNmY2NkYzk5ZWE4MzU5NjdjN2RlZTdlZmJlZDFmM2NhODcyNjBkOTI5MzE4NTBmZGQ2NmRhOGNiMTJmMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZWU4ZWVmOGIxMzIwNTIzNTY4ZWIyNjUxMDhlYTA0ODgzOTQ0NmY4MTVhMmJkOGUyYmNlNjMwYjk0MDgzNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoxLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd66a4b29f0146cf9ecabb86643235fa",
+      "statement": "The app entrypoint can bypass setup with NO_SETUP, otherwise requires root and SANDBOX_USER_ID and chooses root execution or an end-user setup path.",
+      "evidence": [
+        {
+          "resource": "repo://containers/app/entrypoint.sh#L1-L45",
+          "version": "repo-lines-v1:sha256:dd423664347abce220a93c933e9fa11324bf717bf8d9b45a00f006d8ca6c44c9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NzVmOTI4NTQ2YWVlNzg1NWNiMWRiOWFmYzhhYjNmMWE4YTM0ZDQzZGU1YmJkNjJmNzA3NmQ3YmE5ZjM5MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlZWYxMzc0MzcxMWIwZGFiN2U1M2Y4ZTYyNzZmZTExYmIyYWU0MzAyZDQxNzNmZmFiNWZiNTUxMTc3OWEwNjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmZjczYTQ1ZjBjYmRjMjMxZGY5MjY4MGMyYTUzMTI1MTBjMDM3Y2JkM2NlOGE5ZDkyNGVmOWZkYTQ4OWJhY2MifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:51.947Z"
+  }
+}

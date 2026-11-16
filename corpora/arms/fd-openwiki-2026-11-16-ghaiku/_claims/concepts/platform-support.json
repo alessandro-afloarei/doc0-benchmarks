@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:110ee11014ad9e77b8ae38fccb51baacc6d94becf1ded40c06672468ccd5748b",
+  "claims": [
+    {
+      "id": "claim_ffd048b40f3f4f9789f2fefc8ca33fbd",
+      "statement": "The --owner flag is compiled only on Unix, and owner matching compares numeric uid and gid from file metadata.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L466-L474",
+          "version": "repo-lines-v1:sha256:36b7fff1bef426fa2a97df8f5dc7fb3a4d7fe28d6504db9fb0da8ce135edcf84:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNiMTA3MTY2MzJlYzAwZjU1NDJkYjE1MWJkM2MyMWMwMmRlNDNkNTExMGNlNDg1ZjExNjBhMjE2NWI1M2IxMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWIwNjk4NDFlMDQ1NzJhNWI1ZTFkMGRmZmVkZTgxMzg1OWI2NGU5MWQ4YWQ5NzkwNTU4ODA5ZWNmZDdiMzgxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWQyYzFjMTI4Y2JkODFkNGY2YmQwMjBlNGI5NDIzZDFhMjViNmRhYjhlMzY2ZDEyYTM1MTcyMjdlZWEwYjVkMyJ9"
+        },
+        {
+          "resource": "repo://src/filter/owner.rs#L68-L72",
+          "version": "repo-lines-v1:sha256:49eddffdaa2c8a1b84b78629cf33564d4d93c47371a852cab03220cdf7dd0b66:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzMzZDFiNWVhYWRjNWUxYmRlN2JlOGM0MDhjYTk0ZTNmNWUxOTgwOTFhMzk2ODFkOTQzMmY0MmM0OTNkNzQ3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGE3MWFkMmViZjNiZDRiNjRhYTUyNmY4MDE2YTUwOTJhNjdjMTYzNjkxOTk1YTM3YjAzYjJjOWI3MWNkOGM0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a99eb2235bbd4e24b558c93c865a051b",
+      "statement": "--list-details chooses its ls command per target: GNU ls on Linux and other non-BSD Unix, gls or BSD ls on macOS and the BSDs, GNU ls on Windows only when present, and an error on unsupported platforms.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L412-L490",
+          "version": "repo-lines-v1:sha256:cca1e8def4825fd2c676453fa9ba9f0609552df3ac06764aa29bd77f27ce2900:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxYWFiM2MzM2ExNTFiZGY1MmEwMjNjNmYwZWMwNzliM2Q3NmU3ZTIwYTk2YzQ2MjJjN2ZmMjZlMzY2NWEzNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhZjY1YTc3NzUwMDYwNzdkZWVjMWRiM2M4NjRlNDU3ZTBhYTk4MjNiYmViZDc5ZTIxNWQxOTNmNTM2ZDk5ZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjYjIxOTcwMDZjZjU5ODI4NmRmZjJlMWY2NjQxYWU3ZjgzYzJkOGEzMTFkZTllZWJmODViNDVjMGJhNzc4YWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3OThiNzFkY2RkODhlN2VjZjE3ZWI3ZWMzY2NkZmI5YmQwNDZlMzFkMmZkOWU4NDUyMjU2Mzg4MGI5YmNmZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_90acd6ea36084b7084fa35300efa4249",
+      "statement": "Block-device, character-device, socket, and pipe detection use FileTypeExt on Unix and Redox, and are stubs returning false on Windows.",
+      "evidence": [
+        {
+          "resource": "repo://src/filesystem.rs#L62-L70",
+          "version": "repo-lines-v1:sha256:e9ccbac058a9361e422c7e290c0d6c151c0bfe1d0dd91ca9f7b78717b15c3422:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNiMmMzMThjNjRlNGM5NmY2M2NhODU4ZDlmNTU3Y2QwODcyMjc3ZDNjOTEzNTM5MTYwOWQ1ODVhZmE4MzM5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2ZmNjFlOWMzNzIyZmM5YTFhOTg4ZmExZjc5YjQ3NGQwNTUwMThiMDhlODA4ODQwN2RjZTk1YzI0MzIzNTY4YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_992058792dad48a29e2d0c721f480107",
+      "statement": "File names are matched as raw bytes on Unix and as lossily converted UTF-8 bytes on Windows.",
+      "evidence": [
+        {
+          "resource": "repo://src/filesystem.rs#L101-L112",
+          "version": "repo-lines-v1:sha256:4b48ebc2abbdc1bc5286473304f87b6437c7aff886bfb4d05b2337499f3547c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNDMzN2NmNjFiMTVkOTZjNjgxZGU2NDI0MDFiODhjZGU1MGIxNGU4MzhmZGRjN2VmNzUwZDhkZmExYzJlMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0ZTA4MWFlYjc2ZGZlMzZlZDYxM2RhNzIzMjk3N2UzMmE1YjZiMmFiOGYxZGUwODE4Y2M4ZWRjMDkwZTI3ZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlZjIxNWUwNjY0ZGJkZGJmYTY5NWU3YmY0YzYzMzI0ZmE0MWYyODdiYTY0MTA3N2QxOWE0NTc1NTc4NzYzM2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6069c0a5d124724887d2fb4ad4f6bd0",
+      "statement": "On Windows, the default path separator is / when the MSYSTEM environment variable is set, and otherwise the native separator is used.",
+      "evidence": [
+        {
+          "resource": "repo://src/filesystem.rs#L127-L137",
+          "version": "repo-lines-v1:sha256:f37a5d5d6efa91218fec01b4aeb9fa1990b62ce8ec6bcb2c1cc9daba1d0ab644:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMDBhZWMyODM1OWM5YWY3NmRlNmVlMjIyOGZlZjc5NjA5NTRmNTdiY2M1MTNiMDA5MTdlNTNhYzNjMGJkZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2NDU1YTk3MDNkZWQyM2I0MjllMGU2YmY3ZjE2MzUzMTc5MjdiMzRmZGY1NGQwMWE2YTRjMDkyMjgxNjNjNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzN2I0NTU2NTdiOTkyMzVjZmRiMDQ2N2Y1MjcwZmM1YjI0M2VmZjAyMWMzNmQyMGY4NWExYjBkMDQ5MWM2NjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_176fcc5d166d4e5dba6716a8f7941776",
+      "statement": "On Windows, a custom path separator longer than one byte is rejected when the configuration is built.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L234-L244",
+          "version": "repo-lines-v1:sha256:49debe674497a0f99750eb47cacfe591d9cfde2e3d13109770f5688433f0eadb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1M2I2Y2RjNTllOTE1ZDA5ZWIzOWI1ZGFjOTVlZTkxMzA1OGJjOThlN2YwZjk1MDAxYjNjMjZjOTg1ZTIyYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NzQxZDZmY2E0NTY1NmVjYmI0MDBkOWQ5NDI3MmFjODRjZjg3MTEzYWQ3MzlhMWFjYzU2ZDdiZjI5NGI2N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwNjNjNGQxYWY4Y2Q4OWJiMGJkZDc2NTdmZmNiZjY4MDZhNjEwZDc5ZDZjOGQ0YzMwN2MyNDFkZjM5MDA1MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ee064731c2d4b72a9b0cb85df7dd0bb",
+      "statement": "Hyperlink URLs use the Unix host name from gethostname, a constant / host elsewhere, and write Windows backslashes as forward slashes.",
+      "evidence": [
+        {
+          "resource": "repo://src/hyperlink.rs#L24-L62",
+          "version": "repo-lines-v1:sha256:88c74f6ff1a16fd534d7cbc20a2c1044d029f6a27596f300fc2a069df26e33dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNzIwZTQwYjE1YTA2ZDQxOTExN2Y1MGIzNjk0MWMzNTEzMmFhMWVmMDE5YjY0NjBjMmQ3NWRhMzdiYzZjMTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4ZjRhZGRjZmFmOWI3ODE1NWEzMzYxMzE3MzQwMzEwMmMwYjA2Yjg0NWY5MjEwZGMyMWI2YTM0NmQ3NmM1NWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4707c4b0977e48178ae3bb7701f0c3f0",
+      "statement": "The jemalloc global allocator is compiled only when the use-jemalloc feature is enabled and the target is outside the excluded platform list.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L94-L98",
+          "version": "repo-lines-v1:sha256:7236d89c577de1fe68c57409ed893e1c1db88123efa5a04b83883e7120f39397:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmNmMxYzczZTQ2ODViNmY1NTc5MmFlNTM5MjU1M2ZmNzlkM2NjMDY3YjBiNzRlMDY4Njk4ZjZiMmM3NmI4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmEzNGU1YzNiNWYxODc1MGI3NGJkNTlhNGVmZjZjOWUzNWY0NjIyZTdmNTcyOTI2MTNmOTZjNjBkYTYyYjU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQwMWY5ZWRiYjgyNGU2MTBmNTU2M2FjZTZkYjkxMWM1Yzc3NDA0N2I0YWZkMzBmNzVlNDMxNWVmNmJiN2RhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDA1MjBhODZmNmVkN2NkNTVlMTk3ODZkZTcyMjI2ZmI2ZDA3OTBhN2IxMzE4MGRhMDRkODJjOTZiODhmYWRhMyJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L42-L54",
+          "version": "repo-lines-v1:sha256:8e49a36bc819da3bf24ba4f24b56e77bafde80e71afb903b4c6ffe380f3332af:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkZWJjNGI5NGQ5ZGNkZTFjMzZlNTYzMWFlNGYwYjk1ZTNmZjUwNWFlMjg2YmVlZjdiMTM0YWQxM2UzYjk1NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NjMxMjFhYTUzZmIyY2VlOWViMWM0YWM1YmVkYTA4YzIyNTg1ZTY0YmZhYTNlZjA2OGRhOGM1ZjNhMTZhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhMjEyNDlmODU5NmU5MWMwZWJlOTFkNWVkYjY3ZDYyNmExMGU4NTUyMGI4NTE0OGZkZGQ3YWE1NTRjNDY1MmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjJjM2IxYTk2YjI3YWVhM2ZiZDViNDI0NzkwNTM4NzNkMDUwMWM4NzQwZmZiMjBjMGRmMDEzYWIzYzYzMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f7603db209a4afdb02cfcc465804a38",
+      "statement": "Windows color mode probes ANSI support through nu_ansi_term, and accepts the TERM environment variable as a fallback.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L271-L274",
+          "version": "repo-lines-v1:sha256:91316d9218a9439dfba9418028f2a237cbf9486d2fb6e5fabdcef78ebdc5da11:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc3ZWU1NzczNjUwZWQ4NjhiNzQ5YzlkMWVlYWRkZGQ1MDk4YjgxM2Y1YzhkMGVhZWJjZWY4YWZjNDk2ODljZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzNiODNhZTVjZDE5ZDcwMzU2ZWY1MDFhMzkxZWY1NTdhOWZhZTczZDJiNTViYTQzOWExYjMyYTU4ZWY2NjI2NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjkxOTU2OWYxYzc5NDUwYTJlMzU5NzY3NDE0MDBhNDA4ZTA4MzUzM2VmMjRhZWNhMmIxNGU4NmEwMmU2NTEzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFmZjQ5NzVjNTM2ZjZmYTVlNjQ4YWJkMDEzNDliMmVkMjM3ZjYxZGI4ZjMxNDY1ODc0MzQ1ZTA3MmRlYTQ2ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b25732e5894f41759dd4ab3e84275205",
+      "statement": "--one-file-system is compiled only for Unix and Windows targets.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L684-L688",
+          "version": "repo-lines-v1:sha256:a073724c566798255a0122e21896bb18610e941a22cd7bb688b5257106649c41:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGYxYjM3M2Q3NGY0MThmZTJiYjU2ZTkxNTI4ZTU5N2YzMGY0Y2JiNzg2MGI4MWY2ZTgyMzNiNjllMWJiNzUwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAxZTI5ZmU4NjlkNTdlYzJlNzBhYTljN2ZmMDk3Njk0MTNkZDgwYWMzMTI5M2UxY2IwMGU5NzhjYWQ1MzM4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWI5MDhhYTUwYjdjYmFmZTk5YzU3ZDEyMWQ5MGViNDRhMzM3NjIxNTVlODEwMzUzY2IzMjM4NjRmOTk0NDA2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmZhNGZhOTI2NDM4ZDA2NGJlZGUzOGFkYjQxYzk1MGFkZTgyYTU4MDExYWUyNDBiMGMzNmMyNGQwYmZjZjY3MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f1aacb6a59434f99834636b0c2e66ccb",
+      "statement": "The executable file-type check delegates to faccess::PathExt, whose rules vary by platform.",
+      "evidence": [
+        {
+          "resource": "repo://src/filetypes.rs#L20-L40",
+          "version": "repo-lines-v1:sha256:da1001c8de7b2772bff23995e585fb1a778d7d21aaca8d12329b9a664f3f11b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMmUwMmRiZWE4MDZhNTM1MTVmNDdlNDExNDhlMDhjYmNkYmJkMzRiODhkMzdjZDZiMjNkNDJkYzA3OTc0MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwMDUzNzE3YzBmMTlhZTk2MzA3MWYwYjUwNDc1OTkwYmU3MmM2ZWQyMDg0NTMzM2IyMmU2ZjIzZTY1NDhmYzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5OTE0Y2M1NGUxZjVmNDJiMGRjNjRiNjVjMzg1NmQ4ZDdiYzAyZDQxYTc0NWNhMzRiMDk4NWVmMzcxZmZiMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0YTM2NWE5MGVjMTFlOTA0MzI3NTJjZjkzNzZlYzVlZDM2YjgwYmE1ZThlNjg1NGZjZjk4OTcwZDMwNDQ0NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8440405261642d2a9142fafe19389a9",
+      "statement": "absolute_path removes the Windows verbatim prefix from absolute paths.",
+      "evidence": [
+        {
+          "resource": "repo://src/filesystem.rs#L23-L36",
+          "version": "repo-lines-v1:sha256:e0928153bc2e1341acfa936a1f1c6548d292206f4b125dbd6879f2d2c9c76c66:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2YzAyN2U0MzdhYjZiZTc3NjFhZTdkYTI1NWE2OWY2ZWE2OTkwNDJlODg5YmNlNzkyMmVlY2MyYzA3NzAxMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkZmJlNGY5ZmNkMmRkZjQwM2RlYjBkZTQ3YzFiYWY4NzM0YzY5ZDE5YzI3MTY1MmZmNzQzMjVkYjI5ZGJmNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiZWJhMTYyMDg0NTA4Y2QwMjQ4ZTJhMzBlN2U2NGFmOGE2YzM2ZTZhYmI4MjQ4OWE3NjU4ZWI5NGE5ZjY1NjcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:13:27.224Z"
+  }
+}

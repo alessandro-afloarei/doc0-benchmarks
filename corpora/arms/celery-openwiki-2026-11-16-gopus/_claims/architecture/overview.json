@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ad7b4efbfe71094c9fc99c377576f898830e76f4891a5bc2930b5f6f6df3c901",
+  "claims": [
+    {
+      "id": "claim_bea6b28fb42a4c19a14bc954810f892f",
+      "statement": "Celery's core runtime dependencies are billiard, kombu, vine, click (with plugins), python-dateutil and tzlocal.",
+      "evidence": [
+        {
+          "resource": "repo://requirements/default.txt",
+          "version": "repo-file-v1:sha256:17b8070018ddf52ea728f54c711f076ef112fc8a7b590e5863129e46fc50f36c"
+        }
+      ]
+    },
+    {
+      "id": "claim_26971c5781344215bed1db1ba4b160a3",
+      "statement": "app.send_task routes the task via the amqp router, builds the message with amqp.create_task_message, notifies the backend via on_task_call, and publishes with amqp.send_task_message.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L846-L1040",
+          "version": "repo-lines-v1:sha256:f797343fe83f02691f35e2a462cc63e574287a78b26d26242e00495e3d7dfd65:eyJzZWxlY3RlZExpbmVDb3VudCI6MTk1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZmNkNWY0ZGRmYzIxN2RmYWFhZjIxZTIwN2VhNTRhNDQwMjFkYmFlNjZlOWJjY2NjN2Q3NGViYjA2Zjc5MGNhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyMzUzMGVjZjk3YmEzYzA5YTMzNGIxMDAyOGNjZTI5ZDYyODY3MTc1MzM0NjRjMDk3NWU5ZWU0ZTY1NjFhMDM3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlOGI0NmJkMzdjOGMxNTM0ZWQzYzhkM2U5ZDE3NDI5ZDgyYjc3ZDkzODlhNTZlOWI1ZjRiNjAzODNjNjQzM2Y0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjNGIyNGQ4OTc1ODU2MzU2OWExZGE4ZWU5ZDhlYWU2ZWEyZGRiOTVlMmY2ZjgwNmMwNjkyMjBiZmYwYmZiYjA2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_a0bc26e90d674587a946c8ca413b4a9d",
+      "statement": "Task publishing emits the before_task_publish and after_task_publish signals.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L485-L606",
+          "version": "repo-lines-v1:sha256:6ece4469f24eb369357da3944309596d9183eb3fa1ea44df47cf53ee3289639d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMDExOGVhMTM2YmU3ZDRkYjlmYmU1MGIyMjZiMjM0OTg2N2I0NWM0MjBhYzhlNjEwNDMyZTY4Y2RmYzg3NDJmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiOTVkNjE5YTBkNmYwYTQ1MjRjOTliMjJkMGY3YTBhM2E2N2E0OWZjZmY5NDM3NzI4YjMwZmI2ZWNjMmM4MWI1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIwZmZiMjYzNTk0MDE4MWE5ZDRhZGNjZmUwZjYxOWRjZmQzNzJiZmY0Y2Q4M2EyMzI0MjNhN2IwZGJjMDMwYTgzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4M2JiYWI2N2RhMTM2MWVlNWNjNjI5MTMxNTBkODRhYjEwYWVlMzA0ZWY3ZWU3MmRmNTBjMjk5NjIzNzM2MTE1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_2636a9c803614000a70afa55fb0e14b1",
+      "statement": "The worker's message handler dispatches on the protocol v2 'task' header (falling back to decoding v1 payloads) to a per-task strategy, rejecting unknown task names via on_unknown_task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L723-L786",
+          "version": "repo-lines-v1:sha256:292c5a681f10ade7181d68b4fc129daa67ca551461a246300d60f9a7ec2310de:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3NjI1NGQ3MmIxODk2ZmFjYzQ1MWE1NDc1ZDliMTM5OTljMmIzYjQzM2ZkYWQ3YmIwZTU1ZjQ2NjlkZTA1OTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2ZDA2OTgwODEyOWYyNWYwOGQ3MjZiMjczOTcwZDE0NTgwODExNzhkMGQ4MTA4M2U3ZGRkNjc1NzkxZDdjNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljOGZmYjhlMjc0OTMzYWRmOWI2YTEyZDkwOGExMjVkZTc1Yzg4Y2IyZWI1YmFjNWM0NTJmNDc3YmJhYTRhY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3MTkwYmYyNzhlZGM2MjgxZDcyNjc0ZDgxOTM3NzAxOTJmNjRjZTY1MzZlMjYwZmI1N2MxNDk2ZDZkZWQwMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f067980b8ec448ac8222a54b1b267baa",
+      "statement": "The default strategy builds a Request, drops revoked or expired requests, sends task_received, schedules ETA tasks on the timer, applies rate-limit buckets, and otherwise hands the request to the worker for pool execution.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/strategy.py#L99-L209",
+          "version": "repo-lines-v1:sha256:b1378bad3667197230d2de42c9ce2de1aa8d64031ec1b8d0dd857f601974fcbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTExLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlNDFiZmRlYzlmMzg4ODdkN2RlNjE1NzRmMGMzODkwZGI5MmMzODZmNzVjNTQ0YWVjOTA5ZmU4NzhjZmJiMTEwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmN2E4Mjg5OWI1MjYyNTg3ZDEzMjY5YzhiN2YxMzk2MTllZjdkNjc4MjY3NGU3NzFmOTg4ZTVhMTZhMzNkMzJmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1ZTY2ZmUyOGU0YzNjNGJkMGY3NmM0NGI3M2FiMDEwYzI3NTczZDI3NDk3MTI1NDk2ZjY3OGY1YjlhY2MxOGQ4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://celery/worker/worker.py#L220-L231",
+          "version": "repo-lines-v1:sha256:3b4a90ce1632c585dbb83770d070f218ddaf99ae420e04edab59e132ef8e054c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MDhiZDRhNDhhNjA2NGRkYjE2ODFiOGJjY2ViZmUwYzYzZGY0YmQ2YWU3YjQ2MmM0ZDg1ZGU1MTJmNjk5MjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlZWM1MGM5NjU0NDFlMGUxNWQ3ZjI3ZDc5M2QxZTg0NjhjY2M5MzczMWI5OGJiNDFhOWEwYzY2MDUxMDhjNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmOTUyODhjMjM2ZWY3N2VlZWFmNGU1NzZiZmI0ZjQ3YmIzM2M1Nzk1NGUxZjYyMjE1MDk2MzU0MzgyYjhkMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxMDY1NWExM2I1ZjU0ZjhhZTA5ZTRkOTIwMjQwNWUwNGY0OTg3ZDNhNGI0NDNjYjM1YWM4Zjk4NzE2NTg0MDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c93f1902a6884757bc9304df9d9e69e0",
+      "statement": "Without acks_late a task message is acknowledged when the pool accepts the task; with acks_late acknowledgement is deferred until execution completes.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L515-L523",
+          "version": "repo-lines-v1:sha256:d0722383e00bdbeb37d859fddbb450a52512ad0bc78f00bb75cefec3a9e023c5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFkZjJkNjZhYmU1ZDBkNTM3NDlkZDNmZGEzNDI5MTU5NzhhNTdjMDU0ZjE0ODFkY2MzZGFjZWYzNWMyMTdhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc1YzVhZWUxMjg1ZjFhYjVmNGJlOGIyYTcxNzc1NDM5Y2IyZjFmZjVmYzJjNDc3YzNlNWQ3NDgyMWIyNTg4YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTA3N2ViYjJjMThiNjllNTA3Mjc4Y2QyMzFhZGJjOTAwNDk5MjhhMjRjMTAwMmM4YjQzNmZlZmYyZjc1N2NlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDk1ZTlmZDAyNmIyODhmZDJiN2U1ODFmY2E3Y2FmNTljMTRiOGFhMjljMTdlMWY3MDA4NzUyOGU5MTE3ODEyZCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/request.py#L585-L612",
+          "version": "repo-lines-v1:sha256:9205df288f7e9515c51e9d502e74a46dc8df168497913ba5899f925d693b97a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwYmM1ZTUzOTUwMzNlOTllNDUyYzJmZjE1NDUxNzY5M2RlYTIzZGVlM2FlN2Q3ZmI5MTVhOTNjNGMyYWZkNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyN2U3ZTU3ZTdlZmU2YzM1YTBmOGZhNzQ4NGU3YTg4NDQ3MGQ5ODQxMmIwODFmMmNkYjYxNGZiODhjNWJhZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4ZDIyNDQ4YTExODA2ZDRlNzhkODA0ZWRmNWYyYmRhMTliYWYwOWZjNTg3OTczMTE0NjFiMThmNTNlMjY1ZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c6b49b241d14d0aae6d52b55c28e26a",
+      "statement": "The worker is composed by a bootsteps blueprint whose default steps are Hub, Pool, Beat, Timer, StateDB, Consumer and the autoscaler component.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L76-L88",
+          "version": "repo-lines-v1:sha256:c3f0910115b26b57cedb5bdff004986ae5142c8ab6dac08f69c06b7b15564c66:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOGY5MzExNjlkNWE3YThiNzA2MDk3NGMxMWVjZGRjNTJjMWVmYmViNzQyNGU4YjEzYmViNDU5MTZhMWJjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3Yzc2OTY1YmJjZjZhODIwOGJjNDVhMGJiODgwNjVjNzg4MWQ2MTBmNzA4NTljZjcwMWRkMGQ5MzI5YjJlMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxMjgxOTJiMTVjNzMyODg4YjEzMGM5ZDgzN2M5NzlhZDk0Njk1NTU3OTlmOTNjNTFhOTVhZGNiZDAxMzdlM2MifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:57:55.789Z"
+  }
+}

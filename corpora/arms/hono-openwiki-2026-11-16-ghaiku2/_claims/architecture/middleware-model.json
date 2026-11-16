@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a6c00ee3dc09615e77682a73f76b6680bcf0e54f5152a02001b73764fe7aee34",
+  "claims": [
+    {
+      "id": "claim_eb9ba96c218544d58483ff75b1438ceb",
+      "statement": "compose throws 'next() called multiple times' when a handler calls next more than once, using a shared index guard.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L30-L36",
+          "version": "repo-lines-v1:sha256:a343c3529a428411d648839b170c89a54c0b64b525b3f2d56e87524bcd6ca3ea:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzdkMzY1ODMyMTQ0NTk4NWVkYTUzODI4MmQ3ZWU3NjZhMjMyODRhOTZjZWY3ZGRiMzMwNDdlM2I4MTI2YzhjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU0OGE2YjZiMTk2MWY0MDcwZDhlNDc1NGJlMzJlNTA2YjMyMTUyZjNlYTViMDAwNTQ5YzI2YjlmMGM4M2FmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDdhZDk1NDQ2NDdiOTVlNjNhZTI3Y2JmODZkMGJiOGI5ZDAwNTUxZGRjMmM3NGRmNjllOGJkYjE4ZDE4ZTgwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWQ4NzliN2E1ODlhMzQ3NDk2NjA4YjI1MGM0ZGE0NWRhMjI2ZjdiNWQ3NjlmNGQ0MzFiNTM4NzAxMjIwYmIxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe54b93605b744dcb2f0a361ab0b8eda",
+      "statement": "compose sets context.error and calls onError when a handler throws an Error and an onError handler is supplied; non-Error throws are rethrown, and the onError result is assigned to context.res even when the context is already finalized.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L44-L70",
+          "version": "repo-lines-v1:sha256:cda3b5f7a73ea26ce21c1e41771a13b5025aa0ca21fbbe9f429f61a63dac4827:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0NTI2MDdhNGYzYTgzYzBjYzdkNjBiMzFiY2VlMWNmNTdmNzg3ODllM2YzNzgxMTUzNTA0NTFlNjhhM2U5NzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlODhmYWMwYzY2ODYwNWM2NzdhMDEyYzk5OGI5M2I5NDU1Y2Q3OTA4N2E4M2JiOGI2YTA3ZWY3ZmIyYjRhNzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0NzA2YWVmODJkNzE5Mzc2M2FkNzI4NjgyZTY5ODZjNGIzNTNlMDNmOTU2YTIzYmYyNmRiY2E0N2I5MTZkZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlMGY3MjkzZDE1NmE2ZDEyNTI4ZGIxMjkzMzc5ZTUyYTVmODM2NzA0NDI5N2IyMjgyYjk3ZmYyYzg2MDQzOGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_886f87f9ff2c493997f18808c3b744f7",
+      "statement": "app.use without a path registers the handler under the path '*' for all methods, and app.use with a path registers handlers under the method ALL.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L157-L170",
+          "version": "repo-lines-v1:sha256:1a44c1c50ac0ae00570a2f2cb68bebee9459dbe160e8d367e21e36d579718faf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0MTY0YzY2ZGFkZTYzMGRhOWQ2ZTk5YjMzYjU0NjMzNTgxZDc5YzdiNTllM2FmZjY0Njc2MGViZTY5ZDZiZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkNzZlMDYxNzE0YmUwZmQyNDRiYWEzNWViN2I1ZjhkZjI2OWZhMjliZTAyMTgzOWM2Zjg1ZWRmZjVmNDZmYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3NzY3YmFkYjk3YWJhMWVjNjJkNjdmYzE1Mzc4MDJlMWNjZWU1NGNiMzA3OTI3MTFhMTA2NDg0MDhjM2JiZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0MmUzZDY5YWM2ZjljM2ViODFhMTk2MGY3ZGU5ZTUzMzcwOWRiMzhmMzA4MmM5MmNkNDgyMzE4YWMzZGIyNWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae9c01a5be8e4a788608f34459fcada0",
+      "statement": "When a sub-application with a custom error handler is mounted with route(), each copied route handler is wrapped so the sub-app's error handler runs for errors thrown inside it.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L209-L231",
+          "version": "repo-lines-v1:sha256:e471d6eab2d03ffff2e52ad3ee4e7314f98239bdfdb8b0192b0df6093cd7ba70:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhZjM4OTAzZmQyZWYxNjI4NWZlYmY1MzgyOGZlOTUzMmY0MzMzZDdmM2RhMzZmOGQ0NWY5MDBkNDZhYjZmMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4MWEwMmVhNzZhODIzYTRjYWEzNTg5NmQzNDdhZDUwYWUwNDAxODcwNDU5OTFkMDlmNWQzNmMwNGYxZGJlN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjN2MxMGQzNWQxY2NlMGI2NTEzM2IwNDA0MzA0NzZmNGQ1ZWZjOTAwZjg1M2RjZDQ3YTQ1MWU1NzY3Yjk3MWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhOTI5M2ZkODA1NGI2ZTQ3MjQ4MzczZjM5ZjRkZDc3ODAwMTA1ZWI3NTgzNDg2ODcyNTQyODVjZDEyODJiNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7db92264b40e4f57b1d18e36a971b6e9",
+      "statement": "Hono.#dispatch throws 'Context is not finalized' when the composed chain completes without a finalized context, which the error handler then converts into a response.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L450-L462",
+          "version": "repo-lines-v1:sha256:2bf056c09ecdbb4a8eec61eba9b29f883180a4f891aa69e0583a7320d785dd5b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMWZhM2Y1ZTY0ZDQxNjZkYTQ1MzdlYTlmNTc4OTg5NjJiYWZlM2FjNTk2YjQ5NWE3MWVlNjRlYmNhMDA3NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyMmI4OGRjMGI0NGJmMmI5Y2QzOTZhOGQ5NWViNDBkZjcyZjc1MWIyYjFjM2IyNDZlZjkzNmIwM2RkNjM4NzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1YzJkZTA1NjgzZWE5ZDRiODAxNDZmYmE2ZTI2MmRhOWFhYWIyM2RjOTUyMzJmNWUxODRiYzM4NTc1ZTg1NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3YTQ3ZWZlYmIwOTU3YmQ2MzRjNjQxYzM4YWY0ZmQ1NjkwNzg1N2Y2ZDI2ODZmOTA0MGNiZjA0MmJkYjViZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56b3a828c0284c8ba72817ed4fa2a04d",
+      "statement": "The default not-found handler returns a 404 text response, and app.notFound replaces it for the composed chain.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L15-L17",
+          "version": "repo-lines-v1:sha256:b9f3b70bca6f3fbb54d608653906c7cb9456b75fd2a75545cbeea8b01a298579:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRhOTZjMzgyYzZiMTQ0MGE0OTVlMDdhOWZkNWEzOTUzMmI3ZDFiYmQ2MTVkM2U2M2UzY2IxNjgxNTJkZjk1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc4ZDFhMzdkNDQzYjZjYjlhZmU0ZGI1MDEwM2QwOGJhNDg5NGMxZDc4OGNkMDlmOGRjMWZiYTMwNDllNGI0NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWFmYWRmMGIzOTFmZWM1MmEzOWYxMDliOTExNjU3YWJlMTkzYzA4NDBlMWQyNDNjODk1NWU1MTIzZGQzODQ1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjY0NDhmNTIzY2IzOGUwM2U3MDRjOGRjODlmMmY3YWNhZGI3MWU5MmZkZjliMmFlYjE3OTU5ZjU5NjU0NjYyZSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

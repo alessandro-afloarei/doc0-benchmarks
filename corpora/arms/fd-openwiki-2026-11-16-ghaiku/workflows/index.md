@@ -1,0 +1,5 @@
+# Files
+
+- [Command Execution (--exec and --exec-batch)](command-execution.md) - How fd turns --exec and --exec-batch command templates into child processes, runs them one result at a time on a thread pool or in batched argument lists on a single thread, buffers captured output, and merges child failures into fd's exit status.
+- [Filtering Entries](filtering-entries.md) - The ordered chain of checks that decides whether a traversed entry is reported, covering ignore and exclude rules, depth limits, pruning, name patterns, extensions, file types, owner, size, and modification-time constraints, along with how each option is parsed and what happens to entries whose metadata is unavailable.
+- [Output and Formatting](output-and-formatting.md) - How matched entries are written to stdout, covering the three rendering paths (plain, colorized, and --format templates), path display rules such as stripped ./ prefixes and directory separators, null-separated output, OSC 8 hyperlinks, terminal escaping, and the placeholder syntax of --format.

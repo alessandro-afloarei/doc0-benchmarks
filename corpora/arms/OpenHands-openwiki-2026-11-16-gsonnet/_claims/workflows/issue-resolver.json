@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:320ba45f6f4f2d1c4093fad5b7cad6487fab617a505ca834e51093e182de8db9",
+  "claims": [
+    {
+      "id": "claim_213a8f120f2c48f0a0bd467407a14bac",
+      "statement": "The resolver is split into two independent steps: IssueResolver produces a git patch and success verdict in output.jsonl, and send_pull_request applies it to a fresh checkout, commits, pushes and opens or updates a PR.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L52-L120",
+          "version": "repo-lines-v1:sha256:74de95d04391c3edefa01af354ced6f83b0f7f29d6ec0ca8531a01658fa55c9c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNmIyMjk0Njk1ZjM4ZTUwMDY2ZTk5MzMzNGQ5Yjg2NzRiYzk4MmUyNTYyOGRjZWUzODhmMGEyNTg5MjU3NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlMGRkMGQzMDY0MTQyYmM1YmQzYjdlMWI2NWU1MjY3NDE0YzY3ZDYzOTM5MjliYzNkZjlkZGMxMTcxZWVlZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhODAzYmM5NjFhZDBlOWZjYzNmMWM1OWVmNTc5NmFiOWJhOTk2ZTYwZmI3ZmJmMTQwYzYyZDlmMDYzNzM3NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzNDdiMmQ2MzljM2RiODlkZDIzNzczYzM0ODA5NmE2NmJmNjYwYTkzY2MzNjBiOTZkZDg2ZDE0YzBjYzk1YzAifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L502-L586",
+          "version": "repo-lines-v1:sha256:b2508526257a88c478f56cbd936754b1cdf15c00e05963a3f3e7e490285081b8:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTQxMzk4ZGRiZTMyOWViOTU2YTkwMDI5ZDBjYTNjN2Y4ZmVmMzAzMmYzOGY1YTE5NmRiNDdlMDhlYjJiZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MDYzNGVjOThmZWU1MDc0NTU3NTFkNmY2MzlkNzcxMjU2NmExY2Y3NTQ0MDAwMDhkMDE4ZGJhMjJiNDg3ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjYWY2MzczZjgwNWZlNzJjZDkzMzc2ZjM2Yzc0YjBkMTBmNjE1Yjk1ZmM0MWRiY2NhMzVhYzQ4MDA1N2JmZTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00182f76899a4318bdc9cb404858ad85",
+      "statement": "IssueHandlerFactory selects a GitHub, GitLab or Bitbucket handler for issues or PRs, wrapped in ServiceContextIssue/ServiceContextPR, all implementing IssueHandlerInterface.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/interfaces/issue.py#L27-L125",
+          "version": "repo-lines-v1:sha256:f8bd6fa4332053299e1fc2ffb7ad030ca8ccaf051f7ecc84c19e6c49041d39ee:eyJzZWxlY3RlZExpbmVDb3VudCI6OTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1NDQ1N2RlNGRhNmNkOTg1YTQzYzMzNmFiZGM0ZDNhN2M0NDZiNzQyNDdhNWEzYzRlNjg4OTQzMjNkYThhM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNjJlNThlYTBiMGZkMTk1YmEwNzY2MTNiNjMwZDU5ZTY3YmQ0NzBiYjE5ZTk3YTIwYzkwMjM2NmU1YmEwZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkYWIxNzI3M2FmOTFjOWQwZTEyYjJiMTVmOTcxYTRkODUwM2FjZTM4ZDMyYzc2NDQ1NTlkYTYwODc3YWM1MWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/issue_handler_factory.py#L15-L110",
+          "version": "repo-lines-v1:sha256:dd38e01b49b8a4a3933e09080b2028e5e77c52a3b01ea891e2fc2f92bfa7b4b0:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0N2EwNjk5NWNkNWExYTU5MGMzNTFkZjdlMjBjZGUzZGEzN2U0YmQ2NjU5OWUxNjIxZjNhZWZiZDkwYzUxOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Yzc5ZTExZjJhMjdkOTllY2U2NzdmOTVlNTllNDVjOGJkYTc0YTI5YTQzYjU1ZTQ1MmJkNzA2ZTdmOGFiNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OGIwNjNkOWI0N2U2NTM3OTYyNTU3MmNjZTE5NzY2OWQ1NzY3ZTEyYzE4YmUwNzU2NTJiOGNkOTgxY2U4ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_65551b5fd1444016b87a5b7b43c5159a",
+      "statement": "The resolver configures CodeActAgent with the github microagent disabled, a 300s sandbox timeout, no host network or auto-lint, and requires either a base or a runtime image (not both), defaulting to the published runtime image.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L178-L265",
+          "version": "repo-lines-v1:sha256:c5bc467ca6288ed49930ed939e606dc7ad14440b9c3e7c97887de6226840fb4d:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNmMxMDNkMThhNmZiZTljNmNhNjU0MmRhODM1N2MzZDI3ZDNlNTY1ZjRiYTA0OTdkZTcwYWU0ZmYxM2Q1YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ZmRlZjgyZDQ1ZTFjN2NmNGJiNGFmMWJjNzc2MmU1ZTA3YWI4ZWRjY2E5ODQ3MzE0MzRmY2M2MDdiOTc5NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmMzFmZmExYWEyZjNkOTY4NmY2NWEwMDAwMDcyNDdjMzExMjVhZDE2NDkzYzJkZjhiYTY5NmZiMDMzODBmYWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0NzJmN2E1ODI4N2VmOWNkYzJmODQxNGVhMjdmZjFkYmJhZDZkYWQyZTE4NzNmYjBhMzMzMmRlM2I3M2Q3NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ba549b9a3dc4ce6a99098086e48735e",
+      "statement": "process_issue runs the agent headlessly via run_controller with a canned fake user response and then collects the patch with git add -A and git diff --cached against the base commit (retried up to 5 times), so untracked files are included.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L309-L388",
+          "version": "repo-lines-v1:sha256:24a51b259323fb41a4d1cfaf5dd9a0fd9d61b6284af555f45400983d64d61201:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNzM5ZDYzMGViYzM2NzNjZjEyN2YyYmMzMjc1MjA0ZTUzOWIyMWQ5M2I4MjE4YTFkYTJhOTdlMDNlZDYxZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYWJjZDBjYzY5MTNkNGY1MWViMjFlNGY1YWZjMmU5MGY4NmQzNmE0NTBiYjQyY2IwNWM2ZjNlMGQ3MDZmOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNzAxYTRlZGM4NWEyZmE5ZjIyZDZlMTU3NzQ4NWJjM2E4NDA1ZGQxNWFhMWU3NzJlMGM5ZDAwZGY2Njk4MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjOGQ0MmE1MDBiNjAxZTdkYmFjYjE3MTE0MmZlMTQzYjNkYTgzMzVhZTMyZWRiOTk5YTc2N2FiMDlkY2EyNzIifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L397-L460",
+          "version": "repo-lines-v1:sha256:018c9706200c8828fda7669280d7d3ae66b05b1a6e02e0430cb30cab63d1193f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYThmODAzMDgyMTNkZjVkNDQ2YWM2NTI5ZWU4ZTcxYTQxMjE0NTgzOWE3ZDFkNThiZGRmOTBkNDc1NDRkNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczZjc2M2I0NTY2MWJlMTljYTQ2ZmI0M2M1ZDFiMzIwMjM2ZjliMmY4YmI4YjIwYjQzOTc0ZjAzNzY4NzQzZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxZDJhOGVhZjVjNWRlZTdiN2M5ZDU3MDI3MzY2NGIzMTMwNTUzMWEwYmExNWE4N2MxYTVhZmNjNmVjMDllYTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_55d64775a72043999f4fff1c033b92c8",
+      "statement": "resolve_issue is idempotent: it skips an issue already present in output.jsonl, and for PR type it checks out the PR head branch and uses its HEAD as the base commit.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L535-L665",
+          "version": "repo-lines-v1:sha256:2881a7b7cc952e998db99d10618f851c7e5d72443723ac7a7e0b8d5b7d54626f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxNDY2NjM0YzViZGQ0YmFkMThlMGI3NDE2YjJlNDJmZmI0MDkyMDVhNjYxM2I0NDZiZmIxNTFjNDU2YThjNzZhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhM2ZkN2NhYzU2MGJjNThhMTdjNGFlYWFhNGNjMTQyMzk3NjA0YjIyM2E4MGE5OGM2ZmQ0OTFkM2ZkZTVmZDA5IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1OGRlNzVlOTNlOWQ4NmNjNjgyZWVlMTZjMzk5YTZmYTU5NDU2OGViNmJkNmQ1MjcwZmRlZGQzNjQ1YTk3MjJkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_669c4d6cf0c2405d9a883bb91de78c52",
+      "statement": "Success is judged by an LLM from the issue, agent history and patch; for PRs each review thread, review comment and thread comment is checked separately producing a per-item comment_success list.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/interfaces/issue_definitions.py#L45-L110",
+          "version": "repo-lines-v1:sha256:607fe93f280494b56f4780867a48c3f296051cc6e9f6762c1a0eb751a531f066:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2ZDRkMzA3YzRmYmZlM2U0MjViYmFmY2QzOWVmM2Y3ODk5OTY5NGM4ZDA0MDM2MTVlOTM4ZWE3ZTljYzM5YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmZmRiNmUwMTJjZDEwOWQ3MGMyYzUwNjRkYjY5ODQyMjM1NmU0ZWI3OTkxYjYwZTEyOWI3NDQ4ZjRkNjI0ODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzNzQwZDFmNDZiNTAzODZjMjBhNDEyNWZlZmY0MTVmZDZkMDAzMGFhYmEwMmE5YTg3ZDJmMTNkOTg0MzFmOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2ZTYzOTkxM2Y3OTc3ODVkYTczZDQ4NzFhZmNjNjFmNzY1NGMzNzc3NWJjM2Q4Y2ExYTFjMDhmNzdmMTdmNjkifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L460-L515",
+          "version": "repo-lines-v1:sha256:d4dfcbdfc0cc97345d9f5fcc63059b6100da7f6813fc18a474b05d1dc0d3e1f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZmZiNzNiYjI3ZWZiMDQyYTMyM2QwZGMyYjJmMGYwZDhkNmI3ZjBkYzI3NTI5MjM1MjEzNjZhM2Y2YWU4NTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyYjU1MmNlNzFmNmMzYzBlNTkwMDY5N2U0NmJmMTZkMzYzZjdmNTc2OTE0NTM0NGY4NmM1NjdkMzNkYmJlMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmOTQwYzA0ZGI4OTJlODM3NDU3NGVlNTkxNzMzMzY1ZTFiYjVjYjc3NGFkMGNkNmE3ZGNmMTg4YWMyNzI2YTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3045c2839d9c4253aa8ca5e590be78f6",
+      "statement": "If the agent crashes the resolver still collects the patch but records success=False, empty history and the error in the ResolverOutput.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L428-L515",
+          "version": "repo-lines-v1:sha256:b89ab0020269468887d62349750960eeca3e037d93a21d07dc231d5637032258:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZmZiNzNiYjI3ZWZiMDQyYTMyM2QwZGMyYjJmMGYwZDhkNmI3ZjBkYzI3NTI5MjM1MjEzNjZhM2Y2YWU4NTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlZTRiNjdkZDc4ZDkxNjY5ODAwYTAyZTUwN2I5ODVjNzQ3NGQ4YTI2NjYzMzYxMTI4M2QxYWI0NzFjMTI1MmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmOTQwYzA0ZGI4OTJlODM3NDU3NGVlNTkxNzMzMzY1ZTFiYjVjYjc3NGFkMGNkNmE3ZGNmMTg4YWMyNzI2YTIifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/resolver_output.py#L8-L20",
+          "version": "repo-lines-v1:sha256:08f321801977e1ec4a3beb53a7351f81e795fb695e32c6d9b6d7f13361347d01:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5YjI4ZTZhNGVkYmQ5NTc5Yzk5ZDQ0Nzg5ZDAzZDRmYmJiMjU0N2I4OTVlOTYyZWE0MGE4MzQzMmFiODRlMTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1OTE3MzliOWMzNjg5ZDAwNzRlNWE2NmFiZGQxYTA2OTQ1YzAwMzZmZWJmYTBkMDE4NTFhNWY2NGY5ODFjNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiYTM0NThhYjY4MWIzNmE3ZWNkMWNlMTM0NTk3MzZlNDExY2RhMjQ0NGNiNzVlMTQzOTdhYWJiMTBhODM2NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_025ff4a74a2142c09eadf038a4d39a74",
+      "statement": "send_pull_request creates a branch named openhands-fix-issue-<n>, pushes it to the original repo or a fork, and creates a branch-only link, draft PR or ready PR depending on pr_type; process_single_issue skips unsuccessful results unless send_on_failure is set.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L233-L392",
+          "version": "repo-lines-v1:sha256:b65b90098f94c8975c3cd76c5b590df077704b95cee1c957a6ca9ee6273d6241:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyODgzOGM1NjVkNmM1OTU4MDI1YzZmYjZmZmM3YWNlNTZhYmY5NWVmN2VmOWYwZjM0NjZjYzBhNzQ0NTc5M2Q0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiMTJjMTI2ZGM4MmEwZWVkZDA2NzE0M2IzOGU2ZmIyNmRjMzUwYzhjODA1MjU0NjUzNjllM2U0YjI3MDM5ODM0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0Y2NlY2QyNDU5Y2VhNzk3ZTU2YzYxMzI0NzFjYmZiMDFlNzMxYjE4NDA0NDcyMzNmOGNlYmY2YmY4MTA5MWFiIn0"
+        },
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L502-L540",
+          "version": "repo-lines-v1:sha256:5490d36fa39caa89df12fbe92d72152564497065bd9f9d93e6668f3f4cea5198:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NTQxMzk4ZGRiZTMyOWViOTU2YTkwMDI5ZDBjYTNjN2Y4ZmVmMzAzMmYzOGY1YTE5NmRiNDdlMDhlYjJiZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlOGI0NDM3Y2E5MjkwM2VkY2I0MjQ4OWFkNGQzN2VjNDJiMTUyYmMwMGVhZmY5NDk4NjNhYmE1NTIxMDQ2NTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MDYzNGVjOThmZWU1MDc0NTU3NTFkNmY2MzlkNzcxMjU2NmExY2Y3NTQ0MDAwMDhkMDE4ZGJhMjJiNDg3ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4Y2UwNTYyM2ZiZjE4ZmU3MWQ1ZjhhMDY0ZmMzNGIzMmVhMTEyMTBiZDdlYzExM2UwZWMyZTIzYjQ3ZTMxNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5ba04b193664fd1966c85a2ca9678d1",
+      "statement": "For PR-type results update_existing_pull_request pushes to the existing head branch and comments a summary built from per-item explanations or an LLM-generated changes summary.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L393-L500",
+          "version": "repo-lines-v1:sha256:1fc5772b4689d7bc903961c2b0cd9c3d8ebc5f345e14c8d0213d84aa687eb292:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYjdkYjE2MzM0ZWY4OGYxOTY4NGZhY2EwMmJlM2UwMzFlNGMyNzRkMDU2YTlhMWJjYzdlNTcyMzBjNTM4ZWYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1N2IyZmQyYTA2Y2FiZTljYzM2YTgwYTZhMmNmZDhjNTZhOGYzOWNiYzhjMmVkMTUwMjY0YzA3ZmVkN2Y2NzcxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmNTUwMjFmYmU0OGMxMzIwOGIwY2I4Y2UxNzQ5ZTFiNjJhNTczMzUwYWVmZWMzN2FjMzAzMGU1ZGM5NTczMDU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_0622296f26c84c79a8a069b588cbbdc0",
+      "statement": "A reusable GitHub Actions workflow (workflow_call) exposes inputs such as max_iterations (default 50), macro (@openhands-agent), target_branch, pr_type (draft default) and LLM_MODEL.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openhands-resolver.yml#L1-L40",
+          "version": "repo-lines-v1:sha256:5e8ff97d6974bf55c6e5d2eb55a99123488e2f5304e7a0c6643bfaa8a5afe538:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMTMzNTI1NDE0MTYyYjU3N2VkY2JjZThkMmNhMDI5YzU3ZDQwZWU1Njc4M2I3OWFhNzRlNzhhMjI4YjJkZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyYjNiMzg2ODk1NjgzMTUxMTQ0YTZjYzc0MTYwN2FiODI4YWJlYzMxZTEzYTYyNDZhYzlkZjYyMDdhZjE1YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3MTZkZDg2MjkyNDliMDc2YmRlNzIzYWIzZTc5NTNlMWFiYzc5ZTk5YmEzY2YwYzgwZWE2ZDljMmU1ZTU5MTkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:97179efc4de1d6d276d007a307a1ed85e160b2d9f3dbdd3f2ba860326a746724",
+  "claims": [
+    {
+      "id": "claim_d01538d87bd2410a96fa2a115c5eeefc",
+      "statement": "fd is a single binary crate (package fd-find, binary fd) whose modules are all declared in src/main.rs.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L17-L33",
+          "version": "repo-lines-v1:sha256:d535c3d46d01bda893d8cca692169ba3eeb1c8cae4e7012ce981cab20c2b672c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1MTNlYjU1ZTU1NDljODIwOTE4MjcwODRiMGQ5ZTg1N2ExZjMwN2RkZTJkM2ZiNDExZmU1M2RhODBiMmE4MTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyZGY2YzcxNGM5OTRkMDhkYzg1YWFmZmU2MWVjNjRlMDI1NWJlMmI4YmY2Y2NhYzc1NmYxNzkwYWM5OTQwYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjYWMyMjg2ZDc4NjVhZjg4NWZjZjhmM2RjODI5ZjdlMTYwMTJmNTdkNGY1NTU4MGEyYjU4NjM3NmNmNTI1NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmMDk4NTAzYTBkZDk0MjgyNTUwZTZlNjc5ZGJkYmZkOWJkMTg3NzA5NDJmN2JmNTk3Nzk5YzhmOTQ5YTQ5NjcifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L1-L15",
+          "version": "repo-lines-v1:sha256:d31b540c87d182d24af996f20c3dc6bc802758db858271fc36f525bdd7bbf1a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzZGVjOWE0NTk4ODExNzhkY2I0NGE5ODY1NzU4Mjc2ODEyNmJmOWQyNzNhN2JmYmQyY2RiNWRlZmUxMmU5OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NzAzZjIyOTE0NjlmZWJjMTQyZjNlMjQwYzNhYmUwY2Q2N2YzMTJjM2Q1OTUyNTJjYjBhN2UxM2I2NDkzZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyZThkZDNmMzI0YzQxMTNlZTgwZjdiNzVjNzI4ZDI1YTA4MTc4ZWVmNzAwM2U0ZThiNDAxYWQ1NGM0MWMwZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_613e8c5bcc5840818922e0f305b7da04",
+      "statement": "A run flows from clap-parsed Opts through construct_config into an immutable Config and compiled regexes, then into walk::scan, which either prints results or hands them to exec jobs.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L75-L112",
+          "version": "repo-lines-v1:sha256:787bb438302092d0f1e10a4be99cdf40b923ce013f7842ecdc60f1e20d3be880:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMDdhMGM4NTA1ZGU5NGNhMDcxOGQyMDhjYmYyM2U1YjAxOGQ3YTJmZjY3Yjc4ZGE3Y2M4ZTdlMDBlZTM4YTcifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L408-L440",
+          "version": "repo-lines-v1:sha256:11b4cecb9bbd95f6d414b6af13877702f82164fca27d7228394e7e83e27023d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViM2ZkYjcyY2ZkY2ViYmEwNjNlZDY2MWM3YWYyM2RjMTczMWM0YjU4YzA2Y2I3YWQzZjYyNDYxMjI2OWUyZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiMGM5ZTY1OTdkMGUzY2M2NThkOTUwYzllOWJkMDk1MTA1NzJlZDJjNjRiYTQzZDg0NzlkMDBiNjU1NjkzMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxZWMyMGY1MjcwYzUxNjQ0ODU4MzBlNDZjYjZhYjIxMmRjM2Y4NmRjZWRiYTJiMjllY2M1YTE2NDk3YjdkMzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1848295f6eda485aa5ca5d89c8915e68",
+      "statement": "Directory traversal and ignore/hidden handling are delegated to the ignore crate's parallel walker, with results passed over a crossbeam bounded channel.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L347-L404",
+          "version": "repo-lines-v1:sha256:29a70bb281fdea322430e729a24287c2eafe23d71e4b338f3adae5d4b90dc642:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOTU2Y2Y1ZDg2YjkyZDgxMGEwOGU0MjE2NTI1NGMyZjFmMzFkOTQzMWZjMGJjNTQ2MjVjNThiM2NlZDM1MjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxYjIyMDlmNGJiNDMyZWExMTBkNzA1YmFhZjM1MDRjYmM3YjRmYTEyOGJkNWY0NmM3MTlmYWRhZjAzZjUxMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiMGM5ZTY1OTdkMGUzY2M2NThkOTUwYzllOWJkMDk1MTA1NzJlZDJjNjRiYTQzZDg0NzlkMDBiNjU1NjkzMDQifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L636-L636",
+          "version": "repo-lines-v1:sha256:07d922b905c2311954a2e84b447b0e5b60644d2ad6da43e0f1a39ea0def1a45d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdkOTIyYjkwNWMyMzExOTU0YTJlODRiNDQ3YjBlNWI2MDY0NGQyYWQ2ZGE0M2UwZjFhMzllYTBkZWYxYTQ1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdkOTIyYjkwNWMyMzExOTU0YTJlODRiNDQ3YjBlNWI2MDY0NGQyYWQ2ZGE0M2UwZjFhMzllYTBkZWYxYTQ1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODFlZGZjNjczYzM0NDFlNTM1NDNkOWFkZTRjN2M2NWEyMjBiYmU3YTBlMTY5M2IwMmZhOTM2MDExNDhiOTQ3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjZkOGEwMDNjMzcwYjFhNDVjMjA2YWM4YzE3OGUyYjQzZjA4NzM5ZDFmYmJjODAwNjUwYWFjNDM2MzYxZjE1YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b8034df2d284b758106249d154a9d20",
+      "statement": "fd uses argmax for command construction that respects OS argument-length limits, lscolors for LS_COLORS styling, jiff for time parsing and etcetera for locating the config directory.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L35-L60",
+          "version": "repo-lines-v1:sha256:501d1470fd696636372a2d49baa33ad9ed687c0d2c8fbd7f3ef5441ebd5e3e8b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0ZmNiNDUzOWZhYjQzNTFkNTViNzMyNDc3ZGI3NzJmOGI2NGI3NTA4MjEyODY5Mjg1NGY1ZDBlYTMwM2VmZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0MjU0NzA2MmZlMWRiOWY5YjU0ZGVlOWQ3M2I1MzY0NDY5YjA1ZWJiYTA2MTFkY2MxMjFiNzFmNTMzZGM1NjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3ODhjOTVlMDhmZTU2ODY1YTA4MTEyOWRkMzQxNTczNjFjMzExYTdkOTkwNDE3MWY0MGZhMmUwYjg5ZDU1ZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiODUxZGEzMWRhOTNlODIzMGI2ZjdmMDEwNjFmMmM3MDMzMjViNGNlZmJhMDRkZjRmMDhkNWI2NDc5NzMwODYifQ"
+        },
+        {
+          "resource": "repo://src/exec/mod.rs#L11-L11",
+          "version": "repo-lines-v1:sha256:1a369334d122b8a9423f04fad62a24b1efbe925343e4a9bc9da4c926d3b9eb02:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWEzNjkzMzRkMTIyYjhhOTQyM2YwNGZhZDYyYTI0YjFlZmJlOTI1MzQzZTRhOWJjOWRhNGM5MjZkM2I5ZWIwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWEzNjkzMzRkMTIyYjhhOTQyM2YwNGZhZDYyYTI0YjFlZmJlOTI1MzQzZTRhOWJjOWRhNGM5MjZkM2I5ZWIwMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmE4YzA1NDQ1N2Y2YWU3ZTRlMTkwYzU1YjBkMzdiMTkyOTIxYmFhNzVmMTRiMmQ5OWIwZDJmZmVmNTBkYmE2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2NkOWE2NzhlNjExMzEzMDM2OWRmZmVlMWJjNDA1OWE1Zjg1ZjE1YTk2MGNkYWE3OTdkNmVkNzkzMTkwMDc1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:05:54.272Z"
+  }
+}

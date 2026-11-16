@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fbcd6f02e06629d5f7a19211dc97e56610d47851f343c2a7f880d56b918d2f6e",
+  "claims": [
+    {
+      "id": "claim_5c02d23267d14d6caae72be142cf3941",
+      "statement": "The CLI entry point tries a lightweight fast-help path (no heavy imports) for --help/--version, defers other imports, and injects the 'cli' subcommand when none is given, dispatching 'serve' to the Docker GUI launcher and 'cli' to run_cli_command.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/entry.py#L1-L52",
+          "version": "repo-lines-v1:sha256:bc64b48e1293964d1f0d4c6b471a5306623cc037d288e1cc302d846b5ec0c56d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMDBjMzdlNTI0NmE0ZDQ2NzVmNzhiMDg0NjFjZWRmNTRkZmJjMjg2MzAwMjVhNTRmMDg2ZDBhMmJiMWZjMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZTk5MjMyY2QzYTMwOWY1MGNiZDZmNjYyMTI3ZWVhYWZjZTFmNzM2MjkyZGVmYjExM2Q5ODFhMjBjN2Q4NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://openhands/cli/fast_help.py#L1-L15",
+          "version": "repo-lines-v1:sha256:901bba2347cb96a9ba36bf67593c50a240e90c2a4acde24b2f56c9f2cf7bb249:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3NmJiMjFlN2ZiYTUwNzllYjE0NjgyYjAzMjE5OGI2YTgzZDhkNzU2OTg1NDRhNDE4ZjVmZDUzYWU2NWU1OWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1M2U1YTUyODYxNzJmYjBhNDc3Mjg0M2JhM2VkNjIzMzE2ODdiY2I5OTM5ZWM5YzQ5ZTkwNjZkNGVlNDI3MmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyOWQ2N2FlMzljZDAxYjllZDZkN2Q1N2JlYTFhYjhiYjRlMzNiZTVjZTM0ZGIxNTdjZWZmNzEzNTEzMjY4ZTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cee69ccee4ca456ba31ce6b66d16b80c",
+      "statement": "openhands serve launches the GUI by running the app Docker image with the Docker socket mounted, SANDBOX_RUNTIME_CONTAINER_IMAGE set to a pulled runtime image, port 3000 published, and optional GPU and cwd mounts.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/gui_launcher.py#L76-L219",
+          "version": "repo-lines-v1:sha256:5cbea1272b9c0b131d9f79c0edda287de45ee717f22ecd17c4a86b6922614a02:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzMmJiNzFkMTZmNzExMTIxZjg1OWM0YTc1NTY5ZjAzZDYyNGZiZTZkOGQ3NjE4OGI0YmZkODc0YjViMGFjZGQ0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4NjlmOTIxMDIzMjk4NzNlZmE2NzkxMGFiM2M3ZTNmMWEwNTU2YjU0ZTU5MjY4ZGMxNDlmYWE1YjkyZjQ2ODBlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2MzAxN2QyY2E2YzMzMmZhMmQwMmEyNjUzZGVjNTM1ZDI5NjliMzdjY2ExNDU2OTY3YzJmYjk4M2EwYWUzYzU4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb3e9a2e0a014c2c94fcc94448cf80e2",
+      "statement": "Unless --override-cli-mode is given, the CLI forces the cli runtime, workspace_base=cwd, confirmation_mode on, the LLM security analyzer and cli_mode on the agent config, then re-finalizes the config.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/main.py#L660-L683",
+          "version": "repo-lines-v1:sha256:3b3d4a2cf2df4c6a5f6b87741d7a484b1bdcb490d0c32407b91a3f207d7e01cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzN2U4ZmVmNTQ5ZjIzNjcxOWIxYjQzODY4MDBhNjkwOTM2NTQ2Y2FjMzRkYWM1YmM2ZTg2NjEzZDhkYTA4OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkY2ZiMGI2YmY5NTczYTdlNWFlMjczNDE1ODQ4Nzg5NGY3YjM1NjlkYjEyYjBlY2QxNzBmZDg1OWYzMmNkNjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhNmIyNWI1ZjQ0MDNlZjAxODMxNjRjMWJiZWQzMjJhNDJjMDM1ODI1MWEzNTk0ZmFmMjFiZWNlZDgwMGRlNGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4YTM5MmUwNmM4YzIyY2I3M2YzMTU4NjkwMmU5YTVhN2RmMzY3ODI3OGE4MTIyYzg1MDIyYTI3YTQ4ODg5NjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_be539fd185c44a1db895c90f418b7bda",
+      "statement": "LLM config precedence in the CLI is -l argument, then config.toml, then ~/.openhands/settings.json; settings also select between an LLM-summarizing and a no-op condenser.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/main.py#L596-L658",
+          "version": "repo-lines-v1:sha256:b20dfb5de51908c730416d3df63c51e58beeae50968abaff305ce9785807a377:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMWJmMDk5Mjg5MjFiMThhZTdmZDM3MTZjOTRjY2UxMjM1ODkyM2VkMjE5YzE5NjBhN2UxMGFmNDZkMmY5Y2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhOGZhNWMwNWJlM2Y3ZTlmYjQ0ZjRhYWY3M2EzM2UyNDU5NDliNGI0MjcyMmRiYTZlMzA2NTZjZTcyOTFiZjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5OTI1NWE3MTE1MWM1MzhmMWNkMDNlNjk5NjkwMWJlNWMwYzcxYzgxMjM1YWUzOGQxZGE2NjI1YzUxN2IzYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNDFjYjYzYzAwMDdhNmM0NGI3NGQ2YjJjZDNjZTRmOTRhN2EyY2RiZTM5YjBkZDFkMjBjYTc0OTRkMWM0MjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_129250ec0b854736bc58bb2a7ed63dbe",
+      "statement": "In the CLI, confirmation policy is implemented client-side: on AWAITING_USER_CONFIRMATION the CLI prompts (or auto-confirms in always/auto-high-risk modes) and publishes ChangeAgentStateAction USER_CONFIRMED or USER_REJECTED.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/main.py#L214-L310",
+          "version": "repo-lines-v1:sha256:fbd6bad78624869fa4b2aa598eb2141224b077d910e35ff0e000df76c1864080:eyJzZWxlY3RlZExpbmVDb3VudCI6OTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzZjBmYjkyYzU5MGE3MDk4YjhmNGFjMTBlN2VjNWFlNWY5Y2UyM2JkOGQ5NTEyZGU0MzRkNmZlYmJiNmM3ZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyNTY1OTQ2N2UwYWJjY2YxNjMyN2RkODY5MjcxNjQ2MzMzYjZlODQyZWQzNTdhMjc4MWFhNjhlZmViZmI3NjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhNGJhNWM1N2UxZGY2OGVmNzZjZmU5OWU4MDJkYTY0YWNjNDkzNWQ1MjcwMjkwYTU3YWEyNzBkM2QzMmYyYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkMzJjNzM1NDk3ZDMyMWFkZTI5YjIzNjNmZDdkNjY3MzBiNmU4NGNjNzIxMjNjMzQyY2FmMDM2MzJjNTYzM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e067662da97424bba4996f3b494e3f6",
+      "statement": "Slash commands (/exit, /help, /init, /status, /new, /settings, /resume, /mcp) are handled by the CLI; any other input becomes a user MessageAction.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/commands.py#L122-L173",
+          "version": "repo-lines-v1:sha256:fe73402646df154c369bb0462f9515b86db06550c77662edd979e216e75b5fcd:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNWIzMGEyOGY0NTkyYmVhOGZhMmJlYjc0NmM2YzJlMDA3NDM3YzkxOTA5NmUyOTBmMWI5Nzc4MTM5YmY5Y2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiZDFjZTY3ZjBhMWQ2N2RiOTE4MWFhOWVkNjY2NjVjNmJhMGQ1YWFkY2U1ZjYyN2YyNTQxMWI0MDJjNDVmZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwNDc0NzlmOWFkZDc3NjljMzc0N2E2MWEzOTc1OGYxM2QxNTgyMjgzNjZhYTBkYWJjMThiOGI1OGZkY2ZlY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0YjYzM2RjODY0YzVhMGZkNzY5Yzg3OTJkMjYwNmU2OTJiZDEwZTVlZmE3MDRlYWQxMjk4M2Q2YWEzYzBiOTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_13db37fa7bb340079a4f38730f3764e2",
+      "statement": "run_agent_until_done installs a shared status callback on runtime, controller and memory (refusing if one is already set), turns error statuses into ERROR state, and polls until a terminal state.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/loop.py#L11-L45",
+          "version": "repo-lines-v1:sha256:7e77c39636dda929a242bbbf0c82721c834842695dcb7dbe08cded50aeea9ec7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2OTRhMDE1YWFhNmY5OGE1MWRiODNhYmQ0NDc3MDcxOTA1NDQyNTc4Y2M2YjYyZDI1NDE3MTEzNDhiNDZhODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkYzEyZWVjOTZmMmJiY2M3ZTMwZjUzZWRiMDFmMjg5YjhjY2M0MGJjYjE2NGU2ZDE4MmU1MWNhNjZiYmZkN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyMTJlNjA0Y2Q1NTIwZDM0ZmQ4MGNiOTFiNTI0YjBiNjQ0MGM2MWFiZDM1NmJlNDU1ZGU3MDQ1ZjQzYzViY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

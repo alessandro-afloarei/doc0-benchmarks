@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4b662b85d797446e4a4b3df21a1368c3d55280d6e7b20498d25022a53104c822",
+  "claims": [
+    {
+      "id": "claim_4d3242064e2844faacdc4c87b1da5220",
+      "statement": "The html helper escapes ordinary strings, flattens arrays, skips booleans and nullish values, and supports escaped values and promises.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/html/index.ts#L11-L57",
+          "version": "repo-lines-v1:sha256:e5a518a918703d46e1f6b80bab61fda2c6e367e25356a277faf2a3a221b98e57:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0NDlmNmM3MTYwMzFhMjBkNWMwZjU5YjQ2OTQzYWIwOGIzNmU1YzhlMmUwZTQ2NjU3MzVhNmYzYTRmZjI2NDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4MWFlNjQ5MTY3MzY1OWMzZTAwOTg2ZGE0Mzc5NjcyZjcyM2VlMDE5M2UzMWE5ZDcyMGJhZDNmYmJlOWUxZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_21fc8483c4634100b832155bad99ffa5",
+      "statement": "raw marks a string as escaped rather than sanitizing it; server JSX escapes string children and attributes and rejects children together with dangerouslySetInnerHTML.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L108-L125",
+          "version": "repo-lines-v1:sha256:e55caa6f67925c92ef4ee03d3b3fc9983a5edde7565e95c77b6b080e78df21b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5ZjA2Y2NmOTI4OTY0OWRlZjNmZmNhZDIzYWNmMjM2NjFmZTUyMzA5YjgyYTRlMTY5N2Y0YTJhNzc1ODExOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiYzc2NzQ4NjI5YThlYWFlZmMyYjg3ODY2ODVlZDUyMTM2NTBmNWY5ZWNjMzBmYzUwMjNmZWEzN2ZmZmJlMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4ZDE4N2MwOTUxZjljMWJmOTRmMzJlNGNhOTM5MmNiNGI1NTcwMDZmYWU0MzE0OWUwZGM3OGRiNjZjZGZhMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxZDRhN2ViMTI5NDQ2NDMxMGI4MmM2ZTk5YWEwYTY3YTcxYTA0ZWMzNmY4NWQ3M2E2NWFhODAwZDdlNWM2MGQifQ"
+        },
+        {
+          "resource": "repo://src/jsx/base.ts#L190-L239",
+          "version": "repo-lines-v1:sha256:426f4ef2d6cd802eda824eba1c3ca0093a680e331288705501093b6f3d3a0dbf:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0OTUwNzBlNTg1MGM0MWVmYWUyNDg3MjkyODNiNTdkZDg3ZWUwYmVkNTYxNzcwZTE4MDk4NTg1Y2EzNzdkYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyYzhhMjkwNWQ4NjhlNmNhMmFiYzE0MThiZGRiYTFmNTRlNWYxZDllZmNhMGI4NzY4YzQ5ZjczOWE3ZmYzNTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxZTk0MmU3ZDkyN2NmZGMwMDJkYTQxYTNmMDU1Mjc2NjM4MmE4NGRhOGM4ZWRiYWIwNzhiYmY3YzYzMjliNjMifQ"
+        },
+        {
+          "resource": "repo://src/utils/html.ts#L40-L46",
+          "version": "repo-lines-v1:sha256:a4aa0508b4fc14e3cd0725cc9af55c65d6226eb0bafde43f00a3f85c50f59087:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E4MTQ4ZDUwNTk5MmYzYThkYmYxMmE3ZWQwZjdlZmQyZGFhOWY3NTNkYWVhOTcxNjFlZjE0ZGFjMzgyMWYwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzY0ZjkwM2ZiNWJkMDUwYjc1MDk2YmI3Njc4MTk3YWRlMTZjZTM1ZmJhN2I3MDZjM2MyYzkyMzVhNDdkOWZiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBlNGU5NTQ5YWExNDE4Y2FhYjhiMTVkY2U5NTZiZWZkZmZjN2FmZjcwNzE3ZThiNDVmYzg0MjgyNDcwM2U3ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_228a0667be144c9bb6dff751ff1af84e",
+      "statement": "jsxRenderer installs request-local rendering and nested layouts, provides RequestContext, and selects buffered HTML or a readable stream with configurable headers.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L114-L129",
+          "version": "repo-lines-v1:sha256:771eea3b716383e85fe4226761e3a86035f3760dc63f3b1fb0b8e27c389abbba:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1OWUyNDdlMjhmMmE4NTM4YzA4OTY0MDc1NjUxNDY0NTYwNDI2ZThjM2YwMDQ2OGUxYzg2NjIzMGViMzdhZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjNjBiZGVhZTJhZjdhMmFiMWNhZmNkZjA4OTc5NGUxODY1YmQ0OTE4NTE3YmJiMjQwMDUxOWMyNGQ1NjRjODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4NGQ1ODYwYjkwNTdmODNhNzU1NDdkZTQ4NTlhM2ZjYjNmNjAyNWIwY2E5YjJiZDRkZDY3YzgxMDc3ZDhmMzEifQ"
+        },
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L35-L89",
+          "version": "repo-lines-v1:sha256:05e2ddece757b24c2704b668f12d0058d17546113074ce73a1710dd6e6aabea9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYTIxNzllZDQ1NzY3OGE4MDRhNTkzNWM3MTEyNzhkYjFjNzg2M2JhZWVhZDRmMGU3ZTQxZWJmMDJmY2QyMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4YjQzOTk3MTNkN2ZmMmI0ZDUzNjFjYjMzOTM3MGZkM2YxNDcwNzNjOGUwYWZhODdkOWQ4YzcxMDNmODM3ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5NGMxZGNlNDVhZDFjNTkzNDYyYWNjNmY3ZjY2ZTQzNDM1NDVlYmU1NmIxMWU2ZjdmN2M3OWNjOGM2ZDg2OWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZjUyYTJkOTc3NGM4NmM1NWU1NjlkNDcwOTk2NmM3NTllZGVhMDdkYmIwNjgwZWRjNzUzZjYwMmRhMzQ3NDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ceef28d6e0d40a98f0d2e429ebfa3a9",
+      "statement": "useRequestContext throws if the rendering request provider is absent.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L155-L165",
+          "version": "repo-lines-v1:sha256:3a39298c3be144a55d72c47fb079c9408cc9995df7c23e2a7a15aa2073d8bdb6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1MTgzNGMyMzZlNDNlNGFlYTM4ZTZlMDVlZTU2NzFiOWViNDVmNjNhZDcwN2JkZDQxNjgxNTkzNzFhNmQzNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_958e4d0cfe724ff6af79c4f7347316f1",
+      "statement": "DOM createRoot supports repeated renders but rejects rendering after unmount; hydrateRoot creates a root and renders it, and supplied root options warn.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/client.ts#L23-L83",
+          "version": "repo-lines-v1:sha256:d69e9b9adfd99aaaa3f6db2c61897cd7d1e80f9b97eda4687eae0ff0d2fbffb5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZTNiMjRhYjVmOWM0YzZhODRiOWE2NDg4OTU3NjY4MjRhMjM0MmE3MjkyY2I2N2U5MmI3MmI5ZDQ2MjcxY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkZWJiNmEyN2M1NzJiZjhlYTY3ZDVkYTYzNTg2MDRiNDE2MGJmOTVhMDg0YTA4MDJiMzE3ODE4NWYyYWE1N2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmZDhiMGFjYmNkNDgzM2JhZmE2ZmFjNjMzZGM3ZTJhNWI1YzFkM2UyMzM1ZmE1ZGU3MmNiYmFmMGM2NWM3MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2OTNiZTUwZTkwZjEzZWQ2NGY4ZDA5MDc3NWQ1NWNlNzhiZDI1NDA2M2Y3MTQwYmMwMzcwZjRjNDMyZDEwNWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df5197f7f189420eb6760521cbad3390",
+      "statement": "The DOM server wrapper rejects asynchronous renderToString output and supports only onError among its readable-stream options.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/dom/server.ts#L24-L34",
+          "version": "repo-lines-v1:sha256:9c40487d212c32638618ec0a1102a39950565c926b48c0c8db893265a4ebf56c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MGQwN2I0YWM1MjUyMjJhNmUzZGMyYTA1OGFmZGY0ODMxZGRjNjAxYmU2MTdhMWY5M2NkNjEzOGZkNjkzOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YmQyNWMxNzZjYzM4NTIwMDZmZGM1NWU5ZDY0OGI2NTVjOWUxY2FkN2ZjODhiNDI2OTczZGVmYWRlMzc1ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhOThiNTY0MmNlOTQ1ZjdjYTg2ZGQ2ODZhNDI1NWU3MzQwMmZiNzc4MDM4MTY1MDkzOGMwMDdlNWQ5ZThhZTQifQ"
+        },
+        {
+          "resource": "repo://src/jsx/dom/server.ts#L48-L62",
+          "version": "repo-lines-v1:sha256:b9597564934f79fc093e49f89a8740a5f800aede8bc9bee528d4bcae316efd6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxM2MzZjk3MDc4MzA4MDE4M2Y4OWM4NTM0NmFmZTc2ODY5ODQ5ZGFjYTkxNzE0NWVjYzdiNDlhYTc4MDZjY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkZTgyZjNlNjVhMTZlMmE0YWZmOGVmZjVjMGQyOTM0MTVhNzk4OTdlMjdmMDIxYjk3ZWEyZTJlYzVmYjgyNGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0OGYxNWQzMWVhMzVmZDgzYzM4MjkzNzFhMmE3YjFlNTAwZWY4ZGE1ZDJlNDAwMDY0ZWQ3MTI3MTlhNzNlNzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0ODMzMjZjOTEwNzM5YTZlNzE3OTE2Mzc4Y2RhNzZkODMwZWM1MmY2NDkzNzlhN2JhYmM0M2I4Y2Y5MmYwMWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03b8d547f6324c5985881b881f5e3291",
+      "statement": "Vitest defines two DOM JSX test projects with different JSX import sources.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L50-L73",
+          "version": "repo-lines-v1:sha256:99804a86716397b5a8e3056e62bc32478bf9a784a4d99ba86ad935fff3cf41f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMWUxZWQ4MGQyYTI1NDZkMDg5YTY2YjI2NDE1ZDBhMmM1ZTljYmI5MDg2NmZlZWZhMzJkNWNmZTljNjU3OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjZWQxNTQ3ZjNiY2IwZGViMDczMWVlMzZkMWFjYTg2NTc1MTY0MmRhNzkwYWJjZWFhZDRlYTE3Nzc5NWNiNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:36:56.362Z"
+  }
+}

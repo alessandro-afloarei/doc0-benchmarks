@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:adab7ffc8d7cc73cd649993f3f0200e7de9fb04cd7ca9482d02d3b81d57f6f66",
+  "claims": [
+    {
+      "id": "claim_8a94dc497228408ba8861b4552a43fd7",
+      "statement": "webViewInit, run from common renderer init, sets up the webview element only when webviewTag is enabled and the page is not itself a webview guest; with context isolation it hands guestViewInternal to the main world via a hidden value instead of defining the element directly.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/common-init.ts#L1-L40",
+          "version": "repo-lines-v1:sha256:1a5321ec87fd8ba36aed61d1a78a7f7a3e5e34e514e376bbbf48922b48d7dcd2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0MjVjZGUxOWQ3ZjljZDc1N2IxNTA4NzUyNDk3NWQxY2IyMjY0YjVhMmMyOTkyZWRmMDQ2ODU3NGE4ZjlkY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2MzdhZDI2ZmY4NTlhMmRkMjQ3YWE1YjA3ODk0YTBkNWU2NmQ1NTg4OGE4MzNmMWYyNGYwZjBhODNkMzYwZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3ZDdjM2NkNGU3ZTFjMDFjNzVmNWY4YTY1YjRhMTM0MzA2YTE0NDYyMmM2YWFhM2Q0MmVhNjBiYmNjMDg3ZGYifQ"
+        },
+        {
+          "resource": "repo://lib/renderer/web-view/web-view-init.ts#L22-L42",
+          "version": "repo-lines-v1:sha256:4e32f334d2b63ae0b0e322bb2c85e0187b0db039f21d2e42625ed73848254869:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhOThjOTk4MWFhZDQ2MTZiZjBmOGFkNmM0ZWY4YmUyODNkYjdhNzU3NDc2YTJiNWZlYjU0OGI2MjBhMTkwYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a6670a4350f493fbe44be121ff9497a",
+      "statement": "The webview custom element is registered via allowGuestViewElementDefinition, after which its lifecycle callbacks and observedAttributes are deleted from the prototype.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/web-view/web-view-element.ts#L88-L120",
+          "version": "repo-lines-v1:sha256:4285e433e21eac51e6ff81ddb7b2e374d2689bab35bf8c604d3cc7aca91d0165:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2OWQ3NjliMGJkMTZkZDAzNTRiOGVjYjVlZTFmN2NjOGFlNGQ3OWRhZTQ2OTNkZTJkMzg0ZGRmZGNkM2MzYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmYzEyNjA0YmRjNDQ1Y2M0MTRhMTI0NjI0ZTY0NDc3ZGRkOTUwYTk2YjliNzI5YzViMTEzMzg4NjhkODg4MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzNTRkYzQ0MzA4OTdiMzgyYzNjNzkwNGQ5YzIwNDY1MjE2YzMyZjc4ZTVhYjk2NzAyNmIzM2EyMmEzZThjZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11b8dfbdc592479ab973c0036be8fc8c",
+      "statement": "WebViewImpl renders an internal iframe in an open shadow root and marks it with setIsWebView.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/web-view/web-view-impl.ts#L31-L62",
+          "version": "repo-lines-v1:sha256:58276ea3e880cf82390fc08bd8ea58b2e36e5731c4cf5fadde5d3cb223c8c2c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxYWVkYThhMzU0YTg1NmU4MzEwNWJhOWVlODJmNjRjYjU5OTRhZjVhZTVjMTFlMDhlNmQ1OTZkMWRhYjFjNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3MGYxYjgxMDBiMWMxZTMyNWZjM2U4ZmM4Njc2MzJiNmNkZTIzYjE5NmZkNzA0ZTY4OTEyNDhlYzk5ODkwYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljMjk0ZDlhMGIwNmEwNzA3NzQ4MmFjMTllNjExODA4ZDJjZjc2NGNhMGMxMGFlNzE1NmU3ZWVhOTJiMzI0MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2OGQ5MjhkYmNlYTZmNTI4ZGViNTY2MzA4MTY3ODY4MGMyNzQ2MDA4NTAxOTc4MzAxNWY3N2VhZDI2YzlkYTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ab94c17c838248c58c24eca240b486ff",
+      "statement": "Guest creation is requested from the renderer via the internal GUEST_VIEW_MANAGER_CREATE_AND_ATTACH_GUEST invoke carrying the embedder iframe's frame token, and guest events arrive on GUEST_VIEW_INTERNAL_DISPATCH_EVENT-<viewInstanceId>.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/web-view/guest-view-internal.ts#L11-L48",
+          "version": "repo-lines-v1:sha256:5d2a2ffbd638930be2a57e014e153202f857cf8b5fdf73b689c14260b4f06d44:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyYmY2NTI3NzM3MjUxYjIwMjYxYzQ0ZmY2ZmY5MDI5ZWExMmNkYTc0MDk5ZGExMThjN2ZjZjQyZGYwZDg2YWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlYmRiZjU1YjI5MzJjZGI2MzdhZGNhZWQzZDYwNTczMGU1ZWUxYWIwMmJjY2IxYTNmOTdlMzM3NzE1NzIyN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3NTFmNGQ3YjJiMzg3OTVjZmYyNjZiMGQzZWUyNTdhYjFkNjg2ZDFjZTlmYjc3Zjc3MzBiNWRmOGUxYjRiMDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_555b488576d9451ebc763d1346a07995",
+      "statement": "All guest-view-manager handlers only accept frame senders and throw '<webview> disabled' when the sender's webPreferences lack webviewTag.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L258-L286",
+          "version": "repo-lines-v1:sha256:3412ce66e3af05fc1ab5ffeb3b71d32460786c05107cbab1f87c88a256f29315:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMzA0NzQyZTkxZTc1ZmVkZDc0ZWJlMTZjNDhhMWM3MDg1NDY2OTk4NDM5OTY5Y2I0ZjQ1YTZhY2U5YWI2MmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiMDFlNjg5MzZiMzBjODNiMThjNDg5Y2E5MDc5ZDE0YTRkZjU0MDk3ZGY0ZmM2NDExYThjYzNlYzhmNjYwOWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3M2IwZGJlMjE4Yzc4NWI4YWY4MDNhOGJlZDBlZWVmNTc3NmUxNTNkM2FjOTFlMzFiYzlhOTJmNTJlYTIxMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlZTVjMDg0NTdjZWQ0ODQ3YWU1NzU4MGQ4Mjc2OWNkYTBkYzg4OTljOWZmZDgwNTQ0ZWFhMzE3YmRlMmE4ZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_09d6b4a72a774a099e0c0a25bdbc28eb",
+      "statement": "A guest inherits contextIsolation, javascript disabled, nodeIntegration disabled, sandbox, nodeIntegrationInSubFrames disabled and enableWebSQL disabled from its embedder when the embedder has those restrictive values.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L25-L69",
+          "version": "repo-lines-v1:sha256:60fd1ac2475fe438e8ee00d6c43634d1b14fd332409dad60818dd862bf46962a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzOTUwN2U1YTFjNDMyMzljYmM2Yzc4OWQwZjU0YzQ1YjI4OThlNzY0MjdjYWFiNThlY2M0ZTkwODNiMDk5MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlNWU3NzUzOGE2NzhhMmZkNGViZmNlZDdmZDA1Y2NjZGFhNDM2OTYxNDgwMGIwZDkxNzQ5YTFiODYzOTk4M2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhMmExZTI1MmZhMzNjYTEyMTlmMGNhYzlhYTUwODE0Y2M2NjZhNDU5MDlhYzlhNjBhNjUzMTBmZjQ0OThlNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5dffab7a4b5408c89d49aee31642f8a",
+      "statement": "createGuest emits a cancellable will-attach-webview on the embedder, creates a webContents of type 'webview', forwards listed guest events and sendToHost messages to the embedder, loads src on first attach and emits did-attach-webview, then registers with WebViewManager and attaches to the iframe.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L83-L204",
+          "version": "repo-lines-v1:sha256:b2746f39574a96aca98ff89c464b2274f3027807a83d77b758337b3ecd8f8c63:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZWJiYzkyMDYzMWNkOWFjYWU4ZjhhOTQzN2JkZTE0MGQyODY1OWQxZjliNzk0ZjI4MGM5YjQzYzdmMGU2N2U0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhYTFkMWE2MzM5MDIyOWM3OTgzNDdlODNhMDQwNTQ0MWM5NDAwMDM1Mjg0YWQxNjhjMWJmNmNkZjFkNzBhMzcwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmYWRmZjEzMjdlNmNkMzBhZjUzMzcwYTQwYzYzNDEyMDQ1MTY3ZWNjY2ExMWI1MjI3NjlkMmFhNmU3ZTgwZTQ4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjNTM1NjIzM2MzYjNlYmM0MmQyMjg5Y2NhM2U1MTY5ZTQxMjdhYTQxNTdiMWVlMDBlMGY3MDY3NjJiMDUyN2RiIn0"
+        },
+        {
+          "resource": "repo://lib/browser/web-view-events.ts",
+          "version": "repo-file-v1:sha256:9dc788de80fe43c0eff13833edc1a8be6cbda0360913aeb77d8f12f7fa2ac13e"
+        }
+      ]
+    },
+    {
+      "id": "claim_926fc77d5fc445eaaf88eaa0aad4edb2",
+      "statement": "Calls from the embedder to a guest are only allowed for guests whose hostWebContents is the caller and for methods and properties in the web-view-methods allowlists.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L300-L358",
+          "version": "repo-lines-v1:sha256:58004da40fc2bec4fa7e6ddfad17c060bb9b45a3691dd0f407ef3ba19f3cce3e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNmJiMzM4MDE2MTk3ZWFjNGFkZjQ3MTE1M2Q3OWVmMWVhZTVmYzdjMGRhNjY4NGI1MGJhYmZkOTNmNTdlZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5ZDY3NThiYTU3YzhlNWExYjk0ZDZiZjcyN2FjNGNhYzQwMWExNjA0OWZjYmZlMmFiMTUxMGRhZDU5MzE1MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/common/web-view-methods.ts",
+          "version": "repo-file-v1:sha256:5a79dafb0b6b30e56dc5a1809b98ab7f124efd3f067a1ea69be0758534abe4f9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9c090037b8f4a9682516f960938046d",
+      "statement": "Guests are detached when destroyed or when their embedder is about to be destroyed.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L113-L118",
+          "version": "repo-lines-v1:sha256:b8c78d204b16c440945de144b44b6bc90ac86c057d9b85568ad2c09508027850:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA4MDQ3YzZkZjE0MmViZGVjZGNjYmU4YjRlMjNiOTJjZWJkNjI2NDMwMWMwOTU4OGI1OGVkNTYzOTFiZTE1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjJjOGVhMjgxY2IwZGFmNWU1OTRhNjA1ZWJjOGJkMzYzNDAzZTQxNmY4MzNmOTQyZjhkODZlZTRlNzNmYWVkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDA3Y2E4YjU4Yzc2M2FlZmYzZWMwZjczNGEzNjg4ZWQxN2E1ZDdkZjhmMmI5NjYxMjE1MWM4NDllOTA2MzRlZCJ9"
+        },
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L206-L256",
+          "version": "repo-lines-v1:sha256:ab58d5e77ac14ac477e27c5c8b3b1487598d0c5346c9b5e893dafb748bf2f879:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2OTI0NDg3NjcwMjU0YjE2MjQ0OTQ2NjIwZWRkZDNhZmE3ZmVlZTM0NjBiNzYzOWE2OWNjZTkzYjFlMzUxY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2N2U1NGEyMzg0NjcxYTFjYmU5OWI2MmZkOThjYjU1ODExZWJjOWZhN2VlMDQ3M2I1NWIxNDViNzBjMzE4YzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhMWU4Y2JkYzhhYWVjZmMxZTU5ZjljNDk3MDc4YzI4NzE2YWYwYmRmNTZkMmQxY2I0YTM0YzcyNmJkM2Y4MmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ac3460bbbf34b56b84cada1f88d9abe",
+      "statement": "WebViewGuestDelegate::AttachToIframe resolves the embedder frame from its token and attaches the guest as an inner WebContents, linking the guest's zoom controller to the embedder's.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/web_view_guest_delegate.cc#L30-L63",
+          "version": "repo-lines-v1:sha256:e59dcea92bd1e5bc23cf742c79dcfdeecf3e5ca6cfdf3cadd9fc37d1204fc047:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3Y2FlYTc0NDE2OTc1Y2Q3MGU5ZGM2ODFhYTUyYWYwZjJmNjMxMWUwMDI4MDQwNTQyYjgzNjY2NTMzZmIxZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0OTU1NDYwZDY2MDQxZmEzZTY2ZWU5MDEzNjYwZWY3ZmI1NDdiNGY0Njk5MzExZGRlZjkwY2ViN2NlODYyNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3ZTM0NDBjYWQwZTIwYjFjNDMzNTZlMzY3MjE1ZTE4YmYzNTg5ZDE2NjFmZDM4NDJjNmZjNzZlNzZjMDc3YzYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1c73618bd8aa7465e470f8113577f6bfda7b0d2f659987aa09bafac432288526",
+  "claims": [
+    {
+      "id": "claim_4bed5532c4584063a5cdb361ac920856",
+      "statement": "main.rs::run orchestrates a whole invocation: parse Opts, optional completions, set working dir, resolve search paths, guard patterns, compile pattern regexes, construct Config, then call walk::scan and return its ExitCode.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L60-L73",
+          "version": "repo-lines-v1:sha256:d5d7b053a4c1a1d8f72c47e1430c21c601602cb9b26f8060bcd24bfdf4c189ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZWM3YTgyYjNjOTNlZTcwZDMzY2E5NTkxZDA1M2E2YzFlZjc2NmY4OTYxOGIyZDA1NDkyZDNjMzFiMjM5ZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkMmU4OTE3YjdmNDBkOWUxMzY3NjUwMTc5Njg1ZWFhMjc4Mjk0YTk0NWYzYTdjYjRjZTlkZjUwNTcwYTVkNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0N2ZhZDJhM2IzZjkyOGE4MmIyYjQzNjZlZmEwNDlmZGYyMGJlMTZiZjliZTYyZTVhMzZmMWFmYzIwY2FhODkifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L75-L111",
+          "version": "repo-lines-v1:sha256:653163916448d3ad1ec35b2d160363417a62801dcb80808ee6976fd21c4fca17:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNTA5M2YwMTIxZDYwYTBhOTQ4YTk2MGRiMWM5YTg5YjY2MzNmMTUzYmQ3NDk2OThiOGZkNzEwNTI5N2UxNzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwN2RkZDljN2JkNmYyZDNlNGRjYWRlZjI2NTIyODQyYmNlOWY4YmNhMzkyMDRiZGZlNDYwMzgyNTVjNjk5NWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a6de20ac55f451a83bc9a353f035cf2",
+      "statement": "walk::scan runs a bounded crossbeam channel (capacity 2 x threads) between ignore-crate parallel walker closures acting as senders and a receiver thread (or command-runner threads) inside a thread scope.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L442-L444",
+          "version": "repo-lines-v1:sha256:82ab4e12b5086e3d1e3d1977deecf5c0afec3473a7aeb859fe34acb147a8ce8d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFkZGJkOTY4NzEyZjcwOWMwZDMxYWI0ZGVhNWNkOTZjMWE5MDZlMjgwZWZiZTUxZjQ5NzkzNTIyYzg0MjIzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ZmM2UwNjk2NDk1NjI1ZjQyZTk0NmVjMGY0ODQyNjdmNjRkNmVjOWVkZmM3N2Q5N2Q2NzBkMDQ1ZTU4YTFkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjAyYjIyMjI5NDhkMDUyNzQ3Nzk0ZTcwYWEwOTM4MjZjOWFkMjJlY2VhMzNhMjU1YWY3OWI1MmU3ZDM2ZmNiNiJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L616-L653",
+          "version": "repo-lines-v1:sha256:e11f15014131a2a7322ec6ed167a281ae41f609d3389e9e1a926b4a93100ee39:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYWU3YTY1NzA3YzkzOTMxNWNlODE4YzkxNzZlMWFkNDRlNDViNmUzNTUwYzlkYmNjY2U1N2UyNjNjMzNiNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyY2MwZDQ0ZGRlMzkxMDE4YTQ1OWMwNmIwOTBlZWVjOGRmNTA0MTg4Mjk3MzIwMmQwYTc2NWZjOTM1NjRjYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkNDc4ZGQwODQ5ZTBlODhlOTkzNjQxZjQwOWUxNTdmZTVkZDFlNzc5OTdmOGVkYjA0ZGMyMjE0YTkwMmZhMjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae3010d7ba3d4df6acf8388a65ce69fa",
+      "statement": "ExitCode maps Success to 0, HasResults(b) to 0 or 1, GeneralError to 1 and KilledBySigint to 130; on Unix KilledBySigint resets SIGINT to default and re-raises it.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L1-L46",
+          "version": "repo-lines-v1:sha256:58415f125652da1c67f53af1a5f8f5226ef1e92d3113471f64efc9fb96a831bc:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkYWQwMGM0ZTUzZWQwODBmZTFlNzgwZTU3YmQyM2I5OTkzMTE4Yjk3YWNhZmYzZTdkZGY5NTY0NmY3NDE3ZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiMzM5ZTE3OGRkNmYyNTdlYmZjYmM3Y2ZiZTI3ZGZlMzBlNzY0MTI3NWQ3NGI1MmIwNjg0OGUwMTRhYzcwM2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhNmVjZmNmMjhkMzYwZjI4MDRlMDVmYWQ3YjI2ZmNiY2JhMTgyZWU0NGYzMTFlYzNjZWZhNTI5ODgzOWE2ZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_763b17b6f5364d2fb67c432c827030e3",
+      "statement": "Patterns are compiled to regex::bytes::Regex with case-insensitivity unless config.case_sensitive and dot matching newlines, and names are matched as bytes via osstr_to_bytes.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L541-L555",
+          "version": "repo-lines-v1:sha256:4aecbe6430e27f08136ec95199aa800c7ef17b176bc451821f3756ebe25ccba2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMWUwODU3ZjAwZWQ4MmI1OWQ3Mzk4MjM5MmI0MGVmOTNkMjNiYWFjMjU2NDhjMDdiZWM0YmM3YTg0OTMyYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L515-L524",
+          "version": "repo-lines-v1:sha256:0010d58ae8bc519775b8e4db641ce68634d67a635fed39ce0a15adf180bc60d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyOTgyYTIwNDZmZjAyZjhkYTYzYmQ2ZjhjYjExYjNmNDFkOGEzMjA3Yjk4ZGQ2MmJkYWI4OTY2ZTUzYjlmZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5ZTU2OTgyZTk0MjQ3NDQ5Nzg0ODYyZmJkYTBjOTVjZjVkNzU3ODJiZjdjOTQ5ZjA3ODU4ZDQxYmZkZWU2MjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyZDg5ZmJiYTA4NmY3MThkNDc0YmNjNWNkMzY3NjRjZjkyNmM0M2QwMTU1MzI2ODJmODg5OWQ0OGQ3NTk0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_65d4205a62194f2aac1334004d5e2643",
+      "statement": "Each walker thread checks name patterns first and only then extension, file type, owner, size and time filters, loading metadata lazily.",
+      "evidence": [
+        {
+          "resource": "repo://src/dir_entry.rs#L24-L56",
+          "version": "repo-lines-v1:sha256:9f788fc024d50712954c2d39d6e6d6f188e5cd37401b444935ffba1f64ee312c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ODc4YWEwN2EwNWEzMTM0YzhkYTEwN2QyMWYyMWJiMzMyOGI1ZTU5ZGIwOWUxMTM5YTYwODg1ODM0MjQ3OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0ZjBmNzc1YjU4NmY5OWU4ZDk1ZDE2N2ZkYTUwZGE5Yjc1N2E2Y2ZlMWUyY2U0YmM1YWYxNjZkZjIwNmE1MTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkMWRmYTcxNWZlNTM2MzBhMTAyZGJhYThkOWY4MDYxNzM1NWYzNWIxMDgwZDc1N2U1YjIxZWRkYTAyMWI4MWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhZGQ1ZmI0Mjk3Yzk1ZThjMzU1OGQ0OTA5NjZiYzNmNzQ4YTdiMTIyYzQxZjdjNTdiY2U5ZjkxMjVlYTFjYTkifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L514-L591",
+          "version": "repo-lines-v1:sha256:eeb73a86f70952c72bc54aee7f21b6727e1798bc3690ce46caecad9e1c43b6ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNWJmOTljOGQ4Y2EyYzVhMDE5NjgwNWQyNTNlMDEwNWJhNTdhMDdmYTk2ZGQwNDRlMjdiNjYxMTAwODM3ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmMwNzYxNDQ1YjVkMTM5OGI0YmRmNGQxZGYyNTBmZmNmZmQ0MDRlMzRiMTZhMTBiM2IxNDRlYzZhNGM1M2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlM2Y1YzRkNjRiNDEwZWZmODgzMTMwZTRiMzgwZWQ1MWNmOThlODYzNzRkMDdmYzU0MmJmYTNkYTM5MjViMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_983bd7b807fc4e7993de947cff3fe1e7",
+      "statement": "jemalloc is the global allocator only on supported non-Windows/non-macOS targets when the use-jemalloc feature is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L24-L40",
+          "version": "repo-lines-v1:sha256:f85f60440ce3d4eed0b334ba0f9ab5814a26078c3c0306344307b102fcb5f47b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYzZhMDg5MTYyNWI3ZTA0MzE1MzNiODMzMmE3MDk3OTQzMmNiNmExZGU2MzQ0ODNlYmJlYTJlZGY1N2NjYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMDViZmQ2OTJkNGQ2NjRlYWMwZmRmNzE4OWQ0ZGEyNWE1MGNhYmQ0ODU2MjY3YjM2MDQ3YWJkZWY5YWU2ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0YzAxMzMyZGEyZGVkZjczMmJlNjY4ZWEyOGNlNDgyOWRmYTk2ODcyNjQ0NTE5Yjg0ZjdmM2U2ZjQ0NDQ1OTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1ODIxNjYzN2YwY2Y5NmJmZDVhMzY2NzI2NjIxNTA3Yjg5ZWJmYjdhODBjYzcwZGZkM2MxMzc4N2M2YjBjZDkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:38:21.850Z"
+  }
+}

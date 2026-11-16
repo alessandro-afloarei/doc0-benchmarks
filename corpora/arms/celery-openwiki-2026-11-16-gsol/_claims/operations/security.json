@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6d9ad8d80dd8c2f9a01aafe90775e8bc9af3e21af7884cff18e186417e166e32",
+  "claims": [
+    {
+      "id": "claim_b8ce1af95a724f7ebb60c2f7678a224c",
+      "statement": "Task content defaults to JSON and task consumers pass accept_content to Kombu, while backend result acceptance falls back from result_accept_content to accept_content.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L313-L322",
+          "version": "repo-lines-v1:sha256:a3b1eff9d8286ab8ac09a09e8296089a82d0a866f0ac08665522e26f976a070b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MzE3OWY3MjJiMDkzOGQxZTJmNGViZDhkMjY1MTdjYjdmNDZjN2E2ODU1OTlhYTAxN2FmOTRhMTA5OGRhMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwNWMzOWJhNGExYjY0ZGE4NGMyMDMxYjg2YzRlODRkM2EwNjMyMTY2MjUxYzVlZWYxMmQ3YjgyM2E5YzYwNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllMjBiODRkMjNiYzcxMTQ5ZjU3YjRhYmU4NDYzNGY2YTVhOGViMDVkMGFhNGJlZWVmMmM1ODdmOGFmZTRmZmEifQ"
+        },
+        {
+          "resource": "repo://celery/app/defaults.py#L13-L15",
+          "version": "repo-lines-v1:sha256:448c9ff38e20384022dce4a8d47118a74ad14ea5c0d0c50f846ecfb2a33bc395:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2M1ZmE0N2UyYmMxMWYwZDQ4ODY3ODVhODg2YjNiMzMwOGViZjMxZWFiMTJhYmU0MWRhNDNjNDg5ODQ4NjZkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE4ZGI3ODFhYmM5NTIxMzVjMmRmYzQ4MWY5NTk1NzBhMjVmYTkwN2EwZTA1ODlhY2IxZjQ4M2I2YjI3OGViNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGIxNWVmODM1N2RkZWQ1ZmZkNTc2ZjI4NGUyNjY4ODQ1YjVkMGVhM2U1NzFlNTVjOTBiOTY3YzM4Y2FjZjE5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjAxYzgwMWNmZjA3ZGZjYjZmODBlYzljMmE4MmYwNTNiMzczNmY1MTEzZmJlYjdlOWExMWVlNjc3ZTU2ZTZkYiJ9"
+        },
+        {
+          "resource": "repo://celery/app/defaults.py#L300-L315",
+          "version": "repo-lines-v1:sha256:6276097c57141153c3ed7f83838ed88cdea4dc7fce20bfc17b1c389849c3bdae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlMDhkNzMyYzE5OGMxN2FlYzgxNmU1OTIwMGI2NWVmN2U3ZTU0NzU4OWJjZGRhNzBiYmUxYzAwYTBkODZiNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjYTQwNTY5ZmJlMmU2NGM1NWI1YWJjMzZmZDE2ZTg4OTA2NDE1MDRhZGIxMDU3MGFjNjczMmQ4NDFmOTYwODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0MTBjYzQ5NjcwMGI5N2U2NDA2NTcxM2FkNmJhYjI5NGY0ODI4NDY1MDkxNGFiN2NjYjA0YWUxZDcyOGJmODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljMGM0ZDc0ZDBjNWNlZWE1Mjg3YjlkODA3MDEyYzNhNjA1NDY4NGU0ZjBkZTdlYTllMGExOThiZTRkNzI4OTAifQ"
+        },
+        {
+          "resource": "repo://celery/backends/base.py#L138-L155",
+          "version": "repo-lines-v1:sha256:1ecff03539eadc59c70a8654722aa302d688e05a6f238f9e7b386278eeb021c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4MDBjMWZhNDdmMTk2YWVjYTk4ODEzMDI5MWY3OGYwZDBhMjk2YjAzNGRjNjk0YTQ3ZTY5OGIwOTVkNTVmMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiNDhiNWQ0ZDQzODYxMzliMzE2NGExMzI4ODM2ODBmZTAyOWFmNGIzM2M5NjU0MmNhYTM3ZTdmNDllNDkxODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwNWIwYTQ5M2Q2ZTYwZDNhYTRlYmQ2NTI4N2NmZjM0NWIxMTQ1OGNiMjk0YjRlMjc3MTY3MTJlZTFjZjk0YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjYThhMWY3MjAyYjA2MzlhNGUxMjY0NDFlYWY2OTY2YjFhY2JmNjJlYjE0NjlhODIyYmEyNTI2YmM2MjI1NzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a332c259e72448478a960daed9fb50d8",
+      "statement": "setup_security disables untrusted serializers, requires auth task serialization and an auth-only allowlist, loads key/certificate/store inputs and registers the default auth serializer process-wide.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L750-L759",
+          "version": "repo-lines-v1:sha256:28cea1a36dcb5ed22b19893d000a207bbc8d7c762428c547078f1d1885d506dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MWQxMTQxNjgyMTk2OTQwMThkZGI4MDRhMGY1ZWZiYWQ1OTk2NDEzNDg1MmUzMThlNWE1YmQyMzk2N2I3YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlYWIwZDY5YWM3N2IyZDVjOWY4YjViZjhlYzUxN2QwMzhhMGE3ZmE3MjQyYWIyZGEyZTA3OWEwYTM4ZjE5YjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4YjVhZjEwYTgzMDcxNmU5MTE1MjI2OGU1Nzg5NTZmMzVmOTZkOGYxZWYzZjc3YWJmY2U3YTA2NTc5N2Y1N2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3YjRhMzllYmY4MDcwMjU1ZTI1OTMyNDdhNzIxN2IyMjM0ZTAzNmU5NDg3ZDcxZGM3YjQ3NmI4YzdhZTYxNmUifQ"
+        },
+        {
+          "resource": "repo://celery/security/__init__.py#L44-L70",
+          "version": "repo-lines-v1:sha256:336d858dad626eda41747722afa49fc85f17706c4afb95a96091c6f0fbf14f4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1MmEyMjgyNDVmNjFlZDBjOGFhMzliZGRmODk2YTAxM2Y4NTE5ODZmMDM4Mjc5ZDk0ZTUzNGY5NzI1NDYwMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxOGM5YzljNjY0MzYxOWNiNjE1NWI4MmMwYjk4ZDZmNDZmM2FmZTc1Y2M2YmEzMTFlM2U2OTA5MDYxMTE1YTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyOGY3NTg2MjI0OTdkODQwZWIwMzUyMmE0MjY3YWQyYWFjYTc1ZGNhYWJkY2NmMWRlNjI0MjcyN2JmNWY0MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5MzkxZmViZGZkMWZjYjRlOTQxZjQ3MzM0NWRkZWUzY2VjNGVkNjFhZjljY2VjMjliN2U2NmI5YzhiNGQxZWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_67ef43f04842438f8933ba2257597cf7",
+      "statement": "SecureSerializer signs encoded body bytes and verifies the signer and signature before inner decoding, packing fields with base64 rather than encryption.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/serialization.py#L31-L76",
+          "version": "repo-lines-v1:sha256:00a4bb8b222d31c9af401c5fd28c11829ac016d3fcfc0e589ebd2145f2f69aa3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMzhkNjMyNTZiMWZiOWZlNDlkN2I2OTQzYzcwYmY1YTA1NjVhYjBmZGIzNDFiNTU1MTY5NTdmNDllZDViNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NDQ2YzMwYmJmMGRhNGVmOWNiMDE0ZjRlZDFmYjFmZTAyNWI2YjRiN2UyZTk1ZDJkOTI0YWI2ZmI2MGM1M2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkZGE1NmYyNTA4ZTc4MGM4NDg1ODE3NTllMzAxOTlhNGU1MzkyYjM3MDlhYjA1ZDNhN2MyNTNhMWU5MjgzOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmOGNmNmU2MjBjMDg2ZDAzMTIyYzIxNThkMTY2ODZkMmIzYzBkZGE3YjY1ZDdkMjc4YjVkNWFlOGE2MDMxMmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_77ef868aa7ed4e52a16eef009c010113",
+      "statement": "Certificate loading requires RSA keys and verification uses RSA-PSS; certificate stores reject unknown and duplicate IDs and filesystem loading rejects expired certificates.",
+      "evidence": [
+        {
+          "resource": "repo://celery/security/certificate.py#L34-L46",
+          "version": "repo-lines-v1:sha256:62a9cd1234035287745674afddcf8ca15889236401537ba80d72866b30124d49:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzOTI3ZjRkNTBlMmQ0NTEwMTBmNjdhNDVkM2ExMjhjZmQ2YThhMTdkZmEyZTBmNmMzOWM5NWE5Njk3ZDhjNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyZWI1Y2Y1ZGM5NGQ5YTQzZDgwNDM1MjI0NmE0NTRhODIzZDFlMjM4MTQ3OTA2YTFlMmUxZTNhNTg2N2JiYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzZDZiZDgyOGRhZjk4ZTdjOTdkZDhlODI1ZmQ1NTJjYmM4Zjk3OTNiYTg1NGIzZGI1MmI1ZWNjMDU0ZWMzM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5MjdlZTA0ZTZjY2M0N2QzODI2NzAwYjUyYzljNDQ5MGVmZmU0MDIwMzk5MjQzODcyZDhlZjk1NTViOTQ5ODAifQ"
+        },
+        {
+          "resource": "repo://celery/security/certificate.py#L65-L113",
+          "version": "repo-lines-v1:sha256:1300cec6e413e0091ee5c8399b409cc8be7ad18b987a06f463d4f993c8a12184:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkZTQzYTNhMWFiMzA4MzJiMWRhMDdkYzU3YjI5NWJiMDlmNDExMDEzN2U4NjYyOWI1MWRiYWRiNTY5YTZhMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNjIyMTk5ZmNiMzlmNTFkNGQ3MTRiMDdhZDg0YzNhNjBiOWUxMDdjZmZhNjllMDg0NWFmMzQ1MGE2OTY2MWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliZDM2YmMwNTkxZWM2OWIzZjgxM2U2YTM2ZGY0YzA3MzZlMmEwM2U1NjM1OTdjN2I1M2MzNzE0YjJlYTEyMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b8afb36e8b8e47a594b158aec2865ad4",
+      "statement": "Broker connection construction forwards broker_use_ssl and broker_transport_options into Kombu.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1106-L1127",
+          "version": "repo-lines-v1:sha256:44cdc46726c29c12a86b7e5f46d896d59245e125cc9997d796dda7b3e9391c87:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZTY2ZTg0OTgyYjdlYmZhMmYxOThlMmIyZjRiMjczMjljZmVhNjU1NTZhNTVmNmM1YzQwYTE5ZmUyZjc5MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllOGM2MTMyZWQyODIxZmU0OGQyNzlkNDhjYWY3OGQyOTI2YjY0YWM0Zjc2YWUwOTQ5ZTEyNjM5Y2ViNjUwM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhOTJkZmRkOGZmYjZhOTZhZDliMTZlMzAzNmU5ZDkxOGNmNGU4MDYxNjJjOGNkM2Y1ZmMwOTQzNjgyMzU0YWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_059954bc895347e4a615f9c3cde2de35",
+      "statement": "Task protocol v2 sends display representations in headers and sent events while keeping actual arguments in the body.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L362-L417",
+          "version": "repo-lines-v1:sha256:8156b1df5c5d7b62a93b77f621d5b2e2615e44c9544e4c9ad29004cfc3431c58:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1OGVhMjdmZDE3MDRmMzUyNDU0ODI2OGVhOTYzOTQzZmUzZGRlYmIwZTgxNTY1ZDM2NDY5ZDZkNTg2Y2Q4MzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZWMzOTEzNmIzMWVlOWEzZjhiOWIwNzNjNDVmYWI2YTI2NjRjNWZhMDg3NjY4MGEwYTgyYzhhMDIyZmRlNGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0OGZlYmU2MzQ5ZmViMjk4ZTI2NDdkYTZjZjRiMWQyNjBhN2U3ODI2MjJhM2M4NjFjZTEyY2Y5MzE3Yjk2NTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiNzU0YjdlZDJiNzAyNGQ4YzY2ZWYxZGVmNzVlYTYxZmM3MThhZGRlNzAzNDQ4YmNlOGM3OGNiMDg2ODljNzAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:34:04.042Z"
+  }
+}

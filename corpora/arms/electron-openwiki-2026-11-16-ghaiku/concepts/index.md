@@ -1,0 +1,4 @@
+# Files
+
+- [Code Signing, Packaging, and Distribution Artifacts](code-signing-and-packaging.md) - How Electron's release artifacts are assembled and checked. Covers the dist and chromedriver zips and their manifests, symbol zips and dSYM handling, binary and framework stripping, the macOS Mac App Store build configuration, Info.plist hash substitution, and the local code-signing identity helpers used by tests.
+- [Fuses and ASAR Integrity](fuses-and-integrity.md) - Build-time fuses are compile-time boolean switches that turn runtime features on or off, such as NODE_OPTIONS, the --inspect flags, ASAR-only app loading, and embedded ASAR integrity validation. This page covers how fuse defaults are declared, generated into the binary, read at runtime, and overridden in test builds, and which subsystems consult each fuse.

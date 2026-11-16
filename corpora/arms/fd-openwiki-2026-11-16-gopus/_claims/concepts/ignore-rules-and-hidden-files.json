@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4a6c6ea2bbe9d891ccee992aa03593546bd0fde0c2581f6618e020264e688f32",
+  "claims": [
+    {
+      "id": "claim_5a61c802354541389cec8708ca3d4abe",
+      "statement": "fd delegates ignore and hidden-file handling to ignore::WalkBuilder, mapping Config booleans to hidden, ignore, parents, git_ignore, git_global, git_exclude and require_git settings.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L347-L365",
+          "version": "repo-lines-v1:sha256:d16ede7200190656be0dfa6f88779fe148cde4be2126e785631e1910a85fef78:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOTU2Y2Y1ZDg2YjkyZDgxMGEwOGU0MjE2NTI1NGMyZjFmMzFkOTQzMWZjMGJjNTQ2MjVjNThiM2NlZDM1MjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiMjljMDEyYWM1ZTA2YTAxMmRiOGZhMzhlODI5Y2M1ZDU1NWViMmRhMzU0MzNhMWE4ZGIyNTFlOTlhOGNhZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxYjIyMDlmNGJiNDMyZWExMTBkNzA1YmFhZjM1MDRjYmM3YjRmYTEyOGJkNWY0NmM3MTlmYWRhZjAzZjUxMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzYzEwNDdmMzQzMDNiMTQyYjBlYjk4MzdkNmExYmQ2OTE5MDA2ZjQ5ODQ5OTc0ZGVkYWM5NjhiZTZlNTVkYjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f59fd47918fb4d869c16352c764dcfe6",
+      "statement": "Parent-directory ignore files are read only when --no-ignore-parent is not set and at least one of fd ignore files or VCS ignore files is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L356-L356",
+          "version": "repo-lines-v1:sha256:731d6e8578273edd50ade7963a003418f5a52a3476d6ce97922f4b8e2e0cc297:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzMxZDZlODU3ODI3M2VkZDUwYWRlNzk2M2EwMDM0MThmNWE1MmEzNDc2ZDZjZTk3OTIyZjRiOGUyZTBjYzI5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzMxZDZlODU3ODI3M2VkZDUwYWRlNzk2M2EwMDM0MThmNWE1MmEzNDc2ZDZjZTk3OTIyZjRiOGUyZTBjYzI5NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDYzZTMzODQ1OTAzZjI4ODk1NDViMzRlM2Q4YTE0NDVhZWE1MWQxZDU4MWY4N2FjNDRlZDQ4MDRiOWY3NThkMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjE1YTlmNDAxMzVlMDE1YzdhZDNlYTA2ZjRhZjkzMGUwYThjNTJmMjg2NWE0YWRkZmZhNTc4MmY4ZjUxODFmZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ff852274aba4b328f40bc2b32a2e92c",
+      "statement": "-u/--unrestricted disables hidden filtering, fd/.ignore files, VCS ignores and the global ignore file, equivalent to --no-ignore --hidden.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L122-L128",
+          "version": "repo-lines-v1:sha256:f36f87b013f658c186880ac985715085db6abb7f300b3e0f83b1faea3c47ca37:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWIyYjg5MTU1YTJkNWM2ZmQ3OGNmYjU1NzkxNGFhM2FlYzk5NmI5MTc0MTc2ZTdmMjA4MjFlYWZmNjQwNDNiYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk3ZjZlZDRlOTBiOGQ3N2VkMGE3NTU5MDZmMzlkMjY3OWY0ZjhiMDY2ZGFhMTU2OWNjMDhlZTA5ZTMwMWIzZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjlkMTA3ZDJlOTY4NzAyZGZhMTgxNDdjMDE5MTcxMTY3NmRlNjBjYjIyNzNmMWMzMjBjMmU2ZTlmMTJkNDYzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmQyMmRkYTZmNDY1Njg4MzJmNjU1NWE4M2E2N2NjMTY4ZmJhYjY0MWYwMGM4MTI1Zjk4YjQ3MjE5NzY0YzZmZCJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L313-L320",
+          "version": "repo-lines-v1:sha256:0f5085f565bccec0feb0c6149e9c28f5bf8f210f5b7600bfa95ad69d2f6550fe:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDEzODAwZjE2OWY0NjkxN2Q1ZjZmNmZiZWVlMjNkOTQwYTRjZTI4Y2UwM2VhNzA1OWQ4ZTg3Yjk0NjMzZmQ1NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBjMzViYmE4YWYyNWZlNmQ3YzExYzEzNGI5NTUxYzI5NTcxNzM5YmFiMzE0MGEzZjAxOTExNThlYTk4ZTlmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTUwNTkyNzNlOTEyZmFjM2ExNmNkYTc2MmI1NjNiNmRiZjY4MTIwN2FhNjc3ZTU0Y2RlYWZmNWEyODc0MDAxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTIwMjg2MWJlNTcwMmFlYmYwNzIzM2JlNTk0OWViMjkzYjA0MzNhODBhYjU3NDNjMjZhMGI0NDk3MGExZDRiNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c17426612ee9458c90700e829946105e",
+      "statement": ".fdignore is registered as a custom ignore filename when fd ignore files are enabled, and a whitelist in .fdignore can re-include a file ignored by .gitignore.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L367-L369",
+          "version": "repo-lines-v1:sha256:56811cbb8f846a1e9307238778a7b37f98f99d1e0e9f774e72b5f097df6b49c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTg2ZDM3YTE4MzgxMWVhODk2NzQ0OTEyN2VhZGU1YmJkZmVlYTdlY2MyODg2MTNmNzI0ZDk3OGU0MTc1M2E5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWUwZGU0ZGY0OTY0MmUxOWZhMDQ0NmFkNGQ1MDI0ZDg1MzRiNzM4NmQ1YmMwZmNjZWViNjQ4NGIxNGZhNzAyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWMzZTY1NmI5YWY4YjAyZWNmZGI0ZmQ1N2VhN2FkNWIyYzJiNWRjNzg5MWZjMDliNzg2YTNlZWRlODI3NWMxNCJ9"
+        },
+        {
+          "resource": "repo://tests/tests.rs#L862-L884",
+          "version": "repo-lines-v1:sha256:3412674639810332de31143f10169572221f4ceac90b8f2a2add35fdd072ee0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOTc0M2VkYWI1OGY0MDBjNmQ3ZTUxNzg0NWQwMGU0NTc4MTRiMGFiZGU5NmZjNTBiMDgxODdmMzk3ZmU2ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0MjljOTU5NDY3ZjUxYTIwZjVjZTA1ZjEyMWViNmEyZDA5NTI3MzE5ODJiNTBiYmQ5MGNhNjNlMGQ3NTU4ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5NTUwNGY4MjBmYmEzMWJjMjNiMTViMDRkYTkxNmVhOWQwMjQ4YTY2Yjc4YWVmNTViMmE3OWU0ODJjMTYxMzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f910a5177dc41b093869916caa7e9b6",
+      "statement": "The global ignore file is <config dir>/fd/ignore from etcetera's base strategy and is added only if it exists; malformed patterns in global or custom ignore files are reported without aborting.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L371-L396",
+          "version": "repo-lines-v1:sha256:a517b91e13601bb2e2304cc54cbb1fe0c34e55007bb743a1dd436b19c78eb243:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2ZjRhMmQyNmY1MGZkM2RmYzhlOGI1ODJkYjgzZGEwMzk1MzQyMDczNzMwYjFiNTc4ZmVjYzYzNTJkNGY3M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4YjEyNzEyOGFjMDYzYTczMDBhZjFiY2VmYTQwZDRmYTc4NWRiOTM0NTg5MzMwY2NhMDlmM2M4NzY0ZDc5YmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4MGYyYTZkMzQ4YThhYmNhNzY2NjczNDI5MmQxOTZiZjlmYTI0ZGM0NWE1ZTdkMmYxYjAyMmMxYWUzYzRjOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_17663dd3a7fc43f585cf0a6318a01abc",
+      "statement": "Each --exclude glob becomes a negated override rooted at the first search path; overrides take priority over other ignore logic and a malformed pattern fails the run.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L311-L323",
+          "version": "repo-lines-v1:sha256:ccc7a702734c6d949ef2af1068043f44b3e2c88ed01411dcfae0ad7b71482871:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkMGI1NzM1MDI1NDVlMzc3MzUwZmFhNDk3NGI0ZjdmZmE5ZThjODY1NWM5OTU2NTY1NTI2YWM1Y2M1YjQ5ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOTM5NTMwNDFhNTkwMDc3MGNkNzc3Mjk4NThmZmRmYTVhYTY1YmZlM2NjZjMzMDMwZmFhOTBjZWU0NmEyN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxZWEyNjFlMDZkOWZhMDY1ZTA2MjdkZWQ5YmJkMjRlNGU3NDJjYTk4MmMyMWEwYTdlMzRmYjc4MTgxZWJlNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlNTg2NDJhODU4YzU5NDYyYjhiMmM4N2UzMGM0MWRmYWNjMjE2NmE5MGVmYzFmMDRhNzEyYzBlN2I0NThiYTgifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L380-L380",
+          "version": "repo-lines-v1:sha256:1b56c059f378dfe3a773bab353d222b60876f1c688eebf61681b9e265a5e9c09:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWI1NmMwNTlmMzc4ZGZlM2E3NzNiYWIzNTNkMjIyYjYwODc2ZjFjNjg4ZWViZjYxNjgxYjllMjY1YTVlOWMwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWI1NmMwNTlmMzc4ZGZlM2E3NzNiYWIzNTNkMjIyYjYwODc2ZjFjNjg4ZWViZjYxNjgxYjllMjY1YTVlOWMwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDdkODI2ZDkxMzY4MmVmZGUyMGQ5MjBlOGU5M2Y0ZjE3YWRmM2JmNWEwNmEwMTQ0YzhkYjdlZjg3ZGQ4YjBiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWFhODJmYzkwYzJmOWJlYjI1NWE3ZDA4ZmU0MDE1YjhiNjhkMmFkODIzNmY2NjhhZGVhZmY2NWJkY2FlYzhjZCJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L330-L345",
+          "version": "repo-lines-v1:sha256:868f57a9e07f9f1721fb3770848960a4f98f6e85c2bfd05ed1311eb5f99db793:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMTIwNDg4NDE2NWVhMTI3YTdjNjk2ZTg4NTJlMzgzZTU0YTY1YzU4MTM4MjViZDhiNDA2MjNmY2Q4ZGUyMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwN2VlOWU4NDBhOGVlOWEzNmIwMTY5Nzk2MzU5ZjYzYTVlYjQyYWNiODk2N2JiNzQ1MWNkYTU2MjU2NmNkYjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2a6bbfa0c714423aba1969cacf8f055",
+      "statement": "--ignore-contain skips any directory (including the search root) containing the named entry, and is checked before the root-entry and min-depth checks.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L464-L484",
+          "version": "repo-lines-v1:sha256:ff0444a1aa51d5c62a86e116d7987c485586096a7a95c7f7b80dbe27f6b86e62:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkYmZmNjAyNWQ4OTk4MjAzZDdiZmFjNjMyMTY2MmYyNGQ1MTI2MDJlYTNjNzBlNDE4NjZlYzkwODk5NTAxMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjZGE5MmIwZGQ5MDYzNzc5NTMzYjM3NjM3Y2U5ODMyZjk0Y2Y4YjU2OGY5YmJmNmIyYjk1ZmU1MWJmMGI5MGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkMWM3OTRmNWFhOTJjYTllODA0ZjZmNTIwZjAwMGE2ZTZiYzMwMzU1MmNlODdjYmI2YmUxYzg4YjUwYjY2M2IifQ"
+        },
+        {
+          "resource": "repo://tests/tests.rs#L2830-L2878",
+          "version": "repo-lines-v1:sha256:71ea58550750620b17aedccba5dba355312adc412b9dcff0b18b39ad3a488303:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MzZmNDMyNzEzYWRhMDkzNmQ0N2RjNTFiZjJiMjY0MWM4NThkNTc3N2Y3ZjkzZDU2MGE3ODg2NGQ2ZjY0ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmOWFkNDYzYmU3MWM1ZjQyMDk0NmFmYmYwN2QwZmU5ZjVmMTFkYTgyZjFlOTQ5MDNjYzMzOTVkOGMxYTBiMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa35c307f45b487c9d0c8d790e9a586d",
+      "statement": "Negative ignore flags have hidden positive counterparts declared with overrides_with so the last flag on the command line wins.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L39-L116",
+          "version": "repo-lines-v1:sha256:b2d32c7541d442a72972c9a97d33ce976966b7129cd11161f8604d8c2c60af88:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyYzQxZTUxY2VkN2Y4YzVjMzY4ZTBlZWMzNDY3OTJkYTM4YzEyMjFlMmE1ZjY5ODdiOGE3ZTYxY2RmYTExZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMjI4MGJhYzAwYWVlN2E1Yzc0ZGFkZTY0MDlmMzgyMTg5YTYyNjliOTNkN2U0NjY2Nzc4Y2JlZTI2ZjU4MmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4NjBlMDVkNzMwMmJiYzY4OTQyNWFiYzA3MWEyZWEyOGJlZDY5Y2VkZTlkNmE5YmU5ZjBmMTk5NWFmN2Y3ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwYWY0Njg2NDk5OTAxM2RiYzQ1NmI2ODY2ODU3NThjM2RkNzgzZWQxNjY5NWQwYTBkZDAyOTg0NmJmMmQyZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf2a456b67064a839305795f421ea4dc",
+      "statement": "The integration TestEnv creates a fake .git directory so .gitignore rules apply, and writes .gitignore and .fdignore files into each temporary root.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L28-L63",
+          "version": "repo-lines-v1:sha256:04a1cc106870d877fb10553f7b8c4cf69a5ee525b0f3e97b9c2037abf7b3210b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNWRmNzE0ZTdkMWJjOWNjYTdiZTFlZDZlOGFjMDA3ZjJlZjQ2NmYzMjMxNGM0MjQ5YTczNDlhMDE0NzkzY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNmIzNDYxMzg0ZDIwZDgzOTJiMmZiZDE4ZDQ5NWQ1YWQzMTU1NmU5Y2M0Y2Q4ZDU2ZjczZDc1MjdmMWQwMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4NTZmODJjZjlhODFjNDdjMTc0MzY5MWY5YWI1ZTBjOWE5NDlkYjAyOWM2Y2Q3NjVjNTM5NjU4ZTM4OTQ0M2UifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:05:54.272Z"
+  }
+}

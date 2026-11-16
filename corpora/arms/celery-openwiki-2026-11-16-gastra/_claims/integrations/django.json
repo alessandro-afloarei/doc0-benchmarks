@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:02ee9304b8215804fd3fab805765d7b9ce72fd0fa5d6c32221a18b3ffb8ffc54",
+  "claims": [
+    {
+      "id": "claim_6713e3a652294e788799e4f37e268eb7",
+      "statement": "The Django example configures the Celery app from namespaced Django settings and autodiscovers tasks, while the project initializer imports the app for shared tasks.",
+      "evidence": [
+        {
+          "resource": "repo://examples/django/proj/__init__.py#L1-L5",
+          "version": "repo-lines-v1:sha256:b18be6f53de6ad58e9f7362bbc5430b2e2e1a13b8afb9abb6f07e91b754f1d08:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzIzMjQ4OTQ1MTRiOTM4ZDBmMTQ4NzFkOTFlYjEyNmQ2YjdkNGIxMmFjZDMxZDk4MDBmYWQzMzlhNzlmZDAwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVlM2NjNWIxODc5M2M0ODA4YTA1NzI2NzI0ZjQ1NTY5YTY5MDM2ZTU3ZTVkNjgwOGI1NzM5NzM3MGUxMjVkMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://examples/django/proj/celery.py#L1-L16",
+          "version": "repo-lines-v1:sha256:1e0ad6c7deb62c54c641a0d3a91b1314d38ee79dabc6d62d42e47d4894409ec0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MjdhZGZmNTI0ZTA2MTYwMjJlYWRkOGY0YWYyMWEwNzc4YjI5ZmM0Yzc3YmRmZWZkMWFmY2UyY2JmNWU0YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5ZGFhMTljYmYwMTViOTg0YWZhYmQwNWQ2OGM5NmZhMDQ5Mzk5ZWYwZWU4MGE4NjMyYmVhMTAwMGE0MTIyZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczNTEyMWEyZGU1Y2YxNjYxYjg4Y2M5YTBmZWU4NDMyMDkxZDE3ZTAxYmQzN2FmYmQ1OWJhZjM2NDdjNDBlYmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e5eae6c762f448e87e6c589d368410e",
+      "statement": "The Django fixup activates from DJANGO_SETTINGS_MODULE, prepares Django before task imports, and installs DjangoTask unless the user supplied a custom task class.",
+      "evidence": [
+        {
+          "resource": "repo://celery/fixups/django.py#L145-L154",
+          "version": "repo-lines-v1:sha256:dabd5093ec991f71412e35c4b0dde64b0a5cccd76e4a972ede912ef63977e1f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0YWYwZGM0MWNmZjM1Njc0ODA2ZDk5Y2NmY2UxZTJhNGQxNWU1OGY4MzdjZTUyZGViNDE3Y2MwMzJhMjI2ODYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlNjE4ZTk4Y2FiY2ExZmRlY2ZlZjYwYWNlZjY4NDk1NWJkNDI4YzdjNDc4NDUyMDgwN2U1ZTQ4MGExOGQ3NjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmMzMxNTQ5NjQxZTNlZDVjOGUwMDM0NGY4OTRkZGY2Njc5Yjg3MDQ4YmJmNmU3OWI3MTg2YTgxNDFhYzRlOTkifQ"
+        },
+        {
+          "resource": "repo://celery/fixups/django.py#L50-L102",
+          "version": "repo-lines-v1:sha256:bd5b01ef39b5b5a080e5240f650d1ed5caea235657f94f300f28de7d8ab1f896:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyODIwZDgwMjQ0YWU2MzVjZDgzNGEwM2I2ODkyN2FhMGQxZDllMDAxZWE0YjllY2NmMmE0ZDRlZDFmMTMxYTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhYTk4ZjNkYWU1ZDU2M2UzMjMyMmFhMzVkMGI3NTk1NWMwMjIzOGFhZTliNDQ2MmMxNDZhMDI4ZGJiYmM0YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3MjYwMDVlN2U2ZDNjZTE3NDk1NzFkMjIzMWEwMDEwYjQzODg3MGJiYmZhMzEwMTgzNTgxNjZiN2NjM2JkM2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d274df3b1ed4414bdec0a65cf4f77b3",
+      "statement": "Django task discovery obtains package names from Django app configurations.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L839-L844",
+          "version": "repo-lines-v1:sha256:3b8a5bbcb1645ecc8e0ce02fc13bc1c5c3ac2a18eb0e1d9e85e5b47c91d0165c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTE3MjNlYWRmYTZiNDEzY2ZiNjA2ZDBmYzQ1ZmI1NWJmNjE2Y2ZhYjY3MTllN2M2YzY5NGE3ZWI5MGExNzQwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY3MjZjMWVkN2IzY2YwYmM3MTYzM2IxNTFjODJkNTliYTRhZTIyOGRlZTk2OTlmNzhhZTVkN2FmNzJmMWJhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTUxMjZlNjViYTc2NjE5MmNiZmE4YzQzNmJiN2ZjZWM3YzJiNTczMTE0ZmMzOWM1YjA2ZDc3YjQ1OTllMGJjYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjc1NmIxODEwM2MxZWU0MjIzMTRhYmQxMzQ5ZWQ0Y2U1Mzk5ZGU1MmRjNTIwNGQ4ZTE0MjAyZWMzZjZhMDgxNCJ9"
+        },
+        {
+          "resource": "repo://celery/fixups/django.py#L119-L122",
+          "version": "repo-lines-v1:sha256:dd914886cf840685a6916fc62bb1c338f56c9d183f563fd92ca7f38176c794a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y1MjJiOWY3MzNkMTQ5NTAwZmM5MjExZDBlZWJjZGYzOGM4OWM2M2YzZjM5ZWU4MjMxNWE3MjA1YjFjYWUyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzZjMGNhYzQ3Yjk5YzY2NzRjZTI0MjQ3MmQ1NTY1NTQ2OWY0MDBmZGU0NjdmYTMyMGYwOWE0YThhNjM1NjAxNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODcyNjI0ZmM1ZWYzMjRiMWNiODI1ZDJkOTQ5NzAyNjc5MmIxMWM3OWJlOTY0OGJjYTgwYTY3Zjg5YWMwZDY0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzEzZjI3NTIxYzMxODI2ODk4MTY4NGZlZThhZThiMWRlYTc1YWEzMjQzOGQ0ZjkyZWI4ODFjYzVmYzk5YzRkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_706a95d8fc9b45b499bff6b8ad4be81a",
+      "statement": "DjangoTask commit helpers register publication through transaction.on_commit and return None rather than an AsyncResult.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/django/task.py#L8-L21",
+          "version": "repo-lines-v1:sha256:92ccbf80492ea888a80847040efd15d322198dc1692eae875d6ee14e0a3c03b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NjExMTU5ZjQ4OGQ1OTk2ZWE0ODE3YjlmMTlhMTRiMWE0MWJlNGJkMDgyNzEwMjgwZDU4Nzk4NWYxZTI5Y2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyOWE0NDU5MTRiMWY2NzMwNmUzYmVkMjE3YWI2Y2U1N2M4YjUzYTI4OGFlYTg2Mzg3Zjk0ZWU3M2MyNGU3OGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhYmRlM2I1NjRiODJlMTg1Y2UxMzBjMGExNTJhMWY3NTA0YTMyMWE0MjE1NTczMTJkMTdhY2JlZTI1OTVhNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://t/unit/contrib/django/test_task.py#L26-L32",
+          "version": "repo-lines-v1:sha256:05820cbe772dcde5545e1529db0988f7d697081c49f564dd6bd214b4b14b4848:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBiOWM4ODU1ZWQ2MWJmYzc0ODIyZGE3ZTc3ZGU3ZDc3YjMzMDRiMDM0NmVmZGNiNWYwOTdmODBjYjFlOGU2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDUxZjAzNDg2Y2UzMjBmOGIxMmFjZTQ3ZDgwOGU0NTgzZWI0NmY0ZjkyMDg4ZTc1YjRmMzg5ZGZkNmRlNGJmMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTg1ZTU1YjQ2ZmVmZjQ1NWZiNTU5M2UxMWQ2ZmU1NTA2YWFiZWRkNjJhZTg4YzlhYjA1MzUxNmNhNjBhOThmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_997980b19260474c8eadf486334d3ea5",
+      "statement": "Django worker cleanup handles inherited descriptors at process initialization and runs database/cache cleanup around non-eager tasks.",
+      "evidence": [
+        {
+          "resource": "repo://celery/fixups/django.py#L155-L205",
+          "version": "repo-lines-v1:sha256:ff154af61dc1a1dc992efce91757d5af13a83f20b67482a74d241d36a5c1fc45:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0MjU3YjgzNDFmNDc4NGE4NzdhOWVlMjNkYjM2NWVmODM3YmUxYWFlNzI3ZWRjYzcwNWEwODJhNWZkN2Y1NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzNmI5ZjMwNDk5MzRhYWRjM2VjZjRiZWU1Yjk4ODM2NmVlNmYzNzhiZGJmNjY2M2M1YmMzNTAzMTZhYzFhMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzMjNlNmM3ZWU1YTE2MWZhYzNhYTkxYzBlYWM2ZmM4OTk4NmZiZmQyZWJhZDg0YTFhMWNmYmY2NmRkNWZjNmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa3bf9997e4d4edf9a7ebe4de9a43b61",
+      "statement": "Django database cleanup closes connections and closes configured connection pools only for prefork workers when close_pool is available.",
+      "evidence": [
+        {
+          "resource": "repo://celery/fixups/django.py#L207-L239",
+          "version": "repo-lines-v1:sha256:ec1f04a719192873fb5ce9f39e91054dc02d90d4900e86dcb239d159dc5f786d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzNmExZGE1ZmUxNzc3MjAyNjZkNTFiNTVlOGU2MDgwNmEwMTJmZWViZTczZjJmYzkzYjk2OGVmNmJkMWVlOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwYjk2Y2I4MThhNDlmZTQ5OTA2YWMyODgzYTg1M2E4NWI1ZGE2NTRhNDkxMGU4ZTAwZTQzOTI1NmMxMTQ1N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwZWI5YWFjODg5ZGMzOGI0MjI4MmEyM2I2YmYxZjA2NmQ5NWFkMzUxNGU4NjQwMjdmMzVmY2M1Mjk3NTI1YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjNWQzYTI3MzExNzM2MzBkZDdjZmM5MDhmN2E1MjgyODNhNTRhYTdhZTk0MjU4YmVjYWE1MTU3ZjUwYjgzOWQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:55:28.912Z"
+  }
+}

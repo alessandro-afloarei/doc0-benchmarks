@@ -1,0 +1,7 @@
+# Files
+
+- [Context and HonoRequest](context-and-request.md) - How Hono's Context (response building, headers, status, variables, rendering, finalization) and HonoRequest (params, query, headers, cached body parsing, validated data) are created per request and used by handlers and middleware.
+- [Middleware Model and Composition](middleware-model.md) - How Hono registers middleware with app.use and route handlers, chains them through next() using the compose function, propagates errors to onError and falls back to notFound, and how sub-applications keep their own error handlers when mounted with route().
+- [Architecture Overview](overview.md) - Layered map of the Hono codebase, from the HonoBase core and preset classes through routers, Context and HonoRequest, middleware, validator, RPC client, JSX, helpers, and runtime adapters, with the package export surface that exposes each layer.
+- [Request Lifecycle and Dispatch](request-lifecycle.md) - Step-by-step trace of how Hono.fetch turns a Request into a Response, covering path extraction, HEAD handling, router matching, the single-handler fast path versus compose, error and not-found handling, and the finalized-response check.
+- [Routing and Router Implementations](routing.md) - The Router contract and match result format, how SmartRouter picks the first concrete router that accepts every registered route, and how the four matchers (RegExpRouter, TrieRouter, LinearRouter, PatternRouter) differ in build cost, matching strategy, and the path forms they reject.

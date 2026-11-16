@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a1e8e41240e27147c7f121d603cbf2ae2bf7b899bdd03dd214bdec6bac4ea16e",
+  "claims": [
+    {
+      "id": "claim_3b2731fcf5da4bb5afbc9b83ced98b43",
+      "statement": "EventStream.add_event is the single write path: it rejects events that already have an ID, assigns the next integer ID under a lock, redacts known secrets before persisting or delivering, writes the event to the file store, and only then enqueues it for subscribers.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L163-L203",
+          "version": "repo-lines-v1:sha256:063e3b88fd5605c787f9ce504d06274fe20033812fa35a706e057016aa4c1d12:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1N2Y5ZGNlZDEwMTMxMzRlMjQ3Zjc4OWUzMzMyNmE3N2JkMDcxMWZlM2NjOTI2ZjY1MTEyMzNjMTg1OTRjNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ZTYyNWFlM2E4NDYwMjhkZGJmMTM1MTgyOTE0YjZjZjY5ZjU5Y2MxYzA5ZGNiNTQ3YTA0NjNjMDI0NDA0MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzZDFmNzZkZjNlY2FkY2JkMGI3MWJjYjk4N2JmOWI1MDY0NGIzYWY1MDI4ZjZhYjU0MTQ5MDljYTA1NzFmZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4YzEyMDE3ZDU0NmI2ZGY4NzEwMjg2MzVmZWU3ZmEzY2FhMWQxZGM4NjNmNzkwODY4Y2NmMmYxM2RiNWNiNDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_588ae17ba7304cb49618a158968a9dc3",
+      "statement": "Secret redaction replaces known secret values in nested string fields but skips protected top-level metadata fields such as id, source, timestamp, and message.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L221-L244",
+          "version": "repo-lines-v1:sha256:373426ef8a55cc8dacc0caaeec7e7935dfb9113938ab17d5baf2697299c9e9fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4OWFkY2JlYmE4NDVkNmY4Yzc4ZTIyZGMzN2MwYzBkZGRiZGNlNTRmYTgyOGNkOWMwYWJiNjlkMDg0ZTgyZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjMjVlM2FlYzFiMTNmOTBhMzhjYjJjY2NiZjlkZjgzYmM1ZmU2NjAyODE3OTJlYzczMDc0MjcwMjMwYzcyYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxYTI0OGIwY2M1ZjExM2JlNjJjZjhhODQ4ODlkMjMwM2JmODg5NzczNTJiMThjYzNjOWE3OTlmNTIyMjM5OTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhODNkMTlkOGMxZjEzMjkwOGVmYzZiOGJlYjIyOGM5NTEyMzM5ZDBmYjY2MmQ4YjQ1Y2FkZmM0NTU5OTZhMzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c36aff0cb48c4a8fbaa14bab7dbc7e56",
+      "statement": "Events are stored one file per ID, and completed pages of cache_size events (default 25) are also written as a single JSON cache file for range reads.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/event_store.py#L50-L50",
+          "version": "repo-lines-v1:sha256:c25d913d90aebcbc591d383e698e7bfd23f8a6ecbc4d2f830ee4d6343128f3eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzI1ZDkxM2Q5MGFlYmNiYzU5MWQzODNlNjk4ZTdiZmQyM2Y4YTZlY2JjNGQyZjgzMGVlNGQ2MzQzMTI4ZjNlYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzI1ZDkxM2Q5MGFlYmNiYzU5MWQzODNlNjk4ZTdiZmQyM2Y4YTZlY2JjNGQyZjgzMGVlNGQ2MzQzMTI4ZjNlYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTNkMjk3MTQ3YWY0NzI0MjUwMmNmNDYwMjRmMGM0NWMzNjI0ZWJlNzRlODBlNGNkMDRjNGI5NzAwNWEyMWZjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDRiMThhYmEwMWVkYTlhY2U5YmNkODk5YjA3ZTM2N2QzMjk1ZWI4MTFiNzhkYzU5MDJiYzhhODZjYjYzODVjMCJ9"
+        },
+        {
+          "resource": "repo://openhands/events/stream.py#L181-L203",
+          "version": "repo-lines-v1:sha256:055fac8a5ec36ace837791f69144006e9f11c7d90a668c0e4aa43917ebab91f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ZTYyNWFlM2E4NDYwMjhkZGJmMTM1MTgyOTE0YjZjZjY5ZjU5Y2MxYzA5ZGNiNTQ3YTA0NjNjMDI0NDA0MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxYTdhYjkzYTA2ZmMyYzUxMTMwYzE1ZTA3YjRmNWQwOTI0ODQxYmZkMjc5M2UwMmFmZTRmMzBkZmI1NzM5NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4YzEyMDE3ZDU0NmI2ZGY4NzEwMjg2MzVmZWU3ZmEzY2FhMWQxZGM4NjNmNzkwODY4Y2NmMmYxM2RiNWNiNDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e22b09cbbdb4aa3b8279ffc3c665995",
+      "statement": "The delivery loop submits each event to every subscriber callback in sorted subscriber-key order, and each callback has its own single-worker thread pool so callbacks receive events in order.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L130-L149",
+          "version": "repo-lines-v1:sha256:e5db41e59976368e2a75f79521cd9d602750959c8e892a0b0340f72adae1bd85:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4MGJhYTRjNjBlNmQ4OTBlZWQ2N2YxMWVlMzRkY2U0Mzk1NWRjNGM4N2E2YTY5ZWI0OThiMjNiZDE4YzU3MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5OGM3MDQ5MjkzYTgwN2I4ZGU4NjMwYWY1NDliNGJmMDg1YjdmMGViYjFhMjVhYzYwOWQyZjY0MTBjYjgxNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwOTNmZjk1NzMwMTlhZGUwNGVlZmZhMjBiNDIwNDc0OGI2ZjliYjk0ZjVmN2RiZDBiYzAyN2UyMmRmMTdhOTgifQ"
+        },
+        {
+          "resource": "repo://openhands/events/stream.py#L246-L276",
+          "version": "repo-lines-v1:sha256:cb72282e8fdcb0654a4da05ca09ac72aca8577a27bccfbac0da020bd213e3ff0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxZWFjZDJhNjAxOGU0NzRjNzFjMzRiZGEzNzg3MmM5ODlkMDdkNzlkZjNjN2E2ZTUwNTVmMTNiOTRhOTU2MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OTZkMWI0MTM4M2RkZTZjZmJiMWZkODEzMDhmOWQxZjA1Y2NkOWRlZjU0MmI3Yzc3MDc3ZmQ3MTdhYTE5ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4MjZlZDBkZTRkZDYzODBkZjUxMzQ5Zjc4NGUyODZlM2E4YjI1ZTIwNTczM2IxNWRlY2ZmOTU5ZWI4NzNkNzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b80eb2c5fdcf42af9538bca1672041d3",
+      "statement": "The Event base class uses INVALID_ID = -1 as the unassigned marker, and add_event raises when an event already carries an ID, which prevents re-adding an event from inside a handler from looping.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/event.py#L37-L37",
+          "version": "repo-lines-v1:sha256:51b10d40383c4942bf13cb10dc17a8a0d5fa360d738310e1cacf8f53ea07c4c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFiMTBkNDAzODNjNDk0MmJmMTNjYjEwZGMxN2E4YTBkNWZhMzYwZDczODMxMGUxY2FjZjhmNTNlYTA3YzRjNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFiMTBkNDAzODNjNDk0MmJmMTNjYjEwZGMxN2E4YTBkNWZhMzYwZDczODMxMGUxY2FjZjhmNTNlYTA3YzRjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGYyNThiMDAyNmZmYzRkOWY1N2E3NjIzY2M5NjQ3OTc3MzY5ODg2ODVjMTlhOTAwMmM2ZDdjM2ExYTRlNDBhMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWFhZDgzNDU4M2VjOTFmNjdhMGNiYWU5YmFmM2JiODFkZTZhNzcwODY0MjZhODg1MDIyN2UxZGEwY2JmN2YwNiJ9"
+        },
+        {
+          "resource": "repo://openhands/events/stream.py#L163-L170",
+          "version": "repo-lines-v1:sha256:88daa11996e95b47ea51eac927ad42e428592361be24a8558097aa636546ebc7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDU3ZjlkY2VkMTAxMzEzNGUyNDdmNzg5ZTMzMzI2YTc3YmQwNzExZmUzY2M5MjZmNjUxMTIzM2MxODU5NGM3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk4ZTIzMmMxNDkzMmExODhjZWIwY2QwZDc5ODBhODRmNTU0NWUwMzhiYWI1Y2M3YjM0OTViZjUxZWNhYmNmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzNkMWY3NmRmM2VjYWRjYmQwYjcxYmNiOTg3YmY5YjUwNjQ0YjNhZjUwMjhmNmFiNTQxNDkwOWNhMDU3MWZkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDIwZDQzOThhNDU4MTMxNTNmN2UwYzc1NmQ0ODAyMGMyM2IwY2JjZWYyNWM0NjBmODE5ZjU5ODI2N2NlZTNjYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d27af10c222480bb301ad53b4e7d507",
+      "statement": "Trajectory export reads the stream through EventFilter(exclude_hidden=True), so hidden events are omitted from exported trajectories.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/event_filter.py#L9-L37",
+          "version": "repo-lines-v1:sha256:064e2ea6f90c16c1ea51be434118a6f85ab5d970dc028acf14589120bd8cab99:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmNWM1ZWI5OGQ5MGU1YzllM2FmYmI5NWYxMDk3YTdlMmM2ODZmMGIyNjMyMWU2MjM5OWMwNGNjOGRlZGJkNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5OGNlM2Y0MGJmM2Y5ODk1ZmMyZTI0YzE5MWNiZDFlZmExMzIzOWNkMGMyOGUyYTNmYjE4NmY4ZWFiYzExMzgifQ"
+        },
+        {
+          "resource": "repo://openhands/server/routes/trajectory.py#L30-L36",
+          "version": "repo-lines-v1:sha256:224be34c3ada1ad67477a304dff67f5d6b794ffdcf784a184c701e0d372ad36a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlmMTI1NDMxOWRhNzAzMTliNGY0OGYzYzBiOGIxZDYyYWU1MDdmOWMzNjVjYjNhOTVhZWM5NWZlNGUzZjg0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU2NzJlOWEwMmExMzIzYTU2ODE2ZjY1YTI5M2ZiZGUyMGNhNDZkMjM0MjY1N2FiOWMwZWRhMWRiYjk2OTMzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWFhODQ5ODVjNTJhNjVmOTAyMDhlMzcwNmU1OTE4YWUyODRhYjEwZTljZWQyZDU2Mjc1N2IwMjJjNWM3OGE0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzUyODA4YmRjZTljN2I1NzNjNjgzZTQ3ZTVjMjIxYWQ0N2RjOTE0YzNhNDljM2YzMTI3NDA5ZTM5NjEzZWY2ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e838e4b37ca94fe48186060408b03dcc",
+      "statement": "The runtime subscribes with the RUNTIME key and handles each Action it receives through Runtime._handle_action, so execution is driven by the event stream rather than by direct calls from the controller.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L149-L150",
+          "version": "repo-lines-v1:sha256:5ea6f03f90b2ab68305e4b8b27a06de90367d1914278b4b06f481987b1df4fe9:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY2YTRlYzU4ODM4ODZhOTk1ZTBlNDk1N2I2ZWMxZDQ5NGIyODU3NTg0MDgwNTgxNmQ1ZWNiMWZmODllNDFlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM4YjllNzY0OTEzMGQ5ZTdmYjcyMmRiM2Y4YmIwNDk5OTJiMmIwOGMyYTc3ZDE1MWMyZTBmNzMxZjYzODFhNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTk2NjNiMTBmOGRlMDE5MmFhZGU3YmJiNGVmNzA5MGY5M2VmZmYzNzA4MmE5MTE0MDRiOTEyNTczOGJlYzFjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDcxMTEwNjRiNzYyOThmOTdkZjhmY2ZhMWRmYjU4MGFiZDU0Y2JmOGQ5YWViNWNhMDM4YzA5NTRkMmU2NGY4YSJ9"
+        },
+        {
+          "resource": "repo://openhands/runtime/base.py#L321-L323",
+          "version": "repo-lines-v1:sha256:a296930472fa5d7cc1796102f1b24fa00400c794b6d74050ced448e09fba876f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTA2Mzg1ZWRjZWViZDU1NDA4YmUwOGQ4MzRiZGExYjExMjE0MDAyZjJlZmEwNDk2YjUzNDVhMzc0ZjljYjY3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGFiOGJkOGQ0YzEwZDA5OWI3MDRiN2YzODBlMWNkYjljOGI5NDY3ZDM3N2U5ZTUyZmNjMGMyNjVlM2MwOThjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjU3ODUyYmRmYmE5ODRlYWU3ZjVmZDJjOTdiMmFjZGE4YjIxYmMxYTdlMzBiZmMzMGRhOTUwOGUxMWJkMWZiNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5d36a625d2d04e4f801a9850187761a8",
+      "statement": "Each AgentController subscribes to the stream with the AGENT_CONTROLLER key, so controllers receive every event through the same delivery loop.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L166-L170",
+          "version": "repo-lines-v1:sha256:ee7f3a5d70e867d8e8e7af36055343d0c753fd49944560b6071f55c534f8257d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTY2ZjQ4MzM4NjAwODJkOWQ3M2UwNDM0MWJjN2EwOThkMzYyMTJmMGRlMWI0ODQ2YWRiY2Q1MGFhMjNjODgzMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjI3NWQ0ZjQyMzVmZDc0NmZkMWRkOWUyZmFkYjM3ZDQ2MGEwMzEyMTVkNTFkZThkNjQzMDgxODI5OGZlZDk2NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjhlMjg4ODk2NzU3ZTYyMjQxNmFmYjgzZTZmODc3ZjJiN2UxMjAyZjg0YmM4MDdlYzM1YzgxNWM3MWJlMDEyYyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

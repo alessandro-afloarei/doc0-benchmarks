@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f22e12b5b077ca4aedcce6db982b029737c84ccfafab11f34f16333d5caa1f20",
+  "claims": [
+    {
+      "id": "claim_85f091e5ee304c27b12dafa630a002d3",
+      "statement": "Routers expose add and match, with match results containing either parameter maps or parameter-index maps and a shared stash.",
+      "evidence": [
+        {
+          "resource": "repo://src/router.ts#L27-L102",
+          "version": "repo-lines-v1:sha256:e0948c6c71833c3e3209c085847fa2016a570edcf796eaf8648f278962de3105:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0NDlhOTgyYTAzNTA1Y2RjMTA2YTZhMWJmODM3ZGE4ZmZlNWM5YTFjN2UyNzc2N2IwZTY5MmUwODUzMjRjMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0ZTFiYmVhOGIwMmM0N2QzOTBmOTczMDgwMmRiYTc3ZTRmZDhlNzJhYzE1Y2U0MDI3ODNhMTA5MTUyMDU2ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4YTk2N2E5ZGMyMTI1MzRjZDczYmI2NDFjZDVjNTBlNDJmNzVlY2JlZDY4MDRjM2NiMmRmZjRhNmE1OTQ4N2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_54f0e50d54e8483baaa7cadb8d896c1e",
+      "statement": "The main Hono constructor defaults to SmartRouter with RegExpRouter then TrieRouter, while quick and tiny install their own routers unconditionally.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono.ts#L26-L33",
+          "version": "repo-lines-v1:sha256:e6e70d9eda1d6910a282f2ff9b24136da5d2799ae38ee9bfa44f19c2f94bb432:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRkNWNiZWViNDNjNWU1Mjg0YTRjYzNiYjAyODU5N2ZlMjZlMThhMGFmZjg0YTU3YTE3ZTcwMGIwZDgzMzQ1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTA0MzMwNzE5MzQ5YWNhNTA3ZjI5NTUzYmNjZDdiODcwN2IzMmFiMTBmNjE1MTdmNTQwZTE0ODI2MThiNWY5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://src/preset/quick.ts#L18-L24",
+          "version": "repo-lines-v1:sha256:ae8e25f750d93e1a28ce4264d501ee4fc77b63032690536ae869e5a0d6a474a7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRkNWNiZWViNDNjNWU1Mjg0YTRjYzNiYjAyODU5N2ZlMjZlMThhMGFmZjg0YTU3YTE3ZTcwMGIwZDgzMzQ1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjRkYjMzZjI2NDdhZjk4YjZiNTMwNTRmNWIwYjVkN2FkNWFmNzk1ZjI1MmY4NjEwZGQ2NzFjYzUwMmJlNzE4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/preset/tiny.ts#L15-L19",
+          "version": "repo-lines-v1:sha256:c83cbf61c945536510ffc7c625999cc1c5bdc8057998ffa2bb6d5325f429d740:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDIyMDk2Njk1YjhhZWRiYWIxZTc2NGY0MmNlOTY5YTI1NzgwMjRkMzFkNWYyMzY2NTViNGRmYjRhOTZlZTJmNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjk2NTUyYWI5MzA1NzhiZDA1NjVmZDA1Yzg0MWM1MDA4OTlkZDg0OGVhYmU0OTA4YjI2MDNkYzQxZDhmMWYwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba6992b8d2e048e881f8e5e08883d7b1",
+      "statement": "SmartRouter selects one candidate on first match, falls back only on UnsupportedPathError, and forbids registrations after selection.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/smart-router/router.ts#L13-L70",
+          "version": "repo-lines-v1:sha256:139345c9ed7b8242f8a02ff50a7ac53746f308b3736a2f416ef2eda5ca607160:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MWIxMWIwMTI5MjM3ZTVkOTcxNjFjOWNmMzg3ZDM2YmY1M2EyODYxMWRhMjFmMGRkYzFiYTUxMTUxZjg1ZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiZmQ3YjU2MjBmYjhhOGQwZDM2ZjBjM2ZjMDg1MDk1YWVhZDA2ZTJkN2E1MWNlZmU1MWYxMWE5NWUzOTA3NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_da8f54bd815b4a788b37b95d9b3ea748",
+      "statement": "RegExpRouter builds matchers lazily, checks a static map before regular-expression matching, and discards registration caches after building.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/matcher.ts#L10-L33",
+          "version": "repo-lines-v1:sha256:9979e624392c168ee17e16fdce2138271fe69ee0a095718b66327880171d700b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YWU2NzNiOWNkOWZiYTk1MjA0MGZmZjE0MGU3MDNlMGU3YmYxMDUzOWU2NTc4MTllZTJmYjdjZjJmZjE2ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkZmZiMjFjMTNhMDFjOTYwNjRkZTUwMWViZDAwNzNkNzU3YjBkODA0ZmFlYmVjNDFkZWUyZmU1MjQ2ZGUzZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/router/reg-exp-router/router.ts#L208-L221",
+          "version": "repo-lines-v1:sha256:0e0e56e2d407b56e09b288b8fb964ceed7b0d5f8e9409d7de18d47ae54bac3c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxMTExMWE2MDYzM2FiMzYwZTc4MzFkZDExYTcyMDQzNzJlMThjMzNmZjkzMzZhMDI0ZDA1NzU4MGQ0NWE0MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1NjE4MTkxYWE0MTMzMDgwYTM4ZTZhZTFkMmU2OGQ0ZDUxOGU3YWNjNTYxOTU3ODhjMjE2MGE4MWEyZDM5MGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmOTUyMDcxOTAzYzgzZDQwOGQ3NjAzMDhmOTFmYzYwMDcwZGU1YzU5ZDlmMTk4MjNlYjQ0Njk3MmUyMmQ4MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI2OWJmODYwZWE4ODY1MDBjOTQ3MGZkYzI5NWJhNjhmNTAyYWQwOTMzZjMzZjEzNzYxMDBiZTlkNWIxOWVmOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca955af7e3fb40749c06e0f801626662",
+      "statement": "TrieRouter expands optional route paths and orders matching handlers by insertion score; PatternRouter and LinearRouter scan registered route entries.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/linear-router/router.ts#L25-L42",
+          "version": "repo-lines-v1:sha256:b6153403423039a3ff8578a23d882674b2373c30491068d6fcb293ec07a5300b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkOTRlNjg5M2UyNWI3YjI1NzJiMDY1YmY3YzVmZDk5YTkzMDY1ZDlmM2Q3YmI3YzlkMjU4MGMyNmIxNGFkZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ZTYwODg5MDg5MzU4N2Q3ZmI1Mzc1ZTBmMGU3NTRiZmE3MjZhZGE2MTEzY2RmYWE3YWZkODExYWFiY2MwZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkZDFiMmIyNzg3MzlhY2IzZmNiMzE0MDU0ZTc3NDA4OGIxNWI4OTM2Nzg2YmUzZjcxZmUzNjRhNWFhZDc1NzIifQ"
+        },
+        {
+          "resource": "repo://src/router/pattern-router/router.ts#L44-L59",
+          "version": "repo-lines-v1:sha256:449c1bdbd3f4df04bb2f95c519a3d459b8a7a7bb05db9babdfccdd2c1e8416f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkOTRlNjg5M2UyNWI3YjI1NzJiMDY1YmY3YzVmZDk5YTkzMDY1ZDlmM2Q3YmI3YzlkMjU4MGMyNmIxNGFkZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://src/router/trie-router/node.ts#L234-L245",
+          "version": "repo-lines-v1:sha256:659c9ae001d30dad7216245406a3a9b991bf0242ae309832eab920cb0d93ba7a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1MjE5NWUxNjY5Y2Q0YzIzZWNlY2ZiMTNiNjMxNDFiZGMwYTFkMWZmY2Y2Mzk1OWY4YjkyZjA2YzIzZDBjMTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4NWU5NDFhOTlmODc4MTRmZTFiMDgwMWFhMGQzZTJjZjYzZTg2MDA1NTZlOGI2MWI1NjQzY2Y1OGJhNjc5MjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/router/trie-router/router.ts#L14-L28",
+          "version": "repo-lines-v1:sha256:1e5b2e86e44a4367d12f019ef8f35a844b5f611740646d658dd2b61933c6947d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhYjU5NzVmZDRkZWMxMzc0NWJlZDJiOTc3MWQ1YmYwZWM0M2MxNTM3YTA4MWViZGY3OWFjNTVjZWZhOWMwMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4MTk1OWIyMzAyYjRmMjcwMGYyOGM3NzcwNzVkYzhhZWZlNWM0YjFjMzFhZThlOWRlMDMyMDE0Mzg1YmFkMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_964f0239a8d140088469c3e6818b0aed",
+      "statement": "With strict false Hono uses the built-in path extractor that removes a trailing slash except at root, rather than a supplied custom getPath.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L178-L181",
+          "version": "repo-lines-v1:sha256:c263cd8cbe143cbe08254777f8e4bcd2d3be33f44ab3bac4b050cc37f900fc55:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzMyZmU4MjMyNmUwYmMzYWZjOThmNDFmNTc2MmM2M2RjMDdmNjIzMjNiOTI1OWY5ZTM4NjI1M2VhNWM2YjU5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODMyNmQ1MjA1N2I3ZmFlZmFjZDIxZjAwNmQwZTk2ZTcwMmJjOWQ0NGU5NGEwYzM2OTI2NDk5YWY0NzcyNjI4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjU4YmEwYjI4ZDc0YmFkNGEyZTYxODY5YWFiYThiNmNhMjUwODE4NTNhOWQ4ZWJjZjAxZTFjMGQ3YmQzNzNiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjY0YTMwZmVlOTQ0ZjlkOGI2NjJkMjUwMTIxZmJhMDZkNzRiZGYyMjA1YzY4NWU3YjA0NGU1MjMxYmUzZGY1OCJ9"
+        },
+        {
+          "resource": "repo://src/utils/url.ts#L141-L146",
+          "version": "repo-lines-v1:sha256:ac9e834b30fefbe1e69aff399dd76f9557cdc1b604a7ea4d2b4a5efb3c5515a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJlZjgxZjljN2Q5ZWY4OWVkNTk1MTg2N2MyOWYyNDg5NzQzOWM4NDYwNzczMmFkNTFiZjI5NTcxMDNhYjdiMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODE3Mjg2ZDQ2OGFhMDM5ZDgyMWQ2ZGRlZjQ3ODRmZDQyNDJhYTI0ZmU3MTlkN2I1OWJkMGIxZTJkNzk2MTVkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWVkZGYyMmU2NGJiODkwYzE1ODc4MGU3ZGIwZDgzNjM2MzFkMDBiMGQ4ODY2MmE3ZTUxYjgyMGE4YTQ2M2JlYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7da287048c304a4aa885229a9ac2773d",
+      "statement": "PreparedRegExpRouter attaches handlers to a precomputed path set and rejects unregistered non-wildcard paths.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/reg-exp-router/prepared-router.ts#L53-L100",
+          "version": "repo-lines-v1:sha256:2c7737c14144adb7da4ef82417f20875524f268e317b0b045e64d4fe40b11936:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjY2NjNGVmYjUwNWZhNTM0YWMwNTVkOTNmM2RkOWNhNWZiZjZmYzE3NmE4Yzg5YmZhNGU2YTRmNDQxZjc0NzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1YmQ4OTk4MjgzMmUzYzA1MDY3YTNhZjFiYzU0MmVkYjQzZGQ0Y2ZiM2RhYTc4ZTc4ZmM2ZGIxODIzNzk4OTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwZTJjYzQ2MTQ5NzU0ZmMyNjdjNWNhNDE1MTBlYzliYjk4ZGFmY2ViZTc1OWI1ZjIxODAyYzM0MmMwZWFjYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_16ac07989c3b4526b1ef43660ad96731",
+      "statement": "Router test wrappers invoke shared cases that normalize both match-result representations; Vitest excludes case files from direct execution.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/common.case.test.ts#L14-L58",
+          "version": "repo-lines-v1:sha256:ff69c6331c2634da68aa69b7c053000f25f02fc6e9610d8cea61ae1a64919fe3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3ZDg0OGZmMGNjNGIyMmY3ZDI5YTk0OGNkZmJlYWQzZDA2YWEyMjVmMTBmNzliYTJiOTkxOWY0NTZkOGIwNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjMDIyNzg4ZTE3MzAxNzdhYTc1ODMyNzBhNDkxOTBlNjE0NjZiOGNlMmI0NWQ3MDEwMmY1OWQ2NTk4YzMxNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyOGFmZmYxMTNkYTdjOGJkMzZlNWFjMjRkYmM3ZjRlMGI2ZTkxZDZhNTRhYjc0OTIxZjFjMGRlNjU0ZTM3OTMifQ"
+        },
+        {
+          "resource": "repo://src/router/smart-router/router.test.ts",
+          "version": "repo-file-v1:sha256:f65fb3a6a5892d31fd2098381aa50cc4182091aad27f595e99497d91e301086b"
+        },
+        {
+          "resource": "repo://vitest.config.ts#L40-L48",
+          "version": "repo-lines-v1:sha256:54c2ae18d9cb008dfabd75e9de62c9ac7bcf1e4bbe513466511041aae936b191:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q2NDI5MjhkOGUxOTI3MjdkNjQxOTNmZmE3ZjQwMDZlZDRjYzNjZjdjNjY3YTc1Yjg4MTliNTA5MDc0ODc2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdjOWJkNjFiMDgxYjE1NWY5NzRiYjRmYzY0YjgwNGRhZjFhNTkzOGM3MmI1MTg3YzM4MzNhNzY3NjNhYTZmMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDk4ZTM1ZjA0NDRlNzRmODNhNzE0MjA3NmI4NGEzNGViMzIzNTdjOGE4YWEwMGFmNzQ4Y2I0YjY4YTEyNjk4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTVmM2I2NjJhZWFlYjRiN2UxYTcxYWI2Y2NiYjcyMDE4MDg3MmYwNGIxOTI1NWE0YWFmZGJkNDJmYmQwZDdlNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:36:56.362Z"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:053a3ee122cba5d7f2935b8eb1e6e326f297ced906e9c01b84f550ff5716711e",
+  "claims": [
+    {
+      "id": "claim_153f5c2c44554134b915e18f37f257fc",
+      "statement": "WebContentsPreferences defaults to nodeIntegration=false, contextIsolation=true and an unset sandbox value; IsSandboxed() returns the explicit sandbox setting if given, otherwise true unless nodeIntegration or nodeIntegrationInWorker is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/web_contents_preferences.cc#L110-L125",
+          "version": "repo-lines-v1:sha256:bb24c8e36665acd4fdb2fd455f8ee21da71c7fc972a1cb2d29f51491a8e71ac2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxYzRjNDY5ZGEwOGM1YjBjYWEyMjc1MGIwNWEyMGM4MjA2MjYyODFhY2VlMzBkNDUzZGI4NjNlYzBkOGFlOWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0MTAwMDFlZWIzYTcyZmFlMmU0OWE3MGY2MzY4ZjQzMWNmM2ExZmIxNmRjMWM3MTk1NWUzMTI4ZTY0NWRjZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4MDRmMjQ1ZTljNWFkMTg4ZmJjZWZlNjc2NTFkMzc4MjBkOTdmMzFmZjcyMDM4ZTBmODhlZTQ4ZTI4NTBlNzcifQ"
+        },
+        {
+          "resource": "repo://shell/browser/web_contents_preferences.cc#L280-L286",
+          "version": "repo-lines-v1:sha256:50e96488879bcb93c49b064678976c5cade2953c70ae8b9e70df2f1ef0bf2654:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2UzZWNjZDYwYjc4ZjE0MDZiOGYxMDdlZjJlN2QwZjY0OGYwM2EwNzk1NWQ3ZTc0YmU5ZGRlNjZlOGJmMzFiMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjYyYzRmZmVkYzU3NjM1NmZjOWVkYTk3YTY1NjczNTVhMWI5NmQ3NDc1OTQxMTIxYzRlNzEwNjk4NjJkNDg2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjNkOGUwZDU4Y2Y5NmQyMTgzZGE3YzBmOGUxN2FiMmU3YTBhMjllMGNjMDRhNmJjMzQ3Mjg2MjNmZDMwYjUwYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c6c65c98a104b98905b15ced27613fd",
+      "statement": "When launching a renderer, --enable-sandbox is added if the contents is sandboxed or the frame is a subframe without nodeIntegrationInSubFrames; otherwise --no-sandbox and --no-zygote are added, and the child chooses ElectronSandboxedRendererClient or ElectronRendererClient from that switch.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/command_line_args.cc#L57-L60",
+          "version": "repo-lines-v1:sha256:8c991adbca9c11318f3eda1734ee15e8be0463f7e1b9af71aa31d60676d33c83:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2I2NjFjNzVkNTYwZjEyNmRkZTg4MjI2MmMyMGY1YmJmNGJlMzMyZmUxNmQxY2VhOGE1MmE2ODcxZmY2MjEyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGYwZDEzOTkyODhiZjY4NWFlODM5YmQ3OGZiOGE0YzJhZWZlZGIzZTkyZWMyNGQ0NDUyMTcwZTI4MWM4ODU5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzgzZGIyODVmZWRmNzM3YzgzMTYzZjRjYjE5MmY4ZmYyZjM3N2QyZjFmYjRjZjk1YTQ2NzMyZjY3NzNhZGM0ZSJ9"
+        },
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L462-L473",
+          "version": "repo-lines-v1:sha256:a9d3e8c235e51221f9af9061d18be7a4aec5a0bb86fe635bb711eba3f59bced4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkYjY2NzhlMjU1NjI4YjkzNzRmMjE2YjkwYzUzMTRhY2Y4NjdmOTM1ZGY4MTA3MTg0NjkzODA4YTk5MjUxZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4NDdkMGJmNzU4Yzg2ZGJmMzJhMmExOTc4ZDY0MjRiMTlhYjM4YjRhZTY4Yzg0ZjFmYjcyNDJkMGU4MmE4MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhMjEyOWFiNDZkMTliM2ZjMTJmZDI4MWNhNjA4NjMwZGE1NzM0YmUxOWNiODE2MWZiZDczY2NkNDAyNTc1MWIifQ"
+        },
+        {
+          "resource": "repo://shell/browser/web_contents_preferences.cc#L305-L326",
+          "version": "repo-lines-v1:sha256:11b2c8f8d4991aac54483d3b76b83ab85f8bb0959d894657393bcec118e3056c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwYTkxOTAzNWQzMmU3NWFlYjU3YmYzOWYwMmUxZDViMWFkNTkyYTVlMDE3MjU1MzJhOTVkODBkOGI2ZTgyNGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3NWNhZjY5ZDM2YzkzMWMwOTM1ZjYyZjdmNzRjYTcyMmM2MTZkMjVjYzg3Y2M5MDdmMmY3ZWRmYWJiMzJmYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmNmY5OGQ3ZTgxMDMzNjM3N2UwNzE3YzRiNjRiMTlkNjU4NTdlYzNhZTMzOWU3OWRkNjQwMTdlMmQ1ZjlmZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a23183addd0407a8a5a9f1093f583a3",
+      "statement": "A preload/Node environment is loaded only for the main frame, devtools frames, or subframes with nodeIntegrationInSubFrames, and never for <webview> guest frames (ShouldLoadPreload).",
+      "evidence": [
+        {
+          "resource": "repo://shell/renderer/renderer_client_base.cc#L198-L210",
+          "version": "repo-lines-v1:sha256:290364f5bd652a6f2398cd326c0e63a9ce7ae5b3b9a30c32fd15302fe4607a9d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlOGRmYzQ4NGQxMzhiOTJmMDU3N2NlYjdkOTVjMzEyNzJkYWExZWY1M2ZlYjlkM2U5ZGFlZjM1ZjQxMTM4OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhODZkZjc5Yjg4ZTBkNWI2YTMwNGNiYzc2MmIyMWE2OTI1NzhjYjczMzI2NzIxNjA3NjJhOTdkNTMxYWQxYWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkYTZkOThmMmNmZTRmZTcyZjcyNzE4MTI0ZWRmZDc3YWFjNGYwZjA4MTQ3Y2QwMWY0NGZhMTk0MTExNDA2NDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5e8d60bfaad4018886db712cb3fa9ae",
+      "statement": "In non-sandboxed renderers ElectronRendererClient makes Blink defer the document load until preload scripts finish, saves Blink's fetch/Request/Response/Headers/FormData/EventSource as blink* globals because Node deletes them, and only the first Node environment becomes the libuv-driving uv env.",
+      "evidence": [
+        {
+          "resource": "repo://shell/renderer/electron_renderer_client.cc#L92-L180",
+          "version": "repo-lines-v1:sha256:bc7572ad8ae060b91648cb83dd32256fc7cd491d849e5e144a032b0522eda078:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1Zjg3NzQ2MjQ0MGY5ODZlNGE1ZDJhMjBlZWQwYjk3OGI1YTJkZDNhY2Q2NmI0OTI3ZDE5ZWY4ZTE4NTIwYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhODFjNjlkYTY5ZDM1ZTFkNjIzZDlmZTE2ZmVjZTA1NTNlMDhhOWNhNWU2ODA3NzBkNWVmMGZmNGIxMDAyYWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2MDhkNmRhMzdlNjU4MTExZmE5NzBhNzk0ODY2OGY2NzgyNDQ0NzliYjY3MWZiMGVjMjc1ZDg2ZDMyNDg1MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhYzAyMWJlYzNmZGQ4YmVmMDk0Mjc0MDMwMGVkZjJkMTlmNTlkNGRiNGNmZDJlMTM3MjcxMDNjYTg3ZWVkMDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf5177dfc9944bf0bcc10be53a74d500",
+      "statement": "Non-sandboxed renderer init fetches preload paths via synchronous IPC BROWSER_NONSANDBOX_LOAD, loads CommonJS preloads with Module._load and .mjs preloads with the ESM loader, reports failures through BROWSER_PRELOAD_ERROR (re-emitted as 'preload-error' on the WebContents), and then calls appCodeLoaded to release the deferred load.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/rpc-server.ts#L104-L112",
+          "version": "repo-lines-v1:sha256:f486c83dac5ebdc28991f5f09c16372dfac9e4880ed33895cb0e81c499464705:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDU5OWUxYmJlNThmMWNhNjlhYzE4ZjZhMzJhODlmZjk1YjIxZDdjMzAzMTNmMDhiZmE2ZDI2OWEwODM0MTIwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWQyMjVkNjQ2NDhmZDdmYmU1ZDBkYTFmNGY3Y2Y4MDBkMTVjYmE5YzI3MGQ5MmI5NmIxYThhZWY5ZjUzNThhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjhjNDYzN2QzOWM3NTFiOGY5Mzc5YTA5OGJiODE2YjliNjBiOTA5NjRiNzczZWEwOWQ3YTllZjRlN2U2MjYwOSJ9"
+        },
+        {
+          "resource": "repo://lib/renderer/init.ts#L108-L168",
+          "version": "repo-lines-v1:sha256:538f634d75c3cbdd35f746a1be7964d52d944646c47751bb76790c713f2cea3b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmNzA3NTdmZjRjMDhkMDZiZjFmYTdhNmUxZTUzOWQzOGI2MDhmN2Y4YzM3YzVhMGQxMTZjNmQ1YmE4NTg4ZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5NzNkNWExNmRjZmJkYWQ0MWI5OTFlYWY2NzhmNGQwYTdiMzlhN2RkNGZiNTAxYThkODI2YjBjNTAxMzJlNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_120221094ed64a678a509e6cf025866f",
+      "statement": "Without node integration and without context isolation the renderer deletes process, Buffer, setImmediate, clearImmediate and global after Node's loaded event; with node integration it exposes require/module and maps window.onerror to uncaughtException.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/init.ts#L60-L125",
+          "version": "repo-lines-v1:sha256:d47706b5ab80e3bea6e2311f8b95ee129c80a771994d7f19a0a09828df8889b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhYzUzNDg0ZmQ2YzI3MDIwMjMzNjczNTBhY2ZiMzExNTMzZmYwMzI0NGVkZjMwMDkyZmUyMWFhMjM3NGM0Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0OTJlMjVkZjhmZGRjMzgyMzIxODUxZjgwNzVjOThkNWIxNjE0OTM1ZjAzZjhiODRkNzlkNDZiYjRhNjIzNWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3MGI3NmNiNzYwZDI3MGRmYWI0ODcwOWFiZjAxNzRlMjhiNjBlMzkyMTM4NGNkZWU4NDMwYzQ1ZGUwODc4NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2OGU3YTJkNDBkMmI5MGRkODY1MjE2ZWExNzg2MGM4Y2YwZTFhZDQxMjVkMTVhMDgwMWUyOTFkNjVhN2JhNDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea9f8b4669f74555b0e0d03d458686fd",
+      "statement": "Sandboxed renderers get no Node environment: C++ compiles sandbox_bundle with a binding object (get, createPreloadScript, partial process with sandboxed:true), the preload sources are read in the main process and delivered over synchronous IPC BROWSER_SANDBOX_LOAD along with a small subset of process properties.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/rpc-server.ts#L60-L102",
+          "version": "repo-lines-v1:sha256:65184efe1839314b5b7629d7926af7d42934fa00cbb9a29553309aa200368668:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiZDYyNzAyOGI3MTNjZmY1ZTc1OWQxMzJjZGY1OTVmODExZGRlNDAzZmQxNDY0ODk3ZDI3MGM3ZWZjNWVmMDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YjJkOWMwZDY5YjBlMDc0MmE0ZjAzZTFlYTRkNGYxOGM0ZmEwMmQ4OWY1MTk5NjBkYjNlYmFiNmRiN2I4YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjMzFkNmFkYmU1MGE3OTkzMzIwYjgzYTFlN2QzZDcyY2E0ZjQ0NDZkOTM4ZTE2ZmU1MGNiMWJkMTI2MmE0ZDYifQ"
+        },
+        {
+          "resource": "repo://lib/sandboxed_renderer/init.ts#L1-L71",
+          "version": "repo-lines-v1:sha256:ea2b0e14119c6a2a2971cc7534edf089d1b7e4f8aa3d9362e2b8b0d93c692b13:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhYjU3MWU5YWMzYzI2NDcyYzQ3OGQ2MTM4ZDFiZDc4YmU4ZmNiODU5YmFjN2YwM2E4YTI5M2RmOGEyN2ZlMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMzkzMWVhN2ZkMTkwMTA2YzVmZjY1MmRmMmExNGVlNTg3N2VhZDhiZDAwYzE0ZThhZGRkMWVhZGJlMWQwMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://shell/renderer/electron_sandboxed_renderer_client.cc#L66-L140",
+          "version": "repo-lines-v1:sha256:4d0dcc561ea3b7bed02f6a845f1821c85b0b76af362865b3bd1cd041e7fd7740:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlY2I4MTA4YzYxOGQ0OWE5NjM2Y2FhNDk5NTk1Yjg3MDczNDAxMTZhNDcyOWYwY2Q2NTMyNjYzN2VmZjNlMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwNjRiMjgwODJhMTIzMjhlOTU4OTY5NTVjYzliOTdmYzkwNGU5ODQ5NWEwN2YyZmI2ZWM3MDVkNTNjZDNkNGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_76a863de8d1e41c5add95bad359f3e89",
+      "statement": "Sandboxed preload scripts run in a wrapper function whose require only serves an allow-list (electron, electron/common, electron/renderer, events, plus lazily timers and url, with node: aliases) and throws 'module not found' otherwise; the preload process object is a fresh EventEmitter exposing only whitelisted properties.",
+      "evidence": [
+        {
+          "resource": "repo://lib/sandboxed_renderer/init.ts#L20-L40",
+          "version": "repo-lines-v1:sha256:7168fd4061418cb2c78bdbcf23576564e15649fe8faef4ba4991fcf307aeae1c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhZTQ3NGJkN2I1ZjkzYmNhZjczYjVhYjU2NDVmNTAwZjg4ZTIyMDkyMDA1MTBkNTgzYjgxOTYzYzljZTQ0MGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwZjQ0ZmYyY2YyY2JkYzUzN2YxZmFlNDMwNGU0MTA5N2VjODhiYjEyMTg2YzIwYzUxNzdhYjc2YzI0ZmVjYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhNzQxNmZjYzE4YWRmNzI5MDQ3ZDYyOTJiNmU0ZWY2MTZmNjk2Y2M3ZGE4ZDQ0NzA2YWJmZDFlOGQ5ZDRkNDEifQ"
+        },
+        {
+          "resource": "repo://lib/sandboxed_renderer/preload.ts#L1-L101",
+          "version": "repo-lines-v1:sha256:2777bc971ee56ff1c7fbc5a56e87900d81ece51ce6cf95628ac286cc1604d48f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlZGRlMWE5MmUyMzc2NzJiZjBkYzUwY2RhYWNjOTM1Y2YzOTk5NzU2YzVkYTA1ODgzMDIxODFkMzFmYTBmNTMxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d5de7aa15cb48a9aca89bb33678bfff",
+      "statement": "With contextIsolation enabled, Electron's renderer runtime and preload run in isolated world 999 (main world is 0) for main frames or subframes with node integration, while an isolated_bundle is run in the main world only to set up the <webview> element.",
+      "evidence": [
+        {
+          "resource": "repo://lib/isolated_renderer/init.ts#L1-L10",
+          "version": "repo-lines-v1:sha256:4652d7159fd200fb9919708e033f0ca5b9ea87d8f8ac8f2540e1b14110dd148f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyYzdiOTkxNWU4NmIyNjMxY2ZlZjJkOTg2ODgzMTZlZTIxNDZlOTY2MWNiOGUwNGI2YzE1ZGY2NGRkMzIwOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://shell/common/world_ids.h#L10-L22",
+          "version": "repo-lines-v1:sha256:a020b6e9f2bec0787ba132c59961bb0a6bb98f8cac1cfd749bb443a6473f30d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1MzQ0MWZiODZmYjIwY2VmMWJmYjVkOTQyNjBmN2MxMmI4Y2EyNTVkNWYwYTRlY2IwZjRhNDczMmZjOTRiZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiNDA2YjVmMTU4YjZkNTczMWQ1MGE5YTAzOWM4NzYzZjA2MDEzYTc3MzJkNjA4MjBlYTQ2N2YyNWVkZjBiNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0MzJhZTkyNzRhOTMzOTljOTU4YTg0YzZiYTk5ODU3NTZmZDAxNTQwNDk4NWEyZmM4Zjg3MTY3ZjI1OGJkZGEifQ"
+        },
+        {
+          "resource": "repo://shell/renderer/electron_render_frame_observer.cc#L120-L213",
+          "version": "repo-lines-v1:sha256:1efb306860e7a5e9ca9f12dc963da83c2f653410036ff29b507a5a442fa19b8b:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmZmY2Y2U5YmYzOGJjNDJlMDg0N2ZjNTJlNjgzMWJjNTExOWJlNjE0ODI1MTU0ZWVkZGFjMTBjNmJlYmRhYmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhZDliNDBjNDFkNGUwNDExMjg3NjQyNzZmOTNhOTY4MTliOGMwNDE3NzgzNGNhZmU1NmQwNzY3MmVlN2QzMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4MTdlNzlkMWIwNDI3NzIzNjNiYzRhYjFlZjZmYTAyZTRlYzdjYTZlYTlkZDZhNTZlZTRjNTk5YTgxNjMzMjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://shell/renderer/renderer_client_base.cc#L570-L610",
+          "version": "repo-lines-v1:sha256:dbd521a68737963a4427ebfcbedf094e72bb7339458fbf28aa13a9e7b24b99c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0N2ZkMGFiMDc2Y2IxZDIyOTliM2FjYWYyMTcxNDRjZmUxYmIwMWFlZWQ3M2M3MWRiZjczN2U1OWI1NTVlNmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjYmU3YmQ5NThlMmQwY2YxOGMzODZkZGI1ZGQ4ZWNkMTg0NmE2M2NhYTNiMTk0OTgzNGZiYmIyMGQ1YzkwZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczZDEyNmRjNDUzNzMzM2M3ZWFmZGM3YWM4ZGE0MWFhZDhjODI0OWYyYzJjODdkODMzNmZmYWZiODk5YTM4NzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0139366d26b54392807d1cbbe569d5c1",
+      "statement": "contextBridge methods throw unless process.contextIsolated is true; values crossing the bridge are copied or proxied by PassValueToOtherContext (plain objects proxied via CreateProxyForAPI, functions and promises proxied, errors reduced to messages, other values structured-cloned) with a recursion limit of 1000, and binding over an existing window property is rejected.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/api/context-bridge.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:ffebfdea693501c90719257d740783d5d639abf6474f9298db59be99a5af9feb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhMzY4NmViZGU1ZDI1NDdhNzNkM2Y1MjcxMDdiMTc4NWZlYjFmNTA5ZTk5MzhiOGI0YmVmM2MxNzM3ZTZhMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyOTA2MjM3ODk0MmNiNjRlYzNhMTI5YjMxMzkxMDBmODcxNWU4ZTQ3Mjg1OTM5NGE3ZDVhN2M3ODYzMzY0NGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlYjAxY2Q0ZTYwNjdjMjUyYTQ1Y2JhMTYwN2QxNTQ5N2MxMzc1MTEwNjZiMWNjMTFmMzFjOWJhYzk5N2E2MzUifQ"
+        },
+        {
+          "resource": "repo://shell/renderer/api/electron_api_context_bridge.cc#L160-L260",
+          "version": "repo-lines-v1:sha256:ad2cea38d1dbead5fdb4ae0c215b04fdc56350f2c3e1238adca685572fefa06d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5OTA4ZWE4MWFjMGE4MWFkMjEwMjlmMDExNTI4NTMzYmQ5NWRmOWEzNTMxYmM5NzdkNzVmMDhkOTgxNmJmYjE4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2ZTY1NTQ3NWEzZmFkNDFjNDkxOTQ3MTY0ODljMGI2MDYxZmM3YzA4ZGRlMzllNGNiYzdlZjA2MjhjZDI3MjMwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxNmFkOGM3ZWVjZjQ5N2M2NGM5NTc4NWY4NTJmMWVkY2M4ZDliNWJkNjNhMTVlYTViN2Q0ZGQxMTVkNjA1NTU5IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkZGI4NzFlNDBiZDM5ZmEzMTk1Njc5YzBmNjJhZTc3MThkMjdkNTU5ZWUxNTA5OTM1MDcyZjBlY2E3NDA4NTBkIn0"
+        },
+        {
+          "resource": "repo://shell/renderer/api/electron_api_context_bridge.cc#L425-L470",
+          "version": "repo-lines-v1:sha256:0915fed9d6ef2baccca9093c3ad809c606bb0bb8d79c1386baacd4da0b446e4e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzNGQ5Zjg3Y2Q0ZDY1ZmYzNzUyMjI5NmRlMzQ0ZTlhYTU0ZjNiZDIwM2I0NTIyOWQ0ZTkwMzkwNTUwZGU4NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwMGQ0ZTM4MDBhYmI3ZDUzMjQ0NjU3ZDU2NzM0MmRlZTE4M2FiZDM2YjMzYmY5YjdjZjU0YzE1MDc1YjhhZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YTY2YTE0MmY3YTAxYTVmZjBkNTQ0OTI4NDgxZGNiNjZmNjc3MDVkODNlYTUzNjY2NjhiNGU1NThhZjA1YWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2MWNmNzVhMTBjMDhjZjU4YzBiMjYwODNhMzMwNDIzMTYzZDg2ZmU2Y2NjNmNjMjlkOTc3MTAwYWVhYTFhNzIifQ"
+        },
+        {
+          "resource": "repo://shell/renderer/api/electron_api_context_bridge.cc#L55-L110",
+          "version": "repo-lines-v1:sha256:2582fc942b672cf179c5b930da5956d55f35a2d69dcc41a3adb898f6bdb1b2ab:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjMjhlMzk5MmJlYzFmM2M5NjJjNTc2ZTQ2YzhmN2I3Yzc4NmI5ZjhjZGIxMmU3YzAxYjY5Y2I5NjQyZWQwZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjNzkwNTY4OTY5NGJjN2ZkNzQ5OTUwNWUzZWQ4ZjE2YjQ0YTM4NWYxZjg5NDk4MDU1NDBmOWIzMjUxMjhiNzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyYzE0MTg1OTdiYmI3ZmJjYjkxNWYxZTAwNTlhNjk1ZTdiMDkzMThlNDhmNjE1MjEyMTczYTZkOWM4ZGM5NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkNzJjMzE0NjMxYWE0YzkxYmE3MWQxMDQ3OTFjOGU3ZmI0ZDkzYjU3MTU3ZGQ4NzRmNTk0NGQ2OGY3OWRlYWIifQ"
+        },
+        {
+          "resource": "repo://shell/renderer/api/electron_api_context_bridge.cc#L740-L750",
+          "version": "repo-lines-v1:sha256:4fb7c71ec9de5fe953d20752e5105953fc7f502a57bac705b3c252e189c1ab55:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlNWI2N2I2M2Y1OWE1NDI5NDA0ZjA1NmQxODlhN2EwY2Y0NmFlZjI5MGIwMTcyMDRhY2I0MmI1ODU4YjU5YzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlZjY0NTBhNDI0NzM3MDk0NTM5Zjk2NTQ1MzNjNTMzNjlkMGViZmVlOWE2ODJhNjgzMjc5NDMxODNhMTNjYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0ZGQ0YTM5MThjMGM2Yjc5NTE1OTAzZGVkNjdiY2E1YWI5MDI3ODZiNGI4NDQ2ODVlZThjOGQwODYzMDgwNDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1136a7026cad4fd78e65f07e8acf0f97",
+      "statement": "When nodeIntegrationInWorker is enabled each web worker gets its own Node environment via WebWorkerObserver with a kWorker NodeBindings (separate uv loop), and the worker init script restores Blink's fetch family from the saved blink* globals.",
+      "evidence": [
+        {
+          "resource": "repo://lib/worker/init.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:09fc578f9dd4ba0107e29f4be1b3bf9f30f10024a7b29db43a4fed511a61409e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlZmMzYjA3MjJiMWRkYzVlODg3OWFmNDVlNzFiMTE2NDlmMjdiNmYzYjUwNmE2NjFkMzZiZWEwNDdlNWM4MjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjNGU0ODY0ODAyZDM2ZTc1MWVkNWM3ZmNiY2VjZTk3YWQyZDc2ZWMwMDgwYWJiODMxZDVjYTZkMDY0ZWJjNWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4YzZiNDQ3Y2I4MjhmZDUzYzEwNTNlYjQwM2JkZGU0OGNmNThiYWY4ODRjOWI1ODMwYjk1YWMzMDBmYzZkODIifQ"
+        },
+        {
+          "resource": "repo://shell/renderer/web_worker_observer.cc#L34-L100",
+          "version": "repo-lines-v1:sha256:3c5fc4af76c690fe9b52b846ac6405ed8710bc6be0c4d15bd8915166eca5dadf:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MmE1NTRjYTJlODE4YjlhZTU2ODY2MjAyZWQxYWQ3MGJiZWEzOGMyMDE2Y2FkZjc0ZmY0YTBlMTlmNDBlZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkYjc2YmY1YjBiNzk1NTY1YjJjMGI1Nzg1MmNjODk2ZjBlYzZkOWQ4OTI1NjJlMGVjODE2YmNjZjE3MDUwNzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhYWFmYWJlNWYwZTY0NmZmMWUwMDc5Y2NlN2YyYTVmMmZjZmVmOTc2NWY5NjMwNjUwMzdiMjBhMWU4NWZiZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxNWM3ZTUxZmY4MmQ4YjNiNDEzN2Q2NmFlMDRmNjAzOGU3YmMwMmI5MGYwM2E1ZDRkZjM0MGE5OTkzOTdmNWYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

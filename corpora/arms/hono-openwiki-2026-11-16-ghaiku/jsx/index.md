@@ -1,0 +1,4 @@
+# Files
+
+- [Client-side JSX DOM Runtime](dom-runtime.md) - How hono/jsx/dom renders JSX into live browser DOM - the root API (createRoot, hydrateRoot), the build-apply render pipeline over NodeObject trees, batched state updates and flushSync, portals, error boundaries and suspense, form and action hooks, and the server-side string and stream renderers that share the DOM component model.
+- [Server JSX and Streaming Rendering](server-jsx-and-renderer.md) - How Hono's server-side JSX runtime builds JSXNode trees and serializes them to escaped HTML strings or streams - tag validation, the jsx factory and its props and children handling, function and fragment nodes, async components and their context capture, streaming Suspense and ErrorBoundary, renderToReadableStream, memo, and the jsx-renderer middleware with layouts and the render function on the context.

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6bcc53132e5337e15a340fa570e454ba651ffd2ad57fd0b84a4c52431f51725e",
+  "claims": [
+    {
+      "id": "claim_c6d78011b00d4ba6914c40646bf7d8c6",
+      "statement": "The factory's createApp merges the options with the factory's defaultAppOptions, constructs a Hono instance, and runs initApp against it before returning it.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/factory/index.ts#L332-L351",
+          "version": "repo-lines-v1:sha256:c654a83002578b4cb05b64680cff057aa6a262ba3c58c13be27d6e2bd8bf608f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMmJlY2M5M2U3NjMwZDEzOGFmYmZkNjMwMjY4Y2RlNzgwMGQ4NDNiMjY0NGFmOGJmMzI0OWJkZjM3MjUyMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NDM1M2IxOTE5MjhjZWNmYmRiM2Q3NTJlMmI1ZWU0Y2JlZDhhNjdkMmZjYjBhYmFlOTE2Y2E3YTU3ZTJjMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a8c7a1ddccd45389e4936fd2b6d09c0",
+      "statement": "testClient builds a typed hc client on http://localhost whose fetch calls app.request with the supplied bindings and execution context, so requests run in-process without a server.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/testing/index.ts#L16-L26",
+          "version": "repo-lines-v1:sha256:e648d15d826351858310591849538ca4305bebec1227d24d118cb57d9f50fc1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MTBmNGZiMTQxZWQ0ZWY3MDIzNDY5YmJkNTk2Y2RkOWVjYWRkODgzYTMxM2RlMWUxZmJjYTM2OGZjYWQ2MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MWUyYjQzNmE4M2UwMmQ1NzZlZjZlMGI3OWJiNzVmNDEyY2Y3OGMyMjg3YWNkNzAwOTA1N2UwZjJlOGU3NTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNGQ0NDYzOTA0NzZiM2MzYmIwMGU2MDJmMzk0NDk0ZmIwZmZlYWVhYjFlZmIxYzVkNmVmYjZiYjJhZmZlNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2778326fb91648d59c1c226b130fa1fb",
+      "statement": "streamSSE sets the text/event-stream content type and related headers, runs the callback through run(), and on an exception calls onError and writes an error event with the message, closing the stream in all cases.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/sse.ts#L44-L100",
+          "version": "repo-lines-v1:sha256:bad9fa5e2bfc16eff75dcf7f123a71ad3a24ad7de701768b914d8c84bc760de4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliOTkzMzVkY2E3NzMyY2E3ZTlhMjIxZGM1MjU5OThhN2MzZDMyZThlZmRlNGY2Y2NkZmViNzU3NzM4ZTVjM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d4a72e837e942fd9bead9e8c398be77",
+      "statement": "stream wires a TransformStream into a StreamingApi and stashes the context for the lifetime of the stream so that it is not released early on Bun.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/streaming/stream.ts#L7-L45",
+          "version": "repo-lines-v1:sha256:0a280b87fb1dfa529d0c50dbc636bbe9dcaabda0d43a20a1ffce718fefc02ad7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxYmMxNjFiZDExNjY2NjE4ZWVkY2RjNzA4ZGNjM2NjODY3MDMzNTgwMzVlMTI2MDNlNmRkZDA5ZDNjNzJhNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmNzUzZDlmODJiYmM3OWRhYTRhMzI4NDkzMmVhOTY1YjM5YjkzNWIzNDI3YzNkODEzYWJmYzZkZWVhMjExMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_08005960aaa44908b6dfdcff56d7dafc",
+      "statement": "defineWebSocketHelper returns an upgradeWebSocket function with a middleware form that calls next() when the platform handler returns nothing, and a direct form that throws 'Failed to upgrade WebSocket' when no upgraded response is produced.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/websocket/index.ts#L111-L140",
+          "version": "repo-lines-v1:sha256:5e72a020f1b913dcfabdf68daa264b5ba7b8c14831825e3b515374afd187ba6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZTMwMjA5MWZhNmM5MDEwMmUzMjY5NDUyMTA0N2FjNTM3NjZlOTUyYmQ0YjI1YWNkOTAxNGExYzM5YWM0NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyOTY5YzQ4MTg2NTExNGM4NTIzODMwZTFlMjYzOWIzODA3YWYxMTVkNGNlNWJhYTdiNmM4OGE0OTYzMWVhNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_85de0f5a6db0464090df586309146a32",
+      "statement": "inspectRoutes maps each registered route to its path, method, derived handler name, and a middleware flag, and showRoutes groups duplicate method and path pairs when printing.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/dev/index.ts#L27-L60",
+          "version": "repo-lines-v1:sha256:73f124e6155af768a7bb1f78719c145d73d7c841eecb05ce1ed741a701d20173:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0ZWNjZjY0OGEwNDllNTI4NjM0NThiZDA5MDAwNjA2ODZjYjY2YjcxZGRiN2EwY2M0OTVlZTU2NjBjYTliN2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmM2VhNGYwZmUyYzdiNDEzZjAxNTY5MTI0ZmM4YzEzNjJhNDQ5NjBkYWJiZmEzNmU1MzUxZGY3ZWZmODhmNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhNzZkNjA0MjgyYjY0M2U4MWY2YTYwNGViMmJkYWQyNWY1NDY2OTQ3ZjNhMDY2ZmM2MTQ4ODg0ZWI5YTlmZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ab085cb3346a4c179d31a00cc088e3a1",
+      "statement": "proxy removes hop-by-hop headers from the upstream response and drops content-encoding and content-length when the upstream body is compressed.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/proxy/index.ts#L160-L190",
+          "version": "repo-lines-v1:sha256:83f2ad88b2b122fa31be1aa58f58fc2d775dc572b687cd90901944a5002a3587:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZTM5NDdiNGI3OTUwMzZhZTA3YTFlZTI3N2IxYTZjMTQyODVhNWMyYmQzMzJhYTMwMmM2NzU1YTViMmYyMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1526de8353eb4e91a4241ff7fbac6ce9",
+      "statement": "Signed cookies use HMAC-SHA-256 through Web Crypto, which makes the signing and verification functions asynchronous.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/cookie.ts#L37-L48",
+          "version": "repo-lines-v1:sha256:57ea6743e1160ab65ce272ecbb185117aa5aa6305743a04d933d30eeac37035a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMjhiNjg1MTRjZGIxYTQ1OTQyZjgwYmI0NThhZDY5OTAzMjkxMTEyY2NlZWViMmIwZTg2ODFkODFkYmU4ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhZTM5NGUyYmMxYmFlZDNjMjNlYzBkOThjMDE5ODVhNWFjMTY5YTljZmRmNmM0MmJlN2M5ZmEwYzJkMjY3ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3ODI2Nzc5NTE0N2Q2ZTYzMTlkNzk5NDY5NWY2ODRlMzVkMWU4NzBhMjQ3ZjJkNzFmYzM1YWFmZmUwNzE4MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxNTg4N2E5ZGIxMTllMzA4Yzk0MWRjZTI3YWNkMGI3MjQyODhhYjVhY2I0ODc3ZmIxMWI2ZGNkZWQxZjA2ODcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:23:45.579Z"
+  }
+}

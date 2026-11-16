@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5c6c581e4530d6642a10ae07ee3f2c39c40ecdbbf8576f26a347ff86d3eb11ca",
+  "claims": [
+    {
+      "id": "claim_48a6b002fb384c75834ec354b8e33746",
+      "statement": "The socket connect handler validates conversation access, replays events after latest_event_id while filtering internal events, emits the latest state observation last, then joins the conversation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py#L36-L149",
+          "version": "repo-lines-v1:sha256:cf7ad90de677339f42e87ff4c2fc5fcd58970a6e1b1e9686a99875a362287c7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMjMwOWIwMjlmMDA0YmE5ODM1YjcwYzJhM2I4OTVlZDA4NDk2YjEyMzcyMzY4MTgwN2Q5MzBjZjFjYmE2ZjY3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MmZjYWQ0YzBkNzVkNzRhOTcxY2RmMTQ0NWRiZWM1ZjI0NWJhMzVlMGIwNjZmYWNlMjRjMmEyZTJiYTJiYWJiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxMTQyNTM1ZGE3OGNmYjRlYjY1MzVmMzk4ODNiMzgxYzA3ZWExYjAwN2RjNWUwZmViMTM1ZWMxMDBiYTFlMTBjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0OWRiYzUzNDk1YWJjNTE4ZTY2OGE4ZjRhZTk2MGZmOWM3MTRmN2NjODhkYmFiMWI0YmE2N2VkNzYzNWFmZTA4In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd120ccca71248809398cd2a1b825cdf",
+      "statement": "AgentSession startup creates runtime and memory and discovers MCP tools before creating the controller; closure saves controller state and schedules runtime cleanup.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L90-L245",
+          "version": "repo-lines-v1:sha256:558c2a90162c8078065941759080e6a2eef3252baa8e4c36e92bfefc2f0e4f69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmOWI4MDkxNjQzZDFmYjU4NzA2NDAxNTQxYmI5MDA0MjQ2ZGFiNGZjMDY5ZTczYmViMTBjMGM3OTJmYmYxMTU1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1YjRmNTBlMjRmNDg1NTU2ZWNmNjE0NzM2OWZhMTg1MjEwNDQzMTExNDQ4MmNjYWNlMmRiYzgyMGMzYmJlZTM3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjOWUzY2MxYTEyZjZiZWJkOTVlZjVmZmEwZWM4N2NhNDJkOGQwNjdiODU2YTQxY2M0NTI1NTc0NTYzOGJiYjg3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkZWY2OGFiYmUxOWIwMmMwMTFlODcyODkxY2NhOWJjMWMwOThmNzg1NTYyZGQ2MzI0NjJjZjQwOTUyMDE5ZGQ2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b841d08a792d4c0eadd92431a445656b",
+      "statement": "The standalone manager retains agent loops after socket disconnect and applies separate concurrency and idle cleanup policies.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L179-L229",
+          "version": "repo-lines-v1:sha256:d1b13acf16246f10f15f244b770c5922eec3d8b68a4419ccf4cb42f050511a0a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNGE5NmFlNDZhYjNjNTYzMTk3ZjZjYjQ4ZjUzOTE1ZTEyZjlhNmY0YmJmZTJlYjU4MTk1MDc2YmRmN2ZhNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0ODUxYzcyNzM2MDNjMGE3ZTNmOTE1ZWY1MDYzNDE4MTU3OWM3ZDI0MDJlMmIwNGEyODVhNjFhY2RiNDdjMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkNWE2Yjk5Mzg4Mzc3NjdkZTZkZTAzZmQxZTM2MjA5NmE5ODAyNDc5MGI5ZmY5MmZhMzhhYWQ2Yjk1ZDM2YWIifQ"
+        },
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L296-L367",
+          "version": "repo-lines-v1:sha256:b4fb32ecb507055b18ec135b2dd02288a795068b3c731db7ce1adb55526d23d8:eyJzZWxlY3RlZExpbmVDb3VudCI6NzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMzU4ZDNiOTMzYWY1YzFiMmVmN2RjZTlhMTFmNThjNjk5MTBmZGE3NDVmMGFmMTJjMGYyYmFjZWU2NTg2ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxMGRkZjlhMGYwOTYyNTc0ZWEzZGQ5ZmI2NDNlOWI4MGZkZTZjNWExNWQwYWJkM2Y2NTZkZjA0NWJmYWI1MDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3OWRiMzkzMTAyN2RjYzRmZDc0MTkxNmVhZmUxNzk1ZWFmMzMyZDA4NGJjM2NhNTE4YmM4MWE3MWVhZTc2MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMzYyNTcyOWU0MWM5Zjg4NDg4NTUzNzM5YWFiNzQ4NTcwNmU2ZTk4NWYzNWY1Y2MzZmQzMjQ1OWQwNWJkZmEifQ"
+        },
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L397-L455",
+          "version": "repo-lines-v1:sha256:6361e23d1c9ffa25789f96242e1394754a519e8bd4770e910c72d22d57eb027b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhMjg1Y2ZiNWNjZjhmNWUzNTk5NGE2ZDRlOGQxMTQzYTMyNWQ1MzJjMDBmNzg0YWIyNDJlNGRiODkwNjY5YzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhNzE5MGZhYjZhMTQ2MjM4YjE3NDU3ZjUwMjYyMTUzMjI5MjA5NTA0NThjZjUxMDY1YTMxNzRlZTI2MjFiMTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhZDIxZjQ1YjFmNzVlYjJhODM5MDI4NDJmZTE2ZTk0YmVhMzY0OTBjMWMxMTU0ZDJlNTY5Nzg2MmVmM2YwMzcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:55:05.802Z"
+  }
+}

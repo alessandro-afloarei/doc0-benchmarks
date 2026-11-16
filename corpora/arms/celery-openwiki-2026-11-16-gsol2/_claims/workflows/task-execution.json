@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:eddbe9b7f268f8dd35ec474e20a301a6ecbd71ee3f5825d70a0342c6ff92f49e",
+  "claims": [
+    {
+      "id": "claim_8ec460077b5f46d480ec589a2300ae27",
+      "statement": "Request pool submission wires trace execution to acceptance, timeout, success, and failure callbacks and carries encoded body and timing metadata.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L341-L372",
+          "version": "repo-lines-v1:sha256:7979562da58f42665a9c55be03aea994a302357c46cb174602e34f7df13b2df5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OWI0ODU4OTRhNDljMTMwZWQ3YTRmY2E0YmFmZDRjN2ViODA0ZmQyMDlmNmNlNTI3YjJlOTZiZTk4YWMzOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4MjIxZThhODVmYTEzMTFmMGQ4Yjk2MzNiYTc0YjNhYTMzYmY0OTAwYTYzZTQyZTlmNDVhYjVhNDA2OWFiNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1NjRiZmExZTJiM2Y0NDlkZmU0OWM1ZjM4YTllZWE5YTNlMjRhY2I1Mzc3MzUxZTE0ZmNjMWU5MmMwY2RiZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_08bc92baa2d94b4eaae8fe1ce8a819aa",
+      "statement": "The tracer initializes request/task context, invokes hooks and the task body, dispatches callbacks/chain before storing completion, and cleans context and process resources afterward.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L563-L672",
+          "version": "repo-lines-v1:sha256:5fcd4c03f7aeba214dc1a4199740a4cf1a4098971fa390c5fd5661e9cc2b1c2c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2ZjA0YzE4NDE2YzljYzBkZDBjMDk2OWU2YjUyYWEyY2QwNTlhMjVjYTcwYzMyMTRlMTY2OWM1OTU5NmIxOGY4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3NDQzNTE1YjRjMmZhY2YwYjFlZjgxNzA1ZjJhZDZjNDA1MTJlNzMzYTdlNDZhZGI0Y2FkMGJhMTZiODI4ZmVlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxODM0YzAxYzM5ZTlkY2Q4ODNiOGJjZjk3M2Q1NjdkZjY4NTM3NDFjM2I1ZjA1MTU0YjU0YmUyNDNlZDA0MGYyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxZGNlMmY2ZWI5OTdlYjQ3MWYwNzhkMjBkYjdiNWNiNzc0MWM0MjQ4NDMyOWM3OGRkYTZhMjg3YzQ0NDQ1ZjdiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c398d8923a914b2fa47dc8c84c8547ea",
+      "statement": "Task.retry increments retry count, builds a request-derived signature, publishes a new attempt, and normally raises Retry; eager and directly called tasks use separate paths.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L722-L753",
+          "version": "repo-lines-v1:sha256:46fa7209c9bc627bf7f663ffdd2a16281b632b9a7aec7981a253b0b1d4610960:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNTc5MzU5NjFkMWNkODhmNDQwMGYyNDU4ZGVhYTgwYzMzNmQ1ZmYwYzI4YWUwZTQzNTkzN2EyOGFhYjMxMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkN2I5ZDA3MzRlZDExODk3N2M0YWNlOTYyZGNhZmU2YjU0NDk1OWNkNGQ3MTEyZDBmNjA2NTNiYzVmMWZmNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhZmNiYzhkZDhmZmU3OTUyM2NiMzY5NmNjNmFhYTU3ODk0MDA2MTU2YWFkZWJmMjExMDEyZjJiODgzZGY1YmQifQ"
+        },
+        {
+          "resource": "repo://celery/app/task.py#L818-L867",
+          "version": "repo-lines-v1:sha256:8b4d962d713343afa1b4a43fcf59a18bc23dd3dc74bc1ffe951ac850cbcadf54:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwYzk0MmIzMGQzZGU5MjYyYmJmYzMxOGI2NjE0MjdkYzAwMjJjYzJkMWM0ZjhlM2NlYTExOTdlYjI2NWU5M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyZDNmMzFiMzk3NDYxMGQ3M2I1M2I4MjAxYjlkM2JkYTE0OWE4MGVjMTczNWFiNWQ3NjYwNTgyMjFlYWIwZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmZGY0NTBkYmM5YmYyOTM2ZmY2ODM5ODFlNmExMzA5NzgzZjQ3NTJhOTBmMTZjNjlmYjQxZmQzMTNkNjAyNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1MjZhM2JhMjlkMTVjODk0OTI1ZTMxZmQzNDJhMTNlNWQ2YzYyYzY5N2U5MjAyZWYxM2I0NjJhMDRlMjA0ZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e0ea4785e1d342ad82482d7658e5d847",
+      "statement": "Automatic retry preserves Ignore and Retry control exceptions, honors exclusions, and computes bounded jittered backoff before delegating to task.retry.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/autoretry.py#L8-L66",
+          "version": "repo-lines-v1:sha256:e2133a29260c2ae7da843493fd61d1c037c2b14ecce899782bfb1292608a1ce5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0ZmI4OWNjM2U3M2Y0MDVmOWIzMGJjMGIxNDY1MDdkYWVkMTg0Y2QyNTQzNzg0M2U2ZWIxMTNlZDFmNGMzNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMmMzNTMyMzhmMTlkMjcyMGViZTNmNjVkZTBmZjFmZjRmYWM2NGRkYzFjNDIyMjIwN2ViYmFkMmVmNGNkOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZDA4YjliMTcyNjEwMjg3M2UwYjc2ZTA1NTUwODEwMDQ3YjUwNGUyYTNlZTFkZTQ5MDQ4NzJkOGFkODBmYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b35b9ec662d4737a714870be9782350",
+      "statement": "Early acknowledgements occur on pool acceptance; late success and retry acknowledge after processing, while Ignore acknowledges and Reject applies its requeue policy.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L515-L523",
+          "version": "repo-lines-v1:sha256:d0722383e00bdbeb37d859fddbb450a52512ad0bc78f00bb75cefec3a9e023c5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFkZjJkNjZhYmU1ZDBkNTM3NDlkZDNmZGEzNDI5MTU5NzhhNTdjMDU0ZjE0ODFkY2MzZGFjZWYzNWMyMTdhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc1YzVhZWUxMjg1ZjFhYjVmNGJlOGIyYTcxNzc1NDM5Y2IyZjFmZjVmYzJjNDc3YzNlNWQ3NDgyMWIyNTg4YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTA3N2ViYjJjMThiNjllNTA3Mjc4Y2QyMzFhZGJjOTAwNDk5MjhhMjRjMTAwMmM4YjQzNmZlZmYyZjc1N2NlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDk1ZTlmZDAyNmIyODhmZDJiN2U1ODFmY2E3Y2FmNTljMTRiOGFhMjljMTdlMWY3MDA4NzUyOGU5MTE3ODEyZCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/request.py#L596-L675",
+          "version": "repo-lines-v1:sha256:d7424a60080eeaa254fc723544713d628241d039d0a8e770b34e30b5342971e6:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1YTI4YzI3NDJmNDQxNzI2OWNmOGYwNTA4ZGJjNDFmMGFiZTQ4ZWEwYmQ3NWJkODI3ZTc2Y2FhMzEwNGQxZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1NjkwNjhlNzJjNmMwMTQzMTVkMDg1Y2JmZGNiZDZlZTgzNWJhNzI4YjQyZmRlYWM0OGUxZjBlMmFkN2IwOTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiZmEzYzhkYzk0NTJiODhiYjFjZmYxYWQ1Mzc3YTJmYzRhY2Y1MTEyZDAwODNlYTU1ZjkxM2M0MjY2MzhmMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0NGFkYzNlYmMxMDIyNjgzODdiNDUyZTk5MmExNjdjZTQ4NjY0MjIwMTU5NTNkN2ViZGJmNTdkMDEyY2UxZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1fa04e22c2d3489ca0783ce66e004193",
+      "statement": "Failure and timeout acknowledgement options independently fall back to the legacy combined setting; late failures can reject without requeue, timeouts can requeue, and lost workers can requeue when configured.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L425-L445",
+          "version": "repo-lines-v1:sha256:c85a3085f9ff55ec63aa474d99bb56374177224eb57f0d3fa37cea88dcbf2de3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2Y2YyYmQwZmM1MmRjMmU5YjQ2YTc0NTY2OWU3MWRjZjZjZGQ4MzNhYTZmMTExNWNlYTI1ZTYyZTg4N2ZlOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZDgwNjY3ZTQ5MmJhNGM0ZmZlMzZjYWJjNmY0OTBkZTJmOGNiNTQ0MmM3NWE1OGMzOWI3NDQ0MThhMzYzNTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5MzcxNWQwY2VlNGM5YTY1MGE0MzA5YTZiMTBlNGI4NmZlZmU1NGFlMjBhNmE4ZjlkN2RiNzUwZDlkYTBhMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyOTA1ZGI1ODA4N2IzZWJlZmJkMDk1MDk2OWU4MjQxODE3MWJmN2E5ZTY1ZTc3N2NjMDhlNmVhZjg0YmYzYmQifQ"
+        },
+        {
+          "resource": "repo://celery/worker/request.py#L590-L594",
+          "version": "repo-lines-v1:sha256:e054263bdbeebadde81afabb58e802629438a091730255ea73b0e8f467a36a5b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzNlMjk3M2FkMDQ0NWUzNWFlZGIxZTQ3NTkzMTEzNGI3MjhlMTFjNWFlOWI1ZThhZjBiMzk3MGYxNmE1NjU5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmY4NTY1ZGY3NmVlY2Q4NDM0OTBkMDQzMjI1YmRjN2Q3Mzc3Y2YxMjM5ODIzYjJjMDdlMTc0ZDM4NzJmNWM0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2ZhN2EyYzliY2Y4MTZiYzczYmQxMzgyZjJlOTQ0OWIzYTU4ZTQ0NGYxODhjYmJmZmNlMjQ4NzFlMWFhYTA0YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjFmOTk2ZjMzNDkyNGFiOTEzM2YwMzNmOTc2NGM3ZjAwYjA5OGE5N2Q5MmQwOGIyZDQ1ZTZiNjY4NWFkOTVkZSJ9"
+        },
+        {
+          "resource": "repo://celery/worker/request.py#L677-L696",
+          "version": "repo-lines-v1:sha256:623a6f5b94af1f873ccb9aea4493bbf93cf81b372b1844f4881419a44cbf4599:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlY2YwNmZjZThmOWRlNGYwZGNhNjIwNjU5OWM1MDE0ODBkMTI4YzEwNGRlYTk1NjQxNDM5ZTNkYzYwNTMzMTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4MWZhN2U3YWVmNTVlOGI5N2EzMzMyOWUwMzQ0Njk4Mzg5NTBhODdjN2RjMzU2NmFjY2EwOTYwNWU2MTZmMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhNGQ5NTZmY2MyZjA2ODZlYjdkZTU3ZDQ3ZDYyODY0OWJkMzZlZmFjMTQxZGRlYmE1NmNlMjVjOTA3MzA5ZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViMjAxNTRhNTljNmI2ODkyYjljMjI0NDg3MTM5M2MwN2ZiOTA0NTA1ODY1ZTQ5OWZkYWMyN2I4NTcxNmMzNmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d068c152ad544a4ca397c8985e4219d4",
+      "statement": "Reject without requeue records terminal failure and failure observations when configured, and acknowledgement/rejection methods cannot undo an already acknowledged delivery.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L649-L671",
+          "version": "repo-lines-v1:sha256:48600341122574a1b9089023d0c8786fd379b59829d263ad6bac9f4c01a22d87:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwYjdkYzAxYzNmNTM5NTgzNWQ5MmI0ODhmMmM2NDE5N2IyYzJmYTFhYTVkMzQ1Y2Y1Y2YxMTMyYTkyNGI3YWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ZWQyODA0MzhkMDEzNzAwODkyNWQ0MTU5YjEzZDkzNDA0NjQ1NDQ0ZDgyNmIzODE1ZDkxMzczZjcwNmRjODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxZWE0Nzg3MzE3MDc4ZjY4MWRkMjE2MDg5NWVlM2VkM2E4NTExNGU1ZjUyMDFkZmM4YzRkMDI3ZWRkNDkzZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkMzgwMDA5ZmNhZTgyMTQ5NGM1NDE0OGJkNDczMjIzZjhiZDFiZTQyYzFhYThiMjVmYTc1MGE0ZWJhN2MxOTAifQ"
+        },
+        {
+          "resource": "repo://celery/worker/request.py#L730-L743",
+          "version": "repo-lines-v1:sha256:e74a2ba5059361d5161fbad6cd4822f2c16bdfa780d87f2bdef37ecd71ac137b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0YjQ5MDYzMDIyMTQxMTBiOTc0N2QxZmQ2MjAzYjYxNmZjYmY5YmZmOGY3MmJhZTI4ZjQ4YmQ3YjM3MzEzYzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzOWViMTUxNWU4MjE1NGY5MjdkMDlkNzNkNjkzYzUyMjM5MmMzOTFlYzAwMmVhZGI3ZmY0ZGRmNjM1Y2YyZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjMGM1M2VmZTA4ZTJlNjE1YjMwNTEwNTA0NGQ5Nzg5ODJjNTUzMDI1ZDlhMmQ2ZTNiYjQyMGI5N2JjZGYxNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1NThhMWE1NzIwMTBhN2U4MzBiOWI3M2ExNWNkMGQ0YzVhMzVhMDNkMTJhNGU1ZTcwNWIxZTk1ZWZiODcwMDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6b9cf55a4564e7fa19bdd1a04540448",
+      "statement": "Successful-task deduplication requires late acknowledgement, the feature setting, and a persistent backend; for redelivery it checks local success or backend success and may recover undispatched continuations, requeueing recovery failures.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L380-L382",
+          "version": "repo-lines-v1:sha256:383fd196a632c51ebdcd1638d60d2890a4670c8f7e2d0e321e209a8ddf1b91f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzI1NjU4OTRmNWRhYzI4ODA4NDQ5Njc5OTk5ZTI0NjE3NDNiOWQwODU5NTZjMDc5YWE5ZjM3NjMyNGI4Nzg2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY0YTI2Y2FmZWY3NTgxNGQ0MDIwOTVmMjg0M2E2YzA3Y2I0MzQxZjBmNGIzYmRiOTM1ODcyZDZkZjIxNDhlZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2I2M2UwYjJkMTVkY2E5NWFjZDgzZTMyZWExZWMzZTJmMjA4MzIzZDkxZTM0NDkyMDM3ODQ1OThjYTNkNTIzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODNlYjU5NWQyODZjN2FmZTA0MmI0NDdhMzNiYjBkOTA4YzViOGI4M2EwZDU4NDFkZjBjMDgwOGViMzk0OGFjNyJ9"
+        },
+        {
+          "resource": "repo://celery/app/trace.py#L510-L561",
+          "version": "repo-lines-v1:sha256:5837977ea5e9c887f022b7b5be578b036270cce388dfbd34eafd90c469170abd:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmYWY1OGE2ZjdkMGUyYTU2MjE4ZWU5NGU4MjE4MjNhMThhYTY3ODg1ZDgwODZhYjg1MmE5MjliMDNiMDc4NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1MzQyMjJjOGU4NWNmMGE5YTM5OWU2YjQ4NTM5MjEzNDFhOWYzMDUwODEwYzk2M2Q1ZDI0NzU0ZmU5YTFmMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0OWEwZGUxMDQxNTBmYzk0YzRiMDBlNTkwZTc0ZjAxOGM4NDdmZWI3MjYwM2Q5MzAyZmI0NTk1ZTRmN2M5NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlMzY3Zjc1YTAwOTkwOTIzMTFlNDViZTFiYmYzYmVjYTgwYTE4ODI2NmYzN2ZhZTEzYzUzMjhkOTZkMTQ5MWMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:38:41.370Z"
+  }
+}

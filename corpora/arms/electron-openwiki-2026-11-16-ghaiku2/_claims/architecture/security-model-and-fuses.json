@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:35352641d47d3435bbc79da197db4c6f88c5518896c4dc3997c6068f029671cb",
+  "claims": [
+    {
+      "id": "claim_1039557b9ea8418f8fb35406b6099e21",
+      "statement": "build/fuses/fuses.json5 defines the build-time fuse schema and default states, including run_as_node, node_options, embedded_asar_integrity_validation, and grant_file_protocol_extra_privileges.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/fuses.json5",
+          "version": "repo-file-v1:sha256:54b905d53aaa1974297cd60ad84141db8490becbf71d752401f5aafaa15cfb8c"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c339eb906c64b26a796ad026b277471",
+      "statement": "The electron_fuses action in BUILD.gn runs build/fuses/build.py to generate fuses.h and fuses.cc in the target generated directory.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L393-L405",
+          "version": "repo-lines-v1:sha256:c6977ae739f02faf1a07b8ea4fa1120c16f594aa75c12390a93364fdd29668ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkMzZiNGJjYzA3OGIwN2U0ZjQ3MjY3N2M2ZWUxNDhkYjA5ZjI5Njk3ZDcxMmI2YTk5NTRmODEwZTA2YzgzOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyZTAxZDQxNGY3NzBlOWU2MzdjOWExMzA2OTAwMDc0MWIxYzExNWRlMjcyYTIyNzMxNjkxMDk3YzQ5NzdhNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_44e63bffee8545c197e75ee1ea8da9ac",
+      "statement": "build/fuses/build.py generates one Is<Name>Enabled accessor per fuse, reading a byte in a sentinel-prefixed kFuseWire array, and rejects a fuse schema version of 256 or above.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/build.py",
+          "version": "repo-file-v1:sha256:53f21ff86efb7d430114b54b0e24c2c029dd51a0f2c2434fb4c681c7a7ed152e"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7873f0275a149e68b3b240f559db8ce",
+      "statement": "In DCHECK-enabled builds, each fuse accessor first honors a --set-fuse-<name> command-line switch.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/build.py",
+          "version": "repo-file-v1:sha256:53f21ff86efb7d430114b54b0e24c2c029dd51a0f2c2434fb4c681c7a7ed152e"
+        }
+      ]
+    },
+    {
+      "id": "claim_106a16417e9a47ed8aef2e052a06a8ec",
+      "statement": "The contextIsolation web-preference name is defined as a constant in shell/common/options_switches.h.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/options_switches.h#L148-L148",
+          "version": "repo-lines-v1:sha256:0e1c47532b8552686738935273d448af238fdeae57ee9b184fc1d5e809328391:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUxYzQ3NTMyYjg1NTI2ODY3Mzg5MzUyNzNkNDQ4YWYyMzhmZGVhZTU3ZWU5YjE4NGZjMWQ1ZTgwOTMyODM5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGUxYzQ3NTMyYjg1NTI2ODY3Mzg5MzUyNzNkNDQ4YWYyMzhmZGVhZTU3ZWU5YjE4NGZjMWQ1ZTgwOTMyODM5MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzkwMWZlNTVmNjcwOGQzNjdmYmJkMGU4YzQ2MmMwZGVjN2RmNWMxYmEwODIwNGM1NmEyM2ExYjYyNDMyMTVkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTU4Yjk4MGRiNjY2Y2I4NTNkYTI4M2E0NzNlZDlkZmMwY2RkZDgxNmM1MWEzOGM2NTI2MzQ2OTZmYzJlYzExZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2efe7d99ceff46aeb182a6164f5bf8d4",
+      "statement": "The web-preferences documentation states that contextIsolation defaults to true and that nodeIntegration defaults to false.",
+      "evidence": [
+        {
+          "resource": "repo://docs/api/structures/web-preferences.md#L4-L5",
+          "version": "repo-lines-v1:sha256:b4f2116019c9086ad773945e37cf22670b395b5869842de9e46b1d6900fe4612:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY1ZTEwZTNiOGJjZDhhMDE1NjdjNjc4NzY3ZWYwZDVkOTY3ZmE2MGI2YjMyZTEwNWE1MDU3YzE3MGU0NmIxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFhNmM5MDYzZTEyYTNmYzcyODRlOTFkZGNlZDc3YTFjZDFkYjFmZjMyMjkyYTc2MDUwNjg0NmExYzhlMmU1NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzllM2ZiNWU5NDllNTU1M2NhZjk4NTA5NjA0ZmNlNjVlOWI2MWU5NTQzNmM2YmNkOTAyNmZiNDNkYTIwNzYwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjUzYWIxNjg1NWZlNGE0MmMwN2I4ZmI4MDBiOWRlMTE2ZmFjZTdkNGE2ZDQyOTAwN2YxN2Y3OTE4MzI2MGZmNyJ9"
+        },
+        {
+          "resource": "repo://docs/api/structures/web-preferences.md#L90-L93",
+          "version": "repo-lines-v1:sha256:50b99f70352f7bdf618810998b047deb4f19d12a91e3efca8521b67ae159250d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk4ZWMzOGRmZjA3YWYwNDExOTM0ODliNThhN2JmZTkyMDgwM2RkZDQ1Y2UyZGJiMTUzODRkNTIxYzlmNjIwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzljMDFhMDkwMDk2NzNlOGE5YTliMTRmMjQzZTMwNDM3YWJmOTZmZGY3ODdmOWE2ZjBjMTY1NTQxOTU5ZGIzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDM4YjEzMmYwN2Q2Mjk1NGNiNGNlODAxYzk4OTYwNzQ4N2YxZjhiMjhmNjEzY2RmMTMzODNlNDQwMDNmZjU2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzRiZWZiYjYyODFiODk0MWJiNDhjYTg5YTE0ZjA2NWRmYjAwMWNhNTQzOGNlYjBmZTUzYjJjMTlhZDkwNzIwOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4654b1b2c9f84cf3996f746d5abaf402",
+      "statement": "The sandboxed renderer init requests preload scripts and process properties synchronously with BROWSER_SANDBOX_LOAD.",
+      "evidence": [
+        {
+          "resource": "repo://lib/sandboxed_renderer/init.ts#L17-L24",
+          "version": "repo-lines-v1:sha256:1d39b5fbd13efc98eec9a0474be1905fd6e36693a66100053090963e93f6024a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNkMDQxNjUyZDFjMmE3ZTI0ZmEzZGRkMTkzNTE5M2U5NTVkNzhhMDU3YzkyZDQwNTA1MjkzMzZjZjc1YWFhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE1MjY2NWJlOWI2MmM5OTE3NmZkNjg0NWM2ZmE2ZTUzNTEzMWYyNDkxNDI0MDc1ODE2MGQ1YjBhMTQzMDA2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzJjOTc1Nzk3ODJhOTcwNWI4YmJlNjVjMDUyNWU5ZDllYThiYThlNDU2NDU5YTEyZjRkMmNmNWRjOTFkMTIyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWRiMTY2MTQzYWUzODA2Y2Q4YTVhOTJlODM1MzE0OWEwYTc0MTAyY2E5NDBhNjNjZjcyZTJkODY2NzVkYjExZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_60f03e8b91c74ca3a38369ca3a582c3b",
+      "statement": "The ASAR archive reader validates the header signature and integrity payload for archives with a relative path when embedded_asar_integrity_validation is enabled on macOS and Windows.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L122-L130",
+          "version": "repo-lines-v1:sha256:d891a07b4aa224dcb21811a4efb779033ca33f6217482a69b87593324206a62e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWM2ZjBlMmM5MWIwZmM3ODNmNDQ5Y2YxMDQxZWUwNmMwODVmOTk3ZjdjNGNlMGUxZGU3YTIzNzFkODA0MDcyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQzYjFmMWMwNmE0YTU5MTFiZThiZWY2MDAwZmU3Y2JhNzcwMjJkZDgwNzYyNTVkZjM4ZGQ5OWE5ZWRjMDM3OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODI5YTdlNzQ1MTc2NDdhODQzMzA3N2RmNmEzODhkYzAzZGY3MGM0ZjVhMjAxZGJkY2U0YjgyMmIxNDZjOGVlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjMxN2NjOTc2ZDQwYjUyOWE3ODY2ZGU1NTk1ODNmNjg0NDdmZGY0MThkODg2N2U4MjFjOGVjOTUzMmVhMmQ4YiJ9"
+        },
+        {
+          "resource": "repo://shell/common/asar/archive.cc#L236-L245",
+          "version": "repo-lines-v1:sha256:43d637fb81bfec2e23a7e24141f910870ce76c387b353914c4b2adfc7bc3052f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MDkwOWI5ZjI2YmU4ZWU1YjRmMTY5MGM0YmU3MTE2NDRjNWI4YjhlYTY5MjYwOTY4YjliNDI2NjIzM2EzYWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMWY3ODAzYWY0ZjQ1ZDkyMDBjNjVlZTIyMzE1MTE3MjY5OTBkNTdhMmVhYzJkMDY2YzE2ZTBhZDcxY2RhMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0ZGM3MWFiYzYyYzhjNjFjMzAwNjY4MmJjZTkyN2EzYjdkYzBkN2ZiMjAwY2Q3NzBkOThkYzAwZGI3ZWE2ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4ZWM0NWU4MzNjZmYzMGE4MTk1OWE4YzY0ZDIwMDU2YzA2ODcyYTlmYmExMzU5ZGU4NTE5NDBmZjhlZDdkYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e239800487a34ef9903ca3e5af167ca3",
+      "statement": "ValidateV8Snapshot hashes the embedded V8 snapshot with SHA-256 and checks it against snapshot_checksum::kChecksum when the integrity fuse is on.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L216-L226",
+          "version": "repo-lines-v1:sha256:556ec79df065a4e8e20ebcb240c2d4a047f3428e46aae79aa217e1bb514384a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYmJmZWVlNzBiY2FmMzM0NDFjYzliZTJmYTVmMDczYzNkYWFlM2ZmZThiZmIwMmZlZTMyZTk1MDkwNzJlOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmNjlkN2UxODYxZmFjZjQ2MGRmYzc2NDVjM2NkOWNhODNlMmY2NWM4MTQ2ZjBjNzk0Mzk2YTIyYjEzMmYxYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_10d564b868554521a22dc71e101f8fa6",
+      "statement": "The renderer grants service-worker and fetch capabilities to the file scheme only when grant_file_protocol_extra_privileges is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://shell/renderer/renderer_client_base.cc#L282-L287",
+          "version": "repo-lines-v1:sha256:a8e27347117fc29f865c68cca9aae3d86a9bb5115b02fca24aa8cb616421a121:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE3ZjZjMjc1NzViYjkyMmJkMDM1MWM4MjE3ZTg4OTM4MmRmM2IyN2Y1M2E4OWM1ZWJhNjUzYTM2YmNjYTUxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTM5YWZkMTAxMTI4YzEyZjNmOTk4MGZkZjAxM2Q2ZjlhODg1NTkxZjIwMGIwNTY3OWM4NmZmM2M0MDM2N2RiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjdmMDMzMGU1NmVjNDU5YjEwMTA2YWM5OWUyYWI0NmVhNGZhYjA4ODczY2U2MjMyN2Y4MjJiNGY0OGE5YzUyYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_71d9656da6c945c4af57fab50ffab173",
+      "statement": "The renderer security warnings are logged only when shouldLogSecurityWarnings returns true, which depends on the executable name and the ELECTRON_ENABLE_SECURITY_WARNINGS and ELECTRON_DISABLE_SECURITY_WARNINGS environment variables.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/security-warnings.ts#L18-L48",
+          "version": "repo-lines-v1:sha256:21ff19db4826d2ef609aa0e808b62c51c913bed7343da3adf1ce8436f76fbcc1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyY2RhYjdjNTg4MmVlZGY2ZWI0MDI0Y2ZjM2JjOWNmZWFjMzk4MDM3YTAxNDlmNmMxMGIzMGYwNDczNjI3MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2YjdhMzE5M2IxNWQ2NTFkYWE2NDE0N2ZkOTM0NTQzOTYzMGMxYTgyYzg5NjBmNzhjYjc2NDk2NGJjMWE2YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2ZWMwN2UwNGFiMWVmYzQxOWVlYmI1NWUzYzFmMGMzNDNkNDcyMmQyYjEzOTE1Y2IxOGUyYTM5ZDM2ZGRmYWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aed09ecc5e6e4198abaaf0e0c235bd4f",
+      "statement": "securityWarnings registers a load handler that calls the warning checks, and common-init.ts invokes securityWarnings with the nodeIntegration value.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/common-init.ts#L47-L47",
+          "version": "repo-lines-v1:sha256:127b91d163980153cf75e85c7706e4e14d952d8d8be669a2e62a5f8a8df4c74d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI3YjkxZDE2Mzk4MDE1M2NmNzVlODVjNzcwNmU0ZTE0ZDk1MmQ4ZDhiZTY2OWEyZTYyYTVmOGE4ZGY0Yzc0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI3YjkxZDE2Mzk4MDE1M2NmNzVlODVjNzcwNmU0ZTE0ZDk1MmQ4ZDhiZTY2OWEyZTYyYTVmOGE4ZGY0Yzc0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjdjOTQxYzg2ZmZjNDBlYzMwMWU3ODhjMTNmMmNkYmYxZGE5MDc3OWJmMWE2YjUzNzFkMDMzOGFiMzRjZTcxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://lib/renderer/security-warnings.ts#L285-L292",
+          "version": "repo-lines-v1:sha256:e4fdedb5e69e5756b1d5cca15a6fe13500cca41592df86e48cddcf10b0d1bf5d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzViODIwMzI2ZWRkNDljNTNmMDNkNjljYTJhZTY1Y2Q5YTViZjQyNWRjMTc3YWY0NzFkM2FkNjUxMzU4YjRhZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzEzOTA2MThmYTAzM2MzMGY2OTVlMzdhODhmNmE5M2YxZDA3MjYyMzM4Yjg2YTc0YTU3NTczN2IzOTg4ZTIwNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzIxMjljMjczNTJiNDk1NTQ4YjA3MWFlMzRhYjkwODExNzI4NzM0MjhmNmY4N2Y1NGI1ODBlNTE1M2M5YWEwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3debfed8c6f49699910ff8d4072cd7e",
+      "statement": "The Linux entry point checks the run_as_node fuse before entering NodeMain.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_linux.cc#L36-L36",
+          "version": "repo-lines-v1:sha256:6bc0143a6291f294f0d674689f54805da595806d587da775a4a9f2094640bd0d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJjMDE0M2E2MjkxZjI5NGYwZDY3NDY4OWY1NDgwNWRhNTk1ODA2ZDU4N2RhNzc1YTRhOWYyMDk0NjQwYmQwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJjMDE0M2E2MjkxZjI5NGYwZDY3NDY4OWY1NDgwNWRhNTk1ODA2ZDU4N2RhNzc1YTRhOWYyMDk0NjQwYmQwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDAwMzc4M2E5MGJjMjE1ZDhkNTY3MGVkMTU1YTcxNWFjYmFkM2Y3NzMzZmIxMjk1ZjdlYjgzN2YxMzAxZTYyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzNmNWY3YWQxYzIyNzRjMmM3NTAxOGY0N2UxODdiMTRiYTFiMTFkYTU5NGM1MmQ0NWViMDE3NDhmN2RiZGE3NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_df8be530956348779cec3f6877890668",
+      "statement": "When only_load_app_from_asar is enabled, node_bindings.cc sets the app search paths to the ASAR-only list.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L688-L700",
+          "version": "repo-lines-v1:sha256:9561a802eeeb7bfcb37a1364738cdcb75d1cf18ab2e56e6b323a8888a8c5c00e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzNmJhYjRhYjRiYjEyODhkNzkwZDA2MGEwYTcyMjNkMDM0MzE1OTFhZTRkY2ViMmZlMzQ0MjRmNmJjYmJmN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4YjE1NTg5NzVjMTk1MTgyMDc0YWY4MDRkNjMwNjljMWM3Y2NlZDQ1ZjY1ZjA3ZWUxMzZmZDU0OWNiM2JiMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2NWQ0ODFjYzBjOTUzMjgzNDQzOTRlZmFiODU4NmI3NTk2OGZhZjYxNzA2NWVjYzJmODhlNjU3ZDg5NTA3MGUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:50:06.090Z"
+  }
+}

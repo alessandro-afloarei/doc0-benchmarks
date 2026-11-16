@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:33099b03b2fa1e762ed04f27e7838ad2d4b0cd0e0d1e2f4c29112234418ebd81",
+  "claims": [
+    {
+      "id": "claim_5904a3250ede4aa8b6c3220a328f7229",
+      "statement": "compose advances through the chain with a single-advance index, so calling next() more than once throws 'next() called multiple times', and it records each entry's index in context.req.routeIndex before invoking the handler.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L28-L48",
+          "version": "repo-lines-v1:sha256:55c523e771161ad0f5b263cd049b28d97eb68a87729c61e1ceabb40efaf2a3fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4MzU0ZTVlYjQyYmE1YTEwNmUyMWYzMjY4ZGZkZTY2MDRmMjZhNmY5NTkyY2U1ZGNjMjc3ODMwZjE0MGFiYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjZGEyZDVjNDg1MmRhNmQzYWYzZGRjODUyZTk5MTcyNjdjOGNhYzdjNzMyMmU2ZWNlYWVhZjc4N2U2NjgxZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiN2RjZDI2M2I3ODA5YTZjOTRiNWFiOGFkOGYwYmVlZTlmOWU4YTcxMTA3OGUzZTJhOTEwYzJiMjRmNDYzYWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9fc7af61ed4488faa8180082f985202",
+      "statement": "compose assigns a handler's returned response to context.res only when the context is not finalized or the response came from the error handler, and it calls onNotFound when there is no handler and the context is not finalized.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L49-L73",
+          "version": "repo-lines-v1:sha256:660c8609421fcd84c49378411c5bb4b138a10514736a57514ff1a5735ba71e48:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTBjOGRhYTc4YzQ0ZmM5ZTg3MDM3YjE4ZTUwYTBjYTVhNzk5MjgxNjEyNDc4N2Y3MjEyNWJhNmYyYzcyNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExN2YyMmUwNzY4YTgzMDU1ZWRkM2NjYWI5ZmJhNDhiZmE2MWJmODRjZTdkNWZmZTNmNjZlMzg3ZmYxZWYyYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_de590824d06d44d5beaa4615a03b3cf9",
+      "statement": "When a handler throws an Error and an error handler is configured, compose stores the error in context.error and uses the error handler's return value as the response; other thrown values are re-thrown.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L49-L70",
+          "version": "repo-lines-v1:sha256:41379bc90ae872c229d041798fca4815b2bf5a5fc491fd71c7348e2e3443d12b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTBjOGRhYTc4YzQ0ZmM5ZTg3MDM3YjE4ZTUwYTBjYTVhNzk5MjgxNjEyNDc4N2Y3MjEyNWJhNmYyYzcyNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlODhmYWMwYzY2ODYwNWM2NzdhMDEyYzk5OGI5M2I5NDU1Y2Q3OTA4N2E4M2JiOGI2YTA3ZWY3ZmIyYjRhNzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExN2YyMmUwNzY4YTgzMDU1ZWRkM2NjYWI5ZmJhNDhiZmE2MWJmODRjZTdkNWZmZTNmNjZlMzg3ZmYxZWYyYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlMGY3MjkzZDE1NmE2ZDEyNTI4ZGIxMjkzMzc5ZTUyYTVmODM2NzA0NDI5N2IyMjgyYjk3ZmYyYzg2MDQzOGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cd15bea1cc9e4e06ad5b9f2fe9c339cb",
+      "statement": "HTTPException.getResponse returns a copy of the carried response with the exception's status when a response was supplied, and otherwise a text response whose body is the message.",
+      "evidence": [
+        {
+          "resource": "repo://src/http-exception.ts#L46-L78",
+          "version": "repo-lines-v1:sha256:b07e08faf727b5e3bb7cc4bdf303f3611c22cdd77978573cd8983a1e2f00e536:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMjFhOWNhZDQxZDBiOWJjYTY0NWE1ZTQ4OTdjYzdiNzg4ZjkxYTM3YTUyY2FmYzBhZDg4MDBmMmIyNjQwMzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad200c3befe64675a75ebd8f599f7dfc",
+      "statement": "The default app error handler returns the HTTPException response for errors that have getResponse and otherwise logs the error and returns 500 Internal Server Error.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L24-L33",
+          "version": "repo-lines-v1:sha256:cad081917bf00a3b54f07c7398024868c322c30e85329c432356af5fdc680da8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMjkxZjg2NzUxNzFmYzMwZTUwZjliNDk4ODg5ZDVhZGVkZGZiZmQ4ODRkMDIyNDBjMzBmNWE0YjE3ZGZhZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyM2MyNzM1ODQ4N2VkNDU0ZTc0Y2U0MzNlMzUwOTVmNzQ0N2QxM2Q1YzNiMzFhMmI2NWIxMTVkNmM2ZjAxMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1OWMxN2E4Mzc5MGQ2ODc1MTlhMGM2YzM2ZmMxMWRlYTA0ZDdkNDFkYWQyZWNjMjMxZDkxYjBlNWQ5YTgwNGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22440f14f12f4cd1865106f98c15d6e8",
+      "statement": "The built-in basicAuth middleware rejects a failed attempt by throwing an HTTPException that carries a 401 response rather than returning one.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/basic-auth/index.ts#L130-L153",
+          "version": "repo-lines-v1:sha256:3133da66ad7c6e02cf8681ce4412da3eb7fccdb7157ec44397206f15095347a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzNTE5ZTg4ZjAxYzNlY2JlZjdmNzExZTY4MjZkZThiNjdhZmM0NjhiNDUyOTljNTAwN2NlM2U3Y2MxMDM1NGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fd36acd06ae4fd5acf0273a5f070195",
+      "statement": "createMiddleware returns the middleware function it receives unchanged, so it exists for type inference.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/factory/index.ts#L368-L375",
+          "version": "repo-lines-v1:sha256:9ff828a53f82ec7e67c95ae800a8f3445502ec2271916411cb5055ee9869838c:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE2NGUwMmM3OTdlMWIxMmYzYTUyMjA3MGNmYmI1NzM4NzkzMTc0YjlmZTgyY2E3YzM3YjJjOTU1MTE4MjdiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFmODc3OTNjYWM5OGUyYjNhYmM5MTNkZmZlYzFhZDhlYWFhZjQwYTJjNGQxNDAyYzA5YzIwYWEwNjk5ZTk2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjc4NzFmMGEyZmMxMTc4Y2IzN2IwZTcyMmQ4YzM0OTQ2OTA0YzcxMjI4YmZmYzk1M2ZjMmZiMDUyYjk4NDE4ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:23:45.579Z"
+  }
+}

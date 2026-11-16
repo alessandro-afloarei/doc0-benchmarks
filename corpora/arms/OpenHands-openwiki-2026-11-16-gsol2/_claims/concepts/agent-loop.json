@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2f0bc8293fc92009bed22c2def001849327a6b086948f0c77c0d72c649cb5d47",
+  "claims": [
+    {
+      "id": "claim_5ebd322443fd4a99b3f4103fd7e40cce",
+      "statement": "Controller steps require RUNNING state and no pending action, enforce control flags, and correlate pending-action completion using observation cause.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L519-L547",
+          "version": "repo-lines-v1:sha256:7eb39837409a9f40c1587aead1a6917e1e45b2040cd8d05bc0f973662aa814f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNDA0ZDBhNDkxOWNmMGY4NzE5YzFiNTgwMzM5OWE0MWYwNmE2NTNjZDI4NmRmMjg3MDIzNmZkYTY1M2ZkOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5YTIxN2YzMzA4NTJhMjE5YTA2OWM3MGJiYmRmMGZhYjRjZGY4N2ZkOTJlYjA0ZDQ3NGEwZDYzN2JmMDc4NzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzYmI1N2U3Mzc4ODg4YmY3ZWIxMjI0OGYxYThjMzFmZGEwYTY4NjNiZWMxN2ZkOTZmNjE0ZjlkYTNhNzFlNzYifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L821-L868",
+          "version": "repo-lines-v1:sha256:a13402fff49d2672bcbe20dc8919b9a7295abb3ae14db41dc2afdeed1e7611df:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1ODc1ZGMyNTRkOTUwYTk5Y2Y2NjViZjBmMDJhYzBhNzhhMGIwOWU2ZTYyNTdiNWVlM2QyMTJlZGZjMWFhNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5N2I0N2JiODFjZTkzY2JhNjdhZmMwODY5OGE4MGNmYTA5M2E4NjY3ZTljOWY5NjUzMzc4MThkNjU3OGQxODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmOWI0NzM4NGUwZTA1ODAzMjE2NzE3NDBhMzc1MjY2YjU0MDc5NTA1OTVmODE1NzE5M2MxMzVhOWVjMjMyYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4YWRjOGU4NDljNTM3YzkxNWE1YzhjMDkyNWM1ZmE0OTZmZmVlOTU2Y2QxZmE3NTQ1MzM3YWFkNDU2N2EwM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2484217500e745b2a88b2ffe82b8ea94",
+      "statement": "CodeAct drains parsed pending actions before another model call and uses condenser history, model tool schemas and response-to-action conversion to select its next action.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/codeact_agent.py#L160-L224",
+          "version": "repo-lines-v1:sha256:445e60178dbc9853c429da48a0ab82c9daa79055dabf3873f089b1b4b00f7424:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjZTBhYzM2OTBhNzY3YmM4Zjk3ODhkNzZlZDg1NzRkN2NhNWE4YzgxZTdiMGFhMTZkMmFiNDFjYmFmMGE4MTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMjAwOTdmN2MwODg0NGQ5YjVhYmUzOTA1MjQ4YTc3Y2FmNTNkNThiNzFhZDA5NmY2OGRhNzI5NTY1N2UyY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYzUzNTg1OGU5MTZiYjY2MDQ4MWJhNDVlNjRlMmFjZWQ1MmIyZmY5MzA5OThkNzBhNmZiNjZlZjIzMWU2ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiMzYwNzE5NDQ5MzM3ZjAxNjgyZTM5NWRjMzEwNWUzMDgzYjdmYjk3MjRkZjkwZDY3MDk3ZTQ3ODY3NTBiYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56b6aaf21b2e4166abd1fc5164a68bf9",
+      "statement": "User messages trigger workspace recall for the first message and knowledge recall thereafter; stop/error reset can synthesize missing tool-result feedback.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L549-L629",
+          "version": "repo-lines-v1:sha256:2e58305558cc9d7c1fa0efe83eea1332055a3db6c5439b317c55432e7db7b733:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4YWFiOTFjMWE2NDdmYTI2OGU4YjhlMGIwNTlhMGQ4ZTAyYmM3OTgxNTY4MDI4ZGQ5ZGVlM2NhMDNjNGM4NTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYjgzZTBlMzc4YTFlZWE2YjQxOWI2ZWFiZDk3NTcyMjUwY2Q5ZTkyZTIwYWM2ZWEyOTliOGM5ZGJmOTVlZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0OTNjODI4MmFhZDk1YjgxYjIzNWY4MGFhZGU1NzA2NmUwYjdkN2E2ODljNzVjYTNlZTA2MTIyYjIzZDc3NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxNmM0NDc5NWRiY2ExNmRmODQ4NGZiZmUyMTU0MWVmNjZiYWE5NDEwMzMxOGFjZWNmYmM5MjRkNjc2MzFjOGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5dff9d4d1f044c50a5885e16383b24f6",
+      "statement": "Controller delegates share the parent event stream, LLM registry, iteration and budget flags and emit a delegate observation when control returns.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L693-L819",
+          "version": "repo-lines-v1:sha256:ba2439d4e2ae8deebd490923978e3f96a9eb0abaf2a97a13d1aae8e058dc6fdf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhZWNkOGRiOWExNjYxMTg0OGY1MDFlZWFjNWUzNmIxZWY5Y2ZlMGMxNTAxN2VkMTQxYzIyZTY0ODNmZjNjNzg5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxZDk5YTMzZWQ3MjVlNzc4OWU0N2RmNDE3NGJmZjkzYWRkMDQ1NzdkZGZkYmU3MmIyNmRjZjVhY2M1N2UxYTg2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMGQyNTk4MGNmNDNjMGVmOTk5NjUxNDc3M2M5YjI3MmJlN2Q4M2M1YmEzOWM5YWRkY2U0NWRkNmY1MThkYWJhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxOTQxOTExZWM0MjhmMjEwMjZkN2I3ZWViMGI1NmI4MGY5NTViMDgwMDRlZGQxZTBiOTU3MDM2NjcxZjA0NjY3In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:55:05.802Z"
+  }
+}

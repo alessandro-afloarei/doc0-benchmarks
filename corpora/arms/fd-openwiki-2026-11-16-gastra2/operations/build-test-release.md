@@ -1,0 +1,80 @@
+---
+type: operations
+title: Building, testing, and releasing fd
+description: Local Rust development, feature selection, integration-test isolation, CI coverage, completion generation and release packaging.
+tags: [development, testing, ci, release, completions]
+verified:
+  - by: openwiki/0.9.0
+    at: 2026-11-16T17:13:39.635Z
+sources:
+  - id: openwiki-source-dddf858b6f600d9339e1373d
+    resource: repo://.github/workflows/CICD.yml
+  - id: openwiki-source-651d1fb6c9e49916a916ab51
+    resource: repo://Cargo.toml
+  - id: openwiki-source-2f39ca94e091acb887cee50c
+    resource: repo://doc/release-checklist.md
+  - id: openwiki-source-012f2c78e3b1446dfc35803f
+    resource: repo://Makefile
+  - id: openwiki-source-b55a21a31ede1b56cd31a6a6
+    resource: repo://src/main.rs
+  - id: openwiki-source-a7a4c9acc1b5537a33c66a31
+    resource: repo://tests/testenv/mod.rs
+generated: { by: "codex", at: "2026-11-16T17:13:39.635Z" }
+---
+
+# Building, testing, and releasing fd
+
+The Cargo package is `fd-find`; its binary is `fd` at `src/main.rs`. This checkout declares Rust 1.90.0 and edition 2024. Use the manifest as the toolchain authority when it changes. See [Cargo.toml](../../Cargo.toml#L16-L31).
+
+## Local development
+
+From the repository root:
+
+```sh
+cargo build --locked
+cargo run --locked -- --help
+cargo test --locked
+cargo fmt -- --check
+cargo clippy --all-targets --all-features -- -Dwarnings
+```
+
+The README documents `cargo build`, `cargo test`, and `cargo install --path .`; the locked variants align dependency resolution with CI. To install this checkout explicitly, use `cargo install --locked --path .`. These commands are development instructions, not a record of checks performed during wiki generation.
+
+Default features enable completion generation. `use-jemalloc` is optional, and `base` enables that feature; neither is in the default feature list. Allocator activation is additionally platform-gated in both Cargo and `main.rs`. Keep those target conditions synchronized when changing allocator support. Release builds use LTO, stripping and one codegen unit; the `debugging` profile inherits development settings but enables full debug information. See [features and profiles](../../Cargo.toml#L65-L98) and [allocator selection](../../src/main.rs#L38-L55).
+
+## Choosing tests that expose the behavior
+
+Unit tests live beside implementations; process-level integration tests live in `tests/tests.rs`. Examples of focused runs:
+
+```sh
+cargo test --locked --test tests test_exact_literal_nonsubstring
+cargo test --locked --test tests test_ignore_contain
+cargo test --locked --test tests test_exec
+cargo test --locked --bin fd filter::time
+```
+
+Cargo's filter is a substring, so `test_exec` selects several execution tests. Follow a feature across parsing, configuration, and its worker or receiver consumer before choosing coverage. Use [patterns and filters](../concepts/patterns-and-filters.md), [traversal](../architecture/traversal-and-ignores.md), and [execution](../workflows/command-execution.md) to locate relevant cases.
+
+`TestEnv` creates a temporary filesystem with a `.git` directory so Git ignore rules apply, default ignore files, and a symlink. It finds the binary using `CARGO_BIN_EXE_fd`. By default it passes `--no-global-ignore-file`; global-ignore tests instead supply a temporary configuration directory through `XDG_CONFIG_HOME`. It sets `LS_COLORS` to an empty value to stabilize color output. See [fixture creation](../../tests/testenv/mod.rs#L28-L79) and [process setup](../../tests/testenv/mod.rs#L300-L315).
+
+Normal output assertions sort lines, normalize path separators, and translate NUL separators; optional per-line normalization also sorts whitespace-separated words. These assertions prove membership but cannot establish output ordering or byte fidelity. For those properties, inspect the raw `process::Output` or use the platform-gated `assert_output_raw`. Tests involving Unix ownership, invalid bytes or symlink creation have platform constraints; Windows symlink setup requires the appropriate privilege. See [normalization](../../tests/testenv/mod.rs#L114-L134) and [raw assertions](../../tests/testenv/mod.rs#L218-L275).
+
+## CI boundaries
+
+The main workflow has formatting, all-feature/all-target Clippy, minimum-supported-Rust, and platform build jobs. The MSRV job derives the toolchain from Cargo metadata and runs locked checks and tests. The build matrix spans Linux, Windows and macOS; selected Linux targets use `cross`. ARM and AArch64 matrix entries select binary unit tests with `--bin`, so their matrix runs do not provide the same integration coverage as unrestricted test runs. See [CI checks](../../.github/workflows/CICD.yml#L42-L84) and [platform build/test setup](../../.github/workflows/CICD.yml#L86-L198).
+
+## Completions and installation artifacts
+
+`make completions` builds the release binary as needed and populates `autocomplete/`. Bash, fish and PowerShell completions are generated by invoking `fd --gen-completions`; zsh and the `fdfind` compatibility files are copied from `contrib/completion`. Although the binary can generate zsh completions directly, the Makefile intentionally selects the checked-in zsh file. The generation feature must be enabled for binary-generated completions. See [Makefile](../../Makefile#L1-L42).
+
+`make install` installs the binary, completion files and man page, with `prefix`, `bindir`, `datadir`, `exe_name`, and `DESTDIR` controlling destinations. For packaging review, inspect the exact Makefile destinations rather than assuming all compatibility files use the same layout as Debian packages. See [installation recipe](../../Makefile#L44-L52).
+
+## Release path
+
+The [release checklist](../../doc/release-checklist.md) is the maintainer procedure: update version metadata and changelog, review CLI help and the man page, pass CI, run a publish dry run, then tag and publish. It calls for crates.io publication from a clean repository and a fresh upcoming-release changelog section afterward. `scripts/version-bump.sh` and `scripts/update-help.awk` assist the preparatory steps.
+
+CI packages the binary with README, licenses, changelog, man page and completions. Windows archives are ZIP files; other targets use tarballs. Ubuntu jobs also invoke `scripts/create-deb.sh`, which stages the binary, documentation, completions and an `fdfind` symlink, selecting a separate package name for musl builds. Release-tag detection gates artifact attestation and GitHub release uploads; a dependent Winget job handles Windows MSVC archives. See [archive and publication steps](../../.github/workflows/CICD.yml#L205-L309) and [Debian staging](../../scripts/create-deb.sh#L13-L65).
+
+Before contributing behavior changes, consult [CONTRIBUTING.md](../../CONTRIBUTING.md) for the project's discussion, review and changelog expectations.
+
+Related: [quickstart](../quickstart.md), [search architecture](../architecture/search-pipeline.md), [command execution](../workflows/command-execution.md).

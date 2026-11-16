@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2b8f7cc67be31cf3ae57865a5ef640f23a64a4680822ac2682af372c4b33d3ce",
+  "claims": [
+    {
+      "id": "claim_7ebfa3b4533940bb99551d4d66e653c2",
+      "statement": "compress picks gzip or deflate by Accept-Encoding q-values, skips 206, HEAD, already-encoded or chunked responses, bodies below the 1024-byte default threshold, non-compressible types and Cache-Control no-transform, then removes Content-Length and weakens strong ETags.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/compress/index.ts#L24-L44",
+          "version": "repo-lines-v1:sha256:91497fb2970fe692c7713786dd15ec4ee7ff9d958e433a72d355ab7747f04348:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxZWFmZDVlODZlMTZmY2MwN2ZlZDYzYjIyODcyOTEyYTVjYmE5NzU1YWVlYmRmYjkzZGEzN2EwNTY3OTc1ODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmMmRhMGUzYzFjNDg4Yzk5NmI3ZTYzOWVlMDllMTU3N2NjNWJkNTIwNmFjNDdhOWVlMzQwYmYxNzgxY2Y5ODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1M2I4YTRiZjA4M2ZkYjQzZjYwNzg2NWJhNDQ4ZmNkOWU1YjZlOGE3NWM2YTg3ZGY2M2EzNmJiY2FlOGVlYzQifQ"
+        },
+        {
+          "resource": "repo://src/middleware/compress/index.ts#L70-L129",
+          "version": "repo-lines-v1:sha256:d7fc5596ff05c87ca2c3df852bdd42f511184cd11303f75242aaf5d846583e0c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjMGZlMmFjZWMwZjNlZjVhZTgyZThhOGYwMWU3YTUwMmJiNDhiMTFmMDQ5ZGE0NDY1OThjNWQ0NTk5YmRjMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1OWM1ZTk4NWY1YmEwNzMyYTAzYTZkMzNiYjQxZTQ4YTlkYTk5ZWZhYWJlODZjODIxODE0OGVkNjdmNThkOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22bf7eb3a4344967924affae24529730",
+      "statement": "etag hashes the response body with SHA-1 via Web Crypto when no ETag is set and returns a 304 that retains only cache-control, content-location, date, etag, expires and vary headers when If-None-Match matches.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/etag/index.ts#L21-L54",
+          "version": "repo-lines-v1:sha256:221c3ed1da3b53d9ccb129b37179b97f739ff47743a99a5c759542dbcea9948a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiNTk1NGZkYmZiYWI5ZGQzM2JmMjIwNmYwMDdlNTRlNzk1OTIyNDkzZmRlODljYWY0YWI1MjljNjUxNzExYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4MmFhYmVjNGMyMWNmNmVjMzhkODBiY2M4NWU0NjA5ZThjY2IxZWE5ODRmMDQzMzgxNTVjMWI4ODJkOGVhOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxYzc1YWNlNjQyOGVkYThlN2Q2MWE4MjQ4YmRkMWQ1NTI0NzNiNDMzZDJiNjMyZjAxNDY0NmQ2NThkYzFmZGIifQ"
+        },
+        {
+          "resource": "repo://src/middleware/etag/index.ts#L84-L129",
+          "version": "repo-lines-v1:sha256:c19d696dd9233b134a43a5ad1cf8f9dca0a54a95ba471fc24d606770143ff17f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNjE5NzkwZDM0MjZkNWU5ZjQ0MTAxODk3YWQ2N2ViZDgzY2I5YzFmNWNhOGMyYTgyMjVhNTRjMTk5M2VlNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyZWM4YmE2ZmM1MjhiZWZlZjExNDNjM2JjNjNkYmQ1ZTI0OGE0OThiNzhmNjYyOWRlZDAzMGIxOWM2MDkyNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2b150f7b89a4bba918915434f44c379",
+      "statement": "cache is a no-op when globalThis.caches is unavailable, only caches GET requests without an Authorization header, rejects vary '*', skips storing responses with private/no-store/no-cache, Set-Cookie or uncovered Vary, and stores via executionCtx.waitUntil unless wait is true.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/cache/index.ts#L13-L36",
+          "version": "repo-lines-v1:sha256:a79cf08e8fca037faf88bf3803dd1b790c60da3449a8a68a5d854af383ce7033:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYzliYWZiMmM3NDMxMDBkYTdkNzAzYmZmYmJjMWEwZTRkZTg4YTVmOTk4MWJjNTcxMzE1YjhmOTRiNzQ5N2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMjFhNmZhNWJmODAyMzIwNWRhYzFlMTg3YWE4OGMxMmEzMjQxNzc3NGU5MWIyNGNiZTZjZjY5NWM5MTYyODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1YTViNjhjOWNiYTEyNmU1OGIwMDFiMjYwY2U0NTVkODEwNGJkZTYyZWU5ZTJkNWZiZjA3ZjA5MTBlNGY1YzUifQ"
+        },
+        {
+          "resource": "repo://src/middleware/cache/index.ts#L138-L183",
+          "version": "repo-lines-v1:sha256:2cb6f09f82dea0290db043cdc3511a648068e77d00bcde9b7de5cafdd5ddf1da:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZmI1NDliNDMyYWRmMjAxZGM3MmM0NWUxZTNiYmJhMGMxNjQ3ZjEzNGY0NmY0YzE1MWMwNTlhYWFjOTFkOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://src/middleware/cache/index.ts#L73-L98",
+          "version": "repo-lines-v1:sha256:983b8dc797cf497941fe51cb8fbfdb521f4477efc191716bb1d61b2b60f71351:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlZTI0MDA4NmY5ZTg0NjNmNGUxMjZkOTRiYzM2MGM2YzA5MDcxNWUzNjYyNDg4OTQyYzU2OTRkNjNlMjQyNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4NjAxYjA2MTIxMGI1MmI2ZjQ4MzkxMzVkNWJiNzE4NjhiYjZjN2E0OTc3ODE3MmM0Y2Q0ZDBmMzE1MTY5ZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiOGQ1YWRjZTU1MjU1MjlkNGE2ODRiYWNlYjY1Mzk3YzlmZjc2MzhhZjIzNGEzMDIyMDRhOWZkYzFkNTFmNTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11de35e3f5ed4aaa8d0e770f325155aa",
+      "statement": "bodyLimit trusts Content-Length when Transfer-Encoding is absent, otherwise reads the full body up front, failing once maxSize is exceeded, and replaces the raw request with a buffered copy; the default error is HTTPException 413.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/body-limit/index.ts#L50-L110",
+          "version": "repo-lines-v1:sha256:288114658566f98b1ba1194f2dd7a0aa43556fc6de1ed245ee01a88f3ede1815:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2YzZiNjI4MDk4NTgyZDdmNTZhZjAzNmQzMTA0NTc4YjhhODFlZWFiZDlhMTIwMGMxZmY1YmFlNWM0ZTJmMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3NzhkMWIwMTk3ZmE5MzQyNDFiODY0MTljNzA5MDg3NmU0MTEyNjMxMTZjNTgzMGUyNzFiNWY2YmQ1YmM3ZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_065255e0fd3c4fe58e6cb662f50673d3",
+      "statement": "timeout races next() against a timer that rejects with HTTPException 504 'Gateway Timeout' by default, without cancelling downstream work.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/timeout/index.ts#L12-L58",
+          "version": "repo-lines-v1:sha256:19983e9b44b69b8b3a8915bb50d17e808b875093862fedefaf811c0548d2bd34:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2Y2Y2MjU3MzI5ZjkwYzNkMDE4OGE3ZDBmNDMwNDhhM2IwYjJhZTY5MTY5NmYwNWEzYmIwN2QzNmQ3YTcxZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0YWY3NzA3NWM2NmJkMDcyOThmZDIzNTJkNWU3NmU5Nzc1OTdjOTk0YmZiOGQ1MTExY2ZjNDBiOGFjMjhhOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68dd31a1aeb74a8ba1591f365a98d8c3",
+      "statement": "contextStorage runs the downstream chain inside AsyncLocalStorage from node:async_hooks, and getContext throws when no context is available.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/context-storage/index.ts",
+          "version": "repo-file-v1:sha256:f7ac028b4a02315bdf0d1f342272c96bba6bd1212ca50831f0dd60e31416c445"
+        }
+      ]
+    },
+    {
+      "id": "claim_fce35d2bd8bc4681bb0244156e2beecf",
+      "statement": "The core serveStatic skips finalized responses, rejects decoded paths with dot segments, repeated slashes or backslashes, serves index.html for directories, and serves precompressed .br/.zst/.gz variants when enabled.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/serve-static/index.ts#L23-L126",
+          "version": "repo-lines-v1:sha256:12d6d2d82bf46ee662754d19df51c66d8271443f3d6b1271633310061682e6f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlOWNhMzFkZTgxYjc0NTZjZGQxNTYyN2I2NjEzYjRlNzU2YTA0NmIwNjJlYjVjYjBlNTFiNzEyYTJkMTY1ZmY2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1YWQ2NzRkMTFhNTBhYjM2YjhmZDBkN2IxNWZlMDZjNDg5Mzc3YjZhMDM5NDY0ZjQ3ODA5ZjFkM2RlMTczMjRkIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7a88c23422d484b91546afc500889bb",
+      "statement": "methodOverride re-dispatches non-GET requests with the overridden method through app.fetch, defaulting to the _method form field.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/method-override/index.ts",
+          "version": "repo-file-v1:sha256:476fbbdc43a68475dfc8d2ffb6756dea1f1df03a5bb492f6a1269781df35e50e"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5b049f12efd4a929f0c247698d73902",
+      "statement": "requestId reuses an incoming X-Request-Id only if it is at most 255 characters and matches [\\w\\-=], otherwise generates crypto.randomUUID(), and stores it in c.var.requestId and the response header.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/request-id/request-id.ts",
+          "version": "repo-file-v1:sha256:219b70c6165b4c47c33519f0a2d5c4835e44efc222753c09c3e195e157239bdb"
+        }
+      ]
+    },
+    {
+      "id": "claim_42b232d2cb0b40f49e6a1004b1ee1b4a",
+      "statement": "trimTrailingSlash redirects GET/HEAD requests with 301 only after a 404 by default, or before routing when alwaysRedirect is set.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/trailing-slash/index.ts",
+          "version": "repo-file-v1:sha256:7d055d718fbe2f4160c4c55f2bc9421bdb48468e7b4c583df711da5de9a8bd01"
+        }
+      ]
+    },
+    {
+      "id": "claim_efb2468dc1ae445380bc460f4d8c6ae5",
+      "statement": "languageDetector defaults to detection order querystring, cookie, header, caching in a cookie, with fallback language 'en'.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/language/language.ts#L50-L62",
+          "version": "repo-lines-v1:sha256:f365224df8be33675833ee021288e9bf7804e401b48839a1dec0cdae0abe3aef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2Yzg3YzZjYzg4ZWRkNzA2NmM0ZjBhMWRhN2NmOTYxNDhjM2IzMDMxODY0NmYwNDI5ZWRiZDA2MDczYTkzNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzZjFjMDAyYjdkMjk2MmU3NWM5M2U1OWMyYjU0MmRkNGZhOGRhNzkxNGI4MzE1OTEwOGYxZTg5ODk2OWJmMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczMzcyMTZhMTA1NmVkZmNkMGQ1YjMyMTFjN2U1NmJlM2Y2ZjY5ZTk4NmIxZTZiNjRlYjkxMTc0NzQ3ZTY1ZjcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:39:44.364Z"
+  }
+}

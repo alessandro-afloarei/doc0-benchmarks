@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f2ec149b3d11c5027c77510157c0c707b55b3d0422e129b1661ebd01a402c992",
+  "claims": [
+    {
+      "id": "claim_0fe6a4621b6a48bd9964c11faa840299",
+      "statement": "The electron_browser_app native binding is registered with NODE_LINKED_BINDING_CONTEXT_AWARE, and its Initialize function sets the app property to the App singleton.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_app.cc#L1880-L1891",
+          "version": "repo-lines-v1:sha256:156d608858622f6bcb5f8994d902509aa1e9ffbb3f949453493e3b5174344a05:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhMjc2YjEyODJhOTM2N2M5M2MxYjViNGNiNGU3ZDZjZjRlMjhhZDk4NjI3ZmQ4OGIyYTdhMDI1NzA5MDY0NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MDk5ZDJjY2M5M2E4NjNiYmVjYzI0YzZkNjk1YzMxOGY5YTNlMTAxOWM5MzQ0MWRhMjM0NzdjMDE4MGM1ZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiMmUzNGI0NDZmODQ5Y2UwMzY3NGFhYTE3YTMzNmEyNjY1ZjQyY2JiNGRhN2JkMDE1YjRhZjA5NzBjZmJhZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_35072b7e43044750bf5ef65d30b54ad1",
+      "statement": "Binding names reachable through process._linkedBinding are enumerated in the ELECTRON_BROWSER_BINDINGS macro in shell/common/node_bindings.cc, which includes electron_browser_app.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L52-L55",
+          "version": "repo-lines-v1:sha256:f09270277f456f609446b032649953262bb3851f322920036ccfce4bbc98e492:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA1ZDM5NjY4ZDFlNzM1NTY4MWJjMjI4ZGEzMjA4MDM4ODllYjMwMWZjNDdhYTg1YzdmMjgwZTI4MWJlYmIwNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2QzOWZmMGM0MTdlMjkzOTEwYjMxYzA1M2QyZTVmM2FmZDAxMmE5YmQyZjEyZmNjOWEyM2Y3ZGQwMWVkZWEzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQ1MDhjYmU3NDdkOTFhZTQyYjU5NzE2OWY4ZGVmYTA3MDlmYzg1MDQyZmJkZDNiNGVhMjM5ZWJkYTI2ODRkMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f273bc5b4dd4408d942cbd7266439917",
+      "statement": "App's object template binds its methods such as quit, exit, getVersion, and whenReady to the Browser singleton with base::BindRepeating, so the JavaScript-visible app methods are implemented by Browser.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_app.cc#L1728-L1741",
+          "version": "repo-lines-v1:sha256:7f4e5c4dcfcf7ba84b180cd9894d1892a6a6aeba8eb95a3ed63ea16937409511:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNzcxZDIwNmJmMjY1NzJkZjFmOWNhNDFmNmI1MTVkYWJlYTI4MDk5ODEzMTQ1NWM0ZWU3N2NkMDI5NzViN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNDQ2OWU1NzFmY2ZlMWQxMjYzODliODdiMDY2YThlYjZiOGYyN2YxYmYxY2Q0ODYxNDhiZThkMTEzMWY2NWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MTU3ZDJhMTVmM2YzOTA0MGU4ZGI3NWVmNjFjNThmOWYzZWNlOWU2Y2QzNDM4MjAxYTVjNmRmMDcxYTA2NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjMTk2MWMyOWE3NGZiZDdlMDJkYjllMGZjMDIyNDBhNDlmNDQxNDM4ZjBkYWYxYzAzNGJhM2Y3MjZjNzg5MzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6c433bb7a014dd9b6abb15c9ad3c067",
+      "statement": "EventEmitterMixin::Emit dispatches an event object through gin_helper::EmitEvent and returns whether the listener called preventDefault on that event.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/event_emitter_mixin.h#L20-L40",
+          "version": "repo-lines-v1:sha256:ab49ea43a7b47dcc2567e2a022e09a143332b48303283cbd0db4745de18e021f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNGU2M2EzMTdiNGVjMDUwZGYyZjRhODUwOWM1YjM4NzcwZjBlZGM0YWU2MTFmMTFjN2EzYTk4MzM4ZTkzMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiODFjZDFjYmI3OGI1ODEwY2I5N2FmYjlkYTgyMDFjNmVjOWI5NWU0ZjMzNzU1ZGU4ZTNmOGY2NDcyMmUyYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczNjljZDExZDE2ZGMxZTViOGNkZWM4YzRlYzg1MjVlYjg1N2I3MjA4YmEzYzJkZTU5ZGQxYjlmZTFlYTE4MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0ZjUxYjUxNGNlM2MyYjM1Y2VkZjgwZTJhYzI2YzA5NDRhYzQzOGVmZDFiNzAzMmFhNjg3NTA1OTBkMjgyMWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf10bed05998431a9b4d01ec06fe5627",
+      "statement": "Constructible inherits the event-emitter JavaScript prototype only for classes that derive from EventEmitterMixin.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/gin_helper/constructible.h#L49-L56",
+          "version": "repo-lines-v1:sha256:ac23e89b02d9461248377b76f86d390ba727684626b0dd6f2ea05fae2eb699f7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2UxOGIxYTBlNGI5M2U3MTM0N2EyN2QzZTQyM2E4ZDk5NjQ5Mjc0OGVkMjg2MDIzYmFjZTRiZmE2ZjlmYjFjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2EyZDg4YmNhYjY4NTkzM2E2YzVmODg2M2IyNmUxMWQyOTdhMDA3NTdlOTZiMDFlYzlhMzlmODQwZTcwMDY1NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODA0YTJiYWI5NjUyNzIzZDEwZDg5ZGM5M2ZhMzQzNjQwZjY1NTczOThkZDU2YTJjNWYzMmJlYzJhODU4ZGQwZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTFkZjM4YTQ4OTI5ODM5MTEyODNjODYwNjE2NDhjZTg3OWVkZmVkNTNjMDg0ZDRmYjI0Yjg0YjU4NTA4YTUyOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6f8d963282a4a788e31f5d93c571be3",
+      "statement": "The gin converter layer includes a std::span converter and Blink converters for blink::CloneableMessage, which the IPC path uses to carry message arguments.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/gin_converters/blink_converter.h#L124-L129",
+          "version": "repo-lines-v1:sha256:20e4f64a9a60401b6577f8147deaa6c90601263e3dc28f6a261f96a2d9436402:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDczMDgyMmQ5NzgxOTcyN2NhMWZkODM5ZDc5ZThmMTVjNTI2M2E2OTRlNWIxNGY3NzI3ZWU4YmJmNTJhNTFhZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWYzYjUzMDA3N2I2NTEwMWIxYzhkNjYwY2Y4Y2VmYzM3OWM5N2ViZDYyNzkwNDUwMTcyYjQxMDQ5MzcyZDEzZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjM4ZjlmOTcwZmUwOTU3MTRlOTA0ZjdjYWFjYmJlMGRjMjVmY2NjNDEwYWM5ZjRlYWZiNjcyZWNkNjFmZGQ0NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjM4ZjlmOTcwZmUwOTU3MTRlOTA0ZjdjYWFjYmJlMGRjMjVmY2NjNDEwYWM5ZjRlYWZiNjcyZWNkNjFmZGQ0NyJ9"
+        },
+        {
+          "resource": "repo://shell/common/gin_converters/std_converter.h#L34-L41",
+          "version": "repo-lines-v1:sha256:a0a6967984c2a5ee6d1f0ca599dc5b81b942aa99c784605aa91021c8fe6e2220:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWVmNTljNGYwNjMxZGRkNWE4YjAyN2RkNTA0NmQ0YWQxYTZiZjQxNzY2Y2VmNjMwOWExZmJiM2I3NWMzMjZlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjYyZTA0MDhkYmMxMTYyZDMwMDZlNGRkYWMwYjFmNzkwYTZjMTE3NTA1MGU3YWFiNDkzNjcxZjUwYmZkYzJhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2Q1ZjExZjcxZTJkMmI3OWYxNDRhYmZmMzU5ODk0NDRmNjk5YzE2OGM0YThlZGJmMDk5ODBiMmUxZGVjNTZkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWMxN2Y0MmFkYzgzZTA3OTVjZDg5OGNlMWZhMGQ3YzE4NGZjMzBjN2U2ZTE1YmEyMDAxYjg4MjY5OGJlNGNmNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_14915b51d48e49dba56045aa2dcd5b3a",
+      "statement": "The shared asar.Archive binding exposes stat, readdir, realpath, copyFileOut, and getFileInfo methods to JavaScript.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/api/electron_api_asar.cc#L16-L30",
+          "version": "repo-lines-v1:sha256:95a3231a545a1041d31530b5b8fc1518a99a6b5ca1a4eae75649d8480bf3038c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5MDNmMWQwNGNjYmUzZTJkODNkYTM4YTJmYTdjNjFlYjA3NGQ4N2I4NjRiZDY0NjBhOTYxNjkwNDI1ZmJmYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyYWY4Y2Y3ZGE1MDkwZmIxMTJlYWFjODMyYjExMTUyOTllOTMyOWI3Y2Q2ZGRlMmVlZDg4MDdhYzZmZjk5ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiMmUzNGI0NDZmODQ5Y2UwMzY3NGFhYTE3YTMzNmEyNjY1ZjQyY2JiNGRhN2JkMDE1YjRhZjA5NzBjZmJhZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyOGYxNDg1NzlkMTk5NDhkN2I5ZWJhNDRiOWQzYmE0Njg3NzFkMGRkZGE4OGU3OWNhZGU5MjZiYTNkYmIzYjAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

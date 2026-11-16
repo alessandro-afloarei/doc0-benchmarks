@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1f9777309f1cea50bd9fefd9b0d51022ca3f66fc8738568a0fa0f22c915daa39",
+  "claims": [
+    {
+      "id": "claim_b937700338ed4bd0b55492b8105eeea4",
+      "statement": "EventDispatcher.send drops events outside its allowed groups, stamps events with hostname, pid and a logical clock, buffers events of configured groups and flushes them in batches, and holds events in an outbound buffer while the connection is down.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/dispatcher.py#L164-L215",
+          "version": "repo-lines-v1:sha256:e9a4f609bab42e69842824c2b635a7b6e4fd86ef88736aa625e7e28889287b9d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5OThkZTljMjUyYzZiN2QyZGM4YzRmZjVmZmE2NDUyYzNlMTM3ZjMyMTUyZmVlYTA0YTRjMzYxMmJmODdiZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMDcwMzA1MzBkOGI4NGMwMTEzNzgxMmI4NjIyNjE5NTNjYTVkYWE2OGZhZmQyMTA2NTAzOTgxODcyZThkNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2MDRmNjUyMzM1NmExMDkyMTA2M2ZiZmM3NDBhZGJkNjFhNjlkNWY1MWU4ZWU3MDk4NDZmNjUyMzY4ODMwMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxNjc2MTM0YTFiZDcwMGJlNTUzNDNhNjIyYjQ3NGU4NDZhYjc2NmIwZWYwN2U4OGY5YmY2NGMwMTI4MGFiNGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_12f452afcf7b4df4b6d412d2d3242715",
+      "statement": "The worker Events bootstep creates the dispatcher restricted to the worker group when task events are off, buffers task events only when an event loop hub exists, and carries buffered events and reserved requests over to the new dispatcher on consumer restart.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/events.py#L1-L71",
+          "version": "repo-lines-v1:sha256:82e3a58ba880bb2f1ccdfadc9076d57c8b231a25043fa844971bea019573f34c:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MDVhNTc1YjRmN2M4OTYxODVjYzM3YzU3YThiM2U3M2MwM2YwYzhlYTI3MzcxODIyMmE3Y2U4MGZhMTc5MTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1NGI2ZjA0OWU1ZjJkNjY4YjVjYTMzZDEzNDAxNmY0YThlZDUxMWQ2ZDdlMzIwZThiNGUyYzVhMjU1ZTk1MjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4b9e7b0f10d48eba36d4a4ebcb4c7e7",
+      "statement": "The worker heartbeat sends worker-heartbeat events on the worker timer every 2 seconds by default and is started and stopped when the event dispatcher is enabled or disabled; it is distinct from AMQP protocol heartbeats.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/heart.py#L9-L36",
+          "version": "repo-lines-v1:sha256:ea76bd146f827e4db8a69f57dbdbbd4da7b5b087360a8177dcef179a6b20d692:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmODUzNWQwMWFhNDU5MmQxYTcyZDIyMTUwZTM4Nzk1MjhlOGUxNjQwNjViZjk4ZTQ4ZDNmMWNiOWQxMjRlNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmNzUxNTdkOGY3MWQ3NjliMDQ0NzEwMDBjMDhjMjI0YzAxMTBlOWYxN2RmYTM5YzE0MzljYjc2NGExMzc3ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://celery/worker/heartbeat.py#L25-L61",
+          "version": "repo-lines-v1:sha256:21e95797db4d9c533384dae74e2df12b160fd3cf32ebea15714843d578cac0c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxYTdjZTQ1NzkxY2RmNzNiMTU2YTUzODNjN2M5MjczNTM5MWM0NGJlZGEyOWM2NTY2ZGEwYWUxN2RlNDdlMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1ZWQ4MGZiYTljYTg3NzI5MTUzOTI4YTRjZDQwOTM1YWI3MWNmNmU5YzkzM2NjMWY4MWEzNGZiNmZhYmViNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2ZGIxOTU3ZDZkMTVlZTc1MTNmOTgzMTk3NmViZTNmYjNhYzUyMDA4NWYwMzhkNTBhNmU3Nzk5NThmZjkxMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_669b63ea7fa54f10a520c2ee43d7f1e2",
+      "statement": "EventReceiver declares a per-receiver queue bound to the event exchange with TTL, expiry and durability from configuration and rejects queues that are both exclusive and durable.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/receiver.py#L36-L78",
+          "version": "repo-lines-v1:sha256:15edea1af171fad86d2351d276625d2dc2a38180439be8e634a2ac1fa61d392c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjYTA0ODg3MjZmNjU0YjJlYzNhZDZhZTYwOTM1MzliMTY5OTQzMzVmZWE1MzM5ODJiZTZiZjM2YzA3Mzc5ZTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5MzM0ODlhMjk4N2ZiMzg2OTdjMzhhZjc2MDQ0YWVkMjhhNTI0N2ExODI0Mzc5ZGZlYzhlZDgzMTY2MWRmMjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzNjQ2NzAyNTI4M2IxZDgyNThhZGZiMDc3NDhlZWU5OTkzMDk3NWUzNjNlNDUzOTVjM2Q0YWU3MjU4ZGE0ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2YTg3Nzc3NzZiYTZmNjVkMjRmNGI3ODRiZDU4NzM0OGNjZjQ5NDVlYWVkMjY2MzAzZGQyYmJmYWEzYzIzMWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e695d301060447284b0404582170ddf",
+      "statement": "events.State keeps workers and tasks in LRU caches bounded by max_workers_in_memory and max_tasks_in_memory, derives task state from events, and merges out-of-order task events by state precedence so state does not regress.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/state.py#L305-L332",
+          "version": "repo-lines-v1:sha256:b71e67d0130471fc0e826420b4132652d9ed216500410dde422cc00aeff9ab14:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkMDEyZWZjM2UwYTc1N2JkOGUwOWQ3Yjc0YTA0NTAwMGRiN2JlYWI0NTMzYjg2NjhkOTc5ZTEwNTIwM2E4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwOGRhMTdmOTM0OGE3ZWI2MWE3OTA1MjkxMWU1NmM4MWQxM2UxOTViNzNkNzZlNWI4MDk3M2Q1NjlmNTg1ODIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1NjViZjA5NjZiYjkxZDI4ZDdiZTQzZWJjMTNmM2RmNzg1OWNmNjI5YTNhMzlhZjFmZTNiMjc0NjkzZDQ5MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2YzZmYWI5Mzk1YThjNDg2NWQ0ZTc3Y2JlMzQwNzRiMDRmZTIxZjQzMWYyYjE3MGQ3N2JjNjNjZjk3OWY1ODUifQ"
+        },
+        {
+          "resource": "repo://celery/events/state.py#L398-L437",
+          "version": "repo-lines-v1:sha256:669faa72f1e8c964262fc69a88c48e0311704dd885a58c7a6860acb677e43a95:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMWZkMzM4ZTE0Y2Y0NTdjZmFlY2RhYmUxMzFkYjNiM2VmNDVjMGQyMTQ5NjAzOGZlODc1NzY0ZjdmOTBkOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NTMyZTFhYzBlYjgxNmRkODlhYjIwNTM5NGZlNjE5ZTcwZGExYmQ0NzVhNWE3ODExMGEwOGE0OTM1NTM1MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NmI2YmQ3MDBlMTFlZTdhNjFlMDdlMGEyMTllNTllMzU4ZTdiYjM5NzI1MWJiMjE2MzA5Mjg4NThmZWI1YzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fbe1cd9382d5436da71a744cb88d7a4f",
+      "statement": "A worker is considered alive when its last heartbeat has not yet expired.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/state.py#L225-L236",
+          "version": "repo-lines-v1:sha256:1c80b773eeadd93c2f0df5af03cdb407bab158099dd746ea960cf25bf5382919:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMjQ4ZWZjYmJmMGI3YzE3NGY3NzVkNWMwNWZiNzkwZjdkMjY2NjA2NjUxOTRlNDI2ZTA1MDA0YjE4NDI3N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwYzQwZGU5ZWY2MmU0NjhjNDZmZjA0NmZiNjQ0MTc3OWRhNzk1Nzg1YWM3MDg5MGM2M2IxYTdiMzQ4ZTViNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlYjk2NmZkZjY4MjUwYTAwNmMyM2M5MmNmZWY1M2YwNDYwOTdkNDM0NGYxYWZhMTBiMDZlNDQ2MjE5ODVkNzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dc7ef78d775f43738c8d4dda8e4ac86d",
+      "statement": "Mingle sends an inspect hello at start and consumer restart and merges neighbors' logical clock and revoked task ids into the local state; it only runs on amqp, redis and gcpubsub transports.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/mingle.py#L12-L76",
+          "version": "repo-lines-v1:sha256:cf45c51eb4c7256ff11b1ba3eddc30bbd20d152d1845a69333d506d608a79be3:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlOTRlNzk1ZjE1OTM4NDkyMTlmMzc1MTRhNDlmOTNkYjg3ZThjOGFlN2VhN2FjN2JjZTJhYmY5MGNjNjA5OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxZDJkZTNiYjg5Y2YxYjNhNzEzNWIxYzk0MDMzM2NlMDc0Y2UzYjA0YzlhODJmN2U5MmNiZmU3NTc5ZTJlNmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d0e05ac24cd4d95932db0b1044bd9d4",
+      "statement": "Gossip consumes events from other workers into a small State, tracks node join, leave and lost, and runs an election protocol where all alive workers ack and the leader chosen by clock ordering performs the action; it is limited to amqp and redis transports.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/gossip.py#L23-L140",
+          "version": "repo-lines-v1:sha256:05444490eef0dcd7ef816becdb2a4686488e4995e6aa5ade238f5f4d0ced5fca:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2OWRiY2U5OTI5NzZjMWY3NDlkYjU2MGViNWU4ZTQ3ZGNjZjNkOTBkZGYxNDZiYzgxMGRhZDAwZmJjNmZkNGMyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwYmRlOTYxZmZmMDIxMmNmMmFmZTBiN2ZlZjU0MjAyYmY3MGQwOWQxMmExYWIzNWRjYmE2YzZkMGJiNTJiNDNjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0ZmJhNzZmYzY5MTY4ODM1ZmI2NjY0ZDBjNzRkYjUyYzM2NmI2ZDg5N2JjNmJlN2JiMDU5NDljYzk2MjRiMDYyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmZDVkMTkwNjRlMzFhZDk1OGRiNWJiMTUxYTIwNjBkOWRiMDkwZjYzMWYwODNmZjc4NmFkYmQyNTlhMTM1ODhjIn0"
+        },
+        {
+          "resource": "repo://celery/worker/control.py#L332-L341",
+          "version": "repo-lines-v1:sha256:da49e5b338c97236a5e973c134327a00ccb3eb66522fc7af74429e4126140452:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhNDMzODgwZThjODU4YTJhNjZlYjkxODNkY2VjMmFlYjBiNzk2ZjNmM2Q3ODRkMzU3YjVkNGEzYjliYTQ5MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwZjgzZTllMGRmMjNjYjgxYTgwNjlkMDRiOGVkZDQ4MGM4NzNlODEyZTllMmY3ODJmNjE3ZDNkODViYTVmY2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViN2NiYmYzYjdhMjFlNjQ3MTI3OTQ2MDc5OGJiNWNjMWQ2OGFmMzJkNjJiZDNmMzU3M2U2MDM3NzYzZDZlNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViN2NiYmYzYjdhMjFlNjQ3MTI3OTQ2MDc5OGJiNWNjMWQ2OGFmMzJkNjJiZDNmMzU3M2U2MDM3NzYzZDZlNGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9efbc50a90a3417d9c26b98119698edb",
+      "statement": "The client-side Control uses a kombu fanout Mailbox configured from control_* settings, rejects durable plus exclusive control queues, and exposes broadcast with reply, timeout and limit.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/control.py#L426-L452",
+          "version": "repo-lines-v1:sha256:b0a2c6cfc604e5aa773e8b254646dd63fdfd51b9ef5b4decbd8396c73deea1ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMDJkNDhlYjIxNTU0ODQwMDlkODU2ODVhMDEyMjQxMGI1MjFmN2YwY2MzNjg1YTA1OWJiM2EwYzE0YTZmYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMTYxODRiNmQzYmM5ZDY3NDcwYjk4MjYyYzE5MjUzZDk3MmU0YjFiNmRlMTYxYTgwY2MyMDQyYjM3MGE4YjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4NTQ3ZjRmMmRlNTRmZjgwMjA2YTg0YTQ1MThhN2M1NjA2Yjg5ZTJlOTcwMDM2MzgzMDI5ZGNkODNlNTU1Y2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2NWE3NWUyNDIwODc4NmE0MmZkYjY3ZjUxMTBlYTUzYjVhYjcwOTc5YWVmMGM4Mzg5MjA3MDcyZGQ5NWZjNzEifQ"
+        },
+        {
+          "resource": "repo://celery/app/control.py#L755-L790",
+          "version": "repo-lines-v1:sha256:2f173e5e42a207a7f528f362ed03e697742ba72339bbf90d4904c80ea1d5118e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MmFmYzVjN2Y1MTk5OTI4MGZkYzYxZGRmZTBlMDRhZmFhNWM5YWJlYzAwODYyMTViMGQzMjc3YmYyZjAxYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiMjA3MWU1MzE3NWFhOWVkYzVmODJjODk0MmFjNzc5NDNlNDExNWI0NGE2NDJjMzk5MTc0MzhlODU2ODJlNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_52c46b8c43934699bae72a5d716e77e3",
+      "statement": "Panel is a global registry of remote control commands populated by the control_command and inspect_command decorators with metadata used for generic CLI parsing.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/control.py#L39-L77",
+          "version": "repo-lines-v1:sha256:c1e57136465bb987f2c715405e2e5ac3cfff0dde44d3a89dedf5c871dd883383:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NzQyYzA4NjdhMDYxOTNlNDNkYTlmMTVhODkzZDBlYTljZmUxOWI2NmQ1YzFmMDg2ZGNjZDg0YzIyMmZiMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlNzZjNjAxZDQ3YWVmMjkzMjU0MDczY2ZlOGRmYmU4NzdkODZlZDU2NzY1OWJjMTA5NGU3NGNjYTJjMTEzNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0MjA2YjNiN2M3OTA4YjlhMDQxNGI0YjBlZTNlNDBlYmUwODcwNDRhNTExZmI4YTIxMjdjNDc2NzgxOGU2ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a28b84e44bdd430fb0cbc87a3507e7a8",
+      "statement": "The worker Pidbox forwards the logical clock for each control message, dispatches it to Panel handlers, logs unknown commands, and resets its consumer after any handler exception.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/pidbox.py#L17-L52",
+          "version": "repo-lines-v1:sha256:448fdedbaa8e67f6e4f63207b1f8417806983815beb85b7100d9ea6c0387fd3c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmMWI1Nzc5NGJhNzM4NzUxNTU3OTQyMTNjM2Y3YjExMTBjN2YyYzM3ZTJkZDgxN2VkODZmYzRlYmUxOWQxMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3NTAwOTg3MDZjYzdkNDRhZTFhOGU5ZDhlYzZjMWRiNmM0ODU5NzJiODdmNDc3YzViOGQzZmIwZTgyYTk5NzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MGQ4MDQ5YWQ1ODljYzNhMWI0MTVlYjU3MDc5ZmM2MWM4ZTgyMzVlYzI2ZTM2MTlhZWFhNDI1NTY1MTc4ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0NDc5MTBjMmNiMDgyZDY3OWYyNmEyZjM5ZWIwOTFjYjJjZmE1ODg0YTNiMjE2NTE4MTQ1MzUxNTU5ZDJjNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f8685cc13af0490a94bd6bbbe0969da8",
+      "statement": "The revoke control command adds ids to the worker's in-memory revoked set, tries to mark each revoked in the result backend (only warning on failure), and terminates matching active requests when terminate is set; revoke_by_stamped_headers revokes by stamp values.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/control.py#L138-L247",
+          "version": "repo-lines-v1:sha256:0764574e45aa40a832017ed2221ef9d110dc2c391a4c0dbf53110b2d87f234cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxNmY3NjlkZDc4ZjUzMDM2OGM5ZTUyZmFkYmZlNzAxY2M5ZWQ4MmVhNjZjYmE0YjVmMDBhNmEzNjRmNGU1MmY5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwZTFkMDliNjNhMTQxY2ZhNGQ3ZWEwZTg2ZjcxYmFhNTA4ZjY2M2FmZjlkNWJlYmU0MGU5Mjk3YjI4NzdmNTBjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0MTFhMGYxOWZmZTY3ZjI2NjlkMzk3MTRmNjcyYzVkNzFiMTg3Nzc5MzNlZmY4NTkzMzhlNmY0NWM5YWQwY2Q1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5OGIzMGQ5NGE2MjIzNmVjOGQ5ZmZjNjdmODdmYjJmYzUxYzg3MWU4MDFhYTgyYTIwOTM0NjU0NDFjNTFhYWJhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_982821afa89540ae88856122ca032648",
+      "statement": "The worker revoked set is persistent only when a statedb is configured.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/state.py#L193-L205",
+          "version": "repo-lines-v1:sha256:8ef3d98d3c05ecf3d18c6eda70aba4891816d9f7743f5ecc448ee5cfb5932f8d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2OTk3ZWFiNjhkMDk5MjA0YjhmMzRkNzFhZWE1OGQyOWJjNmVkYzZlNTllMDZjN2U2ZmEyNTVhMDJhYjMxZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxNjNhZWE4ZWIyNzZlMzFhYzJjZDRmNjNlZjlmZTRkMTg2NTY5NjUyMWZiOTc5YWRlNWQ1YWFiNjc2OTE1MTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3M2ZjMzBmNzljMDkzMDVhOGRiNTA5MjQ1YmUzNjNhODUzMDU1OWY4NGNjYzEzN2ZjNGViN2NjMGU0MDk4ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3MDhiOGIxYTE3MGIxMWFiY2NjNmQ4NjU4NDFkZjczN2U2NmRiYjRiZDcxOTk4NTE1YjhjMTkxMGI0ZWNlMWQifQ"
+        },
+        {
+          "resource": "repo://celery/worker/state.py#L67-L68",
+          "version": "repo-lines-v1:sha256:2b2f86f22616ffed890c89ba9ea0e12e7c006edbb86bf35478e799cada504785:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUyY2EyNTM5YjBlM2Y0YTEyNWU5Mjg0M2RkYTk3OTdmZGJmNDBmODJmYmE1N2M0M2RkZWE0MTZjM2JjNDljOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWEzYjdjZWNlOTJiMGZlNjlkOTlmMmFlNmM3Yzg1Y2Y2NmIyOTIxNGQ5OWM5ZTRhYjY2YmRmMTRlZjVkNGZhMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2U0ZTczOWQ2OGQ1YTkyMzE3OTA5NWZhMGE2MjBhM2ZhM2UxMDI0ODcyYjUzOWU1NTYzMjA5MDc3MzkwYTc2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTYxNzkwYTFmNjZiNzllY2VhM2EyNTc0ZmRiZjEwOWYyOWVlOGM5Y2QyNTliNGU2NjUzNGZjMTBiZDMxYTFmYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8654caf4e744a13927fdebe2d2f7f67",
+      "statement": "Polaroid snapshots periodically capture event state and fire a shutter signal, with a slower cleanup timer.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/snapshot.py#L24-L55",
+          "version": "repo-lines-v1:sha256:3fc03dfd350f689621d76996f28fb50df9072dd38a4d090bfb5233e778342711:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4ZGJlZjlhMmJkNjVkZmEwYWRmZDliNTA4YzdiODkzMjc0MWI0YWY2ZmExZGI2ODQ2NTNjMGYzNmRlOTEzMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNjJlNThlYTBiMGZkMTk1YmEwNzY2MTNiNjMwZDU5ZTY3YmQ0NzBiYjE5ZTk3YTIwYzkwMjM2NmU1YmEwZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiNjRjOTcyNWI5NmQzZDE5NmI3MmY2MDg1MDI0ZGQ2NDVlOGMxNzIzZTZiYThlMzhhOTI1NDI5OTE3NzM4Y2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExMjJhYmM0M2QyYTg0MzVjMTk4MWMzYTI2Mjg2ODZmNWU0YWU0YTgxMDljNTI0NjU1MGY1MDk5ZWY5ZWIwNjEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:22:47.483Z"
+  }
+}

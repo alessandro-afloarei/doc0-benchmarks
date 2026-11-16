@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ba2be6ac4b42cfb64e78e2afc91e68a6306aee859c29dac7d00f5ad252542e8f",
+  "claims": [
+    {
+      "id": "claim_d3f72140756942f296ff854b08ebe713",
+      "statement": "AgentSession.start creates the runtime, attaches secrets to the event stream, creates memory, attaches MCP tools, and creates the controller, in that order, before publishing the initial state.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L90-L212",
+          "version": "repo-lines-v1:sha256:9bdb3db555b9d0d5b7a1014a30cb083e82b01910828da051461d9363fa75a52b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmOWI4MDkxNjQzZDFmYjU4NzA2NDAxNTQxYmI5MDA0MjQ2ZGFiNGZjMDY5ZTczYmViMTBjMGM3OTJmYmYxMTU1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkM2JkZTQ0MzAwNDhhODgyOTQzNzNjYzZhOGRmNTc5ZGJiZDFlNzMzMDMwYWQ1NTBmNzQ4Y2IxODE4MzBlY2IxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjOWUzY2MxYTEyZjZiZWJkOTVlZjVmZmEwZWM4N2NhNDJkOGQwNjdiODU2YTQxY2M0NTI1NTc0NTYzOGJiYjg3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2NDFjNTgzMWRhMGUzZTdmOTJkYWJmYTQ3NjU5YTU2ZTlhYmEwYzg2ZjY4ODk1YjJjZTQ5YmZiZWNmNGRkNjM4In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_76edf9606941497b9b24a18e1888db32",
+      "statement": "After startup, an initial user message is published with source USER followed by a RUNNING state change, or an AWAITING_USER_INPUT state change when there is no initial message.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L190-L203",
+          "version": "repo-lines-v1:sha256:31512f599e1306d6cb68829e1820513439361f77e69f8af912801b7edff4a8fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjNzM1MDQ5ZjJjZTVjOTdlOWQxODk4N2I0NDA5NDkzNDgyNjcyNGMzNGQwZThiYzk4YmZmODVkYTdmMmU1NjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllMzlkNGQyNzg5MGY0NGQ2OGI3MTA4MzhiNDk3NGM5ZThkZTQ1NmFjOTYzZDZiZTJlYTczYTJjZWQyNzcxZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1Nzc1NzUzNmYwNDlhYzEwZjM5YzkzODE1ZDNkMWYzZTk0NDkwN2NmZDBiMjdhMWFlODA3YWI1MzY5ZjhiNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27e9839e5b294b849070e9e6f6cbdedd",
+      "statement": "WebSession.dispatch converts an incoming client message with event_from_dict and publishes it to the event stream with source USER.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L353-L370",
+          "version": "repo-lines-v1:sha256:27951ab81bfd07099267948ae30fe266d0f9fc6e39c0c5ab2543f7df33f7cede:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjOTE5YjUzZTdlMzUzNWJmZDRhMjc0MGM3Nzc4ZmVlODNlNmMyNzRkOTE4NGIxMjg5NWM4MWNkZDg2OGI0N2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFhMzQ2NTM3Y2EzMmMwMjIyZmFmY2M3MGVlZTJkNjNiZGM0NTVkNWRmM2JjM2NlMzA5NTBmZmFlZTE4N2JmNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0YWFjODE1YTk0MTBlM2RmODBjYjZmYzVmNjYwZDdjZWI2ZjRmOTkzMjZiNGMyMTQ2MTNjZWEyNzU0NWNhODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2c02718676a40d0811750ba3cda40a4",
+      "statement": "The controller's _on_event records each event in history and dispatches actions and observations, and a step is taken only when should_step returns true for that event.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L467-L492",
+          "version": "repo-lines-v1:sha256:78bf11a480fd8f33578893db8c117ec7beb2c78a71de392ccba6f8502141a436:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYzdiOGRiYjhmYTY3ODE0MjhiMDYyMzA2ZWI5YTBkMzZiMTIxMjg5NDY1ZWFlMDczZmM2NWZiODNlNTJkMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2Yzc0N2NkNjliNTAzNWM2NGRhNzg4ODM0ZWE4YjY2ZDZkNTc1OThmZjI4OTA4NzE1ZmUwNGY5ODA0ZDhlNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5NTFkMTYzY2NiOGFiY2UzMmY4M2QwYTVmYTkxMzk5OTkwM2ZmYmUzMjcxMmRiYTNjZWIwNTQ0ZDhlYWU2YTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d80c7fd83f44cdeb966dae2f195bf93",
+      "statement": "The controller clears the pending action when an observation arrives whose cause matches the pending action's ID.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L519-L547",
+          "version": "repo-lines-v1:sha256:7eb39837409a9f40c1587aead1a6917e1e45b2040cd8d05bc0f973662aa814f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNDA0ZDBhNDkxOWNmMGY4NzE5YzFiNTgwMzM5OWE0MWYwNmE2NTNjZDI4NmRmMjg3MDIzNmZkYTY1M2ZkOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5YTIxN2YzMzA4NTJhMjE5YTA2OWM3MGJiYmRmMGZhYjRjZGY4N2ZkOTJlYjA0ZDQ3NGEwZDYzN2JmMDc4NzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzYmI1N2U3Mzc4ODg4YmY3ZWIxMjI0OGYxYThjMzFmZGEwYTY4NjNiZWMxN2ZkOTZmNjE0ZjlkYTNhNzFlNzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3803166d8cdb45d1810c92e999ef60ab",
+      "statement": "The runtime's _handle_action runs the action, publishes the resulting observation with the action's ID as its cause, and does not publish a NullObservation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L361-L400",
+          "version": "repo-lines-v1:sha256:6767f346a3247295252e68d1312c6d874363392bb8d7bdb7a71ab660f4b7858d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNTc5OGUzNWRhYjQ0NDIyNzhkOTU3MTRiNjc4NTY5NTBkYjljYTliNDQzM2I3NjU1NmFmYjMzYzUyNWRiMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNjcxYTUyYjYwMDk1NDNjNmI2YzBlMzVhN2EyNzVlMWI4YzhlMGUxNTVlZDIxM2JhY2Y5ZWU4MDA4OWM3MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1YmM4M2E5Y2VmMGJkY2MzMGIxZjUzNjk2NzQ2NDZlM2NiMjFhZDFlYWU5NjUyYTQwNjZkYTI4MGE5NjZmYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9055f1dcffad480ba48fd86ca7959ce6",
+      "statement": "WebSession._on_event sends events whose source is agent or user to the client as oh_event messages.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L314-L330",
+          "version": "repo-lines-v1:sha256:ebcf1cb9e82a3fee4d9590f79bcbaa15ace836bc953c62c240eecb9241768423:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYzdiOGRiYjhmYTY3ODE0MjhiMDYyMzA2ZWI5YTBkMzZiMTIxMjg5NDY1ZWFlMDczZmM2NWZiODNlNTJkMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzYjc3YWMzM2YxNTY4Y2ZlNWFmODEyZDU2NWQ3YTU5YTQ5N2JhNmY4ZDg5ODIzOThhZTM1NjRiZTYzMjY2YTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNmJkZTQwNjE3ZTViZjM5NzEwNDc2ZTQ2ZTk1NTI0ZGQyMzNiZGI0ZTljNTU0MTUzNzczY2E0MTkyNmY2ZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwNTAyNTM2ODUxMmQ2ZGFkMjM5MTA5OGVhOWI1NmUzZWYxOTliMWVjY2M4YjMwZmY0ZmViZTU2NWUyZGM0NDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac70958a617a46749abb13d15da69a01",
+      "statement": "AgentSession.close waits for an in-progress start, closes the event stream, saves and closes the controller, and submits the runtime close to an executor.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L224-L246",
+          "version": "repo-lines-v1:sha256:2d7bc6dcbab9dea57a9ead12927898eb68fd71124812ec806d09024c4a57bece:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMzFhMWRlZTMzNGY3NTMwNTkwZjJhZjRhOGI1ZTJjZmQxNmU2ZDlhMzkxMDk0MDNhZWE2ODNlMmNjMzgwZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiOGRmMGExM2UyYmE4NGZlMmYyZmJiNmE0ZjcxNDAzMjI4ZmM0YWZhMjk0OTI5NzAyZjBjZWFmOTkzNDEyODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMWViZjExMjU3MDQ2ZTY1NDM5YmQ5Njc4MTY3ZDI1YzEwZGE2MmFjMmE0ZjMzMzk5ZDA0ZjFmNjFjNTc0MzQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:704d86073adc040324fe09a84e88f7c619531d2a093d1cceab61d24cdaa59776",
+  "claims": [
+    {
+      "id": "claim_84345ea76c854e22888e4b5a70c9ce93",
+      "statement": "Runtime classes are selected by name from a registry of docker (and its eventstream alias), remote, local, kubernetes, and cli runtimes plus discovered third-party runtimes, falling back to resolving the name as a Runtime subclass classpath.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/__init__.py",
+          "version": "repo-file-v1:sha256:db65f4472645788c95f407ccf67b1158cf98513374d7a655bfe106f4caee1607"
+        }
+      ]
+    },
+    {
+      "id": "claim_c34e115a913342bda77cd482b6bda615",
+      "statement": "Third-party runtimes are discovered from packages under third_party/runtime/impl and loaded only when their optional dependencies import successfully.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/__init__.py",
+          "version": "repo-file-v1:sha256:db65f4472645788c95f407ccf67b1158cf98513374d7a655bfe106f4caee1607"
+        },
+        {
+          "resource": "repo://pyproject.toml#L105-L106",
+          "version": "repo-lines-v1:sha256:93147a98e469ed9b1c82e56e54f0f2b4e3076cb80cf7a4479bd37a0ba8ed815f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDI1YTA3NTUwZDBiMzQ4MzZlZTRlMjNiZTIwMTk2YjFhMzhiYjk2MGJhYjFiOTAxMGIwMWJiYzU1MWM0MjcyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRjOWY3YmZlMTJkNjZkOTJmNzE3ZDdiMGQ1ZDY5MjdiMmEwMDNiNDlhMmFkMzRmZmMzYzU4N2ZiZmE2ZTU2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzc2NTc1MzQ3Y2I2ZTI0ZTYzYzgyYWU4ZDkwNzhhZGEwMzA5Y2QxMDc3NzA2YjJhMzQ5Yzg3YmY2ZTlhYWIwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODc0NjJlZTY3NTg0NGNjM2ZjZjBlMjgzNzk5NDNiMjNlODdhNDBkMDlhMzBhNTY1YTZjMGM1M2U5NGM2ZWY3MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_24184038d96f4b078ba1fedd87c05270",
+      "statement": "DockerRuntime attaches to an existing openhands-runtime-<sid> container or builds the runtime image if needed and starts a new container, then waits until alive, sets up the environment, and reports READY.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/docker/docker_runtime.py#L170-L250",
+          "version": "repo-lines-v1:sha256:098f365b13ca34b8ba34fa5284d082739265ffe9e8543c7de0c8ff752c970d54:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzYWI3YzAzZWZiOWVhMTI2MjliOGI5YmQzNjI0OGJiOWZlNzMzNzA0MDM4MmYyNjY2OWMwN2E4ZDcwNTkyZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxYWJjZDBjYzY5MTNkNGY1MWViMjFlNGY1YWZjMmU5MGY4NmQzNmE0NTBiYjQyY2IwNWM2ZjNlMGQ3MDZmOGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2M2JlMmE4NWNhNGFkOWY2YjY1N2RlMGNjNTljNTRkYWFhOWZjZWY0YmVlOTU3NzQ0YTFiNWRiNmExZWE4ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlMDE0ZmM5ZDViMzgwOTNkN2JjYjY1MWM1MTdkN2NmNzBlZDVjMDg0YjZiZDVlNTI4ZDk3YzdhZDVmMWI4ZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_855823e4310d4e7294d3547d76084284",
+      "statement": "DockerRuntime allocates execution server, VS Code, and two application ports from fixed ranges using port locks to avoid races between concurrent conversations.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/docker/docker_runtime.py#L391-L420",
+          "version": "repo-lines-v1:sha256:ad630ea70ca8e17a8b61390c38965ea9007197ba5efb633ad10b2d8d2374e7f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NmYwYTBmYWVkNzI0YmUzMmQ2MGY2YzE1YjNhYTU3MDk4NmZiNzgzMTVjNDkyNTdhZjI1OTg4Yjk1NGJkZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2YTcyMjkyOGNhNjBlOWQ3ZmQwNmVkZDZhNDc1ZTYyZjdjMDY5YmRhNjkwZTY5YjAwYmNlZTQyMTUzMzBmYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwMDIwNWVlNmVhYWIyY2NhZmU2Y2YxYTIzODkxZTgzMWUzMWQ1ZGQ5MzBhZWZlMTcxYzc5ZDMxYjVjYzE2OTIifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/impl/docker/docker_runtime.py#L43-L55",
+          "version": "repo-lines-v1:sha256:0366807c8d316a721b4c07bad5c4204c03440b32cef1f1476d9b5a00734f5752:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5Yjg3OTVlYzMxYmVmZGUzNzhlYzczZmMzYmM4MTE3ZmIyOTg2OWEzM2E5N2QyMDFlZWVjZjI0YmE5OWU5ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0Y2Y3YmY1MzEzZWIxMTM5MTBiY2IxNjY1Y2Y1NDE1ZGE1ZThlZTM3OWM1ZDdkNWU5ZTYxYWFhNWE1Y2UyZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0ZGJkOTM0NTRjNWY5ZTZmZWVmOTZhZTNiOGEzYzk3NDY3M2NhOGMwZTdlZGFhYWU3MDYwYTI4ZjI3MjRkYTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_07cb71c942ce4992a4c328bac043ff69",
+      "statement": "Closing a DockerRuntime stops its container (or all OpenHands runtime containers when configured) and releases port locks, unless keep_runtime_alive or attach_to_existing is set.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/docker/docker_runtime.py#L593-L612",
+          "version": "repo-lines-v1:sha256:ed3b65d332430b142da77a570d89fa5ee9bbf8652de8af9da5a9c8fb8e007ebf:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwN2JkNDVhZmI1NWYxNGY3ZmFjNWVjZTZjZjQzNGYxNGE3ZjgwNGUwZTQ4Nzc2NzQzYmJhMTdlZTNhNWRiNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNDE3OGZkMjcxNGI5YjA3NmNiMWRmNzFlMzg2YmJhM2VkYWYwNjc1OWYzNzNlZmNhMGMxNTE1YmY5MTE5NDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiYTc5Y2NlZmVjNTlkODZhOWU3MzQxZWM4MTJkMmVjMDkzNGVkMDhlNGYxZjE4MWQyNzY0NWI3MWE2MDMzNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NTdhOTdkNzFmZWQzNGEyN2Y3YjczYzMzNDQ4ZWQ4OTQyZjM1NDQ1NDRjODNhN2IzOWI3NzhlNWRlMTI0ODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_71f282fb97004fccb770f0c6bf759e14",
+      "statement": "RemoteRuntime reuses or resumes an existing session via the Runtime API, otherwise builds the image if missing and starts a runtime with resource factor and optional sysbox runtime class, then polls until ready, and pauses or stops it on close depending on configuration.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/remote/remote_runtime.py#L135-L330",
+          "version": "repo-lines-v1:sha256:05e30892b6bdbd4ca6c9a164c4a283cc6185b7b657a92ff9d6a4cbafd6f36f12:eyJzZWxlY3RlZExpbmVDb3VudCI6MTk2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhZjlhNmI4YzVkZjVjZmJmMzVmY2NlZmZhMzFjODMyNTlmMjQ3ZDk0Y2U1OTZlNzRlZTBkY2NlMTY4ZDBlNzc4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3ZWY2YzE1OTA1NWRjZDE1ODhhOTI3NGVhMzFhZTAzM2QyYjdjZDEwOWFkYTNlNGRjMWRlMGJmYjkxYzJhNmE0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1ZGI4ZmVkZGE2ZmZmODQ0MmUzYTMyMGVhYjYzYTcyZTdjNWUyMWQzYjUxNzExMmQ3NDljMTYxYjhjODY4YTg5In0"
+        },
+        {
+          "resource": "repo://openhands/runtime/impl/remote/remote_runtime.py#L477-L508",
+          "version": "repo-lines-v1:sha256:13cdf373be6bf9b728e62599dc638a09c8731c0ab5ac9161f2dc886e66f11acf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNzc3NTA5N2I4ZDg1YjI2ODYyZGFlNjBhY2QyZDFlOTQ5YWE3YzgwZDM3Njk3ZjZmZmYwZmNiY2RjN2I1MjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwYWNkMGQ0NTNmNmI1NmVhMzI5MDc4NGE0YWNkOTlkMDczZWE2NmU2YjA5NzBkOWIxNWNkZTA5MjkxMDhkMDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyNmU0MGQ3Njc2YzAxNGI1ZDllNzRjMTI5YTczYmQ1MjU5MzU2NzA3NjFiODA3YjA0M2E0OTE3MWY3MGE1ZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlYTA5NjA1ZjEzMDAzYjQzYjA4ZTg1OTVlZWRlMjYxZDA4OTVlMDJhMzJjZDM3MjU0ODg4ZGNkMTkyYWYxYTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_72dc950db55548bf91531b64263b251c",
+      "statement": "LocalRuntime runs the action execution server as a host subprocess without container isolation and can keep a pool of warm servers configured by DESIRED_NUM_WARM_SERVERS.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/local/local_runtime.py#L1-L70",
+          "version": "repo-lines-v1:sha256:069c2a98bfea095bc66472b029b4b648604184b806f9765258c4fc59c0f4a9bf:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2YTE2YTU0NmZhM2U5NzE0NWZlZjY1MjY4YzMyNjUxNTdmYzAyOGE4NDg2NDI4OWFmMzZmMmY3YzA4YjMxOWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1ZGQ0MWU2ZjI0N2M5NjkwYjViMWM2MGViZmZkZmExNjZjNDc2MjE3OTA3M2IyMzk2NDk1M2E0YjAzMjA2MTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmZDk1MjIxMDQ0ODU0YjgwMjk3ZGI3ODI4MmQ4OGU3NzNjMjljMmJmZDg0ZGIwNDVjNDc0YmZkNDlmOTBkNmYifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/impl/local/local_runtime.py#L216-L230",
+          "version": "repo-lines-v1:sha256:4ffb19e9578e56b620347649b3834a039c3fe28784fcf5baac16f2a71413271b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NGMyNTc0YzcyZjc1ZTg5YTU4M2FkYzhlY2VmMDU2OGMwMmMxYzJiZGJiZWM2MTE1OWIzMDc1YWZkNmE3ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljOWQ5NWNjNGE3MWMyMTRlYWY2MjAxM2IzZWViN2NkMTk0ZWM0NjU5ZjIwM2ZhMzg4NzZjM2Y2NmZkOTE5YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxMTBhMjFlZjhkM2RhY2QxYTRmZDljOGUzODEzNmNjYjc4Mjk5MDAyMmUyNGI4MTNiODQ1OTY2YzBjNjhjMDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed878f6f67a643a3a16efbf7e6ea8684",
+      "statement": "KubernetesRuntime manages a pod, persistent volume claim, service, and VS Code ingress per conversation using settings from the kubernetes config section.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/kubernetes_config.py",
+          "version": "repo-file-v1:sha256:f2b0b8bffc380e5772c48a2ccd86366661a0334d7710499c5c43178a21a8f4fc"
+        },
+        {
+          "resource": "repo://openhands/runtime/impl/kubernetes/kubernetes_runtime.py#L1-L200",
+          "version": "repo-lines-v1:sha256:fc43308f754b259201692606ac51fedf94d8a5ad17f3b42d2223965538fbe468:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYmZjNDFmNmM0OWNlZTA5MWZmMjM1OGU5Njc3MzJlYjhiODAyOGIxMzFkMGM2MGU3MjZhYTVjODVjNzc2OWMzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJjZjVhNjdkZDg4MDg1NDI2NjdhNzQyNzJkY2E2MTJhZGM3NjRhOTg1ZDMxMTExMzIzMzRlMmNiZDBiMDU1MWZlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwYzRhODc5MTQwODI4MzdiZmYzMjA5NDIwZTI2ODg5NmQ2OTU0N2VjYzNjNzRkN2NiOTMzODZkNmJmOWYzMzlhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_46fdf2ac6aff47168cba786da7656b64",
+      "statement": "CLIRuntime executes commands locally via subprocess and file operations via the Python standard library without browser support.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/cli/cli_runtime.py#L1-L105",
+          "version": "repo-lines-v1:sha256:b6d71bea5a15accad1edc4d9b0450e0bd7eeefd590ba75040fe41dd119120f1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3Y2YwNTY1MThjZGE5ODYwNjc1Njk4ZDhhOTIxZjBhN2NiOWM1MjQ2ZTcyNzM5ODg4YjIzMmU2MzRiNWNkZDUwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhNmE3MTUyNTcyZWU4NGYxMDkwNmM3NGI5ZjJhOTI0MzRkZGFiMGUzYzQyODEzYjA0ZTU5N2VmY2VjOTUxYjI2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkMzMxMDk1ZDVmZDk0OTdmNDNkZDY5MDFhOTNmNzQzYmI2NTU1MDZhMDUwZTE1YzI4MTViZjFjOWQ0ZjEzMjk4In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca1e33eed20643a0a592fe3fafeb3536",
+      "statement": "The sandbox base image defaults to nikolaik/python-nodejs:python3.12-nodejs22 and the default per-action timeout is 120 seconds.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/sandbox_config.py#L118-L122",
+          "version": "repo-lines-v1:sha256:4c6edfaa7235e9ae4a25c7340d33093c11149dee565d4b286caab5c5d6e42be7:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxM2M5NTc4MTBiOTUyNjU1NjZkZTFhOTZhNWE0NmYyNmU5MDAxNDRmODE1OWQ0NGI3ZTllNjEwYWQ1ZmRjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFmYThlYmRiNGM1ZjRlMmJiN2I5ZjFhZDA5ODI4ZDY1YTA2MWU1ZGFhMzJiYTFjOTU1ZGVlNTg4OWM4NmU2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTJhYjA5MGJjZDE2MjBmYTYyZWFlZTE1N2E3NGZjYTYzNWFhMjllMTJjYmZmZDYxOGI1NzkyZDg3YmMwM2EzZiJ9"
+        },
+        {
+          "resource": "repo://openhands/core/config/sandbox_config.py#L61-L61",
+          "version": "repo-lines-v1:sha256:c9d08130745154e0f541f3c0322f92856d8986394a208aee3cb933c74584f137:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlkMDgxMzA3NDUxNTRlMGY1NDFmM2MwMzIyZjkyODU2ZDg5ODYzOTRhMjA4YWVlM2NiOTMzYzc0NTg0ZjEzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlkMDgxMzA3NDUxNTRlMGY1NDFmM2MwMzIyZjkyODU2ZDg5ODYzOTRhMjA4YWVlM2NiOTMzYzc0NTg0ZjEzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzlmMWM3NjRlNWFhZjRmNWMyODZjMjRmZWFkMzJiZTI3OTdmODViNzRiNjEzODNmYjZjMzA3ZTQ5ODFjODI0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjg0ZWE0NGQzM2UwZTczNTFlNjA2YzEyYmZiNGRiMGZmYjg1YWQ0NDg2MGI3OTZiNzZjMWVjMTIzMWQwNGFlYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_474d2cc24ce445068135788b8b11d11e",
+      "statement": "Runtime image builds reuse an existing exact source-tag image, else build from a matching lock-tag image, else from a versioned image, else from scratch, and only scratch builds tag the versioned image.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/utils/runtime_build.py#L168-L260",
+          "version": "repo-lines-v1:sha256:d093cd801c476300e7d7c96484bf911dafc05b01de2ebd81b88c90ea8232f7e7:eyJzZWxlY3RlZExpbmVDb3VudCI6OTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3NzVjYmUyNzE5NjM3MzM5NTg5YjUwOThhZjU2MjBjZmY3YzkyZDFmMDQyZDdiNzlkZjBhNjhiZmNlYWE3MGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhZjk3M2FmMTMzYjFjMWRjMTBlZTA5NDk0N2E5MWUyN2Q4YjYxMTM0MWI2NTJjMDc5ZDgwZDQwMDkwMGUxZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3MjIzMTA2ZmQ4NzQyYjcwZWEyMzNmOWRjMzU5ZjRiMDJiYmIwNjliNzI4M2VlZjc2MjQ5OTUxNmJkN2I5YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjYjJhNTRmODQ3NjQzMGYxODNiODYxNjEwZTNiMTFjOTBlM2E0N2FiM2YyMTZiNjE3Yzc1MTkxMGIzNGIwODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68005ad89ab84b2f849a5e16297cdbf3",
+      "statement": "Runtime image tags encode the OpenHands version with hashes of dependency lock files and source files, and long base image names are hashed to fit Docker tag limits.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/utils/runtime_build.py#L178-L187",
+          "version": "repo-lines-v1:sha256:1da26a65e748bd5b8683ddfd6545220a5c63a4b003633338cb8c62ef132901dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMmEzMTkyNTY2MmZjMjc3OGEwNWY2M2UzZGNhMzU1MjFjMzM3YWQ4Y2VlNjYwODI0MTZlOWFlMzIyMTRlNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3ZGNjZjI2MDE2YmJjYTdhMWQ4YTUzZTgwZmNiMDA2MDY0YjA1YjNhMWRkNmJjNjAwOGVjMmUyZGM4M2YwMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmZTZmZWU2NDNiZjE4ZjA5ZGQ1YjNlZTg5OThiMGViYzIzZDc1MmRhZGE0MWZlZjFjZGYwODlmNjE5NGM5MWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0ZDFmYjNiMjJlODdmYjRjYjlkOGJmNWQ4ODU0NTkzODlkMTQwZTFkZGZlNTVkZjFjMzQ1MDhlYzQyMzdhNjEifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/utils/runtime_build.py#L65-L107",
+          "version": "repo-lines-v1:sha256:c4c6ae108a80383cbe9e096f1f71fcf13c8ec6e434d9d11b9e3f9e8c68e6336f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3YWI5NjJmNDU5MjA0MDk0MGFhNTg0ZjhhMzgxMWJlNmM4ZmNjNzUyMmIxNzIwMjMwMmFkMTgzMWUwMDY5M2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzMDY0Zjk5MWJmMDliN2JiZTA5OGNhYTZhYjY4ZDU4NjY5ZmI0MGE0Yjg4YjcxZDJiMWUzYTg1YWNjM2RjZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2NTg4YjRlMGZkMTAzNjU3MjEwNTQ5ODcyMjY5YTMzMjdiYzQzMTY0YTJiNDU5YWIzNDIwNmFhMTFhYjk1YWEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

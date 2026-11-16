@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c56c0d0cf9b635e621a5fcc8b53426947a1257cd2cc9fd7de075213fe608f914",
+  "claims": [
+    {
+      "id": "claim_0106768dd10840b3b83e5c0c71ef35ae",
+      "statement": "Adding a native API requires listing its sources in filenames.gni, registering it with NODE_LINKED_BINDING_CONTEXT_AWARE, adding its name to a binding list in node_bindings.cc, typing it in typings/internal-ambient.d.ts, and adding it to the process's module list.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/creating-api.md",
+          "version": "repo-file-v1:sha256:f490f9221770e63ccc9a830797296c395c08cc81a752636d7a84314b4c565838"
+        },
+        {
+          "resource": "repo://lib/browser/api/module-list.ts",
+          "version": "repo-file-v1:sha256:bc094a6d0d46cf5157f1b8311f6c97ad1b6177a294efc468322871509aae588b"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L53-L113",
+          "version": "repo-lines-v1:sha256:a837401777293dbbf82a5206f11205880b4c0ff2b3e9a29c3870bede6eb03446:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhODE2MGMyMGFmNGE5NjUyNzU5ZWUxNzJmY2U3MzcxZjY4NWMwY2I3Zjc4YzUxOWQxMTViMGVlMmMyMzExMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1MGQwNWVhNGFkMmExYTk5ZjU0MzJlMzRmZWJjYzRmOGQ4MTFkZGIxZDg0NmRkZTgwNzJkNWI3MzhiNDQyOGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzNDE5MTdkMDU1ZjAxNzFkMzQ4NjY2NjI2ODU4YzJhYTUwNTFmMzJjZjNkMDU3ZjVkOGM5YTgxZjlkMzQ1NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MmIyMWZjNWU2NTUxNTRmNzcyMTBjZWQ4ZjZmMzg3OTRhYWRlNmI2Mjc5N2ZhZTc2OWEzNjAyZDFmOTg5M2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d6c183eb8e044b2b3411bc8b450b2d2",
+      "statement": "Public TypeScript definitions are generated from docs/api Markdown: create-api-json parses docs with @electron/docs-parser into electron-api.json, which electron-typescript-definitions converts to electron.d.ts followed by the TS smoke test.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L60-L82",
+          "version": "repo-lines-v1:sha256:53ba48d14be610cd6563a5a9dda6a3ffb45b266416a9859b64fb0459cfc1ca79:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZmE2YjdjN2FkYzExY2UwOThhNGE5Y2Y3NTJlYmQ4NWRkM2U1OGFjMGY4ZTgwNGQ5MzI5Y2FmOWI0YWJmZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5MjU4MTA4ZGU2ZDkyYTNiZWU2ZGVkYTVlZWVlOTc5OWMwODg1ZGI5Y2EwN2I3ZGQyZWUxNmE4ZjgzM2FhODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4NmU5OTIzZjk4YmY4MGQ4MzhjNzRlNjBhZDQ4MTMzMTE3NzViMTk5NmUzNGUzMjA5YjVhM2ExZDFmMTFkN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0MzRmZmVjNGUyYzNlOGU1MTNlY2VlNjExZmRlMDc5ZTAwYjUxZTA1NGVmM2IwZjA1Yzk2NWI1OWU1YTNkMWYifQ"
+        },
+        {
+          "resource": "repo://script/create-api-json.mjs",
+          "version": "repo-file-v1:sha256:80892b11e2662e7e21527d63c2035871a75091573485592789f98586a41163d4"
+        }
+      ]
+    },
+    {
+      "id": "claim_173f0ac07ec74ea3a6f8975ac2b3dd39",
+      "statement": "API history blocks support added and deprecated entries (exactly one each) and changes entries, each requiring a main-PR pr-url and optionally a breaking-changes header; changes entries also require a description.",
+      "evidence": [
+        {
+          "resource": "repo://docs/api-history.schema.json",
+          "version": "repo-file-v1:sha256:e83fc25f04fbd7363e102901ca9cb8a2f00bb7186291d465ed1d7a9c9534d799"
+        }
+      ]
+    },
+    {
+      "id": "claim_58ddb651e395407381d02d18916f412e",
+      "statement": "breaking-changes.md categorizes changes as API Changed, Behavior Changed, Default Changed, Deprecated or Removed, grouped under planned major versions.",
+      "evidence": [
+        {
+          "resource": "repo://docs/breaking-changes.md#L5-L16",
+          "version": "repo-lines-v1:sha256:0380de3d8d6823a2f2a45338eb5384b0992aa19399de296c8a1c43919cf9050b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZjdlZmM4MWQ2MWZhNDE1MWQwODBjMzE3MTlhOTI2NTEzYTU3MjExZjRhZmY3YmIwZTk1MmFiN2FmNTAyOWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5ODlmNTY5Njk2ZmM3YmE4Zjc0ZjVjN2MyNGEzNWU4NWMxNDExNzQyZGYxMTJhYjg4NGE0YmVjZTA1M2MyYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwYmI4NjZkODM2OThhMDIyMTE5YWZkMjk1Y2FhZTFlZTBiYTQ5NTk3N2U1ZTVmMDAzMTc0YzI3YjY5YzlkYmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3661b2d3370541ffa7ba312db8b2850a",
+      "statement": "lib/common/deprecate.ts provides deprecation helpers (warnOnce, rename/remove function and property, event renames, moveAPI) whose warnings respect process.noDeprecation, throwDeprecation and traceDeprecation and can be routed to a custom handler.",
+      "evidence": [
+        {
+          "resource": "repo://lib/common/deprecate.ts",
+          "version": "repo-file-v1:sha256:665809444fe5571ecca177e7a433162eb809518d23b34d6dce881a6254b04338"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

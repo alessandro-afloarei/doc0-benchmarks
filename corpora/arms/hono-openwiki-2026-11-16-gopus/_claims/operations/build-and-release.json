@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ee1dc55215e48ddb7a7651a4bb73c4691194bcf2cdf2c24ff17958a145c55022",
+  "claims": [
+    {
+      "id": "claim_826daa7a1d5d4aa3b127f9772d8915f8",
+      "statement": "The build script validates package.json and jsr.json exports against each other in both directions and fails when an entry is missing from either, with wildcard entries satisfied by matching prefixes or ancestor /* patterns.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L20-L26",
+          "version": "repo-lines-v1:sha256:b156c0232c2fba3f08214cef858341fbc1bc8b1691aaaa58226e926ad4c26f47:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTE0ZmVlYjI3M2ZlYTc1YTg2ODQ0M2E0ZmJkM2UyNmZiNDhlYjVkZGJmOGI3M2I3OGQ2YTk2ODk2ZjI0MzQ3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc0ZmY4Zjc4N2U1ODljODRhYmQwMDcwM2JlYjFhZjFjZjIxM2E1OTE3YmZmYjFhNTkwNjRkMDZlNWJlYzBmMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTNhNDVhODg0MjA3YzhhYzRkZmUwM2I3MTExMzI5NDI5NDFlODJlMzFhODEzN2FhMWIzMTJiMjJhMzNkNTVjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWEwMGFlM2ViZmQzMDY0ZjNkYzk0ZjI5YWU5OTM0MjYxYzE0N2VhMTQ3ZWExNDFmMzJmYWE4YjU1ODhhOGI0NSJ9"
+        },
+        {
+          "resource": "repo://build/validate-exports.ts",
+          "version": "repo-file-v1:sha256:ff840cad785fc1f7d0c6ec5b7c2f6845423fd5ffbbc58ce400ecfd2f7e30af0c"
+        }
+      ]
+    },
+    {
+      "id": "claim_75e92f68b8df4cbb991c65c4d856813d",
+      "statement": "Every src/**/*.ts file except tests, src/mod.ts, src/middleware.ts and src/deno/** is a build entry point.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L28-L39",
+          "version": "repo-lines-v1:sha256:68edbcbff455ec7295b2bb2185707989069c50ce29d28d0214397aadb4f1d4d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMjg3YmQyMDQyY2UzYWM1MzBhZWRhMmZlZTQzMjdjMjA2ZTk3ZDliZTVkMzMyODBmM2FlODFjYmI3YWE2MGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyNGZkY2M1ZGVmYmYwMjVkYmMzNzA5Zjk0NzUxNjdlNTY2NzQwN2U3NjdlODRhZmJkZmZkZDIwOGNmMWYzMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljMzc2YzUzYWEwM2E4YzcyZGYwZTRjMjk3OTA5ZjBkZGIyNmJjMDgzZDEyNWY1YjZlOTM1MTdmNzMxOGRiODMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d1a1831697142cfa154020e2d65f6a9",
+      "statement": "The build runs an esbuild ESM build to dist/ with an add-extension plugin that externalizes relative imports and rewrites them to .js or /index.js, an esbuild CJS build to dist/cjs/, and tsc declaration emission to dist/types/ in parallel.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L45-L107",
+          "version": "repo-lines-v1:sha256:c2587b241a769bdb532417e7a15413b0079f490b4530498d25261ab6eb8406ec:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMDlmYjYyN2MxYjU1YzM5MDllZDU4OTNmMWY3MjE4ZDgwNDY0YTM0NThiZmUzM2Y3NzU4YmEwZDQzMTVjNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2M2FhZTM5YWQ1OWZhZjMyZDNhMDQ1OGI4OTM0NmU4ZTg4ZTkxZmRkNDA0NTQwM2E4OGEwNjdlYjU2Mjk5NjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3M2ZiMmE2NzYyZmFiZmQxM2JiNDhiMWU5NTdhZjQzODA3MDY0NGY0YjUyZjE1NDAwMmRlMDRlZGMzMDk3YjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyYWU0NTI1ZTFjMjJmNWY4ZmUyOWVjNTFiMzI4OGYxYzI2ZGIxZTFjMmZjMTZiZWVhYmJiMDExZDc1YzUyZTIifQ"
+        },
+        {
+          "resource": "repo://tsconfig.build.json",
+          "version": "repo-file-v1:sha256:e3105932180e5845959744d315a68fbfe887abc592eb795d0fbf0444996f418e"
+        }
+      ]
+    },
+    {
+      "id": "claim_7120da657a4d4690876cca66a4288a86",
+      "statement": "After building, ECMAScript #private class fields are blanked out of the generated .d.ts files using oxc-parser.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L109-L114",
+          "version": "repo-lines-v1:sha256:ee07c5103e4f96c3de30949fe1852d7a7290a7c853193793ce92cd08b655a087:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFkMmU4ZDk0N2RiZjBlMGVjNTA4YmI4MTAzOGE2OGNiOGQ1MWJlMWZkNmJkYWFhYjAzMjkwYmU0ZWYxZjVkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGMyMGNkYzg3M2UwM2VhMTgyNGRlOTg3ZTdiYzYxYTNkZmM1NDk5MTM2ZWYxZWFiNDFmZTNjM2I1ZDNmYTVmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjk4Mzk3OTBhZDViOWQ0NDg1ZmE5MWVkM2E2OWMxYWJmYWQ2NjFjNzFmZDIxMWEwNjNjODk0ZTAxNjljNDRlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://build/remove-private-fields.ts",
+          "version": "repo-file-v1:sha256:ebfc7dd9ac802a0cadbcacaa3c2b3f5afbb07bc5f08c3a6b8a31623cd866fdb6"
+        }
+      ]
+    },
+    {
+      "id": "claim_13b1767aba4a451789e16b2d7a754f75",
+      "statement": "The build script copies package.cjs.json ({\"type\":\"commonjs\"}) into dist/cjs and dist/types, and postbuild runs publint.",
+      "evidence": [
+        {
+          "resource": "repo://package.cjs.json",
+          "version": "repo-file-v1:sha256:8005a3491db7d92f36ac66369861589f9c47123d3a7c71e643fc2c06168cd45a"
+        },
+        {
+          "resource": "repo://package.json#L20-L40",
+          "version": "repo-lines-v1:sha256:06bd11199f6b3ba508fbf28fdcdee54d239ee1469c35dd68657e3e7e0f6f94b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhMzE2ZjcxMjIyYTE2NGRlNzE0ZjIzOGQ4OWZiNDg3N2M4NjljMzUxOWM5MTNhNDY1NGQyZTk1YTMyZDViN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5ZDYwNmIxNGE5NGEyNjZiNmIzNzZlNDJiYzBhNGFkYjk1Y2ZjYjZkYzkyMGZhOGVjMjE5YTFjODJjYjI2ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyZDU3ZjVlZjQ5Mjk2YzI0YmRlY2Y1ZTZiZTEwY2MxZTVlYTZlYzc2Y2Y5NGE1ODYwM2YxZGM3Mzc0MDM0MTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxMDdmYjhlMDY4YjY2ZDA2ZDRlYTE3ODI3YzY2MzNlN2UzNDAxYTEwNDMzNWQ0ZGIwYWIzZTg3NDUzNjc0NTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4abcde5cb80243c5b77e73c270d35290",
+      "statement": "Pushing a tag publishes to npm with provenance after a build, and to JSR via publish-on-tag.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml",
+          "version": "repo-file-v1:sha256:a74c8abd8346530a42e8f56ed5abe9be6c44c794f113522f4d6fb232e1164133"
+        }
+      ]
+    },
+    {
+      "id": "claim_41555314648a4383b04a86b091a1eb25",
+      "statement": "CI's main job runs format, lint, editorconfig-checker, build and test, and a separate job validates JSR publishing with a dry run.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L38-L72",
+          "version": "repo-lines-v1:sha256:0d325797891280eb8f1f494d12fa758dc36316ac7a4012bc70d251f440d5299d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZTA5YWVhY2Y1MjI5MDBlNWIzMmRkNzlmZjUzZjJlYTljY2QyMDQwZmI5NjNhZDExZmExNDViYzdlZDliM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MGVjZTY3Y2FjODc1NWFiMGM0ZjJkNzUyNjExMzQwMjZmZTdiMjhmM2M4ZDZhNjVlODgwMjBkNmIxNzg4MGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlNTg0ZWRkM2M4NjMwMTI0YWFjNTFiNGE4MjU5OGE2YjQ4NThmZjg0Mjc4Nzc3NGQ4MmVjMDdjMDk4YzJjYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0ZDZhZDMwNzZhODAzZTkxOGJmNTczZGY1MjgyMmI4NzkwMzNjZDE2OTRlZTY1NjBlZjFmMWFmNjNmMzdlOTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9374e62f5f84f7fba060778612c5fec",
+      "statement": "On pull requests CI measures type-check and bundle size via perf-measures and runs an HTTP benchmark with bombardier, commenting results on the PR.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L185-L230",
+          "version": "repo-lines-v1:sha256:a92a9fdab90c2cd72c9eefb73a282d4952df996203e42c05c7ad60d583d1d9c6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxNWJhNmUwYTBlOWY5MDk2NWU5MGUxMTliMjFiYWY0Nzk5NjllYjFjYzUyN2MyMTAyYmUzYWIzNDBlNzVlZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExNWM4Mjc0N2E0ZmZmNTVlMGRkM2I4ZDdmMzE4NDhjM2M0ODljNmI5ZDIxYWNmNzAwMTg2OGYyNjQyZTU3OGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3YzRjMWI5N2QwNWRjY2M5ZjQ4MzQ0YTNhMjFiZmM3NTJlNDA0NTY1MTMyNGI2ODkzY2JjNmNmZjZmMDhhN2YifQ"
+        },
+        {
+          "resource": "repo://perf-measures/bundle-check/scripts/check-bundle-size.ts",
+          "version": "repo-file-v1:sha256:373c8def4e10a113b88d899b97ded6198b76f82b0f0c74754cc90bed4da2bfba"
+        }
+      ]
+    },
+    {
+      "id": "claim_54d2da3d4a214300b0fd504e79a168b6",
+      "statement": "Preview packages are published via pkg.pr.new on main pushes and on PRs labeled cr-tracked.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/cr.yml#L1-L30",
+          "version": "repo-lines-v1:sha256:cdfbbba3fbaf931b464d094f3398c5c6c0bc404adae086b23037e0fda1c7cfe5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjYjYyZTgxNjQzOGZjZDA1YTU4MjdkZGRjNTFiMmFmNWRiZGY4ZGRkYWJkNjQyNzFjNzFkZTA2OTQ4ZThhYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkZTMyZTEyMjYzOGRhOGU3YWQxYWViYWI2NzNjMDk3ODM4MWNmNmJlYmJmYTE3YmVlYjc0NDMwY2MzNmMwZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhZWRmMWUyMWU5Nzc0YjMxYmY5ZGJlMGZhY2Y3N2MyNWRiNDJkODAzNjRiMzE3ZWUxOWZhMWZlOGM2MjdlY2QifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:17:44.986Z"
+  }
+}

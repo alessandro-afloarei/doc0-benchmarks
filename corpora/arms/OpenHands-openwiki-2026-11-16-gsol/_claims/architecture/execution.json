@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:277c9a5f4722f35469e765ec345624fabfc4cb6bb135658b5b521c9b35bd5827",
+  "claims": [
+    {
+      "id": "claim_8897e166d2124c3ca220e0d18f130640",
+      "statement": "Headless run_controller constructs the agent, connects a newly created runtime, creates memory, discovers MCP tools and creates/restores the controller before adding the initial message.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/main.py#L96-L190",
+          "version": "repo-lines-v1:sha256:9ebbad4ce88e8f3ba9a262bb5b8b692617ce3335884f208e0ce7277f361cf9af:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YTcxNTI1NzJlZTg0ZjEwOTA2Yzc0YjlmMmE5MjQzNGRkYWIwZTNjNDI4MTNiMDRlNTk3ZWZjZWM5NTFiMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1NmVjNDc4MDZiNzZiNGMxYjBkOTMxZmJlNTBmNDdlYWM0YTkwZTk5OTBjOTUwOGNkNzVmMTE4NTdlMDQ3MjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkZDQ2NGNmMzRlZWU2NGNhOTBmNjg4OGJhYjhkNGU0MWE2ZTM5ZjBhOWE3M2MxZWFkNmNkZGIwNmY2YWM5N2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxOWY3MmEyNDExYzNmMzBkYTBlZThjMzc4MWU3MzVhNmMwOGQwNDQzMDc2ZGJjNTViZjkxZGE5NGI1MDkzZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_83cda36a74f845568a3744190963ef6b",
+      "statement": "create_runtime returns an unconnected selected runtime with a fresh event stream and the agent class's sandbox plugin requirements.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/setup.py#L35-L89",
+          "version": "repo-lines-v1:sha256:0a3dfb85c0e6eb3f39cde826d17d1f952ab2da58166e3604ec822d5fbe5e2151:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkZjY0ZmRiYjhlMDFmZTAwYzZmNTllMDAwYTU3Y2E0M2ZkMDVmNDExMjU0NDBiODU2YzlmZDUzM2E5OTJkOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2ODY5MDgyYWQ1MDkwNzg2OTQ5MTEyNjJhOTczM2U1YmRhZTA4YzUwOGNlNzE4ZjVkMDUyZGI0ODY1MzUxNjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyNTYxMTA2YWU3N2FjNWE2NDIyOGNjODNlYTc3OGY4NWI0OGRhMzhhMDg1NzRmMDY4NWJmNDc3OWY0ZjBmODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwNWUzYjljYzU5N2RmNDgyZmVjZjE0OTI1ZDVjYTJmYWVmZmE3MTgxMzEwZjI2ZTMzYzgzM2E0Zjg4OGZiOTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_14e19d46690244209edb00e882595248",
+      "statement": "AgentSession discovers enabled MCP tools before controller creation and appends a RUNNING or AWAITING_USER_INPUT state request according to whether an initial message exists.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L156-L202",
+          "version": "repo-lines-v1:sha256:5cc52b497eac566b6618b4f24869e3d12f43805c2346f472dff8d39d33bdd4ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0NmM5MTlhMGM3ZGYyZjczMzBiNmE4ODMxZDZlODY1ZjdjYmQ2NDE2ZjVjYzhlMTU2ZmQzNmRmZjZmNmM4NTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyMTExOTIzZGM3ZjBlNzdhMmNjZWQwNjQwYzhlNDFhNGQ5MTYyOTA2MWZkOTlhZTRlZmVkZDkzZjMxY2MwM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhZDFjZjhhMGQ1YzhjMjJhN2UwNTJmNDk4NTkzOTczYjNmOGIzOWQ3NTc1OTc4MzJkYmU0NDY3N2RmN2NmNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9eac6b5ee74344199a4ee579e58135f4",
+      "statement": "run_agent_until_done installs error-status callbacks and waits for end states, rejecting preexisting runtime or controller callbacks.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/loop.py#L11-L45",
+          "version": "repo-lines-v1:sha256:7e77c39636dda929a242bbbf0c82721c834842695dcb7dbe08cded50aeea9ec7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2OTRhMDE1YWFhNmY5OGE1MWRiODNhYmQ0NDc3MDcxOTA1NDQyNTc4Y2M2YjYyZDI1NDE3MTEzNDhiNDZhODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkYzEyZWVjOTZmMmJiY2M3ZTMwZjUzZWRiMDFmMjg5YjhjY2M0MGJjYjE2NGU2ZDE4MmU1MWNhNjZiYmZkN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyMTJlNjA0Y2Q1NTIwZDM0ZmQ4MGNiOTFiNTI0YjBiNjQ0MGM2MWFiZDM1NmJlNDU1ZGU3MDQ1ZjQzYzViY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2fa17cb3272b495b88193a570e918495",
+      "statement": "Headless completion saves controller state for non-memory storage and optionally writes a trajectory before returning the final State.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/main.py#L220-L244",
+          "version": "repo-lines-v1:sha256:e856412b1b4862e0e42d7fd975be1dde27bae603e9484688f2905599c2987b66:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjM2I1ODUzOWU1NWExZWMxODk3MjQ5ZDhkNjdmOGIxMGU0NDAxN2QzOTI5MmNhNTJiZWEyOWI4OWRlZTQwNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzI5NTFhYTUwNmFlMjg5MzYxOTY0MWNlZmE0YTkyYjg0MmZhNDk3MGJmOTAwYzUyMTcxNjM0NzY4MWVmNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzY2MzZWVmNDUzMjA5YzQzN2RkZmFlNWY4NDBmMjM4M2QzMzhmMWE1OTA2YWQyMzI3N2ViMjM1ZWIzNWFmMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0YWRkYWE1MjY1ZDk0NzgwOTJmZDU1ODlhMDJhZmZjOWY4ODY1MDgxMDRlZjZlNWM0OTIyNzA5NTE1NWIzZDUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:50:03.393Z"
+  }
+}

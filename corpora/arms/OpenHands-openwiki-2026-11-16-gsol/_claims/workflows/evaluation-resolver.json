@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3b9a8dda1fbf7af64d8e46680f04dd6569bc6617fb6f5621969635c7dbe941ac",
+  "claims": [
+    {
+      "id": "claim_9cd7ab379ada41b395dbebf52dcba992",
+      "statement": "Evaluation dataset preparation requires instance_id, skips IDs already in output JSONL, prioritizes explicit IDs and samples positive limits with random seed 42.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L219-L289",
+          "version": "repo-lines-v1:sha256:1107358e6632d679517d19efda8ea02f32fd630183fd9a819b7a15afef535d8d:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YjVjMGJkMmVmOTVlMzg5NGQyMTk1MjM4MmMwZmUxNWU0OTg3YWZlYTkwNjljYzBlMmYyZGM3ZjM5MmRiNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4ZmEwOTg4ZWFiNjZhZDA2OGE0NGQ2MmUwYWRhN2I2ZjhjZjVkY2IwZmU4OWRhY2VjMjZmMjYwMmE1NWEwNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxZmJhYjUxYzczN2ZmYTIwNzdjZmMzYmFjYjM2ZGFmODg5MmRjYzU5MWNhMWZmZGUxMWRlMTVmMDMyNDM0Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmMzI2MDRmM2E1OWUzYWZiNzYzOTc5MGZkOTM4Yzg0MGUyMGYwYjFmN2I1OTg5ODhhOTgwNTZiNzIyYjdiNzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a50aa8e6818d4cf5be62bf1887547e3f",
+      "statement": "Evaluation writes and flushes each result as JSONL and uses unordered pool results when num_workers exceeds one.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L292-L305",
+          "version": "repo-lines-v1:sha256:086aff545d7861dd8a9c597d16efe438c7a8bcd9d5de9d622801418edeab6494:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliODkwNzE3MTA5MjViYzJmODBhMzcxYzE2NGI4MDIyN2JmODRmYjcwZTQ3YTY0YjU2NWIwNTlkNzFlYTc1ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMTIwN2FlNTg5ZjNjYjdmOTk2OTI2NzMzMDY2NTQxNzNjNWQ3NmE3MmExNDcxYTgwODRmM2FkN2MzNWZlNmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0NjNjYTU1MmNlNzhlN2ViOTFlZDZmZDNiMzczNjg5MGE5ZDliZmRjOTlhNDZhZjVkNTZmYzQxNDc4Yzc4MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2YzllNzczMTVmZmM4YjQ0NWQxMDUyZjJiNzQ5YzIwZjA4MTkyOTczMjY5MmJjZTY2YTBiOGM4MTRlNWJhY2UifQ"
+        },
+        {
+          "resource": "repo://evaluation/utils/shared.py#L497-L538",
+          "version": "repo-lines-v1:sha256:3ed8a7586ef93f311d458f7e7e0333ad0c7c5ad17a5afd99a79706e6c709d615:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiZGNlZjAxNTVmYWQwZDU3NDkwM2FmZjQ3Yzg1ZjdkMWI1NzAwMDk5Mjc0OTc3MjQ2ODJlOTYxYTVhNGMwOTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjM2Y3NzY3YThiZDMxZmJiYjVlNGVkMDEzNjlmNDQwYWEzM2Q3ZGY5MTNhNjRmMmEwOTg1NmFmZjk5OGYyMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1MDMxOTM5MWZjMzJjNjVjOWM5Y2I2MDU5NTMxZmM1NmYzZmY3OTAzNjQ5OTAzZDBmMGU4Mjg5YzhiZTIyNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5ZjdkN2MyNzE4MWIzMWM1MWU2Y2Y5NDNmM2E2NWY5ZTM0NWJhZDU2ODZkMjIyODgxYzRmOGE4ZWQ2MjQyNzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bdb4be55b32f498d9532fb665378b215",
+      "statement": "SWE-Bench inference creates/connects and prepares a runtime, calls run_controller, extracts a patch and closes runtime in finally; scoring is intentionally separate.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/benchmarks/swe_bench/run_infer.py#L637-L683",
+          "version": "repo-lines-v1:sha256:288d41c9fd312111dfafc26b0979701ef9274909ebe75863a59287c6d3a90855:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzMWI4ZTI3MWVkM2I5MDkyZmZhMDZkZTM3ZDI0Zjc4NmJjYzA3ZDlmNDE4OTFlMDFiNjRmZDhiNDE1ZTZkOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczZWY3Y2Q0NGZiMzFkOTAzOTY4MDY2YzBmMzlmZmRkZjcxZGIwNDljMTk2MDU4MTMxMWVjZjUxM2ZjN2E3MjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1YTYxZmM4NWZlNTJiOTIxMjM3YThiNzA5NmM0NjgxMzQwYzc5M2Q3NzUzNDU0NDMxOTk0Mzc5M2M3YTAwMzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1fc5d5101f224dc7b2134df00093e3bf",
+      "statement": "Resolver issue processing generates a patch and handler-assessed success and stores issue, base commit, history, metrics and explanation; an already-recorded issue number is skipped.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L455-L476",
+          "version": "repo-lines-v1:sha256:40121fd5c9ca09a982152a278c71675d34b35ea583aed1665911f1e30104263a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NTRiMzE5OTI5NzgyM2ZlZGZhOGNiMDBlOWYxNTA3MTFhNDRlMmM0MjYxMzQ3OWI4ZWM1NzM5MzlmYmZmY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjNWUyMmEyY2M2ZDZhYmQwZDczYmNmODJlNzk2YzAwZGRkNjM5ODhkYjg4MDZmZmIyYjk1YjY3NTgwN2ZmZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwZTk2NTU0ZDJjYjIxMjU1NjM3YWM0NTVjYTg2MjJiODZlMmY3NDlmYjE5NDY3MTc1NzJjODRiMTY5ZDNmMzgifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L503-L516",
+          "version": "repo-lines-v1:sha256:20c1ee656e97a9880cf2846f553c1957c9c1deb0612848212efcc2b3fb293449:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMjMwMTMyYzliODg3OGI5MmIwY2Q4ZDJlYTdiZDlhNmY4YjE3NTdiMzBhNDM0Y2Y5NDQ1YTgyNDM0ODEyMWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4ZWUxMTExNjU3OTdkNmViMGQ2Y2MyZjNmZWU2YWZmY2YwNDA0NTA1YmUwZGFjMjZkODlhNjIxMmVjZWNhZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4NmI2YWFiN2Q5MmRiMmI2MjcxYmZlYzU1MzgzMDgzOGY1NjMxY2Q0ZjE2YWExN2E3ODEwOThiMGY2NWE5ZjUifQ"
+        },
+        {
+          "resource": "repo://openhands/resolver/issue_resolver.py#L602-L615",
+          "version": "repo-lines-v1:sha256:3ab04a0058ae56c0a3fd943c6b552960290c457a6d726edd4dc0044a51d8fe59:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1OTFiMWY5NWNjODE2YTQ5OTczNTY5YThmZjZhNjcxYmZkNzA3ZGI4NzE0NzJiNTE5MTJiYWYwNWI4ZDgxNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMWY1ZGZmNjkzYjk3Y2FkZjRiY2IyZmY4MjZhMGI0ZTFkY2QyOWU0ODNkMjE1ZmJiZTc4Y2RmOGYzMDgwYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyYzQ3ZTY0MTg3ZmQ5YmIyYTU3YWNlNTdmYzFkMWVlY2U4NjM0YmEyZmUzZTgwMjIxMzVjYzk2YTMwOWZkMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmMThlNGI1YWRjNDM5NGRhZjMyYzBmMWEwZDQwNzI1MzQxNTkyZjcyYzYyYzYxZTU0MzYzZGViMjgzNDI3ZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8de76558b5c641a1b2f21d618ef9a6a5",
+      "statement": "Resolver publication applies and commits recorded patches then updates existing PRs or sends new branches/PRs, skipping failed results unless send_on_failure is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/resolver/send_pull_request.py#L522-L584",
+          "version": "repo-lines-v1:sha256:a9d8d1f28a798c42f690bc84a9aa9c81a4ed57be4a553b334bbea46a9c6ce564:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllNjg1ODQ1Yzg5N2VjOGNiZmY0MGE3N2QyZTZlNThmNzBhOTEwOGY0NGE4NDIyNTA2YWM2NTJiZTU2YTE5OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4OTcyNjczMjdlNDA1MzU5YWQ3ZTg4OGZhYTg4NTUwMzVhNjJhY2I2NWEyYjc0OTM4NTdjZDEyNzRlM2NmMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4NzhlYjQyOTc4MDFjZTFlY2I0OGJmNmIxYzk3YTZmNDQ5ZTI4M2Y5ODQxYTUxZTJlMjNjMmQ0NjEyODY5NjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_98ec9a20008144258b3d5978cb10aecc",
+      "statement": "The resolver GitHub workflow requests repository write permissions, gates mention triggers by author association, and its standard dependency setup selects the latest released package.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openhands-resolver.yml#L65-L115",
+          "version": "repo-lines-v1:sha256:1f512bad3c3910a1b4ee956f699a17c33de697c6288bf8d92f4b96adafbb59a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4NTYwZmVjOWMyNDg2MGYwNzU1MTliNDk2NTQ3Mjk3M2Q1YjRmYzBiNTI5NTZjZGQ2YmI2MDA0NGZiMjhiMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmY2E4MDVmOGE1OGE4YTIwMmJkNTBmZTE0MzljMjQ5NjVkNTY3MTE0YTA1YWVmNTE4OWU0M2UwODJiMDVmNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjNDVmNDE5MjA2ZmEwM2NjZGY5NDU2NThlMTJlZWZjMjk1YjM3M2FhYzY2NmZlMDE3ZDUwMjAxMzNkYmFlNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjMGJjMDE2ODdjMTVmMGY0MmViOTI5ZGE2ZDI0Zjk1MTE5MjkyZmU2YTE0NmIzYmMyMjExMGVkY2ZhNDhlYWMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:50:03.393Z"
+  }
+}

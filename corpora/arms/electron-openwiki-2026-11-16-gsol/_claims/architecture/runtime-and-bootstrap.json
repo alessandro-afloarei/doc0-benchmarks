@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a8e1532bf44f870d74b6bade33a87366f995b4ccdfa6ba194e7af3af8d99f0e9",
+  "claims": [
+    {
+      "id": "claim_34bb335218b74f2f9ba9da5742c61af3",
+      "statement": "The main delegate selects sandboxed versus unsandboxed renderer clients according to sandbox state.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L446-L478",
+          "version": "repo-lines-v1:sha256:6a0dffe1ff9a3c8b1d99397ad9127bac94581755c98302ae43fb0fd32cdbc78d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNTg3MzU1OWRkYmRiNTUxNDY0NjA3MTFlOWUyYmNjMmUzZDMyYWIxZGVjZjViYzZmZGVjZjAzN2E3NzVkMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzMWIyOTNhYWI3NjA5NTg5N2ExYWRlYTViODRmYTE5NTc4MGUzNDcyZDExNjI2MzI3ZDdmYjgyOWFlNDZlMTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNjQxOGI1ZjUwOTE0ZTg5ZjFhYzhjYjI4YjM1ODY4ZDUyNDAxNGNiZWJmYTU5MjYzNGM1ZjZhYWFkMzIyMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlN2FmZDcwMTUyMGEzNGZkODUyMDdjOWJhM2I1N2I4YzFiZTIxYWEwOTllYWZmNDAxYmY3NDA1MzdlMTU3ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_827cb3528a13488896f4a1f32b3d14d3",
+      "statement": "GN builds process-specific JavaScript bundles and embeds them through electron_js2c.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L165-L264",
+          "version": "repo-lines-v1:sha256:f18b3cc8c3a051eb10e705172ff62c76c6c357a12a14254bd41fdd9041720eeb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhM2Y3YjY1ZDBjM2QyYmQwMjI2ZjUwNjZmODE3ZDc2ZmZiMmM2ZGI0NDNlMjBmNjVkNDY0YmIxOTY1ZjBhMmU4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI5ODQzMzRlYmRmY2ViMDZmZGQ3NDhiMDU3YzQ1MzJiODcyZWRiZDQ2OGYwYTI5OTcyMTM5MmRkNjE2NWMyNjIzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMGZmZTlkYzM1NzM0MmM0YTY0MTYxYjI4OGYxODU4NGVhNDllMWZjZGY2MGM4ZTcxNTI0MjhlMDc2OTNiOGE2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0ZGZmZjdjZWM0NGQ5ZjMzYjI1OGIxNzViMTFkYTNlZDM4MTM0MzAwMzgxM2ZjYjgxZjNkNTY0MzBjNjYxZGIzIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_10784a9ebf9f4ebbae7824735a318911",
+      "statement": "Main-process initialization loads package metadata and dispatches CommonJS or ESM entry loading, with an appCodeLoaded barrier joined by native startup.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L201-L227",
+          "version": "repo-lines-v1:sha256:de84e37ccfbd2a63e6dbfb49053019b044d6525df703b8410398d0a0a104e5b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZGVhNzdjNTg5MTY4NDUyYzMxZmI1YjYwZWE4MWQ4ZDBjNzc5YzQ2NmMzZGUyZDhmMGZiNTdhY2Y1MjQ3YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkZWNlMTgwYjQ2MmZlZmY4Y2JjNjkzZWU5OTQ2N2UzMDdkNTZkZTA1OTUyMmM5YTQ1NDE3ZTcyOTZhMDdjYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/browser/init.ts#L82-L163",
+          "version": "repo-lines-v1:sha256:342c8bbd0bac948d88172606fdfc321b8c2cc877fff764f86379eb8e430428d1:eyJzZWxlY3RlZExpbmVDb3VudCI6ODIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0M2ZkMzdiZDQzYzNiMjlmOGIyYzhmN2E3YWY3ZThmNTEwYjAxMDU3M2ZkOWI0OWE5YjA0NTM3MDgzYzFmMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMmM1MDkxY2E2ZTA3MjA2ODFiNjVkODI0MGZjNTRlNDI2MDhjZTExY2U5OGY4ZDJmNzZkYzAzNTgxZGRjNjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwMTEyZGYwMjJkOGU3MjI0ZjMwYzNmYTkzNDMzNWZjMWMzY2Y4NTJiYTE4NGIwMjRiNWY2NDk0MWE2ZWYzMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkZWE5ZjQ1NjQyODcyODllNTU5MmRjMmE2NmU4ZmZjM2EyZTJjYmRhNTQ4NmQxYmY3YjMzMDFiNjdmZmRlMDkifQ"
+        },
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L230-L261",
+          "version": "repo-lines-v1:sha256:f29beaca1f4108e3e804d5c5a2479b8c6b23758f6067eb3eaa491916959c68d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3Njk0NDNhNWEzN2I5NmM2ZDUzMGZlNjlkMDViMWRhYmU0YmZmMzljODYyNDY3NzUxYzFlM2RhOGQ5ZjUxZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNTcyODEyOWNkYzU3YTUzMWQwZWRkMDIwNGZkN2Y2MDFlMmExODMxYTMxNTFlNWNiNzIxNDc1NjFmODRmNzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0YmZiMWZmMzRkNjk3NzI0NDc3ZTZjYzBmZTdmZWJkYTQwZjlmMzRiZGRlMjExMDMxN2VjMDViN2IxMjZkZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MjdiNGRhZjgxZTZmN2I5ZWMzMTU3MzU3YWNkZDk4MWNjYmM3Yzk0M2M5M2NhNjQzMWNkZGM1YmI4OWJlNjQifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L895-L923",
+          "version": "repo-lines-v1:sha256:c62b5b2b4e5cc80fa26d2b6bc3d50b24fea98e7afe40d60616b1277ffa45be1d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1ZDJjOTlmZTBhOWFlYTk1Y2I3Mzc5ZTc2ZTI0NWMzMjYxNDhiYzRiNmQ5MjA5YTRiY2RjNjk3OWQ3OTFhYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzNjI3NDZhOGFlMzRjODE1ZmZkZTUyMTMwOTU0ZjhkOGE3NDg4MzM3ODhiNDE3M2E4NGFkMDM0ZjdhZmMxYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzZTcxYmE4OTNjY2I4NjI2ZTJkMTU5MjA3M2I3MmJjYWYzYjZkMTc4MGNjNjYxM2Q2NDNmMTAyMjFjYzQzYzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_afa883ddb8e0407b916300eb82c2cc2a",
+      "statement": "NodeBindings polls libuv from an embed thread and executes loop work on the owning task runner, skipping execution after the environment is cleared.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L926-L990",
+          "version": "repo-lines-v1:sha256:0d4b0000f619d0e56601f7aa8bdf414de891426ad8c999cfc954e9f16c2314f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1ZjY2NWRmM2UyYzZiNjAwNWNjYTc3MTIzZDUwNmU2NTE4YWM4YTFjODAzMzdjZmJkNzRmZjZmNmQxNmU4M2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1N2JkMzIwNDExMjMzZGYyNTEzNzRhMmVkZjczNmIwMzEzMjg2MDQ5ZDIzZmQ3ZjdlMmU2NGJlY2YyYzM4ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MTliYWFkY2RjNzljZjI4MWU0MmQ1MDk1NGM1MWVmODQzMmRlZjg0NmUyY2E4NGEyYmQ4OWIxNGMwMTM2NTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_afc4198337b64961b1c626e44227a44d",
+      "statement": "Browser shutdown stops download managers and Electron utility processes before stopping Node and destroying browser contexts.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L549-L600",
+          "version": "repo-lines-v1:sha256:b30d2a58330bdd79d3b7944c1bbd973d13a94e89bc1fa843084bf602a3b3fdb3:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5ZjY3ZmRkNTVjZmY2MTkxNzk3MDU0NjE2ZWQ4YzA5YTU2MmRiYWNkMGUxN2VkNDdlYzRjMDIzYTkwYTQ3YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4Yjc4OTNjZDI4OGU4MzcxOWYzNDI3NTFiOGFkZDdiZWY4MDc0NzU5N2JiM2Y0M2JlMTNhZjRkOTllMzQwYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1MTU3ZDJhMTVmM2YzOTA0MGU4ZGI3NWVmNjFjNThmOWYzZWNlOWU2Y2QzNDM4MjAxYTVjNmRmMDcxYTA2NGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMDZmMzFiMDUwNzI3NGY2Y2FlNDJmOWE2MjA4NTJjNmJmYjkwYWZhNThlNjdkYjI4MDBmMzBiNThlMjljNWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3e94972fbaa41988b932b92bb36d8fc",
+      "statement": "Utility initialization exposes process.parentPort and imports its service entry through the ESM loader.",
+      "evidence": [
+        {
+          "resource": "repo://lib/utility/init.ts#L18-L50",
+          "version": "repo-lines-v1:sha256:a83a5e147f47999ef980c74600e022e01976efe6ab29c7a764afba8264e5ec7d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiOTI3M2E5NTZhMzQ4Y2EwOWY2ZTliODFlYWIxZTc3MzBkNWViMGE2NWI2OTA2MTA0NDA1ZGJlMTBiYjFjNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5OGZlNWU5MmNmY2NkMTAzOGU2YTU0YTQ0M2U4NjAxZmNiM2ZhODk4N2JiNzA0ODViNGVhMDQxZWMxOGRlNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:11:18.304Z"
+  }
+}

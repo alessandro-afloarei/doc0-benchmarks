@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:08ab9122ae8231274477aa837aa3fcef082e807575a9eb0012766921c31db3f6",
+  "claims": [
+    {
+      "id": "claim_3cbca8bfa0a248d0a13f6533c1c92a2f",
+      "statement": "The FastAPI application includes the conversation, settings, secrets, files, feedback, security, public options, and trajectory routers, and includes the git router only in OSS app mode.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/app.py#L75-L85",
+          "version": "repo-lines-v1:sha256:aa4f0a3c8cf3dfed5b363f66f4f772fca30f6d0c5d3896676393296298eb30df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhMTFkNmFmNGE4ZTYwZTRkOTdkYjUzMmJjYzEyYTljMmYzYzNkMTQzZWZlMGNlNDQ4MzVhMTE4MTYxYTNhZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlNTk0NjI1MGQxZmEyODAyZjgyNzM5ODg4OTE2MWQwZGY2OThkOGMzNjhjNmZmMWY3MzkyYTE3ODk5YTQxMDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3YTM3YTQwMWQwMWQzZjBiMWFiNDA4YTMzYmZhYjU1NTMxYTBiZGU0YjUzYzBkNzk4ZDc4NDNmMWM1Y2NhNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d4720668f6e4e9ea47794f6907a1045",
+      "statement": "The server entry point wraps the FastAPI application in Socket.IO and adds CORS, cache-control, and an in-memory rate limiter of ten requests per second.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen.py#L1-L27",
+          "version": "repo-lines-v1:sha256:aa744743c97739d69b0989f7408ee1c98388edb338934b6bc7972ed20f17938a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MjdhZGZmNTI0ZTA2MTYwMjJlYWRkOGY0YWYyMWEwNzc4YjI5ZmM0Yzc3YmRmZWZkMWFmY2UyY2JmNWU0YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGMwNjFmNmEwMjc4MjVjNWFlNGNkODUyNzdiNmQ2YjgzZGNmNmIyYzU0OWVkMzk0NWJiZmQxZWEyY2QzY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d0ca37ab8394039bbc85b23dbfc00a4",
+      "statement": "The Socket.IO handlers receive browser actions (oh_action and oh_user_action) and handle disconnect by removing the connection from the conversation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py#L143-L156",
+          "version": "repo-lines-v1:sha256:f43ddd57df87103c00d7868c1d3d62ad8d363bad9006ada81471b5c386889f97:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5M2Q4NDdhZjA5MzRjMTY5M2NkYjBlMzExYjRiNjlhNzQzYjBkZTY5NGZiNmM5M2ZhNjcxOGUyNTNhOTRlODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4NWU2MTRkMDk4NmE3YjliYzhkYzMyOWEzMjk5ZjhjOGE4ZDI4NTdjZWJkNWI0MWNmYWMxZmI1NzVjMmYwOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5ZWZkOWUxNzJlNTE2NDhjYzY1N2RiZWEwNDYxM2ZiNzc5M2Q2ZjZjYmViOTIyZjE2YWVkYTZmZDRhMTlmNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2N2Y1OGFkMTZiMDQ1NzhlNWQ2ODMzYWUzMjJkMGIyZWIwZmRlODgxMGQ3OTVmMDQ4NzQ5ZGViNThkOTliMGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d63e8ec99f1472cadfeaf288565fde4",
+      "statement": "StandaloneConversationManager.maybe_start_agent_loop reuses an existing local agent loop for a session ID and starts one only when none exists.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L280-L294",
+          "version": "repo-lines-v1:sha256:9038912eea4b84718a3345702ee3326e8b69b3ed55f502e1151c85db03d7d90b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhMDk2YzE5MGEwNzIzMTlhNTk5MWFjMGVmODU3NDk0YTRjODE0YzE2MjE4NTYxMjczMWYyMzE2OTQ0YzA0YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxMDEzOTg5Y2I2OWM1NjkzOWQ1NWVmNjM3ZDJhMTViNDNiNTM0ZTY2NjljMTE3MDk1NDBkZTQxOTYwOWJhMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMDA2NTE5ODYxMThkMzg0NjQ4MWI5MTI0ZWFiMTE4ZTZlYjY2MGJmZmYyYzVlZDEyYThhZGJmM2JmYTM4NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MjM3ZWNjMjc0YThhMjFmYTVhNWVkMTFjNTA5M2M3MTYxNGVhZGQ4OTk0ZTI3NDkxNTNlZDFiYjE4NTQ1NjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a3ea266074e2434c9eca23118aae9e99",
+      "statement": "When a user is at the concurrent-conversation limit, starting a new loop sends an error status to the oldest conversations and closes them before starting the new one.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L296-L340",
+          "version": "repo-lines-v1:sha256:9fe65aa68e65654c8e5ee3e401bf56f64eda62caad9552585b25daab95eede8b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMzU4ZDNiOTMzYWY1YzFiMmVmN2RjZTlhMTFmNThjNjk5MTBmZGE3NDVmMGFmMTJjMGYyYmFjZWU2NTg2ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllMjg1YWZlNTlkZmFkZDEzZmQxZjVjNWI2NDVlNDdjYWFiZWI4ZDM2MDM3ZTZhMjg3YWNhZmUzYTA0M2M2ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3OWRiMzkzMTAyN2RjYzRmZDc0MTkxNmVhZmUxNzk1ZWFmMzMyZDA4NGJjM2NhNTE4YmM4MWE3MWVhZTc2MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5MTZkYjU3Mzg4ZDQxNzRjNDcyZDFmYzFkNzQ5YmRlMDIwNzU2MTc3ZDFlZmM2Y2JlMTQ3MTZlZjk3ZDI3M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f353f1c40344933a53afef7ca419cf1",
+      "statement": "A background cleanup closes sessions whose last activity is older than sandbox.close_delay.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L179-L200",
+          "version": "repo-lines-v1:sha256:5e4170a86612b4f4eabffb5a0bcc72d17c34e3e146f8f943665ff314b59a8809:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNGE5NmFlNDZhYjNjNTYzMTk3ZjZjYjQ4ZjUzOTE1ZTEyZjlhNmY0YmJmZTJlYjU4MTk1MDc2YmRmN2ZhNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlNzljZjY4MjY0YmFhZGZjYjFkZGYyNTE2MGFiMDg1ODg3YzJmMmI2ZjZjZmU2MGQzMjhjZWJiZDU0NjlkZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0ODUxYzcyNzM2MDNjMGE3ZTNmOTE1ZWY1MDYzNDE4MTU3OWM3ZDI0MDJlMmIwNGEyODVhNjFhY2RiNDdjMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZjU3NjA5N2NhNzMwOTVlYzI0NGQxNjc2NDA0NzNmZmUyMjA3MGU3N2I3ZGM3ODMyNTg0N2MzM2M5OGI1YzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_948ef09be7204638860fc883b1e4eedc",
+      "statement": "AgentSession.start refuses to start a session that already has a controller or runtime, and returns without starting if the session is already closed.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L90-L110",
+          "version": "repo-lines-v1:sha256:b84b18843535865450ed0a3179ec5e9172bac9213c4e1dcd732c064ef99f3a3d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjgwOTE2NDNkMWZiNTg3MDY0MDE1NDFiYjkwMDQyNDZkYWI0ZmMwNjllNzNiZWIxMGMwYzc5MmZiZjExNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzZTZlYzZjZjY5NDA4YjJlMTRiNGFjYjI3MzNhOWMyOWZkMzJlOTM3YmYxZTQwNzI5YjRmMTkxNTcxYTVkZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5ZTNjYzFhMTJmNmJlYmQ5NWVmNWZmYTBlYzg3Y2E0MmQ4ZDA2N2I4NTZhNDFjYzQ1MjU1NzQ1NjM4YmJiODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4OTAwOWZjYmM3MGY5ZjY1ZDI2ODg0NDg2YWFkYjA2YmYxMzYyYzQ4MWYzMGFmODQ2M2NkMDRjMmI5ZGE5MWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_faf6c15969044cf2861bd4b27bb84569",
+      "statement": "The conversation manager, settings store, and secrets store are chosen at process start from class names in server configuration, through get_impl.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/config/server_config.py#L16-L32",
+          "version": "repo-lines-v1:sha256:112928119d4d2db8eae76998830e8c0b0837128a70a21d68560dde4e9214e2eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2MzAzZmRlYTUzMjkyY2YxYWEyNmFmZmEyODRkZjEwMmI0YTk4NThlOWQ4OGMxYjA3Njg0ZjU5OWFjZDY4M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlNDQ2NWUxMDI4YTNkZTUxZTQ2MmEwNjkwMDE0NzY0NjZjN2YwMWU3MDkwZjQ3ZmM1NGRhZTQzN2RjMzI2NmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2ZWVmODYxMjI1MzVkNjg5Zjk3MThhYWQyNjZiZmIyMDYyNjI1Y2IzYjk0OGQxOTdhYTNiNmRkZWZjODg1ZDkifQ"
+        },
+        {
+          "resource": "repo://openhands/server/shared.py#L59-L72",
+          "version": "repo-lines-v1:sha256:9cfaa1de175350e6f264108b0a157819462df65d5c8d96684bf534af69343ca5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5ZTAwMmVjOWIwMzBlNGY0ZDk2ZWJlNzYwYTQ5MDRjNTRiZjI2NTMyNzk5MWFhNmU3YTVhNDIzYTYyNWNiYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlYjZkMjE1YjFlY2Q2MTEwOGQ0MWQ4OGEyOWYyZDhlNmMzZmNhNzk1MGY1ZWY3OGJlNmRmZTZjMThlMDZkZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhZTJkZjViZTRlNWY0ODViY2JiNjYwZWE4ZjdjYmE5ZDY2MDE0MTQyNTVmYjQwOWYwMDEwYThlOWE2OTM3NjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1MDNmOWJkM2NkYWE4OWUxYjI2MDcwMGU0M2RlMDI4YjZlMjg3ZWUzYWNiNTYwMjNlZDIyMzYxMTFiOWVmNzQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

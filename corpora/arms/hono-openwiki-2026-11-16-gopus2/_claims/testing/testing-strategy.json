@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:384b123c0a2b2b41bf16dc63290c5164ad4583af6787e0b301f0a89bbdda5941",
+  "claims": [
+    {
+      "id": "claim_14ba57782eb14d61aa20cd1586589072",
+      "statement": "bun run test type-checks src with tsconfig.spec.json before running vitest, so type-level regressions fail the test command.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L13-L20",
+          "version": "repo-lines-v1:sha256:a9935d0f80520dd8c471aba45c46b0b5180837bce593d2ed24e93151be3b07c1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ4MzNkNTk0OWMwM2E0MGNhOTUyNDkxNjEwYTY2NTk2NDRiM2FhNDY2MzYyZjc5OTAyMGRiZjE5ODE1NDdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmEzMTZmNzEyMjJhMTY0ZGU3MTRmMjM4ZDg5ZmI0ODc3Yzg2OWMzNTE5YzkxM2E0NjU0ZDJlOTVhMzJkNWI3ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjI2MzQzN2UwMzQ3NzczNDJkOWQzMjBjMWYzOTM3NjkyNzE5NDFkYWY5YzE2YzI0YzA1YjBjNjgzOTMwYjI4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmNkMDliODlhMDAwZmNhMTQzNmY1Y2UwZGVmYzcxYzY1MWVkMTcyM2I2YmQ4NzlmMWYwNmEwMzJjMDMyYjAxNSJ9"
+        },
+        {
+          "resource": "repo://tsconfig.spec.json",
+          "version": "repo-file-v1:sha256:fb97bc443e930077ff966e316fd02fe05bbadaa0e03e575516757f15d244f7d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_663614fc2de6442aa7907809d15aa4ea",
+      "statement": "Vitest is configured with a main project for src, scripts and build tests (excluding *.case.test.* shared suites), two JSX runtime projects for DOM tests with different import sources, and one project per runtime-tests directory.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L24-L73",
+          "version": "repo-lines-v1:sha256:84eb007f230022fc13f9025723da0478e0295d4e68ba989e5c0fb58aacf3432f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwNWNjNTA5OWYxMTY2OWM2OGNiNGUwOTMwZTg5MjEwYWUxZjE0MmQ3MmYwYWRmMmIzZThhM2RhYmI4YTk1ZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d5e95aed4b14077b1a77f989608e477",
+      "statement": "Coverage excludes benchmarks, runtime-tests, the build script, perf-measures and compile-time-only files such as src/**/types.ts.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L1-L23",
+          "version": "repo-lines-v1:sha256:b25f9c50535823e51cad47ffb8f5c6088f3087fa85c82e8a4b102204fcadd24f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyYzU0YjY4Nzc5YzBhNDdiNzgwZWQ4MGQzZDMwZjkwODgxOTkzZjZhNjEzNjk1NTJjOTliZjc1YmJmN2NjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NDE5MTE5Nzk5YTUwNDVmOWY5OTkxY2YxZjkxMGE0OGZjYmNlNDU4MmRlMDE3NmM4MzJhNjRhYmM3ZmYzNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMWFjMDQ2ZjI2MGQzMzQ2Yjc0N2FlNmRlYmEzZDU4NTMzOWRiZjY3MzQ4MDRmMjE3Y2VjOWU1NGNlNmFhYTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_370c9bdebfdd471da6f843e398e3747f",
+      "statement": "The workerd runtime test starts the worker with Wrangler's unstable_dev.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/workerd/index.test.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:88b9398aad894ff636090a9b1f6d7989e7f9a9dfeb46c734f0b1082a40488c35:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1MjA3MWJkY2M2ZDQ0OTYwNWJhOGZlYmVhOGVhYmM5NDBlMTZhOTNiYmRlYTJlNjg1MjNmOWQ5ZjU2ZTQ4MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzUyNTg5YzM0ZDNjNjA2ODU5MzFiNmVjYzRkNTA5OTFhN2M1NmM4ZmJhMjg5NDExNDY1NzY5MDI3MmNhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3NjkzNDZiMWJkNjU4ODVlMjBjOTU5MjA1MTIwM2VlMDZiYzE1ODJkNDA4NGJhNmQwNWUxNjdjZmQyNDQzM2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ab351a6079984b09b303d68ee8ca0562",
+      "statement": "The Node runtime tests serve apps via @hono/node-server.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/node/index.test.ts#L1-L15",
+          "version": "repo-lines-v1:sha256:e6ce0bd8511bd76b960b62611962159a66e5a1de5637d62335bc146783d30094:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZTAyZDY1ODE5YjE5ODdiNjUxMWZmMjhhZDBjYWZmNWYyMmViZjlhOWRlMWJiNmNkMjU4NjAxYTAyYTY2MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZDNmOTlhODM3MWUxYjhlY2QyODE0MzRiNDMzZmNkNmU4ZDYwOTA0NTBhNjA4MzE2M2VjYTI5NzExNjRlMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNTk0YzgwMTljMWNlMTZlZjk2MDZkMTNlNDAwMDEwMzg4YjgzY2NkNTQ4NGY1MDkyY2RlYTRiZDU3MjBjYzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41a7fe50fb5040d9a64745a4e37bb42b",
+      "statement": "The Lambda runtime tests stub the global awslambda streaming API.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/lambda/stream-mock.ts#L34-L44",
+          "version": "repo-lines-v1:sha256:5e76eca38f084daa038e008837489a6b677352ddd87e9a8ffd9dc5fa122b3d87:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3NTExYWU1YzY5YzcyZmI2YjMxYTIyMGRjNDMzNDk5ODEyMGNiNTBjNzA2YjRkNjQyNGUzN2U5MmE0MjE2NDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5ODQ4ZTNjOTc0ZDE1MDQzOTIwYzQ0ZGU2MzZjNTQzM2RkY2VjMTVjOGUyMTQyOWE2M2NkM2U2MTk1MDk2ZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dc008633ead747aabb951f46999cb2b1",
+      "statement": "Bun tests write lcov coverage to coverage/raw/bun via bunfig.toml.",
+      "evidence": [
+        {
+          "resource": "repo://bunfig.toml",
+          "version": "repo-file-v1:sha256:9b4c4ac0a6ea16c09e8db32ef3ce65cd0a1cbc8c63c5745f25da5aaf9831d6a3"
+        }
+      ]
+    },
+    {
+      "id": "claim_dbe1244a79a445d78ac87ab7a3ce7ebe",
+      "statement": "Codecov targets 75% project coverage with a 1% threshold and an informational 80% patch target.",
+      "evidence": [
+        {
+          "resource": "repo://codecov.yml",
+          "version": "repo-file-v1:sha256:39c8544f849463464b2a8db09958c147107060cc6d555ba11a7c93d44b5c3dba"
+        }
+      ]
+    },
+    {
+      "id": "claim_823fdf24392942ef862ec85f1af470f5",
+      "statement": "CI runs Deno runtime tests and both Deno JSX configurations (precompile and react-jsx) with coverage.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L70-L88",
+          "version": "repo-lines-v1:sha256:10967dcbe4c3571d6ee25b8753d317a98dc088687827ea17582ee6febba8035e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1M2NiMmQzMmEyZWMzMDg5NTRmMTM5NGIyMWM3YTRhNGY5M2VlMjMzMDJjOGI5MTU1MWI0NTljNjE2YjdiMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzRkN2E0ZDY2NjI4YTMyYWVmMmZlMTRiY2EzZjhlYTVmYzg5MDQxZjYwODU3N2FmMGU0ZjdlZWU0NjA3NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1Mjc2M2VmNTY0NjBhMjg4YWY5ODlmOTIzMGRmOWViYTE2MTBmNjlmZWNmMzRiYjg2YzIxODBiMDExODg1ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwOWY4MjNiM2ZhZTkxOWJjNTMzMzIwNzMwODE5MTYyOGZkZWIwNmE1NTM1ZDVkOTczZmU1ZDNhNzgyMzMyYWEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:39:44.364Z"
+  }
+}

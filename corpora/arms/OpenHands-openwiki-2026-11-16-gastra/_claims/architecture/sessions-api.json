@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0b3167387ea46880a657bd79e4615a2cddc12aa97aa78817d1aa4d1bd368e755",
+  "claims": [
+    {
+      "id": "claim_0905461502bd40bbb132e1549dd80253",
+      "statement": "The web entrypoint wraps FastAPI with Socket.IO and optionally serves the frontend with CORS, cache-control, and rate-limit middleware.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen.py#L1-L27",
+          "version": "repo-lines-v1:sha256:aa744743c97739d69b0989f7408ee1c98388edb338934b6bc7972ed20f17938a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MjdhZGZmNTI0ZTA2MTYwMjJlYWRkOGY0YWYyMWEwNzc4YjI5ZmM0Yzc3YmRmZWZkMWFmY2UyY2JmNWU0YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGMwNjFmNmEwMjc4MjVjNWFlNGNkODUyNzdiNmQ2YjgzZGNmNmIyYzU0OWVkMzk0NWJiZmQxZWEyY2QzY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7659108b2ea419ab3919a97d8e0eb76",
+      "statement": "Conversation creation verifies selected repository providers, requires initial input for bearer-authenticated requests, and returns structured errors for missing settings or model authentication.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/routes/manage_conversations.py#L189-L288",
+          "version": "repo-lines-v1:sha256:f197c8f59a57d40fe368fa7565b8caaa23791fd9b75f81d69e315b0630a8e4b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4MWZkMzRkODBjODk1M2ZjZjY0NDBiODYzOGRlZTFmYzNhYTFhNzk5MzRkYzgyYjRkMmJjN2ZlZWY0NmZmNGRmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1OTA5YTUzYTYxOGQwMjhlMWQzMDAwYzBhN2FiY2VlY2JlNWZiMzdmNGU1MTFlZmU0NjY0M2ZhZDZlNjY4NzJmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3N2MwM2ZkM2E3MzM4YmYzNTM0ZDU0ZGNiMDMyYTM3MTI5Zjg4ZTIzZjFmYzMxN2RhYTFjZTJiYmEyMzFmNWJjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwMjU4ZDIyZjRmZjExN2Y1ODdkOGIzZWY4ZTdlYTczYzAxYzRkNjE3Zjc0ZjBlN2Q5MGRkYjk0YzUxMDc1MzBlIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_317e0521376b43b39b5ffa8f0a46bec8",
+      "statement": "Socket connect replays events after the supplied cursor, suppresses null/recall events, sends the last state change after replay, and joins the conversation afterward.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py#L40-L146",
+          "version": "repo-lines-v1:sha256:b05a49131ee6fae2d158cf5d0a6edc954d25d1ca2e8cef568a237f56bb6bf302:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwYWNhZWQ0MGY5MzkwNjBkYWM4MGFjYzZjNDc1MGViZTIxMzdiY2FmZjBiYzI1NTdiYjdlZTkzZDVmZDZiZTI0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlYWE5NWNkYTMwYTY5OTE5YzA3NDVlYWEwODU0ZjlhZGQ1NDM0YTYyNDM2OWU5NGRjMjI5MWU5YjM4NWMxOTlhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2NmQ2MTYyNzliZjBjNDdkODNlNjMyMDBjY2EzYTVkZThkZTQ4MzhjY2QzOTBjZTM1ZDViMmUzYWFkNGVmNDQzIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fea958c123742f89cc9a65c6c8915e4",
+      "statement": "AgentSession creates runtime and memory and adds MCP tools before constructing the controller, then publishes initial input or enters awaiting-input state.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L119-L204",
+          "version": "repo-lines-v1:sha256:2a034074c0a335a94be5f1a755d7d5f83a087f6c0cee3f2d2c430a91f1cb3ae4:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1NjFkMzI3YTM5ZDEzMmQ2Nzc0NDFiYTc0NThmYjY4M2UwYTc5Mjk2ODQxOGE4YWFlODczNzFhYzQ3MTY5ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3Mjc2ZDUyN2MzZDkwNmFkYzlhNWVkNWJjMjE4ZjZhMDVjN2E5ZjgxMDk4MDA4ZjU1Y2FmY2MzZmZiMDRmYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2OWFkODUwYjFlMTMyMWE0OGNhNzAyMjNiOTdjNjBiZDM3MTJlMjA3YTgzYzU1MGQ3ODlhYzBkNjcxNzg0N2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3MWIzOTU4YzQ2YzJkODBiZjc4NWZkNTE5MTU0ZmJmYWY2YzY0OGFiMzc0NWE4MjJhMWJkZTlmZTJiZmRjMGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfa9368cf2584d6fb284776cd0c60aa6",
+      "statement": "The standalone conversation manager reuses active and detached conversation wrappers and tracks connection-to-session mappings.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L91-L177",
+          "version": "repo-lines-v1:sha256:4dfe01948f476e3aa241368c9358334e2c9b8b00c5e382f3b03d283e70c651aa:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5NDgyYWM0NTE1NThhODEzYWRkNDY1YTQ3MzA3ODEyNWE0N2RmNGVmNmU3MWQ0ZWFiMTA0NDJmZjZiNGIyYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNjEwY2EzY2NkMDM3MTc5YzhlZTcxOTA2MmQ2ZmQ4ZDBjMTA2ZTdkNWQ2YjBlZTM2M2VmODZhZTg0ZTU0YTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmNDA1YjEzNzgxYWVlNTc5OWY1MTYwYTk4MGFmNmQzZGY4YzIzZTZhMTQzMWI4ZDZkYzFiN2E4MjgxY2IzZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2MTIxMGQ2ZjY1MjczMzE5OWM3ODY4ODkzYjBmMDdjYjdjNDM5MmMzODUwN2E2ZGQ3NDU2Zjk2NjEwZjk2MmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9ee8d524c50f43118fa3ec97a94cfa77",
+      "statement": "Idle agent-loop cleanup depends on close_delay, activity time, non-running state, and lack of connected clients.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L179-L215",
+          "version": "repo-lines-v1:sha256:4371e99e7fc2c65a1c1d20ba5c78e109c500d81d69186dc04ef09f75458b8f7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNGE5NmFlNDZhYjNjNTYzMTk3ZjZjYjQ4ZjUzOTE1ZTEyZjlhNmY0YmJmZTJlYjU4MTk1MDc2YmRmN2ZhNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxMDM0ODFjNTdkMGYwZGMwZjc2Y2QyY2M4YjM2MDRjNGU4Mjk2ZGE0MTIyYWRkMTllODE3NDVkYzdlMzMxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0ODUxYzcyNzM2MDNjMGE3ZTNmOTE1ZWY1MDYzNDE4MTU3OWM3ZDI0MDJlMmIwNGEyODVhNjFhY2RiNDdjMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiYWJhMmI2ODM0NDMyNjE3ZmFhYWM0MDQ3OGM2MmU0MjEyM2I1YWY5ZGM4MDdhMWEwNWY3M2NlZmI0YTAyMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c61db0ef5d984214a2a668c91a9dc1fe",
+      "statement": "Session close shuts the stream, saves and closes the controller, and schedules runtime cleanup on an executor.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L224-L245",
+          "version": "repo-lines-v1:sha256:3fcb747860b2def14bc8342e46dfaadda2b082895c6e1815d32b624df97123a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMzFhMWRlZTMzNGY3NTMwNTkwZjJhZjRhOGI1ZTJjZmQxNmU2ZDlhMzkxMDk0MDNhZWE2ODNlMmNjMzgwZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViNGY1MGUyNGY0ODU1NTZlY2Y2MTQ3MzY5ZmExODUyMTA0NDMxMTE0NDgyY2NhY2UyZGJjODIwYzNiYmVlMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiOGRmMGExM2UyYmE4NGZlMmYyZmJiNmE0ZjcxNDAzMjI4ZmM0YWZhMjk0OTI5NzAyZjBjZWFmOTkzNDEyODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlZjY4YWJiZTE5YjAyYzAxMWU4NzI4OTFjY2E5YmMxYzA5OGY3ODU1NjJkZDYzMjQ2MmNmNDA5NTIwMTlkZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9076c4ba6b6f4d12927fbd8e6b3242e9",
+      "statement": "Default socket conversation validation ensures metadata rather than authenticating users and can be replaced through OPENHANDS_CONVERSATION_VALIDATOR_CLS.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/conversation/conversation_validator.py#L27-L81",
+          "version": "repo-lines-v1:sha256:77223a462864d2cc3fcd30ea2b4b0f78628b4a60420ec4e7bf82f04ef275f5f5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ODg3YWFmZTE2ODkyZjMyNGFlNmQ0MDY2ODFkNWYzMTAyZDQ3NjVmYWJkNjE1YWEyZjZjZDcwODZiYjc5YzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkNWY4ODRlYmU3YjlhNDAwZTczYTE2ZDkwMWI4MDJkNjhiOTlmZTVhMmQ0MDBlMTMwYWQ2YjM1ZDhmNDc0MTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwZWU0NjJlZDY1ZjI4MGQ1YmIyMDhlYmFmY2IxYWMzZDIwMjM1Y2IzZjllZmJiZGM1NGJmN2M2ZDRjMjFjZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

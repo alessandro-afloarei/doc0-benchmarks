@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6c3449dae512ca43598b6b596599bf4b95e012a33d2716c7a3a49454033f0bf9",
+  "claims": [
+    {
+      "id": "claim_0faa40a1ec79467f84e54922fa3996fa",
+      "statement": "For HEAD requests, dispatch re-dispatches as GET and wraps the result's status and headers in a body-less Response, so GET handlers implicitly serve HEAD.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L412-L416",
+          "version": "repo-lines-v1:sha256:6ca9050eb95911021b49de021b018c8babc7de05054ae3f84b1e5e34eac4142a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU0ZGQ3ZWE2MTdlMDE2OGY5MTRmZjMzZjQ4YzEzYWJkOGNkZTEwNzE5ZWI2MmU1MTZlY2NmNGY2ZWZkNmM4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTYwZjdhNjUxNDczMTQ0NjhkMDY2MzJmYTRmMzFlMWYzOTBkOGY3MThjYzQ1NzgyZWNhZWNjZmVjYTNiNmZiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDM5NGVjNjczYTZlODVmNzA2NGYyNDE2ODcyODJkNWU1NTgyYTc0Zjc2M2NkYTMxYzk4NmJiYmRhODAzODhhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e56bf52265d4846948b5ed025db3960",
+      "statement": "When exactly one handler matches, dispatch calls it directly without compose(), with a next() that sets the not-found response; otherwise it uses compose() and throws a 'Context is not finalized' error if no handler produced a response.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L429-L465",
+          "version": "repo-lines-v1:sha256:ec68be9a0ec5e27f582762b0b59042c599cb5fa52e4b3c7f6fb909f5647e34bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzYzAwNmIyY2ZmZDdiYmFjMTk4NGMyOGM1NGFjYWExYWE2MzcyYTVmYWY3OWFmZmQ5NjRlMjkyNmY1YThhNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OGJjYjFjNjdhMDYyZWU2OGQxMzNiM2M4OWU2ZTE5NWZhYzRiNzE3MWYwNTg5Y2I4YWExOTk3MmQzYWI4ZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5OWFhNTg4OTEwZmYzNDI4OTM3YzE2YWRjN2MwNzM2ZWMwMGM4YmRmMTE3NGFmNDFjNjM4ODExOTQxNDUyMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhOTI5M2ZkODA1NGI2ZTQ3MjQ4MzczZjM5ZjRkZDc3ODAwMTA1ZWI3NTgzNDg2ODcyNTQyODVjZDEyODJiNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bbcb16d7c196436ea25542d6f2bf7979",
+      "statement": "compose() throws 'next() called multiple times' when a middleware calls next twice, sets context.req.routeIndex to the currently executing handler index, and calls onNotFound only when the chain ends with an unfinalized context.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L32-L71",
+          "version": "repo-lines-v1:sha256:38b1546714e3d2868669fe6f6ab54123412660e8d0a582b3d5141a2a22d90ba0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxOWY1YTkwNzhjZjg0NzY4ZjQ5ZmNmZGNhYWM4ZmZhYWE5YjQyYTQ1ZWM4Nzg1MjdiYmRhNzkyYTEyOWYxOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5YTYzMDQwN2M2ZTg4N2Y0MDU3ZjkyNmU2Yjk3ODU2ZTY3MTc1NDcxOWUwOTVjMTUzZThlYjBhZmE0OWJmMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNzM5YTA2YzFjYmIxMjQ0ZTMzNjNkMzhiY2Y5ZmE1MGNlODRmZWQzOTljMjE5M2EzYzdmMDhkNTk5MThiMmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9ad5fb0c9a024ec2a688af1fd9b962ce",
+      "statement": "In compose(), a returned response is assigned to context.res only if the context is not yet finalized or the response came from the error handler; thrown Error instances are passed to onError with context.error set, while non-Error throws propagate.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L49-L69",
+          "version": "repo-lines-v1:sha256:463072bb86da3dcd4f5f97c0a90b11199cb075300556114b002b6cc9b40cfabf:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZTBjOGRhYTc4YzQ0ZmM5ZTg3MDM3YjE4ZTUwYTBjYTVhNzk5MjgxNjEyNDc4N2Y3MjEyNWJhNmYyYzcyNmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImExN2YyMmUwNzY4YTgzMDU1ZWRkM2NjYWI5ZmJhNDhiZmE2MWJmODRjZTdkNWZmZTNmNjZlMzg3ZmYxZWYyYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExNzgzNGQwMjE1YzU2ZjZjNzU3MGU4ODU0OTM4NTgwNDE2ODdlNmI1NDE2NjZjNjZiNWFjMjEzZDg3ZTUwYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_924e93cfcc114bb797127db61adb9fc7",
+      "statement": "The default error handler returns an HTTPException's getResponse() if present, otherwise logs and returns a 500 'Internal Server Error'; the default not-found handler returns text '404 Not Found' with status 404.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L27-L37",
+          "version": "repo-lines-v1:sha256:f1dc82d4aa31c53c839cb0efa2e23698e99e356c2314a73cf88fe37fd38fed2d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMjIwMmQ0ZTlmYTkxMDRlNTM5ZTM2MGNkNTg1Yjg3NGQ0YjJmNWZkNzAzNjg3ZjI1NTA2NGU4YTg5ZTA0OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4MzU3NmFjZTY4NzEwZjkyOGZlY2VlNmM1ZDBhZGZlZTJjOTQwOTEzNGMzZGQwM2EwYzZhM2VmZjJjZWZmNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhNTAwMTMwMWZlYzgxZjhmYTAyNThhZGE2NmRmMTExNjViYmRmNjE4ODRlNzQyNDZjODZiZGY0ZDNiNzM4NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwODg4ZjJmZjcxYmUwNmU1NGU2ZDIxMTFhNTZkNWRmNDE1ODhjMzZkODk0N2VhYzU2ZmU4ZWUxNGI4MmZjMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7940c49aede423388916987757688a4",
+      "statement": "HonoRequest resolves route params through matchResult[0][routeIndex], which compose() updates for each executing handler, so param values correspond to the currently running handler.",
+      "evidence": [
+        {
+          "resource": "repo://src/compose.ts#L42-L45",
+          "version": "repo-lines-v1:sha256:3637d4abb9f007c71dedd5b8216fe9afce0eae8dfd5b329f227ca7537cb30715:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzVmZGM3NDIzN2I2YjYwMDRmYzk1NWYyZjVmYmE2OGQ4ZDk5NTI0YmM0NGQ5MGZjOWZlYzliMTg4YWY0MjUwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYwOWIyNjE0OWE3MjRjYTlkZDQ4MmQ4ZmExNzhhOGI4ZmEwMDQ3MDMyMGE4ZWVjZjRjNGVkNTg2OTllMTE1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzU5ZDc0ZjNmNGFhNjhhODJjZGE3NzM2ZWRlYTA0NjY1MDc0OTJjMzk1NDZhZjZmMWE1YTQxOTZjZjBiNjJiNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTE3ZjIyZTA3NjhhODMwNTVlZGQzY2NhYjlmYmE0OGJmYTYxYmY4NGNlN2Q1ZmZlM2Y2NmUzODdmZjFlZjJhMCJ9"
+        },
+        {
+          "resource": "repo://src/request.ts#L106-L120",
+          "version": "repo-lines-v1:sha256:9e293b8e097129ae1d4566bd9731cb6a8ddb2b8b26815276368f09932b4732da:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2M2U4ZTBkNGI0ZjJjZGQ2YzNkMDY2ZTUyNTllYjgxYTQ2MjRkZTUxYzA3MzhlMTc5NTI1NmEwNWZlY2VlMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhYzRkNzM5OGMzNWIxOTg0OGE1ZjUzOGE0ODM3M2RlZDFmYWRmMmMwMThhYjhmODVlZGY2NjM1YjkwYWExZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkOTFkNGJlZGJhOTVkNmFkNTY3ZTcxYTc3YzJjYWMyNjkwMWMwMDJjMTkyZTlhNjZlMWJjYmFiMWVjYmQ0ZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3862fe65056c4aad900e1c7b1c7c66ab",
+      "statement": "app.route() copies the sub-app's routes into the parent under the given base path at call time, wrapping each handler with the sub-app's own error handler (and recording the original under COMPOSED_HANDLER) when the sub-app set a custom onError.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L208-L232",
+          "version": "repo-lines-v1:sha256:adba54d626c68d5600abd1ead02fc403b18aee50993a0875edea6abb2cd02210:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNDJjZDVlNTk4OWQwOGQ3YmI1NDhmZWJkNWJiZTVhM2JiM2JmYzQwZmM5NDJiZGZjMGNkMDQ3OGJhZGUzMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NTAzMmYxYjMwYTU2YTU2YTg2YzI3ZWYwNTM2ZjUzZjYxZTJlMTg4YmQ5ZWY1YWYzODgzNzJiYWM4ZjI5YzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MWUwNzk3NjYzMWM3MTM4NDE1MzY1NzQ4ZjFkZDY3NDc3NzRiNmE2YTA5ZGM4NzliNjQ3M2QzOThiNGI0NDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1997d1f2fc64a0a94db1544a0bb6537",
+      "statement": "app.basePath() returns a clone that shares the parent's router, routes array and error/not-found handlers but with a merged base path.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L175-L184",
+          "version": "repo-lines-v1:sha256:0ac6e9903d653c55ec40be709f59760e18747c85d00a529779ff4e67cb1b3bd1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlZDhkZTRhZGY1NTU5Zjc1MWE0M2YyYjdkMGZmMWFiZDNlMjg4M2FiYjk4MTIwNWRkMGI1NzM1ZWZmYzM0MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyMzQ0MjllOWRjODg2M2FjNGIyMzExYTNjMTQ0YTc3YmZmNWUyMTA3ZDM1MGQ1ODI5M2E0NGM1ODEzNmJkM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiNGY5MWFhZjhkM2Q3NWM4Y2ExNWE3NmI4NzA3ZjFjMjg2ZDljOGZkY2UwYmFkOWI0NWZkZmEyOTlhN2UxMjUifQ"
+        },
+        {
+          "resource": "repo://src/hono-base.ts#L247-L253",
+          "version": "repo-lines-v1:sha256:5c9dd92f361649e903f494e4d54994248ce31a53875cfd5792ab1eeeaec965ec:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzJlMTBjNmQ0NTY5OGRiNmMzOGM3NDRjOTM4ZjRlNTJlMDZmMTYxMWY4OTY0YzI2NWRjMGJkODljNzM0NTcwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI3NmJjMjUwY2FlMmMwYTFmNjA5OTY0ZTYwMjZlNDVjYWU1ZGEyYTc2NGZmOTM1MzdhOGMyMGZjOWU1ODBiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDEyNjIxM2I4ZTI3ZmRhMDhlMzk4NzNlMDhkYWMyZTU3MDc0M2VlOWRjMjUwNDZiYWIzMGM3YWZlYTlkNGUxMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0eed3385b67c44ac85ce65d4545b441b",
+      "statement": "app.mount() registers an ALL route at '<path>/*' that forwards a rewritten Request (mount prefix stripped by default) plus [env, executionCtx] to a foreign handler, and falls through to next() if the handler returns a falsy value.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L328-L383",
+          "version": "repo-lines-v1:sha256:7966da5dbaa804f1e2d95722fea53065d0e3c874360820883ae5be978d099f0b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiZjJhMWIyMWUxYjZkMzgwMTBjZjYyNTJlYTA2Mzk3ZTE0OTgzYWRhZjk4NGVkNDM2ODEwZWQ5NjVhNGE2NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NjNlMDIwM2NhNTNjNjMwNDczZGYyZDdmOWJhMjJhYjU4YTJjNjU1MjJmY2ZmNGYzNTRiZDBmNzc4YjljZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4MmI2NDY2NGFiZmVhNDQzN2IwMjE2ODdlYWVjMDBkYjU3YzBlMDRkMzNkYmZlMWM2NzQ4MjY5NDk5MWI2NGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_baaf0f7e5abe48d18153792957198e35",
+      "statement": "The default getPath extracts the path directly from request.url without building a URL, decoding percent-encoding only when a '%' is present; getPathNoStrict also strips a trailing slash.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/url.ts#L106-L146",
+          "version": "repo-lines-v1:sha256:8cdb72f58ff97105c23e13d7591c01665d9650776ad74c297c22d24b7b5e37ed:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YWE4ZTQ0NzUwMzliNGMxODVhZjg4YzRjYjllMjFkODJiMmIwOWQyODk1OWNkZmMzNjI0NWU4YTYwZDk5ZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1NjEyODhjZmEzNjRmMTk5ZjZlYTQ5NmY0OGZjMzMwOGRmNTYwNTdhNTg4YjRiNTAyNmMxYmEwZTgxNTY3NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlZGRmMjJlNjRiYjg5MGMxNTg3ODBlN2RiMGQ4MzYzNjMxZDAwYjBkODg2NjJhN2U1MWI4MjBhOGE0NjNiZWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db0df998676a4c1fafe4acfb1af61387",
+      "statement": "HTTPException carries a status (default 500) and an optional prebuilt Response, which the default error handler returns verbatim via getResponse().",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L31-L37",
+          "version": "repo-lines-v1:sha256:b514e4c10b7ef46827a293cddb3a061e298d994fd207145066a264a19f9177fd:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDgwYWJjMWU2YWRiMDg0ZmI4MWFlMWY5MzU4NTZkMzdlZGEyOWM2NTYxZGYxMzllY2I0MWRlMGIzZmZhZWY3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTgzNTc2YWNlNjg3MTBmOTI4ZmVjZWU2YzVkMGFkZmVlMmM5NDA5MTM0YzNkZDAzYTBjNmEzZWZmMmNlZmY3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTk1OTkzMGIxMzcyMzZmMTFjMDE5YjJkNmU5OWY1OGE0MzM5ZDBmMmUzZDcwZWVlZmZjNDcxYjViZjFkZDJiZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODA4ODhmMmZmNzFiZTA2ZTU0ZTZkMjExMWE1NmQ1ZGY0MTU4OGMzNmQ4OTQ3ZWFjNTZmZThlZTE0YjgyZmMyYyJ9"
+        },
+        {
+          "resource": "repo://src/http-exception.ts#L42-L60",
+          "version": "repo-lines-v1:sha256:3c3d83cd8f8850982056e6965440974746cc013ebf27330873b0580b40e8ec33:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxM2ZiYjUxZWM2NGJiMGUzYWYxZjBjNDkyYTk4MGZhOWE1NGJmZTQ4NTg2OWZkOTM0MjRhYWM5MjJmNGFmOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmOGMwNmIzNDBjMmUwN2U4ZjlkOGY2YjJlOTQ2NGNkMGU4NDM4ZjFkMTY3YTI5OGNkNWFlM2NlOWE5ODU1NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5ZjVkOGU2NmUyNmI1M2Q2YjUzOTUxNWM0NWE5ZDRkODU0NGZmZWIzNDNhYjcwYTg4NTdjMDZjNTUxYTM2YmEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:09:53.543Z"
+  }
+}

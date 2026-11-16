@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9615e0981f3b594d9a25e7fce057b447018dfcc3b6b3496d0141c680070778fe",
+  "claims": [
+    {
+      "id": "claim_db45e7e8a4d4490eaea8d898119c3228",
+      "statement": "The Makefile default target builds the release binary with cargo build --profile release --locked.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L8-L9",
+          "version": "repo-lines-v1:sha256:bcd6a6b4524928ac62c050e5ec6a7d0f95a718ef26ff1d54c2b907a4eaabef8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQyNjlmN2U5NzZlZTZlMzU5MDQzMDM4NjhlMDBiNGI0NWYzNDFhM2VlNDAzMmY2YWY0MGQxYzc0MWRmMGNiZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzMzMTVmOGE1ZWIxOWExNDBlOGU1ZTA4MjUzMDg5MTVhMmM5NGI4YWMwMzBmNWUwYTUwMWZjMzE1YTFlYTY3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGRjZTI3N2NjODkyNTQzNGE3NTY4Y2JkZGFiZDM1Mzk1MDdiZDRjZjM3NWFhNDRhNzc2MmU3ZjgwNDM5NzA5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjg1NTE4NTUyMDM4M2ZmODYxZDE0YTU4OTRjMzU5YWVlOTZhZWQ5MWIyNDBhZDc0NTJkZGZmYzBmZjYwMzU5NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_70170de32c954eccb23e96cd90b48eb0",
+      "statement": "CI checks formatting with cargo fmt --check and lints with clippy over all targets and features with warnings denied.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L42-L64",
+          "version": "repo-lines-v1:sha256:d4452515206053235e4d57be2499bf8c300f59ef55332c24e2ab58cbf6a87dc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOGQ0NjZiNTViMGJlYzc5M2QwZjI4YWIxOGRkYjllMmFiMTg5ZjQwNWRkOGMxMzAxY2ViMmYzOGJmMDcwNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhNjM5NzdiYTYwZDFmNzZiNWY2ODNmMjcyYzE1MWViOTYyMDJiZGJjYWMyMmQ1OWVhZWVmNjdjMTc3NzIwNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlMTg0N2E4OGUwZWJjYzczYzc5ODlmZDg5YzI4ZjBmZDg2OWNkYzQzNzQ1OTExODkwNGVjMTg2ODYwNTU5YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxYmM4ZDQ1YmJlMDhjYmI0YjRiMWViNTc3MzViMDhiYzE4NGZjY2VmMzg4NGJlYjRmMTUyMGZhZWU5MWZlZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7eb9ecf81f7e4a999ea822d868f7cf4c",
+      "statement": "The integration tests run the binary built by Cargo, so cargo test exercises the current code.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L75-L78",
+          "version": "repo-lines-v1:sha256:5406198eab148c7388521da512b9afe30b3ae1d3069f3f24de9927cc99b779a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFjZmViYjNjODNjNWNkOGUwMzc3NGVjZDRlOTdmNmFjNGZkMzlkYjJlNGUzZTQ4NzRkMTg5MDU0NzgwNTc2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFhYzgxZjBhNWJiZDZmNmMxYTMyYjZjNDA0OTMwNGZiOWRiYmE0MGE0ODZiMjg5Njk0OWI4YzY2NjE2OWVjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Y3ZDNlNTA3ZWJmNWFhY2JkZDJkNjRmN2I3NjZlNzBmNTY4YzU0MDU5MTAxMTA4NTMxZGM1ZTU1OTBkMjUyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTU4YmYzYWYyOGEzMGNhNDAwZTY2N2Q5NGU3NDAxMTZjZTY0YmJkN2VkNzVmZjQxOTRiZjM1NWUyNDNjZjNjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_18cf0a64befd411eb6188a7411210150",
+      "statement": "CONTRIBUTING.md asks contributors to add a CHANGELOG entry under the Upcoming release section for any change that alters fd's behavior, and to disclose AI-tool use in pull requests.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L24-L24",
+          "version": "repo-lines-v1:sha256:15b43e76dbbf3a55ca4d1813caf8928c04661d47fb94e822d242e9834ed743ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTViNDNlNzZkYmJmM2E1NWNhNGQxODEzY2FmODkyOGMwNDY2MWQ0N2ZiOTRlODIyZDI0MmU5ODM0ZWQ3NDNjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTViNDNlNzZkYmJmM2E1NWNhNGQxODEzY2FmODkyOGMwNDY2MWQ0N2ZiOTRlODIyZDI0MmU5ODM0ZWQ3NDNjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODhkY2Q4NDJjMjdiNTM0NjhiODQ4YTY4ZTRhZGY3ZDhlMmQxMGI1ZDMzNzZjYTQ0MWZiOTdlOGFmNTUxNWYxNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjY5OTllZDJjOGJhMGQ0MjEwNGJmZGFiMmNiZTRhMWJiZTIzYjIwNmE3ZDQ3Y2NhMjk2MTZjOGQ0NzIzNWE1YiJ9"
+        },
+        {
+          "resource": "repo://CONTRIBUTING.md#L30-L39",
+          "version": "repo-lines-v1:sha256:fe062fe8bac675220786d89d55866ae3a590f19266380349821232647e0b03f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5ZjQ3ZWYxYWJlYWQ4ZTQzOTI0MjkzZWIwODk3YzY3MDIwOGQxYzY4MjUxMzI2M2IzNjg1NzAzNDFhOThlMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3NWUzNWU4OTFkMDc0MDlmYmU1ZGVmZDk0MWYzYzI5ODM3YmE0NzIxNTg5ODgyZDE5YWViOGYxYWI1OTNhNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4MTBlM2I4NThiMDg3YzQyY2Y2ZmZjYWMxZmVjMGQyYjc0YmViZjZlM2I4MDdmOTIzOWU1MmVmMTkzZTA5OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZGRhMWFjZjg0NmFiOWE5YTkyNzcxMjUxOTNlNzE1YjdmZmM5NTllOWM3ODAwODVmNWJhZTYzOGUxMDNkNzQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:10:54.611Z"
+  }
+}

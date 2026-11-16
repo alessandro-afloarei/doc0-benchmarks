@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2e7407ceb888a0fb7958d264fe24bd493561d8d319fe35e956b89674e3e00734",
+  "claims": [
+    {
+      "id": "claim_8bc99b46ae9b4983a9e33c5ad8c4fb25",
+      "statement": "The console script celery.__main__:main applies concurrency patching unless the first argument is multi, then delegates to the Click entrypoint with the CELERY auto-envvar prefix.",
+      "evidence": [
+        {
+          "resource": "repo://celery/__main__.py#L11-L18",
+          "version": "repo-lines-v1:sha256:a3575299a6cbb77ca9278eb5f6a60798c29a8764edb35ac24212508a7fdcbd4a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJhMWUxYzMzMTRkODVhNGJlZDI3MTMwOWNmOTkwMjA4NTk0ODhlZmEwYTYyMGY5NTRkYTA3Yzk1ZWRkYmIwMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjRmNGZkMTdkOTFmYWEyZGY3ZTZlMzhhM2JiYTU5NTUyYzNlNWM0ZmE1ODk4OWFhNjVmMDAyMzY0NmYyNjdjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg3OGViNDI5NzgwMWNlMWVjYjQ4YmY2YjFjOTdhNmY0NDllMjgzZjk4NDFhNTFlMmUyM2MyZDQ2MTI4Njk2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMThlOTkyMzJjZDNhMzA5ZjUwY2JkNmY2NjIxMjdlZWFhZmNlMWY3MzYyOTJkZWZiMTEzZDk4MWEyMGM3ZDg1MiJ9"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L220-L227",
+          "version": "repo-lines-v1:sha256:0204581f5c96a47034175780b0986735039eccde5da654f0d4ffc0b01e09e9f9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIzOTc5MzNhMjRhODAxZWU5MjMzMjdiZDY5YTAxMDQ5YzA3NzkxNTAyMWNmMmVjMzlkZGE0ZjgxYWE4MzdlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdlNmQ3ZDc1Y2MwODllOTcyOTczMWNkOGY3MGMwZDUwZGNlNGFkNGJlYjA2ZWViNWZlZWU1Mjk5NzY3NDZiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUyMmQ1NGNjZWI0NGRjMjEzYTQ5OGYxNjIzMGYyOGI3MDBiM2Y4Y2Y4M2I2ZTZhZGY5NWMyN2VkMWY3MGEzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b571bd4fadd547219465a175c423fa98",
+      "statement": "The root celery group loads the application before any subcommand runs, failing the command if the app cannot be loaded, and stores a CLIContext on ctx.obj.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L113-L166",
+          "version": "repo-lines-v1:sha256:bec2ab1c864e01c3691b76e6b71b7813159ece5c450371faa93a36507000ef9d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NjRhYWMzNzZlNjYyOGJkZDRjZTFhY2VkZDRiNzkyMWE1NDY4ZTZmMzI0MGI4NjJkN2IxY2FlZWYwNThjMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlOTJhMjc3YzljMzJkYjI3NGE5MjAyYzhmOGMxMTMxMDU1MWY4YzM5ZjEyMTViYTM5ODM3YzRmOWYxZDNlYWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwYTZhNzVlNTA5MzRmMmNjMTNlMzZhMWUwOTgyNTdjNGE5ZWZiMTk1OGMyYmQ1NmU2N2IxMTAwODI4ZTQzZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzZTgwODM0NWMyZmM4NmMxYTQ2ZGVjYzc4YjZiN2M4N2JiNjFlMDg0ODkyOGY5NDQ1ZTQ1ZmIyMzEwMWUxZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7fb1079f0a8e4d04a825bdf090121275",
+      "statement": "After the app is loaded, the root group extends the worker, beat, and events command parameters and each command's preload options from the app's user_options.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L157-L165",
+          "version": "repo-lines-v1:sha256:7fa1522a3e7a0bf37f3f25bd7c184ce1e3c3120114812df1fad6c8d1a9623d4a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzZmMTU5NTRmNjEzZDk5NDM5YjFkNzA5NzUwOGZjYWZmZWQ3OGMxODExNzA0NzQxOTU1MzU0M2MwOGZkMTRmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTAyYWU4NjQwZDM1MGJlYjA3NzhhYmE4MDJhOTI4ODhiMDUyY2JhY2E5NGZmODMwM2UzMzJjZjI4OGEyMzM0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGZlZGI1NTI3MzQyOGRhNDc1YzYzMmI5MjVkZWFiOWI4ZmViNmYyMGQyYjIyNjc1YjFiMTNkODFmYTllM2NmNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_72b11e155df34950aa486e765f234d8c",
+      "statement": "The root group registers the built-in subcommands, including worker, beat, events, multi, inspect, control, amqp, shell, and graph.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L175-L191",
+          "version": "repo-lines-v1:sha256:6071910e8641ca7c513a8155687067ca919dadaaecd16bfcbce5e801b6dbe6f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlMjQ1ZDcyYTg5OTU4MjA3NzI1MjA2OGE0YTNjMzBiNDAyYmU4MGJlMWZhNmNiMDhiNDM0NjFjMjVlMDZiZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxNzJkYTU4OGJiYzMxOWE1ZWU5OTQwMWZhNzUxODViZjNmOWUwYTI3NTAyOTMzZDQ4OTQ0NjlmNmVlZmVhN2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3MmYwOTJkNDc1NzA0NWVhZTk3YjY0MjI2ZTZkYzQxNjYxOTBjZTJlOTZmZTBmOTg5YWZhYjE5NDZiOTU4ODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzODgyNmU4NDg4OTc0MmM5MzQxNmRlOGRkYmE4NDU5ODg3MmM4ZThlNTQ0ZWRmOThkMTk5YzJkZDczNTgyYzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f423ae6c6d614d909c4efb2212e7443b",
+      "statement": "The status, inspect, and control commands share remote-control helpers in celery/bin/control.py and verify command names against the registered worker commands.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/control.py#L107-L130",
+          "version": "repo-lines-v1:sha256:542ed0e748fa65807702d9d4dcc47d1320f84904b8507a4ab27f317d027e61bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NzZlMDUyYzdiYjU1OTI2ZDBhYmM3ZjE3NzQ4ZWE2YmMwNjg0NjlkNGZjY2U4ZWU2NDQxODE4YzIzYmNhN2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZmRjOTQxYjYwMGZkMDgxOTY4NDQzODg3ZTM1MDEyMGFmOTdkOGE3MTNlYTlmOGIwMDZiODJhNjliMzQ4MmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzMjFlZjUzYjE2ZjIwNzJlZWMxY2JhZjkwYTg4MTE4MmNjYmY2YWIyZTU1MTRhM2YxYmU4NDgwNzAyZWM0ODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlOWQ3MjFkNzMwZGRmZjcwMTVkMWY0ZDJmNWIwM2QzODJkOGQzMWI4YWQ5NGE3MDMyZmQ3ZmNiMWIxNjBjNjgifQ"
+        },
+        {
+          "resource": "repo://celery/bin/control.py#L153-L179",
+          "version": "repo-lines-v1:sha256:0fa94018dc42f256e68780273078f79797cb4370668e93848efa6f943a28ced0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliZDVjN2UyMTM3MDUxN2FhNDAxNzA2ZjdlMWRlN2RmMmNiNmFkYTI4MWY5ZDI4ZDYxNzZlMDMyMDNiNDJhNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjOTUyOGNlZGE5ZmJmMjNmYTU2Nzg5ODZkYTIxZDg2MDMyZjhmNTUzZGVmYjg3MTcxMWZlOTJhNjNlMjQ5N2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwMWFiNjRmYjNjNGRkYzNlYjA4ZWNkYTg1MjEwYjlmNTcwZGU0OWMxMmYyMDUxZmRlMDhlZmJiODVlNTRjN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5MTlhNTI1Y2UzMWRiYjI2YjIwMjVlMDc4ZDQxMTAzMWIyNzM5ODk2NzMzZDI4ZmM4NTQ2NjY2MjNkODM4ZGEifQ"
+        },
+        {
+          "resource": "repo://celery/bin/control.py#L59-L68",
+          "version": "repo-lines-v1:sha256:f1690c1bbade4928b0c0e792185c1b53894a43b1de6d245292ddc2a3542ae442:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhODhiZDNkZjkxNGViMjQwYWVhYTQyNDlkOWQxYzIyNDBiOTU5YzM4YjgzMTc4ZGMzZTc5ZDAxMWNlZWNhYmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3MGFhNzM5OGUyNThiYmM4MWMwNjdhZTdkZjExNjAzNWY3NmU2NGE5MTAwYjI0MGRhYTU1NGJmYmM2NGQ2NmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkMDEzMDZkNTM0Y2MyODc4YTgxN2Y0N2M3Y2NlYjA0ZThkNjkwMDI5NDA5Y2UxNGFlZTM4YzMwZmRhNDViODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5bb31ebf29844a9b0f87eadbbee78e7",
+      "statement": "The multi command parses per-node options with NamespacedOptionParser and manages nodes through the Cluster and Node classes.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/multi.py#L122-L130",
+          "version": "repo-lines-v1:sha256:4f7b707e12eb165a221c1327d8250e3d7fcbea1cc921def6af978d3e5b0dd26b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNlNzkzNGQ3MjBiNTY0Y2UwYTQyNGQ0OTYzNTBlMTgwMDAxMzUxNDlhOGRjMzIxODEyZDM2MmViNmFhMzBjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDZjODcwZDdhOTY4MzZkNWZmMzcyNWZjMTVjOTBkNmEwNzM5OGRkOWM2Mzc1OTBjMjM4YWMxNmM4MmVkZmIwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjkyYmFkZGY1OWI3M2EzMGE2NTcyYjQ0ZDgwYWU3MGNhOTIyZWZjZWMxNDNmNDRkNzVhZjE3NmRhMDVkYWNiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTNkODM5NDY0MDMxMzI4N2JkMDEwNmQ0MWQ3YjBlZmY1NDdjMDJmZmYyNWU0NjllYTEwY2ZiZmMyY2EzYzQzNSJ9"
+        },
+        {
+          "resource": "repo://celery/bin/multi.py#L367-L372",
+          "version": "repo-lines-v1:sha256:d6119b3d6bac4e323153b5d8f52b3082db399137da7c91b466dcb4ab4882adf1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ2MzE0MDFiMDNmZjAwM2QxMmQxOTFhOWJkZGU2ODM0ZTljODMxOGM3Y2JiOTM4MWVkYWZkOWU1ODlhNzEzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjFhM2MwZjRmMmE1ZGQ0ZmRkOGI3M2RmMTZmODA2Nzc1YzU3NDE2Y2QwZTA5MGQzNjgxYTUzNDMxNTFmMDU3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjE3NDI3NmM5MDliNzhlODBmYjhlZDlhZTEwMzYxYjdmZGQ0NzVkZGY4ODgzY2ZhOGFlYjBlM2E2ZGMwNjQ1YSJ9"
+        },
+        {
+          "resource": "repo://celery/bin/multi.py#L70-L76",
+          "version": "repo-lines-v1:sha256:354f1fa3dafc301b46e8ad7ce76a52031a1e780f990d80f372e052a0e6e3d1b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNjNDIzZGFiMmU1ZWIzZTYxYjJjZDZlNzhiZDk0MjkyNzRiNTEzMjBhYTdjZTY1ZDcwMjlhYjIyMTMzZTYxOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTUyOThhZTQ4OWE2NTU4MjU2ZWRmZjI2NmMzMTU3NWM4ZjA4ZmI4NGQ0MmU3YzY1MmY2YTg0ZGYyNDhjNzNhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzYwYzQxZjJmZDNkYTBmN2RkYjA1Njc2YzY0OWM4MjQwMDZhZDNmZDJkZjBjZTNjMzJkM2VhMjU2MGQ5NWFlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzg4MDZjZjdkMzY3YTJhYmUzNjdmM2NkOTA5N2FhMmRhYWUyNGUyNjI2ODAxODg4NmI5MWMzN2ZiYjE0MTQzZiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:42:35.525Z"
+  }
+}

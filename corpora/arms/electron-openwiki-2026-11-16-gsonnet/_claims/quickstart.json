@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7fdd74de4866c800f5a1354d8948cb0ecb2fe046f0fd66ec02b979e4e1d15bf9",
+  "claims": [
+    {
+      "id": "claim_f135c70d229f417489cf008c28d47e22",
+      "statement": "The repository is organized as shell/ (C++ embedder: app, browser, renderer, common, services, utility), lib/ (TypeScript bundled per process type), patches/ (patch series for Chromium, Node, V8 and others), docs/ (API markdown as source for typings), spec/ (integration tests), script/ (tooling), build/ and buildflags/, default_app/ and npm/.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/source-code-directory-structure.md#L1-L70",
+          "version": "repo-lines-v1:sha256:853caea9247b112ccc78ffc6d73dcde83987371acaf67d4df74360a46012c79b:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4MGZjNjFiOTJiZjhlYzdhYmU2OTFkMmMwMmQwYTliOGJmN2YyNmY1NmJhMjNiMzJmOWRiYWIxMTM4ODFkNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlMWVhMjIyYzg0ZDExZWMyOGUzNzNiOTNmYzEyZTVhNzg3ODNjNjhkZTY2NzU0MzY2ZmFiMTVmNDcxNDhlYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhNzVlOGI0OThjZjI0OTc3ZGJjMTk2NTZmYjkxOTk0ZGM2MThlMDIyMWIwOGNmOWRkOTAzY2E1ZGNkZTZiMWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e6e5aa9675e43b996101729b5f8eb4f",
+      "statement": "Electron is built as a component inside a Chromium checkout via GN: build/args/all.gn sets root_extra_deps = [ \"//electron\" ], and the root package.json carries only dev tooling with version 0.0.0-development.",
+      "evidence": [
+        {
+          "resource": "repo://build/args/all.gn#L1-L3",
+          "version": "repo-lines-v1:sha256:0af1653668e3085ea476f7072796220073a416c170bad6cbbb4da215160c7a01:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWI4MDRjODFmNzFmMmViYjIzMGUzZWVlOTYwZWVlM2E4OTQ2OTE5ODA1ZDUzMmZlY2FkYWIzMTA2OWQ1YTBiNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTc4YzMxMGZkZWQ1MzAzYjE5OGJmMDI0MTlkN2U4Y2IwZDhiNTQxNTM3NjU1NGU0ZjQ0M2VkOWVhMzFhYjhlZCJ9"
+        },
+        {
+          "resource": "repo://package.json#L1-L10",
+          "version": "repo-lines-v1:sha256:9b7cd52e983cb673d83b4a147e50f3b76894f0f6423fa090be90ad9948e15ff7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0ZWZjNDBmMzA0NmUxNzQ3NWJiNDBiMGFmNzMzMjdhZDEwMWI1ZjM1MGY1ODlmOGQ2ODMyOGRhNDU5NjEzZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1ZmVmMDAzZDgzZWQ4MjViNDQ4ZTFkNWJkZWZjMWFlNGVhZGJlODVhY2IwMDc2NWIwMzI1MmFkOWM4MTU5OTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70a02482c1df4c6dadc52867c4a1b7a0",
+      "statement": "The per-process-type JavaScript bundles (browser, renderer, worker, sandboxed_renderer, isolated_renderer, node, utility, preload_realm) are built by webpack targets in BUILD.gn and embedded via the electron_js2c action.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L165-L272",
+          "version": "repo-lines-v1:sha256:a410ef6b90f77ff380cfe52734c23069206e86e1172cde393a60671c0cd70cc9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhM2Y3YjY1ZDBjM2QyYmQwMjI2ZjUwNjZmODE3ZDc2ZmZiMmM2ZGI0NDNlMjBmNjVkNDY0YmIxOTY1ZjBhMmU4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMGZmZTlkYzM1NzM0MmM0YTY0MTYxYjI4OGYxODU4NGVhNDllMWZjZGY2MGM4ZTcxNTI0MjhlMDc2OTNiOGE2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4ZjljODE4MmU0MjA3YmYxNjI3NGQ1MGQ2Zjg4ZWU3OWMzNDU4ZjA4OTZkYzdhODBiNmQ5NDNlNzJhOTEzMDJhIn0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

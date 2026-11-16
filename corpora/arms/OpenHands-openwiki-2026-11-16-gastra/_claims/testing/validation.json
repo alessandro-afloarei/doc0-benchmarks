@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5f33c5d6d773a5bfbe1d2b4cbb02a94c8e42a1777f5e4784fbc97dcd2e8fac35",
+  "claims": [
+    {
+      "id": "claim_17643873542f42ed857f35e7d7b3a227",
+      "statement": "make test runs only frontend tests through test-frontend.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L237-L242",
+          "version": "repo-lines-v1:sha256:99d1e08eb4763eb757c52385faa2967d63ed14a2b2a29a4316339548a432872e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODgwZWQ5YjgwMDVhY2YwZmUwZjMwNTQxYWRhZGUzNGU4Mzg3Nzc5OTFmOTI0NDA5YWUwYzU1MTkyYjJkYWM1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFlOTA0YjRmZWU0OGFkMDRkZmE1MTUxM2VmMzRmOGRkOTE5ZGViZjc3YzA5ZDQwODU4NjhiZTJkODM2OTZhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTlhYmVjM2VmYWM4N2U4NjU1MzEwODhlNzliMDQ0MjdjODMxYWJhODQ0MzBiODQ2ZjhiNzAyMTE4ZGM2MjY2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzU5ZjYwMDNkMzQ5ZWM2OTNjMjFiYzFkN2Q3YThhYzQ5YzZkMzc3M2FlMThkZDEzYWM1NTg2NzdiZDI0NWQ2YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d8a7538f7a1456584749e868de821c2",
+      "statement": "The frontend test and build scripts use Vitest and React Router; lint includes typecheck, ESLint and Prettier.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/package.json#L79-L102",
+          "version": "repo-lines-v1:sha256:0b40861de874cfe9d3a3263a148dc6514fddc6f614f43f8e518ab1f8a50cd288:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ODVjZDg2MTMxZDI5MmIyYTFiYWI3YmIxNWIxNzQyNmE4ZWRhYmRkYThkZTZjMDY1NGVkMzVjMTIwODcwOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMDQxYTlmYWZiNWUxOTQ3Y2E0YzFiMzk1NTAwMmVmMDI2YTgwN2IwZWM1ZTYxMjAxMjU1ZTk5YjZlM2UxOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3YjEyYjc3M2U4OGI4ODFhZmQwMDIxNDc4OTc2ZDdlZDkxYmVhZGUwYWE2YzY0MTc3N2RkYjIwYTRmYWJkMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxNmZjN2YxOWQ1MGQzMzNjN2M5ODI3M2E0NGM0ODg3NmJlNzM4OWIwZDczZmE3YzdhOGViZWI1NjQ1MjMyZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_47bbe26553ef4c4eabcc2c049b52c207",
+      "statement": "Runtime tests default TEST_RUNTIME to docker and close Docker runtimes without requesting all containers be removed.",
+      "evidence": [
+        {
+          "resource": "repo://tests/runtime/conftest.py#L23-L61",
+          "version": "repo-lines-v1:sha256:10476d91b61ad2272b9aa76a05f07f3b5c348d5a3c589e13b56f379c5d44dbef:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkZWMxZDVkNGQ4MDdkMmFiMjBmOTUyYmI2Nzg1NDVhYzc5NDgwODA1ZWY5YzFjMTNiNDRiODA5YWYyZjZmZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YzcxNDk3Y2ZjODJlNmZlMGZmZmYwYjA2MjM2NWVmNDk3MTUzODhhNjU0N2I5N2ExMzAwZjdlZWEyOGYwMmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmMzMxMzllZGFkMzBhYzBiZWM3ZjFiODk2MjIxZTkwMWQzOWU3NjQ4Mjg1OWJiZDdkNmFmY2E0OWJlNTg2OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1ZWZiNDMwZDNmMTUzMjBmOTEzZTMxYTQwZjFmYTU2ZjZiZjkyZDEwNTMxYTQzZTJiMjEzY2MzMjNkOTI2ODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc08b4f3f3b0400cac004223a18ca765",
+      "statement": "The frontend Playwright suite starts a mock development server and tests Chromium, Firefox and WebKit with CI retries.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/playwright.config.ts#L13-L79",
+          "version": "repo-lines-v1:sha256:8027203076ed70c7d071bbe4a8246b0f2f250a0988973a4f86ad55fd030b8298:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiNjZiYmY2MzVkZmEwYjJkZWM5ZmVmNDExMTczODQ3ZGY1NzJiNTY3NDdmYjMxNjA1OTA3ZjBjM2U0OTc0NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_23d7ebea9e0c48a78e1f68eb0a604501",
+      "statement": "Linux Python CI builds the environment and runs parallel forked unit tests plus CLI runtime bash tests; enterprise CI runs its own manifest and tests from enterprise.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/py-tests.yml#L22-L106",
+          "version": "repo-lines-v1:sha256:e0c9e22be384ade48bb7fabe7f5cf8a81b9612d118f01e1ca0139730a9f355d1:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3OTk5ZGU3NjY3ZWJhMTZjYjEyY2RhZjY3NWNiZDBlNDAyODAyOTNjOTUzMmM4ZmQxYTJmZWQ3MGQ2NzIyMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNDIzZjdjOTJmOWNjMjhiMjhkNDE3NjIwMDhlMDllZDc3NDk2Y2MyYTc1NzQ0NzIwMmNlZjQzYzAwNTkwMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwZDRkNGMzNDM0NTFhNmViM2MyZTE4YTRlYzZjNmRiMzVjN2QwNjc3YTdhMTU4M2U1NDE3YmIzOGFhM2ViOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91d243eeb42f4fdd962d1cf554f182bd",
+      "statement": "Frontend unit CI uses Node 22, npm ci, a build and test coverage.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/fe-unit-tests.yml#L22-L44",
+          "version": "repo-lines-v1:sha256:ac3abdf0469f69acd3041efd357e85f957ba83cee7a7755946dd7739ac064c9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2ZjRhMjJkMTVhNThlNThjNWU4ZWRlN2ExNDUyNmNkMjAwYjEwZDAzMTVkYTFlYjkxZjAwMjJkMmI3YzJjNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwOTA4ZmEyYjcxMTYwMmNjYmNiZGE3MjBmZGRhN2QyNzM3ODE0NjM0NTNlZTMzZWMxMGY3Zjg2MzQ1ZTU4MmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0NmRmYmY1ZWUwNzJmMmNiMzQzM2NkZjBmYTEzZjc3NDA2ZGRjOTc2ZGMyZjQ3YTM3N2I0MmJkODU5MmYyYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_62d4e6140dc54e8f9fad8d1f5548d453",
+      "statement": "Root pytest configuration uses automatic asyncio mode with function-scoped default async fixture loops.",
+      "evidence": [
+        {
+          "resource": "repo://pytest.ini",
+          "version": "repo-file-v1:sha256:02c440af59e9b72e8e4f735afaff7ead1527815263dd287a09e2978553c299a3"
+        }
+      ]
+    },
+    {
+      "id": "claim_93f742c054b04a2b9d0235a04dd6dbfa",
+      "statement": "Python end-to-end tests document live deployment and GitHub/LLM credential requirements, unlike mocked frontend browser tests.",
+      "evidence": [
+        {
+          "resource": "repo://tests/e2e/README.md#L1-L47",
+          "version": "repo-lines-v1:sha256:83da7b7db30293888b4d4f7876e80f5c666aa0c3d11f6dc07bf8f6174d354b44:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZGQ3MjkwZGRhNzI1N2MxZDkxZGY5NzgzMTg5MDEwMDBmZGM2OTNiMjA3NzQyOTQ4OGYyZDllZjQ4MDcyY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3MGFiOTFlNGQyODEwNWYyNzUyMTI0OTBiNzMyY2FjMGJmZDI4MTc5ZTZiMWQzMThkNWI2MDVjNTAxM2NlZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjODA0ZTg0NGJmOTJmZDNiODUxMjM2NzIzMThkNjNiODE3YTI2ZGZlOWY4YWViY2ZkMmFmNDBlYmQ1ZDU0M2EifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

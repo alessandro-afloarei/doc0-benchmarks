@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6b5b9da4e4f26c1316e6c251e8a00a80be2404eca84c48cac51617389b540495",
+  "claims": [
+    {
+      "id": "claim_e70c0104a30641d2859c95c3c6a4984c",
+      "statement": "The configuration loader applies defaults, TOML, environment overrides, finalization and custom-agent registration in that order.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L819-L836",
+          "version": "repo-lines-v1:sha256:2dab5543eae655d97e8f38feeabdcfc50bc9c502cc89fa17391fc66d8a41d5e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZGFlNTAxZjlkNTlmNmQ5ZjA2YjI5MmQxZjc3NmIzMTNiNzg0NDg4ZGQ0YTZhNjVmODM3YzU0ZGE3YjQ1MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YjI0ZWViZWIyMTkxYWY1ZjFhYzNhYjNkNDJkNzJlMzA3NGE5MGZjMGI3NzI0ZDk1ZThlMmUwYTU0MTJmN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3MDJhNDI2ZWZkOWFiZGEyM2EwZGZkYzUyNzliZGI5ODFlMDI5NTEyNDY5Y2FkYzkxNTBiYjAyZTZlNzRiODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_45a8627f1b574bbc9ee0dd3e5cd8b716",
+      "statement": "Finalization derives workspace paths from an explicit /workspace volume, validates mount formats, ensures a JWT secret and disables browsing/Jupyter for CLI runtime.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L377-L470",
+          "version": "repo-lines-v1:sha256:82273d70366564a9feaf19d3c9f9b5921a0ba2c6ccdca3ea147ce90675ab168d:eyJzZWxlY3RlZExpbmVDb3VudCI6OTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxYjY0ZWFkZWZkNGFmYTQwZjM1NTY2MjMyMmQ4OGExODljNGE5YWZjNTRmYzM3ODFiYzE5YTZjYzU5Mjg1ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiZmNjMzhmYjM1MjIwODc2ZGU4MzJjODZhMTVlNTE1NzQ1YjFhMmUyYjhkYzQ1NWU2YjUzNGYyZjc5NWVkMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYmYxY2VjMTAzMjUxNWE3M2E1MWNjYThjYmNjNDgwMTYxMDgwYTM4YWFmNWMxYzAzYTZkZGE0NmYxOTRhZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8f7e4506cd74093a4b9d7ef77f16d32",
+      "statement": "Confirmation policy is opt-in and selected runnable actions use analyzer risk, with different web and CLI confirmation handling.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L204-L242",
+          "version": "repo-lines-v1:sha256:8a4d7ac22cda99947d6c6819e1ffb2f034a8a8b57944987850b30e3f1a34f066:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyNjA1MzYzYjI1ZDgyNWNiNWM2Mzg4OGZjODg0MGQ2YmYxMTg0YmUxMmFjNDg5ZjBlMjI0N2U2MjQxODJlNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhODFiMWY0OTQwYmE4ZmRmOWQwN2RmZjFlYmI4NDE2NzczN2NkNTI0MGNiNDAxMTQ4NWJhM2QwZDczNTcxYTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMDk1ZWFhYzkxYzhiNDI4NDViNGNjM2ViODRiOTc1MzhiODgxMjI3NTEyM2E2Mjk4YzAzMjIyMzM3ZTIwNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1MmY2MGQ3YTNmY2E5NTY3NGYzOGNkNDM4ZTNhYTBiMWFiMzg3OThkMDBmZTZhNGEzZjk1MTc4ODJmYzdkNDUifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L925-L973",
+          "version": "repo-lines-v1:sha256:5eb00c7a1486a5dd44fc93010ce65a9c6b21388cae4a54da097042e73d71791d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMjc0Y2M3MzNmYzAzNDUzNTcyOTY0NTE5YTU4ZGIwOWU3ODBkYTIzMmU4ODI3NTBjM2U2MDg5NTRmOTEwMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NTcyYjg0NjIzNzk0NGY2Y2E0Mzk0YTY2ZGQzMmFjOWNmMzQyYWE4OTRhMWFjNjA3N2FmNDMzYzJjN2Q1NTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4ZWMzMDFiZmMyZTgxOGU5YTRlYTc2ODYwNzc0MzQ3NmJjZDNiZTIzMWU1NmJiYjJlN2FmYzUxNDc0Mjk0ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlZTA3MGIxNGJlOWVlYzBlZWFlMzc3NWFlOTk5NWE3MzkyZjU1ZTg5NTFlZDY4MTZlODVhYTcyOTliNzM0YjcifQ"
+        },
+        {
+          "resource": "repo://openhands/core/config/security_config.py#L6-L15",
+          "version": "repo-lines-v1:sha256:791cb2d16e94d871c90322f86fcc5facb7138b1e83bf007308bd6b14f3bcfb9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMjBhNDhhMjhkZWE1NTQ1NDEzZmE0MmZlZWVjODBlOGQyZDE1NTNjNzUxMDhkNWJjODNiOGM0OGVkODIzMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzOTdlODdiMDIwMzVkMjY3NDEyNGZjZGVkMGRiMWVkMzljMmYzNjQwMjg1OWE0NWQzMGE0Y2QwNGIwMTExMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyZWU2ZmFhN2Y4Yzk1Y2Y0YjExNmEyZDk5ODU2MDlmZjBhY2MyNWI2NzdlYzc2MmVlMTU3YTg4MTFlODExZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f94d9e648b8f4adca8560fb530886479",
+      "statement": "Default OSS authentication does not provide a user identity or multi-tenancy.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/user_auth/default_user_auth.py#L16-L34",
+          "version": "repo-lines-v1:sha256:3f36abcb7e036010b5cbe4058728d0d82045899fc229aaca17c5c07a96b29d20:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1OWE0MzdjNDhiZTRiNmM1NDI0NzA2ODI1YTFlMWQ5ZGQ1OTc1ZmJiMzViOGViNjA4MjFmMzE3MjI4OGVjYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M5NTdiY2I0NGZiNjczYzk4YjAwNTBhNzVkMzgwODJkYjgxZDkxOGRlMzEzYTNmMDdjMTIzNTMwNmQ3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyZmI2NTcyNWUwMDNhYzNhY2VlNWE3MDc4YzdkM2RiMTdkNmQxNTA0Nzc4YjUxNDczOWViN2RiYzYyNDliZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0767f7cc00c3417cb74aef127108c054",
+      "statement": "Compose exposes the app on port 3000, persists /.openhands, mounts a host workspace and Docker socket, and configures a separate runtime image.",
+      "evidence": [
+        {
+          "resource": "repo://docker-compose.yml#L1-L23",
+          "version": "repo-lines-v1:sha256:09ddcf301d5d1bee7ca966696b9174266f4ffdbc7754fde192d50408a04bb340:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZWU4ZWVmOGIxMzIwNTIzNTY4ZWIyNjUxMDhlYTA0ODgzOTQ0NmY4MTVhMmJkOGUyYmNlNjMwYjk0MDgzNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:55:05.802Z"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:de027d7a2f8ecc17a198e621af5e409c57a8b9397132f36f7b6e5dc6a8f432f4",
+  "claims": [
+    {
+      "id": "claim_e83d0241fcd34bbca411fb7699980f83",
+      "statement": "The test script typechecks before Vitest, and named scripts select runtime suites while build emits artifacts then invokes publint as postbuild.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L14-L36",
+          "version": "repo-lines-v1:sha256:eff1eeeab5b3d9c23f482123809bff47f89264781bcf6e954e6320c87097c250:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwY2FhMTQ5MzQ1ZGM1NjAzYmEzYjQ4YWE2YjJiNTgzMmIyN2NmMGY4MmY4YjJmNzY4MWUzZGNkOTUzYTlmMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExOWEzZWQzYzdkZTcxN2E1MDI2NWE2NjJkYmEzYTY4MmEwNDNlY2Y2ZmU5OTJiMjQ5Y2U4OTIwZTYyODhhZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5MDEyMmQ4YTJiYTk1ZmYxYjJhMmYzYTgyZWY3NDcxNTM3NjJkOTZiZTc0M2MwYTRmOWIxZTgyMjA3OWZlNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiY2Q4NzM5YWFhNjI0MDUxZjA4N2E3ZDgwMGM0NDgxMmM1ZTYzMzdmYmZhODA1ODJjMGM2NTAzMzZkODY1N2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb049fe2155f4512b82aca335fe11d12",
+      "statement": "Vitest discovers runtime projects, excludes standalone case tests in main, and runs DOM tests with two distinct JSX import sources.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L25-L73",
+          "version": "repo-lines-v1:sha256:5a8278bda1c41b2e94b2db93f727c783281eeec79576592955cec47a6a7ae651:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5ZmExNDBiMzc4YjZjYmVlMTNlZDFjYTIzNTRjMTJkZDA2NjZmNzQzMTRmYTdjM2UzYmE4MzhkZmU4NDNmY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ODBiNzY1MThkYWU5NzlmYWViZDAyMzY3YTI5MjkyYTUwZDk3NjA5MjI1MWEzOGE2Y2UzMDg4MGJhNDI4MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjMzhjYmUyMTJlOWRhODVkODhkN2NhY2U0ZGU0OWYyZTczMWZlYzUyNjM0NTc1YzU0MWZiYjU0YWRiNjc5ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_155cfd1569d541deb93e01ec40fae107",
+      "statement": "Build validates package and JSR exports bidirectionally, emits ESM and CJS with esbuild plus declarations with tsc, then removes private fields from declarations.",
+      "evidence": [
+        {
+          "resource": "repo://build/build.ts#L23-L39",
+          "version": "repo-lines-v1:sha256:b7f48c61db7361579f5c26a47dc9c35ae0d72c15ff68a07c595b14d969ceef8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1NjE0MTQ1NWJlMjkzODg3OTI2MTg1ZDY3MGYxOWQ5MWQ1NDFkNTQ4NjQxZTQxY2ZjY2YxM2FlZTkwYTI1NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljMzc2YzUzYWEwM2E4YzcyZGYwZTRjMjk3OTA5ZjBkZGIyNmJjMDgzZDEyNWY1YjZlOTM1MTdmNzMxOGRiODMifQ"
+        },
+        {
+          "resource": "repo://build/build.ts#L78-L114",
+          "version": "repo-lines-v1:sha256:39b8d0a0b3373ed3ac9966571aa4734b942043bda7e47b62145ae84cc2f211fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMDE3OGYxOTBhMjUwYTEyZDBiNjRlMzZlZTkyMTM0YTFmZjYxMWJlN2FkYjg1ZThmOTRmYmQ3NzFhMTY4MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjMjBjZGM4NzNlMDNlYTE4MjRkZTk4N2U3YmM2MWEzZGZjNTQ5OTEzNmVmMWVhYjQxZmUzYzNiNWQzZmE1ZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3ZjViYTQyMDBmZjBhZjM2NmM5YzdkZjY1N2M1NTI0ZDc0OThmYjZjMGI0MDJhMDNiNGExNTk2NGY2Yzk2MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a7527fe88d247fe82254b9cb5813038",
+      "statement": "Tag-triggered release jobs build and stage npm publication with provenance and delegate JSR publication to publish-on-tag.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L1-L51",
+          "version": "repo-lines-v1:sha256:a74c8abd8346530a42e8f56ed5abe9be6c44c794f113522f4d6fb232e1164133:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYTc1NThiZWJjYmVjMzAxMjIzOTlhZjE1MmM0ZjQ1MzBiZDdiMTc4ZTQ3MGM4NzY4YjU4Njg2OTljNWQ4YTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1ZmU1N2U2MzMxYzMxYWEyMzdhNjU0NWZhZjk0MmM3MmFmNWU3ZWMxZGFmYjY5YTkxZGI4NmFiNGVhNjAwYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:23:09.970Z"
+  }
+}

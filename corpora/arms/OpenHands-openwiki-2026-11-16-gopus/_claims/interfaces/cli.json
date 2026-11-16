@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1ab33a5b06c6239ca4c0dfd3902999ebfeeb1b47bcefe70ce6b65343bf7f2ef8",
+  "claims": [
+    {
+      "id": "claim_c665e696fdc74e1992e8dcfa740d60e9",
+      "statement": "The openhands console script handles help and version on a fast path, defaults to the cli subcommand when none is given, and launches the Docker-based GUI for the serve subcommand.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/entry.py",
+          "version": "repo-file-v1:sha256:bc64b48e1293964d1f0d4c6b471a5306623cc037d288e1cc302d846b5ec0c56d"
+        },
+        {
+          "resource": "repo://pyproject.toml#L170-L171",
+          "version": "repo-lines-v1:sha256:cfde6dad38b1d6baaabbc358bff5a6312c8bcd9d42e0bec8f6a48dfb02c4d824:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI4ZDM1NGYxZjc2YmI3OThjNzNkZjhmOGI3ZGM5ZGM3NDg2MDYzMjA2ZDBmYjMwNGQ0ZGIwZGM2NjAzMzhmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk3M2M2NDE0M2YzYWZiNTFmYmYxOGZkNTRjZDdjNzdmYTZjOGIyNzU2ODRhMzEzNmIzMjFhN2VlNGQyMWM3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRkNWM0MzYxZTgzODJlNjhmNDIzMGQ3MDZkOWNkMmQwZmEzMjZlZTZhNWEzOGJkODU5MTA2YmM5YmM0YThkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNlNWM1ZjIxZGRkOWNkMTc0YjMyMmI4ZjAyZjhjY2JhZDBjMWU1OGEyMzY2ZWZiYTRmMTA5YzE4MDgyYTkxOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf3d1effc4574802932cf25bd2ea4818",
+      "statement": "The GUI launcher pulls the versioned runtime image and runs the versioned OpenHands app container with the Docker socket and ~/.openhands mounted, optionally mounting the current directory as /workspace and enabling GPUs.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/gui_launcher.py#L76-L175",
+          "version": "repo-lines-v1:sha256:5040a32f5b82401748b82f077e7631c65b599e01d6d67a0e19da9b4428dc03ad:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzMmJiNzFkMTZmNzExMTIxZjg1OWM0YTc1NTY5ZjAzZDYyNGZiZTZkOGQ3NjE4OGI0YmZkODc0YjViMGFjZGQ0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2MzAxN2QyY2E2YzMzMmZhMmQwMmEyNjUzZGVjNTM1ZDI5NjliMzdjY2ExNDU2OTY3YzJmYjk4M2EwYWUzYzU4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5ODNhMDlmZTM5NzUyODA3MWI1YjY0NGUwMjNjNDRiMzYzOWJjYTBjOTM3OTE0ODY2N2ExZGEyZjgyZmIxOWYzIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_836eec4c05ad45998eb9ccfd80d141b8",
+      "statement": "In CLI mode, if no saved settings exist the interactive setup flow runs, and saved settings fill the LLM model, key, and base URL only when neither -l nor config.toml set them.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/main.py#L590-L640",
+          "version": "repo-lines-v1:sha256:bdad06bd410ceec9065ed0cc309298178b8e21eb5dff7d784eac833deeb28d1e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhOThiNjk1N2Y5MDFiNmJjNTZhYzljMjk1YjhjMWNkZDY2M2JjNGE4ZGJjNzNiZmM5YWI4ZmZmMmY2N2NhNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjNTk3NDkyM2JiNThhYjAzZWI5ZGM0Y2I2YzliNWM4ZWJjNGY0ZWFiOWJiYzA2Y2ZjODJhYzk0OTgxNjIzMTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f50ca019b40494e982b95075d239f32",
+      "statement": "Unless --override-cli-mode is set, the CLI uses the cli runtime with the current directory as workspace, enables confirmation mode with the LLM security analyzer, marks the agent as cli_mode, and re-finalizes config.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/main.py#L660-L685",
+          "version": "repo-lines-v1:sha256:d9409960934be6b28900b40fa04791a272a09709aee9ab50b8726bc38ae623db:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzN2U4ZmVmNTQ5ZjIzNjcxOWIxYjQzODY4MDBhNjkwOTM2NTQ2Y2FjMzRkYWM1YmM2ZTg2NjEzZDhkYTA4OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2YTczZjJkYTRhODM4YTBiOTgzZDVjMjYwMDE5NjA4YjFlZDkxMmEwOTg5ODc0Y2NiNWRlZTU3OGIxMzBhNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhNmIyNWI1ZjQ0MDNlZjAxODMxNjRjMWJiZWQzMjJhNDJjMDM1ODI1MWEzNTk0ZmFmMjFiZWNlZDgwMGRlNGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyOWRiMjNhZmJiOTkzYThhMGE4OGJlZWZmYWYxNzBjYmEwODAzYTc1ZmQzN2ZjMjIxNTVkMGM2ZTQ1MjQ1OTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd42510241064278b582f1db10488cf4",
+      "statement": "The CLI requires the user to trust the workspace folder unless it is already in the trusted directories, and remembers confirmed folders.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/commands.py#L384-L428",
+          "version": "repo-lines-v1:sha256:eccb468a3e9e15c319e0100685f7b8dad0c6953fe33c9222eb93ec242b2baa17:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZGI2MGRjMjk4YTc5OWE4YjY0NDI0YTQzYWFhYjhiOGI4NjgxZGUyM2JlYTVmN2FmZmY2MWVkZDZhY2ExYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZTJhNDY1MDA5NWZhOTVkMGUyYmI0MWIyZGIyOTA5NGQzNDA0ZDI4Y2UxMjMzOWVjODhiYjRiNWM1YmU4ZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3YjgxYmM5ZjcxMDBmNDE3N2Y1YTRkYTdkMzc0NzI3ZTE3OWE1ZWE0NTcwMjI2ZjVmZDQ4MWY5ZTk5Mjg2NGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmODJjNmVjYWNkNjI1ZGMxMWM4YzI0Mzc3MjRhNTllOWFhYTA4OTc2ZjM3YWI2ZDdmNjc3YTdiOTA4ZjY0MmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c3797a499f14105b80b99e2dd09ac0d",
+      "statement": "When the agent awaits confirmation, the CLI shows the action's risk and supports always-confirm and auto-confirm-except-high-risk modes, sending USER_CONFIRMED or USER_REJECTED state changes.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/main.py#L235-L300",
+          "version": "repo-lines-v1:sha256:fcac215cf14927d7b5010809eb79f29476869d016460461f36312fb7b89d697c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4NjZiODA5MGY3YzZjYWFkMDEzNWU3ZTU5NWUyZjI3YWY3ZTM0MTZjOWJjYWIzZWM0ZjUxNjgwODk2NmRhMGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxOTdlYWFmMGQwNjU1ODc0ZjIyY2U4YjMzNjAwZTEzYmEyYmQxMTI5ZjkxMjJlOTAwZGE1NzI5NzEwMGRhM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3e4b21eab1f4364a45d2dae1d180e57",
+      "statement": "The CLI supports slash commands /exit, /help, /init, /status, /new, /settings, /resume, and /mcp, where /init asks the agent to create .openhands/microagents/repo.md and /resume sends a continue message.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/commands.py#L122-L330",
+          "version": "repo-lines-v1:sha256:d71952d2a49d79484c40cb18dd918475fa9ef265a2470f7ae0ae3757cb009507:eyJzZWxlY3RlZExpbmVDb3VudCI6MjA5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjZjViMzBhMjhmNDU5MmJlYThmYTJiZWI3NDZjNmMyZTAwNzQzN2M5MTkwOTZlMjkwZjFiOTc3ODEzOWJmOWNjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiNTY5Y2IwOTI4MGVlMDc4MTk0NWU0OGQ0MDQxYmQyZGZhYWU2OTFhZDJlYWJmNWQzY2JhMDg0NmM3MjE2Y2FhIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlMDQ3NDc5ZjlhZGQ3NzY5YzM3NDdhNjFhMzk3NThmMTNkMTU4MjI4MzY2YWEwZGFiYzE4YjhiNThmZGNmZWNhIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiN2MyZTgwNjdmY2YwOWM4NGQyZGE5ZTA0MTIwMWU4MDk0MGMyOTIxNjgyOWU1NTkwNTcxMGViN2E3YjY4YTc1In0"
+        },
+        {
+          "resource": "repo://openhands/cli/tui.py#L79-L88",
+          "version": "repo-lines-v1:sha256:55b5661bc13db8ac5b9d2bca844964a8dccdd305c96481827ceba30def9f37f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczODhhYjY0MzRjZGY4NjFmNTAzZDk4YThhMzdlMWVlNTJmNmY5MjBjMmZjYjA3NGVlZWQ1ZjllNDU0NjFiZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiODg1M2FmNjQ3Y2Q2MDE1ZGU1ODcwODk3MGFkZDY4ZTJkMzJjYjViNmU4YWNhMjQ4NjhkM2IwMDBkODM2ZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2YzdhYzU5YmIwYWM4YzlmYjBjNTRjNTZmMjM0NDgyODRjMmM1MTM3ZGE3ZTAwOWI2MTQxMTAzOTk5MTc1MzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7b5217e9b734e9ab813d2f20e6a16e9",
+      "statement": "Headless runs via openhands.core.main auto-reply with a continue message whenever the agent waits for input unless --no-auto-continue is given, and reject an explicit task in trajectory replay mode.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/main.py#L246-L320",
+          "version": "repo-lines-v1:sha256:aadbbbac1d5e5a8a0d918ce7b59c8e4f76b5eb0809c694a4ea26409c6f4c6732:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhNGNkMmQ0NGI5NDc3M2E3MTM5NDk4OTRiN2NmNmY5YjQ0ZDU1ODUzNzA2MTgxMWJkYzA1NDQ5ZGI4ZWIzN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

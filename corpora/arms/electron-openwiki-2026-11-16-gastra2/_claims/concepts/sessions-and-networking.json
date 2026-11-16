@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b9ef901af1902679831f710ca8787c21397c41af2f382d1eb6fa7f3d77f69c1c",
+  "claims": [
+    {
+      "id": "claim_0390a4bbbe2c4cda812600c47b1a4dce",
+      "statement": "Session partition lookup distinguishes default persistent, persist:-prefixed persistent and unprefixed in-memory contexts; fromPath requires a nonempty absolute path.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_session.cc#L1713-L1749",
+          "version": "repo-lines-v1:sha256:4a700ccd365f20958fb2fffe5b3698b5daabd20d7d0d3e58f2fa76cc9361dccd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmMxYjY5NjI5OWVmYjMyNzA2MmY0YjMzYzkwNjQyNzc1MzI5YTc4MzQ1M2FmMDA2ZTEwOWFkZDdjZTdmNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZmJmOTJjYzBmZjk3YmE5OTQ4OTIwNDEyODI2ZjZmYzZlZTc3MzE2YWFhMjNjMjA5MTAzYmFkNTM3ZjhlMWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhYWFmYWJlNWYwZTY0NmZmMWUwMDc5Y2NlN2YyYTVmMmZjZmVmOTc2NWY5NjMwNjUwMzdiMjBhMWU4NWZiZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhYWFmYWJlNWYwZTY0NmZmMWUwMDc5Y2NlN2YyYTVmMmZjZmVmOTc2NWY5NjMwNjUwMzdiMjBhMWU4NWZiZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ca587a99ce248778b87d999da1cd89b",
+      "statement": "Browser contexts and Session wrappers are reused by identity, so options only affect first creation, and persistent named paths derive from the session-data Partitions directory.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_session.cc#L1683-L1688",
+          "version": "repo-lines-v1:sha256:b0e3fb5b6336234524929355a32ffd59006aa3eeaa685c9eabc594342866ccbb:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZlMzVhMTE4NTk1OTZjNDJkNGIxMjQ3NzBiNmQ5NmM1OTY4MTBhYTBhYTY2YTg0NDY3ZmU0NGY0YzNhYzQ4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2FhYWZhYmU1ZjBlNjQ2ZmYxZTAwNzljY2U3ZjJhNWYyZmNmZWY5NzY1Zjk2MzA2NTAzN2IyMGExZTg1ZmJmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOThkZTcyNTRhYmZkMDE3NDUxOWJmMjg0ZWY4ZTI3YzgzN2ZmMzkxZjMzYzk1YzU0Y2M5ODBiNjFjNDQ5N2ZmNSJ9"
+        },
+        {
+          "resource": "repo://shell/browser/electron_browser_context.cc#L357-L397",
+          "version": "repo-lines-v1:sha256:ab44b4e6455b9ad69bd66546e9c9d77538b5a43079a9ba3dd0ffd67b38620abb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxZTg5NTJhOWY0YWZhODc0ZjQwZDVkNDFiZjZmN2ZkYTI2MzZiZmE3NGY0MjkyYWJmNzFiNjFjYTQ3MWFlZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyNDFhYWIzMjVhYjNlZTRlZTk5OGUxNzYzMDNiMDIxYjFlNjgwYjMxY2EzMDQwZmNhOTQ1YTBmMjUxMDFhNDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4MTNiNTcxNjUyYmJkNTNhMGMwNjk3MjE5ZDY3MjJhZTdhOTA0YzgyZjJhMGE2YzE5OTljYzQ1YzRjMmQzYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5MDA2NDgzZDVmM2JiYWRkOTNjYzZkZmViNDUxYTUxNmNkZjEwMWZlNDEwMmEwNzY0Nzc5MjkxYzdkZjNkODAifQ"
+        },
+        {
+          "resource": "repo://shell/browser/electron_browser_context.cc#L870-L896",
+          "version": "repo-lines-v1:sha256:16938b84afa91eca043c15b422dfef9c44f56967e40f153c9cf3c8a02ab0c6f6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NmE3MmRlODFiMjQ5Y2E3ZGU2Y2NmMTZjODNiYWQ1M2MzNTQ5N2RkNzg4NTQ0MTQzNDRkOTYwNzhhZDA4NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmODkzOGE3OGY1ZjkwMmM5NTA4ZDA5MmRkZjYwNWJhZWJmZTgwNzEyMmMxYTlkMTVkMzdiZTFhNjBhZWQ5M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhYWFmYWJlNWYwZTY0NmZmMWUwMDc5Y2NlN2YyYTVmMmZjZmVmOTc2NWY5NjMwNjUwMzdiMjBhMWU4NWZiZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NjUxYWJhZGNjMGU3MjZkYWM2NDdiZjJlNDU3NGFjNzIzMzM2ZGUwOWZkNTQ4ODU2NjEzYzNiNTM3MGE4ZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_acbdc2584742492f89548cca2cb56489",
+      "statement": "Public session lookup requires readiness and WebContents prefers explicit session over partition over default session.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_session.cc#L1874-L1905",
+          "version": "repo-lines-v1:sha256:7d8f1e22148538772620b1f8e4ae875c6d39c77ab2fa11d8d5e6c6f0cb0f7799:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlZmM4ODg3ZjhkYTgyMDRhZjJiOGMxMmNhN2YyYTRhYzE0NjYyZTdlNDBiMjA4OGE4NDRlN2M0ODBlY2E5NTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiZjhhZDM1N2JhYjI2MTdkNDU3OTBhMjMzNmVhZGI5Nzg0NGQ4YWUyOWZkYzI1MWNmYmU0NTc4NjFhZjgzMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZDE1YmQ3MmY5MDAzNDVhN2I5ODFkNTgxYWEwODY5YTI3ODBhOWRkMGM3YjExZTFlYmNhYzJlODFkYmI3ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzM2Q4ZDYyMTJkZmM2ZmRlNTdlZTM4YjMzNGMyNDM2Y2JiZDJiYTg4YTQ1ZTc4ZDQ5NjFhNmRhOGVmMDRmOGQifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_web_contents.cc#L828-L838",
+          "version": "repo-lines-v1:sha256:655c7b27cb4499235fa0fbc9524d91201ca4fd3714cf62ee36442324fa7fa406:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmZThkNGY4Yzk3NWIwMjVjZGUxNDQxM2JlMDQzMTA2NDZjYWUxNGMyOTQzZjZjMzk5MGZkMjUyZjcxMzc4Y2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiOGY0YzA1NThkYjBkM2U5ZWNhMmI0ODMzZTJjYWI0OGU4MTQwZThjOTFmOGVmN2M0MThlYjZjMzlkMzQ3N2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjYzU3OTI5ODBjZjYyOGMwM2I4YzBiM2NmMTVlNWZjZmQ3ZGQ4ZTRkMjQ4ODNlMzg2YjI1YmEwYzYxN2Q3MjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkOGQ1ZjNjZWY4YzU0NmY0YjE2MjFkZjcyNmYzNDZlMjA2YjE1OTdlYTA3MGVmMGU0M2UxNTcxMzkyNjIxNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_000c2cd7ff8b4c11aacbbfe09f7e4e29",
+      "statement": "Browser net.fetch uses the default session while Session.fetch uses its receiver; the fetch adapter handles aborts and substitutes include for same-origin credentials without an origin.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/net-fetch.ts#L18-L120",
+          "version": "repo-lines-v1:sha256:7c06af4614ced981eaaefcb0dcb642d33bd36233dc75bf2627654d6e5530401e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkN2RhM2QxNjdhMDJlYjZiMTVhMjYzYWUzMzMyYTliMTc2NzVhYWYwYjFhMDU5YTcyMWFkYzczODYzM2FjYjZlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzYTNlNDZmOTQyNzZiNmY2ZjRlZDFmMDJhZjc4YmVmNmEyZWUxYzQzOWRkNTU4NGI5NzM5NDgzMTMyMTRkMmI3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMjNiNTVmMjZmMzg1NzdlNTQ0Njk1NjkxNTI3MmM2YTE5MTk0M2Y2NzNlY2I1YmZjNmM2MDEzMGJkN2RiYzU0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTViYTE3NTA1Y2NkZDQwNTI3NDYzYTU1NmI2OGFmZjZhZWQ0Y2Q2YjhiMmZkZjAwYTY4MTY3NGY5ZDIyY2I4In0"
+        },
+        {
+          "resource": "repo://lib/browser/api/net.ts#L8-L20",
+          "version": "repo-lines-v1:sha256:424a8b37eb84460cb21ecece10fe8a206ddb1cb74a64475c75c3d183a6da90f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NDkzYTA3YWQ4MzBmZTdlZjYyZGM2Yzg4ZWQ0NWYyZjY4NWVmNmFkMDliNjlhZWJjZTM0NTk4MzNjYmYzMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlN2Y4MjA0ZWI0ZTFhYTY4MzIzYTQ2YWVmYzE5OTMyNjcwYTBiODFlNzdhOGJhNjJkNTEwNmE5OTRjODdjODYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhNjlhN2M5MzNmYTFjZTM1NWU1Mzk1ZjhkZTZmZDgxM2RhOWJhNzIxZDcxNDM2MDNhMTMzMzgyMTc2ZTk4MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExNDM1MjhmYmVjNGU5YzI2YmU2ODM3NjU0YjA1OTkzMDhmMmIzMzhmY2RjYmRiNTc2OTQxZTI0NjlkNThlMDgifQ"
+        },
+        {
+          "resource": "repo://lib/browser/api/session.ts#L44-L46",
+          "version": "repo-lines-v1:sha256:9bf0b2690fec8666d3c90255e76c8173e196136feda8a185b5481b0d2ead0405:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjAzNGUyZDEzYmUzYjBmZTkwZDM2NGYzMGNjZWZlNjk0ZjAzOGE1YjQ3ZjJkOGUzZmViZGM3ZTEzZmZjYzIxZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzIxMjljMjczNTJiNDk1NTQ4YjA3MWFlMzRhYjkwODExNzI4NzM0MjhmNmY4N2Y1NGI1ODBlNTE1M2M5YWEwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTllZWFkMjA1MGY4NjAzZjAyNDBjYmJjYWZkOTE0OThjNjE1YmI1M2Q4ZDdmNmYzNWIzMGMwNWY5ZjllM2ViMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_42af0fc9688c4c34b1acea522f7a64d4",
+      "statement": "Protocol.handle adapts requests and responses, intercepts built-in http/https/file schemes, reports failures as network error codes, and global protocol methods use the default session.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/protocol.ts#L111-L180",
+          "version": "repo-lines-v1:sha256:2a728ce42d70935118bb0ce2816ceb400e1e63415654154f1118e5ea230f3aaa:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlYjI1Njk5MGNjMGZiYmZiMTJiODdlMjk2ODFhMTdlOGE0OWQ1MTkxYjM1OGNkMzRlOWJkMjEzMmVkM2ZkYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNDhkOWQwMGRiOGE1YThhMWNhMWEzMTlhNzc2Y2RlOWY3MzNiNjdjMDI4OWYzYmE3NmExY2I2MDhkODNkMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMGQxMzk5Mjg4YmY2ODVhZTgzOWJkNzhmYjhhNGMyYWVmZWRiM2U5MmVjMjRkNDQ1MjE3MGUyODFjODg1OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViYzdmM2Y0ZDFjZjYxM2JmZjA5NWRmMzU0YWMwYjA3YmRjODEyNDNlNzYxZjFlZjE2NzViZGMzOGQ1ODc3NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b4596958b0c4c0a9c55dc09af9f394f",
+      "statement": "Scheme privileges must be registered before app readiness.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_protocol.cc#L346-L359",
+          "version": "repo-lines-v1:sha256:bd1f7ce3a96baff39afa4d7daeebe6de1305280a4bf51726dd19f386b517ea54:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmMDRkOTljMGY1ZDM1MjFmNjdmN2M1ODdkMjBkZDM1OTJhNTAyNGI5MDM1MjllMWU0Njg4NDRmN2ZhZTgxMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwNzI1ZDBmMGY2Y2FlYjBjZGE0NjMxN2M5NDE0YWFiMmU4YjUzMzc4M2FkZDdjYTExOWE4MDgwNDg3ZDczMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0YzFkODNkZWMyOTE1NGYyZDllZWZmOTRmNWM0MWRkZjlmZmM3NGJjMjIwN2Y5NmM5ZWJjMzVmOTcwZGM2MDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0025dbe8852c48f6bd1f28ee64acc345",
+      "statement": "clearStorageData resolves after storage partition clearing and resets media-device salt when clearing cookies; setProxy validates mode and gives PAC precedence when mode is unspecified.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_session.cc#L725-L797",
+          "version": "repo-lines-v1:sha256:c6b35084f8b5e1f05aa80c6d3ab2e6983d654e8ed3453ca275066311b00d6fac:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MjRjZmJhZTNkZWY5N2EwNzgzY2U1Zjg2YzdhNzQ2NzNjZjAzNDg3MTJiOTE3NjllZDNjYzAwZTQ2YzJjZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiOTJhMDUxY2VlMDMxN2JhYmYyY2Y0ODMxZTI1YWNjMDJlMDJjNDA4NmM3ZjgzMTk4M2JhMjE1M2YyYjZkMzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMjdlOTI4YjI4NWZkZDhlYzIyMDY2NWZhYjNlNDVjZGIxYjU1YTEzYjMwYzM4ZjhkMjNmMzVlMGE1Yzk3ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjOGIxZDU5MDZhZTcwZTQ4ZDAyMTgxNDZkZDgwZjE1ODRmMzcxN2M4YTMwYjZmMjk1YTUxYjRhMjY0Y2EzNDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5dcc01472324c11a73efa8b802f7e6f",
+      "statement": "The generic permission-request path grants requested permissions when no request handler is installed.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_permission_manager.cc#L185-L214",
+          "version": "repo-lines-v1:sha256:ded97d2e835f974155f39e8778268205f8ff3d5e47112ce4701e15efb4e6919c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwODllZjE2ODVhNjllZTc4NjEyY2RkZjI2N2RjNDIzODJhMDg4ODY2NWFlZDkwODhkODBjNjhhNGYyMjI2MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmOWMzMTlmNDEwZmFkNjU4NzY0MzNhMjViZGVhZjYyNzgxMjJhOTUxZDE1NTM1YWNiZjg4NjA1MmMyMDE1ODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczOWM5ZjkxNzBmZmIzYjg4NmRhOTRkMDdiM2NmNjVjMmI2YTcyMDY1YWExNjI1ODdhNThjYTM2ZjBmNTkyNmYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:01:04.581Z"
+  }
+}

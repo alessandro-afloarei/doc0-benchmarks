@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:945cfa6b7489342d93aba47aabf748f9a12338322343e6e8f722e00bb1dda0d2",
+  "claims": [
+    {
+      "id": "claim_ae5a0c29a272458c890ca9bba09ba378",
+      "statement": "ProviderHandler requires its provider_tokens argument to be a MappingProxyType and raises TypeError for any other type.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L113-L131",
+          "version": "repo-lines-v1:sha256:64702827f0c575a2a66c9e362888694d0f7d4f34f8b535314a58caf9dcc9db89:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDdhMDdhODNkZDE5OTZmYjUxNjg0YjQyYWVjYWY0ZTkwZmI3OGJhNzIzMGU1NDJlZDdiZDAxZDQyMzAxYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNmQ1YzU1OTA0NDA0NTlkZGJjNmY5OTc3ZTEzZTE0ZDNlOWNlNDUwOTgzYjc3MDg4MjFlY2ZiY2VjNWMxZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3MTc1NTlmNzY1Mjg1NTAwZWUyMTA0NTdiMWMxZDQ1MzE1ZDZmZDYwZjQwNDg0OWIwODQ1YmI2ZTA2NjkxNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a724c1abec2433e9dc48fb9b82b467e",
+      "statement": "When a fresh token is requested, get_env_vars omits a provider whose refresh returns no token; a failed refresh does not fall back to the stored token.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L172-L193",
+          "version": "repo-lines-v1:sha256:205233320ace52fed3e9f463d04b9c33df7845302085b0db6b3f77fa34771c54:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0YTlhYTE0ZmQ2YTVhMjM4OWEzYmFlZDQwOTdlNDA2NmQxMjVlNmRlNTlmNWNlNWIyZTFhN2MzYmRiMDQwZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlN2M5NTdiY2I0NGZiNjczYzk4YjAwNTBhNzVkMzgwODJkYjgxZDkxOGRlMzEzYTNmMDdjMTIzNTMwNmQ3ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZTY4NDMyNWQ0M2E5NjYzZThjMGYxYTc5ZWFhZWY1NTI3MzI5ZmFlZDlhNzcwYjY0MDg3MDNmYzQ2YjUxZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiMjEwNzlhZDQ5MTkzM2E2NDE5NGJlY2JlZmRmZTAyNWQwYmQwYmUwYmQ0ZWU5NzliMDgwOTQ5MmZhOWEyMjcifQ"
+        },
+        {
+          "resource": "repo://openhands/integrations/provider.py#L410-L418",
+          "version": "repo-lines-v1:sha256:34854ebe89bd8de5891ff888fcdb3c86ef75a8680e66fb8407ff6b834d88458f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTkwNTRiNDZhYzljOTAzYTg2NGFhZmNkMTRmZjE1MTViODY2NGE1MDg0NWRkZThiMjg5ZDJlMmMxOTEwMzM3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMzMThmYjM0ZDdhZDdjM2M4NGM0MmFjODIyNWQzMDljN2RkZmVjYzEyNTI0MGI3NzlkMTg1MzIwZDI2ZWQ4YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTAxNzQxOTU4MDk4YTM0MDRlYmY4ZmU2ZjI2NTcxYjYzMGEzMWU0ZWNlYzY2YzQxOGI1MzYxYTEwZDk1NzQyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTI1NTdmMTYxNTc1ZGE2YTY4ZmNjMzA4ZjZlNDRkOGJiMzVjNjZmYzFiY2JkM2FkYmU1ODM4NzVjNjEyMWMzYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_025cb9dc7bb645b684c482779e704391",
+      "statement": "Provider tokens are exported to the sandbox as environment variables named <provider>_token in lower case, and set_event_stream_secrets passes the exposed values to EventStream.set_secrets so they are redacted from stored events.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L338-L354",
+          "version": "repo-lines-v1:sha256:ee77bbe443da6d5455ff397c25f439747cb9ab1a429ebc4c77648a7575a50d6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5YTQ1NjQ2MmIwMmQ4NzgxNThmZTgyMmRhNjc3MTA5NmMyNWRkYTUyYzM0MzRjMDAyMzAyZmQ1ODkwMWJkM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZTM3MzNjYmNkZDk3OTdjMTU2MzliZmQxYjFiNzE1ZjBiMDQ4MTRmNjAzZGE3NDViN2IxYjU0ZGUxYzI1ODUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3YTBjYzZmOGIwYmNjZjQ4MjU5MThmMDhhM2IzMmMwM2ZkYzgyMDEzZDA5NTRlMzM4M2RjOTVhZDZmZTkzNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzOGQ5YTQ4ZTgzNDBlMGMxNzM0MWFhMDczNDkxZTA1NjFjMjAxODUwMTUxMWEwYTliMWJmMmIwY2ZkNWQ4ZjUifQ"
+        },
+        {
+          "resource": "repo://openhands/integrations/provider.py#L443-L446",
+          "version": "repo-lines-v1:sha256:df7e27957f7d100f7bdfac812d6d0e6f917a4a6dcdb60ca3b6346c63f0ab32d8:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JiMjNkOTVmYTk2YmFjMGZlYTE0YWM0Nzc3MDdkYjRjNzY1ODQ0YWRmZTI0MmU1MWY1ZWRjMjJhYTc2ZmViZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDM2NTNkY2NmNWFkMmFjMjZiZGU2YTBlMDIwNjk2M2U4MDdlOTExODE0MjVkZmM4MTk0Njk3NTcxMjMyZTlkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGMxMWRkYzhlYmIyNzI2NjQ4ZGYyMjc3YjAzOWI0ODkzYWM1MmI4NmZlNzI3M2FmN2VlNjM0Njg5Nzg2ZDg2OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_67ebe6cab6fa4f768933c0eff6c7c492",
+      "statement": "create_mcp_clients skips a stdio MCP server whose command is not found on PATH, and attempts each server connection independently so one failed server does not prevent others from loading.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L63-L150",
+          "version": "repo-lines-v1:sha256:053bed6121f0255554408d0398d7f6884e3de64c31f2dce4dc03287134bd50e0:eyJzZWxlY3RlZExpbmVDb3VudCI6ODgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YTc3MTMzMmM1ODczYTQ5MjdkZGUxMmE0YmY5YmI3ZWE1MTJlYTdmYTU0NzkyZmMxZTk4MzA0OGJiYzc5YmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3OWQ4MmJkM2FhYzc3NDIwNTQ4OTA2ZDAxYTAzMTJmNDA2ODc3YjNiZmI4MzM0N2Y3MTEzNDgzM2M5YzYwNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MzU4ZmFmMjVkNjMwNDc4NGIzZWNlMDExNzEzN2FjYjg3NDgwYWJiYTQwMDk3ZTQ0MzBmZjg5NjUzMjMwZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba55a86776204692bc0c593c71d76ebd",
+      "statement": "call_tool_mcp raises ValueError when no connected client owns the requested tool name, and converts an McpError from the server into an MCPObservation whose JSON content has isError set to true.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L206-L265",
+          "version": "repo-lines-v1:sha256:f08d5ca3ca64175a0b404daa27f7cf819cf0eeae9a3710ff68064871cbbd0cc0:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyNDQzNjdjODNhMTBhOWY2ZWM4Mzk3MTZmNGM0OTM0OWU3NGExMjljMmM1Y2ZlZjgzNWFlMTY2OTBmZDQ1NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YzE3ZWZhMjc4NGU3MjFiMTZkYTUxN2I5ZDYxMTFlMDJiZmQyNGE5NzlkZWEzY2FjMDcwMGVlMmI2OTU3ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzNmQxNmJhNmNiNTVmM2FkNjMzZmY5MWU5NjE0OGYzMWJkZDcwYWE5NWExNzVhOWYwZDI0Y2UzYmRiZWViM2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9365d580bff249a58bc1d3c1ab6e6ef4",
+      "statement": "add_mcp_tools_to_agent merges stdio servers declared by microagents and the runtime's own MCP entry into the fetched configuration, then sets the resulting tools on the agent.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L267-L317",
+          "version": "repo-lines-v1:sha256:7c349b9cd2dcf22a82261e945a41c1fbc02c38be3605625f73e2453266231577:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNTMyNDM2ODVlYzhhNzZjZDI3OTk5ZWY1NjUyZWQ4M2ZiZTU1YjgwYjlkOTFmZTdkYzBkOWU2ODAzYjVhYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NGRlODM1ZGNkMTIxNzRmNjZkZTMyMzkzZDk1YmEyNGY3YmRiNWM5NDE5ZDI0Mzc3OTgyMGE2YzU1ZWU5NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_80576dbf20bb430892d9caea081ff31d",
+      "statement": "OpenHands defines its own FastMCP server in server/routes/mcp.py whose tools include create_pr, create_mr, and create_bitbucket_pr for opening pull or merge requests.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/routes/mcp.py#L26-L27",
+          "version": "repo-lines-v1:sha256:7792e07dea422a40f70fe32acadc23d0f4c4087cd03661de5e83b71a1418c972:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQ1NmVjMTdmNGI2NTgzM2ViYzUxN2YyNGNmY2E5ZjdiMTc4N2UzOTk4MTM0M2JlNTcxYzJhN2U5ZDg3ZjBmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZkMzY3NzFkMDBmYjBkOWEyMDdmMDk4NmZhM2Q1NzcxNmEzYjg3MGMzMDFjZmYyMDIzYWFkNDRkMDVlODczZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDY1MDg0OTlhYjQ1Y2U0Y2I2Zjc4YTAwNzYyMGVmNGY3NzEzYjVhZDNjOTZkZDI5MmFkZTJlMDUxYTA4OTA2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGEwYjBkYTFhODQ3NmNkMjhhNDdiYTk5MDM3YzM1ODU1MDJjODE5NmUyMzBiZDAwMjZhZmUzZGY1OWFlMDNhOCJ9"
+        },
+        {
+          "resource": "repo://openhands/server/routes/mcp.py#L83-L90",
+          "version": "repo-lines-v1:sha256:852dcad9407b7165eaaf0954d0c361cb3f4cc5df0d9060d91a1db00394f3d170:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQwOGZlNjBmMGEwNjRmNDBmZTA3YmE1MGE3ZTM1YThjYjc0YjY5NDI5MjE2YmFlMzJjMTYzMjQ1NzY1YWQ1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjI2ZWE3ZjEyYzExN2RkNjhiNjE4MzU5YzlmZGRmMDBmMWFjZjZhOGYwMTRkZmU2MzlmZDhkZDRjZDgxNDgxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWVjMWMxMGZhOWZmZGNiNGI0Y2U3ZGZiYmZlZGVmYjNmZjJjOGQzNDFmYmQ0YjNjZmI2ZjQyMTQ5Y2Y1NDJiYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU4YTgyYTlkYmJjNzM3NjFjMWZlMzdlNzZlZDdmNjJlMmM0NmIzY2ZkYjBlNDA2NTkyNWZhMjhkODEyMjhkMSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

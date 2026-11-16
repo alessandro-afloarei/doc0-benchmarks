@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ca19b39f84cd340a8618683832f4891ab37a001b023a218691f86f7c5c4a0f18",
+  "claims": [
+    {
+      "id": "claim_155d8097c4924e1a89ca4f8144c9edb2",
+      "statement": "The fd-find package builds the fd binary and declares Rust 1.90.0 with edition 2024.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L16-L31",
+          "version": "repo-lines-v1:sha256:45b5aa157645de846b2f696bbb66da955dcd63460d6064dfde128bac26d4072f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzYWRlNGQ0ZTAzMmY0OTk1ZDM3YzkwOGFlMGQxZTEyZGVkYTc0YmRkNDM2ZTMwMTMxMTcwNDQ0YjY4YWQzYjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYWJiMmJhNWU2ZmI5MTQwMGQwNTdlOTMxY2U5MTk5OGI2ZjcwZmM1OGI3MzMwNTIxMzI2YTRlYzVlNWI2YzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5ZDZkYmQ2MGY4MjNlZjFkNjE3ZjI4ODI4NTkzZjNmNjlmZWJmNzc3YzAwNmY5MGU2ZmJiMDRiODM0OTBmODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3ODhjOTVlMDhmZTU2ODY1YTA4MTEyOWRkMzQxNTczNjFjMzExYTdkOTkwNDE3MWY0MGZhMmUwYjg5ZDU1ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb317cf5b7c24f5a952f05b7421a12cf",
+      "statement": "Default features enable completions, while jemalloc is optional and platform-gated; the release profile enables LTO, stripping and one codegen unit.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L65-L98",
+          "version": "repo-lines-v1:sha256:bf7505f12a1ba527c2b51997a4e008454289d75baccc76daed254bebc0261aa1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZTgzOTA4MTEwMzg2NTRlNjIzNGRkMmQzMzk0MmVlNzcwODMwN2YxN2NmYTY2ZTIyZDNiMTA4YmJhNDAxMDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMzRlNWMzYjVmMTg3NTBiNzRiZDU5YTRlZmY2YzllMzVmNDYyMmU3ZjU3MjkyNjEzZjk2YzYwZGE2MmI1NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNlMDVkZDJkYWVmMGUxZDNhNzUxYjY3MjFkNDE0MjdlMjk3N2YwZmJiOGQ4NDBmMzQ4M2ZhZDFiZTIwOTA5ZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNTIwYTg2ZjZlZDdjZDU1ZTE5Nzg2ZGU3MjIyNmZiNmQwNzkwYTdiMTMxODBkYTA0ZDgyYzk2Yjg4ZmFkYTMifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L38-L55",
+          "version": "repo-lines-v1:sha256:ef3cf33b69b4c52eb3bd70cfc15c438bc665e847c8b25182dcc1593e4f1c7d32:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5YzlhODVmNzc1NTE4ZjdlYTk2YTI1ZDlmNzE1ZTI5OGNiYTZmZTA2MWM1YTZhZWRkOWU0MWFkNjI4ZDM1ZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5MjQ3MDA5ZDE4MDE4ODMxMzJhNzg3ZWZhNGQ1YTVkYTkyY2RkMTgyZjc0ZDBiNjc4ZWVmZDRmODY3NmI1NDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMWQzZGViMmIyODA0ZGViODUwNzcxMmYzZDBmZDJjNzQ5YWQ0NDcxOGEyNDI2MWI3Mjc3ZDA4ZTQ5ZGM4NmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b51aee026d9c4d33a54a04f37077c4e1",
+      "statement": "Integration fixtures create a temporary Git-like filesystem, select CARGO_BIN_EXE_fd, isolate global fd ignore behavior and stabilize LS_COLORS.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L28-L79",
+          "version": "repo-lines-v1:sha256:6ed223d6c6435dd722766508bac4ba35294b2be0862f1c354f0efaf471a21191:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNWRmNzE0ZTdkMWJjOWNjYTdiZTFlZDZlOGFjMDA3ZjJlZjQ2NmYzMjMxNGM0MjQ5YTczNDlhMDE0NzkzY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNmIzNDYxMzg0ZDIwZDgzOTJiMmZiZDE4ZDQ5NWQ1YWQzMTU1NmU5Y2M0Y2Q4ZDU2ZjczZDc1MjdmMWQwMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2YjUxYzU1MmQxZGY3ZGE3NmEwYjEwY2Y5YzU2NjI2MWFhZTk2OWY3NjNlZGM5ZjE5MTkwNTM5NTM2NGViYmUifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L300-L315",
+          "version": "repo-lines-v1:sha256:4af0344abd5d0fc870a98ca3dc0b4eed96591abb4cb76ec95e6a71a20e8b3a35:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiOWUzYzQ2ODkyYzVjZjE5MzMyNTgzNmRlNjIyYzYyNDYwNjk4NTUxOGFlYWQ5NjQyZTQwODg4MTI5MGFmNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjMGU0YzVkOTVhYTA0OTA0OWZkZGMyM2NhMjgzM2NkNzU0NmY5MzUwN2EwZTY4MzAxMmYyM2Q0OWUyODIxZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzN2U4ZTBhYzJkZGQ3Mzg5Y2IwMWM5NDJmYjlmOGRmNDliM2U2NGZiMmEwYjkzOGYwMTFkNDZjY2IzNjY5YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4MWE1NDE0NGZiOTRiYzk5YzkwZjUzN2E3YzU5OTY0NDY2NzQ3ODdlMDQzNzFlM2I5NGIwY2JiMWU0ZDZiYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_924fdb0e6d374fac92099b172e5a847b",
+      "statement": "Normalized integration assertions sort lines and normalize separators, so raw output assertions are required to establish exact ordering or bytes.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L114-L134",
+          "version": "repo-lines-v1:sha256:f4c06d340496055a22bd81ba3d2e72f3553fce5fcc60c2552dc42cf4496c1282:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2NzY4OWM5NzdmZjJhZmE0NTAzYmY1NzUyM2JhZmEzMzdmMzAzNzRjYmY2Mzg0MmQ5NGM5MzNkZWJmNWFiODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5NmY4Y2IwODNmYTgwMGE0ZGNkMjk2OTcyMmQ3YjkyNjg2YWRkOWViZTM2NTU0OTJmYTY3MmIxYTdjZWQyNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2Mzk2ZjllY2FjZWUyMTAzZDBlMTAwNTAxNDZmYzg4MGZmNDNmMTMxMTdkYzEyNjY3ODJkMzk1OWRkMzMwNGYifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L234-L275",
+          "version": "repo-lines-v1:sha256:7cac1ab18afde912adb863e6bb7869f53908456f98d5cb52b08a813ca42835a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwNmNiM2E1Y2I5MzQ5ZTgwMzJlYjIxYzJkNGEwMTk5NThiYjM0MDBiMTAzNTlkYWYyZTViNzVkNjg3YTUwZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2OTU0NTJiNjNhODY1MTU5ZDRkZDY1ZjljN2E0YzQ2MjFjMGIxNGVkZTA0M2Y3Y2Q2YzhjNTA2Y2Q5MWQxYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmMzI1MGFmZDllNjBjMWMzNjA4ZGQxYTFmOWJkMTQyNjE5YmE3NzBmYzI3ZDBhNWI1N2I3OTZmNDliYTU1NTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3163dfd2bc3a4b7ea427d3deafdc55e4",
+      "statement": "CI includes formatting, Clippy, MSRV and platform jobs, with ARM and AArch64 matrix tests restricted to the binary target.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L182-L198",
+          "version": "repo-lines-v1:sha256:0914b3a341771746b182b82cd395990dfeaaafb042d95ecd3d11579eae56b9a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzNjU0NzZjN2RlOGNhM2YzYTVkMTE5ZTZlNTg1NGU3ZjY0M2ZhMTkwMGZmZTI3ZmRkOWIyNTk0YzQzZmM3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTVlYWVlYTk0MWFlMTNjYjkzNmU2YjJkOGY0ZDhkMjM4YzY4NGE2MmY1MTRkZDRiOGFhODY0OGJiN2VhZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljODlkYzM4YjM3ZDNhOTFiMGU2NGUzZGVjOGRiZDQ4NmVmYmM3YmJmMGU0NDMzOTU4YzMwMTg2Mjg0MDY0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwMzg1NjA3ZDk0ZGQ0NWZlN2VmNDk1ZDk1YjM1MGRjYmU0MDIyOWYzYmU1NzhkM2Y4YmUyYTdkMWZlOWMxNmQifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L42-L84",
+          "version": "repo-lines-v1:sha256:95d13330fbc125043bb3fe2b24478623c2e9a184155021329a5991133599e5b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOGQ0NjZiNTViMGJlYzc5M2QwZjI4YWIxOGRkYjllMmFiMTg5ZjQwNWRkOGMxMzAxY2ViMmYzOGJmMDcwNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMzNhMTZiZTA5YTk5YzgyOTNkZTY5ZWRhY2I1Y2NjMzZkYTE2ZjNiMTI3YTkyM2RiNTk3NTQ3ZGEzY2I1ZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlMTg0N2E4OGUwZWJjYzczYzc5ODlmZDg5YzI4ZjBmZDg2OWNkYzQzNzQ1OTExODkwNGVjMTg2ODYwNTU5YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMDUyMTI5Y2M4YmZhOWE0Y2E0ZjI4ZjFkMjhlZTIzZjFiODZhYzBkYWY1NjBhMDgyZDcyNmNhZThlMzVlMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00a821101ba841d5aadda717eba5034f",
+      "statement": "The completion Makefile generates bash, fish and PowerShell output using fd but copies checked-in zsh and fdfind compatibility files.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L11-L42",
+          "version": "repo-lines-v1:sha256:bba863f98df82612bfbc677f098c8d4c1323d3bee9b582ad760e3c6c23c933d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMTVjODdkZmQ1ZWUwNWFmYTJmMDFiZTU1M2FmYTQyM2RhYjYzZDI1NWY0MzI3NjE0OGRmYzcwNzYxNDhjYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNjczOTc3MTNlYjI1ZDllM2MzMTNhNzcwNTMxNmEzN2M1ZDQxYWY5MjUwNzZkODVhMTdiMWY4ZjcyNjhiZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzZTBhZWE0NTZhNTBiNmY4NzllZWE0OTI5YTZlM2Q0OTQxYjA5MmRiNzMzZGZkMDg3Y2NiYzc1N2Q3ZThmNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3N2EzMGQ3ODMyMjY2Yzg1ZTk3NDc0Mzc2ZDI4YjVlYThiNTZlODcxZDVjYzY3NDg0NjdmN2FjYjM4YzIxNjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_699b18647908415fbca14a790c64b2e8",
+      "statement": "CI packages binaries with documentation and completions, uses ZIP for Windows and tarballs otherwise, and gates attestation and release upload on release tags.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L205-L245",
+          "version": "repo-lines-v1:sha256:821887f00679aa2e08d532ab55ee98ea479fb45f013ff3ac69355af275ddcf01:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwOWNlOWIwNWQwNzgyNjhkZTM5NjIxNzhlNWQ5NjhlOTJmOTI1MWZlZTgwZWM3NGI1M2IyNTUxNjEwMGRhZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZDY3YmM2ODE1ZGQxOGI4ZDNiMWViYzMzODY2ODZkNjNmZjM5ZGIwNTNlMzQ3ODc3YjdmOGE3NzhmZjQ3YzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMDVlMGJhMTQ3ZDE3MzM1MmNjZDIzN2FmZDdiMzg1MTU0YWY2NjRjMDYxNjFiNjg0OWM0ZjRiOGM1NzY2ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjYTBjYjlhNWQyMTNkOTA0Yjg2Mjc4ODVjYTc3ZmQ2NWU2NWYxOWZiNzZkZTczYjExMGNhZTlhN2ZmNGIwYWQifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L274-L297",
+          "version": "repo-lines-v1:sha256:b159d3936245b6263492838b015fa37213e1df84e76880b715cd948527956074:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4NTU1YTc0MjQ0OTM0ODMxODM2MDI3MmQ1NWQ5NTc5ODY0ODE1YjQ3MWRiNWRlMzdmZTZiZWUwYzI4YmQwNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5NTkyM2VjNmQ2ZjUzMGQ3YzU1MmI5MDhkNzlmMTNhMmE3ZTQ4YmEwNDZlNDhmM2M5OTZmNzg0ODFmMmY2MmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwYmZjYmU1ZGZjOTA2YTJlMGE4OGI5NGNiOWUzYTRjMThkOTc4MjdlMmU5N2Q5ZDMwM2I2MGYxZThmZDdkZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjODFhYWQwNDg3MjllMDNlODdiNzg3MTEwMTQ2MTg2ZWI0ZGRiN2RhM2NiN2M2ZjdmMDc0MThiMmYxYzRiYjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04d8e47c4c69487787cb0251f31fc402",
+      "statement": "The maintainer release process includes metadata updates, help review, successful CI, a publish dry run, tagging and publication from a clean repository.",
+      "evidence": [
+        {
+          "resource": "repo://doc/release-checklist.md#L6-L50",
+          "version": "repo-lines-v1:sha256:e4d935daaf2d52347459ec005d9efc604e23569d71eec3f986c6deebc68a458c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5ZjlmYzYwNmI4MDRlMjY1ZDEyNzE0OGI4YWUxNWZlOGVmODU4MGEyMGZlMWVjM2JjMDliZjYyYmUyYjNjOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4MWY0OTM4NzU1MTJjY2UyNTRkODM3ZmNlZjVkYzBlNDQ0YzRlYTY3MDhkOWM4M2VkODliM2Y2ODhhMjk2MzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlMmQxM2FhMzlkZWFmMjE5NTJjZGZjMGEwMzQzNDkwNjhjNzZlYjRkYjUzNjZiNTBiZjMwMWM1MGMwYTFlNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhMzNkMjhhZWM2ZGJmMmRhMTRiNGYwNzY2NmEyMTY4MTU3ZWUwMTM2ZGM3N2NiYmY2MjdkYWRjZjJmYjliMWUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:13:39.635Z"
+  }
+}

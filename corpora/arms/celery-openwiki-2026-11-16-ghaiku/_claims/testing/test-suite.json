@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d9ddfb2ea9ba32055685a93760b313127892ff4c8b7d775db56bf981f5ee8198",
+  "claims": [
+    {
+      "id": "claim_867b840a89174a659e734eafc791ec46",
+      "statement": "Bare pytest runs cover only t/unit, because pyproject.toml sets testpaths to t/unit/ and enables --strict-markers.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L1-L6",
+          "version": "repo-lines-v1:sha256:226a7d275f40c4bb8edd83a7c84b130879d7bd905189b65e114e357c27a80846:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY3NmU2NDE0NjVhNjU1MWU5ZTljZmZkN2ZhYTFlNmE0MmY5YjcyNDgwOTgxM2M5MDNkN2VkY2I1MmYzMDA2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjNkZDQyMDQyZWEyOTZlYzM5YzgyOWEyMTljZTQ0ZDkxOTBmZjZiN2U1OWI1MWI3YjliNGQ5Y2VhZGI4OTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWRkN2VjOGI5YmQ4ZWI4ZjljYzU2OWNmNGFjYjA1NDE5NzlkYzk3MmQxYWI1YTNiZjAxMmZlOGUyZTEyYzZmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9074cd6ebfdf4568808c8924445d075b",
+      "statement": "The tox unit environment runs pytest with coverage over the celery package, and the integration and smoke environments run pytest against t/integration and t/smoke.",
+      "evidence": [
+        {
+          "resource": "repo://tox.ini#L24-L29",
+          "version": "repo-lines-v1:sha256:7f54c8cba65e1d8f770849efc5b968bc3663170aa53e4e3b3d64e0ba636ac0d0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2M0MmNmYzBkZTUwN2FkM2NiNDhmNzcyYWU5NWVmYjdiNTYxN2E2NTM1NzI2MmViYTJjY2M3ZjBiN2RmM2JmMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWYzYmI2NjE1YzNjOTRlYWVlNGI2YTVjNjNhMWU0YjZjMTNlNjkyMTFmMDU0NjQ0MWI1OWRjODViMmRiN2QzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYThiZjFiMDE4OTNjZDhmNTA3NGY1NzRjYzk0ODc1OWJkOTEzMTk2NDdjYTAwMGI2NjdiZTA0YmJiMzZkYTk1ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_42e8ce75c1c447789ab40061ae817e3d",
+      "statement": "The tox envlist defines unit, per-service integration, and smoke environments for Python 3.10 through 3.14 and pypy3.",
+      "evidence": [
+        {
+          "resource": "repo://tox.ini#L4-L8",
+          "version": "repo-lines-v1:sha256:972703addc6d8d2c9a24c407e43fbdd9743fb1785a3158a877ff73c6d3ee538f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2I4N2ZkMTc4YTFmYzFkYzMzM2ZmNDQ1NzhiNzAxOGFlMGI4Nzc5YzcwZmIyZThhZWQxZWViZGFlYTU1MDk1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTJkNTI2NWMxMGEwNjhlYjAwMzhmNjkyNzA2OGQ2ZjE3YzI1NDhiNzkyYzFlODI0YjQ5MWZmY2M4MTkzZDk3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDg4MWZkZTk5MmQxMWQ2NDZmYzYxOTg1ZmViN2VjZWNjZTMzNDhlMzE5Mjk5ODBmYWE3OTIyMGNhMTU0ZmMxNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dab3b9aa321a48b5a2b2651100b90512",
+      "statement": "The Makefile lint target combines flake8, apicheck, configcheck, and readmecheck.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L86-L100",
+          "version": "repo-lines-v1:sha256:31ad21a96d4d3915068675f5077b32aa6a8de96b6bf563e2407e6ef74ac56da5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMzc1MjQ5NjBjZDI0NDAxNDBlNTZiZTVhZjA2ODc1NWNiYWUyYjViNTY0Zjg0YmYxMWNjNzU1MDg4M2JlMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExYzFkNzY1N2MwYTc4ZjM5OGIxMWRjNDc2ODA1MGU4ZTYxYWY0MTg4ZTVkOWEwY2Y4NzBhNmRjZTM4MTUwMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyYWY2ZTUzM2U5ZmY4ODg1ZWUyZjU0NzkyMzk1NjJjYmY4MTcxNzMyMjhkM2JlZmY5MjkyZWU5ZDQ1MGFhODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1MmQ1YjA5MzNiNjg3NjZlNGRmYTc5ZGNjNGI5ZWMzMTA1ZmJmYmQ4NzQyNTQ0ZWUwZTIyMzlkNmVlOTdiYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00cff9ebf8f94c22b1c6a331bef51c02",
+      "statement": "The unit suite's session fixtures include celery_config and AAA_disable_multiprocessing, which applies to the whole session.",
+      "evidence": [
+        {
+          "resource": "repo://t/unit/conftest.py#L128-L129",
+          "version": "repo-lines-v1:sha256:4a86321adce6947364a1402fc9acfb8d1de8e3bd4465c58e04e215911ca9c0d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzc2NzYwYjFmOGYyNmMxN2ZmZTQ3MWEwMTc0MmMyM2VlNDQ1YjNjOThmODQ4ZWEyMWE1Yjc4ODA1MDIzZmRkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBlZjMyNGQwNWNlZGMwYjk5MTgwMGM1NTJkYmE3YTk5Nzg5OGQ5NzU2NjM4NDVkMDVkOGY0NTFlZGQzYmNkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWRhNGJmODAyMDdiZDM4ZmJhM2JmN2VkYjY5MTNiZDUyYzYzN2QxOGM3OTc1ZDg0NGMyOWY0YjBlMmNiZWQwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGE2ZjJiY2QxZDQ4NWYyYjM1YTZjNzhjYTQxNmM5NzBlMWJhODlhNmI4NWMwOTFjMjhhZDgyMGQ1NGRjYTg2YiJ9"
+        },
+        {
+          "resource": "repo://t/unit/conftest.py#L59-L60",
+          "version": "repo-lines-v1:sha256:db62a7622f65d1aeb2bc0a11825d6299f2fa6bb412f35ab707c7a86fea61ed56:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGVlMjc1Njk4NzNiMmJjOWE5NzBiNGY0NDFmZGJhNWRhODRhMzcxMTY3OTlkZjM0YWI0YWM1ZDJjNTY2ZDI0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDZmYmYzYTk3YzQyOWY0ZTVlN2RjMDBmNWZiZWI2ZDFlNzk5ODFlMzFhYWE2OGQxMDkzNjJkOTE1MTRhY2Y5NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzJiMGYxMTg0ZDVmNDYxOWY5MDFiOTllZDgyNDg4ZTA0MDdiNDY0ODlkYzdkZGMyOWY3Y2Q1ZTlkMzFiNTI1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTIyYzQ5ZDk2ODBjNDE5NTAwYjliNmI4M2ZlY2RhYzhkOGExOTg0ZDZhYmNhYWQ0NmQ3ODRmYjFmMGRhYmQzOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_33320b7ecdbd4279a01b9aafd2ba034e",
+      "statement": "The integration suite imports the celery_app, celery_session_worker, and celery_worker fixtures from celery.contrib.pytest.",
+      "evidence": [
+        {
+          "resource": "repo://t/integration/conftest.py#L9-L10",
+          "version": "repo-lines-v1:sha256:c48dfa8c33450bfbaeafb9b5711923e38b8e90b92e829c8ae15973a96c7fb5ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTVjMWY3MDJhNjZkMDNmYTczNDIzYWQ2MmEwYTcxYzY0NjE1MzM2Zjk5MjA0Yjg0OWVlYjcwOTc0NDE1OGU0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZmNjE0MDI5ODQzODk4M2ZhMWVjMWQ1NGYwYzI3Mzk2MzYxZjlhMzZlM2YwYzZlYWY5ZjVkNGI5NzllODIwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGY2OWM0MDQwZDg0NmFlYTM4OGVhNTY0YjNiMjc1MDMwZTU5ODcxMzAwMTVjNTM5ODkwMzgwY2M0M2M4MjRiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjI3ODY1MTZhM2ZhYmRhZTRmMjZlNTAyZTU0NTFkMTRhZTlhZjMzYWQwNzJjYTFiNjY2YzBhNGNlZDcyZmFkYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e4f277868e24b8bb1ca10ee32bb37d3",
+      "statement": "celery.contrib.testing.worker provides start_worker, which runs a TestWorkController in a thread or a process.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/testing/worker.py#L100-L110",
+          "version": "repo-lines-v1:sha256:3d9b06f9747b5ab06fb386ed632705f3a35f64d05729cf5d8c87e52012d6245d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MDc3YWRkZjc4YTlkZTY5MzE5N2JlYTg3MTEzOTk0YzliODFiOGY4M2YzZTZkODRlN2JiNTg2NTIxYWY3OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0MGFlN2RlOGI0ZDUzNDBhZWEzOTgxOWQ5Mjg2NjI0OWNkNzI2N2I0M2Y4MmU4OTViZTI4NmNmMzVjNTUzZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5N2I4YTg4ZTYzYTY2NGQwM2U1NzU2YWJjOGJhMTkwYTcyZWRjNDU1OTMwN2YzYWZiNDJhNzFhZjNjYzMxNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5Yzc2OTE1NDU3MGE5ZjYwNjk0NGY4OWZhYTJhMzgzNTdhZWZmZDEyZmIxNWJlNjQyY2ZkYjUxOGY4MjZmYmUifQ"
+        },
+        {
+          "resource": "repo://celery/contrib/testing/worker.py#L140-L142",
+          "version": "repo-lines-v1:sha256:cfd9cd9de80204a62e1800244ae354caa481eaa770ad499685cdc6a29264c57a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZThjMDdhNDU4ZTY3ZTk0OThhNTcwYjM4NDlmNDE2ODQ2MWU3NWEyMzE5ODc2OTkyMzEzYWE3Y2NjODAxNGI3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA2NzE3Y2E0NmQyZTc0NTViODM0MTM4ZmEyZmMzMDRiOWQwYjczMWZhNDZlMWNmYmRjMTE4NTQxYmJmNjhmZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzk3YjhhODhlNjNhNjY0ZDAzZTU3NTZhYmM4YmExOTBhNzJlZGM0NTU5MzA3ZjNhZmI0MmE3MWFmM2NjMzE3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQ2ODA4NmQxYjJmMDA1MDhiNzgwYTE5MGJiZTQ3N2U1ODE2MjNkY2ZiM2FkZjgyMjQ0NTVjNjYxZTY3NmUwNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f61adb4e474546a0930fb12536a78515",
+      "statement": "The smoke suite imports the TaskTermination and WorkerKill operations helpers in its conftest.",
+      "evidence": [
+        {
+          "resource": "repo://t/smoke/conftest.py#L11-L12",
+          "version": "repo-lines-v1:sha256:a1de075daf57106960f08f8a409edfda01a9ee4e9e4f5b773f53d03d5222f43d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODlkNjljMWUzYWY0Zjc4MGJkNzRmZmYyNWZlZDdlYWY4YTZkODk2ZjI4NTQxMzcxMDNjYmZhODVjNmViMzU1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTJjYjYwYTdkMGE1ZGIzODM1ZDkwZjQ4NWFhZGI4ZDc2Nzg2ODM4Y2E0YzAxYmY1NzRhZjYzYmUzN2M2NjY0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDE4ZDQzNDZmZmVhNGE1NTU0Y2RlMjQ3MTUxMzA2MGQzNzA4MjliM2E4MDhiMGJkMmRlZGI2MWFlOWM0MGZkNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWFmYWUzYjYxNTY4NmRlYmQ3YzRmNTFiNmU2NzQzOTg0ZTI5Y2U3MzFmZjAzMTEwYzk4NDllNDZkNWNmZTEwNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd0511404b3f4d2ab3bb7498c6e34e73",
+      "statement": "The openwiki-update workflow runs the OpenWiki generator and opens a pull request with the result.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L31-L36",
+          "version": "repo-lines-v1:sha256:cd949520ab3047483c010f806e1b591b69d310b82346f46a8343ef62db79e899:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTc2MDg2MDNhNzFkZWY2YTE5ZTY1NDcyNDI0ZmFmNDcwODkzMGFjNGU2NjI2Zjk5YjA2ZTVmOGFkMGRhZTU4OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQxYzYwZDgzNTk3Yzc2Y2NhNjk2YWFjNzRkZmI3YWM1ZGMzMzYyZmU2NTFmOGNhYjVhMzA0OTk2MzAxN2Q0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzQ5MzIwZGM1NTZjZmEyZWExYTM0MzljYzg0OTZmNmU4MDVhOTg0ZTU2NGFmODQzNzNlMDA2NjI3ZmZhMzVjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzkyNDc3MjE0NGE2Y2E1MWEyOWM2OWNiODQ5NThlZjUyZmM4ZDRhOGYzN2Y4YTE1OTllNWQ3NGY5OTk0ZjYwNSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:42:35.525Z"
+  }
+}

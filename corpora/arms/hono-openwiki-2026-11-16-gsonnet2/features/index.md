@@ -1,0 +1,6 @@
+# Files
+
+- [Helpers: Streaming, SSG, WebSocket, Cookie, Factory and More](helpers.md) - Overview of the src/helper modules, including streaming and SSE, static site generation (toSSG with hooks and plugins), the portable WebSocket abstraction, cookies, createFactory, route introspection, proxy, runtime detection and the testClient.
+- [JSX: Server Rendering, Streaming and DOM Runtime](jsx.md) - How Hono's built-in JSX turns JSXNode trees into escaped HTML strings with async buffers and callbacks, isolates context per render with AsyncLocalStorage, streams Suspense boundaries, runs a client-side virtual DOM, and integrates with c.render via jsxRenderer.
+- [Built-in Middleware Catalog](middleware-catalog.md) - Catalog of middleware under src/middleware, the shared factory-returning-MiddlewareHandler convention, HTTPException-based error signalling, and detailed behavior of jwt, cors, csrf, body-limit, serve-static, combine and context-storage.
+- [Validator, Typed Routes and the hc RPC Client](validation-and-rpc-client.md) - How validator() parses and validates request targets and feeds typed input to handlers, how Env/Input/Schema generics make routes type-inferable, and how the hc Proxy client and testClient turn the app type into typed fetch calls.

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e458c05c6eb96637ede6a09f343a55bf89f6ac22b91e3f36a80b905e4ce8230c",
+  "claims": [
+    {
+      "id": "claim_eb245a3221054877b5a50a4c2bc84d3b",
+      "statement": "Integration tests run the compiled fd binary located via CARGO_BIN_EXE_fd against temporary directory trees created by TestEnv.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L147-L158",
+          "version": "repo-lines-v1:sha256:df1804b38c17ac4c927f3b398526f6abdf32562cf505d52a00f7fd1de51203d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyYjNmZmVlM2NlN2Y5MTZiZDIxNTRlNWNjOWUyYTAxYTE1ZGI0OTRiYzNhZDdjMjcxYzMwNzRkYzIxNmJkYTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkNmI1NWM2ODQyOGJkOWU4ZDZiNGU0Y2YwYmJmYmI4Mjc4MWEzMjU4NjEwYWU5ZTAxMjI3NzA0NjM1MGQwN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmNDliYmQ0MzkxMDMyYTFiNTJhZDUzYzQxNzQ5OWZlNjllNTBiMDA0Nzk4MzExNzE2MjVlNTUxMDdhNjc4NmEifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L75-L79",
+          "version": "repo-lines-v1:sha256:5bcd015fbdf5b1025bef704f64dd4d34d1ba23ee7e9e2b743c3bf3f93e4161c7:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFjZmViYjNjODNjNWNkOGUwMzc3NGVjZDRlOTdmNmFjNGZkMzlkYjJlNGUzZTQ4NzRkMTg5MDU0NzgwNTc2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2Y3ZDNlNTA3ZWJmNWFhY2JkZDJkNjRmN2I3NjZlNzBmNTY4YzU0MDU5MTAxMTA4NTMxZGM1ZTU1OTBkMjUyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDZiNTFjNTUyZDFkZjdkYTc2YTBiMTBjZjljNTY2MjYxYWFlOTY5Zjc2M2VkYzlmMTkxOTA1Mzk1MzY0ZWJiZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3aa87cbf6f1e4abe952babb73117842c",
+      "statement": "TestEnv creates a fake .git directory, the requested directories and files, a symlink to one/two, and .fdignore/.gitignore files in each temporary root.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L28-L63",
+          "version": "repo-lines-v1:sha256:04a1cc106870d877fb10553f7b8c4cf69a5ee525b0f3e97b9c2037abf7b3210b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNWRmNzE0ZTdkMWJjOWNjYTdiZTFlZDZlOGFjMDA3ZjJlZjQ2NmYzMjMxNGM0MjQ5YTczNDlhMDE0NzkzY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNmIzNDYxMzg0ZDIwZDgzOTJiMmZiZDE4ZDQ5NWQ1YWQzMTU1NmU5Y2M0Y2Q4ZDU2ZjczZDc1MjdmMWQwMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4NTZmODJjZjlhODFjNDdjMTc0MzY5MWY5YWI1ZTBjOWE5NDlkYjAyOWM2Y2Q3NjVjNTM5NjU4ZTM4OTQ0M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_97967683d3da45549332b5932238027e",
+      "statement": "Each test run passes --no-global-ignore-file unless a global ignore file was configured, in which case XDG_CONFIG_HOME points to a temporary config directory, and LS_COLORS is set to empty.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L302-L318",
+          "version": "repo-lines-v1:sha256:f81aa184876f0628e220291ca376b13e784041120e2927dcb5ede996da6a1974:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1NDViMzJkMTNhYTJhYmI0ODVkMTJjZDhjYTk3NjIxOTExOWZiYzFhYmQ2ZTliMzJjMjg5ZGI5ZWJiODViNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkN2MxNDhhYTQyOWFiYWYzYzE1NTQ0ZDQ2OWZjMGQwMGFiODU1MTIyOGRhODY5YmUxMGRlNDZiOTBhYTQzN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3NTk3ODEzOGI1MWU4YmYzNWYyZjU2OWJlZWQ2NjhmMDljZjM1ZTgwMzk4YTgwNjI1ZDRjNTkyMDkwNzlmMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzNDZlZDA1ZGM2Mzg0N2UxNDBhMzhkMzAxYTdhYzQ4MzQwNTk1Y2YxM2NlNjM1ZTUzZmI1ZWUyZGJlYWJlNTEifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L65-L73",
+          "version": "repo-lines-v1:sha256:c9326ac7be7ce3f51dca243406ae61e65491f5435385e3602672334c1b7eae89:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWNjZjcwNTk3YTJjMTUzNjA3MzdjOWE5YmQ4MThmNjhkYzUyODdkYjRhYzI2NGQ3YWU3OGRhZTE5NmI5NGVmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjEyMjc4MjBlYTBmNzIxMDVlMmQ0NTM3Mzk1MzBjYTMyNjc4ODZjZjliOThkOWY1YWEzNjA5ZGM5MWQxN2IxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWJkMzY0ZTBiNGU0ZTc0NzNiODRkMDI0OGIwMGYzOGRjODAxMzQxNDkwNjBjN2U0ODg0ZTcwODcyNTgzNGFiNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a07d551cb09f41c38247476528934ba9",
+      "statement": "Output comparison normalizes NUL to 'NULL\\n', trims leading whitespace in expectations, converts '/' to the platform separator, and sorts lines, making tests independent of output order.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L114-L134",
+          "version": "repo-lines-v1:sha256:f4c06d340496055a22bd81ba3d2e72f3553fce5fcc60c2552dc42cf4496c1282:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2NzY4OWM5NzdmZjJhZmE0NTAzYmY1NzUyM2JhZmEzMzdmMzAzNzRjYmY2Mzg0MmQ5NGM5MzNkZWJmNWFiODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5NmY4Y2IwODNmYTgwMGE0ZGNkMjk2OTcyMmQ3YjkyNjg2YWRkOWViZTM2NTU0OTJmYTY3MmIxYTdjZWQyNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2Mzk2ZjllY2FjZWUyMTAzZDBlMTAwNTAxNDZmYzg4MGZmNDNmMTMxMTdkYzEyNjY3ODJkMzk1OWRkMzMwNGYifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L262-L277",
+          "version": "repo-lines-v1:sha256:ad45c3496b07936c53c757fe0a62ca408677f5b19d779b58af228ae68b8f2550:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMmZmOTdiYmRhNjZhN2Q5YzZiMmYwNjQxNzhlNmY1ODBmY2U5YzVkNjczOGE4ODNhMmYxMDk1MzAwOWU3NGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5YzNjN2IyZTM5M2YzYTJkNjA0YWVjNmRmMWY3MTE5NDk2MWUzM2UwOTEwZjhhZjg0ZWMwNTY2YjlkZDU5ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3YzRhNzFhNWU0ODI2ZjlmYjFkMmUxZDRjNjFkZWVlYTIzM2IyMjA1YTEyOGQ2NzRjNDYzZmQ0YzAyOTE2M2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bff7cc2befb2403782762f40c6b178b9",
+      "statement": "Error assertions check that stderr starts with the expected message, and failure assertions additionally require a non-success exit status.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L280-L298",
+          "version": "repo-lines-v1:sha256:126056dbaee646b41fdb89da2e629403ee29a03d47c67e9a4573d03dc7b3b196:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0N2RhMWI4ZDMzYTZmYmNjNTU2NzUyZmEyZGFlMjFmOWE3ZWQwZDQ0ZWVlYzhhYzM2OWQzNGIyMWU0MWMxNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkZWQ5NTEyNTRlYjIwMzk2YzUzYmM0MWIwZDM4MzVjYmFiZTYzZWE1YWZjMDNiYjBjOGJmMjgzMzEzZTNkODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3NTk3ODEzOGI1MWU4YmYzNWYyZjU2OWJlZWQ2NjhmMDljZjM1ZTgwMzk4YTgwNjI1ZDRjNTkyMDkwNzlmMmUifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L322-L340",
+          "version": "repo-lines-v1:sha256:14425c89b3768cb5860c092f7d72833fc4e2d775c2306ac622ef2ff7c7b64fed:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4ZjVjYzM1M2RmZWEwNjc2NjVjNDZiMGRmN2U0OWFlOTY1ZmU5NWQ1ZDY5ZjU3NTY2NDRiNTQ5MWQ0NGU1OGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzNDZlZDA1ZGM2Mzg0N2UxNDBhMzhkMzAxYTdhYzQ4MzQwNTk1Y2YxM2NlNjM1ZTUzZmI1ZWUyZGJlYWJlNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmNTFlZTAzMTc5YjA4MWExZmZjNjRiMzc3NzUzNWIwNDYyZjNlOGFiM2I0YWM5ODY2ZWVlMzNlY2QzNTNhZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5d77aa96f3d42318fadb572969600ef",
+      "statement": "Time filter unit tests inject a fixed current time through a thread-local TESTTIME used by the test build of now().",
+      "evidence": [
+        {
+          "resource": "repo://src/filter/time.rs#L12-L26",
+          "version": "repo-lines-v1:sha256:9aa3331e6aa3654094b9351bd0d502b95911bfd6f03fe1d88a39cfe8098aa46d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzM2QyNzY0N2Y3MzQ1N2RkODE2MTJiZWNiY2M2NWJmYmE3ZDk3MWY4NTk0MTFmODZiZGRjYzg5ZDFkNWIyZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjZmFiMTQyYzEzYThiNjA1MTVkNjExNTUyZmRjN2RjMzIwMTk2MjdlZDQzNWZlYTk2NWVmMWUyNjQyMGQzZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwZjhhMjMxZGFhYTFjZDdhZjQyZTk3ODk0YmI3MjllZWIxOWRlY2RjNjQ1YmM1NDNiNjNkOTQ2ZGYzZDQ1YjkifQ"
+        },
+        {
+          "resource": "repo://src/filter/time.rs#L70-L95",
+          "version": "repo-lines-v1:sha256:71cec476bab45f66ad12edeb3611c32c3d7855cbe7402fd2abaf90b4c3678448:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4YjViYmQyNTA1ZmYwMzFiMDY5NTI5ZWIzMWU2NTcyYmM5NTc3MDgxMDA1YTNhMDY3NWIwNTgyNTBkYmQ3M2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1MDNjMzg4N2Q5MDFmY2ExMjk0Y2M2NTYzOTU3NzA2ZGY5N2QzYTgxOTRlODM1YWNjNDg5MGIyNTg4NGViODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1M2M2NGE2Yzc5YWRjYzkwNTgyMjZlNDhkYTNmMjlkMThhY2Q2N2Q4M2Q2OTJmZGJlZjE2NTI5ZjIxMzAyM2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a3deedf587c64e49a35e512d37169e23",
+      "statement": "CI runs only the binary's unit tests on ARM targets and the full test suite elsewhere.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L182-L198",
+          "version": "repo-lines-v1:sha256:0914b3a341771746b182b82cd395990dfeaaafb042d95ecd3d11579eae56b9a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzNjU0NzZjN2RlOGNhM2YzYTVkMTE5ZTZlNTg1NGU3ZjY0M2ZhMTkwMGZmZTI3ZmRkOWIyNTk0YzQzZmM3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhMTVlYWVlYTk0MWFlMTNjYjkzNmU2YjJkOGY0ZDhkMjM4YzY4NGE2MmY1MTRkZDRiOGFhODY0OGJiN2VhZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljODlkYzM4YjM3ZDNhOTFiMGU2NGUzZGVjOGRiZDQ4NmVmYmM3YmJmMGU0NDMzOTU4YzMwMTg2Mjg0MDY0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwMzg1NjA3ZDk0ZGQ0NWZlN2VmNDk1ZDk1YjM1MGRjYmU0MDIyOWYzYmU1NzhkM2Y4YmUyYTdkMWZlOWMxNmQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:05:54.272Z"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:750ef2f90830bdf50d48c5aed7bdf7212fd762a3ab12d8e436793522e9df4612",
+  "claims": [
+    {
+      "id": "claim_e5bb9cf60f1e4b35ac134346b2ceb646",
+      "statement": "print_entry optionally wraps the path in an OSC 8 hyperlink, prints it using the --format template, the colorized printer, or the uncolorized printer (in that priority), and terminates it with NUL under --print0 or a newline otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://src/output.rs#L17-L43",
+          "version": "repo-lines-v1:sha256:99f8ac8e63a12548c276692cbe9450f89bec940d31c19ae36ffdde1d8ec14aae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5MTFkYWU3ODJhODk0ZTFkOWRjMzBlNmYzZTYzODRlZjFiYzkwN2M4YWE2ZTMwZTdhMTRhYTExNGUzYzlkMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ZjE4MjBiZTEzNzBlMjFmNDhkNDM1M2IyY2QwMzQ4MmM5MjJlZGJlYWJmZjZiZWI4ZTZhMDY3OWZmZDYzZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwODliYmY1NmQ1YmZkYTI0ZmQ0ODY1MDc3NTQ3OGQ4ZTBkMzI0NTlmYjM4OTFhYzA4NmIwYjRiYjZjMGU1OTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9719a07a87a4de5a57f4f8ae3f9d225",
+      "statement": "stripped_path removes a leading ./ when cwd-prefix stripping is enabled unless the result would start with '-', in which case the original path is kept.",
+      "evidence": [
+        {
+          "resource": "repo://src/dir_entry.rs#L112-L114",
+          "version": "repo-lines-v1:sha256:c458e2d68abee87efc5b4de233c890779994d8c380dbb7d9312541d31ec48af2:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBlMjZlNWNjMjcxYTdiMTdmZDBiZjE0NDJhOGViMDNhMzU5NjJiYjQyNjM3OTE0ZWQ5MGRhYjdjMTMyMmViNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQwNzQ3NGNlMWM2ZWQ3MGQ1OWM1MzQwNTlmNmVmNGE3MTlhYjA0MmM3Y2JhYzVhMWMwMmE0NmM0YjJmMTA0NyJ9"
+        },
+        {
+          "resource": "repo://src/dir_entry.rs#L56-L71",
+          "version": "repo-lines-v1:sha256:828a687661ae9fd6f1f51c392c98d1b36d4aadc2d319ea056d58d66903aecafe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0ZjBmNzc1YjU4NmY5OWU4ZDk1ZDE2N2ZkYTUwZGE5Yjc1N2E2Y2ZlMWUyY2U0YmM1YWYxNjZkZjIwNmE1MTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyNzMwYzkzYTcxZTExNzQ2N2VkY2QzNjkyZmNkNGI1ZTczYTA0ZTQwNGIxYzNmNWE0NTBjM2UyMTEzMDBjYjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_53a4842e55c545748a0add32389d68ce",
+      "statement": "Colorized output paints the parent directory prefix with the LS_COLORS directory style and the final component with the entry's own style, and directories get a trailing separator in the directory style.",
+      "evidence": [
+        {
+          "resource": "repo://src/output.rs#L88-L139",
+          "version": "repo-lines-v1:sha256:63a3fa0fe7e942159f8681698aee660c938abef9d2d96eb5729350596f51a099:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkZGQ2MGZjY2M3M2I3ZTM5OWE3ZjYxOWI4NDhiYTEzMzA2MzNmMjczNDg0NTUxNDVlMDY1NzdmZmM5MGNmNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5NmY4Y2IwODNmYTgwMGE0ZGNkMjk2OTcyMmQ3YjkyNjg2YWRkOWViZTM2NTU0OTJmYTY3MmIxYTdjZWQyNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4MWFmYjdlMzAyMzVhYmEwYzdiMDAyZjUyNDFlYTJlNmZhMzhmNjNjODhiODI2YTI4MjRkNjkzNzdhZjljZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68c95cea4a8b435ab8ff9979cf77595b",
+      "statement": "On Unix, uncolorized output to a non-terminal without a custom path separator writes raw path bytes so invalid UTF-8 names are preserved.",
+      "evidence": [
+        {
+          "resource": "repo://src/output.rs#L167-L182",
+          "version": "repo-lines-v1:sha256:c6e35c3f3bc52cf48d5186aed7e167f8f7a44d6910db8fcd1fcb6b595dea11be:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZTFhYjJmOWNiZGI5MGQ1YWM5ODhhNDY3MjUwMjFkYmM1ZDllMjE4NWZiNDUyN2ZmOTYzNTIyYzk0MTIzZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlZDI0NDg5NWMyMjgxODFhZWZkM2YxY2FjMzZlMGMwMzJmNzgwZWQ1YThiYWIyMzQ0MTEyNzNmYzdlYWI1NjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af6459376c8045669fa996d4ba9eecd6",
+      "statement": "Directories are printed with a trailing path separator (custom or OS default).",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L257-L263",
+          "version": "repo-lines-v1:sha256:c6ca8dc71b3a44da45d502fa6965f0698e9109fdfca1c691d986da60c15018f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGU4NWFmNzE0MzYyZmRjOGNiZWMxNzYxZDJkNjk5OGRjZDg1NDU5OGQxNmI3ODYwY2NiNjcwNTY3OTU1NTdiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDU5ZGI0YjBmMzY3YzBjOWNkMzJlMDU4NzMxZjJlZDNmYWZlZjcwYjY0N2ZlMWU5MTNiODNiY2Y1ZjcyMTY1NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDE2YTE3OTllM2IzNGRiZWI2NzQ3NjRlMjc4MzI4ZWRjMGNlYWE2YTE3M2IzMTc2YzM3ZjA4NGQyZmExYWQ4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjZhMTgyNjBmOTcwN2U1YjFiMTQyODAzYzI1ZWQ0ZWIwMjA1MzJiYTM1YjEzNDYzMDZlM2UzNDc5YzE2OTcwMyJ9"
+        },
+        {
+          "resource": "repo://src/output.rs#L45-L66",
+          "version": "repo-lines-v1:sha256:8fc2d86f8e5e6cc65350108343966da030a4e95a8878f7d4d906dc8f43797147:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzYTBlMTZkOWI4MTg1Yjc2MmRlM2ZjNGY1ZjA3ZTJlODgyNmExNTBkNTQxMjBmMTQyMzYxYWE3ODNhZTk0ZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1Yzg1OTFkN2M4ZmE2NWJiODRlYjE5NTU5MTBjOWFkYTQ3OTY2NmY0NmQ5YzQzN2U3OGFmN2IzMDIwYTZjNTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0dc4e816c22e4314a5e434952dfc1b0a",
+      "statement": "FormatTemplate::parse uses an Aho-Corasick automaton over brace escapes and placeholders, returning plain Text when no placeholders are present.",
+      "evidence": [
+        {
+          "resource": "repo://src/fmt/mod.rs#L51-L107",
+          "version": "repo-lines-v1:sha256:c66ddb66cfcd2390216c5879a441f54d35d27826421ce3f8b707d44145c0d6f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMDY5MzBmODQzOTZlZmQyYmIzMWYwMDJjOGQyOGNlMWJkNjYxYzlhYWVmOWFlMTRhN2U0OWNjMWQxMTc2Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxNDk2ZDM3ZDA0NDc2ZDJlZThlN2FmZDUzOWFhNjM3NjczMzk2YWZjOThkM2I0ZjQ4YWJlMjc0YWQ0YjE0YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5NDU1NDkwOWVmMzBhODJiYThlYTJkODI0YTFmYmYyYTk0NTM1MGNhMTg0OTIwYmJmOTJkYjU0N2YxYjJiNTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_571ca84313ca400cbac4af41be047de3",
+      "statement": "Custom path separators are applied to placeholder expansions by rebuilding the path from its components, including Windows UNC prefixes.",
+      "evidence": [
+        {
+          "resource": "repo://src/fmt/mod.rs#L143-L180",
+          "version": "repo-lines-v1:sha256:782e0f45f6e00ed51159b966ecde93c77a252e188e2c91e2eec4fa17642efbf6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4NTk2YzA2MzNiMDhjODk2MGExYmIxNzY2YmI5M2ZkNTk2ODRhZjRlZjdjOTFmNDg2NjVhN2MyMTIxOGY4OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkYjMzOWMxN2Q0Y2M1NGU3MGM0ZmNmZWNiNjExYmI5ZTdkMzYzZjI1YjE4ZTA5MjNhMWQzMDZjYzk1OTI0ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwYjQ3NjEyMTkxOTIwMjhmZDRjZGMyOGIxZWY2ZTExNjVkODI0OTNlMGM1MDJlMjdkYjA3YjRmMmEyNGJmYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2c7a033fc1047f9bb41a3916ab17336",
+      "statement": "Hyperlink mode defaults to never, a bare --hyperlink means auto, and auto follows the color decision.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L532-L548",
+          "version": "repo-lines-v1:sha256:9a37b695fda2b622b2f7477db584525a93a6f191befdab63512b5a5167734178:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlYzkyNWJhZGRjODc1NDAwYzNmMGFjMzg1M2ZhYjk2ZDdlNTQ3MzViZTBmZmIyMTI4M2QzNDcxMDQxNWEwOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5Y2VjMWI3NzVkNWM3OTYxMGNhMzA5MWNjOWRjYzE5OTdhYjgzMjFiNDE3ZWQ5ZGUwYjc2MTU0ODEwMDE3MTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1YjNlYmU3YmRlZjc2MjMxNTQ2ZDU0NmZlNGQxNGMzMDJkZmU4NGY3N2VhZmY2MWY5N2Q5Mjg0YzlmYjFhOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjODQzMjdjY2FmNTY2MGY1ZjczMjA5YTJhMjM1ZmY0NTIzMmI3NDliMDVlYzA2OWM5MjQzNzI5YmY2ZDg5NTEifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L293-L297",
+          "version": "repo-lines-v1:sha256:438fb549b08582716c911449cf2bede5bb7df0a1197294bad71a454f98e7fee8:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjVkNjJiZmM5MzY1YTE0MDkxMWZjOGE4N2M2YmU0MWQ3NWUxOTY5YWQ5ZGJlMGU1NzZhMTQxYWFmZDFjZTg2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ5ZTEyNTQ2NDI1NTc2ZDNkZWFlOGM5YjlkYmYxMjhkNWQ2ZGRhZjVkN2ZlODU3OTM0OTI3ZGVmZmEzYjlkZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODE4Zjc5ZDUxNWU0NGIzOTIwMzYzN2ZjMmZhNmU4NDdmZGNjNjgwZmYyZGFkNzRkOGNjMzAzMmY5ZTEwMDYzZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmYyODY3NDM1Yjc3YjlkNzQ3MDgwZGFkNDI0YWJkMTczNjZmY2YzODEwYzAwNTFmNjZkNGNhMjNmNjljNjYyMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b49ba97513434b51b339040ed0a8118f",
+      "statement": "Hyperlink URLs are file://<host><absolute path> with the hostname from gethostname on Unix, percent-encoding every byte outside a small safe ASCII set.",
+      "evidence": [
+        {
+          "resource": "repo://src/hyperlink.rs#L5-L57",
+          "version": "repo-lines-v1:sha256:37cf1157bf1970cd8282fdf76239dbcd6498a874f7fc9bb9dfc752535019558a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmY2M4YTk0OTQxZjRkNjYyMWU0YTEwMTI0ZTI4ZTQ2OGZlMGViZjM1NmFmOGZmM2QzY2EyY2Q2Y2EzZTZiZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzMjYxNjc4ODI5NzFjNmU5MTJhMmFjMzM3MDdlMzJkMjBkMmNkMTQwOWZmNDE0YzBhMzUyZDA2NTA0YmY4ZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkNzFhZDVjNjJlNzlmNGUzZGIwMDlkMzE5MzQ5N2QxZGMyMDg5NGI3NjFmMWI3MDNlNmUxNDcxMjY3NzYyMTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_998a84f16ce94bd1834279759e556c0d",
+      "statement": "When writing to a terminal, fd escapes control characters other than tab and invisible/bidi/format code points as \\xNN or \\u{NNNN}; non-terminal output is passed through unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/sanitize.rs#L6-L55",
+          "version": "repo-lines-v1:sha256:434ad63686ed0f990010c2dacb252e74379443cdecb98a0bfa2f6dc8bb71ac32:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMjg3ODg4YjI4MWI4NWQ1ZmZiMTFiNDZjYzkzNDkzZDhmZTdlNzI5YzFlMTI4YTI4ZWY2NzhhOTkwYmIyMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkODM1NmY2MGRmMTkzYWUzZTkyOWU2NTMxYzg2ZjMxZWYzZDNiYTgwNjQxOWRkZWI0OGIxZTBiNzI1NTc0ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYzk4ZDZiMGRjNDkyYzUwMTZkZjEwODA1YTNhNTRlYjljMTg0YTVhNjEzN2U3ZjRiZWNmYTBjMjIwNTUwZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bfce64010fbf42a79c5c31916eb161dc",
+      "statement": "Error messages printed to stderr are sanitized when stderr is a terminal and prefixed with '[fd error]: '.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs",
+          "version": "repo-file-v1:sha256:1b74058d291942cf80c2b879cabb02171ffa44cebc7deb6ce62d12641c2dd427"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:05:54.272Z"
+  }
+}

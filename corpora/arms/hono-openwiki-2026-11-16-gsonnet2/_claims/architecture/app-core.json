@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:597c4e9f9ce9ffa863ca79e6a36e1b25834bf1b88effeb5adf298ff1d819d452",
+  "claims": [
+    {
+      "id": "claim_2d8c54bd072c44028f810d5d5d5becbf",
+      "statement": "HonoBase has no router of its own; subclasses (the Hono, quick and tiny presets) assign this.router, with the default Hono using SmartRouter([RegExpRouter, TrieRouter]), quick using SmartRouter([LinearRouter, TrieRouter]) and tiny using PatternRouter.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L103-L112",
+          "version": "repo-lines-v1:sha256:e36e05c1008ebb3111a0e3faadbfe488700fb2b7f4a995f1fa6756ad645b6954:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhYWUwM2ZjMmI4ZjU2NjM0YTUxODRhYzhhZWExYTNjNzhhZDg5MWNkOWU0ODYxZGFhYTMxODFhYTc5MDkwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3ZmJhOTU5YWVmNzkzZjJmNzE1NDdjYTg4NmJmMDE0NTdiZDQ3ZjIwZDRiYTY2NWY2NTNhNzE3YzQxMWIwZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4MWQwMWVhNzUxNDM3OWZiYzA1NTc3OTdmOWM0ZWE3NmQzZjI1MzY0YTI1YmE2MDlkNmUyYWRmZGVjMmUxOGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjNzg1MTA3OTllYjkxNDkzN2M0Y2U2ZDMxMzA3NWQ0M2Y2YTZkMzg3ZTAxYzllMDk2MGM5NTQxNTUxZDQxMDAifQ"
+        },
+        {
+          "resource": "repo://src/hono.ts",
+          "version": "repo-file-v1:sha256:28317c8a40c83cc89a80f268bd4dad18cd423f4704b621dda272292a10f63e77"
+        },
+        {
+          "resource": "repo://src/preset/quick.ts",
+          "version": "repo-file-v1:sha256:5be0902db606b91920d2b4c771646d0a8d0010dda31320383a8d9e7f3e1e0cb1"
+        },
+        {
+          "resource": "repo://src/preset/tiny.ts",
+          "version": "repo-file-v1:sha256:0fff9e84b561bb2c905562186f0c986018308211deb0637448a1a9faadd7760b"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb059c33243745a98f061281d807add9",
+      "statement": "All route registration (verb methods, on, use) funnels through the private #addRoute, which merges the base path, adds [handler, RouterRoute] to the router and appends the RouterRoute to the public routes array.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L385-L397",
+          "version": "repo-lines-v1:sha256:4d1e85a7c91f5e002ef9ee42f63c830d0f6c4043476b5024e27a4cf5159e7bf6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMTlkYTM0YjUzM2VjY2Y4YTMxNzBjNmVjODZhZThlNzQzMjI4ZWVjZDQ2MjBkNTNlZjRmNzQzNjQzMjUzNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5ZmEwNjdlZjY1M2Y3OWU2NjRiMmQyOTg1Mjc3OWViYjUwNjZkOGIzY2NkNTRiZGYxOTMyYjAwYWMxNTVkZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1OTNhZWMyNmYxZjhjNTZlM2ZkZGUyNmEzYmY3YWVkMTBkYjRkOGIxNDBjYzE1YTI2OWQyYTMzMTQ2MGViZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_740fe5e749c24a65bca64b97554af1a8",
+      "statement": "route() copies a sub-app's routes into the parent via basePath(path); when the sub-app has a custom error handler each handler is wrapped so the sub-app's error handler handles its errors, otherwise handlers are copied unwrapped.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L208-L233",
+          "version": "repo-lines-v1:sha256:b8f0deb635c35772a5deaf54de0db556a9830c4dc5dc7e6c7a69c413d675f3d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkNDJjZDVlNTk4OWQwOGQ3YmI1NDhmZWJkNWJiZTVhM2JiM2JmYzQwZmM5NDJiZGZjMGNkMDQ3OGJhZGUzMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NTAzMmYxYjMwYTU2YTU2YTg2YzI3ZWYwNTM2ZjUzZjYxZTJlMTg4YmQ5ZWY1YWYzODgzNzJiYWM4ZjI5YzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxOTJmMTdjYmY3NTI4ZGQ3YTEyNzQ4ZTFhYTdlMzVhYTkwYjkzMWRmOGNiZTFhZTFmYzFiYmQ3ZWEyMjNkNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0fea64a51f3b49d39074dd63ff400c7f",
+      "statement": "basePath() returns a clone that shares the router and routes array of the original but has its own _basePath.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L175-L184",
+          "version": "repo-lines-v1:sha256:0ac6e9903d653c55ec40be709f59760e18747c85d00a529779ff4e67cb1b3bd1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlZDhkZTRhZGY1NTU5Zjc1MWE0M2YyYjdkMGZmMWFiZDNlMjg4M2FiYjk4MTIwNWRkMGI1NzM1ZWZmYzM0MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyMzQ0MjllOWRjODg2M2FjNGIyMzExYTNjMTQ0YTc3YmZmNWUyMTA3ZDM1MGQ1ODI5M2E0NGM1ODEzNmJkM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiNGY5MWFhZjhkM2Q3NWM4Y2ExNWE3NmI4NzA3ZjFjMjg2ZDljOGZkY2UwYmFkOWI0NWZkZmEyOTlhN2UxMjUifQ"
+        },
+        {
+          "resource": "repo://src/hono-base.ts#L247-L254",
+          "version": "repo-lines-v1:sha256:f0a2c81e379f468ca867d02dee41a1a6370d79fecca16712d79240713b7653ef:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzJlMTBjNmQ0NTY5OGRiNmMzOGM3NDRjOTM4ZjRlNTJlMDZmMTYxMWY4OTY0YzI2NWRjMGJkODljNzM0NTcwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI3NmJjMjUwY2FlMmMwYTFmNjA5OTY0ZTYwMjZlNDVjYWU1ZGEyYTc2NGZmOTM1MzdhOGMyMGZjOWU1ODBiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmZmYWJkMDQ4Yzg5NWQ0NmEzNDhiMjQzYjRlMjJkYWYyNTI2MDU0MDI4NGNmOTVlYjc3M2QxNDk0ODgwZDI0MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bad5a0a5561345259009016993090cb0",
+      "statement": "mount() registers an ALL route on path/* that calls a foreign fetch-style handler, by default stripping the mount prefix from the request path and passing env and execution context, and falls through to next() if the handler returns a falsy value.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L328-L383",
+          "version": "repo-lines-v1:sha256:7966da5dbaa804f1e2d95722fea53065d0e3c874360820883ae5be978d099f0b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiZjJhMWIyMWUxYjZkMzgwMTBjZjYyNTJlYTA2Mzk3ZTE0OTgzYWRhZjk4NGVkNDM2ODEwZWQ5NjVhNGE2NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NjNlMDIwM2NhNTNjNjMwNDczZGYyZDdmOWJhMjJhYjU4YTJjNjU1MjJmY2ZmNGYzNTRiZDBmNzc4YjljZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4MmI2NDY2NGFiZmVhNDQzN2IwMjE2ODdlYWVjMDBkYjU3YzBlMDRkMzNkYmZlMWM2NzQ4MjY5NDk5MWI2NGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9490251519fd4341bd34fd3c87e4e2b6",
+      "statement": "The default error handler uses err.getResponse() when present (HTTPException) and otherwise logs and returns 500; #handleError rethrows non-Error throwables instead of invoking the error handler.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L35-L41",
+          "version": "repo-lines-v1:sha256:e398096ec17ba72a36f39d6c8d08a2654e0b35020f76bc21d98e957172c533e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk4YjFlYmU3ZWI5YzBlYTBhNWViNzU5NzJjNmU5YzdlZjhiZDVjOWI5NmE1OTQ5NjBlNDhiY2VhZGFmYzA5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzU3YjA5YjU5YTQ2MWZlNTc3NGY4ZTg2ZGRhYWI3OWY4Nzc3YWQyZmVhNWZmNDJiZDQyMjg3MmExYTUwYmE3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjNhNWVjMDgxN2VkYTY0MDBhZjI5ZDNhN2EwYmUzOGIxZWM3MDBjMDA3ODA0MGE5MjBiZjQxNjhlYjIwNzUxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I2MWJkMjBlMmQ1ZjExNTU2NTliNDMxYmJmM2VmMDc2Nzg3MjU3ZjM4Yjg3YWM5MTlmYmY3YzU0ZjNlNDRhYyJ9"
+        },
+        {
+          "resource": "repo://src/hono-base.ts#L399-L404",
+          "version": "repo-lines-v1:sha256:fb83d79a246fdb82819606d42f34a01146cb1309688b1b35f9157a7f012211f1:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAxYTY4ODg1NTUzMmE1NzBlYzNmODY5M2MzOWI1YzUxYjgyNjY5MDkxNzQ4YWIyODk3NzYxY2U2YTk1NDI0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTAxMWRlYzI2OGUyNzgzYWQ2ODU2YjBlNDc4ZjkyYzBhOGQ1ODQ4MmNkZjFiNTY1ZmNlMzU4YTczM2ZjOGJlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQxNzBlOTFmYWJjZDY3NDY3OTEwN2QwYzRhMDdhYjEyMWFjMDY2NjMzYjMxY2VkNzFhYjBhYTMxMjg2OGZlYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_97a080a5f89342de9fd9f413c1407d31",
+      "statement": "With strict: false the app uses getPathNoStrict (trailing slash stripped) and ignores a custom getPath; otherwise it uses options.getPath or getPath.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L172-L172",
+          "version": "repo-lines-v1:sha256:444fe623f58b8e3ff2ad89053fe73590ee500cfa1175d581ed5b8b4e0d1d5bb5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ0ZmU2MjNmNThiOGUzZmYyYWQ4OTA1M2ZlNzM1OTBlZTUwMGNmYTExNzVkNTgxZWQ1YjhiNGUwZDFkNWJiNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ0ZmU2MjNmNThiOGUzZmYyYWQ4OTA1M2ZlNzM1OTBlZTUwMGNmYTExNzVkNTgxZWQ1YjhiNGUwZDFkNWJiNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzkzYWRkNmJhOTVmNTk0NDI2MDRhMzkzZDQ1NDBiMTNkZWQ1OTFhMTA0ZGQ2N2ZmZDFiYjMzYjQyNTQ1NjRkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI0NDdlNmQ5NmUxMGM5OTIzODZmNDA1OTc2YjU0N2YxYWI3MGNmZDE3Yzc1ZTg0NWNmNmUyYTM1Zjc3N2FjYSJ9"
+        },
+        {
+          "resource": "repo://src/utils/url.ts#L106-L146",
+          "version": "repo-lines-v1:sha256:8cdb72f58ff97105c23e13d7591c01665d9650776ad74c297c22d24b7b5e37ed:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YWE4ZTQ0NzUwMzliNGMxODVhZjg4YzRjYjllMjFkODJiMmIwOWQyODk1OWNkZmMzNjI0NWU4YTYwZDk5ZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1NjEyODhjZmEzNjRmMTk5ZjZlYTQ5NmY0OGZjMzMwOGRmNTYwNTdhNTg4YjRiNTAyNmMxYmEwZTgxNTY3NTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlZGRmMjJlNjRiYjg5MGMxNTg3ODBlN2RiMGQ4MzYzNjMxZDAwYjBkODg2NjJhN2U1MWI4MjBhOGE0NjNiZWMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:46.600Z"
+  }
+}

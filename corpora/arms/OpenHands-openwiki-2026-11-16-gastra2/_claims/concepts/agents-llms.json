@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b9015ecda55a27086be1c0c711d84238f36bad5800d91079289a0f9b9528d19a",
+  "claims": [
+    {
+      "id": "claim_cba4a43fa0a14515b3baaf859dd8bd36",
+      "statement": "CodeAct assembles tools from agent feature flags and uses a condenser, conversation memory, and registry-provided model router.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/codeact_agent.py#L78-L152",
+          "version": "repo-lines-v1:sha256:81d01102a0dd10ee97cbf2d681d32402b56e3a7cfcdd5f1f489248cb40895fc8:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiYWZmNzY5NTE2YTA5MjA3NDNiZTY3OTY4M2U1NzIyNDQ0NjVjN2I0MDI1ZjM1ZmEzZTg4YWMxYmQxM2RhZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmMTM3NGE1ZjI1M2FmN2Y1NjQzZWEyNTk1YzE2ZTYzOGIxMmIyMzUyMTczNDM2ZDkwZWU1ZDA4ZjE0YmI3Y2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmZjk4YmEwYzg5NDM4YTEzZWQ5NDBlNWI3NGU1MjU0NjgxMTlkMjllZTY1YWMxMWFlOGIyZjM2NDRkNzhkODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5YTAwZTk2NDU2MDNjZjEzY2E4OTFkMTVkMGRkNzUyMzQ3ZGViMGVhZDQwMDU4ZTQ4YjYwNzBlYzIxMzQzNDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfa1aab40ece472fa7eb0bff5cb6bff4",
+      "statement": "CodeAct drains pending actions before making a new model call and can return a condensation action instead of requesting completion.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/codeact_agent.py#L184-L224",
+          "version": "repo-lines-v1:sha256:7ef4bc6f2892d5c5e9b2785d3023d964aaa9430e2c3b286d2dad55d9372057ce:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhMDAyYTljYTM1ZmM2NjBkMjY5Y2IxNjRkY2UzNmY0M2VkY2I2M2I3ZDY0MDc3YWY1YTljOTg3ZjE1ODgwYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMjAwOTdmN2MwODg0NGQ5YjVhYmUzOTA1MjQ4YTc3Y2FmNTNkNThiNzFhZDA5NmY2OGRhNzI5NTY1N2UyY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0YTQzM2I0ZGRkNTZlNWEzZTcwNTNjMjI1MDg4OTFiYjdiZTU4NGNlMDRhYWFkZTExNmI2NDE1NTFhMjNjZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiMzYwNzE5NDQ5MzM3ZjAxNjgyZTM5NWRjMzEwNWUzMDgzYjdmYjk3MjRkZjkwZDY3MDk3ZTQ3ODY3NTBiYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f222c32743d44ae845f45b65c496850",
+      "statement": "Controller state transitions emit state-change observations, save state, and re-emit confirmed or rejected pending actions with cleared IDs.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L631-L683",
+          "version": "repo-lines-v1:sha256:f6ea94a06d85e24d971fa461c5ab8823bb6ac4331d5328cd055ec772b2542a2f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMGJlMjlhNmZhZWNlMmVlZDhhZTI0ZGNhYjVhODVlYzdjZDU4ZDQ5OWYxNTM1MGZmMzY2OTBmZjIxYWVmZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMGUwYjIzZTRiNmZhMTkwYTQzY2RhMWFlY2FjNzhlNzkyOWUzZGU4MmQ5ZWM1OTExOTk5OTdiN2JhODU4NTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwYWY1NDk0NTBiNmU3ZjEwZWVhOWNmOTBlMGQ0NmViZDRkODM4NmY5YjlmMWVhMGQ2OTZkNDY2NDNmYTljNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjNjA0NDgwNzhhMmUxNjM3MGY5NjU0MDAxMzY0NzI4NjZiM2E4MTdlZDY3MDQyMDI1ZGQ4OTA2NTE2YjU4MDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68d9de9661574ddf89e44697affe59af",
+      "statement": "Delegate controllers share parent iteration and budget flags, metrics, event stream, and LLM registry and are constructed with is_delegate enabled.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L709-L752",
+          "version": "repo-lines-v1:sha256:4c4fae3d654f8087f45f63d18f9a489b3e00552866c7f8651952f17ce2790df6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwY2QwMjZjNWQ5OWIyMGRjZWMzZWVhZjdlZDJkMGMzMDMzYTQzNzg2OWRiZDQxMWNlMDAwM2E3YjIxOTQ3OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhMTJhMjE1OTkxZWY0M2M2ODViZWE1OWJiMzNkODYwNzUzODIwOGYyM2YyZDA0MDkyODVmN2I1OTlkZGFjYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkMGQyY2IyODVmYzM2MDliNzEzNmI4YjE1ODM4OTNiN2I5MGM4ZDFjNDNmNzBiNGM1NWM3NGZhNGM0YTEwNGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_761d3a9ba6b24eb494fe3e7452588505",
+      "statement": "LLMRegistry.get_llm rejects service-ID configuration changes, whereas get_llm_from_agent_config currently reuses an existing service even on a mismatch.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/llm_registry.py#L71-L106",
+          "version": "repo-lines-v1:sha256:57ce3007b48e9c20f129a4d1c79279a83f4e831d2f71dd1c568cf781922ce682:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmZTc3OTJlNThmYTAzYTBjN2U4M2RmMDczNmNiMWQwYWNjOTQ4NjRmZDY0MzAzMzcyMGFjYTY5NTc1M2I4NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YTEzNGU2MzUwZTE1NGUzOWJkY2ZiMjA1MGVmMTY2ODg2ZWUyZGIyNWE1NTQ5NTRmZjA5ODQ0MTI1MzIwZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhYzg3ZTBiOWZhZmE2ZWZjNDRiNDJjMjFjODM5NTI4NWVjZTMzYjVjMGIyNTE0YjA5YjExMmFhOTYwYmYyMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmNGI0ZjUzOGJmYmE1NDQ3NDBmMGJlMDlmN2UwYzU4Y2M0Yjc0YmUwMzE3NzdhOGY0MGI5YjRlZDNhZDE3MDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_569e109869754f96bc49adc8525395f0",
+      "statement": "LLM retries use configured exception types and exponential backoff; a no-response error can raise zero temperature to 1.0 for the next attempt.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/retry_mixin.py#L28-L69",
+          "version": "repo-lines-v1:sha256:d1680d5cb66c483fc3d0328d6ac84bac1e92e648d20ab86bb00e4c8740ba6bf1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxODdkNzhkZGZkYjdhODc2ZDYwYmYxNjhjYTQ0ZWFkMmFjNTk2MjJiM2FiOWJhNjI2ZGU2NjEwOTc5NjUyNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZmQyNDQ0NDYxZDk2NDczNTdmYjBlMDVkZWQ0ZDcwNzIxYmY1ZDhlNzg5NDg5YzZiOGEyNjA5NTEwMmYwOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5MmM1ZWU4YmFlM2IzZWU4MzkzOTA1NTg0NjE3NzhhMTY2MWU5MGI5ZjBjZjFmZGIxYjc1MjJlYzAwNjU5N2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxODI0OWE0YjhlM2Q3NTZjMGJhOGUwYTkxODEwZGI4ZmE3MWVlY2UxMWFkNzFhMTQ4NDg1ZjEzNDY3M2Q3YzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_be7576c3bfc54e4f8cca90787c137cf9",
+      "statement": "The controller requests condensation on recognized context-window errors when history truncation is enabled and reports a context-window failure otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L878-L918",
+          "version": "repo-lines-v1:sha256:d94697cb49216cba411483814134e3e8cc3b39442346410c497908d49a8828b0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkNDA0NTViNzY4ODM1MGNjN2ZlMTU2YjFmODE0N2M5YzVjNDAyZTNmNmJlMDI3YWUxNDJmNjg0ZTBlMmExMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2MDY2YjY5ZTc5OTdmMzk4OWE3MTJjNDdiYzQ4ODEwYjBlNDM4ODJkYTRlMzM1OGE4ODhlMWFjYjg4YmNkMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkM2ZlMjVkMTBmNmQ3N2JhYzQ1YmM3ZWY1NWYzMmU1ZTg5YzRiNGNlOGRmYzY4NmUyYzUxOGZhNGUyZGFlZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_533de8258ac94a9099ab8d95bc9272f9",
+      "statement": "The multimodal router uses the primary model for image-bearing messages or when the secondary model token limit has been exceeded.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/llm/router/rule_based/impl.py#L24-L61",
+          "version": "repo-lines-v1:sha256:f7bec068f8031e7cf5efee59775b5ce05c6d71fe368fa7492712106edc22ffee:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMThiMmJhNjBjYjM1NmE1ZWQwZGZjOTM1M2I2N2NlZTA5OGY4Yjc0YmY2YWQ4ZTRiMDQyZGQ2ZDg1MTZhMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjZmQ1NTlkMDgxN2EzYzdlZmI4NGMzN2RlYzdhZDQyOTUyNjVjMzk0MmYxODM4ZjBkZDAyMTdjMGNjZDAxZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0ZWJiOWNlNWM0MjAzMmYwZWJhODJkMzJiNDliNTcwMTgxMzk5YjgyNTQzZWNiMTJhM2YzYTYwOTVhNmNhM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MGIwMTJkNzQyZDQ5Yjc1MTM1OTBmM2MwYjdhODNiNjQzOTFkZDk5ZjdhMTk5ZWE3YmRiMzIzOWVjY2IxZDUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:51.947Z"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6ff004abbd8b9dd9ca2f651543e505f4c5078703f599889c9e1d18927d7b444b",
+  "claims": [
+    {
+      "id": "claim_7b598a9d609e4c68a569c15d291244f5",
+      "statement": "Chain.prepare_steps walks steps in reverse, splices nested chains, unrolls groups, and automatically upgrades a group followed by another step into a chord; only the last chain task receives the enclosing group_id/chord options.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L1176-L1292",
+          "version": "repo-lines-v1:sha256:9f12ea43868fdf3522d91bb9264684b200af1644d5cddad7cb71ed571ce2ead2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiMTk4ODVkZWFlOTBjMzlhYzVkNWFlN2RkMjI3MmFmYjI5ZWJkNzVlMmY3Y2M2MWJiZGJlZWQ1MmQ4MzQzNmVkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MmFlYjg1OTZjMTZmYWYwYjY1YzYwZTAwNTY3NDYzNzE5NzUwZDZkYzE0ZjAzZTA2ZTZjOTVmNGUxMjY3YTBkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjY2FlZTY0NTVlMWQyMjgwZDk4ZGM3MTg5YjViNjkzYzk4Njk1NDBlMWE3ZDEwM2Q2NWYyOTNlYjAyYmI3MmFiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwMGQ2ZDMzZTk2ZGY2ZjhkNTU5ZWExM2NmMmQ4MDJmMGJhMDFkN2YzMTBkYmRkM2MzYTE2YjI0NTVmNzY2ZjlhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c074810cef644177b8d43f1a0e688e69",
+      "statement": "A chain run applies only its first task asynchronously and passes the remaining reversed steps in the message's chain field; the returned result is that of the last task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L1048-L1094",
+          "version": "repo-lines-v1:sha256:c39a6a1290c992430bf1ed25753048a639bd4a1ef14e6158de911ce32e97ee78:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NDgyZmViMWJjNjJiZDM2MzNhMWZlODQ0M2E5NWY3ZGNjYWQ3MzBlMGQ2YWI5MTRhZDYyMWVlN2ExZDNmODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMTAyOGU0YTM5YWNmNjc4Njk3NjRlNWFhMzFkNGUzNGFiZTlhYTgxYTNjZTAwMjQ4NWNmNWZmOTEzMjhiMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1NjJjZDI1OTJlZDllYjZkODIxNmU2NGIxNWJjZTQzYWFhMjcyYTAxNjM5MWNhOTU0ODMzNWU1NmY2Yzc4Y2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyNDE1NjY3ZjdiZTUzODI5OWFlMGZlMzk4MjljMWVhMmY5YWQ3YzQyOGVlNTYwYTMxNzllY2QwYjQ5MzAyYWUifQ"
+        },
+        {
+          "resource": "repo://celery/canvas.py#L1176-L1182",
+          "version": "repo-lines-v1:sha256:3b1bf2b4780044c7808522a935b0124d5553c8e76776e0f0b4beb7f359b82921:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjE5ODg1ZGVhZTkwYzM5YWM1ZDVhZTdkZDIyNzJhZmIyOWViZDc1ZTJmN2NjNjFiYmRiZWVkNTJkODM0MzZlZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmZiNTBlM2NjZWJmMTJlMDFhYzk1NTJjOTY3YzgwY2JiNTZhOGY1MjA2MjkxMzlhNDZmNWYwZjlhNWQ5ODczMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2NhZWU2NDU1ZTFkMjI4MGQ5OGRjNzE4OWI1YjY5M2M5ODY5NTQwZTFhN2QxMDNkNjVmMjkzZWIwMmJiNzJhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjRkN2JkNWU3YjQ2ZjhlMTQ0MzQzYmQ4ZjZkOGYxMmQ3NTU3ODRmYjBlZmRiY2NmMjZkYjBjMzM0ODgwZTFmMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7491fa9aa70434ab677ff8d3c2f4fff",
+      "statement": "Chain preparation applies chain-level errbacks to every step and to chord bodies, and calls backend.ensure_chords_allowed whenever a chord step appears.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L1245-L1270",
+          "version": "repo-lines-v1:sha256:6f48b51c075929bf6b4ac8c9cf6aa0e4f0e47da093faadb4cc4054541edc53ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzZjI1YzMzMzc5ZDg4MzJjZmQyOGZlMWZjZTkyNzk1MzQ1M2YxZTUxMDJjODZmNjk3ZmFjOTE1NWU0OTVjODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5M2Q3Y2Q1Nzk2MWJjNGE3NjkxMzY1OWEzOWJlY2JkZjE1MGQ5YTliYWZmZjA1NWFhYTM2MDUxYTQ2YzBkOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhYzJlNWM3NWI0N2ZmNDIwODQzODM5MDEzMjE4Nzg4NzBjZjczYTc3MTczMzZiMTdhZTRiOTg3MDc1ZjI4M2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjMmNjMjI0MjkwNGZjYzA5YTNjNmY5Y2JiOWY1MDYyZGU2MjgyZmVlZTQ3YjQ0YWQzNDVhMGYwMWY1MDMwY2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6cbacadd796044448d09feae3923e8d5",
+      "statement": "chord.run freezes the body, registers the chord with backend.apply_chord before publishing the header, links the body result to the header GroupResult as parent, and executes the body immediately with an empty list when the header is empty.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L2226-L2286",
+          "version": "repo-lines-v1:sha256:9bc3418fc5b72a8ef38f3f2555d9bf5b0b34224f9dbce148c9200beb435ea322:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzZGYzMGE5ZDA0ODRkOGE1MzQ5MTc5ZWJhYzQ0YzEwMTU1YjZkYjhmNjhmY2Q0YjgwZTgwNzY4Y2M3NmQ2YjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NjM0YzFhNmZmMGI1NTUyOGZjZjBlOGFhYzdhMGY5OGNjMDg0MjI4NTY5ZTE3OThiMmQzZTUyOTcxZDI2ZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzNmU4MGZlNmI5MGEwZmEwYmRiOGNkMDhiM2E5YzQ4ZTcyMmIyZDNjYTg4NDk3Y2JjODE2NzMyMmEzOGNlYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5ODMxMjhlMjZlMGYwOWU1OGVlZGI2NDdlNDBjZWQ5MjM2N2Y5MjM0MzZiMDk5MDg0OWNlMmVjZjcwMDdjMDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c7f6b757e914c76bb94dda57a0e8a9a",
+      "statement": "chord._descend counts required completions: simple signatures count one, groups count each member, chains count their last non-empty element, and nested chords count through their body.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L2191-L2224",
+          "version": "repo-lines-v1:sha256:6b871a4d9e9658e40720d5e36c507cc14a8a69774389d23e52939b23e93150d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwN2NhMTRjMDE4NmRkNDdjYmFjZGFmYzUwMDViOGYxZDRlMzAxOTA1NGUyYTA3ODIwY2RjNzQ3MDBiZDljZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxNDAxNTc1NWJkNzZlYTYwYzNkODA2ZGQ0YTU1ODY5YzA0NTRhYjc1YjAyZmE1ZDk1OGRkYTM2YTY0NmNjNzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjY2Q0YTg3N2RhZjEzOTQ1N2IwYTY0MGJjY2RhNjkzMzk2MmY5MjMwYmEzZWU1NzJhMmFjMjU1NDdkNjgyY2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3ZjE5YWVhMDBjNjcwYjkyMDdjODVjNDY1OTYzZmM2NTdjMGFkYjZiMzUzMjdiNWU4ZWE4Y2M0ZmM3MTBkMTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8af3fbe7bbff4d669e9757720e134a6c",
+      "statement": "Counter-based chord completion increments a backend counter per finished header task and, when it reaches the chord size, joins the results and delivers them to the body, converting join or callback failures into ChordError routed to chord_error_from_stack and cleaning up the counter and saved group.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L1188-L1257",
+          "version": "repo-lines-v1:sha256:83a42b5d3e36c47fcd232d38bd5a577aa7bda7cd6a187651826c668ec5916f8f:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YzhmODExNjFiNmZjNjczYTEwNDY0YjkzMGY0ZmVmYTMwMTkxMWM0MWI3NjBmYWNiMzNhODgxNTViMDk5M2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxNmYyZDAxNTVmMmRkNDE2M2E1NDkyOGNjMjM0ZjM1NWY2ZTdkODAxMjdhMzkyOTkzYTc5MDFiMGMzOWI5MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhMjRmMTc1MTk5NDYyODcxYTA5Mjg3NDllODEwYTk1OTEyN2E0NzdmNGU5ODQzZDMxMzI4NWQ5OTQ5ZmE0ZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_98c7a7ca6b4e44629c9b909c0bdba1c6",
+      "statement": "Backends without counter support fall back to the polling celery.chord_unlock task, scheduled on the body's queue and priority, which retries until the header group is ready.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/builtins.py#L36-L98",
+          "version": "repo-lines-v1:sha256:92efbcae187f501d74e2dff665005f398f7308cdbc1abd0d9d6000bdf7742442:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ODYyNDE3MTI0YTc4MzIxY2MxYTkwMzNjOGJhYTI1ODNjZjhjZWE2M2FlYWI1M2FkODViY2NjYjIyZGFkMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwYzViMWZiNTlmMDIzNGIyYWRmMDk2NTBkMDFkMzcyYzVlMDE3YTdjYWNhZjUxZTcxNzVkNDA0NmU3NDc3NzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlYWI2Yjk2NjIwYjJjZmM5N2NjNWRlMDc3NzAzM2ZlMDZmZDdhOTlmNmQ5MTdmNDMxZGQyODEyYzU4Yjc2N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MjYzYTQwMmVjMWZmMzkzYzdiNzljN2FmYjE5YzRjMThhMDcwNWZiZjc5MDYxNzdiOGI0NTQ0MmNlZDJiMGYifQ"
+        },
+        {
+          "resource": "repo://celery/backends/base.py#L838-L867",
+          "version": "repo-lines-v1:sha256:59fd3c50a54a07f98ee0368fca3ecd684316e7035b70805a99e27d2553f6f0ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YTkxMGFmMTQ0MWYyYzk0ZDI0ZWFhOTM1ZDQ1NDY0NGM0NDBkNDc5NDM4YjY4ZmMzZTQ0N2Q5ZDExMWYxY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZmMwYTYxZWEwMDE1MzNmYjFlNDBhM2Y4NTA1NjZmNzVmY2YxNDZlMDAyYjNlY2IxMDgzYzBiZDgwYTg5MTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyNGU4YmYzMTEwYjE4MjBjYTViMjEwMjIzN2VhZDE5MDMzYTkwMWQ0N2UxZjA0ZDE3ZTc5ZDNhZDI2NGVkN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwODYzZDQyMDdhNWFkNmFiODZjYjU2ZTVhMDY4ZGFjNDYxOTY1MjE2MGMyNWIzODY5NjY1ODY1ZjEwZWY3ZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_831898ec3da041aeaaea1c989b6ce90d",
+      "statement": "Backends that cannot support chords (disabled and RPC) raise NotImplementedError from ensure_chords_allowed.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L1271-L1272",
+          "version": "repo-lines-v1:sha256:84f91ae1878ab3312b66d6e04bf1e9e85c239a0b3f103f2a541b1763f9f9a85d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGM2MDI3NWExMGQ2NjQwZDllMDIxYzFiYThlY2VmMmQ0NGVmMWM3YjU0ZWI3MzMzZDVkZDMyNGJiMjdkMDdkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU2Mzc5NDk3MjM4MDJkNGUzMjRjNDc4ZDgwNDkxMjBmNmQ0Yzk0NTU5ZWI5YjBiNGIxNzZhMzU2ZDNiMTc4ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTBiNDZiYTc1MzMyODY2MGQwNmU2ZjcyMTZlODFhNjExNDU3OGY3Y2FiMGNlYmVlN2MyNjA1ODJiZTU2ZGYyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNmZDkxZjVmNzNlNzA4ZWI2YTAxODQzMGZkZDZkMWRjMmZmMzkxM2UwY2Y4ZWUyZGFkNGFkMmQ0Yjc3OTkwMiJ9"
+        },
+        {
+          "resource": "repo://celery/backends/rpc.py#L214-L215",
+          "version": "repo-lines-v1:sha256:8a3daa234ad6a0861e23210b00379bb01b44f8a58e40917ab924488e95005d9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGM2MDI3NWExMGQ2NjQwZDllMDIxYzFiYThlY2VmMmQ0NGVmMWM3YjU0ZWI3MzMzZDVkZDMyNGJiMjdkMDdkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JiYmQ3YzRiNTU0MTJlNTVlZDJkOGFkNDM1ZDQ1YTc2MTk3MDY3ZDgyOWI4MDk3N2YzMGY4YTk4MjVmNjg0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTI1Y2FhMzQ3YmM3OTJlZjM1MmI4Y2U1ZjAzNzEzYmRkYTJjNDIzNzVlMTJlODUwMWFlYjllMDRhMTlhNzA1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2ViNmMxOTZlYzVjNmZhNGMyYTFiMDAwYmJkNGRlY2RjZWNlZjMwY2ZlOWI2Y2MzMDdhNTg2NWM0ODZhMjQ5NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef14470141dc42d089be762ef224faf1",
+      "statement": "mark_as_failure propagates a task's failure to chord callbacks and to every remaining chain step's result id, so callers waiting on the last chain element observe the failure.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L188-L241",
+          "version": "repo-lines-v1:sha256:87a449858e60f24668942543e324bcfe83d595b0481f6562060473c0a868af69:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3MzQxZGI0NjFmYmFhZDZlODRmM2VkN2ZmZjkxZDczZGE2OTVlZDhmYWI2Yjk3MDk4MDYxM2Q2NzQ2ZDQ4MmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5Y2RlOGIyMmFiYTlmMmQyNjE5MzAyNGQyN2QwYzNiYjU2ZDE5NTg2ZWQ5MGE0YzkxY2YyYzJhOGExNjIwYTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3ZDliMWQ4NmQ4OWE4YzI1NzQxY2M4NTAwMDE0YTIxZjczMzNlYmM3ZjEwNjMxOWQxZTcyYzY0YjlhMDQ1Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmZjQwNjEyODVjMDlmZjFhZGZlNWQ3MmEyMjZmMTE1OTlkNTMyOGRiZTY5MzA1N2E4NmJlNjFlMjIyMjEzMjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ecd54646f90440cbad638ebc63420051",
+      "statement": "mark_as_failure descends into the body of a chord step within a chain so the failure is stored on the body result that later steps and enclosing chords poll, preventing chord_unlock from retrying forever (issue #9674).",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L242-L249",
+          "version": "repo-lines-v1:sha256:a0de6632f1e2b4fedf9238ce8e01193d9943512639f5d46fe5ca62a674169314:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTcxYjk0ZjlkMTg0ZWI3YmJjMDhjMDAyNTk1ZmEyODQ1MTRjNzlmM2U5ZjgyZDBkOGZiYjQyYWM3ZmYxZTZkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjgyYjAzZWFhMTRkMDQ2MTk1MjMxZmFkZGIwM2Y3OTA2NThlZmRlMWRjZWFlMTE3OGUzYWI4MWU3OWM0ZmEyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWEzN2U3MDg1YWExNzJiZmMwZTdiZmRhNGE4Y2RlMjIyYzFmMmQ5NzM1YTM2YjVlZTI2MmJhZmI3NTI2YjE5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDdhMzEyNWE1MTQyYmE4NTQ5MTIwYTJlYjUyMzY5ZmFiMTU4ZDczMzc5MzE0MzE2MTI2YzUxYTJkYTNmMjlmOSJ9"
+        },
+        {
+          "resource": "repo://t/integration/test_canvas.py#L3333-L3365",
+          "version": "repo-lines-v1:sha256:2421ab7e60574a4ea9c034d9785b554a5b4b5d931222c732f891655cbc8c3cfd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiOTU3OTIwNjgwNzg3YjU5NWIzODM2Mjg3OTM5ZDdjOGU3NjcwMWU5YTc2OTE3ZTVhMDM4MGMzNTY4NjI5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkM2EwMTgwNTA2YWJjZmIxNWFjNmQ2ZjhmYTBlNDE5ZTEwOTc0ZjFkOGM0MGM1ZGY3OTk4ZDBhMDZjM2Y3YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3ZDZlNmNkNTgyYzA5Y2Y4NDc1ODQ2NWY2NDIzZmM5OTA0ZTFkOGMyNzRhYWY2ZDRkMjRmOWNkZGI4ZWMwOTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad8c6be8e1734dffaf841d5cc5a39e35",
+      "statement": "group.apply_async rejects link and link_error arguments with TypeError and publishes members through one producer, returning a GroupResult.",
+      "evidence": [
+        {
+          "resource": "repo://celery/canvas.py#L1616-L1650",
+          "version": "repo-lines-v1:sha256:b447b7c46c3513269089faa1e19aeff138eb0264073ce20b432cddf64ca2849f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4MjYwN2IzZWU5NmFmYTE4NjZhYzIxMmViMWUzODgwY2JkNWE5ZDEyZjgyNWNiMDM0YTc4YTMyNWQ2NDVjMzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNDU2M2E1ZmJjNGJlNzVjOTE1NDk2NmQ0ZWRiM2M5NzBkNjM3NDlhYmU4OGQ0MDFmY2VlYjNhMTQwOTQ0MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwZDZkMzNlOTZkZjZmOGQ1NTllYTEzY2YyZDgwMmYwYmEwMWQ3ZjMxMGRiZGQzYzNhMTZiMjQ1NWY3NjZmOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0bbd41a4c0cd428ba97a3d5303c9ff08",
+      "statement": "Canvas support tasks (backend_cleanup, accumulate, chord_unlock, map, starmap, chunks, group, chain, chord) are registered on every app via connect_on_app_finalize.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/builtins.py#L12-L186",
+          "version": "repo-lines-v1:sha256:a4aca104046952a56fff03cfde69f8bf2f283e40dcb43dca6b15ad0e8626fead:eyJzZWxlY3RlZExpbmVDb3VudCI6MTc1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlOTg2MjQxNzEyNGE3ODMyMWNjMWE5MDMzYzhiYWEyNTgzY2Y4Y2VhNjNhZWFiNTNhZDg1YmNjY2IyMmRhZDM1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmMzRiNTM5NTQzNmIyZTI3M2QzNjYyNWNlMTIxN2QzNjgxZmQ4ZDE2YTU2MzVmYzhkZDMxNWUxMTg0ZmJlZjlkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlOTBmOGU1ZGEwYzllNWM0ZmJmNTU4ZTdiMDJkNGJjZjk5NzhkZGUxNWQwNGIzZDBkM2U2MDFkZjcyNDk4NjFmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:22:47.483Z"
+  }
+}

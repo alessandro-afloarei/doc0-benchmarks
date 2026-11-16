@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:46f3ec3ec5fef97193cd91fe0fcabfd05d96a258cf38ad521dbd2670243cd630",
+  "claims": [
+    {
+      "id": "claim_ba2d023ff0e14d76a9558b760a4290c3",
+      "statement": "The CLI loads an application from global options, supports celery.commands plugins and extends command parameters using app.user_options.",
+      "evidence": [
+        {
+          "resource": "repo://celery/__main__.py#L10-L15",
+          "version": "repo-lines-v1:sha256:c04d81b70332eb03e6a94f2b34a135e674619f5330a1717927cc0061e41e8e0d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzBiYzUxMjY1ZGEzYzQ5NGJkZDI5NDA4YzBlMTc3NjY1YmZlYWQ2ZmQyNzkzNmYwNTlkMmM1NTdiMTlhM2NlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDIyMDNkYjUzNzk4NjMwNDZkZGJjZWMxYzU3OTk1NTNkNTFmNDY2ZjExMmJhYzMyZGEwZTgzNDdmN2MxZDhlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWJmNjBhNTU5MjA4NmVjZjY1MDRjY2JlZDQwNjM4YTdmYjgyZDIyNGNjNWY3MTg1M2NjMDA0ZDFjN2UyN2U5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWZiMDM3OWEzZDYwZTljMTRiMWExYzRhYjVmNTkwYWUzZWJjOWFmNTAyYjQ0ZGEzMTBlZmE1MDRlOTc4YzEzOSJ9"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L55-L175",
+          "version": "repo-lines-v1:sha256:d4b214e7c26873706433001e7cd2ef5a0199aa56a7f6a446339fe86c628e9a6c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0YWY1MTBjMDUyOWVlYjQwZTBlYjI3YWJiMTMxZGM2ZjYxMjFhMDJjY2QyOWQzOWQ4ZDQwZDkxYjU5NzZjOWZjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlZTI0NWQ3MmE4OTk1ODIwNzcyNTIwNjhhNGEzYzMwYjQwMmJlODBiZTFmYTZjYjA4YjQzNDYxYzI1ZTA2YmVkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhOGE2YjdiNzc5YzM1ZmQxOTk4YWYxNjE1ZTUyOWYyZGQ3NDJjNjcyNzVhM2U1MzhhMDJiNjM4NzIyNDMwZDM0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyNzAwMTE2Mjk2YmY2ZmNjNmZhNjYyZjgyNzAzZjI3NTYwNWM3MDgxNzFhN2JhZWMwYzAyOWZjZGI2NjRhNTUyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b6b41c80483485f80c10da840ca846b",
+      "statement": "Inspect uses broadcast request/reply with destination and timeout settings; duplicate node replies produce a warning.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/control.py#L39-L119",
+          "version": "repo-lines-v1:sha256:30f343cedcc5f1d42b1b771aa88499e7b392bd7f524625266cdfabf49fe89818:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMDhiYzMyNDIyOTEwMDEyZDEzMDZkZGI1NzVjMTk2NjUxNjMyMjQ4OTI1ZWJjMWIxNGMzYmNkZWVkZmMxNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYzQxNDMyMjkyOTFhZDZiZjhmMGMwYzhlZDNmNDRlNDc2MWY0Y2IwNTY3YjVlMzFhM2RkNmQwZDljYzI4ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxNWE2ZjIxZGQzNTlkNDdjNjE3ZDBhNzUwY2M3MGIwYzU4ZmRkMDRlODNjNmI4YTY5ZWIxZGFmYjQyY2E4MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMWRkNjJjNWI2YWU1YzdjZmM4ODRhYWQxMGJlNWZkNzZiYjk1NDVlZTNlYTY1MWMwODk0MGUxNDNiNzAzZGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7897fc07e2f4415986d14483a64e6178",
+      "statement": "Worker inspection distinguishes scheduled ETA requests, reserved requests and active execution through separate state views.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/control.py#L406-L458",
+          "version": "repo-lines-v1:sha256:62d150061c49fe043783b059774fda774856319f251b04f9bdfed18fb53dee91:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwYjUwMTNiNjhjZjEzODhhMzQ1Njg4MTRiMGFiY2I0MmU2NGQ1MzY0ZWYxNjg5OTFlMjBlZDUxMDM5MjJmNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhNDBhMWJkMDUwYzhlMjlhMzY1NmE0YTQ0OWZhZGM1MTcwYmExN2Y4NjI2ZTAzODc1NGI4ZTRkYjJkOWFjMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExM2M1OWNmM2NlODU4ZDRiYWM0ODZiYTk3ZGViZDc2ZGZjMDYzY2QzMDc3YWNhYzVhNzQxODFhOGU1Y2RmYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllMzE1YmI0Zjc0NGY2MjAyY2Y3YzU5M2YxYjAzNWQyMTYwNGEzNmQ3NmNjZTYzZTQ2YTc4NWNlNTYwYzdkNjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a542837b605442e92837732083e9bc8",
+      "statement": "The worker remote-control service requires both worker_enable_remote_control and fanout exchange support.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/control.py#L18-L33",
+          "version": "repo-lines-v1:sha256:7b1d7d3c941e0f286391181c105268c82e578fe0022b89d241231b8046ef61c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjNWYxZTViNTc1ZjhhNGZkZTFlZmVlNzMxMDkyODA3ZjI4YmY5ZTE2NGM4MjA5ZTA4NjRiNTgxNGMyYTk5ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YmQwOGYwMjVjZjI3NjY3MjhmMjRiNzNhMDNiZTQzZTIzOWQ4YmE3OGNhMzhlZTNkZmEwYjNiNWEzN2I0MTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5MGY4ZTVkYTBjOWU1YzRmYmY1NThlN2IwMmQ0YmNmOTk3OGRkZTE1ZDA0YjNkMGQzZTYwMWRmNzI0OTg2MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8664bed3e9284f739a084d6c58e0dbc4",
+      "statement": "Revocation stores task IDs or stamped headers, with active termination controlled separately.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/control.py#L138-L230",
+          "version": "repo-lines-v1:sha256:f03b48431784dfdefc55a5e1f25142e2632c0fd64c0931cbb38d79c24d5192e2:eyJzZWxlY3RlZExpbmVDb3VudCI6OTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2Zjc2OWRkNzhmNTMwMzY4YzllNTJmYWRiZmU3MDFjYzllZDgyZWE2NmNiYTRiNWYwMGE2YTM2NGY0ZTUyZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YzgzMTEyYWQ4ZjY4ZTdkNzU0MjY4ZjUwNzhkZDhlYWE3YTUzYTg1NTM5OTUzYjU3Y2E3ZTg4ZjZlNWVmNTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMWEwZjE5ZmZlNjdmMjY2OWQzOTcxNGY2NzJjNWQ3MWIxODc3NzkzM2VmZjg1OTMzOGU2ZjQ1YzlhZDBjZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5NWU0ZDYzZDk3YzhhNzlhNDZkMjZlZGE5YTU1ZDEwYjk3YjI4ZDA5YWY2NTk4Mjk4ZjQ4MmJiNWYxZmY3MTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_88c22d41b828485cbe55e5178fd392cb",
+      "statement": "Worker statedb persistence stores revoked task IDs and clock data rather than active work or stamped revocation mappings.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/state.py#L192-L245",
+          "version": "repo-lines-v1:sha256:989ce06a6293aea1470d491a20d9100eecb80880bcfd66ab183e38337fff5c49:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzOTFmNTkzNWY3YTNiZGYwYTExNDlhYzkxNTNmM2RjYjBlYzY4Y2YzMDg2ZTdjZGNjNDYxNDhmNGRlNWVjNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4MmU5NDA5ODk3MjAxNDczMmViZDUzOTIyOTJjY2ZhNDNiYWQ0NWQ2MzA5YjQyOWYxYWE3OGRiODZkOWMyNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2OGZlMGQ3Y2I0ZDYxMzExN2YwMTNjMDYyODQ1MTgxYTY1ODA3MWZlOGE4M2E3ZTdmZGM4NjIwZDllMzU0ZWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0dd89a286db4441b90c76e7492e6fbd",
+      "statement": "Event receivers use configurable per-receiver queues and reject simultaneous exclusivity and durability.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/receiver.py#L36-L88",
+          "version": "repo-lines-v1:sha256:8c65a30c5be173e927fdf65e9d0ee38876918161237b4ff7c3ad5c9219f5fe3e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjYTA0ODg3MjZmNjU0YjJlYzNhZDZhZTYwOTM1MzliMTY5OTQzMzVmZWE1MzM5ODJiZTZiZjM2YzA3Mzc5ZTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzNzhkOWI1ZjFkNWUzZjU1Mjk0ZjcxZjA4MjlhODVlYjUwMWEwZDliNDg1NGQwOWQ3MzAyYjIxZmI5OTUzOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzNjQ2NzAyNTI4M2IxZDgyNThhZGZiMDc3NDhlZWU5OTkzMDk3NWUzNjNlNDUzOTVjM2Q0YWU3MjU4ZGE0ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkNDkxYjdmZWJlNGEwZDJhMzUzM2VlN2VhMWJkYjc3ZDBkYWQ1N2RhMTM5OTBkMzZjMTA2ZWI4MjEzZjdkYmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_940fd304208e4d31a769c32347b38ec9",
+      "statement": "Event State keeps bounded in-memory task and worker indexes and uses precedence to handle out-of-order task events.",
+      "evidence": [
+        {
+          "resource": "repo://celery/events/state.py#L305-L334",
+          "version": "repo-lines-v1:sha256:410c23ef2ac26527e96c63772f3f4cbc99be3bc9246fcd97283a4b704292406b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkMDEyZWZjM2UwYTc1N2JkOGUwOWQ3Yjc0YTA0NTAwMGRiN2JlYWI0NTMzYjg2NjhkOTc5ZTEwNTIwM2E4MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5OTNmM2YzNGJkZTJiMjFkZmViZWNlZDJjZWUyYzU5YWExNDA0OWVhNGI0OTVmNjExNmM2OGQ1ZTBjMTMwYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1NjViZjA5NjZiYjkxZDI4ZDdiZTQzZWJjMTNmM2RmNzg1OWNmNjI5YTNhMzlhZjFmZTNiMjc0NjkzZDQ5MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1NDdhM2RmZDI5ZDU2OTllYzFjODM5Yjg1MDI0YTE3ZjVlOTlkNTcyOGZiNGI1N2FkYzM5YjEyMTk4ZDZkNGMifQ"
+        },
+        {
+          "resource": "repo://celery/events/state.py#L398-L433",
+          "version": "repo-lines-v1:sha256:04a7d8962651228bdeb626c7c13dc08ca8732df4c37e81006914e543640b76da:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMWZkMzM4ZTE0Y2Y0NTdjZmFlY2RhYmUxMzFkYjNiM2VmNDVjMGQyMTQ5NjAzOGZlODc1NzY0ZjdmOTBkOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4NGZhMjI0ZTY1ODgxZTBiODc0YTAyOGY2MDU5YjEyNGI2MDg3M2I1NGMwNjI4ODRkNjU0ZTIxZTMwMzdjYWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NTMyZTFhYzBlYjgxNmRkODlhYjIwNTM5NGZlNjE5ZTcwZGExYmQ0NzVhNWE3ODExMGEwOGE0OTM1NTM1MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0NWU5Y2YzNmYyYThkMThmNzgwZTc3MjRjNzk1ZThmYzVjN2MwMzMyZGZiOTZlMzFmMWNlMThlM2IyN2RhOTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d207f924a504c688311b8233d82d916",
+      "statement": "Event dispatchers support group filtering and buffering while disconnected, and producer sent events and worker events are controlled at separate call sites.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1020-L1029",
+          "version": "repo-lines-v1:sha256:6ca314fe8ab2e038b04f3f297c157af4bf641efb790b40ad16baa0c78f4390d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNDAyZjk5YzE3MzVhYjk4YTU5OThkYTFmMTQ0Nzc5MTU3YjVhNWY4M2NmNzU1MGYzNDg5NDYzMGYyMDk5MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyZWQ3MWY4NjgxYzZmN2Q0Yzk5MmQzZDdjNGI1MDIwMjgxMzk0OGU1M2YzMGM4ZDdjNDkzYzRmY2IyMmFjNGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiYjQ5OTc4ZDcyNGEzMzNkMGJmYWU0ZmUwNGU2ZDE3ZTQ5MWQyZGJmMTMxZWJlYjAxMjVjYWI3M2E5ZTAxYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliZjllN2YyMGNkMzFiYTVjYzc1NWMzNDhjMTBjMzhhZGVmMDdhMzY5MTc2ODYyNjdkOGEyZmM1YjEzMzAzOTIifQ"
+        },
+        {
+          "resource": "repo://celery/events/dispatcher.py#L21-L49",
+          "version": "repo-lines-v1:sha256:42769338f36da0f8e8936ef0207f0b8189401d279fac321d4d1fad39025a5521:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwNmJmODI4YWQxZDlhM2QzY2I1NGE2ZWQ1YWRjNmQ3ZTljMzJkYWEyNGNlZGFlNjc1MjMyMjU1NGU3YzgzYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5MzQ3OWQyMDNkNmEzNTBmY2RkNDhjZDljMjU2N2VkOGEyNmJhMzY2Y2IxYWM4M2VlZmNhZGU3ZmYzZDlhNGYifQ"
+        },
+        {
+          "resource": "repo://celery/worker/strategy.py#L113-L117",
+          "version": "repo-lines-v1:sha256:56340bf2b56fcaf148ab6739ba008d490353bc997df3eea0f96d859c4335759d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q5ZDMwZWZiMzg1ZmExYzE1YzkzODIyN2ZkYTIzYzZmY2Q1YzllZWJlMmIzMjZhYTMzNzNiZmVkYjNiMjVjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDYzZDY5NjA4MTk1ZjkxZDUyMGI2YjQ3ZDk3NjkxMzc3MmZhYWY1NThiZGY3YzZhOWQzMzJkMjcyNzJhMjM4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWIzYTc2MzI4ZTA2OWZhZGI5MGJmNTc0NTc0MmNjZGMxY2UyZjNhODAzMDQ2NWE1ZWZhZjdjNGU0OWFjNTU1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGZkYmMxYjkxNzk0YzIwN2MwZjM0M2E2NDg0ZmE1MzU2NGRlMzU5OTQwNjMyMGNjMGY1NGZkMjY4M2NkNWRjOCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/strategy.py#L167-L176",
+          "version": "repo-lines-v1:sha256:61e605a80d6557b6fa2e429698238aca9d98af5a2375142c611e431964c38b41:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzOGNhZDQ4NmVmYTcxZWYwZDNmNGU1Y2ZjNGU4N2I4ZGE1ZGI0Mzk3MTFiODgzNzBiODgzNzJiNzllNWUyZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3NGFiMDI0MmYzYmZkZTA2YjkzZTE4OWViN2U4NDdmZTU4N2NkNGUyYTJjNWIzZTk1MWJiMWYwMDdiYzAxNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkNDQwZDY1ZTNiZTE0MzY1M2UwZGQzYWQyMDUxYzlkODlhMDM3MGNlMTM1ODBkZTFkMzJmM2U1ZWE2N2ZkNjYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:34:04.042Z"
+  }
+}

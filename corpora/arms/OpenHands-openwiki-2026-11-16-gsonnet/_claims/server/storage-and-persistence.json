@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3661a84777451000e93f3043392646292db8120fca8e64d614adf369b463543c",
+  "claims": [
+    {
+      "id": "claim_3b11604fe49f4497ac04c3e4412129d1",
+      "statement": "All persistence goes through the minimal FileStore interface (write, read, list, delete); get_file_store picks local, s3, google_cloud or otherwise an in-memory store, so any unrecognized file_store value silently selects the in-memory backend.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/__init__.py#L12-L57",
+          "version": "repo-lines-v1:sha256:c82e9b954999cf03d0c2e3e433ce7c43b64d13c8fbf5f8329d417880e989f448:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjZmJjMzMxODQ2NmQyZDQ2MDJiNjY5MjZmZGFjYjdkYTZiN2QwMjhlZjI4ZDQzOTYyMzQ4NzE4OWQwZWY0YTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxNmY0NGU0ZDQ4MGM5NmVlMjI1YTU3ODFiYWFjZmJhZTE0MjJjZjEyYzRiNWFlYWYyNjA1Y2M1N2RlZGI5MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://openhands/storage/files.py#L1-L19",
+          "version": "repo-lines-v1:sha256:e09b056bc551794e147b325fd2b5ba26121906089bd6a3ee92b0cc47b736e02b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMzVjZDY2OWM2MDZjZmM2NDhlNzkzYjk4MWUzMjg2NjAyYTRlMmNlYzAzMGIzNjhlMzU3YzgwNjU4ZDVkZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNjJlNThlYTBiMGZkMTk1YmEwNzY2MTNiNjMwZDU5ZTY3YmQ0NzBiYjE5ZTk3YTIwYzkwMjM2NmU1YmEwZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_067eb15c836a4321bcc5f0e09d5d5274",
+      "statement": "When a file-store web hook URL is configured the store is wrapped in WebHookFileStore (async POST/delete notifications retried 3 times) or BatchedWebHookFileStore (batched by timeout or size), defaulting headers to X-Session-API-Key from SESSION_API_KEY.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/__init__.py#L28-L57",
+          "version": "repo-lines-v1:sha256:bcf451a10cec40395369463c919d60a4f04f42f87fb1574099f50d291ee91d53:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYjc0ZTI3Y2E1MWNhZjFmYmZiNmYwYmNkYmU2YThlN2I4YmI4YjY5ZGEzZDVhODA3NDE2OWJhODkwNzEwOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjZmJjMzMxODQ2NmQyZDQ2MDJiNjY5MjZmZGFjYjdkYTZiN2QwMjhlZjI4ZDQzOTYyMzQ4NzE4OWQwZWY0YTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczZDk0YTE1NDk4ZmNiOWJlMGM0ZDU1ODkyMzUzNjI4MzcwMGYzZjc5ODE3Y2ZmODhmZGI1ZTRmZmE5YmI5Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://openhands/storage/batched_web_hook.py#L16-L85",
+          "version": "repo-lines-v1:sha256:ddc48a539f71fb12afbb5539b37d472cc7a3d42c6d009c547e1f3efcbe2081ac:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNTQyYjViZTBkMDU0ZTE1YmEwMTdjNmY5OTJhZWQ3NWI3NDJkYThjOTU3NDVkNDdlMGY5NmE5MjQyNzI1M2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlZjZjZjdmMDRhMWZlZDFmOGZhZDJkZmQzNTE5ZjI4NmJhZDY3NDM0MTNjM2EwOWViMmRjZTBlZmFjNzJhYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI1YzExOWYyNGIxZjVhYWY0YjhhNjU0OTNiZmNiZDhhNTZkNjY3ZDZkNWE3Yjk0MWUxNDNkZGE2Yjc0ZGM2ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhNTAzOGY5OGY2ZDVlNjNmY2VjNDg5NmQ5Mzg3YTU0NWYwY2NkMjI0ZThkYjg5YWUyMWU1YjM2ZjQ3NzAwMjIifQ"
+        },
+        {
+          "resource": "repo://openhands/storage/web_hook.py#L40-L100",
+          "version": "repo-lines-v1:sha256:fb2a77c4c891b8c94146c226fb9e86f8510f0d83208f807b9b68c1858b79ca7e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlZjZjZjdmMDRhMWZlZDFmOGZhZDJkZmQzNTE5ZjI4NmJhZDY3NDM0MTNjM2EwOWViMmRjZTBlZmFjNzJhYmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0MWNkNmY5MWFjMDg5ZjM2YzdjM2I3MDJmZTU5NmQ4Yjc4MGY5NThjZWYyYmYxMDRjMmY5NTBjY2NjNDMwMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4ZDZiNjJhMTYyNWRiYmVlNjQ2NWJlNGU0NjgxZWM0Y2VhOGI2NWE3NjYxMjk3NTVjMDg1MmIxMTRjZTliNDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd0922622d834874a4444ee25cf23157",
+      "statement": "Conversation data lives under sessions/<sid>/ (or users/<user_id>/conversations/<sid>/) as per-event JSON files, event cache pages, a pickled agent_state.pkl, conversation_stats.pkl and metadata.json.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/locations.py#L1-L42",
+          "version": "repo-lines-v1:sha256:88579ba74548ed95e2dd47b6b3e8cf7eac29afad9e35836f7b715f5cedd98415:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjYTlkOTBkNjdhMzhlZWUxMDE4ODY1MWNlZTI1MTgwMjU3ZmZhMmRjNDZmZDYyZWQwZDAzNDE4MTY2NzRiOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3ODFhZWE3ODc4MzA1MTBlZjljNTFiYTRiZjM0YTQwODk4YWZkZjg0NjdlNDdjNjRmMjY2OWI4ZWZkNTg2OTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dc14f99736f44e13a3a6d15ae71290a1",
+      "statement": "Session start tries to restore the pickled State; if restoration fails while events exist it warns and continues with fresh state rebuilt from the event log.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L492-L511",
+          "version": "repo-lines-v1:sha256:24ed2df499f5d35187256c82f54ee495150087b5ce1c1ad15510893501222b3b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4ZDViZTQyZWRhMzUwZTM0Y2QyNGNjZDE1ZTVjMGVhY2I5Zjk2M2JlNzFiMTBmNzk4MDA5YzViYTMwMDg0MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjZDQyZjAxZjgyMGI4MTRlNDVkZDQ5ZjE0Zjg3ODVkNjQ4MGVkZTI3NzYwYjRmNjg4YjA0NWQ2MmQ5ZGMzN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhNDg3NzI1ZDFkZjUzZDA3MDA3NWUzMGYwMWRjYTZhOTRjYzAzMTA0YjEyOThhNGE4Yjc4YzRjOTZlNWI0NzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_27cae3434a834c7da4707d28bf06ed75",
+      "statement": "FileSettingsStore and FileSecretsStore persist settings.json and secrets.json through the file store, dumping with expose_secrets so API keys and tokens are stored, and the secrets store drops provider entries without tokens on load.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/secrets/file_secrets_store.py#L12-L49",
+          "version": "repo-lines-v1:sha256:98e73511fb98306329ba05c8f2da13ed9240a824494f162e9e9ca92a7bb19482:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhNTQ0N2UwMDQ4ZWFhYTEzNzNhZDJiMmE5OTNiOGM1NGMyZWJlOGQ3ODZkZDlkOTIzYWU5ZDBjMDBjNDliNjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjYzQ4ZjNmNDAyNDJjZjBlZTI0Y2Q1YWJjYTI5NzQyZTcyZTY5YmZhMGY2OWQ3Njc4ZTU5MmQ0YTg1MTJiN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://openhands/storage/settings/file_settings_store.py#L12-L43",
+          "version": "repo-lines-v1:sha256:614cdc50061734b3a688292cab00306664f143f8edcb5d043ede6adbed4677e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3YjlkYzZkOThiNmQzZDUyNjAxZmE2ZTcwZDBlYmVmODQwMjFhNDkyMDcyNmM4N2RmMTQ2M2M5YjFjZGQ4NTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwNTM2YzY2NTBlODJhMzEzYmZlNWEyOGRkMzE5YzdiNWMwYjdkYTRhMjk0Mjg4ZTgwZWRlYzE3YTk2ZWNiNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c94663ed05054ead860ad801164e18d7",
+      "statement": "FileConversationStore saves ConversationMetadata as JSON per conversation, rejects metadata missing created_at, deletes the whole conversation directory on delete, and pages search results via offset-derived page ids.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/conversation/file_conversation_store.py#L26-L122",
+          "version": "repo-lines-v1:sha256:acda096ddbec45b5b3f6d7cdb9736fd1319c95864bb7332ae46699771ba20aab:eyJzZWxlY3RlZExpbmVDb3VudCI6OTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MTJhM2ExOTRjM2UxOGI5MTE4ZTVlZjgzOGJjYzNkZDc0ZmViODhjOTgyZTFhYTQ0YWQ1ODdmYjdmODA0NzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhNzQxYzEwNDEyYmY4ZWU3NDE1MjMxNjg2ZjkxYjYzNTBhNzE4ODhlZDIzODQ4MDM3MDk2N2MxMjgwZWZlODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9529db8c050c40d8a7e500cfd334fe43",
+      "statement": "The default ConversationValidator loads conversation metadata and creates a default record if none exists.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/conversation/conversation_validator.py#L37-L70",
+          "version": "repo-lines-v1:sha256:cb962a7ebb359acfdc1174b8b34b820f252cfa5d80ccab8c269cf03d5f5fd904:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTFkODEyZmFmYjdkNTg2NjI0MjY1ZTk3ZTdiMjBiY2NkMTAzYWExYTg2ZmYyZjdmMTY2MjFjZDU5NDYzOTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3MGFiYmVlZTU2YTc2OGUwMGVjNmMxNWFkZjYxNDk3NzdiMGE2ZWI2YmU1M2JiN2QwNGI0NjQ2NTY4MmQwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0ZmRlNTlmYTZkYzY3YjJlNzQ0OTJlMGVmYjU2NzNlMDNmZmQwODFhNWU4YmI1NDU4OGE3ZTA5NGZhZGUyMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4N2EyYzMyNDE5ZmU1OTZmZTcwNTBjODZiNDUyNjA4M2NiNDBmOWY5ZDcwMTE1ZDdjMTk2ZWIyOWI5NGY4MzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6fc1531fc8e4009ba23f38643dc2213",
+      "statement": "A random JWT secret is generated once and stored in the file store, and ConversationMetadata records trigger, PR numbers, model, accumulated cost and token counts.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L367-L374",
+          "version": "repo-lines-v1:sha256:41cdc4379e1392c138863f077055764d7f465443afc2a4fb357899de2cb01012:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYyYThhZjc0MzI4NWZjZTc4NTJmOTkyMGM5OTA4OTU4MTY0Y2IyYzk1NmQ1ODAwMjlkNzMyOTcxNWEyZDQ2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjM3NzhlZDRiM2M3MjhlYjlkMmY1OTk3Y2UwMDQ3MjkzZjBmMjlkNjQ0MWU5MWEzZjljZTJmMTFiYjYxZjUyNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2RiY2IxM2U1NmFlZjJiNzU2MTc1MzMwZWU5MDBjMjJiZGJhMjQ3Y2MwNWQzNzdiYmZjZDE2MjYwZDNjMmFhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmE3NDkxYzQ2ZTBiOGEwYjE3MDQ0MTg0NWUwMzhkODYyY2NmNTVkM2ZjN2IwN2M5YmJmYmQ5ZTE4OGE3OTQ5MyJ9"
+        },
+        {
+          "resource": "repo://openhands/storage/data_models/conversation_metadata.py#L6-L37",
+          "version": "repo-lines-v1:sha256:4bbf9752dead84e503e87f5d65d610f91165655a58d50bf0b8a8121045ef421e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzOTMyZWFiYjgxODgyY2QwMGVhMjJjZmZiMmY1MmVmZWZlNmFlNGQ0ZTliMWZiNWEyZmJhMmI5YjZjMThmOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY1NGMwZTE2NTFjYzRjODgwYzIyZDIwZDVkMTY5ZWRiZmIyMWNkMjU2YWZiMjk1YjM5MjQ4MmRmMjVlMjkwMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

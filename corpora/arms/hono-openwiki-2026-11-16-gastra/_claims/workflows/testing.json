@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ce918950509c11bbb11da6e142405c878a76de80a9403b55c54aa7ce55d6e659",
+  "claims": [
+    {
+      "id": "claim_75c7bf937c5a48bb82ba9f58224d43b5",
+      "statement": "Contributor setup uses Bun with a frozen lockfile; CI reads toolchain versions from .tool-versions and runs build before tests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L42-L64",
+          "version": "repo-lines-v1:sha256:2e0fe3609e5906af64b2310d1c4df4778944460b1dcb6f67a6d0115b45f4c69f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkZTMyZTEyMjYzOGRhOGU3YWQxYWViYWI2NzNjMDk3ODM4MWNmNmJlYmJmYTE3YmVlYjc0NDMwY2MzNmMwZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiMjI3ZWY0NmU1ZGM2OWQ1NDFkMzhiNDk1Y2NkMzQzOTk2ZmNiNzAyZjZiMWMzZmQ0YTE4OWQ1NDY4ZjEzMDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyNWI1YmIwMThiYThmNzA4ODEzZGFiN2MwNjNkYmUyNjgzNDk4NGFiZTU3ZDA4ODFiOWRlNzdmOGVkOTVlMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhODY0ZWUwMTBiNGQxNTA5YWVkOGQ0Y2U1MTlkNGUyZDRjZWYxY2ZhM2Y4YzRjZTcyMDQ3MWE1Y2FiMjU2YjUifQ"
+        },
+        {
+          "resource": "repo://.tool-versions",
+          "version": "repo-file-v1:sha256:a2bed04475b27ad64a8cdbd1ffee2d5591a8ef77f97a1d3d4a31cc121848b0ce"
+        },
+        {
+          "resource": "repo://docs/CONTRIBUTING.md#L33-L43",
+          "version": "repo-lines-v1:sha256:c390ba8b605f7d327dea678af17921b45f378ebc3c77d0be2fa3492850a73a83:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkZTJmNTMyOGVlNmU4MDUwZThhYWZkOGRjODY5YTA2OWNkOTU4NGVkYWFmNTRmZTU4OWQ3M2MzYjdkY2Q3OTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNWZiNDM0Y2JlMzJiODVkZTczMzY2MzcxNDkxNzk0NWM5MjA3MzE4MjgzZjkzMzk4NzkxNzcxYzVlZjZhMTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5OTc1YTM2ZjQ1NTA2YjZlOGVmNTJmNzc0MDhmZmUzMTE0YTBmNWM3ZGNhZThmMzljMTI2OTY1NTAyNTE0ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzZjAxMWQ3ODA3OGYyNWI1NmYwYWJlZmZlOTQ4MWEwODBhNjRkNzE3Yjk0MTljOGI5OWNkMTU0NDNhMjg4OGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_776cc91300174d93aff3e862487fc454",
+      "statement": "The test script runs the TypeScript spec check before Vitest, while native Bun and Deno tests have separate commands.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L13-L23",
+          "version": "repo-lines-v1:sha256:4f2a4568adc103d4cf16a58740f2ad033fc7cbe7fa49c58acf78102839f04bb7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ODMzZDU5NDljMDNhNDBjYTk1MjQ5MTYxMGE2NjU5NjQ0YjNhYTQ2NjM2MmY3OTkwMjBkYmYxOTgxNTQ3ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwMWI1NTc2YjgxMTg0MmMyOTNhYmNhOTk0MzljYzQ1ZGI2NzRiOTI1NGNkZTlhNzFmNmRmZDE0YmI0YTM0MDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyNjM0MzdlMDM0Nzc3MzQyZDlkMzIwYzFmMzkzNzY5MjcxOTQxZGFmOWMxNmMyNGMwNWIwYzY4MzkzMGIyODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlMzYwMThlYTc2NGFmMzVhMWQzMWUzNDhhNTZhY2M2NjYwNmMzZGU5NzQwZmE1ZWZjNTI5N2JkMGNiMGQ3OTMifQ"
+        },
+        {
+          "resource": "repo://tsconfig.spec.json",
+          "version": "repo-file-v1:sha256:fb97bc443e930077ff966e316fd02fe05bbadaa0e03e575516757f15d244f7d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa8370160d93449693a1a2234c046a76",
+      "statement": "Vitest defines main, runtime and two DOM JSX projects, excludes case files from standalone discovery, and enables V8 coverage.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts",
+          "version": "repo-file-v1:sha256:b88f833a4df694d5c31da52f09b986a642e10616962a8ca2205990d5ae105a58"
+        }
+      ]
+    },
+    {
+      "id": "claim_dae1154142e14c0c99b912fdccb093d8",
+      "statement": "Native Bun coverage writes raw reports under coverage/raw/bun.",
+      "evidence": [
+        {
+          "resource": "repo://bunfig.toml",
+          "version": "repo-file-v1:sha256:9b4c4ac0a6ea16c09e8db32ef3ce65cd0a1cbc8c63c5745f25da5aaf9831d6a3"
+        }
+      ]
+    },
+    {
+      "id": "claim_1608ddf5027147f097fbd0a0f5fd92f4",
+      "statement": "workerd runtime tests launch and stop Wrangler workers and use a network WebSocket client for upgrades.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/workerd/index.test.ts#L1-L76",
+          "version": "repo-lines-v1:sha256:0895637cdee77d61afa448375919842ecb8cc9f67a753fc2bfa804bd793a8db9:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1MjA3MWJkY2M2ZDQ0OTYwNWJhOGZlYmVhOGVhYmM5NDBlMTZhOTNiYmRlYTJlNjg1MjNmOWQ5ZjU2ZTQ4MWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMzUyNTg5YzM0ZDNjNjA2ODU5MzFiNmVjYzRkNTA5OTFhN2M1NmM4ZmJhMjg5NDExNDY1NzY5MDI3MmNhYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkNTlmYzU0NTQyNzg1ODkwMmVlZTc3ZWY1NzIyYjk3YjdlNmFkYjZiNGM0YzY0NmRiOWE3ZDA5MTIzYjllZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2156b2a40cc740d49cf5e32bcd86f30c",
+      "statement": "CI runs code-quality and build checks, a JSR dry run, separate runtime jobs, and combines main/Bun/Deno coverage artifacts.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml",
+          "version": "repo-file-v1:sha256:65bf879eb08094cd0011bb6e30ccb0d2df31b3ec51090059e2467620cfb2f279"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f0132f7f3c445008fb51e44a31e7d0c",
+      "statement": "Performance automation generates a 200-route type workload and measures both compiler diagnostics and the built minified ESM bundle.",
+      "evidence": [
+        {
+          "resource": "repo://.github/actions/perf-measures/action.yml",
+          "version": "repo-file-v1:sha256:aa94a690f2f139fa9dbbcb674aa56b1c5480272feed81e460620c6bd961b7086"
+        },
+        {
+          "resource": "repo://perf-measures/bundle-check/scripts/check-bundle-size.ts#L6-L44",
+          "version": "repo-lines-v1:sha256:a5f8e0cedd6566a5f075894bff5f798dc8b494dc92dbff6bd7a827d4adba60db:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlODIwMGViZDE3MDliNmE2NzViZWNiM2JlOWYzOWU1M2JiYWMwMmNjOTI3MjM0NjJjMDU0NjhlYjBkYTZhMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhNjhkMTQ1YzFmZDA4M2Y2ZDMzOTUzMGEwODk4NjcxMzA0NTM5MmJkZDc0YWIyNWI0YzEyN2VjNmRlMjJmNWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhOTMzZTk4MTZlMDM5ZTFlZDkzYjQ5MGNiYWU4YjA5ZDU4NjZlMjY2MWJmOWFhY2NmZjA0N2ZiZjIxYTkxYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3YTJiMjYxZTUwMTc5NmE5YTk2NTgyZmJmMTlmODMxMzM5Y2MwMWZiMGE1N2E5YTg4OTY3OTRmYWNhODM4NjIifQ"
+        },
+        {
+          "resource": "repo://perf-measures/type-check/scripts/generate-app.ts",
+          "version": "repo-file-v1:sha256:feb7a66fba55ab5eb0c909d8bb4590217f89ddeaea46ce423650feaadf73498b"
+        }
+      ]
+    },
+    {
+      "id": "claim_b9b8fbaf426d41d49c7afd25c370dbf2",
+      "statement": "Router benchmark scripts distinguish matching-only and initialization-inclusive runs; the HTTP benchmark defaults to origin/main versus current and uses fetch, stash and checkout for baseline preparation.",
+      "evidence": [
+        {
+          "resource": "repo://benchmarks/http-server/benchmark.ts#L22-L33",
+          "version": "repo-lines-v1:sha256:d3e8ba198f04a63869f25079d242f58d8065808aaee25ba24054e6b7959a8cef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MmNmNDkyODkyNWY4Mzg3YjUzZmQyZTE1OTMxZTI1YWE4NmI2YmM3ZjBkMDlkYTEzOWUxZjU2YzNjYjVjMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0YzMxZjI4N2RlYzlkMmUyOTg4NzUzNGRiMzNjODAzMTQ4Njg2Zjk4YmEwZjg4YzRlODI5NTY1NzYxNjczYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmZTAwZGFiYzcyMzI4NjA3YThiZDIzNTBhODViMTg3MjEzM2FiZDZhODk4OTBhZjkwMjU0YmZkNDQwMTNiOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZjNhMDg4ZWE4NzBhZWZmZjU5NWUwYWU0NjUyYTA2OGY0YTY2NGI3NjhmMDdmODIyODdiMTgwZjk0ZjA3OGUifQ"
+        },
+        {
+          "resource": "repo://benchmarks/http-server/benchmark.ts#L92-L115",
+          "version": "repo-lines-v1:sha256:eb4c0db4b54234531f4a7279f6d7c16fb061f1c8d574827f943ec5bbe3374906:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyZTc0ZGE3MDYwMTVjMmJkNDZjYWFlMzM3OGFjNWI5MzZhYTg4ZTY1MjRlZGFlYzhhOTlhOWY2Zjk1OTA2ZWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiZWU3ZGFjZTA2MzBmZDJjM2UxM2Q4Mjg4ZDRjMmY4MjQ3MGVjNjMwM2YyODRiZTY2Nzk3YWEwNzU3YWI4YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwYjJjODlhNGQ4NzQxMjgwZTAzNDI3MTNjNTE0NGI2YTViN2VkOTNlNzE1ODg4YTE0ZWJkYWVlOGQ2NmI2ZjEifQ"
+        },
+        {
+          "resource": "repo://benchmarks/routers/package.json#L2-L6",
+          "version": "repo-lines-v1:sha256:a814c4c86249e22f13839e6a4602181ec272a03e3410358f79e57561e6f7e286:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ4MzNkNTk0OWMwM2E0MGNhOTUyNDkxNjEwYTY2NTk2NDRiM2FhNDY2MzYyZjc5OTAyMGRiZjE5ODE1NDdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFhMGI3ZjU5ZTdkZDRkYjExZTQ3ZWU3YjBkMGM0ZWUwOWQ3YWYyZDQxZmMyYTk4NmRkMDc1MmJhZjZmOWM1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjEsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzBiY2FhZTNjOTZlM2JlNDQyZjVmMTU3MWYxMzI2ZWEyNjA0Yzk5M2YzNTRjN2UyZDJkMzU0ODJhNzE1NzdiMyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:36:56.362Z"
+  }
+}

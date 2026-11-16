@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:755f3713a78dc433eae730f117aec2c76a546be3883793e6739a1ea189f54074",
+  "claims": [
+    {
+      "id": "claim_a033aede14114d38aca09c9d2fe6bd31",
+      "statement": "run() parses options, handles completions, sets the working directory, resolves search paths, validates patterns, builds pattern strings, constructs Config, checks the leading-dot diagnostic, compiles regexes, and then calls walk::scan.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L75-L112",
+          "version": "repo-lines-v1:sha256:787bb438302092d0f1e10a4be99cdf40b923ce013f7842ecdc60f1e20d3be880:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMDdhMGM4NTA1ZGU5NGNhMDcxOGQyMDhjYmYyM2U1YjAxOGQ3YTJmZjY3Yjc4ZGE3Y2M4ZTdlMDBlZTM4YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d72c365dbe7d4e51973112d26622f87e",
+      "statement": "If run() returns an error, main prints it via print_error and exits with ExitCode::GeneralError.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs",
+          "version": "repo-file-v1:sha256:1b74058d291942cf80c2b879cabb02171ffa44cebc7deb6ce62d12641c2dd427"
+        },
+        {
+          "resource": "repo://src/main.rs#L62-L73",
+          "version": "repo-lines-v1:sha256:13c65d2c2e9294fdae79f679c0ae84913ca26313f2fcb5474b41a7e5509f19a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYjllZWU5MWJjMGIxYTc3YjVmMjI0ZmQ2OTQ1ZjNkZWMyMzRlNTU5NmI5NDc1YzkwYzVhZWM5ZTZhZTIwYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYzM3ODVmMmUzODI3NDk2ZDU2NTMxMTE0ZGEyYjc4M2IwMWUxMDAyMjg3ODgzN2U2YjdmMDZjMTI1NDdhNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0N2ZhZDJhM2IzZjkyOGE4MmIyYjQzNjZlZmEwNDlmZGYyMGJlMTZiZjliZTYyZTVhMzZmMWFmYzIwY2FhODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_571aacfcac284389b9ab5b02b98db884",
+      "statement": "Shell completion generation names the completions after the file stem of the invoked program, defaulting to fd.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L114-L129",
+          "version": "repo-lines-v1:sha256:6fce4f25d421048259389c6d378d3ced2083f15db433c80804dd5003c082e498:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTZmZDc5OTdkY2E0MGYwMjM2NWM3Y2I0ODA0YTMxMGY2ZDMwZWYxMGEyZDk0MTU2ZmIyY2M0NzQ3Mzk2MWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmMGY3OGI1Mzk1NmU5NDkwZWEyZDY4ZTk0NWNjYTk1MjYwYjcyNThmZjM0YTkxNDQyMjFlNDI5NjYxM2ZlNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjYWI2NWI5ODllYTM4NDYxNGY0ZGJlZDFjOTMwMDFiMDEyZTRmZWJlMzBhZTk5YWU4MmJmODRlNzIzMjg0ZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1164d5cfd3b4490ab505ae79c858d6e0",
+      "statement": "Search paths come from positional paths, else --search-path, else ./; non-directory paths are reported and dropped, and an empty result fails with 'No valid search paths given.'",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L696-L721",
+          "version": "repo-lines-v1:sha256:d34f92ddbc134f029d276ccf4782ecacbedea15ad2220aa32260313092fb10f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZmJkYjRjZmEyMzg5NDAxY2UwNjg1MmZlNWEwMDk5NDkzNDg0YTBjNjBkOWM2OTdmYmQzZmMyNTNkNGYzODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZDliNzVkZDgxMDgwZjQ3YWE3YWNiNzE2ZDkzYTRkYjBhMmI3MmFjOGQ0NzQzOGViOTc4ZjQ1ZDBkMTZiYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhZmRkOTQwMDQyNzQ4ZGE0ZDJmZDI0NDJjMWFmZjg4NmZkYmQwNWExZDcxZjExM2FkMDdkZTZlNjhjN2RhMzEifQ"
+        },
+        {
+          "resource": "repo://src/main.rs#L84-L87",
+          "version": "repo-lines-v1:sha256:234fc91dc393c774133403b62e218ec6d299d438387f3f8db3e00056b6464fdb:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIxZjNjZWUyNGY2ZGExZTI3ZTFjNDg3MjZjMGViMGVhYzcyMjU0OWViYjllOWYxODBlYjhlMmVkMzFmNWFjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTIwOGE3ZWJjNDQxODU5ZTE5MTQyYjE4ODNjYjA4ZGVmODBjMWUxNzdiZWY4MTE4MWI1NDcyNTdlMzczMjQ2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODRkMTg5NTAyMjhhZWRkNWY2ZTY5Mzk4N2U0YTE2YzRjZjg3OTc1OTQ3NzBiYmY5N2RlOWQxNTNjYzBiNTY0OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_169e1bb695fb4dbe8393d1e69c66e8ab",
+      "statement": "normalize_path makes paths absolute under --absolute-path, rewrites '.' to './', and rewrites '-' to './-' so the walker treats it as a path.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L723-L736",
+          "version": "repo-lines-v1:sha256:8986aed2cbc6661c00ef5369697fe2c51e576b5949144d1a7d69df886645297b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMzJhMmFkNWZmYTkzYTY5ZTc3MDY0OGQ2Y2Q3NDQwODY0NzNlYzc1NWJjNTUyY2I0YTFlMGVhOGNkOWZkMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1NDUzMjBmNTU2ODI2ZTZhYjFkNmY2ZjQzYmFlZmZjNTc0MTM1M2VkN2MxYWY5YTkzNzY0YmJkOGVjOWQ1MDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViNzY3YTJjNDM5OWU5MDc5YzAxNzIzNjk0YTliODRmMzQ4ZmUzMzExOTI3YzYwMWU0MzY3NDY4ZTk5Y2U4NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39943e35910d456dad81cc9214b1323a",
+      "statement": "Without --full-path, any primary or --and pattern containing '/' is rejected with a hint to use 'fd . dir' or --full-path; on Windows a pattern containing '\\' that names an existing directory is also rejected.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L169-L216",
+          "version": "repo-lines-v1:sha256:9f9cffd90d35115bebc476abd4cf436d33d89426b5b26fecca5624574dd622f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZWZlMzZjNDhlMmQ0NDBkODE5NWZkOWQ2NTJiMWY5N2QwNzdiZjA1NzRlMDRjYWMxZjgzOTczNjMzZjNhNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2OTk1NDM2NzI1NmM2YTYxYWUyZTg2Yjc1MGUzZmRjYmNkYmFjOTBhOTFhNGYyOTg2NWUwYWI0MWQzMzhjMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwYWUyNDhjYzg4OTU3OGFlNDIwYmYxMzhjNDEzZTNjMDU0YWY1ZTUzOWY4OWY3NzUzNWEwNmVkOWQ4YjhlYmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e45670afeda4170b45e321d6dad1ee6",
+      "statement": "Case sensitivity is enabled unless --ignore-case is given and either --case-sensitive is set or any pattern contains an uppercase literal (smart case).",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L249-L255",
+          "version": "repo-lines-v1:sha256:d585a21bc11285b45990a64f26a464a2d5b4ee633bd35026faa552386884ab47:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQ2OWY3NDIyODBlNjNhMDI5NzBlOTEzMTVjMzI4Y2Y2ZjQzOGRjNDUwZDQyOGY2YmMzYmE2ZWEwYTE5OTY1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVmMDY4NmQwY2JhYjU0OWRlNGQzNGU3YmNkOGJhOTg3MWQ5NGEwZjUzMWE4OTBkNjg5ZjE5NjJmMzI3N2ZmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNiYTYyNDM1M2Y0ZmM0MzQwMjgxMDQzNzMwYTZmZTJmNzY3MTZlODIyMGViYTlhYTMxODAxOGZkNmM0YWM2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmJjNWViNWNmYmZiMjViODI3NWJhOGRkOTgyYTZlZjM3NzAxMzJiMzlkMWYyNjQ2MWJhOTMxNGI0ZjVlNWQ0ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_94aa316325854e46a23664dcc56d5fb8",
+      "statement": "With --color auto, output is colorized only when ANSI is supported, stdout is a terminal, and NO_COLOR is unset or empty; LS_COLORS falls back to a built-in default palette.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L279-L292",
+          "version": "repo-lines-v1:sha256:b4378bc86d24653fe82f0f3a1273157e81936588e681027a8338fd770b9beb49:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjZGEyZGI1YzA2NWU5NTQ3NDNkYTI1ZTlmM2I0YTYxMWVmZmI0Yzg5YmY2MjI5MmE3MWNkY2JhYjY0MzQ0ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlYjZiMzMxZjczNjlhODA0ZjkxZTQzMzk2YWQ3Y2Y3YzJkMTFhMzRkYTY3MmVjNzcxOWQ1YmZkYmRjZjVlMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5N2Q4NWYwOGVlYTBkN2EyMGQwN2JlNWFhZGFhNTQ2OWU0MTMyNmViODRiZTRmMTkyYmNmMTllMDJlZTVmMjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5eaf9120c66c4edf81d0e32c2ec50dba",
+      "statement": "On Unix, fd errors out when hidden files are ignored and a pattern can only match names starting with a literal dot, suggesting -H/--hidden.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L521-L539",
+          "version": "repo-lines-v1:sha256:03fc43e4364c9c9be01660977624f8fcb36831d68eda44f20beed381baabbfa3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZTJmNDI0MjU3N2Y3YWMwZGNkZjNhNDk2ZjBkZTQ5NmE0ZDI4YWQyMDM1MjQ0ODk3ZWM3MWU3MjZkZTYyYTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3YzhkZGE5MGFjMDU0NDA0NmNjZTQyNmZmZjEwM2FjYWJmMThmZmUzM2U5MTJjNWJiZGUxNjU5OWRjMTBhMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlY2NlYzJjOGRhYjFhZTk1MzU3YjBkYzAxZGRmYTI2Nzk3YjZkZTY5MTE2MTljODNiMzA0YjI1N2JlNTE1NzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d560459274fc4964b39a095a27eb40e5",
+      "statement": "Pattern regexes are compiled as byte regexes with case-insensitivity from Config and dot_matches_new_line enabled; compile errors include a hint about --fixed-strings, --exact and --glob.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L541-L555",
+          "version": "repo-lines-v1:sha256:4aecbe6430e27f08136ec95199aa800c7ef17b176bc451821f3756ebe25ccba2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMWUwODU3ZjAwZWQ4MmI1OWQ3Mzk4MjM5MmI0MGVmOTNkMjNiYWFjMjU2NDhjMDdiZWM0YmM3YTg0OTMyYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5218158e78d24b428a3b0e2e5e882b7d",
+      "statement": "The default path separator on Windows is '/' when the MSYSTEM environment variable is non-empty, and a custom separator on Windows must be exactly one byte.",
+      "evidence": [
+        {
+          "resource": "repo://src/filesystem.rs#L128-L136",
+          "version": "repo-lines-v1:sha256:7d9e912a700f11e0de1a4e21c72c5db8e306e2ccae56041400cd46cf7cb9239a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzkxYjUwYzE1NzFkOTMwMDRjYjNhNWJlNzAyMDQ2OTY4ZmM2ZGFkYjk2NDQ0ZmNhMzA4ODlkNGI2NGE1YWE0OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDVmZGI3NGY5MDYzODg2ZDRjZGRiZjVjY2QyNWJmMGUzYTA1YzY1M2JjYzUyYWQ5N2QxN2Y5ZTk5MGRhNDBhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JjOThkNmIwZGM0OTJjNTAxNmRmMTA4MDVhM2E1NGViOWMxODRhNWE2MTM3ZTdmNGJlY2ZhMGMyMjA1NTBkMCJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L234-L264",
+          "version": "repo-lines-v1:sha256:99ecb52af7a8a445adfd51567c616786a4dee9856ee6649d248b801cab35f739:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1M2I2Y2RjNTllOTE1ZDA5ZWIzOWI1ZGFjOTVlZTkxMzA1OGJjOThlN2YwZjk1MDAxYjNjMjZjOTg1ZTIyYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MGY5M2Y0NDgyZjU0MmQ4NDVjMTg4ODkyNGU4NmFhYjRiODMxYzA1MDQyY2IwMGVmNzZlMGVlOTVjNTBiMzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwNjNjNGQxYWY4Y2Q4OWJiMGJkZDc2NTdmZmNiZjY4MDZhNjEwZDc5ZDZjOGQ0YzMwN2MyNDFkZjM5MDA1MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjNmYwZjUyMGMzNjY5Y2Y4NTY0Y2Y4ZGJmYjVlYzdjMWE3MzNhZjRmYzljMmM4NmU4NmM3ZmQxODk2NTEyZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_436e39dcfb064305a3dd56addc97049f",
+      "statement": "The ./ prefix is stripped only when no explicit search path is given; in auto mode it is stripped unless --print0 or a command is in use.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L765-L773",
+          "version": "repo-lines-v1:sha256:cb2e725d662d530f28c7283124e5fcf5eee46d46c6044dd01f082033752e4bd3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjkxMGYzODgzOWQzNDg5YzdiM2EwMzQwMjc1OWYzOWZiNjcwMGY2NWEzOGQ3YjljMDFhY2NjYWQ2NmQ4YTI0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzlkNzY5ZWZiZjIwMTVmZjJiYzAyNzM2ZWUwZWJlZTE0MGI2Zjc4ODY3N2M4NjdiZjgwNzZmNGIzM2EzYWZjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTMxYzBjOTg1ZjI0YzI3MzZkMjdlNzdlYzc4YmNhNGFhZWY0YWE2MTRkNThhZDRmYjUwNjg0Y2Q1NmNmNDJiZSJ9"
+        },
+        {
+          "resource": "repo://src/main.rs#L390-L390",
+          "version": "repo-lines-v1:sha256:6e1e5d0c9ebdfcc88292ff6288cd7d99474990d389b931467373ea7ee723ce88:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmUxZTVkMGM5ZWJkZmNjODgyOTJmZjYyODhjZDdkOTk0NzQ5OTBkMzg5YjkzMTQ2NzM3M2VhN2VlNzIzY2U4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmUxZTVkMGM5ZWJkZmNjODgyOTJmZjYyODhjZDdkOTk0NzQ5OTBkMzg5YjkzMTQ2NzM3M2VhN2VlNzIzY2U4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzc0NTkwYWQyNjAyYTc5NzZiMzlmYjY1NTk4Y2Q4YjVhNmIzZGMyZWVlMGVjYmNjY2NhNzNmMjhjZDliZTg4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjcxNzNlYjQzMDAwOTQ4ZWVmOTZkMTM0N2M1NDhhMmMzYjNjY2I1OTY3M2U3NzA0ZDdhMDEwNjA2NTNlZDYyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_76dc67aa203a46a7a33df61808881654",
+      "statement": "Config::is_printing returns true exactly when no command is configured.",
+      "evidence": [
+        {
+          "resource": "repo://src/config.rs#L140-L142",
+          "version": "repo-lines-v1:sha256:91ecfb92c51012c453f1d0b2d204f74cf9d6cc858994e0a0251b3660c6ffefa9:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzkwZGIyZjI2ZjZiZDVmZjhmOWU1YmYyZjkwODM3YWY3YjIzYWFkZDlhZjExMzAzMDQ1MDg2NjY2MGU4MjQ1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDYzNmM0YmVkZTg3Zjk1MjA0MjEzYWQxYTZiM2YyYjZmMmFhODYwZDkyNTNjNWNmOTljMjNmMzBjYmYyMmE2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:05:54.272Z"
+  }
+}

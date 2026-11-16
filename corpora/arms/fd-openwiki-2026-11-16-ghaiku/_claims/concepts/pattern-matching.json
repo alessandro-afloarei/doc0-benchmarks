@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:536561295d63cd75c9a257ea383aa4ff5b5aabe33d312aa7e64955f67b25e368",
+  "claims": [
+    {
+      "id": "claim_995a920af6ca41d1b6ad1ea8c88cfa11",
+      "statement": "Each pattern is translated to regex source in a fixed precedence: --glob (with literal path separators) first, then --exact (anchored, escaped), then --fixed-strings (escaped), and otherwise the pattern is used as a raw regular expression.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L218-L231",
+          "version": "repo-lines-v1:sha256:0e7b57fc8c965808ca8f5db7bb999fb7a7d6b9bb8a802b54a65062d4a10298ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NWQ5ODY4ZmNmN2EyOTE3NzcxYzE4YzlhMmUxMWUzNjUzNWRhYmViNDU5OGVjNWYxNDg3NmFkNmE4OGI1YzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxYmQ0ODU5MmEzMWYxNGM2ZDg5ZGY5MTYxM2FhMDY2OTUzZWNiYTgzNWFhYjIwNzRkZTRiNmQxM2RlZjg2YjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_488f66cd51b145c7818102b0033e2ab6",
+      "statement": "Smart case makes the search case-sensitive when --case-sensitive is given or any pattern, including every --and value, has an uppercase literal or character-class bound; --ignore-case overrides this.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L251-L255",
+          "version": "repo-lines-v1:sha256:92998d39b9818a0fc268378f8c315b3be7a563dacc36c98cca15296456830925:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk0MDE0ZjFlMTA3ZmM5OWM4ZTcyYjUwM2QwMjM1NDI2MjU1M2QxNmEzZjcyYTk3Y2VhNjgzZGRlNDRlY2MyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVmMDY4NmQwY2JhYjU0OWRlNGQzNGU3YmNkOGJhOTg3MWQ5NGEwZjUzMWE4OTBkNjg5ZjE5NjJmMzI3N2ZmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQxMmI3YTdlOWY5YzJmMDk1MmYxMzEzYzFiZDcxMDEwMTNmMDcwMGVhN2RlNTk5ZmVhYTJlZjhlMzhmOTRkZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmJjNWViNWNmYmZiMjViODI3NWJhOGRkOTgyYTZlZjM3NzAxMzJiMzlkMWYyNjQ2MWJhOTMxNGI0ZjVlNWQ0ZiJ9"
+        },
+        {
+          "resource": "repo://src/regex_helper.rs#L5-L13",
+          "version": "repo-lines-v1:sha256:534ef5c2bc764d85f7c1bae21ffdaf165d7dfc57493824919f3bd7b8f9d16d8b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2RhYmRlNWI2YTJiZjliNmZjMWZjMTJmZTZhNDQ0MWNlZTQyNTA5OTJmMjc5OWIxYzk3MGY5YWI0YTVlODRjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzZlN2Q1MWEwOWY5NDlmZDk1N2RlNTZkMzI2NmRjMDE0OWE5YjczNTAzMzc0ZGZlMTc0ZDQ3MDcyMzZmZWM0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWEzMmRiMWYxM2E3ODliZjc1NzdjMmZmNWI4YmNmNTEwNDYxNjQ0ZGMyYTdkMzg0NTIxZjNlZTNkOGUwM2E4NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_74041a4bba014678b6de6ef8f7761c71",
+      "statement": "Multiple patterns combine as a conjunction: an entry is reported only when every compiled pattern matches the same search string.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L517-L523",
+          "version": "repo-lines-v1:sha256:dfa75ea45c6419a859a73e0169a341fe84a38821b68a7c01a39d12c5e6cc1ff6:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDM2MWU3ODc4ZjdjNmNmYjExZjhhZmZjNzhjMDY1OWI4M2IxYjBlMTVlNGYzZjIzOTBhODlhYjg5NGNjMWEyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDI0NjdlMWMwNjk3YTI5OTc2Zjc3YTM3NjVmMDBjMDAyNDc4NTViMTRkNDkzYzU4YmI3MTU2MGQ1ZWQ4YWZiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjFkMjliMTM5YTdhOWJhNmJmYTAwMzQ2OGEzNWUwZTIyYTExOTc4YzBhMzUwMzk1ZjZmN2IyNTIwZDJhZDcwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGNhNTk2ZTEyYzRkN2NmNzQ4ZTU5YWUzMWU0ZGMzMjUyYjQyYzA3NmFhYzMwYmE3Y2I1YmFiYjZlMTkxNTc2NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d14a14b45fc4bad8880743384af56b1",
+      "statement": "With --full-path the matched string is the absolute path, built by joining relative paths onto the current directory and stripping a leading ./; otherwise only the final file name is matched.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L656-L672",
+          "version": "repo-lines-v1:sha256:2f1f88b971f2704f9b795935d12fc9732230bbee877849ad202f64f2dd652806:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlOGFkMDg3Y2I2YzhiZWQ4YTIwMTk2MTVmNmQwZTE4N2JjZGIyOWVhYmJmNmNmMDY5ZjRkNmQwNzQ3ZWY4OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzZWY1YmVhMzg3YjRkYzJjNDIwMDhlOTE3MDI5MDBmMzRhZmU0YjQ5MjY1ZTAyODYwMjVhYzJiOWIzZDdiNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1MWMwMjQwNTY1OGExZDY3MmE5NGE3ZDA4ODkxMjVlMzNlYmQxZDQ1YWFhNzVlYjZmMzIyN2Q4MTQwZjgzZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_77b71acc86bc4b3f80e1bcfdf55e7764",
+      "statement": "The leading-dot diagnostic recognizes only a regex that begins with the start anchor followed by a literal dot; other dot-only patterns are not detected.",
+      "evidence": [
+        {
+          "resource": "repo://src/regex_helper.rs#L40-L76",
+          "version": "repo-lines-v1:sha256:d54a021310ccace5c4e00cba4a89f29e23cfb602e7a301b7429183541e29acbf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwYjQwMDE0NDY4OTVlOTIzMzkwNGY5ZmJmZjgxMjZhNGJlZmFlZDk0ZDFiMDFlYTQ3NWNhMjQzZTRhZjZkMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzMTExZTQyY2I4OGJlZTllMjJhYzQ4YWE3MmQ0NTM2MzhlZjYyZjA3ZjY0N2IzNTYwMGFiMTAxZWJlZTExOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5Y2U4MWY5ZDhkZjM3NTQxYmVlZGUzMThiMTc4NzhhYmEyNzc0NzUwYzFhODY0MTIwNDNkM2NjMDBlZWRjOTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6711bdd7a7d043e9a1513d4194bbba5f",
+      "statement": "A pattern that fails to compile produces an error that suggests --fixed-strings, --exact, or --glob as alternatives.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L541-L555",
+          "version": "repo-lines-v1:sha256:4aecbe6430e27f08136ec95199aa800c7ef17b176bc451821f3756ebe25ccba2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMWUwODU3ZjAwZWQ4MmI1OWQ3Mzk4MjM5MmI0MGVmOTNkMjNiYWFjMjU2NDhjMDdiZWM0YmM3YTg0OTMyYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:13:27.224Z"
+  }
+}

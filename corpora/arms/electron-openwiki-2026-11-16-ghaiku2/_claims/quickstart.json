@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e8e5182b66d2efa20de18eb439393ffc5851b5ef1070830bfb151ae7fe9ec039",
+  "claims": [
+    {
+      "id": "claim_db53fdb6c3ea46cabb8073a0afc15518",
+      "statement": "This repository pins Chromium to 141.0.7361.0 and Node.js to v22.18.0 in DEPS, so it contains the Electron layer rather than the upstream sources.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L4-L7",
+          "version": "repo-lines-v1:sha256:ea57a49e264c6514156fd03c8c5e06d854c0c02e67a2fb4bae41e37fa90822d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JjZTJmYzM4MTk1NmJhYTE1NzU0YTE4MjdkMGNhOTdiMTNjODZlZWZhMTg1MWE4Yzk0NTBlOGE0MGZkNTMxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM2MzFkZGQ4YmI2MWI5ZmM4ODRiNGYzZjU1ZjgyNzE4NjQzMGM1ZmMzNTVjMTY3MjQ0MGFkNWYyYWIxMGU5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRmN2FlNjc0NTg5MWUxMzcwNDBjNzk3ODQxZWE4MDM3ZDkyNTJhMzIxOWIzOTJiNGExNzcxMjMyZGIyZDg3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5YTk4ZTQxOGI0MDg0ZWNiZGFiNWE5OTI5ZDAzOTE0YTMxZjliYzA0NmNmMjdkMTFiZWQ5N2U3ZTBhZGU3OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c95ed4420ebe445fb1ebab572b30050e",
+      "statement": "docs/development/source-code-directory-structure.md describes the top-level layout, with shell/ holding the C++ code, lib/ holding the JavaScript and TypeScript runtime, patches/ holding upstream patches, and spec/ holding the test suite.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/source-code-directory-structure.md#L13-L20",
+          "version": "repo-lines-v1:sha256:a12a1b4db72953578c3c3d9e1dc191c2e256cc98e04d077029c04530be5de9f4:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ5YWJlZTZjMzY2N2IyZTMyZjQ2ZGM3NDhhZWFhODFjYmYxZjM4NmE1MDkwMmJlOTZlYWUwYzE5ZjZjZmE3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmUwYTc0NDlmZWI1YjM0NzUzYWRkMGZhY2U4NmVhNGYwNDU1MWMyODQwZjhlNDgxNzRmYTFlYjhlZmIyMDEwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTdmNTRkMGE0MzNiNmVjMjYyNzc5MDE2MDZlNTEwMGUyN2ZiYTVkMGU2NmRjNmJlMzYyNzE3YTNiNmU3ZTc1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDgwY2NiMWVmMTc0N2UxNmYyZmI4ZjBiMTNmMzY5ODYzNDA2NjAxYzY5YzdjNGFmOWU5Yzc1NDg0ZWNjOWJiOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7993457c0684c3092a90a53d99659ea",
+      "statement": "package.json defines npm run lint, create-typescript-definitions, and test scripts that run the lint gates, the typings generator, and the spec runner respectively.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L64-L64",
+          "version": "repo-lines-v1:sha256:6d60bce022264acf287c3ca8d583bc998cbb6f3bd7a8801d810a0062de7ce058:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ2MGJjZTAyMjI2NGFjZjI4N2MzY2E4ZDU4M2JjOTk4Y2JiNmYzYmQ3YTg4MDFkODEwYTAwNjJkZTdjZTA1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ2MGJjZTAyMjI2NGFjZjI4N2MzY2E4ZDU4M2JjOTk4Y2JiNmYzYmQ3YTg4MDFkODEwYTAwNjJkZTdjZTA1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODEwODU2YTg5YThlODM3ODY2NTQ5Y2Q0ZTdhNmQwYTMyN2JmNDQ4YTQ2M2Q0ODA5OGUyZWU4OTEzM2JhZDZmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTc0MzIzZmQ0NjE4ODBkZjk3OWFiNDlhYmMxMWZjZTVkNTc1YzMyNmRlNWMxZjg1MTZhOGVkZTRjMTIyOTk5ZSJ9"
+        },
+        {
+          "resource": "repo://package.json#L80-L80",
+          "version": "repo-lines-v1:sha256:eaad6960d7f26fbdf5ac04becec29850ed5f769c0736728a2a41f0c594b61239:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFhZDY5NjBkN2YyNmZiZGY1YWMwNGJlY2VjMjk4NTBlZDVmNzY5YzA3MzY3MjhhMmE0MWYwYzU5NGI2MTIzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFhZDY5NjBkN2YyNmZiZGY1YWMwNGJlY2VjMjk4NTBlZDVmNzY5YzA3MzY3MjhhMmE0MWYwYzU5NGI2MTIzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2JkM2YyNjhiYjYyODNkNTM1ZWQ1YTZkZWM5NjM3YmYxZDE1NmVhZTRmMmFkN2RlOTk2ZmNhMjcyZTMwY2FjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWMyYmM3MGUwM2M3ZjhlNGQ2ZmY3YmM2N2EyNGExMWNiOGMyODE1ZDUwNzg4NjA4MmUwZTkxN2I1MTJkYjVhYiJ9"
+        },
+        {
+          "resource": "repo://package.json#L92-L92",
+          "version": "repo-lines-v1:sha256:e0ac4aad6bd1ed89df305f01947e925ece17a7617c435112bff226609ea623d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTBhYzRhYWQ2YmQxZWQ4OWRmMzA1ZjAxOTQ3ZTkyNWVjZTE3YTc2MTdjNDM1MTEyYmZmMjI2NjA5ZWE2MjNkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTBhYzRhYWQ2YmQxZWQ4OWRmMzA1ZjAxOTQ3ZTkyNWVjZTE3YTc2MTdjNDM1MTEyYmZmMjI2NjA5ZWE2MjNkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTg2NmI1MDljMmIxNjkyM2E3OGVlZjhhNzI1Y2M1MDM0Y2IyZDAwZDA3MTZiNDc4MGY0YmUxZDM3YTY0ZDg0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTFmOTdmNWRjM2ZlYzVkMWEyZWY3MDY1NzMxYmQxNTkwZDNlM2QwNmI0ZjUzMzhkY2FjNDRlN2E0MTNhYzdmOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfbbe7eeb115492ba547f4adf1955b42",
+      "statement": "script/start.js launches the built Electron executable with the arguments it is given and forwards termination signals to it.",
+      "evidence": [
+        {
+          "resource": "repo://script/start.js#L1-L8",
+          "version": "repo-lines-v1:sha256:e9f7ef4cb44e8649fc75df071dfc498f709efee7fd9ea15e79a76f6a385203d7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU5OTNiZjY0NjBmMGJjNmIyNWUxZTdkY2Y2ODljMWI0OTk5Y2IyNDM4YmNjY2MwMjkzNTAzNmJjNTdjMjM3NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmU2YWIxMWMzZGE4MmE5YjIzNmZjMmE2OGM3NTRhNDg1ODNhMmU3YmI0YTdjMDNiNjExNTVlNjg2NGE0NTRmYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODhjNzA2MGZkMDRkNGRkNmFhY2Y2M2NmN2JlMzExMTJmOWM0ZTdkNDY1YmE5NTMyYzU5MGExYTU0ZGZjMjcxZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_300482bfde464f8c88e3628c28d9b4c2",
+      "statement": "The pre-commit hook runs lint-staged through the precommit npm script, and the pre-push hook runs the prepack script, which runs check-for-leaks.",
+      "evidence": [
+        {
+          "resource": "repo://.husky/pre-commit",
+          "version": "repo-file-v1:sha256:1b42d27781e331ac4210dff4a12bdaf9d0bff344797ef4df4edce5226a58521b"
+        },
+        {
+          "resource": "repo://.husky/pre-push",
+          "version": "repo-file-v1:sha256:2d03ed63cf13bd087d3292d859e92ccb72d7c9dbc410ef6079f8c425ad406d9f"
+        }
+      ]
+    },
+    {
+      "id": "claim_13f6fccef27046a3bff1cb943c761517",
+      "statement": "The main spec runner in script/spec-runner.js is the only registered runner and is named main.",
+      "evidence": [
+        {
+          "resource": "repo://script/spec-runner.js#L40-L44",
+          "version": "repo-lines-v1:sha256:4b426c7ba6f0c036abb5910d1b7ff705763a45ec903bb96f29d146a4c502163a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YzOGYyNWUyMTM4M2NkMjgzN2EzZDVjY2EzYjY4MWZjNWE2NmFiNTFlODg4NDdkYzQ2OGE3OGNiYjEwMzViMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTVlMjZjZDkyMzY2ZjYwZDhlZDkyZDAyMzlmMDdmZWY3NGNhYzE0YWE2OWFkZGY5YzJjYzBkMTFlYjAwYTQ2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjEyNmExYzdjZGEyODE3YjZkOWNmZGVhMzUyMTYyNTNmZTQ4ZjcyNDIzYjE2YTMzN2ZjYTA2M2Y0MWRlMzM5MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWI3ZDZjZmNkYTBiNzcyYThiZTA5MGY2Nzc0YmYxM2I0N2UwZTQwNmJkYjE4NWI5ODBiNWM4YjRhNWUxOTRhNyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:50:06.090Z"
+  }
+}

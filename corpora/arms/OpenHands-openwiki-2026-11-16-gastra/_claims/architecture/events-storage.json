@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7daeb19854a13077da87ea6ca8fe1be52fe347bfeffe89d878647078162d6710",
+  "claims": [
+    {
+      "id": "claim_97719e26db6946ad9a8d3017ac0e4e8b",
+      "statement": "EventStream rejects previously identified events, assigns IDs, filters serialized data, persists each event and cache page, then queues the reconstructed event.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L163-L213",
+          "version": "repo-lines-v1:sha256:4856bc8b3c866d6d335dace3f0cd096d90de259843e92f6765a79f54c7ccbf41:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1N2Y5ZGNlZDEwMTMxMzRlMjQ3Zjc4OWUzMzMyNmE3N2JkMDcxMWZlM2NjOTI2ZjY1MTEyMzNjMTg1OTRjNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZmFiNjRiODk4YzZiYWE1NTMyMTE2NWM3NWJjMTBiZGIyMGFhMmQ3YmRmNThiNzE5OWI0MzRlNmI4OGRlZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzZDFmNzZkZjNlY2FkY2JkMGI3MWJjYjk4N2JmOWI1MDY0NGIzYWY1MDI4ZjZhYjU0MTQ5MDljYTA1NzFmZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3YmE0ZWQ4MTJmYWQzZmU5YjQ1OTgxOWY0ZTJkYzhjMTVjMWFkN2EyMGIxNmRmZjViNDVhOTRlODFiNGUyNmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82be3b3153c44eabae00e1eb8675d785",
+      "statement": "EventStream submits callbacks in subscriber order to separate executor resources and cleans these resources on close.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L246-L291",
+          "version": "repo-lines-v1:sha256:251121e9cfbc5930c2665817cd5c483a2e49d65074caca91edd56ebebfadb571:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxZWFjZDJhNjAxOGU0NzRjNzFjMzRiZGEzNzg3MmM5ODlkMDdkNzlkZjNjN2E2ZTUwNTVmMTNiOTRhOTU2MjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0MzM2ODZjMTJlODYwNmZjNGI1Y2FhZmU0OTc5YWVmYWE0OTVkYmMyYTMzNWM5MGZiMWMxM2JkYjhlZWUwYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OTZkMWI0MTM4M2RkZTZjZmJiMWZkODEzMDhmOWQxZjA1Y2NkOWRlZjU0MmI3Yzc3MDc3ZmQ3MTdhYTE5ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://openhands/events/stream.py#L56-L161",
+          "version": "repo-lines-v1:sha256:a5af21b9464f2699995a9f4bfac14634678f70769a6774ed0118fc16f6832c65:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNGVkNmI2OGE1NzFkYWM1ODU2NWI4N2Y2ZjQxY2E0ZGJmMTI5OWQ0YTYxODAzYjJmMGIxY2ViODE1ZTdiMjI2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1MDZkNGM1OTlmZjI0MDgwZDkwM2E3OTk0NjVkYmZkYjU5MGZmYjgwN2E1MDk4YjhjNDdkNjFiYTNkM2VlOTZkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxZTFhMzNlY2UwN2EwYjJjZWUzNjg2ZDM3YmE1MzNlYzA5MDMwM2MwMzliOWRiYTBiOWViOTBmMzJlZGFkYWY3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0YTJiNWJhMzczM2FiZmE1MTA4OWYxYTEwMzIwNTNlY2ZhZjYxNWUyN2E4ZmZlMWM5Mzk1NGUzNTczZjI4ZDBjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_11116270b886409a8d9e9a5fab2727a2",
+      "statement": "Conversation storage paths are user-scoped when user_id is present and otherwise live under sessions; event, checkpoint, registry and stats artifacts are separate.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/locations.py#L1-L42",
+          "version": "repo-lines-v1:sha256:88579ba74548ed95e2dd47b6b3e8cf7eac29afad9e35836f7b715f5cedd98415:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjYTlkOTBkNjdhMzhlZWUxMDE4ODY1MWNlZTI1MTgwMjU3ZmZhMmRjNDZmZDYyZWQwZDAzNDE4MTY2NzRiOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3ODFhZWE3ODc4MzA1MTBlZjljNTFiYTRiZjM0YTQwODk4YWZkZjg0NjdlNDdjNjRmMjY2OWI4ZWZkNTg2OTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73f59b70613541c097121957fc366bfc",
+      "statement": "The file-store factory selects local, S3 or Google Cloud, otherwise using memory, and optionally wraps the store with webhooks.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/__init__.py#L14-L57",
+          "version": "repo-lines-v1:sha256:9a1d3d449d7e2e8d42ddcd1bbc1c6c31c379d4845539590fcf1bffa7e4d74a34:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhNDZiOGU0MjFjMjJjODZkMGMwODIwN2YzZmY5MzFkYTM5NmQxYWEwZTk1N2YzZmFjNWU2MmRiZjRlNjQ5MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjZmJjMzMxODQ2NmQyZDQ2MDJiNjY5MjZmZGFjYjdkYTZiN2QwMjhlZjI4ZDQzOTYyMzQ4NzE4OWQwZWY0YTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4MzM0OGQ4MjU1MGNiNzY0NmY1NjIzYTNmMzRmMjg2MmY3YjQyNDYyNTFjNjcxOGFhZmQwY2Q2YjI2MTRlMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_65bd4c08d80845959403382bf4831ecd",
+      "statement": "State checkpointing excludes history and view caches; restore supports a legacy path fallback and sets the restored state to LOADING while preserving eligible resume state.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/state/state.py#L123-L214",
+          "version": "repo-lines-v1:sha256:b6ff1caca15fd056071de0242e817a1607d94b63bf289b55c757f77b6c4bfe8f:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYzM2MWI5ZmY3OWUxNzAxM2I1MTZkZGRkYmNmN2NhYTdhODc1NDA2ZmE4M2UyOWYzN2IxMDdiNWMxY2E3ZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjMDQ5Y2Y5Mzg0N2ZlMzQ0NTQzNGI5ODliZTI3NDUyMTY4NGNhMzFjYTVhNjAzMzRhZTU3ZTZhOGU5MDQ5YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwZTEyY2RlNTcwNTM1YWY3YTY0NjVmNDA5ZTlhMGYzODJkOTdmMzcwYmIxMzMxYzU5YjljMTlkNmFlMmRiYTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00194e4cdcd44649a87d6486c47cb395",
+      "statement": "Event secret replacement traverses dictionaries and string values with protected top-level metadata; it does not traverse arbitrary lists.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/stream.py#L215-L244",
+          "version": "repo-lines-v1:sha256:5b704e3496d45943aac98d5a41a79c81538e6deea91d9c175ecee7ff4855cf85:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmOTMyZjc3NDc4NGIxMzUzM2M5MDAzMWQwYWY1OTFhMjVlY2JmNWRlYzIwM2I0MDNhMmY3N2VkMjdjZGY3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjMjVlM2FlYzFiMTNmOTBhMzhjYjJjY2NiZjlkZjgzYmM1ZmU2NjAyODE3OTJlYzczMDc0MjcwMjMwYzcyYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0ZjdlZGMwMTk5YmQ1MTRiY2I1Nzg0NTljM2ZjYWZlNDkwNjQ1NWQ1MjQyMWQxYjM3YTdkZjJmZmU4YTU1YmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhODNkMTlkOGMxZjEzMjkwOGVmYzZiOGJlYjIyOGM5NTEyMzM5ZDBmYjY2MmQ4YjQ1Y2FkZmM0NTU5OTZhMzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b268714ba8494785b85c329465bfe925",
+      "statement": "EventStore computes its next ID from the maximum stored event ID.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/event_store.py#L45-L87",
+          "version": "repo-lines-v1:sha256:8d71bef42e3601950be5a0806f1e513614191e29f6d3a8243f01f9d6146199b2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiZTU4MTBlZmU2MmVhMGQ3NWEyNWExOGE1Y2Y1ZTA0NGJjYWQzYzYzMjE0MjZlMDM0NjRmZjMzOGJkZDkyZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmMjBhOTNlZjRkZWM5MGEwYTJlOTdhZTFlZWI5NjBmMjczOGYxNGZlZjgyMDA5MTBlMWJhOWZhZWE0NmY3OGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNjg2NGMyMTcyZjkxNzBlZDM1OTQ4ZDFmOTM5NmZiOTk2Njc0NzkzM2ZjZGJhNjVkMTdjNWZjNGZmYzk0ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxMDAzYWJkYjkxNWQzYjMxNjc0N2E0NmViMzA4Yzk0NmJmOTkxMDUyZDg3YzBmMThlNmUxNzU3Zjg0ZWFjMTMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

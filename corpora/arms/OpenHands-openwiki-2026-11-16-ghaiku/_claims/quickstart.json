@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0bec03fdfa13c8876f59278872574e89c3f3b1a08757e4ad43a8edf562d98e78",
+  "claims": [
+    {
+      "id": "claim_cd8acbc497264cd5ae3d119855044258",
+      "statement": "make build checks dependencies, installs Python and frontend dependencies and pre-commit hooks, and builds the frontend.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L25-L33",
+          "version": "repo-lines-v1:sha256:5351f6466a3a458f2b6a3dbaea4262fe48e7e2583cb6d77ca395537223a601be:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRmZmEwOWExNDRhNzI3OTlhNmJkNDk3NWM3MDVhYjA5MjY4ZTY5YTk3MWFjZDYzMGVmMjUxM2EzNDRjNDBhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzVjNzg5ZmZjODdhN2FhMDZlMWE3YmM2ODRhMWFlYWVjOGNhMjRhOGQyMWI3ZjlkODAwNTYyNjdlNjg2OTk1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA4MzRjMDFhMTY3MThhMWU1ODQ0ZjBhOGIzMWM0OGZmYWFiZWU5MTcxOTAzMWU1OWYwMDNhYTk3Y2MyOWU1OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a22fcecbbe094e519d3533272666e74f",
+      "statement": "make run runs the setup step and starts the frontend, and the backend is started by uvicorn with openhands.server.listen:app.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L249-L254",
+          "version": "repo-lines-v1:sha256:94c2816fbd26aa1025879d12a7e3f34bf53eb2a3ee33dec6ecaed81f3e775f48:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWI1MGEwMmNiNTQwOTFmOGEyYTk2YWY0MDgyYzZiMGFjNjFhODliZjVhYTMzYjUxNTQ3YWMwNDRhZjc2MDFlMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFjMzI4OGExMTcxMzYyNTAzZTRhNDExMTVkYzE5YmJhMWViNWI1NjJmMTQzY2QwODk4NjRlNTRjNGQ2ZTM0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzUwYTAxNzBlY2ZjY2Y3ZjBiOWY1ZGY4YTA5ODQ4NjQzZTQxMzU2ZTAyNDFhNzAwNzMzMzJlMTFhYTBhYzAxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzdmZDRlOTczOWJjNmJhOTg4ODc1ODcxZWI5YzYzMDg3ODVjNzAwMGQ5ZTU5ZTkzZDljODZkNzEwZDg3ZGFmZCJ9"
+        },
+        {
+          "resource": "repo://Makefile#L279-L282",
+          "version": "repo-lines-v1:sha256:92d3f5bf7273050aff96d3ae10a2d77171eba252bf3ff73863194edc8e3f111a:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNhOGJhOTMzNzhkMGVlMTg4NTljOTcwMGQ4YzI4ZjdmNTcwYTljMmMxOGFlYjk5ZDBkYjE4OThjOTFlMjUwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQ3OWY4NzJlZjk0NjI3Y2Q4NGEyMTExNTZjYTcwZGQwOTBhYzg4NDIzNTkzZmRlZjhiNzQwODNiMjA1NTQ4ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGRlYzhkMjU3ZDgyZGJmYWVhZjA3OGZkNGE5MTJhOTQ3ZjY0MWUzMmEwN2VkNGU1YTZmMWI2ZWFjYWYxYWYwOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmMzNDJmOThiMDY4MDgxY2JjZDE3MDg0NzMzNmVjNTJhZTliMmU0YjQwM2I2YmM4Y2RiOTVmZDAxYmEwZTljZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5197d5dfe7cf4b758edd2e2f1d5834d8",
+      "statement": "Evaluation runs use only the [llm] section of config.toml, and other configuration such as save_trajectory_path is not applied.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/README.md#L24-L30",
+          "version": "repo-lines-v1:sha256:b3d63e142aa0ccb68fdbc0bbdf05f7f85035aa3ac8abd75b83033d09b1f8b91c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IxYTk4MzQwNDg2OWM5YzFjZTlkYmIxZjEyYmMyM2Y1YTYzMDBkNzk3ODIyMWNjOWYwYjIwZDhlZjM4MTQzZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTc2MGE5NTI0NTYzODdlMzU5ZmY3MGNhZGZjZGM3NjQ2ZjRmZDMzN2RmMGIzNzBhMTVjM2Y2Zjc3ZTdjOTA0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjlkYjM0OGRlZGI2OGI4OWFmOWIwMjA1Y2MxYmRkOWZhM2U3ZGZhMTRmMWU4ZTRjNDdjMDEwMDdiMTg0MDhlMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f12d1c7308584a0da816f2a1af273051",
+      "statement": "Configuration is loaded from config.toml first and then environment variables, so environment values take precedence.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/utils.py#L819-L836",
+          "version": "repo-lines-v1:sha256:2dab5543eae655d97e8f38feeabdcfc50bc9c502cc89fa17391fc66d8a41d5e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhZGFlNTAxZjlkNTlmNmQ5ZjA2YjI5MmQxZjc3NmIzMTNiNzg0NDg4ZGQ0YTZhNjVmODM3YzU0ZGE3YjQ1MmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MWU3YzkwZDY2ZTYzNjZmODcxM2EyZjkzMjE1OWY5ZjAxYTk0MzU2ZjIzNGNmODk4YTdjNDliYzdkOTlkMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YjI0ZWViZWIyMTkxYWY1ZjFhYzNhYjNkNDJkNzJlMzA3NGE5MGZjMGI3NzI0ZDk1ZThlMmUwYTU0MTJmN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3MDJhNDI2ZWZkOWFiZGEyM2EwZGZkYzUyNzliZGI5ODFlMDI5NTEyNDY5Y2FkYzkxNTBiYjAyZTZlNzRiODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae7695eca5524f729e1a8d7bb591d828",
+      "statement": "The runtime receives actions from the event stream and handles each action, so the controller does not execute commands itself.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L320-L323",
+          "version": "repo-lines-v1:sha256:d8273623e5332d76612ff9cbd05a6a4a28e5cd5e0797fdeeb67df2fbd13e9f8f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FhODFjM2U1N2IyYTJhZDFjNmE4ODUxZWVhNDk0NGVhZTAzN2Y3MjM3NjM2ODMwNGUxNWRiMGNjODM0MDEwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzU3M2YwNDQxNDcxNzI2NmFiZGMyOTg2M2QxYjA2NzlkMzk5YWU2ZjVlMjkzZDhkNjcxMzNiMWI4NTFjZjRmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjU3ODUyYmRmYmE5ODRlYWU3ZjVmZDJjOTdiMmFjZGE4YjIxYmMxYTdlMzBiZmMzMGRhOTUwOGUxMWJkMWZiNCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

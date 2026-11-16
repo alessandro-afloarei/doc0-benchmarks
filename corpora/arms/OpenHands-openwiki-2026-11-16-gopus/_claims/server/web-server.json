@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ed93f7bafcdf865f6e451b35f4fc360028c86783df29cb113fd22e3edb57036a",
+  "claims": [
+    {
+      "id": "claim_48ecdcbd3246418cbe36a4d3356e4ebb",
+      "statement": "The FastAPI app runs the conversation manager and MCP app lifespans, mounts the built-in MCP server at /mcp, maps AuthenticationError to 401, and includes the git router only in OSS app mode.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/app.py",
+          "version": "repo-file-v1:sha256:72971f4d25cf579670d2feb07edca61da7b1ccd36ea3552472647414ad40c109"
+        }
+      ]
+    },
+    {
+      "id": "claim_dbe1a072a6d44442b632b4a2239ab9dd",
+      "statement": "listen.py serves the frontend build unless SERVE_FRONTEND is false, adds localhost CORS, cache-control, and in-memory rate-limit middleware, and wraps the app with the Socket.IO ASGI app.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen.py",
+          "version": "repo-file-v1:sha256:aa744743c97739d69b0989f7408ee1c98388edb338934b6bc7972ed20f17938a"
+        },
+        {
+          "resource": "repo://openhands/server/middleware.py#L16-L50",
+          "version": "repo-lines-v1:sha256:f66a8c4bb234c90472bff7efe4d0ae6044046eeead9df1ca1192ddb92fc2fae5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0MjFiNjhjMWViNzFjMTExZTdlNDU2N2FmODJmYjVjZjQzYzdiMzRiOTQxNzYyOGVjYjVlODc0NGEwZmRiNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlOGE5ZDkwOTY0MDBhYTA1NGMyODI4ZmI3OGE2YWZjM2NlYWNkNTQ0MGNmYzNiODQ1NjYzNjFhZDE0MWZhMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwNzljNjVhYzI1ZDliNGFhNTM3MTcyNTRiYjNjNmQxNGEzNDkxNjI5YWRiOWZkOWJhMzhlNDFlZGQyNzMwMjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68c114a491354273966b5b6a7d302a21",
+      "statement": "On Socket.IO connect, the server requires a conversation id and valid session API key, validates access, replays stored events after latest_event_id (skipping null and recall events and sending the latest agent state change last), and then joins the conversation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py",
+          "version": "repo-file-v1:sha256:7a07530b592e7e204bd7f6399f78b297cd91b6d6503278e3eed6253c225b3d22"
+        }
+      ]
+    },
+    {
+      "id": "claim_b16b8470e30140feac28734a473ec30b",
+      "statement": "Socket.IO oh_user_action messages are forwarded to the conversation's event stream via the conversation manager, and disconnecting only detaches the connection.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py",
+          "version": "repo-file-v1:sha256:7a07530b592e7e204bd7f6399f78b297cd91b6d6503278e3eed6253c225b3d22"
+        }
+      ]
+    },
+    {
+      "id": "claim_55bd62520ffb409f816287e8ed710866",
+      "statement": "Creating a conversation verifies repository access, initializes conversation metadata with its trigger, and starts the agent loop with settings, provider tokens, custom secrets, MCP config, and instructions.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/routes/manage_conversations.py#L189-L290",
+          "version": "repo-lines-v1:sha256:868094e9aeba736cb6da3a8f71595a8db98abb4305ba736be38be9129ff5236c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4MWZkMzRkODBjODk1M2ZjZjY0NDBiODYzOGRlZTFmYzNhYTFhNzk5MzRkYzgyYjRkMmJjN2ZlZWY0NmZmNGRmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3N2MwM2ZkM2E3MzM4YmYzNTM0ZDU0ZGNiMDMyYTM3MTI5Zjg4ZTIzZjFmYzMxN2RhYTFjZTJiYmEyMzFmNWJjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0OTRmNzFmZDUwYzZkZDBjYjhiODg4MWJmMWMwNmM3NWViZWIyNTgzMmVmYzllN2Q3MGE5NDhjNzRlY2NjMDBhIn0"
+        },
+        {
+          "resource": "repo://openhands/server/services/conversation_service.py#L164-L201",
+          "version": "repo-lines-v1:sha256:065ec526b28ae62279668ce8bdd61545eb542c0c2c9ca75a1ed3e884fe071926:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjNzM5OTZiMzI3ZWViNTg3Y2M0NjliMDZiZDY5MWJhMTQ5MzU0OTllMTFlYTkzMjU3ZjUxODgxMzJiNTNkNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NDlhMjNjYzNkMDM2OGNiZTExZTU5N2I3YjAxZTJmYTQ4NTUwNGY2OWFkZjAyMDRjYzZjM2EwMzNiYzE5NGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwNjBmZjdlODg2NzNiZjc1NWUxNTEwMDFkMDQ3MzQxNDkwMmVmODFkZjJkMWJkYTE3YjNhZDc4ZTYzY2RhOTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b5e66b428d7f4b4aaeeafea99cf2a06e",
+      "statement": "The standalone conversation manager closes a user's least recently updated conversations, after sending a too-many-conversations status, when starting a loop would exceed max_concurrent_conversations.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L296-L345",
+          "version": "repo-lines-v1:sha256:25346fe5b6135304f720cb9698ff7fb4adfb779459520f96d53f4a85d2596a7e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMzU4ZDNiOTMzYWY1YzFiMmVmN2RjZTlhMTFmNThjNjk5MTBmZGE3NDVmMGFmMTJjMGYyYmFjZWU2NTg2ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MTQ1MjEwOGJhMTQzZTBiYTMwZGU4NmQ4MTZiYTJkOWJiYjZhZDMzNWU4MTZkMTljOWM1ZjZmZmQ2NTc2NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3OWRiMzkzMTAyN2RjYzRmZDc0MTkxNmVhZmUxNzk1ZWFmMzMyZDA4NGJjM2NhNTE4YmM4MWE3MWVhZTc2MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMWU0OTIyMDM3ZDQ3ZmFmYjRiYjhjODM3N2MyOTljMzRjNThjMGVjMjU0YTI1NmNmZWIyZDZkMTQxYzZmYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5256338ec11f4a9f853cfd462e0e5fca",
+      "statement": "Idle cleanup closes sessions inactive beyond sandbox.close_delay that are not running and have no connected clients, and does nothing when close_delay is unset.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L179-L228",
+          "version": "repo-lines-v1:sha256:9e53e2336273544da614aa7315407108e59092ca45f9c687631580392c6387b9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNGE5NmFlNDZhYjNjNTYzMTk3ZjZjYjQ4ZjUzOTE1ZTEyZjlhNmY0YmJmZTJlYjU4MTk1MDc2YmRmN2ZhNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NjJkZDE1MTk3MmJhYzgwZTU2ZWE4ZjNjMTUwOGU2OWEyYWIyOGFhMDk4MTc3ZDBhMTIxMjAwMzgwZGU1MzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0ODUxYzcyNzM2MDNjMGE3ZTNmOTE1ZWY1MDYzNDE4MTU3OWM3ZDI0MDJlMmIwNGEyODVhNjFhY2RiNDdjMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwZTg4NGJhNmUxNDJhMzJiMjQ0YjE4MWU4MzY1MTVhYmVhY2NhNzY3NTgyNTM5ZmI4ODA5OTY4Y2EyZWRmM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c21854dd3839456bb6daf9fbec2080fc",
+      "statement": "The standalone manager updates conversation metadata on events with last-updated time, accumulated cost and tokens, an auto-generated title when the default title is in use, and the current git branch.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L493-L640",
+          "version": "repo-lines-v1:sha256:2f48d7b2cb6719161f617823cafc1aafb780044a30dacd8e5ce0dc63f22134ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4YjY0MDM3Y2UxNzQ2YWY3ZTBjYWZkYWY2NGNhNDg3MTcwZWU2NjQwMWNiZThiN2VjOWVjYTk4ODUyMjNiMTYzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkNzIwYmI4MGUwMzEyNjQzMTY3ODFjMDUyMDEwMTA5ZGM1OGUyYzUyNDkxZTkwZjQ5MjAzZDljMTg1YjgzMjgwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlY2YzZjhmYjNhNzNiYWNjZDQ0ZjZiOTMzNTgzMjZkOWQzNjVlOGEzZjgwYWUxYzA0MmE4YTE3ZGQxNGU0MTZhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_f4adada06e944981ba216bc3cb70c13a",
+      "statement": "DockerNestedConversationManager runs a full OpenHands server inside each Docker runtime, creates the conversation via the nested /api/conversations endpoint, forwards events to the nested events endpoint, and does not support clients joining through the outer server.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/docker_nested_conversation_manager.py#L50-L340",
+          "version": "repo-lines-v1:sha256:32d36f7a205f49764f9a23a34a14cbeed0f870574b1175f2240b08091ae2df5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjkxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiOWE1ZjBhMzdhNWQ0MjBiMDcwZGViNjE0M2JhZDAwZDYzMTBlNzBkZjhkZjNiMGI2ZjZiN2ViNzMzMjdmZTVlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhYTQ2NzFkNTNlZjM3ZWYwMGFmODQ3MzMxNTE4ODA1NTViM2ExZWIzOTFlOTY0NWU3MzM4NjVmNzg1MzljNGU1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2YzFmMDJmZDdlYzFkNDYyYzBjYjgxOGI5NDhmZmU0ZjcxNWIyYzJjNDMyNjMwYzIzMmRmZTM0ZDQyNzQzZmE5IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjZjcwODM5YWY5OWRiMGQ3NmZhZWRmMjk2YTVlOTY4ZjExMTdhMTdmNzFkYWU0ZTQxZmQ4MzFiYzYyODIxN2VkIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e471be18f4744caa5d88153eaa14349",
+      "statement": "Session forwards agent and user events plus selected environment observations and errors to clients relabeled as agent events, and rejects image messages when the model does not support vision.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L311-L370",
+          "version": "repo-lines-v1:sha256:952ef3c6aab44299fd77c959c14efbc09aaf64e38ce9780e506239ce57256cfb:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYTgxYzNlNTdiMmEyYWQxYzZhODg1MWVlYTQ5NDRlYWUwMzdmNzIzNzYzNjgzMDRlMTVkYjBjYzgzNDAxMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjYTA5YTZhMWJiMjA2NDk1MTQzZWVhNzU0YzI0NWU1MDg5YWE2MTgwMTM4MGYxYjllNWYyYTk2NjQ4MWZkNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0YWFjODE1YTk0MTBlM2RmODBjYjZmYzVmNjYwZDdjZWI2ZjRmOTkzMjZiNGMyMTQ2MTNjZWEyNzU0NWNhODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dee941af1b45493ea5fbd301e782270b",
+      "statement": "Session agent initialization errors expose only the exception class to the client, except microagent-related ValueErrors which include the message.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L285-L304",
+          "version": "repo-lines-v1:sha256:ee0ecc20e7eadcd8f979b2a034f2f4426eb029a853f6cd43244b0693cdda2a2b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlN2JjZDM2ZWY1M2I0NDUyM2U2NWU5OGQxOTQ0OTkzZTBmZjE3NDZmNTUzNmMxYTUxMTc0NmYzZTAxZTc1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjMzgxOTVkOTVjNDc3MjM5MmZhODdiYzJjMGMzMDBjMzAyOGJhZDI3ZjlkMDY5ZTNiMDBlMWNlNDI3MDFjNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExMTlkNTY1ZTE4ZWI5MWQxN2VlNmRhN2M0NTE3YTdmN2I2NzI4N2E2ZTRiZTQxNzc5YmVjMTU5MWI3YjMxMTIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

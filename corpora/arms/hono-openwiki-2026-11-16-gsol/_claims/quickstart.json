@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:961a324e21f5793d9b02a0a625cfe1824fa7a83077cea8dbadee8f8924db23db",
+  "claims": [
+    {
+      "id": "claim_4811e72b23904a1185a02d5f232707eb",
+      "statement": "app.request accepts Request, URL or path inputs, defaults relative paths to http://localhost, and delegates to the application's fetch entrypoint.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono-base.ts#L499-L517",
+          "version": "repo-lines-v1:sha256:b5b47794db46c37643212b629868676659b4c823d7d7ec2a8aa08f998cc4702c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMGU1MzJkNjc0NmI2NGM5YTA4YTFjNmIxMzY2ZjM3YWNlZmZkZjgxMjZjNTMyMzI1YjU3YjEzM2IzOGI3NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1NDhmZTMyZWNjNTg3NzBlZmMyNDY3YWZiZjQ2Y2JkODFiZWY0YzYzMDBhMmY2YjczZjgzZGUzZWIxNTE4OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3YzU4YTY3NmM3Mzk2ZjMwMmYyZWNlYzYxMDI3MzQxYWZhZjVkY2EyZjE0Zjg1MjQ0NzExNmY0YzVjMDE0MmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a232a94e8fc942879185f909f8a159a3",
+      "statement": "The default Hono configures RegExpRouter/TrieRouter SmartRouter, whose first match selects a router and prevents later route registration.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono.ts#L26-L33",
+          "version": "repo-lines-v1:sha256:e6e70d9eda1d6910a282f2ff9b24136da5d2799ae38ee9bfa44f19c2f94bb432:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRkNWNiZWViNDNjNWU1Mjg0YTRjYzNiYjAyODU5N2ZlMjZlMThhMGFmZjg0YTU3YTE3ZTcwMGIwZDgzMzQ1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTA0MzMwNzE5MzQ5YWNhNTA3ZjI5NTUzYmNjZDdiODcwN2IzMmFiMTBmNjE1MTdmNTQwZTE0ODI2MThiNWY5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://src/router/smart-router/router.ts#L16-L52",
+          "version": "repo-lines-v1:sha256:b1e353a1afc74be4dec76de4fdbe15ae13e56b6045446f36723802ff2a94cdae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZTg4MDEzZDM2ZGExMzlmNzg5MTlhOWNiNTJiYzlmYTliN2Y2ZmM1NTBlM2JjZjkyMjU5ZWM2MjljYWM3ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0NzIyNWNiNDlkY2Q0NDUyYzk4ODQ1M2MxZGIwMmFiY2Y2NmFhYjkzNzYxZjkzZWUzZjI0MTRjNDEwZGUwYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyZTc1OWU0ODY0MWVmOWU5ZjZiM2JkMTYyZWNjMmVhMzQ1ZDM1NzU2MWVkYWU3YmEyZTFkYzU3OTEwZmNiNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_38457b2bc09e453db6afd29f7f05dab7",
+      "statement": "The main test script runs TypeScript spec checking before Vitest, while build creates and packages the distribution through the Bun build program.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L13-L36",
+          "version": "repo-lines-v1:sha256:89475a81c17791fa9f45c1dc952acbe94a42e10d4d057006e11663aae6149ab8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ODMzZDU5NDljMDNhNDBjYTk1MjQ5MTYxMGE2NjU5NjQ0YjNhYTQ2NjM2MmY3OTkwMjBkYmYxOTgxNTQ3ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExOWEzZWQzYzdkZTcxN2E1MDI2NWE2NjJkYmEzYTY4MmEwNDNlY2Y2ZmU5OTJiMjQ5Y2U4OTIwZTYyODhhZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyNjM0MzdlMDM0Nzc3MzQyZDlkMzIwYzFmMzkzNzY5MjcxOTQxZGFmOWMxNmMyNGMwNWIwYzY4MzkzMGIyODQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiY2Q4NzM5YWFhNjI0MDUxZjA4N2E3ZDgwMGM0NDgxMmM1ZTYzMzdmYmZhODA1ODJjMGM2NTAzMzZkODY1N2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_596995752dd84e1f8624b759a087bec7",
+      "statement": "The public main entrypoint exports Hono, Context and shared environment/handler/request/client types.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L17-L53",
+          "version": "repo-lines-v1:sha256:ce76a0b9b15cce3234063e379d1c26a4133474121e8775f514d0b1979926715c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlMWQ2ZWU5ZDVhYzljNDExY2U0MmI2MDQ4ZTFlZmNjNzBjNzBmMWUzMzhhOWY0NWU0YTg5ODI0ZThkODE3MGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhNTk5ZDEyZjg4ZTc2ZDhmNTQwZjBhZWExNDdiZDNiMDJiMWRhZDliYTcwNmU3YWUxMWJkZTNkMDdiYmQ5ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjNThhMWNjNWEyZThlMDliYzAwODZmNWNhY2Y0YzM1ODQ5YjgyNmVjZDM2NjhkMTQ5MmI0ZjRlZWVmZGYzMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:16:56.556Z"
+  }
+}

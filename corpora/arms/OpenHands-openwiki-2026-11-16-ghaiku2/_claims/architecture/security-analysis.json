@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c45ee7b20c9ef44307e7e614793801533601af9f4b51fa8a1c05fd6464162b4e",
+  "claims": [
+    {
+      "id": "claim_7dd78cec86f14d68bbdf6ec8f7bf3441",
+      "statement": "ActionSecurityRisk is an integer enum with UNKNOWN (-1), LOW (0), MEDIUM (1), and HIGH (2).",
+      "evidence": [
+        {
+          "resource": "repo://openhands/events/action/action.py#L14-L18",
+          "version": "repo-lines-v1:sha256:76acff74a2529183488e047d306a3968dee5ef536305a975b9197f429d935224:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcwNDU4NDA0YWNmZTNhNmJlNjc4NmZlNDZhOTE4Zjc5MDJlYTMwZGI2ZmY1OGNlZDk2MjMyY2ZiMDNmYzkyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDc0NTgzZmJkMGIxYTY5N2YwYTM4MWQ4OTY0M2VmNjZkN2JiYWNlYjcxYjE4ZTQxY2MzNmM2ZmRkNDdlMmFjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2I2ZTdjMzdhZDliNDMwMThhMDM4MGExMGQ0NzE2OWRiZTIyNDc5NzBiNTIwMGJjODZkZDlkY2I1NGYwYmVlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmMxZjAyZmQ3ZWMxZDQ2MmMwY2I4MThiOTQ4ZmZlNGY3MTViMmMyYzQzMjYzMGMyMzJkZmUzNGQ0Mjc0M2ZhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_137cbf370d9a4d28b130b1873ef6315e",
+      "statement": "The SecurityAnalyzer base class's security_risk method raises NotImplementedError, so each configured analyzer must implement it.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/security/analyzer.py#L21-L26",
+          "version": "repo-lines-v1:sha256:733609f974332f9945b46a05f6d51dddf3d4a679e685765b3609ced416c27d05:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQxMmIxM2NiMWU4NDEyZjUyZjkzZmNhN2E1YmIxYWVmNTk4ZjQwZjVlOGU5MDNiMWI5YjgyYTAwMGJlMTU2YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWMwMTNlZTMwNGM0ODg1NGVlODg1OWJmMTRhZTVhOTg4NjM0MDEzNGE3NjVjYzQ4NDRiNjVkMzA0OGRhMmY1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTg5N2U3MTFiODAwMzZiNjdkNTQ4NGRmYjI3MmMwNzY0MTQ1MGE5YjU2ODM3YjEyNmU0ZGI5MTczNzI0ZTdlMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b44b15759d4e421fbd8000c66b513e8e",
+      "statement": "The InvariantAnalyzer maps the risk=<level> markers in policy violation messages to risk values and returns the highest risk found, and returns LOW when no violation matches.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/security/invariant/analyzer.py#L92-L108",
+          "version": "repo-lines-v1:sha256:ab36072d512faca7ab3a796365190e6a3b2ac7194808ed6311caac43edfc724c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwMzc3YWIzMzgyZDYyNzVlYmU3MGJjM2MzZWE2NzFmZTBkY2YwNjU5YTE5NWJlYzU3YWUzOTYxY2ZmZmQ1Y2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5MmY5MTkzMDVkNWU0NWYyNmI4YjQ2OWIwMmNiNmE4OTBiYTE3OGM3ZTEzM2E5MDk4YmM2YmI5NTAwY2ZlN2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiYzU0Y2ExNWQzZTBjNWRhYmZlMDRhOTViYWM5Y2NkMDEyMDUyZTdhYTQwM2M1ZTc1NTdjM2FhMjQzNDc4YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5ZTFhZWFmMmZmN2RjZGY4NmZmYzZlOGNmMjI4ZTJjOTU4ZTU4NzQ5NTA4NDg1ZGU5NmYwMmNlZWYyZjBjYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_76e987c9366d410c95ad79b8a64a4904",
+      "statement": "The LLMRiskAnalyzer returns the security_risk value already set on the action by the model, and returns UNKNOWN when that value is missing or unrecognized.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/security/llm/analyzer.py#L19-L30",
+          "version": "repo-lines-v1:sha256:14f6b74b74be919ed68b8d0b29b5dbacb702c36d66697a81af81e17d9f79f6bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0MTJiMTNjYjFlODQxMmY1MmY5M2ZjYTdhNWJiMWFlZjU5OGY0MGY1ZThlOTAzYjFiOWI4MmEwMDBiZTE1NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmOWQ0OTViYmVkOTFlMjc5Y2U2OTkxY2FjNWNiYjA4MTAwODE3ZWEyMmRkNzAwYjg3YTRkNTg0NmRhMmM0ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExYTk3NWRlNzBhY2E4MGI0N2E3ZGQ3OTRhMjVjOGY0NDczYjBjODdjOTllMzA1MjA3MzlhZDg3M2IxMGJkMjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_deeaa7e3599d41cc960e87e47d52b1bb",
+      "statement": "The runtime creates its security analyzer from config.security.security_analyzer at construction and leaves it None when no analyzer is configured.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L194-L205",
+          "version": "repo-lines-v1:sha256:1aecffbe138c238791c08debe1c422198e83d0ef1c9b14faa3a776e3e0235390:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzMzg0NTkzZDY2YWY5NzI1NGQ3MWRiNDQzMDYxM2I4ZmZlMzBiYjQxZTg4NWFiMTJlMzcyMzRhZTNmZTE3MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlMjdhNWRhOWYyYWZlOGJjNjliOTQ4ZDYyZWJiZDM3ZjRiMGRlNWYxOTlkZjA1YzMxMzNkOWJhNzg1ZjRhNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c28f190736741f0803f438663a76059",
+      "statement": "The controller applies the confirmation gate only when confirmation mode is on and the action is a runnable command, IPython cell, interactive browse, file edit, or file read.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L919-L926",
+          "version": "repo-lines-v1:sha256:dfcc1c51bad6f5a79a0f67160780fcf16f5e4a1bc44a3ddf1144f22e0e921457:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjI1N2VkNDY1Mjk0MTkzMjc0ZmNlNDhhOGQwODMwNTY3M2I4NmY3N2EyODZkMTM4MmM5NjhjNTgyYTRjMzIxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWM0OWFmZDMzZWQxYjJjZDhhOTcyM2IxZGJiNjMyYzBmNDQ1YWQyMGRmNTkyYzdhMzAyMzI0ZDNjNTNkMDlmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDc3ZDU4YTY4MTE3MTY5NTNlYWQ4YmFjZmIxMjM0OGVjNjFhMGEyN2YwOTUxMmZlMjc3NWU3MWVjYzcwZWNjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjgxNzgyZGE5Zjg3MDFmMGUyYzYwNTljM2IxMzYzZWI3MmU2YWE1OTQ5NWM2OTM5NTcyYzg1N2QzODBmZjE3NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_683e6c5c4d9b447e91241c97882db45a",
+      "statement": "Inside that gate, the controller runs the security analyzer and marks the action AWAITING_CONFIRMATION when it is high risk, or when its risk is unknown and no analyzer is configured, in CLI mode always.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L929-L948",
+          "version": "repo-lines-v1:sha256:61abf3b1200b51c115dc7260706f5867dd3def73d614d2af8917c366e5fb4788:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmNTkzMWEzOTJiYzI4OTc2MWRjODE0YzAxYWE5M2FkNzRhNjdkMTE3Mjc4NDEwMzgxY2E4ZGE5OWI1MDZiNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlYTE2OTRkNzkyZTY3YmQzNWJiM2MwZDBmNzYyZmJjNzVmZDVjNjYzY2ZhODk5YjlmNzU5MzExMTQyMWU4MTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxZTljMmM4MzMwOGZjNTliNTg2OWVhNWJjMWNhZWIwZTJiOGY5YmI5MjI1YjBmNDNiNjFkOWZjNjc5MmFiMjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b6162bd5cb54435a4d84b0f8c762f00",
+      "statement": "An action marked AWAITING_CONFIRMATION moves the agent to AWAITING_USER_CONFIRMATION before the action is published to the event stream.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L958-L970",
+          "version": "repo-lines-v1:sha256:2268a54ec317cafb5736b0123ad010a4b9e60b94e552cdb3df9693de02113a93:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmNTkzMWEzOTJiYzI4OTc2MWRjODE0YzAxYWE5M2FkNzRhNjdkMTE3Mjc4NDEwMzgxY2E4ZGE5OWI1MDZiNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZDE4NzljNDYwMmU5ZjhjOGJlZTljNTNmOTAxOGZhY2M1NzVmNGVjMTA2Yjc0MTUyNTFmZjRhYWI0ZDhkYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3ZDdhYWE2Mjc2YjA2ZWJhMmNhYzc1MGI2MWFmNjEwZTc5Mjg4ODJmNjRiYTkwOGI3MmE2MTlhMWNkOTU3MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2YzM4MTI1NWQzNWNiODEwN2NlNjJlNTE3OGY4NWQ3NmE0Yjk4YmRmOWVkNDRkOTMxNjA2N2I4ODI2MjU2ZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_96fd14d9ccdd48f7b0119afdea0acd7f",
+      "statement": "When the agent state changes to USER_CONFIRMED or USER_REJECTED, the controller stamps the pending action with the matching confirmation status and republishes it to the event stream.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L655-L668",
+          "version": "repo-lines-v1:sha256:20a38811502888116c0efbe0390be33c3a8eea12ee38691ba90a3f4db0cddc83:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4Y2JiZmYxYmI4ZWE2ZGFjZTZlNmU4MGI4YjllODU5NGE4ZTBjMTQ5ZWM1YmY0ODBmNjNjNWM3NWUxNWIyNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxZTU1NmQ5MzhlYmUxODEyOGRmODYyM2E1MTdlYjdjYzk4NGM2ZWJhMzk0MjFhOGQzNmRkOGQzNzZjMzY4M2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NTMxZDFlMzdjNGM4NjNmNGJlMjg0MWRkZDQ3Y2FlZjQ1Y2ZhNTYyYjEwYzY5ODViYzY5N2Q2MGM0Njg5ODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1ZTM2MTM1ZjU1MTc0ZjdjZDgzMTA1ZDU1OGUxZTJkNzg3OTg3MWM4ZDZiYzExNjMxNzNiNDA1OGM0MTIzOWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0e61ed7606049ddbac34b4503f46141",
+      "statement": "The action execution client returns NullObservation for an action still awaiting confirmation and UserRejectObservation for an action the user rejected, so neither runs in the sandbox.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L296-L316",
+          "version": "repo-lines-v1:sha256:0dfa6032e8634f35d77a50cd112d08691bc8e1daa7bc06e3c840a5e170f68ebf:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxYTBhN2Y3MTBhNTMwMGY4YzEzMTA0YjU5ZWE1YjYwOGQ0OTk3YmVhZjVmNWYwZTVkMzcyNDFiMTU3ODM0NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwMDEwZTJiMTA4OTVkZmE0M2U1Zjg3MWVjZTdiMTE2NjAzZDdkNDU4MmVkZDQ5NmY3YjFkY2RiODdhNjVlNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0NzMwNTIzNjFhZDkzNjRmNDc3ZWNiMTczM2MzMWVkMjZmNzkwOWMwZGY5YWI1YmZhOTg0MWYxMDY4NmFhOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiYzliZTI2YzYyM2E0MmY1MzhmNzNjY2RmZjRmYzNkNWNmNTY5MTVkNjBhYTQ1NWI5ZmM5MTE4NGFhZGUxMGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_59129a64c79f4d5692ae236f1faa4a0d",
+      "statement": "A session can override the configured confirmation mode with the value from user settings when that value is set.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L140-L148",
+          "version": "repo-lines-v1:sha256:c9aed983de634870026e3b98a138334e367adeb7cebdad7e743a5c5af115f3a9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDc3ODFjYWQxNmQ5YWQ2MzZmOThjNmIwNmJjYThkY2QwZDJiNjllYTk4YmU5MDI3YmE2OTU0NzhjNDQxMGJlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQyODU0MDdlNTAwYjEzOWQwYmI3YzZkNzgxZTU1YWZiMWQyOWViYTI5YjBhNGIxZGEzMzNmODZjYTZmYzZhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc0YmQxMjEyNDAwZDI0ZmMwNjAyOGNiNTgwYzhlMjJlNmVhN2NlNWUyNjVkMDNjZTFhMzg0OGRhNzVjM2EyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTFlNDJhYzUyMGQ2YTQzOGNiNmExNmFkZmNmZjg0OTExZDIyNThmMWViMGQyZDVmNjFjODc5Y2Y5MTk4NjJiMyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

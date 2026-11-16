@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5724ab00196da070fa7f5ffbfd37632c65c041884673f36cc2038a4d80861853",
+  "claims": [
+    {
+      "id": "claim_80455ce1690e4d0392e3e65a7879cd3a",
+      "statement": "electron_dist_zip packages the application, version and licenses into dist.zip, with additional Linux sandbox and official stripping dependencies.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1423-L1446",
+          "version": "repo-lines-v1:sha256:5dd9d3630bb5b75782ed8c092b344a0c22a4167cc0b6aae5fc840fd67cc2ff99:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZDE3MGIxMDI1ZmM5OTdiNDE0MmE4YWIwZTA0Mjc2ZGY4NmNhODYyOWJlOTIzZWEwZTY0ZmZmOTkyNGI4MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5MzVjOTRjMzdjNTRjMWIzZTJkMDQ5NzAxM2RiOWQ2N2FhZWQ4MDY2MjJhMGIzNWQ0N2QxM2ZmYzNjM2QyNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_14a44066602d48719c57ff8b3478e084",
+      "statement": "Release preparation bumps and tags a version, rejects an existing matching draft, creates a draft release, pushes and starts release builds.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/prepare-release.ts#L146-L180",
+          "version": "repo-lines-v1:sha256:0b67e710e44dd647eb5347439ce413753a357015952d0fd27c54404dbdfa195f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlYzUzYjlkOGRhYTUyNzJlNGRkNDU5MjU2Njk2MDMxZmM0ZjM3NjVmZjdiMzhlMWZkZmRmODRhYmUyYzIwY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmZTAzM2NjZjRkODM0MjJhYmEzYzZmYTJhZWMxYzk3NzJhZDNhMWJhYmNmZDY4YzhkYmUwMzY2MWE0OTE0NzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxODY5MWU0ZDQ1YTBjNTQ1NGVlNTQzYzNmMzA5YWEwZTE1ODAwM2RhZDgzNzkyZDYwNWQxMGNkYzM4YmQ0YTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        },
+        {
+          "resource": "repo://script/release/prepare-release.ts#L215-L221",
+          "version": "repo-lines-v1:sha256:ca4e8a0c03003a6086280990792f78e0ee02ba3aa325fe89c5b2a63f04d7b6c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NjMmYxMjlmNzE4NTlkMmIwMzczZjE5YTg3MDdlZmYwZjgwMGE1YTQ0ZDM0ZGZiNDQyODMyNTc3NGRjMWQwNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGNjODBmYzE5NTVjOWI2M2NkNDk5YmNjYmY4MWI0YWUyZGZiNTZlM2NmNWEwMGE5ZjkwNzU5M2VkYzNlOGY0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGExODJmZGViMTUxZWZhMjUxNTdhZTRkMzNjMTUzZmJiMTMxZGMxNDhkOWFjYWFiYmNlMDQxZWFiNTFkMjllMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://script/release/prepare-release.ts#L76-L109",
+          "version": "repo-lines-v1:sha256:0408aae34025f47cc35ab16895950d429a8068063943c29aa7522b975325999f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlOWRiMzZlNzNhOGQ0OGY1Y2RlNTgzNTQ0NGUxM2YzZTRjNmU0YjFhNWRhMjg0YjAzZTQ1MTNlMjMzZmU3NTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmZTAzM2NjZjRkODM0MjJhYmEzYzZmYTJhZWMxYzk3NzJhZDNhMWJhYmNmZDY4YzhkYmUwMzY2MWE0OTE0NzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkNzMxZTI0NDg3ZDU0MjBjYzgzZTUxZmE1ZTA5MmY5NzNhMzIwYTQyMDdkNzkwOWYxMDQ2NTVkYzg1M2I4NmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhY2E0NzM3YWJkNTJiMDY2YTg5MzI2MzU0OWI5OTkzMGZkNWJlYTI1OWNiNjM4N2Q2YTg2MDMxM2ZlODhhOWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c648d601826c4085b861d7634abb0ef0",
+      "statement": "makeRelease assembles checksums and validates assets before uploading index.json and publishing GitHub; standalone validation can skip draft hash checks.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/release.ts#L408-L432",
+          "version": "repo-lines-v1:sha256:1c766a768a7f7fc7a2e926e1f94c96372cfd0ec98343001f8ecaa10eb95da22d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxM2EwNWEwYmFlMzcxZTkxNWMyNzJkODI5MWVmYWVmM2MyNDRjMGRmNzM5MTU0YTNkNWFhYTFmMGI0M2E5MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmYWI3MTBkZGY3ODU5ZTU3NTc2NGE5MTNhMDAyYzc0NTg1ZmZhNzAwMTUxMGNiODgxMWRhODNkMmNmNzRiMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmNGI4OGU4ZTg5ZmE4MDFjZjg1Nzg1MGM5YTYyMDk3MWU4NjllMzFlODlmM2FkYzIwMjU4YmNlMjU2ZmNlMDcifQ"
+        },
+        {
+          "resource": "repo://script/release/release.ts#L82-L115",
+          "version": "repo-lines-v1:sha256:969ad1e0b0dae0b75625aed8867daa0e78453df201dedec6a9e616b621f88c27:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4YWRjZTc2Y2RjNDIzOWJhY2FjODRmNTU4OTk3NjI2NTY0ZjhiNzg5OTI1NmEwYjU5MWIzMzIxYTZlZGZlYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3YzM5ZTMxZWUyMGFhMjUzZWM1MDYxMmI5YTk2ODcyYTkxMWZmODQyODc2OGEyMTA5ODRlMDhlNDBkMzRiM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4Nzk5NGU5MDk1YjBhMjU0ZGU3NzRhM2E4N2NmYjczYzg4MDQ0ZjY4ZDM4YjkzNzQ2NGFhNmQzOTc2MWNkODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b02c3bfb363841ab86767e04a05ce274",
+      "statement": "npm publication obtains release declarations and checksums, packs and test-installs before publishing and managing dist-tags.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/bin/publish-to-npm.ts#L185-L238",
+          "version": "repo-lines-v1:sha256:2c72919f57064202739abc0721f895e3ca15a55d7100f701d202e720cc95895f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNTdkNTRiZTA1YWNhOGEzNjc1N2NhOGNhYmI1MzRhYjlmNTljZGNhZDYxODdkYzBiMGM5Y2I4MGZlYmY0YWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMTVjYTkwZTYwZGEwNzFlMjkyYjJjNjM4NTY4MjhmNmJiN2ZjYzc3MGU5MmE3YjNjNDA2MjMxMDkwYmRiZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2MjNkYzcyNDVkNzUyODBhNDQzMWQxZDIxZWExOGJlNzE0NWZiOTViMjlkMGIxZTE2MGEyZDYzMzI3YTAxMjMifQ"
+        },
+        {
+          "resource": "repo://script/release/bin/publish-to-npm.ts#L94-L135",
+          "version": "repo-lines-v1:sha256:469feae10d652b94240f7f2930c6e4c103a7af40c8605f52be36cdc10988ca13:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwYzZmOWU3M2JlMjU5MGJmYjE1MzFmMjE1NWE3Zjc5ZTRjZDA4NzkzMDA2ZDBhMGMyZWJiMjI1ODcyZjgwOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNGY1YWMxZWUzNjI0YTM2ZmFlYjc3NzE2YjE1Y2Y4Y2ZkODc3Y2NlYzI2NDI2NGZmMzllNGE4MWIxOTc2MTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5YmVkNWVhOTkzM2JiOTA5OTljZTc1ZDgzZGM5ZWIzZGY3Yzc0NjgyMTQxMzI3ZmI0N2Y1ODc0YjI1OGI0ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4NTg5ZTRlNWNhNTUzOTEyZDJhZjAwZWM0MzBkYmMwNjY3NjZhOWQ1MDM3MWU3MDZmZjRhZjFlNzRhYjU2ZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e2cacba199b243f7b106151cd290d7f6",
+      "statement": "npm installation can skip binary download, otherwise verifies installed metadata and downloads a platform/architecture-specific artifact with cache and checksum options, extracts and writes path.txt.",
+      "evidence": [
+        {
+          "resource": "repo://npm/install.js#L14-L89",
+          "version": "repo-lines-v1:sha256:1c1f5657e094515ec5e429d303bd4940de3b0d54318e65f92acc3cd263d8b4e2:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0ZGNjZjRhZTg4NGEyMTk0YjIwNDVlMTMzYmJlYTUzNWM4ZmMwZDBmN2RkMmI5MjBiMzhkZmM0MTRjY2Q5NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzNjNhMGM1ZjIxZmJmODUyZTRkMzUxNTI5MTc2ZTNlNGVhNjJhYTA0ZmJjOGY4MGNjMjE3OTlkNTBlZWRkZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkNGJlMTM2NDE0MDNhNjhmMzcwMzQxZmM4NmFlZGI0MDQ0MWEzZmI2OTc2ZWU0MDFiMWMyNzFjMTJiOTM4MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIifQ"
+        },
+        {
+          "resource": "repo://npm/package.json#L1-L14",
+          "version": "repo-lines-v1:sha256:638a22ad2544f990c0b773011e6fce0b0511f61d0e92a2749b024889ceb72177:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmMTIwZGRlZWQ2Nzk2MGUwNGY1ZTA5NTI0YzAwMjZjMjAzNjQ2ZTdlZmRkZjg5N2E4OWM2YTVhOTU5ZmQ4NzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f694867eaa34d87962215f2cc2e1301",
+      "statement": "The installed npm module exports an executable path, and its CLI spawns it with inherited stdio, forwards termination signals and propagates completion status.",
+      "evidence": [
+        {
+          "resource": "repo://npm/cli.js#L5-L25",
+          "version": "repo-lines-v1:sha256:9f1cb87c04e2d0ad1991fa49d6705e7706333c3f5f50c09de7a17c3aec2d2269:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMTAzMDEwNTFiODE3MTk3MmNlZTVhMmEzYjUwZjAxZmY5YTcyMjE4MmQ0ZTM3MzA3MjE3ZDFkMzFjYWRhZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhZjQ1NzVlYmMxMDQxNmIwZGIwNWM3MzlkNjM1ZDU3ZmZhNGE0YmY1Mzg2ZDg3MjU2NTk3ZTZhNmE3NjgxOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4Y2I0ZGI4NjExMzM3YjMyYzM5NTc4ZmNjNWM2Zjc3Nzg3OWRlOWY4YmU1MTZlZmViYTJkNzU5MGUyODk1YWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://npm/index.js#L4-L21",
+          "version": "repo-lines-v1:sha256:5deece2e672f1c363e640d8901e1625739ffac59657adf40e24229e1acda2b4a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YmIyNjgzZmExYjE0ODc4OWZmMDFiYTRiNzliOTcwMzQ3MjQzNTliOWEwZjhmODMzNzA2YjYwMGViODE5OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzMmQxN2I2ZjQxZWI4OTFkZjE1NTA0MGJjNWE0ZTJjZDk5MGM5OGI0MzQ2OWVlNjgzMzYzYjdiZTgzZDZmZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjYmRhMzkyYjEzYmY1MWM1MmI1NjcxMWJjYzYzYjA1MWEwNDZlZDkxMTgzNjIzMzQ2NjM2YmEyNmY1NTliYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_098f207631cb407e8bee08a8c308ee82",
+      "statement": "Windows autoUpdater checks a configured Squirrel feed, downloads available updates and emits lifecycle/error events; quitAndInstall invokes Squirrel and app.quit.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/auto-updater.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:8330f336c6bc56311c2eba424507bb43e10638a7bf2070c097f6179345c4fa7b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRlYWY3ODEzZTM3Yzg0NjU0MmViZGJjNDYyOThjNjY5YjEzNTQ5OGI4MjJlNjkxZTUzOTBjYTVhNDAwMDA0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://lib/browser/api/auto-updater/auto-updater-win.ts#L11-L71",
+          "version": "repo-lines-v1:sha256:ced3bfc881264fbcd0a4656ce925214665377a5b01913b5005b0b1da376b3266:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0MjJlYjg2MjdlNzY0NWM3MmYyZjc4OGVkZDI2OWQ3MGJjNjU5ZmY4Zjk2Y2JiYTU1MGY5NTkyNjI2NmM0NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxYTYwYmMxMjczOGM1MzBkMmE3ODhlYjBhMTVhNzZkZmM4ODk2ODUyZmI2MDVhNjRhNmYwOTkyNzVkNzBiZTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiOWI1NDI0NDNmMGJmOWEzYzFjY2QyZjBjYjg1OWNlN2YyMDA0ZjAxMzIwMzdhZDhlYTkyMDIzODBkMDliZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d3de5a086be42e9bc78e3cc76359609",
+      "statement": "macOS uses SQRLUpdater, while native unsupported configurations have no-op updater methods and the API guide specifies no built-in Linux updater and signed macOS apps.",
+      "evidence": [
+        {
+          "resource": "repo://docs/api/auto-updater.md#L10-L31",
+          "version": "repo-lines-v1:sha256:43225a1e438e77f6728fcd3762e3c77f2d4c431e090fb6dbc60aa1e39daf57c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhNjU2NDJlOTUzMzIyZDNhYmVjY2YwNzllNGY2OTYxOTc0NmZhMjVjZjA3ODcxODE1MzM0MjY4YTk5YTI4NTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2ZjM1OTg3ZjY4YmU5NzA3MmU5ZmVhOTEyZTQxN2M5MmI1MmJjM2YxNjgwMjlkNjI2OWYxZGFmMjAxZWJmODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyZTRlZjc3MmUxNjQwYjc0YjA3MWEyYzZkNTMyMmYxYmZkYjg5NmM0NTdkMjlkZDY2YTE1OTE2MDYyYmFkZTgifQ"
+        },
+        {
+          "resource": "repo://shell/browser/auto_updater.cc#L22-L37",
+          "version": "repo-lines-v1:sha256:1831f984e3d4729ff70092fbbf8fc8367518c261f70523f9dd43837809cbdb22:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZjUzMzNkZjAxMjc5OWM5NWM4OWY0Zjg0NjMyYmExMTAwMjViZjNhZWM2MzQyYWQ5ZjRhMTNlOWQ1MmE4YTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhMzQ5YmJkMWEyMTEwNGYwNTFlMzRiMmM4YTllNzBjYzdmYmI1MGJjMTlhNjc3ODFmMmExNDBjMzg2ZDk0MzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0ZTRkYjI2ODRmZDIzMjZhNDFlZDVkMzNjOTkxM2I5MWMxNzE3ZTQ2MjFiNTgzMDM1ZDM2YmVmNWFjOTM5NDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5MTZiYjJmMDQwNDA2MDMzMmEwYjMzNDFjOGQ3NmUzNTdkZjI2MjUxNzUwMTc5YTY5OWUyYzcwNWYwMjQyYmUifQ"
+        },
+        {
+          "resource": "repo://shell/browser/auto_updater_mac.mm#L92-L118",
+          "version": "repo-lines-v1:sha256:4d386e441c567b032f65fd7d2f733032065a5ee5dfe0598555356ab9b9896b6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyYzAwMmFhOTNhNDk5MzI2MDAxYjRiMWRjMzQ5M2VhMWRmZWE4NDNhMDkyMWEwNzI0Njc2MDU0YTRlZjdjZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzYjFkY2EzYTA1YjZhZWY2MTEzYjUxNjVjM2YxMjhhNjRlMDZjMjMzNDY2MjVlNWE5MWEyNDc3OWFiMWY5ODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlMDA2ZmQ0OGEzYzZkZTg0OGViYmM0NjJiMzdkOWI5ZDE3ZDg1ZDUyNzBiZTU0ODkwZDM0MWMyMDlmMzM0ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhYWFmYWJlNWYwZTY0NmZmMWUwMDc5Y2NlN2YyYTVmMmZjZmVmOTc2NWY5NjMwNjUwMzdiMjBhMWU4NWZiZmUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:40:08.980Z"
+  }
+}

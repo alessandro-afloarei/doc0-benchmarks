@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ab66faf49d7daafe98599355c7532c07f3a97fcd332af97f1ce49c3a2dea7b4f",
+  "claims": [
+    {
+      "id": "claim_afc0f70bca5e461083bcdf7bc832c705",
+      "statement": "JSXNode.toString serializes the tree through toStringToBuffer into a string, returning a Promise when any part is asynchronous.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L166-L178",
+          "version": "repo-lines-v1:sha256:95aab9b87c10934704343c37d44adb82f75131028b18c209d249052131467ed4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZTc1YWU2YjM3ODBkNTZkOWNkMzlkZjZhMTk2Mzk1MTJjMzE4MTk5MDZkODYzNTI0ZTczODc5MTA4YmYwODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwNmQ1NmJlNzMzNDBjOWU1YjJlOWQ0NDg1Nzc3ODI2NTFkZDM3MjEyNDhiZDMzZDNkMzczMjEwNjk2ZTJmZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMzhkMjk5YzgyOWVkN2NkMmNhODk5YmY0MmRiYWIyMmM2YWYwYmU0ZjI0ZjEzODVjZjQxNjk4MzI4NDFjYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e51b3891e6e94bf0855e14fbc0ed267e",
+      "statement": "The jsx factory creates JSX nodes without invoking function components, so components run during serialization.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/base.ts#L304-L318",
+          "version": "repo-lines-v1:sha256:d4641841cbe1b6e646c6871c805fa6d2efc4fdb2d4eebb36608f852a797a4e56:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4OTQ2MjU4ZGQ4NDFhNDkzZGU5ODAxOTk0MGI4MTRjOTVjM2UzNGUyYzA1MTMwYmVjZjBlYWJhZjNhMjcxMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4NDhjMTE5NDhkNTM4ZTA0ZmVkNmE2ZjFjZjBhMDllNWU3ZjEzNGRlNTM4NmZkYjI5NDMwOTk3YjUxMjNlMzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyNmE2MGFkNzNmNDhhNThmMmE2OTBhMDk5NTA2ZjQxM2QwMTdiYjVlZDIyNGI3OWZhODRiOTA0YTAwNzMwMjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7662bdcc13234e539d3325f041421680",
+      "statement": "escapeToBuffer escapes text values for HTML output using a buffer, and values wrapped with raw are written unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/html.ts#L90-L100",
+          "version": "repo-lines-v1:sha256:46d0c69b596a653ab84ad71e4b7ada75778b7f314bb6f1cf5896b743a14aa60f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMGE5NmFkMzE4ZDNjZTc0Y2YwOTRkM2MyOTFhODBjNzk5MmFlNGYzYjk4ZDNjNjU4YjY3OWNmMjVhYjJmYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwNDNhYWFmMmQ5YWY0MzUwYWNiYTMyOTRmMmEzNDQzZDYwYzhjNWNjMGJlOGJjYjJhYmQxNTc5MTc3YjA0OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4M2U0OGZkYTA0MDU3NmFkYmRkNjgxZmYxMzkzOTQ1YWZiYjdmZWNmNjZmMTY0YTcyNzgxMTkxYmNkN2NlMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e82538ac92f64c9da63671961491efdb",
+      "statement": "renderToReadableStream converts a JSXNode to a string, resolves BeforeStream callbacks, and enqueues the encoded output into a ReadableStream, with cancellation tracked by a flag.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L146-L170",
+          "version": "repo-lines-v1:sha256:79ecb689541ca536c7d8f3511722526aa2e9dadba42d403bcdda52635c81e0ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViOTI5MDBmMGQxNzlmNjJiYWM3YWEwYWUzNGE1ZmYyODdmZGZmZjE3NmI3ZTFhNDNkMWM5YTVlYjA5NTNiMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2OWZmNjc2NmI1NDA2YTU1NmJlN2E2M2VmOTEzYTdmNzNkMmUyNmY0MGE1MTIxN2EwZTFmM2M2OWU4ZWNlOTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2NGM1MTJmNTE3Y2I2ODgzNzc4NjY3MDk4ZjliODI3MzkxMjc5YmVjNzIzYzJhMzVlZmUwMDgwYTE2OTAzZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2MzM3MWExZWRhMzM5OTMwMzAzZmJkZGJlZjEwYTVkMjlkMzhjZjQ4MzhmNjE0ZTRkZGQxZjBhYmNmNjc0ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f4e22b6f632488b9a0a094b143f5d80",
+      "statement": "renderToReadableStream's onError parameter defaults to console.trace.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L146-L149",
+          "version": "repo-lines-v1:sha256:d1e61b53557b954f1b1e3768f3eb0634cc5104d34629b654011e8f31d87652e8:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWI5MjkwMGYwZDE3OWY2MmJhYzdhYTBhZTM0YTVmZjI4N2ZkZmZmMTc2YjdlMWE0M2QxYzlhNWViMDk1M2IwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTJiODhiZjRjOTRiZDM3YmYyOWU3Y2FhNjg0YWM1MjVmMWMwM2E5ZjM4NGI3MjQ1NWE2NjAwMzFlMDM4NTMzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTY0YzUxMmY1MTdjYjY4ODM3Nzg2NjcwOThmOWI4MjczOTEyNzliZWM3MjNjMmEzNWVmZTAwODBhMTY5MDNkOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWE4ZWUwZDVlMWQ1ZWFiNGQ1NDJjOWNiMTNkZmZjOGNiM2Q0ODg1MDgzZDFhYTc4OTk0ZjQ5MGZkZDg0M2M0MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bfe33150d15b41dcb0123188608aba41",
+      "statement": "The Suspense component reads the streaming script nonce from StreamingContext and stores rendering state on a stack node while it renders its children.",
+      "evidence": [
+        {
+          "resource": "repo://src/jsx/streaming.ts#L42-L72",
+          "version": "repo-lines-v1:sha256:9a6b56318d6ea2e01e0a7954bb14aa50b8646f937cad2ac50ec2f5564e7a7ec1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0NGI0OThiNzk2ZmFjNWEyMjJkYTI4ZjFiMGIxNWNmMTEzMTg4NjVhZWQ2ZTYyOGY3MDRlYmY3MTA4MzM1ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZWFmNzlmN2M4ZjBkMzk3OWRmMzg5MmEyMzQzNjU5NDA5OTY3MmY5NmJiZTVmZTcyZWM0ZjljOTE3NTRiNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjMTBlOTIwMjc2YjJhM2ZkNmVlZDFmM2ZiMzVhMzkzZTI3ZjZhYTIxNzIxZGVmNzY3OGJhZjc3NzI4NGVhZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwNjRjYzkzMWVlOTZjNmNmZjMwZmNlNDY4NzFjMzEwMzZhODE1NDc3NjQzNWU1N2FlOTJlY2M1MDViZmViODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f69217e414504b648666ee6a691f1872",
+      "statement": "jsxRenderer sets its layout from the component option and installs a renderer created by createRenderer before calling next.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L116-L129",
+          "version": "repo-lines-v1:sha256:03efadabb6a57afd29d3b817308e43f6ff8a40ccaf1115ccb5f90287704b3aa9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhOWRhNmU3NjMwYjE3Mzc5YWI2YzZjMDcwMTE0MjlmODYyOGQ5ZDhjYzgwYTEwMDZjZDBlYmM1OWNhNjgwYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4NGQ1ODYwYjkwNTdmODNhNzU1NDdkZTQ4NTlhM2ZjYjNmNjAyNWIwY2E5YjJiZDRkZDY3YzgxMDc3ZDhmMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dfa27d87dacb4755b3e0e830a64d2161",
+      "statement": "The jsx-renderer createRenderer uses <!DOCTYPE html> by default and lets options.docType override it with a string or disable it with false.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/jsx-renderer/index.ts#L40-L48",
+          "version": "repo-lines-v1:sha256:2533a6efe0f4ba925758f78e98fddaffa89d0747aac73db5ec40df99905ab224:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FhY2NjZDU2OWU4ZjQwMzU3NmZlMjkwNjIzNjI0NzNiMWE0OThlYWQxZjk0NGViNjY1ODg1NzgwYzJjM2Y1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWU5M2U1ZTY0NWRlMWQxZjgxODJmMzA2YWExODI4NWYxZDBmZmE3ZjgxNzM4NDhlZDE1NWI0NzMxNDliYWVmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTUzN2Q5YTgwNDQyOGJhZDM5NTZiN2ZmN2E3NzBkOWZkNWYwMjc5OGI2MDllZmE1ZDU2ZTgzY2Q4YzRmNTFhYyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

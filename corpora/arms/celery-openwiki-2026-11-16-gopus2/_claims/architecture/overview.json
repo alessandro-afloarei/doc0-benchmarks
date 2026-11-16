@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:273021b710a63e2690c7d495c9744e9c3937c0d80770b64bf9997cd7f5a954a0",
+  "claims": [
+    {
+      "id": "claim_736a531ccff8440fbeb16f3265dd480c",
+      "statement": "Celery's core runtime dependencies are billiard, kombu, vine and click (with click plugins), plus python-dateutil and tzlocal.",
+      "evidence": [
+        {
+          "resource": "repo://requirements/default.txt",
+          "version": "repo-file-v1:sha256:17b8070018ddf52ea728f54c711f076ef112fc8a7b590e5863129e46fc50f36c"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd84fe154e4e4f49a920dd2d7ecfdbbd",
+      "statement": "Task.apply_async runs the task locally through apply() after a serializer round-trip when task_always_eager is set, and otherwise delegates to app.send_task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L682-L709",
+          "version": "repo-lines-v1:sha256:68aed6caa3a41cf4d76f4c1e1dc492369a4959ee7bc9dd3042cef3b5ae9abf81:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MGU3M2U4NTMzZjU5ODYwODg1ODlmYjFlZjgyZGZhOTU5MDJiYmJhMTE1NjQ4MDYzMTQ3OTJmYWQ0YmI4ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhZjVlM2QzNWFjOTI1MTVjYmQ1MTQ4YjYwN2U5MDZmYWEzODgxNGQ5ODg4MjZjNDVhODc2YWMzYjIyODQ5ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlMTkxNjI2MmRkYjU5ZGU3MDE5NGZmMjEwMjE5ZTY5OTMxYTgzYjkzZjNiODkwMDljZThiODIxYjY2MjgwY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5c5f5b9fe0b4e048025d5c208769c86",
+      "statement": "app.send_task builds the message with amqp.create_task_message, notifies the backend via on_task_call unless the result is ignored, publishes with amqp.send_task_message using a pooled producer, and returns an AsyncResult for the task id.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/base.py#L1006-L1041",
+          "version": "repo-lines-v1:sha256:f8fc3da9d1d8ed3b45a1163b3e36782d322e559f987ad4e4a89a8d1a2172bc1f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3MGI2ZWUyZTVjMzhkMDc3NTkxYzAwMDIwZDRhYmQ5Y2U5MjI2NjUzMDJmNTU5NmVkNjE1YmRkMWM0ZDk0NGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYWIxMjcwYmU5OGU5MGE4YTMzYzNlYmZiMzE0NjllYzJjNThjNjFjOGQ5OWYwODUxOTllNmM4N2IxYjY4MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyY2ZlMzMxN2IzODk4MmRlYjc3YjQyM2NhMDBlOGU5ODE1YzU2OGQxMWI0NGVjNTA3MzA4ODg2ZGExMDJkODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8721e3abd2f544b98f555dedbd05fe27",
+      "statement": "The worker blueprint's default steps are Hub, Pool, Beat, Timer, StateDB, Consumer and the autoscaler WorkerComponent.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L76-L88",
+          "version": "repo-lines-v1:sha256:c3f0910115b26b57cedb5bdff004986ae5142c8ab6dac08f69c06b7b15564c66:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOGY5MzExNjlkNWE3YThiNzA2MDk3NGMxMWVjZGRjNTJjMWVmYmViNzQyNGU4YjEzYmViNDU5MTZhMWJjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3Yzc2OTY1YmJjZjZhODIwOGJjNDVhMGJiODgwNjVjNzg4MWQ2MTBmNzA4NTljZjcwMWRkMGQ5MzI5YjJlMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxMjgxOTJiMTVjNzMyODg4YjEzMGM5ZDgzN2M5NzlhZDk0Njk1NTU3OTlmOTNjNTFhOTVhZGNiZDAxMzdlM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9dc8f9fde8a74ed09dbd2f8921b3146a",
+      "statement": "The consumer blueprint's default steps are Connection, Mingle, Events, Gossip, Heart, Control, Tasks, DelayedDelivery, Evloop and Agent.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L175-L186",
+          "version": "repo-lines-v1:sha256:23cb4c741f547909b177d32be88076dd4cfeb33123921f46358c592741889ec1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0OGJjZWZhZTAxMzgwNTgyM2NhZGM5ZTRiZmU3Yzg0MTQwYjcwNjdkMzlkNGUyMzRjMDAyOTJjMWU4ZWVmZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhYWU4YTBjYTc2Zjk4ZjdiN2RjNzk4NDk1MWQ2M2U1N2RiM2M2NDU1NzljYTUxYmFkNmE1MzlkNjE0ZWRiYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjYmM3MzNmMTQzY2FjYzEzMTc5YjI1M2FjNzYwNjdlYzNlM2E1YzEyY2YzODBiMGMxYTZjMWMyNzgxZGM1MTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmNmRkZGM5N2QyZmY0ZDUzMTdlZWZjMDM2YjMxMWU1YjJlYTA2NzM2MjA5ZTdhMWQ3MDIyZDMzMTcxNDZjZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_552486d33cd44be8ab95666b3cf754d9",
+      "statement": "The worker's task message handler schedules ETA tasks on the timer, routes rate-limited tasks through a token bucket, and otherwise hands requests on for execution.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/strategy.py#L178-L209",
+          "version": "repo-lines-v1:sha256:bad1de46b7bf39d51339b56be600d7aea3641d115923e47c0d3add0cbdfcabe8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYzBiYjY5NmZiODZhZGJkOGRmNmE1MDkwOTQ0MTg4ZjY4NmI3MmFhNDQzYzQ0NTI4MzE3NDJlYWU2MGVkMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3YTgyODk5YjUyNjI1ODdkMTMyNjljOGI3ZjEzOTYxOWVmN2Q2NzgyNjc0ZTc3MWY5ODhlNWExNmEzM2QzMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyZjJiZTJlN2ExYmViZjI4NjIzYmE4M2VjM2U3M2U0ZmM5NTgzMGQ3M2RjNDk2MzU1NDFjZGZjNTE2ZGM1ZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c99a5123a7c4bf687b00797e6c10ba3",
+      "statement": "Request.execute_using_pool submits fast_trace_task or trace_task_ret to the concurrency pool depending on app.use_fast_trace_task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L341-L372",
+          "version": "repo-lines-v1:sha256:7979562da58f42665a9c55be03aea994a302357c46cb174602e34f7df13b2df5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OWI0ODU4OTRhNDljMTMwZWQ3YTRmY2E0YmFmZDRjN2ViODA0ZmQyMDlmNmNlNTI3YjJlOTZiZTk4YWMzOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmY5Njk1Yzc0NjdjNzQ3NzNjOWNlN2ZjNDI5YzVkMGQwZTQ4N2YzYzUxZDE1ZDY2NjhhM2QyNDA3MmJiOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4MjIxZThhODVmYTEzMTFmMGQ4Yjk2MzNiYTc0YjNhYTMzYmY0OTAwYTYzZTQyZTlmNDVhYjVhNDA2OWFiNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1NjRiZmExZTJiM2Y0NDlkZmU0OWM1ZjM4YTllZWE5YTNlMjRhY2I1Mzc3MzUxZTE0ZmNjMWU5MmMwY2RiZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f040fa803bfc4c16a539d77ffa20eb6f",
+      "statement": "Without acks_late a request is acknowledged when the pool accepts it; with acks_late acknowledgement is deferred until after execution completes.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/request.py#L515-L523",
+          "version": "repo-lines-v1:sha256:d0722383e00bdbeb37d859fddbb450a52512ad0bc78f00bb75cefec3a9e023c5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFkZjJkNjZhYmU1ZDBkNTM3NDlkZDNmZGEzNDI5MTU5NzhhNTdjMDU0ZjE0ODFkY2MzZGFjZWYzNWMyMTdhMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzc1YzVhZWUxMjg1ZjFhYjVmNGJlOGIyYTcxNzc1NDM5Y2IyZjFmZjVmYzJjNDc3YzNlNWQ3NDgyMWIyNTg4YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTA3N2ViYjJjMThiNjllNTA3Mjc4Y2QyMzFhZGJjOTAwNDk5MjhhMjRjMTAwMmM4YjQzNmZlZmYyZjc1N2NlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDk1ZTlmZDAyNmIyODhmZDJiN2U1ODFmY2E3Y2FmNTljMTRiOGFhMjljMTdlMWY3MDA4NzUyOGU5MTE3ODEyZCJ9"
+        },
+        {
+          "resource": "repo://celery/worker/request.py#L670-L695",
+          "version": "repo-lines-v1:sha256:d05d6dda3349c988b6e81b946af0f894536cfebd152a51bf89d0a337f121f3c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMDEwNWUwYTY4NTIxYzNkMzMyNjE1MzkwZTg1OWUzOWNmMjQxMjc0YTdkNzgxZDE5NmEzYWRhMDdiMTBmZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlM2ZkNTYwZWYyMjM1MjY5ZTY5MzkyZmVkZGZiYTA0NGRjZDVlMDE4NzFjMzE2NTljMzk1MmFjYmY1YzYyYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyYmQ3MDY3NWQ3ZWMzMjQ2NjE0MmNkODU4MDRlZTRhMTIzZWJlM2E5MDM5YzhmZDI3ZjM5MTNhMzA3MGY0NjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwZTFhYzRhYmQ1Njg1MGMxNzc5ODk5ZWFhOWZhMmZiMWU4NzQ1YzJmNmMyMmQxNThkZmNkNWQ4MjliYjNmYTAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:05:29.073Z"
+  }
+}

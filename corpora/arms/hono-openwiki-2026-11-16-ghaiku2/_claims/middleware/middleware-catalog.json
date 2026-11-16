@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:964d05f35407e448cec33df17531130ca983c8188b40e9a3c4afe3caeedb2fdb",
+  "claims": [
+    {
+      "id": "claim_5e2e3e145c3e40d3aa40e8a2874493fe",
+      "statement": "The cors middleware defaults its origin option to '*' and its allowed methods to GET, HEAD, PUT, POST, DELETE, and PATCH.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/cors/index.ts#L63-L70",
+          "version": "repo-lines-v1:sha256:7fb965ef36cda35778bf0b5c9f2640ba7ee469310ef48aa8876951f163eeaba1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U1YTcyOWM2MGQ0ZjdhYjYyZGEwMWJlZWU1MTlkYmMzNmQ2MGM4Y2MwYWQxMjZhMDRmNTc1YTk4MGI1NDUxYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmM2ZjQ2OWFhZmQ2YzZjMzQ3NzJmZDQwNDBkZWU3YjY2NWZlMTk1NTBkMDAwMjM1YjkwMjY2MmIxMmM5N2ViMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWUzNGQ3ODVlZWE5NTM2MzhlYmFmODFhYmEzMTkxOTY3Y2Y4ZmE1ZmViYjZmZDI4OTk2NjkxMTY1MmJmMjg0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTY2MjM1ZWU1NzAxYWI4Y2I1Njc0ZTVkYTE1MjgyY2Q0OWQxNTRmNmRmOTRhODQzNjM4NjAxYTk3NDQyYmQzNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ef53f63c7b9419ba14a047f74f357c7",
+      "statement": "The csrf middleware's default origin check accepts a request only when its Origin matches the origin of the request URL.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/csrf/index.ts#L94-L100",
+          "version": "repo-lines-v1:sha256:22f0346ca2e224368576d93fd53c9a84ffa0833a1104c6cc5a5a86491fa306a7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWEyYjYwZjQwZDAxODBlZDgzMzg2Y2VkNjM0NjNlNzJhNWFhNjlkYzljMzYwNTQ3MTNjYTljYzg4MzQxMGRiMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWUxOWJmNzcwMmE3NGQ5ZWRiNjNjMTY0ZWIwNmU5Mzg4ODM3ZjY4NzViYjM5MjRlN2Q3MzFiNjlkYjk3NDZlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGI4MmYxNjZlZTI1YmQ2YWEyZjI0NDQyYTc1ODM0ZGM2OGIyMjNmODVjZjdlN2FkNGE4ZDRhYTBiMThhMjA4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzE2YmQ5N2FlMWFlZDhjMDUxNmI3ODg1OWQyMjg0YjQyOWI1OGY2MTNkODE0Nzg2NmE1NWMyMTNhNmU3NWJiOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a07e985593b412d8add081cfad425b9",
+      "statement": "secure-headers defaults Strict-Transport-Security to max-age=15552000 with includeSubDomains and X-Frame-Options to SAMEORIGIN.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/secure-headers/secure-headers.ts#L99-L105",
+          "version": "repo-lines-v1:sha256:edf315a972a406d49ef04f3f238250401e33f4a5ec41711cb5afd746b561ea5e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDI1YTQ5MmNiZDJhMDcwOTJjY2ExZjQwZGM0ZWMwOTcwY2ExZmQ2OTA3YWViZDViNTc5MGZjZGNkYzE0YjBhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzNlOTgwZTIyOGJmMTNhMTZhOGFiODJlYzQwZDgxYjBiZDgyNzYxMGY5YjM1YTA5MjlmZTg2MWU5YjhhNjVjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTVmYzFlYjBlYzEwZDdiMDI4ZGM4ZTYyMzYzY2Y1M2Q5MjkxNTZmYzk2YTI1NTE0YWQwYWMyYWM3ZTljYzMyMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjRkNWM5OGEyMzIxZjRlMjFmN2FlNzRjMmE3Yzc2MjYyZTY1ZDE1Y2Y2N2NmZjQzYzRlMTg5MTQ2OTU0OWVmZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a0b13cb304f4164944f9c2070cc40c7",
+      "statement": "body-limit rejects requests whose body exceeds the limit with status 413 by throwing an HTTPException.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/body-limit/index.ts#L50-L58",
+          "version": "repo-lines-v1:sha256:9c1560209d3e3bf3d8c3d418c27ba9302070f1d480b50b0f90622f738ae00de9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZjNmI2MjgwOTg1ODJkN2Y1NmFmMDM2ZDMxMDQ1NzhiOGE4MWVlYWJkOWExMjAwYzFmZjViYWU1YzRlMmYyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQ3NWU5NGE5MDRhYzQ5YjMxNTRkNDY3MmE2NmU4NjI5Yjg2ZGFjNzRlM2UyOTM3YmU2OTI3YWUzZGExMWM1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTc3OGQxYjAxOTdmYTkzNDI0MWI4NjQxOWM3MDkwODc2ZTQxMTI2MzExNmM1ODMwZTI3MWI1ZjZiZDViYzdlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTNjYjkyNDEzNDBkYmMyYWE3ZDdmYzdlY2U1ZWYxMmU2NzcwZjg1ZTFkZDhjYTIyN2MwYmRlZDhmOWFjMmE1YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ebf17022e025470ca3c9738c49eb0ce1",
+      "statement": "timeout races the handler against a timer and, by default, raises an HTTPException with status 504.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/timeout/index.ts#L7-L16",
+          "version": "repo-lines-v1:sha256:369d892a2ff779f4b91593a68d744e9bdbf0d2ad992ca06fe3eb52f4a7c2b0a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmN2JlZThjMWQ3ZTZmODQ3OTliMGIwNjIxYjA4MDJiYWJjODQ0YmM2NGRkMjk2ZmM3OWM2NzgzNjcxNGUwMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0MDQ0ZDU5OGY4N2YzM2JlZmJkNjY4MDk5OTQ1NjI4Zjg4NDYyZGNkMWJkZjc2OTU4Y2E4ODMwZTVlMGVmOGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1YWVhNDhjNGI1MjAwMjJiZjkzOTY4NzIwNzUwOTIyNjAwNDM1MTJmYjMxMjdhNDk0MGUzMDMyNmUxYjU5ODMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31dd7fce55cb4c97bc57fe801b818a48",
+      "statement": "The cache middleware opens a named cache through the Web caches API and looks up the request key with cache.match.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/cache/index.ts#L155-L165",
+          "version": "repo-lines-v1:sha256:514c4d8f7b6f8f10f703951428e04358205ab71ab97971d4ef39dcfd73bb173b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMDU5NTAxYTZkMDdmMzYzMjNlNDQ2MzZlMGZiYTFiNDNlNWNlZGU4MGU4N2U0YmVkYzM5MTFjMDE1ZjY2NDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhYTQxYzUyMWUzZjY2ZmMxZDU0ZGFiMjQ2MGFiNjkxMWRkYjY1NTRiOTQ1ZDYzNDFkMTU0Yzc0MjZhY2JlMzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c44e3297c8ad49bfafd97a39e7802cbd",
+      "statement": "context-storage keeps the current Context in a module-level AsyncLocalStorage imported from node:async_hooks.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/context-storage/index.ts#L6-L10",
+          "version": "repo-lines-v1:sha256:a0ad1bddc1ab6f7b7c9d1b2af4040e5838fcf39ce269d308cabd223fad39483e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzQzOGJjZjNmNzgzMGE4YjdlMTRiNDg1MjRmNjM1OTlmNGMzOWJiYTE0ZjNmMzc2MTRhMDU4Njc3MjZkMTg2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDhjYjQxNzY2YzkzYmU4MmI1ODdmNjFjNmNiODEzODZjOTdhZmEyMGU0NTJlYTQ1ODhjNTM0MTliMDI4ZjQ3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjlhMTkzZTQwYWI3Mjc0MDQxY2M5NmFjOWYwOTIwNmRhZmMyODZmMDI3YTgwNGQ1Y2YyN2E2YTkyYTg2YTE3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmNjNDYwOGU3MzZjOTQ4MzI1MDE1YTE2OTMyZGExZWRmZTlmYWJhYTM1MDQ1YTMxZDEyMDU1YzExN2MzNDJkYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e1d6bb548cc45ec963286537dded7ac",
+      "statement": "request-id defaults its generator to crypto.randomUUID() and lets options replace it.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/request-id/request-id.ts#L40-L52",
+          "version": "repo-lines-v1:sha256:d3a7f6bfd2969c40e0380e98565bb473e60455527a899bdeac2410646d2cca69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlMmI0NTI2MjlhNmM0ZWNmMTkwN2Q4NjQ5M2NmYzdiYmJjMWZkNDEyYTdlNzYwZWJmMDM1MzRlZGExZTg1NWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxMGU1OGIzMDYzYWM2NzQxYTkzZjNlNTU5YTE3NDhhOGM4YzRiOTY4Nzc3ZGMwZGFmZjhhOWVkZWRjZjI0YzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_57c8c712323e4849b84414290795acd6",
+      "statement": "The some combinator runs a wrapped middleware only when one of its conditions matches the request.",
+      "evidence": [
+        {
+          "resource": "repo://src/middleware/combine/index.ts#L38-L44",
+          "version": "repo-lines-v1:sha256:e77819625c3b319a8fa4336e69b58156388a53416cf9d4532b1c25dbcc18718e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDYyZTc3NjA0OTMwZDAzMThkYTljZTFjNGU5ZWFiMjcwOTRiZDVlNjk1YzU4MGRhN2NlYzlhYmZmMDliMTU5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODRjZDY5NzlkZmI2OGM4N2MyMzQ3Yjc1N2UyYjc4MjkxMDM0MmY0OWE2NzZiNDhhMWFkMDA4ODhkZDYxZTE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDQ1MjBhMTMyZWYxODE3NDA3ZjBjZjdmOWI5MTc0MWMyOTE1YTI5MDgxZjhjOWY4NzlhODMxMDQ2NzM2NzRkYyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

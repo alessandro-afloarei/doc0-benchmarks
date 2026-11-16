@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:eb830467c08528a6e0f81cd4321fa9a476f8e956572c74a2efe34a35b09a8c44",
+  "claims": [
+    {
+      "id": "claim_f2c3c24f9466402a9bb1da422efccdd4",
+      "statement": "When Context.res is assigned while a response already exists, the new response is rebuilt and the old response's headers are copied onto it except content-type, with set-cookie headers preserved, and the context is marked finalized.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L414-L433",
+          "version": "repo-lines-v1:sha256:f2169da8aeef79cc5c6799288899f4cf28e05216b2b17ab28a0398ec3a52cae9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNzhhZDQ2NDI0NzZhMzI2ZjRmOWE3MWEzN2JlOGYzZGM2MDM3ODcyN2I0ZGIzNDZiYmRhZDQ1OTdlNTM1ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiZjA5ZTQ0MzY3OWJmMWI5NGVhOGFiYWVkYWRkNDc4NzdmYzhiMmVlNTY3MGQ3NjViOTQ1ZjRkOTkzMGM5NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2NmM5ODM1NzQyNGYwNjQ1NTlkYzBmZWE4NjM2YjdjNTM4YzhmMzUzYmE1MzA4M2FkYmZiODg4YWFhN2VjY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhOTI5M2ZkODA1NGI2ZTQ3MjQ4MzczZjM5ZjRkZDc3ODAwMTA1ZWI3NTgzNDg2ODcyNTQyODVjZDEyODJiNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6f1ee37e0814b1d8dbd94a62125ad7a",
+      "statement": "Context response helpers share #newResponse, which merges prepared/existing headers with init headers (appending set-cookie) and explicit headers, with status taken from the argument, then c.status(), and a caller-supplied Content-Type overriding the default.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L604-L640",
+          "version": "repo-lines-v1:sha256:6b55dfa5bec3051bd296aeef28c95c70114d8f72ecfed8b727644266349564da:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2YzllMWIzOThmYjNhYmUzMTAxZDk2N2MzNDY1OGYxZDNjMWM1ZDA2YmM2OWJkMDI3YWE1MTZlYzNiOTQ1MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4MTM5ODk5Y2QxYTBmOTg3NDk4MzVjMWIzMGZjMmI3NTBkMTdiNmI5YWQxZmFlZjA5YmZjNDA2ZGRlYWU4NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMDE1ODJhM2FmYmJkZDY5YmQ0NWQxNjdmYjIxZDI0NjgzNTA1Y2ExY2IxMWIwMTNlNDc1YTlkYmUyMTRiYTQifQ"
+        },
+        {
+          "resource": "repo://src/context.ts#L682-L700",
+          "version": "repo-lines-v1:sha256:66caaec91458acdb0fc8214608af2faefca135c0e8af1b8371dd4f32460dcd6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1YzNjZTM2MjUwZTlkMjI3NDY3MjMzNDljNGVjOTJmOGM5YjM1ZGZjMzA3MTY3Nzc3Y2NmNjE3ZTJhOTZkYjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MmZmMDFmZTM5YmE1YzZkMDg2MGNhODE2Y2Q0MGNlZTRjMmMzYzVlMjc3OTlmYmFlYTRhOGIwNmExOWQxODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NjNlMDIwM2NhNTNjNjMwNDczZGYyZDdmOWJhMjJhYjU4YTJjNjU1MjJmY2ZmNGYzNTRiZDBmNzc4YjljZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmYmY3NWZhZmYyNDhkZjJjYWIyMTM2YzYyMTFjOWEyYzZhMmQ1MDM0ZTkwZmZmZjJiMzMwYzBkZWI3NGMxMzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_93e8bebab55a49719b154c731c4943f0",
+      "statement": "c.executionCtx and c.event throw when the host did not supply an execution context or FetchEvent.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L377-L401",
+          "version": "repo-lines-v1:sha256:9dcf39824a73f42c467b1e9063d8ea04498a9b226aa3d39a32ac6f6c77343cc7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljNWI3MmY4NTdhOWE4OTM2MmExNDMwNTBlNTRkMDIxYzcxODAwMTY0ODA0NGM1ZjAxMWZiZjQ3YTg3MDMxMTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYjY2ZTkzMGRjODA2ZjIyODNhY2ZkYTRhMDBiZmJkNWJiMDhmZDNjMGZkNzdkYWVlODkyZjg1NTJhMjhlZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlZWM0NDNmM2U1YjQ4ZWQxNzdjNWVjMmFjOWFlYzVkNDlkY2E5NzYyMjA1YjRiNWQ3ZDkxOWEyMjFmY2I0OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1N2JkNzY1YTc2ZDRhNTQ2ZGRhZDdkNmRkMzIyZjI3ZTg5NmMyNDMwNGUzYjcwMmE4YmE4ZDczZTc0NTUzZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_39a5fe4396de45d986603cf618da4c7f",
+      "statement": "HonoRequest resolves params from the router match result at the current routeIndex, indexing into the shared capture array when present, and percent-decodes values containing % with a safe decoder.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L100-L145",
+          "version": "repo-lines-v1:sha256:2484003cc016781031cd2a38fbb56f4ee9cec0f07ee6f5c43f852dfe1ea63428:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MTg3YjM1ZGVhMjVhY2U0YmYzMmFkZjJhNDFiYzc3NDg3NjNiOTQxYWI3YzJkODQ2ZDMwODQxZTNiY2Q4YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNmMwNDJjMTE2NTJkYTdhZjA5MzQxNDUzMzA1ZDc5MzUwMWFmNTU2ZjY0YmRmYmM5NDc2YjBjYjZjNGZjMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyNzhiN2U0Y2E1ZDE1N2NkM2FjODkwOGZkZWFiZDQzNmFkYTBmMDU1ZmIxOTVjYTY0ZTNiZTk2YzcyNjllNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4ZTVmNGRlOGUyOGFmZmQ4ODRiNzlkMWMwMzMzMTkyZDIwODFmNmFhZGJhYzAwZDQxZTlhYjExNWU3MGY1ZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2174374809046edaa1e7f79ca1c7b3e",
+      "statement": "HonoRequest caches request bodies per representation and, when a different representation is requested after one was read, derives it from the cached body (re-stringifying cached JSON) so the single-use stream can be read in several forms.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L220-L251",
+          "version": "repo-lines-v1:sha256:60ff010d2b655afbc8a3061910b89fd6872c62ec61925e019c1fc89fd68a2ba0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkZjZmNDFjYzNkNTU2ZTJlZGI2NDRlNzU0OWQ2ODBkOGNlZTYxN2JhMjhjYWM1YTYxOTMyNzE1ODNjMGUyMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlNTkzMzFmN2E3ZTAyMzJiZDQzZjI5N2FkOGY1ODdhNTE3NmViZjYzY2QzZmQ1YTFjMDEwOGIzY2QyZTJkZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3NWE3MjI1YjhmNDkwN2QwZTQ2YjcxOWVjZDJiNzZjOTY2NTUwYjE3NDA4NDNkY2ZjOWUzNzU4NDY1MDZiMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0MDJkZTNmYmQ0Y2Y5ODVjNDViN2YxZTMxNDU0MzA5NTZhZGE2MGFlNTVjZDU0MDE4ZWE4NTEwZDgyYmI1OGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_408253693d014b7eb1a90629acaa4e20",
+      "statement": "parseBody only handles multipart/form-data and application/x-www-form-urlencoded content types, returning an empty object for any other type, with options all and dot controlling repeated keys and nested keys.",
+      "evidence": [
+        {
+          "resource": "repo://src/utils/body.ts#L55-L75",
+          "version": "repo-lines-v1:sha256:ee964f183fc275eff26304ffee5dc6cf94027669fcd448dbf4dbc37abe39b0eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MmZmMDFmZTM5YmE1YzZkMDg2MGNhODE2Y2Q0MGNlZTRjMmMzYzVlMjc3OTlmYmFlYTRhOGIwNmExOWQxODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyYWRiOTcyNjhmNTI1ZWY3N2M4ZDRmMDlkODdiYzY4MGE2MWJjNGE2OThlZjAyNTA0NzMyNDljMzZiM2ZkNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjMTNhYTg5N2EzN2U3ZmM4NGMzYTc1NzRjODAyNWM3YmRjMTFkNmIwYjc4Y2FlMjkzZjEwNWU0NjBjMjNhMDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e55bee54cc0b406ab5c513c9285d1fea",
+      "statement": "Validated data from validator middleware is stored per target via HonoRequest.addValidatedData and read by valid().",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L339-L355",
+          "version": "repo-lines-v1:sha256:70245bb1b5f3095a6ebda2ead15cf8a77f24e56698a61806d1c8e737f7252660:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NGQzODBjMzYyZmI3ZDg4YjEyZjEwNDE5ODM4NzM4ZmZkMzhjOWNmOGY5MDI3YTUwYjkwMzYwM2ZjZGMzYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjNGViYmRjZTc4ZDBkNmMwZTQ5M2Q4Mjc3NGQ1ZDJmYmU0OWM3NjM3MmQyMDI0YmQyZGYyYzY0Mjg2MTMwNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5YWE2Y2NhNTZmODNhMTc4MGVhM2ZhNTQxZjRlYzY5YjA1NWJjNzVhMWMxYjdhNTM5ZmE0NzY0ZmM5NTI3OWMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:46.600Z"
+  }
+}

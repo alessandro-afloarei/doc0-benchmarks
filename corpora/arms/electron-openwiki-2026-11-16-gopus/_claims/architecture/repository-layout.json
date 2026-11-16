@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:754d6910c79a6297111ac9a4a659443032b52e8f494b25a53c0d768cb5122d49",
+  "claims": [
+    {
+      "id": "claim_3d54d50e60ea496f92736656cca30f21",
+      "statement": "The repository is checked out as src/electron inside a Chromium checkout; DEPS pins Chromium at src and Node.js at src/third_party/electron_node, and a gclient hook applies Electron's patches via script/apply_all_patches.py.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L127-L139",
+          "version": "repo-lines-v1:sha256:b9aaa98a34e38a5e33f7190572104751beb42c7c5aded8e4affe8a4fe2ee2ca2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzMjA2NDE2ZmJiZTNkNTM1MGEyZDI1ODU4MzQxOTQ3Yzk2Y2U1ZWJkNjFkOWMwNjQxZWY5YmI1ZGIxMGVjZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxOWFkN2Y3MDhlNzNkZWUxN2Q0MGM1ODBjODdmMzUxZGRlNjAxMDczNTU2YjFiNDU5NDI2NjliYzI4OGIwNDQifQ"
+        },
+        {
+          "resource": "repo://DEPS#L78-L90",
+          "version": "repo-lines-v1:sha256:99bee3ebff7498597e60561f1126c3032f7144d8d693318923249562462d0820:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZjUwMjUwNjc4NDU4ZmNkNTBhNWJkMTgwMzgzNmM0ZDY2YTM3NGMxYjY3MTdkY2MzMDQxZTg1NjI4YmNjM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhYjdiMzc5MGEyNGFlNDcxZGVmNTYzN2UzNWVhZWI4YTcxNWQzMDMzOWYyODI3Y2QyZDU3NDBkYjlhZmE0YjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3Y2FlMjBmNTNlMDkzYzNmZGNkMzZhMTBjNjBkYWQyNTBlZTRlMjk5YmYwYTA3MGQ0YjMzNzlmZWI1MTBkY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlYTZkZjIzY2M2YjI2YTJiNjM2NTI2MDA2MzM5YjNkYWZlMmNkNmM2ZmY0ZmRiZjE5MTg3MGRhZDE0YmFjNmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee33ffce0a724bf29cd48c1fc8a25f31",
+      "statement": "C++ sources are listed explicitly in filenames.gni lib_sources variants and compiled by the electron_lib source set in BUILD.gn, which depends on the js2c, fuses and buildflags targets.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L423-L440",
+          "version": "repo-lines-v1:sha256:c3ffc20c08d75c04b220538b89c68289122fbd277237a4ca822e02088f8397ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyMjAxYTBlYmVhMWU0YmMzZGRiOTc0YzFiYzRiYzEwNTZmNzQwMjhlN2QzN2E2ZWQ0MGJjOGVhYjJiNWJkYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzM2NiMzBlN2MwMDUwMmM0NGMyN2RlNGVlZTE3NjcyNGVjODU3MzI2ZjY4MTI5MDEwODAzNzdiYjA0NmMyOWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhMTA3OTI1ZDgwMDRiYTU5MzlkNmI4NDc0ODJhNjRhNzRlZDQ0ODBjMGExODFkMDE5YjQzNDg4MjcwOWNjNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzOTMyOTg4MWIyNjE1M2MzOTA4MDgwMGFmYzI0Mzg2ZWVkYmQ4YTc2MTNhOWYzMDI3YjIyMGQ4OThmODc4ZTEifQ"
+        },
+        {
+          "resource": "repo://BUILD.gn#L560-L575",
+          "version": "repo-lines-v1:sha256:755ec60f3abf8e91c422d21b0115e109577da41736ec623a9acf5bff7b4ffd0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNmFkZmJjYzhlNDAxMzA3NWViOGQ4YWFhNjUxYjg0YTc1MjA4MGEyZWU3MGRkZjc0ZjBhZTlhOTliNGYwYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3MzVjOTYyOTZmNDlmMjNlMDI3NjE2MDgxZWVhZTk3NjVkN2Q3ODQ3MDgzZDRiMjQzNTRlYmUwOTlhNmFhMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxNDAyNzExNmIxOTZlM2VhY2MzMDM4MGU5Yzk1MTNmYjI2OTY4N2Y4MDljZDUwNmFlNGM0MDFhMTVlZDM0MzQifQ"
+        },
+        {
+          "resource": "repo://filenames.gni#L236-L240",
+          "version": "repo-lines-v1:sha256:f0e844eba882883ab119403e5734abcb05b296f09a738b657704b7f754fad96e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWVmMTdlMGQ1N2FiYWI0ODMyMDNhNTIyMDg5NThhNjk3NGM3Njg3ZmM4YTE1OTk0OTJkZDgxYTI3ZjlkOTY3NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MzNjJiZDljMTk5NmQ0NzBlODFlYjhkNTY0OGZkMWIzZDg3OTRiODlmZWNjY2Y5MzAwOWYwMDc1NzI2N2ZlZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWM1YTZmZThhZjgzNjk5YTQ3OTIwMjY0MzQ0MzY3ZTE3YjAwOWYyYzEwZTViNjBiOTBlYzcyMzRkNDllMzY3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTc1OWJiMzRjYzY1NWQxZmRjMjQ4NWEzZGQyNWNjNDdjMjk2NzE0NWQ4N2Q1NjllYmFhOGU3NmFhODdmOTYxZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f67393d8e32347d5bf59dbbf61a0ad79",
+      "statement": "filenames.auto.gni is auto-generated and supplies the API doc list and per-bundle JS dependency lists used as BUILD.gn inputs.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L160-L232",
+          "version": "repo-lines-v1:sha256:40abbec8c475a2b9894914e7ef06b7ae7e3bd8a861e681a07c88608e9733487d:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllMzcyZDM0ZGIwMTY2NmJhYTRlM2Y0NDQ2YzlhMWQ5MzQ5MWE5N2Y2NGQ1MDI5NDBlODJlZTRiN2Q5ZjZjODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwZmIxOGM5ZTQ2NzU2MzcxNjgxZDE0MTMwYzMyZTMwMDFlMzY5MzUzN2NkOGQzYjMyOWJiNGMzNzcwNDY3ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2MTc1MTc0NWI5YzBkYjI1MzY3YTJmMWRkNTUwNzRkZTQ3OGEyOGEzODQyMmE4NGVkZjQ5OTE5NjYzZWU3MmQifQ"
+        },
+        {
+          "resource": "repo://filenames.auto.gni#L1-L5",
+          "version": "repo-lines-v1:sha256:2ef3493b244e1726f15c47368e785e054715f8b2f1446abbae5ac9bc59c2bd0d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTI3N2ZkYTJiNDMzYjlmYjg2Mjk1NmE2ZmY0ZWM4YjhhMDdkNmVhMDMzM2E5OWM0N2RhOTBhZmI2YTNkMTlkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDc0Nzc0MDViNmU5ZmEwMmU4ZThiMGZjMjNjOTM2YmNiNmMzZjkzZjk4YmM4YThhZmY0MDRmOTkzNWVmZDg2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGQ1NzhmYmMwYjU2ZWQyZDQ5YWFiYTkxMmYzOWVhZjA4NzE5NmE4NWJiZjVlMDRkOTBkYjg4YjNiMDYwY2NiYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_32507321319d411b89d4af34ee7d86a8",
+      "statement": "chromium_src/BUILD.gn defines a chrome static library, visible only to //electron:electron_lib, that compiles selected Chromium //chrome sources Electron reuses.",
+      "evidence": [
+        {
+          "resource": "repo://chromium_src/BUILD.gn#L13-L30",
+          "version": "repo-lines-v1:sha256:6283d69a104463b98d01d5f3b3173d0bd980bf436ebe09fc0a83a42f7fd8afb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyZGY1NTA0NDBlYzY4MDFkZmFkODgyYTQ4NjY5YTJiZmZiOWRhZGM2YWViNDQ2NWVlNTk3NTQzYTY4ZmMyYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzZDZiNGJmZDA3NzZmYTNkMWYyZTMzZDUzNzJkN2ViNGE2NDNjZWJmMjc2OGU3NzFlZGM2NWQzMzM1NDNmOTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzNWEzYmIwOTA0ZTJlOWE2NDlmYzFhMWY3YmRjMWQzOWY0NTk2OTJlNjZkNmFmMjhkZDg5OWJlMmQ3Zjg4N2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwYzk3NWFmMzVlZTJjZWYyYjRkZmE3ZTQ0NzRkMDhlNGY3MTM4Y2FhOTdkZjAyY2M3NTdiMWJlODMzZWI1ZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_485442c486b641a4b811f71c9281a0d9",
+      "statement": "patches/config.json maps each patch directory to the dependency checkout it applies to, including Chromium, V8, Node, BoringSSL and Squirrel.Mac.",
+      "evidence": [
+        {
+          "resource": "repo://patches/config.json",
+          "version": "repo-file-v1:sha256:30511b8e410073d05c6ef91b9bd47d5fecafaf2eacab203c1c3a09046a195f33"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

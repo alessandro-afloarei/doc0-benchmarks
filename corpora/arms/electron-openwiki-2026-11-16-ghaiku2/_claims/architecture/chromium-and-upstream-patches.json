@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:27146b8ba19f51139891bded11f17e3fa6e4fb66404c47c39843584a1103e736",
+  "claims": [
+    {
+      "id": "claim_9955c69594fa422b843f619cae2102f5",
+      "statement": "patches/config.json maps each patch directory to the checkout path it targets, with the Chromium patch directory targeting src.",
+      "evidence": [
+        {
+          "resource": "repo://patches/config.json",
+          "version": "repo-file-v1:sha256:30511b8e410073d05c6ef91b9bd47d5fecafaf2eacab203c1c3a09046a195f33"
+        }
+      ]
+    },
+    {
+      "id": "claim_714025c24bda42749b7397733a27a39f",
+      "statement": "The DEPS patch_chromium hook runs script/apply_all_patches.py against patches/config.json when checkout_chromium and apply_patches are both set.",
+      "evidence": [
+        {
+          "resource": "repo://DEPS#L130-L138",
+          "version": "repo-lines-v1:sha256:39acd31f6e8289620e37c9eb1eb94466c24380bac93e909ac57ce81b2620f7ad:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjExMWYyMzlhYzY1YzlmZWNkNGY3OTc1ZDRlZTBjNjc3YjU4YThlYTY3ODUyZWEyNWQyNzkyMzkyNTE4ZDJmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzYzZDUzNWNlMzgwNjNkNmI0YzUxZDhjMzg2YTdmOWIzZTU4MGExNGExMGMwN2IxOThkZmFmMTljOTNhM2JmZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDQ4YmY2NWJkZGZkNTM3NjcxMGJjZmM5ZGNiZjViY2I0ZjY2YThhMzFjOGM1MzdiZTM2ZGUyZDRmYTM0N2U5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmIwYTk5Y2VjY2UxOGJhMzA2NmE0YjIyMzAzNjdkYTg1Yjg4ODc4MGI4NzY5ZDJmYmZlMWU5NGU0ZDU4NGMyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c91e84864eb24638981c4ec7c013684a",
+      "statement": "apply_all_patches.py skips a target whose repository path does not exist and emits a warning instead of failing.",
+      "evidence": [
+        {
+          "resource": "repo://script/apply_all_patches.py#L13-L19",
+          "version": "repo-lines-v1:sha256:a2160137714dcb6e642bc24f17854aa69e3d2a5cd4de3c8a3b5241bc7249c71e:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Y2Yjg3OWE4OTg2ZjZmYzZjZTk4N2Q4MjAzYmU3MzNmZDFiZTZjOGU0YTkyOWMzZWZkMTBmYzA5NDFmYWQ0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVjMmVlYTJiZDRjYWRjMTE3MzkxNzgwMzkyZjQ1ZWVkNGEzNDZjOWIyYjhjODhiZWJhMDliNGQ2YzU1NTNjZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWIzMmY0MWIwNjVlMTUxMjRkYjhiYmQ3NjJhZTk0N2YxMDdlYzQ3YTZmODkxMmEwMDkyMDY0N2VhNTI1NGNiOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWJjOTZmNWU3MTk1MjhhZTVhMDZlMTVhNDQzYTE2Y2MyYjc1ZTYzYTllNThiOGU4YzFiMWM4MDA5ODRmMTY5NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e7a93dbc2eb406aa9e3750490da9400",
+      "statement": "git.am runs git am with --keep-cr and a fixed committer identity and raises RuntimeError on a non-zero exit, while import_patches first records the upstream HEAD in refs/patches/upstream-head.",
+      "evidence": [
+        {
+          "resource": "repo://script/lib/git.py#L53-L85",
+          "version": "repo-lines-v1:sha256:2966d32f2278f202383834d58008db0e9658920046f8acbc2a32695c36c753e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNTA4ZGM3ZmRmM2M5ZjUzMmY4YTJkOTE4ZmQxN2NiYjljOTQzYWFhODc2OGE1YWYzMWExN2UyOTBjNGI4YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzYTkwYTZhMzNlNTAxZTNkMGRjZTNhZDc2NTA3NDc1NjUyYTNiMTI1NTlmMzA4ZTE3NWNiZWFhZTkwYTY1MjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjZDllNjg2MWVmMGNlYjk2ZTkxODY1NTI0ZmJmZjVlYmVlZWJiYThiODUwMDhjZGQ3ODFiMGExMTVmY2FlOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0MzhmOWE3NGU1ZDExMzE3YjczMDQxMTM4NDQ1MjViMDI5NjgwNTlhNWFlYzQyOTQ5YTAxYmU0OGUwOWI0YjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22eb3ceb86814af4b5468fab9cacb198",
+      "statement": "patch_from_dir reads the .patches file to order patches and inserts Patch-Dir and Patch-Filename headers into each patch.",
+      "evidence": [
+        {
+          "resource": "repo://script/lib/patches.py",
+          "version": "repo-file-v1:sha256:dbc83703912c42fea72d6b64e2b845cd07ef5e0e9f4f743134fdf74448be4a62"
+        }
+      ]
+    },
+    {
+      "id": "claim_5771a1d1f47249569492a182f70dd0f7",
+      "statement": "export_patches regenerates patch files with git format-patch, rewrites the .patches ordering file in a normal run, and in dry-run mode exits with status 1 if any stored patch is stale.",
+      "evidence": [
+        {
+          "resource": "repo://script/lib/git.py#L224-L280",
+          "version": "repo-lines-v1:sha256:3355d2967cd4e6dfc2faf187aeb2e7baaab9f0585c1bba9c022fdf9073cf584f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMzg1Mjk1NTQzYWU0NWIzYmJjZGQ3YTNlZTcxZDgwZGM4YWRmMDQ0ZDU4ZDI5NDIyZWM3ZjU0M2E2ODUwY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYTljYTM3MDE3NmM2OTFjYzZkNzllMmJjZGZkMmFkODJjMWJjYjUxNjgyZTZlZDQ4MDY4ZmIzZGQ3NjEzNDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1NjU4YTNiNWE2NjA2MmI3OGRiY2FmZTdmMWVhNmE4YjdhM2UwMDUxNGNmMWRmOWU2MWZiNzE4YzYyNDhhMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1ZGFmZDhmMGY0MWI3ZGRhMDk4ZmIxODIzNWZkNTk5YWM4MGM3NzNkMTYxMTAyYjc3MDZkOTMyYjZhNjdjYTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d321ee0fe4f4455cb4a2fdc6b9096c7b",
+      "statement": "When no refs/patches/upstream-head exists, guess_base_commit falls back to git describe --tags to choose the export base.",
+      "evidence": [
+        {
+          "resource": "repo://script/lib/git.py#L102-L116",
+          "version": "repo-lines-v1:sha256:f9a30c4aab7e3bf07fc4fc9dfefc313e604f4e60eecb14a6aceed9d38b160a6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4NjkxNGJkMTBjMjJjZTMyN2FlODAxNmFmNmFkZTU4YWQyMzQ0OTgwZWZhMmUzNDMxYzQ4ZjZkNzdmYjE4OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5ODBkYWMyNDViNGI1NjE0M2ExNzhkM2M1OTgxZDhmYmU1YWZmOGNmODUyZTBhZjE5ODUwZTc2YTIxYjczMzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkNDIyOGQ4MDA3ZTg1OGM2MmU5M2NiZThmODQyMGQwZjMzOTUxMTE5OWM3YjFiZmQ2NDQ0ZTlhMDllMjM1NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0YzU4YTk5YWY2YWYwNTY4OTcwMzMxMjY1NjY4ZWI3N2YwYzc2NDFjODBjMDBlZTg5OTRmMDhhMDkzZDU2NjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_725c1952c465475592f83b1323cd8174",
+      "statement": "On non-release CI builds, the checkout action re-exports patches after gclient sync and checks for a diff.",
+      "evidence": [
+        {
+          "resource": "repo://.github/actions/checkout/action.yml#L113-L117",
+          "version": "repo-lines-v1:sha256:d210e6262a60463e263dbde6b70bc17030e3ab1e8cfc9227b28968432b5172f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQ0NGViMzg4MWJkOTk3NmU3MzhkNDZhY2I5YTZjZTZjYmE2OWQ0MmQ2MmEyNmU0NGViMzhkODhkYzViNzA5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTY0MDY4ZDZlY2RhMmNhYjA4ZWFmNGQwNmVhMzNkZjlhOTgxMGVmOGQ3YmUyN2U5MmNjYWIxMTEyMmQyMzFiYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWZhZTgwMGM4NjA2MzAwZDM1YmY1NmEwZTdjZDQzZDJjMWY1MTY1OWE0NmVmNTE5NDU4MGM3YWRiY2Y3MzA2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTMxMWI5OWNjZDIxMWIwZGE0MzMyZDNmMzg2OGI5OThlMWFlODI1OTg4ZTllMmM3MTc4NThjZmZkOGRiZWJiYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b82ef328d1864cc081198940691e9cff",
+      "statement": "script/patch-up.js pushes updated patch files through the GitHub API using PATCH_UP_APP_CREDS and only works in pull-request workflows that set GITHUB_HEAD_REF.",
+      "evidence": [
+        {
+          "resource": "repo://script/patch-up.js",
+          "version": "repo-file-v1:sha256:22ebc59271b07a242b50dfcf4d8bcd6e30d2fe973be6530a8f2726bca1113c44"
+        }
+      ]
+    },
+    {
+      "id": "claim_350c6fd97ecc47deba3c0696273b91c5",
+      "statement": "chromium_src/BUILD.gn defines a static library named chrome that is visible only to //electron:electron_lib and whose sources are Chromium's own chrome/ files referenced by GN label.",
+      "evidence": [
+        {
+          "resource": "repo://chromium_src/BUILD.gn#L11-L20",
+          "version": "repo-lines-v1:sha256:30d88a634b6aeb0ec35af19e8df4a8f715ca96fb1383e6934da501c2e753f39b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZjczZjIyMmM5YjBlNTk0NGQ1MjYzZDEzYmE1NTBiODcyNTM2ODFiYjFjZjM1MDliN2NmM2E2NWNjMmQ0ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxMzA5ODE3ZmFhMTc0ZDJlZTUzYWQyOTg2MWUyYTE4NDY1NjJiMmNlMzhiYmUwZjM5MTg5ODRiZTM5ODM5OGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZWU1ZDViYzkyN2VkYWFmMmNjNjUyNmNiMjM1ODI5N2U2N2Q1NTI5NWYxZDVkMDZkYTM1ZmYwNGYxOWIwZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd8dc20da4704ce58d57336ace19774c",
+      "statement": "The root BUILD.gn depends on the chromium_src:chrome target.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L440-L443",
+          "version": "repo-lines-v1:sha256:9946a8339e109f65a04259783b40b3c164c8c710243e5386d3bcc8cd1acb2693:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTMzY2IzMGU3YzAwNTAyYzQ0YzI3ZGU0ZWVlMTc2NzI0ZWM4NTczMjZmNjgxMjkwMTA4MDM3N2JiMDQ2YzI5ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzVhYmZmM2ViZjFkYjdlZGIxOGVkMTJjMjkwNjI3YjNmNzAzYTUwODFkMGVmNDVmYjNkZTk4NjAyODM3OWViMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDZmY2RjYTdjM2ViYjIyODU3MGIwMzk0ZDQ0NjJhMWQxNDQwMWQ2ZjI3YjM4MmFmMGIzYTVhN2Y0M2M1Nzg3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmYwZDUyZmQ2YzkzZjEzMzU1ODUwZDQyOTZlMTJkMTEyYTZlYzk0YmFiNmNhMzM1YjczMjQzMTY4YzgwZDZiYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e40696413e441ed868b3339b30773eb",
+      "statement": "docs/development/patches.md requires each patch's commit message to state one of three accepted reasons for the patch: temporary upstreamable change, Electron-specific compile fix that cannot be upstreamed, or fundamentally Electron-specific behavior.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/patches.md#L5-L15",
+          "version": "repo-lines-v1:sha256:4b442833e00aad912f2613ef8602e826c6906aad34277f3d20187c4f69e83815:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmYzg3OTczZmRjNmQyOWQxYzIwODQxYmYyZmQ4ZmE5NjQ3NjJiNDU2Nzg2YmYyMGQ1ZmYxMWZkNWVhMzllYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4Y2JiNmRiMjcxMDU1OTI3MGFiYzM4ZDY0NDllNjk5OWZjMDQ1NmRjMThhYzg3ZmJkMTk4OGUzZWU3MDNlY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkZjIzOTFkZjJiNzRiODYzYjE0NTEwNzkyYTUwMTUzNTU3MWExZDIyNWMwMTRlYjMyNmIxM2FkMTJlMDBhYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkMGQ1MDZkNTYzNzE0ZGZmM2IwMmZmODg5YzAwMzg0ZGZlYTc1MGNmZmJhMmRkOGJlZDkzMjNmZDA0ZTc1YjIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:50:06.090Z"
+  }
+}

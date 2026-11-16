@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6d558bb7c50522d16450c81b710a68987f81d2fa7599dbb56953e9c9e7845fe4",
+  "claims": [
+    {
+      "id": "claim_1912879e108c4f4f99f682d550b9c5a3",
+      "statement": "Assigning c.res stores the new response, marks the context finalized, and carries over the previous response's headers except content-type, preserving multiple set-cookie values.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L414-L435",
+          "version": "repo-lines-v1:sha256:1ab2e0b3704638f771bb5cdee65299b58aa717d49bb24a33022a901dd9060465:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNzhhZDQ2NDI0NzZhMzI2ZjRmOWE3MWEzN2JlOGYzZGM2MDM3ODcyN2I0ZGIzNDZiYmRhZDQ1OTdlNTM1ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2NmM5ODM1NzQyNGYwNjQ1NTlkYzBmZWE4NjM2YjdjNTM4YzhmMzUzYmE1MzA4M2FkYmZiODg4YWFhN2VjY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmY2E2ZGE5YjFmNTQ4Yzc5OTU0NmYzYTM2Y2ZmYTlmYjlkMDc5NTBkZGIxYzQ1NTAwMGIwMGEwOGEwZDBkYjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_95cf1c9d8ca14d048944b818808e7706",
+      "statement": "c.header() clones the current response before mutating its headers when the context is already finalized, and writes to prepared headers when no response exists yet.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L515-L532",
+          "version": "repo-lines-v1:sha256:1dc120dbd3609bee8db212ba20174e6e873d5a89d9239d0d8e8e144db5414497:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ZTcyY2MxZDllNWEyZjIzMDY3YzlkMjEwYTlmNDA0OTgxMjZlMmVlYWM5MTdjZGM2ZWVkMmJiMzFhODcyZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NjNlMDIwM2NhNTNjNjMwNDczZGYyZDdmOWJhMjJhYjU4YTJjNjU1MjJmY2ZmNGYzNTRiZDBmNzc4YjljZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhNmIwODdkN2E5Yzk2ZWZmOTRhZDY0NzBjYzRlODg4ZDA3ZGRiYmUwN2JkYjJjODExYWJlMzY4NTdmZDNkYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fcf006c1a5bf4ce7bf7da1ca79144b43",
+      "statement": "The c.text, c.json, and c.html helpers return a bare Response when no prepared headers, status, options, or extra headers exist and the context is not finalized; otherwise they go through the internal newResponse path.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L686-L700",
+          "version": "repo-lines-v1:sha256:28684c17ff3a48d41773316830a758d1fdd654ee3ff62b5dad30544021f0bdfb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMjIyNTBlZWFmNzFlMWI5OTFkNTY3OWVjMWZiYmQ3YTYyNjlkNTJhNDE5ZGY2ZDZiNDc0ZjYyNDVhY2Q4M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MmZmMDFmZTM5YmE1YzZkMDg2MGNhODE2Y2Q0MGNlZTRjMmMzYzVlMjc3OTlmYmFlYTRhOGIwNmExOWQxODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk0NDEzODdmNzg5NGU0ZGM2NGUzYTFlZjQ1MTY1MTk2MGQ2YmVlNjc3ODFlNzkzMzgyZDYzMTg5OWVhNzViYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmYmY3NWZhZmYyNDhkZjJjYWIyMTM2YzYyMTFjOWEyYzZhMmQ1MDM0ZTkwZmZmZjJiMzMwYzBkZWI3NGMxMzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7697b87c31b43bc970b72e110b729e4",
+      "statement": "HonoRequest caches body reads: a later read of a different body format is derived from the cached first read instead of consuming the underlying stream again.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L224-L250",
+          "version": "repo-lines-v1:sha256:f12e612510fd422bc7b5b50467094c9b3b70edb25af7cd729213957fea7d9d3d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5MmY0NDI4ODg1ZWVhNjY3NGE3YTA2YzU0YTM0NDZiNDdlY2JiNjkyZmFiYTAwNmNlYWQyMTA5MGY5Yjk4NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNmMwNDJjMTE2NTJkYTdhZjA5MzQxNDUzMzA1ZDc5MzUwMWFmNTU2ZjY0YmRmYmM5NDc2YjBjYjZjNGZjMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxNmEyNmY3ZTcwNDVhN2ZhYmYzOGNhY2EzNzZlOTM5YzJiZTNhNzZmYzViYjdiN2U3YWQyMzE0N2RmZWQ1MDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMzdmMDRhOGU1MzAzMzkzN2FmOGM4NjAxZjEyNGU3Y2Q3MjE0MDcwZGM2MGY4MGRiYzJkNDM5ZjFlZmY0YWUifQ"
+        },
+        {
+          "resource": "repo://src/request.ts#L253-L255",
+          "version": "repo-lines-v1:sha256:9d27cf28b7df79669425da311c71e820c97778f2c4fd93df343858de6cd5a085:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWE5MzFlOTk2NTNkY2NjYzg5MzdiYWMyYTQ4NTAzNjk2YTU3NWE5NjM1OGRiMTBjMjg4NmMxMWNjMDMzZTYwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk2M2UwMjAzY2E1M2M2MzA0NzNkZjJkN2Y5YmEyMmFiNThhMmM2NTUyMmZjZmY0ZjM1NGJkMGY3NzhiOWNlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTM3MjQ1MDQwZjliYzQ2ZTdjOTY1ODc4NjA4NzY5NWRkYTQxOGI3MTViOTQ0M2RhNjY4NTdlNjVjNWU5YjMzNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_786efe3000e948319f4fae37d0abf421",
+      "statement": "HonoRequest.param decodes percent-encoded parameter values and resolves them through the match result at the current routeIndex.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L106-L135",
+          "version": "repo-lines-v1:sha256:52d1b6bb5b30e4993ae9babd6aef9de6a0a7691ff7b8a0dfc1d1634d82b76c30:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2M2U4ZTBkNGI0ZjJjZGQ2YzNkMDY2ZTUyNTllYjgxYTQ2MjRkZTUxYzA3MzhlMTc5NTI1NmEwNWZlY2VlMjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzMmQ3MTJlM2ZjODFjMWZhYjJjYTAzODFiMjk3ZTY1MDk4YTZlZTM1NTM0NTZmZjk0OWYwNzFhZDFlN2JhZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhYzRkNzM5OGMzNWIxOTg0OGE1ZjUzOGE0ODM3M2RlZDFmYWRmMmMwMThhYjhmODVlZGY2NjM1YjkwYWExZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjM2VlMmNlYWU5NjQ3NDcwMWU1MmFhZTRlYTU5YzVlNzJiMmQ1YjQ2MTgyNmYxZDRmNDQwODFkNjEyZTRkYjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2ee3ac255744e54ad2995e8309a6a66",
+      "statement": "Context.set and Context.get store request-scoped values in a Map created lazily on first use.",
+      "evidence": [
+        {
+          "resource": "repo://src/context.ts#L551-L580",
+          "version": "repo-lines-v1:sha256:d4cab4b330fb0918e61ec4403aa6a69eff53658654e7917975d67136db199cfe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxNjk5YWQ0ODYwNDgxMGZmMmRmZTIyZGYwZGYxNTE5OWI4NzhkNjRiYTk0MTU1NjNiOWEwYTllMmE3NzUyYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0MjE3NDZlMWMyMTg5ZmQxOGJhM2MwNzQwYTdhMzhhNzcwM2JhNmFlMGUyYTQ3MjU1NTFjM2UzNDI5YjhhZWMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

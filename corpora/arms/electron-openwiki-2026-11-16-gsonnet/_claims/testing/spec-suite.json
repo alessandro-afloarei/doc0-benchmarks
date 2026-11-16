@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:08d5c2045bb9eaa4be5d329f684797fdb6821d386f2b287e61a301c9295c291b",
+  "claims": [
+    {
+      "id": "claim_5ec8ba0b62da49eb8ff61a6c8b2a6b40",
+      "statement": "npm test runs script/spec-runner.js, which launches the built (or a downloaded, via --electronVersion) Electron binary with the spec/ app as its main script; on Linux it is wrapped by python3 script/dbus_mock.py, and any non-zero exit status fails the run.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L88-L94",
+          "version": "repo-lines-v1:sha256:a0c4b2a710ca96fb81bda5b7ed662f1f32736c0babaa92777733f646da94d27b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWUwZmI5YjU4MGFlZGM2ZDZkMDc2Mjk1YjQyMzU3MDQwM2IyZWM4YWRmYWQ4YjYxNTUyYWQyNjdlZGQ0ZGFkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFmMTc3YTQzZWE3OGEzYjJmMDk1YTNkYjY0OWI0ODVmOWI1OGFlMWNmYTZjOTcxODU1ZDBiMTExZmJiNTkwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODE0NGFjNDk0YTM5NzRkZTEzOWEyNDViZTI0ODA2ZTNkMjA0ZmI5YTRkOTNkZmE2NjY4NmNhZDhjNGMzMThhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDMzZjVjYmJjMTQyN2I5ZTAyMDQ1OTJjMmI2Yzc2M2MxODQyNjEwNjIyZTRjZTRjYjIyODZmMmYzNjNlNjA2NCJ9"
+        },
+        {
+          "resource": "repo://script/spec-runner.js#L180-L240",
+          "version": "repo-lines-v1:sha256:2df989b964de63d1cf220cda87039cb49cf734e0254d2c296b66153ea557f827:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0MTZjNjRlNmNhNmE5YWEwZDg0NGZlYzVkOGUxNjU2NDcxZDc2NjE5Nzg4ZGQzMjE0YmZlNWRlNjNjNTU5YTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwZDk1NzBlNDU3Mjk2NjNkZTAxOTM4MDIzMTk0Y2QxYTljNTg4MmRkNGM0YzI0Zjc1OGU5NGJmNjE5ZDM4MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTk3Yjg2ZDQ3ZGViYzFiMWRhYWMwMTYwYzA2OTZmNzllYjg3MWFiZDM4ODQ5ZWMwMDZkZGU1NTBkYTgzMmYifQ"
+        },
+        {
+          "resource": "repo://script/spec-runner.js#L24-L60",
+          "version": "repo-lines-v1:sha256:d28df9473b5f4027cc589be2ff3fd03174927efee6527f10c95bcee4e5dbd2da:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwMGUzZjBmMTgxMTI5ZDlkZDZiODkwNmY1YWMwMzYzNWExODQzMjNmZWJjYzAzOWFhNGZlMDQ4MTRkYTdjYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YjhhMGQ0YjQyMzIzN2UwNDRiOGVlNDY3MTdhMDYwYTJhMmZmNTM2NjQ5NGRjM2Q0MmI4M2JjOGJiZGZhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4OGI1NGQ1ZmY1NDk3NDA1NDI3Y2E5MjQ0OGFiMzk3YjkwNmRkOWM3ODM0NmQ2YjhlN2EzNzcyYjNiMzJlYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1ODgwMjUyNTYzYzY1OWY3N2U2MGM5YTU0NDNiMjA2MTgyODE3N2VmZThmYzBmMDJhYjExNzM4ODUxY2E0NDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fd985b2b0544075a0025f9a398596fa",
+      "statement": "spec-runner.js hashes spec/package.json, spec/yarn.lock, itself and spec/node_modules and, when anything changed, deletes spec/node_modules and re-runs yarn install --frozen-lockfile, building native test modules against the build's node_headers or against the downloaded Electron runtime.",
+      "evidence": [
+        {
+          "resource": "repo://script/spec-runner.js#L240-L292",
+          "version": "repo-lines-v1:sha256:ef3d98cdb983be5566c935536675ac8216ef9c1ec64983ddb27d9e111cc24ed8:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0MTZjNjRlNmNhNmE5YWEwZDg0NGZlYzVkOGUxNjU2NDcxZDc2NjE5Nzg4ZGQzMjE0YmZlNWRlNjNjNTU5YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTU3MzU5MGE4NmY5N2M2NTU2NDg4Mzc2ZDM1ZjY1ZDQ2MmFkODFiOGQxNDZhNDJjNjllYzFmMjJlYzA1M2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://script/spec-runner.js#L85-L110",
+          "version": "repo-lines-v1:sha256:ffbe181d5245ae49bc62139b55fcde1324f76a1059855d27b1ce1a60200522ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1M2JiNDFhZjFhYzY0MWE4ZjY2NWIwN2UzZTY5MGExZmNmYmFkNjdjOTZlZGViYWE3ZWE2ZmUyYzBlMmEzM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzNjc3ZTJmNzQ0MTFiNDcwZDdmMzNiZDM5ZWFhNTM0NDdhZjMyNWQ5MTJlNjcxNWFkMmIwYTI0ZTFlZWVjODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjOTUyZmVlZjQyMWRmZGM1OTBiM2Y5Yzk5MGZkNTZlOTExN2E2MWViNzU0ZDNhOTdmNzE2ZWRmZmFmNDhjY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlM2FlNmUzM2M5M2MwNjVjOWJiZTNhM2MzMGJiZDQ3N2E1MzBjZjJiMGE2ODJkYTM5MDU0MThlNTk0NzQxZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2910867ff7be45fa9f1dee4f6b275126",
+      "statement": "spec/index.js registers privileged test schemes before ready, loads ts-node, configures mocha (bdd, 30s default timeout, forbidOnly and 3 retries on CI, grep/invert and sharding env vars), and adds all -spec.[tj]s files; it exits with the number of failures.",
+      "evidence": [
+        {
+          "resource": "repo://spec/index.js#L1-L196",
+          "version": "repo-lines-v1:sha256:130350041c954d47387e7d225b63e18e093e1529d7fb8733bedd6876aa14d8c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTk2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyODRlMjYzOGRhNzMxMGNlZDk4NDA1Njg4MTEwYTVlYmE3YmZkZjI5ZTRmZWUwZDZkYzEzNTg0MjVlNmIwYTc4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmNmY1YjQwYjE1ODQ1N2QxNzg2NGYyMTc5MDc4NmRkNWEyZWNkYjY0YjY2YTY1MWY3ODhkNGUyNWNkMzMwM2QyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_04b5607981a747f7b56631edbd4e1943",
+      "statement": "A mocha root beforeEach skips tests whose full title appears in spec/disabled-tests.json, and defer()-registered cleanup functions run before regular afterEach hooks.",
+      "evidence": [
+        {
+          "resource": "repo://spec/disabled-tests.json#L1-L12",
+          "version": "repo-lines-v1:sha256:fc51f8e0606e7cbde149406b6a7cd3b49ff222dc83552e62ac2dc76334a5a3ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZDJiMTkzNDkzMTY5MTY2OWNjMzVhODc2MTk1MTgwMTUzMzYyMTNkZGEwYTYwZmUxYjA5ZjliOGUzZTk5M2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4ODQ0NjkwYTQxMTRlN2Y3YmYwYmU5YWFmYTM3MDc5ZTljMTVlNTEzNjNkMjExM2RkYjcyODZmYTMxY2E2OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAifQ"
+        },
+        {
+          "resource": "repo://spec/index.js#L95-L125",
+          "version": "repo-lines-v1:sha256:20e6112f190076b0965020c1e088317ca4b484e37d5b33a3aa3488437909982b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiNGYyNjQ2YzVjNDRhNGRiY2UyNDgwMzE5ODBkOTM3NDBjMDliMTZhMGU1NDY1OGNlZWEwMjU4ZDk1OTM4MjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMzc5ZTQxYjhhN2UyNzE0ZmExNjVlODkxODQ1YWYwOWZmN2ZjNWU2MDNhNWNjZmFjZDQ1MTdmMGJlMDlkM2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a033bfcb2ee54d1280af4e16711fbeee",
+      "statement": "spec-helpers provides ifit/ifdescribe, defer cleanup, startRemoteControlApp (a child Electron app driven over HTTP with V8-serialized results), and itremote/useRemoteContext, which run test bodies inside a hidden renderer window with nodeIntegration on and contextIsolation off.",
+      "evidence": [
+        {
+          "resource": "repo://spec/lib/spec-helpers.ts#L155-L229",
+          "version": "repo-lines-v1:sha256:6195b913c082e036a50f32784d7a13f7d78dbc1a14881247aef3f5d54d2a8881:eyJzZWxlY3RlZExpbmVDb3VudCI6NzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3YjY2MTNhNzgzZTllNmNmZjk3ZGU3NjZhODk2ZmU2MzYxNzBmN2E4NGNhNmI5YTgzMWQ0Y2NjMWI0YzMwODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://spec/lib/spec-helpers.ts#L20-L100",
+          "version": "repo-lines-v1:sha256:dbb3d2f214432ebe3b9af12ef3cf89e56f485dd30ae448a55fcd121913018c8b:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NmI3MTEyZGNlNTVlYjMwNGY1ZTE0MDUzMGQ0ZTE3N2U5MTFhNzExYWY2NWJmYjU2NGZlNTMwZmRhMTYzNTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMTYzZjc3ODZjNDJjYTg4OTI3MGY3NTNhNzgwNjI2NDI2YzAzZjk3M2EwNWFkZWFlZGQ0ZmE0ZDI3MGYwZDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyMjFkMzc3NjAyNGU1MDc5YjljOGY1ODM4MjhkYmEwMzU2YmQyMWFjNTRmMDZiMWQxYmY4MDg0NTBjZjY1NmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3Yzg4YWU5ZmM3ZDU2NGVhMzYxNjNkOTMxYzhkNDhhOTJjYWNkN2NlYjU2NzE4MjZmNTIxM2MzOWQyNjk1ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff679fae87af49b5bf966a2622e16afc",
+      "statement": "script/node-spec-runner.js runs Node's tools/test.py inside third_party/electron_node using the Electron binary as the shell with ELECTRON_RUN_AS_NODE and ELECTRON_EAGER_ASAR_HOOK_FOR_TESTING set, skips tests in node-disabled-tests.json, and can validate that disabled tests still exist.",
+      "evidence": [
+        {
+          "resource": "repo://script/node-spec-runner.js#L1-L109",
+          "version": "repo-lines-v1:sha256:16a9a71f1f0582a3da58d15f2332f33cd0d62d5525299fb1cadef96228ae5f9a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5NWU0YTUyMmQ0ZjMyYTUzZGUwOTYxOTRmOWFhYTI4MDM5MmJjMGRlYmM0MDc1YjUyMTE1MjBmNGJmNmI4NWE5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmNmY1YjQwYjE1ODQ1N2QxNzg2NGYyMTc5MDc4NmRkNWEyZWNkYjY0YjY2YTY1MWY3ODhkNGUyNWNkMzMwM2QyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ede139affb774a6f9ac2338d64aef46c",
+      "statement": "script/nan-spec-runner.js rebuilds nan's tests with node-gyp against Electron's node headers using Chromium's libc++ include paths and lld.",
+      "evidence": [
+        {
+          "resource": "repo://script/nan-spec-runner.js#L25-L120",
+          "version": "repo-lines-v1:sha256:c67794403118dea60f11aeff6f88e52e547bd58cc701e26e3d6179ceb26b475f:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiYTA4NGJlNTQyNWY4N2FiYzM1MTllMGI0ZTk1YmE2ZDJhYzZhZDNhZTI1NzFjMTgwNzk4MGI0YjBmMTI5MjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2MzNmYWVmNjU5OTk3NDU1YmYwNTI2YWE2YzViY2FjMzFkOWYwZDVkNGZjZmRlOTYzOTI2OTFiZTllY2EwZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiMzc4NWMyMzU0YzI1ZDljZWU4Y2JiMDg2MWRiNjE0YjcwNTVkOTJjMDU0YTVmYThjMzI0YzJjOTBhYjE2MGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_863db77446034e0ca66682f9181b1e95",
+      "statement": "The test output directory must be Testing, Release or Default (or ELECTRON_OUT_DIR); otherwise script utilities throw 'No valid out directory found'.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/testing.md#L24-L33",
+          "version": "repo-lines-v1:sha256:0555901629e4c570cb6d2927fed2e650ded25bcd9a845b70687b4c81a4b25b35:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4NjI5NmEyYTllMWE1NWU1YjJkMjlhYjBlNmJlZmEzODNmYWZkMDBmYjM2ODZlNzQyNmVlNmRmMmUyNTdmNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NDYzMDAzYmU4MzNlM2I4YjMyZjkxODExMzNlY2VkZmE0MDhmNjZjNjVjYWJmOGEzM2IxYjZhYWYxMGZiZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ZGM2NmE0ZjkxNzUzNzEyYTNjZTE2ODExOTM4ZjM1NWExNzE2ZDQ5YzY0YmVjZTg1NDRmMTRlN2NjZTJhN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxNTRiMmNmNmQ2MDEyZTdlZjlhMjk1N2Y1YmJhOGYyZDAwMzdjNDg1NzE4Yzc2ZGRlYTk0NTYyODg5YmY3ZDgifQ"
+        },
+        {
+          "resource": "repo://script/lib/utils.js#L15-L60",
+          "version": "repo-lines-v1:sha256:5e540cf7ca8c70b9455a9a314c6d51bc494bfa687387544949bc32eb728ae667:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1ZmQ0YTJjYzkyYjJkMmNiN2UwYTRkNzMwMTFiYjM1ZGUwODlkYzRmZjg3ZTAyYThlMmJlYjE5OTM0ODJiYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxZDg4MjM2N2FhNTE5MGFiZTIxMWQyOTAwN2ZlY2Q0YzFhYmY5ZDZlYTA1ZTRkNzcwNmU4ZDE4NmNiZjJlZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiNzhjMTU5ZDAxMjQyYWQ3YWJhYTU5YzVkOWMzMzY3NzlmNTRmMzI1MjMwYjQxODEwMWFlNTI3MDgzMDQ2Y2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NzNkYjI3NjFlMDBmYWFmMDUwZTNlNWYyYzAzMzQ5OGFmMTA3ZTVjOTVmZGE1MDdlMThjM2ZhOTI3NGViNzkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

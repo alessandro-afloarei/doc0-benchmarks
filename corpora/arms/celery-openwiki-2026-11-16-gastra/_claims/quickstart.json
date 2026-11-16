@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5098848d41d118ce6b7d8fc39d5883a01b832d1e3b99cebbaf43079b68270a0b",
+  "claims": [
+    {
+      "id": "claim_38b4082bc2124217b00cab447bc30c54",
+      "statement": "This checkout requires Python >=3.10 and exposes the celery console entrypoint; Redis support is available through the redis extra.",
+      "evidence": [
+        {
+          "resource": "repo://requirements/extras/redis.txt",
+          "version": "repo-file-v1:sha256:83f7bb30d92970e12fed195d0ded6ac1a270839a4fc45db04d49a64c96377dfa"
+        },
+        {
+          "resource": "repo://setup.py#L113-L119",
+          "version": "repo-lines-v1:sha256:8355e32450c181e2df14bba96fc383dc5fbf75570cf4b966557274e4f1572367:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE5YzJhZjM1NzdiZTMyN2RlZjU2YjJhNjUzYzk0YWIwYWM1ZmEwY2ZmZTBiMTJhNGEyNGI3YjEzY2Y0NjIwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWJkMjU1MTc1NDY4MGY4OTdlMzc1MWUxNzM3ZjU0OGFiZjMxZjljOTJhOTQyM2VjMmYyMzIzYTQ3ZDEyZmY5NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjI0OTYwNmZiNTBlNzFlM2JiOWI3MWExYjljYzAyZTgyMTlhOWY1NWU2MjkyNDAxZGE0YTUxNmU3N2Q4MjYyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzMyYTA1ODhiOWFlNmY0NTRmOGRlYTAyZmM2NjA5OWQ2YTdmNzVkZWMyMzA2NzU0ODc5NmFjZDQxNGZiZWQ3NSJ9"
+        },
+        {
+          "resource": "repo://setup.py#L150-L158",
+          "version": "repo-lines-v1:sha256:12cf7fa9d85088bb2c0e54a915d230459b11577c9dc4e7ba04561b2a1cf2c808:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGZmYWEzMzQ3YTMxN2U3ZDRiYjY3ZWY1ODA0NTdlZDBjMmRmMzFhZmM3YmFkMTQzMTQ3YmRkN2NmOTQxY2VhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFhZThhMGNhNzZmOThmN2I3ZGM3OTg0OTUxZDYzZTU3ZGIzYzY0NTU3OWNhNTFiYWQ2YTUzOWQ2MTRlZGJiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjFkNmZiMzA4MGNiZWUwZGNkOTcyZmMyOGQ1YTZlNTZjNmQ0MGNlMjBmMmU5YTY1ZGZhMWRjYmUxZGI1NjgzZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjZkMjQzMjM4OWI1YTA5NTdjNzBkNmVhMGY1Nzk1YjdmMTAzN2M4MGY2MzU4NjI1ZjYxYjk4MGI5ZWQ4ZGNlNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e369a964c284b7f9ff12d89fd7b3576",
+      "statement": "The first-task workflow defines a Celery app and registered task, starts a worker, and publishes with delay, which returns AsyncResult.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L523-L534",
+          "version": "repo-lines-v1:sha256:c0d89627d3d02c235d8f9bae10121035d9db4c82a3a4e26f29fa181cc4877307:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5YTQ0NjEwMWFmM2RlNzg2OTJjM2NkOGRhNzJhYTYyZThkNDFjN2ZiMjZmZWEzMmVhMzA1MzYxMjA5NjRhYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0ZDY5MTQxMmI2NjIxY2ZjZmE1MGYzMjgyNjg0MTBlNWY5Yzc3YmUwMWVhMDhhMjAwMzM5YmQzZTVkYWJjY2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyYjcxNGJlMDg1ODM4MDkxNmYxOTdhMzYwMGYzZDY2ZDUwMWE5NmEzYmFiM2FkZDUyOTQ5NDQ3ZTFlNDg5ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZGM5NzMzNmVkNTI0MTdhNTU1YmVlZGY4MGRhNGE3MDE2ZmZlOGYzZWZjZWYwMjE2MmI5NmIzYmQ3NGQ1NDgifQ"
+        },
+        {
+          "resource": "repo://docs/getting-started/first-steps-with-celery.rst#L120-L209",
+          "version": "repo-lines-v1:sha256:a7e66ecc6915abff1b6f271769f30cf11c052145ce38ce9aca9de76e7ac943df:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NDc5ODIyNzE0YThiZTRlYWY5ZjYyYWIzMWNmMzEzYzUyMjAwMzg1MjZhYjZiZDcyYmQzYzBmOGIzNGQzYmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkMjgzMDIzMDE3OTYwMzA4NjQzY2MxYzBjMzk3YzUzZWE5YjJmYWMwZjBlM2QzOTJlYjI1N2U3MjZmMDZhYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5YTQ2MmE0ODNkNTUyNDVkOTU5YzNiNTc5ZDRmZjU5MzM3MDgxMmY4NzgyZWUxNGFkN2EzZDU1YjUzNWRmZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3M2Y0OTJmZjZlYzc0Mzk3Y2YzMGZiNzQwYzdhYWIwMDAzYWMzMzAzNzBhMTU1NTI2ZGIwMjM3YTJjMTQ2MmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_75cb02667c2a4082bce4567ca2457f69",
+      "statement": "Tracking task results requires configuring a result backend, and AsyncResult.get timeout only limits the wait rather than terminating the task.",
+      "evidence": [
+        {
+          "resource": "repo://celery/result.py#L197-L224",
+          "version": "repo-lines-v1:sha256:9c3955dee1ae4be2a7306c2c7dc94b482adc093d800a09f5f989851c15d20441:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwMzQ1OWMxM2I5NzE2ODczZDUzNmYxYzA4NjJkMTFlNzA5NGJlNDJjMzRmMzZhNWMzMWM1ODU3NThhMTc5NWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmMzBiZDA5MzQyNzY2YjU4Yjc3MWQwYzUzNTBlZjliY2MwOWZkNThlNjVjMDhkYTUyMTEwZmRkYjVhYjFlNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjZDcxYjdiOGZmYjhhNDZkZDhkNjY1MjM4YWIzM2Q2Y2E4YjgwMjcxMzk1ZjFjODI3YTgzNjIzMzMyZjI5YzgifQ"
+        },
+        {
+          "resource": "repo://docs/getting-started/first-steps-with-celery.rst#L206-L224",
+          "version": "repo-lines-v1:sha256:e6114127c52da36d83131b056b9fab7ec59e31107a77a6385e4951635657a58a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMTg4NmUyMmQ2MWIwN2ZiZGMwZDdiZmQ2OGNhY2U3YTgxMjJlOWRkMGQ1OTdlNjkzZmU4ODJmNjUwYTI0M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjN2ZhOTM5YmYxMDlmNzVmYWNhMzNhNWIxNzhiOTM2ZDcxYzIxZDc0ZWIyMmI3NzliZGEwODhjNzk1ZjUyYzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmNDliNGUxYzUxZmJjMjkwNmM4NzZlMGY1NTg1MjE2ODY2NDhhNmE2YTNmZmUyYjIzNmZmMzE3MTliNGVkOGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZTRmM2VlNzE5MjdmMDE2Y2NmZTI5ZDljYzkyZDczYWVmMjEzOTJkNzFkY2Q2ZDgzMDRjNTRlN2I5M2EzNzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d3fa34e54d54938b339d8dcbe9c5a7b",
+      "statement": "Missing key/value backend metadata is reported as PENDING, so PENDING alone is not proof that a task remains queued.",
+      "evidence": [
+        {
+          "resource": "repo://celery/backends/base.py#L1148-L1153",
+          "version": "repo-lines-v1:sha256:b470b3fd8abc5ddde5fc2021e92632657aeb5dd8d7ceaa1215c4cc15f3a823f9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUyZTNlY2E4NmM2YmFlZmI3MTQxNzIyYWZmNTI1OGM5ZDA4Mjg0MTFhMThkMGQyMzhhMGY4ZTgxNzNkMGQzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjI2ZDYwYzU2N2QzMDZjNTIwNzk0ZWNlOWNjNWZiZjU2YWFhMjQzNTFjY2FjMmZjMWViZmMyMGE0NzBhYTY2YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2Q5ODRiM2Q3NzUyODc0MDFkN2Y5MDdhMjRjNmNmNWJhMjU2MjIxYThiM2E3MGYwMDc1ZjViZmFkY2FhMTU3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I4NGRkM2I2Y2I4MTZkMWYxZDU0MTU4NDUwOWU0ZjZhNWI5Nzg5ZDViYTk5ZDE2YTY0ZjEzNmIxNzBhZTYyZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_68f3a14cb110474386975da90f5d7706",
+      "statement": "Pytest defaults to t/unit, while tox defines separate unit, integration and smoke test commands.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L1-L7",
+          "version": "repo-lines-v1:sha256:583e902a9c2ae2706fa2c77ce2aa1551cd6ed3cae1a6f6c519e978330a0493ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY3NmU2NDE0NjVhNjU1MWU5ZTljZmZkN2ZhYTFlNmE0MmY5YjcyNDgwOTgxM2M5MDNkN2VkY2I1MmYzMDA2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWMzMDJjZTM1NTRkZmM1YmUxZGEyYjRjMTg3YWJmYmM4Zjc2NThlNTU4ZmRkZjQ0MDk2NjkyODMwMjc0ZTdkYyJ9"
+        },
+        {
+          "resource": "repo://tox.ini#L42-L49",
+          "version": "repo-lines-v1:sha256:826b287bb674eecb0988dad9c62c43933f5551b941150d35da5f47b5c37ceaf6:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmIzN2NmZDJjNTgyYTkzYTgzOTJmZGQ1NWMzNDE0ODdlNzJhMTk0OGNkZDY0Yjk0NTUyNDhiNTc1NThhMzI1NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2JhM2M0OTViNGI5MjJmMmUxZGFhM2IyODYyYzFkNTQ4Nzg0ZDkyY2YzOTczNmQ5YTYzODUxZmRlN2U5MWNhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDcwMDhmZTVlZGM4YTY3ODIzYzkzN2E5ZGI2NjhhNDZiZDNmNzIxNTM1NmRiMjUyMDk3N2JjNDgzNDIxMzBjZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM0ZmU0MDNkZTgyN2MwYzE1YWYyNDBlNmVlODIzZGE1ZjkyMGU3ZGM1ZDg0ZDFmYzFiN2UxZTQwYjRmNzI1OSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:55:28.912Z"
+  }
+}

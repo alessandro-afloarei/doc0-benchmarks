@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:98c86d11e5f865d040d6763008babc72a60f96d382a0e64f83c48203b99dcd60",
+  "claims": [
+    {
+      "id": "claim_cb73adcba9b24abb892855c74f514fbf",
+      "statement": "print_entry emits an optional OSC 8 hyperlink wrapper, then a body chosen by precedence (--format template, colorized LS_COLORS, uncolorized), then a NUL or newline terminator.",
+      "evidence": [
+        {
+          "resource": "repo://src/output.rs#L17-L47",
+          "version": "repo-lines-v1:sha256:1d5e13b19c330430c2c3d23c7e8be23fe23e14a7dae83d33e70e50190a22c250:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5MTFkYWU3ODJhODk0ZTFkOWRjMzBlNmYzZTYzODRlZjFiYzkwN2M4YWE2ZTMwZTdhMTRhYTExNGUzYzlkMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzN2M1NDc0ZDdlZmFiZGE5ZTYxNWFkYjRlNThiYjE5MTNkNjU0MjYxY2ZlODA1ZmYwYmNiN2FjMTA0NmY1YzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ZjE4MjBiZTEzNzBlMjFmNDhkNDM1M2IyY2QwMzQ4MmM5MjJlZGJlYWJmZjZiZWI4ZTZhMDY3OWZmZDYzZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5NDA4MTkwOTE0MWNkODllZDRlMjI4ZDZhNmI4YzZlYWNiY2I3NTMxNDA2YjI1ZGMyYTQ1ZjczYjdiNzMxMWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5367955a93e14400a1beaf01810880c9",
+      "statement": "On Unix, uncolorized output to a non-terminal without a custom path separator writes raw OsStr bytes so non-UTF-8 file names reach downstream tools intact.",
+      "evidence": [
+        {
+          "resource": "repo://src/output.rs#L168-L182",
+          "version": "repo-lines-v1:sha256:ad6b7f3bcbe00927439165001ea739e45e6444cebb8c46ddc0db507ff0b71017:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwNDQ3MjA2MzUzOGVjZGRmY2RjMDY2MGYzNWFlMzc0ZjAwM2U3NjlhMGM3MGRhY2E4MzlkYWI2YzcwM2IyZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwNDdhZTM0OWE2NWVkNjY4NDIwM2IzNjhhNWY2OWI0YWQ1ZDYxNzZhZDYxMzViM2NhYTM3Njg4NDFhODUxNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05254cee96e0406284c74756eb98d205",
+      "statement": "DirEntry::stripped_path removes the leading ./ when strip_cwd_prefix is set but keeps the original path if the stripped path would start with '-'.",
+      "evidence": [
+        {
+          "resource": "repo://src/dir_entry.rs#L112-L114",
+          "version": "repo-lines-v1:sha256:c458e2d68abee87efc5b4de233c890779994d8c380dbb7d9312541d31ec48af2:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBlMjZlNWNjMjcxYTdiMTdmZDBiZjE0NDJhOGViMDNhMzU5NjJiYjQyNjM3OTE0ZWQ5MGRhYjdjMTMyMmViNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQwNzQ3NGNlMWM2ZWQ3MGQ1OWM1MzQwNTlmNmVmNGE3MTlhYjA0MmM3Y2JhYzVhMWMwMmE0NmM0YjJmMTA0NyJ9"
+        },
+        {
+          "resource": "repo://src/dir_entry.rs#L58-L72",
+          "version": "repo-lines-v1:sha256:4c939950f7ef576946572770a281948524e0961ab5b0a4a969ff252c885a2816:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiOGYzNTFiM2I3M2EwMzRkYTk4NTMwMDdkODM4MGUxYzVhMmEzMWY3NWZjODAxN2E4MzZiYjQ2YzYzZjgzMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMzOGRjNWFmNTg4ZmYxMDE2NWVmZjVkOGFmZDc3NjVlOGE0ZTVhMWE1ODUxZDVlNzcwMjYxY2M5OTZmNmMyMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlOWQ4ZjgzNGFiZDEwNzQwZmEyM2JjNWNlY2YzZTBjYjhkOTk5NDQzY2MwZTQ1NWFlYTA1OGVjNTI3Njg0ZjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22012b5a58a84e808f64eaa714851305",
+      "statement": "sanitize_for_terminal escapes control characters (except tab) and invisible/bidi/format characters as \\xNN or \\u{NNNN}, while keeping variation selectors and private-use characters; maybe_sanitize only applies this on interactive terminals.",
+      "evidence": [
+        {
+          "resource": "repo://src/sanitize.rs#L1-L56",
+          "version": "repo-lines-v1:sha256:bc65517d539a5b0e055882b4016a2d3294b94f32927470bb5fc67d3c23124b81:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlMDYwNWFhYWE2MTMxNzYzOTg0MzcwMDE1ZTI3ZWQ1MTAzMmEwNzMxYzBmMWVmZDdhMWZjZTI2NTQ0NmM5N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMzYwZTc4OTM3Mjc0OTA3NjlhYzM4ZTYxMjRhNzZhMGIyOGZkZGJiZjFlYTM1ZDJiOTk4MDYzMjNiMWZjODUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_95ab410a643d4e81837dde5c0e766f24",
+      "statement": "print_error prefixes messages with '[fd error]:' and sanitizes them when stderr is a terminal.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L1-L9",
+          "version": "repo-lines-v1:sha256:1b74058d291942cf80c2b879cabb02171ffa44cebc7deb6ce62d12641c2dd427:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGY0YzNhMWNhMjFhZDIyYTRiNDUzZjg3YzY2Y2QyNDI4ZDQ3MGJkZDg5NmI4ZjUwZTBmOGFmNDNlMWM0ODkwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_409595cd7f334f0087e15b1bb2c38b92",
+      "statement": "PathUrl produces file://host/absolute-path URLs, percent-encoding every byte outside a small safe ASCII set, using the system hostname on Unix and '/' elsewhere.",
+      "evidence": [
+        {
+          "resource": "repo://src/hyperlink.rs#L1-L56",
+          "version": "repo-lines-v1:sha256:900dac9056d92e9bad19d7c60bae5ae518ae02df54b9f6b32908a4a0c7ff2966:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0MmZjMzMxZTZkOWYyYTZjM2U4MmY1OWEyYjYxZDU1OWQ1OGU1MTU1YTcyZDE5N2QxOTc2MTIwYTc2YmExOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwYzU5ZjUwZWY2OTUwNjI5MWNlMjg0MzM5ODI4MDYxMzE5YWRkMzkwNDhkMGY3MDE2NjI2NGQ0MzgzMTY1N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0MDEzOGE0MmQ0ZjBiNWZlN2E4MDcyZGVlNzA5ODU1MGIxZjA3YWM3NTM3ZDRjY2MzYTg1MTA5MTg2OGMyMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_900ccd9006c74a47aaa91123fa05ea70",
+      "statement": "DirEntry wraps either a normal ignore::DirEntry or a broken-symlink path, lazily caching metadata and LS_COLORS style in OnceCells, and orders entries by path.",
+      "evidence": [
+        {
+          "resource": "repo://src/dir_entry.rs#L116-L137",
+          "version": "repo-lines-v1:sha256:88f5b564e72a229f6437c66904c50b62912257d5861a82090b8ebd4cd11e4bfa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MjkzM2E2MDM4Zjg1NjdhOTBmZDY2Y2Q0NGI1YjZkYTExN2FiNDIwNmM2ZjI4ODA2MWJiZjI0ODBlZDgyNDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzOTk5MjY0OTkyNDIwMmIyZjE4YWM0YzVlOGZkOGJlNjI1NGMzNzg0NWM2ODI5NmUyNjhmZGFkMmUxM2FhOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhYTI2NjQyMTU3ZmYwNjQ3ZWZiNjk1ZjI5ZjFmOWNjYmZjMTBlNWE3OGFmY2I0NWQ2OTI1OTgwOGUxMDY4OTcifQ"
+        },
+        {
+          "resource": "repo://src/dir_entry.rs#L9-L110",
+          "version": "repo-lines-v1:sha256:bf1c06e1cf45a037557c9c077b2b54f89f94538dab55cda135e7737e200973d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxMDEzMjhlMzBhMDdmODgyNjEzOWY3MmY0ODgwNGQ5OTdlODI3MGU4YWU2M2ZiY2I1MDMzYTAyYTA3ZTM4ZDNmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2OWRmNzY2NGFiNjFhYjQ4NDNmZTkwZDhlNjIzNjI3YzgxMzZlNjE0ZTcxYjI2NzAwN2Y3MjEwZDJkMGQ0OTRlIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0ZDViNjM3MzEyYTc1MTM0N2VmN2Y5ZGJhMmI4YTFiNjczNTNlNGI2NTc4MmNhNTQ2NTMwNDk3ZjcwYTY5ZjA1In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:38:21.850Z"
+  }
+}

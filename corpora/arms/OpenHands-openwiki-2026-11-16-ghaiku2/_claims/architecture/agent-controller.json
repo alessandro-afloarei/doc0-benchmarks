@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5af66949682f41ef06ef943f656acbd8da243f3a27be06db7becab8587e97f65",
+  "claims": [
+    {
+      "id": "claim_66aaa4f876fa42eda687a0869dfd87ae",
+      "statement": "While a delegate agent is active and not finished, errored, or rejected, AgentController.on_event forwards every event to the delegate and skips parent processing.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L440-L470",
+          "version": "repo-lines-v1:sha256:dfee65bb5ce4c3bbcf238537b6ab2623f6296c986effa76bd558872ccaa64dbe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmYjU5ODljYjQ1NjcxOWVjYWZkMTVmZGYzNWFkZWE0ZGNmNDcxMmE2ZTA3NDQzNjMzYWViNjdmNjEzMDg3MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5YTllMzc3MjBhOWYyY2IwODMwMTc5ZDAzZWUyOGFjODAyODIwMWU0NzM0Y2RkNTQ1MjQ5NDk2NmI0YTBhNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2MjJiOTRkMGZlM2M4ODZjZmQxN2Y1NmI0MmYyMWM1ZWExMTI3N2JkNGExNGY1ZGZlZDZlN2NkZmEyOTczN2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_33c228380a5945628e706af6145228fc",
+      "statement": "AgentController._step only takes a new action when the agent state is RUNNING and no pending action exists; it checks stuck detection before running control flags and before calling agent.step.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L821-L870",
+          "version": "repo-lines-v1:sha256:40ba470277f0f9be83f7aced8c0b8decd8c4d5012fb6a302232a9cbc36d24b81:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1ODc1ZGMyNTRkOTUwYTk5Y2Y2NjViZjBmMDJhYzBhNzhhMGIwOWU2ZTYyNTdiNWVlM2QyMTJlZGZjMWFhNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzYzI5OGIyZDhlMjE4NmRiZWIxMjI3YWI3OGQwNTQ5NjAzZWUwMDZmMzdkZTFkNGY2ODUwYmFiYWM2Zjc1NmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmOWI0NzM4NGUwZTA1ODAzMjE2NzE3NDBhMzc1MjY2YjU0MDc5NTA1OTVmODE1NzE5M2MxMzVhOWVjMjMyYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1ZGM4Y2M1YzNhZDJlNjM4ZjFkNzBiNzE1ODgxMzlmOGZjZGM2NTg4NmRkMTc1MTBkY2MwNzZmMDYzOTkwODUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2dbcddd93b0547809d1a38a7b12ae745",
+      "statement": "When an action is marked AWAITING_CONFIRMATION by the security analyzer in non-CLI mode, the controller moves the agent to AWAITING_USER_CONFIRMATION before publishing the action to the event stream.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L955-L975",
+          "version": "repo-lines-v1:sha256:9a0d7f82b3e9d6da095d34ef2cd2c65a59836fbe46571d0ef633e3d1ae33daaa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyNjNiYWYyNzAxYTQ2MGM5MzczNmVjZWEyN2RhMGRhM2I5YWE5YmYyMTMzYTM2NGNmYWNlMjcyODlhYjlhOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5MDg4OGZhMTk2Yzc2ZTlkYTJmNjQyZWNhOTgwMDllOTA3ZmYzNTM5NjEwODM3NGViYjM5MGZiMzI2OTlmZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwYjExNTNlYWZhNTA1MmM4YWViZmI2MTEzMTdkNWEzZTEwZWQ4NDU2YTM1NmM4ZTRhNmM4ZTFhZmM4MjMzOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3ZDZiZmI5MmMyYzU0MTk0NDUyYmFlNjdiMThmNzcwOGZhNjc4Mzc2Nzg5YzdhNDJhOTViNWY2MzBhM2IyZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8eed0e0c341c4e328e5127c3acb602d5",
+      "statement": "IterationControlFlag and BudgetControlFlag raise RuntimeError when the iteration or budget limit is reached, and the step loop converts that into an error state.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L849-L862",
+          "version": "repo-lines-v1:sha256:c65b5050dda43d0bd992b33197339c397ddb35bce25c00dc473d88aaf4b0b5de:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3N2M2OTZlZmFmYzBjZGIxM2M2NTMxYzY5ZmZkMDgxMDU3ZTE2ZGIzNjE4MjBmN2M2NDRjYjkwYjM2YzQ5NjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1ZTQwNWZiZmQ3ZjljZjY4M2NjYTUyZjVmY2QxZDY5N2M0NjEwNTZhYjhmYmQwNzZlZWFiYWJjM2EwOWFmZjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3OWFhZDA5N2FmMmZhNWI4NzA2ZTBiZmNkNTFiODNiMjRjYzYwODhkNjM1Y2Y2NGQ2NTZiMzUyNjJmZWQ0YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5YjNmODBlOThhMGFjMjQ1MmY2MDY1MWU5NWU0NTZkOWMwNWFkODliMjBhNDIwNWU1OTdkZWQ3MjM1YmE4YTIifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/state/control_flags.py#L43-L95",
+          "version": "repo-lines-v1:sha256:0a885dd55add16ff8f066d85f623d28b5cd984c688fb6999c3277ffaeaabdd84:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4MzY1ZTViZWM3Yzg3NjhjNjZiM2NmZDFlZTJjMjc3ZWE3MjY4MmQxNjk4NTM4ZGNkYzEwMjI4MDYzZjViMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjMWYwMmZkN2VjMWQ0NjJjMGNiODE4Yjk0OGZmZTRmNzE1YjJjMmM0MzI2MzBjMjMyZGZlMzRkNDI3NDNmYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d48398602e314cc281e311f173baf131",
+      "statement": "Stuck detection runs on each step; a detected loop is reported as AgentStuckInLoopError and handled through the same error path as other failures rather than retried.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L849-L853",
+          "version": "repo-lines-v1:sha256:d09a2e41fb5eaf33a976f5c4e0f45829e88fbd4692be91192524cc2c2b04dce3:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc3YzY5NmVmYWZjMGNkYjEzYzY1MzFjNjlmZmQwODEwNTdlMTZkYjM2MTgyMGY3YzY0NGNiOTBiMzZjNDk2OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWU3YmNkMzZlZjUzYjQ0NTIzZTY1ZTk4ZDE5NDQ5OTNlMGZmMTc0NmY1NTM2YzFhNTExNzQ2ZjNlMDFlNzU2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDc5YWFkMDk3YWYyZmE1Yjg3MDZlMGJmY2Q1MWI4M2IyNGNjNjA4OGQ2MzVjZjY0ZDY1NmIzNTI2MmZlZDRhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWJmMjQzMTQxYmViMWI3MmVlZGUyOTJmNjU2ODQ3MzUxZDg4OWViZTk1NTRmYTVmZjIzNTU1MmExNjY5MzkyZiJ9"
+        },
+        {
+          "resource": "repo://openhands/controller/stuck.py#L28-L40",
+          "version": "repo-lines-v1:sha256:7a5aff0593ad2e6418558dd873a8b23373f53a652ad3494e2d87976e7c4b9d0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNGZlMGJkM2U1MmE1YzM4MTQxNzE1MDFhZjIyYjEwNGIwMGZjNGMyMTcxMDdiYmE0ZDNjOGRkY2ZkNTY0YWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3N2FhZmRiYzdhZThiMGY0NWNmY2I4Y2JhYjkwMTllNGI4YmJjMDI2YzRmZDQwYzYzOTllZGY3OWJmNDE1MjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzMmJlZjQ1ZDVlN2M4NjI4NDdlZTgyNDIzOGZlMzhhMzc3ODA1MjFjZDM4NWM4NzIyZDNhZjViNzk4MDRmMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRlOTllYjE3MDI0MGZmMDU0YWM2MjlhY2Q5YzY1ZDA3MDQwYWI4NzY3NTkyOTZkZTA5MjhiMzY0NTMyNGQ4ZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6dc632964f6349f087b71d2dcc74ddf3",
+      "statement": "On stop or error, the controller's _reset synthesizes an ErrorObservation for any pending tool call so the history has a matching observation, then clears _pending_action.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L590-L630",
+          "version": "repo-lines-v1:sha256:2467c45f7b0e12dbf7cd51e2f30d971262320c99248946612f19ced5d1a7b13a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ZDBlMDVmMWY5NGM1OGM4ZDFmNzg2ZjMzYTU1NTI1YWFiODFjNGI0NGZjYTZiZjhhNjk2Zjk5NTYzZWU3YTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlOTA4YTBhMTM1OWEzMGYzYzgzZTBlZGEwMzQ1YjA3MDkxNjkxY2I5MjZjNzZhOWM1ODNiZDI4NmE0ZGYwOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExOTc5ZjkyMGQ1NjgxMTBlOTI1ZGJkMjEwN2MwMWFlYTc2OTA0MDc4M2I5YjUwZGMxOGNjNTAxMWY5Y2M2N2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e0934b48eed94569bf2abda4b078a377",
+      "statement": "end_delegate copies the delegate's iteration count back into the parent state and merges delegate metrics before the parent resumes normal operation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L754-L785",
+          "version": "repo-lines-v1:sha256:825fdab4ccde03e62305f3bd0d5155764d966b9334031aea5b1333a69d70eded:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNDdiOThjNWQ3ODE1MGJjZmM0ZWQzNmExZGY2ODY2NzFmOTkzNGIxMTFkYjhjODE2ZWUxNzBjNGRmZThjMDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1YmZmOGRiNGJhZjc5ZWI2NmVhOWQxYzY1MmRmOWU0ZThjMWFlMTc5MzMwMTZlY2I3NGZiMjJjM2VmZWM2YWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkN2Q3NjMzMmNmMDAyZDg1MjM4NWNjMmM4MDMzODEwYTBjMjFjODBiYmY5MDlmMGMzMjFiMTEwNzhiYzQ0MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1NjIyMzVjMTY4MzQ5NmQ0ZDIzNDg3YmMyYjllNDg4NmU2N2Q2ODMyNDA1NzBkMDk2M2NkMzdhMDc4OTg2MzYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

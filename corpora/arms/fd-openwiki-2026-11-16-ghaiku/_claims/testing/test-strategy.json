@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5706010de715996def83afe86e5b86a5fee46ebca7a4042f0212fd6401f1d608",
+  "claims": [
+    {
+      "id": "claim_5e92a50862704ed1be508a5e691fec75",
+      "statement": "Integration tests run the compiled fd binary against a temporary directory tree built from the fixture lists passed to TestEnv::new.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L146-L166",
+          "version": "repo-lines-v1:sha256:70d079f14d670323c350ae43d4ecec29f1ce6b4dfaefcae95f1149cd8602e425:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkN2UyNzI1ZmU0ZWIyOGZlZTYyMDZjMzM0YzZlNTM5Yzc4NzM3YWI5MzA5MGQ2MmMyYzczYzM3OWE0YzcyZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2OWY5NjdmZWJlNmIwMzM3ZDJjMjdjNTY5YTJkNDEyZTM1YTM5MjI2MWYxMjdkYmQ5ZTJiMTZkZTA4NzU0ZjgifQ"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L300-L318",
+          "version": "repo-lines-v1:sha256:c513427ae30929b70df21c197339bed69dbacb4726897351d460260d76f65317:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiOWUzYzQ2ODkyYzVjZjE5MzMyNTgzNmRlNjIyYzYyNDYwNjk4NTUxOGFlYWQ5NjQyZTQwODg4MTI5MGFmNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkN2MxNDhhYTQyOWFiYWYzYzE1NTQ0ZDQ2OWZjMGQwMGFiODU1MTIyOGRhODY5YmUxMGRlNDZiOTBhYTQzN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzN2U4ZTBhYzJkZGQ3Mzg5Y2IwMWM5NDJmYjlmOGRmNDliM2U2NGZiMmEwYjkzOGYwMTFkNDZjY2IzNjY5YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzNDZlZDA1ZGM2Mzg0N2UxNDBhMzhkMzAxYTdhYzQ4MzQwNTk1Y2YxM2NlNjM1ZTUzZmI1ZWUyZGJlYWJlNTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_784967e72db146828f02afcabfda2236",
+      "statement": "Each fixture tree contains an empty .git directory so that .gitignore rules apply, plus a .fdignore and .gitignore excluding fdignored.foo and gitignored.foo, and a symlink to one/two.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L28-L62",
+          "version": "repo-lines-v1:sha256:824d91ae33fb7bcbc7e3b3a23755804b1ae28add76f4d7c5b7045c8155dc7e97:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNWRmNzE0ZTdkMWJjOWNjYTdiZTFlZDZlOGFjMDA3ZjJlZjQ2NmYzMjMxNGM0MjQ5YTczNDlhMDE0NzkzY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMTMyYWNmMDc1YzljYjNjNDlmMjQ5ZDIzOWNlZTY2NTViZDY3NWQxZGJlYjcyNDgzMDc2MzdiMGU5N2EzM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmNmIzNDYxMzg0ZDIwZDgzOTJiMmZiZDE4ZDQ5NWQ1YWQzMTU1NmU5Y2M0Y2Q4ZDU2ZjczZDc1MjdmMWQwMTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllM2IyMGI2NWVlNGUwYmQwMDZlZGJhZjU2ZGIyZjgyZGM0NmZkYjRlYmVjMjU4Mjg3MTk2MzA4MTU0YzU5MDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f9c22d34d63434aa1a9270b7d7c8727",
+      "statement": "The test runner clears LS_COLORS and, unless a global ignore file is configured, passes --no-global-ignore-file so user configuration cannot affect results.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L300-L318",
+          "version": "repo-lines-v1:sha256:c513427ae30929b70df21c197339bed69dbacb4726897351d460260d76f65317:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiOWUzYzQ2ODkyYzVjZjE5MzMyNTgzNmRlNjIyYzYyNDYwNjk4NTUxOGFlYWQ5NjQyZTQwODg4MTI5MGFmNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkN2MxNDhhYTQyOWFiYWYzYzE1NTQ0ZDQ2OWZjMGQwMGFiODU1MTIyOGRhODY5YmUxMGRlNDZiOTBhYTQzN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzN2U4ZTBhYzJkZGQ3Mzg5Y2IwMWM5NDJmYjlmOGRmNDliM2U2NGZiMmEwYjkzOGYwMTFkNDZjY2IzNjY5YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzNDZlZDA1ZGM2Mzg0N2UxNDBhMzhkMzAxYTdhYzQ4MzQwNTk1Y2YxM2NlNjM1ZTUzZmI1ZWUyZGJlYWJlNTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_04b2a75c956d40fabe40b0dc001f303b",
+      "statement": "Output comparison trims lines when asked, converts / to the native separator, turns NUL into line breaks, and sorts words within lines when normalize_line is set.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L115-L135",
+          "version": "repo-lines-v1:sha256:7d9ca637b0e22525fe6ca3f00c8a2b5b925cabd31cc1e84550d901192df393c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NjIyY2E1YmY3MTY2NWQ5NzNjODg3NmU2NjE5NmI0M2QyZWJkNGNjNmYxZWY4OTFiNGQ4MjA2ZjM0NjI2OWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiMjdjOTQ4YjYwZjFjYWQ5ZjRjZTgyNjdmOGRmZDMzNmFkZmYwMjNjZDVhZDk2OTY1ZDA1NGFiNWFmNGJhMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1NTA5YzgxODQyNDZiYzg1NDA3ODg2MzdlN2Y1Yjk0ZmY0NTU3NGExNGZjMDBkZDAwMGFiZTdlMzBlOTdkZjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_13f0894342dd42e6835e3121a3e63754",
+      "statement": "Assertion helpers compare exact or raw stdout, check error exits and messages, and run from subdirectories.",
+      "evidence": [
+        {
+          "resource": "repo://tests/testenv/mod.rs#L248-L300",
+          "version": "repo-lines-v1:sha256:b43c5600d9fb67fc66b4cceae851d363a66dced11e8f41cb6fc452c440b70b97:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyNWRlNTdiMDc5ZjcyNmExZTJlMGZlNzhmMzNjOGY0YzQyOTlmMjZjZjJiMDQ3NDQ4OTc4NDQ3NTU0MDIyZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiOWUzYzQ2ODkyYzVjZjE5MzMyNTgzNmRlNjIyYzYyNDYwNjk4NTUxOGFlYWQ5NjQyZTQwODg4MTI5MGFmNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwMGExMTc5YWNlZTJlZDY2ZTQ4NDg0ZTJhOTcwYzZjZGM4MDg3YTFiZjA0ZTNlYzc2MWFhZDQ4YzBiOTZlMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MTBhYWEyYmFhMTNhM2Q0OTNmNWEzMzFjNjIxNWM5YTliYjVkYTQ2NTQ5NTAzYWY5OWY3YWZlNGYwNDg4OWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a44c253d12474eebab76f69f55cb2876",
+      "statement": "Parameterized cases use the test_case crate for groups of related inputs, such as the ignore-flag variants.",
+      "evidence": [
+        {
+          "resource": "repo://tests/tests.rs#L1024-L1046",
+          "version": "repo-lines-v1:sha256:266f6f116f139777726830c11937948ab440f8032adef886c0b1cabc9a1b4712:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0Nzc4ODY2ZDMxNWQwOTA5MzY4Yzc0Mjk0Zjg3ZTM3MDA2NDIwMzFhZjlhMTViM2ZkYjE1YWY1MDE5OTY4NjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NTBkNDg5MGEzYTlkZDRlMjU4MmNhOTBmMDZhZjgxZTg3ODhiYTI3NmU3OTk1ZjdmYmEyZTQ4ZjM3NmIwZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyMzg1M2FiNzkzNDg4YjYxODJjZGQyYWI5ODNlOTE5M2I3NjFlMjljYzYxMzcwZWY3N2VlYTUzOTMyZTY5NjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7e671a7cf9948cd9d6fbe7590a709f1",
+      "statement": "Unit tests for regex analysis, exit-code merging, and walker path selection live in #[cfg(test)] modules beside the code they cover.",
+      "evidence": [
+        {
+          "resource": "repo://src/exit_codes.rs#L52-L94",
+          "version": "repo-lines-v1:sha256:9d8014fea0fca5ebbdafcbbf478b4ad00c3da9b15b741a1052bf011cb1ec7b82:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0MTM2MTQ0MDZhMjRlOGM2NjVkOGE5OGNiMDUxNTZiZDEzN2NhMGNmYjQ5ZjhkYzM0MjI1OTk1N2VkNDE1YTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/regex_helper.rs#L80-L105",
+          "version": "repo-lines-v1:sha256:a49149a12d9ff0d709c0a244ae250fb6bb5042b12f774f55e1ab2cd9a28ee279:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5Y2U4MWY5ZDhkZjM3NTQxYmVlZGUzMThiMTc4NzhhYmEyNzc0NzUwYzFhODY0MTIwNDNkM2NjMDBlZWRjOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L686-L744",
+          "version": "repo-lines-v1:sha256:e0c03eeb7a2c9d7deba342473bc11a35cc16a6bdf2770c8dc7235405e7bfd2e8:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiMDI5NWNhZTQ3N2NmZTZkMjViODMxOGZmM2FjZWUyMTM0ZjA1OTM2ZGM1Y2M5NzE4YWQwZjk3ZjMwYzE0NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjODc4ZDI3MzhiMmZmMDU2MzliYTJmZDQ1N2EwNzdmYmRkN2UwOTMwYjU3ZDhhMDBjNjZkZWQzMDY5NTRjMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4bd349e7dc64e24b3dfe50f999992cf",
+      "statement": "Owner-based integration tests are compiled only on Unix.",
+      "evidence": [
+        {
+          "resource": "repo://tests/tests.rs#L2450-L2462",
+          "version": "repo-lines-v1:sha256:ecaa04e9a6eb38ce558a9eb59e796ffd8de563f8492c6bced1b413421250f99f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZTFhYjJmOWNiZGI5MGQ1YWM5ODhhNDY3MjUwMjFkYmM1ZDllMjE4NWZiNDUyN2ZmOTYzNTIyYzk0MTIzZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MjMyZDllZThjNzJkYTgzODI4N2U1MjgwMGRhYmM4MjQ1NmU5ODk4ZDY4N2RmYTdhZWZkNzM3NDFkNjU3MjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1OTM3Njc5MWU2OTQ3NmY3YTA3MTg5NmRjMjViOTEzN2VmODQyM2UzZTk2MzQwY2NmYWMzMzIzZDQyY2E1MWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkYjBlMDIwMGEwMGZkODY2OGY4ZjRhODdmYzg2MzJkZDY0NjdhMTM5OWEyMDUyNDY5YTNjMjc0N2RiNzI0NDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e5d560d5fe24c6cb5f020916650af8f",
+      "statement": "Contributors are asked to make sure the build succeeds and tests pass before opening a pull request, and to add a changelog entry for behavior changes.",
+      "evidence": [
+        {
+          "resource": "repo://CONTRIBUTING.md#L5-L40",
+          "version": "repo-lines-v1:sha256:4cac3ba1851a2019b89eaefea179c143738a8fa2b0867c93aa075f4d8024442c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNTgyMGM0ZmI1YTJmN2QwYzM0NmJjNzBlZWE3MjFjYjNkM2ExMmI3Zjc3M2VkZDlhNDQ2NGFiMWU5MjJkMTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0MDNkNjg2NDExMGFiYjg1NWU3ZTc0MzM4Mjk3MzViOGYwOTY4OGZmMjBmNWViZWMzNmQ2ODA2ZGZkNTQ2YzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyNmMxNjdjZWRkNmY1MGZhOTFlYzg1NzQ0YjUzMjhhM2VhYTU2Y2I4MDhmOGRkZDc2NmJlYzYzMmE1MDRkYjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_450058fa7192469ea1f2fc2dd67327c7",
+      "statement": "CI enforces cargo fmt --check and clippy with warnings as errors, and runs the test suite in the minimum-version and per-target jobs.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L186-L196",
+          "version": "repo-lines-v1:sha256:be6e3e47e9ea0f142f82a7144298702abfac642c599d4d67c4cc1bd1a67f3009:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhODQ0YjVhMjQ1ZjIxZmNhMTkxNThkNjRhY2IxNGM4OTE4Y2UwNzZiYjg5OTdkMjM4MWQwZmJlNTQ3Y2ViNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNTlmNjgwMmUyY2U3Y2Q5ZGZhYWVlMjY3MGUxZDI4YWQ0NzMyZmYzMjg2ZmY5YTgyOTc5ZmZiY2ZlYjIxMDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZkYjk3YzkwNWU1YzhlOGRjMTg3NmZmYmU0NWQ5NDFhYzViMWIyMDY2MGU1YmFmOTlkZjZhYmQ4ZjBlYTc0NGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkN2MzY2M0YzdmNTZhNDlhZDlhMjQzZWE0OGYxZjA0NTViYmY3ZTlmMzA5Y2ExOTQ1MTUzYjY4NGFhN2MzNWQifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/CICD.yml#L42-L84",
+          "version": "repo-lines-v1:sha256:95d13330fbc125043bb3fe2b24478623c2e9a184155021329a5991133599e5b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOGQ0NjZiNTViMGJlYzc5M2QwZjI4YWIxOGRkYjllMmFiMTg5ZjQwNWRkOGMxMzAxY2ViMmYzOGJmMDcwNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMzNhMTZiZTA5YTk5YzgyOTNkZTY5ZWRhY2I1Y2NjMzZkYTE2ZjNiMTI3YTkyM2RiNTk3NTQ3ZGEzY2I1ZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlMTg0N2E4OGUwZWJjYzczYzc5ODlmZDg5YzI4ZjBmZDg2OWNkYzQzNzQ1OTExODkwNGVjMTg2ODYwNTU5YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMDUyMTI5Y2M4YmZhOWE0Y2E0ZjI4ZjFkMjhlZTIzZjFiODZhYzBkYWY1NjBhMDgyZDcyNmNhZThlMzVlMmUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:13:27.224Z"
+  }
+}

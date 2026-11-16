@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8326e460fcc757f117696ced7c814223d24f291322a9a73852300ef156ec4dc0",
+  "claims": [
+    {
+      "id": "claim_137f34716d8c428aaa520e9da353fe38",
+      "statement": "electron_dist_zip produces dist.zip from the application, version and license artifacts with Linux sandbox and official-build stripping dependencies.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L1423-L1445",
+          "version": "repo-lines-v1:sha256:eae515818bc6647e2cdf54d4073bd1128afb73fdfad58c498f83a832eb090272:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZDE3MGIxMDI1ZmM5OTdiNDE0MmE4YWIwZTA0Mjc2ZGY4NmNhODYyOWJlOTIzZWEwZTY0ZmZmOTkyNGI4MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3MTRkNGQ1OWU4MmVmYTg1NzFmMzZhNjdkNmZjNGJhNTVkN2M5M2M4MDZmMmMyOWExOWZiNmY2MmRmYjA2MDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzOGQzMjk0MWM5YmE0NWMzZWJjZmYwYzkyNmQxZmQwMWFiYjliZDQ4MGNhYjc3Y2ZmY2ZhNGQ1MGU2MjQzMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMmU5YzY4NzBmZjZkNWMxNTM4MWNiZmExYzc1YjY0ZjMxODdmOTc4ZThhZmZhZjNjMTczMzM3YjMyYmNjOTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b15317063ce46a49d7f35c81543628a",
+      "statement": "The npm installer selects a platform artifact, downloads it through @electron/get, extracts to package dist, and records the relative executable in path.txt.",
+      "evidence": [
+        {
+          "resource": "repo://npm/install.js#L14-L53",
+          "version": "repo-lines-v1:sha256:994ef953f7e889a11e8a74a91dd5c6c9c074fc1f503679ea9a011d454f7b2ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0ZGNjZjRhZTg4NGEyMTk0YjIwNDVlMTMzYmJlYTUzNWM4ZmMwZDBmN2RkMmI5MjBiMzhkZmM0MTRjY2Q5NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkNGJlMTM2NDE0MDNhNjhmMzcwMzQxZmM4NmFlZGI0MDQ0MWEzZmI2OTc2ZWU0MDFiMWMyNzFjMTJiOTM4MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkMzI4ZWY5NGYxMzM4N2M2ODQ0OGJhYjgyOTQ0M2YyYTM0N2U2NzY2ZTYyOTQ1NDA4NjQzZGM4ZWQ2ZGM3OWUifQ"
+        },
+        {
+          "resource": "repo://npm/install.js#L73-L109",
+          "version": "repo-lines-v1:sha256:1f556dc048dcc5418abae439f2f48d9cf9e2e5f08f74251bbb69233b77bfd72e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyOGI1NzIzZjM2NDc4OWRiYjY0MWM3NmEwZDY1MDk0YzU2OGYxYWYxZDNhZjYyMzUwMWFjMDZjMjc4ODE4OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYjlkM2Y1YjA4YzY5NTc3YTljY2FmZTk3YjRhNjRhZDIxNjFiYWFmMDgwZDk2Zjk4YjhkNDgzZjZiNmQ2OTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://npm/package.json#L1-L14",
+          "version": "repo-lines-v1:sha256:638a22ad2544f990c0b773011e6fce0b0511f61d0e92a2749b024889ceb72177:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmMTIwZGRlZWQ2Nzk2MGUwNGY1ZTA5NTI0YzAwMjZjMjAzNjQ2ZTdlZmRkZjg5N2E4OWM2YTVhOTU5ZmQ4NzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51ca8c8ff4a647879490e1697e4b751c",
+      "statement": "The plain-Node npm entry resolves an executable path from path.txt or an override, and its CLI spawns the executable and forwards termination signals.",
+      "evidence": [
+        {
+          "resource": "repo://npm/cli.js#L5-L25",
+          "version": "repo-lines-v1:sha256:9f1cb87c04e2d0ad1991fa49d6705e7706333c3f5f50c09de7a17c3aec2d2269:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMTAzMDEwNTFiODE3MTk3MmNlZTVhMmEzYjUwZjAxZmY5YTcyMjE4MmQ0ZTM3MzA3MjE3ZDFkMzFjYWRhZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhZjQ1NzVlYmMxMDQxNmIwZGIwNWM3MzlkNjM1ZDU3ZmZhNGE0YmY1Mzg2ZDg3MjU2NTk3ZTZhNmE3NjgxOTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4Y2I0ZGI4NjExMzM3YjMyYzM5NTc4ZmNjNWM2Zjc3Nzg3OWRlOWY4YmU1MTZlZmViYTJkNzU5MGUyODk1YWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://npm/index.js#L4-L21",
+          "version": "repo-lines-v1:sha256:5deece2e672f1c363e640d8901e1625739ffac59657adf40e24229e1acda2b4a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YmIyNjgzZmExYjE0ODc4OWZmMDFiYTRiNzliOTcwMzQ3MjQzNTliOWEwZjhmODMzNzA2YjYwMGViODE5OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzMmQxN2I2ZjQxZWI4OTFkZjE1NTA0MGJjNWE0ZTJjZDk5MGM5OGI0MzQ2OWVlNjgzMzYzYjdiZTgzZDZmZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjYmRhMzkyYjEzYmY1MWM1MmI1NjcxMWJjYzYzYjA1MWEwNDZlZDkxMTgzNjIzMzQ2NjM2YmEyNmY1NTliYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_26ecfd95bb96446ab3855c3307d23188",
+      "statement": "The override distribution path does not change the installer's extraction target, which remains the package dist directory.",
+      "evidence": [
+        {
+          "resource": "repo://npm/install.js#L55-L89",
+          "version": "repo-lines-v1:sha256:e048d3b77f1956c15a5a67c40e3d0030648dacf40e53e0510a20ba2f3064c0e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMzIwZDQxMTM3YzcyNTdhNGRlMTc5YWViODEwZDQ2MzFjNjIyNjc4ZjQ5MzcwMWY0NmExYzRlMjY4OTAyZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzNjNhMGM1ZjIxZmJmODUyZTRkMzUxNTI5MTc2ZTNlNGVhNjJhYTA0ZmJjOGY4MGNjMjE3OTlkNTBlZWRkZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiY2IxN2U2NTE3YWQ1OWViNTIxOTY1NmM0ZjkwYjM5YWI4MTRmMjM2MzZlYzYxZTUxY2E4OTFmZWQ1OGRmMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3066b590c7834207b06af93150924824",
+      "statement": "Fuse defaults enable Node mode/options/inspection and extra file privileges, while ASAR integrity validation and ASAR-only loading default off.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/fuses.json5#L1-L12",
+          "version": "repo-lines-v1:sha256:f26ef9f002d440525c7d9d8f68ab7010c8e66d04680a6aa97096cd66b0347102:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjOWYwOTZiNGY5ZTA1YTZkMDFhMThlY2ZhZGJjZDY2YTEyYjAzNDY4MGVjNTM2NzJmMjNmYjQyMzlhMGNhMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b41a62fc602745a494d436e5f7f10d4c",
+      "statement": "GitHub release publication creates checksums, revalidates the draft, uploads the public index, and then publishes the release.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/release.ts#L414-L428",
+          "version": "repo-lines-v1:sha256:98dc45f1b06c5da314c75a76186d64dd220ea03eea812534e7e31e72c2cbc1b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhZmU0NTFjODk5NjkzOWRlNzM0YzhkNzdjYzkwZTQxNDRmMTVlODE5MmFjNjEwN2NjMzQwZDNiNDRkOGE5NzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZmJjMGIzOTI1YzdlMjFkODk1ZjE2YWRhMTcxYThkMmQ3NjQ5YTQ0OTBiMWExZmYxN2E3MGEzM2NhMWQyYTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyNjVmN2U4NTM5YTZlZDVjMjJiYTlkNzU3MmU1MjA1MGI2ZTU1ZTY3YmMyYjU5MGM4ODhhZGMzMzdlZTUxYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxMjJiYjUxNmQ1MzFjZTM1OTQwYjk1YWZhODQ2MWI3YWZlOGUxMTJiOGE4OThlNzg1MzQ5OTJhNDQ3ZDFmOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_10342a535a744e9b83961d1da5803e34",
+      "statement": "The npm publisher stages installer template files and obtains generated declarations and checksums from the release assets.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/bin/publish-to-npm.ts#L67-L135",
+          "version": "repo-lines-v1:sha256:f7df43c653194c6f577f79601138648d5cda0c6f8dcb5d12f90e496a0502f421:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMWJiOTc5Yjk3MzQzNjU0NGE0NDYxODllMzM2ZGQyNzY1OWIxMTAyYWI4MTlhNTAwZDUzYTJhNDA0YzNmZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNGY1YWMxZWUzNjI0YTM2ZmFlYjc3NzE2YjE1Y2Y4Y2ZkODc3Y2NlYzI2NDI2NGZmMzllNGE4MWIxOTc2MTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4NWJiZWE4M2UyMWY2ODA3NjQwYzk1MzQ2YzM2M2EwZDZkYzI5MjVjMmE3MzdmZThmY2RjYTc5ZDg3MmVmY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4NTg5ZTRlNWNhNTUzOTEyZDJhZjAwZWM0MzBkYmMwNjY3NjZhOWQ1MDM3MWU3MDZmZjRhZjFlNzRhYjU2ZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d303ee31a9144d2ab66185cc0401aa6b",
+      "statement": "Windows auto-updates use Squirrel, require a feed URL and supported installation, and reject quit-and-install without an available update.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/auto-updater.ts#L1-L5",
+          "version": "repo-lines-v1:sha256:8330f336c6bc56311c2eba424507bb43e10638a7bf2070c097f6179345c4fa7b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWRlYWY3ODEzZTM3Yzg0NjU0MmViZGJjNDYyOThjNjY5YjEzNTQ5OGI4MjJlNjkxZTUzOTBjYTVhNDAwMDA0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://lib/browser/api/auto-updater/auto-updater-win.ts#L11-L65",
+          "version": "repo-lines-v1:sha256:831eca917c023b4ed550aac7c2b7777968e35cd2e9d07f2ed2c3bdc165864c29:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0MjJlYjg2MjdlNzY0NWM3MmYyZjc4OGVkZDI2OWQ3MGJjNjU5ZmY4Zjk2Y2JiYTU1MGY5NTkyNjI2NmM0NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiOWI1NDI0NDNmMGJmOWEzYzFjY2QyZjBjYjg1OWNlN2YyMDA0ZjAxMzIwMzdhZDhlYTkyMDIzODBkMDliZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwOTllMTk0NzRkYWYyZmRkMjg5OGVhNzRkMGJhNTcyYWQ1NGMyYTAzNTQzYjI5MDFiNGMxMzQwM2E4ZTE3ZDgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:11:18.304Z"
+  }
+}

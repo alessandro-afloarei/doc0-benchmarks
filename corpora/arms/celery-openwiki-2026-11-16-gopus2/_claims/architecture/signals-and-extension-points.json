@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cac26f37d02eeebc676c815692a85dd7cc63f32c79a822e26498183cb6320d62",
+  "claims": [
+    {
+      "id": "claim_d3fd3d7e55a7465c8b021ddbe6210696",
+      "statement": "Signal.send catches exceptions raised by receivers, logs them, and returns them in the (receiver, response) list instead of propagating; send_robust is an alias of send.",
+      "evidence": [
+        {
+          "resource": "repo://celery/utils/dispatch/signal.py#L258-L290",
+          "version": "repo-lines-v1:sha256:12112f59508aaf2d374f27d8533a80b965375cb6ec6632614cad6c94d27e3d23:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMjYxNzkwN2NhODQzYzkyMmU1ODU4ZWUzYWU1ZjQ0NjgzMjNmNGRkYTQ2MmU1Mzg1NDk5NDAxYTE0ZWFkYWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjYzUzOThhYjgwMDZlNTA5NDAyMGMwZmU3MDBkZWZhZmMwOGY5ZTIzOTkzOGRhMDM1MTI0NjdlNDQxZWRhMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlY2JjNzAyODZlMzA5Mzc1MmY1MmE4MDQ1MWZjOGIyYWQ1YzFjM2U3ZTU2ZjM1ZjA2NTAzZWM5ZGQwYmQwZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxNGRmYjgzYjAxYTY3MjJlZTM0YjM2NDgxZGMyNTQwYzM2N2I0ZjNjYTExYTdjNjcxZmUzMWRkYjBkNDYyYmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6701efed8b64058b9a7691d11e6df73",
+      "statement": "Signal receivers must accept keyword arguments, are weakly referenced by default, and connecting with a PromiseProxy sender defers registration until the proxy is evaluated.",
+      "evidence": [
+        {
+          "resource": "repo://celery/utils/dispatch/signal.py#L188-L215",
+          "version": "repo-lines-v1:sha256:ab6fa935e57338cf2558888744a759b06376109c2213fca4d4ef9e77607cb9e0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3OThmZjZhNzUwY2I2YmU5NzIxMTU5ZDBkZDc2NDgzMzkxNDE4NzNkYmQyMTkzZDg3ZDIxZmUxOGMwZjRjOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxZTg3NjUyZDY3MGM3MzFlYmQyNDk5MGViZjZkMjM4OWQ2ZmU4MGYzNjEzYjUwZWU2M2VlNDhmNjVjZmExNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljMGU5ZmVlNDJlZjJhMmNiNGY4Yzg2YTI1OWE4YzNhYjBiYzZlZTliYmQ2NGFhZjNhMDhkZjk4OWJkOTQyNWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a164dba2bdfe48068c18df0c4fe4905a",
+      "statement": "connect(retry=True) wraps the receiver in retry_over_time, forces a strong reference, and assigns a dispatch_uid derived from the original function.",
+      "evidence": [
+        {
+          "resource": "repo://celery/utils/dispatch/signal.py#L144-L180",
+          "version": "repo-lines-v1:sha256:b4e1812724ec2c542095259136b2d62300ceca8635ef825657c77dd83beb9571:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1MTNkOThmZGZmZmZmNjFhYmJjNzViNTJlMjg4ZmI4M2EyOWFiNDVkZDQwMjUyOGIzZDQ2YTQ2YTdhYTFkNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjZjJhZGIyMTg1YjM2M2UyMzdkYjQ3MjdjMjhlMzQ4NmYwYTU1ZjQ2YTU5NzQ0NGYxYjU0MTFlZTNkMjU4NTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkYWFkMGFiODYyOWU4Yjg1Y2NiMmIwOWM1YTRhMjI3NjA0YWMxODRjZmQwOWM3MTRjZTliMmRiZGE2ZjBkZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0MGU3Nzc5YTM3Njg5ZDg0YTIwYWI2ZDU3MmJhMDdkZDYzOWViZDg1ZWIzYzhlYjllMTcxNTA0NGRhMDA4MzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af60e09c6dc94e1490c9c5d0ba7d1529",
+      "statement": "before_task_publish and after_task_publish are sent with the task name string as sender from amqp.send_task_message.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/amqp.py#L559-L579",
+          "version": "repo-lines-v1:sha256:1caa582bb07cbfc883940d1ecf7374df378e9dbcf046407e13ffd72156eb2a8a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZDlmZDA2MjhkZmUzMWRhMmM4ZDM5OTY0YmMxZjBmMzYzMTgxYmRmMzQzMjBjNTZhZjkyODMwZWI2MDM3MGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlOThjMWZjODYwNjhkN2Y5MjMxY2IyNjA5OGQ3Y2M0NGViNzZhNzg2OTIxN2Y4M2JjM2FlYWE3NmM1NjRiZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyNWExMTk3NGUzNmIwZGU4NDY4MDI1MzQxNTUwMTc2OThlZGFiMWIyMzdlN2RkYWQzZmUwMGEwYzUxMjIwMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwN2U2MDk1MzQ4ZmU1YWZiMDFiOGM4Zjg4YTZhNTkxM2QyMGI2YTgwZGYxNTQ5Yjg5YzhkNzYzOWE3ZmE5ZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7cb0f7851cb4ea49d5bbb518dc91517",
+      "statement": "If any receiver is connected to setup_logging, Celery does not configure the root logger itself.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/log.py#L98-L110",
+          "version": "repo-lines-v1:sha256:ba8c554f00c96b53eb051fce57a789a213f730013f988a889ee31af66e98ada3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZmZkOTYwNTdhNTEzMGIyNjliMDMxNjFmYWE4MjM0MWNjNDY4MTliNWVlNGUwOTk1ODJhMjU0MWFiNWZjZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhODhlNzFlOTgyZmEyYWE2NDRkYTE3Y2IxOWI4ODBlMjU3N2JjMzEwMGE4MGFiOWIxZmE2MDI4N2IxOWI0OWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhM2ZmMjVkNTRjYjRlNTZlODVlMjQwOTYwZTk0YmZjOTg4ZjY0ODUyMTk1ZjFjNDcwMDBhMzJjN2EwZGNjM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkOGEzNTRjNTJmZmQ4MGIxNmE3YTA2NDIwMjAwYWU5MzViZTA0YjZmMzlkZGExZDU2Yjk3NWY5Y2VkMTAzNGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_91b2d87b8f2c4316b7bdcd2ad7378412",
+      "statement": "Task annotations from task_annotations are applied in Task.annotate during first bind: keys starting with '@' wrap the named method via add_around and other keys are set as class attributes; dict annotations support '*' to match all tasks.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/annotations.py#L18-L52",
+          "version": "repo-lines-v1:sha256:a6929b2f9b7ba0e069f173fa4512590f177da917a3d1c0518be5b986e257dd44:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOWEyNzY5ZDgwYzAxNmJjNmI3ODVhYmFkYjc3YWFlNGY1ZjE1M2RiNDg1YTEzNzIyYTMzZDRjNDM2NGQ4N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMGY2ZTI0OTY3NzI2NDVjOWQ1M2QyN2QwZmQyMzRjNmVhZjQzNjViNmIwMTUzMWFjY2RkNTBmYmViODc3ZTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllN2RkYTQ5ZWM3NjZkNGRmOWJlNGZkYjQ2MDZkYTU3MDAzYTBjOTc3ZmQ2NGUzMzJlZTc5MmY1YjlhYjdkYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://celery/app/task.py#L445-L486",
+          "version": "repo-lines-v1:sha256:066e3d9fd60ab439ae821bed469743c7a30a3e88257518b4662212e0ea630b36:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZDgwNjY3ZTQ5MmJhNGM0ZmZlMzZjYWJjNmY0OTBkZTJmOGNiNTQ0MmM3NWE1OGMzOWI3NDQ0MThhMzYzNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0YjZiZWE0MDUwYWQ5MDcwNDMxZjc3NTBkY2FlNTEzZDE4NzM2MzllYjJhMjIyMGU2OTBmMWY3NWRkMTE4M2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiNTcxMzk4NGVmMjNmZjI3NTk4Y2M5MWJkZjlkYWNjM2Q2NDkxY2NhMWI4YjIxNjUxYmVkOTc3N2ZkNTA1ODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_558cad6da3ae481a9d532ad0c4ae4f68",
+      "statement": "Result backend aliases can be extended through the celery.result_backends entry-point group and the loader's override_backends; CLI commands can be added through the celery.commands entry-point group.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/backends.py#L41-L47",
+          "version": "repo-lines-v1:sha256:90ffe2c37a88e97071c541de78ab342ef3f5c766d59f7773ba7bbc41e0022e91:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDUxZDUzNmM3MjM0Yzk2M2YzNGI5YTcyNDgzZTQzNDBjYzgyMjk5NWEwNTIyYzNiMDgzNDNmNDM4MGQ5M2Q3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI3MTk2ZTcxMmUwYmVmNmI2M2ViZTdiNWNiNWI5NmU3MTgwYWFkZjY2MDhiYWYyMTk2NDFkMGU4OGQ3ZTdkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDlmOTMwODNjMTk3MTIxYjk4MjcwMGJhOGFmYWJkMTcyMmNmMWQzZTc0MDQ1MDllODBlZmEyNzI0N2Y2MmYwNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDc0ODQ3MmQ0MmZjNzkwMjNhYzY4NTZjMDM5M2Y2NTQwNzQzMjhkN2QwOTA1YzViMTk5MjVhYzgzNzAyMDkxMiJ9"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L45-L53",
+          "version": "repo-lines-v1:sha256:2333d9284cefd5701854a9f15ae102bd0efe8ed03fdbd4bded6a17af1fa3ce8f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDJmMmM1OWRkYzljOTc1NTY1MmRiYTMzNjdkMTUyNjQ0ZjA3NjRkYzc0YTc1ODRkYjhlMzBmYjliMGY2ZDIxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2FmMThiZGNmMzUzZTczZGExNTgwMDBlMDFhZWMxZDk5OWJhOWE1MGJjZjI5NzMzYmY1MTA0YTI5OTg1Y2RhMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5699cd62304479e953ba3fb6fe8b49d",
+      "statement": "An out-of-tree worker pool can be selected with --pool custom when CELERY_CUSTOM_WORKER_POOL names a BasePool implementation.",
+      "evidence": [
+        {
+          "resource": "repo://celery/concurrency/__init__.py#L25-L38",
+          "version": "repo-lines-v1:sha256:44c4b9ef4735f484527c8f0a02e843e5d289e3600d64af9c712a1f374c7279f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYzQ4NThlMjJjYzJjOTY3YjQyMTUwZmE1NTA1NjJhMmM4MzljMmNlYmNhYWI5MWNhYmRmNmY0ZGEwMjAwMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0ZmQ4NGU2OTYyMzczNTk2ZDJlNmVmMTRkNGY3MjY4ZDQ1YjUwMDkyMDZhZTgwNjAzYjYzZTM0N2MzMDk4NjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2MjE5YWNiYzk0ZTQ5YTg2YTRlYTZlODViYWU4MDM1ZDM4NTU1MTVjZmU1Yjg4ZGMwY2Y3NDBjMWI3OTdkNGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0YTlmMzUxYmFiZTc5NDE2YzVjZTNhMTZmZWY5OWY1Y2ZlMjQ5ODg5Mjg5ODY0OTdiMWZjZWZmODNiOTU1NzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e01503b30c442869c284cb7d1fbc0ee",
+      "statement": "User-registered steps in app.steps['worker'] and app.steps['consumer'] are passed into the worker and consumer blueprints respectively.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L250-L254",
+          "version": "repo-lines-v1:sha256:769971ee32b1ebb8b766a216579075e880fed172c6e934f2c39b024529899e4f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNlNzMwNjQwM2RkMTkxMGVjZmJmZmM3YzcwYTcwOWEyM2VkYjE3OGUwNmMyMTFjYmU1YmM5ZWE5ZTQ1YjJiNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTkwOWE1M2E2MThkMDI4ZTFkMzAwMGMwYTdhYmNlZWNiZTVmYjM3ZjRlNTExZWZlNDY2NDNmYWQ2ZTY2ODcyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzFkODJjN2RjZmQxODcxYmQ0MTU0YTBiNWNhOWU0OTA0YWQxMzJhNjA3M2UxNzcxZmEyMjUzNDExNWE1YzVjMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzYzOTg3M2UyMWUxNjMyMmQ5YzQzYzM4MmYyZWUxMDQ5OWM2NzM0MDNmODkwZmU0MjMwMGFkOWNhNzQxOTZlYSJ9"
+        },
+        {
+          "resource": "repo://celery/worker/worker.py#L132-L136",
+          "version": "repo-lines-v1:sha256:cfcbf68a6eab2af9564d57e23380b7a215f0ceb97c245f7792a30a0189d8aba9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWUwYTA3OTA4ODI0ZjFlOGM1NWQ0NWVlNzEzODBkZTI2YTlkZDQ1MGMwNWZjY2I4NGM2MmE1ZjZiNGQzMjY0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk5MTdjNzVlYWY3YzM2MGNlYmU5NTJiM2NjYzI1ZDllNmFhOGY0NjE1MGVjYTVmOWQyNjU3NmE2NGNkZWI3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODc1ZDg1MTJhY2JhNDhjOWU2OGI5YjU3NTQ1NTBhZmNlMzU5YzkzOTVjOGUwNzIwOTMwYmNiMDY0OThmMTQ5ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmVmYjQ1NDc2NTI5NmYyZDI2NTdmMmU2YjU3MmI2MzQ1NTFlYjQ1N2EwMDIzMzBlMmQ1NDAzODU2MTBlMTZmYiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:05:29.073Z"
+  }
+}

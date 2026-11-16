@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:16753a2827a1a61d9b4ea3fbca6cda68cb67ddd3d5ad3e0f89f2d74967d7c327",
+  "claims": [
+    {
+      "id": "claim_f3c4980be7264e76bd17fa8038460434",
+      "statement": "utilityProcess creates an unsandboxed Node service and rejects construction before app readiness.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L438-L445",
+          "version": "repo-lines-v1:sha256:1f2e0185afd1d6a261dd41bee6dfd4e22a1c10da03fe91c89c046c2f5b0d9f13:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY5ZTYzMjUwZTQyYzY5Y2NkN2MzMDY1ZjE2ZDFjODViNmJlZDFlYjExY2ExYWNiNjMxZGNhZTRhNjgwMjljMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2FhYWZhYmU1ZjBlNjQ2ZmYxZTAwNzljY2U3ZjJhNWYyZmNmZWY5NzY1Zjk2MzA2NTAzN2IyMGExZTg1ZmJmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDhjM2IwMDg1NTM5YWU2NzY1Nzk1MjQ3NmJkOWZhYTVmYzJiNzgzZDg4YWU0ZDRmZTg4NGU2M2VmNDNhZTc0NyJ9"
+        },
+        {
+          "resource": "repo://shell/services/node/public/mojom/node_service.mojom#L27-L31",
+          "version": "repo-lines-v1:sha256:325e85eea08670b5df6101a0c97b2511e2b0ac8d01f3b1f9660104716325a639:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTViMDliYmQzMTY0YjJhNjU5NDBiMDk4MzI3NjZlZjFjMjQ0MGYzZmUyNTRmZTk3ODJlMDdhMGJiYjQ3YWY5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2JiNjY2OWQwOTBmY2RlNTA4NzFlOWYxYjY5Y2IzZmQ3NTI0OTI0MWFmYWY3MjIyZmZmOTEyN2M4MTNmMDMwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_359b541b25884e3798dc6c5a251c33a0",
+      "statement": "Utility process launch passes working directory and environment to ServiceProcessHost, inheriting the parent for an empty environment map; stdio defaults to ignored stdin and inherited outputs.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/utility-process.ts#L55-L91",
+          "version": "repo-lines-v1:sha256:b3a0257f371ca21bde85185ab945324be4f0511aadf1ee07567be3444302fb17:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NDJmZTBlYjEwMGQxYzllZDkwNTY3ZTIwM2IyM2Y4YzMxODM1OWNhN2ExOTgwYmU0NTg2YzE1YWVmYmU4ZWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0YjlhMGIxNmI5OTEwYmFhNWQwYTRkY2FmZjhhNjBjNDI5NjMzYmYyYWUzY2JhY2M4MjAyOTA3NTgwZDEwY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwMmFiYjgwNGNkMGM5YmUzYjU3NjEwN2RmNGU0YmI2ZDEwODZlM2E0ZDMxN2ExMzBlODMyMzNjZWNhODQxNGMifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L159-L191",
+          "version": "repo-lines-v1:sha256:6f15cdcc6319ca2e4141cf73a8415e02d0ee87cd66d16c9c2c16899feaf6f0d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxZGFmNmI0MDM3YWNiOTA3NmJmOTc3OWRiZDg5Mjc5OTZlNzA4ODNkODIxM2JiOWQ1MTU2OTc4ODhmMmVlZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyYzc1Njk1YjRkZDZlNzZiOWQ0N2Q5NTY4ZjRiMTZkZGY1NDE2YTgzOTVmOTU4NWI5MmUwNWQyYjBjZDkxNDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4MTE5NzkzN2RhNzU3NGEzMzE3MmJhZDhkMDhmZDllMzY0YWVjYjEzYmQzZTc1YzQxNWYyY2U0MDFlMzM3NTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyZWFmNzA3MGVkNDViMzMwZjA3NzkxNTQ2NjQ2Y2MzZDQ0ZWUyYjk1YmUyMDI1OWRkMTViMmViYmM3M2UxMGEifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L479-L494",
+          "version": "repo-lines-v1:sha256:7f018d209176b8449160a23088cb1619f97c77474d5ecaee0378123b187d4afb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTRjZTQ1ZmNhOGE2ZTMyZmJhN2QyZjg3ODYzODJmZjdmMDE4MDMwM2RhMmEzZjBkNTY5MDlkZTUwZDA3YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzMzY4YzJlZmY1YmQyM2EzOGM5NzU3ODZhODgzNWVkMmIzNzgzZTYxYWQ3NjI3NWJmMWI5MDdhOGY3NmQ0MzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2MjNkMWEyOWE5MjhkOTdmOTRmMmY2OTQ0MTVhZTY3NWY0OThmN2M1NGExZmQzMjQxYTE5ZjhkNGZiMzU2MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5YWZlNWE0MjZjNDg0MzI3ZTU0OWI4M2IxMzU3YTM5ZmRkMjk1MzgyZjlkMTE0OGE5ZGJkYjY2NWE2YTg2ZmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_562b9dda87424a35861bfc82e63287be",
+      "statement": "The Node service installs messaging, networking, exit handling and microtask infrastructure before loading user code, and utility init imports the entry with Node's ESM loader.",
+      "evidence": [
+        {
+          "resource": "repo://lib/utility/init.ts#L8-L50",
+          "version": "repo-lines-v1:sha256:e06a60f6c78f0b8fc3cc57b7ed35f1f7be930a0ef431d17aba6d45c3b66e3a57:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMzY0ZjI5NGQ4ZmVhOTEzODQ0NjRkMzRkZTVlOGVlNDkzOGI2M2ZkOGMzMjQ3NjZjYzk5NTgwNmU0MWQ0MDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwMGI1YTA3NjAwMWMwZThhOTQ1OTJkNDFjYmMxZGRlNjFiOWQ5MmE0N2M3Zjk3Nzk5NzFkOGYxZTA0ZjMyNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://shell/services/node/node_service.cc#L108-L193",
+          "version": "repo-lines-v1:sha256:57211e472e5a4e1d447577c4d8826ebd78e44714fb795a1b1a6b0c26d9f00097:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2OTNjZjhiY2VjYTgwMzlkZTJhODkxZDM0MDhiOTg0OWMwYWJhOWFlMjZkOGVlNDc4MzUwMjUzZTcwMjUwZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYzY0NWRiNjlhYzI5NWY4NDk4ZDcwM2NiMDc1ZjNlZmYwNGVmNWQwNmYyOTUyYjg4NjQ4MjhkMGI5YTczMmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2NjUxYWJhZGNjMGU3MjZkYWM2NDdiZjJlNDU3NGFjNzIzMzM2ZGUwOWZkNTQ4ODU2NjEzYzNiNTM3MGE4ZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4a17e0719f948c3b69cde7a88859404",
+      "statement": "Utility messaging uses a separate pipe, with child delivery started by the first message listener and paused when the last is removed.",
+      "evidence": [
+        {
+          "resource": "repo://lib/utility/init.ts#L18-L36",
+          "version": "repo-lines-v1:sha256:cf5fcaede8387d87f38cdc86ed153a263a16e90f7573d847664c097dfdc5a9f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiOTI3M2E5NTZhMzQ4Y2EwOWY2ZTliODFlYWIxZTc3MzBkNWViMGE2NWI2OTA2MTA0NDA1ZGJlMTBiYjFjNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5OGZlNWU5MmNmY2NkMTAzOGU2YTU0YTQ0M2U4NjAxZmNiM2ZhODk4N2JiNzA0ODViNGVhMDQxZWMxOGRlNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2MDBiMWMwYjYyNGQ4YTY2NDI5ZDcxM2Q3OWFlZGYyZTFkY2FjMjVjZDJlZjRhZjM1MTA2ODI1MDJhNDM1MjIifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L197-L210",
+          "version": "repo-lines-v1:sha256:cc1d6ea447b2137ab11aaa29a70b526e39b5a8f214f8d4374c6e3b37c193d5df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkODgwMGUxNzYxMDc0ZGZjYjA3OTNlYmNmNGZkM2QzM2Y4N2M4MTdjMmY0Y2QyYTIyYTBhNTE1MjgwNGNlNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YjIzNjIwMGQwMWNmMWQ3NDYyNzI4NDI1YjdkMGYzNjA4MDMwMTUxMTU3ZWRlNjVmZjEzYTJiOWI4NDZlOWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0MTliMWYyM2M2ZmMyNzg5NTVkYzhmOTk2NjY2NDY5NmUyNzMxMzdlNzk0MjczZTEyZTQ1YWUwNzg0NWRhYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlN2ZlMzExMzI0M2Y4NDk0ZWIyYjY3MDZmZGM0NTUxNDlhZTllMGU4Nzc0ZWY0OTE4NjJlODg3M2E5NGI2ZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d6358a8f35d477eaa4052f07f9ec50a",
+      "statement": "Utility network facilities come from the system network context through a trusted URL loader factory with ORB disabled.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L212-L237",
+          "version": "repo-lines-v1:sha256:ee840c7ab2203bd0763755fe80ac6eb29ca7ad6286ee002bdfc84e0d3e7ef65c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NGRhYTFjZjQ2NDgyNjc4NDZkZjZiZmFmMTA3OTY1MDQyZjA0Mjc2ZjJhNmY3MDE4M2U2ZWIyOWM0Y2M3YTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0NWRkYzVkY2IwMzU3MTkwODAyNmQ4MWYzYzVlYzk3NjA3Nzg3OWE5OWI3NmNjNWM0ZTk1ZjhmM2VmZmM1NDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4YjA4ZDdjZDE3MWFlZGQ0NzI4YjYxYWNjNThhZGZhOGIyNWQyYjkwMWFkNjJkZjg5YTNhOTA3MmJkOTRmYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjNzc5OTAwMWNiMTZiYjE0NDIzY2QyZjAxMjUxMTBiMzNlZjJkNThmNmFjNTk5NzYyZjkzZGNiZmQwYjE1NjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6ce19179a9a44d0ad95d7941af39604",
+      "statement": "Utility termination is deduplicated natively and clears the PID and messaging connection, while the JavaScript wrapper clears its handle and output streams after exit.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/utility-process.ts#L93-L147",
+          "version": "repo-lines-v1:sha256:232c969e57a48842e4355bf06729fede8bd67423973ab37902b4834e4b74e71b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwZjI5ZGUwODc0MmZlMmZjYjIwY2RiZjJmMDVhN2FlM2QxNTZmNTIxNmZiOTJhM2ZiNDU0NDcyZGJhMmY1NmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0YjlhMGIxNmI5OTEwYmFhNWQwYTRkY2FmZjhhNjBjNDI5NjMzYmYyYWUzY2JhY2M4MjAyOTA3NTgwZDEwY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiNjJiMmVmMDFkM2U1NDI4ZjdkZTgyZDczY2U1YmVhYTViYjczM2Y0ZDFmNDhhNzUyZWE2ZDA0ZmU0MjY0NjQifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_utility_process.cc#L259-L315",
+          "version": "repo-lines-v1:sha256:768b985503768e7711a20a6a4af4a0b512f3a772dae74e01e46701c972aca884:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4OTVmNjdiZTE2ZWI5ZTdhOTg2Y2M0NGM2ZDZiMWU4MmQyYzRiNjE2NWNhYzY2MjcwYzVlODRlZTg0NTI3ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyMzM5OTBkYzIyMzE4ZmIyOWVkZTVkYWE4NDA4MjdiZGJmOTY5YTM5NWYzM2FjY2JjMzdmZjBjMmJjMTdhZDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0N2FhNjhjOTEwOTllMGZjMjlkN2M4NGMyY2JiNzIwNTg3YzJhNzk1MjI4OWE0MmExNDA3YWIxMDU0MzRiNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlOWQ1MjQ3NTFjN2FjOTM2MTBmY2U5NTQ1ODlhM2QxMzdjNzk5ZWVjMmQ3MGY3OGM5NDE1NjExOGQ3ZTJiYzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7801883e0c9d4dd3966d2f3e717ca187",
+      "statement": "Browser teardown stops Node utility services before stopping its Node environment so child exit events can run.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L561-L598",
+          "version": "repo-lines-v1:sha256:c10a88784a03c412e4786f0345c516afcadc724ab31fdceb6e29402aca3e16de:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiYmI5NTgzNzQxODkzOGEwMDRhZWFhNDZjMTEyOTgzYWI5MDhiZWIxMGZiNjA2MDkyOWU0ZWExMTgzMTY3NjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NDY2MTk4ZmZlMmE0Njk5NTMyNmNkNjQyNGI5NzYzYzQ5ZGIyNzBiMjc3ZWQwMzhkMmZhNWI3ODdkNGM3YzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExZjMzNWJiMjU4ZTg3MzRjZGU1ZjZiMTY1ODVlZmQzNDEwNGNkNzgzMGVkNjBhMjkzMjk4YTMyZWZkNGY5NDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmODA1MDA5MjEzYmJlOWEzZTI3ZGMyODM0OWZlZjc1M2Y5ZDYzYjRlN2ZjODgwOTMwNzRmODgwZWE1Mjk1YjgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:01:04.581Z"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:952f3992ed24eb464efa362d4df41e358dcf3a4088a85b9bbdc4fd2798add014",
+  "claims": [
+    {
+      "id": "claim_abf1b5a6eb504a62a55e9461e2ce599b",
+      "statement": "patches/config.json maps each patch directory (chromium, node, v8, boringssl, devtools_frontend, ffmpeg, nan, perfetto, squirrel.mac and its vendors, webrtc, reclient-configs, sqlite) to the git repository inside the Chromium checkout that it applies to.",
+      "evidence": [
+        {
+          "resource": "repo://patches/config.json#L1-L16",
+          "version": "repo-lines-v1:sha256:30511b8e410073d05c6ef91b9bd47d5fecafaf2eacab203c1c3a09046a195f33:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZDJiMTkzNDkzMTY5MTY2OWNjMzVhODc2MTk1MTgwMTUzMzYyMTNkZGEwYTYwZmUxYjA5ZjliOGUzZTk5M2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b8ea0b06ea394307a4db7328cc5413aa",
+      "statement": "Each patch directory has a .patches file listing patch filenames in application order, which is used instead of numeric prefixes to avoid collisions between concurrent PRs.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/patches.md#L20-L55",
+          "version": "repo-lines-v1:sha256:a68d6dd75f25b12c52fb727e4c8d3d25cf659125233e2c48f735d7f95436cbf0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2NDA2YjI1ZTAwYzExNzE3YTkyODgxZjVlZGUxMzAyMDQ4N2I2OWZhZTFjMGZjN2ZhMmNmZWI2M2U3Nzk1YTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhNTBhZTlhZDE0NDExZGI0NjU4Yjg1MjNiODdiZTBlNjg4YTBkZDg2NjIzOTE3YTdlNTkyNTYxMDdlZWM3Y2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlZTVhMWM4YmVmMWI1MDk2NWNkNDE2ZTRjODMwYzU5ZmJhM2I3ZDlmNGU3NDQxZWFlOTQ3ZTI1MWZlNmVmNjkifQ"
+        },
+        {
+          "resource": "repo://script/lib/patches.py#L28-L40",
+          "version": "repo-lines-v1:sha256:e06f79a5098ea3c55567ef5f9069136561f02d08d554a4f2fd6bd6f77dbd135b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNWZmMDNjYmI0NDViOGNlOGZhN2U5NGUyZjU2YmM1MDgyMjliYmQ4NzM2YjllMDM5NWI0MWMyYzAyYTQ5MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4N2JiZDBmOTNiY2Y1ZmE4ODAwYjFlYTkxMTJjZDIxNWQ1ZTk4YmYyY2VlZTBkMWEzMTlmNGM1ZTI5MzViMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiZDdmMmQwMTYxMzMzM2QwZjNiOGYxNDAwNTg2ZjJhZjdhNmRlZTVlZWI3ZDU5NDk4MmMzODQ5ZDYxNDI2ZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e14acacdd0e4924983cf654be8eb5bd",
+      "statement": "Applying patches reads every patch listed in .patches, inserts Patch-Dir and Patch-Filename metadata lines into each patch, records refs/patches/upstream-head at the repo's current HEAD, and pipes the concatenation into git am --keep-cr with a fixed committer identity and gpg signing disabled; ELECTRON_USE_THREE_WAY_MERGE_FOR_PATCHES enables --3way.",
+      "evidence": [
+        {
+          "resource": "repo://script/apply_all_patches.py#L1-L45",
+          "version": "repo-lines-v1:sha256:f36532b143b2fe12662564480d3370d47655ab6c3972edf67ebd58214b57e7f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ODJjYmRiNGM4YjA3NTE4YmY0ODZjNTg5OTBmYzM5MTc4M2FhMjBhOTE2YmZiMjdhZDIxMWViMWQ1YzM2NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyZTM3ZGIzMzI3Y2Q3YTRlODI0OGMzNzllNzA4NDc4NjgwNzIxYmI1NjY0MGIxMWE4NTI3ZmZiM2E0MGYxZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://script/lib/git.py#L53-L90",
+          "version": "repo-lines-v1:sha256:e9c39908cfdaa99ebcdc5323717fcb3c038da933267401dc87682ef58e652036:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNTA4ZGM3ZmRmM2M5ZjUzMmY4YTJkOTE4ZmQxN2NiYjljOTQzYWFhODc2OGE1YWYzMWExN2UyOTBjNGI4YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjZDllNjg2MWVmMGNlYjk2ZTkxODY1NTI0ZmJmZjVlYmVlZWJiYThiODUwMDhjZGQ3ODFiMGExMTVmY2FlOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4MWFlMGNhNzliNTI5MGZlYjcxNGYwZDdjY2JhODdmOWZiNjUyODIzOWIwZjBhNWUyZGIzMTU4N2M4NDBiNjEifQ"
+        },
+        {
+          "resource": "repo://script/lib/patches.py#L1-L40",
+          "version": "repo-lines-v1:sha256:dbc83703912c42fea72d6b64e2b845cd07ef5e0e9f4f743134fdf74448be4a62:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ODJjYmRiNGM4YjA3NTE4YmY0ODZjNTg5OTBmYzM5MTc4M2FhMjBhOTE2YmZiMjdhZDIxMWViMWQ1YzM2NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM4N2JiZDBmOTNiY2Y1ZmE4ODAwYjFlYTkxMTJjZDIxNWQ1ZTk4YmYyY2VlZTBkMWEzMTlmNGM1ZTI5MzViMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_93682c93c9cb40c990ee87cc7eb44035",
+      "statement": "git-export-patches exports all commits since refs/patches/upstream-head with git format-patch, deletes the old .patch files in the destination, and rewrites the patch files and the .patches list; a dry-run mode reports mismatched patch files and exits 1.",
+      "evidence": [
+        {
+          "resource": "repo://script/git-export-patches#L1-L25",
+          "version": "repo-lines-v1:sha256:ffd4fc3d9fd095f217a5dc8f8c280645d7f354fc67191e7e296705cb92908b58:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ODJjYmRiNGM4YjA3NTE4YmY0ODZjNTg5OTBmYzM5MTc4M2FhMjBhOTE2YmZiMjdhZDIxMWViMWQ1YzM2NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3MjZkNzRmOGNiMDRlZGEzOTIyM2NkOGMyOWRmNjczOWRkODI0YWNjNzE2NWJiNmVhZDE0MTZlOTE0NGYwMzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://script/lib/git.py#L224-L289",
+          "version": "repo-lines-v1:sha256:d5eb2e28b1f884243b76b0a28a6c428bf6dd215a2fee91be24d304551d51d56a:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMzg1Mjk1NTQzYWU0NWIzYmJjZGQ3YTNlZTcxZDgwZGM4YWRmMDQ0ZDU4ZDI5NDIyZWM3ZjU0M2E2ODUwY2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkYzkxYjY4ZGUyYTVmOTAyMmY0NjI5NzY0OWFmOGQxMjljMDc3YzIwMTc0NmM3OTllYjNlMjY5OTBhMWZiNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1NjU4YTNiNWE2NjA2MmI3OGRiY2FmZTdmMWVhNmE4YjdhM2UwMDUxNGNmMWRmOWU2MWZiNzE4YzYyNDhhMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af0b3fc77a404a719f13690a29cbad0a",
+      "statement": "script/check-patch-diff.ts re-exports all patches in dry-run mode and fails when committed patch files differ, and is wired into lint-staged for patch file changes.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L100-L135",
+          "version": "repo-lines-v1:sha256:c02962f75c1badd1875e93199f72695804f3b03b496e73952f7359fed9394244:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NGQ4YzA3MzQyOTg5MzEwMTU3NmQ4OGQ5OTEyN2U4OWQ2ODkxZDNiMTdlODlkZjAyZWM5YWU3MDcwNWQ4YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2OGJjNmU3NjljZWQ3MDUwZmRkYjI0M2ZiYmIzMDU5ZTM4NTM4OGRlN2M4NzU4NWM5NjM4MjNjZDAyNjYwZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIwY2FhODUxZTdiZDc3YzdhMjFlMDA2MGNkZDhkNzhhMTk4YTljMDlkNmM3N2E5ZmMzNzhhNWY2NDA0YWVhZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhMjk4OWYyYzk3OWZkMTliYTNmOGU1N2M1Zjk1ZjBhNDNhMDJkNDRlZDkxYzhjYTYzMmVhMDVhNWMzYjQ2NDAifQ"
+        },
+        {
+          "resource": "repo://script/check-patch-diff.ts#L1-L17",
+          "version": "repo-lines-v1:sha256:24aca5e09f566aee91174c3815fcd942f5c22d20101f2c67613f49729b56e21a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2MjZiZDkyYTFjMDZiMTBjZGM1ZjA0YTM2OGMyMWExNWNlNjQzOGRlNzQxN2QzZjA5YWVkMDBiNDM5NmU4YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_54356a28cace402187e1b8c9c47de315",
+      "statement": "patches-mtime-cache.py records sha256 and timestamps of files touched by patches and restores the original timestamps on files whose content hash is unchanged after re-patching, to avoid unnecessary rebuilds.",
+      "evidence": [
+        {
+          "resource": "repo://script/patches-mtime-cache.py#L1-L70",
+          "version": "repo-lines-v1:sha256:9372a90f3847464c517e9cfafa7e928ed3d5d93d6a25e237296e7a32b5cdd6ed:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ODJjYmRiNGM4YjA3NTE4YmY0ODZjNTg5OTBmYzM5MTc4M2FhMjBhOTE2YmZiMjdhZDIxMWViMWQ1YzM2NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiYmNiMTRkOGFiN2NjMjBhYjQ4NzdkYmVhNjI4ZTUwOWJkNzE5MTA3NzI0YjE2YTJiOGYxNWM0Y2Q2YjFlNzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViNDc1NTUyNTVmNWM2MjA2NTM2N2E3ZTVjYzA3ODgxZWRiYjE1ZjZmMjlhNDRkMDU1MTU2NzU1MzdmNDE3ZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_58a87db891aa424daa60ea45ed547d37",
+      "statement": "Every patch must justify its existence as temporary (to be upstreamed), required to compile in Electron's environment but not upstreamable, or an Electron-specific functional change incompatible with upstream.",
+      "evidence": [
+        {
+          "resource": "repo://docs/development/patches.md#L1-L12",
+          "version": "repo-lines-v1:sha256:cf1ddadc82b8c64d29dc4c51ae75d0217dc6e7063e75ed47e4078d854129617f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkOGMxMTJiOTRhMGIzODNiMjNmMTU4MDlhMDI3ZThlODA4YjI2YzU1Y2EyY2JlZDc4YWFmMmI4YjNiYmZiMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyZmFiOGE3MDcwZmZkMjllNGIwMjIzNjMxZGY1OTNmMGYzY2FjYTUyMmE5NDA1ZjEzNWEwODJiNWMwM2ZjMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_68f70c3809694d64a64fe09c664d6a21",
+      "statement": "chromium_src/BUILD.gn builds a static_library 'chrome' from selected unmodified Chromium chrome/ and ash/ source files, visible only to //electron:electron_lib.",
+      "evidence": [
+        {
+          "resource": "repo://chromium_src/BUILD.gn#L1-L40",
+          "version": "repo-lines-v1:sha256:559572006dfece69dde81a41633845447e6a0ef74b19f7ac4ce3daf6be7ba000:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwOTc0OTNjZmNjODE1NTFjYWY1M2JhZDJkNTdkZDA0Y2M3MmM4OGVmY2I5NTI5MDliMmYwMTFiOWRiMjY1OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlNDY2ODNiNzJmYmE3OTg4N2RmYTY0NjJjYzljNzk2NmMwODhmMDFmNmM5M2ViN2ZmNGU2M2I2N2FkNzY4Y2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4M2U4YTZiOWY4MmFlOTc1OWVlYmJjMTM0MDk1NWZmMjI5MjQ1NTE4YmM5YWNjOTdjN2EwNGZhMzkwOWQ3MWEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

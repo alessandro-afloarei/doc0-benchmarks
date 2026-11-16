@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3a77e872843c64179b4ed7005609b3c753d750d0d5761a2eb371e8473bb50c58",
+  "claims": [
+    {
+      "id": "claim_cda26d0aca9f429a9da8f6daafcddcc7",
+      "statement": "The celery entry point applies eventlet/gevent monkey patching before importing the CLI unless the command is multi.",
+      "evidence": [
+        {
+          "resource": "repo://celery/__main__.py",
+          "version": "repo-file-v1:sha256:d224f758273cd2603cf1785d0314e9b7f83a4c54609b01d273d186f8788fce41"
+        }
+      ]
+    },
+    {
+      "id": "claim_94ca8e742155401a8b67b5523f86800d",
+      "statement": "Global CLI options --loader, --broker, --result-backend, --config and --skip-checks are exported as CELERY_* environment variables before the app is loaded, and the CLI runs with auto_envvar_prefix CELERY.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L104-L150",
+          "version": "repo-lines-v1:sha256:7106e91c99132ac936ddbdf026f81adacf4ec06e0bebf9aacd6edb3fb839c877:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4YmYxYjNjMWRmOTJhYWRmYjdiNTgyNjk1ZGQ2Y2Q0OWRhZGVlMjZmMzFjMzNkNzA4MzNmYzE3OWEzOGE2ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOGYzYmFiYzAzODYzNzk3OWMzMWIzN2M2NWIyM2NhMjJiN2FjNjFmMzY4ZmUyOWEwZDRkYzVjNjEwMTFjNzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyOGRmNjI3MjcxNTI5ZTkzOTMyOGU1MmNjZmIwNjdhNWY1MjhmYmVjMGQ5NmJkYTBhNGQ3ZGYxYmFkMWQ1MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0ZThlNGI4NGI1YTBlNzEzMGEzNGE3YmMzYzEwZGM2ZjY3MjU4ZThlNmEwZWFkMjM5ZWM4MDkzZjAwZmRiMWEifQ"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L220-L227",
+          "version": "repo-lines-v1:sha256:0204581f5c96a47034175780b0986735039eccde5da654f0d4ffc0b01e09e9f9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIzOTc5MzNhMjRhODAxZWU5MjMzMjdiZDY5YTAxMDQ5YzA3NzkxNTAyMWNmMmVjMzlkZGE0ZjgxYWE4MzdlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdlNmQ3ZDc1Y2MwODllOTcyOTczMWNkOGY3MGMwZDUwZGNlNGFkNGJlYjA2ZWViNWZlZWU1Mjk5NzY3NDZiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTUyMmQ1NGNjZWI0NGRjMjEzYTQ5OGYxNjIzMGYyOGI3MDBiM2Y4Y2Y4M2I2ZTZhZGY5NWMyN2VkMWY3MGEzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f62b150039af426db0d2e82282264774",
+      "statement": "find_app resolves -A by trying module:attr, then the module's app attribute, then its celery attribute, then a celery submodule for packages, and finally any Celery instance in the module.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/utils.py#L378-L415",
+          "version": "repo-lines-v1:sha256:5e334dec645ff8bbeffb40fa293a91c08b739eff47b75cbffa3a5e5c0044934c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYmZkZGZlZGQ4MTlkNWFhNWIzNzc3NmEzNDQ1NTg0OGEyZGUyYmJkNTE1OTQ1ZjIyNTk4NzAzNjRlOWM4NDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMDRhNjVjZWExOTViYWY0MDE1MDU4YThjNWVjZjNhNGE4ZGU2ODlmNWVhMjdhNTNmODFhZDA4ZTZjOGY0NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzRhN2QxY2M3OTZhYmEzZTQ2NzIzMzI3ZjUxN2U5ZjgxMTk4MmQyNTBmMDcwMjk4NmU0YjU3NjRhZDk1ODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_43ed5f45a607490ca95a9308924e7b6b",
+      "statement": "Additional celery subcommands are loaded from the celery.commands entry-point group, and app.user_options adds options to worker, beat, events and (preload) all commands.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/celery.py#L142-L150",
+          "version": "repo-lines-v1:sha256:fc72069972347ac99823607fde87629f726a486ba8d731a8909eb519671360e8:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU2YmFjMjdlODVjZTBhNjdhY2JjZGEyNzRjYjljNzNkNzM0ZTJjZGIwNzQ5NjRkNWM3ZmZlYTA2YWM3ZmY0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU4ZjNiYWJjMDM4NjM3OTc5YzMxYjM3YzY1YjIzY2EyMmI3YWM2MWYzNjhmZTI5YTBkNGRjNWM2MTAxMWM3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWZkNzBmMmFlNzU0YTM3OTkzODIwOTM4YzI1MGRjMzZkOGRiNWUxNGZiYzZlMWI1OWFiM2NhYWI5YzgwMjdkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjRlOGU0Yjg0YjVhMGU3MTMwYTM0YTdiYzNjMTBkYzZmNjcyNThlOGU2YTBlYWQyMzllYzgwOTNmMDBmZGIxYSJ9"
+        },
+        {
+          "resource": "repo://celery/bin/celery.py#L38-L50",
+          "version": "repo-lines-v1:sha256:aa95ac08d22af6211d14c7d1e12d2750fcb7f0826a9c16b07c48049b87c3364b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNzUwM2MyMzA2ZmUwZTQyOTdmYWMwOWI3YTBiMGU1MDg0ZjA4OGQ3MjdlMDYxYmMzYmJiZGYwODlmN2FjNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlYWQ3NTI5NTY0MWMyNDViOTExMTkyNzBmNzk5ZGU0MWIzZDZlNjMyM2VkMzUzOTM0ZTQ3ZWEwMGQzYjAyNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlN2JmNzQzOWE2NTYwMzFjM2E2MmQ0ZGFmZDYwNWJkMDkzZWIzNDAxN2U1MzdmNDM5NTI3M2U4YTBiZGJiMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiMWMyMzk0ZmI5MDM3OGM5ZjExYmQwMTdjMGMyMGYxZmM1NDM0MDJlNDFmODMwMGJmMjYzMzYyNzg3YTkyYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_65e3b051c7ed43bdb5f2b1571403f355",
+      "statement": "Daemon options fall back to the <command>_<option> setting (e.g. worker_pidfile) when not given on the command line.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/base.py#L197-L227",
+          "version": "repo-lines-v1:sha256:7b9809620914eb4abe45f29542dc26a5366bbccdf414867e0dfb0b4e760eb678:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiODI0NmFkMjA4ODZhZjdhMDBmNGQwOWZhMzU3MzEzYjVhMzc1NzA5NWY5N2E0MTQ1NzM1NzBkNDExMTBjYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4YjhkNGVlY2FmNGQ2NzA3NWRlZDRiMzZhNjA1ZDhiZTU4OTBjNWVlZjQ3M2MzNGMxOWI1NWQxNmMyM2UyYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmZWM5YmJmZjE4MjEwOWJmMWNkMzJjMzVkNjQ2OGRjY2IwY2E0N2RiZDNkZDExYzc5ZmNmZTMxMmQ1NzlhOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5M2EwOTJlOTRkNGQzNGMwYTRmNDBiZjMxNzFmOTA5Mjc1Zjg5NzE0YjIzYjViYTBlNjBkOTA4NGU2NTQ5ZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3db500e97074093ad30d7fb6cf98902",
+      "statement": "worker --detach re-executes python -m celery without the detach/uid/gid flags inside platforms.detached; otherwise privileges are dropped and pidfile/statedb node patterns are expanded before starting the worker.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/worker.py#L307-L371",
+          "version": "repo-lines-v1:sha256:46b1c0fb73ecf0147d70195ad6f61d16db0f5f87eca663eb6b1795c550033b1c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0OGM5Y2M3ZjhiZTI0ZDRlYTg0ZmM2MTk3Yjg3NmQ3ZTYzNzQzYzNmMGIxYjE1MjVlNzBiYmNmYTQwOTk2N2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NTVmMjZiMWQ5YTAzZmRmODQ2MzFhOTIwMzNkYjg0MWM5ODVjZGVlNmYwOTk1MjU1MWRlNTQwZWRiYjk2OGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmYjhiNjRjZjA0ZGQxNmNlZGQzYmZmOTgzZDBlM2ZkODMwZTQ5MWFhYWEzNzA4Nzk2OGIyY2U0MGFjMDA3ZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a30bb883cf446aa9bdcdf6f3e976b1c",
+      "statement": "create_pidlock refuses to start if a live process holds the pidfile, but removes stale or broken pidfiles and pidfiles containing the current pid.",
+      "evidence": [
+        {
+          "resource": "repo://celery/platforms.py#L183-L272",
+          "version": "repo-lines-v1:sha256:e5856bb004e6904fefca24a8e72c1d027eb73a85de5720cedf63f89a269834b5:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2NWM3M2QxY2ZjY2ZiOTNhNTNiNGE4ODdmMjRiMmYwMjk3NjI5M2EzYjgwZWM2NmE4NDIwYWYxY2RjOWRhNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2Y2Y4NzY2MzM5NTQyODRmNDA1ZjUwMTllMTI4ZTU3MGQwYWFiNDI5YTE5YTkyYzEyZDEwODk2NTMyMjYzNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4NGRmZTY4NWYwOGE5OGI2OTg2NzE3ZDUzOWNhN2JlZTk2M2ZjZjkyMzFlYTMxNWM0ODRlNzM3ZjA2ZTVmZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyY2Q3YTQ0ZDliZTU2Mzg0NTBkZjk3MzE4MzdmOTU5NzlkMWViNWI5MDg1YWE4MDFjZTEwMDk1OWI0MjBhMDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b2200927d8d4d48a6904f3adaa1691b",
+      "statement": "The worker refuses to run as root or with the sudo/wheel group when pickle content is accepted unless C_FORCE_ROOT is set, and otherwise only warns.",
+      "evidence": [
+        {
+          "resource": "repo://celery/apps/worker.py#L94-L105",
+          "version": "repo-lines-v1:sha256:9425784b52f4ee5be99bb676b267ff167d36e48b6bef886fd63f48636c3c43f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViZGY0OGE0Mjc4YjVkMjhmOTk5ZjJmZTE3MTRlMTFhNDUyZGNiNjJkMDRiZWMwNzVjOWZjNjZjODQ3NDJkNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzYWM4NDdmMTcyYzEzNTUwNDZkYjllYmU4OTJmZTZhMTliMzZmZDU3ZjZhNzU5M2FiZmRmMjQ1YjY5NTIzYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmMWU3OTRlMTI3OWQzMmIwYjAxZDIyYTk3YTdhM2I2MjgxZjJlMWZlODBiOGY5ZDZhYThiMzViZDkyNjBlYzAifQ"
+        },
+        {
+          "resource": "repo://celery/platforms.py#L788-L845",
+          "version": "repo-lines-v1:sha256:b799ba23a947473b013082fc6c1e3eb904ef911140fe171e37f05d812c236467:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1ZDgxMjFjNzFlMzFkMTdkMzg3YjBkZWNlNTg0OGFjZTMxYTMzMGM4YjQyNGU2Zjk0MGRjODVkZmJkM2IwNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxMmIzNWM5YTE3NDNhODgwOWMzMjI0NzA5YmU5NGM5Y2Q3M2YzMzhhY2IwMDIzYjg1YzU1MDc2NzFlZjcxZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_17327a5351b0470e9183e0d231bccaa9",
+      "statement": "maybe_drop_privileges raises SecurityError if root uid or gid remains after changing user or group.",
+      "evidence": [
+        {
+          "resource": "repo://celery/platforms.py#L528-L556",
+          "version": "repo-lines-v1:sha256:cd742e192ff1c9cd47d5951a6b0d1e5087255f2d4383459aa624d2bbb1c2b423:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyOGVkNWU4NDYwMDhlMDVhMmQxY2E1NDQwYmZiYTViODcwN2YzMmVhOThjM2Y1YzE2MWU5MjdjZDdmYzA5NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhYzM2ODE0OWI1MTY5MDlmYjZjZTZjZWY2YzQ5NDI0MmUxYzRhNzNiMTE5MWJmOTIwZWEyMTU4OGM2OWI1NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0ZWI4OTUwY2E0NDMxYjUxODQ1ZWUyOTMwZGEwODM1ZTZjODhlMWY4ZDIwNzIwYThlZTM0MzY2NDlkOTIxNzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_83cda31848e9432e9bd407592021f0bb",
+      "statement": "celery multi supports start, show, stop, stopwait, restart, kill, names, expand, get and help commands.",
+      "evidence": [
+        {
+          "resource": "repo://celery/bin/multi.py#L246-L262",
+          "version": "repo-lines-v1:sha256:54d87d90e4727fec3235d330608145c3ea306d9450be7249e3d9a7cea7ffe953:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNTVhNzBmMjIyNjQ0MGUzMmZiOWU5Njg5YTQ3M2M3YTY1ZWMxZjRhMzI2YWQxYjQyMzdiOGJjODlmNzU4NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1NmFjMmYyMmJiZjdhMzdiOTU1OTBmOGExZGE3OGJiMDBlYmYzMDc2NDg1MmM1NWExZTc1NmI4ZTdkNWRlNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3MmE1NTg1MDFmMmVhZjkwZmY0NDMwNzMxNGMwZGU5ZTFlODNhZTZhZmZlYTZmZTA1NTkzYzNmNWNmNGY1ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1MGNhNTZkN2ZiZjEyZjk3ZGNjOTk0MGM0MDcwN2VhNDdkYjA4Y2RmNmRiZWM2ZWM2Y2JlNDY5OWY5MDYxYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a030cbda0e7e40d3934aa3d745ea2ff8",
+      "statement": "The systemd unit in extra/systemd manages workers through celery multi start, stopwait and restart.",
+      "evidence": [
+        {
+          "resource": "repo://extra/systemd/celery.service",
+          "version": "repo-file-v1:sha256:f34e387ac953ebca22b93a8bc5fab03f27471ccd6ba6c5b315732a26a3945f85"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:57:55.789Z"
+  }
+}

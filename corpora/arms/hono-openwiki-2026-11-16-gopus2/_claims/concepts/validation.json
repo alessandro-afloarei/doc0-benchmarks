@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3ac84e3c5a7f13ac066439fb3cef522613c13c3f09a5feb97ee416365e21b24c",
+  "claims": [
+    {
+      "id": "claim_ddc7c123931949f282dabb46d3206a20",
+      "statement": "The json validator target only parses the body when Content-Type matches application/json or application/*+json, leaving the value as {} otherwise, and throws HTTPException(400) on malformed JSON.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L24-L26",
+          "version": "repo-lines-v1:sha256:f8a01a6d795f61617297401ecef86377dbe63f10536afab3e5dd0732c152a996:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIyZTI3MDllZmMzZDRhNzhhYzg5MTI5NzI3Yjc3YTcxNjQ3ODAzMmM1NjFlZTM4YThkMThjZjlkMDVkYzU3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjMyNWE2NDdmYzM2MTkxM2I1ZWViNzA0MmQ4NWJjYzJlM2U1MjA5YjhjMjVjYjMwZDAyMDMxNmM5NDUyYzRiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2I1NTBjZjMzZWVkYTExYzRkYzhjZWRlZjQ3M2E3N2RmYTMzOTg1ZmExYjQ3YjE2ZGRkMDIxMGU3NGUxMDMzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDg3MGU0MmEwNDRhNGJmMGQ0YzU3YzFjZmE3ZjBkNTgwNTY5MjRiNzRjOTNjODQ1NTFjMDE5NTljNGNhMTllMSJ9"
+        },
+        {
+          "resource": "repo://src/validator/validator.ts#L89-L104",
+          "version": "repo-lines-v1:sha256:a46102c17c0048dbc12b7931063a64988572d0c0931988fdfcfd1667fda67cd7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0YjMzNDRkZjU0MTUwNDY0YmQzY2ZhYmQwOGU1ZDFlM2IzZmZhZDQxMzExMTkxZjlmODVjODdiMDM0MmNlNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkNzI5MDVhMmQwYjhiM2IyM2I1ODc2NTA0NDc2NmUzY2FjYWNhZjkyOGEyMTVlOTQzOGZiZjFkZmRkZmIwMDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3NGNmNmYzNTcxOGQ4ZGY4YzgxNjdjN2QxNTdjNzU4MGQ5ZGU5YTVlNDI5ZjMwOTlkMTI0Yjc1MjRhMDA1YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzNWVlZTU2ZDY2OGIwNDQ4MWViN2FkZGYyMGZjNzZiMjQyY2NkZjQ1ZjE3MzU1ZWNjMzg0YTYxMDA5ZGZjZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_28b0187bc75a4bd1b155e3f0850266ee",
+      "statement": "The form target reuses a cached FormData when present, otherwise parses and caches it, throwing HTTPException(400) on parse failure, and collects keys ending in [] or repeated keys into arrays.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L105-L143",
+          "version": "repo-lines-v1:sha256:a3fe3ffdb109db99a3475f52d748d26f39388b0913321158e15d68a1738ff2f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0ZjRiYTExOGM3YTY4NWM0NGQ4NjFkOGJkOTE0NzNhZjJhZTE0NDE1Y2MzNmRlMTUyMDA5MGQ2MDAzOWI0NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5OWJhNmZkMWM2MDYyZjllMjEyZjQ4YjhlODY2Njg3OGJkMWExODM1ODliZmNkZWIwMTAzNzUxMTliNzg0NmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlOThiYzMzODgzMTkyZjM5YmJmZTQ5MWVhZmMwYzA2MTZjMjFkNTk0MWQ5NTA5N2VmODg5ODRjMTM1YjUwNzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_139f3708e37f402884cadc727204cc5c",
+      "statement": "The query target unwraps single-valued query parameters and keeps repeated keys as arrays; param, header and cookie targets read c.req.param(), c.req.header() and getCookie(c).",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L144-L160",
+          "version": "repo-lines-v1:sha256:1849c390fc048d1bc420b634abedf2ea9a32dacf44946b3b0913f1971385c108:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2NTQzY2I2YWUwMTI4N2FjZTM2NWVjY2ZiOGI4YTQ2M2QxN2QxYTcwY2U5YWEyMTY1OTdiZjc1YjM0YmNjZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4NTU1MDQ5NjU1NGUzMjBkNzAzMGUyN2MwM2UxNmVhMGUxZjE1ZGY0MGM5MmE0YjI3OTZhMDcyMzVkMzQxZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjZWMwZWJkODc5MTRhN2Y5ZjMwN2U5Yjc5NzUwNWFiMzZkODA0NzdmZTQyYmI3ZTZhMmI4MTBmYmE5NjBhOGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1b2190a3d8b64474a7ac7c1714b514a6",
+      "statement": "If the validation function returns a Response it is returned immediately; otherwise the result is stored with addValidatedData and next() is called.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L162-L171",
+          "version": "repo-lines-v1:sha256:f6956ab0b49faf7cc6168ae6303de1906bd8a1caf859395f1c4208fbdaf9270b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2MjZlNGZmMmQ4M2EwODk4MzYwOTk1YjNiYTkyZjYzOTJlOWE1MDM4YjI2ZjY3ZTQ2NjEzNGQ3ZWUyODRjODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczMGYxYWJkM2YxZGY4Yjg1YWEyZjZmYTNlMzgxNTdkNjdmYmU5MGM1MThmY2VkYWU1MWU3ZjIyNzk0MWI4NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkNDQ3NmRlZDAwYmZhZGRkYmRmODFjYTY1MDZkMjU0N2Y4ZGE4NzQwMmUxNGYwMGY5ZTU4MjRlMTA1MGJmYjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce8e78afbbd94b90bc6292e4d80c5d28",
+      "statement": "At the type level, json and form targets are excluded for GET and HEAD routes.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L9-L12",
+          "version": "repo-lines-v1:sha256:1fd3c930ac03f4f8e7642d22480b9955f5e2323af00dba36bf2967069550c06f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjllYmVmZDYyYTJkMjBlZWJlODY1MDhlYWZlZmRjZGU0YjdlMjE0ZjQ3ZjYyZWFmZjE5ZThjODI1ODY2MDViMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTk5ZDg3NmIwODQ3ODBmMWYwOGY0ZTQ4NWE5ZGYyNmI2ZGU2NjY4MDc0N2I3MTQ2ZGJkMGQ2ODM2NjdlOTczMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGFiMDgwNTY0NWJlNzY4NGRlZjE1MWJhNGQ1NWRhMDNhMGNlMzFkOTk1YTVmNmI0NDYxZDIyNzdiMmUzZmNlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTgxMWQ0ZGY4YjE0NDIyNDFiNWQwOTc3NmEyMmZkNmZiY2M4MjIzNjg2ZmI3OGE4MWRhM2I1YzNkM2VmY2Q3MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b38885d19f543f7bf2e38a85f58cb36",
+      "statement": "Validated data is stored per target on HonoRequest and retrieved with c.req.valid(target).",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L339-L354",
+          "version": "repo-lines-v1:sha256:830fc341af7ccc9cff44802fdde38682afd75c2b2733c2161e775a4711dcf847:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NGQzODBjMzYyZmI3ZDg4YjEyZjEwNDE5ODM4NzM4ZmZkMzhjOWNmOGY5MDI3YTUwYjkwMzYwM2ZjZGMzYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjNGViYmRjZTc4ZDBkNmMwZTQ5M2Q4Mjc3NGQ1ZDJmYmU0OWM3NjM3MmQyMDI0YmQyZGYyYzY0Mjg2MTMwNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4ZmJkNDYxZjI5NDQ3Y2M3MDhhOGZlMjE4NTU4NmFjYzg1ZTJmMjYyMjgyZWIyNjQ0MDIyZmZmMzgxMjhlYWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c573f21188f140a1b673497d78b71c82",
+      "statement": "ValidationTargets defines six targets: json, form, query, param, header and cookie.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2683-L2690",
+          "version": "repo-lines-v1:sha256:bf9f4ce3813733dda89bb6544927258948116dbbb06b1e86007ea6bbdd2da8ca:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE0M2E0ZWZkZGY4ZTlhMjNlZTYwMDBlY2U4YWQyMzUyYzNhYWE5OWFiODU4YjczOGNmMWZiYTczMWIzNGEyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzg2YWI2YWYyNjY0NjRhNDgxNzA2YzYyNjMxMjk0ZmExZDM1MDE1NDBlMGJkMzg5ZTM3NDBlMmJkZWRhNDNhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzFkYzY1M2VkYzBmYTc3Nzc1NGNjM2RmNmY2NDgwZmU0ZTliNmY1NDM5MmY3OTgxODg1Y2FmYTk1N2YyMzQ5NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:39:44.364Z"
+  }
+}

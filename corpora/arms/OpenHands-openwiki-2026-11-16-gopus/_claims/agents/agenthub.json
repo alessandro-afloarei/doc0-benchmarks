@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:90893281b82ea38cc996fcfe35706f066492b7767c241d40ff51c612e33dcd8b",
+  "claims": [
+    {
+      "id": "claim_8a3486f5c06c41cc90af8a3935ca407e",
+      "statement": "Agents are registered by name in a class-level registry on Agent; registering a duplicate name raises AgentAlreadyRegisteredError and looking up an unknown name raises AgentNotRegisteredError.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent.py#L120-L161",
+          "version": "repo-lines-v1:sha256:bbf5392d848992c06ce9c7d504dfe178a83c14fbac69ff9f2536132c4d9cfc46:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMGI0NTNmNWUwYzkyZDVmNmMyNTFhNWVhMTk2MGQ3MmYzYmQwNzk1NmFlODU3ZGEyMGUzMWE4OGM1NTk2OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzOGQ0OWQ3YTBjMjczZTY5MmM5NTQ4YmU4NmVlNWU4MmUyNWVmMTQ2NTMzODg2N2Y1N2E2ZjBlZTFkMGYzOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3YTEzNThkNTc2YWI5ODJkYzQwODI5MWRmZmUyOWYzNmJlYjBjYTIxMWVkZThmNTlhNjA2MWQ5MWZkYWJmY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzNDVhMDczMzZmMTE3NTdjMjAzMzZlZjgwYTc0NjE4YjY5NmU1Mjk2NzBlNGRjZTIyNTdkMGNkZGNkMzI1YWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4db39f6f333e422dbee46f6d921dc5f4",
+      "statement": "Bundled agents register themselves in their package __init__ modules, and importing openhands.agenthub imports all bundled agent packages so they are available for lookup.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/__init__.py",
+          "version": "repo-file-v1:sha256:e292619ea62150703b70a838189f1c7f55368d9ce43d8d8f532b55d8ba0fca97"
+        },
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/__init__.py",
+          "version": "repo-file-v1:sha256:d8338a2a9cc8ecfab146157985e4166e11482f1ed1943eff621fe0114e1caf1e"
+        }
+      ]
+    },
+    {
+      "id": "claim_26677cc4e2584539a4c022a02ee7ef90",
+      "statement": "create_agent instantiates the agent class registered under config.default_agent using that agent's named AgentConfig.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/setup.py#L202-L207",
+          "version": "repo-lines-v1:sha256:9088490640dbb61469c8f9f46414acbe6f2e337ebf1b994f4e7b6f3149f01ae2:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJlYjg4OTBiYjc0ZjcwYjMzNjc1YTBjMDE5MzdkYmIyMjM2ZjQwNWVhYmI1NDY0ZDZhZDVjMmEwOGQ1NDc5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWY0NDk4MjNiZGY5NjViYjc0ZmE3YmQ1N2NlMzkwYzVlYTY5NGRiOTA3M2UzY2NjNTRiZDI4YjhhOTQ1ZTVjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjRjZWRmNzkzZDVkNjNmODI5MDI5MTE4Y2E2NzAzMDU1OTE2NWFmY2RjMDk5M2IyZmE2NjMxOThmYWRhOThlZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzBkMDI1ZWJlN2FlYTVhNTU4OGYwZGJjZmJjZWU3NGQwYmMyMTljYmVhOGNmYzYzYjkxYmVmYWU1YWY5ZDFjNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dab2c3d266f44b419cee5d28a0ac4a2b",
+      "statement": "CodeActAgent selects its tools from AgentConfig flags, and the LLM-based file editor takes precedence over the str_replace_editor tool when enable_llm_editor is set.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/codeact_agent.py#L108-L152",
+          "version": "repo-lines-v1:sha256:19c6f6da9bf9744026543695fedd90e9aa9bfcc779a75b26f2a09eaedd11a24a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1MzliODBmZDU4NmUzNjU4NDU1NWZkNTZhMDkwNzViNjNiOTZkMWVkYWE1Nzg4NmJkODk2ZDcyMTAyODBhMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmMTM3NGE1ZjI1M2FmN2Y1NjQzZWEyNTk1YzE2ZTYzOGIxMmIyMzUyMTczNDM2ZDkwZWU1ZDA4ZjE0YmI3Y2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4MWQxZjY1YWM4NTg3MGEwYTQzNDhlODU0YzEzNGU4YjA5MzE0ZjMxMzk2NDc5MDIxNTg3MzBmMTZkYjViOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5YTAwZTk2NDU2MDNjZjEzY2E4OTFkMTVkMGRkNzUyMzQ3ZGViMGVhZDQwMDU4ZTQ4YjYwNzBlYzIxMzQzNDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd4fd4146e1141d89e2de60dec850ee2",
+      "statement": "CodeActAgent queues multiple actions from one LLM response in a pending_actions deque and returns them one per step before calling the LLM again.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/codeact_agent.py#L182-L224",
+          "version": "repo-lines-v1:sha256:0661ec719872d9caf4d4670b0b3301eddbd75d53e8eda4945f6fe34368163604:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlZTIyMTBmY2ViNDQzZWI2Mzg0ZjYwZWFjOWFhYWZmNWU1OTA1NTBkN2M1NzI3YjE5ODc5OWNlMmVhZTc3YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMjAwOTdmN2MwODg0NGQ5YjVhYmUzOTA1MjQ4YTc3Y2FmNTNkNThiNzFhZDA5NmY2OGRhNzI5NTY1N2UyY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllNzQ1ZTY5MTk5NTEzYmVmNzAxZjk1ZDliMTY3YTI0OGY0MTdkOTU0ZjNlOGZhZmEzNmFjY2FhNGQyYzMzOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiMzYwNzE5NDQ5MzM3ZjAxNjgyZTM5NWRjMzEwNWUzMDgzYjdmYjk3MjRkZjkwZDY3MDk3ZTQ3ODY3NTBiYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2fa0aaf83f9549b68b9dde66b75be26b",
+      "statement": "When the condenser returns a Condensation rather than a View, CodeActAgent returns the condensation action immediately instead of calling the LLM.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/codeact_agent.py#L191-L201",
+          "version": "repo-lines-v1:sha256:0d00dd6b0bc7656672ec552451868960dd5dc024888d0e8e630c717097749e5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlNWM1M2U3NjQ1Y2M0NDg0YTI3ZTY4MDRjMGJjYjI2ODlhNDgxOTE2NTc3MmQ4Mzk3NzYzMmYwNTgwMzNiOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2OWE4ZWU1MTU5ZTc4YTc5MGE4ZGNhMGM4NWM1ZmRjYzIwZWU0ZjgwODdlMmQ5ZGFkYzA2ZWQzMWIxMjAyZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjNzZmNzBmMWIzMDYwYjVkMWE1ODkyNTMzY2U3MzE0YTU4ZmQwNWE5MjhjZGRmMTcyZjg4MmMzZThiNTVkNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjODBmNzY2ZjEzOGY5NzEyODMxMGZiZDViYThhNzg3NDAzODU3Y2NlN2Y0MTY3NzJlMzYwYTM2NDUxNTg4YjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_177c1addccf74d79bc852cdecb5ed472",
+      "statement": "response_to_actions converts each tool call into a specific Action type, attaches the LLM thought only to the first action, attaches ToolCallMetadata and the response id to each action, and converts a response without tool calls into a MessageAction that waits for user response.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/function_calling.py#L73-L338",
+          "version": "repo-lines-v1:sha256:09d320889e612a336b7ea4cf260634bc7763f9c3b61d51077f5d3f66cf89d9d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjY2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxN2JkMTQ0ZTc0MzVkZDc4NzBlYjkwMmM2OGI2YjNjY2JmYzNhNjQzZTFiMGFmMDcwZDZiNmZiYTQ4ZGNlNTExIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzM2JkNDMzNTBlNTM1ZjcwOGZlMjFiMTNjYmNlMDNmOGY5Y2NiNzdjZTM2ZDJiNzBmNGU2NTk2MTg5NWVhY2VmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJkMzJjYmY5NjM2MDgxOGQyMTUyODVlMzZjZjIyNGEyZjk0NDg4MGMyOGQwYTY2ZGIzMjQ4ODA5ZjdmZmZlNGNiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_90b48c70244b4cf7bfe98fc7db684832",
+      "statement": "Unknown tool names raise FunctionCallNotExistsError and malformed tool arguments raise FunctionCallValidationError; the controller catches these and adds an ErrorObservation to the event stream instead of failing the conversation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/function_calling.py#L306-L309",
+          "version": "repo-lines-v1:sha256:6a29c316255cf747ae3dc70fd5df7cea303ebab7b732dad9ab2ad8a84e4ea69b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTU3ZDJiZmRhYjVmMjVlNzllMjNlYjQyOWEyODU3YTBhNzE5Nzc1Mzc0MDQ3ZmI2NWJkYzUwNTQ4OTMzNDIwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTEwMzQ4MWM1N2QwZjBkYzBmNzZjZDJjYzhiMzYwNGM0ZTgyOTZkYTQxMjJhZGQxOWU4MTc0NWRjN2UzMzFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTExMTI4ODJiZmNhMjljMDA4NGIwMmRkNDlkNGFmOTE5NzU1YTA2YjA0Yjk4NjIyNTkzZTA1NmMxZWNkODczYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzc2MzEwYjkzNTc2OWIyYjk2NWU1MWQ0MWFkNTQ1NzMzYTNmNzllMmRmMjdjZWJmZGM4NGEwY2JkMGJjMmMxYyJ9"
+        },
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/function_calling.py#L94-L99",
+          "version": "repo-lines-v1:sha256:4294cd5b752f3257862f529016c4d55d5d482033b458cd6c9bbb61bc8faa30dc:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTU3ODA1YzNmZTdhYzYzMDc0ZjY5Y2RiMjViOWFjZDdhODY3OTJkZmU1NDA4MThhYzRmODc2NGI0OWU3ZDE0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE4YTFkOWM1ZmZiZjNiOWI3NThkYzdkNTAxMDJlOGY0ZDU4NmY0YjIxNTgyYTVjNjg0YTRjMTQ2NzAxZTBmYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Y1Yjg5YjlkZjZiYzA0Zjg1ZmI4Y2ZmZTM4MDk4NTZjNjgxYmQ4NjBjZWZiMmEyMGJkYmJmMTI1N2ZhNmFmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDk1ZDlmYmFjZDBlMmM0ZDk4NTQ1ZGQxNDMwNWQ5NTNiMGIyMGU0NjgzMGU1YjA2MzYwNTM3Yzc3ZjE5NjA5ZCJ9"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L874-L887",
+          "version": "repo-lines-v1:sha256:4e5e76db145d4ade432c063c0c2191e739d28b4e86d663c1e31b61f3c0e630d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzOWVjODJlNzUyNWM0MmUxNTEwNjc2MTY0NGYwOTBmYmNhMTk0NjVmNzVjYTY0MWM3MGUzMjU5NTI3MTMyNWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyYWI1NmFjMGE4NjliZjgwOWVlZTFiZGRjZTM4OGFmMDc3YzlmYjM2NzI1MjFkYzdmYzk1ZTIwOWExMTc3Y2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1ZGM4Y2M1YzNhZDJlNjM4ZjFkNzBiNzE1ODgxMzlmOGZjZGM2NTg4NmRkMTc1MTBkY2MwNzZmMDYzOTkwODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3MTJjYjY0MjEyZWEwOTVhMmZjMThkYWU4ZWZiN2UzZjljYTM2MWEzNjQ2Y2JkYzJiOWJjOGE0ZjI5MWRiMzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c3de220844b4f7b802b5059dcb7be91",
+      "statement": "When plan mode is enabled and the system prompt filename is the default, the agent uses system_prompt_long_horizon.j2 as its system prompt.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/agent_config.py#L68-L77",
+          "version": "repo-lines-v1:sha256:90d54b74940408ea9fd2c387f62ef6ee7107ace87b73f1554b3ed762202c4258:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZDAwY2YyNzA5NjRkNDRhMTNkZmFjODc1MmIwOWZjYzQzNWIwZjE5YjMxNmFiY2Y4MWE3YWE2NGJiMTIyZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MjM2YWE2M2RhMmZlM2QwZGY1OThlNTFiNjVhYmVkZTI1MjkzNTM0MDU2MWE2NzMzMGI1NmQzNDllNGE1NjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2NWY3YTEwYjI2ZDUyMzc3ZjFkYWZlNjJjNzQyODg3ZTZmM2UwZTg2ZDYxNGM5ODA3ZTFlMDExZWYxM2Y2ZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmOTc3YTQ0MDZjMzNjYjg3ZTJhYzQ1YzZkYTEyYmQyMGZkYmY2Mzc3ZmE4Yzk3MDU4NTRlYTUzYjk1MTMzMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d65b57eb78af471fbb42f3def7e828de",
+      "statement": "ReadOnlyAgent restricts CodeAct to think, finish, grep, glob, and view tools and ignores MCP tools.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/readonly_agent/function_calling.py#L241-L248",
+          "version": "repo-lines-v1:sha256:7fd065a2895f5b7c2bd31c5bacf522f9506d05ae95cf48377b70d9a927435745:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ5MWQzYmZmNTY4ODI1OWY3YTQyMjkxN2RhMjZhNGZjZDk5Mjg4ZmFiMWFiM2Y5MjRiYjIzM2RmNzMwYTk4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRkMjQ0NTgyYjZmYjAzZDIzYjg0MTVhYmVjZDM0NmIwYzlmNDY2YjZmNzUyYjA2ODE4OWNlN2U5YTJkYzM1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTdhZDgwM2QyNjQ2OWU1YjQwZDg3ODE0YTYyNjhlYzFjYTc3ZWZjODcyNTk1YmNkMGQ4ODgzMjAxMDZlZGNlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://openhands/agenthub/readonly_agent/readonly_agent.py#L65-L80",
+          "version": "repo-lines-v1:sha256:b4a70061e47083587af31da8650769fe4f6add202dc5fbedb0367bd878de6573:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1MzliODBmZDU4NmUzNjU4NDU1NWZkNTZhMDkwNzViNjNiOTZkMWVkYWE1Nzg4NmJkODk2ZDcyMTAyODBhMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzMzAxMWFjZjQyYzIzNzM1ZDNkYjE5YzMyMzJiZjcxZmYyYjg4MzQ3NTYwNzc3OWIxM2NmYTQ4ODI4NGEzZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2NGY1MGUyZGU5NTg2MDI4ZTMyMTBmZDM5NTk1MDJkYmVkMzA0ZGY4OTNmYzYyZmFlNDI2MmJkMjJkNjU0ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0ZjIxZDU4NzA3ODU5OWE4ZjFjODEyMDdlNTNlOTk1NmRjNDQzNWZmNTEyMjk3NDBjOWUxZGE1MjExMWUzZWYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:35:38.671Z"
+  }
+}

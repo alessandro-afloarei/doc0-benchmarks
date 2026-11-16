@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:34edea5f0256e402db17e5bf87e7fdf7c2a5429590d2fe42997c3370430457b8",
+  "claims": [
+    {
+      "id": "claim_91a6e0c87a9341b49f671e7ff835ef1b",
+      "statement": "Fuses are defined in build/fuses/fuses.json5 with a schema version and per-fuse 0/1 defaults (run_as_node, node_options, node_cli_inspect and grant_file_protocol_extra_privileges on; cookie_encryption, embedded_asar_integrity_validation, only_load_app_from_asar and load_browser_process_specific_v8_snapshot off), and the file mandates that fuses are never removed or repurposed.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/fuses.json5#L1-L13",
+          "version": "repo-lines-v1:sha256:54b905d53aaa1974297cd60ad84141db8490becbf71d752401f5aafaa15cfb8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11dfa975ed884ef9a118eeebda6ea9f5",
+      "statement": "build/fuses/build.py generates fuses.h/fuses.cc with an exported volatile kFuseWire byte array (a 32-character sentinel, schema version, wire length, then one '0'/'1' char per fuse) and an Is<Name>Enabled() accessor per fuse that reads the fuse's position; in DCHECK builds a --set-fuse-<name> command-line switch can override it.",
+      "evidence": [
+        {
+          "resource": "repo://build/fuses/build.py#L1-L111",
+          "version": "repo-lines-v1:sha256:53f21ff86efb7d430114b54b0e24c2c029dd51a0f2c2434fb4c681c7a7ed152e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTExLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkNjgyY2JkYjRjOGIwNzUxOGJmNDg2YzU4OTkwZmMzOTE3ODNhYTIwYTkxNmJmYjI3YWQyMTFlYjFkNWMzNjQyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyYTE5NGRmYzcyZTljYzgzMDNjYjVlOGQxZDBiMTgwMWU5NWY0NzczODY2YTQyM2FiNWQ2Zjg5MGM1OWUyZGUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_79bf33a2055341d3a9e219f8f080cdd8",
+      "statement": "The run_as_node fuse together with ELECTRON_RUN_AS_NODE decides at each platform's main() whether to run NodeMain instead of Chromium.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_linux.cc#L26-L44",
+          "version": "repo-lines-v1:sha256:54159db3ca297d54a478895d3873f7e4799f634734f68dc8b6bab13c06f5f27b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmY2IzMWJiYWEzZmM2MDk0N2EyY2VlYjAzOTdiYjUwNzcxMDRlNGM3YmM5NmEzMjkwM2ExNTlmZDlmZjEzNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://shell/app/electron_main_mac.cc#L50-L60",
+          "version": "repo-lines-v1:sha256:896cf9ed759203d95b5e008ee0128e9e370d55a4bf8363efa661dc12d6875daf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0ODA0ODY0MjJhY2NjOGFlOTg1YTg5Mzg3YTk3ZjhiYTlkZGNjODljYTYyYzJlNWViY2FlNzgxNGYwZDg4MmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzOTg2N2I2M2RmZGE2M2Y0YmEwMzMzZmIwZmYxNjk5YmExMjlmYWZiNzg3MTBhMjQ1YjlhMTE5NDI5YzNkYTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0YmM1NGZlZDc2NGEwMjJhNDc5NWUwMGVmMGFmOGI5ZDU2MTVmZWEwYWFkNDU1ZjIzNzQxZThlY2IyMjhiY2QifQ"
+        },
+        {
+          "resource": "repo://shell/app/electron_main_win.cc#L155-L165",
+          "version": "repo-lines-v1:sha256:d1a92fe3f854f7b075c319ab64c68b92aea9ec9b502de80fd726616c7f964f14:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0Mjk5ZGI5NDJkNDY2ODU0ZWI1ZDhlYWRhYjA3MjU5OTljN2M4YjBlMTVlZTk1M2NkNmM2MjM3MTNiNmZlMzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhNWM1YWMyNWYyNTU0OWZiZmNiYjRkZDViZmQ2Y2Y2OTAxZjk5YTkwOTQ0N2JhODMxNzU2OGY4MTg5YzdiNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRmMDBhYTkwYTFkN2Q4YWViNTk1ZTc3MjY4YjhhOWQxMzYyYjZhNDgwZmM4M2ZhYzczNjczMDk3OTc2OGJmZTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6288a91b87e14482983662e44a51ecb3",
+      "statement": "The cookie_encryption fuse controls enable_encrypted_cookies on the network context parameters.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/net/network_context_service.cc#L108-L120",
+          "version": "repo-lines-v1:sha256:90b92d01e7cdc6904806ac96b901a2ff0078c379f9b36faa82c5f88c8f60d50d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0YTY1MTYxNDAzYjUyZWY5MGNiODM0ZDZhN2RhMGE1YjdjZDFlMmE0MzQ3MWRiOTdhNzhiYmNhNjhhODhkNWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4Yjc3ZjlkM2RmOWUxOGY1NWZjZjQxNTdjZDYyODBmODRlNTEyYmIzYjFlYjlhNTRmZmUyNDYyNTVlZGNkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyYTRkN2RjNTVkMWFjMWM1M2ZmYzA1NjZiNGU4ODc2YjNmMjEzNjA1M2I4ZGY2YWY1MmY2MmFlNzhlYjQwYjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3734f966bb9848b49f8dae7380983abc",
+      "statement": "NODE_OPTIONS is filtered in SetNodeOptions: when the node_options fuse is on, packaged apps may only use --http-parser and --max-http-header-size, FIPS/OpenSSL/CA-related options are always removed, and NODE_EXTRA_CA_CERTS is unset when the fuse is off.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L396-L460",
+          "version": "repo-lines-v1:sha256:31b2c651a7fdaf38d3117e5e95699a9a0a8eb90557c92b1ba4fbadc44151c081:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhOGI1YjgwMjEzMGVkZjhmMTM2NDhhZDMzY2NlYmEwNjg0YzEyNjIwNjEzNWJlNzExOTZmOTUxMTZlYjI0N2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1MzQ0MWZiODZmYjIwY2VmMWJmYjVkOTQyNjBmN2MxMmI4Y2EyNTVkNWYwYTRlY2IwZjRhNDczMmZjOTRiZGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmN2IyOTNhOGJjNDU3Yzg5Mzg0YjkwNTNkYzEzYTg0MjUzMWRjNDM2ZmIxODJiMTRkYTU2NmYzMzEwOTY0MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiMmUzNGI0NDZmODQ5Y2UwMzY3NGFhYTE3YTMzNmEyNjY1ZjQyY2JiNGRhN2JkMDE1YjRhZjA5NzBjZmJhZjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6bc168668cb2458e85e626f9c329a0d1",
+      "statement": "In normal (non run-as-node) mode only a small allow-list of Node CLI options is accepted; debug/inspect options are allowed only when node_cli_inspect is enabled, and --expose-internals only for unpackaged apps; with the fuse off the SIGUSR1 debug handler is also disabled.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L352-L392",
+          "version": "repo-lines-v1:sha256:00d4163411e4b68af4e3f3c8b8fc97310767278085d1c83525b5fb4554d9a064:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmOTc0NmNjY2U0ODJkYjM4MzljMTkzNmJiNjg2YjVlMjU3NWRjMTQxN2Y4NDEwOTgzNjc3NjMwMjVhNDNhYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlYWYzYjgxYmEyNWFmNjlhODFiN2RhMmQ5Zjk2YWEwYmQzN2UwODIxYmFkZDUzOTc2OGJlOGI2ZjBlNDA1YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmN2IyOTNhOGJjNDU3Yzg5Mzg0YjkwNTNkYzEzYTg0MjUzMWRjNDM2ZmIxODJiMTRkYTU2NmYzMzEwOTY0MTYifQ"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L728-L735",
+          "version": "repo-lines-v1:sha256:db41dca0abca46d15d3f28091e8854721cb680ec3527f2d0948f604d67930b90:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTMyZmI4YWJjNWJlMmJmNzQ1MWMyYjAxNzVhYTdkYjE2M2ZjNmNiY2Q3ZjQ1MGRhNjc4OWFmOTUwM2JiOTE5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGZlNTNjMWZhMjFiOGMzMDk0N2FkOTE3M2FmNmVhMjI0NGRhM2MwOThlOGM3NjM4YjU3YWQwNDg4NmI4N2RkMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_22355719a5a74ae88c4aef41577f43d5",
+      "statement": "In run-as-node mode NodeMain exits with status 9 when FIPS/OpenSSL/CA flags are supplied.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/node_main.cc#L60-L85",
+          "version": "repo-lines-v1:sha256:d3362bd9c8a76702f513f986411c5ebf7b5f5be646f231a16cd276d6c9e03125:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmMDRkOTljMGY1ZDM1MjFmNjdmN2M1ODdkMjBkZDM1OTJhNTAyNGI5MDM1MjllMWU0Njg4NDRmN2ZhZTgxMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzNDE5MTdkMDU1ZjAxNzFkMzQ4NjY2NjI2ODU4YzJhYTUwNTFmMzJjZjNkMDU3ZjVkOGM5YTgxZjlkMzQ1NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzMjI0NjViMmEyODlkZTVkZmNkNDk3YzFiY2M5N2EzMjJlMzJiYThkZmIzODRkZGFkZjMyYmRhMDk1NWQ2ZmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f5397e9d9424920aaa81c0dba6e81fe",
+      "statement": "The grant_file_protocol_extra_privileges fuse controls allow_universal_access_from_file_urls and allow_file_access_from_file_urls Blink preferences, registers file: for service workers and the Fetch API, and installs the ASAR-aware file: loader factory.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_content_client.cc#L145-L152",
+          "version": "repo-lines-v1:sha256:d38ebec530cd077db29aecd6afedf82592042413b26c40d8acd4bb323f423ecd:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U0ZGIxNDEwOGU3NzhkNzJkNTY2OTQ2OWNlZWQyNmIwYTJjNTU4MWFkNDBjMDg0NDQzNmNmM2QyN2M5OGMxMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmNiMjYwZjgxNjk2Y2Y5M2Y3MGJiY2MyMmNlMTc4MGNjNTlkNTIxODI1OWYzM2VhODNmMDZhMjgxYmNjNGM5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzRlNjU5ZjAzMjdlZmMzMGFjNDk2MzY0YTYwODYxMGZhMWMzMWUyZThmZTkxZGRjZDU0MGQ2MmJkNjhmNDM4OSJ9"
+        },
+        {
+          "resource": "repo://shell/browser/electron_browser_client.cc#L404-L425",
+          "version": "repo-lines-v1:sha256:7f83befb9dea9a2317ab523c1eb29161a64c8666bd7ed06bd761a460e46f96e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjYTFiNDgwNDFlNGE4ZTlhOTNjODA1MjIwYzFjM2NlZDM4MWNlZmU4MGZjNzE0M2JmYTExNTQxZjc1NTg0MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMWJjYmI1ZjU5Yjc1MDA5MzRiNTRiNzNiNjRlZmMzMmM3OGFmOTY3ZmFlMzlmMDFhYTQwMGZmYzAyNTUwMDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4OGNhMGVhYmY0NmRmNDRjM2E1MDg2N2ZmNmEyZWJmOWNkZGExY2M5OTFmYTA4ZjA2MjU4ZmIxMDE1NmFiNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2YWI3Mjk0NjdiMGM4NDY2MzFjMDZkNTIzNmIzYThjOTI2MTBmMTc4ZDA0Mzg0YjcyMDdlYjk1NjE4ZjIzYWIifQ"
+        },
+        {
+          "resource": "repo://shell/browser/protocol_registry.cc#L22-L62",
+          "version": "repo-lines-v1:sha256:6115a9b3dc3d897922b1732d24cb2039d1262d737cba9bd4c23738440b64cd1d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNGVmZTQzOGQzYWIyMDIxMTc0MGY0YzcwNmViOTgwYjYxN2UyNjM2ZTIxMTNiNGZmYTI5NjBkY2VjZWQ5OTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5YjU2NmNlOWVjNGFmOGNkYmMyZmQxZGQ4ODI2YjUwMWJmZTMzMzllZTZkY2FhZDU3NGJhZWNiMzdjNDhlZTcifQ"
+        },
+        {
+          "resource": "repo://shell/renderer/renderer_client_base.cc#L280-L292",
+          "version": "repo-lines-v1:sha256:9a1466f46250aab2b1e9a674a21ff858622aee9b38934d5a16c42441bd1069cb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmY2VmMWZlMTRkNWMyMTdlNjQxNzExZTc5YmQ1Yzc3NWQzODZiY2E4MTgzZmFiNDZjM2M2ZWJjNzNhODkyNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1NjAyNTc4OTM2YjBhZjEzMDAwNWI5MzU1OWFkODA1ODgwMmE4YWIwMGFkMjlmMzQzZDk2NTk4YWFhY2ZjMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwZTJiZWUzZWMxZDdiMDBjNzkyMGRiMGMxNDQ0MjJhYjZjYTgyYzZkMTk2NThjYzA3ZTgwZmQ1Zjk4MWUxMjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_684ae489b8f44cf0a3c122fd58dc984a",
+      "statement": "OverrideWebPreferences sets web_security_enabled and disallows running insecure content, DOM paste and script clipboard access by default.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_client.cc#L404-L425",
+          "version": "repo-lines-v1:sha256:7f83befb9dea9a2317ab523c1eb29161a64c8666bd7ed06bd761a460e46f96e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjYTFiNDgwNDFlNGE4ZTlhOTNjODA1MjIwYzFjM2NlZDM4MWNlZmU4MGZjNzE0M2JmYTExNTQxZjc1NTg0MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhMWJjYmI1ZjU5Yjc1MDA5MzRiNTRiNzNiNjRlZmMzMmM3OGFmOTY3ZmFlMzlmMDFhYTQwMGZmYzAyNTUwMDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4OGNhMGVhYmY0NmRmNDRjM2E1MDg2N2ZmNmEyZWJmOWNkZGExY2M5OTFmYTA4ZjA2MjU4ZmIxMDE1NmFiNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2YWI3Mjk0NjdiMGM4NDY2MzFjMDZkNTIzNmIzYThjOTI2MTBmMTc4ZDA0Mzg0YjcyMDdlYjk1NjE4ZjIzYWIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

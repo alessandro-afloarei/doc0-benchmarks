@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:04e894c321443b1a6b04802551234992a3ab289a2d12d9e5f5e717e8d2cb7ab0",
+  "claims": [
+    {
+      "id": "claim_a5b6190f069a4da98315a8cb1ed51ec8",
+      "statement": "Execution uses direct argmax Command executable/argument construction, supports implicit trailing path placeholders, rejects missing executables and requires fixed batch executables.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L219-L271",
+          "version": "repo-lines-v1:sha256:03ec1936897a81e3f3724184db635e17fff256cc9ff05ca153a821221260888d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwMDBkNzRiZmNiOTEyMzAyZGY1MjAxNjgzNDUwYzEwMWE1OWZhOGY2ZDhhZjNkNDQzMDgwMTc0Y2M0NWE2YWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiMzU3NDBkNWRlNDM1Njg3YjE1YjdiMmI3YjIxYjM3YTg0YmY0YzE3MDcyNzYxNTM1ZDk5NGRjZWUyMmI3YjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiZWM0NWQwNDE5OTllYWYzNzliN2Y3MzUxZGQ3MDdhMmZjOTBhMmY1YjU1NGY5YTI5NWFmMDJhMTIwYzVjNWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe4784b9d01c4d8b83cb1c83fce363b1",
+      "statement": "Batch validation counts arguments containing placeholders and rejects more than one such argument, while a single argument may contain several tokens.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L258-L260",
+          "version": "repo-lines-v1:sha256:7db16cdee9209098591f2f5ed95ff2501dc9098199a4095b508561d1efb88bf3:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjU5NDUxYzk2MjQzYmYzOTFmZGQ1NDg0MDhkNzI0Y2UzZTdkM2E3YWY3YzVhNjViNDVlMTNiZWMwMjlmMGNhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGU3NWNiMGM0YjU5ZDNjNGQyOWM4NmEwMzg4MzJlMzMwNDFhMGMxN2U4ZDIyNDU3NTVjZjJiOWVhYTE0NjNhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjIzZGFmYWQ5YmEwZTIxOWMxMzRhZGVjNDI4MzJhMzFkMDMzOTBjOTI1NDY1N2I3MTI4N2E1MGI4NGNkNzdhMSJ9"
+        },
+        {
+          "resource": "repo://src/exec/mod.rs#L405-L424",
+          "version": "repo-lines-v1:sha256:71c5763ed2f3ab6e54f0f7dbfce8c2123f5aeabf009e15b861c58828e4f2397d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyZDgyOGEwMzdhYzFjODE1MzViMWQ1NTAwODMyMzIzYmZiYjg2NmEzYTNmODdlN2E2OGMxM2EyYmFlNTZmZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyOTRjOTQ5NTJiM2MxMjdhNjE0ZWRkZWY2MjZmOGNhMjYzM2ZiYTcwNTNmNDZlMzI5MDljMjM5YjU1ZDJhYTAifQ"
+        },
+        {
+          "resource": "repo://src/exec/mod.rs#L51-L69",
+          "version": "repo-lines-v1:sha256:75a39a43f5ce97a8f656c8f21f650d67e3c70cabfea7aad47ce80f28957f9662:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNTUwOGI0MThjNzU4MjdjZTFjN2U3YzA3N2RhOGNjYmIzNjdkMDM4YjI4NWFlNzkyYjEzMTQwNWU0YzFhNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOWEwOGJjMjlmNmViZWJlOWE1ZjAxOTAzZDk4NDVkYmNiNTg0MmE0NTVmMDdkNWY0MDAyZGFjMzJhNWM2MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NGJjMDVlMGExNjE4OGM4OTA4YzhjYjdkMzc0YzNjZjQ3NzY2ZDMzOTkwZmM0MWI5YTA4MjVkNDZhODkwNDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4a8e15ba0854b0891fc53f18d4ac2df",
+      "statement": "Per-result execution uses configured-size competing receiver workers, buffers child output when threads exceed one, and executes sequentially with inherited output for one worker.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/command.rs#L60-L98",
+          "version": "repo-lines-v1:sha256:8b8a4e513473124bf3dd815727c36b03e7adf5bcffa045bf846bf9e4161955ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyNDg0NTNkZDA1ZWIxNTk5NjcxNDljYmI2Zjg2OTRlZDQ0MGQxYjI1ZTAzMWYwYmE2NGE3NmFiN2VmYjRlODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZGI4OWIyN2JkZDA0NmY0ZWViMTJhNTY1YzU0NjJhNTVjMWViMzZiNjQ2NGQxMDVkYzQ2ZDU4MDY5ZThiZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExZmM3NjEzZmUwYmYyNzcxNDZkM2M1NTViYmIxYzE5NjBkNGUxNjEwZGNhZGU1YjA5NTE0ZDg4YTQwYzVlNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4NTE4NDBmMTU3MDY1OGE2NTM3MDQyYTZjNjVlOWU2MjRhZjllZDZiODAzYzdkNmYzZjBiNWE5N2U1YjRlMWUifQ"
+        },
+        {
+          "resource": "repo://src/exec/job.rs#L11-L43",
+          "version": "repo-lines-v1:sha256:165685ba82d2f9c4de0797636cc819abebfeff243258e70d035818e842c11cd2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzMjA1MDA3MmI3YjUwMzBmNGJhMzM5YjZmOTgyMzQ0MWQ0NWI2OGI3MmEwNDViYmNjY2FjNGZhNzZhZmVhYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0YWY3MGYzYjJlMTFhMGY5MDQ2YWY4N2NlODMxMTJiZmYxZmY3NzI1NTA2MWFkMGJkZGY0Y2VjNjhmMTk1ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExZTQzNmRjMzc3YWM2NzU0NWExYWRjOWU4MDA3ZTRmZWRiODU1NmFhYmNhMGVkNWZiMTQ0NjMwZDZhYmJkN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNGRkYjUxNTQ1ZjA3MjA5ZjgzZGY4YjVmNDgzOGI0MjMwMzYzNjFlMjMzNmFlMGQxYjczZGFlZDcyOTMxYzkifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L408-L432",
+          "version": "repo-lines-v1:sha256:f5d9a8a2a80b0f09027b67d4b948ada4aee64dd54d80604fac94bf6eda27ec12:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViM2ZkYjcyY2ZkY2ViYmEwNjNlZDY2MWM3YWYyM2RjMTczMWM0YjU4YzA2Y2I3YWQzZjYyNDYxMjI2OWUyZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMGQ2YjQwZGZlYTQyNmVhNWZiZDE3OWRhNmZlMDBkYjQ3ZjcyYzcxMDczZDU3YzMzYjhlNDA5ODBhOGJhZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiMGM5ZTY1OTdkMGUzY2M2NThkOTUwYzllOWJkMDk1MTA1NzJlZDJjNjRiYTQzZDg0NzlkMDBiNjU1NjkzMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3ODM2MDk0NmExMjgxOWExZDA2NjcyNmZhZTE2NzkxYjBkZjQ4YTRiYjdhOWRmNGNmM2MzZWY4ZTgyMDgxZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd4a340ab99c4572aebdd612f4d367be",
+      "statement": "Captured per-entry command output is written under stdout/stderr locks, optional NUL terminates that entry's output, and a failed command skips later commands for the entry while subsequent entries continue.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/command.rs#L30-L98",
+          "version": "repo-lines-v1:sha256:3a94a7051763cdd52129a7a3520c72ac05e0bc65bffc6e64bc5d3db4aa3b1375:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMDIzZWMyZjY3YjQ5MmU5NWY4MzIzOTRhOTRlMzI5YzFhOGU1ZTg4MjJhYmEwMTcwMzM0ZjY3MjAwNTAxYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZGI4OWIyN2JkZDA0NmY0ZWViMTJhNTY1YzU0NjJhNTVjMWViMzZiNjQ2NGQxMDVkYzQ2ZDU4MDY5ZThiZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkOTIxYjUyM2U3MDVmMTA5MDMyOGZkZTRlMmJhMGZiMDFhMmFiYTZiY2M2NzY1ZDQyODBjYjExOWQyMjVhN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4NTE4NDBmMTU3MDY1OGE2NTM3MDQyYTZjNjVlOWU2MjRhZjllZDZiODAzYzdkNmYzZjBiNWE5N2U1YjRlMWUifQ"
+        },
+        {
+          "resource": "repo://src/exec/job.rs#L19-L43",
+          "version": "repo-lines-v1:sha256:12221c504de20b5725c6880866166616531ae6cc9f1a9ed042480a7232948ea0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3ZjQ0YjI5MWE1NTI3ZWQwZWY1YTEyZDM4MTkxNWI0MjQ4ZGJjMTBmOTk2MzZlZTdkZWMwNjg3MzViMGZkZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0YWY3MGYzYjJlMTFhMGY5MDQ2YWY4N2NlODMxMTJiZmYxZmY3NzI1NTA2MWFkMGJkZGY0Y2VjNjhmMTk1ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5Nzc4YWM0YzczMjJkZGU5MTM0ZDg5NmQzOWI0ZmUwYWRmODViYmE4NjAwMTA0MTc1MGJlYzZjMzRmN2MyNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNGRkYjUxNTQ1ZjA3MjA5ZjgzZGY4YjVmNDgzOGI0MjMwMzYzNjFlMjMzNmFlMGQxYjczZGFlZDcyOTMxYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d34a05e330604e169cd52ee006e40ad4",
+      "statement": "Batch builders split at nonzero result counts or argument-size limits, reserve trailing arguments, inherit streams, avoid empty invocations, and accumulate nonzero child statuses.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L135-L207",
+          "version": "repo-lines-v1:sha256:324d5c41950e00c0f18a2472250ef1c63a5c3e65b1c5783aa541202a1b1f4ded:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlZWZlMTRiMTk1NDA4YzZjNDgyODUxZDdjMmEwMjY1ZGNiNTU3OTE0ZDVhMTdiZGM5YzI4NzQ5MWY2MGY5ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkMzdiMzViYTM1NTM1MjllZDNlODk1NTFiMzkxNmEzYWI1OGZkY2YxOThmZTY4YzlkMGVkZGJlMTRjOWNiODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwZmFmY2EwMmRjM2MyZjVlZmY0NzM3MDFjYWI2ODM2ZTM3NTgwMzFiMGU5NWVlMThkOTZjMWFkZGEzZjc0ZTEifQ"
+        },
+        {
+          "resource": "repo://src/exec/mod.rs#L90-L118",
+          "version": "repo-lines-v1:sha256:9a1a7bc2c37d4f5099124454e88ce3d8354924e73a1874b61a6d5d61927ae6b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMTliYmVmNDg0OWE2NjJkY2QzMTY4NWI3N2Y3NGE1NDQyODcyMTMwZmQ2OTE1NjhjMjZkNDhhYTJkYjYwMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0MWI1NWMzNzdkYWI1OTZjYTVlYTZlNzZjOTUxZjA1YzY5ZjNiYjA1YjgwYmMwMTVjM2IxMzg5OWQzZWI2N2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4YmNlNmNmYzViZjcxZDA5NmFlMDVkMWUzMmYxMTlhOTQ3ZTJiOWMyZTI5YTBlMjA2NWExMzMxNTc1OGY0NWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0YTM2NWE5MGVjMTFlOTA0MzI3NTJjZjkzNzZlYzVlZDM2YjgwYmE1ZThlNjg1NGZjZjk4OTcwZDMwNDQ0NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_30e20217324e49168d0771dbc91d6c4d",
+      "statement": "The CLI accepts repeated same-mode templates terminated by semicolons and rejects mixing execution modes, list-details, quiet mode and result limits.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L29-L30",
+          "version": "repo-lines-v1:sha256:8c348b6c721db39b6a4cdc73a860dd692cc186277d4e4c1463c76164b394a90b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODgyZWY4MjZmZjY4MDgwZDE3OGE3ZTE5NmU5YzQzYWQzMDEzZDU3NWEwM2JhNTQ0ZTJlZWYzMDBhNTUxYWIyNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RlMDk3ZjVkMzI3MWRmMzkwNDA4YTA1Y2MxMTg0MWFjMzZjNjI0YzQ0OThkN2FlYjRlNzE3NGFiY2EwYWNjMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNlNDA3MjdmN2I0OTQ0OWM3NzcwMTAwMThiNzI3ZTEwMTljMjdkNjA4MjQ4YjVlN2I1MzQ1NDExN2FhYzljOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGI2MmM2YjI3OGZkNGE0YWNjMzdlN2ViYTdlYmVlOWIwYzQ2ZWI1YWNiMGM5MjEzYzljOWNkODM3OTQyZGU2NyJ9"
+        },
+        {
+          "resource": "repo://src/cli.rs#L861-L952",
+          "version": "repo-lines-v1:sha256:b68abd0e6498ab4d49aad2a715dcf2e7f3c599525d39405f1369ebe7b88058a5:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNjRhYjVkM2ZiMWQ2NDJlNjg1ZTRkZTZjNzU4NGQ5ZTNmMWRmYzdhYzAwNzZjOTEyN2VhZTczMGJhYmJlMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiNjkwODI2YjM1NjBlNmUzNTI1NmExZWNhMzYzMTAyMjRjZmE2ZDlmM2M3YmZkYTBjNDgyZWJiMzc0MWQ1NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3NTE0OTMxNDQyYjY2Y2U4YjMzMzcxMGYwZTIxZDE5ODg0OTc0M2I1MDVlOTE0OWI5NzlmMTc4MDg3YjBmYWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9249897bc2f94bb9b26447980e866163",
+      "statement": "List-details creates a batch CommandSet using a platform-selected external ls implementation, with Windows requiring GNU ls.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L395-L496",
+          "version": "repo-lines-v1:sha256:480c51d0dc7df63bcb9ad2beb6fa9b5ae069c916870ac50a5be44db744c767c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1OTFhOTRhNzU2N2U0NDliN2ZiYWRiZGQ5Yzg4MmQxOTg3Y2NkOTFmNmYxNmM4ZWU1NTQ4NjgxNGRmZDFkNTYwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2ODQ0ZDRkMjlhOWNkODNjOWM1ZjlmN2Q2NzZlZmM2NWI1NTVkMDY3OTg0NDE4MDQ4NDI1ZDY1YTE2OGUwYTM3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2MDYzYzRkMWFmOGNkODliYjBiZGQ3NjU3ZmZjYmY2ODA2YTYxMGQ3OWQ2YzhkNGMzMDdjMjQxZGYzOTAwNTIyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmOWY3NzM5NTM3ZjMzZTdiN2JjNDE3MjRhM2UxZmM2MzVmY2I1N2MxNjhiNjg5OWM0YzAyNzE3ZGY1ZWIyNGZiIn0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:28:27.513Z"
+  }
+}

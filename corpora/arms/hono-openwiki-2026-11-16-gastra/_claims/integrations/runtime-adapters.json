@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4fe6c27ae60bb036aeddb9ce27964add20127bd3adf9d7c95d3a819d2160eada",
+  "claims": [
+    {
+      "id": "claim_a35525f9ef044439a27cbf730d71e48f",
+      "statement": "Pages forwards environment plus eventContext and execution capabilities; Vercel forwards a Request; Netlify exposes platform context in bindings.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/cloudflare-pages/handler.ts#L32-L46",
+          "version": "repo-lines-v1:sha256:7d54959f814976b8004b2fdc373e8e005323d85ade057194d0633cdebe588928:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllOGI3ZGE2M2Q5MDBiMzNjNTAwMjEwYWZiZDQyMGRlMzRlYTBmMWU1NTM3ZjgxYjNlNGE2YWNjNGFjYTdlZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2MjljOTkxYmRjYTI5YzBkZDM4MGYxNDViZGMwMGYwMzNmNzBkYzI5YTQ3OTgxY2U5ZDM1ZmVmMTNmNGNjMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2NmFlYzNlMzY0NWE0YmY2MTJmNDljOGIyNmJmZmJhMzczODZhZWU2ZjFjOGRjOTNlYmFjMjdjOTE4OWZiOGUifQ"
+        },
+        {
+          "resource": "repo://src/adapter/netlify/handler.ts",
+          "version": "repo-file-v1:sha256:aa5ffa075c893f8a54f6c741bea95c477596531974b47e1dc9b25e253d333737"
+        },
+        {
+          "resource": "repo://src/adapter/vercel/handler.ts",
+          "version": "repo-file-v1:sha256:ba1651134aa33156061ff81f727517c3e7ea4b6ef4be01c4f90db32fa5090db0"
+        }
+      ]
+    },
+    {
+      "id": "claim_2de4391f7d78470ca50b279d314e0904",
+      "statement": "Lambda@Edge exposes CloudFront metadata and callback bindings, while the Service Worker handler defaults to network fetch on a Hono 404.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/lambda-edge/handler.ts#L116-L146",
+          "version": "repo-lines-v1:sha256:2179bdb7ae20bf2e437e5b29092539b506561e599c18af19ac969abb130524ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjMDgzYzZlMmI0NWE2MjRjZjcwMWRkYmI4MTQ1N2YxNmM1NTk2Y2QwNzc3MWY2NTM0N2UwYzIzYmUxOWJlNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NTQzODk4MTNkZGZjZDliM2NiOGIzODY0ZDc5NWVmZDgxYzNmODZiMjczNTgwMGJiNGM4NWNkYWI3OTEwZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhZTQ1NDRmNzMwODhiZWI4N2Q5MDhkYTM4YjFmOGYwZDUwODliZTYzNDI5MzJmMjliODA5YWRjYTZhMGQ1N2YifQ"
+        },
+        {
+          "resource": "repo://src/adapter/service-worker/handler.ts#L18-L37",
+          "version": "repo-lines-v1:sha256:6d0082f89597beabb6f7c7334495b71e025cca6d6d7450502ab64076f7802b69:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmODQ0ZmU1YjdlMGNhZTVkNzViMTZlNzM2NmQ3Njg0NTY1ZjAxZjRjY2JiNmMxMzYzYmI3ZGNjNTgwNDU3NTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkOWRlZWM0NzgzYzM2ZWZhMWNmNTlhNWQ0YjE5NGEzOTY0YTM2NGQ5MDhkZTEwOTljZjRmYjA5MWU3ZDAwNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3103871e06945c9b63b9dd17b908df8",
+      "statement": "The env helper selects platform-specific environment sources instead of merging them, and Node runtime tests use @hono/node-server.",
+      "evidence": [
+        {
+          "resource": "repo://runtime-tests/node/index.test.ts#L1-L15",
+          "version": "repo-lines-v1:sha256:e6ce0bd8511bd76b960b62611962159a66e5a1de5637d62335bc146783d30094:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZTAyZDY1ODE5YjE5ODdiNjUxMWZmMjhhZDBjYWZmNWYyMmViZjlhOWRlMWJiNmNkMjU4NjAxYTAyYTY2MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0ZDNmOTlhODM3MWUxYjhlY2QyODE0MzRiNDMzZmNkNmU4ZDYwOTA0NTBhNjA4MzE2M2VjYTI5NzExNjRlMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNTk0YzgwMTljMWNlMTZlZjk2MDZkMTNlNDAwMDEwMzg4YjgzY2NkNTQ4NGY1MDkyY2RlYTRiZDU3MjBjYzIifQ"
+        },
+        {
+          "resource": "repo://src/helper/adapter/index.ts#L10-L41",
+          "version": "repo-lines-v1:sha256:99cc2cd994b424eba0df7db6986b0577402150388d982053bcb6b3abaf96ce27:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjYjhiZTViYTNhMjJiNmUzM2FjMTUxNGE0M2RmMzdmMjVmNTlmYjE4Nzg3Nzc1NzBlMzUyYTFmMjcxM2FkNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1N2FkZGIwZDlmYzFlZTU4YThhOTYyYTYxNDAwMzdiMDNjZTI1OWYwYTE5ZTQyNjhlMzg5ODNhMDg5NjM5YWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczN2EwMjYyN2FlN2YxZjJlZmIzNzA5NDE2ZGI0MmI4YWM2Yzk1ODkxMDQ3MGIxYmEwMmNlNWM1YjYxNmQxZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9f95476638844b180a930f04526a79b",
+      "statement": "Lambda processor selection distinguishes ALB, v2 and Lattice events and requires rawPath plus requestContext.http for v2.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L625-L657",
+          "version": "repo-lines-v1:sha256:3dae1e525d936880e193764a3b391b2a2142f72ae9f5ae8e0d38d992c64ee4b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyMTJhNzNmZTRlMzc4MTRhMWI2NjQ1YjQ1MWIyN2U1YzVlZTc0NTJiYjdiMDQ3YmQzYjlhMWU2OTgzYWRlMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYmIxNzVjMDcxZmQwNWQzM2M4Zjc0YTdhNTdmZWZlN2U4NDk4ZWI2YWUwZWU4YTI2NmVlZGJmMjg4NTk5YzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlYmI1MDMxNjYxZDM1MzM3MTBhY2FjYjI4Mjg5ODIzYjg0ODIxMTc0ZDc3NWYxMzkzNDNjNjIxMzBmYzM2MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3735732a4a504aef9ddb096fb9520613",
+      "statement": "Lambda handle converts request construction TypeError to 400 and other construction errors to 500, and passes event metadata as bindings before serializing the result.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L239-L275",
+          "version": "repo-lines-v1:sha256:060ad959823beafc461dd0aad08f40ee6a5e35bccddaf03d9e58e812082898ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMzRhYTYyMWM1NDA4OWE4YmQzMDQ5OGZlNGVlYjAwNTEwZTFjYjZlZWY1NzllNDhjZmM3MmQ0NjY5MGRhMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMzRkNzg1ZWVhOTUzNjM4ZWJhZjgxYWJhMzE5MTk2N2NmOGZhNWZlYmI2ZmQyODk5NjY5MTE2NTJiZjI4NDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0ZmZjYjcyYzg4ZTk1MTg1NTg5MTgwMGQxNDY0ZmZjZmFiYTVhYzhhYzgxYTkxM2M3NTk1NzhkNDgxMTMyY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_076cf9a554dd4a29a1f036ae52c69e5b",
+      "statement": "Lambda request conversion decodes or encodes body bytes and resets Content-Length; response conversion consumes the body, selects text or base64 and uses processor-specific cookie handling.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L318-L401",
+          "version": "repo-lines-v1:sha256:a9b165d97496ac755a5aa8f78b0a23ebe75feff371600a54be155230dca90b84:eyJzZWxlY3RlZExpbmVDb3VudCI6ODQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyYzM1ODVhNmU2Yzk1ODg1Mzk5NmI0NWQ4Mzk2ODRlMWY2YWNkZTcwMDExYmY5NmU3ZmEzYWUyMzY1NjNiNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljMGQ0YjA3NTEwODVlYjEwYTM1MzQwZDU5YWZmMDYzMGU2ZjljMGZiMDAxNGVhNWU0NjFlOTJkNTljNzNlNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3N2QwYzMwMWI0YmQ5NDMyZTJkYmMxNTk5NzVmYTg3NTE0YjRiYWU0Y2M2YzAyODVjNjc0ZTc2ZmNlZmUwNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_100c174962074acf9d00889fa8fa2a05",
+      "statement": "Lambda streamHandle uses a distinct streaming bridge and platform stream metadata instead of buffered result serialization.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/aws-lambda/handler.ts#L130-L193",
+          "version": "repo-lines-v1:sha256:204ac372bfcbb78bbdd6b053f60093947ebdf9067437cc8d8950d32e8f08fa17:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwOWIwOTZmNDNmODdhN2ZiMDBlMGJhYjg5ODRmOWZiMDI2ODg5ZmM1YTE5NzNkNWVlZjY3MTFjY2VhOTFhYWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhMTMyMjlhNzAyYzFmN2ZlNmRlMzc3NjE1YjAwZjViYWJjNWQ0YTZiZGNkMjRlY2YzYmZjZTI2ZDI1OGUzMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5YjE1MDRhMTBlNDE5MGYyZDUxYWU0OWQ1ZTc0MDYyYjU3NzVlNTMyMDk3OWY4NmMxOTUxMGQ1MDFjMTVhOTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f22b248d27849e9a558fd4076012607",
+      "statement": "The shared WebSocket helper continues middleware when no upgrade response is returned but throws for unsuccessful direct upgrades.",
+      "evidence": [
+        {
+          "resource": "repo://src/helper/websocket/index.ts#L111-L140",
+          "version": "repo-lines-v1:sha256:5e72a020f1b913dcfabdf68daa264b5ba7b8c14831825e3b515374afd187ba6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZTMwMjA5MWZhNmM5MDEwMmUzMjY5NDUyMTA0N2FjNTM3NjZlOTUyYmQ0YjI1YWNkOTAxNGExYzM5YWM0NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyOTY5YzQ4MTg2NTExNGM4NTIzODMwZTFlMjYzOWIzODA3YWYxMTVkNGNlNWJhYTdiNmM4OGE0OTYzMWVhNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41334e451bc84df78954e83fae02eaac",
+      "statement": "Bun WebSocket upgrades use the server in bindings and exported event callbacks; Deno wraps native upgrade; Workers uses WebSocketPair without onOpen.",
+      "evidence": [
+        {
+          "resource": "repo://src/adapter/bun/server.ts#L13-L14",
+          "version": "repo-lines-v1:sha256:2c1af2f4cfa5b6f99391d7467d130a590fc1efef9298dfaa1b535b8f38584780:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGU3NzBmMGY4M2U0ZTY4NGE0YjRkZWM4MzExMmE2NTYxM2U4NGNlZjk2ZWEwNjc4ZGU2YWQ1MjA2ZmU3MmQwMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJmZjZhOTI5MzdmMzRkYzgwOTE3NTgyZGUxZGEwMmQxZTExYzIwZjdjNWM2ZmRjMjgxN2ZlZjQ1MGUyNTU5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmEzZTQwMzhjYmFhMTRhNTIzN2FhMmJjMjNkYzU3MGIyMWZkNTVmMDIyYzVkOWQ5YTFhNmIwYjkxYmViZTIzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/adapter/bun/websocket.ts#L48-L104",
+          "version": "repo-lines-v1:sha256:f996325ec149a24a5fc99116920755ebb1055d5337b2d93db7ab56a1bd28c48e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxZDA3N2JmMWU0NTg2NjM3Mjk4NjY1MjJlZDUyZGNmOTllNjU2YjVkOWM5YTg4NzgyYzQ2NWJlYmIwMWE5YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZjk1ZjJhMmZmNDU0NDJlMTM1ZDA0ZjY2ZmIyNTRiYTcwMTBlZTMyYmU4YjNhY2EwMDI3M2UxNzdkMDlmMjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhZThhZWMxMjZkZGJjNGY0YTk0NDFlNzM5ZDRmNzIzOTczODlmMzFiM2E5Mjg3YmY3NzVjYmEzMjJmNzE1YjkifQ"
+        },
+        {
+          "resource": "repo://src/adapter/cloudflare-workers/websocket.ts",
+          "version": "repo-file-v1:sha256:b434dbf3d167edbd83b94f71da4e8885ea38bb9c74936f50652acdd7f6d404a3"
+        },
+        {
+          "resource": "repo://src/adapter/deno/websocket.ts",
+          "version": "repo-file-v1:sha256:7e0c2181169efd673635b09f9b01223212fc08c97b978170641eae49e32cc0b6"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:36:56.362Z"
+  }
+}

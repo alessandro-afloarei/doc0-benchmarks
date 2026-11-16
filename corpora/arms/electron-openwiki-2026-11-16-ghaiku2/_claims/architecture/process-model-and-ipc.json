@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:53e9cc01e196376980c01443f550270157651dfce30e85f6bf6da73dc133fe43",
+  "claims": [
+    {
+      "id": "claim_8d366bc2397f4e31a9c36088277484c1",
+      "statement": "The browser-side IPC dispatcher listens for -ipc-message, -ipc-invoke, and -ipc-message-sync events emitted from the native IPC handler.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/ipc-dispatch.ts#L58-L120",
+          "version": "repo-lines-v1:sha256:b6131e5c6eff1f93116ac23c21690e83ad51656163132827c4d538db8549b835:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkODdlM2VmYzNmMjZiN2EzOTc1OWUxMGI0YmJhOGM3ZTFlYjBjYzhkYzY2MzA3OWE2N2FkM2I1MDc5OTk2NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNDcxZTY3ODZhMTdkNDE5ZWM4MjI1M2M0NjM3NWMwNzY0Y2JjMWE0ZmU4NjUxYWFjYzQyM2YzNDdhMzFmMmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4ZTc3ZWU5M2FjZWM0MGVhMjI2NWY2YTNlNTQ1ZTZlYjkzZmY4YTRlM2YxNGQ1OWYxZDJkYWFmNzA3MTlhMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyYTE0ODYzZDI0YjY5NzcwMTlhODU5NmJlMmIyMzdkOGZmZDg2Y2VlODcyMzJhOTc1MjJiZTllNmE4N2M1YTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_06c2c97b1ec4403eb61eac15631b81a4",
+      "statement": "For frame-originated messages, the dispatcher builds candidate emitters in order: the WebFrameMain looked up by frame tree node ID, then the sending WebContents, then ipcMain.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/ipc-dispatch.ts#L40-L60",
+          "version": "repo-lines-v1:sha256:e22a56f27ea373128afe924fbe81660f838731adb0e362b22dae45cb63539203:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMDI0ZmJjZjcyODUzNmI0YzlmZWYzOTM4ODc3ZDFlNTUwMDdiNWU4N2RkNmE2NDAwYzJjYTQ5MjM3MTJmNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliN2ZjYjQxODk2ZDRhNDNjOTRhZjZkYjQxOTA4ZGQ2YjQzY2JjZTZjYjFkOGIxNGIyYmM5NDcyZDgxODljZGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZlNzdjZGM0YTU2ZWY3YzIzYTBiMDhkMGZlNjY3MzgxYjliZGFmZTFmNzBlYzk3ZDk1MjRhZmM2NjQzZmRmOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExZDA2ODgxNTk5MGI3Y2E1YmUwZjU5YTkxZjVmNTJiMTA5OTM5YTMyNTRjNDQxNDg1NDFmNWM5Y2U2MjlhM2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ecc58a58782349a1810a51fb44e5676e",
+      "statement": "An invoke with no registered handler is answered with an error reply naming the channel, and a throwing handler's error is logged and returned as an error reply.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/ipc-dispatch.ts#L86-L120",
+          "version": "repo-lines-v1:sha256:3cd8f903c6d76f458c4728ab372b8b5f81e21b24225129d4b1bd0838dfb7c136:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNDcxZTY3ODZhMTdkNDE5ZWM4MjI1M2M0NjM3NWMwNzY0Y2JjMWE0ZmU4NjUxYWFjYzQyM2YzNDdhMzFmMmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwZjFmNDlkZjZjMmI3NWY0M2E3ZmViZWRkYzY2MjJiOTgxZjdhM2FjNDYzNjZlMGNlYjVjZTZiNTk3MzZkYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyYTE0ODYzZDI0YjY5NzcwMTlhODU5NmJlMmIyMzdkOGZmZDg2Y2VlODcyMzJhOTc1MjJiZTllNmE4N2M1YTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ddb08308936844a69f56b4a76318ad87",
+      "statement": "IpcMainImpl.handle throws when a channel already has an invoke handler or when the handler is not a function.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/ipc-main-impl.ts#L14-L23",
+          "version": "repo-lines-v1:sha256:e0cce6e8c3efe885bc1c6f63bc7f1d7aa5a7e93959c8a988a33a801d720f85cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NThhN2YyZGQxZDQzZjk0OTVkZmMxNWEyNzEwZWJiNDA1OGY5NWYwOTg2OTE4MzZmMGNiNDJhZDBkMWVjZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmODI4MmVhM2JkYWFlMTA1ZjY0ZDUzYzYxZjA3MjI2YTMxMTk3YjA5NWI2NTU5N2IyZTNmNGMzYzhhYzQzYWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e7a301eb242421e91905e54631fede9",
+      "statement": "The ElectronApiIPC Mojo interface defines Message, Invoke, and ReceivePostMessage methods, with Invoke returning a CloneableMessage result.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/api/api.mojom#L28-L45",
+          "version": "repo-lines-v1:sha256:3a926b8fabde01795b98ef90677b3a67c34db66c3be3a950b00a370bae05e385:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxZjY3M2ZiZWQ1ZmMzZjkwMWJiZWMyMTg2MmJhM2M1ZjA1ZTFmZTk2M2I2MjZmYTJlY2VjNzc2ZDdkY2ZkODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3ZTQyMDMzMWFhYThiMzkyMGEzYzhmNDYyM2VhNGEzZTdlYjI3M2E5NzBlMjVhY2E3NDE2NGJkY2RjNDdkYmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmYmEwMThjNTc0MzU3M2I0NjQ0MDExYTQxMTM4ODI4ZTNlMTM0OTZlNzdiN2ZlM2M2NTYyZDIzYWI3YjIyYjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NGNmYzBjYzg2MmVmM2NiMzQyODg0ZDZjNjIyMDI3YmIwZjdmNmUzNDIzMzJiZTQ5MTg5M2YwZDgwZjc2ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_81cc21e78a604f008cc39e3de0c427ff",
+      "statement": "The browser-side ElectronApiIPCHandlerImpl::Message resolves the owning Session and forwards the message to its Message method with an IPC event object.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_api_ipc_handler_impl.cc#L44-L56",
+          "version": "repo-lines-v1:sha256:b99d1b1b7f72d21e4dd1c791885acc4d343c26e47e05fa1f137f29e41937465e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYmIxZjhjZWUyZTdlZTY3YTk0ZTNhZWNiYTkwN2NhNjNkN2IyOGRmOGI0MTQxZTM2NmI5NjljMThjOGRlYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllYTcwMWRhMWJmYjhhY2RkM2UzZjI4NTRkOTcxNzJiYjAzMGQ3YTkwNWVlMDM3M2IzMzY3NTJlODYwYjQ2YjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjNGFlNDc2MDk1MzQzMDAyMDRmNzRkZGExYjhmZTkzNTI2MzVmZDg3YjgyNTQ5YjI5ZjgwYjZkNjM5ODU0NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_57c533a104d74d089354c021c4c76ad1",
+      "statement": "lib/browser/api/session.ts registers the IPC dispatch listeners on each Session instance.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/session.ts#L26-L26",
+          "version": "repo-lines-v1:sha256:2b7632aa54afc86d51520a193f13e0479d4a7b1ffb478a0b848a13aac085b96f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmI3NjMyYWE1NGFmYzg2ZDUxNTIwYTE5M2YxM2UwNDc5ZDRhN2IxZmZiNDc4YTBiODQ4YTEzYWFjMDg1Yjk2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmI3NjMyYWE1NGFmYzg2ZDUxNTIwYTE5M2YxM2UwNDc5ZDRhN2IxZmZiNDc4YTBiODQ4YTEzYWFjMDg1Yjk2ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTljMDQ1MWJhYTdkYjU4NTU0N2I3M2VjZDIzODY5ZDBhZDBhYTE1NzgxY2M4N2NhMzgyMTg5ZjI3ZGNiZjliMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODJlMzU2MzlkMGE1ODZjNTgyMjIzYTQwZTYwM2E5NzczODc0ODFlNDFhMTRmN2ViN2MxZTNlODdiOGIwZWRiMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7d90a19c2604a4a8e7f7ef7b6329dce",
+      "statement": "The renderer init requests preload script paths synchronously from the browser with BROWSER_NONSANDBOX_LOAD, and the browser answers through a sync handler in rpc-server.ts.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/rpc-server.ts#L104-L110",
+          "version": "repo-lines-v1:sha256:f35b79cb2e722b65c40cb1c6ab36e63605a86c531e7c2f5eae399f4fd46244f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDU5OWUxYmJlNThmMWNhNjlhYzE4ZjZhMzJhODlmZjk1YjIxZDdjMzAzMTNmMDhiZmE2ZDI2OWEwODM0MTIwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDU4ZjE2ZjE2ZWNiODdjMGZiNGU3YjQ0ZTQ0MGRkNTliODAwOWRmZjk4YmNiNjg1NDM4NGY0ZTIwM2ViNWYyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWQyMjVkNjQ2NDhmZDdmYmU1ZDBkYTFmNGY3Y2Y4MDBkMTVjYmE5YzI3MGQ5MmI5NmIxYThhZWY5ZjUzNThhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTAxZGI0MzU2MDE0ZTkzMzdhNTFiOWI4ZjZiM2E4ZWU2NmI4NTA2NzhjYmYxNTM5MjUxNGVlNDdjZmY5ZWZmZSJ9"
+        },
+        {
+          "resource": "repo://lib/renderer/init.ts#L136-L136",
+          "version": "repo-lines-v1:sha256:f08eca899cd620534b4faa8ebb1ed3b359d17c77d99fe3dcb209ffac690900b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjA4ZWNhODk5Y2Q2MjA1MzRiNGZhYThlYmIxZWQzYjM1OWQxN2M3N2Q5OWZlM2RjYjIwOWZmYWM2OTA5MDBiOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjA4ZWNhODk5Y2Q2MjA1MzRiNGZhYThlYmIxZWQzYjM1OWQxN2M3N2Q5OWZlM2RjYjIwOWZmYWM2OTA5MDBiOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDViODg1OGIyMzk1NDY1NjUxODYzY2Q3OGU2NDg4YTY1Yjc0ZTNhYjI5ZTI4MzcyZmIxNDU5ZDA1MWQ3M2ZiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWYzMTMyMmZlMDBjMDZkOTQ4YmExMjNjYTNlZWNhMzk5Y2ZkY2M3NDU1OTI3NDIyODhhNTRkNDNjYWQwNGZhZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_532c0576802c4939ad3be4f1801aa955",
+      "statement": "The sandboxed renderer init requests its preload scripts and process properties synchronously with BROWSER_SANDBOX_LOAD.",
+      "evidence": [
+        {
+          "resource": "repo://lib/sandboxed_renderer/init.ts#L17-L24",
+          "version": "repo-lines-v1:sha256:1d39b5fbd13efc98eec9a0474be1905fd6e36693a66100053090963e93f6024a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmNkMDQxNjUyZDFjMmE3ZTI0ZmEzZGRkMTkzNTE5M2U5NTVkNzhhMDU3YzkyZDQwNTA1MjkzMzZjZjc1YWFhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzE1MjY2NWJlOWI2MmM5OTE3NmZkNjg0NWM2ZmE2ZTUzNTEzMWYyNDkxNDI0MDc1ODE2MGQ1YjBhMTQzMDA2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzJjOTc1Nzk3ODJhOTcwNWI4YmJlNjVjMDUyNWU5ZDllYThiYThlNDU2NDU5YTEyZjRkMmNmNWRjOTFkMTIyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWRiMTY2MTQzYWUzODA2Y2Q4YTVhOTJlODM1MzE0OWEwYTc0MTAyY2E5NDBhNjNjZjcyZTJkODY2NzVkYjExZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba552aa32eb241cf96050c505c804c23",
+      "statement": "The sandboxed renderer restricts module loading to the loadedModules and loadableModules maps in its init file.",
+      "evidence": [
+        {
+          "resource": "repo://lib/sandboxed_renderer/init.ts#L34-L49",
+          "version": "repo-lines-v1:sha256:1d5f61682ca5a0819becab5e4b90c4a31e755c66a37555880b5dfefe1ffebc3b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2YWQwZmM2ZGM4MWI3NjNkMGNkYWViNmM0YzkzMDY4ZjIzNWFlNmZkMThkMWE1NTMzYzNiODQ0MzQzNTc2MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0YzYzY2EwMjRiMWQxMTE0NTI4YzFiMmY4NjJkMjAxZDI1ZDI3YjNmODgxOTU2MTJkYWRkOGU2MmQ0ZjA0NDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwYjQzM2FhYmE3ZDRlYTdkMDllNDhjMWE3NDcxMGQyMWZhYmZkY2JiYzJhMmQwNGUwMjhkOWRiZDQ5OWUwZWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2907e393c3c74964a7261ca5045759d7",
+      "statement": "ipcRenderer.invoke converts an error reply from the browser into a thrown Error that names the channel.",
+      "evidence": [
+        {
+          "resource": "repo://lib/renderer/api/ipc-renderer.ts#L23-L31",
+          "version": "repo-lines-v1:sha256:ae86156192fb79e8b915f7497bac6009456d08784b3988dd9e39f535bbc5c1c5:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmU3NWE5MDg0NThkYzViMjgyM2E2OWM3ZWJiZmM1ODAxODBhY2JhMTI3ZDkxODFhODNmZGQzMzA1YzIzMTJjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDI1MGNmN2U3NTJjNmMzZTMyODUwNzQyYzFhNTRjNzJhZjYxOWZlZjhlMDAxY2M0OTA5ZWRlOTE5OTNlZWUzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWMyYzk3OTI4M2UzN2ZjOTZlOWE2YTRkM2ZjNzQ1MGRlMGY2YTAzODZiZmEzNTRjMDY1YzQ5OTMzZmNiYThmYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a76f00628b6c4d879ddce37b5080d137",
+      "statement": "ElectronApiServiceImpl::Message emits the incoming message to the renderer through ipc_native::EmitIPCEvent.",
+      "evidence": [
+        {
+          "resource": "repo://shell/renderer/electron_api_service_impl.cc#L86-L101",
+          "version": "repo-lines-v1:sha256:64cceb4f610b81ce4c4ec397e5377e18855891ebb9ddff5fb9cfe96236a35e80:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0OGRlMjNjMTI4M2I2MzI0MDUyNDc4MTE3Mjg0NmM5Nzk0MmVmNWU4NGMxYmEzMjdhZGYzOWRjMjQxYjQ1YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1MmM1ZWI4OWIxNDg4YWExMWFjYzAxNTQzMWRmZTJmM2MzZTU0MzcyYWM2NTRjN2FjMjNkMTQzYTFhZjZkZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0N2ViZTI3NDUxMzhkNWRjZGU4NTg1MGU5Yzc2NGI0ZGI3ODQxNWUxMWYxMzk5NzQ2YWFhNDY5ODBhNWRhNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMGRjYmE4N2I5YjkyY2EwMmE0YThkZjIyZTgwOGU0MzdkZTA2ZDM4MDY2NmI3ZjQ1MmZlNWMwYjEyMzVhY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_85ea7cca473246c4b8404a16cfedce15",
+      "statement": "MessagePortMain.postMessage replaces MessagePortMain arguments with their internal ports before sending, and converts transferred ports back when a message arrives.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/message-port-main.ts#L1-L25",
+          "version": "repo-lines-v1:sha256:6eefea1f5acdf06750f7da8bbad71a2ebc9640680f854ac21ad7611a35bb64f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZTdhNjgwOTU2ZjVmNjdjMjFiMGUwMTZmMjk4YjcyNzg2OGU0NDNjOWRmOGM1NWIyN2U5ZWYzYWVjNTM5YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZjQ5ZGJjZjc1YjYwZGM5NWY4OGE5Y2JjYzZjMGIzNTZkZjg3YzAzZGYxN2RjYWVkZGI0ZGM3OGFiNjE4NjgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:50:06.090Z"
+  }
+}

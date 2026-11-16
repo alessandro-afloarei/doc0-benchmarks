@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:abb05aeab408395a60eacebddc4eb84cb70318684ae14c792c4186b56e4fd530",
+  "claims": [
+    {
+      "id": "claim_63d32766c0874838841542bdf1f7fdef",
+      "statement": "The test script type-checks the spec configuration with tsc before running Vitest, so type errors in tests fail the run.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L14-L14",
+          "version": "repo-lines-v1:sha256:f0caa149345dc5603ba3b48aa6b2b5832b27cf0f82f8b2f7681e3dcd953a9f20:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjBjYWExNDkzNDVkYzU2MDNiYTNiNDhhYTZiMmI1ODMyYjI3Y2YwZjgyZjhiMmY3NjgxZTNkY2Q5NTNhOWYyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjBjYWExNDkzNDVkYzU2MDNiYTNiNDhhYTZiMmI1ODMyYjI3Y2YwZjgyZjhiMmY3NjgxZTNkY2Q5NTNhOWYyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDkwMTIyZDhhMmJhOTVmZjFiMmEyZjNhODJlZjc0NzE1Mzc2MmQ5NmJlNzQzYzBhNGY5YjFlODIyMDc5ZmU0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjViYmNmYmI0NjUyY2NhN2Q0YjU2NjVlOWNiMzFlOGNlZWMwNDY3NjE1NWViMWJhNTIwYjFjYmRkZTQ2ZjJkOSJ9"
+        },
+        {
+          "resource": "repo://tsconfig.spec.json",
+          "version": "repo-file-v1:sha256:fb97bc443e930077ff966e316fd02fe05bbadaa0e03e575516757f15d244f7d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a2cec590b064035bbbfcac7825a8813",
+      "statement": "The main Vitest project collects src, scripts, and build spec files, and excludes sandbox directories and *.case.test files.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L36-L44",
+          "version": "repo-lines-v1:sha256:dd0afabba177d743cb75fc75801ed376992cfe38227800360b33a45934720582:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzg0ZTlmMjcyMzI3ODVlMjE3ZjA3OWYyMWFmYTU4YTBjZDk1OWE5ZDI3MjUxN2RkYzkwOTQwYmIwOTEwODk3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk3OGUyNTAzYjhjZjM3YTA2ZjdkNmYwYTNhNmI2ZmUzNTY5MWZiY2FiNTBiODc3NWNhYjZmYWJjNzFjNTkyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWU0Nzg1OTBkYjc5MWI5NGFiYjUyZmU1YzkzMDE1YTcyZGVhYzEwNGU4NTA5ODQ5NmZjYWU1OTI2YWIwMjM1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTU5MWE3MDk3YzQxZTk4MWNkYWI1ZTlmZWIzNWM1NTY1MTY2NGQ5Nzg2OGFlNDAxMGM1NzVlNGNmZmEwNjFmYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_284c0d00bbc9488a9362e8e3b28dedd7",
+      "statement": "The jsx-runtime-dom Vitest project runs the src/jsx/dom tests and src/jsx/hooks/dom.test.tsx with the DOM JSX import source.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L58-L70",
+          "version": "repo-lines-v1:sha256:cbbcb27611796a2d8deec2415133c15e8c62071fea35b326579d72ed5a5aa5a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5NWI4YzViZjg2Mzc0MzY3MWRlZjNmNjMwZWIyMzJkNTlhN2E2MzRhMDcwZmM0MzZlZWMzN2E4Njc0ZTZjMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5NzhlMjUwM2I4Y2YzN2EwNmY3ZDZmMGEzYTZiNmZlMzU2OTFmYmNhYjUwYjg3NzVjYWI2ZmFiYzcxYzU5MmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3MDMxMWU5ZWZhZjIwMDk2ZDNiMzhiMjgzMjFlOTM3OGVhZDE3MWUyYWM2ODhmZGI1NWRiMzdkYjQxNzhjMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5M2RmNTg5MDc5NmY5NWI3OTJlYmMwZGFkNzBkNDA0OTZmOTM3Njc3NjM4MmNiMWVkNDYxZGYxOTBkNDkzN2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9585df306f9c4358a42da14cc9ce2c07",
+      "statement": "Coverage is collected with the V8 provider and excludes benchmarks, runtime-tests, perf-measures, and pure type-declaration files.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L6-L28",
+          "version": "repo-lines-v1:sha256:b8e4fef20e4726e585b82f182fe5fbd4cbfdb361f097a1f806f649449bb7127d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4MDgwMjY3ZDQzZWYwZGI3ODhmYWE3NDFiMDg2Mjc1MWU3ZjVjMzM3MGZmYTQ3ODQ2MzFlM2IzOTc0NTViZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhYjk5M2M3NWIzZThlYzhhMWI1MmJiYTkxOGU0MjExNTVkOGExNjk3MDIyOWM4MDQyZTEzOWZhYmIxY2FiZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0ZWJkMjk2ZDI1NGRiOTY5OGQzOTY1ZWRmZWMxMzdjNjk5ZDFmOTI5ZDMzYzYwZTkxMzM2YzFmNmZmMjJjZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjZWQxNTQ3ZjNiY2IwZGViMDczMWVlMzZkMWFjYTg2NTc1MTY0MmRhNzkwYWJjZWFhZDRlYTE3Nzc5NWNiNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c4d7109cc5e417f88c762d147ef335b",
+      "statement": "The CI main and runtime jobs run the test:bun, test:fastly, test:node, test:workerd, test:lambda, and test:lambda-edge scripts.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L95-L183",
+          "version": "repo-lines-v1:sha256:4ccf3403e8b134c20d9cf483cdecde72f89c4fc1e52282773aef7851e2da2384:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyYzIzZTRlZjU5MjMxN2E0YjQ1YTA1NjllZjA3MzczNWFlZTlmMjQ3OGYwNjcwY2QwMDkwMWRlOGM1NjcyMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyNWI1YmIwMThiYThmNzA4ODEzZGFiN2MwNjNkYmUyNjgzNDk4NGFiZTU3ZDA4ODFiOWRlNzdmOGVkOTVlMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjOGU2MjdhYTg5ZThmOTY3NDQyY2JlMzQ4NGM2MmZjMWU0YjM0NjFhMDJiZGRmMzJmZDExZjVkZjQ2ZDE2NWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9af248d452e4fdc8555aa18d9bfcddd",
+      "statement": "The test:all script runs the main Vitest suite, the Deno suite, and the Bun suite in sequence.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L23-L23",
+          "version": "repo-lines-v1:sha256:f01b5576b811842c293abca99439cc45db674b9254cde9a71f6dfd14bb4a3405:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAxYjU1NzZiODExODQyYzI5M2FiY2E5OTQzOWNjNDVkYjY3NGI5MjU0Y2RlOWE3MWY2ZGZkMTRiYjRhMzQwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjAxYjU1NzZiODExODQyYzI5M2FiY2E5OTQzOWNjNDVkYjY3NGI5MjU0Y2RlOWE3MWY2ZGZkMTRiYjRhMzQwNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjQ1ZWQzNmJjOTRlMzc3MTI5NmEzNzhjNzk4ODNhMTI3YmU0ZGNmMzVhMGE0ZDNlZmRhYWVkNzZjNGQwZjJkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmUzNjAxOGVhNzY0YWYzNWExZDMxZTM0OGE1NmFjYzY2NjA2YzNkZTk3NDBmYTVlZmM1Mjk3YmQwY2IwZDc5MyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

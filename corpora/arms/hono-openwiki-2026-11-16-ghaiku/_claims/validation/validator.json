@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:581be86ce5f3dd4cf691b63e335ec8941f0b7420da41a74223cf3a0bae4ba003",
+  "claims": [
+    {
+      "id": "claim_8087aaafdd944e29915a1c7ee9c7e97c",
+      "statement": "The validator middleware reads the requested target into a value: json is parsed only for JSON content types and yields 400 on malformed bodies, form is parsed only for multipart and urlencoded bodies, and query, param, header, and cookie are read from the request.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L132-L166",
+          "version": "repo-lines-v1:sha256:579f0e48aed9e035eb16f0de1a4972d2639635d13d0246839f56265b716459cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNTdhNWNjOWM2MWM4MmNjNDg5ZjEwZTFmMGEyMTNhYTNlNzA4NjliODMwMmJjZTk5MjUyZTFmMTZmZWEwMDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjZTUwNjFlYWI0ODZjMGM4YTIzYzE3MjQ0MzNjMjJiZDJmMjliZjcwN2EzMzc3MDgyNDI0NTE0ZmM0NjJjMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwY2ZjNTU3NWNiYTBiZmY4OWM0ZmRmZDBjNjRmODIxNDE4MzRjNTAwYThlNTQzMzRmZjdiZGU4NTg2MDViM2IifQ"
+        },
+        {
+          "resource": "repo://src/validator/validator.ts#L89-L131",
+          "version": "repo-lines-v1:sha256:cbd5f6661e4f36260ef340596b389718a4587c0af440b8bd9d7726f09fd231dd:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0YjMzNDRkZjU0MTUwNDY0YmQzY2ZhYmQwOGU1ZDFlM2IzZmZhZDQxMzExMTkxZjlmODVjODdiMDM0MmNlNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZmYzYjgwMzMyYjIzYTdlMGM5N2VkMmRjNTcxNDM3Y2M0ZDJhMjc0ZGMyMzM2MTU0ODZiZDMyODIyYThjNjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3NGNmNmYzNTcxOGQ4ZGY4YzgxNjdjN2QxNTdjNzU4MGQ5ZGU5YTVlNDI5ZjMwOTlkMTI0Yjc1MjRhMDA1YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmZWI0ZWU5ZWQzNzY2ZTM1ODRmYWU0ZGJhMTQ1ZDdjZWVmYjk0YzVmOWE3NjMwZTI0YmI2ZTk3ODc3MzdlMjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_01913238e911459ea9d65a601208cc05",
+      "statement": "Form values with keys ending in [] or repeated keys are collected into arrays, and malformed form bodies raise a 400 HTTPException.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L113-L149",
+          "version": "repo-lines-v1:sha256:ed8dc26b9ea7d96f7bad4108a01569980f4b43f315d391965ffb58ef7a97fabd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1OWJkYmI1M2ZmMWQ2MDI1NDdlYmUwYjE1MTM3MTM0NTE0MGQ0NDNmZjRkNGU4NzdjYjYxYjY1YjJlMjc5MzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlZTJlNWU1OWQ3MTUyN2YwMDVjYjU2YjA0MjY0ZTBhZWIyMzllY2M1MDAxMTAwMTcyNGZkNTNhOGYyY2YxZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiOWFiMDM3OWQ5ZTY3YmNhNzdkYmI3ZDcwMjM3NjMxYzBmZjczOWI4NDg2MzdjZmFkNDQ0MzI2ZGI1ZDVhMWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a18d871227f14516bea278c09e131912",
+      "statement": "A validation result that is a Response is returned directly without calling next, while any other result is stored with addValidatedData for the target before next is called.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L166-L171",
+          "version": "repo-lines-v1:sha256:979bacca2922b1dea681c2a50e13f32d6c9766e4be6e5fe6de5ae88a455ee4bc:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGIzYWMzM2FhYzVjNzljYzJiNzFiMzE5MGJkMTUwMWFiNTI5MDYzMjg5N2RjNWI2NmZiNWVhN2VlMmY1NDllYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2Q0NDc2ZGVkMDBiZmFkZGRiZGY4MWNhNjUwNmQyNTQ3ZjhkYTg3NDAyZTE0ZjAwZjllNTgyNGUxMDUwYmZiNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c9fb1296e0645fea753ebf494da1d7a",
+      "statement": "The validator is exported as a factory with target and validation function parameters, and the validation function may return a promise.",
+      "evidence": [
+        {
+          "resource": "repo://src/validator/validator.ts#L46-L89",
+          "version": "repo-lines-v1:sha256:6fabb187cae4adb92a713df08adda1e3a15e24f7d29e642ece63f5f0fb2d0457:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0MGE2ZWJmM2Q0ZWI0M2Y1Njg5N2Q5Y2RkNGY1MzgwNDQyYTExMDk0MDllYmU3YjU4Y2Q2ZjJmMzVhZGVjZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0YjMzNDRkZjU0MTUwNDY0YmQzY2ZhYmQwOGU1ZDFlM2IzZmZhZDQxMzExMTkxZjlmODVjODdiMDM0MmNlNzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjYTRiZTE2NWYyMGQ2NjZkN2E4MDFiYjVlMTdjZmY3MTg5Y2FlM2NlZTNmYWI4YWIwNjQyYzU2OTc0ZjQzMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1ZmM5MmIzZWY2NGEyMTgyYWRlNmEyYzhkMTQ5YTBiYjFiMjVlNDgyYTBjZmFlNWMxMDZmNDUyZTZlZDIyZWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4be30a36b7244061ab1f9520c97b368f",
+      "statement": "The ValidationTargets type declares json as any, form and query as keyed records, param as a record over path parameter names with optional parameters typed as possibly undefined, and header and cookie as string records.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2683-L2690",
+          "version": "repo-lines-v1:sha256:bf9f4ce3813733dda89bb6544927258948116dbbb06b1e86007ea6bbdd2da8ca:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE0M2E0ZWZkZGY4ZTlhMjNlZTYwMDBlY2U4YWQyMzUyYzNhYWE5OWFiODU4YjczOGNmMWZiYTczMWIzNGEyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzg2YWI2YWYyNjY0NjRhNDgxNzA2YzYyNjMxMjk0ZmExZDM1MDE1NDBlMGJkMzg5ZTM3NDBlMmJkZWRhNDNhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzFkYzY1M2VkYzBmYTc3Nzc1NGNjM2RmNmY2NDgwZmU0ZTliNmY1NDM5MmY3OTgxODg1Y2FmYTk1N2YyMzQ5NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_08c8f994046d407e97e7ef36f95805ea",
+      "statement": "The Schema type maps each path to methods named with a dollar prefix to endpoints, and MergeSchemaPath rewrites those paths when a sub-application is mounted under a base path.",
+      "evidence": [
+        {
+          "resource": "repo://src/types.ts#L2531-L2536",
+          "version": "repo-lines-v1:sha256:2c7ee27c34a9b1ab16e486ed0038386957e4c8823775e25a35a07cc46226716d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTJlMTlhZmIwOWI0ZjYxYTIxZDgwODliNTg3NGM1ZDU5ZTQ3NTEwMTE0NzEyOWYzM2Y3NjkxNDI2OTQzY2VmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzdjNjZkNmE4MzA3MzIwZjZjNWJjZGFiNzJlMDg0MGFlZWE5ZTM0M2ExZDk1NGNmODYwN2NiOGVhZDA4NWRhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2ZhZDQ4MGM4OGEzMjBlNDVjOGMxYTRjMDMzNDA3OTg3MDEzMGI1MjBkYzRhMWQ2ODc3ZmI5NjY3MjVmNWZiNSJ9"
+        },
+        {
+          "resource": "repo://src/types.ts#L2563-L2569",
+          "version": "repo-lines-v1:sha256:01eb933c0126d1161d814f6d0591d88f4be3b283d16b9391a0a42c82d8ae9e2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTc5MjQxNWJmYjRiZDQyNDAwNjc0NDQxNzEzNGI5OTViZWUwNmQxYjNjMTVjMzBiNjU4NzljM2Y4YzgzMTdlYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjExZjczNDVhMTAwNDcyYTg0MWMzZjk1OTg0M2Y0NWMxMjQxOTNjY2M3MGVkMzQyY2MzMDRiYmU4MDJkZjAzZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI4MjJjZDkzNGY2MjU4ODFkZWY2MzIxNGExNGFlZjg2ZTdlMDM4MWZhN2I0OTU1YzE2ODQ4MmNiZWJiMGUwMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b51800b0b244a8c9745aaafd7822fb4",
+      "statement": "HonoRequest.valid is typed through InputToDataByTarget, so the handler's validated data type depends on the validator's declared output.",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L339-L356",
+          "version": "repo-lines-v1:sha256:12efb835fe9a37e59a61f41fb1edccc6a359430257fea0d17315b8fcbf589baf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5NGQzODBjMzYyZmI3ZDg4YjEyZjEwNDE5ODM4NzM4ZmZkMzhjOWNmOGY5MDI3YTUwYjkwMzYwM2ZjZGMzYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMmEyZjk5NmYwOGU2ODBiZDI5MjEzNWE2ZmE0OTc4YmRhMjZlNjAyZDg0ZjMzY2IxZDU5NDc3NWQ0MzA0YjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjNGViYmRjZTc4ZDBkNmMwZTQ5M2Q4Mjc3NGQ1ZDJmYmU0OWM3NjM3MmQyMDI0YmQyZGYyYzY0Mjg2MTMwNjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwZDc5ZTEzYmFhZWUyNjFhN2FhMjkwMzU2ZjY5NDNmMWY3MmRiOGNiMjM0ZGI3MmViNGQyYjNhYWJmOWYzZTkifQ"
+        },
+        {
+          "resource": "repo://src/types.ts#L2720-L2730",
+          "version": "repo-lines-v1:sha256:e7b63b09847abf9e02e06889131c9635750cde5006b4317dbfeeadf16ecb7132:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0YzdiMGI1NzE2MmE2NjQyMTBmMmI1ODZlYzlkOTcxZmE1NzMwYzI4MWE4Nzg0MTFkNTVlOWE3ODZhMjJhZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYTU1MTllYzhlYTA5MTU2Y2RlZjcxZGJmMWRkMzg4NGQ5NDIwYmZlZTg3NjZmMjYzODBmNTlhYWI4N2Q1NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0YjYxNjViMjg5YjZkY2U1NTNlNjE1Mjk5ZjVlMDQ2NTU0MmQ1MGFmMDI4ZDhlMWM2NTAzZDIwNDRiMTQyYzAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:23:45.579Z"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:73d075978f410d183492e4e134e8c134ccda0af2afda5a90203844418dbe82d6",
+  "claims": [
+    {
+      "id": "claim_cc98b6e8d51343bb8c505b7083a9cf22",
+      "statement": "walk::scan runs a receiver thread and the parallel sender threads inside a thread scope, and returns KilledBySigint when the interrupt flag is set, otherwise the receiver's exit code.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L617-L652",
+          "version": "repo-lines-v1:sha256:38c20cc57d80845be9f979a4ad764cc77be12190e397e2258dc17eb677ac9ad6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3MTM4MTg4YmI4YmE2YWQ1MDY5ZGMxYTgwMWE4YzJkN2JiMmM5ZmUxNzg5MjYxZDBmY2FmY2I2OTUzYTBlYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlMjcxNTNkY2Q0NGU2Mzc0MTYzYmQyOGFmOWRmNGQ2YWZjYmZmZjI4OWQxODg3YjVmYTVkMjVhY2M2MzZjYmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11cc39d9f7e246e59d85c08f0d2cbd42",
+      "statement": "A Ctrl-C handler that sets the quit flag is installed only when results are printed with colors enabled; a second Ctrl-C exits the process immediately.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L621-L631",
+          "version": "repo-lines-v1:sha256:a6a0e2d641c527a21a3d07ac151d327f43474ed44e927f1ba013d5e469f853a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NTJhOTM4NzFiNzkzNmE5MGJiOThmYzI0MjFlNTA0NWY2NTc4MTI4NzJhNTJjNmJiZjQ1NDkyM2M2NGU2ODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiN2EwNDBhYjJkYjJmMzRkZjA1NThlYzZmNDFjZjQ3ZWY4MjUzYzRkZjUxZjE1YzRkN2Y0MmMxMjI4ZWY2ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0MTVmMmI2NGFmYzZkODY1ZTc3YmNlODE2ZDY3OTA2MWJiNzExZmUyM2I5NTA0ZGFhNjk0ZjRmZmUyMTZmY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_194152a91e7b4bddad1c85e9c384b819",
+      "statement": "Traversal results travel from sender threads to the single receiver over a channel bounded at twice the thread count.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L636-L636",
+          "version": "repo-lines-v1:sha256:07d922b905c2311954a2e84b447b0e5b60644d2ad6da43e0f1a39ea0def1a45d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdkOTIyYjkwNWMyMzExOTU0YTJlODRiNDQ3YjBlNWI2MDY0NGQyYWQ2ZGE0M2UwZjFhMzllYTBkZWYxYTQ1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdkOTIyYjkwNWMyMzExOTU0YTJlODRiNDQ3YjBlNWI2MDY0NGQyYWQ2ZGE0M2UwZjFhMzllYTBkZWYxYTQ1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODFlZGZjNjczYzM0NDFlNTM1NDNkOWFkZTRjN2M2NWEyMjBiYmU3YTBlMTY5M2IwMmZhOTM2MDExNDhiOTQ3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjZkOGEwMDNjMzcwYjFhNDVjMjA2YWM4YzE3OGUyYjQzZjA4NzM5ZDFmYmJjODAwNjUwYWFjNDM2MzYxZjE1YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca91419aceeb4f6bbde182edfafd5f38",
+      "statement": "Per-entry predicates (patterns, extension, type, owner, size, time) run on the sender worker threads before an entry is sent, so rejected entries never reach the receiver.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L515-L600",
+          "version": "repo-lines-v1:sha256:d5f0c61375140b57c66b01f46215e3aafe1a39c5b3a7a204c5bbd5497c7a1a12:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyOTgyYTIwNDZmZjAyZjhkYTYzYmQ2ZjhjYjExYjNmNDFkOGEzMjA3Yjk4ZGQ2MmJkYWI4OTY2ZTUzYjlmZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZTAzOTUzMjdlOWY5NGRmZWU4NTUzZTY0NTg0OGZkZjM5YWRkOTE1YTZmZjViNjcwNTFkNDMzYTMzZTE3YmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5ZTU2OTgyZTk0MjQ3NDQ5Nzg0ODYyZmJkYTBjOTVjZjVkNzU3ODJiZjdjOTQ5ZjA3ODU4ZDQxYmZkZWU2MjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzM2U1YjRkZGRkNThiMGQ4MmJhODI4ZTQ2YWEyNzdlNGE2MzRlOTJjNmQ5NTA3OGQzZjM2ZDIwNjBjZGIzYjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf06bfec6ebf4925a8a1a5a7370b3c65",
+      "statement": "Traversal errors are forwarded to the receiver as WorkerResult::Error and printed only when show_filesystem_errors is set; traversal continues either way.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L226-L232",
+          "version": "repo-lines-v1:sha256:9637a53a4852775ba7693d3ea5b1def51f4c338b0d4a4bbfc8beb35d3d8c50b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTdhNWZmYTNlMDk1ZGYwNWI2YjMzMzM4NzFhYmExYzFiM2UyNWFiM2RiZjFkNDkyZjE1NGMyY2MyYjEyMmY1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRiMzM5YzE3ZDRjYzU0ZTcwYzRmY2ZlY2I2MTFiYjllN2QzNjNmMjViMThlMDkyM2ExZDMwNmNjOTU5MjRlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE2NGI3OTViMDYwZTUyOTllMzllMjU5MzFmZmM5MjYzMWJkM2Q2ZDk0YjYzYjI2N2U4YzZmY2VhZGYxMWVmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzU5NGY1MDJhZjZmMGYwYThiMzczOGI3MWZmYjYwNDAyYjY1YjY5ODFlYTIyMzNkMzk0ZTA5MWZhMzE0MTM0YSJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L499-L505",
+          "version": "repo-lines-v1:sha256:6a9b6b8efd6d70d5f3277134324f659e1464023d58950d2185fc47567768b463:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRiMzM5YzE3ZDRjYzU0ZTcwYzRmY2ZlY2I2MTFiYjllN2QzNjNmMjViMThlMDkyM2ExZDMwNmNjOTU5MjRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGRiMzM5YzE3ZDRjYzU0ZTcwYzRmY2ZlY2I2MTFiYjllN2QzNjNmMjViMThlMDkyM2ExZDMwNmNjOTU5MjRlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNhODA4NDkwMDI1NjM0ZTY0MzBiYWRjNmNkMmNiNGI1ZTJiY2M1NDVjYTY2MGJkNDZkODFlNTEzMTZjMjQ5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDQ0OThkYjg2YTE0OTc0YjQ4MGNkNDQ3ZWY0MGNkZTM1OWNlYjhjZWNlNTBjODM2NjJiZDg5ZWI5YjA3NDAzYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_73f30729907a44c9a222d1dd55cad844",
+      "statement": "Config is built once by construct_config and moved into walk::scan together with the compiled regexes and search roots, after pattern validation has completed.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L102-L111",
+          "version": "repo-lines-v1:sha256:669cdbfb66db872ffe8ea0434a55dba501d148861ee6c4a0c42cc6161490ee6f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjODAzOGMwYWVmMmM0OTI1NDlmMTlhYTcxNTI0NTU1Njc4ZTMzZDEzYzVjYzA2ZGM4YjIyMTQ2MmI0ZWI0ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzNTA5M2YwMTIxZDYwYTBhOTQ4YTk2MGRiMWM5YTg5YjY2MzNmMTUzYmQ3NDk2OThiOGZkNzEwNTI5N2UxNzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjOWE2Y2MxMmZlNTY4NDEzM2Y1NzMwM2MzODI3NTZkYjk0NDlkYWI5NTAzMTgxYWEzODA1ZTk0MTYyNGE5ZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwN2RkZDljN2JkNmYyZDNlNGRjYWRlZjI2NTIyODQyYmNlOWY4YmNhMzkyMDRiZGZlNDYwMzgyNTVjNjk5NWUifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L685-L687",
+          "version": "repo-lines-v1:sha256:515c364861faf3f87a46ccd2d615a3031c4344f3827119e7d3b66fbd64914606:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjYyNzY0MTY3MWViOWJiMDAzY2VhN2JjZjRjYmQ5MzRmNjI0NTE2NGU3MmFhMTRhMzAxMTZmOGI3OWM0YzVjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjAwYjg0MmI5MzUyOWM0YjEzMWZhZDI3MjU5MWI5YmVlZDY5MGI4ZWY1MWZiNDFkMjNlOTA0ZWY5MmZmZjUwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JjOThkNmIwZGM0OTJjNTAxNmRmMTA4MDVhM2E1NGViOWMxODRhNWE2MTM3ZTdmNGJlY2ZhMGMyMjA1NTBkMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0176e20044e54b6180f44b9d60e2e7bf",
+      "statement": "Command-line flags are parsed into the Opts struct with clap's derive API under the program name fd.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L28-L36",
+          "version": "repo-lines-v1:sha256:489e003ab33107e47e4d7e049acebf45ef86e96cb280c2838531b1782341fa30:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E4NmVjOTM5OTNiZjY3ZTAzNzAwZGE0YTI1OTlmNDQzOThlMDYyZGU2MjVkZGI4YzVkNjZkMDhiOTU5OWRkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDkyNGE5OGRjNDkwNzA2M2QwYTA1NmMxMzYwNjg2OWUwMDE2OGQxOWNiNDM5NjAyMmRlNmU1MThmOWI0MGEyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzkyZmI2MDRhNTk4MWVmYjI4NWZmYTM5ZWI5NDM4MmQ1MTVjMDZkYjcwNWUzMDNlMTYxZmExZDcxMTVjYTNkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTBiNTAwMzA2N2VkODg4YzFmZWI5MGYwM2UyYTY2OTliMjcwNTQ0YWRkZGRiMTUwYzVlMmM0OGNiMGZlNTEyYiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:13:27.224Z"
+  }
+}

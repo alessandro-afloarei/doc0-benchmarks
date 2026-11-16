@@ -1,0 +1,11 @@
+# Files
+
+- [Celery Application](application.md) - How the Celery app object loads configuration, defers task registration until finalization, resolves its loader, and builds its AMQP routing and task registry.
+- [Beat Scheduler](beat.md) - How celery beat turns periodic schedule entries into task publications, including the tick loop, the persistent shelve-backed scheduler, schedule types, and the Service lifecycle.
+- [Canvas: Signatures, Chains, Groups, and Chords](canvas.md)
+- [Concurrency Pools](concurrency.md) - The worker's pluggable execution pools (prefork, solo, thread, eventlet, gevent), the shared BasePool interface they implement, how the worker selects one, and what each implies for task isolation, timeouts, and shutdown.
+- [Events and Signals](events-and-signals.md) - The two observability channels in Celery - in-process signals that run hooks around publishing, task execution, and worker or beat lifecycle, and the broker-level event stream that workers publish for monitors, with its dispatcher, receiver, and cluster-state model.
+- [System Overview](overview.md) - Map of Celery's major subsystems - the application object, AMQP messaging, the worker and its bootstep blueprint, the beat scheduler, result backends, events and signals, and the command-line entrypoints - and how a task moves between them.
+- [Result Backends](result-backends.md) - How Celery stores and retrieves task state and return values - the Backend base classes, the key-value and database storage paths, the asynchronous result-consumer machinery, the RPC backend, and the backends that support or do not support chords.
+- [Tasks and Tracing](tasks-and-tracing.md) - The Task base class and its per-call Context, the options that shape execution (acknowledgement, result storage, retries, time limits), the retry and autoretry mechanics, and build_tracer, the function that wraps every execution and decides the final state.
+- [Worker](worker.md) - How the Celery worker is assembled from bootstep blueprints, how its consumer receives messages and hands them to the pool through Request objects, how the event loop, heartbeat, autoscaler, and remote-control (pidbox) channels run, and how acknowledgement and shutdown behave.

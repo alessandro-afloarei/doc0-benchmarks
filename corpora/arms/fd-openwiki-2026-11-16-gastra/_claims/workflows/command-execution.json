@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fc58b939f3046cdd4cc98e8970a63c4097be343cd52733169632fb25eba4b1a6",
+  "claims": [
+    {
+      "id": "claim_f77a3b8354654fa2ae819a12ebc7af6e",
+      "statement": "CLI execution options consume argument vectors up to a semicolon, support repeated command sets, and prohibit mixing batch and per-result execution or detailed listing.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L861-L950",
+          "version": "repo-lines-v1:sha256:3a96447255d88965809289cd9d65776d6e030f0ea802f6ecdb480364e3077994:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNjRhYjVkM2ZiMWQ2NDJlNjg1ZTRkZTZjNzU4NGQ5ZTNmMWRmYzdhYzAwNzZjOTEyN2VhZTczMGJhYmJlMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwZDlmNzM0YmU1YWEwMzkzNWM0OTliNzE0MTEzNTVjZWZhYzJhMmJmNTc5ODllMTI0NmQzNWE3MzUyYzdlOWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiNjkwODI2YjM1NjBlNmUzNTI1NmExZWNhMzYzMTAyMjRjZmE2ZDlmM2M3YmZkYTBjNDgyZWJiMzc0MWQ1NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmMGQ3NTk1MGRmMGZmOWEzZWU5NjYzOWRjYzhmZjVlYWVkYjQwZDY4MmJlYTkyNjIyYjUyMGRkODg3ZDkzZTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_71e96e9cab7243a4ad9813ff6812fc1f",
+      "statement": "Commands are constructed directly as an executable and argument vector without implicit shell evaluation.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L164-L170",
+          "version": "repo-lines-v1:sha256:0e7d83f4f58318fdb1a8bec1888bb7e6e03fbe848a61cb5b08101da7c0e945c9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzg4YjRkNTRiNTMwNzI5OWQ1MzkzNDZhNmZmZDAxMGQzN2NjZjRmMWRiYjRkMDliOTMxYWIyNTJmNDE5ZWVmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIzNTc0MGQ1ZGU0MzU2ODdiMTViN2IyYjdiMjFiMzdhODRiZjRjMTcwNzI3NjE1MzVkOTk0ZGNlZTIyYjdiOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWI5YTA4YmMyOWY2ZWJlYmU5YTVmMDE5MDNkOTg0NWRiY2I1ODQyYTQ1NWYwN2Q1ZjQwMDJkYWMzMmE1YzYwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTZlMDc4YzFjMGE0M2RlMzI2MjczNmI4NGMzZDBmYzAxMDhlN2MxYzFiMDM5NGM1MjU5OWMzNWExN2IzNmE0YyJ9"
+        },
+        {
+          "resource": "repo://src/exec/mod.rs#L266-L271",
+          "version": "repo-lines-v1:sha256:88371b486a1ea8b9bf1c3c6ea477fe6ed7797f89f62a4d9e21063225eebaf957:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTA4ZmVkNGVjNzgzMTMwM2FhNzExMDRkZTM4YWNjNTljZGMwNGFkZmFhMzQwMDRhOGFlNjdlYzljNjNjYTIxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIzNTc0MGQ1ZGU0MzU2ODdiMTViN2IyYjdiMjFiMzdhODRiZjRjMTcwNzI3NjE1MzVkOTk0ZGNlZTIyYjdiOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmIyMWFlOTQ5Njc5YTY1M2M1YmVkNWJiZjEzNmY5M2EyMzI0YzJjYTEyMTY3N2Q2ODk1MmQzNWRlMThlZTk3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c409991f16c04f64b4e2de5489aa451a",
+      "statement": "The shared formatter parses path placeholders and escaped braces, returns OsString arguments, and replaces separators only within placeholder-derived content.",
+      "evidence": [
+        {
+          "resource": "repo://src/fmt/mod.rs#L46-L140",
+          "version": "repo-lines-v1:sha256:aede75fa529c3561f0a3de9a08876210ebeff4df52f4639786342f509e844e48:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0OWQ0OWQ1Yzk4ZmU3ZTE5ZmQxOWUwYmVkZmNiYjkzYTRkOTI4NTA2ZGQ2ZjgzMGYxYzEwMjA2NTA1ZTNhOWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmMjg4YWFlMmJhZTkxNjEyOTIzZmNmMDUyMmExZTFjZmI5YTNmNTkxYTBlYmZkZDcyNGU1MTMzNTY2YjQ4OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhZDNhNGUzY2JkMjE2YzZlNjJmYTVhYjQ3YjFjNDMzZjFmOGQ3ZTBhMmFjYzM3MzYxMGFhMTkwODQ1MWE4MzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef35f843916944e4a0e47156a3e0d89b",
+      "statement": "Command templates reject empty input and append an implicit path placeholder when none exists; batch execution requires a fixed executable and at most one token-bearing argument.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L220-L260",
+          "version": "repo-lines-v1:sha256:93f0cebff8b0729ce3c5e9bc47afb289707ce45cc593e80604e36d431f3060b8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0ZGI3ZGVhYjE0MzU4ZDIzN2RiMzNjYzg4ZGZlZTdlZDg3MzRlYTRkMGRkZTI2NDE5N2ViMDM4OGJjN2ZhNDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhMzVlZTAwMzk5ODQ3YWUxY2JiZTFlNzZkZWUxNTA2MTkwZTYwMmQ0NDFhOTMxNjQzZTgyOTVjNDRlNjAyM2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyM2RhZmFkOWJhMGUyMTljMTM0YWRlYzQyODMyYTMxZDAzMzkwYzkyNTQ2NTdiNzEyODdhNTBiODRjZDc3YTEifQ"
+        },
+        {
+          "resource": "repo://src/exec/mod.rs#L51-L69",
+          "version": "repo-lines-v1:sha256:75a39a43f5ce97a8f656c8f21f650d67e3c70cabfea7aad47ce80f28957f9662:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNTUwOGI0MThjNzU4MjdjZTFjN2U3YzA3N2RhOGNjYmIzNjdkMDM4YjI4NWFlNzkyYjEzMTQwNWU0YzFhNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOWEwOGJjMjlmNmViZWJlOWE1ZjAxOTAzZDk4NDVkYmNiNTg0MmE0NTVmMDdkNWY0MDAyZGFjMzJhNWM2MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NGJjMDVlMGExNjE4OGM4OTA4YzhjYjdkMzc0YzNjZjQ3NzY2ZDMzOTkwZmM0MWI5YTA4MjVkNDZhODkwNDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7fc5b00cfc14352a89caaf0af6be9b2",
+      "statement": "Per-result execution uses a configured-size pool, processes each entry's command set sequentially, and buffers output only with multiple configured threads.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/command.rs#L60-L98",
+          "version": "repo-lines-v1:sha256:8b8a4e513473124bf3dd815727c36b03e7adf5bcffa045bf846bf9e4161955ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyNDg0NTNkZDA1ZWIxNTk5NjcxNDljYmI2Zjg2OTRlZDQ0MGQxYjI1ZTAzMWYwYmE2NGE3NmFiN2VmYjRlODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZGI4OWIyN2JkZDA0NmY0ZWViMTJhNTY1YzU0NjJhNTVjMWViMzZiNjQ2NGQxMDVkYzQ2ZDU4MDY5ZThiZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExZmM3NjEzZmUwYmYyNzcxNDZkM2M1NTViYmIxYzE5NjBkNGUxNjEwZGNhZGU1YjA5NTE0ZDg4YTQwYzVlNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4NTE4NDBmMTU3MDY1OGE2NTM3MDQyYTZjNjVlOWU2MjRhZjllZDZiODAzYzdkNmYzZjBiNWE5N2U1YjRlMWUifQ"
+        },
+        {
+          "resource": "repo://src/exec/job.rs#L11-L43",
+          "version": "repo-lines-v1:sha256:165685ba82d2f9c4de0797636cc819abebfeff243258e70d035818e842c11cd2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzMjA1MDA3MmI3YjUwMzBmNGJhMzM5YjZmOTgyMzQ0MWQ0NWI2OGI3MmEwNDViYmNjY2FjNGZhNzZhZmVhYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0YWY3MGYzYjJlMTFhMGY5MDQ2YWY4N2NlODMxMTJiZmYxZmY3NzI1NTA2MWFkMGJkZGY0Y2VjNjhmMTk1ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExZTQzNmRjMzc3YWM2NzU0NWExYWRjOWU4MDA3ZTRmZWRiODU1NmFhYmNhMGVkNWZiMTQ0NjMwZDZhYmJkN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNGRkYjUxNTQ1ZjA3MjA5ZjgzZGY4YjVmNDgzOGI0MjMwMzYzNjFlMjMzNmFlMGQxYjczZGFlZDcyOTMxYzkifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L415-L432",
+          "version": "repo-lines-v1:sha256:f300a6a55fc16d92b971ebff8753a3ffb76f38b11b398a78d4ad26cd54984c2a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNGZkOThmZDhiODhjMzI5NTAyZjE0Y2M4MzVmNTRjNTA2ZDhlZTM0YWU3MjZjODQwYzI0NmVjY2QxYWM5ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMGQ2YjQwZGZlYTQyNmVhNWZiZDE3OWRhNmZlMDBkYjQ3ZjcyYzcxMDczZDU3YzMzYjhlNDA5ODBhOGJhZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkNzI3Zjk4Y2JlZjExZjgyZTJlNDNiN2QyYjllZTJkMzM5YTg2YzBhYjZjY2U1NDM4NmY3YWM1ODhlMzE5ZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3ODM2MDk0NmExMjgxOWExZDA2NjcyNmZhZTE2NzkxYjBkZjQ4YTRiYjdhOWRmNGNmM2MzZWY4ZTgyMDgxZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c45d602a5566404cb79ab521cb0a72f1",
+      "statement": "Captured entry output is written under stdout/stderr locks with an optional trailing NUL, and a failed command stops the remaining commands for that entry while workers continue later entries.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/command.rs#L30-L98",
+          "version": "repo-lines-v1:sha256:3a94a7051763cdd52129a7a3520c72ac05e0bc65bffc6e64bc5d3db4aa3b1375:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMDIzZWMyZjY3YjQ5MmU5NWY4MzIzOTRhOTRlMzI5YzFhOGU1ZTg4MjJhYmEwMTcwMzM0ZjY3MjAwNTAxYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZGI4OWIyN2JkZDA0NmY0ZWViMTJhNTY1YzU0NjJhNTVjMWViMzZiNjQ2NGQxMDVkYzQ2ZDU4MDY5ZThiZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkOTIxYjUyM2U3MDVmMTA5MDMyOGZkZTRlMmJhMGZiMDFhMmFiYTZiY2M2NzY1ZDQyODBjYjExOWQyMjVhN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4NTE4NDBmMTU3MDY1OGE2NTM3MDQyYTZjNjVlOWU2MjRhZjllZDZiODAzYzdkNmYzZjBiNWE5N2U1YjRlMWUifQ"
+        },
+        {
+          "resource": "repo://src/exec/job.rs#L19-L43",
+          "version": "repo-lines-v1:sha256:12221c504de20b5725c6880866166616531ae6cc9f1a9ed042480a7232948ea0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3ZjQ0YjI5MWE1NTI3ZWQwZWY1YTEyZDM4MTkxNWI0MjQ4ZGJjMTBmOTk2MzZlZTdkZWMwNjg3MzViMGZkZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0YWY3MGYzYjJlMTFhMGY5MDQ2YWY4N2NlODMxMTJiZmYxZmY3NzI1NTA2MWFkMGJkZGY0Y2VjNjhmMTk1ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5Nzc4YWM0YzczMjJkZGU5MTM0ZDg5NmQzOWI0ZmUwYWRmODViYmE4NjAwMTA0MTc1MGJlYzZjMzRmN2MyNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNGRkYjUxNTQ1ZjA3MjA5ZjgzZGY4YjVmNDgzOGI0MjMwMzYzNjFlMjMzNmFlMGQxYjczZGFlZDcyOTMxYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_faa50b547af04e46840f3e2fd98ca313",
+      "statement": "Batch builders flush on a positive count limit or argument-capacity pressure and include fixed trailing arguments in the capacity check.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L125-L188",
+          "version": "repo-lines-v1:sha256:5395f11157a74e5d9dd58f577bafaf3a13d5fa9db3f274a94a893ce9a0652999:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MTY2MmM4NTI2ZTViNjJlZjVmZDMzODUyNjRiNzdiZDNjMWY2ZDhmMWEwZjQzNTU3NjEzOWExODNiNDZjMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNzFjNmU5MjJkNjRlM2MyZDEyZDFiNDAwODRjMzFjYzRlNzgwN2ZiNDJlN2Y3MjI5Y2M4ODYwNWU3ZmM4YjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiMjcxZDljZWJjOGJiMDQ2MTFmMjFlMDJlZGVkODlhZjNmMWJmNTQwNTVhZGU1NzFhNWQyNTFkNWMzNGEwMDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkOTE1Mzc3N2M3Y2E4YTU3ZjRkNzIxYmU3YjY1MTFjNzVjYmNmYmE3Njg2NWQ3MGIyODM2YTlhYTA4MzEwZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3fdcc4318a014e33863a4e51cd28a3ac",
+      "statement": "Batch execution inherits standard streams, runs only nonempty batches synchronously, records nonzero child statuses and returns early on building or spawn I/O errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L164-L207",
+          "version": "repo-lines-v1:sha256:ff6550d34567ac12fd9c4358ece1497f1f018613017d5f02d458cd3febc2616a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4OGI0ZDU0YjUzMDcyOTlkNTM5MzQ2YTZmZmQwMTBkMzdjY2Y0ZjFkYmI0ZDA5YjkzMWFiMjUyZjQxOWVlZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOWEwOGJjMjlmNmViZWJlOWE1ZjAxOTAzZDk4NDVkYmNiNTg0MmE0NTVmMDdkNWY0MDAyZGFjMzJhNWM2MDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwZmFmY2EwMmRjM2MyZjVlZmY0NzM3MDFjYWI2ODM2ZTM3NTgwMzFiMGU5NWVlMThkOTZjMWFkZGEzZjc0ZTEifQ"
+        },
+        {
+          "resource": "repo://src/exec/mod.rs#L90-L120",
+          "version": "repo-lines-v1:sha256:862fe7af89fa880f29fa5b3fede712afc5e01e276187ac05fad3eed9f1c37dd7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMTliYmVmNDg0OWE2NjJkY2QzMTY4NWI3N2Y3NGE1NDQyODcyMTMwZmQ2OTE1NjhjMjZkNDhhYTJkYjYwMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4YmNlNmNmYzViZjcxZDA5NmFlMDVkMWUzMmYxMTlhOTQ3ZTJiOWMyZTI5YTBlMjA2NWExMzMxNTc1OGY0NWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2YTNjMWNkMGVhNzY1NjE2MWVlYzgzNGE5YmViZTAxNDJkMzFhN2JmNjBlMDE5ZjBjNDY0ZTgxNTk0NDg3YTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e72370e50861498590d929718894bf1d",
+      "statement": "Multiple batch commands have independent builders and flush limits rather than a global per-command completion barrier.",
+      "evidence": [
+        {
+          "resource": "repo://src/exec/mod.rs#L173-L200",
+          "version": "repo-lines-v1:sha256:e9c06b06aee9732efc664976df1a6bb5262cf6714a5c0d96c05cbc8211e6d1ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5MGI5NDE1NTg0Njg3MDQ0NGE4YzA0YzIzNDNiMzU4ZjA4ODk5MDg4Zjg0YjgwNDcyNTg2ZjNiZGJmZmIyODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1ZmFmYWY1YmI2YmQ1YTMxYjMwZDQ4NTQxZTNkNzc4Zjk5NmVmZWJmM2Y1ZjhlZmEzZGJjNDhiOTE3MjVkZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3MjQwODM0ZDFkY2ViZjdmOTE3YzNhMTJjMzQ1ZjY0OGQ5YTJlZjA4NWI1NjdjNWJjZmFlZGIwZjhhZjM0ODYifQ"
+        },
+        {
+          "resource": "repo://src/exec/mod.rs#L90-L116",
+          "version": "repo-lines-v1:sha256:b331699159b0cc72af260e57c4e2d67e3eb9e578b0976173ed1396bc693b45ed:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMTliYmVmNDg0OWE2NjJkY2QzMTY4NWI3N2Y3NGE1NDQyODcyMTMwZmQ2OTE1NjhjMjZkNDhhYTJkYjYwMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NjNiNmZmNjcwYjBiNzJkNjdmMmI0Mzg5M2RmZDVlYjFjMWJkY2FmNzNjZDc0NmY2YTQxYWQyNTViYmU2N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4YmNlNmNmYzViZjcxZDA5NmFlMDVkMWUzMmYxMTlhOTQ3ZTJiOWMyZTI5YTBlMjA2NWExMzMxNTc1OGY0NWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxNDdkMDk2NGJiMDEwZDNjYWRjMDBlMzk3MWFhYjkyZjlhYjQ2MzM0ODRkZThmMDQ5NTE4ZWRlYjI4NTVjYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b14f043074da404690240a49ab55a8c1",
+      "statement": "Detailed listing is implemented through a platform-selected external ls batch command, with GNU ls required on Windows.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L395-L493",
+          "version": "repo-lines-v1:sha256:34d97e0a46df07e9284c365ad8d592bc146029a091a8a181526b51ff7b7fa908:eyJzZWxlY3RlZExpbmVDb3VudCI6OTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MWE5NGE3NTY3ZTQ0OWI3ZmJhZGJkZDljODgyZDE5ODdjY2Q5MWY2ZjE2YzhlZTU1NDg2ODE0ZGZkMWQ1NjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyOGU3MmQ5OGM0ZTc2YWE4MDI3NWE3MmIzOWRjN2JhMGQxNDkyZTJlMWU0MjJjNWFiMTY0OGRmYTBmZTExZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwNjNjNGQxYWY4Y2Q4OWJiMGJkZDc2NTdmZmNiZjY4MDZhNjEwZDc5ZDZjOGQ0YzMwN2MyNDFkZjM5MDA1MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3M2JlNzZiN2QwYjBmZjI4MmYyMDEyYTU0OWYzY2RjMjk4NzE4YzEzOWI2YzM3ZWYyYmFjNWQ2ODg4ZmQxYzIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:26:52.841Z"
+  }
+}

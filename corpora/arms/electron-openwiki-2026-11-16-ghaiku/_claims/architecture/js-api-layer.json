@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:806f0466997ebb3336921a12b01733d06ee10c41a83fdfe8c1b33df51ca40efc",
+  "claims": [
+    {
+      "id": "claim_c706bbe5ab3e4724a27ec0bf772f5c34",
+      "statement": "The electron module is not a file on disk: webpack aliases electron, electron/main, electron/renderer, electron/common, and electron/utility to a per-target api/exports/electron.ts file, which attaches the common and per-process module lists.",
+      "evidence": [
+        {
+          "resource": "repo://build/webpack/webpack.config.base.js#L34-L34",
+          "version": "repo-lines-v1:sha256:c8c7eb5340be9433fe5e2ec4bd5bf3aed4bc09ed1137d7b65e4d5b7b1d7cbaeb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhjN2ViNTM0MGJlOTQzM2ZlNWUyZWM0YmQ1YmYzYWVkNGJjMDllZDExMzdkN2I2NWU0ZDViN2IxZDdjYmFlYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhjN2ViNTM0MGJlOTQzM2ZlNWUyZWM0YmQ1YmYzYWVkNGJjMDllZDExMzdkN2I2NWU0ZDViN2IxZDdjYmFlYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDFmYTMxY2ZhM2Y2ODY0MDJlZjVjYjAxNWY0ZmMzNGNjNTU1OWM2MGQ3YWI1ZDJkMGUxNzhkOWEwNTdkMmMxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTUxNTI3MmM3ZDI5NThjM2Q5YmNmOGFhMjlmMzUyYmNlZDM2NzJhMDJjZTBmODNlNmFjNzM0MmM1YWRkZDlkYiJ9"
+        },
+        {
+          "resource": "repo://lib/browser/api/exports/electron.ts#L1-L8",
+          "version": "repo-lines-v1:sha256:b4da389bd662e88c36dca9d8db45a5dd24282583cceb73f36363c47919a90d56:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQxNTMzNTVlM2IyYjdkOTQ4MDAxNGJlN2RlMDQyYmExOGMwYzFmNDY4NWFjMTg2NTUyNjM1MDZmZWE5NjU2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTBmOWQwMjMwNzlkNGQ2MTBmZTAyNDM5YzlkY2YyMTliM2RmMTRmYzkyODU1OWYwN2IwMDQwZTZiNDdmNzg3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce8e4adbd66e48ad8ed42c2d15009ff3",
+      "statement": "defineProperties installs enumerable getters for each module entry, and each getter calls the entry's loader and unwraps an ES module default export on access.",
+      "evidence": [
+        {
+          "resource": "repo://lib/common/define-properties.ts#L1-L16",
+          "version": "repo-lines-v1:sha256:74ab2409fdd2d90812583d8968fe14eb0133b9f6cf6c1192075372a5182620b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NzRjZGVlY2M1ZDQwODA1NDE0MGU1YzIxMmE1OGUwODdkY2RhYWZiMWNhOWY2YTMwM2E2ODZjYTE0YWI2MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MTIzNjE5Nzc3Y2Q2NzlhNDVlNTY0NmM0MDZhNWNlYTA3YTdmMzY3MTQyZmExM2YxNjRmYjQxOGQ2M2RlNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c5ba3a7f2a04c48b20e7ee6ba0019e0",
+      "statement": "Browser-side lib modules obtain their native object through process._linkedBinding, for example electron_browser_app for the app module, and the binding names are registered in ELECTRON_BROWSER_BINDINGS.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/app.ts#L6-L8",
+          "version": "repo-lines-v1:sha256:893f679ecd5909a3c54971e79613fa13b3a9ab9e689670734b4409b0e0f31cad:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODE2OTc2ZjE1NTYxN2MxZGVlMzNkMzdjYzNhZmMzMGUwYjFkNzNiMzYwNTJkYWNjMzFiOGJlZjJlYWIzMTMyNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmZhMmJmMWFkM2NhMWNmNDcyNWQwNTQzMmIxYmRhNDJlNzQ3NGMxMGFjMjUwNzIxZDAxNjNjZjFjOTliNDc2YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzE4ZDU3OGEzNmNmYTg0ZTJjN2I2ZTE1YWM5MGJiN2E3ZTg4M2VmYmRlZDFhNjE5ZTEwYTExYjc5ZThmMTQzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzI3MDIxMmQ0NmNlY2Y0ZTE5ZTA0ZjM5MWU4ZmMwZjRjZDE0YjliNWNmMWU0MDM3MGFkY2Q5MTU4OWU1NTFiMCJ9"
+        },
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L53-L55",
+          "version": "repo-lines-v1:sha256:cf036e8979d31e4125aec240152af7aa01a34a714b0290e72df33cf9da441870:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE4MTYwYzIwYWY0YTk2NTI3NTllZTE3MmZjZTczNzFmNjg1YzBjYjdmNzhjNTE5ZDExNWIwZWUyYzIzMTExNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA1ZDM5NjY4ZDFlNzM1NTY4MWJjMjI4ZGEzMjA4MDM4ODllYjMwMWZjNDdhYTg1YzdmMjgwZTI4MWJlYmIwNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTM0MTkxN2QwNTVmMDE3MWQzNDg2NjY2MjY4NThjMmFhNTA1MWYzMmNmM2QwNTdmNWQ4YzlhODFmOWQzNDU2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQ1MDhjYmU3NDdkOTFhZTQyYjU5NzE2OWY4ZGVmYTA3MDlmYzg1MDQyZmJkZDNiNGVhMjM5ZWJkYTI2ODRkMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e27c91e0838e4ccb8e2407e0f1997c2b",
+      "statement": "Each process type's bundle is built by a webpack_build target in BUILD.gn, and the browser bundle is emitted as js2c/browser_init.js.",
+      "evidence": [
+        {
+          "resource": "repo://BUILD.gn#L165-L172",
+          "version": "repo-lines-v1:sha256:394ca5fb4ca1c68cccba18a411c45a56c3815e5aa4c768e06581c13df949eab5:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNmN2I2NWQwYzNkMmJkMDIyNmY1MDY2ZjgxN2Q3NmZmYjJjNmRiNDQzZTIwZjY1ZDQ2NGJiMTk2NWYwYTJlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTBmZmU5ZGMzNTczNDJjNGE2NDE2MWIyODhmMTg1ODRlYTQ5ZTFmY2RmNjBjOGU3MTUyNDI4ZTA3NjkzYjhhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2VjNTAzZWJkODg1NDAxNzkwZjQ4ZTdmZjE0MjdhY2YwOGRhNTMyMDExMjYwMDQ3NjQ0NTM3ZjYwY2M5ODQ4YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a461666e42a145f08b0f292a3a447899",
+      "statement": "At startup, the node bindings run the bundled init script for the process type, named electron/js2c/<process_type>_init.",
+      "evidence": [
+        {
+          "resource": "repo://shell/common/node_bindings.cc#L702-L702",
+          "version": "repo-lines-v1:sha256:582dcb857f98d72c96a7b5e777592032be04b7d9d73c254b18570843275ad422:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgyZGNiODU3Zjk4ZDcyYzk2YTdiNWU3Nzc1OTIwMzJiZTA0YjdkOWQ3M2MyNTRiMTg1NzA4NDMyNzVhZDQyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgyZGNiODU3Zjk4ZDcyYzk2YTdiNWU3Nzc1OTIwMzJiZTA0YjdkOWQ3M2MyNTRiMTg1NzA4NDMyNzVhZDQyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIyOTJhYTQzNWE2YjVmNTc1MjI1ZGJlYzdhNjM1YmU1NTkyYjY2YjA5YTE1ZmVmMGZlYThkNjIwYTdmYmQzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjI2OGViMTJjM2QxMDU2YWFjNjI0MGI0MjMxYjEzMTVmOTVmZjM0ZGYwODE5OWI3OTYzOTg5NWU5MzcyZWU2YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8a4f19609de04c89b733b45ccb299a88",
+      "statement": "Electron's common init wraps process.nextTick, setImmediate, and timer functions to activate the Node event loop, and applies the global timer override only in browser and utility process types.",
+      "evidence": [
+        {
+          "resource": "repo://lib/common/init.ts#L1-L60",
+          "version": "repo-lines-v1:sha256:72b83e96cceb71300899cf6e58fe0e91046083006b7a52495a689b4983cd25b5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4OWU1ZjY4NDJkYzUyYjg1NDFlY2E4MTNjNTEyNzkzYjFhOGQ2OThmMDk3ZDdiY2M0NmZmN2I3ZTQ5OWU0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYTIxMWJlZGUzMjExN2FlNWY5ZjdkYzZlNmE0YjlkM2I5ZTljZjA0ZWY3NGMwNjI0M2VlZWJiZWIxZTQ2ODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzM2NjMGJlYjNiYjc1NDk3ZmU4YTkyNGY0NWI4OTM0ZWJiMzQxZjFhZTQyMjI5YWY5ZTgzNjY3YmM4YTViZDcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:29:50.477Z"
+  }
+}

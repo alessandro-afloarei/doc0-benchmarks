@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:6ee3677b6b1e0b67c289cc78796f1d958e8762a8ddb01565f6801715a033b159",
+  "claims": [
+    {
+      "id": "claim_5f79b323182c4af1a4fe3364d185288a",
+      "statement": "MCP startup requires an initialized runtime, merges repository-microagent stdio servers, discovers tools using direct stdio for CLIRuntime, and installs schemas on the agent.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L267-L317",
+          "version": "repo-lines-v1:sha256:7c349b9cd2dcf22a82261e945a41c1fbc02c38be3605625f73e2453266231577:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNTMyNDM2ODVlYzhhNzZjZDI3OTk5ZWY1NjUyZWQ4M2ZiZTU1YjgwYjlkOTFmZTdkYzBkOWU2ODAzYjVhYTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NGRlODM1ZGNkMTIxNzRmNjZkZTMyMzkzZDk1YmEyNGY3YmRiNWM5NDE5ZDI0Mzc3OTgyMGE2YzU1ZWU5NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e1dcd896c8754be7bcf95aca0dd98d79",
+      "statement": "MCP client creation skips missing stdio executables and failed connections while retaining successful clients; these helpers disable MCP on Windows.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L63-L148",
+          "version": "repo-lines-v1:sha256:fb8735278921d5863f904f759ca631e9367ef181c12a14d2c860f9dd945d9103:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YTc3MTMzMmM1ODczYTQ5MjdkZGUxMmE0YmY5YmI3ZWE1MTJlYTdmYTU0NzkyZmMxZTk4MzA0OGJiYzc5YmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkZWE4MDEwYmQxMTEyYjM2NGY5NzVmZTkwYzFjNzMxNDYwOWI5MzQ5NTlkMDdkMjQ0MzFlYjNjMjE2Y2Q4MWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3OWQ4MmJkM2FhYzc3NDIwNTQ4OTA2ZDAxYTAzMTJmNDA2ODc3YjNiZmI4MzM0N2Y3MTEzNDgzM2M5YzYwNmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkMDIxOWE4YTI1MzUxM2EyMTQyYWExNWQxZTc1MTkxM2RhMTJhNDAzNmRlNDgwNGRkZDQ1YThhODJjN2NiYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c89b5c35f6204b0d8a00bd207ce1e91a",
+      "statement": "MCP execution selects the first client matching the tool name and returns McpError as an error-bearing MCPObservation; missing clients or names raise ValueError.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/mcp/utils.py#L206-L264",
+          "version": "repo-lines-v1:sha256:ef27ee4a845ef6e7cdb6d8981a345a533d140b08e4ecdd86d586cf8be8209fb9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyNDQzNjdjODNhMTBhOWY2ZWM4Mzk3MTZmNGM0OTM0OWU3NGExMjljMmM1Y2ZlZjgzNWFlMTY2OTBmZDQ1NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3YzE3ZWZhMjc4NGU3MjFiMTZkYTUxN2I5ZDYxMTFlMDJiZmQyNGE5NzlkZWEzY2FjMDcwMGVlMmI2OTU3ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1M2EwZGFlNjcwZjRjNGQxNmYwNDlkZGY1MTA4NDgxODAwMTZmODEwMTFkODcwMjk5MDNkNDM4NTQxY2JlZTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff80258dffe742d9b926d2eaef24cb3b",
+      "statement": "ActionExecutionClient exposes configured runtime stdio servers through its MCP endpoint.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/impl/action_execution/action_execution_client.py#L361-L450",
+          "version": "repo-lines-v1:sha256:62c704c44ee5320857176cf9eb48eaeff45c4a708fa5360c82182c2977f94daf:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMzJjMDI1ZGNjNjRhMjQxYWRjZjMwMzdhNGU5NmQ2MWUyNzNhYjdiZmUzMTM4OTQ4Mzg2ODNiZTAyZmQ1YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxYTE2MGZjNjhlZDAyYzcwYjYxZjc4NDhjYWUxM2IxYWU1NTI3OTBmM2U5YTBiZWE2MDRjYzgxOGQxMTM0NWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4ODEyMDUwMzMyMDIxY2M4M2ZkZDIyM2M3MTAyODRiZjQ0YWQ2NmM0YWI0ZTJiZjQyODkzZWQwYzhiNjQxOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4YzUxMDAwMTk1NzViNDk0YjU4ZDk4OWU0YTllN2Q1ODc5MWE2MGRiYjA0OTI2NzliNWY0MzYzNjA5YjE3NjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb7305e6bd10414392702138873ae078",
+      "statement": "ProviderHandler requires an immutable MappingProxyType token map and constructs GitHub, GitLab and Bitbucket services with identity, credentials and host settings.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L105-L160",
+          "version": "repo-lines-v1:sha256:3edca51ccf6836d6eec42635b9dd3758966e482884f8a2fe3730af8849886592:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1OTA3MmM3MzY4MDYzYmJhMGY0MTgyMzhkOGUwYjUzMDkzODkzZjUxYjU5ZjU3MmExYmVlNWQwODdmNGU5ZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MDlhNTNhNjE4ZDAyOGUxZDMwMDBjMGE3YWJjZWVjYmU1ZmIzN2Y0ZTUxMWVmZTQ2NjQzZmFkNmU2Njg3MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzZDE3MWRlNzU0MzFhMDIxYTBkOTRmYTc2ZmFiZjBkNzEzOWM4OThjMWEwYjQ0YjQzY2E2MDkwM2ZhMWI4NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyY2Y0YzcwZTEyY2FjNTlmZGI3ZGZiNTdmMzg4MjBjOWQ4NmNlMDMzMDhkMTFiOTBjZDM0ODM3OTMzYmJkN2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_beb063c77d33455b83e56674f66af443",
+      "statement": "Provider environment export can retrieve refreshed tokens when a refresh URL and session ID are configured; secret registration replaces the event stream's registered secret map.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/integrations/provider.py#L338-L422",
+          "version": "repo-lines-v1:sha256:d2b473fb8f0468663d8d2f4063843db67e982c9c1aab52905754486feae6c1a7:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5YTQ1NjQ2MmIwMmQ4NzgxNThmZTgyMmRhNjc3MTA5NmMyNWRkYTUyYzM0MzRjMDAyMzAyZmQ1ODkwMWJkM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3YTBjYzZmOGIwYmNjZjQ4MjU5MThmMDhhM2IzMmMwM2ZkYzgyMDEzZDA5NTRlMzM4M2RjOTVhZDZmZTkzNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyNjMyZTJkMGJjZjRjY2JhZWI3NDYxMWVlZDJmYmU5N2ExNjU3ZWQxNjdhMDcwMWRhNjcxMDk3YWMyYTQzYWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f4356c606cc64cfe8981b5ded933cfa3",
+      "statement": "Before action execution the runtime detects provider-token references and refreshes the selected token environment and event-stream secret registration.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L324-L359",
+          "version": "repo-lines-v1:sha256:ccfe91a2788293c884d65e88fe4ea64bd045daaf6c44ac39f973beb9a8c9fd48:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNzVkYzJmMGQ2NTUyYzkzZDQyNDhiZjU0ZjgxYzViMjczZjA5OGI3NGE2MzcyOTk2YWU3MWUyYmRlYjE4OTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MDMyZTk2NGQwOTMyMzUxZTVkMTg1MjY5MjgxYjE3MWEzYTA5YjA4YjI4NmU2NjFlYTQ3MDMyM2M4MmViNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyOTY5MzA0NzJmYTVkN2NjMTc5NjEwMmYxYjI0ZmEwMDQwMGM3OTRiNmQ3NDA1MGNlZDQ0OGUwOWZiYTg3NmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2NDU2NjE2ODk5ODE2N2Q5NTVkN2ZjMGMzZjNkNDNjYmE1NGY3YjYyY2Q5YjA3ZjIzOTMxMzI2OWQ3NjU3ZTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

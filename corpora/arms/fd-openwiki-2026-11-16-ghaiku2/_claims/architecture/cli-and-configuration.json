@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f7e99b772d5e8a75b0aff87e984cf823949280f0da18a18c4a433c4999403220",
+  "claims": [
+    {
+      "id": "claim_3f048dcbc2734213a144640cb1a35f4f",
+      "statement": "fd's run() parses options, handles completions, sets the working directory, resolves search paths, validates the pattern, builds per-pattern regex sources, constructs Config, performs the leading-dot check, compiles the regexes and then starts the walk.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L75-L112",
+          "version": "repo-lines-v1:sha256:787bb438302092d0f1e10a4be99cdf40b923ce013f7842ecdc60f1e20d3be880:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0NzZmMDdkMWRjNDYxNWU0NTlhMTFmNWExOTVmYTM4NWJjMzk0YjFkMGYwMzM4ZGU5NmZiZDMxMDVhNTZiYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxMDdhMGM4NTA1ZGU5NGNhMDcxOGQyMDhjYmYyM2U1YjAxOGQ3YTJmZjY3Yjc4ZGE3Y2M4ZTdlMDBlZTM4YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_272cd79a3b7c4195ab01e6c063024087",
+      "statement": "Smart case: the search is case-sensitive only when --ignore-case is absent and either --case-sensitive is given or some pattern contains a literal uppercase character detected from the parsed regex HIR.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L251-L255",
+          "version": "repo-lines-v1:sha256:92998d39b9818a0fc268378f8c315b3be7a563dacc36c98cca15296456830925:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk0MDE0ZjFlMTA3ZmM5OWM4ZTcyYjUwM2QwMjM1NDI2MjU1M2QxNmEzZjcyYTk3Y2VhNjgzZGRlNDRlY2MyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVmMDY4NmQwY2JhYjU0OWRlNGQzNGU3YmNkOGJhOTg3MWQ5NGEwZjUzMWE4OTBkNjg5ZjE5NjJmMzI3N2ZmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQxMmI3YTdlOWY5YzJmMDk1MmYxMzEzYzFiZDcxMDEwMTNmMDcwMGVhN2RlNTk5ZmVhYTJlZjhlMzhmOTRkZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmJjNWViNWNmYmZiMjViODI3NWJhOGRkOTgyYTZlZjM3NzAxMzJiMzlkMWYyNjQ2MWJhOTMxNGI0ZjVlNWQ0ZiJ9"
+        },
+        {
+          "resource": "repo://src/regex_helper.rs#L5-L13",
+          "version": "repo-lines-v1:sha256:534ef5c2bc764d85f7c1bae21ffdaf165d7dfc57493824919f3bd7b8f9d16d8b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2RhYmRlNWI2YTJiZjliNmZjMWZjMTJmZTZhNDQ0MWNlZTQyNTA5OTJmMjc5OWIxYzk3MGY5YWI0YTVlODRjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzZlN2Q1MWEwOWY5NDlmZDk1N2RlNTZkMzI2NmRjMDE0OWE5YjczNTAzMzc0ZGZlMTc0ZDQ3MDcyMzZmZWM0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWEzMmRiMWYxM2E3ODliZjc1NzdjMmZmNWI4YmNmNTEwNDYxNjQ0ZGMyYTdkMzg0NTIxZjNlZTNkOGUwM2E4NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f2852ffb76945e98101ade9be2ae38a",
+      "statement": "Compiled patterns are built with case-insensitivity set from !config.case_sensitive and with dot_matches_new_line enabled.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L541-L545",
+          "version": "repo-lines-v1:sha256:0e12dc1d213163371cd04a4c6b9414f51a7c964c846afbc6435ff06966a9bb1a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzIxZTA4NTdmMDBlZDgyYjU5ZDczOTgyMzkyYjQwZWY5M2QyM2JhYWMyNTY0OGMwN2JlYzRiYzdhODQ5MzJhNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWU3MTk0ODAwZWI0OTU5OGVjNWQwMTNiYjU1MWE5ZDQwMmJlMmU2M2U5YTAzM2ZjZmNlNDFkYjNiNGVjM2NkMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTY5YzAzMWQ5NTRlNDdlYzU4MjlhYTYwOGU1MmM0ZmZjMWRmZDY4YmRjYjRkOWY5OWE2MGRjMjIzNWYyNjkxMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a7277dfb8114d8a842b7fba7e9a8a34",
+      "statement": "On Unix, when hidden entries are filtered and a pattern can only match names beginning with a dot, fd fails with an error suggesting --hidden instead of returning silently empty results.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L521-L539",
+          "version": "repo-lines-v1:sha256:03fc43e4364c9c9be01660977624f8fcb36831d68eda44f20beed381baabbfa3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZTJmNDI0MjU3N2Y3YWMwZGNkZjNhNDk2ZjBkZTQ5NmE0ZDI4YWQyMDM1MjQ0ODk3ZWM3MWU3MjZkZTYyYTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3YzhkZGE5MGFjMDU0NDA0NmNjZTQyNmZmZjEwM2FjYWJmMThmZmUzM2U5MTJjNWJiZGUxNjU5OWRjMTBhMzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlY2NlYzJjOGRhYjFhZTk1MzU3YjBkYzAxZGRmYTI2Nzk3YjZkZTY5MTE2MTljODNiMzA0YjI1N2JlNTE1NzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc494b88b8ce409580c66ef24c98b4ba",
+      "statement": "Without --full-path, a positional or --and pattern containing '/' is rejected with an error explaining that it cannot match file names.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L169-L190",
+          "version": "repo-lines-v1:sha256:7ad66750f02aea364f6bfa075cf442e0978f8d8d0ac0162f79f342b7909c2751:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZWZlMzZjNDhlMmQ0NDBkODE5NWZkOWQ2NTJiMWY5N2QwNzdiZjA1NzRlMDRjYWMxZjgzOTczNjMzZjNhNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3MWYwODExNTQ5NWE3OGZkODM5OTE2MDI4NTZkMDQ0ZmMxZjNjNTI5MWMwNTBmNGY0Yjc1MmZjNjEwZDYyN2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2OTk1NDM2NzI1NmM2YTYxYWUyZTg2Yjc1MGUzZmRjYmNkYmFjOTBhOTFhNGYyOTg2NWUwYWI0MWQzMzhjMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxMDU5MmRjZDQ5NjQ4NzZiNzU1NmZkY2JiNmJjOTE2ZGUzZjRhNzY2Y2ViNjJiOWVmMjQzYzZlMzgzYWNhY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ccd56683401348688e4aceea0f95b602",
+      "statement": "Search roots that are not existing directories are reported with an error and dropped; with no path argument the root defaults to ./.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L696-L721",
+          "version": "repo-lines-v1:sha256:d34f92ddbc134f029d276ccf4782ecacbedea15ad2220aa32260313092fb10f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZmJkYjRjZmEyMzg5NDAxY2UwNjg1MmZlNWEwMDk5NDkzNDg0YTBjNjBkOWM2OTdmYmQzZmMyNTNkNGYzODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjZDliNzVkZDgxMDgwZjQ3YWE3YWNiNzE2ZDkzYTRkYjBhMmI3MmFjOGQ0NzQzOGViOTc4ZjQ1ZDBkMTZiYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhZmRkOTQwMDQyNzQ4ZGE0ZDJmZDI0NDJjMWFmZjg4NmZkYmQwNWExZDcxZjExM2FkMDdkZTZlNjhjN2RhMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_54b0fbdb9cd64f6081f40d79c2ac5d6d",
+      "statement": "The default thread count is the available parallelism capped at 64, and it falls back to one thread when parallelism cannot be determined.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L789-L800",
+          "version": "repo-lines-v1:sha256:bf693edccf679417f91447baf12445ea19df4e23565d7943e09ee2dd49f16df0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNWFjMDBhYjA2NDU1YTc2ZTMxZTllMjAyNmU2YjM5OTBjOTg1MDIxNmUwMGViZjE5ZjAwOGQyOGRlODgzN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyNmQ1ZGQxYjYzODAwYjkzZTRlNDZhNjM0MzYyZDQwZTFmYjAwZjNkZDQ1OTkyMjNiMTUzNTUzMGUyYWJhN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1NjFmMzhmYzE5NGY5YzQ5ZmZmNDU3NDI1ZDIwNzQ3NTkzYzgzOGI2NmU0Njc5ZDk2ZDNiNzBlYTA2NWI3YmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0af599410ed41cda341ed4699fa2c12",
+      "statement": "clap enforces that --exec, --exec-batch and --list-details are mutually exclusive and that they conflict with --max-results, --quiet and --max-one-result.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.rs#L27-L31",
+          "version": "repo-lines-v1:sha256:e96d19b06b31cd5a73e428ceb763e61fba03b9f36e9ee7b9b7dadc1a1aaa843a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA0NTI5ZjE4NGMyMTllOWI3NzljZTA2MGFjZDUxYTY0M2I0MjQ3NzU0NzU5ODU0ZjUxNWMxZjM5OTU4YTdlZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYyNzNiMDczODEyMjEzNjg5ZTUyZmNkZjZlNWMzMzMxZjk2NTA4MjI2MjM4OTU0MTMxNzM4YzZjYjA4N2UwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmFkYzlhMGNjNGRmYTkyMTc2MjZkYWQ5NmY5M2U3OGUyMTNlMmI0YzhjYmQzODkyMGExYmU2NDM0ZjkzOTViYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDMyMDMyYTVhZThjOGY2NmRhODM2NGE0NDY4OGZiZGJkMzRiZWUxMDk3ZmFkMWNiNmVmODRiNmQ2ODUwMTQxMiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:10:54.611Z"
+  }
+}

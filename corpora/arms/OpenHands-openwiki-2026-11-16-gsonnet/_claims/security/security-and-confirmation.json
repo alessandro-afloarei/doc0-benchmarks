@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:954f594e88144bd0c15e7a20d4ae461c13660beeda400bfc56a92da46d3eac7e",
+  "claims": [
+    {
+      "id": "claim_d9b17438838644d1971f6170b7e1654a",
+      "statement": "CodeAct tools expose an LLM-filled security_risk parameter (LOW/MEDIUM/HIGH) which the function-calling parser copies onto the resulting action, and a prompt section defines the levels differently for CLI and sandbox modes.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/function_calling.py#L59-L72",
+          "version": "repo-lines-v1:sha256:e21bcc34956b5f1fc7a0426734a51e33fdcf5850267a7d8de3157b3df1142293:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2N2NkMDQ1ODI4ZTAzYTMzMDBkZGIzZTJlYzY2YWQyMzY2NzFmNDEyOTM5NWViOTkwNDljOTZhNDY5MzI2ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2YzFkZmU4MjkyNWE4NjM5ZGQ3YTE5NzJiNTEwNGM4NTBmMjQxNTk1MDUwMzA1Mjk5YmMzNWM0Y2I0YjkzYzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZjYyYjgwYzkyMzYwMmU0NzE5YzMwNTA5MWEzYWVlNTk3NzM3M2ZhOGIxNTQ1ZmVmMzNlYTc4YWMwOTk5NmUifQ"
+        },
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/prompts/security_risk_assessment.j2#L1-L23",
+          "version": "repo-lines-v1:sha256:c57318e080f8e2aae715798a5f34de6ced8ab39983f74d37bd3f3a86d5cb4979:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyM2UyNmExMjc0YTc1MWY4MjI5NWNhOTczNDEwY2M2MzI3NWQ0ZTVkMDM1NzhkMjBkNTJhOWNkYzBmZGI0ZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyZjkyYTM3M2FlNWFiZGIxM2JjYzM4YmFkOThmMTkxNDcwMjZiZDlkZDE4N2IxYjljNzA0NzNjN2IzYmI1NzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://openhands/agenthub/codeact_agent/tools/security_utils.py#L1-L10",
+          "version": "repo-lines-v1:sha256:ab5a67fc87726237549e678d73aa3b49f83c71295ce9d67decf42fab146b81f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYzgzYjM5NDk0M2VmYWMyNjhjM2Y4YWYwYWZhMDJkOGVhMDlhNzJkNTlkZmM2MTVkZTVhNmYyYmU3NTU4ZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2Nzg4ZmU4NjE1YWRiNmEzMDZiODQ5MTlhMGRkM2VhZWU3M2UzYzc2ODVkY2VkMjQwYWY4MzE4YzM0YTFiMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_afacdf3967574fe99d1825f7b3d10cdf",
+      "statement": "Two analyzers are registered: 'llm' (LLMRiskAnalyzer, trusting the LLM-provided risk and returning UNKNOWN otherwise) and 'invariant' (InvariantAnalyzer, which runs the Invariant policy engine in a Docker container and takes the highest risk annotation, LOW when none, UNKNOWN on policy errors).",
+      "evidence": [
+        {
+          "resource": "repo://openhands/security/invariant/analyzer.py#L12-L125",
+          "version": "repo-lines-v1:sha256:4799dd17b90239513caf29bc67bf42ccc30527d3d25dfa1ddd2a3f7f805a4754:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkZWNiNzQ0NWU0ZjA2OTYxNWRlNTc2OTNlZDJhMTJkZjMwMzg4ZWIxYTk4ZTkzY2YxM2UyZjI2OTBmYmU0OGQ2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3NWUyZDdjYmU2OWM2ZTdjYjg4ZGViNTQ1OThkYTk1NDAyMDM3NTliN2Q3YjNkN2RhNmFlYmUxZTQ4NDZmNDMwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmMjVhNjVjMWNiNzRhODA5NGFlYjY0MmU4ZjYzMzRmOWZmNTEyZjcwOGYxYmNhZWQwYTJmM2ZiMTYxZDg0YTA3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://openhands/security/llm/analyzer.py#L12-L42",
+          "version": "repo-lines-v1:sha256:8b5f4a0b54df1e8682ad9a960e8823ac56cf75dcdf1fe18b0f0d95f1de02c772:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhOTBkMjczYTEyMjlhNTdhNTY1NTcwYzU3MmRjMDVhZmUxOGY1MDVlYTMzNzM3NjM4ZDUwNTJlMDQ3MDRjODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MzM3M2Q3ZThmNzk5MzBlZDY3ZjczM2JjYThmOWI1ZmJjZjUwMzMxYWQzYzgwNjI3ODJkN2FhOTkwZGJlMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxNjY0ZWMxZTE1MWIxMDcwN2Q4MWNjNjEwMzU3OTI5NzVmOWM2NzFkNWQyNmE1MDQ1MGJjNmE4YWM1MmZmYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://openhands/security/options.py#L1-L8",
+          "version": "repo-lines-v1:sha256:42f3388ecdd60ef0858b7c686e9368b4dac4c742ef07a96e2b64690042d5b7b1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWZkZTZiZjhlZWM2YjA3NGM2YWE2NzhlNjgxNTk2MmNhY2UzNWU4NmM2YzRjOGQxN2IwOTFhOGRjN2IyZTg2NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_23d180c23b4c4586b0e45cbfdc6e7af4",
+      "statement": "The runtime instantiates the configured analyzer from SecurityAnalyzers, falling back to the abstract SecurityAnalyzer for unknown names, and the controller reads it from runtime.security_analyzer.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/runtime/base.py#L195-L203",
+          "version": "repo-lines-v1:sha256:46af2013de22fb503904e0c750630f87b9502c03b59f561fc74df1a4d93a4365:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDE3NzkwZjg5MTQ4MzdiNmIzZjNiZTlmNTAwN2UyN2QzNjI3ZGY3NmFlYjRiNTVmZGVkMjZjM2Y3ZGNiYmU1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTUwMzZkZWE3ZjQ1NTBiNTlhOTI1MmFlZDA1YjMwZGNjOTY4ZTA4YzU5MzAxNTEyYTQwZmYzYzlmYTE4Njg4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTAwZTY3YjZlNjAzNTA2MDgwYTRlN2Q2NDk5MTIzMDdmYWViZTk4ZmQ4MTUwYjMyZWY4MDVmNGViZmMzYTFkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmJiZGQyNWYzYzQxZjJlZmM4MzZmZjNlMzVmNDNhN2FkMjEyNzQxNmEyZDA1ZGM3ZWYxOGJhODk3MzEyOTVlZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_21b3558e79dd41ab9a9f95eccc9ab01e",
+      "statement": "In confirmation mode the controller analyzes gated runnable actions (commands, IPython, interactive browsing, file edit/read), sets risk UNKNOWN on analyzer failure or when no analyzer exists, marks actions AWAITING_CONFIRMATION always in CLI mode and otherwise when risk is HIGH or UNKNOWN without an analyzer.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L204-L243",
+          "version": "repo-lines-v1:sha256:b370b1b06f7949d59239eac8195b09e76d714cc6b7698d7487b553282ec40ad5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyNjA1MzYzYjI1ZDgyNWNiNWM2Mzg4OGZjODg0MGQ2YmYxMTg0YmUxMmFjNDg5ZjBlMjI0N2U2MjQxODJlNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMDk1ZWFhYzkxYzhiNDI4NDViNGNjM2ViODRiOTc1MzhiODgxMjI3NTEyM2E2Mjk4YzAzMjIyMzM3ZTIwNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjYWE3MDFiZjFlMDVhNjRiYjgyZGY2NTk0OTUzYjlhMWU5MTk1YjgzMTkyMzEyNDU3YjdmY2U4YWMxYTUyNjkifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L931-L975",
+          "version": "repo-lines-v1:sha256:12fec011e0b2b8b7387efbbde2cf7888b27baa9585969cc92847fa52c92d4b4b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMjdjNDNjODFiMzRkODViMzViMzFkMDAxOGYxYjQwNzJhNDczYTg3MTA3YzlkYTRkOTcwOTVkN2MzMjFmODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5MDg4OGZhMTk2Yzc2ZTlkYTJmNjQyZWNhOTgwMDllOTA3ZmYzNTM5NjEwODM3NGViYjM5MGZiMzI2OTlmZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU5NmQxZDAyY2ZjYzNmMTUyODBlNGQ5NjA2ZTliMjIxNzY1MTA1MjlhNjZiOTIyYzZlMjFjMWVhOWIzOGZiMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3ZDZiZmI5MmMyYzU0MTk0NDUyYmFlNjdiMThmNzcwOGZhNjc4Mzc2Nzg5YzdhNDJhOTViNWY2MzBhM2IyZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f273e1a60f674e639228aa916301b4a8",
+      "statement": "An action awaiting confirmation is published but not executed (the runtime returns a NullObservation); after the user confirms or rejects, the action is re-published with updated confirmation state and either runs or yields a UserRejectObservation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L631-L684",
+          "version": "repo-lines-v1:sha256:5445b0ea3eb56dc098d1684596758d609ae5f2b5e9a11373b33491764239c00e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMGJlMjlhNmZhZWNlMmVlZDhhZTI0ZGNhYjVhODVlYzdjZDU4ZDQ5OWYxNTM1MGZmMzY2OTBmZjIxYWVmZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwYWY1NDk0NTBiNmU3ZjEwZWVhOWNmOTBlMGQ0NmViZDRkODM4NmY5YjlmMWVhMGQ2OTZkNDY2NDNmYTljNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwMDJmMGY2NDc5YzdlNTU1MTE2MTA2MmIyZDI2NmRmN2Y3MWM1NDczYjMyNzk0N2MyNTJlODJhMzQxOGZiNzkifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/base.py#L890-L940",
+          "version": "repo-lines-v1:sha256:3352fee201fa24fed4bfd7d37920fc5b2b06ba885f1c7cc4eba293b6b726df5a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4ODc0Mzk5MDIyMWIxYjNlMTJhYTE4OGVjNzcyZDdkY2M2NGUwM2NkYzQyNmY2OGVkOTVlOGU1ZmE1NTBlN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5ZDgyNWEzMDdkMjM2NDlkZjAzNGI0MGE4OWFmYjRlNzVlMGZhZGMwMjMxNmIyMTM5OTQ4ZTg2YjMxZWU3NWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjMjk1NmNjMTA4Mjc3M2Y5ZDFjYTBmNjE4MmJlNmE4MDIwMDA2MzE1Yzg4YzdhMWRiZTZkNDc0ZmZkOTg3NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxMmI2NjIzNWRhMDU5NTg3YzljNzVlOGJlMWM0MDdkMWRlNDg5YWRmMGJhYjYzZTZmNGZjMWUzZTk5MTBmNmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7fef1983222a452c951cd8d440b93223",
+      "statement": "SecurityConfig has confirmation_mode (default false) and security_analyzer (default none); the CLI forces confirmation mode and the llm analyzer by default.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/main.py#L660-L672",
+          "version": "repo-lines-v1:sha256:6c34111e9cc50f7a0c01c914320fe15d9b287de4e8e945caaea7bb95756ce2d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzN2U4ZmVmNTQ5ZjIzNjcxOWIxYjQzODY4MDBhNjkwOTM2NTQ2Y2FjMzRkYWM1YmM2ZTg2NjEzZDhkYTA4OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkNGZjNGMyZmFmMmYyNzM4NTkxZGMwMThlM2UzNDIzOTJiM2E3OTg1OGQwNzY0ZWM1YjI3YzJlNDhhNTViZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVhNmIyNWI1ZjQ0MDNlZjAxODMxNjRjMWJiZWQzMjJhNDJjMDM1ODI1MWEzNTk0ZmFmMjFiZWNlZDgwMGRlNGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJmNWExN2ZhNWYyNzU2ZWM3YzY4NzlmMjQyOTkzYTgyNjM0NzdjNmUyYzkxNmM3MDdmMjQ3MzIyZTNkMDcyMjkifQ"
+        },
+        {
+          "resource": "repo://openhands/core/config/security_config.py#L1-L20",
+          "version": "repo-lines-v1:sha256:0d05d1aa13577f4e3c3a64b5f0a3c9cd26ddfd5efe264443f0edcfd61d42a141:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhZmUwYWQ4NzBlNGFkZjBjOWQwODJkZTQyMzZjMzZlMGIwZjcwYzljMjYxOWU4MWIxMzZiNDFkMDA0OThiN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0YzUwMzQ1OWI1MWIxOWVkYzJlY2FhNmI3NDA3ZGJkOGFjZjk3NjQzOTQyNTAzNTkxZjkxMWQ1N2JmMmU1ZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c3729bd4796c4c35b09e386dd67cd967",
+      "statement": "The server forwards /api/conversations/{id}/security/* requests to the conversation's security analyzer and returns 404 when none is initialized.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/routes/security.py#L1-L42",
+          "version": "repo-lines-v1:sha256:186f37fbe76df005c4a13548cf456ecd3eab9cd24bdad24bfe3a07666049dad6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxOWI2NDYwMzUwZTFkM2QzZmViNTU4NjdjMDdhNTc0NmZmNGVkYmNlNjBjOGJiODhjYjI0NWExZGQyMDBiOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjMGUwNGI5NmEzZjA2YWM4ZGI2MDE0MTMxZjFmNTE1ZGEzOTRiOGFiMmNjYzQ4YzdhYjQzMzRhMTgwMjBhMTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_945ed3f6f09d471da8ace62d02a72d3b",
+      "statement": "UserSecrets is a frozen model of read-only provider token and custom secret mappings whose serializers reveal values only when expose_secrets is set in the serialization context.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/storage/data_models/user_secrets.py#L20-L60",
+          "version": "repo-lines-v1:sha256:d13b7a07a454dc3bf0d631548d1c80644fc1fdef4383be401f1bed04dac17a30:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwODMzMGFjMmZkMDNmZTE5Njg5ZGRhN2FlOWUyNjU4NjMxOWE1OGQxOWE5MmMyYTJhOWFiN2QyOWQyMjI2OTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OGZiNzVhODhhNmZhODBkNDFjZWRlMzI2MjNmOGY0NDk5ODU1NTFkODU1ZDY4MzU2NmNiNjhjYzM5Yjk2NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMmZjZDNiYjJiOWYxMDEzMjc0MDBmNDljOWU3YTcyZTNmYWE1Y2EzODE1M2Q3MWZmNWI4YmMwYjNhOGI3MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhZDBjNWQ5MGU2MWIxMDVhMGEwMWMxNjg0MTg3ZTYyMGY4MTkyY2ZkOWM2NjdkYzc0MjQ3MTdlOTZlYjE5OTYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:38:52.407Z"
+  }
+}

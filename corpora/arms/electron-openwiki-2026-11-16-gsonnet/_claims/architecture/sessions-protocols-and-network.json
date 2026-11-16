@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3f08738671fd67634026ce2ec70741c455f2d02a9ac8b0667f659b30cce1875d",
+  "claims": [
+    {
+      "id": "claim_929f12f5e499437e8524ea06122f8b4d",
+      "statement": "ElectronBrowserContext instances live in a process-wide map keyed by partition name plus in-memory flag, or by absolute path, and DestroyAllContexts extracts and destroys the default context last to avoid a use-after-free.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_context.cc#L306-L356",
+          "version": "repo-lines-v1:sha256:caa338680bb6b61da3c18c3f0cf8152d8a204cb823974f9f5f384477363d905f:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3N2M4YTM4ZWNjMjFhMDkzOTUzNTlkNzhjMTExOTQ2Yzg3OTkxNmYwMzc3YmQ5NTYxNGQ5NzM1NWIzMDZkZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4ZTg0ODk1NGEzYTA1MTk1OTVmZWUwMGEwYWVmMTQ1ZThlZTQ3NjQ3ZGM3NWE1OGMzZmRkNTA3YTUwZDhjYTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_73992312dea446258f34d876111439a0",
+      "statement": "Session.fromPartition maps an empty partition to the default session, a 'persist:' prefix to an on-disk context, and any other name to an in-memory context; fromPath requires a non-empty absolute path; CreateFrom reuses an existing wrapper, calls JS _init, and emits 'session-created' on app.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_session.cc#L1683-L1745",
+          "version": "repo-lines-v1:sha256:3f816f02adbf56319cdd78bb66b90149b0157361699932b6437fa440b7635850:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmZTM1YTExODU5NTk2YzQyZDRiMTI0NzcwYjZkOTZjNTk2ODEwYWEwYWE2NmE4NDQ2N2ZlNDRmNGMzYWM0ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhYWFmYWJlNWYwZTY0NmZmMWUwMDc5Y2NlN2YyYTVmMmZjZmVmOTc2NWY5NjMwNjUwMzdiMjBhMWU4NWZiZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxZDBkZGVjOTA5MmRjNjU4YzFiOTk1Y2NjMGNkNzA4ZTQyNjIxMjgzNjRiOTlhZWI4MTRhN2RkNmU2ZDJiNDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00df465afd0d4b96bdf0628a1a8949b4",
+      "statement": "Session emits 'will-download' for each new download, and preventDefault cancels and removes the item.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_session.cc#L608-L627",
+          "version": "repo-lines-v1:sha256:6ee8377d6d52c344909fe313cc13c4de5b992707de9e1fb8267bb46283fd8263:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2ODc0ZWQzNTYzMDlmMDVlNzNhMWM0YTRiYTNhYjFiNjdlY2U5YjczNGQyMjdiYWQ3Y2U3MzM4ODY5ZWU1NDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkYjhjZjdlMDM3ZGU1YmM2Zjc2MzAzYTBlYWY2YjE0OGEzMTMxYTM0OTQxODgwZWI1MjhiN2YyMTQ3NTJkMGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce90ccf00a98457cb2b19d575217fb41",
+      "statement": "protocol.registerSchemesAsPrivileged registers scheme privileges (standard, secure, bypassCSP, allowServiceWorkers, supportFetchAPI, corsEnabled, stream, codeCache) with Chromium's URL tables and appends them to the browser command line so child processes can register them; codeCache requires standard.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_protocol.cc#L60-L180",
+          "version": "repo-lines-v1:sha256:8728320a9ea0500d607c0f57f69553a5798c71dedd294916e6b77db37c50e284:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1YjhhOGQ4YmI1MjIyZTJjOWQxODhiZWQzOTFhMGNhMzBiOGJkMjUwNjc2ZmVkODE4MWQzZjM1YzVmODc3MWRkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0M2Q1YWQzNDFhMTFlODczMWYxZTI4MWU3ZGEzMGRlMjhlYzI1YjliNTU1YTM2ZmFhY2VjNGE3M2IxMTNjZmJhIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5Y2RjY2IzYWE3OTRlMjhmMjAxYmJlMzU3NDIyOWM1ZWM1OWU3NWM5OGIzMWEyNDgwNzdhZmVjNjc0YzFmYjNjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlNWM4M2QzOGQ0YTc4OTQxODhkZWQ5MjAyM2MyMmZmYzM1NTg1NWY0NDc2M2M0MDdlZTk3ODhhNzM1NTA2MWY3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb4c66b208f24edb89f1f9c8ee05868f",
+      "statement": "ProtocolRegistry keeps per-context maps of registered handlers and intercept handlers (registration fails if the scheme already exists), adds an ElectronURLLoaderFactory per registered scheme, and when the grant_file_protocol_extra_privileges fuse is on replaces the file: factory with an AsarURLLoaderFactory.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/protocol_registry.cc#L18-L100",
+          "version": "repo-lines-v1:sha256:ad9e05b91c5d9f2e74eb6b7d9d04b65380a3e003476d2f911badd1610081474a:eyJzZWxlY3RlZExpbmVDb3VudCI6ODMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhZDliNDBjNDFkNGUwNDExMjg3NjQyNzZmOTNhOTY4MTliOGMwNDE3NzgzNGNhZmU1NmQwNzY3MmVlN2QzMjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjNmVmZGJlN2ZlMTVjMjRjNzZhMzc5MmMwNjlkOTgzMmZmYzg3ZTA4YjJlZWY3OGY3MTE2OTljYWI5YzNjMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_88ff11fe14244d8da9a3b0abaf380bee",
+      "statement": "protocol.handle is implemented in JS: it intercepts built-in http/https/file schemes but registers all other schemes, converts native requests into WHATWG Requests (streaming upload body chunks of rawData, file, stream and blob kinds), validates the returned Response, and maps failures to ERR_UNEXPECTED (-9) and error responses to ERR_FAILED (-2).",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/protocol.ts#L1-L145",
+          "version": "repo-lines-v1:sha256:d7da07aaba3a6349c8d2c1349cd7e7dd9482eee3949ea3b4d5b061d50495d581:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQ1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0NDFkMzhkMTZjOGU2MDk1OTVmYTlmZjBlZDMwY2RjZmY2ODYyNzJlM2Q3MjhlOTM0NzZlMzVlMzc5MGZiM2M3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzYTNlNDZmOTQyNzZiNmY2ZjRlZDFmMDJhZjc4YmVmNmEyZWUxYzQzOWRkNTU4NGI5NzM5NDgzMTMyMTRkMmI3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJhZDFiMjE2NjczMTQ4YTIxOWNlOTRjOTJmMDRiYjVlZjlhNjlkZjY3Mzc0YjQxMmU4NGJlMGFiYmQ5NDY0MDRiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_c398dad1d9154ca59b63d5e6e12db00a",
+      "statement": "ElectronBrowserClient::WillCreateURLLoaderFactory wraps the network loader factory in ProxyingURLLoaderFactory, passing the context's protocol intercept handlers, unless extensions are enabled, no session.webRequest listener exists, and Chromium's extension WebRequestAPI chooses to proxy instead.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_client.cc#L1309-L1378",
+          "version": "repo-lines-v1:sha256:4ee8b2ad222d0b2c2b1065aa84480cd8fef47c028c371c175f655852de34d352:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1YjAzNDg2ODExNmZjMzE5Y2U2NDkyMWZkOTFmMmNkNWVlN2ZjMDRkMzE4MGNlMTEwNjNhNjc5MjdiZTZlZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYjNiOTA1NDE3ZWFlY2IyYjIzNTE2NDkzODdmZTRjNTAzMTNhNDJmMDNhNDllYjhmMjFhZmQ3Y2Y1YjAwMWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwYzYxMjNmNmUzMWUyYTJmY2M2NDQ1NjM3ZGU5MWQ3MjEwMTgyZTI0MTQzODBlNzE4MTRjNGQwN2ZhMTI3MmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2NTVlZWVlMjcwMzI1NzEyN2JmZDJhY2U3MGRiMjkwZjNkMGI5ODc3ZTUxY2IzMWFjMGE3MGUxNDdjMDljOWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c85326da9a25470f902f492b97b77016",
+      "statement": "ProxyingURLLoaderFactory runs requests through the webRequest lifecycle (OnBeforeRequest, OnBeforeSendHeaders, OnSendHeaders, OnHeadersReceived, OnResponseStarted, OnBeforeRedirect, OnCompleted, OnErrorOccurred), supports internal redirects from OnBeforeRequest, and in Electron does not check IsRedirectSafe.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/net/proxying_url_loader_factory.cc#L110-L300",
+          "version": "repo-lines-v1:sha256:eaf6cfb78db557a110afa08a4619578df582a947b50506be2c8c5c7a63bb422e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTkxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZjQzMWQ0MWU1M2I5ZDdjMzU4NjI4NGYxOTY4NDYwNzc4OWUwNWM4ZDk0ODc5OWM5NDU3YTMxN2JhZWIwY2Y4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI5ODBmYTBiZGQ3NDdiZmZlNDQ2NjYzNTFjZTIyN2I1ZGIzZTk5ZTc1NTMxMmMxMDNmZjc3YTM0MjY0NDg0YWNlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMjQ4ODI5M2MzYjFmNjNlYTFiNWNlZDZjMGVhMTQ1MWZlMzhmNGNiODIyOGRhNGUyODI4MDVhZWRhMDdkMzg0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1MmQ3NmNiYjFjNzI3MmYwNWI3NjZiYTBjOTFlYTI5YjMyZWEwNTRjZTI3NjRjZDg0YzJhMmQ0NjQ4ODQyMmFkIn0"
+        },
+        {
+          "resource": "repo://shell/browser/net/proxying_url_loader_factory.cc#L365-L420",
+          "version": "repo-lines-v1:sha256:186b4f17b630d1f55382bee37fd4c476a9550ce0c8832936670737d6f2319224:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMGYyNGRkNzZkOGEzZTg5YzE2Y2Y4NDE5NWVhM2EzYWQ0OWI4YTI4YjRhNDI3ZjJkYzg1YTg3MzZiYTJiODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmOTY2YTViNzg1NzVmM2E1NTE5ZGQ2YTFhMTk0YWEyYWJiMGVkMGFiMGU4MGU1ZmE3OTgzOGJhM2E2NzQ1YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxNGVhNDllZDFiOTFkYWFmMjY2ZWNiODgwZWM3MGZjOTNjMGJlZTRmODdkN2JjZDNkZjIyYmVhZGI1NmY5OTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_10f2200eb76b4c2cb4696cae17fc0289",
+      "statement": "WebRequest stores response listeners (onBeforeRequest, onBeforeSendHeaders, onHeadersReceived) separately from simple listeners (onSendHeaders, onBeforeRedirect, onResponseStarted, onCompleted, onErrorOccurred), each with an optional URL-pattern RequestFilter.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_web_request.cc#L210-L350",
+          "version": "repo-lines-v1:sha256:45526f6e3a1f17022fe42b9667389e314c025d8e3b9988fd1ef386c144061c99:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjN2JmZTJmM2RlMTMzZDc4YTJiYzhiYjFjNGEwODQ1MDU2Mzk4NmVlODI1NGZhY2VlNjk4ZTFkY2M1N2U4MTYyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0ZDNkNDg4ZmZiODQ3NDI3OWIyMDU5NzQ3MzAxMjQ5YTg2ZGFiNTUyMDIyMjRhOWNkYjk5MmJmODM2M2Q5Mzg3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1NDdlNTVhZGZmYTgxMzUwZjhkODYzYWQ4NWQ2NGZkNDdlMDVhNzkzOTNkMWFkMWU4ZTU5NjY4ZWZiMDVlNmEwIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_cf347c3bd675498088d74c618ff8edfe",
+      "statement": "The net module's request requires app ready, while net.fetch and net.resolveHost delegate to session.defaultSession; the browser-process trusted URLLoaderFactory passes through WillCreateURLLoaderFactory so webRequest and protocol interception also apply to net traffic.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/net.ts#L1-L27",
+          "version": "repo-lines-v1:sha256:508aedba676dc1acd00fe807bab6779296a136e3a6ae9d6f1ef9a6d565785503:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMGQ0NzZkYTdlODU4ZWZlNzIxMzM4MDhmNjBkZDFhNmYxODE5ODdmZjVjYzQzNDRhYzRjYTQyNDIxMjRhNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://shell/browser/electron_browser_context.cc#L572-L602",
+          "version": "repo-lines-v1:sha256:ba1bd0227ef020f377348ff707ddc6172a0020c3d3ef6e98bc791685b2ef29f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmZDRmMmUyZDA4ZTczMjczODFlOTQ5OWNlZmZlODM2ZDM1MmIzMTBjZThmZWYwYjZhOTBkNTg1YmE4ZDVmMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjYWNlN2MyNGFjZDk4YTU1YWI1NGUxNGU0N2UyMTgxOGRmYjhhYTAyN2YxNjU2NGQyZTZlMzAyZjkxODE3MGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1OGRjNDAyZTgzNDUxYjRjYWU2YjQ4MjAyZjllNWUxMjdlMTk4OWY2NWVhZjAyNDNmMTYxNTljNmNhMGY3OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwYzgzODYyMWUzZDAwMWNjZThjMzBiOTJmNDY4YjRjNTdkYzQyYWE3NzIxMjc3MWIwN2M2ZTQwNjY4YmYzYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ef75e1e5f3442ceb244ce4610699bcf",
+      "statement": "With no permission request handler set, ElectronPermissionManager grants every requested permission (denying only requests from fenced frames); with no check handler, synchronous checks return true except for deprecated synchronous clipboard read, which returns false.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_permission_manager.cc#L145-L235",
+          "version": "repo-lines-v1:sha256:33950f34fd6670f71b78f3238b04ee70d7a0c23cb8ac41cf622ce5d63a39804d:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZGI2MTIyYTM3MDVjMzE4MTBhNWVmMGNlMjdhN2U5NWJiN2RlNzcwZTVhNTc3NzczMjY0NDcwZjVhMjNmOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhNzJkMDYyNzc1YmQ1ZjMyZmNhZWQ1MGU5YzBjMzY0OWM2MTVkZTE0YWRiNDM3MDNiZTFjY2Q4NjcyZWVjOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhMDQ1ZGRkNTkxYzlhYzY3N2FmYWU3NWNhMzc2ZWQ4M2E1OTBhMGNhZjVhZmEzNGQ0OTY2YWM1MjUxMzlkNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQwOTIwN2YyYzM2YjRkYWIxNDc0ZWI0NzkyY2YxOGI3YjdlMDg4NDMzNzEzZTc4ZDNlMWUxYWRmNWYyMDM1NzkifQ"
+        },
+        {
+          "resource": "repo://shell/browser/electron_permission_manager.cc#L308-L343",
+          "version": "repo-lines-v1:sha256:b8a0369653f35ddf48e1baff97863c3d27a645e5eb36244b0fd28efb7e1b9d52:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzMWRkMGJhOTM4OGQwMDVjN2ViZTFiM2E4MTYzNzVjY2VjODhjZDUyODQyNmRjODRhNjhlOTViMGNmNWI4OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5ZDE5OWY4YTRmODBiNGFiNDUzNzFhMGVlODU2MjM1ZDU2M2Q2MjEwMGJiNzc2OWI4ZTg3MjhkNDQ1MzAwYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b04655f9acab4c4187921d21073518aa",
+      "statement": "HID and USB chooser contexts record granted devices through ElectronPermissionManager::GrantDevicePermission and check them with CheckDevicePermission, and the serial chooser emits 'select-serial-port' on the session, denying the request unless the app calls preventDefault.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/hid/hid_chooser_context.cc#L271-L282",
+          "version": "repo-lines-v1:sha256:4b7aaaefbc595b06f2ada14aef7bb89bff6c8bbd7c330277427e8108dcf54c0c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNTlhNjA5MDRiMmZkNWFmMTFmNWExY2I1OTBiYTQ3OWU2Yjk5MWYyYTFlNGZmZDAzNTg0ZWRkMmQ1NjMyOWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2OWRlMTE2YWExOTRlZDE0Y2ZhNzE4OGEwYmYyMGE4ZWU5YjA2OGM0ZmZjOWQ1M2M5MGVhZjU1ZTI5NTM5MDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkMGE4MmMzMGUxNTdiNTY5NTU2NDgyMzI1M2ZjNDdjODc5NmMzNGI3MGMwYmZlODA4YmM1OThkZTIxZGVlZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0OTE3YmRjNmNjYTA0ZTVjOTBmNmVmNzBkMGNkMjliMzJmM2FiZmYxYzE2MGYyYzNjZWE3OTIyOWM3YzY4YzIifQ"
+        },
+        {
+          "resource": "repo://shell/browser/serial/serial_chooser_controller.cc#L242-L252",
+          "version": "repo-lines-v1:sha256:fc134a678f47b7d8b095c1f7770a457761a7b15eeb613e48c4332769598421bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1YzZlMjBmOWNlMDM2ZjI4ZTg5MGMzYmM4YjEwZGIzMjMwZDQxNmRlM2Y5ZTM1YjUxMzg1Y2YzNTU3ZTIyZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViZGUxYjdkZjZmZjFlZjI2NTc2NjkyZGNmYjRhMGYxYzVhZWZhNmVmMjZlMWQ2NTc3YjNkZmUyZWUzZDJlZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3Zjk2M2YwMjc0NzJhNDRhOWM5YmYyNWY5ODBiNGYzNDViOTJhMjJiOTk4NWViMWFmZjgyZmQxZjI1MmE0ZjEifQ"
+        },
+        {
+          "resource": "repo://shell/browser/usb/usb_chooser_context.cc#L291-L300",
+          "version": "repo-lines-v1:sha256:6bc391b2e9cdb57f33d57c6df337d5bf259e2e3019b8ec2b4c7bd7659bb70f66:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyZWEzY2U1Y2NkODNlOTJiMjY2NTk5Yzk3NGJjMzY2MWQxNTU0ZWE1NGQzOTRlNjM3ZjU1MWMyNjE0OWRiYTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2OWRlMTE2YWExOTRlZDE0Y2ZhNzE4OGEwYmYyMGE4ZWU5YjA2OGM0ZmZjOWQ1M2M5MGVhZjU1ZTI5NTM5MDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxMDU1OGJhMDViY2QxNzA0MjBmNzdmNmU0ZDJhZWUxYzU0MGU3ZjMyNzllMGI1M2MzNzA2ZjdkMGEzNmFlY2EifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T09:55:01.404Z"
+  }
+}

@@ -1,0 +1,4 @@
+# Files
+
+- [Built-in middleware](built-in-middleware.md) - Conventions shared by Hono's bundled middleware (before/after next(), c.res replacement, HTTPException failures, ContextVariableMap augmentation) and behavior of the general-purpose ones — logger, timeout, body-limit, compress, etag, cache, combine (some/every/except), context-storage, request-id, trailing-slash, jsx-renderer, pretty-json, timing, language, method-override, powered-by.
+- [Security and authentication middleware](security-middleware.md) - How Hono's basic-auth, bearer-auth, jwt, jwk, cors, csrf, secure-headers and ip-restriction middleware work — credential extraction, timing-safe comparison, JWT/JWKS verification rules in utils/jwt, CORS preflight handling, Origin/Sec-Fetch-Site CSRF checks, default security headers and CSP nonces, and allow/deny IP matching — including their failure responses.

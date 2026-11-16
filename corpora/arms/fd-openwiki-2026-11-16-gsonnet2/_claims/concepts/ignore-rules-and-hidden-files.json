@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:03bb10470ed23e54bf20ea73b094f69ef31c2a6917b1b6201e018c73bece1442",
+  "claims": [
+    {
+      "id": "claim_d37c896618f44503a0fbdd8b31318d0e",
+      "statement": "fd delegates ignore handling to the ignore crate's WalkBuilder, mapping hidden, .fdignore, VCS ignore, require_git, parent-ignore, follow-links, same-file-system and max-depth flags to builder settings.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L347-L369",
+          "version": "repo-lines-v1:sha256:aa50d5cb228fd7e80fb8daef737d44cecaffa52bdbe94e6a0a001a1fd496dc57:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiOTU2Y2Y1ZDg2YjkyZDgxMGEwOGU0MjE2NTI1NGMyZjFmMzFkOTQzMWZjMGJjNTQ2MjVjNThiM2NlZDM1MjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxYjIyMDlmNGJiNDMyZWExMTBkNzA1YmFhZjM1MDRjYmM3YjRmYTEyOGJkNWY0NmM3MTlmYWRhZjAzZjUxMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljM2U2NTZiOWFmOGIwMmVjZmRiNGZkNTdlYTdhZDViMmMyYjVkYzc4OTFmYzA5Yjc4NmEzZWVkZTgyNzVjMTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_87aef08e89d24ba3aed14c714b387a24",
+      "statement": "Config resolves --no-ignore and -u to disable .fdignore, VCS and global ignores together, while --no-ignore-vcs and --no-global-ignore-file disable only their own category, and -u/--hidden disable hidden-file filtering.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L372-L382",
+          "version": "repo-lines-v1:sha256:238893f65e1e164fe631667837a0246be033e5bc303aaba15278b3d4d318a94f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmNjA3ODI4ZDQxZDU5YjhjM2Y0YmZmOWQ0ZWQyZDRkODYyMzRlOGZmOGE4M2U5OTQ4OGYyMjhjNWQzMzMzZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhNjEyNGVmMDU2Y2ExMTNmNGFjYjJiOTFkMDAxNjhlOTVlZjVjNWZlMTdkMDdkYjE2NDA5ZDRkMWYwMTkwZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2ODA5ZWMxNTBhODI3NzQ1ZWFjOGI0NGFkMjAwZGJhZGViMWI0ZDQ4MzdkNWQ1MWVhYzAxNzE3NDEzZWQyZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzMmE5OTg5ZTMzMzNlMzU5ZWQyOWJlZDJjMjVmM2UxOGVhNDZmM2QxOWUxYjAwMmZmODQzYTJkMzgyNjRmNGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6526555382034a26b1c6f59a88a25f8d",
+      "statement": "--exclude patterns are installed as walker Overrides prefixed with '!', and a malformed pattern fails with 'Malformed exclude pattern'.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L382-L382",
+          "version": "repo-lines-v1:sha256:9a6124ef056ca113f4acb2b91d00168e95ef5c5fe17d07db16409d4d1f0190e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWE2MTI0ZWYwNTZjYTExM2Y0YWNiMmI5MWQwMDE2OGU5NWVmNWM1ZmUxN2QwN2RiMTY0MDlkNGQxZjAxOTBlMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWE2MTI0ZWYwNTZjYTExM2Y0YWNiMmI5MWQwMDE2OGU5NWVmNWM1ZmUxN2QwN2RiMTY0MDlkNGQxZjAxOTBlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWMwMjA5ZTUyYmNlNTA4MWMzNTZmYWRlNDI1MDg0Zjk5MzA3ZTllZTdhZWVkMzFmN2E3ZGM3YTFmNGMxY2NjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjMyYTk5ODllMzMzM2UzNTllZDI5YmVkMmMyNWYzZTE4ZWE0NmYzZDE5ZTFiMDAyZmY4NDNhMmQzODI2NGY0YiJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L330-L345",
+          "version": "repo-lines-v1:sha256:868f57a9e07f9f1721fb3770848960a4f98f6e85c2bfd05ed1311eb5f99db793:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMTIwNDg4NDE2NWVhMTI3YTdjNjk2ZTg4NTJlMzgzZTU0YTY1YzU4MTM4MjViZDhiNDA2MjNmY2Q4ZGUyMTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwN2VlOWU4NDBhOGVlOWEzNmIwMTY5Nzk2MzU5ZjYzYTVlYjQyYWNiODk2N2JiNzQ1MWNkYTU2MjU2NmNkYjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_640698a3b48e49de9018bc8cac649d07",
+      "statement": "The global ignore file is read from <config_dir>/fd/ignore only if it exists, and malformed patterns in it or in --ignore-file files print errors without aborting.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L371-L396",
+          "version": "repo-lines-v1:sha256:a517b91e13601bb2e2304cc54cbb1fe0c34e55007bb743a1dd436b19c78eb243:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2ZjRhMmQyNmY1MGZkM2RmYzhlOGI1ODJkYjgzZGEwMzk1MzQyMDczNzMwYjFiNTc4ZmVjYzYzNTJkNGY3M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4YjEyNzEyOGFjMDYzYTczMDBhZjFiY2VmYTQwZDRmYTc4NWRiOTM0NTg5MzMwY2NhMDlmM2M4NzY0ZDc5YmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4MGYyYTZkMzQ4YThhYmNhNzY2NjczNDI5MmQxOTZiZjlmYTI0ZGM0NWE1ZTdkMmYxYjAyMmMxYWUzYzRjOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc35eb42cca443408591c45e7414063f",
+      "statement": "A .fdignore whitelist overrides a .gitignore exclusion of the same file.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L367-L369",
+          "version": "repo-lines-v1:sha256:56811cbb8f846a1e9307238778a7b37f98f99d1e0e9f774e72b5f097df6b49c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTg2ZDM3YTE4MzgxMWVhODk2NzQ0OTEyN2VhZGU1YmJkZmVlYTdlY2MyODg2MTNmNzI0ZDk3OGU0MTc1M2E5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWUwZGU0ZGY0OTY0MmUxOWZhMDQ0NmFkNGQ1MDI0ZDg1MzRiNzM4NmQ1YmMwZmNjZWViNjQ4NGIxNGZhNzAyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWMzZTY1NmI5YWY4YjAyZWNmZGI0ZmQ1N2VhN2FkNWIyYzJiNWRjNzg5MWZjMDliNzg2YTNlZWRlODI3NWMxNCJ9"
+        },
+        {
+          "resource": "repo://tests/tests.rs#L862-L882",
+          "version": "repo-lines-v1:sha256:a4a23f03ee7d0947ee0130f8cae06963ede9dcb33432d459268db5b8f5e2a33a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOTc0M2VkYWI1OGY0MDBjNmQ3ZTUxNzg0NWQwMGU0NTc4MTRiMGFiZGU5NmZjNTBiMDgxODdmMzk3ZmU2ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0MjljOTU5NDY3ZjUxYTIwZjVjZTA1ZjEyMWViNmEyZDA5NTI3MzE5ODJiNTBiYmQ5MGNhNjNlMGQ3NTU4ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZhYzJmMTBjOTU5Yzg2MGVkZWJlMWNmNTU3ODk3OWNiOGUzNGQyYTM3NTNmZWI5NTA3Yjc3NDBlNDZlYjAyYzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00068554e4bd4db4a9551d9c89db5fd0",
+      "statement": "--ignore-contain skips any directory that directly contains the named marker entry before root and depth checks are applied, and --prune stops descent into matching entries.",
+      "evidence": [
+        {
+          "resource": "repo://src/walk.rs#L464-L484",
+          "version": "repo-lines-v1:sha256:ff0444a1aa51d5c62a86e116d7987c485586096a7a95c7f7b80dbe27f6b86e62:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkYmZmNjAyNWQ4OTk4MjAzZDdiZmFjNjMyMTY2MmYyNGQ1MTI2MDJlYTNjNzBlNDE4NjZlYzkwODk5NTAxMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjZGE5MmIwZGQ5MDYzNzc5NTMzYjM3NjM3Y2U5ODMyZjk0Y2Y4YjU2OGY5YmJmNmIyYjk1ZmU1MWJmMGI5MGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkMWM3OTRmNWFhOTJjYTllODA0ZjZmNTIwZjAwMGE2ZTZiYzMwMzU1MmNlODdjYmI2YmUxYzg4YjUwYjY2M2IifQ"
+        },
+        {
+          "resource": "repo://src/walk.rs#L606-L611",
+          "version": "repo-lines-v1:sha256:82f406e5ec7cc7d58fa6601b834dfcc2a1921909af61b83396c82412f8644ddf:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQwMzBkMDFmMGJlM2FiZDMzZmNlNjVjMDQ4MDQ2ZmRjOWQ0OWNmOWZmZmY4NDE0MWM1YzU3MzFlMDFhOTMzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFjZTU0YmQ4MDJhYmNlMWY1OWVmMmM4YzZmMzQ2OTRkYWQ2ZjFjNTE2NDEyY2NkOGVhODA0ZTVjYzc3MWJjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGNkYTkyYjBkZDkwNjM3Nzk1MzNiMzc2MzdjZTk4MzJmOTRjZjhiNTY4ZjliYmY2YjJiOTVmZTUxYmYwYjkwZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTVkY2YzOTEzY2FmZTYwMmM1NTg3NjYwNjVkMWUwZTkzYTk5OTNjZjg2NDFlMTFhYmNlZTI1NDU2ZmNmMzY4NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f6be7cfc4074919b6a21a33090db4e9",
+      "statement": "Gitignore files are only respected inside a git repository by default (require_git), unless --no-require-git is passed.",
+      "evidence": [
+        {
+          "resource": "repo://src/main.rs#L368-L369",
+          "version": "repo-lines-v1:sha256:648acca1e4488ebebb694567660bfbcb91e689a82229d15dd484499ec2e7d362:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmZmN2YwMmEwYWI5NmFjMTMwMTI0YTA5OTVhMzM3NGYyYjM4MTg0ZjliZTFkMzQ3MDMxMDFkMGJkYTYxNmM5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFjM2ExNjc5ODgwNWUzNzAwNzg3ZmI2YTIxNGM3NjZmMTUwMjQxNjQ5NmRlZmZiNWZhY2I1NjkyMGMzNjJiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmYyYmY1OWI4ZWQ2MTQzNGQ2MzBiMjMzMDVkNjkxZjRhNGRlMGZmYjU0NjZkMDUxZmNjODIyMDUwZTM1YTg5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFmMGVlODMwZmM3Y2M4OGI4ZjRjNzMxZGFkZDM2NzIwNTc4NzJkOGNhYTFjOWZlYTM1MDFjODk2Nzc3MDVlZiJ9"
+        },
+        {
+          "resource": "repo://src/walk.rs#L360-L360",
+          "version": "repo-lines-v1:sha256:99f254c9faa25d377f92da06034c3174b368667cb2533d142bdb208a1a8eec33:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTlmMjU0YzlmYWEyNWQzNzdmOTJkYTA2MDM0YzMxNzRiMzY4NjY3Y2IyNTMzZDE0MmJkYjIwOGExYThlZWMzMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTlmMjU0YzlmYWEyNWQzNzdmOTJkYTA2MDM0YzMxNzRiMzY4NjY3Y2IyNTMzZDE0MmJkYjIwOGExYThlZWMzMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjE1YTlmNDAxMzVlMDE1YzdhZDNlYTA2ZjRhZjkzMGUwYThjNTJmMjg2NWE0YWRkZmZhNTc4MmY4ZjUxODFmZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzMxMWIwZGQ0YjBkNDQyZTkzMDk4OTVlMDUyMTRhMDhkOGI4NTI0ZDI5YzY0ZTE5NzI4NzRiMjZiNjE3NDEzNiJ9"
+        },
+        {
+          "resource": "repo://tests/testenv/mod.rs#L38-L40",
+          "version": "repo-lines-v1:sha256:029a241ad48c5f859a51f4306e73dd0f6e529e4c395068c41c24d9ce3d5e2f0b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Y1OGYyM2IzMTkzYzFjMjA2NTBjNWJmODI3NTM2N2EwMzJjODc2YzkwMmE4MGMyODE0NDQ3MDg0NzZmZTY3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjExMWY5MjVkNjk5YzI1ZTMxZWY4ZWVjOTJmOWQ0NDlkOGNjMDE1MWE0NTNiMDI1MmJhNWFhYmQ2ZTZjNWNlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWI5MjhhOWRhN2ZmNGYxZGVmMTFmYWVjYWZkYTdhYzE3ZGI3MjUxZmZhNDhjMDI2ODNhNzhjYmRlYTNmNTQxOSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:38:21.850Z"
+  }
+}

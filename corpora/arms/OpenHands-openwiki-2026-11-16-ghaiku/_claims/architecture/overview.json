@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:440dbacdf853b34488953515011b35a52074ef4a3e57e305cc33ea2a53cb6662",
+  "claims": [
+    {
+      "id": "claim_467e0e47fa674a8187ae49ddb7f560ce",
+      "statement": "The openhands console command is bound to openhands.cli.entry:main, and the Python distribution is named openhands-ai.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L170-L171",
+          "version": "repo-lines-v1:sha256:cfde6dad38b1d6baaabbc358bff5a6312c8bcd9d42e0bec8f6a48dfb02c4d824:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI4ZDM1NGYxZjc2YmI3OThjNzNkZjhmOGI3ZGM5ZGM3NDg2MDYzMjA2ZDBmYjMwNGQ0ZGIwZGM2NjAzMzhmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk3M2M2NDE0M2YzYWZiNTFmYmYxOGZkNTRjZDdjNzdmYTZjOGIyNzU2ODRhMzEzNmIzMjFhN2VlNGQyMWM3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRkNWM0MzYxZTgzODJlNjhmNDIzMGQ3MDZkOWNkMmQwZmEzMjZlZTZhNWEzOGJkODU5MTA2YmM5YmM0YThkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNlNWM1ZjIxZGRkOWNkMTc0YjMyMmI4ZjAyZjhjY2JhZDBjMWU1OGEyMzY2ZWZiYTRmMTA5YzE4MDgyYTkxOCJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L8-L9",
+          "version": "repo-lines-v1:sha256:20edf56cd469116c133b3e6be700aa2940951cd670fc9ae0daa7285817806b78:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTBlMWFlZjI3NTFlMWNjZGE2Y2FkZWE4OTM4YjA4NjU5Y2NkNTUwMjNlYWJhMzA4MjkwMTgyZWVkN2E0MzlhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWVjYWMxM2FkNDRlODJhMzUwNGFkZWFkYzk5MzczM2YxZjM0MWE4M2RjZjFjZWRlYmZkNDU0OWVlMTU1Y2EwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDg4OTgxNWI1N2I5M2MyOGZiOTgxNWQyMjRlNzIyMTNlZDUyYjNhY2QwMWVjNjliMTU5ZTM1YmVhNGI3OGQyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTE1N2I5ZjE1ZTliOGM4NWVlMzM5NjVlZmQyZDRiOTM4ZTI0YTI1YTk3Y2I1YWRiYTVlODJkZDYxOWU0Yzc0NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0fe48ad75144418fb4aaede37fc0eedf",
+      "statement": "The server entry point wraps the FastAPI application in a Socket.IO ASGI app, mounts the built frontend when SERVE_FRONTEND is true, and adds CORS, cache-control, and rate-limit middleware.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen.py#L1-L27",
+          "version": "repo-lines-v1:sha256:aa744743c97739d69b0989f7408ee1c98388edb338934b6bc7972ed20f17938a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MjdhZGZmNTI0ZTA2MTYwMjJlYWRkOGY0YWYyMWEwNzc4YjI5ZmM0Yzc3YmRmZWZkMWFmY2UyY2JmNWU0YjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGMwNjFmNmEwMjc4MjVjNWFlNGNkODUyNzdiNmQ2YjgzZGNmNmIyYzU0OWVkMzk0NWJiZmQxZWEyY2QzY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e85576d7a55f444281902c9e32aa75d0",
+      "statement": "The FastAPI application includes routers for public, files, security, feedback, conversations, settings, secrets, git, and trajectory endpoints.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/app.py#L58-L85",
+          "version": "repo-lines-v1:sha256:68c5017c489f832afa4d71aabd5669c85ae19e34c17ffaeb26a471913a01b853:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4MjA5YTMyYjkwNDc3NDFhMmUyNTM3ZmQ4ODdhNDUzMTNkNDQ3ZjY0OWE1NGUxNDUzZTE3MDY3Njk4ODkxMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlNTk0NjI1MGQxZmEyODAyZjgyNzM5ODg4OTE2MWQwZGY2OThkOGMzNjhjNmZmMWY3MzkyYTE3ODk5YTQxMDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhYmE5YmNkZmIzZThjMWRjNzNiMTUwMTJmYTc2YjI2NDFkMWM2NDllNzAzNDA3MGI0NjZjOTQ5YTk2YjBjY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3YTM3YTQwMWQwMWQzZjBiMWFiNDA4YTMzYmZhYjU1NTMxYTBiZGU0YjUzYzBkNzk4ZDc4NDNmMWM1Y2NhNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4a143ae3a684c4199c48c22f99b6c13",
+      "statement": "The openhands entry point dispatches to the terminal experience by default or with the cli subcommand, and to launch_gui_server with the serve subcommand.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/entry.py#L20-L44",
+          "version": "repo-lines-v1:sha256:eaf3d5867243542065f097281c2da1a9f1fb731bd8306b2a32585ec3f66b0571:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxNzc4N2M1YTU3NmRlN2JiY2NhM2Y5ZTkxNTg1ZDkxZGRlZjZmNjhhODMxNDI2MjllZjU1ZGYyOTgwMzFiNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkYzBmYWI0ODE0YmQ4YjQ0YjMxMjcyZTBkMGQ4ZGRlOTE3YWIzYzYwNzE2MzU2NzhmNmJkNDdjOWNlN2NiNzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2e18b3fc0ca84ea18591411c9ac4d340",
+      "statement": "The GUI launcher starts the application and runtime containers from images tagged with the package version.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/gui_launcher.py#L95-L103",
+          "version": "repo-lines-v1:sha256:dff3565f52b84287e9e1d438eb085b6b15e32ded7eef2b608ce01455ba72743a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc1ZTNjOTc2Y2E5M2FkOWFmZjdmNTUwNzI0MmM2MTRlMTk0Y2IxYmViODg4ZTRhMDkwYWY2MDU0YWM4MWRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJkODgxZTM3NTk0MmQxMmZiMmJjMmZiMGQwODhlNzMyOGY5MjhiNzYwMTAwMGQ1MDE0MTNjMmYzOTE1NzM1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDhjNDFmOTUwYjJkYzUzZmE2ZmY5OTRhMWEyY2RkOTg5OTc1NjhmOWU2NTAwNGExZDk2YmM3NGY0OTBmZmE2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzkwNDU4YmRhNTQ2ODVlYjRiMDg4ZTU0NWM2NDJiMWVmYTg3ZjA1ZTVhMmVhNzY3MDE0MTFhNDdkM2U5MWY2OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c83d38ccd9bf4da983f8feacc241c124",
+      "statement": "The runtime setting defaults to docker, and the runtime class is resolved by name when the runtime is created.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/config/openhands_config.py#L71-L71",
+          "version": "repo-lines-v1:sha256:87d07dbb11a07f01c9250726269a2b3ab8f7bf7a06c96886dcdb78e928913d30:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODdkMDdkYmIxMWEwN2YwMWM5MjUwNzI2MjY5YTJiM2FiOGY3YmY3YTA2Yzk2ODg2ZGNkYjc4ZTkyODkxM2QzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODdkMDdkYmIxMWEwN2YwMWM5MjUwNzI2MjY5YTJiM2FiOGY3YmY3YTA2Yzk2ODg2ZGNkYjc4ZTkyODkxM2QzMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWVjZWE4MWE4YTc3OTAwZTM3YmNiN2U0Y2M2MjJhZjNjN2IxOWU5NjM2YjhiZTYyMzc1OTQxZTc0Yzg5YzVmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTYxZjdmMTg5MjMzOWY2Yjk2ZTRhNmUzODAyMjkzNDZjMGU1MTNhNWY0YTk3YWFkOWEzZDVkMzIyYmVlNGJlZCJ9"
+        },
+        {
+          "resource": "repo://openhands/core/setup.py#L72-L73",
+          "version": "repo-lines-v1:sha256:113e949bfd32b5430b515074a3eb6b39c7dc8cfd2a28d7c91b8397af553d5fa4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGU5MGQ0ZWZlNDk5ZDA2ZGE0NjYyZjIzOWU1Mjg5NzlmODQ1ZmQyMTYzYjQ4MzY5M2RjNDkwODE1Mjc5OGM4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE3YmI0OTY4Mjk0NDFhYjRiNmIxZGQzNTU1NTJlMjM3YTY4ZDdlOTRiMTM2ZjhlMTI0ZWIzMmY2ZWM2NTFkOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2UyMzZmYWM5NTQ2MGY2NGY1YjY4MzE3OTRlYWY0Nzg0MzFmN2UyMjI5MDdjYjY1ZGE2YjQ4Y2E1YmFlMjQ2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGQ3N2YzYmIyMjNjZWRmMzNmMTFhNWNhODI4ZTMzMjgxZTRhNjI3NTU4ZDY5MWRhNzMwMjM5YWJlZjZlODdmOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_63f18a02e7cf43d0aa29e8916fd5cc5a",
+      "statement": "The enterprise SaaS server imports the base openhands.server.app application and extends it, then mounts the SPA build and wraps the app in Socket.IO.",
+      "evidence": [
+        {
+          "resource": "repo://enterprise/saas_server.py#L110-L130",
+          "version": "repo-lines-v1:sha256:fa355ef43e716f8509993abf98b9666e023ab3b64a28cb3d93b577a81e4379f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjN2M4ZTZiN2FlZDZlNGI1MjU3ZjMxMWNkMDEwMjQ1YjkwMmUzYzE1ZGExOWU1OTc1MjM2ZjExMjY0YjdlYmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmMGMwNjFmNmEwMjc4MjVjNWFlNGNkODUyNzdiNmQ2YjgzZGNmNmIyYzU0OWVkMzk0NWJiZmQxZWEyY2QzY2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNTM1YWI3MDM3NGM1ZjRkNzE3MjZlZjRlNWFmY2ExNDNlMjAxMzAwYmZmMDM5OWNjNTZkN2MxYjllMWQ1YzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://enterprise/saas_server.py#L40-L41",
+          "version": "repo-lines-v1:sha256:ade1dcf84f7476f14d9caf50f3c24618b59d81d2c2e24ccf5c2255b12483cb81:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTBkZmU3YjE3MmM5MGI2MGEyY2ZjOGY5ZWI1ODVkNWVhNTZkMTE0M2RkMGQwN2NiZDdkMjRlZDU3NWUyZTcxZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGEyMGEwZDI2MGViZTY3YjZkMmZkNmViODZlMGMwMjI3ZmY0ZTg0MWZiNDVkZjhmM2ZhNGUxMTI4MjRhNjQyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTkyZGU1M2RlNTZmZTk5YWI4MzNlNzBkMTYxYWVhMzQ3Y2VkZmE1MGFhMzhiYTc0ODY3NTY2NjdjZDg0MDIxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjg1NjhmZWJhNTkyZTAxYTFhZDVlYWFmNWUzZWY5MjhlZjY5YTlhZTdmNjkzNWQwMDc3MDk0OTJjMjU1NGIyNyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T11:08:31.416Z"
+  }
+}

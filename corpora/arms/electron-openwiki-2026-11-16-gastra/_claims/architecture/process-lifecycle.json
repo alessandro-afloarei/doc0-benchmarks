@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fed18579616ce3c656554938859d0e9ec787bf292d3231d153c32e2e20a76dba",
+  "claims": [
+    {
+      "id": "claim_12ffa782087c452c9e1c0d7117ade1d5",
+      "statement": "Linux entry selects NodeMain only when the RunAsNode fuse and environment flag are enabled, otherwise delegates to Chromium ContentMain.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_linux.cc#L29-L44",
+          "version": "repo-lines-v1:sha256:e869a998eddebf513b1af62d7cbc8b494ea71d4c6c81fb069f9bcc722054af20:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyZGQ0MTA2YWQxM2QzOWIzNmVjYmEzZGVmNTY3YzgyOWQ2M2QyNmU3ODhlMzE4NDM4N2RkODU5NTc5OTUxOTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllMzc1YTNjYjNhMmNiZTJmOWRlZDljODI5NmE2YWI2Njg0OGNjODI2ZmQ3MWY5MTkyNDZhY2IxN2UwYmQ0NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51efc9aec4924d2395c8406d10b90219",
+      "statement": "ElectronMainDelegate provides browser, GPU, utility and sandbox-selected renderer clients.",
+      "evidence": [
+        {
+          "resource": "repo://shell/app/electron_main_delegate.cc#L446-L479",
+          "version": "repo-lines-v1:sha256:0ce56a41cc9984f59700a8810e129f46aeb67ce62a9d569c1838de7b2b58802c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiNTg3MzU1OWRkYmRiNTUxNDY0NjA3MTFlOWUyYmNjMmUzZDMyYWIxZGVjZjViYzZmZGVjZjAzN2E3NzVkMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNjQxOGI1ZjUwOTE0ZTg5ZjFhYzhjYjI4YjM1ODY4ZDUyNDAxNGNiZWJmYTU5MjYzNGM1ZjZhYWFkMzIyMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmNWU5YjRmZmFiYTlkY2YxMzAyM2QwY2ZjMWM1NjE5MDU3OTY2NWRhMTdmMzdjZTVkMTYyYzFmNjQ1MmIyYmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_649b96db2ad5485aa1c124bd2ecd8308",
+      "statement": "Browser bootstrap creates and loads the Node environment, joins application-code loading, then reinitializes feature configuration and logging.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L225-L279",
+          "version": "repo-lines-v1:sha256:c7a19530727ead92e8f62003fdb08a2b2928be928066fd176d8496683750f3ce:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3NDQ5ZmM4Y2Y2Y2NmODJlZjQyOTc4ODA5ODdkOTkzNjkxZjJhNzFjNzg1NGM0NDg1MzUwMGFhOGFiZDA0NTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkYzRhMTE5OTI1NzBjNzM0ZWE4NTJhZWIxMmIyYjYzYTEwM2FhOGNiOTljNmViZWRkOWJhYmI0OWYwMmQ4ZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4Y2VhYzdiZDdmMDFhY2M3Yjk4YTkyOTg3MGM2NmZjOTViYzZiZjFiMmU4YzVmYTAyNTY0MDliOWJiYzc2Y2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1MjViYWFhYmQyODIwNjdmYTYyMTFmY2FlNjVlY2E0ZGQzOTg2ZDkzZGU5Nzk4MWE3ZGEwZmY1MmQ1MDBkM2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_98303b4848264612a81e633f000980a7",
+      "statement": "Browser initialization discovers the resource package, fails with exit code 1 if absent, and chooses ESM or CommonJS loading based on package type and main extension.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L162-L163",
+          "version": "repo-lines-v1:sha256:07c64b390594e91847317ca9b42f4b31e8bd7ec06bd61ab6b316539f505a8a8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDVhMmYyMTY1OGI1ZTUyZWI0YzM1YzgyMjU4ZGY2MDkwZGEzNGU2YjlkZjBkYWFkMjJjYmU5OGRmYmNlOGQ1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjIyYzUwOTFjYTZlMDcyMDY4MWI2NWQ4MjQwZmM1NGU0MjYwOGNlMTFjZTk4ZjhkMmY3NmRjMDM1ODFkZGM2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzQ2YWVkY2Y5ODI4MTdhOGU4NjM4YjQ4OWVkOGYyNTQyYWRmMGQyYjBkMDc0NjgyODY3Mjc5MWI4NTA0ZmE2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmRlYTlmNDU2NDI4NzI4OWU1NTkyZGMyYTY2ZThmZmMzYTJlMmNiZGE1NDg2ZDFiZjdiMzMwMWI2N2ZmZGUwOSJ9"
+        },
+        {
+          "resource": "repo://lib/browser/init.ts#L201-L227",
+          "version": "repo-lines-v1:sha256:de84e37ccfbd2a63e6dbfb49053019b044d6525df703b8410398d0a0a104e5b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZGVhNzdjNTg5MTY4NDUyYzMxZmI1YjYwZWE4MWQ4ZDBjNzc5YzQ2NmMzZGUyZDhmMGZiNTdhY2Y1MjQ3YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkZWNlMTgwYjQ2MmZlZmY4Y2JjNjkzZWU5OTQ2N2UzMDdkNTZkZTA1OTUyMmM5YTQ1NDE3ZTcyOTZhMDdjYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://lib/browser/init.ts#L82-L114",
+          "version": "repo-lines-v1:sha256:04155040d878b302c5cd2293d20ce802b5c7dd756eb6c6fb6f2a6bf877de06c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0M2ZkMzdiZDQzYzNiMjlmOGIyYzhmN2E3YWY3ZThmNTEwYjAxMDU3M2ZkOWI0OWE5YjA0NTM3MDgzYzFmMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwMTEyZGYwMjJkOGU3MjI0ZjMwYzNmYTkzNDMzNWZjMWMzY2Y4NTJiYTE4NGIwMjRiNWY2NDk0MWE2ZWYzMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhYTlmNTI5NzE4YWUxOWJjMzYwNjE3ZTRiZDA1ODE4NTM2NTQ2MTYyOWJhM2Q5ZTc3OWRmMmMyNWViNTVlZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_82dd11496bcf429fa1e65bfeb7bfcd16",
+      "statement": "Readiness is recorded before launch observers are notified, and whenReady resolves immediately when called after readiness.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/browser.cc#L183-L210",
+          "version": "repo-lines-v1:sha256:42a472518b7f21c7a2ba61017a67fa636673e365a0a98fac8117f35958964578:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNTRkNDZhZTM1Njk2ZGRmMGU4MjkxMDBjNjk1OTNiYTY5MTQyYTRlYTMzYmU1NTU0YTU3YjBlNThjOWI0YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1YzA1MThjOTA5MGQwMDMxMDEyOGNjZGRiNDNmOWFkMGE1YTNhY2I1OGZiNDdjNjhiNDMyYTAzYTA0NTM2MzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiODQ2MzBkN2QzYzZlY2M5NmQzNTcyMzgzYTgwYTBlNGQxODdjN2NlMzkxMDU0NWZkNDI5N2E2Mzg4MDhmN2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3ZDljMTQ1MGNlNjAyNDVhNmNkNmJkZWEwMTJiYTA4N2VkMDI4ZTUyNDU3YWNhNjM5ODliNzRmM2QxNzk2MDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_22a4fae75b0f428b857056004f38fba5",
+      "statement": "The default window-all-closed handler quits only when no application listener has been added.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L186-L199",
+          "version": "repo-lines-v1:sha256:36253c67e4e0aa9f4ee7073397ef9efee7453903b2102f1d06bfe4014d7cd9fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjOTM5OGQ0YmEwNWEyMzg1M2Q4ZTA1MzkxODY2ZTQzNmY4NzM1NjA0MGZlYTBlZGQ1NzA5Mjk1YWI2ZjQwYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMjYzMmYwNzIyM2U2NzE2ZmY2NjM2MDgwMTFlMGM0ZGI3OWY2MGRlMmE4Y2E4YWJlY2ZjMDJmODQxNTBlZjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxYmZhMTM3N2JkNGZmMWRiYTI2Y2E1Mjg3ZTVmZWU0Yjk4ZTUzMmRkZjhiYWExYzYxYTRmNzcyYWQ2YzVlNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExOTViMzZmZjE0ZDI5YWVhZmE4ZjliYjIyYTRkNmQxZDkxNmUzOTU5ZTY4ZDM0Y2NiN2Y5NDdjYjkwMjUzZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd4cce25c54047a8abfdba32dcaa9142",
+      "statement": "Quit supports observer and window-close cancellation, while Exit destroys windows without asking; process.exit is mapped to app.exit.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L73-L74",
+          "version": "repo-lines-v1:sha256:f07a76ac2cf8db8b6f6885a79e1113741cf251b68e69f079fd04181aa48153f6:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZiNzA0N2QyZmY5ODAyYTM5N2Q4MTQzMDRhMWM3YjA4NDhjYTBjMzQxYjRiNmZkMjQwNThjNDI3YmIxMTI0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2M5MzQwYTJmZjM5NTE1NmFlNzU2NjE0MWI1ZjUwM2VlZDRiZWIyZTM3ZDk1NzA2ZmZkZTZjMjFjODM5ZDBjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmM1NmQxM2U2MmYzZGJiMGMxNGNkM2ZjYmVjNmIzNGJmMjNlMGQ2ODk1ZjY3Yjc0ZTgzZGVlOGExMDhmNGMxMyJ9"
+        },
+        {
+          "resource": "repo://shell/browser/browser.cc#L232-L256",
+          "version": "repo-lines-v1:sha256:302bc0105e43dbebf85d12d8bd044f93c91712b3f065849a7389f17761abb659:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5MTY5NDRlYmMxZDkyNzExM2UxYmU5ZjljMmRhNWM0MTEwNDE0YmE2MGQxZDNiYjEzN2RmMmMxNzQyOWVmZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3ZTY5M2Q2ZTJlYzViZjliOWFjZmY0MzgxNGRiMDlhYWQ0MTgxODNmOTc5NTM0YTMwZTYzM2IyY2JhNDFiNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkYzYwMzhlMGU0YmM5M2Q1OGEwOWQwNTYzZjI3NDIwYWNmNjk0ZmU0ZjdiNGIyMWM4NWU0N2Y5ZTcxZjFkYTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5ZTI1OTJhZWJhM2E0ZGJiMDU5ODAyZDYwOGZiMjQyYTE5YzE0MzIyMTM1ZGUxMWI3MTRkOWIwM2E5ODk0OWMifQ"
+        },
+        {
+          "resource": "repo://shell/browser/browser.cc#L86-L141",
+          "version": "repo-lines-v1:sha256:b116f2f446edf8c5f7cdec19e8ce0b5f8cd603b116b734e9ea1008f2eb6dc270:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0YTNlZjgwYjgwNjMzY2EzNjc4MDYyMmY3MzVjMTljODY3YTk1Njg0ZWIzOGZlZGI2YTJhNjY1YWJmMjI4NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZiZGIwMGY3N2MyYWEwYzI2MGUwMjQwNGQ2OGQzZTczMmE2NWY3ZDE5MzM5YzcyZGQxNmQwNTNiYmZkMDkwYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxZmM1NThlNjkxZmY5YmIzNDMzMTc4NTZjNDA0YTM0OGFjNTYyNGJlNjQ5ZDM2ZmIzYzU2MGZhNDYzY2U2ZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c277db57c947450d93824cebad5bb11d",
+      "statement": "Main-process uncaught exceptions use a built-in dialog unless another handler is installed, while native bootstrap configures unhandled rejections as warn-with-error-code.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/init.ts#L21-L38",
+          "version": "repo-lines-v1:sha256:5962a58905822aeb319a7aaa4f638f421289237981d387cd927e3d1aaa0e80e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYzg1YjBmMTk3ZmM4N2Q0ZmI0YzU2MGQzMGUyZjYyY2I5MGY3NWIyZTEzZGI0NzI0MjZjNTE4Y2U0NDk5Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5OGZlNWU5MmNmY2NkMTAzOGU2YTU0YTQ0M2U4NjAxZmNiM2ZhODk4N2JiNzA0ODViNGVhMDQxZWMxOGRlNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhYTNjZTUwOGRlZTZiZTQzNmRkZDZiYmI1OWJkZDc4MWRkYWE5YzA0NDhjMGMyMmM0ZGE1YjgzNzMyN2QwMzgifQ"
+        },
+        {
+          "resource": "repo://shell/browser/electron_browser_main_parts.cc#L245-L246",
+          "version": "repo-lines-v1:sha256:60fb14d7e857ccd9c04f630cfc3fa16c0f06680fb1b6b823c85d3ae9e5a7fafe:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjI0M2M4MTdlZjYzOTRlNDgwMGQ4ZGVlNzZiNWVhYzUxNTc0Mzc0ZjQyNDBlNjIzYWZhYTU4MDNjMmQ1ZWZlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGNlNWMxNmNlYjU3NGIwYTJkODEyZWE4MDg0YzUyZGIwMmRhNDY0YjJjYTJkOWZiMmE2MGJhYjJhMjI4YzRlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGY0OWIyYzE2NWYxYWFlNWFkNzQxMDBkMDQ5MmM4ODg1ZjM4NGVjYTZjYTA4ZjFlY2QzM2E3ZTkwM2U0Mzk2NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDU0ZWIyZWMwZDMzMDViOTdmMzQ1ZjQ1NGJiNTQwYWY4ODRiODk1OWMyMTgyOTNmYmExYTRjMDNmMTIwMmIwNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:40:08.980Z"
+  }
+}

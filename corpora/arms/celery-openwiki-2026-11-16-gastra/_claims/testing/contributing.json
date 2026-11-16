@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8b4185dc4a05b7c1ada70d78f7279b03a523f8daa74ef3ab0fcb37c8e79807af",
+  "claims": [
+    {
+      "id": "claim_59fb710230bc4ea89f04a9f9318e5107",
+      "statement": "This checkout declares Python >=3.10 and the Celery console entrypoint in setup.py; pytest defaults to t/unit with strict markers and xfail behavior.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L1-L7",
+          "version": "repo-lines-v1:sha256:583e902a9c2ae2706fa2c77ce2aa1551cd6ed3cae1a6f6c519e978330a0493ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY3NmU2NDE0NjVhNjU1MWU5ZTljZmZkN2ZhYTFlNmE0MmY5YjcyNDgwOTgxM2M5MDNkN2VkY2I1MmYzMDA2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWMzMDJjZTM1NTRkZmM1YmUxZGEyYjRjMTg3YWJmYmM4Zjc2NThlNTU4ZmRkZjQ0MDk2NjkyODMwMjc0ZTdkYyJ9"
+        },
+        {
+          "resource": "repo://setup.py#L145-L165",
+          "version": "repo-lines-v1:sha256:ee8dba7f04fe75d1e7fd85bc1a2643b10d613a35c3ec9206e467f4e65f6707d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZjE1NDBkNmNhZDk3ZDk5ODAxNDFjNjhiOTRiOTZkZGZmNzY0MzRiMTE5NjFkYmVjYjM5MGY0NDE5MzU3ZjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhYzYwMmVjMDJkZGVmZjgxZjZjMDBlM2M2YTdkMTU0NjQyYmI3MmZkZTMyYzNiNWQ1NTA1ZjhkZDllNDFmYmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3YjZhYmNjN2YyOGY0MjlhM2M5Y2RkMDk5YzFkYmEyNmU4NWRlMTI1NzExM2NjNTliYmM2MjY0YzI0MjY3ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzNzUzNjg0YzQ2N2U3N2U1ZjdkMzNhNGE5MTRkNWVkNTNmZTI5MjY4NDYyYzVjMGM3MjBmNjAxN2IwNjUxYzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15536640416d4c02a4832a09545e3d1d",
+      "statement": "Unit fixtures configure a memory broker and cache backend and enable a trap against unintended current-app dependencies.",
+      "evidence": [
+        {
+          "resource": "repo://celery/contrib/testing/app.py#L23-L35",
+          "version": "repo-lines-v1:sha256:60fa875c3e794c23a4678b69babca92489d092c288eb605e58135f81be9ba6f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMmNlMGNmM2U0NDE3NWY1ZGQ5NTIwZjFiOTY4YWU2M2YwMjNmZTU5N2MzZGQ3YTI2ZGQxMmNkZjA2OGYzNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmOTM5OWFkNWMwNmI4MTFjM2MwZDE1NGE5ZmMzNzY5NWJjNjhhZTU0NzY1ZWM4NzgxZjA3NjZiM2FlZmZhOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5ZjkzMDgzYzE5NzEyMWI5ODI3MDBiYThhZmFiZDE3MjJjZjFkM2U3NDA0NTA5ZTgwZWZhMjcyNDdmNjJmMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2Mzc2NGZiN2Y1NTFjNzU1MDA5OWRlNTNjZjUyZTVjZWVkYjFiNWU2YjVlNmM3NjMwNWZmNDA3YWQ3YjgwYzAifQ"
+        },
+        {
+          "resource": "repo://t/unit/conftest.py#L58-L94",
+          "version": "repo-lines-v1:sha256:b8a7274e8f339846d9537b51dc127c1bb220a941f80c6ac81862a07fc762a3bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3YmQ0ZTAyODM1Y2JjYWZjN2QxYmZjNjc1ZTliMzgxODk1ODZkODJlMTBkOGI2Njc2ZjVjOTYzMWVhYTU2MGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyMDVjYjE1YzMwYjgzY2EyZWYxY2EwMDg0NjcxMzEzZWM0MzhkM2ExYmVjYjJmMWVmZjk1ODRkMzUzZWQ2Y2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_310a38c160634e4f849b48867c973022",
+      "statement": "Integration fixtures default to pyamqp and Redis via TEST_BROKER and TEST_BACKEND, use prefork workers, and accept repository-root JSON configuration overrides.",
+      "evidence": [
+        {
+          "resource": "repo://t/integration/conftest.py#L20-L21",
+          "version": "repo-lines-v1:sha256:8a9ad03228d9cf9487ea67b128678b601d821c44eda83d17b7d10664730d71c7:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc2NWQ5NWU1ZGRjZTk3OWJiODg3OTFjODg3ZjI2ZmU4YWMyMzM2ZjVhZjNiOWQyMGQyYTQxNWJhYTAxZTAwYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI5OTkxMWRmNjAwYWU2MGYyZmQ2ZjM2MjM3ZDI0MTA2MjljYjFmMDU4OThkY2FjMTc2NTY5ZDc3ZjNmOTVlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdkZTg3NWEzYzI1YTQ0NDY4MmMzYTZlMTE1OWY0MmRhZTNkZTM3NjdkY2VkZjZiOTRkNWMzZDVhZWU0NDk0NyJ9"
+        },
+        {
+          "resource": "repo://t/integration/conftest.py#L62-L98",
+          "version": "repo-lines-v1:sha256:c93aabdf287e9a7c4d68de130dc6d1c38dd08ecd847eabe26c3a0fe4edc1dd64:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiM2FiOTQ4OTUyNGYwOTEyNzU0ZDE2OWQ3NDQ0NzZjMTdlYTJhMTgyMjM1ZTkzNzFiNmFhNDk4MTM4MTk5NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0Y2ZmMGVjMmMxMjg2MDUxNTQ3YmU5NDk3MzMyZjU1YTJjZWFkOTczMzEyYWUyODljMDlmOTc4NjY2MmFiOGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkMjJlOWQ1MjUyNWZjYTU4Njk5M2UyMWFjODU1M2FhNzE3MWJkZWQ0MmMyM2Y3YjQ3NTNmOGJkNWYwYzA4YjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cda391a8793426893ffb4f3c7b9222f",
+      "statement": "Smoke tests use pytest-celery and pytest-docker-tools to provision containers and provide worker kill, restart and termination operations.",
+      "evidence": [
+        {
+          "resource": "repo://t/smoke/conftest.py#L6-L47",
+          "version": "repo-lines-v1:sha256:3b509ed0c3969ce3a04a3e9f2d53cc824d61a3457c8cc2e973f579a381fa2d2d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkMDAwZjU0ZDZmNDQ2MmUzNzIyOTlkYmUzNDcxMTI0MDY4ZTIwNTVhMTQ1ZTVmNjE3YjMzOTZjYmE5NjVmZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmMWRmYmJhNGU4YTU0ZjAxNWI4YjJkYzBkMGMxYzRmOTE0MmJiNjY1YzRkODZiNzM0OGQ2ODJhODBhZDVjOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0OGM5N2JkOTIyOGE0MTM3YWM5OTUyYTAwMDAzZWU4NDg1YWNjZDQ4MTQzNDFmNGE1MDUzNGUwNDBjNzQ0MWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyYjI1NzhkODVmMDU0N2ZhOTE3ZGE3YjE4ZDIwNzg5OTE4MjlhNTM4MmM3OTEyOGJlMTZmNmYxMDg4ZjdhYjUifQ"
+        },
+        {
+          "resource": "repo://t/smoke/conftest.py#L65-L112",
+          "version": "repo-lines-v1:sha256:625c19233466a5528e285b5ad41810ad529b3e4fcffd816f89578385cf39f090:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4MjBiNWI4NjYxNDhhNjg5Zjk4MDhkNjFhODRlZjA2OTA1OTQyYTNhYzVkM2NkNGNhZjdhNzU0N2E3ZjQ1MjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4MWY4M2RlNWUyZjY5MWMyYWJmMjBjOTY5NGFlZGQ5MzFhMmE5ZTg5OGY5YmEyZmJkYjQzYTRmYmFhMjU1ZmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b0069852e3b245f299f1f1a72e486976",
+      "statement": "Tox separates coverage-enabled unit tests, integration tests and smoke tests, with broker/backend-specific configurations and a build constraint file.",
+      "evidence": [
+        {
+          "resource": "repo://tox.ini#L1-L17",
+          "version": "repo-lines-v1:sha256:c3be6020934caee246c33ceea2ba5a33d0874dc07a6cb1a625b9f4cd9b41cc7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwYWI3NjVkOWU2MGJmN2U3MGQ1ZDU4NzU4NDNiZjdmZjMxMWIwOGYyZjBmNzZiOTc0ODc3NzQxZTc0MDJiZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MjQxZDQ1OTgyYjk3Njc2ZTYwMmJjMzRhNWY4YTMyNTgyNDhjNjk3OTY2OTc1OWE5NzYxMjk2MjQ2YTkxNWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0ZDAwNmQ4YWE3NzExZDQ3M2FjOWRlYzllMDliYzc0YmYwOGIzNWYzNzRkOWEwYWM5NGM5MmEyNWZlZjRmZTkifQ"
+        },
+        {
+          "resource": "repo://tox.ini#L34-L90",
+          "version": "repo-lines-v1:sha256:0fed318f04945ceaaeb0b0a61ae8335aa00d7d2c0edd225d684286dbf7c95172:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5MzEwMWI0ZjM0YjIxMWU1ODA1ZTk5M2JkYzVhZmVjOTdhYzFlNjNjYTQyZTMxMDhjNGU4YzFjMDU5ZDA4N2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhOTMyYzVmMTE0ZDdhMzA0YTVhMzJjZTY1NmVjN2IxNTM2NmY4YjFjZGM3MTE4ZGRjZjVmNTdiYTc4NGM2YmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhNzUzYWVkYjZlYjQxNTc3NjkzNTI0MDI0ZmUyYTY5ZDQzODhjNThjNWEzZThlZjU4MTk2MzNjZmFjNTU5OGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczYjBmMmM3MzdkNTFjM2FiZjAzYWM3NmRlZGRiNTM4NjRjODg0MzAwYmJiYTc5MjdlY2Y2NzMyNTlhOGRhNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a0af30f27e384984b04fcce1d16b690d",
+      "statement": "Tox exposes pre-commit lint, scoped mypy, and Sphinx API, configuration and link checks.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L8-L26",
+          "version": "repo-lines-v1:sha256:f1a81cf209b29231ef81cb210f3801fa72e337ee07b72c1991e88cc42064591b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiNzQ1ZWVmYTZkNmZmM2I2M2Y2NzMxZGUyNmU2ODNjMWMzNTJhMGNmNWEzNDA1MTdiMDJhZGU4N2Y1MTRkMDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2ZGI5YjViM2MyOWI3YmJkY2Y5Y2FiNzg1MjdhZjkxOTQzMGExMjEwNDNhOTBkMWFkN2U2Y2JjYjMyYWY0N2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2ZmQxZGU4ZGYyY2ExNTQ3YmE3ZTc2MjNkMTVmYTJkZGU4NzhjNWJmNmNjNjlhZjA1YjU4YWQ0MDEyNDkzNjcifQ"
+        },
+        {
+          "resource": "repo://tox.ini#L101-L124",
+          "version": "repo-lines-v1:sha256:423020463258a3a696bc6216b21251b82596d6e225be3d990ee8ce59a5764f35:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MTFmOGYwZTAzNGE2NDEyNjdjOWQ5MTdmMzVlZjdiOWVhNTMzZjgzNDhjYmNkOGIyMjBhMzE0Y2E2YTdkNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNTk2YmNmYzhjYmYzYzViN2U4OGY4N2YwMDBiMjQ5M2NmMDVjYmE1N2Q4MTFlYjUyNjE2MTg2Y2FiZjdjODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1MzBiMzQ0OWVmZWYzMDMyMTZhY2JhZDA4YTU5OThmMzBkYzI5NjJkZjM1YWZjN2RhZTdjMjA2NmQxOTVjODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliZjg1MDdmZTZiMmQ0MmRjNjQ5NTAzOGNiNWM2NDg2MjFiOTcwYzFmOWQ4ZDRlY2E2NTQ1Njg4NGVmMWVjN2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1479ce0e914b4710a93fe3bbfa8d1296",
+      "statement": "CI and integration requirement sets can install Kombu directly from its Git repository.",
+      "evidence": [
+        {
+          "resource": "repo://requirements/test-ci-default.txt",
+          "version": "repo-file-v1:sha256:5275dec4916d1a094647802b69a546c0953b89e098b79fd533574acbbdc31307"
+        },
+        {
+          "resource": "repo://requirements/test-integration.txt",
+          "version": "repo-file-v1:sha256:bbe747a495240df819dd85838a0ddf66c712d76b42098070d4ce76221be530cf"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T07:55:28.912Z"
+  }
+}

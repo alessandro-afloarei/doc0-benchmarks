@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c034cced88f91665c5804508d3ea1227c11129c561ffdc3f3f0220398632b8b4",
+  "claims": [
+    {
+      "id": "claim_6015dbcff79d4766b4c6680d7a6a14b9",
+      "statement": "build_tracer returns a trace_task closure specialised for one task, which captures the task's store-error policy, success and failure hooks, and signal receivers before execution.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L344-L400",
+          "version": "repo-lines-v1:sha256:03e951a87940372f430ea8dceb32a65543ae4f29caf9c7e38dd80d456ba3818e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmNTYwNmEwNmUzYjQ5NGYyNDE4NmFlYmRjYjBkOTQ0ZmQzODQyZmZlZjI1YWI4MzRiZWE4YWQ1ZDNhYjViYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4OGFlM2E4NDVmZmY2MmJlODVkYTFkMzg4NDhjMmFlZTQ0YzQ1ZWI5MjFiOGU5Y2RjMjE1Yzg0YWVjMGRiNmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiMWM5NWM2MmE5ZTMyNjE5Nzc3YjE3NDJkZmI4OTUzZTVjYmJhMDc1ZDAxN2I0ZGQwOWM1YzQ5Mjc4NTM0YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiNDE3MDJkZTMzOTc2YTNjNDA0N2FjZTg2MzdkMGQ1NjljMDE2Y2QyNDAzYWUwZDEzZTE0MzQwNjI0MjRjNWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1bb666824ea349fa8349b10426fe8c67",
+      "statement": "Inside the tracer, a normal return sets SUCCESS only after callbacks are dispatched, so result children are populated before mark_as_done stores the result.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L575-L640",
+          "version": "repo-lines-v1:sha256:5a6b3f8b9c1e53a3e54eadfe13304ee74fd892584c3a56b5e478f2b633ed2e11:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0MTUwZGRhZjJjNjAwYTFlODBkZmUzZGQ5MDBkZThhZmQyOWRkZDZiODIyZDEzOTEzZWVhYjhlNzMwMjY0ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5ZDEzYTRkZTIyZjY2ODdlYzkxNmM2ZDdjNTlhZWRjOTcwYjkzNTljZWRhMjZiZTA0ZDExNmMxMTBlN2Q3YTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1OWU2ODY0MDYyZWVlNzRmYmNhZDQ1Y2ZlNjBhNTA0NGZkMDA2ZjlhM2I3NzcwOTlmZWFjNGNlNGNiYTAxOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwMjY3YmViY2JiNjgzNTYzMGU3MTAxZDc1ZDZlMTA5ODYyMDZkZGZlN2ZlMTQ4ZDEzODAzZThhMDkwNmY4NzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_11aa03c53a4d4427b27b3cc116970985",
+      "statement": "The tracer classifies Reject as REJECTED, Ignore as IGNORED, Retry as RETRY without errbacks, and any other exception through on_error as a failure.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/trace.py#L587-L610",
+          "version": "repo-lines-v1:sha256:e02608ac3baa071e2e0461fe53e32805f1db5cba68a55b39a2d7c2226a3630d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiZjg5OWVjY2FlZTI3ZWMwMjBkYjJiZTM5YmE1NDcwMGIyZGIyMWM1YWQyYWI5OWQwZGVhZTFlYTg1YWJmYTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwMGNjZTIyODM1N2QxNjM2MDRhMzllYTM0MTFhNjYzNGJiMmI0MmZjNTFkYWM2YmMyMDQ1ZmQyMGRjOGFjZmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ZGRjNTczYTYxODBhYjY2NzUxYTdmYzlmMDg5Y2IyMTc1MjFlYzEyODlhMWFmODg0MzAyOWE4NzU0NmZlZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjMjkwZmRkMGM5NzlhOWJiYzc0MjdiMWM4NDAyZjQwODYyMmYzNDFkNjNiN2Q1MjRjMzM5MGM3NThkOTU4MTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c16848fe2f3d4c4b9ae2bcbded8b0de5",
+      "statement": "Task.retry raises MaxRetriesExceededError or the original exception once retries exceed max_retries; otherwise it publishes the retry signature and raises Retry, or raises Reject with requeue=False if publication fails.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L756-L868",
+          "version": "repo-lines-v1:sha256:eb398a5ca51f78ab382770aa3a5c9b4c6adf24b0146306187ae45cc39ed7cf28:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmZGM4NDcxYjhkMGU5ODY5YmI1MTEzNWQ1Mzg4OTUxZTk2ZDM3YTEyOWI5YjI5N2VkNDFjYjYxMWY1NzgwOTYyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzNGFkYTFiYWVkNDA1NDZjMDA4YWIzMjI4NzVlOGQwNGQ5MjEzMjBkMzYwZGZhYWFjYWJjNmNiNTMwMWIwYjkwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxNDJkYTMwMzM3ZjU0MzVlNzdjYTczYzIyZDRlM2MyN2NiZmJiZDNlODYwMzBjZTI0MzUzMzZiZmQ4NjIxYTMyIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_e6fa2e1e003e4205a55c7da7b6f4f9db",
+      "statement": "The autoretry wrapper calls task.retry for exceptions listed in autoretry_for, applying exponential backoff when retry_backoff is set.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/autoretry.py#L8-L60",
+          "version": "repo-lines-v1:sha256:d4900249aded94d589c9dd5cc8fddff099d27083993c1d683856b1421738b1ca:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0ZmI4OWNjM2U3M2Y0MDVmOWIzMGJjMGIxNDY1MDdkYWVkMTg0Y2QyNTQzNzg0M2U2ZWIxMTNlZDFmNGMzNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExZDYzMDRjZTQ1NzEzNWI4YmViNWYzZDZmMDA3MDlhYzliNzBkOWUxNWNlNWU4OWNiNDczMGRmZDdhMzliZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwZDA4YjliMTcyNjEwMjg3M2UwYjc2ZTA1NTUwODEwMDQ3YjUwNGUyYTNlZTFkZTQ5MDQ4NzJkOGFkODBmYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkNjYyNDNjMjVhMmIzMjMxZTY0ZDJkMThkYmY4MjYyYThiMTU2NGUxMTI1ODdmMzc0NTY1NTZkNzllODJhMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_557a15c5bfc548f6b573f0efe6f6cb4c",
+      "statement": "Task class defaults include max_retries of 3, default_retry_delay of 180 seconds, and resultrepr_maxsize of 1024.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/task.py#L241-L246",
+          "version": "repo-lines-v1:sha256:0381f68eb50312e8eb10b9b7e77595af200ec04008c3f70a944c847139f43a94:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODk2YTYwNGYzMmY1MGRjMDFhZThjOWJlYzY0MWYxOTdlZTM5YjMzMzBkODkwYjEyM2ZhNDEyNDcyYTliMzRmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjAxOWI0MWUwNmRmNTRkY2VlYjViZTIxYzJiMjM5ODQzZjI1OTI4MDQ3MzIwZTQzN2QzYWVhMDcxMmViMmJjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAzOGVjN2FjYmNmZjk2NjI5ZDdkMWViMTkxMjA4MTlkMDQzNTIzMGFhMmZiOGEwODBlYmI1YzI2OTU4NGExYiJ9"
+        },
+        {
+          "resource": "repo://celery/app/task.py#L380-L381",
+          "version": "repo-lines-v1:sha256:69b8173da9f0331f8fe1b533868f3e197f806092c798bc9242cfdc9bcab0ce61:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM5N2I3YmRmNjEyMjNiMDZiNmUxY2FkNmI3Mjg0Mzg3ZjIyM2Q0OWY1ODJlYzA2MDVhMDRjNjNmYTRiMzY4MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzgzYTkyNTQ5NDFhMmJiNTAzOTVkYWIxMjk3ZjZhYmUzOTUyZDZjNDgwMGExZjEzYTFiMjA3Nzg0MTEwMWE5NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmZkYTg4ZTZkNzg5NjY5NWNkOGNiNzhlNDgxNGZiMzhiOGYxMTEyYWU1NDUwZjg0Yjc5NjhkMmM5ZDBjNTI3OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_28f2c6acbe58475caa2fc3a5bf83ea12",
+      "statement": "Built-in chord, group, chain, map, and chunks tasks are registered per app with fixed names such as celery.chord_unlock, and celery.chord_unlock retries without limit.",
+      "evidence": [
+        {
+          "resource": "repo://celery/app/builtins.py#L36-L52",
+          "version": "repo-lines-v1:sha256:a6bc87985d0141561b6cf612467797b05e4fef5e878aaa38b2c367e401ad8ce6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ODYyNDE3MTI0YTc4MzIxY2MxYTkwMzNjOGJhYTI1ODNjZjhjZWE2M2FlYWI1M2FkODViY2NjYjIyZGFkMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNmVhMTA2MmU4YWM4YmU0ZDdlYmU0MDQ3ZmVmNzAzYmQyZWMwMzliZTMyNzE0OWY5ZGQ2ZDU1YzIwMTI5YjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlYWI2Yjk2NjIwYjJjZmM5N2NjNWRlMDc3NzAzM2ZlMDZmZDdhOTlmNmQ5MTdmNDMxZGQyODEyYzU4Yjc2N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5NmE5OWVhMjExNzM1NmJkYjM4N2ZjNzQyMWZiODhjNjA0OTM1ZDBhYzlhY2EwNjViODhjNzUwZWVlN2Q0NjMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:42:35.525Z"
+  }
+}

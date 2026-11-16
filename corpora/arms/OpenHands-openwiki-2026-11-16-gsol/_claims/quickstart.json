@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:dba100c6a950b99a549e06b8f36ac597e064bd6739512eb348fdeaa725dd940f",
+  "claims": [
+    {
+      "id": "claim_f806358c3b6e4edfb42d5a1fcfeada42",
+      "statement": "The development build installs backend/frontend dependencies and hooks and builds frontend assets; Python setup normally installs dev,test,runtime groups and can skip Playwright with INSTALL_PLAYWRIGHT=false.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L139-L174",
+          "version": "repo-lines-v1:sha256:6dc58c676287410227272df913bb897c1a4ccdc2282efd203ca1863a16053e7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmZGEyMzZhYjM0NjMxZjlmYTY1YzIyYzFiNmUxNTk0MTgzNTU3MWExYjVhOGNlY2Q3MjE2YTQzMDFiN2I5M2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlY2IzODFhYjc5MmQ4MjNmMDEzZjgyYzcwNjdmY2YwNjE0NTZjY2I2ODU2ZTJmYTNkMzZkNDA2ODZiZjhlYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4OTBmY2Q0YzY1ZDg4YjFjMmZlMjc3NzEwZTkxZjcyNjYxMDY2ZWM3YzFhYTY1Y2VhNTM2Mjc1ODkyM2M1YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiODA5NjAzNGYyMzBjZTI1ZDliNDJiNzdlOWEwYWIwZTQ5ZjhmMGQyOTdjODk2YzZmMWM4ZWU3NGU1ZmRhMDEifQ"
+        },
+        {
+          "resource": "repo://Makefile#L24-L32",
+          "version": "repo-lines-v1:sha256:8833e1e42f687f412c39e4882546ce915969c7552082e2c62c140ca197597e2e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmJjMjkwYzlmODRlNTMyYmQ0NzczNzQ4MDM4MWYwZGIzYWZhZTYzN2Q2OTY4MDY4NTZkOTVkMGExODZiYjYxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTNmMDYwNDg2ZmI5NmEwZTkyNmU4YmIxMDEzOTdiZTY4N2NlYzE4NzE3OTQwNTJiNjAyMzFlZWU1NjNkOGU3OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTljNGY5Mzc2N2YyY2E4ZjMyOWY1ZDJkMzA0ZWYwZTgxMzYwOGY4N2E0YzU3NTE1MWNkZTcyODYyZmQyNmEwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmQ0OGI2ZjRjYTkwMDk3Nzk1OGMxYTFhNTgzMTc3ZDU1NzFiNDlmODJhY2RmYmZiMjlkYzY5YTlhNzQ1MGYzMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2536dac0c6d84df19c7a844c9f2b0bc3",
+      "statement": "The development run starts the backend and frontend with default ports 3000 and 3001, and exposes separate start-backend/start-frontend targets.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L248-L283",
+          "version": "repo-lines-v1:sha256:c9fd2e0a001c6e818d412ac0c983b097172b14d1098b23d594c657d32cb13c10:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiYTM4MTllNjJkODY1N2Y4N2IyNTU4YjlhMTQ4ODgwZWRmZmM5ZDIwODUyMzNmNTFhMjY0MGFhZWQ0OTJhMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxYzMwZWQ5NWM3NzBiODI5ZWExNDkyMWI0ZmM1NTlhOTNkYTk0OTI2YmM5OTQyZDg2NTg2OGUxZDQ3OTA0NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwMmRiY2QyNWRhZDY3YjA2Nzk2MmMxZGJiNDc3MDFmOTJlYzk1YTcwNjI2MGRlZWViZGQ4OTgyOGJjZDc3ZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3ODUwYTdkMGM2MDkwYjFkZDg2MzgyYmIwZjAwMmZhNTk2OWNlOWQ4MTdmYWVlZjNmYjEyZTUxZDcyNGU0YzgifQ"
+        },
+        {
+          "resource": "repo://Makefile#L4-L14",
+          "version": "repo-lines-v1:sha256:9bc40bc19171eec89db68e026cae4d3e0894dd5a337bd3d1178d9f74d7d0c152:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwOTFmNDE1YjJlN2IzZDI0M2UyZDBiYzc3ZTI5MzlmZTc0NzBjMTkwZjhmOGRmYjgzNzM3MzE3YTRmMzQ3ZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiM2Q3NjI3MWRmNTYyNWE2ZTEwZGY1Mzg1NDU4MWMzYWVmZjIzMjNmZTFkY2JmNmE4ZTU2OWM1MmZkMjU1YTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4MTdiNmU2NWMwNGRkOGEzMzUwNGNkMWU2ZTE3Y2JiNzZkYjUyNTExODU2M2M5YTM0YTIwYmRlM2MzNzNkM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjZTJjZTg5NzU0YmY0NTk0NGEyMjc4NDQ5NWMyNDBmMjc4MmY3ZTdlZTM3MzlkMGUxNWJhNzk5ZTk4OGYwZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_774b1d8df3e94b51912910c8616dd6e2",
+      "statement": "The installed openhands entrypoint defaults to interactive CLI mode and dispatches serve to the Docker GUI launcher.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/entry.py#L12-L45",
+          "version": "repo-lines-v1:sha256:26e622b6812743e2170f45aa77882ab24184eb09245f86011786105f335819df:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZTMxMjU3ZGMwYWUxZDU5MzAzN2MyODBjOWFkNTA4MTliOGE2YzhjZjcyOGJlMDcxNmQwMGEzZWVjYzA0YmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5YjFlNDdlNTk4ZTA1OGI2NTUzNjY1YzkyM2UxYmNlY2Q0YWY0ODJkZjFkNWQ1NGUxNWUyNWExY2E0MjE4OTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkYTYxZDg3ZjY0ZGEwY2M0MDYyZDVmOTAyN2Y5YjUxMTY3ZWMxZjUyOGI1ZjVmZTJiZWQ0MzQ5NmY0YWJkZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViZjE2YjBkM2ZmZGFiNzNhZjE1NThjNWViNTdlN2ZjZmZmYmE0ZWQxYzRmZTc3Mjc1ZWY2Y2QwZWQwYzk1NTQifQ"
+        },
+        {
+          "resource": "repo://openhands/cli/gui_launcher.py#L76-L98",
+          "version": "repo-lines-v1:sha256:aa3d58df9acfdcf1a09950431de207a02b86ecd03b3169c688f61a3f84f9cc80:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYmI3MWQxNmY3MTExMjFmODU5YzRhNzU1NjlmMDNkNjI0ZmJlNmQ4ZDc2MTg4YjRiZmQ4NzRiNWIwYWNkZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZDdkOWRjZWMyZmI2OWRkN2FhMDBmMTE3MGI0ODdkY2UxNjU1MmI1MTc2Y2I2NDE5OWNkMjkzODg0N2NjNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYzMDE3ZDJjYTZjMzMyZmEyZDAyYTI2NTNkZWM1MzVkMjk2OWIzN2NjYTE0NTY5NjdjMmZiOTgzYTBhZTNjNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1NTVlZjU5MjJmMDQ3MmQxYWJiNjNlMjQ1ZDVmNTUxYWRiMjdhNjYzMTJmOGRkMjAyYzU2ZDQwNDQ2MTQzODkifQ"
+        },
+        {
+          "resource": "repo://pyproject.toml#L170-L171",
+          "version": "repo-lines-v1:sha256:cfde6dad38b1d6baaabbc358bff5a6312c8bcd9d42e0bec8f6a48dfb02c4d824:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI4ZDM1NGYxZjc2YmI3OThjNzNkZjhmOGI3ZGM5ZGM3NDg2MDYzMjA2ZDBmYjMwNGQ0ZGIwZGM2NjAzMzhmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk3M2M2NDE0M2YzYWZiNTFmYmYxOGZkNTRjZDdjNzdmYTZjOGIyNzU2ODRhMzEzNmIzMjFhN2VlNGQyMWM3YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRkNWM0MzYxZTgzODJlNjhmNDIzMGQ3MDZkOWNkMmQwZmEzMjZlZTZhNWEzOGJkODU5MTA2YmM5YmM0YThkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNlNWM1ZjIxZGRkOWNkMTc0YjMyMmI4ZjAyZjhjY2JhZDBjMWU1OGEyMzY2ZWZiYTRmMTA5YzE4MDgyYTkxOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2cc10f4cf2f6467e9abc68ccd3fcf8fa",
+      "statement": "Current frontend scripts use a real backend for dev and explicitly enable mocked OSS/SaaS development through dev:mock and dev:mock:saas; the manifest requires Node 22 or newer.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/package.json#L1-L8",
+          "version": "repo-lines-v1:sha256:315fc46908d4a25dae4a1866223e92f4fbce15ff6ac0d3f506ab6c1966657f4e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIzNjVmOTk4ZGEwNjQxODRiN2IzNTBjMDdjODBiYWZlZTEwMjc1NWE1ZTg3ZjEyMDA4YmQwODg2MDgyN2M0NCJ9"
+        },
+        {
+          "resource": "repo://frontend/package.json#L63-L66",
+          "version": "repo-lines-v1:sha256:6d26f68e2782a4f9e420186abaca160da06d9039cdd9bfaf29d1feeaffcfb442:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ4MzNkNTk0OWMwM2E0MGNhOTUyNDkxNjEwYTY2NTk2NDRiM2FhNDY2MzYyZjc5OTAyMGRiZjE5ODE1NDdkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTM5M2NjMThlODA5MDdiOGYyNzIwMGZkNTg0MTc5NGQwZDZhMDc4MDBmMDhmNmE0NDVlYzNkNjc4ZjMxYjcyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWQxN2U5MTFhZjM0NDU0NGZkMjcwODYzYmMwMjU4ZGIzYmNiNzJhNTkwNGNhYmE1YzAyZDNlODUyNTYxZDRkMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQzMzliMmI1YzQxMTVmMmQ4MDU4N2RjMjIzNzlhNTkyZWQwZDUxYTIyZmE2NjljMzI5MTYwN2Y4YTdlNjNjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb1816ba97d248da9997cb74d2daea51",
+      "statement": "The headless entrypoint parses config/task input, generates a session ID and uses automatic continuation unless no-auto-continue is selected.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/main.py#L286-L320",
+          "version": "repo-lines-v1:sha256:0a9a1fc46476456635d1b03bae64990712db4c3fab8c13b8637a215848c5f895:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZGYxYTI2MTIxYzBjYTFmNWM2YTBkYTBmMjY1NTEzNTk5MmNlZTVkOTM0MzEzNWYzZjVmNTE0NzdhNDQxZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjYmRmYjhlNTkxODEwYWYxNDY5YjYzMjRjMjllNmViZWNmNDA4NjA1Y2I4YjkxNmJkZjM4YWNiN2Q0YjhhODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T06:50:03.393Z"
+  }
+}

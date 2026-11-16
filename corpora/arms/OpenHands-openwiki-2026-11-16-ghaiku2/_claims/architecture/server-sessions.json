@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:046c73bb57d64edfb4975e3ed025c05952f2beafdcf21aedb634871b71cc2379",
+  "claims": [
+    {
+      "id": "claim_ab465b674e344339b52acba51f43ab8e",
+      "statement": "The Socket.IO connect handler requires a conversation_id, checks the optional session API key, validates the user for the conversation, and refuses the connection if the event log cannot be opened or the conversation cannot be joined.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py#L36-L120",
+          "version": "repo-lines-v1:sha256:d907aad80187aa646bab57b4249f57f4e6ecc2d894499ac6f1a5236c40395936:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyMzA5YjAyOWYwMDRiYTk4MzViNzBjMmEzYjg5NWVkMDg0OTZiMTIzNzIzNjgxODA3ZDkzMGNmMWNiYTZmNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjNGIwNWRjOTNlNTlkZjM1ODAzMTQ4MjRlZjZkM2MzZDBmOWYwY2NiYmI3ZTBiNWQ0MDkwZDVjMWM0NWExYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExNDI1MzVkYTc4Y2ZiNGViNjUzNWYzOTg4M2IzODFjMDdlYTFiMDA3ZGM1ZTBmZWIxMzVlYzEwMGJhMWUxMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4NjMxYzZhYTA2NWE5MmY1ZjlhMzMyOTVkMDE3NDYzZGQ2YWY2Mzk1Y2YxYjI1OTMyNTAwYmExNWJmYzk4MDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_98cf91c2113241e3acb150881b22c997",
+      "statement": "On socket connect, stored events from latest_event_id plus one onward are replayed to the client, skipping null actions, null observations, and recall actions, and the last AgentStateChangedObservation is sent after the others.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py#L64-L92",
+          "version": "repo-lines-v1:sha256:5d19542b20fe3842c47fe0bb619f9df93f278afab51ae5f479698148b18f5565:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNjk2ZTU3NTZiZjQzMzJiMGY0MmI2MjkwNmVkNjUwOGNjMGMzZDc0NWRlZjU1MTlhZjdlOTU5NTA0ZmYyYzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkYzY0OTg5NWNlNzVkZGZmNmU2MzVhYzE5Y2Q3YzgxMjlkZmRkMTQ1NWY0NTkzOTJlMjI2YWI0NzZlOWQ3NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhYzdhNzc4MmYzYmVhNTZhYjJiZjgyMjEzYmY0ODZjNzAzNGQ3MWQ5Mzk0N2Y3OTU0MGQ1MjhmNmZkZjg5NzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e7f4b69fc00b412d86e2b4ccca8b6ffa",
+      "statement": "Incoming oh_user_action socket messages are forwarded to the conversation manager, which publishes them to the conversation's event stream.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/listen_socket.py#L144-L147",
+          "version": "repo-lines-v1:sha256:b6ae878dc1c5de328e1f978b41f13bf43fdf7645847424fa164ea87922d17b71:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY3NzM4MGE2ZjdjZGJkMjI1MWQzODMyMWJjMjExOTJhMmZjZThmNjZiNzE5YjQ5Mzc4NDI3ZDQ1NzUxNDA4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTE0MjUzNWRhNzhjZmI0ZWI2NTM1ZjM5ODgzYjM4MWMwN2VhMWIwMDdkYzVlMGZlYjEzNWVjMTAwYmExZTEwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjIzZTMzYWJjNGNhMGJkMmNjNTEzOTg3YWE0ZjMwNTMyMzEwMzk4MWU5N2RlNWJkOWZhNjFmMDNjZmIxMDAyYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_505d9609afcb49ae843227db15231854",
+      "statement": "maybe_start_agent_loop returns the existing session for a conversation ID when one is running, and otherwise starts a new agent loop.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L280-L294",
+          "version": "repo-lines-v1:sha256:9038912eea4b84718a3345702ee3326e8b69b3ed55f502e1151c85db03d7d90b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhMDk2YzE5MGEwNzIzMTlhNTk5MWFjMGVmODU3NDk0YTRjODE0YzE2MjE4NTYxMjczMWYyMzE2OTQ0YzA0YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxMDEzOTg5Y2I2OWM1NjkzOWQ1NWVmNjM3ZDJhMTViNDNiNTM0ZTY2NjljMTE3MDk1NDBkZTQxOTYwOWJhMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxMDA2NTE5ODYxMThkMzg0NjQ4MWI5MTI0ZWFiMTE4ZTZlYjY2MGJmZmYyYzVlZDEyYThhZGJmM2JmYTM4NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MjM3ZWNjMjc0YThhMjFmYTVhNWVkMTFjNTA5M2M3MTYxNGVhZGQ4OTk0ZTI3NDkxNTNlZDFiYjE4NTQ1NjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1908d88f7ab34d88b5bb729788cddbec",
+      "statement": "Starting an agent loop enforces max_concurrent_conversations per user by closing the oldest conversations and sending each an AGENT_ERROR$TOO_MANY_CONVERSATIONS status message first.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L296-L340",
+          "version": "repo-lines-v1:sha256:9fe65aa68e65654c8e5ee3e401bf56f64eda62caad9552585b25daab95eede8b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlMzU4ZDNiOTMzYWY1YzFiMmVmN2RjZTlhMTFmNThjNjk5MTBmZGE3NDVmMGFmMTJjMGYyYmFjZWU2NTg2ODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllMjg1YWZlNTlkZmFkZDEzZmQxZjVjNWI2NDVlNDdjYWFiZWI4ZDM2MDM3ZTZhMjg3YWNhZmUzYTA0M2M2ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3OWRiMzkzMTAyN2RjYzRmZDc0MTkxNmVhZmUxNzk1ZWFmMzMyZDA4NGJjM2NhNTE4YmM4MWE3MWVhZTc2MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5MTZkYjU3Mzg4ZDQxNzRjNDcyZDFmYzFkNzQ5YmRlMDIwNzU2MTc3ZDFlZmM2Y2JlMTQ3MTZlZjk3ZDI3M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_685afb937c494de997f6528557a5c35a",
+      "statement": "Stale cleanup closes idle sessions whose last activity is older than sandbox.close_delay, and skips sessions in the states it lists as active.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/conversation_manager/standalone_conversation_manager.py#L179-L229",
+          "version": "repo-lines-v1:sha256:d1b13acf16246f10f15f244b770c5922eec3d8b68a4419ccf4cb42f050511a0a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNGE5NmFlNDZhYjNjNTYzMTk3ZjZjYjQ4ZjUzOTE1ZTEyZjlhNmY0YmJmZTJlYjU4MTk1MDc2YmRmN2ZhNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0ODUxYzcyNzM2MDNjMGE3ZTNmOTE1ZWY1MDYzNDE4MTU3OWM3ZDI0MDJlMmIwNGEyODVhNjFhY2RiNDdjMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkNWE2Yjk5Mzg4Mzc3NjdkZTZkZTAzZmQxZTM2MjA5NmE5ODAyNDc5MGI5ZmY5MmZhMzhhYWQ2Yjk1ZDM2YWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_61bbf62775c7415a930d7f84e83b2a20",
+      "statement": "AgentSession.close marks the session closed, waits for an in-progress start to finish, saves and closes the controller, and submits the runtime's close method to an executor.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L224-L246",
+          "version": "repo-lines-v1:sha256:2d7bc6dcbab9dea57a9ead12927898eb68fd71124812ec806d09024c4a57bece:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMzFhMWRlZTMzNGY3NTMwNTkwZjJhZjRhOGI1ZTJjZmQxNmU2ZDlhMzkxMDk0MDNhZWE2ODNlMmNjMzgwZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiOGRmMGExM2UyYmE4NGZlMmYyZmJiNmE0ZjcxNDAzMjI4ZmM0YWZhMjk0OTI5NzAyZjBjZWFmOTkzNDEyODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMWViZjExMjU3MDQ2ZTY1NDM5YmQ5Njc4MTY3ZDI1YzEwZGE2MmFjMmE0ZjMzMzk5ZDA0ZjFmNjFjNTc0MzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f30fbe446ea4a31af901248f68b5cf7",
+      "statement": "WebSession sends outbound events to the connected room as oh_event messages over Socket.IO.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/session.py#L400-L412",
+          "version": "repo-lines-v1:sha256:5ab6ef09fae0a39183cd40568cc2f56be4fa16f717ec053e865a79253537f839:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkNjllNWM0Yzk4YmFkYjI5ZTYxOGM5OWVjNmFhZGQ2Njg3NDhkNTJkY2Y4NTFlYTJmMTY1N2Q2NjFhNTU3Y2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhMjJkZDMxZjcxNWVmZGQ4YjAxZGYyYTY0Mzc3OGI1MDIxN2RhMmE1Nzc0ZTBlYzA2MDNlZjczNDhjYmE1MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmMDRmNmE5NGNhMTdmOWE1MDQyY2E0ZDQ2ZWMzMzNhNjE1ZDczMjY0MmQ5ZWU4YTE4MDBiMTIxYWEzMzg2ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0ZjU4ZjViNjc5YmQzZjQzMzMwNzkxM2I2YTE1YTczNjE5YTJiNmQxZjZlMGQ1YjgwNTFiYzQ4ZDMwMThlN2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_864d331e90e64a3abf947b0565ba6dd8",
+      "statement": "The start_conversation REST endpoint calls maybe_start_agent_loop to start the agent loop for a conversation.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/routes/manage_conversations.py#L474-L520",
+          "version": "repo-lines-v1:sha256:f4152e9b584b0833d07e0239a3a7498ca6a4afd72a07c8baa987d6391662a481:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhMDVkN2M4MTI4ZTg2OTk3N2YzMGExZmQ3MTljNTM4M2E0ZjhjMGZlNjZjYTJlNDEzYmEyMmRlZDQ5N2E3NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5ZWM5Y2ExZDU0ZTVhY2Q5N2NjYmI4ZmE5MzQ5ZTM4ODRkYmMxMGIyNDI5MGJhMTJlNDgwZTA5N2Y5ZmIzODMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmZWJiYjg5YzhmNGI4MTk2NTI4NjkyMjU4NTkxNzA0MmE3NmZkMDQ3MmMwNWZkOWI1ZDI4OGU3ZWZmYmNiYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmNDY0NDRjYmE0MGE5YzhlYjA4NjdlNmZkYTQ4ZjE0OTA5ZDhjYzkxODI3ZGE0NDliMzk1YzIxMzQ1NDg4MWUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:30:54.023Z"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:aa3dd142ff06881dd186b06878b4766e51bcd6e54d593f19d7806b5799167ae9",
+  "claims": [
+    {
+      "id": "claim_4d907625c0d04b6b8cb956b73dff7257",
+      "statement": "The electron npm package's postinstall downloads the Electron zip with @electron/get, verifying it against a bundled checksums.json unless remote checksums are requested, and skips entirely when ELECTRON_SKIP_BINARY_DOWNLOAD is set.",
+      "evidence": [
+        {
+          "resource": "repo://npm/install.js#L14-L53",
+          "version": "repo-lines-v1:sha256:994ef953f7e889a11e8a74a91dd5c6c9c074fc1f503679ea9a011d454f7b2ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0ZGNjZjRhZTg4NGEyMTk0YjIwNDVlMTMzYmJlYTUzNWM4ZmMwZDBmN2RkMmI5MjBiMzhkZmM0MTRjY2Q5NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkNGJlMTM2NDE0MDNhNjhmMzcwMzQxZmM4NmFlZGI0MDQ0MWEzZmI2OTc2ZWU0MDFiMWMyNzFjMTJiOTM4MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkMzI4ZWY5NGYxMzM4N2M2ODQ0OGJhYjgyOTQ0M2YyYTM0N2U2NzY2ZTYyOTQ1NDA4NjQzZGM4ZWQ2ZGM3OWUifQ"
+        },
+        {
+          "resource": "repo://npm/package.json",
+          "version": "repo-file-v1:sha256:dc7eff73295b36dc1fc229844527e01555be7ae208ebc61c9726d907b637b570"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee675360bc24465a820565a16866a7d9",
+      "statement": "install.js treats Electron as already installed only when dist/version matches the package version, path.txt matches the platform path, and the executable exists.",
+      "evidence": [
+        {
+          "resource": "repo://npm/install.js#L55-L71",
+          "version": "repo-lines-v1:sha256:c6cf7cb2034be102af7cd55f79c4c0d3d0d4b0d1c692f8aa9add87626f7b3ae1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxMzIwZDQxMTM3YzcyNTdhNGRlMTc5YWViODEwZDQ2MzFjNjIyNjc4ZjQ5MzcwMWY0NmExYzRlMjY4OTAyZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiY2IxN2U2NTE3YWQ1OWViNTIxOTY1NmM0ZjkwYjM5YWI4MTRmMjM2MzZlYzYxZTUxY2E4OTFmZWQ1OGRmMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiYzZhYzRjMjY0MWM1MDdiNmE0ZjFjOTQ1ZDkyYzNjOGViMmFmMDk0YzY0YjRhYjE3OGEwNDVjN2NhMzkyNTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_502cc441441548c1aaa983cbeb3fa1c6",
+      "statement": "On macOS under Rosetta with no explicit npm_config_arch, install.js downloads the arm64 build instead of x64.",
+      "evidence": [
+        {
+          "resource": "repo://npm/install.js#L27-L39",
+          "version": "repo-lines-v1:sha256:fe951eac62da7e73839b1872d9ca26e5fbf61f06768829a6e164f9391178fd5b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5ZmE4YzNlMzU4YWZlNzllZDQ5MWMxZmFhZjQ2ODQwODhiMDdjODRkMTAyNWJmOTJkNTJlZWVjYjQ4ZWIyYWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiMjcyMDdjNzAxZWI2MzVjMzkyNzI5M2EwNThmNGNhNGU1NjU1MGQ5MTllYTJlM2UwZWJmNjQwOWVkYzQ1NjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5NGQ1ZjAzODFjNDJiMzRkNjM4OWI4NmIyNDY1ZGQxMzE0NGYyZjczOTY5YjE0ODA1NjM3NjZhYmQ1ZThhY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c137aec2670402db933640741a696ae",
+      "statement": "After extraction, install.js moves a bundled electron.d.ts to the package root and writes path.txt with the platform-specific executable path; unsupported platforms throw.",
+      "evidence": [
+        {
+          "resource": "repo://npm/install.js#L74-L109",
+          "version": "repo-lines-v1:sha256:9b83d25908685d434da583e2e7ba5e7630e238f5049c4d83060e5e5b06f9e509:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0ZGI2YzZlNWM3MWYxN2RjNGZmMzJjMWJkNTM5ZGE4OGRkNGE0YjBlNzZhMmNmM2FhZGVlMjJmMGU5NThkMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlNTNjOTY2MzNmMzdiN2Y3MWJlZmUyZTI5ZmY3NjQ5YWY2MjE5NTBlZTAzNzIyZDQxZmE4NGQ2MzlhZDFjYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7e7ca1172891403e81562a14214ccd0f",
+      "statement": "Requiring the electron npm package from Node returns the executable path from path.txt (or ELECTRON_OVERRIDE_DIST_PATH) and throws if installation is incomplete; cli.js spawns it, forwards SIGINT/SIGTERM and propagates the exit code.",
+      "evidence": [
+        {
+          "resource": "repo://npm/cli.js",
+          "version": "repo-file-v1:sha256:193a59dc9f5842c9564c88cc00e50bcb83c9bd771d1c47e7c1f2180ae2238404"
+        },
+        {
+          "resource": "repo://npm/index.js",
+          "version": "repo-file-v1:sha256:46a7d3a2da5d96cd693612e5c3ec407c38ac9c15c44f97ad2be478cbcf80b43c"
+        }
+      ]
+    },
+    {
+      "id": "claim_d4b031140f22464c94e00ce50ed0d989",
+      "statement": "prepareRelease creates a draft GitHub release (aborting if a draft for the tag already exists), pushes the release commit with tags, and triggers release CI builds; nightly releases target main.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/prepare-release.ts#L168-L222",
+          "version": "repo-lines-v1:sha256:61eb14af3dacada2c5bbd0b56a0fe2bf14cc79d3c66b9ce57db95dc4aebf2946:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhMDgzOTM2ZDFhMGU5M2Q5Y2UwOThjODAyZTFkYzczNjc5NTk1NmY3YWU2ZWM3MTQ3OTY1Y2JkMDE3ZTRmY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlZDliYTQ0MmI5ODlkNDIwMjYxZDMyYzExY2M3YTZiMGExMjA2ODkzNzMxMjA4OGJhZThlYTIxZmEyYzU5YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://script/release/prepare-release.ts#L76-L166",
+          "version": "repo-lines-v1:sha256:34d049a3862d1780329728596c95ceeec9673995101c1953c85ae414272314c3:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlOWRiMzZlNzNhOGQ0OGY1Y2RlNTgzNTQ0NGUxM2YzZTRjNmU0YjFhNWRhMjg0YjAzZTQ1MTNlMjMzZmU3NTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkNzMxZTI0NDg3ZDU0MjBjYzgzZTUxZmE1ZTA5MmY5NzNhMzIwYTQyMDdkNzkwOWYxMDQ2NTVkYzg1M2I4NmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhNDFlNzdkY2M0MzYxMzg0ZTA0OTcxMjQxNjNiYzU1NmJjNzBjZTNiYzhiYjU4N2YyOWEwNWQzYmZlZDZjZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_261d5e2d971c4081b45bc1ae83a3aa81",
+      "statement": "nextVersion supports nightly, alpha, beta and stable bumps, and bumping a stable version to alpha or beta throws.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/version-bumper.ts#L59-L95",
+          "version": "repo-lines-v1:sha256:57d374bd4225330291165429d6afb19d4fad2d8dd8e06aceafd910c01523c3b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MGVhMTIxODQ0ZjM2YTA1NzcyODdjYThjNDdlM2E2NzYxZjRmMTFmYjQ2MjNiZDYwZjk3YThiMzYxODVkMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2ZjBhNDc2Nzc3YjNkZDQyOWJlMzBmZDFhZjk3MDQ3NmE0MmJiOTIwYzI5Y2VmZjNkOWU3NDhhODM5YTg0YzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMWY3ZDQ3NmI5MmJhNTAyMTAwNjY1MjA1NjA1NGU0NTQ3MmRjMmRjNGY4NjU4YjMxZWEwNmMzNjNkNDUwOTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e25809cdd584052a290251242f83f2a",
+      "statement": "Release notes group commits into Breaking Changes, Features and Fixes sections and drop commits whose notes are 'No notes'.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/notes/notes.ts#L22-L42",
+          "version": "repo-lines-v1:sha256:c7d757ecc540a0b4790245391cdc132a4758df12061548ecf5e418211f6e3f25:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NjZhMjA1YjRjZTI4OWNiN2IzY2VjN2UzNmM3OGU1MGRlNmY1ZTdkOTg0MmU3NmE3MDk3YTUxNzlmZTZjYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhMWZiNzgwMmNhNDlmM2RiOWUxNDk4ZmExMGNkMTdkMjc2ZTU2MmZmYmFjODU3OGMwM2Y5Yjc5YTFkM2Q1MjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhZjhjNjFmMDM4ZTJlYmNhMmI0MTM1ODNiZmZkMWM3ZmQxMTlmOWIxZGIxYmVlN2IxYTI1NTRhNDUyMGUyNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlMzQwZTNhNTZmYjY2MzlmNjYyMzNkNTBjMTNhNmVjNjU3Y2FiMGY4OTBjMjAzNmQ2NmVhMmNlNWM1MTE2YTYifQ"
+        },
+        {
+          "resource": "repo://script/release/notes/notes.ts#L540-L600",
+          "version": "repo-lines-v1:sha256:e114eeec3d4028e629cbddf72e318e542e2d89b7ab67b2f69d5200ac6970e46c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2ZDNlZjZkOGRhM2U2YTNjZDVhOWZiMzlhZjMyN2M2OWJkYzY0YmI2ZGU1OTQzZGY2YmU5MzM0ZDZiNzQ4NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxYzg1MDVjNDE4MTBkYjFhNDAxYzgyYzdhYjUzYWM3NzJhZGJiNTA0YTdmNjEwMmQ2OTc3NjU1NDBhMzNmMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiM2Y1MzljNGViOWE5MjA3NGYzMDUwMWQ0ZmJmN2M2MjhhN2U4N2MyZDZiN2I2YjI1OTE5MDZlN2E3ODI0Y2QifQ"
+        },
+        {
+          "resource": "repo://script/release/notes/notes.ts#L750-L792",
+          "version": "repo-lines-v1:sha256:c5b3e3c8aacb0c5f7feb9f56f82ad830f422963a8e2f2844c1b6c5acb8aca73d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MDBhODg5MDc2ZTU2MDczMjBlYTUyOWUwMmUzYjQ0N2FmMjM2ZTQyYTUzY2I5NDVlYjQxOGI0NjFhZGYzYzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlYzg3ZjcwYzM0MGMzZTliMWZlNGZlN2M5N2NjNWRjNWFiMzc0ZDI4NTkwNTc5NWU2ZTUxZTNlYjU0OGU2MzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxZDcxNzcyYTFkZGM3ZDA5ZmE5MWVjMGE4ZWUyY2Q1NzBjOGNiYjQzZGVlZDRhMmE3ODY0MGY0NzBlZTY3NzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4fb7a89a087b441bbb24a64b3ba25797",
+      "statement": "publish-to-npm converts the release's SHASUMS256.txt into the package's checksums.json, publishes nightlies as electron-nightly, and tags other releases with branch-specific dist-tags, moving latest/beta/alpha when appropriate.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/bin/publish-to-npm.ts#L115-L240",
+          "version": "repo-lines-v1:sha256:aa975276f4c25de3a03333a9d2d3ca4263ec854e6a03363eb2e984b89fa1b8dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0OGNiYzljMGVhOGMwYzY1MmM1NWI0NjBlZWM3ZTE3NjRiNTc0NmUxMzhmZTkzODllMGM1NDAxNDFlMTZiZTc4IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyN2RkMDI1N2MyZjViYTQ1OTZiZTYxYjNmNWEyZDVmNzNjNGFiMTBlOGRhMmViZjE4MTFiODJjYjkyMWEzMzgzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlNWFmM2EwNTliZmRjNjc0YzU3MDlmYTJhODQ0NTU4MmUwZGU2ZmU2OWMyODQ4NzFkZGExZWQ3ODk1M2U0NDBhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_b42fa1cef84942488604616ed9aa0f19",
+      "statement": "The release bin scripts are invoked by release automation at defined stages rather than manually, and cleanup-release is the only case that deletes an existing tag.",
+      "evidence": [
+        {
+          "resource": "repo://script/release/bin/README.md",
+          "version": "repo-file-v1:sha256:9f4b4264b6bc16da1bc1cec614401102c8d2153cd008ab1e8c67d6bc75c55a46"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:25:33.723Z"
+  }
+}

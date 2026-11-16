@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d9ee2d7aa908ccf548bd79f1a1a19e577cada818f4a725370bc034d21a8e1596",
+  "claims": [
+    {
+      "id": "claim_788edae2af9547f48fe1a489122c1c01",
+      "statement": "The frontend builds as a non-SSR React Router application and moves client build output into the top-level build directory.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/react-router.config.ts#L12-L35",
+          "version": "repo-lines-v1:sha256:9240bbf8c5aed3ea505c1cc35c6c1357615ebb486cec1ecbe86a159aef48174d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2MjRkZjFjYTc5YzExMWZlYjEyNGM4OGEwYmFjN2IzMDllM2U0ZGIzMGFhY2QyNTUzNGU0YmQ5MWQwYjY4NjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyNmRlMjBiOWIzYTAzMDQwYmM0MDMyOTY3YTQ5OWM2ZjY3OGYxYmNkNDNlODFjY2Y0YTY0NmY2NzExNzAwMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1ODI3YWRlNzAwZjFkYTYyMmI3OWVjZWY3OTVhMGUwZTE2OTU2Y2Y1ODA1ZjA2NzQwYWVjOTYxNTQwMGY4NDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_551418bb25264ae9a83d63b82e8bcf5b",
+      "statement": "WsClientProvider sends user actions through oh_user_action, selects conversation-specific socket host/path, resets history on conversation changes and reconnects with a latest-event cursor.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L151-L162",
+          "version": "repo-lines-v1:sha256:0df995508011bf3151820228641524ef501ca80f2760fa04e8de93f8c3f30219:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwNWEyZDJmMDE1YWNmYWViMGU0MmQ1MTUwMGE0MDNhNWVkMDQ3NjI0MWI5ZDcyNTA3NWVlZDY2MmJlZTliZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhNDM0YzAxOTA2YWVkZmE4N2I5NTEzY2Q3NWRjNzRkNTI0Zjc1NTMwYmY2OGRjOTFiM2YzMWM0YTFjZjZiZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkZWRmNDkzNGI4NjJlZDJhZmUxZDc0MTY2YTlmNTZlOGFlOGEwZGMzOThkOTBlMDcxYjkyMWVmNTQ3MTZmZmYifQ"
+        },
+        {
+          "resource": "repo://frontend/src/context/ws-client-provider.tsx#L250-L378",
+          "version": "repo-lines-v1:sha256:5e996b6269d7e7d585647eb7d9f8bf3f296e300127cf2052cd9b6ddb7f38a686:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhOGI4ZTdjMjBlZDgyYTA0ZjlmNmVlYWYyOTgxNmU5ZTY0MWZlNjlmZTM0ZDBmZWVjYzcyN2E5NTIwZDAwMTIwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2ZWU4ZDkxOGI1YjkzNmRmZGIzMDkxMTNiZmQyM2Y4ODExODNkMzhhOGJlMzFmY2JjNzA5OGFjOGIwYWViZmI2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmMTQzNzQyMjg5NjMwNDM3YWZjNWRhNjJjYWVmYzY1NGUwNDRlZTU1ZTNlZGJkYmJiZDAxYmNkODZmNmRiNmU2In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_02d3fe5cab184605b944fc326c9efb13",
+      "statement": "The conversation route clears client conversation displays on ID changes and starts stopped conversations through the API.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/routes/conversation.tsx#L46-L78",
+          "version": "repo-lines-v1:sha256:fd2debf738d4cf5748d988b1a138af590143912c968f48a9c292a72c6b966b41:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NDAwYmY0MDc1NmFmNzBlMTFkNDVhZGMzMDhhNjVmOTY4MjY0MmVjZDY0MWVhZTFiYTVlODFhMDIxZDUzZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyYWY4MzJjMTNiYTBmZTZhNWYwMzdlMTE0NmRjM2UyYTNmZjFkODhkOTgyM2ViMTczZjkwOTFkNzkxMmM4NDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5YWQyZTJjODNkYjlmMzZmOTI1OWFmZGUyMzM3MTA4NDAwOWIwYzM4MDJmZDQxMDc4NTk0MGMwOTgwZmM2N2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4OTNlMWRjZjFlYWU4NDY4NDg0OTZkZjFjNzE4ZjdiNzZhYTI5ZmMzMGJiMGQ1YTZiNGIxZGYxMThmYmVhMDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_34b3b9f6993f4d63ba4cb006fa75a488",
+      "statement": "Client event services update command/notebook inputs and metrics from actions and terminal/browser/agent state from observations; command display output is truncated above 5000 characters.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/src/services/actions.ts#L17-L44",
+          "version": "repo-lines-v1:sha256:e78b6ee75f3ffdf79fc00d0b3138c3c7269971068c823b817522ba5ce4fb6a99:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2OTVlMzhhYTk2M2I3MDU3Y2M2MzA0MjBkMjI5MDNhOTNlOWE5ODVhNmRiZGM1ZmFiM2FmOTkzMjBiNDcxYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2Yzk2ZGI5MmU1MjczNzkxNzVhZjkwYjE2Nzk4OWVhY2ZiYmM5NmRmOTk5MGFkOTUwODZlZWY5MTM2OWMwMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0ZjRiYzk4N2QyMWQwMWVkZGIxZDQ2MTI0OTUxYWE1Nzc5YTFhNTgzMjYxYmNkNTEwNzYxMDgwNTQ5ZDBlZjcifQ"
+        },
+        {
+          "resource": "repo://frontend/src/services/observations.ts#L9-L46",
+          "version": "repo-lines-v1:sha256:42a4ab853b0a0b8ce3e755e9a32c3856d74889c704076aa02343dfafb6a51810:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YmZjZTVmNWFkODk4MmI3YzMxMGJjYTM1Zjk5ZDVmYTQ0ZDQzMTMxYTk3MGVhYmVhZmU1ZTIzZDA3MmE2OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4Mjc4ZTc5YTk3MGQ4ZWQwNjRjZGMxMjhiMWVjNDA4MTY3MTg5MDJkNzFhZTdhNTRiZDU3NmU5NWVjYjhlYjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1NjAyMjMwZTQ1YWJhMWFhNDMxNjIyMjdjYzc5MjRkMWU2MWY3YmJhNTFmZDQwZmRmZThjNzJiMjM3OTc0YTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0NzM1ZDVlOGQzZTEzMTIyMWI0NGUwOGEyOGUwNTI2ZDE0MjkyYTQwNWQ2ZjZiMmQ5NzVmMDIxZDA2ZDk0NzkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:55:05.802Z"
+  }
+}

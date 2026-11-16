@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:57a2aeeb481063ca869b1d12fc52e80298a949143cd371d623c524d97dff0631",
+  "claims": [
+    {
+      "id": "claim_40244790cde245638c93b6c3f8ae5f2f",
+      "statement": "The main CI job runs format checking, lint, editorconfig checking, build, and tests, and uploads coverage as an artifact.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L37-L57",
+          "version": "repo-lines-v1:sha256:1f7d19aaa86d877f4d8d5544f710a2ccd6cb2cc1366a04ba7600cbd5661e0549:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiYzQ0MjZiYTJhMDRkYzg0YTY4NDk1MmVjM2JhMGRlOTBiMTYyOTc4NWYyYzg5MWNjNWVjY2E3YjYyYTUzNTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzRkN2E0ZDY2NjI4YTMyYWVmMmZlMTRiY2EzZjhlYTVmYzg5MDQxZjYwODU3N2FmMGU0ZjdlZWU0NjA3NjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxYjE3MmE0MmY5MjI4Mjk2YWUzMTBlNTRmNTA4YzdjMGYxZTAxYWZhYzFhMDU5ZGNjODg3Zjg4Y2E2YzA5NzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjMmFkOTg1Mzg4MTliZTQ0NzlhZTlmYTVhZmM5OWRmYzY1OGEyYWNlNGQxY2ZlMjQxMjIxN2Q3NjUzNzU1N2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bec3607517cc4b06b06147c85c5ce44b",
+      "statement": "The ci workflow ignores pushes that only change docs, .vscode, README.md, .gitignore, or LICENSE.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L6-L13",
+          "version": "repo-lines-v1:sha256:46d50747bc4fd34eed205db2882d0f21bc3f9455aa03092ba5a75319be68a0f1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZmZTQwMTI5OTg3MDFhOWU1MTc2ZjZiMTgwNDUzYjg5ZTM1NzFlYWJjNzIwYjkxNmMyNTBlNDY1NDA4ZTQzMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjljNzg0MWMyNmRkYjE1M2E2YTU1MjFiYTEyMjJkYzk0MGY4YjhiZjIyZTFiYTYxZjk4ODU3MDFmN2JkMzE5MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmYxZDcwZDcyYmFkMjMxZDQzYzU3NWFjZWY2OTQ2NTgwZTQzOWM4Nzk3OTRlZDJlYTFmNGE0MDM0MDI0NTE3MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a89801758f74e2e975a5f7f6d585079",
+      "statement": "The deno job runs the Deno runtime test suites and produces a coverage report.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L72-L90",
+          "version": "repo-lines-v1:sha256:5ba5eb7218c3bf3ebcbf4ae56e67b28ad8669b934d5d8832b3e58fbf442f9cb2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MGVjZTY3Y2FjODc1NWFiMGM0ZjJkNzUyNjExMzQwMjZmZTdiMjhmM2M4ZDZhNjVlODgwMjBkNmIxNzg4MGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NDhlOGVjNTVmNjBjMDYyMTk4ZGE3MGZhYTIzNzI3YmNhZDI4ZTc3ZTM0NDczYjFkYjc2MjU3ODBlOWI4YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1ODg1YzQ1ZTk2NDc4ZWVjMjlmOGI5MjIwMTU4NGI5ODU5YWFjZjVhMmEzMjI3MTRjMTQyMDhkZTcwMDk5ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkyNmJiMzQ0NWNjODM3NjFhZDA3YTg5NDRiN2QzMGFiN2YyZTIxNTIxZjBkNmZmNmQ4ZGNlMDlkNTk4OTljOGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ae99fdbc45d4e05a0cdce36482e3669",
+      "statement": "The release workflow runs on tag pushes and publishes the built package to npm with provenance and to JSR through publish-on-tag.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L1-L51",
+          "version": "repo-lines-v1:sha256:a74c8abd8346530a42e8f56ed5abe9be6c44c794f113522f4d6fb232e1164133:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlYTc1NThiZWJjYmVjMzAxMjIzOTlhZjE1MmM0ZjQ1MzBiZDdiMTc4ZTQ3MGM4NzY4YjU4Njg2OTljNWQ4YTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1ZmU1N2U2MzMxYzMxYWEyMzdhNjU0NWZhZjk0MmM3MmFmNWU3ZWMxZGFmYjY5YTkxZGI4NmFiNGVhNjAwYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e6f6ad188aa40998df924a6299b4072",
+      "statement": "The autofix workflow skips draft pull requests and applies format and lint fixes through autofix-ci.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/autofix.yml#L16-L30",
+          "version": "repo-lines-v1:sha256:be5e9959364d5fbab425b7f3ed1c841356390809e89b9c895215abce3a50ceeb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmZGFkMGE4ZjQ1NWI5N2ZkODI5MWZkZDI3ZDZmYjFiMDM0OGFlMGQyYTM4M2ZiYzMyMjcwNTUyYTVhZTA3YjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjNzA2YjJkOGU4ZjQxMzFmMDlkMDQwMzhhZjk5ZmI1MTM1OGQ4Yzk1ZTYwMDc0Y2UyNDQ4OThiZDY0NzY1ODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjZGRhZTRlN2E2MzZjMjBmNTUwYWNiNmE1NGYyNzA5YWUyY2I0Y2RhNDE1ZDNhN2U1MjQxZTM3MTg1Njg5MjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4YTRiMjU2YWQyNTJlMDgzM2NhMTgxMmUyZDQwNDM2YWFkZWU5ZDhlZmIyMTgwODg2ZTc0NzZmNjA1Y2NjZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5018ea15dd7d4cd9bb12012f63140687",
+      "statement": "The OpenWiki update workflow runs on manual dispatch and on a daily schedule, runs openwiki code --update, deletes .run.json, and opens a pull request with the generated paths.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L70",
+          "version": "repo-lines-v1:sha256:52c210f580b604c7bf11ec32bce5631ef700a27dc252aca567ab11719c6cf656:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNjNiMWQ4NzlhMTQ5YTE4MTA2MjM5ODJlZWRiOWYxODdjZmFkZDJjMGRlNjEyMDE3YjUxZGEzZDA2YzE3MTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2MzZmMzlkMzA3YTkwMTA1NzIzODIyMGQ3NjJhODk0NDE5OTExMWQyZDgyN2Y2MmY4ZTJmYmNlZjU4MmU3NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_76735a4714094e90b7c4717c096b6289",
+      "statement": "The OpenWiki update workflow fails at the end when the OpenWiki step failed, after the pull request step has run.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L84-L88",
+          "version": "repo-lines-v1:sha256:e7dd63a4b0d13cb4cdf2cdd1dca9682eb860a9c631b6bcdd99fb9f69915dbc6a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY5NmIxYTdkMjgzMzEwODA1YjJlYjAzNWI3YzQ5ZDllZmY0Nzc4MjFmOGU5NmE2ODBlNWViYzNlY2QzYjQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY3MThmMDY3YjVlNWMxZjA5OTFhNmU3NDcyNmZlMmEyM2QyNjQzNDVlMDhlNGVhZDA0ZmFmNzNjMjdlZDQ0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzI3ZDllYTYwYzNlMGYzNTEwN2ZiYTlhOGFmNjU4NGI1Yzc5NDU0MTBhNGZlODM4YzQzZmUzNGMxZDUzMGNjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b5df1f6bf604926842a097047b2f7d7",
+      "statement": "AGENTS.md wraps its OpenWiki-managed guidance between OPENWIKI:START and OPENWIKI:END markers.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md#L1-L16",
+          "version": "repo-lines-v1:sha256:3f65427f27766385406120665601b3866f854937467101977cfcd5ab695bd575:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmMTgwZjljMTI2OTAzYmNjMzMxYWE5NTQ1NmU0OTQ0NGE3ZDRkMDExZThhMmE4M2Y1ZGM4NzAyMzkxODEyZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5Zjc4NzE0ODkzYWE3Nzk0MmNlYTFjNGEyZTAyMzFkYmI3ZmEyYTQxYTcwYzgxNDYwYTNjNjc1NjJkYTNhYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T18:18:42.046Z"
+  }
+}

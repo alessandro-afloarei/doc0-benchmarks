@@ -1,0 +1,4 @@
+# Files
+
+- [Helper Modules](helper-modules.md) - Survey of the helper modules under src/helper - factory and createMiddleware for typed apps and middleware, testClient for in-process requests, streaming (stream, streamText, streamSSE), the WebSocket helper contract, cookies, connection info, the reverse proxy, route introspection, dev-time route printing, the html and css tagged-template helpers, and accepts - with the role and key mechanism of each.
+- [Static Site Generation (SSG) Helper](static-site-generation.md) - How the ssg helper turns a Hono application into static files - route discovery for static GET routes, ssgParams expansion for dynamic routes, requests dispatched in an SSG context, the before-request, after-response and after-generate hook pipeline with the default and redirect plugins, bounded concurrency, and the file-system adapter contract with path containment.

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:3f4c5960457e424d0ce4d421e347032ffd1d3afaed6f51b20ad05f35c452171f",
+  "claims": [
+    {
+      "id": "claim_244abafe1db44b888d65f368d0b55378",
+      "statement": "Web AgentSession initializes runtime, memory and MCP tools before the controller and initial message publication.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/server/session/agent_session.py#L119-L204",
+          "version": "repo-lines-v1:sha256:2a034074c0a335a94be5f1a755d7d5f83a087f6c0cee3f2d2c430a91f1cb3ae4:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1NjFkMzI3YTM5ZDEzMmQ2Nzc0NDFiYTc0NThmYjY4M2UwYTc5Mjk2ODQxOGE4YWFlODczNzFhYzQ3MTY5ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3Mjc2ZDUyN2MzZDkwNmFkYzlhNWVkNWJjMjE4ZjZhMDVjN2E5ZjgxMDk4MDA4ZjU1Y2FmY2MzZmZiMDRmYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2OWFkODUwYjFlMTMyMWE0OGNhNzAyMjNiOTdjNjBiZDM3MTJlMjA3YTgzYzU1MGQ3ODlhYzBkNjcxNzg0N2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3MWIzOTU4YzQ2YzJkODBiZjc4NWZkNTE5MTU0ZmJmYWY2YzY0OGFiMzc0NWE4MjJhMWJkZTlmZTJiZmRjMGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_31087e99ea6c4c05bbe5c2a37cdc0046",
+      "statement": "AgentController separates action scheduling from Runtime execution through an event stream and observation causes.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L519-L546",
+          "version": "repo-lines-v1:sha256:3173ef87a54542a8fe1bc360235989c94e12e48da3d43dcbf4ad756981d62656:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzNDA0ZDBhNDkxOWNmMGY4NzE5YzFiNTgwMzM5OWE0MWYwNmE2NTNjZDI4NmRmMjg3MDIzNmZkYTY1M2ZkOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhODA2NGUyN2UyMDU4ZWY0NjE1ZTU3NDc0MjgwNDg1MTU0ZjczMTJkNDc0N2NmNDZjNjhmMzU1OWVlMzAwMDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5YTIxN2YzMzA4NTJhMjE5YTA2OWM3MGJiYmRmMGZhYjRjZGY4N2ZkOTJlYjA0ZDQ3NGEwZDYzN2JmMDc4NzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3ZTczMmQxNTcxNDNhYjQ0MzEyZmM4ODJiMTc3ZTEwMDcwMTFlMDVmZTc1NDgwMDA3YTJlMzQ0MTI0ODNjNjIifQ"
+        },
+        {
+          "resource": "repo://openhands/controller/agent_controller.py#L821-L865",
+          "version": "repo-lines-v1:sha256:2a8259d415f74579a0ae27fa882fc42b5a97bbc93d0f0af5c83499c4e4eb3be8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1ODc1ZGMyNTRkOTUwYTk5Y2Y2NjViZjBmMDJhYzBhNzhhMGIwOWU2ZTYyNTdiNWVlM2QyMTJlZGZjMWFhNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjYTAyZWNlODY2MTljMWIzOTNjNDU2MjkxZTNjN2ZlMWQwNDgwZWEwZjIyODA4ODQ2Nzc2NGM5NTg0MjcxOGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmOWI0NzM4NGUwZTA1ODAzMjE2NzE3NDBhMzc1MjY2YjU0MDc5NTA1OTVmODE1NzE5M2MxMzVhOWVjMjMyYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmYWE5N2NmYWUzYmUyMDY5NzhmY2ZmN2E0NTczOWIzODk0ZWNlYTEyNTQzZmM5MmIyYmZiNmZiOTc5MGFlODQifQ"
+        },
+        {
+          "resource": "repo://openhands/runtime/base.py#L361-L399",
+          "version": "repo-lines-v1:sha256:3e32bcc3c022aedd0dbc8d20ef9680aa50dbf9e6724512b14fb216900744087f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiNTc5OGUzNWRhYjQ0NDIyNzhkOTU3MTRiNjc4NTY5NTBkYjljYTliNDQzM2I3NjU1NmFmYjMzYzUyNWRiMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzNzNkOGU2N2VlYzg5Y2M2NzE5MTNlYTU4MWE0NDU0MmZkZTQ2OTU3NjEyODZlZmVhZTUzMTgxYjA4MmU0ZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwNjcxYTUyYjYwMDk1NDNjNmI2YzBlMzVhN2EyNzVlMWI4YzhlMGUxNTVlZDIxM2JhY2Y5ZWU4MDA4OWM3MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMzk4YjZlODViNzNjNGNkNzMxMmQwOTIzMzY4OGNhMjgwZDJmZWIwNDlhNzJiZWVjYjQ2ODUyZmYyNzkxNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8695cc2d4ff9428089e448f18c65111f",
+      "statement": "The CLI entrypoint dispatches serve to the GUI launcher and defaults unspecified subcommands to cli.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/cli/entry.py#L12-L48",
+          "version": "repo-lines-v1:sha256:927d96614b02bab7f8ac7164bbf2c243d0e5ca10e587dba0d0aa91e8b6d9adc0:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZTMxMjU3ZGMwYWUxZDU5MzAzN2MyODBjOWFkNTA4MTliOGE2YzhjZjcyOGJlMDcxNmQwMGEzZWVjYzA0YmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmYTIwODU4YWY2NDI0N2FhNDdmMzFkMWUwMDQ0ZjcxMDc1NmJkMjc0Y2Y1MmYwODk3ZjgxNTU3YzU1MjViZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkYTYxZDg3ZjY0ZGEwY2M0MDYyZDVmOTAyN2Y5YjUxMTY3ZWMxZjUyOGI1ZjVmZTJiZWQ0MzQ5NmY0YWJkZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwMjY5NzZiOTI4ZmJjYjU3NjJhZDBiZWYyYzM4MTViNDMyNDRiZDlkMDYwZGRkMjhiM2U5NWNjZmIyNTQxYzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4ace6799b3740b5bd893bc86bf09b83",
+      "statement": "run_controller can reuse a supplied runtime and memory or initialize them, enrich the agent with MCP tools, and construct a controller.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/main.py#L51-L165",
+          "version": "repo-lines-v1:sha256:ff120617010650587bd7fb016e2eda06aa3efc65f2c4345a72050f0822be4f9e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyYzliNjliNmVlMzE2ZDcyZGQxMjg4MmE1MmZkYWE4ZjM0OGQ4NmVlZmI4Zjk5NjAzNDJlYjRkNGMzYWYzYmM5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI2OTQyZjg3ZjNmZGY3NDdjNDQ1NjNiOWM4MTdkNmFmZWY0ZGEzM2FiZTE4NTE0N2UxZWY4ZjA5MjgwOGFhZWVjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiNDI4M2RmYjkxYmYwNWIwZjZiODc5NmU1ODVhZWMzNDkzN2YzYmYxOGFjNTgyMTZkZGRjZWM0ZjI5NzY4OGQwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmNjdiMDJhYzJmNzdlNjcxMmFjMThiODU2ZDE0ZmMzZTcxYzEyYjRjOGRlYWU1NmY0Yjc0N2U5N2M5MzQ0ZmEwIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_48fe33bca5bd4e678dbb0945f87d506e",
+      "statement": "run_controller supports fake-user or exit-on-message responses and saves non-memory state and optional trajectories before returning State.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/core/main.py#L193-L244",
+          "version": "repo-lines-v1:sha256:148949cd8fd03a111eb57121e414836eb94d0dd8ceae46ebb81b6c28b2f5b32b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZDE2MzFkN2RkYjVjYTRkZWQ2NjM4YzQ3N2IxNGJjZjE4Zjg1MTI4ZTdlMDdiZTI2Zjk0ZjQ2MGYzNDFmN2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNzI5NTFhYTUwNmFlMjg5MzYxOTY0MWNlZmE0YTkyYjg0MmZhNDk3MGJmOTAwYzUyMTcxNjM0NzY4MWVmNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzZjU0ZjIzNTZlY2VhMjkzNDRjYWZjZDIyZjE5MjNmYzIyNzhjODgyMjhjYjU3YzA2MzJjM2FlMDIxM2FmMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0YWRkYWE1MjY1ZDk0NzgwOTJmZDU1ODlhMDJhZmZjOWY4ODY1MDgxMDRlZjZlNWM0OTIyNzA5NTE1NWIzZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7eee83b28314526939c04d00567a477",
+      "statement": "Agent obtains its model through the shared registry and exposes a system-message event containing its prompt and tools.",
+      "evidence": [
+        {
+          "resource": "repo://openhands/controller/agent.py#L40-L97",
+          "version": "repo-lines-v1:sha256:9c8d8e13285433dc7d8a4d650e71a8f2f20486f046f0fd871b6aed3ecb037bc9:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmZDdhMDdhODNkZDE5OTZmYjUxNjg0YjQyYWVjYWY0ZTkwZmI3OGJhNzIzMGU1NDJlZDdiZDAxZDQyMzAxYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YzBiMzQ3YWMyYzNjMDhhYmNiZmNjMWQwZWI2MGVmMjA0Y2Q0MjM0OTk0MDQ2MTE2ODcwNDgyYWZmN2M2N2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiMTc4OTI4ZWI4NzA0MTdhOTYzOTczZDA4MmUyZmQ4ZmMxYjVlNzkyNzY5ZDI2NWViNWRkNzc3MzE4YTRmZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3YzFjYzY1NWJiMjhmY2M2ZDgwNGMxZTRkMmI1ZDZhZjA3NWE3MmRkZmJlNDg5NTgzYWIxMjU2NDgwMjIwZmIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:14:39.912Z"
+  }
+}

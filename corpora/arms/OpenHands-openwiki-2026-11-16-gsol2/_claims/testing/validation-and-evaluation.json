@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ffd4e3dae8b9272f0a57e7ba8c971668e928c3f72871fd32e48594b3b5935429",
+  "claims": [
+    {
+      "id": "claim_a0cc2f0d7b354b528025200bc45d0618",
+      "statement": "The Makefile test target runs frontend tests only, while Python CI runs the Python unit suite with forked parallel workers and separate runtime checks.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/py-tests.yml#L44-L58",
+          "version": "repo-lines-v1:sha256:58070752974e1c3cb987c61d59c6893d09d5fd1c74103f0e11a5d432423b8c6c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NzdiZmFlMWE5YWJmOWI4MGQ4NmZmOWRhYmI3ODAwM2Y2NmE2OWE0NDBhNDhlMzc3YWFkMmJiOTk1OWI3YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiZDRlOGJlNWYzMzAyMTBkYmE2Yjc3YjljYmVhMGJmOWVhNzFhMDBiMTdhMTkzMGY0Y2U5NjNiMmY3OTc4ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhZDdjOGUzZWVjMzk2OTFjNGQyZjNmMzI3OTdjNTdjY2MyMTk1M2FkYmNkNDk2MDViNjFlYmE1MDQ1YjBkNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2MjBlY2VkYmI3ZjQ5ZGVlOTkyNjQwZTI2ZTY0ODMzYTNmZGMxNTI2NWRkMWE3NWRiZGY1NjE1ZjNmYTc3YjIifQ"
+        },
+        {
+          "resource": "repo://Makefile#L237-L242",
+          "version": "repo-lines-v1:sha256:99d1e08eb4763eb757c52385faa2967d63ed14a2b2a29a4316339548a432872e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODgwZWQ5YjgwMDVhY2YwZmUwZjMwNTQxYWRhZGUzNGU4Mzg3Nzc5OTFmOTI0NDA5YWUwYzU1MTkyYjJkYWM1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjFlOTA0YjRmZWU0OGFkMDRkZmE1MTUxM2VmMzRmOGRkOTE5ZGViZjc3YzA5ZDQwODU4NjhiZTJkODM2OTZhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTlhYmVjM2VmYWM4N2U4NjU1MzEwODhlNzliMDQ0MjdjODMxYWJhODQ0MzBiODQ2ZjhiNzAyMTE4ZGM2MjY2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzU5ZjYwMDNkMzQ5ZWM2OTNjMjFiYzFkN2Q3YThhYzQ5YzZkMzc3M2FlMThkZDEzYWM1NTg2NzdiZDI0NWQ2YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_edd6c65d921d4078b4204b498282d7a3",
+      "statement": "Playwright launches the mocked frontend on port 3001 and defines Chromium, Firefox and WebKit browser projects.",
+      "evidence": [
+        {
+          "resource": "repo://frontend/playwright.config.ts#L13-L55",
+          "version": "repo-lines-v1:sha256:d6568d9ea4dbf2eacd794e4512da83519df9e73d77e1f8c57b41552ca856fdfb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZWY0Zjk4ODU3ZjY1N2UxYTk3OWIyMmYyMGI3MjZkMjA1ZmQ2OWE2YmQ5MGQ4NGM2NjdkMjhjNWE2Y2UwYzEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiNjZiYmY2MzVkZmEwYjJkZWM5ZmVmNDExMTczODQ3ZGY1NzJiNTY3NDdmYjMxNjA1OTA3ZjBjM2U0OTc0NGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzY2EzZTIwYjViY2VmNmI5MjNjNDJkZjliOTk5YzdlZDdlODBhMDIxZjRlZTNhODI3N2Q1YTYxYmIyNzRiZDIifQ"
+        },
+        {
+          "resource": "repo://frontend/playwright.config.ts#L73-L79",
+          "version": "repo-lines-v1:sha256:3ceddd435c2c62670414238bf078df96e43e68e4141d51ff0f1f7ebe3cd74063:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzFkNTUyMWQ2NTdiM2VhOTc5YjkyMDc5N2VmMDg1M2U3MGQ1MTQyYTExYjNlZmEwNjQwZjg3YThkNTljNDAwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTk5YmM2MmZkMzNiYjJiMzVkN2Q4MDk2NzI5YjI2MTQ1MTVlOTMyNmIxNGE4MmJlN2EwNTk3NTc1OTBiMGZkZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_955bb18188e94b3eae83592c8abdace9",
+      "statement": "Evaluation dataset preparation excludes instance IDs already written to output and uses seed 42 for sampled subsets.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L219-L289",
+          "version": "repo-lines-v1:sha256:1107358e6632d679517d19efda8ea02f32fd630183fd9a819b7a15afef535d8d:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YjVjMGJkMmVmOTVlMzg5NGQyMTk1MjM4MmMwZmUxNWU0OTg3YWZlYTkwNjljYzBlMmYyZGM3ZjM5MmRiNWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4ZmEwOTg4ZWFiNjZhZDA2OGE0NGQ2MmUwYWRhN2I2ZjhjZjVkY2IwZmU4OWRhY2VjMjZmMjYwMmE1NWEwNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxZmJhYjUxYzczN2ZmYTIwNzdjZmMzYmFjYjM2ZGFmODg5MmRjYzU5MWNhMWZmZGUxMWRlMTVmMDMyNDM0Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmMzI2MDRmM2E1OWUzYWZiNzYzOTc5MGZkOTM4Yzg0MGUyMGYwYjFmN2I1OTg5ODhhOTgwNTZiNzIyYjdiNzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_206cd1b37b5145708c13294e472c2070",
+      "statement": "Evaluation runs append results, use unordered multiprocessing output, and currently forward timeout_seconds only in the multiprocessing branch.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L486-L549",
+          "version": "repo-lines-v1:sha256:b8753dc22e71d4486981565f786328f1aa0e6834b55c8adc5239be234a0f17c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYjEwMDhmNDE5YTBjMDI0Y2M0ZGM5YzA2ZjRjNDRjNTgxMTBlY2FjMmEyYmY4YmUzMGRjMjkyODI2ZTUwNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjMWJkZmFjYjhmMTgyOGVmYmRlZmUyMzMxODAwNDI1NTczOWJlODNiZDQ3MmY4MGVhODg4ZmE1NjY5Zjc4NGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlZDAyNzlmNTJmYjQ2MjRjZTQ2YjMzYjc5N2U2ODdkMDZlNGIxYzI5NzE4MzY5YzExMmJiYjM1NWFjMjQyMjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExODU1ZDYxODU3ZTA0MmYzYjU5NjA4YjZkMDk2YTczN2NkMzgxYTE3MTAwMGRkZjliYmJiMGNjZjAzN2ZkYjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_625d087ad7294dc181c5f38145261588",
+      "statement": "The per-instance evaluation wrapper retries failures and normally raises on exhausted retries unless explicit skip behavior is enabled.",
+      "evidence": [
+        {
+          "resource": "repo://evaluation/utils/shared.py#L387-L478",
+          "version": "repo-lines-v1:sha256:a666a0dae4ea86d571aea2885e0054a6e2a52492e386f90d62e0e1195b1e938c:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4ZmI2ZDA3MTNjOTAzNjQ4ZWRhZjAwNzIzMWRjNTUzZTdlZTZmZGNjNjk5YzIzOTM4YjFkZWI5YTljMTdlMWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZjhhMGE5ZmE4NjRjYjdiMDU4MWYxZDdhNmQxNDFkMDRhYjc2MTg4Y2VkMTgzNzg5ZWI2NzAwYjgxMTg2YTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYyYWNmMDZlOGMzZjAzYzcxMzVjNmU4YWM1YTljYTU0MzJhYmUwNmE3NGFjYTBmZGQ5YTUzYTAwOGY5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1ZDk0NWI3ZGY0M2FiNTQzZTM4YTM2NWM0MmI3ZWE0YTcwMzMxZGFiOTJiNzY5MjVjZDU4ODBkN2E4ODY0ZTAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T16:55:05.802Z"
+  }
+}

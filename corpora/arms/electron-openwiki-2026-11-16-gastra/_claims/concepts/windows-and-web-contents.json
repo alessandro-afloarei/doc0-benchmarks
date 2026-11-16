@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5795fe431ae04b32275d579132644bf3b89902df38450ad15b5453d8aeef22c8",
+  "claims": [
+    {
+      "id": "claim_f34649b5339442fd844bf6314a078c8a",
+      "statement": "BrowserWindow creates and retains a WebContentsView/WebContents, associates its owner window, and couples window/content destruction; BaseWindow manual views require explicit contents cleanup.",
+      "evidence": [
+        {
+          "resource": "repo://docs/api/base-window.md#L66-L90",
+          "version": "repo-lines-v1:sha256:a46c72399e9744aa3b8c2160d8feda842342e20f8d8cade54c1172ad05589c22:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMTdjOGRmMTY2NTQzZDFmNjMxMTg1ZWE5MTFhMTZkMTYxN2YxY2M5YWYyZGZmZDFiYTIyNmM0OGJkZTkwM2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxNGExMGVhNDQ5NGQzYTk4NzcyNTNkYzkzMDE5YmIwOTBiMjA1MWQ3YTlmNDk4N2Q5MWVlZjgyOWY3YWQ4OWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhZGRmZTJmZGJiNTNmYzkxYTg5MTg0Yjk4NWFjZTkwOTUxZTZhOTI1MWQ1YzA4YjlkMzYyYzg4YjY0MTQ4NjAifQ"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_browser_window.cc#L67-L117",
+          "version": "repo-lines-v1:sha256:eae915248dba819013dca74a42b7f0f6b3642bd52b068136da9979dbcaa0b418:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzM2FhMjc0YTEzMjBhNTYxZGU0ZTA0Yzc4NjJiMmRmYjAzOGZjYzY0MjY3ODMyYzZhNzU0N2UwMWEwOWU5MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNzc1NTBmZWM5MWZlN2E4MDIwZTVhMzg4ZjY3NmQzZmZmNzM3MDQzOGE1OGEyNDM5ZWI5MzViMDE1ZWI1MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4NDVhODI3N2E4YjZiMWVjNzMyNzEwOWMyOWQzYWFkY2JhY2I3MDUzODU3MzNkMTg3M2Q3NTY5MmIyOGExZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c47f33f2a454d189f4717f8b681c635",
+      "statement": "BrowserWindow's JavaScript wrapper preserves its ID, forwards focus and visibility events, and delegates page operations to WebContents.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/browser-window.ts#L15-L100",
+          "version": "repo-lines-v1:sha256:f5cb32f2736168b8daf38f1e76cc025228b39ac98ce887625bb5b12eb84b05e8:eyJzZWxlY3RlZExpbmVDb3VudCI6ODYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkNzE3YzAxZWRjZTExYzBjMmU4MmM5YWYwMWExZDA1OTNmZGUzMzY1YWI4MjYyYWJmNDQ0YTEwMjc3YmY5YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2ODNhNmQ4OWVkZjIyNDg4MmU0ODM4MjJhYjhhZDc1ZGRjMGNhNTY4MTYyZTE5YmM2MDVlNGMzMTQxNjJjOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyZmNhMTc5YzhhMWNhODRmNjI5MjZlNjZkZGMyZjVkNjYxZDNlZjM3MGVlMmU4MzAxYTY5NzZhMzQ1YjliMGEifQ"
+        },
+        {
+          "resource": "repo://lib/browser/api/browser-window.ts#L151-L183",
+          "version": "repo-lines-v1:sha256:43d28a1d3fb53f0061f2ca900505873226d393b070e3f229d24dd9743db1fb50:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlMjdlZDU5MzEzMDQyZTNkN2I1ZjAzZmQ1ZWYxN2MxOThhZTM3ZGI4ZDYwMzdlZGYyMGMxYWYwNDYyMTg5MzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyOWNmZjg5ZTk1NjBjYzg0YTM3NDhiZWVhNWQzNmYzZDQwZmYyZGVmZjJlZjU2MmU5NzU2YTIwMmVmYzNiZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f89ade30fdd14b1dabbbb93172871772",
+      "statement": "WebContents loadURL observes navigation completion before invoking native loading, rejects superseded main-frame navigation, and removes its listeners on completion.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/web-contents.ts#L324-L432",
+          "version": "repo-lines-v1:sha256:f8b242f0ede7c2a42361104077986b28c2a393bdc8773184579dab5f0dbea61f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiODVhMWVhMzE0YjJmY2M4Y2EyNzM3MWExOWNiY2U0MjQ2MmEzZDRjYzI5YTBiZjdhNmUwYjc1YjFkNWE0ZDI3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlYzhiYmM1ZmE1ZTc0YTNmMmYwMDk2ZDJmMDU4MTYyNmMyZGIxNzExMWRmZWEzNmQ5Y2Y4MmU4YTU5NTUyMGJjIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI3MjEyOWMyNzM1MmI0OTU1NDhiMDcxYWUzNGFiOTA4MTE3Mjg3MzQyOGY2Zjg3ZjU0YjU4MGU1MTUzYzlhYTAyIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2MWYwY2Y2MWFjMGNjYzZlZTJhMDczOTkzMjFiMDJjMjE3OGQ2MGY3MzI0NzFiODNkMzkxYmQ5ZjljNzdkOWUzIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_480116b01d514c5f866a89d07e45b018",
+      "statement": "BrowserWindow close-button handling dispatches beforeunload when required, and cancellation is reported to WindowList.",
+      "evidence": [
+        {
+          "resource": "repo://shell/browser/api/electron_api_browser_window.cc#L110-L117",
+          "version": "repo-lines-v1:sha256:72bac6559b5c21800a18320079818bdc7cf887a53e194c8b98e80059c14275b5:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDczODg5YzYwNTJkNDIyNjhkODgxZDU4ODQxZDVhYmVhZWFmNDA5MGRlYmZlZmJiNjZlZmViNWJjYzY1YzYxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDg0NWE4Mjc3YThiNmIxZWM3MzI3MTA5YzI5ZDNhYWRjYmFjYjcwNTM4NTczM2QxODczZDc1NjkyYjI4YTFmNiJ9"
+        },
+        {
+          "resource": "repo://shell/browser/api/electron_api_browser_window.cc#L148-L165",
+          "version": "repo-lines-v1:sha256:932dbbbb736be591b0ea889805143121ee30b90ff4ed4395c5c853f13ff3be86:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlODU3ZjZhYWI3NTVlODYyYTdmM2ZlNWE1ZTYwYjNiOTk1YzIxOTliMWQ4MGQzNDIwZmZjOTdhZWYyNzU0Y2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1YjczMDAxZjUxOWQ3YjE0MTQ0YTM4MWQ2OTAwNmM2MTAxOTlkNTg5YTNhNjM0MTRjMWYxMzFhMjJlNmFiODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyZmQ0ODQyY2JmYjVhYTBiMGZjODEzY2U3ZWExZTZkZGQ4OTNhYjhjZWY3OWEzN2E3MzI5ZTMwMWI5NGRmNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c91558463ff14403a5c4c9f0e1a063de",
+      "statement": "Window-open handler deny and malformed responses cancel creation; allow supports constructor overrides, outlivesOpener and custom creation.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/api/web-contents.ts#L435-L477",
+          "version": "repo-lines-v1:sha256:71a36a50912a5aefc9ec41f1b6e9552ef0ec5a2a4e14d2098a78f38d80f8dda6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2MjYxNTkyOGNmNzVkZjk3NGU5Mjg0MzliOWIwMGVhNGFmYzliMDI1ZWU0MDYyMjdhNzRlNTJkY2YwY2ZhM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhNWZiMmE2ZjIyOTM4MGM5YzM1NjYyNjRmYWFhN2QyYWRjYjE2MTRlZWY1ZGZlODEwMjZkN2MzZjJlZTk4ZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3Y2JjOWEwMDNiMmNmYjQxNTVmYTkzN2QxMmIwMzhjZDhmOGQ2NTU0NzhmMjY2Y2JhMTY0OTkwYmMyYjM2ZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a34eb57dcc224ec1b934cb0ca22ad7ab",
+      "statement": "Guest windows reuse named contents, validate custom creation against supplied contents, and normally destroy the child when the opener's current render view is deleted.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-window-manager.ts#L110-L138",
+          "version": "repo-lines-v1:sha256:5340cada1927c65e3399f05a44d3fa76f5c54b837bb1b83afef82f1527ae2ae0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1M2E2ODhkZDgxYmI5YWY2MjI3ZWYzN2ZkZjRlMWM2MjE5ZTkzNTNjMDBkYTQwMDRiZTUyZGU1ZjlmZDg4NmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQyZWZmZTNlYTNmNmVjMjFjYzU5MWIyYzAwZTBmYWJhZTcwMmQxMmEyNWVlOWVhOGI1NTlkYTBjNjA0YThkZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5ZDNlZDQ1ODEwN2JiYzBlM2FlYTNiMmMyYzhlNDhhMzAwMjk0NTBkNWJjZWViNGRhMDc1ZDdiYmNmNDM5OTYifQ"
+        },
+        {
+          "resource": "repo://lib/browser/guest-window-manager.ts#L50-L99",
+          "version": "repo-lines-v1:sha256:3214ff22be22b0262c0dd448baff0d9d6f3e12e82833752be1b74c0d2918cc97:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YzUwYjlkYmNiZjI3NjI0YWNmZjVlZmE0ZDViZTFjNDY1YjU2OTZlYzA1OTQzMjhkMDEzNzVkNzY0MTgxZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4MTkxYTBlZjVhN2JjODBlNDZjNDFlYzQ0YTVhNmIwNGYwZWY2ZjU1OTBhNmI1NWE1ZWYwYmRkMzJkZDZhNzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiYWJkY2EyNzlkMWUzMTlhYWZlODAxMjE2NDYzOGU1NjI2MTIxNzc1MmVhN2E0YmU1MWRhYjdiOGQ0YWM4MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmMmFlY2ZiNGNjMmQwZDY0NTllZmFiNzUzY2UwMGVmMWYzNjJjZDYzNTZjZTJkNTU3MjYxMWE2M2Q0NTY5NjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_90edc7b0813d4a2b8180c668863c42c2",
+      "statement": "Child-window preferences apply renderer features first, secure inherited parent values next, and trusted main-process overrides last.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-window-manager.ts#L140-L175",
+          "version": "repo-lines-v1:sha256:5835e67b67c9eca5f657afc8bd90b95144dcf7bbb2f9c362dffb3457503b0e0e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1YjU1MmY5ZWQ1ZDk5OTY4ZGQxYjIxYjRkY2Y1MWUxZTA1MTI4ODAxNTIzOWUzNjRkYTZhNDA4MTc4ZWU3YTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyMTI5YzI3MzUyYjQ5NTU0OGIwNzFhZTM0YWI5MDgxMTcyODczNDI4ZjZmODdmNTRiNTgwZTUxNTNjOWFhMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyNDQ3MGQ2M2ExNzliYWMyMTA2YzYyMTQ5YTJlOTgzMDIzNDJlZDlmNTg3NzE0M2QxY2I5ODNhMGJhZDIyMWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f50b23b7187427eb97499a99f1aaa5e",
+      "statement": "Webview creation is gated by webviewTag and cancellable will-attach-webview; the manager detaches associated guests on embedder destruction.",
+      "evidence": [
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L243-L278",
+          "version": "repo-lines-v1:sha256:76a75caafd8a1cc1772b2f08a361279c96014d93a94e400dfce9c78851944020:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNmM4MDYxYzkzMjE5NWIzNzUzYTU0MjNmOTZmMDU1Njg5ODZlZGZkNjA5ZjNkOGYzYTNjNjg1YjU0NzdiMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjNDk2MmJiNmNjMTBkNjNhZDViYTNjNjY2OWU3M2I5ODVjYmU2ZDk3NGQ5NmVjYmU1NjEyYjY4ZmRiZmVmOWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhZTAzYzA1ZTQzZmM1YTBjYTI2MzYyNGJhNDE3ZmJkNGUxYzU0MDg3NjdiNWRlZTVkY2RjNDJjMmU2ODNkMzEifQ"
+        },
+        {
+          "resource": "repo://lib/browser/guest-view-manager.ts#L83-L104",
+          "version": "repo-lines-v1:sha256:5c024398c13eb6d125a350ab81b52318d5c4a729f74b920d1df5c4e4bbff00c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlYmJjOTIwNjMxY2Q5YWNhZThmOGE5NDM3YmRlMTQwZDI4NjU5ZDFmOWI3OTRmMjgwYzliNDNjN2YwZTY3ZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhZGZmMTMyN2U2Y2QzMGFmNTMzNzBhNDBjNjM0MTIwNDUxNjdlY2NjYTExYjUyMjc2OWQyYWE2ZTdlODBlNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNDllZjhlMDA3NTc1NDUzMDA4N2EzYmQ4ZjcwOTZkMzkzOWZjYzMzMmM5ODMwODFmYjI5ODU4YzQyMzVhNmUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T08:40:08.980Z"
+  }
+}

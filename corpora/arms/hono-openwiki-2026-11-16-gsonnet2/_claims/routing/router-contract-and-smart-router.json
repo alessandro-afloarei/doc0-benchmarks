@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f71309a3779538aa9fb7aa059f7486d45ba2e60569a207264d8c4d85fad49694",
+  "claims": [
+    {
+      "id": "claim_48f8fdb7a0c54688bf5ae0e282765a8d",
+      "statement": "A router match Result has two shapes: handlers paired with a parameter index map plus a shared parameter stash (RegExpRouter), or handlers paired directly with parameter objects and no stash (Trie, Linear and Pattern routers).",
+      "evidence": [
+        {
+          "resource": "repo://src/request.ts#L100-L145",
+          "version": "repo-lines-v1:sha256:2484003cc016781031cd2a38fbb56f4ee9cec0f07ee6f5c43f852dfe1ea63428:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MTg3YjM1ZGVhMjVhY2U0YmYzMmFkZjJhNDFiYzc3NDg3NjNiOTQxYWI3YzJkODQ2ZDMwODQxZTNiY2Q4YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNmMwNDJjMTE2NTJkYTdhZjA5MzQxNDUzMzA1ZDc5MzUwMWFmNTU2ZjY0YmRmYmM5NDc2YjBjYjZjNGZjMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyNzhiN2U0Y2E1ZDE1N2NkM2FjODkwOGZkZWFiZDQzNmFkYTBmMDU1ZmIxOTVjYTY0ZTNiZTk2YzcyNjllNjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4ZTVmNGRlOGUyOGFmZmQ4ODRiNzlkMWMwMzMzMTkyZDIwODFmNmFhZGJhYzAwZDQxZTlhYjExNWU3MGY1ZDUifQ"
+        },
+        {
+          "resource": "repo://src/router.ts#L55-L98",
+          "version": "repo-lines-v1:sha256:69dc358e278f3fd2ac6538ee9d9490e2566407becd096888f767c28112d76d49:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkZjMzMjk5MmJjMGIxNDBjNTE4YzdjYzBhZWVjYTNlY2FjODkxOGY2MDM0Zjk2ZDZhMTQ4OWYzNmE5ODVhMTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYWEzNDAyNjVjMjc4ODM4ZjQzMmQwNTUzMjlhYjk2MzNlYjNiZDE1ZmRlNDIyMDM0OTcwYzNhNWZjNWVlZWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzZGU3MzAxOTExNTllOGQxNmVjNTk2MDY3NGQ2ODliYWU1ZTM0OWJhZjQ2YzQzNTk2NWUyM2ZhZDBjMmE0MDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1ce664b526248c08d9516df5600874c",
+      "statement": "SmartRouter buffers every added route and, on the first match, replays all of them into each candidate router in order, skipping candidates that throw UnsupportedPathError and rethrowing other errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/smart-router/router.ts#L8-L55",
+          "version": "repo-lines-v1:sha256:a2846f870c5919119f6200e8c17a40501013ac0d20ee14982a1c751cecf2597e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2ZDYzYTA1ZTk1MzRiYmEyNWU5OWUxMTY0N2Y4OTkzMjc0NjBlMDNkM2M3NTQ1ZmE0ZWQzMWEwZWMyZTQ4ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjZDAxMTQwNTEzYzdlZmM2NDE3ODc3MDRjYjY1ZGRlZTFhMGQ3YTk4NDBiYTM2Y2MwMmY0MjUxNTY1NjBhZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c78959d1f0f248e1bfd8f9054f5d2557",
+      "statement": "After SmartRouter selects a router it replaces its match with the winner's bound match, discards the route buffer so further add() calls throw the already-built error, and renames itself 'SmartRouter + <winner>'.",
+      "evidence": [
+        {
+          "resource": "repo://src/router/smart-router/router.ts#L22-L70",
+          "version": "repo-lines-v1:sha256:02b037b4aca0416288ac83f4f7a7900bd8fc6e4db5c88f712978c9079780b89a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYjc3M2MwMGE4N2Q5YTFmNjM2ZDBhY2Y5MWI5ZDI4NWRiNzA0NWQxODg1YzZiMmJmNzhhMTk3ZmZlODk4MzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3Yjg3ZWRlMWIxMzMxYTAyNDhiOThmODlhYzlmNzJhNDE3YTdiYjA0MTE3OTE1YzZmMGRkOTJiY2Y3NzAzZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0234a61235184b90a579914c7c789983",
+      "statement": "The default Hono preset uses SmartRouter with RegExpRouter then TrieRouter, hono/quick uses LinearRouter then TrieRouter, and hono/tiny uses PatternRouter.",
+      "evidence": [
+        {
+          "resource": "repo://src/hono.ts",
+          "version": "repo-file-v1:sha256:28317c8a40c83cc89a80f268bd4dad18cd423f4704b621dda272292a10f63e77"
+        },
+        {
+          "resource": "repo://src/preset/quick.ts",
+          "version": "repo-file-v1:sha256:5be0902db606b91920d2b4c771646d0a8d0010dda31320383a8d9e7f3e1e0cb1"
+        },
+        {
+          "resource": "repo://src/preset/tiny.ts",
+          "version": "repo-file-v1:sha256:0fff9e84b561bb2c905562186f0c986018308211deb0637448a1a9faadd7760b"
+        }
+      ]
+    },
+    {
+      "id": "claim_a91e328b010549bd9d62d6141d72efbd",
+      "statement": "UnsupportedPathError is the router-level signal that a route cannot be represented, and only SmartRouter interprets it to fall back to another router.",
+      "evidence": [
+        {
+          "resource": "repo://src/router.ts#L100-L103",
+          "version": "repo-lines-v1:sha256:2b848cd83d9188a9608c331fc2b1839bb0751225ef4315d36a0d71ef9b7462ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzhhOTY3YTlkYzIxMjUzNGNkNzNiYjY0MWNkNWM1MGU0MmY3NWVjYmVkNjgwNGMzY2IyZGZmNGE2YTU5NDg3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzc0ZTc5MTE2MjAxZjA0MjMwNTA1ZTIxYjYzNWE5M2QyMmVhMGVhYzVhNzBlMDA5NmI5ZGVmZWIzNTdlNTg0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/router/smart-router/router.ts#L38-L50",
+          "version": "repo-lines-v1:sha256:b1d83ebbea52e8649f67c3f62ac0eebc645b1617435a899a4a4bd6c0b8d48406:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjNTgxNzc3MmRhYTVjOWY2MjU1NWZiZDU5MmU2N2VkODNhZmMzZGE3NWY5YjJlNDE3NjA4OWJlYjNkNzc3YWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0YTczZGVmMDMzZjMwZGNkOGFlMmY3NzY2ZGRhMzdjMTVmZTY2MDJlYzg5MjA4MDgyODc1ZDdjYmRkNzU1OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyMWQ1ZDZhZjA0MmRhNGQ4OGFmMmM5OGZjMDhkZmY4NzRhNmViNzM5MjgxYzQ4MjNkMzEyMGE3YWJiMWY0NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T17:43:46.600Z"
+  }
+}

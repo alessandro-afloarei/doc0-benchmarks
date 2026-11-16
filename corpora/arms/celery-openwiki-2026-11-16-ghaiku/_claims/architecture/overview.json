@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:700ecb1c0aefb0fd6b19e7f5d1b8cfa587fa3f4e80d8b5327cc5f9ca405fbdc6",
+  "claims": [
+    {
+      "id": "claim_25dbaef3df764b4380aa5c756796bf40",
+      "statement": "The Worker blueprint's default steps are Hub, Pool, Beat, Timer, StateDB, Consumer, and the autoscaler component.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/worker.py#L76-L88",
+          "version": "repo-lines-v1:sha256:c3f0910115b26b57cedb5bdff004986ae5142c8ab6dac08f69c06b7b15564c66:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOGY5MzExNjlkNWE3YThiNzA2MDk3NGMxMWVjZGRjNTJjMWVmYmViNzQyNGU4YjEzYmViNDU5MTZhMWJjNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3Yzc2OTY1YmJjZjZhODIwOGJjNDVhMGJiODgwNjVjNzg4MWQ2MTBmNzA4NTljZjcwMWRkMGQ5MzI5YjJlMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxMjgxOTJiMTVjNzMyODg4YjEzMGM5ZDgzN2M5NzlhZDk0Njk1NTU3OTlmOTNjNTFhOTVhZGNiZDAxMzdlM2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_337fb105b9864ec3a21c22ad7a879231",
+      "statement": "The Consumer blueprint's default steps are Connection, Mingle, Events, Gossip, Heart, Control, Tasks, DelayedDelivery, Evloop, and Agent.",
+      "evidence": [
+        {
+          "resource": "repo://celery/worker/consumer/consumer.py#L175-L186",
+          "version": "repo-lines-v1:sha256:23cb4c741f547909b177d32be88076dd4cfeb33123921f46358c592741889ec1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0OGJjZWZhZTAxMzgwNTgyM2NhZGM5ZTRiZmU3Yzg0MTQwYjcwNjdkMzlkNGUyMzRjMDAyOTJjMWU4ZWVmZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhYWU4YTBjYTc2Zjk4ZjdiN2RjNzk4NDk1MWQ2M2U1N2RiM2M2NDU1NzljYTUxYmFkNmE1MzlkNjE0ZWRiYmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjYmM3MzNmMTQzY2FjYzEzMTc5YjI1M2FjNzYwNjdlYzNlM2E1YzEyY2YzODBiMGMxYTZjMWMyNzgxZGM1MTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmNmRkZGM5N2QyZmY0ZDUzMTdlZWZjMDM2YjMxMWU1YjJlYTA2NzM2MjA5ZTdhMWQ3MDIyZDMzMTcxNDZjZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_72967e7255ec4bf2852e265e189a00c3",
+      "statement": "The celery console script is celery.__main__:main, which applies concurrency patching before delegating to the CLI unless the command is multi.",
+      "evidence": [
+        {
+          "resource": "repo://celery/__main__.py#L11-L18",
+          "version": "repo-lines-v1:sha256:a3575299a6cbb77ca9278eb5f6a60798c29a8764edb35ac24212508a7fdcbd4a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJhMWUxYzMzMTRkODVhNGJlZDI3MTMwOWNmOTkwMjA4NTk0ODhlZmEwYTYyMGY5NTRkYTA3Yzk1ZWRkYmIwMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjRmNGZkMTdkOTFmYWEyZGY3ZTZlMzhhM2JiYTU5NTUyYzNlNWM0ZmE1ODk4OWFhNjVmMDAyMzY0NmYyNjdjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg3OGViNDI5NzgwMWNlMWVjYjQ4YmY2YjFjOTdhNmY0NDllMjgzZjk4NDFhNTFlMmUyM2MyZDQ2MTI4Njk2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMThlOTkyMzJjZDNhMzA5ZjUwY2JkNmY2NjIxMjdlZWFhZmNlMWY3MzYyOTJkZWZiMTEzZDk4MWEyMGM3ZDg1MiJ9"
+        },
+        {
+          "resource": "repo://setup.py#L155-L159",
+          "version": "repo-lines-v1:sha256:e951e41147ba7a11e27e0ba208623eafd9187ad3dcfc7e948fa94d1d17147d6e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2EwZGY4MTQ1ZGJhZWRmMWFkNDcyZjA0ZjgxOTliZDdmYmU2ZjljZGY2YjZjZDI2MjMyOGQ0Nzc2YjQyZTQwMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwY2RiOTcyYTdiZmI3ZWQyNDZmOWZmNjcyMzg1ZTU1ZjQ5NjhmYzExMDQzZGM1YjY4NGQ1MWRmYTMxZGJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNhNGM1ZTA3NDgxZTU1ODFmYzA2MzQ2MmZjMWUzYTIzNTg4NjdhMDAzODM0ZTkzNGM4NjRiYjhmZTQzZWQ4NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTgyM2NkOTNlYTAxOTE3ZmJjNmIxMTllYTI0YmI3ZmZmMzJkZGYxYTkxZWIxMjc1NGQwMGE4YTk2MWJmMjU0ZSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-16T10:42:35.525Z"
+  }
+}
