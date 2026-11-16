@@ -25,6 +25,7 @@ import {
   type AccuracyJudgeFn,
   type ClaimCitation,
   type ClaimGroup,
+  judgeConcurrency,
 } from "./judge-accuracy.ts";
 import { loadWikiDir, type WikiPage } from "./corpus.ts";
 
@@ -375,5 +376,13 @@ describe("parseSupportReply", () => {
     for (const reply of ["Yes.", "", '{"supported": "true"}', '{"supported": true, "why": "x"}', '{"verdict": true}', 'Sure: {"supported": true}']) {
       expect(() => parseSupportReply(reply)).toThrow();
     }
+  });
+});
+
+describe("judgeConcurrency", () => {
+  it("takes a whole number from 1 to 32 and falls back to 4 otherwise", () => {
+    expect(judgeConcurrency("12")).toBe(12);
+    expect(judgeConcurrency(undefined)).toBe(4);
+    for (const bad of ["0", "33", "2.5", "x", ""]) expect(judgeConcurrency(bad)).toBe(4);
   });
 });

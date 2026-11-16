@@ -245,8 +245,14 @@ export interface ClaimGroupScore {
 const ratio = (part: number, whole: number): number | null => (whole <= 0 ? null : part / whole);
 
 /** Judges EVERY group (the full population, no sampling), 4 at a time, retrying a failed judge call once. */
+/** Claim groups judged at once: JUDGE_CONCURRENCY when it is a whole number from 1 to 32, else 4. A slow judge backend (Vertex MaaS queues calls) needs more in flight. */
+export function judgeConcurrency(value: string | undefined): number {
+  const n = Number(value);
+  return Number.isInteger(n) && n >= 1 && n <= 32 ? n : 4;
+}
+
 export async function judgeClaimGroups(groups: ClaimGroup[], repoDir: string, judge: AccuracyJudgeFn): Promise<ClaimGroupScore> {
-  const { resolved, supported, judgeFailures } = await scoreGroups(groups, repoDir, judge, { retry: true, concurrency: 4 });
+  const { resolved, supported, judgeFailures } = await scoreGroups(groups, repoDir, judge, { retry: true, concurrency: judgeConcurrency(process.env.JUDGE_CONCURRENCY) });
   return {
     groups: groups.length, resolved, supported, judgeFailures,
     groundedRate: ratio(supported, groups.length - judgeFailures),
