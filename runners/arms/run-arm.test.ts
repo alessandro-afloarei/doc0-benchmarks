@@ -345,6 +345,7 @@ writeFileSync("../codex-home.json", JSON.stringify({ config: readFileSync(join(h
 const token = JSON.parse(readFileSync(join(home, "auth.json"), "utf-8")).tokens.access_token;
 if (mode.refresh) writeFileSync(join(home, "auth.json"), JSON.stringify({ ...JSON.parse(readFileSync(join(home, "auth.json"), "utf-8")), last_refresh: "2026-11-16T09:00:00Z" }));
 if (mode.userAuth) writeFileSync(mode.userAuth, JSON.stringify({ auth_mode: "chatgpt", last_refresh: "2026-11-16T10:00:00Z" }));
+if (mode.refreshLeak) { const a = JSON.parse(readFileSync(join(home, "auth.json"), "utf-8")); a.tokens.access_token = "eyJ-refreshed-token-x"; a.last_refresh = "2026-11-16T11:00:00Z"; writeFileSync(join(home, "auth.json"), JSON.stringify(a)); out({ type: "item.completed", item: { id: "item_r", type: "command_execution", command: "env", aggregated_output: "eyJ-refreshed-token-x", status: "completed" } }); }
 out({ type: "thread.started", thread_id: "t1" });
 out({ type: "turn.started" });
 const call = (server, tool, result) => {
@@ -388,7 +389,7 @@ describe("runArm on codex", () => {
     await chmod(authFile, 0o600);
   });
 
-  interface CodexMode { doc0?: "complete" | "none"; openwiki?: true; skills?: string[]; servers?: string[]; foreign?: true; leak?: true; failed?: true; refresh?: true; userAuth?: string }
+  interface CodexMode { doc0?: "complete" | "none"; openwiki?: true; skills?: string[]; servers?: string[]; foreign?: true; leak?: true; failed?: true; refresh?: true; userAuth?: string; refreshLeak?: true }
   async function codexStub(mode: CodexMode) {
     const doc0 = mode.openwiki === undefined;
     await writeFile(join(root, "codex-mode.json"), JSON.stringify({ server: doc0 ? "doc0-local" : "openwiki", skill: doc0 ? "doc0-write" : "openwiki", ...mode }));
@@ -436,6 +437,14 @@ describe("runArm on codex", () => {
     await codexStub({ doc0: "complete", refresh: true, userAuth: authFile });
     await runArm(await codexOptions("doc0-nomap", { date: "2026-11-17" }), codexDeps());
     expect(JSON.parse(await readFile(authFile, "utf-8"))).toMatchObject({ last_refresh: "2026-11-16T10:00:00Z" });
+  });
+
+  it("a token codex refreshed during the run is scanned like the original, and the sign-in copy is removed", async () => {
+    await codexStub({ doc0: "complete", refreshLeak: true });
+    const meta = await runArm(await codexOptions("doc0-nomap"), codexDeps());
+    expect(meta).toMatchObject({ status: "incomplete" });
+    expect(meta.reason).toContain("codex auth.json");
+    await expect(stat(join(workDir, "fd-doc0-nomap", "codex-config/auth.json"))).rejects.toThrow(/ENOENT/);
   });
 
   it("an openwiki run is complete on openwiki_finish's result and keeps its pages and Claims", async () => {

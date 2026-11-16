@@ -465,12 +465,18 @@ async function runCodex(
   } finally {
     // A refresh spends the old refresh token, so the refreshed sign-in goes back to the user's file, unless that file
     // changed meanwhile (another run or the user refreshed it): then the newer one there stays.
-    const refreshed = await readFile(runAuth, "utf-8");
-    if ((JSON.parse(refreshed) as { last_refresh?: string }).last_refresh !== signIn.last_refresh) {
-      if ((await readFile(c.authFile, "utf-8")) === auth) await writeFile(c.authFile, refreshed, { mode: 0o600 });
-      else console.warn(`[bench:arm] codex refreshed its sign-in during the run, and ${c.authFile} changed meanwhile: if codex asks, run \`codex login\`.`);
+    // A refreshed sign-in holds new tokens: they join the secret scan like the original ones.
+    try {
+      const refreshed = await readFile(runAuth, "utf-8");
+      const after = JSON.parse(refreshed) as { last_refresh?: string };
+      if (after.last_refresh !== signIn.last_refresh) {
+        c.secrets.push(...jsonSecrets("codex auth.json", after));
+        if ((await readFile(c.authFile, "utf-8")) === auth) await writeFile(c.authFile, refreshed, { mode: 0o600 });
+        else console.warn(`[bench:arm] codex refreshed its sign-in during the run, and ${c.authFile} changed meanwhile: if codex asks, run \`codex login\`.`);
+      }
+    } finally {
+      await rm(runAuth, { force: true });
     }
-    await rm(runAuth, { force: true });
   }
 }
 
