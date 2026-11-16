@@ -4,7 +4,9 @@
 // fixed before any run.
 //
 // Usage:
-//   pnpm bench:arms --repos fd[,hono,celery] --date 2026-11-16[-<tag>] [--judged] [--label <name>]
+//   pnpm bench:arms --repos fd[,hono,celery] --date 2026-11-16[-<tag>] [--judged [--accuracy-judge gemini|deepseek]] [--label <name>]
+// --accuracy-judge deepseek judges the grounded rate on DeepSeek V4.1 Flash through the metered LiteLLM proxy
+// (JUDGE_PROXY_URL, JUDGE_PROXY_KEY); the blind comparison stays on the Gemini judge.
 // Writes results/arms-<date>[-<label>].json and docs/benchmarks/<date>[-<label>]-local-generation-arms[-DRY-RUN].md,
 // and refuses to write over either: a re-judged report takes a --label.
 
@@ -16,7 +18,7 @@ import { parseArgs } from "node:util";
 import { ensureSourceAt, requireJudgeCredentials } from "../grounding-scorecard.ts";
 import { ARM_SETTINGS, loadArmCorpus, readArmMeta, type ArmCorpus, type ArmMeta, type ArmName } from "../../scoring/arm-corpus.ts";
 import type { WikiPage } from "../../scoring/corpus.ts";
-import { judgeClaimGroups, LINK, liveAccuracyJudge, parseRef, type AccuracyJudgeFn, type ClaimGroupScore } from "../../scoring/judge-accuracy.ts";
+import { judgeClaimGroups, LINK, liveAccuracyJudge, parseRef, PROXY_ACCURACY_MODEL, proxyAccuracyJudge, type AccuracyJudgeFn, type ClaimGroupScore } from "../../scoring/judge-accuracy.ts";
 import { framedSampleForJudge, judgeComparative, liveJudge, type CellVerdict, type JudgeFn } from "../../scoring/judge-comparative.ts";
 import { judgeModel } from "../../scoring/judge-model.ts";
 import { computeStructuralMetrics, wordCount, type StructuralMetrics } from "../../scoring/metrics.ts";
@@ -210,14 +212,18 @@ export interface Projection {
   costUsd: Record<RepoName, Partial<Record<ArmName, number>>>;
 }
 
+/** The model behind each judged measure: grids judged by different models are never compared one to one. */
+export interface ReportJudges { accuracy: string; comparative: string }
+
 export interface ArmsReport {
-  schema_version: 1;
+  /** 2: `judge` names the accuracy and comparative judges apart. */
+  schema_version: 2;
   date: string;
   /** Names a report that re-judges `date` (instrument-v2): written beside the first report, never over it. */
   label: string | null;
   dry_run: boolean;
   judged: boolean;
-  judge: string | null;
+  judge: ReportJudges | null;
   repos: RepoArmsReport[];
   decisions: { rule1: Decision; rule2: Decision };
   projection: Projection | null;
@@ -228,7 +234,7 @@ export interface ArmsReportDeps {
   sourceDir?: (repo: RepoName) => Promise<string>;
   accuracyJudge?: AccuracyJudgeFn;
   comparativeJudge?: JudgeFn;
-  judgeName?: string;
+  judgeNames?: ReportJudges;
 }
 
 function usageCell(arm: ArmName, meta: ArmMeta | null, reason: string | null): ArmCell {
@@ -253,6 +259,11 @@ function requireSameSettings(scope: string, metas: Array<{ arm: ArmName; meta: A
       throw new Error(`${scope}: the arms differ in ${field} (${metas.map(({ arm, meta }) => `${arm} ${JSON.stringify(meta[field])}`).join(", ")}): compare only arms run the same way.`);
     }
   }
+}
+
+function judgeModelName(): string {
+  const model = judgeModel();
+  return typeof model === "string" ? model : model.modelId;
 }
 
 const exists = (path: string) => stat(path).then(() => true, () => false);
@@ -336,10 +347,9 @@ export async function armsReport(o: { repos: RepoName[]; date: string; judged: b
   const missingRepos = REPOS.filter((r) => !o.repos.includes(r));
   const notApplied = (note: string): Decision => ({ outcome: "not applied", note, because: "The rules apply only to a full run on every repository.", numbers: {} });
   const held = dryRun ? notApplied("dry run") : missingRepos.length > 0 ? notApplied(`needs ${REPOS.join(", ")}`) : null;
-  const model = o.judged ? (deps.judgeName ?? judgeModel()) : null;
   return {
-    schema_version: 1, date: o.date, label: o.label ?? null, dry_run: dryRun, judged: o.judged,
-    judge: model === null ? null : typeof model === "string" ? model : model.modelId,
+    schema_version: 2, date: o.date, label: o.label ?? null, dry_run: dryRun, judged: o.judged,
+    judge: o.judged ? (deps.judgeNames ?? { accuracy: judgeModelName(), comparative: judgeModelName() }) : null,
     repos,
     decisions: held ? { rule1: held, rule2: held } : { rule1: decideRule1(inputs), rule2: decideRule2(inputs) },
     projection: dryRun ? projection(repos) : null,
@@ -434,7 +444,9 @@ export function renderArmsReport(report: ArmsReport, template: string): string {
     run: [
       `Repositories: ${report.repos.map((r) => `\`${ARM_REPOS[r.repo].repo}@${ARM_REPOS[r.repo].sha.slice(0, 12)}\``).join(", ")}.`,
       firstMeta ? `Host \`${firstMeta.host}\`, model \`${firstMeta.model}\`, effort \`${firstMeta.effort}\`, credential \`${firstMeta.credential}\`.` : "",
-      report.judge ? `Judge \`${report.judge}\`, every claim group (full population).` : "Not judged.",
+      report.judge
+        ? `Grounded rate judged by \`${report.judge.accuracy}\`, every claim group (full population); blind comparison judged by \`${report.judge.comparative}\`.`
+        : "Not judged.",
     ].filter(Boolean).join(" "),
     decisions: [renderDecision("Rule 1, the map", report.decisions.rule1), renderDecision("Rule 2, the landing claim", report.decisions.rule2)].join("\n"),
     grounded, comparative, usage, projection: projectionText, deterministic,
@@ -457,7 +469,9 @@ export function reportPaths(root: string, date: string, label: string | null, dr
 }
 
 async function main(): Promise<void> {
-  const { values } = parseArgs({ options: { repos: { type: "string" }, date: { type: "string" }, judged: { type: "boolean", default: false }, label: { type: "string" } } });
+  const { values } = parseArgs({
+    options: { repos: { type: "string" }, date: { type: "string" }, judged: { type: "boolean", default: false }, label: { type: "string" }, "accuracy-judge": { type: "string", default: "gemini" } },
+  });
   const repos = (values.repos ?? "").split(",").filter(Boolean) as RepoName[];
   if (repos.length === 0 || repos.some((r) => !REPOS.includes(r))) throw new Error(`[bench:arms] --repos takes a comma list of ${REPOS.join(", ")}`);
   if (!isRunDate(values.date ?? "")) throw new Error("[bench:arms] --date YYYY-MM-DD (or YYYY-MM-DD-<tag>, as bench:arm was given) is required");
@@ -468,8 +482,18 @@ async function main(): Promise<void> {
   for (const path of [false, true].flatMap((dryRun) => Object.values(reportPaths(ROOT, date, label, dryRun)))) {
     if (await exists(path)) throw new Error(`[bench:arms] ${path} already exists: a report is never overwritten. Give this one a --label, or move that one away.`);
   }
+  const accuracyJudge = values["accuracy-judge"];
+  if (accuracyJudge !== "gemini" && accuracyJudge !== "deepseek") throw new Error("[bench:arms] --accuracy-judge takes gemini or deepseek");
   if (values.judged) requireJudgeCredentials();
-  const report = await armsReport({ repos, date, judged: values.judged ?? false, ...(label ? { label } : {}) });
+  const deps: ArmsReportDeps = {};
+  if (values.judged && accuracyJudge === "deepseek") {
+    const baseUrl = process.env.JUDGE_PROXY_URL;
+    const apiKey = process.env.JUDGE_PROXY_KEY;
+    if (!baseUrl || !apiKey) throw new Error("[bench:arms] --accuracy-judge deepseek needs JUDGE_PROXY_URL (the LiteLLM proxy's /v1) and JUDGE_PROXY_KEY");
+    deps.accuracyJudge = proxyAccuracyJudge({ baseUrl, apiKey });
+    deps.judgeNames = { accuracy: PROXY_ACCURACY_MODEL, comparative: judgeModelName() };
+  }
+  const report = await armsReport({ repos, date, judged: values.judged ?? false, ...(label ? { label } : {}) }, deps);
   const { json: jsonPath, markdown: mdPath } = reportPaths(ROOT, date, label, report.dry_run);
   await mkdir(dirname(jsonPath), { recursive: true });
   await writeFile(jsonPath, `${JSON.stringify(report, null, 2)}\n`);

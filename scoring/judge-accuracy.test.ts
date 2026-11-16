@@ -19,6 +19,7 @@ import {
   judgeAccuracy,
   judgeClaimGroups,
   parseRef,
+  parseSupportReply,
   groupClaimCitations,
   seededShuffle,
   type AccuracyJudgeFn,
@@ -360,5 +361,19 @@ describe("judgeClaimGroups", () => {
     });
     expect(peak).toBe(4);
     expect(score).toMatchObject({ groups: 30, resolved: 30, supported: 10, judgeFailures: 0, groundedRate: 1 / 3 });
+  });
+});
+
+describe("parseSupportReply", () => {
+  it("reads exactly {supported: boolean}, a code fence around it allowed", () => {
+    expect(parseSupportReply('{"supported": true}')).toBe(true);
+    expect(parseSupportReply(' ```json\n{"supported": false}\n``` ')).toBe(false);
+    expect(parseSupportReply('```\n{"supported":true}\n```')).toBe(true);
+  });
+
+  it("throws on anything else, so the judge call fails instead of reading unsupported", () => {
+    for (const reply of ["Yes.", "", '{"supported": "true"}', '{"supported": true, "why": "x"}', '{"verdict": true}', 'Sure: {"supported": true}']) {
+      expect(() => parseSupportReply(reply)).toThrow();
+    }
   });
 });

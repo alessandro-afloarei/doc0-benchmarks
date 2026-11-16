@@ -256,6 +256,13 @@ export async function judgeClaimGroups(groups: ClaimGroup[], repoDir: string, ju
 }
 
 const supportSchema = z.object({ supported: z.boolean() });
+const accuracyPrompt = (claim: string, sourceExcerpt: string) => `Does the source code excerpt SUPPORT the documentation claim? Answer supported=true only if the code substantiates the claim.
+
+CLAIM: ${claim}
+
+SOURCE EXCERPT:
+${sourceExcerpt}`;
+
 export const liveAccuracyJudge: AccuracyJudgeFn = async ({ claim, sourceExcerpt }) => {
   // NOTE: this call sends source code excerpts to whichever backend judgeModel()
   // selects — Google AI Studio (`gemini-2.5-flash`) by default, or Vertex
@@ -271,15 +278,49 @@ export const liveAccuracyJudge: AccuracyJudgeFn = async ({ claim, sourceExcerpt 
   const { object } = await generateObject({
     model: meteredJudgeModel("arms-accuracy"),
     schema: supportSchema,
-    prompt: `Does the source code excerpt SUPPORT the documentation claim? Answer supported=true only if the code substantiates the claim.
-
-CLAIM: ${claim}
-
-SOURCE EXCERPT:
-${sourceExcerpt}`,
+    prompt: accuracyPrompt(claim, sourceExcerpt),
     // Two real hangs during Phase-2 validation: an unbounded call stalls the whole eval
     // run and never reaches the judgeFailures accounting above.
     abortSignal: AbortSignal.timeout(60_000),
   });
   return object.supported ? "supported" : "unsupported";
 };
+
+/** The model the LiteLLM proxy serves as DeepSeek V4.1 Flash on Vertex MaaS (codewikibench-2026-11-15/proxy/config.yaml). */
+export const PROXY_ACCURACY_MODEL = "deepseek-v4.1-flash";
+
+/** A reply that is exactly `{"supported": boolean}`, a code fence around it allowed; anything else throws: a judge failure, never "unsupported". */
+export function parseSupportReply(text: string): boolean {
+  const json = text.trim().replace(/^```(?:json)?\s*([\s\S]*?)\s*```$/, "$1");
+  return supportSchema.strict().parse(JSON.parse(json)).supported;
+}
+
+/**
+ * The accuracy judge on DeepSeek V4.1 Flash, through the LiteLLM proxy's OpenAI-compatible endpoint. The proxy meters
+ * every call into the Vertex ledger and answers 402 once the ledger reaches the budget, so these calls are not metered
+ * here too, and a 402 stops the report. The answer is parsed from the reply's text: the prompt asks for the JSON alone,
+ * so nothing depends on the endpoint honouring a structured-output mode.
+ */
+export function proxyAccuracyJudge(proxy: { baseUrl: string; apiKey: string }): AccuracyJudgeFn {
+  return async ({ claim, sourceExcerpt }) => {
+    const res = await fetch(`${proxy.baseUrl}/chat/completions`, {
+      method: "POST",
+      headers: { authorization: `Bearer ${proxy.apiKey}`, "content-type": "application/json" },
+      body: JSON.stringify({
+        model: PROXY_ACCURACY_MODEL,
+        messages: [{ role: "user", content: `${accuracyPrompt(claim, sourceExcerpt)}\n\nReply with only the JSON object {"supported": true} or {"supported": false}.` }],
+        // A verdict is a few tokens: the cap bounds a runaway reply's cost, and a cut reply fails to parse.
+        max_tokens: 1000,
+      }),
+      // Vertex MaaS queues a call at times (a 6-token verdict took 134 s in calibration): wait as long as the proxy
+      // lets one attempt run (request_timeout 300), since it retries upstream errors itself.
+      signal: AbortSignal.timeout(300_000),
+    });
+    if (res.status === 402) throw new BudgetExceededError(`the judge proxy refused at the Vertex budget: ${(await res.text()).slice(0, 300)}`);
+    if (!res.ok) throw new Error(`the judge proxy answered ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    const reply = (await res.json()) as { choices?: Array<{ message?: { content?: unknown } }> };
+    const content = reply.choices?.[0]?.message?.content;
+    if (typeof content !== "string") throw new Error("the judge proxy's reply holds no message text");
+    return parseSupportReply(content) ? "supported" : "unsupported";
+  };
+}

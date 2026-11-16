@@ -1,4 +1,6 @@
 import { describe, it, expect } from "vitest";
+import { createServer } from "node:http";
+import type { AddressInfo } from "node:net";
 import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
@@ -17,7 +19,8 @@ import {
 } from "./arms-report.ts";
 import type { ArmMeta, ArmName } from "../../scoring/arm-corpus.ts";
 import type { JudgeFn } from "../../scoring/judge-comparative.ts";
-import type { ClaimGroupScore } from "../../scoring/judge-accuracy.ts";
+import { proxyAccuracyJudge, type ClaimGroupScore } from "../../scoring/judge-accuracy.ts";
+import { BudgetExceededError } from "../../scoring/vertex-ledger.ts";
 
 const TEMPLATE = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "docs", "benchmarks", "templates", "local-generation-arms.md");
 
@@ -234,7 +237,7 @@ async function fakeCorpora(arms: Partial<Record<ArmName, FakeArm>>) {
       comparativeCalls.push(args);
       return args.oursIsA ? { verdict: "better", margin: 1, rationale: "A reads better" } : { verdict: "worse", margin: -1, rationale: "A reads better" };
     }) satisfies JudgeFn,
-    judgeName: "stub-judge",
+    judgeNames: { accuracy: "stub-accuracy-judge", comparative: "stub-comparative-judge" },
   };
   return { deps, comparativeCalls, cleanUp: () => rm(root, { recursive: true, force: true }) };
 }
@@ -416,5 +419,76 @@ describe("renderArmsReport", () => {
     const note = template.slice(0, template.indexOf("## The decision rules"));
     expect(note).toContain("one proposition per Claim");
     expect(note).toContain("the owner settles it before the full run");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// The DeepSeek accuracy judge, against a stub of the LiteLLM proxy's
+// OpenAI-compatible endpoint: `answer` gets each request's claim.
+// ---------------------------------------------------------------------------
+
+async function stubProxy(answer: (claim: string) => { status: number; content?: string }) {
+  const requests: Array<{ authorization?: string; model: string }> = [];
+  const server = createServer((req, res) => {
+    let raw = "";
+    req.on("data", (chunk: Buffer) => (raw += chunk.toString()));
+    req.on("end", () => {
+      const body = JSON.parse(raw) as { model: string; messages: Array<{ content: string }> };
+      requests.push({ authorization: req.headers.authorization, model: body.model });
+      const claim = /^CLAIM: (.*)$/m.exec(body.messages[0].content)?.[1] ?? "";
+      const { status, content } = answer(claim);
+      res.writeHead(status, { "content-type": "application/json" });
+      res.end(JSON.stringify(status === 200 ? { choices: [{ message: { role: "assistant", content } }] } : { error: { message: "Vertex ledger holds $200.0000 of the $200 budget", code: String(status) } }));
+    });
+  });
+  await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const baseUrl = `http://127.0.0.1:${(server.address() as AddressInfo).port}/v1`;
+  return { judge: proxyAccuracyJudge({ baseUrl, apiKey: "sk-test" }), requests, close: () => new Promise<void>((resolve) => server.close(() => resolve())) };
+}
+
+describe("armsReport with the DeepSeek accuracy judge", () => {
+  const judgeNames = { accuracy: "deepseek-v4.1-flash", comparative: "gemini-3.5-flash" };
+
+  it("reads supported and unsupported from the reply's text; an unparseable reply is a judge failure, never unsupported", async () => {
+    // Claim 0 fenced true, 1 false, 2 true, 3 prose: 2 supported of 3 judged, 1 failure.
+    const replies = ["```json\n{\"supported\": true}\n```", "{\"supported\": false}", "{\"supported\":true}", "Yes, the code supports it."];
+    const proxy = await stubProxy((claim) => ({ status: 200, content: replies[Number(/number (\d+)/.exec(claim)?.[1])] }));
+    const corpora = await fakeCorpora({ "doc0-nomap": { claims: 4, resolvedClaims: 4, judge: () => true } });
+    const report = await armsReport({ repos: ["fd"], date: DATE, judged: true }, { ...corpora.deps, accuracyJudge: proxy.judge, judgeNames });
+    expect(report.repos[0].arms["doc0-nomap"].judged).toMatchObject({ groups: 4, resolved: 4, supported: 2, judgeFailures: 1, groundedRate: 2 / 3 });
+    // The prose reply was asked twice (the retry); every call names the proxy's model and key.
+    expect(proxy.requests).toHaveLength(5);
+    expect(proxy.requests.every((r) => r.model === "deepseek-v4.1-flash" && r.authorization === "Bearer sk-test")).toBe(true);
+    await proxy.close();
+    await corpora.cleanUp();
+  });
+
+  it("a 402 from the proxy (the Vertex budget is spent) stops the report", async () => {
+    const proxy = await stubProxy(() => ({ status: 402 }));
+    const corpora = await fakeCorpora({ "doc0-nomap": { claims: 4, resolvedClaims: 4, judge: () => true } });
+    await expect(armsReport({ repos: ["fd"], date: DATE, judged: true }, { ...corpora.deps, accuracyJudge: proxy.judge, judgeNames })).rejects.toBeInstanceOf(BudgetExceededError);
+    await proxy.close();
+    await corpora.cleanUp();
+  });
+
+  it("another HTTP error is a judge failure", async () => {
+    const proxy = await stubProxy(() => ({ status: 500 }));
+    const corpora = await fakeCorpora({ "doc0-nomap": { claims: 2, resolvedClaims: 2, judge: () => true } });
+    const report = await armsReport({ repos: ["fd"], date: DATE, judged: true }, { ...corpora.deps, accuracyJudge: proxy.judge, judgeNames });
+    expect(report.repos[0].arms["doc0-nomap"].judged).toMatchObject({ judgeFailures: 2, groundedRate: null });
+    await proxy.close();
+    await corpora.cleanUp();
+  });
+
+  it("the report names the accuracy judge and the comparative judge apart, in its JSON and its markdown", async () => {
+    const corpora = await fakeCorpora({ "doc0-nomap": { claims: 1, resolvedClaims: 1, judge: () => true } });
+    const report = await armsReport({ repos: ["fd"], date: DATE, judged: true }, { ...corpora.deps, judgeNames });
+    expect(report.schema_version).toBe(2);
+    expect(report.judge).toEqual(judgeNames);
+    expect(renderArmsReport(report, await readFile(TEMPLATE, "utf-8"))).toContain(
+      "Grounded rate judged by `deepseek-v4.1-flash`, every claim group (full population); blind comparison judged by `gemini-3.5-flash`.",
+    );
+    expect((await armsReport({ repos: ["fd"], date: DATE, judged: false }, corpora.deps)).judge).toBeNull();
+    await corpora.cleanUp();
   });
 });
