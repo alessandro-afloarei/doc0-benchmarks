@@ -191,7 +191,7 @@ function meta(armName: ArmName, extra: Partial<ArmMeta>): ArmMeta {
   return {
     schema_version: 4, system: armName === "openwiki" ? "openwiki" : "doc0", arm: armName, repo: "sharkdp/fd", credential: "api-key",
     source_repo_sha: "41532d114e2ba565fb5367d606c111b29b96450c", generated_at: "2026-11-16T00:00:00Z",
-    model: "claude-opus-5-5", effort: "high", tool_version: "x", dry_run: true, max_pages: 3, time_cap_minutes: 60, budget_usd: 15,
+    host: "claude", model: "claude-opus-5-5", effort: "high", tool_version: "x", dry_run: true, max_pages: 3, time_cap_minutes: 60, budget_usd: 15,
     status: "complete", reason: null, page_count: 1,
     usage: { input_tokens: 100, cache_creation_input_tokens: 0, cache_read_input_tokens: 0, output_tokens: 50 },
     cost_usd: 3, duration_ms: 6 * 60_000, num_turns: 10, ...extra,
@@ -359,7 +359,7 @@ describe("armsReport refuses or holds back", () => {
   });
 
   it("refuses to compare arms made differently, naming the setting", async () => {
-    for (const [field, value] of [["model", "claude-haiku-5-5"], ["credential", "subscription"], ["budget_usd", 2], ["max_pages", 1], ["effort", "low"], ["time_cap_minutes", 30], ["source_repo_sha", "0".repeat(40)]] as const) {
+    for (const [field, value] of [["host", "codex"], ["model", "claude-haiku-5-5"], ["credential", "subscription"], ["budget_usd", 2], ["max_pages", 1], ["effort", "low"], ["time_cap_minutes", 30], ["source_repo_sha", "0".repeat(40)]] as const) {
       const corpora = await fakeCorpora({ openwiki: all, "doc0-map": { ...all, meta: { [field]: value } }, "doc0-nomap": all });
       await expect(armsReport({ repos: ["fd"], date: DATE, judged: false }, corpora.deps)).rejects.toThrow(`fd: the arms differ in ${field}`);
       await corpora.cleanUp();
@@ -390,7 +390,7 @@ describe("renderArmsReport", () => {
     expect(markdown).toContain("DRY RUN: 3 pages per arm: tests the harness, decides nothing.");
     expect(markdown).toMatch(/\| fd \| openwiki \| 0\.5 \| 250 \| 0\.5 \| 1 \| 0 \|/);
     expect(markdown).toContain("**Rule 1, the map: not applied (dry run).**");
-    expect(markdown).toContain("Model `claude-opus-5-5`, effort `high`, credential `api-key`.");
+    expect(markdown).toContain("Host `claude`, model `claude-opus-5-5`, effort `high`, credential `api-key`.");
     expect(markdown).toContain("a subscription run's `total_cost_usd` is Claude Code's API-equivalent figure, not money charged");
     await corpora.cleanUp();
   });

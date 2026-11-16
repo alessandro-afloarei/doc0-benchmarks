@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtemp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
+import { chmod, mkdtemp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { isRunDate, positiveOption, runArm, runUsage, type RunArmOptions } from "./run-arm.ts";
+import { codexUsage, isRunDate, positiveOption, runArm, runUsage, type RunArmOptions } from "./run-arm.ts";
 import type { ArmMeta } from "../../scoring/arm-corpus.ts";
 
 const SECRET = "sk-ant-test-never-in-a-file";
@@ -31,6 +31,8 @@ if (mode.child) {
   const child = spawn("sleep", ["300"], { stdio: ["ignore", "inherit", "ignore"] });
   child.unref();
   writeFileSync("../child.pid", String(child.pid));
+  // As codex starts its MCP servers: a process group of its own, in the same session.
+  require("node:child_process").execSync("bash -c 'set -m; sleep 300 > /dev/null 2>&1 & echo $! > ../own-group.pid'");
 }
 if (mode.sleep) setTimeout(() => {}, mode.sleep * 1000);
 else {
@@ -99,7 +101,7 @@ async function options(arm: RunArmOptions["arm"], extra: Partial<RunArmOptions> 
   const doc0Cli = join(root, "doc0");
   await writeFile(doc0Cli, "#!/usr/bin/env node\n", { mode: 0o755 });
   return {
-    repo: "fd", arm, date: "2026-11-16", model: "claude-opus-5-5", effort: "high", budgetUsd: 15,
+    repo: "fd", arm, date: "2026-11-16", host: "claude", model: "claude-opus-5-5", effort: "high", budgetUsd: 15,
     timeoutMinutes: 1, workDir, credential: "api-key", toolVersion: arm === "openwiki" ? "openwiki@0.9.0" : "doc0@0.3.0",
     tools: { doc0Cli, doc0Skill: join(root, "SKILL.md"), openwikiBin: await fakeOpenwiki() },
     ...extra,
@@ -274,6 +276,7 @@ describe("runArm", () => {
     expect(Date.now() - started).toBeLessThan(10_000);
     expect(meta).toMatchObject({ status: "incomplete", reason: "time cap 0.02 min", cost_usd: null });
     expect(await gone(Number(await readFile(join(workDir, "fd-doc0-map/child.pid"), "utf-8")))).toBe(true);
+    expect(await gone(Number(await readFile(join(workDir, "fd-doc0-map/own-group.pid"), "utf-8")))).toBe(true);
   });
 
   it("a child left behind by a finished run is killed too", async () => {
@@ -281,6 +284,7 @@ describe("runArm", () => {
     const meta = await runArm(await options("doc0-map"), deps());
     expect(meta.status).toBe("complete");
     expect(await gone(Number(await readFile(join(workDir, "fd-doc0-map/child.pid"), "utf-8")))).toBe(true);
+    expect(await gone(Number(await readFile(join(workDir, "fd-doc0-map/own-group.pid"), "utf-8")))).toBe(true);
   });
 
   it("an openwiki run is complete on openwiki_finish's result and keeps its pages, its index.md navigation and its Claims", async () => {
@@ -311,6 +315,181 @@ describe("runArm", () => {
       await rm(existing, { recursive: true });
       await expect(stat(join(workDir, "fd-doc0-map", "transcript.jsonl"))).rejects.toThrow();
     }
+  });
+});
+
+// A stand-in for the Codex CLI. `debug prompt-input` prints the prompt codex
+// would send (its skills and MCP namespaces from codex-mode.json); `exec`
+// prints the --json events (an MCP call per tool, then turn.completed) and
+// writes the files a doc0 or openwiki run leaves, plus what it saw of its
+// home: config.toml, and auth.json's mode.
+const CODEX_STUB = String.raw`#!/usr/bin/env node
+const { mkdirSync, readFileSync, statSync, writeFileSync } = require("node:fs");
+const { dirname, join } = require("node:path");
+const mode = JSON.parse(readFileSync(join(dirname(process.argv[1]), "codex-mode.json"), "utf-8"));
+const out = (e) => console.log(JSON.stringify(e));
+const file = (path, text) => { mkdirSync(dirname(path), { recursive: true }); writeFileSync(path, text); };
+const home = process.env.CODEX_HOME;
+if (process.argv[2] === "debug") {
+  const skills = (mode.skills ?? [mode.skill]).map((s) => "- " + s + ": Does it. (file: r0/" + s + "/SKILL.md)").join("\n");
+  const servers = (mode.servers ?? [mode.server]).map((s) => "- mcp__" + s.replaceAll("-", "_")).join("\n");
+  console.log(JSON.stringify([
+    { type: "message", role: "developer", content: [{ type: "input_text", text: "<skills_instructions>\n" + skills + "\n</skills_instructions>" }] },
+    { type: "message", role: "developer", content: [{ type: "input_text", text: "<tools>\nDeferred tool namespaces:\n" + servers + "\n</tools>" }] },
+  ], null, 2));
+  return;
+}
+writeFileSync("../codex-args.json", JSON.stringify(process.argv.slice(2)));
+writeFileSync("../codex-env.json", JSON.stringify(process.env));
+writeFileSync("../codex-home.json", JSON.stringify({ config: readFileSync(join(home, "config.toml"), "utf-8"), authMode: (statSync(join(home, "auth.json")).mode & 0o777).toString(8) }));
+const token = JSON.parse(readFileSync(join(home, "auth.json"), "utf-8")).tokens.access_token;
+out({ type: "thread.started", thread_id: "t1" });
+out({ type: "turn.started" });
+const call = (server, tool, result) => {
+  const item = { id: "item_" + tool, type: "mcp_tool_call", server, tool, arguments: {}, result: null, error: null, status: "in_progress" };
+  out({ type: "item.started", item });
+  out({ type: "item.completed", item: { ...item, result: { content: [{ type: "text", text: JSON.stringify(result) }] }, status: "completed" } });
+};
+if (mode.foreign) {
+  out({ type: "item.started", item: { id: "item_x", type: "mcp_tool_call", server: "gaja", tool: "brain_search", status: "in_progress" } });
+  setTimeout(() => {}, 30000);
+  return;
+}
+out({ type: "item.completed", item: { id: "item_r", type: "reasoning", text: "plan" } });
+out({ type: "item.completed", item: { id: "item_m", type: "agent_message", text: "Starting." } });
+if (mode.doc0) {
+  file(".doc0/pages/overview.md", '---\ntitle: "Overview"\n---\n## Overview\n\nfd walks the tree.\n\nSources: [src/walk.rs:1-3](repo://src/walk.rs#L1-L3)\n');
+  file(".doc0/navigation.json", JSON.stringify({ sections: [], pages: ["overview"] }));
+  if (mode.doc0 === "complete") call("doc0-local", "doc0_finish", { status: "complete", published: false, pages: [join(process.cwd(), ".doc0/pages/overview.md")] });
+}
+if (mode.openwiki) {
+  file("openwiki/architecture/walk.md", "---\ntitle: Walk\n---\n# Walk\n");
+  file("openwiki/index.md", "# Index\n");
+  file("openwiki/.claims/architecture/walk.json", JSON.stringify({ schemaVersion: 1, claims: [] }));
+  call("openwiki", "openwiki_finish", { status: "complete" });
+}
+if (mode.leak) out({ type: "item.completed", item: { id: "item_c", type: "command_execution", command: "cat ~/auth.json", aggregated_output: token, status: "completed" } });
+if (mode.failed) out({ type: "turn.failed", error: { message: "usage limit reached" } });
+else out({ type: "turn.completed", usage: { input_tokens: 1000, cached_input_tokens: 600, cache_write_input_tokens: 0, output_tokens: 50, reasoning_output_tokens: 20 } });
+`;
+
+describe("runArm on codex", () => {
+  const ACCESS = "eyJ-access-token-never-in-a-file";
+  let codexBin: string;
+  let authFile: string;
+
+  beforeEach(async () => {
+    codexBin = join(root, "codex");
+    await writeFile(codexBin, CODEX_STUB, { mode: 0o755 });
+    authFile = join(root, "auth.json");
+    await writeFile(authFile, JSON.stringify({ auth_mode: "chatgpt", OPENAI_API_KEY: null, tokens: { id_token: "eyJ-id-token-x", access_token: ACCESS, refresh_token: "rt_refresh_x", account_id: "acct-1234" }, last_refresh: "2026-11-13T16:14:05Z" }));
+    await chmod(authFile, 0o600);
+  });
+
+  interface CodexMode { doc0?: "complete" | "none"; openwiki?: true; skills?: string[]; servers?: string[]; foreign?: true; leak?: true; failed?: true }
+  async function codexStub(mode: CodexMode) {
+    const doc0 = mode.openwiki === undefined;
+    await writeFile(join(root, "codex-mode.json"), JSON.stringify({ server: doc0 ? "doc0-local" : "openwiki", skill: doc0 ? "doc0-write" : "openwiki", ...mode }));
+  }
+  const codexOptions = (arm: RunArmOptions["arm"], extra: Partial<RunArmOptions> = {}) =>
+    options(arm, { host: "codex", model: "gpt-6-astra", effort: "high", budgetUsd: null, credential: "subscription", ...extra });
+  const codexDeps = () => ({ ...deps(), codexBin, codexAuthFile: authFile });
+
+  it("a doc0 run is complete on doc0_finish's mcp_tool_call result, in its own CODEX_HOME with the arm's server alone", async () => {
+    await codexStub({ doc0: "complete" });
+    const meta = await runArm(await codexOptions("doc0-nomap", { maxPages: 3 }), codexDeps());
+    expect(meta).toMatchObject({
+      status: "complete", reason: null, page_count: 1, host: "codex", model: "gpt-6-astra", effort: "high", credential: "subscription",
+      budget_usd: null, cost_usd: null, num_turns: 2,
+      usage: { input_tokens: 400, cache_creation_input_tokens: 0, cache_read_input_tokens: 600, output_tokens: 50 },
+    });
+    const corpus = join(corporaDir, "fd-doc0-nomap-2026-11-16");
+    expect((await readdir(corpus)).sort()).toEqual(["_meta.json", "navigation.json", "overview.md"]);
+    const run = join(workDir, "fd-doc0-nomap");
+    const home = JSON.parse(await readFile(join(run, "codex-home.json"), "utf-8")) as { config: string; authMode: string };
+    expect(home.authMode).toBe("600");
+    expect(home.config).toContain('model = "gpt-6-astra"');
+    expect(home.config).toContain('model_reasoning_effort = "high"');
+    expect(home.config.match(/^\[mcp_servers\./gm)).toEqual(["[mcp_servers."]);
+    expect(home.config).toContain('args = ["mcp","--no-publish","--no-map"]');
+    const args = JSON.parse(await readFile(join(run, "codex-args.json"), "utf-8")) as string[];
+    expect(args.slice(0, 4)).toEqual(["exec", "--json", "--ephemeral", "--strict-config"]);
+    expect(args[4]).toContain("Plan at most 3 pages.");
+    const env = JSON.parse(await readFile(join(run, "codex-env.json"), "utf-8")) as Record<string, string>;
+    expect(env).toMatchObject({ CODEX_HOME: join(run, "codex-config"), HOME: join(run, "codex-config") });
+    expect(env).not.toHaveProperty("ANTHROPIC_API_KEY");
+    // The sign-in copy is gone once the run ends, and the agent's own folder holds the original only.
+    await expect(stat(join(run, "codex-config/auth.json"))).rejects.toThrow(/ENOENT/);
+    await expect(stat(join(run, "src/auth.json"))).rejects.toThrow(/ENOENT/);
+    expect((await readdir(join(resultsDir, "fd-doc0-nomap-2026-11-16"))).sort()).toEqual(["prompt-input.json", "result.json", "transcript.jsonl"]);
+  });
+
+  it("an openwiki run is complete on openwiki_finish's result and keeps its pages and Claims", async () => {
+    await codexStub({ openwiki: true });
+    const meta = await runArm(await codexOptions("openwiki"), codexDeps());
+    expect(meta).toMatchObject({ status: "complete", system: "openwiki", host: "codex", page_count: 1 });
+    expect((await readdir(join(corporaDir, "fd-openwiki-2026-11-16"), { recursive: true })).sort()).toContain("_claims/architecture/walk.json");
+  });
+
+  it("a prompt that lists another skill or server stops the run before codex exec starts", async () => {
+    await codexStub({ doc0: "complete", skills: ["doc0-write", "imagegen"] });
+    expect(await runArm(await codexOptions("doc0-map"), codexDeps())).toMatchObject({
+      status: "incomplete", reason: 'isolation: skills ["doc0-write","imagegen"], expected only doc0-write', usage: null,
+    });
+    await expect(stat(join(workDir, "fd-doc0-map/codex-args.json"))).rejects.toThrow(/ENOENT/);
+    await rm(workDir, { recursive: true });
+    await rm(corporaDir, { recursive: true });
+    await rm(resultsDir, { recursive: true });
+    await codexStub({ doc0: "complete", servers: ["doc0-local", "codex_apps"] });
+    expect((await runArm(await codexOptions("doc0-map"), codexDeps())).reason).toBe('isolation: MCP servers ["doc0_local","codex_apps"], expected only doc0-local');
+  });
+
+  it("a call to another MCP server stops the run at once", async () => {
+    await codexStub({ foreign: true });
+    const started = Date.now();
+    const meta = await runArm(await codexOptions("doc0-map"), codexDeps());
+    expect(Date.now() - started).toBeLessThan(10_000);
+    expect(meta).toMatchObject({ status: "incomplete", reason: "isolation: codex called MCP server gaja" });
+  });
+
+  it("pages without a doc0_finish result, or a failed turn, are not a run", async () => {
+    await codexStub({ doc0: "none" });
+    expect(await runArm(await codexOptions("doc0-map"), codexDeps())).toMatchObject({ status: "incomplete", reason: "finish not proven: no doc0_finish result with status complete", page_count: 0 });
+    await rm(workDir, { recursive: true });
+    await rm(corporaDir, { recursive: true });
+    await rm(resultsDir, { recursive: true });
+    await codexStub({ doc0: "complete", failed: true });
+    expect(await runArm(await codexOptions("doc0-map"), codexDeps())).toMatchObject({ status: "incomplete", reason: "turn.failed: usage limit reached", usage: null });
+  });
+
+  it("a sign-in token that reaches the transcript makes the run incomplete, and every copy is redacted", async () => {
+    await codexStub({ doc0: "complete", leak: true });
+    const meta = await runArm(await codexOptions("doc0-map"), codexDeps());
+    expect(meta).toMatchObject({ status: "incomplete", reason: "secret in transcript.jsonl: codex auth.json tokens.access_token" });
+    for (const file of [join(workDir, "fd-doc0-map/transcript.jsonl"), join(resultsDir, "fd-doc0-map-2026-11-16/transcript.jsonl")]) {
+      const text = await readFile(file, "utf-8");
+      expect(text).not.toContain(ACCESS);
+      expect(text).toContain("[REDACTED codex auth.json tokens.access_token]");
+    }
+  });
+
+  it("refuses a sign-in that is not ChatGPT's, and leaves no copy behind", async () => {
+    await codexStub({ doc0: "complete" });
+    await writeFile(authFile, JSON.stringify({ auth_mode: "apikey", OPENAI_API_KEY: "sk-openai-x" }));
+    await expect(runArm(await codexOptions("doc0-map"), codexDeps())).rejects.toThrow("is not a ChatGPT sign-in (auth_mode apikey)");
+    await expect(stat(join(workDir, "fd-doc0-map/codex-config/auth.json"))).rejects.toThrow(/ENOENT/);
+  });
+});
+
+describe("codexUsage", () => {
+  it("sums every turn.completed, the uncached input apart, and counts completed items but reasoning as turns", () => {
+    const turn = { type: "turn.completed", usage: { input_tokens: 100, cached_input_tokens: 60, cache_write_input_tokens: 10, output_tokens: 7 } };
+    const item = (type: string) => ({ type: "item.completed", item: { type } });
+    expect(codexUsage([item("reasoning"), item("mcp_tool_call"), item("command_execution"), turn, item("agent_message"), turn])).toEqual({
+      usage: { input_tokens: 60, cache_creation_input_tokens: 20, cache_read_input_tokens: 120, output_tokens: 14 },
+      num_turns: 3,
+    });
+    expect(codexUsage([item("agent_message"), { type: "turn.failed", error: { message: "x" } }])).toEqual({ usage: null, num_turns: null });
   });
 });
 

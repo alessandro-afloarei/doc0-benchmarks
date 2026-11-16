@@ -8,8 +8,11 @@ import { loadOpenwikiClaimGroups } from "./openwiki-claims.ts";
 
 export type ArmName = "openwiki" | "doc0-map" | "doc0-nomap";
 
-/** How the run's claude signed in: an API key (ANTHROPIC_API_KEY) or a subscription token (CLAUDE_CODE_OAUTH_TOKEN). Never its value. */
+/** How the run signed in, never the value: an API key (ANTHROPIC_API_KEY), or a subscription (claude's CLAUDE_CODE_OAUTH_TOKEN, codex's ChatGPT login). */
 export type ArmCredential = "api-key" | "subscription";
+
+/** The agent that ran the arm: Claude Code (`claude -p`) or the Codex CLI (`codex exec`). */
+export type ArmHost = "claude" | "codex";
 
 export interface ArmMeta {
   schema_version: 4;
@@ -18,6 +21,7 @@ export interface ArmMeta {
   repo: string;
   source_repo_sha: string;
   generated_at: string;
+  host: ArmHost;
   model: string;
   effort: string;
   /** doc0's packed version (and commit when given), or "openwiki@0.9.0". */
@@ -25,27 +29,29 @@ export interface ArmMeta {
   dry_run: boolean;
   max_pages: number | null;
   time_cap_minutes: number;
-  budget_usd: number;
+  /** claude's --max-budget-usd; null on codex, which has no spend cap (its time cap still holds). */
+  budget_usd: number | null;
   credential: ArmCredential;
   status: "complete" | "incomplete";
   reason: string | null;
   page_count: number;
-  /** Usage, cost and turns come from claude's final result: null (unknown, never 0) for a run that ended without one. */
+  /** Usage, cost and turns come from claude's final result (codex: its turn.completed usage and completed items): null (unknown, never 0) for a run that ended without one. */
   usage: { input_tokens: number; cache_creation_input_tokens: number; cache_read_input_tokens: number; output_tokens: number } | null;
-  /** claude's total_cost_usd: on a subscription, Claude Code's API-equivalent figure, not money charged. */
+  /** claude's total_cost_usd: on a subscription, Claude Code's API-equivalent figure, not money charged. Always null on codex, which reports none. */
   cost_usd: number | null;
   duration_ms: number;
   num_turns: number | null;
 }
 
 /** The settings two arms must share to be compared: the report refuses a pair that differs in any. */
-export const ARM_SETTINGS = ["model", "effort", "credential", "dry_run", "max_pages", "time_cap_minutes", "budget_usd", "source_repo_sha"] as const satisfies ReadonlyArray<keyof ArmMeta>;
+export const ARM_SETTINGS = ["host", "model", "effort", "credential", "dry_run", "max_pages", "time_cap_minutes", "budget_usd", "source_repo_sha"] as const satisfies ReadonlyArray<keyof ArmMeta>;
 
 /** A corpus folder's _meta.json, refused when an older harness wrote it (it lacks fields the report checks). */
 export async function readArmMeta(dir: string): Promise<ArmMeta> {
-  const meta = JSON.parse(await readFile(join(dir, "_meta.json"), "utf-8")) as ArmMeta;
+  const meta = JSON.parse(await readFile(join(dir, "_meta.json"), "utf-8")) as Omit<ArmMeta, "host"> & { host?: ArmHost };
   if (meta.schema_version !== 4) throw new Error(`${dir}/_meta.json has schema_version ${String(meta.schema_version)}, not 4: run the arm again.`);
-  return meta;
+  // Every run before the codex host was a claude run, and its meta names no host.
+  return { ...meta, host: meta.host ?? "claude" };
 }
 
 const FRONT_MATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n/;

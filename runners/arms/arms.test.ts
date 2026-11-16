@@ -14,14 +14,19 @@ import {
   capMinutes,
   claudeArgs,
   CLOUD_PAGE_COUNTS,
+  codexArgs,
+  codexConfigToml,
+  codexIsolationProblem,
   CODEWIKIBENCH_REPOS,
   isolationProblem,
+  jsonSecrets,
   MINUTES_PER_PAGE,
   redactSecrets,
   REPOS,
   RUN_REPOS,
   secretValues,
   usableDoc0Cli,
+  writeClaudeMcpConfig,
 } from "./arms.ts";
 
 describe("claudeArgs", () => {
@@ -65,9 +70,10 @@ describe("armSetup", () => {
     await mkdir(clone);
     const doc0Skill = join(root, "SKILL.md");
     await writeFile(doc0Skill, "---\nname: doc0-write\n---\n");
-    const setup = await armSetup(arm, clone, { doc0Cli: "/opt/doc0-cli/node_modules/.bin/doc0", doc0Skill, openwikiBin: "/opt/ow" });
-    const mcp = JSON.parse(await readFile(setup.mcpConfigFile, "utf-8")) as { mcpServers: Record<string, { command: string; args: string[] }> };
-    return { root, clone, setup, mcp };
+    const setup = await armSetup(arm, clone, { doc0Cli: "/opt/doc0-cli/node_modules/.bin/doc0", doc0Skill, openwikiBin: "/opt/ow" }, "claude");
+    const mcpConfigFile = await writeClaudeMcpConfig(clone, setup.server, setup.entry);
+    const mcp = JSON.parse(await readFile(mcpConfigFile, "utf-8")) as { mcpServers: Record<string, { command: string; args: string[] }> };
+    return { root, clone, mcpConfigFile, mcp };
   }
 
   it("doc0-nomap's MCP file adds --no-map, doc0-map's does not", async () => {
@@ -79,13 +85,68 @@ describe("armSetup", () => {
   });
 
   it("the doc0 arms' MCP file runs DOC0_CLI directly, and the skill sits in the clone", async () => {
-    const { root, clone, setup, mcp } = await setUp("doc0-map");
+    const { root, clone, mcpConfigFile, mcp } = await setUp("doc0-map");
     expect(Object.keys(mcp.mcpServers)).toEqual(["doc0-local"]);
     expect(mcp.mcpServers["doc0-local"].command).toBe("/opt/doc0-cli/node_modules/.bin/doc0");
-    expect(setup.skillName).toBe("doc0-write");
-    expect(setup.mcpConfigFile.startsWith(clone)).toBe(false);
+    expect(mcpConfigFile.startsWith(clone)).toBe(false);
     expect(await readFile(join(clone, ".claude/skills/doc0-write/SKILL.md"), "utf-8")).toContain("name: doc0-write");
     await rm(root, { recursive: true });
+  });
+
+  it("for codex the doc0 skill sits where codex reads a repository's skills, and openwiki installs for codex without its project MCP block", async () => {
+    const root = await mkdtemp(join(tmpdir(), "arm-setup-"));
+    const clone = join(root, "src");
+    await mkdir(clone);
+    const doc0Skill = join(root, "SKILL.md");
+    await writeFile(doc0Skill, "---\nname: doc0-write\n---\n");
+    // openwiki's installer, faked: it writes the skill and a project config naming a bare `openwiki`.
+    const openwikiBin = join(root, "openwiki");
+    await writeFile(openwikiBin, '#!/usr/bin/env bash\necho "$@" > ../openwiki-args.txt\nmkdir -p .agents/skills/openwiki .codex && echo --- > .agents/skills/openwiki/SKILL.md && echo x > .codex/config.toml\n', { mode: 0o755 });
+    const tools = { doc0Cli: "/opt/doc0", doc0Skill, openwikiBin };
+    expect(await armSetup("doc0-nomap", clone, tools, "codex")).toEqual({ server: "doc0-local", entry: { command: "/opt/doc0", args: ["mcp", "--no-publish", "--no-map"] } });
+    expect(await readFile(join(clone, ".agents/skills/doc0-write/SKILL.md"), "utf-8")).toContain("name: doc0-write");
+    expect(await armSetup("openwiki", clone, tools, "codex")).toEqual({ server: "openwiki", entry: { command: openwikiBin, args: ["mcp", "--host", "codex"] } });
+    expect(await readFile(join(root, "openwiki-args.txt"), "utf-8")).toBe("integrations install codex --project .\n");
+    await expect(readFile(join(clone, ".codex/config.toml"), "utf-8")).rejects.toThrow(/ENOENT/);
+    await rm(root, { recursive: true });
+  });
+});
+
+describe("codex", () => {
+  it("codexConfigToml names the model, effort, the arm's server alone with its tools approved, and turns off connectors, plugins and bundled skills", () => {
+    expect(codexConfigToml({ server: "doc0-local", entry: { command: "/opt/doc0", args: ["mcp", "--no-publish"] }, model: "gpt-6-astra", effort: "high" })).toBe(
+      [
+        'model = "gpt-6-astra"', 'model_reasoning_effort = "high"', 'approval_policy = "never"', 'sandbox_mode = "workspace-write"', "",
+        "[features]", "apps = false", "plugins = false", "", "[skills.bundled]", "enabled = false", "",
+        '[mcp_servers."doc0-local"]', 'command = "/opt/doc0"', 'args = ["mcp","--no-publish"]', 'default_tools_approval_mode = "approve"', "",
+      ].join("\n"),
+    );
+  });
+
+  it("codexArgs asks for JSONL events, no session files and a strict config", () => {
+    expect(codexArgs("P")).toEqual(["exec", "--json", "--ephemeral", "--strict-config", "P"]);
+  });
+
+  // The shape `codex debug prompt-input` prints (0.167.0): a tools item, then developer messages.
+  const promptInput = (namespaces: string[], skills: string[], tools: string[] = []) => [
+    { type: "additional_tools", role: "developer", tools: [{ type: "namespace", name: "functions", tools: [{ type: "custom", name: "exec", description: "e.g. `await tools.mcp__ologs__get_profile(...)`" }, ...tools.map((name) => ({ type: "function", name }))] }] },
+    { type: "message", role: "developer", content: [{ type: "input_text", text: `<skills_instructions>\n### Available skills\n${skills.map((s) => `- ${s}: Does ${s}. (file: r0/${s}/SKILL.md)`).join("\n")}\n</skills_instructions>` }] },
+    // codex writes `doc0-local` as doc0_local, and a server without instructions bare.
+    { type: "message", role: "developer", content: [{ type: "input_text", text: `<tools>\nDeferred tool namespaces:\n${namespaces.map((n) => n === "doc0-local" ? "- mcp__doc0_local" : `- mcp__${n}: The ${n} server.`).join("\n")}\n</tools>` }] },
+  ];
+
+  it("accepts a prompt that lists only the arm's server and skill (the exec tool's example name aside)", () => {
+    expect(codexIsolationProblem("doc0-map", promptInput(["doc0-local"], ["doc0-write"]))).toBeNull();
+    expect(codexIsolationProblem("openwiki", promptInput(["openwiki"], ["openwiki"]))).toBeNull();
+  });
+
+  it("names another server (deferred or listed as a tool), the arm's server missing, another skill, or no prompt", () => {
+    expect(codexIsolationProblem("doc0-map", promptInput(["doc0-local", "codex_apps"], ["doc0-write"]))).toBe('MCP servers ["doc0_local","codex_apps"], expected only doc0-local');
+    expect(codexIsolationProblem("doc0-map", promptInput(["doc0-local"], ["doc0-write"], ["mcp__gaja__brain_search"]))).toMatch(/gaja/);
+    expect(codexIsolationProblem("doc0-map", promptInput([], ["doc0-write"]))).toBe("MCP servers [], expected only doc0-local");
+    expect(codexIsolationProblem("doc0-map", promptInput(["doc0-local"], ["doc0-write", "imagegen"]))).toBe('skills ["doc0-write","imagegen"], expected only doc0-write');
+    expect(codexIsolationProblem("openwiki", promptInput(["openwiki"], []))).toBe("skills [], expected only openwiki");
+    expect(codexIsolationProblem("openwiki", undefined)).toBe("codex rendered no prompt input");
   });
 });
 
@@ -95,8 +156,8 @@ describe("armDirs", () => {
     const repos = Object.keys(RUN_REPOS) as (keyof typeof RUN_REPOS)[];
     for (const repo of repos) {
       for (const arm of ARMS) {
-        const dirs = armDirs("/w", repo, arm);
-        for (const dir of [dirs.root, dirs.clone, dirs.config]) {
+        const dirs = armDirs("/w", repo, arm, "claude");
+        for (const dir of [dirs.root, dirs.clone, dirs.config, armDirs("/w", repo, arm, "codex").config]) {
           expect(seen.has(dir), dir).toBe(false);
           seen.add(dir);
         }
@@ -104,7 +165,7 @@ describe("armDirs", () => {
         expect(dirs.config.startsWith(dirs.clone)).toBe(false);
       }
     }
-    expect(seen.size).toBe(repos.length * ARMS.length * 3);
+    expect(seen.size).toBe(repos.length * ARMS.length * 4);
   });
 });
 
@@ -237,8 +298,14 @@ describe("armEnv", () => {
   const isolated = { PATH: "/usr/bin", LANG: "C.UTF-8", TMPDIR: "/work/tmp", HOME: "/w/fd-doc0-map/claude-config", CLAUDE_CONFIG_DIR: "/w/fd-doc0-map/claude-config" };
 
   it("passes the allowlist and the run's one credential only: no CLAUDE_CODE_* messaging, no judge keys, HOME and the config dir isolated", () => {
-    expect(armEnv(parent, "/w/fd-doc0-map/claude-config", "api-key")).toEqual({ ...isolated, ANTHROPIC_API_KEY: "sk-ant-x" });
-    expect(armEnv(parent, "/w/fd-doc0-map/claude-config", "subscription")).toEqual({ ...isolated, CLAUDE_CODE_OAUTH_TOKEN: "sk-ant-oat-x" });
+    expect(armEnv(parent, "/w/fd-doc0-map/claude-config", "claude", "api-key")).toEqual({ ...isolated, ANTHROPIC_API_KEY: "sk-ant-x" });
+    expect(armEnv(parent, "/w/fd-doc0-map/claude-config", "claude", "subscription")).toEqual({ ...isolated, CLAUDE_CODE_OAUTH_TOKEN: "sk-ant-oat-x" });
+  });
+
+  it("codex gets the allowlist alone, with HOME and CODEX_HOME in the run's folder: no Anthropic credential, no OPENAI_API_KEY", () => {
+    expect(armEnv({ ...parent, OPENAI_API_KEY: "sk-openai" }, "/w/fd-doc0-map/codex-config", "codex", "subscription")).toEqual({
+      PATH: "/usr/bin", LANG: "C.UTF-8", TMPDIR: "/work/tmp", HOME: "/w/fd-doc0-map/codex-config", CODEX_HOME: "/w/fd-doc0-map/codex-config",
+    });
   });
 });
 
@@ -252,6 +319,14 @@ describe("secrets", () => {
     expect(secretValues(env)).toEqual([
       ["ANTHROPIC_API_KEY", "sk-ant-api03-secret"], ["CLAUDE_CODE_OAUTH_TOKEN", "sk-ant-oat01-secret"],
       ["GEMINI_API_KEY", "AIza-judge-key"], ["GITHUB_TOKEN", "ghp_123456789"],
+    ]);
+  });
+
+  it("jsonSecrets takes a credential file's token values by their path, never its timestamps or mode", () => {
+    const auth = { auth_mode: "chatgpt", OPENAI_API_KEY: null, tokens: { id_token: "eyJ-id-token", access_token: "eyJ-access-token", refresh_token: "rt_refresh", account_id: "acct-1234-5678" }, last_refresh: "2026-11-13T16:14:05Z" };
+    expect(jsonSecrets("codex auth.json", auth)).toEqual([
+      ["codex auth.json tokens.id_token", "eyJ-id-token"], ["codex auth.json tokens.access_token", "eyJ-access-token"],
+      ["codex auth.json tokens.refresh_token", "rt_refresh"], ["codex auth.json tokens.account_id", "acct-1234-5678"],
     ]);
   });
 
